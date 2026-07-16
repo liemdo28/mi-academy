@@ -1,0 +1,42 @@
+"""Application configuration — all settings from environment variables."""
+
+from functools import lru_cache
+from typing import List
+
+from pydantic_settings import BaseSettings, SettingsConfigDict
+
+
+class Settings(BaseSettings):
+    model_config = SettingsConfigDict(env_file=".env", extra="ignore")
+
+    # App
+    APP_ENV: str = "development"  # development | production
+    DEBUG: bool = True
+
+    # Database
+    DATABASE_URL: str = "sqlite+aiosqlite:///./mi_academy.db"
+    CREATE_TABLES_ON_STARTUP: bool = True
+
+    # JWT
+    SECRET_KEY: str = "CHANGE_ME_IN_PRODUCTION_USE_64_CHARS_RANDOM"
+    ALGORITHM: str = "HS256"
+    ACCESS_TOKEN_EXPIRE_MINUTES: int = 30
+    REFRESH_TOKEN_EXPIRE_DAYS: int = 30
+
+    # CORS
+    CORS_ORIGINS: List[str] = ["*"]
+
+    # Security
+    BCRYPT_ROUNDS: int = 12
+
+    # Sync
+    SYNC_RATE_LIMIT_PER_MIN: int = 60
+    AUTH_RATE_LIMIT_PER_MIN: int = 10
+
+
+@lru_cache
+def get_settings() -> Settings:
+    return Settings()
+
+
+settings = get_settings()

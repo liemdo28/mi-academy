@@ -1,0 +1,802 @@
+[
+  {
+    "word": "mèo",
+    "reading": "mèo",
+    "meaning": "cat",
+    "category": "animals",
+    "difficulty": 1,
+    "image_key": "cat"
+  },
+  {
+    "word": "chó",
+    "reading": "chó",
+    "meaning": "dog",
+    "category": "animals",
+    "difficulty": 1,
+    "image_key": "dog"
+  },
+  {
+    "word": "cá",
+    "reading": "cá",
+    "meaning": "fish",
+    "category": "animals",
+    "difficulty": 1,
+    "image_key": "fish"
+  },
+  {
+    "word": "chim",
+    "reading": "chim",
+    "meaning": "bird",
+    "category": "animals",
+    "difficulty": 1,
+    "image_key": "bird"
+  },
+  {
+    "word": "voi",
+    "reading": "voi",
+    "meaning": "elephant",
+    "category": "animals",
+    "difficulty": 2,
+    "image_key": "elephant"
+  },
+  {
+    "word": "hổ",
+    "reading": "hổ",
+    "meaning": "tiger",
+    "category": "animals",
+    "difficulty": 2,
+    "image_key": "tiger"
+  },
+  {
+    "word": "gấu",
+    "reading": "gấu",
+    "meaning": "bear",
+    "category": "animals",
+    "difficulty": 2,
+    "image_key": "bear"
+  },
+  {
+    "word": "khỉ",
+    "reading": "khỉ",
+    "meaning": "monkey",
+    "category": "animals",
+    "difficulty": 2,
+    "image_key": "monkey"
+  },
+  {
+    "word": "gà",
+    "reading": "gà",
+    "meaning": "chicken",
+    "category": "animals",
+    "difficulty": 1,
+    "image_key": "chicken"
+  },
+  {
+    "word": "heo",
+    "reading": "heo",
+    "meaning": "pig",
+    "category": "animals",
+    "difficulty": 1,
+    "image_key": "pig"
+  },
+  {
+    "word": "thỏ",
+    "reading": "thỏ",
+    "meaning": "rabbit",
+    "category": "animals",
+    "difficulty": 2,
+    "image_key": "rabbit"
+  },
+  {
+    "word": "sư tử",
+    "reading": "sư tử",
+    "meaning": "lion",
+    "category": "animals",
+    "difficulty": 3,
+    "image_key": "lion"
+  },
+  {
+    "word": "hươu",
+    "reading": "hươu",
+    "meaning": "deer",
+    "category": "animals",
+    "difficulty": 3,
+    "image_key": "deer"
+  },
+  {
+    "word": "báo",
+    "reading": "báo",
+    "meaning": "leopard",
+    "category": "animals",
+    "difficulty": 3,
+    "image_key": "leopard"
+  },
+  {
+    "word": "cá sấu",
+    "reading": "cá sấu",
+    "meaning": "crocodile",
+    "category": "animals",
+    "difficulty": 3,
+    "image_key": "crocodile"
+  },
+  {
+    "word": "hà mã",
+    "reading": "hà mã",
+    "meaning": "hippopotamus",
+    "category": "animals",
+    "difficulty": 4,
+    "image_key": "hippopotamus"
+  },
+  {
+    "word": "bò",
+    "reading": "bò",
+    "meaning": "cow",
+    "category": "animals",
+    "difficulty": 1,
+    "image_key": "cow"
+  },
+  {
+    "word": "ngựa",
+    "reading": "ngựa",
+    "meaning": "horse",
+    "category": "animals",
+    "difficulty": 2,
+    "image_key": "horse"
+  },
+  {
+    "word": "dê",
+    "reading": "dê",
+    "meaning": "goat",
+    "category": "animals",
+    "difficulty": 2,
+    "image_key": "goat"
+  },
+  {
+    "word": "cừu",
+    "reading": "cừu",
+    "meaning": "sheep",
+    "category": "animals",
+    "difficulty": 2,
+    "image_key": "sheep"
+  },
+  {
+    "word": "táo",
+    "reading": "táo",
+    "meaning": "apple",
+    "category": "fruits",
+    "difficulty": 1,
+    "image_key": "apple"
+  },
+  {
+    "word": "cam",
+    "reading": "cam",
+    "meaning": "orange",
+    "category": "fruits",
+    "difficulty": 1,
+    "image_key": "orange"
+  },
+  {
+    "word": "chuối",
+    "reading": "chuối",
+    "meaning": "banana",
+    "category": "fruits",
+    "difficulty": 1,
+    "image_key": "banana"
+  },
+  {
+    "word": "xoài",
+    "reading": "xoài",
+    "meaning": "mango",
+    "category": "fruits",
+    "difficulty": 2,
+    "image_key": "mango"
+  },
+  {
+    "word": "nho",
+    "reading": "nho",
+    "meaning": "grape",
+    "category": "fruits",
+    "difficulty": 1,
+    "image_key": "grape"
+  },
+  {
+    "word": "dừa",
+    "reading": "dừa",
+    "meaning": "coconut",
+    "category": "fruits",
+    "difficulty": 2,
+    "image_key": "coconut"
+  },
+  {
+    "word": "đu đủ",
+    "reading": "đu đủ",
+    "meaning": "papaya",
+    "category": "fruits",
+    "difficulty": 3,
+    "image_key": "papaya"
+  },
+  {
+    "word": "mít",
+    "reading": "mít",
+    "meaning": "jackfruit",
+    "category": "fruits",
+    "difficulty": 2,
+    "image_key": "jackfruit"
+  },
+  {
+    "word": "ổi",
+    "reading": "ổi",
+    "meaning": "guava",
+    "category": "fruits",
+    "difficulty": 2,
+    "image_key": "guava"
+  },
+  {
+    "word": "na",
+    "reading": "na",
+    "meaning": "custard apple",
+    "category": "fruits",
+    "difficulty": 3,
+    "image_key": "custard_apple"
+  },
+  {
+    "word": "dưa hấu",
+    "reading": "dưa hấu",
+    "meaning": "watermelon",
+    "category": "fruits",
+    "difficulty": 2,
+    "image_key": "watermelon"
+  },
+  {
+    "word": "chanh",
+    "reading": "chanh",
+    "meaning": "lemon",
+    "category": "fruits",
+    "difficulty": 2,
+    "image_key": "lemon"
+  },
+  {
+    "word": "bưởi",
+    "reading": "bưởi",
+    "meaning": "pomelo",
+    "category": "fruits",
+    "difficulty": 2,
+    "image_key": "pomelo"
+  },
+  {
+    "word": "sầu riêng",
+    "reading": "sầu riêng",
+    "meaning": "durian",
+    "category": "fruits",
+    "difficulty": 3,
+    "image_key": "durian"
+  },
+  {
+    "word": "vải",
+    "reading": "vải",
+    "meaning": "lychee",
+    "category": "fruits",
+    "difficulty": 2,
+    "image_key": "lychee"
+  },
+  {
+    "word": "thanh long",
+    "reading": "thanh long",
+    "meaning": "dragon fruit",
+    "category": "fruits",
+    "difficulty": 3,
+    "image_key": "dragon_fruit"
+  },
+  {
+    "word": "dâu tây",
+    "reading": "dâu tây",
+    "meaning": "strawberry",
+    "category": "fruits",
+    "difficulty": 3,
+    "image_key": "strawberry"
+  },
+  {
+    "word": "bơ",
+    "reading": "bơ",
+    "meaning": "avocado",
+    "category": "fruits",
+    "difficulty": 2,
+    "image_key": "avocado"
+  },
+  {
+    "word": "măng cụt",
+    "reading": "măng cụt",
+    "meaning": "mangosteen",
+    "category": "fruits",
+    "difficulty": 4,
+    "image_key": "mangosteen"
+  },
+  {
+    "word": "nhãn",
+    "reading": "nhãn",
+    "meaning": "longan",
+    "category": "fruits",
+    "difficulty": 2,
+    "image_key": "longan"
+  },
+  {
+    "word": "bố",
+    "reading": "bố",
+    "meaning": "father",
+    "category": "family",
+    "difficulty": 1,
+    "image_key": "father"
+  },
+  {
+    "word": "mẹ",
+    "reading": "mẹ",
+    "meaning": "mother",
+    "category": "family",
+    "difficulty": 1,
+    "image_key": "mother"
+  },
+  {
+    "word": "ông",
+    "reading": "ông",
+    "meaning": "grandfather",
+    "category": "family",
+    "difficulty": 1,
+    "image_key": "grandfather"
+  },
+  {
+    "word": "bà",
+    "reading": "bà",
+    "meaning": "grandmother",
+    "category": "family",
+    "difficulty": 1,
+    "image_key": "grandmother"
+  },
+  {
+    "word": "anh",
+    "reading": "anh",
+    "meaning": "older brother",
+    "category": "family",
+    "difficulty": 1,
+    "image_key": "older_brother"
+  },
+  {
+    "word": "chị",
+    "reading": "chị",
+    "meaning": "older sister",
+    "category": "family",
+    "difficulty": 1,
+    "image_key": "older_sister"
+  },
+  {
+    "word": "em",
+    "reading": "em",
+    "meaning": "younger sibling",
+    "category": "family",
+    "difficulty": 1,
+    "image_key": "younger_sibling"
+  },
+  {
+    "word": "cô",
+    "reading": "cô",
+    "meaning": "aunt (paternal)",
+    "category": "family",
+    "difficulty": 1,
+    "image_key": "aunt"
+  },
+  {
+    "word": "dì",
+    "reading": "dì",
+    "meaning": "aunt (maternal)",
+    "category": "family",
+    "difficulty": 2,
+    "image_key": "maternal_aunt"
+  },
+  {
+    "word": "chú",
+    "reading": "chú",
+    "meaning": "uncle (paternal)",
+    "category": "family",
+    "difficulty": 1,
+    "image_key": "uncle"
+  },
+  {
+    "word": "cậu",
+    "reading": "cậu",
+    "meaning": "uncle (maternal)",
+    "category": "family",
+    "difficulty": 2,
+    "image_key": "maternal_uncle"
+  },
+  {
+    "word": "con",
+    "reading": "con",
+    "meaning": "child",
+    "category": "family",
+    "difficulty": 1,
+    "image_key": "child"
+  },
+  {
+    "word": "cháu",
+    "reading": "cháu",
+    "meaning": "nephew/niece",
+    "category": "family",
+    "difficulty": 2,
+    "image_key": "nephew_niece"
+  },
+  {
+    "word": "đỏ",
+    "reading": "đỏ",
+    "meaning": "red",
+    "category": "colors",
+    "difficulty": 1,
+    "image_key": "red"
+  },
+  {
+    "word": "xanh",
+    "reading": "xanh",
+    "meaning": "green/blue",
+    "category": "colors",
+    "difficulty": 1,
+    "image_key": "green"
+  },
+  {
+    "word": "vàng",
+    "reading": "vàng",
+    "meaning": "yellow",
+    "category": "colors",
+    "difficulty": 1,
+    "image_key": "yellow"
+  },
+  {
+    "word": "trắng",
+    "reading": "trắng",
+    "meaning": "white",
+    "category": "colors",
+    "difficulty": 1,
+    "image_key": "white"
+  },
+  {
+    "word": "đen",
+    "reading": "đen",
+    "meaning": "black",
+    "category": "colors",
+    "difficulty": 1,
+    "image_key": "black"
+  },
+  {
+    "word": "tím",
+    "reading": "tím",
+    "meaning": "purple",
+    "category": "colors",
+    "difficulty": 2,
+    "image_key": "purple"
+  },
+  {
+    "word": "cam",
+    "reading": "cam",
+    "meaning": "orange (color)",
+    "category": "colors",
+    "difficulty": 2,
+    "image_key": "orange_color"
+  },
+  {
+    "word": "hồng",
+    "reading": "hồng",
+    "meaning": "pink",
+    "category": "colors",
+    "difficulty": 2,
+    "image_key": "pink"
+  },
+  {
+    "word": "nâu",
+    "reading": "nâu",
+    "meaning": "brown",
+    "category": "colors",
+    "difficulty": 2,
+    "image_key": "brown"
+  },
+  {
+    "word": "xám",
+    "reading": "xám",
+    "meaning": "gray",
+    "category": "colors",
+    "difficulty": 2,
+    "image_key": "gray"
+  },
+  {
+    "word": "một",
+    "reading": "một",
+    "meaning": "one",
+    "category": "numbers",
+    "difficulty": 1,
+    "image_key": "one"
+  },
+  {
+    "word": "hai",
+    "reading": "hai",
+    "meaning": "two",
+    "category": "numbers",
+    "difficulty": 1,
+    "image_key": "two"
+  },
+  {
+    "word": "ba",
+    "reading": "ba",
+    "meaning": "three",
+    "category": "numbers",
+    "difficulty": 1,
+    "image_key": "three"
+  },
+  {
+    "word": "bốn",
+    "reading": "bốn",
+    "meaning": "four",
+    "category": "numbers",
+    "difficulty": 1,
+    "image_key": "four"
+  },
+  {
+    "word": "năm",
+    "reading": "năm",
+    "meaning": "five",
+    "category": "numbers",
+    "difficulty": 1,
+    "image_key": "five"
+  },
+  {
+    "word": "sáu",
+    "reading": "sáu",
+    "meaning": "six",
+    "category": "numbers",
+    "difficulty": 1,
+    "image_key": "six"
+  },
+  {
+    "word": "bảy",
+    "reading": "bảy",
+    "meaning": "seven",
+    "category": "numbers",
+    "difficulty": 1,
+    "image_key": "seven"
+  },
+  {
+    "word": "tám",
+    "reading": "tám",
+    "meaning": "eight",
+    "category": "numbers",
+    "difficulty": 1,
+    "image_key": "eight"
+  },
+  {
+    "word": "chín",
+    "reading": "chín",
+    "meaning": "nine",
+    "category": "numbers",
+    "difficulty": 1,
+    "image_key": "nine"
+  },
+  {
+    "word": "mười",
+    "reading": "mười",
+    "meaning": "ten",
+    "category": "numbers",
+    "difficulty": 1,
+    "image_key": "ten"
+  },
+  {
+    "word": "trường",
+    "reading": "trường",
+    "meaning": "school",
+    "category": "school",
+    "difficulty": 1,
+    "image_key": "school"
+  },
+  {
+    "word": "thầy",
+    "reading": "thầy",
+    "meaning": "male teacher",
+    "category": "school",
+    "difficulty": 1,
+    "image_key": "male_teacher"
+  },
+  {
+    "word": "cô giáo",
+    "reading": "cô giáo",
+    "meaning": "female teacher",
+    "category": "school",
+    "difficulty": 2,
+    "image_key": "female_teacher"
+  },
+  {
+    "word": "học sinh",
+    "reading": "học sinh",
+    "meaning": "student",
+    "category": "school",
+    "difficulty": 2,
+    "image_key": "student"
+  },
+  {
+    "word": "sách",
+    "reading": "sách",
+    "meaning": "book",
+    "category": "school",
+    "difficulty": 1,
+    "image_key": "book"
+  },
+  {
+    "word": "vở",
+    "reading": "vở",
+    "meaning": "notebook",
+    "category": "school",
+    "difficulty": 1,
+    "image_key": "notebook"
+  },
+  {
+    "word": "bút",
+    "reading": "bút",
+    "meaning": "pen",
+    "category": "school",
+    "difficulty": 1,
+    "image_key": "pen"
+  },
+  {
+    "word": "bảng",
+    "reading": "bảng",
+    "meaning": "blackboard",
+    "category": "school",
+    "difficulty": 1,
+    "image_key": "blackboard"
+  },
+  {
+    "word": "ghế",
+    "reading": "ghế",
+    "meaning": "chair",
+    "category": "school",
+    "difficulty": 1,
+    "image_key": "chair"
+  },
+  {
+    "word": "bàn",
+    "reading": "bàn",
+    "meaning": "desk/table",
+    "category": "school",
+    "difficulty": 1,
+    "image_key": "desk"
+  },
+  {
+    "word": "giấy",
+    "reading": "giấy",
+    "meaning": "paper",
+    "category": "school",
+    "difficulty": 1,
+    "image_key": "paper"
+  },
+  {
+    "word": "thước",
+    "reading": "thước",
+    "meaning": "ruler",
+    "category": "school",
+    "difficulty": 2,
+    "image_key": "ruler"
+  },
+  {
+    "word": "tẩy",
+    "reading": "tẩy",
+    "meaning": "eraser",
+    "category": "school",
+    "difficulty": 2,
+    "image_key": "eraser"
+  },
+  {
+    "word": "cặp",
+    "reading": "cặp",
+    "meaning": "bag/satchel",
+    "category": "school",
+    "difficulty": 2,
+    "image_key": "bag"
+  },
+  {
+    "word": "bài học",
+    "reading": "bài học",
+    "meaning": "lesson",
+    "category": "school",
+    "difficulty": 2,
+    "image_key": "lesson"
+  },
+  {
+    "word": "cây",
+    "reading": "cây",
+    "meaning": "tree",
+    "category": "nature",
+    "difficulty": 1,
+    "image_key": "tree"
+  },
+  {
+    "word": "hoa",
+    "reading": "hoa",
+    "meaning": "flower",
+    "category": "nature",
+    "difficulty": 1,
+    "image_key": "flower"
+  },
+  {
+    "word": "cỏ",
+    "reading": "cỏ",
+    "meaning": "grass",
+    "category": "nature",
+    "difficulty": 1,
+    "image_key": "grass"
+  },
+  {
+    "word": "núi",
+    "reading": "núi",
+    "meaning": "mountain",
+    "category": "nature",
+    "difficulty": 1,
+    "image_key": "mountain"
+  },
+  {
+    "word": "sông",
+    "reading": "sông",
+    "meaning": "river",
+    "category": "nature",
+    "difficulty": 1,
+    "image_key": "river"
+  },
+  {
+    "word": "biển",
+    "reading": "biển",
+    "meaning": "sea/ocean",
+    "category": "nature",
+    "difficulty": 2,
+    "image_key": "sea"
+  },
+  {
+    "word": "mặt trời",
+    "reading": "mặt trời",
+    "meaning": "sun",
+    "category": "nature",
+    "difficulty": 2,
+    "image_key": "sun"
+  },
+  {
+    "word": "mặt trăng",
+    "reading": "mặt trăng",
+    "meaning": "moon",
+    "category": "nature",
+    "difficulty": 2,
+    "image_key": "moon"
+  },
+  {
+    "word": "sao",
+    "reading": "sao",
+    "meaning": "star",
+    "category": "nature",
+    "difficulty": 2,
+    "image_key": "star"
+  },
+  {
+    "word": "mây",
+    "reading": "mây",
+    "meaning": "cloud",
+    "category": "nature",
+    "difficulty": 1,
+    "image_key": "cloud"
+  },
+  {
+    "word": "vợ",
+    "reading": "vợ",
+    "meaning": "wife",
+    "category": "family",
+    "difficulty": 1,
+    "image_key": "wife"
+  },
+  {
+    "word": "chồng",
+    "reading": "chồng",
+    "meaning": "husband",
+    "category": "family",
+    "difficulty": 1,
+    "image_key": "husband"
+  }
+]

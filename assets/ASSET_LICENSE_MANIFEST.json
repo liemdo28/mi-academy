@@ -1,0 +1,230 @@
+{
+  "$schema": "https://mi-academy.example.com/schemas/asset-license-manifest-v1.json",
+  "manifest_version": "1.0",
+  "generated_date": "2026-07-16",
+  "generated_by": "MI Academy Design + Engineering Team",
+  "description": "License manifest for all assets used in MI Academy. Every asset must have an entry here before it enters the codebase.",
+
+  "license_types": {
+    "MI_OWNED": {
+      "description": "Asset created by or commissioned exclusively for MI Academy. Full copyright held by MI Academy.",
+      "attribution_required": false,
+      "redistribute_allowed": true
+    },
+    "CC0": {
+      "description": "Public domain equivalent. No restrictions.",
+      "attribution_required": false,
+      "redistribute_allowed": true
+    },
+    "CC_BY": {
+      "description": "Creative Commons Attribution. Can use if attribution is displayed in-app.",
+      "attribution_required": true,
+      "redistribute_allowed": true
+    },
+    "CC_BY_SA": {
+      "description": "Creative Commons Attribution-ShareAlike. Must share derivatives under same license.",
+      "attribution_required": true,
+      "redistribute_allowed": true,
+      "requires_sa": true
+    },
+    "FLATICON": {
+      "description": "Flaticon icon license. Free for personal and commercial projects with attribution.",
+      "attribution_required": true,
+      "redistribute_allowed": false,
+      "requires_attribution_template": "Icon made by {author} from Flaticon (flaticon.com)"
+    },
+    "KENNEY_ASSETS": {
+      "description": "Kenney.nl assets. Public domain (CC0) unless otherwise noted per asset set.",
+      "attribution_required": false,
+      "redistribute_allowed": true
+    },
+    "FREESOUND": {
+      "description": "Freesound.org audio. License varies per file — check individual entry.",
+      "attribution_required": true,
+      "redistribute_allowed": true,
+      "requires_attribution_template": "Audio by {author} from Freesound (freesound.org)"
+    },
+    "GOOGLE_FONTS": {
+      "description": "Google Fonts. Most fonts are Open Font License (OFL).",
+      "attribution_required": true,
+      "redistribute_allowed": true,
+      "requires_attribution_template": "{font_name} by {author}, Google Fonts"
+    },
+    "UNKNOWN": {
+      "description": "Do not use. Asset must be reclassified before entering codebase.",
+      "attribution_required": false,
+      "redistribute_allowed": false
+    }
+  },
+
+  "asset_categories": {
+    "illustration": {
+      "description": "Character art, background art, scene art",
+      "preferred_license": "MI_OWNED"
+    },
+    "icon": {
+      "description": "UI icons, game icons, map icons",
+      "preferred_license": "MI_OWNED"
+    },
+    "sprite": {
+      "description": "Animated characters, game objects",
+      "preferred_license": "MI_OWNED"
+    },
+    "background": {
+      "description": "Static and parallax backgrounds",
+      "preferred_license": "MI_OWNED"
+    },
+    "audio_music": {
+      "description": "Background music tracks",
+      "preferred_license": "MI_OWNED"
+    },
+    "audio_sfx": {
+      "description": "Sound effects (UI, game events)",
+      "preferred_license": "MI_OWNED"
+    },
+    "audio_voice": {
+      "description": "Voice recordings (narrations, prompts)",
+      "preferred_license": "MI_OWNED"
+    },
+    "font": {
+      "description": "Typography",
+      "preferred_license": "GOOGLE_FONTS"
+    },
+    "tile_texture": {
+      "description": "Game tile textures and patterns",
+      "preferred_license": "MI_OWNED"
+    },
+    "lottie_animation": {
+      "description": "Lottie JSON animations",
+      "preferred_license": "MI_OWNED"
+    }
+  },
+
+  "assets": [],
+
+  "guidelines": {
+    "adding_new_asset": [
+      "1. Create the asset (original) or find a licensed source.",
+      "2. Fill out every required field in the asset entry template below.",
+      "3. Calculate SHA-256 hash of the file and record it.",
+      "4. Add entry to this manifest with approved = false.",
+      "5. Submit for review by Design Lead + Engineering Lead.",
+      "6. Set approved = true and record approved_by and approved_date."
+    ],
+    "forbidden": [
+      "Do NOT add an asset to the codebase without an entry in this manifest.",
+      "Do NOT use an asset with license = UNKNOWN.",
+      "Do NOT use assets from Google Images, Pinterest, or unverified sources.",
+      "Do NOT assume 'found online' is equivalent to public domain.",
+      "Do NOT include personally identifiable information (child faces, voices, names)."
+    ],
+    "required_fields_per_asset": [
+      "asset_id",
+      "file",
+      "category",
+      "source_type",
+      "creator_or_author",
+      "source_url (if external)",
+      "license",
+      "attribution_required",
+      "attribution_text (if required)",
+      "file_hash_sha256",
+      "file_size_bytes",
+      "upload_date",
+      "used_in_games",
+      "approved",
+      "approved_by (if approved)",
+      "approved_date (if approved)"
+    ]
+  },
+
+  "asset_entry_template": {
+    "asset_id": "mi-[category]-[short-name]-[###]",
+    "file": "relative/path/within/assets/folder.webp",
+    "category": "illustration | icon | sprite | background | audio_music | audio_sfx | audio_voice | font | tile_texture | lottie_animation",
+    "source_type": "original | cc0 | cc_by | purchased | commission | flaticon | freesound | google_fonts | kenney | unknown",
+    "creator_or_author": "Name of person or organization",
+    "source_url": "https://...",
+    "license": "MI_OWNED | CC0 | CC_BY | CC_BY_SA | FLATICON | KENNEY_ASSETS | FREESOUND | GOOGLE_FONTS | UNKNOWN",
+    "attribution_required": true,
+    "attribution_text": "Text to display in credits screen",
+    "file_hash_sha256": "sha256:...",
+    "file_size_bytes": 0,
+    "upload_date": "YYYY-MM-DD",
+    "used_in_games": ["word_builder", "sound_match"],
+    "mi_age_group": "5-7 | 8-10 | 11-12 | all",
+    "approved": false,
+    "approved_by": "",
+    "approved_date": ""
+  },
+
+  "example_entries": [
+    {
+      "asset_id": "mi-character-mi-robot-001",
+      "file": "assets/sprites/characters/mi_robot_idle.webp",
+      "category": "sprite",
+      "source_type": "commission",
+      "creator_or_author": "MI Academy Design Team",
+      "source_url": null,
+      "license": "MI_OWNED",
+      "attribution_required": false,
+      "attribution_text": null,
+      "file_hash_sha256": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "file_size_bytes": 24500,
+      "upload_date": "2026-07-16",
+      "used_in_games": ["word_builder", "sound_match", "math_race", "memory_cards", "robot_commands", "math_supermarket"],
+      "mi_age_group": "all",
+      "approved": true,
+      "approved_by": "Design Lead",
+      "approved_date": "2026-07-16"
+    },
+    {
+      "asset_id": "mi-bg-alphabet-city-001",
+      "file": "assets/backgrounds/alphabet_city_parallax.webp",
+      "category": "background",
+      "source_type": "original",
+      "creator_or_author": "MI Academy Design Team",
+      "source_url": null,
+      "license": "MI_OWNED",
+      "attribution_required": false,
+      "attribution_text": null,
+      "file_hash_sha256": "sha256:a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3",
+      "file_size_bytes": 182000,
+      "upload_date": "2026-07-16",
+      "used_in_games": ["word_builder"],
+      "mi_age_group": "5-7",
+      "approved": true,
+      "approved_by": "Design Lead",
+      "approved_date": "2026-07-16"
+    },
+    {
+      "asset_id": "ext-kenney-tiles-fantasy-001",
+      "file": "assets/tiles/fantasy_tiles_128.webp",
+      "category": "tile_texture",
+      "source_type": "kenney",
+      "creator_or_author": "Kenney.nl",
+      "source_url": "https://kenney.nl/assets/fantasy-kit",
+      "license": "KENNEY_ASSETS",
+      "attribution_required": false,
+      "attribution_text": null,
+      "file_hash_sha256": "sha256:b14a7b8058d9e9e10e1a5e8d8e7f6a5b4c3d2e1f0a9b8c7d6e5f4a3b2c1d0e9f8",
+      "file_size_bytes": 512000,
+      "upload_date": "2026-07-16",
+      "used_in_games": ["math_supermarket"],
+      "mi_age_group": "8-10",
+      "approved": false,
+      "approved_by": "",
+      "approved_date": ""
+    }
+  ],
+
+  "audit_summary": {
+    "total_assets": 0,
+    "approved_assets": 0,
+    "pending_assets": 0,
+    "by_license": {},
+    "by_category": {},
+    "last_audit_date": "2026-07-16",
+    "next_audit_due": "2026-10-16"
+  }
+}

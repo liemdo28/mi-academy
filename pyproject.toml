@@ -1,0 +1,17 @@
+[project]
+name = "mi-academy"
+version = "0.1.0"
+description = "MI Academy — Offline-first educational games for children 5–12"
+requires-python = ">=3.10"
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["tests"]
+pythonpath = ["."]
+
+[tool.uv]
+dev-dependencies = [
+    "pytest>=8.3.2",
+    "pytest-asyncio>=0.24.0",
+    "aiosqlite>=0.20.0",
+]

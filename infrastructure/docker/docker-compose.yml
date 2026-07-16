@@ -1,0 +1,51 @@
+version: '3.9'
+services:
+  db:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_DB: mi_academy
+      POSTGRES_USER: mi_user
+      POSTGRES_PASSWORD: mi_dev_password
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U mi_user -d mi_academy"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  redis:
+    image: redis:7-alpine
+    ports:
+      - "6379:6379"
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  api:
+    build:
+      context: ../../
+      dockerfile: infrastructure/docker/Dockerfile.api
+    ports:
+      - "8000:8000"
+    environment:
+      DATABASE_URL: postgresql+asyncpg://mi_user:mi_dev_password@db:5432/mi_academy
+      SECRET_KEY: dev-secret-key-change-in-production-use-64-characters-here
+      CREATE_TABLES_ON_STARTUP: "true"
+      REDIS_URL: redis://redis:6379
+    depends_on:
+      db:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    volumes:
+      - ../../apps/api:/app/apps/api
+      - ../../content:/app/content
+    command: uvicorn apps.api.main:app --host 0.0.0.0 --port 8000 --reload
+
+volumes:
+  pgdata:
