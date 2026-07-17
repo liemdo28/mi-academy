@@ -51,6 +51,13 @@ class SyncQueueItem extends HiveObject {
   @HiveField(7)
   String status; // SyncItemStatus as string
 
+  /// When this item was last attempted (null if never attempted). Used for
+  /// exponential backoff -- retrying a failed item immediately on every
+  /// `sync()` call (e.g. one triggered per connectivity event) ignores how
+  /// recently it just failed.
+  @HiveField(8)
+  DateTime? lastAttemptAt;
+
   SyncQueueItem({
     required this.id,
     required this.childProfileId,
@@ -60,6 +67,7 @@ class SyncQueueItem extends HiveObject {
     this.retryCount = 0,
     this.lastError,
     this.status = 'pending',
+    this.lastAttemptAt,
   });
 
   static String typeToWireValue(SyncItemType type) {
@@ -115,18 +123,30 @@ class SyncQueueItem extends HiveObject {
     }
   }
 
+  /// Maximum transient-failure retries before an item is quarantined
+  /// instead of retried forever (or, worse, silently stopping being
+  /// retried while still showing as "failed" — see [shouldRetry]).
+  static const maxRetries = 5;
+
   void markSyncing() {
     status = 'syncing';
+    lastAttemptAt = DateTime.now();
   }
 
   void markCompleted() {
     status = 'completed';
   }
 
+  /// Records a transient failure. Once [maxRetries] is exhausted, the item
+  /// moves to `quarantined` rather than staying `failed` forever: a
+  /// `failed` item with no retries left previously vanished from both
+  /// `shouldRetry` and `failedCount` (which is defined in terms of
+  /// `shouldRetry`) — an item nobody could see, and nobody would ever sync
+  /// again.
   void markFailed(String error) {
-    status = 'failed';
     lastError = error;
     retryCount += 1;
+    status = retryCount >= maxRetries ? 'quarantined' : 'failed';
   }
 
   void markQuarantined(String error) {
@@ -134,8 +154,30 @@ class SyncQueueItem extends HiveObject {
     lastError = error;
   }
 
-  /// Should this item be retried? Max 5 retries.
-  bool get shouldRetry => retryCount < 5 && status == 'failed';
+  /// Exponential backoff: 2^retryCount seconds, capped at 5 minutes, so a
+  /// connectivity-restore event doesn't hammer a server that just rejected
+  /// this exact item moments ago.
+  Duration get _backoff {
+    final seconds = (1 << retryCount.clamp(0, 8));
+    return Duration(seconds: seconds.clamp(1, 300));
+  }
+
+  bool get _backoffElapsed {
+    final last = lastAttemptAt;
+    if (last == null) return true;
+    return DateTime.now().difference(last) >= _backoff;
+  }
+
+  /// Is this item eligible for another attempt at all (remaining retries,
+  /// `failed` status)? Doesn't consider backoff timing -- use [readyToRetry]
+  /// to decide whether to actually attempt it in a given `sync()` call.
+  bool get shouldRetry => retryCount < maxRetries && status == 'failed';
+
+  /// Should this item be retried right now? [shouldRetry] plus enough time
+  /// having passed since the last attempt (see [_backoff]) -- this is what
+  /// `sync()` uses to pick items, so a connectivity-restore event doesn't
+  /// hammer a server that just rejected this exact item moments ago.
+  bool get readyToRetry => shouldRetry && _backoffElapsed;
 
   Map<String, dynamic> toJson() => {
         'id': id,

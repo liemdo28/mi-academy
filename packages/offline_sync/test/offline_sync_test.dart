@@ -400,7 +400,7 @@ void main() {
     expect(service.oldestPending!.id, 'older');
   });
 
-  test('child switching and logout clear profile-scoped queue entries',
+  test('clearForChild/clearForLogout delete only profile-scoped entries (explicit data-deletion use, not routine switch/logout — see docstrings)',
       () async {
     final service = SyncService(
       queueBox: queueBox,
@@ -427,6 +427,105 @@ void main() {
     expect(queueBox.containsKey('child-b-1'), isTrue);
     expect(await service.clearForLogout(), 1);
     expect(queueBox.isEmpty, isTrue);
+  });
+
+  test('exhausting retries quarantines the item instead of leaving it stuck invisible', () async {
+    final service = SyncService(
+      queueBox: queueBox,
+      progressBox: progressBox,
+      attemptBox: attemptBox,
+      connectivityChecker: () async => true,
+      processor: (item) async => throw StateError('backend still down'),
+    );
+
+    await service.enqueue(
+      id: 'stubborn',
+      childProfileId: 'child-local',
+      type: SyncItemType.attempt,
+      payload: {'score': 10},
+    );
+
+    // Directly drive retryCount to one below the max via markFailed, since
+    // this service's real backoff would otherwise skip immediate re-sync
+    // attempts within this test's execution time.
+    final item = queueBox.get('stubborn')!;
+    for (var i = 0; i < SyncQueueItem.maxRetries - 1; i++) {
+      item.markFailed('backend still down');
+    }
+    expect(item.itemStatus, SyncItemStatus.failed);
+    expect(item.shouldRetry, isTrue);
+
+    // The final failure crosses maxRetries -- must quarantine, not vanish.
+    item.markFailed('backend still down');
+
+    expect(item.itemStatus, SyncItemStatus.quarantined);
+    expect(item.shouldRetry, isFalse);
+    expect(service.quarantinedCount, 1);
+    expect(service.failedCount, 0);
+  });
+
+  test('failed items back off exponentially instead of retrying every sync() call', () async {
+    var attempts = 0;
+    final service = SyncService(
+      queueBox: queueBox,
+      progressBox: progressBox,
+      attemptBox: attemptBox,
+      connectivityChecker: () async => true,
+      processor: (item) async {
+        attempts++;
+        throw StateError('still failing');
+      },
+    );
+
+    await service.enqueue(
+      id: 'backoff-item',
+      childProfileId: 'child-local',
+      type: SyncItemType.attempt,
+      payload: {'score': 10},
+    );
+
+    final first = await service.sync();
+    expect(first.processed, 1);
+    expect(attempts, 1);
+
+    // Immediately retrying should skip the item -- it just failed and its
+    // backoff window (>= 1 second after retryCount 1) hasn't elapsed.
+    final second = await service.sync();
+    expect(second.processed, 0);
+    expect(attempts, 1);
+
+    final item = queueBox.get('backoff-item')!;
+    expect(item.shouldRetry, isTrue);
+    expect(item.readyToRetry, isFalse);
+  });
+
+  test('averageRetryCount reflects only items that have failed at least once', () async {
+    final service = SyncService(
+      queueBox: queueBox,
+      progressBox: progressBox,
+      attemptBox: attemptBox,
+      connectivityChecker: () async => true,
+      processor: (item) async {
+        if (item.id == 'always-fails') throw StateError('down');
+      },
+    );
+
+    await service.enqueue(
+      id: 'always-fails',
+      childProfileId: 'child-local',
+      type: SyncItemType.attempt,
+      payload: const {},
+    );
+    await service.enqueue(
+      id: 'succeeds',
+      childProfileId: 'child-local',
+      type: SyncItemType.attempt,
+      payload: const {},
+    );
+
+    expect(service.averageRetryCount, 0);
+    await service.sync();
+    expect(service.averageRetryCount, 1);
   });
 
   test('wire values round-trip for every sync item type', () {

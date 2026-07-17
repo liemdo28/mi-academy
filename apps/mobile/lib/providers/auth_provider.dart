@@ -110,6 +110,17 @@ class AuthNotifier extends Notifier<AuthState> {
 
   Future<void> logout() async {
     state = state.copyWith(isLoading: true);
+    // Best-effort: try to flush the offline sync queue while the access
+    // token is still valid, so pending game results/progress don't sit
+    // queued any longer than necessary. Never lose data on logout either
+    // way -- items that don't sync stay queued (scoped to their child) and
+    // will sync on a future login; nothing is deleted here.
+    try {
+      await ref.read(syncServiceProvider).sync();
+    } catch (_) {
+      // Offline, or the sync attempt didn't go through -- proceed with
+      // logout anyway.
+    }
     await _api.logout();
     state = const AuthState();
     // Re-lock the parent area so a fresh sign-in (possibly a different

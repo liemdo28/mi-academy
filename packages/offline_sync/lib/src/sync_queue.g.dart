@@ -25,13 +25,14 @@ class SyncQueueItemAdapter extends TypeAdapter<SyncQueueItem> {
       retryCount: fields[5] as int,
       lastError: fields[6] as String?,
       status: fields[7] as String,
+      lastAttemptAt: fields[8] as DateTime?,
     );
   }
 
   @override
   void write(BinaryWriter writer, SyncQueueItem obj) {
     writer
-      ..writeByte(8)
+      ..writeByte(9)
       ..writeByte(0)
       ..write(obj.id)
       ..writeByte(1)
@@ -47,7 +48,9 @@ class SyncQueueItemAdapter extends TypeAdapter<SyncQueueItem> {
       ..writeByte(6)
       ..write(obj.lastError)
       ..writeByte(7)
-      ..write(obj.status);
+      ..write(obj.status)
+      ..writeByte(8)
+      ..write(obj.lastAttemptAt);
   }
 
   @override

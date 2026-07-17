@@ -77,11 +77,14 @@ class SyncService {
     var processed = 0;
     var succeeded = 0;
 
-    // Get all pending items, sorted by createdAt (oldest first)
+    // Get all pending items, sorted by createdAt (oldest first). Failed
+    // items still in backoff (readyToRetry false) are skipped this pass —
+    // they remain `shouldRetry`-eligible and will be picked up once their
+    // backoff window elapses on a later sync() call.
     final pending = _queueBox.values
         .cast<SyncQueueItem>()
         .where(
-          (i) => i.itemStatus == SyncItemStatus.pending || i.shouldRetry,
+          (i) => i.itemStatus == SyncItemStatus.pending || i.readyToRetry,
         )
         .toList()
       ..sort((a, b) => a.createdAt.compareTo(b.createdAt));
@@ -125,6 +128,16 @@ class SyncService {
     await _queueBox.put(id, item);
   }
 
+  /// Permanently deletes every queued item for [childProfileId], including
+  /// ones that never synced.
+  ///
+  /// **Not** for routine child-switching in the UI — switching the active
+  /// child must never delete another child's still-pending offline
+  /// progress (every [SyncQueueItem] already carries its own
+  /// `childProfileId` and syncs independently of whichever child is
+  /// currently active). This is for explicit data-deletion requests (e.g.
+  /// "delete my child's account/data") where losing unsynced items is the
+  /// intended outcome, not an accident.
   Future<int> clearForChild(String childProfileId) async {
     final keys = _queueBox.keys
         .where((key) => _queueBox.get(key)?.childProfileId == childProfileId)
@@ -133,6 +146,13 @@ class SyncService {
     return keys.length;
   }
 
+  /// Permanently deletes the entire queue, for every child.
+  ///
+  /// **Not** for routine parent logout — "never silently lose queued
+  /// learning data" means logout should attempt [sync] first (best-effort;
+  /// items that don't sync stay queued, scoped to their child, and will
+  /// sync on a future login) rather than delete anything. This exists for
+  /// account-level data deletion, same caveat as [clearForChild].
   Future<int> clearForLogout() async {
     final count = _queueBox.length;
     await _queueBox.clear();
@@ -238,6 +258,20 @@ class SyncService {
 
   /// Number of locally stored attempt records awaiting or backing sync.
   int get localAttemptCount => _attemptBox.length;
+
+  /// Average retry count across items that have failed at least once
+  /// (pending, quarantined, or still-retryable) -- an operational signal
+  /// for "is the backend/network generally healthy," not just a single
+  /// queue-size number.
+  double get averageRetryCount {
+    final attempted = _queueBox.values
+        .cast<SyncQueueItem>()
+        .where((i) => i.retryCount > 0)
+        .toList();
+    if (attempted.isEmpty) return 0;
+    final total = attempted.fold<int>(0, (sum, i) => sum + i.retryCount);
+    return total / attempted.length;
+  }
 }
 
 class SyncResult {
