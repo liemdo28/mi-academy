@@ -26,6 +26,47 @@
       "reviewer": "Dev 3",
       "reviewDate": "2026-07-17",
       "notes": "Emoji characters rendered by OS text engine — no image file to license"
+    },
+    {
+      "assetId": "font-nunito-variable-v01",
+      "file": "apps/mobile/assets/fonts/nunito/Nunito-VariableFont_wght.ttf",
+      "type": "font",
+      "sourceType": "third-party",
+      "creator": "Vernon Adams, Cyreal, Jacques Le Bailly (Nunito, via Google Fonts)",
+      "license": "OFL-1.1",
+      "licenseFile": "apps/mobile/assets/fonts/nunito/OFL.txt",
+      "sourceUrl": "https://github.com/google/fonts/tree/main/ofl/nunito",
+      "attributionRequired": false,
+      "approved": false,
+      "reviewer": "Dev 3",
+      "reviewDate": null,
+      "notes": "Variable font (wght axis); pubspec declares static weight instances 400/600/700/800 against the same file per Flutter's documented variable-font pattern. Full Vietnamese diacritic coverage confirmed by Google Fonts glyph set. Pending Dev 3 license/child-safety sign-off before shipping — placeholder system font remains the effective fallback until approved."
+    },
+    {
+      "assetId": "icon-set-v01",
+      "file": "packages/design_system/assets/icons/",
+      "type": "svg-icon-set",
+      "sourceType": "original",
+      "creator": "MI Academy Design Team",
+      "license": "MI-Academy-Owned",
+      "attributionRequired": false,
+      "approved": false,
+      "reviewer": "Dev 3",
+      "reviewDate": null,
+      "notes": "21 original line icons (26 files incl. filled variants for home/world/parent/star/garden), per docs/design/MI_DESIGN_SYSTEM.md §8. Manifest with per-icon accessibility labelKeys: assets/manifests/app-core.manifest.json. Pending Dev 3 review before reviewStatus flips to approved."
+    },
+    {
+      "assetId": "character-mi-direction-b-v01",
+      "file": "packages/design_system/assets/characters/mi/ (runtime) + design/characters/ (concept sheet, docs-only)",
+      "type": "svg-character-set",
+      "sourceType": "original",
+      "creator": "MI Academy Design Team",
+      "license": "MI-Academy-Owned",
+      "attributionRequired": false,
+      "approved": false,
+      "reviewer": "Dev 3",
+      "reviewDate": null,
+      "notes": "MI character, Direction B 'Screen-Face Companion' (docs/design/MI_CHARACTER_GUIDE.md). 16 files: 1 icon-head still, 12 expression stills, 2 basic pose stills bundled by packages/design_system; 1 three-direction concept sheet kept as a docs-only reference under design/characters/. Static SVG production art; animated Rive rig is a follow-up step (each still already serves as its own reduced-motion fallback). Pending Dev 3 similarity/child-safety review before reviewStatus flips to approved."
     }
   ],
   "placeholderAudioDir": "assets/audio/",

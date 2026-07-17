@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import '../character/mi_character.dart';
+import '../icons/mi_icon.dart';
 import '../theme/mi_theme.dart';
 
 /// Error state — shown when something goes wrong.
@@ -22,7 +24,11 @@ class MiErrorState extends StatelessWidget {
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-            const Text('⚠️', style: TextStyle(fontSize: MiTokens.icon2xl)),
+            const MiCharacter(
+              expression: MiExpression.errorRecovery,
+              size: 72,
+              semanticLabel: 'MI đang nghĩ cách giúp con',
+            ),
             const SizedBox(height: MiTokens.space4),
             Text(
               title,
@@ -41,7 +47,7 @@ class MiErrorState extends StatelessWidget {
               const SizedBox(height: MiTokens.space6),
               ElevatedButton.icon(
                 onPressed: onRetry,
-                icon: const Icon(Icons.refresh),
+                icon: const MiIcon(MiIconName.replay, color: MiColors.textOnPrimary),
                 label: const Text('Thử lại'),
               ),
             ],

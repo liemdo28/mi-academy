@@ -4,6 +4,8 @@
 /// the mobile app and admin dashboard.
 library design_system;
 
+export 'src/character/mi_character.dart';
+export 'src/icons/mi_icon.dart';
 export 'src/theme/mi_theme.dart';
 export 'src/widgets/mi_card.dart';
 export 'src/widgets/mi_button.dart';

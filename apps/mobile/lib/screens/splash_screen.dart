@@ -1,3 +1,4 @@
+import 'package:design_system/design_system.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
@@ -19,7 +20,7 @@ class _SplashState extends ConsumerState<SplashScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFF6C63FF),
+      backgroundColor: MiColors.primary,
       body: Center(
         child: Column(
           mainAxisSize: MainAxisSize.min,
@@ -31,7 +32,7 @@ class _SplashState extends ConsumerState<SplashScreen> {
                 borderRadius: BorderRadius.circular(30),
                 boxShadow: [BoxShadow(color: Colors.black.withValues(alpha: 0.1), blurRadius: 20)],
               ),
-              child: const Icon(Icons.smart_toy, size: 72, color: Color(0xFF6C63FF)),
+              child: const Icon(Icons.smart_toy, size: 72, color: MiColors.primary),
             ),
             const SizedBox(height: 24),
             const Text('MI Academy', style: TextStyle(fontSize: 32, fontWeight: FontWeight.w800, color: Colors.white)),

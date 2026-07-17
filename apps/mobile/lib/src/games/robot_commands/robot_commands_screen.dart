@@ -160,9 +160,14 @@ class _RobotCommandsScreenState extends State<RobotCommandsScreen> {
                     runSpacing: 8,
                     children: _session.availableCommands
                         .map(
-                          (type) => ElevatedButton(
+                          (type) => ElevatedButton.icon(
                             onPressed: () => _addCommand(type),
-                            child: Text(_labelFor(type)),
+                            icon: Icon(_iconForBlock(type), size: 20),
+                            label: Text(_labelFor(type)),
+                            style: ElevatedButton.styleFrom(
+                              backgroundColor: _colorForBlock(type),
+                              foregroundColor: Colors.white,
+                            ),
                           ),
                         )
                         .toList(),
@@ -357,45 +362,61 @@ class _ProgramCommandChip extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final label = '${index + 1}. ${_labelFor(type)}';
-    return DecoratedBox(
-      decoration: BoxDecoration(
-        color: GameTheme.surface,
-        borderRadius: BorderRadius.circular(8),
-        border: Border.all(color: GameTheme.primary.withValues(alpha: 0.3)),
-      ),
-      child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
-        child: Row(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            Text(
-              label,
-              key: ValueKey('robot-program-label-$index'),
-              style: GameTheme.bodyMedium.copyWith(fontWeight: FontWeight.w700),
-            ),
-            const SizedBox(width: 4),
-            IconButton(
-              key: ValueKey('robot-command-move-left-$index'),
-              onPressed: canMoveLeft ? onMoveLeft : null,
-              icon: const Icon(Icons.chevron_left_rounded),
-              tooltip: 'Đưa lệnh lên trước',
-              visualDensity: VisualDensity.compact,
-            ),
-            IconButton(
-              key: ValueKey('robot-command-move-right-$index'),
-              onPressed: canMoveRight ? onMoveRight : null,
-              icon: const Icon(Icons.chevron_right_rounded),
-              tooltip: 'Đưa lệnh ra sau',
-              visualDensity: VisualDensity.compact,
-            ),
-            IconButton(
-              key: ValueKey('robot-command-remove-$index'),
-              onPressed: onRemove,
-              icon: const Icon(Icons.close_rounded),
-              tooltip: 'Xóa lệnh này',
-              visualDensity: VisualDensity.compact,
-            ),
-          ],
+    final blockColor = _colorForBlock(type);
+    // Rounded corners require a uniform border color, so the color-coded
+    // accent is a solid leading bar rather than a mixed-color Border.
+    return ClipRRect(
+      borderRadius: BorderRadius.circular(8),
+      child: DecoratedBox(
+        decoration: BoxDecoration(
+          color: GameTheme.surface,
+          border: Border.all(color: blockColor.withValues(alpha: 0.35)),
+        ),
+        child: IntrinsicHeight(
+          child: Row(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Container(width: 4, color: blockColor),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+                child: Row(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Icon(_iconForBlock(type), size: 18, color: blockColor),
+                    const SizedBox(width: 4),
+                    Text(
+                      label,
+                      key: ValueKey('robot-program-label-$index'),
+                      style: GameTheme.bodyMedium
+                          .copyWith(fontWeight: FontWeight.w700),
+                    ),
+                    const SizedBox(width: 4),
+                    IconButton(
+                      key: ValueKey('robot-command-move-left-$index'),
+                      onPressed: canMoveLeft ? onMoveLeft : null,
+                      icon: const Icon(Icons.chevron_left_rounded),
+                      tooltip: 'Đưa lệnh lên trước',
+                      visualDensity: VisualDensity.compact,
+                    ),
+                    IconButton(
+                      key: ValueKey('robot-command-move-right-$index'),
+                      onPressed: canMoveRight ? onMoveRight : null,
+                      icon: const Icon(Icons.chevron_right_rounded),
+                      tooltip: 'Đưa lệnh ra sau',
+                      visualDensity: VisualDensity.compact,
+                    ),
+                    IconButton(
+                      key: ValueKey('robot-command-remove-$index'),
+                      onPressed: onRemove,
+                      icon: const Icon(Icons.close_rounded),
+                      tooltip: 'Xóa lệnh này',
+                      visualDensity: VisualDensity.compact,
+                    ),
+                  ],
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );
@@ -418,6 +439,46 @@ String _labelFor(BlockType type) {
       return 'LẶP';
     case BlockType.ifPathAhead:
       return 'NẾU TRỐNG';
+  }
+}
+
+/// Command blocks must be distinguishable by icon + text + color, never
+/// color alone (docs/design/MI_DESIGN_SYSTEM.md §1, design/games/GAME_SHELL_SPEC.md §7).
+IconData _iconForBlock(BlockType type) {
+  switch (type) {
+    case BlockType.moveForward:
+      return Icons.arrow_upward_rounded;
+    case BlockType.turnLeft:
+      return Icons.rotate_left_rounded;
+    case BlockType.turnRight:
+      return Icons.rotate_right_rounded;
+    case BlockType.collect:
+      return Icons.battery_charging_full_rounded;
+    case BlockType.start:
+      return Icons.flag_rounded;
+    case BlockType.repeat:
+      return Icons.repeat_rounded;
+    case BlockType.ifPathAhead:
+      return Icons.help_outline_rounded;
+  }
+}
+
+Color _colorForBlock(BlockType type) {
+  switch (type) {
+    case BlockType.moveForward:
+      return GameTheme.primary;
+    case BlockType.turnLeft:
+      return MiGameColors.secondary;
+    case BlockType.turnRight:
+      return MiGameColors.tertiary;
+    case BlockType.collect:
+      return GameTheme.warning;
+    case BlockType.start:
+      return GameTheme.success;
+    case BlockType.repeat:
+      return MiGameColors.info;
+    case BlockType.ifPathAhead:
+      return GameTheme.textSecondary;
   }
 }
 

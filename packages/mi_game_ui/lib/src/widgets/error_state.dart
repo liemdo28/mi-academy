@@ -1,3 +1,4 @@
+import 'package:design_system/design_system.dart';
 import 'package:flutter/material.dart';
 
 import '../theme/game_theme.dart';
@@ -40,10 +41,10 @@ class ErrorState extends StatelessWidget {
               child: Column(
                 mainAxisSize: MainAxisSize.min,
                 children: [
-                  const Icon(
-                    Icons.sentiment_dissatisfied_rounded,
+                  const MiCharacter(
+                    expression: MiExpression.errorRecovery,
                     size: 64,
-                    color: GameTheme.secondary,
+                    semanticLabel: 'MI đang nghĩ cách giúp con',
                   ),
                   const SizedBox(height: 16),
                   Text(title, style: GameTheme.headingMedium),
