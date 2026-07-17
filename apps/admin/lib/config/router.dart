@@ -11,7 +11,7 @@ final adminRouter = GoRouter(
   initialLocation: '/login',
   redirect: (context, state) {
     // TODO: Check auth state from secure storage
-    final isLoggedIn = false; // Replace with actual auth check
+    final isLoggedIn = _isLoggedIn(); // Replace with actual auth check
     final isLogin = state.matchedLocation == '/login';
     if (!isLoggedIn && !isLogin) return '/login';
     if (isLoggedIn && isLogin) return '/';
@@ -31,6 +31,8 @@ final adminRouter = GoRouter(
     ),
   ],
 );
+
+bool _isLoggedIn() => false;
 
 /// Admin layout shell with navigation sidebar.
 class AdminShell extends StatelessWidget {
