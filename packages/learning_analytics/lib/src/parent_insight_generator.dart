@@ -81,7 +81,7 @@ class ParentInsightGenerator {
     required String language,
   }) {
     final skillCount = practicedSkills.length;
-    final improvingSkills = practicedSkills.where((m) => m.delta > 0).length;
+    final improvingSkills = practicedSkills.where((m) => m.masteryScore > 0.3).length;
 
     return ParentInsight(
       insightId: 'insight-${DateTime.now().millisecondsSinceEpoch}',
