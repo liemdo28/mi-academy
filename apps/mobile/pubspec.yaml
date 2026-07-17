@@ -77,8 +77,6 @@ flutter:
     - assets/audio/
     - assets/images/
     - assets/levels/
-    - assets/icons/
-    - assets/characters/mi/
   fonts:
     - family: Nunito
       fonts:

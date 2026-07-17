@@ -55,12 +55,32 @@ class MiCharacter extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final path = pose != null
-        ? 'assets/characters/mi/character_mi_pose_${_kebabCase(pose!.name)}_v01.svg'
-        : 'assets/characters/mi/character_mi_face_${_kebabCase(expression.name)}_v01.svg';
+        ? 'packages/design_system/assets/characters/mi/character_mi_pose_${_kebabCase(pose!.name)}_v01.svg'
+        : 'packages/design_system/assets/characters/mi/character_mi_face_${_kebabCase(expression.name)}_v01.svg';
     return SvgPicture.asset(
       path,
       width: size,
       height: size * 1.25,
+      semanticsLabel: semanticLabel,
+    );
+  }
+}
+
+/// Small icon-form of MI's head (`icon_mi_head_v01`, docs/design/MI_CHARACTER_GUIDE.md
+/// §6). Used where the full body doesn't fit — progress markers, small
+/// badges — never as a substitute for the full character in a game shell.
+class MiCharacterHead extends StatelessWidget {
+  const MiCharacterHead({super.key, this.size = 32, this.semanticLabel});
+
+  final double size;
+  final String? semanticLabel;
+
+  @override
+  Widget build(BuildContext context) {
+    return SvgPicture.asset(
+      'packages/design_system/assets/characters/mi/icon_mi_head_v01.svg',
+      width: size,
+      height: size * (200 / 240),
       semanticsLabel: semanticLabel,
     );
   }

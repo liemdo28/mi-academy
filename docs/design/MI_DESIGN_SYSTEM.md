@@ -116,10 +116,11 @@ world, parent, settings, download, offline, lock, complete, star, badge,
 garden, language, accessibility. Filled variant shipped only where an
 active/selected state exists (home, world, parent, star, garden); the rest
 are outlined-only for v1.
-IDs: `icon_<name>_<variant>_v01.svg` under `apps/mobile/assets/icons/`
-(referenced in code via `MiIcon(MiIconName.<name>)` in `packages/design_system`,
-never as a raw path). High-contrast is handled by the consuming color, not a
-separate SVG, since these are single-color `currentColor` icons.
+IDs: `icon_<name>_<variant>_v01.svg` under `packages/design_system/assets/icons/`
+— the assets live in the package that owns the widget, not in `apps/mobile`
+(referenced in code via `MiIcon(MiIconName.<name>)`, never as a raw path).
+High-contrast is handled by the consuming color, not a separate SVG, since
+these are single-color `currentColor` icons.
 
 ## 9. Component library
 
