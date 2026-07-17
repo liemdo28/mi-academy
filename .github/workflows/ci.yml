@@ -95,9 +95,16 @@ jobs:
           python-version: ${{ env.PYTHON_VERSION }}
 
       - name: Install test dependencies
+        # apps/api/requirements.txt already pins pytest/pytest-asyncio/aiosqlite
+        # alongside fastapi/sqlalchemy/starlette etc. Installing only a
+        # hand-picked subset here (as this job previously did) meant every
+        # test importing the actual backend app failed to collect with
+        # ModuleNotFoundError -- but the failure was masked because this
+        # workflow never scheduled a job before (see the CI-fix commit that
+        # touched android-release-signing's `if:`).
         run: |
           python -m pip install --upgrade pip
-          python -m pip install pytest pytest-asyncio aiosqlite
+          python -m pip install -r apps/api/requirements.txt
 
       - name: Run Python tests
         run: python -m pytest packages/game_core/tests tests test -q

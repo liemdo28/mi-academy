@@ -17,18 +17,15 @@ void main() {
   TestWidgetsFlutterBinding.ensureInitialized();
 
   setUpAll(() async {
-    await _loadFonts(
-      'Roboto',
-      [
-        r'C:\Windows\Fonts\arial.ttf',
-        r'C:\Windows\Fonts\segoeui.ttf',
-        r'C:\Windows\Fonts\seguisym.ttf',
-        r'C:\Windows\Fonts\seguiemj.ttf',
-        '/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf',
-        '/usr/share/fonts/truetype/noto/NotoColorEmoji.ttf',
-        '/System/Library/Fonts/Supplemental/Arial.ttf',
-      ],
-    );
+    // Golden tests must render identically regardless of which OS runs
+    // them. Loading fonts from OS-specific system paths (previous approach:
+    // Windows Arial/Segoe UI vs Linux DejaVu vs macOS Arial) meant the
+    // goldens captured on one platform never matched another platform's
+    // rendering -- CI (Linux) was seeing 1-4% pixel diffs against goldens
+    // captured on a Windows dev machine on every run, since DejaVu's glyph
+    // metrics differ from Arial's. Loading one font file bundled in the
+    // repo, the same on every platform, removes that source of divergence.
+    await _loadFonts('Roboto', [_bundledFontPath]);
     await _loadFonts(
       'MaterialIcons',
       [
@@ -171,6 +168,11 @@ void main() {
     );
   });
 }
+
+/// Bundled in the repo (already shipped as an app asset, OFL-licensed —
+/// see apps/mobile/assets/fonts/nunito/OFL.txt) so golden rendering is
+/// identical on every platform that runs `flutter test`.
+const _bundledFontPath = 'assets/fonts/nunito/Nunito-VariableFont_wght.ttf';
 
 Future<void> _loadFonts(String family, List<String> paths) async {
   final fontLoader = FontLoader(family);
