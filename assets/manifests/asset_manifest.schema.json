@@ -1,0 +1,67 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "mi-academy/asset-manifest/1.0.0",
+  "title": "MI Academy Asset Manifest",
+  "description": "Per-bundle asset manifest. Every visual/audio asset integrated into the app or a game must appear in exactly one manifest with a stable assetId. Code references assetId, never raw filenames.",
+  "type": "object",
+  "required": ["schemaVersion", "bundleId", "assets"],
+  "properties": {
+    "schemaVersion": { "const": "1.0.0" },
+    "bundleId": {
+      "type": "string",
+      "description": "e.g. 'app-core', 'game.memory_cards', 'world-map'",
+      "pattern": "^[a-z0-9_.-]+$"
+    },
+    "preloadPolicy": {
+      "enum": ["eager", "on-enter", "lazy"],
+      "default": "on-enter",
+      "description": "eager only for app-core; games load on-enter/lazy (§23: never preload all games)"
+    },
+    "assets": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["assetId", "path", "type", "license", "reviewStatus"],
+        "properties": {
+          "assetId": {
+            "type": "string",
+            "description": "Stable ID: category_subject_variant_state_version",
+            "pattern": "^[a-z0-9]+(_[a-z0-9-]+)*_v[0-9]{2}$"
+          },
+          "path": { "type": "string" },
+          "type": { "enum": ["svg", "webp", "png", "rive", "lottie", "audio", "font"] },
+          "dimensions": {
+            "type": "object",
+            "properties": { "width": {"type": "integer"}, "height": {"type": "integer"} }
+          },
+          "fileSizeBytes": { "type": "integer" },
+          "language": { "type": "string", "description": "'none' | 'vi' | 'en' — assets must be text-free unless audio/font" },
+          "license": { "type": "string", "description": "Must match an entry in assets/ASSET_LICENSE_MANIFEST.json" },
+          "preloadPriority": { "enum": ["critical", "high", "normal", "low"], "default": "normal" },
+          "accessibility": {
+            "type": "object",
+            "properties": {
+              "labelKey": { "type": "string", "description": "localization key for screen-reader label" },
+              "reducedMotionFallback": { "type": "string", "description": "assetId of static fallback (required for rive/lottie)" },
+              "highContrastVariant": { "type": "string", "description": "assetId of hc variant if any" }
+            }
+          },
+          "audioMeta": {
+            "type": "object",
+            "description": "Required when type=audio; schema per docs/audio/AUDIO_DIRECTION.md §6",
+            "required": ["locale", "transcript", "durationMs", "normalized"],
+            "properties": {
+              "locale": { "type": "string" },
+              "speaker": { "type": "string" },
+              "transcript": { "type": "string" },
+              "durationMs": { "type": "integer" },
+              "normalized": { "type": "boolean" }
+            }
+          },
+          "reviewStatus": { "enum": ["draft", "in-review", "approved", "rejected"] },
+          "placeholder": { "type": "boolean", "default": false }
+        }
+      }
+    }
+  }
+}
