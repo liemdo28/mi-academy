@@ -1,0 +1,15 @@
+<svg viewBox="0 0 160 160" xmlns="http://www.w3.org/2000/svg">
+  <ellipse cx="80" cy="146" rx="62" ry="8" fill="#2D2D5F" opacity="0.08"/>
+  <!-- house body -->
+  <rect x="42" y="90" width="76" height="50" rx="8" fill="#FFD9E1"/>
+  <rect x="60" y="108" width="16" height="22" rx="3" fill="#FF6584"/>
+  <circle cx="94" cy="118" r="9" fill="#F4F4FF" stroke="#FF6584" stroke-width="2.5"/>
+  <!-- palette roof -->
+  <path d="M38 90 Q80 50 122 90 Z" fill="#FF6584"/>
+  <circle cx="66" cy="76" r="5" fill="#FFC94D"/>
+  <circle cx="82" cy="68" r="5" fill="#6C63FF"/>
+  <circle cx="98" cy="76" r="5" fill="#2BB673"/>
+  <!-- bunting -->
+  <path d="M42 88 L50 98 L58 88" fill="#FFC94D"/>
+  <path d="M102 88 L110 98 L118 88" fill="#42A5F5"/>
+</svg>

@@ -1,0 +1,15 @@
+<svg viewBox="0 0 160 160" xmlns="http://www.w3.org/2000/svg">
+  <ellipse cx="80" cy="146" rx="62" ry="8" fill="#2D2D5F" opacity="0.08"/>
+  <!-- lab building -->
+  <rect x="30" y="96" width="100" height="44" rx="8" fill="#E7F9F0"/>
+  <rect x="46" y="112" width="18" height="20" rx="3" fill="#2BB673"/>
+  <rect x="96" y="112" width="18" height="20" rx="3" fill="#2BB673"/>
+  <!-- dome -->
+  <path d="M46 96a34 34 0 0 1 68 0Z" fill="#2BB673"/>
+  <rect x="76" y="46" width="8" height="16" fill="#8FE0B8"/>
+  <circle cx="80" cy="42" r="6" fill="#8FE0B8"/>
+  <!-- flask -->
+  <path d="M70 60v18l-14 26a8 8 0 0 0 7 12h34a8 8 0 0 0 7-12l-14-26V60Z" fill="#F4F4FF" stroke="#2D2D5F" stroke-width="2.5"/>
+  <path d="M62 100h36" stroke="#2D2D5F" stroke-width="2.5"/>
+  <path d="M68 104a12 8 0 0 0 24 0" fill="#7DEFFF"/>
+</svg>

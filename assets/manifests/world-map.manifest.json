@@ -1,0 +1,13 @@
+{
+  "schemaVersion": "1.0.0",
+  "bundleId": "world-map",
+  "preloadPolicy": "eager",
+  "assets": [
+    { "assetId": "world_alphabet-city_v01", "path": "packages/design_system/assets/worlds/world_alphabet-city_v01.svg", "type": "svg", "language": "none", "license": "MI-Academy-Owned", "preloadPriority": "high", "reviewStatus": "draft", "accessibility": { "labelKey": "world.alphabetCity" } },
+    { "assetId": "world_math-kingdom_v01", "path": "packages/design_system/assets/worlds/world_math-kingdom_v01.svg", "type": "svg", "language": "none", "license": "MI-Academy-Owned", "preloadPriority": "high", "reviewStatus": "draft", "accessibility": { "labelKey": "world.mathKingdom" } },
+    { "assetId": "world_logic-island_v01", "path": "packages/design_system/assets/worlds/world_logic-island_v01.svg", "type": "svg", "language": "none", "license": "MI-Academy-Owned", "preloadPriority": "high", "reviewStatus": "draft", "accessibility": { "labelKey": "world.logicIsland" } },
+    { "assetId": "world_science-lab_v01", "path": "packages/design_system/assets/worlds/world_science-lab_v01.svg", "type": "svg", "language": "none", "license": "MI-Academy-Owned", "preloadPriority": "high", "reviewStatus": "draft", "accessibility": { "labelKey": "world.scienceLab" } },
+    { "assetId": "world_creative-house_v01", "path": "packages/design_system/assets/worlds/world_creative-house_v01.svg", "type": "svg", "language": "none", "license": "MI-Academy-Owned", "preloadPriority": "high", "reviewStatus": "draft", "accessibility": { "labelKey": "world.creativeHouse" } },
+    { "assetId": "world_achievement-garden_v01", "path": "packages/design_system/assets/worlds/world_achievement-garden_v01.svg", "type": "svg", "language": "none", "license": "MI-Academy-Owned", "preloadPriority": "high", "reviewStatus": "draft", "accessibility": { "labelKey": "world.achievementGarden" } }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "schemaVersion": "1.0.0",
+  "bundleId": "game.memory_cards",
+  "preloadPolicy": "on-enter",
+  "assets": [
+    { "assetId": "game_memory_animals_cat_v01", "path": "packages/design_system/assets/memory-cards/animals/game_memory_animals_cat_v01.svg", "type": "svg", "language": "none", "license": "MI-Academy-Owned", "preloadPriority": "high", "reviewStatus": "draft", "accessibility": { "labelKey": "memoryCards.animal.cat" } },
+    { "assetId": "game_memory_animals_dog_v01", "path": "packages/design_system/assets/memory-cards/animals/game_memory_animals_dog_v01.svg", "type": "svg", "language": "none", "license": "MI-Academy-Owned", "preloadPriority": "high", "reviewStatus": "draft", "accessibility": { "labelKey": "memoryCards.animal.dog" } },
+    { "assetId": "game_memory_animals_fish_v01", "path": "packages/design_system/assets/memory-cards/animals/game_memory_animals_fish_v01.svg", "type": "svg", "language": "none", "license": "MI-Academy-Owned", "preloadPriority": "high", "reviewStatus": "draft", "accessibility": { "labelKey": "memoryCards.animal.fish" } },
+    { "assetId": "game_memory_animals_bird_v01", "path": "packages/design_system/assets/memory-cards/animals/game_memory_animals_bird_v01.svg", "type": "svg", "language": "none", "license": "MI-Academy-Owned", "preloadPriority": "high", "reviewStatus": "draft", "accessibility": { "labelKey": "memoryCards.animal.bird" } },
+    { "assetId": "game_memory_animals_rabbit_v01", "path": "packages/design_system/assets/memory-cards/animals/game_memory_animals_rabbit_v01.svg", "type": "svg", "language": "none", "license": "MI-Academy-Owned", "preloadPriority": "normal", "reviewStatus": "draft", "accessibility": { "labelKey": "memoryCards.animal.rabbit" }, "notes": "Not yet referenced by any level content; ready for when Dev 2/3 add it." },
+    { "assetId": "game_memory_animals_frog_v01", "path": "packages/design_system/assets/memory-cards/animals/game_memory_animals_frog_v01.svg", "type": "svg", "language": "none", "license": "MI-Academy-Owned", "preloadPriority": "normal", "reviewStatus": "draft", "accessibility": { "labelKey": "memoryCards.animal.frog" }, "notes": "Not yet referenced by any level content; ready for when Dev 2/3 add it." },
+    { "assetId": "game_memory_animals_elephant_v01", "path": "packages/design_system/assets/memory-cards/animals/game_memory_animals_elephant_v01.svg", "type": "svg", "language": "none", "license": "MI-Academy-Owned", "preloadPriority": "normal", "reviewStatus": "draft", "accessibility": { "labelKey": "memoryCards.animal.elephant" }, "notes": "Not yet referenced by any level content; ready for when Dev 2/3 add it." },
+    { "assetId": "game_memory_animals_bee_v01", "path": "packages/design_system/assets/memory-cards/animals/game_memory_animals_bee_v01.svg", "type": "svg", "language": "none", "license": "MI-Academy-Owned", "preloadPriority": "normal", "reviewStatus": "draft", "accessibility": { "labelKey": "memoryCards.animal.bee" }, "notes": "Not yet referenced by any level content; ready for when Dev 2/3 add it." }
+  ]
+}

@@ -10,7 +10,9 @@ import 'package:flutter_test/flutter_test.dart';
 /// declared in this package's own pubspec.yaml so both `flutter test`
 /// here and every consumer's asset bundle can resolve it.
 Future<void> _expectAllSvgsLoad(WidgetTester tester, Widget child) async {
-  await tester.pumpWidget(MaterialApp(home: Center(child: child)));
+  await tester.pumpWidget(
+    MaterialApp(home: Scaffold(body: Center(child: child))),
+  );
 
   final pictures = tester.widgetList<SvgPicture>(find.byType(SvgPicture));
   expect(pictures, isNotEmpty);
@@ -49,5 +51,24 @@ void main() {
 
   testWidgets('MiCharacterHead loads its SVG asset', (tester) async {
     await _expectAllSvgsLoad(tester, const MiCharacterHead());
+  });
+
+  testWidgets('every MiMemoryCardArt animal loads its SVG asset',
+      (tester) async {
+    for (final animal in MiMemoryAnimal.values) {
+      await _expectAllSvgsLoad(tester, MiMemoryCardArt(animal));
+    }
+  });
+
+  testWidgets('every MiWorldZoneTile loads its SVG asset in every state',
+      (tester) async {
+    for (final zone in MiWorldZone.values) {
+      for (final state in MiZoneState.values) {
+        await _expectAllSvgsLoad(
+          tester,
+          MiWorldZoneTile(zone: zone, label: zone.name, state: state),
+        );
+      }
+    }
   });
 }

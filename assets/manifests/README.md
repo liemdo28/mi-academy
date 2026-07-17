@@ -6,10 +6,12 @@
 
 ```text
 assets/manifests/
-├── asset_manifest.schema.json   # normative schema (validate in CI)
-├── app-core.manifest.json       # icons, MI character, fonts, shared UI art
-├── world-map.manifest.json      # zone art (Wave 2+)
-└── game.<game_id>.manifest.json # one per game — bundle loaded on-enter/lazy
+├── asset_manifest.schema.json         # normative schema (validate in CI)
+├── app-core.manifest.json             # icons, MI character, fonts, shared UI art
+├── character-mi.manifest.json         # MI character stills (expressions/poses)
+├── world-map.manifest.json            # 6 zone illustrations
+└── game.memory_cards.manifest.json    # Memory Cards Animals theme — first of
+                                        # one-per-game manifests, loaded on-enter/lazy
 ```
 
 ## Rules

@@ -1,0 +1,14 @@
+<svg viewBox="0 0 160 160" xmlns="http://www.w3.org/2000/svg">
+  <ellipse cx="80" cy="140" rx="66" ry="10" fill="#0090A6" opacity="0.15"/>
+  <!-- water -->
+  <path d="M10 132 Q40 122 80 132 T150 130 V150 H10 Z" fill="#BEEFF5"/>
+  <!-- island mound -->
+  <path d="M28 120 Q40 84 80 84 Q120 84 132 120 Z" fill="#00BCD4"/>
+  <!-- interlocking puzzle hill accent -->
+  <path d="M60 100a8 8 0 1 1 16 0 8 8 0 0 1 8 8v4h-32v-4a8 8 0 0 1 8-8Z" fill="#7FE0EC"/>
+  <!-- lighthouse -->
+  <rect x="72" y="46" width="16" height="42" rx="3" fill="#F4F4FF"/>
+  <rect x="70" y="40" width="20" height="10" rx="2" fill="#FF6584"/>
+  <path d="M74 40 L80 26 L86 40Z" fill="#2D2D5F"/>
+  <rect x="76" y="60" width="8" height="6" fill="#00BCD4"/>
+</svg>
