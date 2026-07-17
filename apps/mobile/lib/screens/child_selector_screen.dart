@@ -2,18 +2,54 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import 'package:design_system/design_system.dart';
+import '../providers/providers.dart';
+import '../widgets/add_child_dialog.dart';
 
 /// Screen for selecting which child profile to use.
 ///
-/// Shown after parent login. Child profiles are loaded from local storage
-/// and cached. This screen shows only the nickname and avatar — no PII.
-class ChildSelectorScreen extends ConsumerWidget {
+/// Shown after parent login. Child profiles are loaded from the backend
+/// (via [activeChildProvider]) — no PII beyond nickname/avatar is shown.
+class ChildSelectorScreen extends ConsumerStatefulWidget {
   const ChildSelectorScreen({super.key});
 
   @override
-  Widget build(BuildContext context, WidgetRef ref) {
-    // TODO: Load child profiles from Hive via ProfileRepository
-    // final children = ref.watch(childProfilesProvider);
+  ConsumerState<ChildSelectorScreen> createState() =>
+      _ChildSelectorScreenState();
+}
+
+class _ChildSelectorScreenState extends ConsumerState<ChildSelectorScreen> {
+  @override
+  void initState() {
+    super.initState();
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      if (mounted) ref.read(activeChildProvider.notifier).loadChildren();
+    });
+  }
+
+  Future<void> _openAddChildDialog() async {
+    final result = await showDialog<({String nickname, String ageGroup})>(
+      context: context,
+      builder: (context) => const AddChildDialog(),
+    );
+    if (result == null || !mounted) return;
+
+    final ok = await ref.read(activeChildProvider.notifier).createChild(
+          nickname: result.nickname,
+          ageGroup: result.ageGroup,
+        );
+    if (ok && mounted) {
+      context.go('/home');
+    } else if (mounted) {
+      final error = ref.read(activeChildProvider).error;
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text(error ?? 'Không thể tạo hồ sơ, thử lại nhé')),
+      );
+    }
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final state = ref.watch(activeChildProvider);
 
     return Scaffold(
       body: SafeArea(
@@ -33,27 +69,41 @@ class ChildSelectorScreen extends ConsumerWidget {
                 style: Theme.of(context).textTheme.bodyLarge,
               ),
               const SizedBox(height: MiTokens.space8),
-              // Avatar grid — 2 columns
               Expanded(
-                child: GridView.count(
-                  crossAxisCount: 2,
-                  mainAxisSpacing: MiTokens.space4,
-                  crossAxisSpacing: MiTokens.space4,
-                  childAspectRatio: 0.9,
-                  children: const [
-                    _ChildAvatarCard(
-                      avatarId: 'avatar_01',
-                      nickname: 'Minh',
-                      ageGroup: 'junior',
-                    ),
-                    _ChildAvatarCard(
-                      avatarId: 'avatar_02',
-                      nickname: 'Lan',
-                      ageGroup: 'explorer',
-                    ),
-                    _AddChildCard(),
-                  ],
-                ),
+                child: state.isLoading && state.children.isEmpty
+                    ? const MiLoading()
+                    : state.error != null && state.children.isEmpty
+                        ? MiErrorState(
+                            title: 'Không thể tải hồ sơ',
+                            onRetry: () => ref
+                                .read(activeChildProvider.notifier)
+                                .loadChildren(),
+                          )
+                        : GridView.count(
+                            crossAxisCount: 2,
+                            mainAxisSpacing: MiTokens.space4,
+                            crossAxisSpacing: MiTokens.space4,
+                            childAspectRatio: 0.9,
+                            children: [
+                              for (final child in state.children)
+                                _ChildAvatarCard(
+                                  avatarId: child['avatar_id'] as String? ??
+                                      'avatar_01',
+                                  nickname:
+                                      child['nickname'] as String? ?? '',
+                                  ageGroup:
+                                      child['age_group'] as String? ??
+                                          'junior',
+                                  onTap: () async {
+                                    await ref
+                                        .read(activeChildProvider.notifier)
+                                        .selectChild(child);
+                                    if (context.mounted) context.go('/home');
+                                  },
+                                ),
+                              _AddChildCard(onTap: _openAddChildDialog),
+                            ],
+                          ),
               ),
             ],
           ),
@@ -67,20 +117,19 @@ class _ChildAvatarCard extends StatelessWidget {
   final String avatarId;
   final String nickname;
   final String ageGroup;
+  final VoidCallback onTap;
 
   const _ChildAvatarCard({
     required this.avatarId,
     required this.nickname,
     required this.ageGroup,
+    required this.onTap,
   });
 
   @override
   Widget build(BuildContext context) {
     return MiCard(
-      onTap: () {
-        // TODO: Set active child profile
-        context.go('/home');
-      },
+      onTap: onTap,
       accentColor: _ageGroupColor(ageGroup),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
@@ -158,15 +207,14 @@ class _ChildAvatarCard extends StatelessWidget {
 }
 
 class _AddChildCard extends StatelessWidget {
-  const _AddChildCard();
+  final VoidCallback onTap;
+
+  const _AddChildCard({required this.onTap});
 
   @override
   Widget build(BuildContext context) {
     return MiCard(
-      onTap: () {
-        // TODO: Navigate to create child profile
-        context.go('/parent');
-      },
+      onTap: onTap,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [

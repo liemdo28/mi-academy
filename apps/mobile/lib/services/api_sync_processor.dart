@@ -7,6 +7,10 @@ abstract class SyncApiClient {
   Future<Map<String, dynamic>> syncAttempts(List<dynamic> items);
   Future<Map<String, dynamic>> syncSessions(List<dynamic> items);
   Future<Map<String, dynamic>> checkRewards(String childId);
+  Future<Map<String, dynamic>> submitGameResult(
+    String gameId,
+    Map<String, dynamic> result,
+  );
 }
 
 class ApiServiceSyncClient implements SyncApiClient {
@@ -33,6 +37,14 @@ class ApiServiceSyncClient implements SyncApiClient {
   Future<Map<String, dynamic>> checkRewards(String childId) {
     return _api.checkRewards(childId);
   }
+
+  @override
+  Future<Map<String, dynamic>> submitGameResult(
+    String gameId,
+    Map<String, dynamic> result,
+  ) {
+    return _api.submitGameResult(gameId, result);
+  }
 }
 
 class ApiSyncProcessor {
@@ -57,6 +69,10 @@ class ApiSyncProcessor {
         break;
       case SyncItemType.sessionEnd:
         await _client.syncSessions([item.payload]);
+        break;
+      case SyncItemType.gameResult:
+        final gameId = item.payload['game_id'] as String;
+        await _client.submitGameResult(gameId, item.payload);
         break;
     }
   }

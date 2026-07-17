@@ -1,5 +1,7 @@
 import 'package:hive_flutter/hive_flutter.dart';
 
+import 'sync_queue.dart';
+
 /// Hive box names for MI Academy.
 abstract class MiBoxes {
   static const String auth = 'auth';
@@ -16,21 +18,30 @@ abstract class MiBoxes {
 }
 
 /// Initialize all Hive boxes.
+///
+/// Only the sync-queue box has a typed adapter registered today; the rest
+/// are opened untyped (`Box<dynamic>`) since their local-cache schemas
+/// aren't finalized yet. Opening them here (rather than leaving them
+/// commented out) is required for [SyncService]/[SyncQueue] to function —
+/// `Hive.box()` throws if the box was never opened.
 Future<void> initHive() async {
   await Hive.initFlutter();
 
-  // Register adapters
-  // await Hive.openBox('sync_queue');
-  // await Hive.openBox('progress');
-  // await Hive.openBox('attempts');
-  // await Hive.openBox('lessons');
-  // await Hive.openBox('levels');
-  // await Hive.openBox('rewards');
-  // await Hive.openBox('snapshots');
-  // await Hive.openBox('profiles');
-  // await Hive.openBox('settings');
-  // await Hive.openBox('auth');
-  // await Hive.openBox('mastery');
+  if (!Hive.isAdapterRegistered(SyncQueueItemAdapter().typeId)) {
+    Hive.registerAdapter(SyncQueueItemAdapter());
+  }
+
+  await Hive.openBox<SyncQueueItem>(MiBoxes.syncQueue);
+  await Hive.openBox(MiBoxes.progress);
+  await Hive.openBox(MiBoxes.attempts);
+  await Hive.openBox(MiBoxes.lessons);
+  await Hive.openBox(MiBoxes.levels);
+  await Hive.openBox(MiBoxes.rewards);
+  await Hive.openBox(MiBoxes.snapshots);
+  await Hive.openBox(MiBoxes.profiles);
+  await Hive.openBox(MiBoxes.settings);
+  await Hive.openBox(MiBoxes.auth);
+  await Hive.openBox(MiBoxes.mastery);
 }
 
 /// Get a Hive box by name.

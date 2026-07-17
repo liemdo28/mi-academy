@@ -9,7 +9,7 @@ from sqlalchemy.ext.asyncio import AsyncSession
 
 from apps.api.database import get_db
 from apps.api.dependencies import get_parent_profile
-from apps.api.models import Game, Attempt, Reward, ChildReward, ParentProfile
+from apps.api.models import Game, Attempt, Lesson, Progress, Reward, ChildReward, ParentProfile
 from apps.api.time import utc_now
 from apps.api.schemas import (
     GameListItem,
@@ -17,6 +17,7 @@ from apps.api.schemas import (
     GameStartRequest,
     GameAttemptRequest,
     GameCompleteRequest,
+    SaveGameResultRequest,
 )
 
 router = APIRouter()
@@ -119,6 +120,33 @@ async def submit_attempt(
     return {"attempt_id": attempt.id, "recorded": True}
 
 
+async def _check_first_star_badge(db: AsyncSession, child_id: str, game_id: str) -> list[str]:
+    """Award the "first star" badge the first time a child attempts a game."""
+    result = await db.execute(
+        select(Attempt)
+        .where(Attempt.child_id == child_id, Attempt.game_id == game_id)
+        .limit(1)
+    )
+    existing = result.scalar_one_or_none()
+    if existing is not None:
+        return []
+
+    badge_result = await db.execute(select(Reward).where(Reward.name == "Sao đầu tiên"))
+    badge = badge_result.scalar_one_or_none()
+    if badge is None:
+        return []
+
+    db.add(
+        ChildReward(
+            id=str(uuid.uuid4()),
+            child_id=child_id,
+            reward_id=badge.id,
+            unlocked_at=utc_now(),
+        )
+    )
+    return [badge.name]
+
+
 @router.post("/{game_id}/complete")
 async def complete_game(
     game_id: str,
@@ -133,36 +161,136 @@ async def complete_game(
     if result.scalar_one_or_none() is None:
         raise HTTPException(status_code=404, detail="Game not found")
 
-    # Award rewards
-    unlocked_badges = []
-    unlocked_rewards = []
-
-    # Check first-star badge
-    result = await db.execute(
-        select(Attempt)
-        .where(Attempt.child_id == body.child_id, Attempt.game_id == game_id)
-        .limit(1)
-    )
-    existing = result.scalar_one_or_none()
-    if existing is None:
-        badge_result = await db.execute(
-            select(Reward).where(Reward.name == "Sao đầu tiên")
-        )
-        badge = badge_result.scalar_one_or_none()
-        if badge:
-            cr = ChildReward(
-                id=str(uuid.uuid4()),
-                child_id=body.child_id,
-                reward_id=badge.id,
-                unlocked_at=utc_now(),
-            )
-            db.add(cr)
-            unlocked_badges.append(badge.name)
+    unlocked_badges = await _check_first_star_badge(db, body.child_id, game_id)
 
     await db.commit()
     return {
         "total_stars": body.total_stars,
         "badges_unlocked": body.badges_unlocked + unlocked_badges,
-        "rewards_unlocked": body.rewards_unlocked + unlocked_rewards,
+        "rewards_unlocked": body.rewards_unlocked,
         "completed": True,
+    }
+
+
+@router.post("/{game_id}/result")
+async def save_game_result(
+    game_id: str,
+    body: SaveGameResultRequest,
+    profile: ParentProfile = Depends(get_parent_profile),
+    db: AsyncSession = Depends(get_db),
+):
+    """Save a full MiGameResult: idempotent attempt log + server-side mastery update.
+
+    This is the real endpoint for the game-finish → mastery → reward → sync
+    pipeline. `/complete` (above) is kept for the older stars/badges-only
+    payload; this endpoint additionally persists the richer session evidence
+    (correct/incorrect counts, mastery_evidence, skill_evidence) and computes
+    mastery on the server instead of trusting a client-sent score.
+    """
+    _child_belongs_to_parent(profile, body.child_profile_id)
+
+    if game_id != body.game_id:
+        raise HTTPException(
+            status_code=status.HTTP_400_BAD_REQUEST,
+            detail={"error": {"code": "GAME_ID_MISMATCH", "message": "Path and body game_id must match"}},
+        )
+
+    game_result = await db.execute(select(Game).where(Game.id == game_id))
+    if game_result.scalar_one_or_none() is None:
+        raise HTTPException(status_code=404, detail="Game not found")
+
+    # Idempotency: replaying the same attempt_id returns the original outcome
+    # instead of double-counting attempts/rewards/mastery.
+    existing_result = await db.execute(
+        select(Attempt).where(Attempt.client_attempt_id == body.attempt_id)
+    )
+    existing_attempt = existing_result.scalar_one_or_none()
+    if existing_attempt is not None:
+        progress_score = None
+        if existing_attempt.lesson_id:
+            progress_row = await db.execute(
+                select(Progress).where(
+                    Progress.child_id == existing_attempt.child_id,
+                    Progress.lesson_id == existing_attempt.lesson_id,
+                )
+            )
+            progress = progress_row.scalar_one_or_none()
+            progress_score = progress.mastery_score if progress else None
+        return {
+            "attempt_id": existing_attempt.id,
+            "idempotent_replay": True,
+            "mastery_score": progress_score,
+        }
+
+    attempt = Attempt(
+        id=str(uuid.uuid4()),
+        client_attempt_id=body.attempt_id,
+        child_id=body.child_profile_id,
+        lesson_id=body.lesson_id,
+        game_id=game_id,
+        answer_json=json.dumps(
+            {
+                "attempt_count": body.attempt_count,
+                "correct_count": body.correct_count,
+                "incorrect_count": body.incorrect_count,
+                "skill_evidence": body.skill_evidence,
+                "metadata": body.metadata,
+            },
+            ensure_ascii=False,
+            sort_keys=True,
+        ),
+        is_correct=body.completed and body.correct_count >= body.incorrect_count,
+        response_time_ms=body.duration_seconds * 1000,
+        hint_count=body.hint_count,
+    )
+    db.add(attempt)
+
+    mastery_score = None
+    if body.lesson_id:
+        lesson_result = await db.execute(select(Lesson).where(Lesson.id == body.lesson_id))
+        if lesson_result.scalar_one_or_none() is not None:
+            correct_rate = (
+                body.correct_count / body.attempt_count if body.attempt_count else 0.0
+            )
+            # Blend this session's accuracy with the game's own mastery signal,
+            # then average against prior mastery so one weak session doesn't
+            # erase established progress.
+            session_evidence = max(0.0, min(1.0, 0.6 * correct_rate + 0.4 * body.mastery_evidence))
+
+            progress_row = await db.execute(
+                select(Progress).where(
+                    Progress.child_id == body.child_profile_id,
+                    Progress.lesson_id == body.lesson_id,
+                )
+            )
+            progress = progress_row.scalar_one_or_none()
+            if progress is None:
+                progress = Progress(
+                    child_id=body.child_profile_id,
+                    lesson_id=body.lesson_id,
+                    mastery_score=session_evidence,
+                    total_attempts=0,
+                )
+                db.add(progress)
+            else:
+                progress.mastery_score = max(
+                    0.0, min(1.0, 0.5 * progress.mastery_score + 0.5 * session_evidence)
+                )
+
+            progress.total_attempts += 1
+            progress.last_played_at = utc_now()
+            progress.status = "completed" if progress.mastery_score >= 0.7 else (
+                "needs_practice" if body.completed else "learning"
+            )
+            mastery_score = progress.mastery_score
+
+    unlocked_badges = await _check_first_star_badge(db, body.child_profile_id, game_id)
+
+    await db.commit()
+    await db.refresh(attempt)
+    return {
+        "attempt_id": attempt.id,
+        "idempotent_replay": False,
+        "mastery_score": mastery_score,
+        "badges_unlocked": unlocked_badges,
     }

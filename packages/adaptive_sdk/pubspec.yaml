@@ -10,8 +10,6 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  shared_models:
-    path: ../shared_models
   http: ^1.1.0
   json_annotation: ^4.8.1
   uuid: ^4.2.1

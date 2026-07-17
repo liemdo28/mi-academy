@@ -48,11 +48,17 @@ class AudioPreferencesSchema(BaseModel):
 
 
 class SaveGameResultRequest(BaseModel):
-    """Platform receives MiGameResult from the game layer."""
+    """Platform receives MiGameResult from the game layer.
+
+    Field-for-field mirror of mi_game_core's MiGameResult (Dart), plus one
+    backend-only additive field (`lesson_id`) since the DB has no Game→Lesson
+    link: the mobile app supplies it when the game was launched from a lesson.
+    """
     attempt_id: str = Field(..., description="UUID idempotency key")
     child_profile_id: str
     game_id: str
     level_id: str
+    lesson_id: str | None = Field(default=None, description="Lesson this game session was launched from, if any")
     started_at: datetime
     completed_at: datetime
     attempt_count: int = Field(..., ge=0)

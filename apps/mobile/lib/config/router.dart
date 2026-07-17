@@ -56,7 +56,8 @@ final routerProvider = GoRouter(
       builder: (context, state) {
         final gameId = state.pathParameters['gameId']!;
         final childId = state.uri.queryParameters['childId'] ?? 'offline-child';
-        return GameScreen(childId: childId, gameType: gameId);
+        final lessonId = state.uri.queryParameters['lessonId'];
+        return GameScreen(childId: childId, gameType: gameId, lessonId: lessonId);
       },
     ),
     GoRoute(

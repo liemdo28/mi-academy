@@ -69,6 +69,27 @@ class ActiveChildNotifier extends Notifier<ActiveChildState> {
     );
   }
 
+  /// Create a new child profile, then select it.
+  Future<bool> createChild({
+    required String nickname,
+    required String ageGroup,
+  }) async {
+    state = state.copyWith(isLoading: true, error: null);
+    try {
+      final created = await _api.createChild(
+        nickname: nickname,
+        ageGroup: ageGroup,
+      );
+      final children = [...state.children, created];
+      state = state.copyWith(children: children, isLoading: false);
+      await selectChild(created);
+      return true;
+    } catch (e) {
+      state = state.copyWith(isLoading: false, error: e.toString());
+      return false;
+    }
+  }
+
   /// Clear selection (logout or switch).
   void clearSelection() {
     state = const ActiveChildState();

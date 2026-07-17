@@ -9,6 +9,7 @@ enum SyncItemType {
   snapshot,
   rewardUnlock,
   sessionEnd,
+  gameResult,
 }
 
 /// Status of a sync queue item.
@@ -72,6 +73,8 @@ class SyncQueueItem extends HiveObject {
         return 'reward_unlock';
       case SyncItemType.sessionEnd:
         return 'session_end';
+      case SyncItemType.gameResult:
+        return 'game_result';
     }
   }
 
@@ -87,6 +90,8 @@ class SyncQueueItem extends HiveObject {
         return SyncItemType.rewardUnlock;
       case 'session_end':
         return SyncItemType.sessionEnd;
+      case 'game_result':
+        return SyncItemType.gameResult;
       default:
         return SyncItemType.attempt;
     }

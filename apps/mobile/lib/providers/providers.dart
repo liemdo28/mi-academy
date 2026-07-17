@@ -1,5 +1,8 @@
+import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:offline_sync/offline_sync.dart';
 import '../services/api_service.dart';
+import '../services/api_sync_processor.dart';
 import 'auth_provider.dart';
 import 'child_provider.dart';
 
@@ -69,8 +72,36 @@ final reportsProvider = FutureProvider<List<Map<String, dynamic>>>((ref) async {
   return [result];
 });
 
-/// Connectivity status provider.
+/// Games catalog provider — used to resolve a game_type (e.g.
+/// "memory_cards") to the backend's DB game id (a UUID), since
+/// SaveGameResultRequest / POST /games/{game_id}/result key on the DB id.
+final gamesCatalogProvider =
+    FutureProvider<List<Map<String, dynamic>>>((ref) async {
+  final api = ref.read(apiServiceProvider);
+  final result = await api.getGames();
+  return result.cast<Map<String, dynamic>>();
+});
+
+/// Connectivity status provider — backed by connectivity_plus.
 final connectivityProvider = FutureProvider<bool>((ref) async {
-  // TODO: Use connectivity_plus for real checks
-  return true;
+  final results = await Connectivity().checkConnectivity();
+  return results.any((r) => r != ConnectivityResult.none);
+});
+
+/// Offline sync service — owns the local sync queue and drains it against
+/// the backend when connectivity is available. Constructing this reads the
+/// Hive boxes opened by `initHive()` in main(), so it must not be read
+/// before that has run.
+final syncServiceProvider = Provider<SyncService>((ref) {
+  final api = ref.read(apiServiceProvider);
+  final processor = ApiSyncProcessor(ApiServiceSyncClient(api));
+  final service = SyncService(
+    queueBox: box<SyncQueueItem>(MiBoxes.syncQueue),
+    progressBox: box(MiBoxes.progress),
+    attemptBox: box(MiBoxes.attempts),
+    processor: processor.call,
+  );
+  service.start();
+  ref.onDispose(service.stop);
+  return service;
 });

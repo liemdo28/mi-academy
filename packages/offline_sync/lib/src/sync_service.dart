@@ -130,6 +130,10 @@ class SyncService {
       case SyncItemType.sessionEnd:
         await _syncSession(item);
         break;
+      case SyncItemType.gameResult:
+        // No default HTTP mapping here — the mobile app always supplies a
+        // custom `processor` (ApiSyncProcessor) that knows the game_id path.
+        break;
     }
   }
 

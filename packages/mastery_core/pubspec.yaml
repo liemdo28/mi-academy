@@ -9,8 +9,6 @@ environment:
 
 dependencies:
   equatable: ^2.0.5
-  shared_models:
-    path: ../shared_models
 
 dev_dependencies:
   flutter_test:

@@ -90,6 +90,27 @@ void main() {
       [item.payload],
     ]);
   });
+
+  test('routes game-result queue items to backend result save', () async {
+    final client = _FakeSyncApiClient();
+    final processor = ApiSyncProcessor(client);
+    final item = _item(
+      id: 'result-1',
+      type: SyncItemType.gameResult,
+      payload: {
+        'attempt_id': 'result-1',
+        'child_profile_id': 'child-1',
+        'game_id': 'game-uuid-1',
+        'level_id': 'level_1',
+      },
+    );
+
+    await processor(item);
+
+    expect(client.gameResultCalls, [
+      ('game-uuid-1', item.payload),
+    ]);
+  });
 }
 
 SyncQueueItem _item({
@@ -111,6 +132,7 @@ class _FakeSyncApiClient implements SyncApiClient {
   final attemptCalls = <List<dynamic>>[];
   final sessionCalls = <List<dynamic>>[];
   final rewardChecks = <String>[];
+  final gameResultCalls = <(String, Map<String, dynamic>)>[];
 
   @override
   Future<Map<String, dynamic>> syncProgress(List<dynamic> items) async {
@@ -134,5 +156,14 @@ class _FakeSyncApiClient implements SyncApiClient {
   Future<Map<String, dynamic>> checkRewards(String childId) async {
     rewardChecks.add(childId);
     return {'unlocked': []};
+  }
+
+  @override
+  Future<Map<String, dynamic>> submitGameResult(
+    String gameId,
+    Map<String, dynamic> result,
+  ) async {
+    gameResultCalls.add((gameId, result));
+    return {'attempt_id': result['attempt_id'], 'idempotent_replay': false};
   }
 }

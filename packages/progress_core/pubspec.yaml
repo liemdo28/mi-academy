@@ -9,5 +9,3 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  shared_models:
-    path: ../shared_models
