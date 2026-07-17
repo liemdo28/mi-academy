@@ -61,7 +61,7 @@ jobs:
           python-version: ${{ env.PYTHON_VERSION }}
 
       - name: Install scan tooling
-        run: python -m pip install --upgrade pip pip-audit bandit
+        run: python -m pip install --upgrade pip pip-audit bandit cyclonedx-bom
 
       - name: Python dependency vulnerability scan (report-only)
         # Non-blocking while the team triages findings — see docs/security/SECURITY_BASELINE.md.
@@ -72,6 +72,17 @@ jobs:
       - name: Python SAST scan (report-only)
         continue-on-error: true
         run: python -m bandit -r apps/api -x apps/api/alembic --severity-level medium
+
+      - name: Generate backend SBOM
+        run: |
+          mkdir -p reports
+          python -m cyclonedx_py requirements apps/api/requirements.txt -o reports/sbom-api-${{ github.sha }}.json
+
+      - name: Upload backend SBOM
+        uses: actions/upload-artifact@v4
+        with:
+          name: sbom-api-${{ github.sha }}
+          path: reports/sbom-api-${{ github.sha }}.json
 
   python-tests:
     name: Python game-core tests
