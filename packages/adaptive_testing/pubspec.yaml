@@ -1,0 +1,27 @@
+name: adaptive_testing
+description: Testing utilities for adaptive learning system.
+version: 0.1.0
+publish_to: none
+
+environment:
+  sdk: ">=3.4.0 <4.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  mastery_core:
+    path: ../mastery_core
+  recommendation_core:
+    path: ../recommendation_core
+  spaced_repetition:
+    path: ../spaced_repetition
+  learning_analytics:
+    path: ../learning_analytics
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  test: ^1.25.0
+
+flutter:
+  uses_flutter_rust_bridge: false

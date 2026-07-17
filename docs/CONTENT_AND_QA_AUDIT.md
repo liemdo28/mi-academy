@@ -21,16 +21,20 @@
 
 ### Missing content assets
 
-| Asset | Required by | Priority |
-|-------|-------------|----------|
-| `content/en/words.json` | Word Builder | P0 |
-| `content/curriculum/age_*.json` | All games | P0 |
-| `content/skills/skill_taxonomy.json` | Progress tracking | P0 |
-| Word Builder level files | Word Builder | P0 |
-| Sound Match audio manifest | Sound Match | P0 |
-| Math Race question banks | Math Race | P0 |
-| Math Supermarket product catalog | Math Supermarket | P0 |
-| Robot Commands map files | Robot Commands | P0 |
+| Asset | Status | Priority |
+|-------|--------|----------|
+| `content/en/words.json` | ✅ Created by Dev 3 | P0 |
+| `content/curriculum/age_*.json` | ✅ Created by Dev 3 | P0 |
+| `content/skills/skill_taxonomy.json` | ✅ Created by Dev 3 | P0 |
+| `memory_cards.json` | ✅ 10 levels, vi+en, Foundation Sprint | - |
+| `word_builder.json` | ✅ 10 levels, vi+en | - |
+| `sound_match.json` | ✅ 10 levels, vi+en | - |
+| `math_race.json` | ✅ 10 levels, vi+en | - |
+| `math_supermarket.json` | ✅ 10 levels, vi+en | - |
+| `robot_commands.json` | ✅ 10 levels, vi+en (validated) | - |
+| Sound Match audio files | ⏳ Audio assets pending | P1 |
+| Math Supermarket product images | ⏳ Image assets pending | P1 |
+| Robot Commands robot/grid sprites | ⏳ Image assets pending | P1 |
 
 ### Existing documentation (Dev 1/Dev 2 generated)
 

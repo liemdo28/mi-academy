@@ -118,38 +118,38 @@
       "gameId": "robot_commands",
       "levelNumber": 3,
       "difficulty": 2,
-      "learningObjective": "Rẽ trái — quay hướng",
+      "learningObjective": "Rẽ phải — quay hướng",
       "localizedContent": {
         "vi": {
-          "prompt": "Đi tới, rẽ trái, đi tới!",
+          "prompt": "Đi tới, rẽ phải, đi tới!",
           "availableCommands": [
             "MOVE_FORWARD",
-            "TURN_LEFT"
+            "TURN_RIGHT"
           ],
           "requiredCommands": [
             "START",
             "MOVE_FORWARD",
-            "TURN_LEFT",
+            "TURN_RIGHT",
             "MOVE_FORWARD"
           ]
         },
         "en": {
-          "prompt": "Forward, turn left, forward!",
+          "prompt": "Forward, turn right, forward!",
           "availableCommands": [
             "MOVE_FORWARD",
-            "TURN_LEFT"
+            "TURN_RIGHT"
           ],
           "requiredCommands": [
             "START",
             "MOVE_FORWARD",
-            "TURN_LEFT",
+            "TURN_RIGHT",
             "MOVE_FORWARD"
           ]
         }
       },
       "hints": [
         {
-          "text": "Dùng lệnh Quay trái trước, rồi Tiến"
+          "text": "Dùng lệnh Quay phải trước, rồi Tiến"
         }
       ],
       "metadata": {
@@ -516,7 +516,7 @@
       "learningObjective": "Thuật toán đường đi — tìm đường ngắn nhất",
       "localizedContent": {
         "vi": {
-          "prompt": "Tìm đường ngắn nhất tới cờ! (tối đa 6 lệnh)",
+          "prompt": "Tìm đường ngắn nhất tới cờ!",
           "availableCommands": [
             "MOVE_FORWARD",
             "TURN_LEFT",
@@ -529,13 +529,11 @@
             "MOVE_FORWARD",
             "TURN_RIGHT",
             "MOVE_FORWARD",
-            "MOVE_FORWARD",
-            "TURN_RIGHT",
             "MOVE_FORWARD"
           ]
         },
         "en": {
-          "prompt": "Find the shortest path to the flag! (max 6 commands)",
+          "prompt": "Find the shortest path to the flag!",
           "availableCommands": [
             "MOVE_FORWARD",
             "TURN_LEFT",
@@ -548,8 +546,6 @@
             "MOVE_FORWARD",
             "TURN_RIGHT",
             "MOVE_FORWARD",
-            "MOVE_FORWARD",
-            "TURN_RIGHT",
             "MOVE_FORWARD"
           ]
         }
@@ -585,59 +581,35 @@
       "gameId": "robot_commands",
       "levelNumber": 10,
       "difficulty": 5,
-      "learningObjective": "Chướng ngại + thu thập — thuật toán hoàn chỉnh",
+      "learningObjective": "Thu thập items — về đích!",
       "localizedContent": {
         "vi": {
-          "prompt": "Thu thập tất cả items, tránh chướng ngại, về đích!",
+          "prompt": "Thu thập tất cả items, về đích!",
           "availableCommands": [
             "MOVE_FORWARD",
-            "TURN_LEFT",
-            "TURN_RIGHT",
-            "COLLECT",
-            "IF_PATH_AHEAD"
+            "COLLECT"
           ],
           "requiredCommands": [
             "START",
-            "COLLECT",
-            "TURN_LEFT",
             "MOVE_FORWARD",
             "COLLECT",
-            "TURN_RIGHT",
-            "MOVE_FORWARD",
-            "MOVE_FORWARD",
-            "TURN_RIGHT",
-            "MOVE_FORWARD",
             "MOVE_FORWARD",
             "COLLECT",
-            "TURN_LEFT",
-            "MOVE_FORWARD",
             "MOVE_FORWARD"
           ]
         },
         "en": {
-          "prompt": "Collect all items, avoid obstacles, reach the goal!",
+          "prompt": "Collect all items, reach the goal!",
           "availableCommands": [
             "MOVE_FORWARD",
-            "TURN_LEFT",
-            "TURN_RIGHT",
-            "COLLECT",
-            "IF_PATH_AHEAD"
+            "COLLECT"
           ],
           "requiredCommands": [
             "START",
-            "COLLECT",
-            "TURN_LEFT",
             "MOVE_FORWARD",
             "COLLECT",
-            "TURN_RIGHT",
-            "MOVE_FORWARD",
-            "MOVE_FORWARD",
-            "TURN_RIGHT",
-            "MOVE_FORWARD",
             "MOVE_FORWARD",
             "COLLECT",
-            "TURN_LEFT",
-            "MOVE_FORWARD",
             "MOVE_FORWARD"
           ]
         }
@@ -650,7 +622,7 @@
       "metadata": {
         "grid": {
           "width": 4,
-          "height": 4
+          "height": 1
         },
         "start": {
           "x": 0,
@@ -659,27 +631,22 @@
         },
         "goal": {
           "x": 3,
-          "y": 3
+          "y": 0
         },
         "ageGroup": "master",
         "skillIds": [
           "logic.algorithms",
           "logic.programming_sequences"
         ],
-        "obstacles": [
+        "obstacles": [],
+        "collectibles": [
           {
             "x": 1,
             "y": 0
-          }
-        ],
-        "collectibles": [
-          {
-            "x": 0,
-            "y": 1
           },
           {
             "x": 2,
-            "y": 2
+            "y": 0
           }
         ]
       },

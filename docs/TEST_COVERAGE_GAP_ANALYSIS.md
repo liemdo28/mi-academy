@@ -18,7 +18,10 @@
 | mi_blocks | 22 ✅ | 0 ❌ | 0 ❌ |
 | offline_sync | 5 ✅ | 0 ❌ | 0 ❌ |
 | Content validators | 20 ✅ | N/A | 0 ❌ |
-| apps/mobile | 0 ❌ | 40 ✅ | 0 ❌ |
+| Mobile platform privacy audit | 6 ✅ | N/A | 0 ❌ |
+| Child-safety pre-signoff | 5 ✅ | N/A | 0 ❌ |
+| Release evidence ledger | 6 ✅ | N/A | 0 ❌ |
+| apps/mobile | 0 ❌ | 50 ✅ | 0 ❌ |
 
 ## Critical gaps
 
@@ -28,13 +31,27 @@ asset/sign-off gates tracked in `docs/RELEASE_READINESS_BASELINE.md`.
 `mi_game_ui` now meets the shared UI widget and visual baseline target with 12
 behavior/widget tests plus 8 golden tests. Game-slice golden and integration
 coverage now includes one golden baseline per MVP game slice. Broader
-Memory Cards, Word Builder, Sound Match, Math Race, and Math Supermarket
-save/restore are covered with privacy-safe offline snapshot roundtrips.
+Memory Cards, Word Builder, Sound Match, Math Race, Math Supermarket, and
+Robot Commands save/restore are covered with privacy-safe offline snapshot
+roundtrips.
 `offline_sync` queue behavior is covered locally for Hive-backed
 persistence, privacy-safe payloads, offline retention, FIFO flush, and retry
-retention. Robot Commands save/restore, real backend/device sync, integration,
-device/runtime, production asset, and sign-off gates remain separate
-release-readiness gaps.
+retention. Backend sync routes now have local tests for progress upsert,
+attempt idempotency, JSON answer persistence, and daily session upsert; mobile
+has queue-to-API adapter tests for progress, attempt, and session-end items,
+plus API path contract tests for FastAPI child, reward, and sync routes.
+Mobile platform privacy audit tests cover sensitive Android/iOS permission
+detection, tracking prompts, ad/IAP/social dependencies, and the current
+debug/profile Internet warning boundary.
+Child-safety pre-signoff tests cover the six-game evidence matrix, manual
+pending boundary, report generation, privacy gate evidence, and release-blocker
+handling when an automated audit fails.
+Release evidence tests cover the blocking release ledger, production-audio
+blocker classification, pending external proof boundaries, markdown rendering,
+command failure handling, and repo-relative source paths.
+Deployed backend/device sync,
+integration, device/runtime, production asset, and sign-off gates remain
+separate release-readiness gaps.
 
 ## Recommended test targets (pre-release 0.2)
 
@@ -48,5 +65,8 @@ release-readiness gaps.
 | offline_sync | 5 (queue + retry + privacy) | ✅ Met with 5 tests |
 | mi_game_ui | 8 visual golden tests | ✅ Met with 8 golden tests and 12 behavior/widget tests |
 | Content validators | 20 (Python validator rules) | ✅ Met with 20 tests |
+| Mobile platform privacy audit | 6 (permissions + SDK checks) | ✅ Met with 6 tests |
+| Child-safety pre-signoff | 5 (automated evidence + manual pending boundary) | ✅ Met with 5 tests |
+| Release evidence ledger | 6 (blocked readiness ledger + pending proof boundaries) | ✅ Met with 6 tests |
 
 **Total target: 110 tests across all packages**

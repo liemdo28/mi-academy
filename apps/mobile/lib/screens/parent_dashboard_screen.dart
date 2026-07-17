@@ -153,7 +153,7 @@ class ParentDashboardScreen extends ConsumerWidget {
             width: 48,
             height: 48,
             decoration: BoxDecoration(
-              color: MiTokens.accentPurple.withValues(alpha: 0.2),
+              color: MiColors.primary.withValues(alpha: 0.2),
               shape: BoxShape.circle,
             ),
             child: const Center(

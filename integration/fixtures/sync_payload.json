@@ -1,0 +1,39 @@
+{
+  "fixture_id": "FIX-SYNC-001",
+  "contract_id": "mi.sync",
+  "description": "Offline sync payload with progress and attempts",
+  "schema_version": 1,
+  "data": {
+    "contentVersion": 3,
+    "progressVersion": 7,
+    "items": {
+      "progress": [
+        {
+          "lessonId": "lesson-math-01",
+          "status": "completed",
+          "masteryScore": 0.85,
+          "totalAttempts": 3
+        }
+      ],
+      "attempts": [
+        {
+          "lessonId": "lesson-math-01",
+          "gameId": "game-math-race-01",
+          "questionId": "q-001",
+          "answerJson": {"answer": 7},
+          "isCorrect": true,
+          "responseTimeMs": 3500,
+          "hintCount": 0
+        }
+      ],
+      "sessions": [
+        {
+          "childId": "550e8400-e29b-41d4-a716-446655440001",
+          "startedAt": "2026-07-17T08:00:00Z",
+          "endedAt": "2026-07-17T08:15:00Z",
+          "durationSeconds": 900
+        }
+      ]
+    }
+  }
+}

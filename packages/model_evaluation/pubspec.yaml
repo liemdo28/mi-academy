@@ -1,0 +1,17 @@
+name: model_evaluation
+description: MI Academy — Model evaluation framework: metrics, confusion matrices, A/B evaluation, offline evaluation.
+version: 0.1.0
+publish_to: 'none'
+
+environment:
+  sdk: '>=3.0.0 <4.0.0'
+
+dependencies:
+  equatable: ^2.0.5
+  mastery_core:
+    path: ../mastery_core
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  mocktail: ^1.0.0

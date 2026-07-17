@@ -1,6 +1,37 @@
 import 'package:dio/dio.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 
+class ApiPaths {
+  static const authRegister = '/api/v1/auth/register';
+  static const authLogin = '/api/v1/auth/login';
+  static const authLogout = '/api/v1/auth/logout';
+  static const authRefresh = '/api/v1/auth/refresh';
+  static const parentProfile = '/api/v1/parent/profile';
+  static const parentPin = '/api/v1/parent/pin';
+  static const parentPinVerify = '/api/v1/parent/pin/verify';
+  static const parentReports = '/api/v1/parent/reports';
+  static const parentWeeklyReports = '/api/v1/parent/reports/weekly';
+  static const children = '/api/v1/children';
+  static const lessons = '/api/v1/lessons';
+  static const games = '/api/v1/games';
+  static const syncStatus = '/api/v1/sync/status';
+  static const syncProgress = '/api/v1/sync/progress';
+  static const syncAttempts = '/api/v1/sync/attempts';
+  static const syncSessions = '/api/v1/sync/sessions';
+  static const syncContent = '/api/v1/sync/content';
+
+  static String child(String childId) => '$children/$childId';
+  static String lesson(String lessonId) => '$lessons/$lessonId';
+  static String childProgress(String childId) =>
+      '/api/v1/progress/children/$childId/progress';
+  static String childSkills(String childId) =>
+      '/api/v1/progress/children/$childId/skills';
+  static String dailyPlan(String childId) =>
+      '/api/v1/progress/children/$childId/daily-plan';
+  static String childRewards(String childId) =>
+      '/api/v1/rewards/children/$childId/rewards';
+}
+
 /// API service — handles all HTTP communication with the FastAPI backend.
 /// Stores tokens securely using flutter_secure_storage.
 class ApiService {
@@ -60,7 +91,7 @@ class ApiService {
     required String displayName,
     String language = 'vi',
   }) async {
-    final response = await _dio.post('/api/v1/auth/register', data: {
+    final response = await _dio.post(ApiPaths.authRegister, data: {
       'email': email,
       'password': password,
       'display_name': displayName,
@@ -74,7 +105,7 @@ class ApiService {
     required String email,
     required String password,
   }) async {
-    final response = await _dio.post('/api/v1/auth/login', data: {
+    final response = await _dio.post(ApiPaths.authLogin, data: {
       'email': email,
       'password': password,
     });
@@ -84,7 +115,7 @@ class ApiService {
 
   Future<void> logout() async {
     try {
-      await _dio.post('/api/v1/auth/logout');
+      await _dio.post(ApiPaths.authLogout);
     } catch (_) {
       // Stateless logout — ignore errors
     }
@@ -93,7 +124,7 @@ class ApiService {
 
   Future<bool> _refreshAccessToken() async {
     try {
-      final response = await _dio.post('/api/v1/auth/refresh', data: {
+      final response = await _dio.post(ApiPaths.authRefresh, data: {
         'refresh_token': _refreshToken,
       });
       await _saveTokens(response.data);
@@ -107,7 +138,7 @@ class ApiService {
   // ─── Parent ────────────────────────────────────────────────────────────────
 
   Future<Map<String, dynamic>> getProfile() async {
-    final response = await _dio.get('/api/v1/parent/profile');
+    final response = await _dio.get(ApiPaths.parentProfile);
     return response.data;
   }
 
@@ -116,7 +147,7 @@ class ApiService {
     String? language,
     String? timezone,
   }) async {
-    final response = await _dio.put('/api/v1/parent/profile', data: {
+    final response = await _dio.put(ApiPaths.parentProfile, data: {
       if (displayName != null) 'display_name': displayName,
       if (language != null) 'language': language,
       if (timezone != null) 'timezone': timezone,
@@ -125,23 +156,23 @@ class ApiService {
   }
 
   Future<void> setPin(String pin) async {
-    await _dio.put('/api/v1/parent/pin', data: {'pin': pin});
+    await _dio.put(ApiPaths.parentPin, data: {'pin': pin});
   }
 
   Future<Map<String, dynamic>> verifyPin(String pin) async {
     final response =
-        await _dio.post('/api/v1/parent/pin/verify', data: {'pin': pin});
+        await _dio.post(ApiPaths.parentPinVerify, data: {'pin': pin});
     return response.data;
   }
 
   Future<Map<String, dynamic>> getReports() async {
-    final response = await _dio.get('/api/v1/parent/reports');
+    final response = await _dio.get(ApiPaths.parentReports);
     return response.data;
   }
 
   Future<List<dynamic>> getWeeklyReport(String childId) async {
     final response = await _dio.get(
-      '/api/v1/parent/reports/weekly',
+      ApiPaths.parentWeeklyReports,
       queryParameters: {'child_id': childId},
     );
     return response.data;
@@ -150,7 +181,7 @@ class ApiService {
   // ─── Children ──────────────────────────────────────────────────────────────
 
   Future<List<dynamic>> getChildren() async {
-    final response = await _dio.get('/api/v1/parent/children');
+    final response = await _dio.get(ApiPaths.children);
     return response.data;
   }
 
@@ -163,7 +194,7 @@ class ApiService {
     String preferredLanguage = 'vi',
     int? dailyTimeLimit,
   }) async {
-    final response = await _dio.post('/api/v1/parent/children', data: {
+    final response = await _dio.post(ApiPaths.children, data: {
       'nickname': nickname,
       'age_group': ageGroup,
       if (birthYear != null) 'birth_year': birthYear,
@@ -176,7 +207,7 @@ class ApiService {
   }
 
   Future<void> deleteChild(String childId) async {
-    await _dio.delete('/api/v1/parent/children/$childId');
+    await _dio.delete(ApiPaths.child(childId));
   }
 
   // ─── Lessons ───────────────────────────────────────────────────────────────
@@ -185,7 +216,7 @@ class ApiService {
     String? ageGroup,
     String? subjectId,
   }) async {
-    final response = await _dio.get('/api/v1/lessons', queryParameters: {
+    final response = await _dio.get(ApiPaths.lessons, queryParameters: {
       if (ageGroup != null) 'age_group': ageGroup,
       if (subjectId != null) 'subject_id': subjectId,
     });
@@ -193,14 +224,14 @@ class ApiService {
   }
 
   Future<Map<String, dynamic>> getLesson(String lessonId) async {
-    final response = await _dio.get('/api/v1/lessons/$lessonId');
+    final response = await _dio.get(ApiPaths.lesson(lessonId));
     return response.data;
   }
 
   // ─── Games ─────────────────────────────────────────────────────────────────
 
   Future<List<dynamic>> getGames() async {
-    final response = await _dio.get('/api/v1/games');
+    final response = await _dio.get(ApiPaths.games);
     return response.data;
   }
 
@@ -208,19 +239,19 @@ class ApiService {
 
   Future<List<dynamic>> getChildProgress(String childId) async {
     final response =
-        await _dio.get('/api/v1/progress/children/$childId/progress');
+        await _dio.get(ApiPaths.childProgress(childId));
     return response.data;
   }
 
   Future<List<dynamic>> getChildSkills(String childId) async {
     final response =
-        await _dio.get('/api/v1/progress/children/$childId/skills');
+        await _dio.get(ApiPaths.childSkills(childId));
     return response.data;
   }
 
   Future<List<dynamic>> getDailyPlan(String childId) async {
     final response =
-        await _dio.get('/api/v1/progress/children/$childId/daily-plan');
+        await _dio.get(ApiPaths.dailyPlan(childId));
     return response.data;
   }
 
@@ -231,29 +262,34 @@ class ApiService {
   // ─── Rewards ───────────────────────────────────────────────────────────────
 
   Future<List<dynamic>> getChildRewards(String childId) async {
-    final response = await _dio.get('/api/v1/rewards/children/$childId');
+    final response = await _dio.get(ApiPaths.childRewards(childId));
     return response.data;
   }
 
   Future<Map<String, dynamic>> checkRewards(String childId) async {
-    final response = await _dio.post('/api/v1/rewards/children/$childId/check');
-    return response.data;
+    final rewards = await getChildRewards(childId);
+    return {'rewards': rewards};
   }
 
   // ─── Sync ──────────────────────────────────────────────────────────────────
 
   Future<Map<String, dynamic>> getSyncStatus() async {
-    final response = await _dio.get('/api/v1/sync/status');
+    final response = await _dio.get(ApiPaths.syncStatus);
     return response.data;
   }
 
   Future<Map<String, dynamic>> syncProgress(List<dynamic> items) async {
-    final response = await _dio.post('/api/v1/sync/progress', data: items);
+    final response = await _dio.post(ApiPaths.syncProgress, data: items);
     return response.data;
   }
 
   Future<Map<String, dynamic>> syncAttempts(List<dynamic> items) async {
-    final response = await _dio.post('/api/v1/sync/attempts', data: items);
+    final response = await _dio.post(ApiPaths.syncAttempts, data: items);
+    return response.data;
+  }
+
+  Future<Map<String, dynamic>> syncSessions(List<dynamic> items) async {
+    final response = await _dio.post(ApiPaths.syncSessions, data: items);
     return response.data;
   }
 
@@ -261,7 +297,7 @@ class ApiService {
     required String contentType,
     int sinceVersion = 0,
   }) async {
-    final response = await _dio.get('/api/v1/sync/content', queryParameters: {
+    final response = await _dio.get(ApiPaths.syncContent, queryParameters: {
       'content_type': contentType,
       'since_version': sinceVersion,
     });

@@ -1,6 +1,6 @@
-"""Sync schemas — content delta, progress upsert, attempt sync."""
+"""Sync schemas — content delta, progress, attempt, and session sync."""
 
-from datetime import datetime
+from datetime import date, datetime
 from pydantic import BaseModel
 
 
@@ -44,3 +44,12 @@ class SyncAttemptItem(BaseModel):
     response_time_ms: int = 0
     hint_count: int = 0
     created_at: datetime
+
+
+class SyncSessionItem(BaseModel):
+    id: str | None = None
+    child_id: str
+    session_date: date
+    duration_seconds: int = 0
+    lessons_completed: int = 0
+    games_completed: int = 0

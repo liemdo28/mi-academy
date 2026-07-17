@@ -24,85 +24,94 @@ from apps.api.time import utc_now
 
 def test_parent_reports_summarize_child_activity_without_scores_pressure():
     async def run():
-        session_maker = await _session_maker()
-        async with session_maker() as db:
-            profile, child = await _seed_parent_child_activity(db)
+        session_maker, engine = await _session_maker()
+        try:
+            async with session_maker() as db:
+                profile, child = await _seed_parent_child_activity(db)
 
-            summary = await get_reports(profile=profile, db=db)
-            weekly = await get_weekly_report(child_id=child.id, profile=profile, db=db)
+                summary = await get_reports(profile=profile, db=db)
+                weekly = await get_weekly_report(child_id=child.id, profile=profile, db=db)
 
-            assert summary.total_children == 1
-            assert summary.total_lessons_today == 2
-            assert summary.total_games_today == 3
-            assert summary.total_time_minutes_today == 25
-            assert summary.total_stars_today == 2
-            assert len(weekly) == 1
-            assert weekly[0].lessons_completed == 2
-            assert weekly[0].games_completed == 3
+                assert summary.total_children == 1
+                assert summary.total_lessons_today == 2
+                assert summary.total_games_today == 3
+                assert summary.total_time_minutes_today == 25
+                assert summary.total_stars_today == 2
+                assert len(weekly) == 1
+                assert weekly[0].lessons_completed == 2
+                assert weekly[0].games_completed == 3
+        finally:
+            await engine.dispose()
 
     asyncio.run(run())
 
 
 def test_delete_child_removes_child_owned_data():
     async def run():
-        session_maker = await _session_maker()
-        async with session_maker() as db:
-            profile, child = await _seed_parent_child_activity(db)
+        session_maker, engine = await _session_maker()
+        try:
+            async with session_maker() as db:
+                profile, child = await _seed_parent_child_activity(db)
 
-            await delete_child(child_id=child.id, profile=profile, db=db)
-            await db.commit()
+                await delete_child(child_id=child.id, profile=profile, db=db)
+                await db.commit()
 
-            assert await _count(db, ChildProfile) == 0
-            assert await _count(db, DailySession) == 0
-            assert await _count(db, Progress) == 0
-            assert await _count(db, Attempt) == 0
-            assert await _count(db, ChildReward) == 0
-            assert await _count(db, Reward) == 1
-            assert await _count(db, ParentProfile) == 1
-            assert await _count(db, User) == 1
+                assert await _count(db, ChildProfile) == 0
+                assert await _count(db, DailySession) == 0
+                assert await _count(db, Progress) == 0
+                assert await _count(db, Attempt) == 0
+                assert await _count(db, ChildReward) == 0
+                assert await _count(db, Reward) == 1
+                assert await _count(db, ParentProfile) == 1
+                assert await _count(db, User) == 1
+        finally:
+            await engine.dispose()
 
     asyncio.run(run())
 
 
 def test_parent_export_is_privacy_safe_and_reviewable():
     async def run():
-        session_maker = await _session_maker()
-        async with session_maker() as db:
-            profile, child = await _seed_parent_child_activity(db)
+        session_maker, engine = await _session_maker()
+        try:
+            async with session_maker() as db:
+                profile, child = await _seed_parent_child_activity(db)
 
-            exported = await export_parent_data(profile=profile, db=db)
-            payload = exported.model_dump(mode="json")
+                exported = await export_parent_data(profile=profile, db=db)
+                payload = exported.model_dump(mode="json")
 
-            assert payload["schema_version"] == "mi-academy-parent-export-v1"
-            assert payload["parent"]["display_name"] == "Parent"
-            assert payload["children"] == [
-                {
-                    "id": child.id,
-                    "nickname": "Mi",
-                    "age_group": "junior",
-                    "preferred_language": "vi",
-                    "daily_time_limit": 30,
-                    "created_at": child.created_at.isoformat().replace("+00:00", "Z"),
+                assert payload["schema_version"] == "mi-academy-parent-export-v1"
+                assert payload["parent"]["display_name"] == "Parent"
+                assert payload["children"] == [
+                    {
+                        "id": child.id,
+                        "nickname": "Mi",
+                        "age_group": "junior",
+                        "preferred_language": "vi",
+                        "daily_time_limit": 30,
+                        "created_at": child.created_at.isoformat().replace("+00:00", "Z"),
+                    }
+                ]
+                assert payload["daily_sessions"][0]["lessons_completed"] == 2
+                assert payload["progress"][0]["status"] == "completed"
+                assert payload["rewards"][0]["name"] == "First Steps"
+                assert payload["attempts_summary"] == [
+                    {
+                        "child_id": child.id,
+                        "total_attempts": 1,
+                        "correct_attempts": 1,
+                        "hint_count": 0,
+                    }
+                ]
+                assert payload["privacy"] == {
+                    "contains_child_contact_info": False,
+                    "contains_location_data": False,
+                    "contains_raw_answers": False,
+                    "shared_with_third_parties": False,
                 }
-            ]
-            assert payload["daily_sessions"][0]["lessons_completed"] == 2
-            assert payload["progress"][0]["status"] == "completed"
-            assert payload["rewards"][0]["name"] == "First Steps"
-            assert payload["attempts_summary"] == [
-                {
-                    "child_id": child.id,
-                    "total_attempts": 1,
-                    "correct_attempts": 1,
-                    "hint_count": 0,
-                }
-            ]
-            assert payload["privacy"] == {
-                "contains_child_contact_info": False,
-                "contains_location_data": False,
-                "contains_raw_answers": False,
-                "shared_with_third_parties": False,
-            }
-            assert "answer_json" not in str(payload)
+                assert "answer_json" not in str(payload)
+        finally:
+            await engine.dispose()
 
     asyncio.run(run())
 
@@ -111,7 +120,7 @@ async def _session_maker():
     engine = create_async_engine("sqlite+aiosqlite:///:memory:", future=True)
     async with engine.begin() as conn:
         await conn.run_sync(Base.metadata.create_all)
-    return async_sessionmaker(engine, expire_on_commit=False, autoflush=False)
+    return async_sessionmaker(engine, expire_on_commit=False, autoflush=False), engine
 
 
 async def _seed_parent_child_activity(db):

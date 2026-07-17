@@ -144,7 +144,8 @@ class SyncService {
   }
 
   Future<void> _syncReward(SyncQueueItem item) async {
-    // HTTP POST to /api/v1/rewards/children/{id}/check
+    // Reward refresh uses GET /api/v1/rewards/children/{id}/rewards
+    // in the mobile API client.
   }
 
   Future<void> _syncSession(SyncQueueItem item) async {

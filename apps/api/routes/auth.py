@@ -64,7 +64,7 @@ async def register(body: RegisterRequest, db: AsyncSession = Depends(get_db)):
             email=user.email,
             created_at=user.created_at.isoformat(),
         ),
-        parent_profile=ParentProfileResponse.from_model(profile),
+        parent_profile=ParentProfileResponse.from_model(profile) if profile else None,
         access_token=access_token,
         refresh_token=refresh_token,
     )
@@ -96,7 +96,7 @@ async def login(body: LoginRequest, db: AsyncSession = Depends(get_db)):
             email=user.email,
             created_at=user.created_at.isoformat(),
         ),
-        parent_profile=ParentProfileResponse.from_model(profile),
+        parent_profile=ParentProfileResponse.from_model(profile) if profile else None,
         access_token=access_token,
         refresh_token=refresh_token,
     )

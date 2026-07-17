@@ -37,6 +37,53 @@ jobs:
       - name: Run static child-safety audit
         run: python tools/child_safety_audit.py --json
 
+      - name: Audit mobile platform privacy surfaces
+        run: python tools/mobile_platform_privacy_audit.py --json
+
+      - name: Generate child-safety pre-signoff evidence
+        run: python tools/child_safety_signoff.py --json
+
+  security-scans:
+    name: Secret, dependency, and SAST scans
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Scan for committed secrets
+        uses: gitleaks/gitleaks-action@v2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+
+      - name: Install scan tooling
+        run: python -m pip install --upgrade pip pip-audit bandit cyclonedx-bom
+
+      - name: Python dependency vulnerability scan (report-only)
+        # Non-blocking while the team triages findings — see docs/security/SECURITY_BASELINE.md.
+        # Promote to blocking once a Critical/High triage owner is assigned.
+        continue-on-error: true
+        run: python -m pip_audit -r apps/api/requirements.txt
+
+      - name: Python SAST scan (report-only)
+        continue-on-error: true
+        run: python -m bandit -r apps/api -x apps/api/alembic --severity-level medium
+
+      - name: Generate backend SBOM
+        run: |
+          mkdir -p reports
+          python -m cyclonedx_py requirements apps/api/requirements.txt -o reports/sbom-api-${{ github.sha }}.json
+
+      - name: Upload backend SBOM
+        uses: actions/upload-artifact@v4
+        with:
+          name: sbom-api-${{ github.sha }}
+          path: reports/sbom-api-${{ github.sha }}.json
+
   python-tests:
     name: Python game-core tests
     runs-on: ubuntu-latest
@@ -138,3 +185,57 @@ jobs:
 
       - name: Build iOS without codesigning
         run: flutter build ios --debug --no-codesign
+
+  android-release-signing:
+    name: Android release build (signed)
+    # No-op until ANDROID_KEYSTORE_BASE64 is configured as a repo secret —
+    # see docs/security/SECRET_INVENTORY.md. Nothing is uploaded to Play
+    # Store here; this only produces a signed .aab + mapping file artifact
+    # for manual upload until a Play Store publishing step is added.
+    if: ${{ secrets.ANDROID_KEYSTORE_BASE64 != '' }}
+    runs-on: ubuntu-latest
+    needs: mobile-test-build
+    defaults:
+      run:
+        working-directory: apps/mobile
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "17"
+
+      - uses: subosito/flutter-action@v2
+        with:
+          flutter-version: ${{ env.FLUTTER_VERSION }}
+          channel: stable
+          cache: true
+
+      - name: Install Flutter dependencies
+        run: flutter pub get
+
+      - name: Decode release keystore
+        run: |
+          echo "${{ secrets.ANDROID_KEYSTORE_BASE64 }}" | base64 --decode > android/app/release.jks
+          cat > android/key.properties <<KEYPROPS
+          storeFile=app/release.jks
+          storePassword=${{ secrets.ANDROID_KEYSTORE_PASSWORD }}
+          keyAlias=${{ secrets.ANDROID_KEY_ALIAS }}
+          keyPassword=${{ secrets.ANDROID_KEY_PASSWORD }}
+          KEYPROPS
+
+      - name: Build signed app bundle
+        run: flutter build appbundle --release
+
+      - name: Upload signed app bundle + mapping file
+        uses: actions/upload-artifact@v4
+        with:
+          name: mi-academy-release-aab
+          path: |
+            apps/mobile/build/app/outputs/bundle/release/app-release.aab
+            apps/mobile/build/app/outputs/mapping/release/mapping.txt
+
+      - name: Remove decoded keystore
+        if: always()
+        run: rm -f android/app/release.jks android/key.properties

@@ -36,7 +36,7 @@ class UserResponse(BaseModel):
 
 class AuthResponse(BaseModel):
     user: UserResponse
-    parent_profile: "ParentProfileResponse"
+    parent_profile: "ParentProfileResponse | None"
     access_token: str
     refresh_token: str
 
@@ -113,6 +113,7 @@ from .sync import (
     SyncAttemptItem,
     SyncContentResponse,
     SyncProgressItem,
+    SyncSessionItem,
     SyncStatusResponse,
 )
 
@@ -242,6 +243,7 @@ __all__ = [
     "SyncContentResponse",
     "SyncProgressItem",
     "SyncAttemptItem",
+    "SyncSessionItem",
     # Reports
     "ParentReportSummary",
     "WeeklyReportEntry",

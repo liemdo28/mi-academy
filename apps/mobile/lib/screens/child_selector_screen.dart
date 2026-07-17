@@ -118,13 +118,13 @@ class _ChildAvatarCard extends StatelessWidget {
   Color _ageGroupColor(String ag) {
     switch (ag) {
       case 'junior':
-        return MiTokens.juniorBlue;
+        return MiColors.primary;
       case 'explorer':
-        return MiTokens.explorerGreen;
+        return MiColors.success;
       case 'master':
-        return MiTokens.masterPurple;
+        return MiColors.secondary;
       default:
-        return MiTokens.primaryBlue;
+        return MiColors.primary;
     }
   }
 
@@ -174,14 +174,14 @@ class _AddChildCard extends StatelessWidget {
             width: 72,
             height: 72,
             decoration: const BoxDecoration(
-              color: MiTokens.border,
+              color: MiColors.border,
               shape: BoxShape.circle,
             ),
             child: const Center(
               child: Icon(
                 Icons.add,
                 size: 36,
-                color: MiTokens.textSecondary,
+                color: MiColors.textSecondary,
               ),
             ),
           ),
@@ -189,7 +189,7 @@ class _AddChildCard extends StatelessWidget {
           Text(
             'Thêm hồ sơ',
             style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                  color: MiTokens.textSecondary,
+                  color: MiColors.textSecondary,
                 ),
             textAlign: TextAlign.center,
           ),

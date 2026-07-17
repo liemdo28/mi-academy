@@ -1,27 +1,36 @@
 """Rewards routes — list, unlock for a child."""
 
-from fastapi import APIRouter, HTTPException, Depends
+from fastapi import APIRouter, HTTPException, Depends, status
 from sqlalchemy import select
 from sqlalchemy.ext.asyncio import AsyncSession
 import uuid
 
 from apps.api.database import get_db
-from apps.api.dependencies import get_current_user
-from apps.api.models import ChildProfile, Reward, ChildReward
+from apps.api.dependencies import get_parent_profile
+from apps.api.models import ParentProfile, Reward, ChildReward
 from apps.api.time import utc_now
 from apps.api.schemas import RewardResponse, UnlockRewardRequest
-from apps.api.models import User
 
 router = APIRouter()
+
+
+def _child_belongs_to_parent(profile: ParentProfile, child_id: str):
+    if child_id not in [c.id for c in profile.children]:
+        raise HTTPException(
+            status_code=status.HTTP_403_FORBIDDEN,
+            detail={"error": {"code": "FORBIDDEN", "message": "Child not owned by parent"}},
+        )
 
 
 @router.get("/children/{child_id}/rewards")
 async def get_child_rewards(
     child_id: str,
-    user: User = Depends(get_current_user),
+    profile: ParentProfile = Depends(get_parent_profile),
     db: AsyncSession = Depends(get_db),
 ):
     """List all rewards — unlocked and locked — for a child."""
+    _child_belongs_to_parent(profile, child_id)
+
     # Get all rewards
     all_result = await db.execute(select(Reward))
     all_rewards = all_result.scalars().all()
@@ -42,7 +51,7 @@ async def get_child_rewards(
             description=r.description,
             asset_url=r.asset_url,
             is_unlocked=r.id in unlocked_rewards,
-            unlocked_at=unlocked_rewards.get(r.id),
+            unlocked_at=unlocked_rewards[r.id].isoformat() if r.id in unlocked_rewards else None,
         )
         for r in all_rewards
     ]
@@ -52,16 +61,11 @@ async def get_child_rewards(
 async def unlock_reward(
     child_id: str,
     body: UnlockRewardRequest,
-    user: User = Depends(get_current_user),
+    profile: ParentProfile = Depends(get_parent_profile),
     db: AsyncSession = Depends(get_db),
 ):
     """Parent manually unlocks a reward for a child."""
-    # Verify child exists
-    child_result = await db.execute(
-        select(ChildProfile).where(ChildProfile.id == child_id)
-    )
-    if not child_result.scalar_one_or_none():
-        raise HTTPException(status_code=404, detail="Child not found")
+    _child_belongs_to_parent(profile, child_id)
 
     # Verify reward exists
     reward_result = await db.execute(
