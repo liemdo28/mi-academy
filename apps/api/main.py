@@ -6,7 +6,9 @@ from sqlalchemy import text
 
 from apps.api.config import settings
 from apps.api.database import engine, Base
+from apps.api.logging_config import configure_logging
 from apps.api.middleware.rate_limit import RateLimitMiddleware
+from apps.api.middleware.request_context import RequestContextMiddleware
 from apps.api.routes import (
     auth,
     parent,
@@ -19,6 +21,8 @@ from apps.api.routes import (
     admin,
 )
 
+configure_logging()
+
 APP_VERSION = "1.0.0"
 
 app = FastAPI(
@@ -26,6 +30,10 @@ app = FastAPI(
     version=APP_VERSION,
     description="Backend API for MI Academy — Offline-first educational games for children 5–12",
 )
+
+# Correlation ID + structured request logging — added first so it wraps
+# every other middleware and captures their effect on status/duration.
+app.add_middleware(RequestContextMiddleware)
 
 # CORS — allow mobile app + web dev
 app.add_middleware(
