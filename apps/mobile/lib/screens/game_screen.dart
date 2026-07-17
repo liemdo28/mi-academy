@@ -44,6 +44,7 @@ class GameScreen extends ConsumerStatefulWidget {
 class _GameScreenState extends ConsumerState<GameScreen> {
   List<MiLevel>? _levels;
   String? _error;
+  MiGameSnapshot? _initialSnapshot;
 
   @override
   void initState() {
@@ -55,14 +56,55 @@ class _GameScreenState extends ConsumerState<GameScreen> {
     try {
       final levels = await loadGameLevels(context, widget.gameType);
       if (!mounted) return;
-      setState(() => _levels = levels);
+      // Only ever the first level today (see _buildGame) -- resuming a
+      // snapshot for a level the child isn't currently being shown isn't
+      // meaningful yet, since there's no per-level launch selection.
+      final firstLevel = levels.isNotEmpty ? levels.first : null;
+      final snapshot = firstLevel == null
+          ? null
+          : ref.read(snapshotStoreProvider).load(
+                childProfileId: widget.childId,
+                gameId: widget.gameType,
+                levelId: firstLevel.id,
+              );
+      setState(() {
+        _levels = levels;
+        _initialSnapshot = snapshot;
+      });
     } catch (e) {
       if (!mounted) return;
       setState(() => _error = e.toString());
     }
   }
 
+  void _onSaveSnapshot(MiGameSnapshot snapshot) {
+    // Child game screens can call this from their own dispose() (see
+    // SnapshotLifecycleMixin), including during whole-widget-tree teardown
+    // (app close, test teardown). `mounted` alone isn't enough here: during
+    // a teardown pass Flutter deactivates a whole subtree before unmounting
+    // it, and `State.mounted` stays true throughout deactivation -- only
+    // `unmount()` (after `dispose()` returns) flips it. If GameScreen's own
+    // element is deactivated in the same pass as the child that's saving,
+    // ref.read()'s ancestor lookup throws even though `mounted` says true.
+    // This save is always best-effort (the child screen already has the
+    // snapshot in memory regardless), so swallow that failure rather than
+    // crash the teardown.
+    if (!mounted) return;
+    try {
+      ref.read(snapshotStoreProvider).save(snapshot);
+    } catch (_) {}
+  }
+
   Future<void> _saveResult(MiCompletionResult result) async {
+    // The level is done (whether or not the backend save below succeeds) --
+    // any in-progress snapshot for it is stale now, so it must not be
+    // offered as "resume" on a future launch of the same level.
+    await ref.read(snapshotStoreProvider).clear(
+          childProfileId: widget.childId,
+          gameId: widget.gameType,
+          levelId: result.levelId,
+        );
+
     if (widget.childId == 'offline-child') return;
 
     final games = await ref.read(gamesCatalogProvider.future);
@@ -184,6 +226,8 @@ class _GameScreenState extends ConsumerState<GameScreen> {
           allLevels: allLevels,
           onExit: onExit,
           onComplete: _saveResult,
+          initialSnapshot: _initialSnapshot,
+          onSaveSnapshot: _onSaveSnapshot,
         );
       case 'sound_match':
         return SoundMatchScreen(
@@ -191,6 +235,8 @@ class _GameScreenState extends ConsumerState<GameScreen> {
           allLevels: allLevels,
           onExit: onExit,
           onComplete: _saveResult,
+          initialSnapshot: _initialSnapshot,
+          onSaveSnapshot: _onSaveSnapshot,
         );
       case 'math_race':
         return ChoiceGameScreen(
@@ -202,6 +248,8 @@ class _GameScreenState extends ConsumerState<GameScreen> {
           primaryColor: GameTheme.warning,
           onExit: onExit,
           onComplete: _saveResult,
+          initialSnapshot: _initialSnapshot,
+          onSaveSnapshot: _onSaveSnapshot,
         );
       case 'math_supermarket':
         return ChoiceGameScreen(
@@ -213,6 +261,8 @@ class _GameScreenState extends ConsumerState<GameScreen> {
           primaryColor: MiGameColors.tertiary,
           onExit: onExit,
           onComplete: _saveResult,
+          initialSnapshot: _initialSnapshot,
+          onSaveSnapshot: _onSaveSnapshot,
         );
       case 'robot_commands':
         return RobotCommandsScreen(
@@ -220,6 +270,8 @@ class _GameScreenState extends ConsumerState<GameScreen> {
           allLevels: allLevels,
           onExit: onExit,
           onComplete: _saveResult,
+          initialSnapshot: _initialSnapshot,
+          onSaveSnapshot: _onSaveSnapshot,
         );
       case 'memory_cards':
         return _MemoryCardsHost(
@@ -227,6 +279,9 @@ class _GameScreenState extends ConsumerState<GameScreen> {
           allLevels: allLevels,
           onExit: onExit,
           onComplete: _saveResult,
+          childProfileId: widget.childId,
+          initialSnapshot: _initialSnapshot,
+          onSaveSnapshot: _onSaveSnapshot,
         );
       default:
         return Scaffold(
@@ -250,12 +305,18 @@ class _MemoryCardsHost extends StatefulWidget {
     required this.allLevels,
     required this.onExit,
     required this.onComplete,
+    required this.childProfileId,
+    this.initialSnapshot,
+    this.onSaveSnapshot,
   });
 
   final MiLevel level;
   final List<MiLevel> allLevels;
   final VoidCallback onExit;
   final void Function(MiCompletionResult) onComplete;
+  final String childProfileId;
+  final MiGameSnapshot? initialSnapshot;
+  final void Function(MiGameSnapshot)? onSaveSnapshot;
 
   @override
   State<_MemoryCardsHost> createState() => _MemoryCardsHostState();
@@ -322,6 +383,12 @@ class _MemoryCardsHostState extends State<_MemoryCardsHost> {
       level: _level,
       onComplete: _onGameComplete,
       onExit: widget.onExit,
+      childProfileId: widget.childProfileId,
+      // Only the very first level shown may resume from a saved snapshot --
+      // "next level"/"replay" always start that level fresh.
+      initialSnapshot:
+          _level.id == widget.level.id ? widget.initialSnapshot : null,
+      onSaveSnapshot: widget.onSaveSnapshot,
     );
   }
 }

@@ -4,6 +4,7 @@ import 'package:offline_sync/offline_sync.dart';
 import '../services/api_service.dart';
 import '../services/api_sync_processor.dart';
 import '../services/parent_settings_store.dart';
+import '../services/snapshot_store.dart';
 import 'auth_provider.dart';
 import 'child_provider.dart';
 
@@ -119,4 +120,10 @@ final syncServiceProvider = Provider<SyncService>((ref) {
   service.start();
   ref.onDispose(service.stop);
   return service;
+});
+
+/// Platform-owned snapshot save/load (Phase 10) — reads the `snapshots`
+/// Hive box opened by `initHive()`, same constraint as [syncServiceProvider].
+final snapshotStoreProvider = Provider<SnapshotStore>((ref) {
+  return HiveSnapshotStore(box(MiBoxes.snapshots));
 });

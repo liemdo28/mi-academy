@@ -1,16 +1,28 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:mi_academy/providers/providers.dart';
 import 'package:mi_academy/screens/game_screen.dart';
+import 'package:mi_academy/services/snapshot_store.dart';
 
 /// Covers the production `/game/:gameId` launcher: it must render the real
 /// per-game engine (loaded from the bundled level assets), not the old
 /// hardcoded demo. childId is 'offline-child' throughout so the save path
 /// (which needs network) is never exercised — see api_sync_processor_test
 /// and test_api_game_result.py (backend) for that.
+///
+/// GameScreen reads snapshotStoreProvider on load; override it with the
+/// in-memory implementation (see snapshot_store.dart) instead of standing
+/// up a real Hive box, which needs `Hive.initFlutter()` (a platform
+/// channel unavailable here).
 Future<void> _pumpAndSettleLoad(WidgetTester tester, Widget child) async {
   await tester.pumpWidget(
-    ProviderScope(child: MaterialApp(home: child)),
+    ProviderScope(
+      overrides: [
+        snapshotStoreProvider.overrideWithValue(InMemorySnapshotStore()),
+      ],
+      child: MaterialApp(home: child),
+    ),
   );
   // Level content loads via an async asset read; pump until it resolves.
   for (var i = 0; i < 10 && tester.any(find.byType(CircularProgressIndicator)); i++) {

@@ -14,6 +14,9 @@ class MemoryCardsScreen extends StatefulWidget {
     required this.level,
     required this.onComplete,
     this.onExit,
+    this.childProfileId = 'local-child',
+    this.initialSnapshot,
+    this.onSaveSnapshot,
   });
 
   final MemoryCardsGame game;
@@ -21,11 +24,23 @@ class MemoryCardsScreen extends StatefulWidget {
   final void Function(MiCompletionResult) onComplete;
   final VoidCallback? onExit;
 
+  /// Real child id when launched from the production route; defaults to
+  /// the prior hardcoded placeholder for the debug game picker, which
+  /// doesn't have a real backend child.
+  final String childProfileId;
+
+  /// See WordBuilderScreen.initialSnapshot.
+  final MiGameSnapshot? initialSnapshot;
+
+  /// See WordBuilderScreen.onSaveSnapshot.
+  final void Function(MiGameSnapshot)? onSaveSnapshot;
+
   @override
   State<MemoryCardsScreen> createState() => _MemoryCardsScreenState();
 }
 
-class _MemoryCardsScreenState extends State<MemoryCardsScreen> {
+class _MemoryCardsScreenState extends State<MemoryCardsScreen>
+    with WidgetsBindingObserver {
   bool _isPaused = false;
   String? _feedbackMessage;
   bool _showFeedback = false;
@@ -33,17 +48,36 @@ class _MemoryCardsScreenState extends State<MemoryCardsScreen> {
   String _currentHint = '';
   bool _showTutorial = true;
   Timer? _feedbackTimer;
+  bool _completed = false;
 
   @override
   void initState() {
     super.initState();
+    WidgetsBinding.instance.addObserver(this);
     _initGame();
+  }
+
+  @override
+  void didChangeAppLifecycleState(AppLifecycleState state) {
+    if (state == AppLifecycleState.paused ||
+        state == AppLifecycleState.inactive) {
+      _saveSnapshotNow();
+    }
+  }
+
+  void _saveSnapshotNow() {
+    if (_completed) return;
+    final onSave = widget.onSaveSnapshot;
+    if (onSave == null) return;
+    // Best-effort, fire-and-forget: this fires from a lifecycle callback
+    // (and potentially dispose()), neither of which can await.
+    widget.game.saveSnapshot().then(onSave).catchError((_) {});
   }
 
   Future<void> _initGame() async {
     await widget.game.initialize(
       context: MiGameContext(
-        childProfileId: 'local-child',
+        childProfileId: widget.childProfileId,
         language: 'vi',
         ageGroup: '5-7',
         accessibility: const AccessibilityPreferences(),
@@ -59,6 +93,10 @@ class _MemoryCardsScreenState extends State<MemoryCardsScreen> {
     );
     await widget.game.loadLevel(level: widget.level);
     await widget.game.start();
+    final snapshot = widget.initialSnapshot;
+    if (snapshot != null) {
+      await widget.game.restoreSnapshot(snapshot);
+    }
     if (mounted) setState(() {});
   }
 
@@ -81,6 +119,8 @@ class _MemoryCardsScreenState extends State<MemoryCardsScreen> {
 
   @override
   void dispose() {
+    _saveSnapshotNow();
+    WidgetsBinding.instance.removeObserver(this);
     _feedbackTimer?.cancel();
     widget.game.dispose();
     super.dispose();
@@ -100,6 +140,7 @@ class _MemoryCardsScreenState extends State<MemoryCardsScreen> {
     }
 
     if (result.isLevelComplete) {
+      _completed = true;
       final completion = await widget.game.complete();
       widget.onComplete(completion);
     }

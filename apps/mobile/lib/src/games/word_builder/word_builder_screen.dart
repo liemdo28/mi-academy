@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:mi_game_core/mi_game_core.dart';
 import 'package:mi_game_ui/mi_game_ui.dart';
 
+import '../snapshot_lifecycle_mixin.dart';
 import 'word_builder_session.dart';
 
 class WordBuilderScreen extends StatefulWidget {
@@ -12,6 +13,8 @@ class WordBuilderScreen extends StatefulWidget {
     required this.allLevels,
     this.onExit,
     this.onComplete,
+    this.initialSnapshot,
+    this.onSaveSnapshot,
   });
 
   final MiLevel level;
@@ -23,30 +26,58 @@ class WordBuilderScreen extends StatefulWidget {
   /// without this screen calling the backend or Hive itself.
   final void Function(MiCompletionResult)? onComplete;
 
+  /// A previously-saved in-progress snapshot for this exact (child, game,
+  /// level), already validated by the platform (checksum, child/level
+  /// match, schema version) -- this screen just applies it. Null means
+  /// start fresh.
+  final MiGameSnapshot? initialSnapshot;
+
+  /// Called with a snapshot of the current session when the app backgrounds
+  /// or this screen is exited mid-level. This screen never persists it
+  /// itself — see [SnapshotLifecycleMixin] and Phase 10's "platform owns
+  /// save/load" rule.
+  final void Function(MiGameSnapshot)? onSaveSnapshot;
+
   @override
   State<WordBuilderScreen> createState() => _WordBuilderScreenState();
 }
 
-class _WordBuilderScreenState extends State<WordBuilderScreen> {
+class _WordBuilderScreenState extends State<WordBuilderScreen>
+    with WidgetsBindingObserver, SnapshotLifecycleMixin<WordBuilderScreen> {
   late WordBuilderSession _session;
   late Stopwatch _stopwatch;
+  bool _completed = false;
+
+  @override
+  void Function(MiGameSnapshot)? get onSaveSnapshot => widget.onSaveSnapshot;
+
+  @override
+  MiGameSnapshot? captureSnapshot() {
+    if (_completed) return null;
+    return _session.saveSnapshot();
+  }
 
   @override
   void initState() {
     super.initState();
     _stopwatch = Stopwatch()..start();
-    _loadLevel(widget.level);
+    _loadLevel(widget.level, snapshot: widget.initialSnapshot);
   }
 
   @override
   void dispose() {
+    disposeSnapshotLifecycle();
     _stopwatch.stop();
     super.dispose();
   }
 
-  void _loadLevel(MiLevel level) {
+  void _loadLevel(MiLevel level, {MiGameSnapshot? snapshot}) {
     setState(() {
+      _completed = false;
       _session = WordBuilderSession(level: level);
+      if (snapshot != null) {
+        _session.restoreSnapshot(snapshot);
+      }
       _stopwatch
         ..reset()
         ..start();
@@ -90,6 +121,7 @@ class _WordBuilderScreenState extends State<WordBuilderScreen> {
   }
 
   void _showCompletion() {
+    _completed = true;
     _stopwatch.stop();
     widget.onComplete?.call(MiCompletionResult(
       gameId: _level.gameId,
