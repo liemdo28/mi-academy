@@ -1,0 +1,23 @@
+name: spaced_repetition
+description: Spaced repetition scheduler with configurable intervals and retention tracking.
+version: 0.1.0
+publish_to: none
+
+environment:
+  sdk: ">=3.4.0 <4.0.0"
+  flutter: ">=3.22.0"
+
+dependencies:
+  equatable: ^2.0.5
+  shared_models:
+    path: ../shared_models
+  mastery_core:
+    path: ../mastery_core
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^4.0.0
+
+flutter:
+  uses_flutter_rust_bridge: false

@@ -1,0 +1,245 @@
+{
+  "version": "1.0.0",
+  "description": "Synthetic evaluation scenarios for mastery-rule-v1",
+  "engineVersion": "mastery-rule-v1",
+  "scenarios": [
+    {
+      "id": "new-child-first-attempt",
+      "description": "New child with zero evidence attempts a skill for the first time",
+      "tags": ["new-child", "zero-evidence", "first-attempt"],
+      "input": {
+        "childId": "child-new-001",
+        "skillId": "math.addition.within_10",
+        "currentMastery": null,
+        "attempt": {
+          "correct": true,
+          "hintsUsed": 0,
+          "difficulty": 1,
+          "durationSeconds": 30
+        }
+      },
+      "expectedOutput": {
+        "masteryScoreGreaterThan": 0.0,
+        "masteryScoreLessThan": 0.15,
+        "evidenceCount": 1,
+        "confidenceGreaterThan": 0.0,
+        "confidenceLessThan": 0.3
+      }
+    },
+    {
+      "id": "consistent-success-three-attempts",
+      "description": "Child gets 3 consecutive correct answers with no hints at difficulty 3",
+      "tags": ["consistent-success", "medium-difficulty", "independent"],
+      "input": {
+        "childId": "child-active-001",
+        "skillId": "math.addition.within_20",
+        "currentMastery": {
+          "masteryScore": 0.5,
+          "evidenceCount": 5,
+          "confidence": 0.4
+        },
+        "attempts": [
+          {"correct": true, "hintsUsed": 0, "difficulty": 3, "durationSeconds": 45},
+          {"correct": true, "hintsUsed": 0, "difficulty": 3, "durationSeconds": 40},
+          {"correct": true, "hintsUsed": 0, "difficulty": 3, "durationSeconds": 38}
+        ]
+      },
+      "expectedOutput": {
+        "masteryScoreGreaterThan": 0.5,
+        "evidenceCountGreaterThan": 7,
+        "confidenceGreaterThan": 0.4
+      }
+    },
+    {
+      "id": "single-incorrect-does-not-collapse",
+      "description": "One wrong answer should not cause mastery to drop dramatically",
+      "tags": ["stability", "single-outlier", "resilience"],
+      "input": {
+        "childId": "child-confident-001",
+        "skillId": "letters.word_building",
+        "currentMastery": {
+          "masteryScore": 0.72,
+          "evidenceCount": 12,
+          "confidence": 0.65
+        },
+        "attempt": {
+          "correct": false,
+          "hintsUsed": 2,
+          "difficulty": 2,
+          "durationSeconds": 60
+        }
+      },
+      "expectedOutput": {
+        "masteryScoreGreaterThan": 0.60,
+        "masteryScoreLessThan": 0.78,
+        "deltaLessThan": 0.12
+      }
+    },
+    {
+      "id": "high-hint-usage-penalty",
+      "description": "Many hints should reduce mastery evidence but not be a failure",
+      "tags": ["hint-penalty", "help-seeking", "evidence-quality"],
+      "input": {
+        "childId": "child-hinting-001",
+        "skillId": "math.subtraction.within_10",
+        "currentMastery": {
+          "masteryScore": 0.6,
+          "evidenceCount": 4,
+          "confidence": 0.35
+        },
+        "attempt": {
+          "correct": true,
+          "hintsUsed": 3,
+          "difficulty": 2,
+          "durationSeconds": 90
+        }
+      },
+      "expectedOutput": {
+        "masteryScoreGreaterThan": 0.5,
+        "masteryScoreLessThan": 0.68,
+        "hintPenaltyApplied": true
+      }
+    },
+    {
+      "id": "high-difficulty-success-bonus",
+      "description": "Success at high difficulty should give more mastery evidence",
+      "tags": ["difficulty-bonus", "challenge"],
+      "input": {
+        "childId": "child-advanced-001",
+        "skillId": "math.multiplication.tables",
+        "currentMastery": {
+          "masteryScore": 0.65,
+          "evidenceCount": 8,
+          "confidence": 0.5
+        },
+        "attempt": {
+          "correct": true,
+          "hintsUsed": 0,
+          "difficulty": 5,
+          "durationSeconds": 55
+        }
+      },
+      "expectedOutput": {
+        "masteryScoreGreaterThan": 0.65,
+        "difficultyBonusApplied": true
+      }
+    },
+    {
+      "id": "low-evidence-confidence-calibration",
+      "description": "Low evidence count should produce low confidence even if score is high",
+      "tags": ["confidence-calibration", "new-skill"],
+      "input": {
+        "childId": "child-lucky-001",
+        "skillId": "science.cause_effect",
+        "currentMastery": null,
+        "attempts": [
+          {"correct": true, "hintsUsed": 0, "difficulty": 2, "durationSeconds": 20},
+          {"correct": true, "hintsUsed": 0, "difficulty": 2, "durationSeconds": 22}
+        ]
+      },
+      "expectedOutput": {
+        "masteryScoreGreaterThan": 0.5,
+        "confidenceLessThan": 0.4,
+        "evidenceCountLessThan": 5
+      }
+    },
+    {
+      "id": "recovery-after-struggle",
+      "description": "Child recovers mastery after a period of difficulty",
+      "tags": ["recovery", "spaced-repetition", "resilience"],
+      "input": {
+        "childId": "child-recovering-001",
+        "skillId": "letters.spelling",
+        "currentMastery": {
+          "masteryScore": 0.35,
+          "evidenceCount": 6,
+          "confidence": 0.4,
+          "lastPracticedAtDaysAgo": 7
+        },
+        "attempts": [
+          {"correct": true, "hintsUsed": 1, "difficulty": 2, "durationSeconds": 50},
+          {"correct": true, "hintsUsed": 0, "difficulty": 2, "durationSeconds": 40},
+          {"correct": true, "hintsUsed": 0, "difficulty": 3, "durationSeconds": 38}
+        ]
+      },
+      "expectedOutput": {
+        "masteryScoreGreaterThan": 0.45,
+        "recoveryDetected": true
+      }
+    },
+    {
+      "id": "offline-many-days-return",
+      "description": "Child returns after 14 days offline — retention decay expected",
+      "tags": ["offline", "retention", "spaced-repetition"],
+      "input": {
+        "childId": "child-offline-001",
+        "skillId": "math.addition.within_10",
+        "currentMastery": {
+          "masteryScore": 0.78,
+          "evidenceCount": 10,
+          "confidence": 0.6,
+          "lastPracticedAtDaysAgo": 14
+        },
+        "attempt": {
+          "correct": true,
+          "hintsUsed": 0,
+          "difficulty": 2,
+          "durationSeconds": 35
+        }
+      },
+      "expectedOutput": {
+        "masteryScoreGreaterThan": 0.7,
+        "retentionPenaltyApplied": true,
+        "confidenceLowerThanInitial": true
+      }
+    },
+    {
+      "id": "accessibility-mode-timing-normalized",
+      "description": "Child using screen reader — timing should not penalize mastery",
+      "tags": ["accessibility", "timing-normalization", "fairness"],
+      "input": {
+        "childId": "child-a11y-001",
+        "skillId": "logic.memory",
+        "currentMastery": {
+          "masteryScore": 0.5,
+          "evidenceCount": 3,
+          "confidence": 0.3
+        },
+        "attempt": {
+          "correct": true,
+          "hintsUsed": 0,
+          "difficulty": 1,
+          "durationSeconds": 180,
+          "accessibilityMode": "screen_reader"
+        }
+      },
+      "expectedOutput": {
+        "timingNormalized": true,
+        "masteryScoreGreaterThan": 0.4
+      }
+    },
+    {
+      "id": "maximum-single-attempt-increase",
+      "description": "Single correct attempt should not increase mastery by more than 0.08",
+      "tags": ["safety", "maximum-delta", "overshoot-prevention"],
+      "input": {
+        "childId": "child-bounds-001",
+        "skillId": "math.addition.within_20",
+        "currentMastery": {
+          "masteryScore": 0.70,
+          "evidenceCount": 8,
+          "confidence": 0.55
+        },
+        "attempt": {
+          "correct": true,
+          "hintsUsed": 0,
+          "difficulty": 5,
+          "durationSeconds": 30
+        }
+      },
+      "expectedOutput": {
+        "deltaLessThanOrEqual": 0.08
+      }
+    }
+  ]
+}
