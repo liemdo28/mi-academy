@@ -106,6 +106,9 @@ jobs:
           python -m pip install --upgrade pip
           python -m pip install -r apps/api/requirements.txt
 
+      - name: Debug release evidence gate breakdown
+        run: python tools/release_evidence.py --json
+
       - name: Run Python tests
         run: python -m pytest packages/game_core/tests tests test -q
 
