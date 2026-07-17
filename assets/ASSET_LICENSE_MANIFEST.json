@@ -67,6 +67,32 @@
       "reviewer": "Dev 3",
       "reviewDate": null,
       "notes": "MI character, Direction B 'Screen-Face Companion' (docs/design/MI_CHARACTER_GUIDE.md). 16 files: 1 icon-head still, 12 expression stills, 2 basic pose stills bundled by packages/design_system; 1 three-direction concept sheet kept as a docs-only reference under design/characters/. Static SVG production art; animated Rive rig is a follow-up step (each still already serves as its own reduced-motion fallback). Pending Dev 3 similarity/child-safety review before reviewStatus flips to approved."
+    },
+    {
+      "assetId": "world-map-zones-v01",
+      "file": "packages/design_system/assets/worlds/",
+      "type": "svg-illustration-set",
+      "sourceType": "original",
+      "creator": "MI Academy Design Team",
+      "license": "MI-Academy-Owned",
+      "attributionRequired": false,
+      "approved": false,
+      "reviewer": "Dev 3",
+      "reviewDate": null,
+      "notes": "6 zone illustrations (Alphabet City, Math Kingdom, Logic Island, Science Lab, Creative House, Achievement Garden), each with a distinct silhouette so zones are never told apart by color alone. One illustration per zone; locked/in-progress/completed states are applied programmatically (grayscale filter + badge) by MiWorldZoneTile rather than as separate art files, per the §23 asset budget. Pending Dev 3 review before reviewStatus flips to approved."
+    },
+    {
+      "assetId": "memory-cards-animals-theme-v01",
+      "file": "packages/design_system/assets/memory-cards/animals/",
+      "type": "svg-illustration-set",
+      "sourceType": "original",
+      "creator": "MI Academy Design Team",
+      "license": "MI-Academy-Owned",
+      "attributionRequired": false,
+      "approved": false,
+      "reviewer": "Dev 3",
+      "reviewDate": null,
+      "notes": "8 pairs for the Memory Cards Animals theme (cat, dog, fish, bird, rabbit, frog, elephant, bee) per design/games/memory-cards/MEMORY_CARDS_ASSET_KIT.md. Wired into MemoryCardsScreen's card renderer as a presentation-only emoji-to-illustration lookup (packages/design_system MiMemoryCardArt) with graceful fallback to the level's own text/emoji content — does not modify level data or matching logic. Only cat/dog/fish/bird are currently referenced by shipped level content; the rest are ready for when Dev 2/3 add matching pairs. Pending Dev 3 review before reviewStatus flips to approved."
     }
   ],
   "placeholderAudioDir": "assets/audio/",

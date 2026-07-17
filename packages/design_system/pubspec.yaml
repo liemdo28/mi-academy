@@ -19,3 +19,5 @@ flutter:
   assets:
     - assets/icons/
     - assets/characters/mi/
+    - assets/worlds/
+    - assets/memory-cards/animals/

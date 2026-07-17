@@ -1,0 +1,14 @@
+<svg viewBox="0 0 160 160" xmlns="http://www.w3.org/2000/svg">
+  <ellipse cx="80" cy="146" rx="62" ry="8" fill="#2D2D5F" opacity="0.08"/>
+  <!-- background buildings -->
+  <rect x="18" y="86" width="26" height="54" rx="6" fill="#E9E7FF"/>
+  <rect x="118" y="72" width="24" height="68" rx="6" fill="#E9E7FF"/>
+  <rect x="26" y="96" width="6" height="8" rx="1" fill="#C9C6F5"/>
+  <rect x="126" y="86" width="6" height="8" rx="1" fill="#C9C6F5"/>
+  <!-- hero building: book-roof library -->
+  <rect x="52" y="70" width="56" height="70" rx="10" fill="#6C63FF"/>
+  <rect x="64" y="98" width="12" height="20" rx="3" fill="#F4F4FF"/>
+  <rect x="84" y="98" width="12" height="20" rx="3" fill="#F4F4FF"/>
+  <path d="M50 70 Q80 54 110 70 L104 78 Q80 66 56 78 Z" fill="#FFC94D"/>
+  <path d="M80 58v14" stroke="#2D2D5F" stroke-width="2" stroke-linecap="round"/>
+</svg>

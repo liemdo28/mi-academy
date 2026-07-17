@@ -1,0 +1,19 @@
+<svg viewBox="0 0 160 160" xmlns="http://www.w3.org/2000/svg">
+  <ellipse cx="80" cy="146" rx="62" ry="8" fill="#2D2D5F" opacity="0.08"/>
+  <!-- castle wall -->
+  <rect x="34" y="104" width="92" height="36" fill="#FFE3B0"/>
+  <rect x="34" y="96" width="10" height="10" fill="#FFE3B0"/>
+  <rect x="52" y="96" width="10" height="10" fill="#FFE3B0"/>
+  <rect x="98" y="96" width="10" height="10" fill="#FFE3B0"/>
+  <rect x="116" y="96" width="10" height="10" fill="#FFE3B0"/>
+  <!-- cylinder tower -->
+  <rect x="38" y="66" width="26" height="44" rx="4" fill="#F5A623"/>
+  <path d="M38 66 Q51 52 64 66Z" fill="#2D2D5F"/>
+  <!-- cube tower -->
+  <rect x="96" y="70" width="28" height="40" rx="4" fill="#F5A623"/>
+  <rect x="96" y="58" width="28" height="14" rx="3" fill="#2D2D5F"/>
+  <!-- center cone keep -->
+  <rect x="66" y="80" width="28" height="30" rx="4" fill="#FFC168"/>
+  <path d="M66 80 L80 48 L94 80Z" fill="#2D2D5F"/>
+  <circle cx="80" cy="68" r="3.5" fill="#FFC94D"/>
+</svg>

@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:design_system/design_system.dart';
 import 'package:flutter/material.dart';
 import 'package:mi_game_core/mi_game_core.dart';
 import 'package:mi_game_ui/mi_game_ui.dart';
@@ -320,7 +321,7 @@ class _MemoryCardWidget extends StatelessWidget {
       child: GestureDetector(
         onTap: onTap,
         child: AnimatedContainer(
-          duration: const Duration(milliseconds: 300),
+          duration: MiMotion.resolve(context, MiMotion.normal),
           width: width,
           height: height,
           decoration: BoxDecoration(
@@ -350,6 +351,15 @@ class _FaceUpContent extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // Prefer an owned illustration over the raw emoji glyph where the
+    // Animals theme has one; falls back to the level's own text/emoji
+    // content otherwise. Presentation-only — the card's identity for
+    // matching purposes is still `card.content`/`pairId`.
+    final animal = miMemoryAnimalByEmoji[card.content];
+    if (animal != null) {
+      return MiMemoryCardArt(animal, size: 56);
+    }
+
     final fontSize = card.type == 'image' ? 48.0 : 28.0;
     return Text(
       card.content,

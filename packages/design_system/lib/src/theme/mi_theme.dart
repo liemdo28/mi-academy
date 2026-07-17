@@ -175,27 +175,36 @@ abstract class MiTokens {
 /// Bright, playful theme suitable for children aged 5-12.
 /// Always uses light mode (kids app — no dark theme).
 class MiTheme {
-  static ThemeData get light {
+  /// Builds the app theme. Pass [highContrast] (typically
+  /// `MediaQuery.highContrastOf(context)`) to switch every semantic color
+  /// that has an `.hc` variant (docs/design/MI_DESIGN_SYSTEM.md §1) — this
+  /// is a real accessibility mode, not just tokens that exist on paper.
+  static ThemeData light({bool highContrast = false}) {
+    final primary = highContrast ? MiColors.primaryHc : MiColors.primary;
+    final textPrimary = highContrast ? MiColors.textPrimaryHc : MiColors.textPrimary;
+    final border = highContrast ? MiColors.borderHc : MiColors.border;
+    final error = highContrast ? MiColors.errorHc : MiColors.error;
+
     return ThemeData(
       useMaterial3: true,
       brightness: Brightness.light,
       colorScheme: ColorScheme.fromSeed(
-        seedColor: MiColors.primary,
+        seedColor: primary,
         brightness: Brightness.light,
-        primary: MiColors.primary,
+        primary: primary,
         onPrimary: MiColors.textOnPrimary,
         secondary: MiColors.secondary,
-        error: MiColors.error,
+        error: error,
         surface: MiColors.surface,
-        onSurface: MiColors.textPrimary,
+        onSurface: textPrimary,
       ),
       scaffoldBackgroundColor: MiColors.background,
       // Nunito must be bundled in apps/mobile/pubspec.yaml before release
       // (vi subset, OFL license entry via Dev 3). Falls back to system font
       // until then — tracked in ASSET_PRODUCTION_STATUS.md P0 queue.
       fontFamily: 'Nunito',
-      appBarTheme: const AppBarTheme(
-        backgroundColor: MiColors.primary,
+      appBarTheme: AppBarTheme(
+        backgroundColor: primary,
         foregroundColor: MiColors.textOnPrimary,
         elevation: 0,
         centerTitle: true,
@@ -210,7 +219,7 @@ class MiTheme {
       ),
       elevatedButtonTheme: ElevatedButtonThemeData(
         style: ElevatedButton.styleFrom(
-          backgroundColor: MiColors.primary,
+          backgroundColor: primary,
           foregroundColor: MiColors.textOnPrimary,
           elevation: 2,
           minimumSize: const Size(
@@ -232,13 +241,13 @@ class MiTheme {
       ),
       textButtonTheme: TextButtonThemeData(
         style: TextButton.styleFrom(
-          foregroundColor: MiColors.primary,
+          foregroundColor: primary,
         ),
       ),
       outlinedButtonTheme: OutlinedButtonThemeData(
         style: OutlinedButton.styleFrom(
-          foregroundColor: MiColors.primary,
-          side: const BorderSide(color: MiColors.primary),
+          foregroundColor: primary,
+          side: BorderSide(color: primary),
           minimumSize: const Size(
             MiTokens.touchTargetChild,
             MiTokens.touchTargetChild,
@@ -253,60 +262,60 @@ class MiTheme {
         fillColor: MiColors.surface,
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(MiTokens.radiusMd),
-          borderSide: const BorderSide(color: MiColors.border),
+          borderSide: BorderSide(color: border),
         ),
         enabledBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(MiTokens.radiusMd),
-          borderSide: const BorderSide(color: MiColors.border),
+          borderSide: BorderSide(color: border),
         ),
         focusedBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(MiTokens.radiusMd),
-          borderSide: const BorderSide(color: MiColors.primary, width: 2),
+          borderSide: BorderSide(color: primary, width: 2),
         ),
         errorBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(MiTokens.radiusMd),
-          borderSide: const BorderSide(color: MiColors.error),
+          borderSide: BorderSide(color: error),
         ),
         contentPadding: const EdgeInsets.symmetric(
           horizontal: MiTokens.space4,
           vertical: MiTokens.space4,
         ),
       ),
-      textTheme: const TextTheme(
+      textTheme: TextTheme(
         displayLarge: TextStyle(
           fontSize: MiTokens.font4xl,
           fontWeight: FontWeight.w800,
-          color: MiColors.textPrimary,
+          color: textPrimary,
         ),
         displayMedium: TextStyle(
           fontSize: MiTokens.font3xl,
           fontWeight: FontWeight.w700,
-          color: MiColors.textPrimary,
+          color: textPrimary,
         ),
         headlineLarge: TextStyle(
           fontSize: MiTokens.font2xl,
           fontWeight: FontWeight.w700,
-          color: MiColors.textPrimary,
+          color: textPrimary,
         ),
         headlineMedium: TextStyle(
           fontSize: MiTokens.fontXl,
           fontWeight: FontWeight.w600,
-          color: MiColors.textPrimary,
+          color: textPrimary,
         ),
         titleLarge: TextStyle(
           fontSize: MiTokens.fontLg,
           fontWeight: FontWeight.w600,
-          color: MiColors.textPrimary,
+          color: textPrimary,
         ),
         titleMedium: TextStyle(
           fontSize: MiTokens.fontBase,
           fontWeight: FontWeight.w600,
-          color: MiColors.textPrimary,
+          color: textPrimary,
         ),
         bodyLarge: TextStyle(
           fontSize: MiTokens.fontBase,
           fontWeight: FontWeight.w400,
-          color: MiColors.textPrimary,
+          color: textPrimary,
         ),
         bodyMedium: TextStyle(
           fontSize: MiTokens.fontSm,
@@ -316,11 +325,11 @@ class MiTheme {
         labelLarge: TextStyle(
           fontSize: MiTokens.fontSm,
           fontWeight: FontWeight.w600,
-          color: MiColors.textPrimary,
+          color: textPrimary,
         ),
       ),
-      dividerTheme: const DividerThemeData(
-        color: MiColors.border,
+      dividerTheme: DividerThemeData(
+        color: border,
         thickness: 1,
       ),
     );
