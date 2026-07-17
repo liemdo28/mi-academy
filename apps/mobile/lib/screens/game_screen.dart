@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
-import '../config/theme.dart';
+import 'package:design_system/design_system.dart';
 
 class GameScreen extends ConsumerStatefulWidget {
   final String childId;
@@ -29,7 +29,7 @@ class _GameState extends ConsumerState<GameScreen> {
           Padding(
             padding: const EdgeInsets.only(right: 16),
             child: Row(children: [
-              const Icon(Icons.star, color: MITheme.accent),
+              const Icon(Icons.star, color: MiColors.accent),
               const SizedBox(width: 4),
               Text('$_stars',
                   style: const TextStyle(
@@ -49,7 +49,7 @@ class _GameState extends ConsumerState<GameScreen> {
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
               LinearProgressIndicator(
-                  value: _level / 10, color: MITheme.primary),
+                  value: _level / 10, color: MiColors.primary),
               const SizedBox(height: 12),
               Text('Cấp độ $_level',
                   style: Theme.of(context).textTheme.bodyLarge),
@@ -59,10 +59,10 @@ class _GameState extends ConsumerState<GameScreen> {
                 Container(
                   padding: const EdgeInsets.all(16),
                   decoration: BoxDecoration(
-                    color: MITheme.background,
+                    color: MiColors.primarySoft,
                     borderRadius: BorderRadius.circular(16),
                     border: Border.all(
-                        color: MITheme.primary.withValues(alpha: 0.2)),
+                        color: MiColors.primary.withValues(alpha: 0.2)),
                   ),
                   child: const Row(children: [
                     Text('🤖', style: TextStyle(fontSize: 48)),
@@ -93,7 +93,7 @@ class _GameState extends ConsumerState<GameScreen> {
                 Center(
                   child: Column(children: [
                     const Icon(Icons.celebration,
-                        size: 80, color: MITheme.accent),
+                        size: 80, color: MiColors.accent),
                     const SizedBox(height: 16),
                     Text('Tuyệt vời!',
                         style: Theme.of(context).textTheme.headlineLarge),
@@ -101,9 +101,9 @@ class _GameState extends ConsumerState<GameScreen> {
                     const Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          Icon(Icons.star, color: MITheme.accent, size: 32),
-                          Icon(Icons.star, color: MITheme.accent, size: 32),
-                          Icon(Icons.star, color: MITheme.accent, size: 32),
+                          Icon(Icons.star, color: MiColors.accent, size: 32),
+                          Icon(Icons.star, color: MiColors.accent, size: 32),
+                          Icon(Icons.star, color: MiColors.accent, size: 32),
                         ]),
                     const SizedBox(height: 24),
                     ElevatedButton(

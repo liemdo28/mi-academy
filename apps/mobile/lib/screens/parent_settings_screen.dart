@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import '../config/theme.dart';
+import 'package:design_system/design_system.dart';
 import '../services/parent_settings_store.dart';
 
 class ParentSettingsScreen extends ConsumerStatefulWidget {
@@ -66,7 +66,7 @@ class _SettingsState extends ConsumerState<ParentSettingsScreen> {
           ),
           FilledButton(
             key: const ValueKey('confirm-delete-child-data'),
-            style: FilledButton.styleFrom(backgroundColor: MITheme.danger),
+            style: FilledButton.styleFrom(backgroundColor: MiColors.error),
             onPressed: () => Navigator.of(context).pop(true),
             child: const Text('Xác nhận xóa'),
           ),
@@ -130,7 +130,7 @@ class _SettingsState extends ConsumerState<ParentSettingsScreen> {
                       min: 15,
                       max: 120,
                       divisions: 7,
-                      activeColor: MITheme.primary,
+                      activeColor: MiColors.primary,
                       label: '${_settings.dailyLimitMinutes}',
                       onChanged: (v) => _save(
                         _settings.copyWith(dailyLimitMinutes: v.round()),
@@ -151,14 +151,14 @@ class _SettingsState extends ConsumerState<ParentSettingsScreen> {
             SwitchListTile(
               title: const Text('Âm thanh', style: TextStyle(fontSize: 16)),
               value: _settings.soundEnabled,
-              activeThumbColor: MITheme.primary,
+              activeThumbColor: MiColors.primary,
               onChanged: (v) => _save(_settings.copyWith(soundEnabled: v)),
             ),
             SwitchListTile(
               title: const Text('Phụ đề cho giọng đọc',
                   style: TextStyle(fontSize: 16)),
               value: _settings.subtitlesEnabled,
-              activeThumbColor: MITheme.primary,
+              activeThumbColor: MiColors.primary,
               onChanged: (v) => _save(_settings.copyWith(subtitlesEnabled: v)),
             ),
             const SizedBox(height: 24),
@@ -201,7 +201,7 @@ class _SettingsState extends ConsumerState<ParentSettingsScreen> {
                       _settings.offlineReady
                           ? Icons.cloud_done
                           : Icons.cloud_download,
-                      color: _settings.offlineReady ? MITheme.success : null,
+                      color: _settings.offlineReady ? MiColors.success : null,
                     ),
                     title: const Text('Tải nội dung offline'),
                     subtitle: Text(
@@ -218,7 +218,7 @@ class _SettingsState extends ConsumerState<ParentSettingsScreen> {
                       _settings.exportReady
                           ? Icons.task_alt
                           : Icons.file_download,
-                      color: _settings.exportReady ? MITheme.success : null,
+                      color: _settings.exportReady ? MiColors.success : null,
                     ),
                     title: const Text('Xuất dữ liệu của bé'),
                     subtitle: Text(
@@ -235,11 +235,11 @@ class _SettingsState extends ConsumerState<ParentSettingsScreen> {
                       _settings.deleteConfirmed
                           ? Icons.delete_forever
                           : Icons.delete_outline,
-                      color: MITheme.danger,
+                      color: MiColors.error,
                     ),
                     title: const Text(
                       'Xóa dữ liệu của bé',
-                      style: TextStyle(color: MITheme.danger),
+                      style: TextStyle(color: MiColors.error),
                     ),
                     subtitle: Text(
                       _settings.deleteConfirmed
@@ -259,7 +259,7 @@ class _SettingsState extends ConsumerState<ParentSettingsScreen> {
                 style: Theme.of(context)
                     .textTheme
                     .bodyMedium
-                    ?.copyWith(color: MITheme.textSecondary),
+                    ?.copyWith(color: MiColors.textSecondary),
               ),
             ),
             const SizedBox(height: 32),

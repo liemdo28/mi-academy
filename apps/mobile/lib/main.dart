@@ -168,7 +168,7 @@ class _HomeScreenState extends State<HomeScreen> {
           title: 'Siêu thị toán học',
           subtitle: 'Vương quốc toán học - 10 cấp độ',
           icon: Icons.shopping_cart_rounded,
-          color: const Color(0xFF00897B),
+          color: MiGameColors.tertiary,
           levels: _levelsFor('math_supermarket'),
           onLaunch: () => _launchGame('math_supermarket'),
         ),
@@ -231,7 +231,7 @@ class _HomeScreenState extends State<HomeScreen> {
           level: levels.first,
           allLevels: levels,
           heroIcon: Icons.shopping_cart_rounded,
-          primaryColor: const Color(0xFF00897B),
+          primaryColor: MiGameColors.tertiary,
           onExit: () => Navigator.of(context).pop(),
         );
       case 'memory_cards':
