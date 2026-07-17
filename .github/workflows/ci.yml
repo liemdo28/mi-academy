@@ -219,6 +219,13 @@ jobs:
       run:
         working-directory: apps/mobile
     steps:
+      # Checkout unconditionally, before the working-directory default
+      # (apps/mobile) is used by any step -- a step-level `if` still
+      # inherits the job's `defaults.run.working-directory`, so running the
+      # secret check before checkout failed with "No such file or
+      # directory" since apps/mobile didn't exist yet.
+      - uses: actions/checkout@v4
+
       - name: Check release signing secret is configured
         id: check-secret
         run: |
@@ -227,9 +234,6 @@ jobs:
           else
             echo "configured=false" >> "$GITHUB_OUTPUT"
           fi
-
-      - uses: actions/checkout@v4
-        if: steps.check-secret.outputs.configured == 'true'
 
       - uses: actions/setup-java@v4
         if: steps.check-secret.outputs.configured == 'true'
