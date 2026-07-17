@@ -2,6 +2,12 @@
 .env
 .env.local
 *.env
+key.properties
+*.jks
+*.keystore
+*.p12
+*.mobileprovision
+GoogleService-Info.plist
 
 # Python
 __pycache__/
@@ -16,6 +22,7 @@ venv/
 .flutter-plugins
 .flutter-plugins-dependencies
 build/
+**/test/failures/
 *.apk
 *.ipa
 
