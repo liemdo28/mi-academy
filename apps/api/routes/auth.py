@@ -1,6 +1,6 @@
 """Auth routes — register, login, logout, refresh."""
 
-from fastapi import APIRouter, HTTPException, status
+from fastapi import APIRouter, Depends, HTTPException, status
 from sqlalchemy import select
 from sqlalchemy.ext.asyncio import AsyncSession
 
@@ -27,7 +27,7 @@ router = APIRouter()
 
 
 @router.post("/register", response_model=AuthResponse)
-async def register(body: RegisterRequest, db: AsyncSession = get_db):
+async def register(body: RegisterRequest, db: AsyncSession = Depends(get_db)):
     # Check email uniqueness
     existing = await db.execute(select(User).where(User.email == body.email))
     if existing.scalar_one_or_none():
@@ -58,7 +58,12 @@ async def register(body: RegisterRequest, db: AsyncSession = get_db):
     refresh_token = create_refresh_token({"sub": user.id})
 
     return AuthResponse(
-        user=UserResponse.model_validate(user),
+        user=UserResponse(
+            id=user.id,
+            role=user.role,
+            email=user.email,
+            created_at=user.created_at.isoformat(),
+        ),
         parent_profile=ParentProfileResponse.from_model(profile),
         access_token=access_token,
         refresh_token=refresh_token,
@@ -66,7 +71,7 @@ async def register(body: RegisterRequest, db: AsyncSession = get_db):
 
 
 @router.post("/login", response_model=AuthResponse)
-async def login(body: LoginRequest, db: AsyncSession = get_db):
+async def login(body: LoginRequest, db: AsyncSession = Depends(get_db)):
     result = await db.execute(select(User).where(User.email == body.email))
     user = result.scalar_one_or_none()
 
@@ -85,7 +90,12 @@ async def login(body: LoginRequest, db: AsyncSession = get_db):
     refresh_token = create_refresh_token({"sub": user.id})
 
     return AuthResponse(
-        user=UserResponse.model_validate(user),
+        user=UserResponse(
+            id=user.id,
+            role=user.role,
+            email=user.email,
+            created_at=user.created_at.isoformat(),
+        ),
         parent_profile=ParentProfileResponse.from_model(profile),
         access_token=access_token,
         refresh_token=refresh_token,
@@ -99,7 +109,7 @@ async def logout():
 
 
 @router.post("/refresh", response_model=TokenResponse)
-async def refresh(body: RefreshRequest, db: AsyncSession = get_db):
+async def refresh(body: RefreshRequest, db: AsyncSession = Depends(get_db)):
     payload = decode_token(body.refresh_token)
 
     if payload.get("type") != "refresh":

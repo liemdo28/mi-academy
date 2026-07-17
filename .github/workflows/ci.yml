@@ -1,0 +1,140 @@
+name: MI Academy CI
+
+on:
+  push:
+    branches: [main, develop]
+  pull_request:
+    branches: [main, develop]
+  workflow_dispatch:
+
+env:
+  FLUTTER_VERSION: "3.41.6"
+  PYTHON_VERSION: "3.13"
+
+jobs:
+  content-and-safety:
+    name: Content and child-safety gates
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+
+      - name: Validate MVP content
+        run: python tools/content_validator/validate_content.py
+
+      - name: Verify MVP levels are solvable
+        run: python tools/level_validator/solve_levels.py
+
+      - name: Audit child-facing level content
+        run: python tools/content_safety_audit.py --json
+
+      - name: Verify game code is offline-only
+        run: python tools/game_network_audit.py --json
+
+      - name: Run static child-safety audit
+        run: python tools/child_safety_audit.py --json
+
+  python-tests:
+    name: Python game-core tests
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+
+      - name: Install test dependencies
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install pytest pytest-asyncio aiosqlite
+
+      - name: Run Python tests
+        run: python -m pytest packages/game_core/tests tests test -q
+
+  mobile-test-build:
+    name: Mobile analyze, tests, web, and Android build
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: apps/mobile
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "17"
+
+      - uses: subosito/flutter-action@v2
+        with:
+          flutter-version: ${{ env.FLUTTER_VERSION }}
+          channel: stable
+          cache: true
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+
+      - name: Install Flutter dependencies
+        run: flutter pub get
+
+      - name: Analyze mobile app
+        run: flutter analyze
+
+      - name: Run mobile widget tests
+        run: flutter test
+
+      - name: Build web release
+        run: flutter build web --release
+
+      - name: Build Android debug APK
+        run: flutter build apk --debug
+
+      - name: Record artifact-size baseline
+        working-directory: ${{ github.workspace }}
+        run: |
+          mkdir -p reports
+          python tools/performance_baseline.py --json > reports/performance-baseline.json
+
+      - name: Upload Android debug APK
+        uses: actions/upload-artifact@v4
+        with:
+          name: mi-academy-debug-apk
+          path: apps/mobile/build/app/outputs/flutter-apk/app-debug.apk
+
+      - name: Upload web build
+        uses: actions/upload-artifact@v4
+        with:
+          name: mi-academy-web-build
+          path: apps/mobile/build/web
+
+      - name: Upload performance baseline
+        uses: actions/upload-artifact@v4
+        with:
+          name: performance-baseline
+          path: reports/performance-baseline.json
+
+  ios-build:
+    name: iOS no-codesign build
+    runs-on: macos-latest
+    defaults:
+      run:
+        working-directory: apps/mobile
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: subosito/flutter-action@v2
+        with:
+          flutter-version: ${{ env.FLUTTER_VERSION }}
+          channel: stable
+          cache: true
+
+      - name: Install Flutter dependencies
+        run: flutter pub get
+
+      - name: Build iOS without codesigning
+        run: flutter build ios --debug --no-codesign

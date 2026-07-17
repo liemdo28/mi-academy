@@ -1,0 +1,35 @@
+{
+  "version": 1,
+  "language": "vi",
+  "content_type": "lessons",
+  "checksum": "sha256-placeholder",
+  "items": [
+    {
+      "id": "letters-vowel-001",
+      "type": "lesson",
+      "title": "Bảng chữ cái nguyên âm",
+      "subject_id": "letters",
+      "age_group": "junior",
+      "difficulty": 1,
+      "version": 1
+    },
+    {
+      "id": "math-addition-1digit-001",
+      "type": "lesson",
+      "title": "Cộng số một chữ số",
+      "subject_id": "math",
+      "age_group": "junior",
+      "difficulty": 1,
+      "version": 1
+    },
+    {
+      "id": "logic-pattern-001",
+      "type": "lesson",
+      "title": "Tìm quy luật",
+      "subject_id": "logic",
+      "age_group": "junior",
+      "difficulty": 1,
+      "version": 1
+    }
+  ]
+}

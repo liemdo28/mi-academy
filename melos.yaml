@@ -1,0 +1,96 @@
+name: mi_academy
+repository: https://github.com/liemdo28/mi-academy
+
+packages:
+  - apps/mobile
+  - apps/admin
+  - packages/*
+
+command:
+  bootstrap:
+    usePubspecOverrides: true
+
+  version:
+    workspaceChangelog: true
+    conventionalCommits: true
+
+scripts:
+  analyze:
+    run: melos exec -- dart analyze --fatal-infos
+    description: Run dart analyze on all packages
+
+  format:
+    run: melos exec -- dart format --set-exit-if-changed .
+    description: Check formatting on all packages
+
+  test:
+    run: melos exec -- flutter test
+    packageFilters:
+      dirExists: test
+    description: Run flutter test on all packages
+
+  test:unit:
+    run: melos exec -- flutter test test/unit
+    packageFilters:
+      dirExists: test/unit
+    description: Run unit tests only
+
+  test:widget:
+    run: melos exec -- flutter test test/widget
+    packageFilters:
+      dirExists: test/widget
+    description: Run widget tests only
+
+  test:contracts:
+    run: melos exec -- flutter test test/contracts/
+    packageFilters:
+      dirExists: test/contracts
+    description: Run contract validation tests
+
+  test:integration:
+    run: melos exec -- integration_test
+    packageFilters:
+      dirExists: integration_test
+    description: Run integration tests
+
+  build_runner:
+    run: melos exec -- dart run build_runner build --delete-conflicting-outputs
+    packageFilters:
+      dependsOn: build_runner
+    description: Run build_runner for code generation
+
+  build:mobile:
+    run: flutter build apk --debug
+    packageFilters:
+      dirExists: apps/mobile
+    description: Build mobile debug APK
+
+  build:admin:
+    run: flutter build web
+    packageFilters:
+      dirExists: apps/admin
+    description: Build admin web app
+
+  clean:
+    run: melos exec -- flutter clean
+    description: Clean all packages
+
+  api:test:
+    run: pytest tests/api/ -v
+    description: Run Python API tests
+
+  api:lint:
+    run: ruff check apps/api/
+    description: Lint Python API
+
+  generate_notices:
+    run: echo "NOTICES generation not yet implemented"
+    description: Collect third-party license notices
+
+  dev:api:
+    run: uvicorn apps.api.main:app --host 0.0.0.0 --port 8000 --reload
+    description: Start FastAPI dev server
+
+  dev:docker:
+    run: docker compose -f infrastructure/docker/docker-compose.yml up
+    description: Start Docker services (PostgreSQL + Redis + API)

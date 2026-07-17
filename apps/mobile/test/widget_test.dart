@@ -1,0 +1,739 @@
+import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:flutter_test/flutter_test.dart';
+import 'package:mi_academy/main.dart';
+import 'package:mi_academy/providers/providers.dart';
+import 'package:mi_academy/screens/parent_pin_screen.dart';
+import 'package:mi_academy/screens/parent_settings_screen.dart';
+import 'package:mi_academy/services/parent_settings_store.dart';
+import 'package:mi_academy/src/games/choice/choice_game_screen.dart';
+import 'package:mi_academy/src/games/memory_cards/memory_cards_game.dart';
+import 'package:mi_academy/src/games/memory_cards/memory_cards_screen.dart';
+import 'package:mi_academy/src/games/robot_commands/robot_commands_screen.dart';
+import 'package:mi_academy/src/games/sound_match/sound_match_screen.dart';
+import 'package:mi_academy/src/games/word_builder/word_builder_screen.dart';
+
+import 'game_test_fixtures.dart';
+
+void main() {
+  testWidgets('MI Academy shell renders the first playable game entries',
+      (tester) async {
+    await tester.pumpWidget(MiAcademyApp(key: UniqueKey()));
+    await pumpUntilFound(tester, find.text('Thế giới khám phá'));
+
+    expect(find.text('MI Academy'), findsOneWidget);
+    expect(find.text('Thế giới khám phá'), findsOneWidget);
+    expect(find.text('Hồ sơ của bé'), findsOneWidget);
+    expect(find.text('Sao MI: 0'), findsOneWidget);
+    expect(find.text('Huy hiệu: sẵn sàng'), findsOneWidget);
+    expect(find.text('6 game offline'), findsOneWidget);
+    await dragUntilFound(tester, find.text('Khu vực phụ huynh'));
+    expect(find.text('Khu vực phụ huynh'), findsOneWidget);
+    expect(find.text('Ghép chữ tạo từ'), findsOneWidget);
+    expect(find.text('Nghe âm tìm chữ'), findsOneWidget);
+    await dragUntilFound(tester, find.text('Đường đua cộng trừ'));
+    expect(find.text('Đường đua cộng trừ'), findsOneWidget);
+    await dragUntilFound(tester, find.text('Siêu thị toán học'));
+    expect(find.text('Siêu thị toán học'), findsOneWidget);
+    await dragUntilFound(tester, find.text('Ghi nhớ vị trí'));
+    expect(find.text('Ghi nhớ vị trí'), findsOneWidget);
+    await dragUntilFound(tester, find.text('Robot làm theo lệnh'));
+    expect(find.text('Robot làm theo lệnh'), findsOneWidget);
+  });
+
+  testWidgets('Local parent area shows gentle report and opens settings',
+      (tester) async {
+    await tester.pumpWidget(
+      MaterialApp(
+        home: LocalParentAreaScreen(
+          parentSettingsStore: MemoryParentSettingsStore(),
+        ),
+      ),
+    );
+    await tester.pump();
+
+    expect(find.text('Báo cáo nhẹ nhàng'), findsOneWidget);
+    await dragUntilFound(tester, find.text('Kỹ năng đang làm tốt'));
+    expect(find.text('Kỹ năng đang làm tốt'), findsOneWidget);
+    await dragUntilFound(tester, find.text('Gợi ý luyện thêm'));
+    expect(find.text('Gợi ý luyện thêm'), findsOneWidget);
+    await dragUntilFound(tester, find.text('Offline'));
+    expect(find.text('Offline'), findsOneWidget);
+
+    await dragUntilFound(tester, find.text('Mở cài đặt phụ huynh'));
+    await tester.tap(find.text('Mở cài đặt phụ huynh'));
+    await tester.pumpAndSettle();
+
+    expect(find.text('Giới hạn thời gian'), findsOneWidget);
+    await dragUntilFound(tester, find.text('Tải nội dung offline'));
+    expect(find.text('Tải nội dung offline'), findsOneWidget);
+  });
+
+  testWidgets('Word Builder renders playable controls', (tester) async {
+    await tester.pumpWidget(
+      const MaterialApp(
+        home: WordBuilderScreen(
+          level: wordBuilderLevel,
+          allLevels: [wordBuilderLevel],
+        ),
+      ),
+    );
+    await tester.pump();
+
+    expect(find.text('Ghép chữ tạo từ'), findsWidgets);
+    expect(find.text('Kiểm tra'), findsOneWidget);
+    expect(find.text('m'), findsOneWidget);
+  });
+
+  testWidgets('Word Builder completes a correct word', (tester) async {
+    await tester.pumpWidget(
+      const MaterialApp(
+        home: WordBuilderScreen(
+          level: wordBuilderLevel,
+          allLevels: [wordBuilderLevel],
+        ),
+      ),
+    );
+    await tester.pump();
+
+    await tester.tap(find.text('m'));
+    await tester.pump();
+    await tester.tap(find.text('è'));
+    await tester.pump();
+    await tester.tap(find.text('o'));
+    await tester.pump();
+    await tester.tap(find.text('Kiểm tra'));
+    await tester.pump();
+
+    expect(find.text('Con đã ghép đúng từ!'), findsOneWidget);
+  });
+
+  testWidgets('Word Builder gives a gentle prompt for incomplete answers',
+      (tester) async {
+    await tester.pumpWidget(
+      const MaterialApp(
+        home: WordBuilderScreen(
+          level: wordBuilderLevel,
+          allLevels: [wordBuilderLevel],
+        ),
+      ),
+    );
+    await tester.pump();
+
+    await tester.tap(find.text('Kiểm tra'));
+    await tester.pump();
+
+    expect(find.text('Mình còn ô trống, thử ghép thêm nhé!'), findsOneWidget);
+    expect(find.textContaining('sai'), findsNothing);
+    expect(find.textContaining('trừ'), findsNothing);
+  });
+
+  testWidgets('Sound Match renders playable controls', (tester) async {
+    await tester.pumpWidget(
+      const MaterialApp(
+        home: SoundMatchScreen(
+          level: soundMatchLevel,
+          allLevels: [soundMatchLevel],
+        ),
+      ),
+    );
+    await tester.pump();
+
+    expect(find.text('Nghe âm tìm chữ'), findsWidgets);
+    expect(find.text('Nghe lại'), findsOneWidget);
+    expect(find.text('A'), findsWidgets);
+  });
+
+  testWidgets('Sound Match completes a correct answer', (tester) async {
+    await tester.pumpWidget(
+      const MaterialApp(
+        home: SoundMatchScreen(
+          level: soundMatchLevel,
+          allLevels: [soundMatchLevel],
+        ),
+      ),
+    );
+    await tester.pump();
+
+    await tester.tap(find.text('A').last);
+    await tester.pump();
+
+    expect(find.text('Con đã nghe và chọn đúng!'), findsOneWidget);
+  });
+
+  testWidgets('Sound Match reveals transcript and gentle retry after mismatch',
+      (tester) async {
+    await tester.pumpWidget(
+      const MaterialApp(
+        home: SoundMatchScreen(
+          level: soundMatchLevel,
+          allLevels: [soundMatchLevel],
+        ),
+      ),
+    );
+    await tester.pump();
+
+    await tester.tap(find.text('B'));
+    await tester.pump();
+
+    expect(
+      find.text(
+        'Chưa khớp rồi, con nghe lại và thử đáp án khác nhé!',
+        skipOffstage: false,
+      ),
+      findsOneWidget,
+    );
+    expect(find.text('A'), findsWidgets);
+    expect(find.textContaining('sai'), findsNothing);
+  });
+
+  testWidgets('Math Race renders playable controls', (tester) async {
+    await tester.pumpWidget(
+      const MaterialApp(
+        home: ChoiceGameScreen(
+          title: 'Đường đua cộng trừ',
+          worldLabel: 'Xe MI tiến lên khi con chọn đúng.',
+          level: mathRaceLevel,
+          allLevels: [mathRaceLevel],
+          heroIcon: Icons.directions_car_rounded,
+          primaryColor: Color(0xFFFFC107),
+        ),
+      ),
+    );
+    await tester.pump();
+
+    expect(find.text('Đường đua cộng trừ'), findsWidgets);
+    expect(find.text('2 + 3 = ?'), findsOneWidget);
+    expect(find.text('5'), findsOneWidget);
+  });
+
+  testWidgets('Math Race completes a correct answer', (tester) async {
+    await tester.pumpWidget(
+      const MaterialApp(
+        home: ChoiceGameScreen(
+          title: 'Đường đua cộng trừ',
+          worldLabel: 'Xe MI tiến lên khi con chọn đúng.',
+          level: mathRaceLevel,
+          allLevels: [mathRaceLevel],
+          heroIcon: Icons.directions_car_rounded,
+          primaryColor: Color(0xFFFFC107),
+        ),
+      ),
+    );
+    await tester.pump();
+
+    await tester.tap(find.text('5'));
+    await tester.pump();
+
+    expect(find.text('MI thấy con đã hiểu bài!'), findsOneWidget);
+  });
+
+  testWidgets('Math Race keeps progress gentle after an incorrect choice',
+      (tester) async {
+    await tester.pumpWidget(
+      const MaterialApp(
+        home: ChoiceGameScreen(
+          title: 'Đường đua cộng trừ',
+          worldLabel: 'Xe MI tiến lên khi con chọn đúng.',
+          level: mathRaceLevel,
+          allLevels: [mathRaceLevel],
+          heroIcon: Icons.directions_car_rounded,
+          primaryColor: Color(0xFFFFC107),
+        ),
+      ),
+    );
+    await tester.pump();
+
+    await tester.tap(find.text('4'));
+    await tester.pump();
+
+    expect(find.text('Gần đúng rồi, mình thử cách khác nhé!'), findsOneWidget);
+    expect(find.textContaining('bị trừ'), findsNothing);
+    expect(find.textContaining('thua'), findsNothing);
+  });
+
+  testWidgets('Math Supermarket renders playable controls', (tester) async {
+    await tester.pumpWidget(
+      const MaterialApp(
+        home: ChoiceGameScreen(
+          title: 'Siêu thị toán học',
+          worldLabel: 'Giỏ hàng MI giúp con luyện tính tiền.',
+          level: mathSupermarketLevel,
+          allLevels: [mathSupermarketLevel],
+          heroIcon: Icons.shopping_cart_rounded,
+          primaryColor: Color(0xFF00897B),
+        ),
+      ),
+    );
+    await tester.pump();
+
+    expect(find.text('Siêu thị toán học'), findsWidgets);
+    expect(find.text('Quả táo 2 đồng, quả chuối 3 đồng. Tổng cộng bao nhiêu?'),
+        findsOneWidget);
+    expect(find.text('5 đồng'), findsOneWidget);
+  });
+
+  testWidgets('Math Supermarket completes a correct answer', (tester) async {
+    await tester.pumpWidget(
+      const MaterialApp(
+        home: ChoiceGameScreen(
+          title: 'Siêu thị toán học',
+          worldLabel: 'Giỏ hàng MI giúp con luyện tính tiền.',
+          level: mathSupermarketLevel,
+          allLevels: [mathSupermarketLevel],
+          heroIcon: Icons.shopping_cart_rounded,
+          primaryColor: Color(0xFF00897B),
+        ),
+      ),
+    );
+    await tester.pump();
+
+    await tester.tap(find.text('5 đồng'));
+    await tester.pump();
+
+    expect(find.text('MI thấy con đã hiểu bài!'), findsOneWidget);
+  });
+
+  testWidgets('Math Supermarket hint teaches without solving by pressure',
+      (tester) async {
+    await tester.pumpWidget(
+      const MaterialApp(
+        home: ChoiceGameScreen(
+          title: 'Siêu thị toán học',
+          worldLabel: 'Giỏ hàng MI giúp con luyện tính tiền.',
+          level: mathSupermarketLevel,
+          allLevels: [mathSupermarketLevel],
+          heroIcon: Icons.shopping_cart_rounded,
+          primaryColor: Color(0xFF00897B),
+        ),
+      ),
+    );
+    await tester.pump();
+
+    await tester.tap(find.byIcon(Icons.lightbulb_outline_rounded));
+    await tester.pump();
+
+    expect(
+      find.text('Cộng giá hai mặt hàng', skipOffstage: false),
+      findsOneWidget,
+    );
+    expect(find.textContaining('nhanh'), findsNothing);
+    expect(find.textContaining('hết giờ'), findsNothing);
+  });
+
+  testWidgets('Memory Cards initializes from level content', (tester) async {
+    await tester.pumpWidget(
+      MaterialApp(
+        home: MemoryCardsScreen(
+          game: MemoryCardsGame(),
+          level: memoryCardsLevel,
+          onComplete: (_) {},
+        ),
+      ),
+    );
+    await tester.pump(const Duration(milliseconds: 100));
+
+    expect(find.text('Memory Cards'), findsWidgets);
+    expect(find.text('Tiếp tục'), findsOneWidget);
+
+    await tester.tap(find.text('Tiếp tục'));
+    await tester.pump();
+
+    expect(find.text('Tìm cặp giống nhau!'), findsOneWidget);
+  });
+
+  testWidgets('Memory Cards completes by matching every pair', (tester) async {
+    var completed = false;
+    final game = MemoryCardsGame();
+
+    await tester.binding.setSurfaceSize(const Size(390, 844));
+    addTearDown(() => tester.binding.setSurfaceSize(null));
+
+    await tester.pumpWidget(
+      MaterialApp(
+        home: MemoryCardsScreen(
+          game: game,
+          level: memoryCardsLevel,
+          onComplete: (_) => completed = true,
+        ),
+      ),
+    );
+    await tester.pump(const Duration(milliseconds: 100));
+
+    await tester.tap(find.text('Tiếp tục'));
+    await tester.pump();
+
+    final pairToIndexes = <String, List<int>>{};
+    for (var i = 0; i < game.cards.length; i++) {
+      pairToIndexes.putIfAbsent(game.cards[i].pairId, () => []).add(i);
+    }
+
+    for (final indexes in pairToIndexes.values) {
+      await _tapMemoryCardAt(tester, indexes[0]);
+      await tester.pump();
+      await _tapMemoryCardAt(tester, indexes[1]);
+      await tester.pump();
+    }
+
+    expect(completed, isTrue);
+  });
+
+  testWidgets('Robot Commands renders playable controls', (tester) async {
+    await tester.pumpWidget(
+      const MaterialApp(
+        home: RobotCommandsScreen(
+          level: robotCommandsLevel,
+          allLevels: [robotCommandsLevel],
+        ),
+      ),
+    );
+    await tester.pump();
+
+    expect(find.text('Robot làm theo lệnh'), findsWidgets);
+    await tester.scrollUntilVisible(
+      find.text('TIẾN'),
+      220,
+      scrollable: find.byType(Scrollable).first,
+    );
+    expect(find.text('Chạy lệnh'), findsOneWidget);
+    expect(find.text('TIẾN'), findsOneWidget);
+  });
+
+  testWidgets('Robot Commands completes a valid command sequence',
+      (tester) async {
+    await tester.pumpWidget(
+      const MaterialApp(
+        home: RobotCommandsScreen(
+          level: robotCommandsLevel,
+          allLevels: [robotCommandsLevel],
+        ),
+      ),
+    );
+    await tester.pump();
+
+    await tester.scrollUntilVisible(
+      find.widgetWithText(ElevatedButton, 'TIẾN'),
+      220,
+      scrollable: find.byType(Scrollable).first,
+    );
+    await tester.tap(find.widgetWithText(ElevatedButton, 'TIẾN'));
+    await tester.pump();
+    await tester.tap(find.widgetWithText(ElevatedButton, 'TIẾN'));
+    await tester.pump();
+    await tester.tap(find.text('Chạy lệnh'));
+    await tester.pump();
+
+    expect(find.text('Con đã lập trình cho MI!'), findsOneWidget);
+  });
+
+  testWidgets('Robot Commands moves and removes specific commands',
+      (tester) async {
+    await tester.pumpWidget(
+      const MaterialApp(
+        home: RobotCommandsScreen(
+          level: robotCommandsTurnLevel,
+          allLevels: [robotCommandsTurnLevel],
+        ),
+      ),
+    );
+    await tester.pump();
+
+    await tester.scrollUntilVisible(
+      find.widgetWithText(ElevatedButton, 'TIẾN'),
+      220,
+      scrollable: find.byType(Scrollable).first,
+    );
+    await tester.tap(find.widgetWithText(ElevatedButton, 'TIẾN'));
+    await tester.pump();
+    await tester.tap(find.widgetWithText(ElevatedButton, 'RẼ PHẢI'));
+    await tester.pump();
+
+    expect(find.text('1. TIẾN'), findsOneWidget);
+    expect(find.text('2. RẼ PHẢI'), findsOneWidget);
+
+    await tester.tap(find.byKey(const ValueKey('robot-command-move-left-1')));
+    await tester.pump();
+
+    expect(find.text('1. RẼ PHẢI'), findsOneWidget);
+    expect(find.text('2. TIẾN'), findsOneWidget);
+
+    await tester.tap(find.byKey(const ValueKey('robot-command-remove-0')));
+    await tester.pump();
+
+    expect(find.text('1. TIẾN'), findsOneWidget);
+    expect(find.text('RẼ PHẢI'), findsOneWidget);
+    expect(find.text('1. RẼ PHẢI'), findsNothing);
+
+    await tester.tap(find.byTooltip('Làm lại'));
+    await tester.pump();
+
+    expect(find.text('1. TIẾN'), findsNothing);
+  });
+
+  testWidgets('Robot Commands allows gentle retry after an incomplete run',
+      (tester) async {
+    await tester.pumpWidget(
+      const MaterialApp(
+        home: RobotCommandsScreen(
+          level: robotCommandsLevel,
+          allLevels: [robotCommandsLevel],
+        ),
+      ),
+    );
+    await tester.pump();
+
+    await tester.scrollUntilVisible(
+      find.widgetWithText(ElevatedButton, 'TIẾN'),
+      220,
+      scrollable: find.byType(Scrollable).first,
+    );
+    await tester.tap(find.widgetWithText(ElevatedButton, 'TIẾN'));
+    await tester.pump();
+    await tester.tap(find.text('Chạy lệnh'));
+    await tester.pump();
+
+    expect(
+      find.text(
+        'Robot MI chưa tới đủ mục tiêu, mình thử đổi lệnh nhé!',
+        skipOffstage: false,
+      ),
+      findsOneWidget,
+    );
+
+    await tester.tap(find.widgetWithText(ElevatedButton, 'TIẾN'));
+    await tester.pump();
+    await tester.tap(find.text('Chạy lệnh'));
+    await tester.pump();
+
+    expect(find.text('Con đã lập trình cho MI!'), findsOneWidget);
+  });
+
+  testWidgets('Parent PIN locks after three failed attempts', (tester) async {
+    await tester.pumpWidget(
+      ProviderScope(
+        overrides: [
+          parentPinVerifierProvider.overrideWithValue((_) async => false),
+        ],
+        child: const MaterialApp(
+          home: ParentPinScreen(
+            enableBiometricPrompt: false,
+            lockoutDuration: Duration(seconds: 30),
+          ),
+        ),
+      ),
+    );
+    await tester.pump();
+
+    for (var attempt = 0; attempt < 3; attempt++) {
+      await _enterPin(tester, '1234');
+      await tester.pumpAndSettle();
+    }
+
+    expect(
+      find.text('Tạm khóa khu vực phụ huynh trong 30 giây.'),
+      findsOneWidget,
+    );
+
+    final oneButton = tester.widget<OutlinedButton>(
+      find.widgetWithText(OutlinedButton, '1').first,
+    );
+    expect(oneButton.onPressed, isNull);
+  });
+
+  testWidgets('Parent PIN adult math fallback unlocks parent area',
+      (tester) async {
+    var unlocked = false;
+    await tester.pumpWidget(
+      ProviderScope(
+        overrides: [
+          parentPinVerifierProvider.overrideWithValue((_) async => false),
+        ],
+        child: MaterialApp(
+          home: ParentPinScreen(
+            enableBiometricPrompt: false,
+            onUnlocked: () => unlocked = true,
+          ),
+        ),
+      ),
+    );
+    await tester.pump();
+
+    await tester.ensureVisible(find.text('Quên PIN?'));
+    await tester.tap(find.text('Quên PIN?'));
+    await tester.pumpAndSettle();
+
+    expect(find.text('8 + 5 = ?'), findsOneWidget);
+
+    await tester.enterText(
+      find.byKey(const ValueKey('adult-challenge-answer')),
+      '13',
+    );
+    await tester.tap(find.text('Mở khu vực phụ huynh'));
+    await tester.pump();
+
+    expect(unlocked, isTrue);
+  });
+
+  testWidgets('Parent settings confirms offline download and data export',
+      (tester) async {
+    final store = MemoryParentSettingsStore();
+    await tester.pumpWidget(
+      ProviderScope(
+        child: MaterialApp(
+          home: ParentSettingsScreen(store: store),
+        ),
+      ),
+    );
+    await tester.pump();
+
+    await tester.scrollUntilVisible(
+      find.text('Tải nội dung offline'),
+      240,
+      scrollable: find.byType(Scrollable).first,
+    );
+    await tester.tap(find.text('Tải nội dung offline'));
+    await tester.pump();
+
+    expect(find.text('Sẵn sàng học không cần mạng'), findsOneWidget);
+    expect(
+      find.text('Nội dung MVP đã sẵn sàng để học offline.'),
+      findsOneWidget,
+    );
+
+    await tester.scrollUntilVisible(
+      find.text('Xuất dữ liệu của bé'),
+      240,
+      scrollable: find.byType(Scrollable).first,
+    );
+    await tester.tap(find.text('Xuất dữ liệu của bé'));
+    await tester.pump();
+
+    expect(find.text('Bản xuất dữ liệu đã sẵn sàng'), findsOneWidget);
+    expect(
+        store.lastExportJson, contains('mi-academy-parent-settings-export-v1'));
+  });
+
+  testWidgets('Parent settings persist after reopening the screen',
+      (tester) async {
+    final store = MemoryParentSettingsStore();
+
+    await tester.pumpWidget(
+      ProviderScope(
+        child: MaterialApp(
+          home: ParentSettingsScreen(store: store),
+        ),
+      ),
+    );
+    await tester.pump();
+
+    await tester.tap(find.text('English'));
+    await tester.pump();
+    await tester.scrollUntilVisible(
+      find.text('Tải nội dung offline'),
+      240,
+      scrollable: find.byType(Scrollable).first,
+    );
+    await tester.tap(find.text('Tải nội dung offline'));
+    await tester.pump();
+    await tester.tap(find.text('Xuất dữ liệu của bé'));
+    await tester.pump();
+
+    await tester.pumpWidget(
+      ProviderScope(
+        child: MaterialApp(
+          home: ParentSettingsScreen(store: store),
+        ),
+      ),
+    );
+    await tester.pump();
+
+    expect(find.text('English'), findsOneWidget);
+    final englishChip = tester.widget<ChoiceChip>(
+      find.widgetWithText(ChoiceChip, 'English'),
+    );
+    expect(englishChip.selected, isTrue);
+
+    await tester.scrollUntilVisible(
+      find.text('Tải nội dung offline'),
+      240,
+      scrollable: find.byType(Scrollable).first,
+    );
+    expect(find.text('Sẵn sàng học không cần mạng'), findsOneWidget);
+    expect(find.text('Bản xuất dữ liệu đã sẵn sàng'), findsOneWidget);
+  });
+
+  testWidgets('Parent settings requires confirmation before deleting data',
+      (tester) async {
+    await tester.pumpWidget(
+      ProviderScope(
+        child: MaterialApp(
+          home: ParentSettingsScreen(store: MemoryParentSettingsStore()),
+        ),
+      ),
+    );
+    await tester.pump();
+
+    await tester.scrollUntilVisible(
+      find.text('Xóa dữ liệu của bé'),
+      240,
+      scrollable: find.byType(Scrollable).first,
+    );
+    await tester.drag(find.byType(Scrollable).first, const Offset(0, -120));
+    await tester.pump();
+    await tester.tap(find.text('Xóa dữ liệu của bé'));
+    await tester.pumpAndSettle();
+
+    expect(find.text('Xóa dữ liệu của bé?'), findsOneWidget);
+    expect(find.text('Cần xác nhận của phụ huynh'), findsOneWidget);
+
+    await tester.tap(find.byKey(const ValueKey('confirm-delete-child-data')));
+    await tester.pumpAndSettle();
+
+    expect(find.text('Yêu cầu xóa đã được ghi nhận'), findsOneWidget);
+    expect(
+      find.text('Đã ghi nhận yêu cầu xóa dữ liệu trên thiết bị.'),
+      findsOneWidget,
+    );
+  });
+}
+
+Future<void> _enterPin(WidgetTester tester, String pin) async {
+  for (final digit in pin.characters) {
+    final button = find.widgetWithText(OutlinedButton, digit).first;
+    await tester.ensureVisible(button);
+    await tester.tap(button);
+    await tester.pump();
+  }
+}
+
+Future<void> pumpUntilFound(
+  WidgetTester tester,
+  Finder finder, {
+  int maxPumps = 60,
+}) async {
+  for (var i = 0; i < maxPumps; i++) {
+    await tester.pump(const Duration(milliseconds: 100));
+    if (finder.evaluate().isNotEmpty) return;
+  }
+  expect(finder, findsWidgets);
+}
+
+Future<void> dragUntilFound(
+  WidgetTester tester,
+  Finder finder, {
+  int maxDrags = 12,
+}) async {
+  for (var i = 0; i < maxDrags; i++) {
+    if (finder.evaluate().isNotEmpty) return;
+    await pumpUntilFound(tester, find.byType(Scrollable), maxPumps: 10);
+    await tester.drag(find.byType(Scrollable).first, const Offset(0, -180));
+    await tester.pumpAndSettle();
+  }
+}
+
+Future<void> _tapMemoryCardAt(WidgetTester tester, int index) async {
+  final card = find.bySemanticsLabel('Thẻ úp, vị trí ${index + 1}');
+  expect(card, findsOneWidget);
+  await tester.ensureVisible(card);
+  await tester.tap(card);
+}

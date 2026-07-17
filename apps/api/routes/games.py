@@ -1,12 +1,13 @@
 """Games routes — list, detail, start session, attempt, complete."""
 
-from fastapi import APIRouter, HTTPException, status
+from fastapi import APIRouter, Depends, HTTPException, status
 from sqlalchemy import select
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from apps.api.database import get_db
 from apps.api.dependencies import get_current_user
 from apps.api.models import ChildProfile, Game, Attempt, Progress, Reward, ChildReward
+from apps.api.time import utc_now
 from apps.api.schemas import (
     GameListItem,
     GameDetail,
@@ -23,7 +24,7 @@ router = APIRouter()
 async def list_games(
     age_group: str | None = None,
     language: str | None = None,
-    db: AsyncSession = get_db,
+    db: AsyncSession = Depends(get_db),
 ):
     """List active games, optionally filtered by age_group or language."""
     query = select(Game).where(Game.is_active == True)
@@ -35,7 +36,7 @@ async def list_games(
 
 
 @router.get("/{game_id}", response_model=GameDetail)
-async def get_game(game_id: str, db: AsyncSession = get_db):
+async def get_game(game_id: str, db: AsyncSession = Depends(get_db)):
     """Get a single game's full config."""
     result = await db.execute(select(Game).where(Game.id == game_id))
     game = result.scalar_one_or_none()
@@ -66,8 +67,8 @@ async def get_game(game_id: str, db: AsyncSession = get_db):
 async def start_game(
     game_id: str,
     body: GameStartRequest,
-    user: User = get_current_user,
-    db: AsyncSession = get_db,
+    user: User = Depends(get_current_user),
+    db: AsyncSession = Depends(get_db),
 ):
     """Mark a game session as started for a child."""
     result = await db.execute(select(Game).where(Game.id == game_id))
@@ -92,8 +93,8 @@ async def start_game(
 async def submit_attempt(
     game_id: str,
     body: GameAttemptRequest,
-    user: User = get_current_user,
-    db: AsyncSession = get_db,
+    user: User = Depends(get_current_user),
+    db: AsyncSession = Depends(get_db),
 ):
     """Record an answer attempt within a game session."""
     import uuid
@@ -116,12 +117,10 @@ async def submit_attempt(
 async def complete_game(
     game_id: str,
     body: GameCompleteRequest,
-    user: User = get_current_user,
-    db: AsyncSession = get_db,
+    user: User = Depends(get_current_user),
+    db: AsyncSession = Depends(get_db),
 ):
     """Mark game complete, award stars and check badge unlocks."""
-    import datetime
-
     # Award rewards
     unlocked_badges = []
     unlocked_rewards = []
@@ -144,7 +143,7 @@ async def complete_game(
                 id=str(uuid.uuid4()),
                 child_id=body.child_id,
                 reward_id=badge.id,
-                unlocked_at=datetime.datetime.utcnow(),
+                unlocked_at=utc_now(),
             )
             db.add(cr)
             unlocked_badges.append(badge.name)

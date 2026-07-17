@@ -1,8 +1,8 @@
 """Progress routes — per-child progress, skills, daily plan."""
 
 from datetime import date, timedelta
-from fastapi import APIRouter, HTTPException, Query
-from sqlalchemy import select, func
+from fastapi import APIRouter, Depends, HTTPException, Query
+from sqlalchemy import Integer, select, func
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from apps.api.database import get_db
@@ -17,8 +17,8 @@ router = APIRouter()
 @router.get("/children/{child_id}/progress", response_model=list[ProgressResponse])
 async def get_child_progress(
     child_id: str,
-    user: User = get_current_user,
-    db: AsyncSession = get_db,
+    user: User = Depends(get_current_user),
+    db: AsyncSession = Depends(get_db),
 ):
     """Return per-lesson progress for a child."""
     result = await db.execute(
@@ -41,8 +41,8 @@ async def get_child_progress(
 @router.get("/children/{child_id}/skills", response_model=list[SkillReport])
 async def get_child_skills(
     child_id: str,
-    user: User = get_current_user,
-    db: AsyncSession = get_db,
+    user: User = Depends(get_current_user),
+    db: AsyncSession = Depends(get_db),
 ):
     """Analyze attempts to report strong and weak skills."""
     result = await db.execute(
@@ -77,8 +77,8 @@ async def get_child_skills(
 @router.get("/children/{child_id}/daily-plan", response_model=list[DailyPlanItem])
 async def get_daily_plan(
     child_id: str,
-    user: User = get_current_user,
-    db: AsyncSession = get_db,
+    user: User = Depends(get_current_user),
+    db: AsyncSession = Depends(get_db),
 ):
     """Return today's recommended learning plan (up to 4 items)."""
     child_result = await db.execute(

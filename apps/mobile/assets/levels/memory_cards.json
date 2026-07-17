@@ -1,0 +1,406 @@
+{
+  "gameId": "memory_cards",
+  "schemaVersion": "1.0.0",
+  "levels": [
+    {
+      "id": "mc-lv1-001",
+      "gameId": "memory_cards",
+      "levelNumber": 1,
+      "difficulty": 1,
+      "learningObjective": "Nhận biết và ghép hai thẻ có hình giống nhau",
+      "localizedContent": {
+        "vi": {
+          "prompt": "Tìm cặp thẻ giống nhau!",
+          "cards": [
+            {"id": "c1", "content": "🐱", "pairId": "p1", "type": "image"},
+            {"id": "c2", "content": "🐱", "pairId": "p1", "type": "image"},
+            {"id": "c3", "content": "🐶", "pairId": "p2", "type": "image"},
+            {"id": "c4", "content": "🐶", "pairId": "p2", "type": "image"}
+          ]
+        },
+        "en": {
+          "prompt": "Find the matching pairs!",
+          "cards": [
+            {"id": "c1", "content": "🐱", "pairId": "p1", "type": "image"},
+            {"id": "c2", "content": "🐱", "pairId": "p1", "type": "image"},
+            {"id": "c3", "content": "🐶", "pairId": "p2", "type": "image"},
+            {"id": "c4", "content": "🐶", "pairId": "p2", "type": "image"}
+          ]
+        }
+      },
+      "hints": [
+        {"text": "Chạm vào một thẻ để lật lên"},
+        {"text": "Tìm thẻ có hình giống thẻ vừa lật"}
+      ],
+      "metadata": {"gridCols": 2, "gridRows": 2, "initialRevealMs": 1500},
+      "assetRefs": []
+    },
+    {
+      "id": "mc-lv2-001",
+      "gameId": "memory_cards",
+      "levelNumber": 2,
+      "difficulty": 1,
+      "learningObjective": "Ghép cặp với 3 cặp thẻ",
+      "localizedContent": {
+        "vi": {
+          "prompt": "Tìm 3 cặp thẻ giống nhau!",
+          "cards": [
+            {"id": "c1", "content": "🍎", "pairId": "p1", "type": "image"},
+            {"id": "c2", "content": "🍎", "pairId": "p1", "type": "image"},
+            {"id": "c3", "content": "🍌", "pairId": "p2", "type": "image"},
+            {"id": "c4", "content": "🍌", "pairId": "p2", "type": "image"},
+            {"id": "c5", "content": "🍇", "pairId": "p3", "type": "image"},
+            {"id": "c6", "content": "🍇", "pairId": "p3", "type": "image"}
+          ]
+        },
+        "en": {
+          "prompt": "Find 3 matching pairs!",
+          "cards": [
+            {"id": "c1", "content": "🍎", "pairId": "p1", "type": "image"},
+            {"id": "c2", "content": "🍎", "pairId": "p1", "type": "image"},
+            {"id": "c3", "content": "🍌", "pairId": "p2", "type": "image"},
+            {"id": "c4", "content": "🍌", "pairId": "p2", "type": "image"},
+            {"id": "c5", "content": "🍇", "pairId": "p3", "type": "image"},
+            {"id": "c6", "content": "🍇", "pairId": "p3", "type": "image"}
+          ]
+        }
+      },
+      "hints": [
+        {"text": "Lật thẻ và nhớ hình bên trong"},
+        {"text": "Cố gắng nhớ vị trí các thẻ"}
+      ],
+      "metadata": {"gridCols": 3, "gridRows": 2, "initialRevealMs": 1500},
+      "assetRefs": []
+    },
+    {
+      "id": "mc-lv3-001",
+      "gameId": "memory_cards",
+      "levelNumber": 3,
+      "difficulty": 2,
+      "learningObjective": "Ghép cặp với 4 cặp thẻ",
+      "localizedContent": {
+        "vi": {
+          "prompt": "Tìm 4 cặp thẻ giống nhau!",
+          "cards": [
+            {"id": "c1", "content": "🌸", "pairId": "p1", "type": "image"},
+            {"id": "c2", "content": "🌸", "pairId": "p1", "type": "image"},
+            {"id": "c3", "content": "🌻", "pairId": "p2", "type": "image"},
+            {"id": "c4", "content": "🌻", "pairId": "p2", "type": "image"},
+            {"id": "c5", "content": "🌺", "pairId": "p3", "type": "image"},
+            {"id": "c6", "content": "🌺", "pairId": "p3", "type": "image"},
+            {"id": "c7", "content": "🌷", "pairId": "p4", "type": "image"},
+            {"id": "c8", "content": "🌷", "pairId": "p4", "type": "image"}
+          ]
+        },
+        "en": {
+          "prompt": "Find 4 matching pairs!",
+          "cards": [
+            {"id": "c1", "content": "🌸", "pairId": "p1", "type": "image"},
+            {"id": "c2", "content": "🌸", "pairId": "p1", "type": "image"},
+            {"id": "c3", "content": "🌻", "pairId": "p2", "type": "image"},
+            {"id": "c4", "content": "🌻", "pairId": "p2", "type": "image"},
+            {"id": "c5", "content": "🌺", "pairId": "p3", "type": "image"},
+            {"id": "c6", "content": "🌺", "pairId": "p3", "type": "image"},
+            {"id": "c7", "content": "🌷", "pairId": "p4", "type": "image"},
+            {"id": "c8", "content": "🌷", "pairId": "p4", "type": "image"}
+          ]
+        }
+      },
+      "hints": [
+        {"text": "Có 4 cặp thẻ để tìm"},
+        {"text": "Cố gắng nhớ tất cả vị trí thẻ"}
+      ],
+      "metadata": {"gridCols": 4, "gridRows": 2, "initialRevealMs": 1500},
+      "assetRefs": []
+    },
+    {
+      "id": "mc-lv4-001",
+      "gameId": "memory_cards",
+      "levelNumber": 4,
+      "difficulty": 2,
+      "learningObjective": "Ghép cặp với 6 cặp thẻ (12 thẻ)",
+      "localizedContent": {
+        "vi": {
+          "prompt": "Tìm 6 cặp thẻ giống nhau!",
+          "cards": [
+            {"id": "c1", "content": "⭐", "pairId": "p1", "type": "image"},
+            {"id": "c2", "content": "⭐", "pairId": "p1", "type": "image"},
+            {"id": "c3", "content": "🌙", "pairId": "p2", "type": "image"},
+            {"id": "c4", "content": "🌙", "pairId": "p2", "type": "image"},
+            {"id": "c5", "content": "☀️", "pairId": "p3", "type": "image"},
+            {"id": "c6", "content": "☀️", "pairId": "p3", "type": "image"},
+            {"id": "c7", "content": "🌈", "pairId": "p4", "type": "image"},
+            {"id": "c8", "content": "🌈", "pairId": "p4", "type": "image"},
+            {"id": "c9", "content": "☁️", "pairId": "p5", "type": "image"},
+            {"id": "c10", "content": "☁️", "pairId": "p5", "type": "image"},
+            {"id": "c11", "content": "⚡", "pairId": "p6", "type": "image"},
+            {"id": "c12", "content": "⚡", "pairId": "p6", "type": "image"}
+          ]
+        },
+        "en": {
+          "prompt": "Find 6 matching pairs!",
+          "cards": [
+            {"id": "c1", "content": "⭐", "pairId": "p1", "type": "image"},
+            {"id": "c2", "content": "⭐", "pairId": "p1", "type": "image"},
+            {"id": "c3", "content": "🌙", "pairId": "p2", "type": "image"},
+            {"id": "c4", "content": "🌙", "pairId": "p2", "type": "image"},
+            {"id": "c5", "content": "☀️", "pairId": "p3", "type": "image"},
+            {"id": "c6", "content": "☀️", "pairId": "p3", "type": "image"},
+            {"id": "c7", "content": "🌈", "pairId": "p4", "type": "image"},
+            {"id": "c8", "content": "🌈", "pairId": "p4", "type": "image"},
+            {"id": "c9", "content": "☁️", "pairId": "p5", "type": "image"},
+            {"id": "c10", "content": "☁️", "pairId": "p5", "type": "image"},
+            {"id": "c11", "content": "⚡", "pairId": "p6", "type": "image"},
+            {"id": "c12", "content": "⚡", "pairId": "p6", "type": "image"}
+          ]
+        }
+      },
+      "hints": [
+        {"text": "Có 12 thẻ — 6 cặp để tìm"},
+        {"text": "Cố gắng nhớ vị trí mỗi thẻ"}
+      ],
+      "metadata": {"gridCols": 4, "gridRows": 3, "initialRevealMs": 1000},
+      "assetRefs": []
+    },
+    {
+      "id": "mc-lv5-001",
+      "gameId": "memory_cards",
+      "levelNumber": 5,
+      "difficulty": 3,
+      "learningObjective": "Ghép hình ảnh với từ chữ",
+      "localizedContent": {
+        "vi": {
+          "prompt": "Ghép hình với từ đúng!",
+          "cards": [
+            {"id": "c1", "content": "🐱", "pairId": "p1", "type": "image"},
+            {"id": "c2", "content": "Con mèo", "pairId": "p1", "type": "text"},
+            {"id": "c3", "content": "🐶", "pairId": "p2", "type": "image"},
+            {"id": "c4", "content": "Con chó", "pairId": "p2", "type": "text"},
+            {"id": "c5", "content": "🐦", "pairId": "p3", "type": "image"},
+            {"id": "c6", "content": "Con chim", "pairId": "p3", "type": "text"},
+            {"id": "c7", "content": "🐟", "pairId": "p4", "type": "image"},
+            {"id": "c8", "content": "Con cá", "pairId": "p4", "type": "text"}
+          ]
+        },
+        "en": {
+          "prompt": "Match the picture with the word!",
+          "cards": [
+            {"id": "c1", "content": "🐱", "pairId": "p1", "type": "image"},
+            {"id": "c2", "content": "Cat", "pairId": "p1", "type": "text"},
+            {"id": "c3", "content": "🐶", "pairId": "p2", "type": "image"},
+            {"id": "c4", "content": "Dog", "pairId": "p2", "type": "text"},
+            {"id": "c5", "content": "🐦", "pairId": "p3", "type": "image"},
+            {"id": "c6", "content": "Bird", "pairId": "p3", "type": "text"},
+            {"id": "c7", "content": "🐟", "pairId": "p4", "type": "image"},
+            {"id": "c8", "content": "Fish", "pairId": "p4", "type": "text"}
+          ]
+        }
+      },
+      "hints": [
+        {"text": "Ghép hình con vật với tên của nó"}
+      ],
+      "metadata": {"gridCols": 4, "gridRows": 2, "initialRevealMs": 0, "mixedTypes": true},
+      "assetRefs": []
+    },
+    {
+      "id": "mc-lv6-001",
+      "gameId": "memory_cards",
+      "levelNumber": 6,
+      "difficulty": 3,
+      "learningObjective": "Ghép số với số lượng tương ứng",
+      "localizedContent": {
+        "vi": {
+          "prompt": "Ghép số với số lượng!",
+          "cards": [
+            {"id": "c1", "content": "1", "pairId": "p1", "type": "number"},
+            {"id": "c2", "content": "🍎", "pairId": "p1", "type": "image"},
+            {"id": "c3", "content": "2", "pairId": "p2", "type": "number"},
+            {"id": "c4", "content": "🍎🍎", "pairId": "p2", "type": "image"},
+            {"id": "c5", "content": "3", "pairId": "p3", "type": "number"},
+            {"id": "c6", "content": "🍎🍎🍎", "pairId": "p3", "type": "image"},
+            {"id": "c7", "content": "4", "pairId": "p4", "type": "number"},
+            {"id": "c8", "content": "🍎🍎🍎🍎", "pairId": "p4", "type": "image"}
+          ]
+        },
+        "en": {
+          "prompt": "Match the number with the quantity!",
+          "cards": [
+            {"id": "c1", "content": "1", "pairId": "p1", "type": "number"},
+            {"id": "c2", "content": "🍎", "pairId": "p1", "type": "image"},
+            {"id": "c3", "content": "2", "pairId": "p2", "type": "number"},
+            {"id": "c4", "content": "🍎🍎", "pairId": "p2", "type": "image"},
+            {"id": "c5", "content": "3", "pairId": "p3", "type": "number"},
+            {"id": "c6", "content": "🍎🍎🍎", "pairId": "p3", "type": "image"},
+            {"id": "c7", "content": "4", "pairId": "p4", "type": "number"},
+            {"id": "c8", "content": "🍎🍎🍎🍎", "pairId": "p4", "type": "image"}
+          ]
+        }
+      },
+      "hints": [
+        {"text": "Đếm số lượng quả táo rồi ghép với số tương ứng"}
+      ],
+      "metadata": {"gridCols": 4, "gridRows": 2, "mixedTypes": true},
+      "assetRefs": []
+    },
+    {
+      "id": "mc-lv7-001",
+      "gameId": "memory_cards",
+      "levelNumber": 7,
+      "difficulty": 4,
+      "learningObjective": "Ghép phép tính với kết quả",
+      "localizedContent": {
+        "vi": {
+          "prompt": "Ghép phép tính với kết quả đúng!",
+          "cards": [
+            {"id": "c1", "content": "2 + 1", "pairId": "p1", "type": "text"},
+            {"id": "c2", "content": "3", "pairId": "p1", "type": "text"},
+            {"id": "c3", "content": "5 - 2", "pairId": "p2", "type": "text"},
+            {"id": "c4", "content": "3", "pairId": "p2", "type": "text"},
+            {"id": "c5", "content": "4 + 3", "pairId": "p3", "type": "text"},
+            {"id": "c6", "content": "7", "pairId": "p3", "type": "text"},
+            {"id": "c7", "content": "6 - 1", "pairId": "p4", "type": "text"},
+            {"id": "c8", "content": "5", "pairId": "p4", "type": "text"}
+          ]
+        },
+        "en": {
+          "prompt": "Match the equation with the correct answer!",
+          "cards": [
+            {"id": "c1", "content": "2 + 1", "pairId": "p1", "type": "text"},
+            {"id": "c2", "content": "3", "pairId": "p1", "type": "text"},
+            {"id": "c3", "content": "5 - 2", "pairId": "p2", "type": "text"},
+            {"id": "c4", "content": "3", "pairId": "p2", "type": "text"},
+            {"id": "c5", "content": "4 + 3", "pairId": "p3", "type": "text"},
+            {"id": "c6", "content": "7", "pairId": "p3", "type": "text"},
+            {"id": "c7", "content": "6 - 1", "pairId": "p4", "type": "text"},
+            {"id": "c8", "content": "5", "pairId": "p4", "type": "text"}
+          ]
+        }
+      },
+      "hints": [
+        {"text": "Tính kết quả mỗi phép tính"}
+      ],
+      "metadata": {"gridCols": 4, "gridRows": 2, "mixedTypes": true, "initialRevealMs": 0},
+      "assetRefs": []
+    },
+    {
+      "id": "mc-lv8-001",
+      "gameId": "memory_cards",
+      "levelNumber": 8,
+      "difficulty": 4,
+      "learningObjective": "Ghép chữ hoa với chữ thường",
+      "localizedContent": {
+        "vi": {
+          "prompt": "Ghép chữ hoa với chữ thường!",
+          "cards": [
+            {"id": "c1", "content": "A", "pairId": "p1", "type": "text"},
+            {"id": "c2", "content": "a", "pairId": "p1", "type": "text"},
+            {"id": "c3", "content": "B", "pairId": "p2", "type": "text"},
+            {"id": "c4", "content": "b", "pairId": "p2", "type": "text"},
+            {"id": "c5", "content": "C", "pairId": "p3", "type": "text"},
+            {"id": "c6", "content": "c", "pairId": "p3", "type": "text"},
+            {"id": "c7", "content": "D", "pairId": "p4", "type": "text"},
+            {"id": "c8", "content": "d", "pairId": "p4", "type": "text"}
+          ]
+        },
+        "en": {
+          "prompt": "Match uppercase with lowercase letters!",
+          "cards": [
+            {"id": "c1", "content": "A", "pairId": "p1", "type": "text"},
+            {"id": "c2", "content": "a", "pairId": "p1", "type": "text"},
+            {"id": "c3", "content": "B", "pairId": "p2", "type": "text"},
+            {"id": "c4", "content": "b", "pairId": "p2", "type": "text"},
+            {"id": "c5", "content": "C", "pairId": "p3", "type": "text"},
+            {"id": "c6", "content": "c", "pairId": "p3", "type": "text"},
+            {"id": "c7", "content": "D", "pairId": "p4", "type": "text"},
+            {"id": "c8", "content": "d", "pairId": "p4", "type": "text"}
+          ]
+        }
+      },
+      "hints": [
+        {"text": "Ghép A với a, B với b, và tiếp tục"}
+      ],
+      "metadata": {"gridCols": 4, "gridRows": 2, "mixedTypes": true, "initialRevealMs": 0},
+      "assetRefs": []
+    },
+    {
+      "id": "mc-lv9-001",
+      "gameId": "memory_cards",
+      "levelNumber": 9,
+      "difficulty": 5,
+      "learningObjective": "Ghép từ với từ đồng nghĩa",
+      "localizedContent": {
+        "vi": {
+          "prompt": "Ghép từ đồng nghĩa!",
+          "cards": [
+            {"id": "c1", "content": "Đẹp", "pairId": "p1", "type": "text"},
+            {"id": "c2", "content": "Xinh", "pairId": "p1", "type": "text"},
+            {"id": "c3", "content": "Lớn", "pairId": "p2", "type": "text"},
+            {"id": "c4", "content": "To", "pairId": "p2", "type": "text"},
+            {"id": "c5", "content": "Nhanh", "pairId": "p3", "type": "text"},
+            {"id": "c6", "content": "Vội", "pairId": "p3", "type": "text"},
+            {"id": "c7", "content": "Buồn", "pairId": "p4", "type": "text"},
+            {"id": "c8", "content": "Chán", "pairId": "p4", "type": "text"}
+          ]
+        },
+        "en": {
+          "prompt": "Match the synonyms!",
+          "cards": [
+            {"id": "c1", "content": "Happy", "pairId": "p1", "type": "text"},
+            {"id": "c2", "content": "Joyful", "pairId": "p1", "type": "text"},
+            {"id": "c3", "content": "Big", "pairId": "p2", "type": "text"},
+            {"id": "c4", "content": "Large", "pairId": "p2", "type": "text"},
+            {"id": "c5", "content": "Fast", "pairId": "p3", "type": "text"},
+            {"id": "c6", "content": "Quick", "pairId": "p3", "type": "text"},
+            {"id": "c7", "content": "Sad", "pairId": "p4", "type": "text"},
+            {"id": "c8", "content": "Unhappy", "pairId": "p4", "type": "text"}
+          ]
+        }
+      },
+      "hints": [
+        {"text": "Tìm hai từ có nghĩa giống nhau"}
+      ],
+      "metadata": {"gridCols": 4, "gridRows": 2, "mixedTypes": true, "initialRevealMs": 0},
+      "assetRefs": []
+    },
+    {
+      "id": "mc-lv10-001",
+      "gameId": "memory_cards",
+      "levelNumber": 10,
+      "difficulty": 5,
+      "learningObjective": "Ghép biểu tượng khoa học với chức năng",
+      "localizedContent": {
+        "vi": {
+          "prompt": "Ghép biểu tượng với tên!",
+          "cards": [
+            {"id": "c1", "content": "🌡️", "pairId": "p1", "type": "image"},
+            {"id": "c2", "content": "Nhiệt kế", "pairId": "p1", "type": "text"},
+            {"id": "c3", "content": "⚖️", "pairId": "p2", "type": "image"},
+            {"id": "c4", "content": "Cân", "pairId": "p2", "type": "text"},
+            {"id": "c5", "content": "🔬", "pairId": "p3", "type": "image"},
+            {"id": "c6", "content": "Kính hiển vi", "pairId": "p3", "type": "text"},
+            {"id": "c7", "content": "🧲", "pairId": "p4", "type": "image"},
+            {"id": "c8", "content": "Nam châm", "pairId": "p4", "type": "text"}
+          ]
+        },
+        "en": {
+          "prompt": "Match the science symbols with their names!",
+          "cards": [
+            {"id": "c1", "content": "🌡️", "pairId": "p1", "type": "image"},
+            {"id": "c2", "content": "Thermometer", "pairId": "p1", "type": "text"},
+            {"id": "c3", "content": "⚖️", "pairId": "p2", "type": "image"},
+            {"id": "c4", "content": "Scale", "pairId": "p2", "type": "text"},
+            {"id": "c5", "content": "🔬", "pairId": "p3", "type": "image"},
+            {"id": "c6", "content": "Microscope", "pairId": "p3", "type": "text"},
+            {"id": "c7", "content": "🧲", "pairId": "p4", "type": "image"},
+            {"id": "c8", "content": "Magnet", "pairId": "p4", "type": "text"}
+          ]
+        }
+      },
+      "hints": [
+        {"text": "Mỗi biểu tượng có một tên gọi riêng"}
+      ],
+      "metadata": {"gridCols": 4, "gridRows": 2, "mixedTypes": true, "initialRevealMs": 0},
+      "assetRefs": []
+    }
+  ]
+}

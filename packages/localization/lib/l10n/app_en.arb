@@ -1,0 +1,75 @@
+{
+  "@@locale": "en",
+  "appName": "MI Academy",
+  "welcome": "Welcome!",
+  "login": "Login",
+  "register": "Register",
+  "logout": "Logout",
+  "email": "Email",
+  "password": "Password",
+  "parentDashboard": "Parent Dashboard",
+  "childHome": "Home",
+  "settings": "Settings",
+  "profile": "Profile",
+  "selectChild": "Select Child Profile",
+  "createChild": "Create Child Profile",
+  "nickname": "Nickname",
+  "ageGroup": "Age Group",
+  "dailyPlan": "Today's Plan",
+  "lessons": "Lessons",
+  "games": "Games",
+  "rewards": "Rewards",
+  "stars": "Stars",
+  "badges": "Badges",
+  "lessonComplete": "Lesson Complete",
+  "greatJob": "Great job!",
+  "tryAgain": "Try again",
+  "continue": "Continue",
+  "pause": "Pause",
+  "resume": "Resume",
+  "hint": "Hint",
+  "next": "Next",
+  "back": "Back",
+  "save": "Save",
+  "cancel": "Cancel",
+  "delete": "Delete",
+  "confirm": "Confirm",
+  "loading": "Loading...",
+  "error": "Something went wrong",
+  "retry": "Retry",
+  "noInternet": "No internet connection",
+  "offlineMode": "Offline mode",
+  "todayProgress": "Today's Progress",
+  "weeklyReport": "Weekly Report",
+  "parentPIN": "Parent PIN",
+  "setPIN": "Set PIN",
+  "enterPIN": "Enter PIN",
+  "changePIN": "Change PIN",
+  "audioSettings": "Audio Settings",
+  "accessibility": "Accessibility",
+  "subjectLetters": "Letter City",
+  "subjectMath": "Math Kingdom",
+  "subjectLogic": "Logic Island",
+  "subjectScience": "Science Lab",
+  "subjectCreative": "Creative House",
+  "correct": "Correct!",
+  "incorrect": "Not quite, try again!",
+  "welcomeBack": "Welcome back, {name}!",
+  "@welcomeBack": {
+    "placeholders": {
+      "name": {"type": "String"}
+    }
+  },
+  "minutesPlayed": "{count} minutes played today",
+  "@minutesPlayed": {
+    "placeholders": {
+      "count": {"type": "int"}
+    }
+  },
+  "starsEarned": "+{count} stars",
+  "@starsEarned": {
+    "placeholders": {
+      "count": {"type": "int"}
+    }
+  }
+}

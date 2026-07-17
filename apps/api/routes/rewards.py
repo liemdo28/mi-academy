@@ -1,6 +1,5 @@
 """Rewards routes — list, unlock for a child."""
 
-from datetime import datetime
 from fastapi import APIRouter, HTTPException, Depends
 from sqlalchemy import select
 from sqlalchemy.ext.asyncio import AsyncSession
@@ -9,6 +8,7 @@ import uuid
 from apps.api.database import get_db
 from apps.api.dependencies import get_current_user
 from apps.api.models import ChildProfile, Reward, ChildReward
+from apps.api.time import utc_now
 from apps.api.schemas import RewardResponse, UnlockRewardRequest
 from apps.api.models import User
 
@@ -18,8 +18,8 @@ router = APIRouter()
 @router.get("/children/{child_id}/rewards")
 async def get_child_rewards(
     child_id: str,
-    user: User = get_current_user,
-    db: AsyncSession = get_db,
+    user: User = Depends(get_current_user),
+    db: AsyncSession = Depends(get_db),
 ):
     """List all rewards — unlocked and locked — for a child."""
     # Get all rewards
@@ -52,8 +52,8 @@ async def get_child_rewards(
 async def unlock_reward(
     child_id: str,
     body: UnlockRewardRequest,
-    user: User = get_current_user,
-    db: AsyncSession = get_db,
+    user: User = Depends(get_current_user),
+    db: AsyncSession = Depends(get_db),
 ):
     """Parent manually unlocks a reward for a child."""
     # Verify child exists
@@ -85,7 +85,7 @@ async def unlock_reward(
         id=str(uuid.uuid4()),
         child_id=child_id,
         reward_id=body.reward_id,
-        unlocked_at=datetime.utcnow(),
+        unlocked_at=utc_now(),
     )
     db.add(cr)
     await db.commit()

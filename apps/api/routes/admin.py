@@ -32,7 +32,7 @@ def _require_admin():
 async def create_lesson(
     body: AdminLessonCreate,
     _: AuthUser = Depends(_require_admin()),
-    db: AsyncSession = get_db,
+    db: AsyncSession = Depends(get_db),
 ):
     lesson = Lesson(
         id=str(uuid.uuid4()),
@@ -55,7 +55,7 @@ async def update_lesson(
     lesson_id: str,
     body: AdminLessonUpdate,
     _: AuthUser = Depends(_require_admin()),
-    db: AsyncSession = get_db,
+    db: AsyncSession = Depends(get_db),
 ):
     result = await db.execute(select(Lesson).where(Lesson.id == lesson_id))
     lesson = result.scalar_one_or_none()
@@ -73,7 +73,7 @@ async def update_lesson(
 async def delete_lesson(
     lesson_id: str,
     _: AuthUser = Depends(_require_admin()),
-    db: AsyncSession = get_db,
+    db: AsyncSession = Depends(get_db),
 ):
     result = await db.execute(select(Lesson).where(Lesson.id == lesson_id))
     lesson = result.scalar_one_or_none()
@@ -90,7 +90,7 @@ async def delete_lesson(
 async def create_question(
     body: AdminQuestionCreate,
     _: AuthUser = Depends(_require_admin()),
-    db: AsyncSession = get_db,
+    db: AsyncSession = Depends(get_db),
 ):
     question = Question(
         id=str(uuid.uuid4()),
@@ -112,7 +112,7 @@ async def create_question(
 async def high_error_questions(
     threshold: float = 0.5,
     _: AuthUser = Depends(_require_admin()),
-    db: AsyncSession = get_db,
+    db: AsyncSession = Depends(get_db),
 ):
     """Return questions with >threshold error rate."""
     sub = (
@@ -148,7 +148,7 @@ async def high_error_questions(
 async def create_game(
     body: AdminGameCreate,
     _: AuthUser = Depends(_require_admin()),
-    db: AsyncSession = get_db,
+    db: AsyncSession = Depends(get_db),
 ):
     game = Game(
         id=str(uuid.uuid4()),
@@ -168,7 +168,7 @@ async def update_game(
     game_id: str,
     body: dict,
     _: AuthUser = Depends(_require_admin()),
-    db: AsyncSession = get_db,
+    db: AsyncSession = Depends(get_db),
 ):
     result = await db.execute(select(Game).where(Game.id == game_id))
     game = result.scalar_one_or_none()
@@ -189,7 +189,7 @@ async def update_game(
 @router.get("/analytics")
 async def analytics(
     _: AuthUser = Depends(_require_admin()),
-    db: AsyncSession = get_db,
+    db: AsyncSession = Depends(get_db),
 ):
     """Aggregate usage stats for admin dashboard."""
     total_children = await db.execute(select(func.count(ChildProfile.id)))
@@ -210,7 +210,7 @@ async def analytics(
 async def completion_rate(
     lesson_id: str | None = None,
     _: AuthUser = Depends(_require_admin()),
-    db: AsyncSession = get_db,
+    db: AsyncSession = Depends(get_db),
 ):
     """Return completion rate for lessons."""
     query = select(

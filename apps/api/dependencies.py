@@ -1,6 +1,6 @@
 """Shared FastAPI dependencies — auth, PIN, rate-limiting."""
 
-from datetime import datetime, timedelta
+from datetime import timedelta
 from typing import Optional
 
 from fastapi import Depends, Header, HTTPException, status
@@ -9,10 +9,12 @@ from jose import JWTError, jwt
 from passlib.context import CryptContext
 from sqlalchemy import select
 from sqlalchemy.ext.asyncio import AsyncSession
+from sqlalchemy.orm import selectinload
 
 from apps.api.config import settings
 from apps.api.database import get_db
 from apps.api.models import ParentProfile, User
+from apps.api.time import utc_now
 
 pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
 bearer_scheme = HTTPBearer(auto_error=False)
@@ -32,7 +34,7 @@ def verify_password(plain: str, hashed: str) -> bool:
 
 def create_access_token(data: dict, expires_delta: Optional[timedelta] = None) -> str:
     to_encode = data.copy()
-    expire = datetime.utcnow() + (
+    expire = utc_now() + (
         expires_delta or timedelta(minutes=settings.ACCESS_TOKEN_EXPIRE_MINUTES)
     )
     to_encode.update({"exp": expire, "type": "access"})
@@ -41,7 +43,7 @@ def create_access_token(data: dict, expires_delta: Optional[timedelta] = None) -
 
 def create_refresh_token(data: dict) -> str:
     to_encode = data.copy()
-    expire = datetime.utcnow() + timedelta(days=settings.REFRESH_TOKEN_EXPIRE_DAYS)
+    expire = utc_now() + timedelta(days=settings.REFRESH_TOKEN_EXPIRE_DAYS)
     to_encode.update({"exp": expire, "type": "refresh"})
     return jwt.encode(to_encode, settings.SECRET_KEY, algorithm=settings.ALGORITHM)
 
@@ -97,7 +99,9 @@ async def get_parent_profile(
 ) -> ParentProfile:
     """Return the parent profile attached to the authenticated user."""
     result = await db.execute(
-        select(ParentProfile).where(ParentProfile.user_id == user.id)
+        select(ParentProfile)
+        .options(selectinload(ParentProfile.children))
+        .where(ParentProfile.user_id == user.id)
     )
     profile = result.scalar_one_or_none()
     if profile is None:

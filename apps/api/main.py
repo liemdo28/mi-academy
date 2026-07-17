@@ -5,6 +5,7 @@ from fastapi.middleware.cors import CORSMiddleware
 
 from apps.api.config import settings
 from apps.api.database import engine, Base
+from apps.api.middleware.rate_limit import RateLimitMiddleware
 from apps.api.routes import (
     auth,
     parent,
@@ -30,6 +31,13 @@ app.add_middleware(
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
+)
+
+# Rate limiting
+app.add_middleware(
+    RateLimitMiddleware,
+    auth_limit=settings.AUTH_RATE_LIMIT_PER_MIN,
+    sync_limit=settings.SYNC_RATE_LIMIT_PER_MIN,
 )
 
 # Register routers

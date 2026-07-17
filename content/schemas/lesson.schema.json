@@ -1,0 +1,90 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://mi-academy.app/schemas/lesson.schema.json",
+  "title": "MI Academy Lesson",
+  "description": "Schema for a learning lesson in MI Academy",
+  "type": "object",
+  "required": ["id", "title", "age_group", "subject_id", "difficulty"],
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z0-9_-]+$",
+      "description": "URL-safe identifier"
+    },
+    "title": {
+      "type": "object",
+      "required": ["vi"],
+      "properties": {
+        "vi": { "type": "string", "minLength": 1, "maxLength": 200 },
+        "en": { "type": "string", "minLength": 1, "maxLength": 200 }
+      }
+    },
+    "description": {
+      "type": "object",
+      "properties": {
+        "vi": { "type": "string" },
+        "en": { "type": "string" }
+      }
+    },
+    "subject_id": {
+      "type": "string",
+      "enum": ["letters", "math", "logic", "science", "creative"]
+    },
+    "age_group": {
+      "type": "string",
+      "enum": ["junior", "explorer", "master"]
+    },
+    "difficulty": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 5
+    },
+    "estimated_minutes": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 120
+    },
+    "language": {
+      "type": "string",
+      "enum": ["vi", "en"]
+    },
+    "version": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "game_type": {
+      "type": "string",
+      "enum": ["word_builder", "sound_match", "math_race", "math_supermarket", "memory_cards", "robot_commands"]
+    },
+    "phases": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["type", "content"],
+        "properties": {
+          "type": {
+            "type": "string",
+            "enum": ["introduction", "explanation", "example", "practice", "game", "feedback", "summary"]
+          },
+          "content": {
+            "type": "object"
+          },
+          "duration_seconds": {
+            "type": "integer",
+            "minimum": 5
+          }
+        }
+      }
+    },
+    "skills": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "is_active": {
+      "type": "boolean",
+      "default": true
+    }
+  }
+}

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'config/theme.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:design_system/design_system.dart';
+import 'package:localization/localization.dart';
 import 'config/router.dart';
 
 class MiAcademyApp extends ConsumerWidget {
@@ -8,23 +10,19 @@ class MiAcademyApp extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final router = ref.watch(routerProvider);
     return MaterialApp.router(
       title: 'MI Academy',
       debugShowCheckedModeBanner: false,
-      theme: MITheme.light(),
-      darkTheme: MITheme.light(), // kids app — always bright
-      routerConfig: router,
+      theme: MiTheme.light,
+      darkTheme: MiTheme.light,
+      routerConfig: routerProvider,
       localizationsDelegates: const [
-        // AppLocalizations.delegate,
         GlobalMaterialLocalizations.delegate,
         GlobalWidgetsLocalizations.delegate,
         GlobalCupertinoLocalizations.delegate,
       ],
-      supportedLocales: const [
-        Locale('vi'),
-        Locale('en'),
-      ],
+      supportedLocales: supportedLocales,
+      locale: const Locale('vi'),
     );
   }
 }

@@ -1,0 +1,75 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://mi-academy.app/schemas/question.schema.json",
+  "title": "MI Academy Question",
+  "type": "object",
+  "required": ["id", "prompt", "question_type"],
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z0-9_-]+$"
+    },
+    "lesson_id": {
+      "type": "string"
+    },
+    "question_type": {
+      "type": "string",
+      "enum": ["multiple_choice", "text", "image", "audio"]
+    },
+    "prompt": {
+      "type": "object",
+      "required": ["vi"],
+      "properties": {
+        "vi": { "type": "string" },
+        "en": { "type": "string" }
+      }
+    },
+    "options": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "text"],
+        "properties": {
+          "id": { "type": "string" },
+          "text": {
+            "type": "object",
+            "properties": {
+              "vi": { "type": "string" },
+              "en": { "type": "string" }
+            }
+          },
+          "image_url": { "type": "string" },
+          "audio_url": { "type": "string" }
+        }
+      }
+    },
+    "correct_answer": {
+      "type": "object",
+      "description": "The correct answer identifier"
+    },
+    "explanation": {
+      "type": "object",
+      "properties": {
+        "vi": { "type": "string" },
+        "en": { "type": "string" }
+      }
+    },
+    "media_url": {
+      "type": "string",
+      "format": "uri"
+    },
+    "media_type": {
+      "type": "string",
+      "enum": ["image", "audio", "video"]
+    },
+    "difficulty": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 5
+    },
+    "skills": {
+      "type": "array",
+      "items": { "type": "string" }
+    }
+  }
+}

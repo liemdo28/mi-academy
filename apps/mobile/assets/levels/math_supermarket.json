@@ -1,0 +1,317 @@
+{
+  "gameId": "math_supermarket",
+  "schemaVersion": "1.0.0",
+  "description": "Kids shop for items, calculate totals, and make change. Teaches money, budgeting, and arithmetic.",
+  "levels": [
+    {
+      "id": "ms-lv01",
+      "gameId": "math_supermarket",
+      "levelNumber": 1,
+      "difficulty": 1,
+      "learningObjective": "Nhận biết tiền — đếm đồng xu",
+      "localizedContent": {
+        "vi": {
+          "prompt": "Con có 3 đồng xu. Mua quả cam giá 2 đồng. Còn lại bao nhiêu?",
+          "options": [
+            {"id": "a", "text": "1 đồng", "correct": true},
+            {"id": "b", "text": "2 đồng", "correct": false},
+            {"id": "c", "text": "3 đồng", "correct": false}
+          ]
+        },
+        "en": {
+          "prompt": "You have 3 coins. An orange costs 2 coins. How much is left?",
+          "options": [
+            {"id": "a", "text": "1 coin", "correct": true},
+            {"id": "b", "text": "2 coins", "correct": false},
+            {"id": "c", "text": "3 coins", "correct": false}
+          ]
+        }
+      },
+      "hints": [
+        {"text": "3 trừ đi 2 bằng mấy?"},
+        {"text": "3 - 2 = 1"}
+      ],
+      "metadata": {"ageGroup": "junior", "skillIds": ["math.currency", "math.subtraction_within_10"], "budget": 3, "currencyUnit": "đồng"},
+      "assetRefs": ["mi-fruit-orange", "mi-coin-1"]
+    },
+    {
+      "id": "ms-lv02",
+      "gameId": "math_supermarket",
+      "levelNumber": 2,
+      "difficulty": 1,
+      "learningObjective": "Tính tổng giá 2 mặt hàng đơn giản",
+      "localizedContent": {
+        "vi": {
+          "prompt": "Quả táo 2 đồng, quả chuối 3 đồng. Tổng cộng bao nhiêu?",
+          "options": [
+            {"id": "a", "text": "4 đồng", "correct": false},
+            {"id": "b", "text": "5 đồng", "correct": true},
+            {"id": "c", "text": "6 đồng", "correct": false}
+          ]
+        },
+        "en": {
+          "prompt": "Apple costs 2 coins. Banana costs 3 coins. How much together?",
+          "options": [
+            {"id": "a", "text": "4 coins", "correct": false},
+            {"id": "b", "text": "5 coins", "correct": true},
+            {"id": "c", "text": "6 coins", "correct": false}
+          ]
+        }
+      },
+      "hints": [
+        {"text": "Cộng giá hai mặt hàng"},
+        {"text": "2 + 3 = 5"}
+      ],
+      "metadata": {"ageGroup": "junior", "skillIds": ["math.currency", "math.addition_within_10"], "budget": 10, "currencyUnit": "đồng"},
+      "assetRefs": ["mi-fruit-apple", "mi-fruit-banana"]
+    },
+    {
+      "id": "ms-lv03",
+      "gameId": "math_supermarket",
+      "levelNumber": 3,
+      "difficulty": 2,
+      "learningObjective": "So sánh giá — tìm mặt hàng rẻ hơn",
+      "localizedContent": {
+        "vi": {
+          "prompt": "Sữa 5 đồng, Nước 3 đồng. Mặt hàng nào rẻ hơn?",
+          "options": [
+            {"id": "a", "text": "Sữa", "correct": false},
+            {"id": "b", "text": "Nước", "correct": true},
+            {"id": "c", "text": "Giống nhau", "correct": false}
+          ]
+        },
+        "en": {
+          "prompt": "Milk costs 5 coins. Water costs 3 coins. Which is cheaper?",
+          "options": [
+            {"id": "a", "text": "Milk", "correct": false},
+            {"id": "b", "text": "Water", "correct": true},
+            {"id": "c", "text": "Same price", "correct": false}
+          ]
+        }
+      },
+      "hints": [
+        {"text": "So sánh hai giá — số nhỏ hơn rẻ hơn"},
+        {"text": "3 < 5 nên nước rẻ hơn"}
+      ],
+      "metadata": {"ageGroup": "junior", "skillIds": ["math.currency", "math.comparison"], "budget": 10, "currencyUnit": "đồng"},
+      "assetRefs": ["mi-drink-milk", "mi-drink-water"]
+    },
+    {
+      "id": "ms-lv04",
+      "gameId": "math_supermarket",
+      "levelNumber": 4,
+      "difficulty": 2,
+      "learningObjective": "Mua nhiều món — tính tổng 3 mặt hàng",
+      "localizedContent": {
+        "vi": {
+          "prompt": "Bánh mì 4 đồng, Sữa 3 đồng, Trái cây 2 đồng. Tổng bao nhiêu?",
+          "options": [
+            {"id": "a", "text": "8 đồng", "correct": false},
+            {"id": "b", "text": "9 đồng", "correct": true},
+            {"id": "c", "text": "10 đồng", "correct": false}
+          ]
+        },
+        "en": {
+          "prompt": "Bread 4 coins, Milk 3 coins, Fruit 2 coins. How much total?",
+          "options": [
+            {"id": "a", "text": "8 coins", "correct": false},
+            {"id": "b", "text": "9 coins", "correct": true},
+            {"id": "c", "text": "10 coins", "correct": false}
+          ]
+        }
+      },
+      "hints": [
+        {"text": "Cộng cả 3 mặt hàng"},
+        {"text": "4 + 3 + 2 = 9"}
+      ],
+      "metadata": {"ageGroup": "junior", "skillIds": ["math.currency", "math.addition_within_10"], "budget": 15, "currencyUnit": "đồng"},
+      "assetRefs": ["mi-food-bread", "mi-drink-milk", "mi-fruit-mixed"]
+    },
+    {
+      "id": "ms-lv05",
+      "gameId": "math_supermarket",
+      "levelNumber": 5,
+      "difficulty": 2,
+      "learningObjective": "Kiểm tra đủ tiền mua không",
+      "localizedContent": {
+        "vi": {
+          "prompt": "Con có 8 đồng. Mua sách 6 đồng và bút 4 đồng. Đủ tiền không?",
+          "options": [
+            {"id": "a", "text": "Đủ, còn 2 đồng", "correct": false},
+            {"id": "b", "text": "Không đủ, thiếu 2 đồng", "correct": true},
+            {"id": "c", "text": "Đủ, còn 0 đồng", "correct": false}
+          ]
+        },
+        "en": {
+          "prompt": "You have 8 coins. Book is 6 coins, pen is 4 coins. Do you have enough?",
+          "options": [
+            {"id": "a", "text": "Yes, 2 left", "correct": false},
+            {"id": "b", "text": "No, need 2 more", "correct": true},
+            {"id": "c", "text": "Yes, 0 left", "correct": false}
+          ]
+        }
+      },
+      "hints": [
+        {"text": "Tính tổng tiền cần: 6 + 4"},
+        {"text": "Cần 10 đồng, con chỉ có 8 đồng"}
+      ],
+      "metadata": {"ageGroup": "junior", "skillIds": ["math.currency", "math.addition_within_10"], "budget": 8, "currencyUnit": "đồng"},
+      "assetRefs": ["mi-school-book", "mi-school-pen"]
+    },
+    {
+      "id": "ms-lv06",
+      "gameId": "math_supermarket",
+      "levelNumber": 6,
+      "difficulty": 3,
+      "learningObjective": "Tính tiền lẻ — trả lại thừa",
+      "localizedContent": {
+        "vi": {
+          "prompt": "Quần áo giá 15 đồng. Con trả 20 đồng. Nhận lại bao nhiêu?",
+          "options": [
+            {"id": "a", "text": "4 đồng", "correct": false},
+            {"id": "b", "text": "5 đồng", "correct": true},
+            {"id": "c", "text": "6 đồng", "correct": false}
+          ]
+        },
+        "en": {
+          "prompt": "Clothes cost 15 coins. You pay 20 coins. How much change?",
+          "options": [
+            {"id": "a", "text": "4 coins", "correct": false},
+            {"id": "b", "text": "5 coins", "correct": true},
+            {"id": "c", "text": "6 coins", "correct": false}
+          ]
+        }
+      },
+      "hints": [
+        {"text": "Trừ giá hàng khỏi tiền trả"},
+        {"text": "20 - 15 = 5"}
+      ],
+      "metadata": {"ageGroup": "explorer", "skillIds": ["math.currency", "math.subtraction_within_20"], "budget": 20, "currencyUnit": "đồng"},
+      "assetRefs": ["mi-clothes-shirt"]
+    },
+    {
+      "id": "ms-lv07",
+      "gameId": "math_supermarket",
+      "levelNumber": 7,
+      "difficulty": 3,
+      "learningObjective": "Mua theo số lượng — nhân đơn giản",
+      "localizedContent": {
+        "vi": {
+          "prompt": "Con mua 4 hộp sữa, mỗi hộp 3 đồng. Tổng bao nhiêu?",
+          "options": [
+            {"id": "a", "text": "10 đồng", "correct": false},
+            {"id": "b", "text": "12 đồng", "correct": true},
+            {"id": "c", "text": "14 đồng", "correct": false}
+          ]
+        },
+        "en": {
+          "prompt": "Buy 4 milk cartons, each costs 3 coins. How much total?",
+          "options": [
+            {"id": "a", "text": "10 coins", "correct": false},
+            {"id": "b", "text": "12 coins", "correct": true},
+            {"id": "c", "text": "14 coins", "correct": false}
+          ]
+        }
+      },
+      "hints": [
+        {"text": "Nhân số hộp với giá mỗi hộp"},
+        {"text": "4 × 3 = 12"}
+      ],
+      "metadata": {"ageGroup": "explorer", "skillIds": ["math.currency", "math.multiplication_tables"], "budget": 20, "currencyUnit": "đồng"},
+      "assetRefs": ["mi-drink-milk"]
+    },
+    {
+      "id": "ms-lv08",
+      "gameId": "math_supermarket",
+      "levelNumber": 8,
+      "difficulty": 4,
+      "learningObjective": "Lập ngân sách — tối ưu mua sắm",
+      "localizedContent": {
+        "vi": {
+          "prompt": "Con có 20 đồng. Cần mua bút 5 đồng và vở 8 đồng. Còn lại bao nhiêu? Có thể mua thêm kẹo 4 đồng không?",
+          "options": [
+            {"id": "a", "text": "Còn 7 đồng — được", "correct": false},
+            {"id": "b", "text": "Còn 3 đồng — không đủ", "correct": true},
+            {"id": "c", "text": "Còn 3 đồng — đủ", "correct": false}
+          ]
+        },
+        "en": {
+          "prompt": "You have 20 coins. Pen is 5, notebook is 8. Can you also buy candy for 4?",
+          "options": [
+            {"id": "a", "text": "7 left — yes", "correct": false},
+            {"id": "b", "text": "3 left — not enough for candy", "correct": true},
+            {"id": "c", "text": "3 left — enough for candy", "correct": false}
+          ]
+        }
+      },
+      "hints": [
+        {"text": "Tính: 20 - 5 - 8 = ?"},
+        {"text": "Còn 3 đồng, kẹo giá 4 đồng → không đủ"}
+      ],
+      "metadata": {"ageGroup": "explorer", "skillIds": ["math.currency", "math.word_problems"], "budget": 20, "currencyUnit": "đồng"},
+      "assetRefs": ["mi-school-pen", "mi-school-notebook", "mi-candy"]
+    },
+    {
+      "id": "ms-lv09",
+      "gameId": "math_supermarket",
+      "levelNumber": 9,
+      "difficulty": 4,
+      "learningObjective": "Giảm giá — tính phần trăm đơn giản",
+      "localizedContent": {
+        "vi": {
+          "prompt": "Áo giá 20 đồng, giảm 50%. Giá mới bao nhiêu?",
+          "options": [
+            {"id": "a", "text": "8 đồng", "correct": false},
+            {"id": "b", "text": "10 đồng", "correct": true},
+            {"id": "c", "text": "12 đồng", "correct": false}
+          ]
+        },
+        "en": {
+          "prompt": "Shirt costs 20 coins, 50% off. What is the new price?",
+          "options": [
+            {"id": "a", "text": "8 coins", "correct": false},
+            {"id": "b", "text": "10 coins", "correct": true},
+            {"id": "c", "text": "12 coins", "correct": false}
+          ]
+        }
+      },
+      "hints": [
+        {"text": "50% của 20 bằng một nửa"},
+        {"text": "20 ÷ 2 = 10"}
+      ],
+      "metadata": {"ageGroup": "explorer", "skillIds": ["math.currency", "math.percentages"], "budget": 20, "currencyUnit": "đồng"},
+      "assetRefs": ["mi-clothes-shirt"]
+    },
+    {
+      "id": "ms-lv10",
+      "gameId": "math_supermarket",
+      "levelNumber": 10,
+      "difficulty": 5,
+      "learningObjective": "Mua sắm phức tạp — tính đơn vị và tổng",
+      "localizedContent": {
+        "vi": {
+          "prompt": "Mua 3 gạo (5 đồng/kg), 2 đường (4 đồng/kg). Trả 30 đồng. Thừa bao nhiêu? (Gạo mua 2kg, đường mua 3kg)",
+          "options": [
+            {"id": "a", "text": "8 đồng", "correct": true},
+            {"id": "b", "text": "10 đồng", "correct": false},
+            {"id": "c", "text": "12 đồng", "correct": false}
+          ]
+        },
+        "en": {
+          "prompt": "Buy 2kg rice (5 coins/kg) and 3kg sugar (4 coins/kg). Pay 30 coins. How much change?",
+          "options": [
+            {"id": "a", "text": "8 coins", "correct": true},
+            {"id": "b", "text": "10 coins", "correct": false},
+            {"id": "c", "text": "12 coins", "correct": false}
+          ]
+        }
+      },
+      "hints": [
+        {"text": "Gạo: 2×5=10, Đường: 3×4=12. Tổng: 22"},
+        {"text": "30 - 22 = 8 đồng thừa"}
+      ],
+      "metadata": {"ageGroup": "master", "skillIds": ["math.currency", "math.word_problems", "math.multiplication_tables"], "budget": 30, "currencyUnit": "đồng"},
+      "assetRefs": ["mi-food-rice", "mi-food-sugar"]
+    }
+  ]
+}

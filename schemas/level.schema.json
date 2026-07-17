@@ -1,0 +1,129 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://mi-academy.app/schemas/level.v1.schema.json",
+  "title": "MI Academy Level Schema",
+  "description": "Schema for game level content files. Invalid levels must not reach production.",
+  "version": "1.0.0",
+  "type": "object",
+  "required": ["id", "gameId", "levelNumber", "difficulty", "localizedContent"],
+  "properties": {
+    "id": {
+      "type": "string",
+      "format": "uuid",
+      "description": "Unique level identifier (UUID v4)."
+    },
+    "gameId": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Parent game identifier (e.g., memory_cards, word_builder)."
+    },
+    "levelNumber": {
+      "type": "integer",
+      "minimum": 1,
+      "description": "Ordinal level number (1-based)."
+    },
+    "difficulty": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 5,
+      "description": "Difficulty tier (1 = easiest)."
+    },
+    "learningObjective": {
+      "type": "string",
+      "description": "What the child learns from this level."
+    },
+    "localizedContent": {
+      "type": "object",
+      "description": "Map of locale code to localized content.",
+      "minProperties": 1,
+      "additionalProperties": {
+        "type": "object",
+        "required": ["prompt"],
+        "properties": {
+          "prompt": {
+            "type": "string",
+            "description": "Main instruction text shown to the child."
+          },
+          "options": {
+            "type": "array",
+            "description": "Answer options (for choice-based levels).",
+            "items": {
+              "type": "object",
+              "required": ["id", "text"],
+              "properties": {
+                "id": { "type": "string" },
+                "text": { "type": "string" },
+                "correct": { "type": "boolean" },
+                "media": { "type": "string" }
+              }
+            }
+          },
+          "cards": {
+            "type": "array",
+            "description": "Card definitions (for memory/matching games).",
+            "items": {
+              "type": "object",
+              "required": ["id", "content"],
+              "properties": {
+                "id": { "type": "string" },
+                "content": { "type": "string" },
+                "type": {
+                  "type": "string",
+                  "enum": ["image", "text", "number", "mixed"]
+                },
+                "imageUrl": { "type": "string" },
+                "audioRef": { "type": "string" },
+                "pairId": { "type": "string" }
+              }
+            }
+          }
+        }
+      }
+    },
+    "hints": {
+      "type": "array",
+      "description": "Ordered progressive hints (never auto-completes).",
+      "items": {
+        "type": "object",
+        "required": ["text"],
+        "properties": {
+          "text": {
+            "type": "string",
+            "description": "Localized hint text."
+          },
+          "media": {
+            "type": "string",
+            "description": "Optional audio/image reference."
+          },
+          "highlight": {
+            "type": "string",
+            "description": "UI element to highlight (e.g., card:3)."
+          },
+          "action": {
+            "type": "object",
+            "description": "Optional auto-action for this hint."
+          }
+        }
+      }
+    },
+    "metadata": {
+      "type": "object",
+      "description": "Game-specific metadata (grid size, timer settings, etc.)."
+    },
+    "assetRefs": {
+      "type": "array",
+      "description": "References to required assets (images, audio).",
+      "items": { "type": "string" }
+    },
+    "accessibilityOverrides": {
+      "type": "object",
+      "description": "Per-level accessibility overrides.",
+      "properties": {
+        "textScaleFactor": { "type": "number", "minimum": 1.0, "maximum": 2.0 },
+        "highContrast": { "type": "boolean" },
+        "reducedMotion": { "type": "boolean" }
+      }
+    }
+  },
+  "additionalProperties": false
+}

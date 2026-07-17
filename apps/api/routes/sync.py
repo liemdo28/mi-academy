@@ -1,11 +1,11 @@
 """Sync routes — content delta, progress upsert, attempts, status."""
 
-from datetime import datetime
-from fastapi import APIRouter, HTTPException, Query
+from fastapi import APIRouter, Depends, HTTPException, Query
 from sqlalchemy import select, func
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from apps.api.database import get_db
+from apps.api.time import utc_now
 from apps.api.models import (
     Attempt,
     Progress,
@@ -25,7 +25,7 @@ router = APIRouter()
 
 
 @router.get("/status", response_model=SyncStatusResponse)
-async def sync_status(db: AsyncSession = get_db):
+async def sync_status(db: AsyncSession = Depends(get_db)):
     """Return current server content versions."""
     result = await db.execute(select(ContentVersion))
     versions = {v.content_type: v.version for v in result.scalars().all()}
@@ -33,7 +33,7 @@ async def sync_status(db: AsyncSession = get_db):
         lessons_version=versions.get("lessons", 1),
         questions_version=versions.get("questions", 1),
         games_version=versions.get("games", 1),
-        server_time=datetime.utcnow(),
+        server_time=utc_now(),
     )
 
 
@@ -41,7 +41,7 @@ async def sync_status(db: AsyncSession = get_db):
 async def get_content(
     since_version: int = Query(0),
     content_type: str = Query(...),  # lessons | questions | games
-    db: AsyncSession = get_db,
+    db: AsyncSession = Depends(get_db),
 ):
     """Return content delta (or full snapshot if since_version=0)."""
     if content_type == "lessons":
@@ -85,7 +85,7 @@ async def get_content(
 @router.post("/progress")
 async def sync_progress(
     items: list[SyncProgressItem],
-    db: AsyncSession = get_db,
+    db: AsyncSession = Depends(get_db),
 ):
     """Bulk upsert progress records from client."""
     import uuid
@@ -117,7 +117,7 @@ async def sync_progress(
 @router.post("/attempts")
 async def sync_attempts(
     items: list[SyncAttemptItem],
-    db: AsyncSession = get_db,
+    db: AsyncSession = Depends(get_db),
 ):
     """Bulk insert attempts from client (idempotent by id)."""
     accepted = 0

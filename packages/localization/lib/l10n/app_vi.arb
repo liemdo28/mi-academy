@@ -1,0 +1,75 @@
+{
+  "@@locale": "vi",
+  "appName": "MI Academy",
+  "welcome": "Chào mừng!",
+  "login": "Đăng nhập",
+  "register": "Đăng ký",
+  "logout": "Đăng xuất",
+  "email": "Email",
+  "password": "Mật khẩu",
+  "parentDashboard": "Phụ huynh",
+  "childHome": "Trang chủ",
+  "settings": "Cài đặt",
+  "profile": "Hồ sơ",
+  "selectChild": "Chọn hồ sơ trẻ",
+  "createChild": "Tạo hồ sơ trẻ",
+  "nickname": "Biệt danh",
+  "ageGroup": "Nhóm tuổi",
+  "dailyPlan": "Kế hoạch hôm nay",
+  "lessons": "Bài học",
+  "games": "Trò chơi",
+  "rewards": "Phần thưởng",
+  "stars": "Sao",
+  "badges": "Huy hiệu",
+  "lessonComplete": "Hoàn thành bài học",
+  "greatJob": "Làm tốt lắm!",
+  "tryAgain": "Thử lại",
+  "continue": "Tiếp tục",
+  "pause": "Tạm dừng",
+  "resume": "Tiếp tục",
+  "hint": "Gợi ý",
+  "next": "Tiếp theo",
+  "back": "Quay lại",
+  "save": "Lưu",
+  "cancel": "Hủy",
+  "delete": "Xóa",
+  "confirm": "Xác nhận",
+  "loading": "Đang tải...",
+  "error": "Đã xảy ra lỗi",
+  "retry": "Thử lại",
+  "noInternet": "Không có kết nối mạng",
+  "offlineMode": "Chế độ offline",
+  "todayProgress": "Tiến độ hôm nay",
+  "weeklyReport": "Báo cáo tuần này",
+  "parentPIN": "Mã PIN phụ huynh",
+  "setPIN": "Đặt mã PIN",
+  "enterPIN": "Nhập mã PIN",
+  "changePIN": "Đổi mã PIN",
+  "audioSettings": "Cài đặt âm thanh",
+  "accessibility": "Hỗ trợ đặc biệt",
+  "subjectLetters": "Thành phố chữ cái",
+  "subjectMath": "Vương quốc toán học",
+  "subjectLogic": "Đảo tư duy",
+  "subjectScience": "Phòng thí nghiệm",
+  "subjectCreative": "Ngôi nhà sáng tạo",
+  "correct": "Đúng rồi!",
+  "incorrect": "Chưa đúng, thử lại nhé!",
+  "welcomeBack": "Chào mừng quay lại, {name}!",
+  "@welcomeBack": {
+    "placeholders": {
+      "name": {"type": "String"}
+    }
+  },
+  "minutesPlayed": "{count} phút chơi hôm nay",
+  "@minutesPlayed": {
+    "placeholders": {
+      "count": {"type": "int"}
+    }
+  },
+  "starsEarned": "+{count} sao",
+  "@starsEarned": {
+    "placeholders": {
+      "count": {"type": "int"}
+    }
+  }
+}

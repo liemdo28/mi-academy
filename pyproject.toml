@@ -5,7 +5,6 @@ description = "MI Academy — Offline-first educational games for children 5–1
 requires-python = ">=3.10"
 
 [tool.pytest.ini_options]
-asyncio_mode = "auto"
 testpaths = ["tests"]
 pythonpath = ["."]
 

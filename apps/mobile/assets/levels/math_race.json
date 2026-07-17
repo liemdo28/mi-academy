@@ -1,0 +1,317 @@
+{
+  "gameId": "math_race",
+  "schemaVersion": "1.0.0",
+  "description": "Kids solve math problems to race their car forward. Correct answers = speed boost.",
+  "levels": [
+    {
+      "id": "mr-lv01",
+      "gameId": "math_race",
+      "levelNumber": 1,
+      "difficulty": 1,
+      "learningObjective": "Nhận biết số đếm 1-5",
+      "localizedContent": {
+        "vi": {
+          "prompt": "Có mấy quả táo? 🍎🍎🍎",
+          "options": [
+            {"id": "a", "text": "2", "correct": false},
+            {"id": "b", "text": "3", "correct": true},
+            {"id": "c", "text": "4", "correct": false}
+          ]
+        },
+        "en": {
+          "prompt": "How many apples? 🍎🍎🍎",
+          "options": [
+            {"id": "a", "text": "2", "correct": false},
+            {"id": "b", "text": "3", "correct": true},
+            {"id": "c", "text": "4", "correct": false}
+          ]
+        }
+      },
+      "hints": [
+        {"text": "Đếm từng quả táo một"},
+        {"text": "Một... hai... ba!"}
+      ],
+      "metadata": {"ageGroup": "junior", "skillIds": ["math.number_recognition"], "trackLength": 100, "timeLimitSec": 0},
+      "assetRefs": ["mi-fruit-apple"]
+    },
+    {
+      "id": "mr-lv02",
+      "gameId": "math_race",
+      "levelNumber": 2,
+      "difficulty": 1,
+      "learningObjective": "So sánh số nhỏ hơn 10",
+      "localizedContent": {
+        "vi": {
+          "prompt": "Số nào lớn hơn?",
+          "options": [
+            {"id": "a", "text": "3", "correct": false},
+            {"id": "b", "text": "7", "correct": true},
+            {"id": "c", "text": "5", "correct": false}
+          ]
+        },
+        "en": {
+          "prompt": "Which number is bigger?",
+          "options": [
+            {"id": "a", "text": "3", "correct": false},
+            {"id": "b", "text": "7", "correct": true},
+            {"id": "c", "text": "5", "correct": false}
+          ]
+        }
+      },
+      "hints": [
+        {"text": "So sánh hai số — số nào lớn hơn?"},
+        {"text": "7 lớn hơn 5 và 3"}
+      ],
+      "metadata": {"ageGroup": "junior", "skillIds": ["math.comparison"], "trackLength": 100, "timeLimitSec": 0},
+      "assetRefs": []
+    },
+    {
+      "id": "mr-lv03",
+      "gameId": "math_race",
+      "levelNumber": 3,
+      "difficulty": 2,
+      "learningObjective": "Cộng trong phạm vi 10",
+      "localizedContent": {
+        "vi": {
+          "prompt": "2 + 3 = ?",
+          "options": [
+            {"id": "a", "text": "4", "correct": false},
+            {"id": "b", "text": "6", "correct": false},
+            {"id": "c", "text": "5", "correct": true}
+          ]
+        },
+        "en": {
+          "prompt": "2 + 3 = ?",
+          "options": [
+            {"id": "a", "text": "4", "correct": false},
+            {"id": "b", "text": "6", "correct": false},
+            {"id": "c", "text": "5", "correct": true}
+          ]
+        }
+      },
+      "hints": [
+        {"text": "Đếm thêm 3 từ số 2"},
+        {"text": "2... 3, 4, 5!"}
+      ],
+      "metadata": {"ageGroup": "junior", "skillIds": ["math.addition_within_10"], "trackLength": 150, "timeLimitSec": 0},
+      "assetRefs": []
+    },
+    {
+      "id": "mr-lv04",
+      "gameId": "math_race",
+      "levelNumber": 4,
+      "difficulty": 2,
+      "learningObjective": "Trừ trong phạm vi 10",
+      "localizedContent": {
+        "vi": {
+          "prompt": "7 - 4 = ?",
+          "options": [
+            {"id": "a", "text": "2", "correct": false},
+            {"id": "b", "text": "3", "correct": true},
+            {"id": "c", "text": "5", "correct": false}
+          ]
+        },
+        "en": {
+          "prompt": "7 - 4 = ?",
+          "options": [
+            {"id": "a", "text": "2", "correct": false},
+            {"id": "b", "text": "3", "correct": true},
+            {"id": "c", "text": "5", "correct": false}
+          ]
+        }
+      },
+      "hints": [
+        {"text": "Bỏ 4 khỏi 7"},
+        {"text": "7... 6, 5, 4, 3!"}
+      ],
+      "metadata": {"ageGroup": "junior", "skillIds": ["math.subtraction_within_10"], "trackLength": 150, "timeLimitSec": 0},
+      "assetRefs": []
+    },
+    {
+      "id": "mr-lv05",
+      "gameId": "math_race",
+      "levelNumber": 5,
+      "difficulty": 3,
+      "learningObjective": "Cộng trong phạm vi 20",
+      "localizedContent": {
+        "vi": {
+          "prompt": "8 + 7 = ?",
+          "options": [
+            {"id": "a", "text": "14", "correct": false},
+            {"id": "b", "text": "16", "correct": false},
+            {"id": "c", "text": "15", "correct": true}
+          ]
+        },
+        "en": {
+          "prompt": "8 + 7 = ?",
+          "options": [
+            {"id": "a", "text": "14", "correct": false},
+            {"id": "b", "text": "16", "correct": false},
+            {"id": "c", "text": "15", "correct": true}
+          ]
+        }
+      },
+      "hints": [
+        {"text": "8 cộng thêm 2 bằng 10, còn 5 nữa"},
+        {"text": "8 + 7 = 8 + 2 + 5 = 15"}
+      ],
+      "metadata": {"ageGroup": "explorer", "skillIds": ["math.addition_within_20"], "trackLength": 200, "timeLimitSec": 0},
+      "assetRefs": []
+    },
+    {
+      "id": "mr-lv06",
+      "gameId": "math_race",
+      "levelNumber": 6,
+      "difficulty": 3,
+      "learningObjective": "Nhân đơn giản (bảng 2)",
+      "localizedContent": {
+        "vi": {
+          "prompt": "2 × 4 = ?",
+          "options": [
+            {"id": "a", "text": "6", "correct": false},
+            {"id": "b", "text": "10", "correct": false},
+            {"id": "c", "text": "8", "correct": true}
+          ]
+        },
+        "en": {
+          "prompt": "2 × 4 = ?",
+          "options": [
+            {"id": "a", "text": "6", "correct": false},
+            {"id": "b", "text": "10", "correct": false},
+            {"id": "c", "text": "8", "correct": true}
+          ]
+        }
+      },
+      "hints": [
+        {"text": "Nhân là cộng nhiều lần"},
+        {"text": "2 + 2 + 2 + 2 = 8"}
+      ],
+      "metadata": {"ageGroup": "explorer", "skillIds": ["math.multiplication_tables"], "trackLength": 200, "timeLimitSec": 0},
+      "assetRefs": []
+    },
+    {
+      "id": "mr-lv07",
+      "gameId": "math_race",
+      "levelNumber": 7,
+      "difficulty": 4,
+      "learningObjective": "Chia đơn giản (bảng 3)",
+      "localizedContent": {
+        "vi": {
+          "prompt": "12 ÷ 3 = ?",
+          "options": [
+            {"id": "a", "text": "3", "correct": false},
+            {"id": "b", "text": "4", "correct": true},
+            {"id": "c", "text": "5", "correct": false}
+          ]
+        },
+        "en": {
+          "prompt": "12 ÷ 3 = ?",
+          "options": [
+            {"id": "a", "text": "3", "correct": false},
+            {"id": "b", "text": "4", "correct": true},
+            {"id": "c", "text": "5", "correct": false}
+          ]
+        }
+      },
+      "hints": [
+        {"text": "Chia 12 thành 3 phần bằng nhau"},
+        {"text": "3 × ? = 12 → 4"}
+      ],
+      "metadata": {"ageGroup": "explorer", "skillIds": ["math.basic_division"], "trackLength": 250, "timeLimitSec": 0},
+      "assetRefs": []
+    },
+    {
+      "id": "mr-lv08",
+      "gameId": "math_race",
+      "levelNumber": 8,
+      "difficulty": 4,
+      "learningObjective": "Phép tính hỗn hợp đơn giản",
+      "localizedContent": {
+        "vi": {
+          "prompt": "3 × 4 + 5 = ?",
+          "options": [
+            {"id": "a", "text": "15", "correct": false},
+            {"id": "b", "text": "17", "correct": true},
+            {"id": "c", "text": "20", "correct": false}
+          ]
+        },
+        "en": {
+          "prompt": "3 × 4 + 5 = ?",
+          "options": [
+            {"id": "a", "text": "15", "correct": false},
+            {"id": "b", "text": "17", "correct": true},
+            {"id": "c", "text": "20", "correct": false}
+          ]
+        }
+      },
+      "hints": [
+        {"text": "Làm nhân trước, rồi cộng"},
+        {"text": "3 × 4 = 12, 12 + 5 = 17"}
+      ],
+      "metadata": {"ageGroup": "explorer", "skillIds": ["math.multiplication_tables", "math.addition_within_20"], "trackLength": 250, "timeLimitSec": 0},
+      "assetRefs": []
+    },
+    {
+      "id": "mr-lv09",
+      "gameId": "math_race",
+      "levelNumber": 9,
+      "difficulty": 5,
+      "learningObjective": "Phân số cơ bản — nhận biết",
+      "localizedContent": {
+        "vi": {
+          "prompt": "½ + ½ = ?",
+          "options": [
+            {"id": "a", "text": "1", "correct": true},
+            {"id": "b", "text": "½", "correct": false},
+            {"id": "c", "text": "¼", "correct": false}
+          ]
+        },
+        "en": {
+          "prompt": "½ + ½ = ?",
+          "options": [
+            {"id": "a", "text": "1", "correct": true},
+            {"id": "b", "text": "½", "correct": false},
+            {"id": "c", "text": "¼", "correct": false}
+          ]
+        }
+      },
+      "hints": [
+        {"text": "Một nửa cộng một nửa bằng một"},
+        {"text": "½ + ½ = 2/2 = 1"}
+      ],
+      "metadata": {"ageGroup": "master", "skillIds": ["math.fraction_operations"], "trackLength": 300, "timeLimitSec": 0},
+      "assetRefs": []
+    },
+    {
+      "id": "mr-lv10",
+      "gameId": "math_race",
+      "levelNumber": 10,
+      "difficulty": 5,
+      "learningObjective": "Bài toán có lời văn — tính tổng",
+      "localizedContent": {
+        "vi": {
+          "prompt": "Lan có 15 viên kẹo. Mẹ cho thêm 8 viên. Lan có bao nhiêu viên kẹo?",
+          "options": [
+            {"id": "a", "text": "22", "correct": false},
+            {"id": "b", "text": "23", "correct": true},
+            {"id": "c", "text": "24", "correct": false}
+          ]
+        },
+        "en": {
+          "prompt": "Lan has 15 candies. Her mom gives her 8 more. How many candies does Lan have?",
+          "options": [
+            {"id": "a", "text": "22", "correct": false},
+            {"id": "b", "text": "23", "correct": true},
+            {"id": "c", "text": "24", "correct": false}
+          ]
+        }
+      },
+      "hints": [
+        {"text": "Cộng số kẹo cũ và số kẹo mới"},
+        {"text": "15 + 8 = 23"}
+      ],
+      "metadata": {"ageGroup": "master", "skillIds": ["math.word_problems"], "trackLength": 300, "timeLimitSec": 0},
+      "assetRefs": []
+    }
+  ]
+}

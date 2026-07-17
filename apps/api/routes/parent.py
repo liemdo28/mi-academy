@@ -2,7 +2,7 @@
 
 from datetime import date
 from fastapi import APIRouter, Depends, HTTPException, status
-from sqlalchemy import func, select
+from sqlalchemy import Integer, func, select
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from apps.api.database import get_db
@@ -17,6 +17,7 @@ from apps.api.dependencies import (
 from apps.api.models import (
     ChildProfile,
     DailySession,
+    Attempt,
     ParentProfile,
     Progress,
     Reward,
@@ -31,8 +32,14 @@ from apps.api.schemas import (
     VerifyPinResponse,
     ParentReportSummary,
     WeeklyReportEntry,
-    ChildResponse,
+    ParentDataExport,
+    ParentExportProfile,
+    ChildExportProfile,
+    ProgressExportItem,
+    RewardExportItem,
+    AttemptExportSummary,
 )
+from apps.api.time import utc_now
 
 router = APIRouter()
 
@@ -48,7 +55,7 @@ async def get_profile(
 async def update_profile(
     body: ParentProfileUpdate,
     profile: ParentProfile = Depends(get_parent_profile),
-    db: AsyncSession = get_db,
+    db: AsyncSession = Depends(get_db),
 ):
     if body.display_name is not None:
         profile.display_name = body.display_name
@@ -64,7 +71,7 @@ async def update_profile(
 async def set_pin(
     body: SetPinRequest,
     profile: ParentProfile = Depends(get_parent_profile),
-    db: AsyncSession = get_db,
+    db: AsyncSession = Depends(get_db),
 ):
     profile.pin_hash = hash_password(body.pin)
     await db.flush()
@@ -86,7 +93,7 @@ async def verify_pin(
 @router.get("/reports", response_model=ParentReportSummary)
 async def get_reports(
     profile: ParentProfile = Depends(get_parent_profile),
-    db: AsyncSession = get_db,
+    db: AsyncSession = Depends(get_db),
 ):
     today = date.today()
     child_ids = [c.id for c in profile.children]
@@ -127,7 +134,7 @@ async def get_weekly_report(
     child_id: str,
     week: int = 0,  # 0 = current week, -1 = last week, etc.
     profile: ParentProfile = Depends(get_parent_profile),
-    db: AsyncSession = get_db,
+    db: AsyncSession = Depends(get_db),
 ):
     # Verify child belongs to this parent
     if child_id not in [c.id for c in profile.children]:
@@ -153,3 +160,108 @@ async def get_weekly_report(
         )
         for s in sessions[-7:]
     ]
+
+
+@router.get("/export", response_model=ParentDataExport)
+async def export_parent_data(
+    profile: ParentProfile = Depends(get_parent_profile),
+    db: AsyncSession = Depends(get_db),
+):
+    """Return a privacy-safe parent export without raw answers or contact data."""
+    child_ids = [c.id for c in profile.children]
+
+    if child_ids:
+        sessions_result = await db.execute(
+            select(DailySession)
+            .where(DailySession.child_id.in_(child_ids))
+            .order_by(DailySession.session_date)
+        )
+        progress_result = await db.execute(
+            select(Progress)
+            .where(Progress.child_id.in_(child_ids))
+            .order_by(Progress.last_played_at)
+        )
+        rewards_result = await db.execute(
+            select(ChildReward, Reward)
+            .join(Reward, Reward.id == ChildReward.reward_id)
+            .where(ChildReward.child_id.in_(child_ids))
+            .order_by(ChildReward.unlocked_at)
+        )
+        attempts_result = await db.execute(
+            select(
+                Attempt.child_id,
+                func.count(Attempt.id).label("total_attempts"),
+                func.sum(func.cast(Attempt.is_correct, Integer)).label("correct_attempts"),
+                func.sum(Attempt.hint_count).label("hint_count"),
+            )
+            .where(Attempt.child_id.in_(child_ids))
+            .group_by(Attempt.child_id)
+        )
+        sessions = sessions_result.scalars().all()
+        progress_rows = progress_result.scalars().all()
+        reward_rows = rewards_result.all()
+        attempt_rows = attempts_result.all()
+    else:
+        sessions = []
+        progress_rows = []
+        reward_rows = []
+        attempt_rows = []
+
+    return ParentDataExport(
+        generated_at=utc_now(),
+        parent=ParentExportProfile(
+            id=profile.id,
+            display_name=profile.display_name,
+            language=profile.language,
+            timezone=profile.timezone,
+        ),
+        children=[
+            ChildExportProfile(
+                id=child.id,
+                nickname=child.nickname,
+                age_group=child.age_group,
+                preferred_language=child.preferred_language,
+                daily_time_limit=child.daily_time_limit,
+                created_at=child.created_at,
+            )
+            for child in profile.children
+        ],
+        daily_sessions=[
+            WeeklyReportEntry(
+                date=session.session_date,
+                duration_seconds=session.duration_seconds,
+                lessons_completed=session.lessons_completed,
+                games_completed=session.games_completed,
+            )
+            for session in sessions
+        ],
+        progress=[
+            ProgressExportItem(
+                child_id=row.child_id,
+                lesson_id=row.lesson_id,
+                status=row.status,
+                mastery_score=row.mastery_score,
+                total_attempts=row.total_attempts,
+                last_played_at=row.last_played_at,
+            )
+            for row in progress_rows
+        ],
+        rewards=[
+            RewardExportItem(
+                child_id=child_reward.child_id,
+                reward_type=reward.reward_type,
+                name=reward.name,
+                unlocked_at=child_reward.unlocked_at,
+            )
+            for child_reward, reward in reward_rows
+        ],
+        attempts_summary=[
+            AttemptExportSummary(
+                child_id=row.child_id,
+                total_attempts=row.total_attempts or 0,
+                correct_attempts=row.correct_attempts or 0,
+                hint_count=row.hint_count or 0,
+            )
+            for row in attempt_rows
+        ],
+    )

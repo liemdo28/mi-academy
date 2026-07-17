@@ -1,41 +1,19 @@
-"""Pydantic DTOs — shared across all routes."""
+"""Pydantic request/response schemas for all API routes."""
 
-from datetime import datetime, date
-from typing import Any, Generic, List, Optional, TypeVar
+# ─── Auth ────────────────────────────────────────────────────────────────────
+
 from pydantic import BaseModel, EmailStr, Field
 
-# ── Generic paginated response ──────────────────────────────────────────────────
-
-T = TypeVar("T")
-
-
-class PaginatedResponse(BaseModel, Generic[T]):
-    items: List[T]
-    total: int
-    page: int
-    page_size: int
-
-
-class ErrorDetail(BaseModel):
-    code: str
-    message: str
-
-
-class ErrorResponse(BaseModel):
-    error: ErrorDetail
-
-
-# ── Auth ───────────────────────────────────────────────────────────────────────
 
 class RegisterRequest(BaseModel):
-    email: str
-    password: str
-    display_name: str
-    language: str = "vi"
+    email: EmailStr
+    password: str = Field(..., min_length=8, max_length=128)
+    display_name: str = Field(..., min_length=1, max_length=100)
+    language: str = Field(default="vi", pattern="^(vi|en)$")
 
 
 class LoginRequest(BaseModel):
-    email: str
+    email: EmailStr
     password: str
 
 
@@ -49,23 +27,23 @@ class TokenResponse(BaseModel):
     token_type: str = "bearer"
 
 
+class UserResponse(BaseModel):
+    id: str
+    role: str
+    email: str | None
+    created_at: str
+
+
 class AuthResponse(BaseModel):
-    user: "UserResponse"
+    user: UserResponse
     parent_profile: "ParentProfileResponse"
     access_token: str
     refresh_token: str
 
 
-# ── User / Parent ───────────────────────────────────────────────────────────────
+# ─── Parent Profile ────────────────────────────────────────────────────────────
 
-class UserResponse(BaseModel):
-    id: str
-    role: str
-    email: Optional[str]
-    created_at: datetime
-
-    class Config:
-        from_attributes = True
+from datetime import datetime
 
 
 class ParentProfileResponse(BaseModel):
@@ -73,10 +51,7 @@ class ParentProfileResponse(BaseModel):
     display_name: str
     language: str
     timezone: str
-    pin_is_set: bool = False
-
-    class Config:
-        from_attributes = True
+    has_pin: bool = False
 
     @classmethod
     def from_model(cls, model) -> "ParentProfileResponse":
@@ -85,112 +60,84 @@ class ParentProfileResponse(BaseModel):
             display_name=model.display_name,
             language=model.language,
             timezone=model.timezone,
-            pin_is_set=model.pin_hash is not None,
+            has_pin=model.pin_hash is not None,
         )
 
 
 class ParentProfileUpdate(BaseModel):
-    display_name: Optional[str] = None
-    language: Optional[str] = None
-    timezone: Optional[str] = None
+    display_name: str | None = Field(None, min_length=1, max_length=100)
+    language: str | None = Field(None, pattern="^(vi|en)$")
+    timezone: str | None = None
 
 
 class SetPinRequest(BaseModel):
-    pin: str = Field(..., min_length=4, max_length=4, pattern=r"^\d{4}$")
+    pin: str = Field(..., min_length=4, max_length=6, pattern=r"^\d+$")
 
 
 class VerifyPinRequest(BaseModel):
-    pin: str = Field(..., min_length=4, max_length=4, pattern=r"^\d{4}$")
+    pin: str = Field(..., min_length=4, max_length=6, pattern=r"^\d+$")
 
 
 class VerifyPinResponse(BaseModel):
     verified: bool
-    parent_session_token: Optional[str] = None
+    parent_session_token: str | None = None
 
 
-class ParentReportSummary(BaseModel):
-    total_children: int
-    total_stars_today: int
-    total_games_today: int
-    total_lessons_today: int
-    total_time_minutes_today: int
+# ─── Child Profile ─────────────────────────────────────────────────────────────
+
+from datetime import date
+from pydantic import ConfigDict
+
+from .admin import (
+    AdminGameUpdate,
+    AdminLessonCreate,
+    AdminLessonUpdate,
+    AdminQuestionCreate,
+    AdminQuestionUpdate,
+)
+from .child import ChildResponse, CreateChildRequest, UpdateChildRequest
+from .lesson import GameLevelResponse, LessonDetailResponse, LessonResponse
+from .progress import DailyPlanItem, ProgressResponse, SaveGameResultRequest, SkillReport
+from .reports import (
+    AttemptExportSummary,
+    ChildExportProfile,
+    ParentDataExport,
+    ParentExportProfile,
+    ParentReportSummary,
+    ProgressExportItem,
+    RewardExportItem,
+    WeeklyReportEntry,
+)
+from .reward import ChildRewardResponse, RewardResponse
+from .sync import (
+    SyncAttemptItem,
+    SyncContentResponse,
+    SyncProgressItem,
+    SyncStatusResponse,
+)
 
 
-class WeeklyReportEntry(BaseModel):
-    date: date
-    duration_seconds: int
-    lessons_completed: int
-    games_completed: int
+ChildCreate = CreateChildRequest
+ChildUpdate = UpdateChildRequest
 
 
-# ── Children ────────────────────────────────────────────────────────────────────
-
-class ChildCreate(BaseModel):
-    nickname: str = Field(..., max_length=20)
-    birth_year: Optional[int] = None
-    age_group: str  # junior | explorer | master
-    grade_level: Optional[str] = None
-    avatar_id: str = "avatar_01"
-    preferred_language: str = "vi"
-    daily_time_limit: Optional[int] = None
+class LessonListItem(LessonResponse):
+    subject_name: str | None = None
 
 
-class ChildUpdate(BaseModel):
-    nickname: Optional[str] = None
-    birth_year: Optional[int] = None
-    age_group: Optional[str] = None
-    grade_level: Optional[str] = None
-    avatar_id: Optional[str] = None
-    preferred_language: Optional[str] = None
-    daily_time_limit: Optional[int] = None
-
-
-class ChildResponse(BaseModel):
+class QuestionResponse(BaseModel):
     id: str
-    nickname: str
-    birth_year: Optional[int]
-    age_group: str
-    grade_level: Optional[str]
-    avatar_id: str
-    preferred_language: str
-    daily_time_limit: Optional[int]
-    created_at: datetime
-
-    class Config:
-        from_attributes = True
-
-
-# ── Lessons ────────────────────────────────────────────────────────────────────
-
-class LessonListItem(BaseModel):
-    id: str
-    title: str
-    description: Optional[str]
-    age_group: str
+    question_type: str
+    prompt: str
+    options_json: list[dict] | None = None
+    media_url: str | None = None
     difficulty: int
-    language: str
-    estimated_minutes: int
-    is_active: bool
-    subject_name: Optional[str] = None
-
-    class Config:
-        from_attributes = True
 
 
-class LessonDetail(BaseModel):
-    id: str
-    title: str
-    description: Optional[str]
-    age_group: str
-    difficulty: int
-    language: str
-    estimated_minutes: int
-    content_json: Optional[dict]
-    questions: List["QuestionResponse"] = []
-    subject_name: Optional[str] = None
-
-    class Config:
-        from_attributes = True
+class LessonDetail(LessonResponse):
+    content_json: dict | None = None
+    questions: list[QuestionResponse] = Field(default_factory=list)
+    subject_name: str | None = None
 
 
 class LessonStartRequest(BaseModel):
@@ -202,9 +149,9 @@ class LessonCompleteRequest(BaseModel):
     mastery_score: float = Field(..., ge=0.0, le=1.0)
 
 
-# ── Games ───────────────────────────────────────────────────────────────────────
-
 class GameListItem(BaseModel):
+    model_config = ConfigDict(from_attributes=True)
+
     id: str
     name: str
     game_type: str
@@ -212,21 +159,9 @@ class GameListItem(BaseModel):
     age_max: int
     is_active: bool
 
-    class Config:
-        from_attributes = True
 
-
-class GameDetail(BaseModel):
-    id: str
-    name: str
-    game_type: str
-    age_min: int
-    age_max: int
-    config_json: Optional[dict]
-    is_active: bool
-
-    class Config:
-        from_attributes = True
+class GameDetail(GameListItem):
+    config_json: dict | None = None
 
 
 class GameStartRequest(BaseModel):
@@ -235,187 +170,92 @@ class GameStartRequest(BaseModel):
 
 class GameAttemptRequest(BaseModel):
     child_id: str
-    answer_json: dict
-    response_time_ms: int = 0
-    hint_count: int = 0
+    answer_json: dict = Field(default_factory=dict)
+    response_time_ms: int = Field(default=0, ge=0)
+    hint_count: int = Field(default=0, ge=0)
 
 
 class GameCompleteRequest(BaseModel):
     child_id: str
-    total_stars: int = Field(..., ge=0)
-    badges_unlocked: List[str] = []
-    rewards_unlocked: List[str] = []
-
-
-# ── Questions ───────────────────────────────────────────────────────────────────
-
-class QuestionResponse(BaseModel):
-    id: str
-    question_type: str
-    prompt: str
-    options_json: Optional[List[Any]] = None
-    media_url: Optional[str]
-    difficulty: int
-
-    class Config:
-        from_attributes = True
-
-
-# ── Progress ───────────────────────────────────────────────────────────────────
-
-class ProgressResponse(BaseModel):
-    id: Optional[str] = None
-    lesson_id: str
-    status: str
-    mastery_score: float
-    total_attempts: int
-    last_played_at: Optional[datetime]
-
-    class Config:
-        from_attributes = True
-
-
-class SkillReport(BaseModel):
-    subject_id: str
-    skill_name: Optional[str] = None
-    correct_count: int = 0
-    total_attempts: int = 0
-    accuracy_pct: float = 0.0
-    strength: str = "unknown"  # strong | weak | unknown
-
-
-class SkillScore(BaseModel):
-    skill_name: str
-    score: float  # 0-1
-    attempts: int
-
-
-class DailyPlanItem(BaseModel):
-    lesson_id: Optional[str] = None
-    title: str
-    subject: Optional[str] = None
-    age_group: str = "junior"
-    estimated_minutes: int = 5
-    game_type: Optional[str] = None
-    type: str = "lesson"  # lesson | game
-    is_required: bool = True
-
-
-class DailyPlanResponse(BaseModel):
-    items: List[DailyPlanItem]
-    date: date
-
-
-# ── Rewards ─────────────────────────────────────────────────────────────────────
-
-class RewardResponse(BaseModel):
-    id: str
-    reward_type: str
-    name: str
-    description: Optional[str]
-    asset_url: Optional[str]
-    is_unlocked: bool = False
-    unlocked_at: Optional[datetime]
-
-    class Config:
-        from_attributes = True
+    total_stars: int = Field(default=0, ge=0)
+    badges_unlocked: list[str] = Field(default_factory=list)
+    rewards_unlocked: list[str] = Field(default_factory=list)
 
 
 class UnlockRewardRequest(BaseModel):
     reward_id: str
 
 
-class RewardCatalog(BaseModel):
-    unlocked: List[RewardResponse]
-    locked: List[RewardResponse]
-
-
-# ── Sync ───────────────────────────────────────────────────────────────────────
-
-class ContentDelta(BaseModel):
-    content_type: str
-    version: int
-    checksum: str
-    items: List[dict]
-
-
-class SyncContentResponse(BaseModel):
-    content_type: str
-    version: int
-    items: List[dict]
-    deleted_ids: List[str] = []
-
-
-class SyncProgressItem(BaseModel):
-    id: Optional[str] = None
-    child_id: str
-    lesson_id: str
-    status: str
-    mastery_score: float
-    total_attempts: int
-    last_played_at: Optional[datetime] = None
-
-
-class SyncAttemptItem(BaseModel):
-    id: str
-    child_id: str
-    lesson_id: Optional[str]
-    game_id: Optional[str]
-    question_id: Optional[str]
-    answer_json: dict
-    is_correct: bool
-    response_time_ms: int
-    hint_count: int
-    created_at: datetime
-
-
-class SyncStatusResponse(BaseModel):
-    lessons_version: int
-    questions_version: int
-    games_version: int
-    server_time: datetime
-
-
-# ── Admin ───────────────────────────────────────────────────────────────────────
-
-class AdminLessonCreate(BaseModel):
-    subject_id: str
-    title: str
-    description: Optional[str] = None
-    age_group: str
-    difficulty: int = 1
-    language: str = "vi"
-    estimated_minutes: int = 5
-    content_json: Optional[dict] = None
-
-
-class AdminLessonUpdate(BaseModel):
-    title: Optional[str] = None
-    description: Optional[str] = None
-    age_group: Optional[str] = None
-    difficulty: Optional[int] = None
-    content_json: Optional[dict] = None
-    is_active: Optional[bool] = None
-
-
-class AdminQuestionCreate(BaseModel):
-    lesson_id: Optional[str] = None
-    question_type: str
-    prompt: str
-    options_json: Optional[List[Any]] = None
-    correct_answer_json: Optional[dict] = None
-    explanation: Optional[str] = None
-    media_url: Optional[str] = None
-    difficulty: int = 1
-
-
 class AdminGameCreate(BaseModel):
-    name: str
-    game_type: str
-    age_min: int = 5
-    age_max: int = 12
-    config_json: Optional[dict] = None
+    name: str = Field(..., max_length=100)
+    game_type: str = Field(..., max_length=50)
+    age_min: int = Field(default=5, ge=5, le=12)
+    age_max: int = Field(default=12, ge=5, le=12)
+    config_json: dict | None = None
 
-
-# Update forward refs
-LessonDetail.model_rebuild()
+__all__ = [
+    # Auth
+    "RegisterRequest",
+    "LoginRequest",
+    "RefreshRequest",
+    "TokenResponse",
+    "UserResponse",
+    "AuthResponse",
+    # Parent
+    "ParentProfileResponse",
+    "ParentProfileUpdate",
+    "SetPinRequest",
+    "VerifyPinRequest",
+    "VerifyPinResponse",
+    # Child
+    "ChildResponse",
+    "CreateChildRequest",
+    "UpdateChildRequest",
+    "ChildCreate",
+    "ChildUpdate",
+    # Lesson
+    "LessonResponse",
+    "LessonDetailResponse",
+    "GameLevelResponse",
+    "LessonListItem",
+    "QuestionResponse",
+    "LessonDetail",
+    "LessonStartRequest",
+    "LessonCompleteRequest",
+    # Progress
+    "ProgressResponse",
+    "SkillReport",
+    "DailyPlanItem",
+    "SaveGameResultRequest",
+    # Reward
+    "RewardResponse",
+    "ChildRewardResponse",
+    "UnlockRewardRequest",
+    # Games
+    "GameListItem",
+    "GameDetail",
+    "GameStartRequest",
+    "GameAttemptRequest",
+    "GameCompleteRequest",
+    # Sync
+    "SyncStatusResponse",
+    "SyncContentResponse",
+    "SyncProgressItem",
+    "SyncAttemptItem",
+    # Reports
+    "ParentReportSummary",
+    "WeeklyReportEntry",
+    "ParentDataExport",
+    "ParentExportProfile",
+    "ChildExportProfile",
+    "ProgressExportItem",
+    "RewardExportItem",
+    "AttemptExportSummary",
+    # Admin
+    "AdminLessonCreate",
+    "AdminLessonUpdate",
+    "AdminQuestionCreate",
+    "AdminQuestionUpdate",
+    "AdminGameCreate",
+    "AdminGameUpdate",
+]

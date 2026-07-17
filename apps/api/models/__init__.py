@@ -1,8 +1,8 @@
 """SQLAlchemy models — mirrors docs/DATABASE_SCHEMA.md exactly."""
 
-import uuid
 from datetime import datetime
 from typing import Optional
+import uuid
 
 from sqlalchemy import (
     Boolean,
@@ -20,6 +20,7 @@ from sqlalchemy.dialects.postgresql import UUID
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 
 from apps.api.database import Base
+from apps.api.time import utc_now
 
 
 def _uuid() -> str:
@@ -33,12 +34,15 @@ class User(Base):
     role: Mapped[str] = mapped_column(String(20), nullable=False)  # parent | admin | content_admin
     email: Mapped[Optional[str]] = mapped_column(String(255), unique=True, nullable=True)
     password_hash: Mapped[str] = mapped_column(String(255), nullable=False)
-    created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=datetime.utcnow)
+    created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=utc_now)
     updated_at: Mapped[datetime] = mapped_column(
-        DateTime(timezone=True), default=datetime.utcnow, onupdate=datetime.utcnow
+        DateTime(timezone=True), default=utc_now, onupdate=utc_now
     )
 
-    parent_profile: Mapped[Optional["ParentProfile"]] = relationship(back_populates="user")
+    parent_profile: Mapped[Optional["ParentProfile"]] = relationship(
+        back_populates="user",
+        cascade="all, delete-orphan",
+    )
 
 
 class ParentProfile(Base):
@@ -52,7 +56,10 @@ class ParentProfile(Base):
     pin_hash: Mapped[Optional[str]] = mapped_column(String(255), nullable=True)
 
     user: Mapped["User"] = relationship(back_populates="parent_profile")
-    children: Mapped[list["ChildProfile"]] = relationship(back_populates="parent")
+    children: Mapped[list["ChildProfile"]] = relationship(
+        back_populates="parent",
+        cascade="all, delete-orphan",
+    )
 
 
 class ChildProfile(Base):
@@ -67,13 +74,25 @@ class ChildProfile(Base):
     avatar_id: Mapped[str] = mapped_column(String(50), default="avatar_01")
     preferred_language: Mapped[str] = mapped_column(String(10), default="vi")
     daily_time_limit: Mapped[Optional[int]] = mapped_column(Integer, nullable=True)  # minutes
-    created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=datetime.utcnow)
+    created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=utc_now)
 
     parent: Mapped["ParentProfile"] = relationship(back_populates="children")
-    attempts: Mapped[list["Attempt"]] = relationship(back_populates="child")
-    progress: Mapped[list["Progress"]] = relationship(back_populates="child")
-    rewards: Mapped[list["ChildReward"]] = relationship(back_populates="child")
-    daily_sessions: Mapped[list["DailySession"]] = relationship(back_populates="child")
+    attempts: Mapped[list["Attempt"]] = relationship(
+        back_populates="child",
+        cascade="all, delete-orphan",
+    )
+    progress: Mapped[list["Progress"]] = relationship(
+        back_populates="child",
+        cascade="all, delete-orphan",
+    )
+    rewards: Mapped[list["ChildReward"]] = relationship(
+        back_populates="child",
+        cascade="all, delete-orphan",
+    )
+    daily_sessions: Mapped[list["DailySession"]] = relationship(
+        back_populates="child",
+        cascade="all, delete-orphan",
+    )
 
 
 class Subject(Base):
@@ -154,7 +173,7 @@ class Attempt(Base):
     is_correct: Mapped[bool] = mapped_column(Boolean, default=False)
     response_time_ms: Mapped[int] = mapped_column(Integer, default=0)
     hint_count: Mapped[int] = mapped_column(Integer, default=0)
-    created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=datetime.utcnow)
+    created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=utc_now)
 
     child: Mapped["ChildProfile"] = relationship(back_populates="attempts")
     game: Mapped[Optional["Game"]] = relationship(back_populates="attempts")
@@ -201,7 +220,7 @@ class ChildReward(Base):
     id: Mapped[str] = mapped_column(String(36), primary_key=True, default=_uuid)
     child_id: Mapped[str] = mapped_column(String(36), ForeignKey("child_profiles.id"), nullable=False)
     reward_id: Mapped[str] = mapped_column(String(36), ForeignKey("rewards.id"), nullable=False)
-    unlocked_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=datetime.utcnow)
+    unlocked_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=utc_now)
 
     child: Mapped["ChildProfile"] = relationship(back_populates="rewards")
     reward: Mapped["Reward"] = relationship(back_populates="child_rewards")
@@ -227,4 +246,4 @@ class ContentVersion(Base):
     content_type: Mapped[str] = mapped_column(String(30), nullable=False)  # lessons | questions | games
     version: Mapped[int] = mapped_column(Integer, default=1)
     checksum: Mapped[str] = mapped_column(String(64), nullable=True)
-    created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=datetime.utcnow)
+    created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=utc_now)

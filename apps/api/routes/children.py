@@ -7,7 +7,7 @@ from sqlalchemy.ext.asyncio import AsyncSession
 from apps.api.database import get_db
 from apps.api.dependencies import get_parent_profile
 from apps.api.models import ChildProfile, ParentProfile
-from apps.api.schemas import ChildCreate, ChildUpdate, ChildResponse
+from apps.api.schemas import CreateChildRequest, UpdateChildRequest, ChildResponse
 
 router = APIRouter()
 
@@ -24,14 +24,14 @@ def _check_child_ownership(profile: ParentProfile, child_id: str):
 async def list_children(
     profile: ParentProfile = Depends(get_parent_profile),
 ):
-    return [ChildResponse.model_validate(c) for c in profile.children]
+    return [ChildResponse.from_model(c) for c in profile.children]
 
 
 @router.post("", response_model=ChildResponse, status_code=status.HTTP_201_CREATED)
 async def create_child(
-    body: ChildCreate,
+    body: CreateChildRequest,
     profile: ParentProfile = Depends(get_parent_profile),
-    db: AsyncSession = get_db,
+    db: AsyncSession = Depends(get_db),
 ):
     # Max 5 children per parent
     if len(profile.children) >= 5:
@@ -52,7 +52,7 @@ async def create_child(
     )
     db.add(child)
     await db.flush()
-    return ChildResponse.model_validate(child)
+    return ChildResponse.from_model(child)
 
 
 @router.get("/{child_id}", response_model=ChildResponse)
@@ -62,15 +62,15 @@ async def get_child(
 ):
     _check_child_ownership(profile, child_id)
     child = next(c for c in profile.children if c.id == child_id)
-    return ChildResponse.model_validate(child)
+    return ChildResponse.from_model(child)
 
 
 @router.put("/{child_id}", response_model=ChildResponse)
 async def update_child(
     child_id: str,
-    body: ChildUpdate,
+    body: UpdateChildRequest,
     profile: ParentProfile = Depends(get_parent_profile),
-    db: AsyncSession = get_db,
+    db: AsyncSession = Depends(get_db),
 ):
     _check_child_ownership(profile, child_id)
     child = next(c for c in profile.children if c.id == child_id)
@@ -80,14 +80,14 @@ async def update_child(
         setattr(child, key, value)
 
     await db.flush()
-    return ChildResponse.model_validate(child)
+    return ChildResponse.from_model(child)
 
 
 @router.delete("/{child_id}", status_code=status.HTTP_204_NO_CONTENT)
 async def delete_child(
     child_id: str,
     profile: ParentProfile = Depends(get_parent_profile),
-    db: AsyncSession = get_db,
+    db: AsyncSession = Depends(get_db),
 ):
     _check_child_ownership(profile, child_id)
     child = next(c for c in profile.children if c.id == child_id)

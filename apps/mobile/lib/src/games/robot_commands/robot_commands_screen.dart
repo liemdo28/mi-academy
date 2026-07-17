@@ -1,0 +1,435 @@
+import 'package:flutter/material.dart';
+import 'package:mi_blocks/mi_blocks.dart';
+import 'package:mi_game_core/mi_game_core.dart';
+import 'package:mi_game_ui/mi_game_ui.dart';
+
+import 'robot_commands_session.dart';
+
+class RobotCommandsScreen extends StatefulWidget {
+  const RobotCommandsScreen({
+    super.key,
+    required this.level,
+    required this.allLevels,
+    this.onExit,
+  });
+
+  final MiLevel level;
+  final List<MiLevel> allLevels;
+  final VoidCallback? onExit;
+
+  @override
+  State<RobotCommandsScreen> createState() => _RobotCommandsScreenState();
+}
+
+class _RobotCommandsScreenState extends State<RobotCommandsScreen> {
+  late RobotCommandsSession _session;
+
+  @override
+  void initState() {
+    super.initState();
+    _loadLevel(widget.level);
+  }
+
+  void _loadLevel(MiLevel level) {
+    setState(() {
+      _session = RobotCommandsSession(level: level);
+    });
+  }
+
+  MiLevel get _level => _session.level;
+  Map<String, dynamic> get _content => _session.content;
+
+  void _addCommand(BlockType type) {
+    setState(() {
+      _session.addCommand(type);
+    });
+  }
+
+  void _removeLast() {
+    setState(() {
+      _session.removeLast();
+    });
+  }
+
+  void _removeAt(int index) {
+    setState(() {
+      _session.removeAt(index);
+    });
+  }
+
+  void _moveCommand(int index, int offset) {
+    setState(() {
+      _session.moveCommand(index, offset);
+    });
+  }
+
+  void _resetProgram() {
+    setState(() {
+      _session.resetProgram();
+    });
+  }
+
+  void _runProgram() {
+    final complete = _session.runProgram();
+    setState(() {});
+    if (complete) {
+      _showCompletion();
+    }
+  }
+
+  void _showHint() {
+    setState(() {
+      _session.showHint();
+    });
+  }
+
+  void _showCompletion() {
+    showDialog(
+      context: context,
+      barrierDismissible: false,
+      builder: (_) => CompletionOverlay(
+        starsEarned: _session.stars,
+        maxStars: 3,
+        message: 'Con đã lập trình cho MI!',
+        score: _session.score,
+        onNext: _goNext,
+        onReplay: () {
+          Navigator.of(context).pop();
+          _loadLevel(_level);
+        },
+        onExit: () {
+          Navigator.of(context).pop();
+          widget.onExit?.call();
+        },
+      ),
+    );
+  }
+
+  void _goNext() {
+    Navigator.of(context).pop();
+    final nextIndex =
+        widget.allLevels.indexWhere((level) => level.id == _level.id) + 1;
+    if (nextIndex > 0 && nextIndex < widget.allLevels.length) {
+      _loadLevel(widget.allLevels[nextIndex]);
+    } else {
+      widget.onExit?.call();
+    }
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final prompt = _content['prompt'] as String? ?? '';
+
+    return Scaffold(
+      backgroundColor: GameTheme.background,
+      body: SafeArea(
+        child: Column(
+          children: [
+            GameHeader(
+              title: 'Robot làm theo lệnh',
+              score: _level.levelNumber,
+              onExit: widget.onExit,
+            ),
+            ProgressDots(
+              total: widget.allLevels.length,
+              completed: _level.levelNumber - 1,
+              color: GameTheme.primary,
+            ),
+            Expanded(
+              child: ListView(
+                padding: GameTheme.screenPadding,
+                children: [
+                  Text(prompt, style: GameTheme.headingMedium),
+                  const SizedBox(height: 16),
+                  _RobotGridView(
+                    grid: _session.grid,
+                    state: _session.robotState,
+                  ),
+                  const SizedBox(height: 16),
+                  const Text('Chương trình', style: GameTheme.headingMedium),
+                  const SizedBox(height: 8),
+                  _ProgramView(
+                    program: _session.program,
+                    onRemove: _removeAt,
+                    onMoveLeft: (index) => _moveCommand(index, -1),
+                    onMoveRight: (index) => _moveCommand(index, 1),
+                  ),
+                  const SizedBox(height: 16),
+                  Wrap(
+                    spacing: 8,
+                    runSpacing: 8,
+                    children: _session.availableCommands
+                        .map(
+                          (type) => ElevatedButton(
+                            onPressed: () => _addCommand(type),
+                            child: Text(_labelFor(type)),
+                          ),
+                        )
+                        .toList(),
+                  ),
+                  if (_session.feedback != null) ...[
+                    const SizedBox(height: 16),
+                    FeedbackBubble(
+                      isCorrect: _session.feedback!.contains('hoàn thành'),
+                      message: _session.feedback!,
+                    ),
+                  ],
+                ],
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(16),
+              child: Row(
+                children: [
+                  HintButton(
+                    onPressed: _showHint,
+                    hintsAvailable: _level.hints.length,
+                    hintsRemaining: _level.hints.length - _session.hintsUsed < 0
+                        ? 0
+                        : _level.hints.length - _session.hintsUsed,
+                  ),
+                  const SizedBox(width: 8),
+                  IconButton(
+                    onPressed: _removeLast,
+                    icon: const Icon(Icons.undo_rounded),
+                    tooltip: 'Xóa lệnh cuối',
+                  ),
+                  IconButton(
+                    onPressed: _resetProgram,
+                    icon: const Icon(Icons.refresh_rounded),
+                    tooltip: 'Làm lại',
+                  ),
+                  const SizedBox(width: 8),
+                  Expanded(
+                    child: ElevatedButton.icon(
+                      onPressed: _runProgram,
+                      icon: const Icon(Icons.play_arrow_rounded),
+                      label: const Text('Chạy lệnh'),
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: GameTheme.primary,
+                        foregroundColor: Colors.white,
+                        padding: GameTheme.buttonPadding,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class _RobotGridView extends StatelessWidget {
+  const _RobotGridView({required this.grid, required this.state});
+
+  final RobotGrid grid;
+  final RobotState state;
+
+  @override
+  Widget build(BuildContext context) {
+    return AspectRatio(
+      aspectRatio: grid.width / grid.height,
+      child: GridView.builder(
+        physics: const NeverScrollableScrollPhysics(),
+        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+          crossAxisCount: grid.width,
+        ),
+        itemCount: grid.width * grid.height,
+        itemBuilder: (context, index) {
+          final x = index % grid.width;
+          final y = index ~/ grid.width;
+          final isRobot = state.x == x && state.y == y;
+          final isGoal = grid.goal.x == x && grid.goal.y == y;
+          final isObstacle = grid.obstacles.contains((x: x, y: y));
+          final isCollectible = grid.collectibles.contains((x: x, y: y)) &&
+              !state.collected.contains((x: x, y: y));
+          final icon = _cellIcon(
+            isRobot: isRobot,
+            isObstacle: isObstacle,
+            isGoal: isGoal,
+            isCollectible: isCollectible,
+            facing: state.facing,
+          );
+
+          return Container(
+            margin: const EdgeInsets.all(4),
+            decoration: BoxDecoration(
+              color: isObstacle
+                  ? GameTheme.textSecondary.withValues(alpha: 0.18)
+                  : isGoal
+                      ? GameTheme.warning.withValues(alpha: 0.25)
+                      : GameTheme.surface,
+              borderRadius: BorderRadius.circular(12),
+              border:
+                  Border.all(color: GameTheme.primary.withValues(alpha: 0.35)),
+            ),
+            child: Center(
+              child: icon == null
+                  ? const SizedBox.shrink()
+                  : Icon(icon, size: 34, color: GameTheme.textPrimary),
+            ),
+          );
+        },
+      ),
+    );
+  }
+}
+
+IconData? _cellIcon({
+  required bool isRobot,
+  required bool isObstacle,
+  required bool isGoal,
+  required bool isCollectible,
+  required Direction facing,
+}) {
+  if (isRobot) {
+    return _robotIcon(facing);
+  }
+  if (isObstacle) {
+    return Icons.stop_rounded;
+  }
+  if (isGoal) {
+    return Icons.star_rounded;
+  }
+  if (isCollectible) {
+    return Icons.battery_charging_full_rounded;
+  }
+  return null;
+}
+
+class _ProgramView extends StatelessWidget {
+  const _ProgramView({
+    required this.program,
+    required this.onRemove,
+    required this.onMoveLeft,
+    required this.onMoveRight,
+  });
+
+  final List<BlockType> program;
+  final ValueChanged<int> onRemove;
+  final ValueChanged<int> onMoveLeft;
+  final ValueChanged<int> onMoveRight;
+
+  @override
+  Widget build(BuildContext context) {
+    return Wrap(
+      spacing: 8,
+      runSpacing: 8,
+      children: [
+        const Chip(label: Text('START')),
+        for (var i = 0; i < program.length; i++)
+          _ProgramCommandChip(
+            index: i,
+            type: program[i],
+            canMoveLeft: i > 0,
+            canMoveRight: i < program.length - 1,
+            onRemove: () => onRemove(i),
+            onMoveLeft: () => onMoveLeft(i),
+            onMoveRight: () => onMoveRight(i),
+          ),
+      ],
+    );
+  }
+}
+
+class _ProgramCommandChip extends StatelessWidget {
+  const _ProgramCommandChip({
+    required this.index,
+    required this.type,
+    required this.canMoveLeft,
+    required this.canMoveRight,
+    required this.onRemove,
+    required this.onMoveLeft,
+    required this.onMoveRight,
+  });
+
+  final int index;
+  final BlockType type;
+  final bool canMoveLeft;
+  final bool canMoveRight;
+  final VoidCallback onRemove;
+  final VoidCallback onMoveLeft;
+  final VoidCallback onMoveRight;
+
+  @override
+  Widget build(BuildContext context) {
+    final label = '${index + 1}. ${_labelFor(type)}';
+    return DecoratedBox(
+      decoration: BoxDecoration(
+        color: GameTheme.surface,
+        borderRadius: BorderRadius.circular(8),
+        border: Border.all(color: GameTheme.primary.withValues(alpha: 0.3)),
+      ),
+      child: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+        child: Row(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Text(
+              label,
+              key: ValueKey('robot-program-label-$index'),
+              style: GameTheme.bodyMedium.copyWith(fontWeight: FontWeight.w700),
+            ),
+            const SizedBox(width: 4),
+            IconButton(
+              key: ValueKey('robot-command-move-left-$index'),
+              onPressed: canMoveLeft ? onMoveLeft : null,
+              icon: const Icon(Icons.chevron_left_rounded),
+              tooltip: 'Đưa lệnh lên trước',
+              visualDensity: VisualDensity.compact,
+            ),
+            IconButton(
+              key: ValueKey('robot-command-move-right-$index'),
+              onPressed: canMoveRight ? onMoveRight : null,
+              icon: const Icon(Icons.chevron_right_rounded),
+              tooltip: 'Đưa lệnh ra sau',
+              visualDensity: VisualDensity.compact,
+            ),
+            IconButton(
+              key: ValueKey('robot-command-remove-$index'),
+              onPressed: onRemove,
+              icon: const Icon(Icons.close_rounded),
+              tooltip: 'Xóa lệnh này',
+              visualDensity: VisualDensity.compact,
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+String _labelFor(BlockType type) {
+  switch (type) {
+    case BlockType.moveForward:
+      return 'TIẾN';
+    case BlockType.turnLeft:
+      return 'RẼ TRÁI';
+    case BlockType.turnRight:
+      return 'RẼ PHẢI';
+    case BlockType.collect:
+      return 'NHẶT';
+    case BlockType.start:
+      return 'START';
+    case BlockType.repeat:
+      return 'LẶP';
+    case BlockType.ifPathAhead:
+      return 'NẾU TRỐNG';
+  }
+}
+
+IconData _robotIcon(Direction direction) {
+  switch (direction) {
+    case Direction.north:
+      return Icons.keyboard_arrow_up_rounded;
+    case Direction.east:
+      return Icons.keyboard_arrow_right_rounded;
+    case Direction.south:
+      return Icons.keyboard_arrow_down_rounded;
+    case Direction.west:
+      return Icons.keyboard_arrow_left_rounded;
+  }
+}

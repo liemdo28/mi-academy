@@ -1,7 +1,6 @@
 """Lessons routes."""
 
 import json
-from datetime import datetime
 from fastapi import APIRouter, Depends, HTTPException, Query, status
 from sqlalchemy import select
 from sqlalchemy.ext.asyncio import AsyncSession
@@ -9,6 +8,7 @@ from sqlalchemy.ext.asyncio import AsyncSession
 from apps.api.database import get_db
 from apps.api.dependencies import get_parent_profile
 from apps.api.models import ChildProfile, Lesson, ParentProfile, Progress, Question
+from apps.api.time import utc_now
 from apps.api.schemas import (
     LessonListItem,
     LessonDetail,
@@ -32,7 +32,7 @@ def _child_belongs_to_parent(profile: ParentProfile, child_id: str):
 async def list_lessons(
     age_group: str = Query(None),
     language: str = Query(None),
-    db: AsyncSession = get_db,
+    db: AsyncSession = Depends(get_db),
 ):
     query = select(Lesson).where(Lesson.is_active == True)
     if age_group:
@@ -62,7 +62,7 @@ async def list_lessons(
 @router.get("/{lesson_id}", response_model=LessonDetail)
 async def get_lesson(
     lesson_id: str,
-    db: AsyncSession = get_db,
+    db: AsyncSession = Depends(get_db),
 ):
     result = await db.execute(
         select(Lesson).where(Lesson.id == lesson_id)
@@ -115,7 +115,7 @@ async def get_lesson(
 async def get_recommended(
     child_id: str,
     profile: ParentProfile = Depends(get_parent_profile),
-    db: AsyncSession = get_db,
+    db: AsyncSession = Depends(get_db),
 ):
     _child_belongs_to_parent(profile, child_id)
 
@@ -154,7 +154,7 @@ async def start_lesson(
     lesson_id: str,
     body: LessonStartRequest,
     profile: ParentProfile = Depends(get_parent_profile),
-    db: AsyncSession = get_db,
+    db: AsyncSession = Depends(get_db),
 ):
     _child_belongs_to_parent(profile, body.child_id)
 
@@ -169,7 +169,7 @@ async def start_lesson(
 
     if progress:
         progress.status = "learning"
-        progress.last_played_at = datetime.utcnow()
+        progress.last_played_at = utc_now()
     else:
         progress = Progress(
             child_id=body.child_id,
@@ -177,7 +177,7 @@ async def start_lesson(
             status="learning",
             mastery_score=0.0,
             total_attempts=0,
-            last_played_at=datetime.utcnow(),
+            last_played_at=utc_now(),
         )
         db.add(progress)
 
@@ -190,7 +190,7 @@ async def complete_lesson(
     lesson_id: str,
     body: LessonCompleteRequest,
     profile: ParentProfile = Depends(get_parent_profile),
-    db: AsyncSession = get_db,
+    db: AsyncSession = Depends(get_db),
 ):
     _child_belongs_to_parent(profile, body.child_id)
 
@@ -212,7 +212,7 @@ async def complete_lesson(
     progress.status = "completed" if body.mastery_score >= 0.7 else "needs_practice"
     progress.mastery_score = body.mastery_score
     progress.total_attempts += 1
-    progress.last_played_at = datetime.utcnow()
+    progress.last_played_at = utc_now()
 
     await db.flush()
     return {"status": progress.status, "mastery_score": progress.mastery_score}
