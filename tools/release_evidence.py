@@ -250,7 +250,11 @@ def _child_safety_presignoff_gate() -> GateEvidence:
 
 
 def _performance_artifact_gate() -> GateEvidence:
-    result = performance_baseline.measure()
+    # require_build=False: this ledger may run in a context (e.g. the
+    # backend-only python-tests CI job) that never runs `flutter build` at
+    # all, where a missing artifact means "not measured here" rather than
+    # "the build broke." See performance_baseline.measure()'s docstring.
+    result = performance_baseline.measure(require_build=False)
     return GateEvidence(
         gate="Artifact-size baseline",
         status=result.status,
