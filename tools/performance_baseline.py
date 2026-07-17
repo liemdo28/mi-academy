@@ -63,7 +63,23 @@ def largest_web_files(limit: int) -> list[Artifact]:
     return [artifact(path) for path in files[:limit]]
 
 
-def measure() -> PerformanceBaseline:
+def measure(*, require_build: bool = True) -> PerformanceBaseline:
+    """Measure build artifact sizes on disk.
+
+    `require_build=True` (the default, used by this tool's own CLI and by
+    the CI step that runs immediately after `flutter build`) treats a
+    missing artifact as a real failure -- if a build just ran, the output
+    should be there.
+
+    `require_build=False` is for callers (e.g. release_evidence.py's
+    aggregate ledger) that may run in a context — such as a checkout that
+    never runs `flutter build` at all, like the backend-only python-tests
+    CI job — where "no artifact" doesn't mean "the build broke," it means
+    "nothing was built here." Conflating those two cases previously made
+    this gate's pass/fail outcome depend on incidental local build state
+    (e.g. a stale APK left over from an earlier manual build) rather than
+    anything this ledger itself could actually verify.
+    """
     apk = artifact(APK)
     web = artifact(WEB)
     thresholds = {
@@ -72,17 +88,27 @@ def measure() -> PerformanceBaseline:
     }
     notes: list[str] = []
     status = "pass"
+    missing_status = "fail" if require_build else "not_built"
+
     if not apk.exists:
-        status = "fail"
-        notes.append("Android debug APK is missing; run `flutter build apk --debug`.")
+        status = missing_status
+        notes.append(
+            "Android debug APK is missing; run `flutter build apk --debug`."
+            if require_build
+            else "Android debug APK was not built in this context (not measured)."
+        )
     elif apk.mib > thresholds["android_debug_apk_warn_mib"]:
         status = "warn"
         notes.append("Android debug APK exceeds warning threshold.")
 
     if not web.exists:
-        status = "fail"
-        notes.append("Web build is missing; run `flutter build web --release`.")
-    elif web.mib > thresholds["web_build_warn_mib"] and status != "fail":
+        status = missing_status
+        notes.append(
+            "Web build is missing; run `flutter build web --release`."
+            if require_build
+            else "Web build was not built in this context (not measured)."
+        )
+    elif web.mib > thresholds["web_build_warn_mib"] and status not in {"fail", "not_built"}:
         status = "warn"
         notes.append("Web build exceeds warning threshold.")
 

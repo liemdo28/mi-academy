@@ -142,6 +142,14 @@ jobs:
       - name: Run mobile widget tests
         run: flutter test
 
+      - name: Upload golden test failure diffs
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: golden-failures
+          path: apps/mobile/test/failures/
+          if-no-files-found: ignore
+
       - name: Build web release
         run: flutter build web --release
 
