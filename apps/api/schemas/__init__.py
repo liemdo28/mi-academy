@@ -113,6 +113,7 @@ from .sync import (
     SyncAttemptItem,
     SyncContentResponse,
     SyncProgressItem,
+    SyncSessionItem,
     SyncStatusResponse,
 )
 
@@ -242,6 +243,7 @@ __all__ = [
     "SyncContentResponse",
     "SyncProgressItem",
     "SyncAttemptItem",
+    "SyncSessionItem",
     # Reports
     "ParentReportSummary",
     "WeeklyReportEntry",

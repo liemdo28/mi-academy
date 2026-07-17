@@ -21,7 +21,10 @@
 | `offline_sync` | Queue persistence, offline retention, retry, privacy-safe payloads | 5 tests ✅ |
 | `mi_game_ui` | Widget rendering, child-safe shared states, and visual baselines | 20 tests ✅; includes 8 golden tests |
 | Content validators | Level schema, skill ID existence, localization completeness | 20 tests ✅ |
-| `apps/mobile` | MVP game surfaces, parent flows, game-slice visual baselines, gentle retry/hint interactions, Memory Cards save/restore, and Word/Sound/Choice session save/restore | 40 widget/golden/save-restore tests ✅ |
+| Mobile platform privacy audit | Android/iOS permissions, tracking prompts, ad/IAP/social SDKs | 6 tests ✅ |
+| Child-safety pre-signoff | Six-game automated evidence matrix and manual pending boundary | 5 tests ✅ |
+| Release evidence ledger | Local release gates, production blocker classification, and pending external proof boundaries | 6 tests ✅ |
+| `apps/mobile` | MVP game surfaces, parent flows, game-slice visual baselines, gentle retry/hint interactions, all-six MVP game save/restore, and sync adapter routing | 47 widget/golden/save-restore/sync tests ✅ |
 
 ### Layer 2: Contract tests
 
@@ -46,6 +49,7 @@
 | Offline → online | Play offline, reconnect, data syncs |
 | Parent dashboard | Local parent report shows gentle progress summary; backend progress data remains separate verification |
 | Parent API report/export/delete | FastAPI parent report summarizes sessions, parent export returns privacy-safe JSON without raw answers, and child deletion removes child-owned data |
+| Offline queue → sync API | Queued progress, attempt, and session-end items route to backend sync APIs; snapshots remain local until a backend contract exists |
 
 ### Layer 4: E2E tests
 
@@ -79,6 +83,9 @@
 | No ad SDK in dependency tree | `pubspec.lock` scan |
 | No GPS/camera/contact API calls | Grep source + permission manifest |
 | No advertising identifier | Grep for `advertisingId` |
+| No ad/IAP/social SDKs | `tools/mobile_platform_privacy_audit.py --json` |
+| Per-game automated safety evidence | `tools/child_safety_signoff.py --json`; manual release sign-off remains required |
+| Release evidence ledger | `tools/release_evidence.py --write --json`; exits nonzero until all release blockers are cleared |
 | Parent gate present | UI test |
 | No external links in child mode | Manual review + grep |
 

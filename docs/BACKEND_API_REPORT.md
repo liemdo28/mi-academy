@@ -88,6 +88,7 @@
 | GET | `/content` | None | Content delta by type |
 | POST | `/progress` | Access token | Bulk upsert progress |
 | POST | `/attempts` | Access token | Bulk insert attempts |
+| POST | `/sessions` | Access token | Bulk upsert daily sessions |
 
 ### 2.9 Admin (`/admin/api/v1`)
 
@@ -157,9 +158,13 @@
 | Weekly report local API test | ✅ |
 | Child-data deletion cascade local API test | ✅ |
 | Parent export local API test | ✅ |
-| Full Python suite | ✅ `91 passed` |
+| Sync progress upsert local API test | ✅ |
+| Sync attempt idempotency local API test | ✅ |
+| Sync attempt JSON persistence local API test | ✅ |
+| Sync daily session upsert local API test | ✅ |
+| Full Python suite | ✅ `112 passed` |
 
-The child-data deletion test verifies `child_profiles`, `daily_sessions`, `progress`, `attempts`, and `child_rewards` are removed while the parent account and reusable reward catalog remain. The parent export test verifies the privacy-safe JSON export includes parent/child summaries, daily sessions, progress, reward names, aggregate attempt counts, and explicit privacy flags without raw answer payloads.
+The child-data deletion test verifies `child_profiles`, `daily_sessions`, `progress`, `attempts`, and `child_rewards` are removed while the parent account and reusable reward catalog remain. The parent export test verifies the privacy-safe JSON export includes parent/child summaries, daily sessions, progress, reward names, aggregate attempt counts, and explicit privacy flags without raw answer payloads. The sync tests verify progress upserts, idempotent attempt ingestion, deterministic JSON persistence for attempt answers, and idempotent daily-session upserts by child/date.
 
 ---
 

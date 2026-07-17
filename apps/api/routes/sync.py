@@ -1,13 +1,17 @@
 """Sync routes — content delta, progress upsert, attempts, status."""
 
+import json
+import uuid
+
 from fastapi import APIRouter, Depends, HTTPException, Query
-from sqlalchemy import select, func
+from sqlalchemy import select
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from apps.api.database import get_db
 from apps.api.time import utc_now
 from apps.api.models import (
     Attempt,
+    DailySession,
     Progress,
     Lesson,
     Question,
@@ -18,6 +22,7 @@ from apps.api.schemas import (
     SyncContentResponse,
     SyncProgressItem,
     SyncAttemptItem,
+    SyncSessionItem,
     SyncStatusResponse,
 )
 
@@ -46,12 +51,10 @@ async def get_content(
     """Return content delta (or full snapshot if since_version=0)."""
     if content_type == "lessons":
         model = Lesson
-        version_field = ContentVersion.version
         result = await db.execute(
             select(model).where(model.is_active == True)
         )
         items = result.scalars().all()
-        import json
         return SyncContentResponse(
             content_type="lessons",
             version=1,
@@ -62,7 +65,6 @@ async def get_content(
         model = Question
         result = await db.execute(select(model))
         items = result.scalars().all()
-        import json
         return SyncContentResponse(
             content_type="questions",
             version=1,
@@ -72,7 +74,6 @@ async def get_content(
     elif content_type == "games":
         result = await db.execute(select(Game).where(Game.is_active == True))
         items = result.scalars().all()
-        import json
         return SyncContentResponse(
             content_type="games",
             version=1,
@@ -88,7 +89,6 @@ async def sync_progress(
     db: AsyncSession = Depends(get_db),
 ):
     """Bulk upsert progress records from client."""
-    import uuid
     for item in items:
         existing = await db.execute(
             select(Progress).where(Progress.id == item.id)
@@ -133,7 +133,7 @@ async def sync_attempts(
             lesson_id=item.lesson_id,
             game_id=item.game_id,
             question_id=item.question_id,
-            answer_json=str(item.answer_json),
+            answer_json=_encode_answer(item.answer_json),
             is_correct=item.is_correct,
             response_time_ms=item.response_time_ms,
             hint_count=item.hint_count,
@@ -143,3 +143,47 @@ async def sync_attempts(
         accepted += 1
     await db.commit()
     return {"accepted": accepted, "total": len(items)}
+
+
+@router.post("/sessions")
+async def sync_sessions(
+    items: list[SyncSessionItem],
+    db: AsyncSession = Depends(get_db),
+):
+    """Bulk upsert daily session summaries from offline clients."""
+    for item in items:
+        row = None
+        if item.id:
+            existing = await db.execute(select(DailySession).where(DailySession.id == item.id))
+            row = existing.scalar_one_or_none()
+        if row is None:
+            existing = await db.execute(
+                select(DailySession).where(
+                    DailySession.child_id == item.child_id,
+                    DailySession.session_date == item.session_date,
+                )
+            )
+            row = existing.scalar_one_or_none()
+
+        if row:
+            row.duration_seconds = item.duration_seconds
+            row.lessons_completed = item.lessons_completed
+            row.games_completed = item.games_completed
+        else:
+            row = DailySession(
+                id=item.id or str(uuid.uuid4()),
+                child_id=item.child_id,
+                session_date=item.session_date,
+                duration_seconds=item.duration_seconds,
+                lessons_completed=item.lessons_completed,
+                games_completed=item.games_completed,
+            )
+            db.add(row)
+    await db.commit()
+    return {"accepted": len(items)}
+
+
+def _encode_answer(answer_json: dict | None) -> str | None:
+    if answer_json is None:
+        return None
+    return json.dumps(answer_json, ensure_ascii=False, sort_keys=True)

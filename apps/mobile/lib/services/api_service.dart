@@ -257,6 +257,11 @@ class ApiService {
     return response.data;
   }
 
+  Future<Map<String, dynamic>> syncSessions(List<dynamic> items) async {
+    final response = await _dio.post('/api/v1/sync/sessions', data: items);
+    return response.data;
+  }
+
   Future<Map<String, dynamic>> syncContent({
     required String contentType,
     int sinceVersion = 0,

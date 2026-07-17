@@ -91,6 +91,6 @@ Any 0 on any category = P0 blocker.
 
 ## Review process
 
-1. Automated: Privacy tests in CI (`tools/game_network_audit.py` for no outbound game-code calls, `tools/child_safety_audit.py` for prohibited APIs/dependencies, and `tools/content_safety_audit.py` for authored child-facing text)
-2. Manual: QA reviewer completes this checklist per game
-3. Sign-off: Release cannot proceed without checklist attached to release PR
+1. Automated: Privacy tests in CI (`tools/game_network_audit.py` for no outbound game-code calls, `tools/child_safety_audit.py` for prohibited APIs/dependencies, `tools/content_safety_audit.py` for authored child-facing text, `tools/mobile_platform_privacy_audit.py` for platform/dependency privacy surfaces, and `tools/child_safety_signoff.py` for per-game pre-signoff evidence)
+2. Manual: QA reviewer completes this checklist per game on a real device or emulator
+3. Sign-off: Release cannot proceed without the automated pre-signoff report and the completed human checklist attached to the release PR
