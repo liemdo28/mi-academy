@@ -1,7 +1,8 @@
 """MI Academy API — FastAPI application entry point."""
 
-from fastapi import FastAPI
+from fastapi import FastAPI, Response
 from fastapi.middleware.cors import CORSMiddleware
+from sqlalchemy import text
 
 from apps.api.config import settings
 from apps.api.database import engine, Base
@@ -18,9 +19,11 @@ from apps.api.routes import (
     admin,
 )
 
+APP_VERSION = "1.0.0"
+
 app = FastAPI(
     title="MI Academy API",
-    version="1.0.0",
+    version=APP_VERSION,
     description="Backend API for MI Academy — Offline-first educational games for children 5–12",
 )
 
@@ -38,6 +41,7 @@ app.add_middleware(
     RateLimitMiddleware,
     auth_limit=settings.AUTH_RATE_LIMIT_PER_MIN,
     sync_limit=settings.SYNC_RATE_LIMIT_PER_MIN,
+    redis_url=settings.REDIS_URL,
 )
 
 # Register routers
@@ -54,7 +58,30 @@ app.include_router(admin.router, prefix="/admin/api/v1", tags=["admin"])
 
 @app.get("/api/v1/health")
 async def health_check():
-    return {"status": "ok", "version": "1.0.0"}
+    """Deprecated alias for /health/live — kept for existing clients."""
+    return {"status": "ok", "version": APP_VERSION}
+
+
+@app.get("/health/live")
+async def health_live():
+    """Liveness — confirms the process is running. Never checks dependencies."""
+    return {"status": "ok"}
+
+
+@app.get("/health/ready")
+async def health_ready():
+    """Readiness — confirms the service can serve requests, including the database."""
+    try:
+        async with engine.connect() as conn:
+            await conn.execute(text("SELECT 1"))
+    except Exception:
+        return Response(status_code=503, content='{"status":"not_ready"}', media_type="application/json")
+    return {"status": "ready"}
+
+
+@app.get("/version")
+async def version():
+    return {"version": APP_VERSION, "environment": settings.APP_ENV}
 
 
 @app.on_event("startup")

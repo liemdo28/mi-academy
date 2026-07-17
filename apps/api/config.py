@@ -33,10 +33,22 @@ class Settings(BaseSettings):
     SYNC_RATE_LIMIT_PER_MIN: int = 60
     AUTH_RATE_LIMIT_PER_MIN: int = 10
 
+    # Redis (optional — enables rate limiting shared across multiple API processes)
+    REDIS_URL: str | None = None
+
+
+DEFAULT_SECRET_KEY = "CHANGE_ME_IN_PRODUCTION_USE_64_CHARS_RANDOM"
+
 
 @lru_cache
 def get_settings() -> Settings:
-    return Settings()
+    loaded = Settings()
+    if loaded.APP_ENV == "production" and loaded.SECRET_KEY == DEFAULT_SECRET_KEY:
+        raise RuntimeError(
+            "SECRET_KEY is still the default placeholder value. "
+            "Set a real secret via the SECRET_KEY environment variable before running in production."
+        )
+    return loaded
 
 
 settings = get_settings()
