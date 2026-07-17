@@ -1,5 +1,11 @@
 -- MI Academy — Initial schema migration
--- Run with: psql $DATABASE_URL -f infrastructure/migrations/001_initial.sql
+-- SUPERSEDED: kept only as historical reference. The source of truth for
+-- schema migrations is now Alembic (apps/api/alembic/versions/), which is
+-- generated from and stays in sync with apps/api/models. Do not run this
+-- file against a new database — use `alembic upgrade head` instead
+-- (see docs/infrastructure/ENVIRONMENT_STRATEGY.md and the Makefile's
+-- `make migrate` target).
+-- Original usage: psql $DATABASE_URL -f infrastructure/migrations/001_initial.sql
 
 CREATE EXTENSION IF NOT EXISTS "pgcrypto";
 
