@@ -10,11 +10,15 @@ class MiAcademyApp extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    // Real accessibility wiring, not just tokens on paper: the platform's
+    // "increase contrast" setting swaps every semantic color that has an
+    // `.hc` variant (docs/design/MI_DESIGN_SYSTEM.md §1).
+    final theme = MiTheme.light(highContrast: MediaQuery.highContrastOf(context));
     return MaterialApp.router(
       title: 'MI Academy',
       debugShowCheckedModeBanner: false,
-      theme: MiTheme.light,
-      darkTheme: MiTheme.light,
+      theme: theme,
+      darkTheme: theme,
       routerConfig: routerProvider,
       localizationsDelegates: const [
         GlobalMaterialLocalizations.delegate,
