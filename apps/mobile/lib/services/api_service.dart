@@ -22,6 +22,7 @@ class ApiPaths {
 
   static String child(String childId) => '$children/$childId';
   static String lesson(String lessonId) => '$lessons/$lessonId';
+  static String gameResult(String gameId) => '$games/$gameId/result';
   static String childProgress(String childId) =>
       '/api/v1/progress/children/$childId/progress';
   static String childSkills(String childId) =>
@@ -255,8 +256,15 @@ class ApiService {
     return response.data;
   }
 
-  Future<void> submitGameResult(Map<String, dynamic> result) async {
-    await _dio.post('/api/v1/progress/game-result', data: result);
+  /// Save a MiGameResult (as JSON, snake_case per the contract) for the
+  /// given game. `result['game_id']` must match [gameId].
+  Future<Map<String, dynamic>> submitGameResult(
+    String gameId,
+    Map<String, dynamic> result,
+  ) async {
+    final response =
+        await _dio.post(ApiPaths.gameResult(gameId), data: result);
+    return response.data as Map<String, dynamic>;
   }
 
   // ─── Rewards ───────────────────────────────────────────────────────────────

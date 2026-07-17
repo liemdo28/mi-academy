@@ -165,6 +165,7 @@ class Attempt(Base):
     )
 
     id: Mapped[str] = mapped_column(String(36), primary_key=True, default=_uuid)
+    client_attempt_id: Mapped[Optional[str]] = mapped_column(String(64), unique=True, nullable=True)
     child_id: Mapped[str] = mapped_column(String(36), ForeignKey("child_profiles.id"), nullable=False)
     lesson_id: Mapped[Optional[str]] = mapped_column(String(36), ForeignKey("lessons.id"), nullable=True)
     game_id: Mapped[Optional[str]] = mapped_column(String(36), ForeignKey("games.id"), nullable=True)

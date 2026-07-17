@@ -26,8 +26,6 @@ dependencies:
     path: ../../packages/mi_game_accessibility
   mi_blocks:
     path: ../../packages/mi_blocks
-  shared_models:
-    path: ../../packages/shared_models
   design_system:
     path: ../../packages/design_system
   localization:

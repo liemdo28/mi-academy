@@ -46,6 +46,7 @@ async def list_lessons(
     return [
         LessonListItem(
             id=l.id,
+            subject_id=l.subject_id,
             title=l.title,
             description=l.description,
             age_group=l.age_group,
@@ -136,6 +137,7 @@ async def get_recommended(
     return [
         LessonListItem(
             id=l.id,
+            subject_id=l.subject_id,
             title=l.title,
             description=l.description,
             age_group=l.age_group,

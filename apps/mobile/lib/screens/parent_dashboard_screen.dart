@@ -3,6 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import 'package:design_system/design_system.dart';
 import '../providers/providers.dart';
+import '../widgets/add_child_dialog.dart';
 
 /// Parent dashboard — today overview, weekly report, child progress.
 ///
@@ -58,7 +59,7 @@ class ParentDashboardScreen extends ConsumerWidget {
                   emoji: '👶',
                   action: MiButton(
                     label: 'Tạo hồ sơ',
-                    onPressed: () => _showCreateChildDialog(context),
+                    onPressed: () => _showCreateChildDialog(context, ref),
                   ),
                 )
               else
@@ -182,10 +183,23 @@ class ParentDashboardScreen extends ConsumerWidget {
     );
   }
 
-  void _showCreateChildDialog(BuildContext context) {
-    // TODO: Implement create child dialog
-    ScaffoldMessenger.of(context).showSnackBar(
-      const SnackBar(content: Text('Tính năng đang phát triển')),
+  Future<void> _showCreateChildDialog(BuildContext context, WidgetRef ref) async {
+    final result = await showDialog<({String nickname, String ageGroup})>(
+      context: context,
+      builder: (context) => const AddChildDialog(),
     );
+    if (result == null) return;
+
+    final ok = await ref.read(activeChildProvider.notifier).createChild(
+          nickname: result.nickname,
+          ageGroup: result.ageGroup,
+        );
+    if (!context.mounted) return;
+    if (!ok) {
+      final error = ref.read(activeChildProvider).error;
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text(error ?? 'Không thể tạo hồ sơ, thử lại nhé')),
+      );
+    }
   }
 }

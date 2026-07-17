@@ -2,11 +2,21 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import 'package:design_system/design_system.dart';
+import 'package:offline_sync/offline_sync.dart';
+import 'package:uuid/uuid.dart';
+
+import '../providers/providers.dart';
 
 class GameScreen extends ConsumerStatefulWidget {
   final String childId;
   final String gameType;
-  const GameScreen({super.key, required this.childId, required this.gameType});
+  final String? lessonId;
+  const GameScreen({
+    super.key,
+    required this.childId,
+    required this.gameType,
+    this.lessonId,
+  });
 
   @override
   ConsumerState<GameScreen> createState() => _GameState();
@@ -17,6 +27,88 @@ class _GameState extends ConsumerState<GameScreen> {
   int _score = 0;
   int _stars = 0;
   bool _completed = false;
+  bool _resultSaved = false;
+  final _stopwatch = Stopwatch()..start();
+
+  /// This demo screen's gameplay is a stand-in (see docs/final/KNOWN_LIMITATIONS.md);
+  /// it doesn't track per-answer correctness. What it *does* now do for
+  /// real is save whatever session data it has through the actual
+  /// game-result -> mastery -> sync pipeline, so that pipeline is exercised
+  /// end-to-end from the UI instead of silently discarding the result.
+  Future<void> _saveResult() async {
+    if (_resultSaved || widget.childId == 'offline-child') return;
+    _resultSaved = true;
+    _stopwatch.stop();
+
+    try {
+      final games = await ref.read(gamesCatalogProvider.future);
+      final game = games.firstWhere(
+        (g) => g['game_type'] == widget.gameType,
+        orElse: () => const {},
+      );
+      final dbGameId = game['id'] as String?;
+      if (dbGameId == null) return; // Game not in backend catalog yet.
+
+      final now = DateTime.now().toUtc();
+      final attemptId = const Uuid().v4();
+      final body = {
+        'attempt_id': attemptId,
+        'child_profile_id': widget.childId,
+        'game_id': dbGameId,
+        'level_id': 'level_$_level',
+        if (widget.lessonId != null) 'lesson_id': widget.lessonId,
+        'started_at': now
+            .subtract(_stopwatch.elapsed)
+            .toIso8601String(),
+        'completed_at': now.toIso8601String(),
+        'attempt_count': _level,
+        'correct_count': _stars,
+        'incorrect_count': (_level - _stars).clamp(0, _level),
+        'hint_count': 0,
+        'duration_seconds': _stopwatch.elapsed.inSeconds,
+        'completed': _completed,
+        'mastery_evidence': (_stars / 10).clamp(0.0, 1.0),
+        'skill_evidence': const <String, dynamic>{},
+        'metadata': const <String, dynamic>{},
+      };
+
+      final api = ref.read(apiServiceProvider);
+      await api.submitGameResult(dbGameId, body);
+    } catch (_) {
+      // Offline, or the save didn't go through — queue it for later
+      // instead of dropping the result on the floor.
+      try {
+        final games = await ref.read(gamesCatalogProvider.future);
+        final game = games.firstWhere(
+          (g) => g['game_type'] == widget.gameType,
+          orElse: () => const {},
+        );
+        final dbGameId = game['id'] as String?;
+        if (dbGameId == null) return;
+        await ref.read(syncServiceProvider).enqueue(
+          id: const Uuid().v4(),
+          childProfileId: widget.childId,
+          type: SyncItemType.gameResult,
+          payload: {
+            'attempt_id': const Uuid().v4(),
+            'child_profile_id': widget.childId,
+            'game_id': dbGameId,
+            'level_id': 'level_$_level',
+            if (widget.lessonId != null) 'lesson_id': widget.lessonId,
+            'attempt_count': _level,
+            'correct_count': _stars,
+            'incorrect_count': (_level - _stars).clamp(0, _level),
+            'hint_count': 0,
+            'duration_seconds': _stopwatch.elapsed.inSeconds,
+            'completed': _completed,
+            'mastery_evidence': (_stars / 10).clamp(0.0, 1.0),
+          },
+        );
+      } catch (_) {
+        // Best-effort — nothing more we can do without a queue.
+      }
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -107,7 +199,10 @@ class _GameState extends ConsumerState<GameScreen> {
                         ]),
                     const SizedBox(height: 24),
                     ElevatedButton(
-                        onPressed: () => context.pop(),
+                        onPressed: () async {
+                          await _saveResult();
+                          if (context.mounted) context.pop();
+                        },
                         child: const Text('Quay lại bản đồ')),
                   ]),
                 ),

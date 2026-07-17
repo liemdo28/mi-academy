@@ -126,10 +126,9 @@ class _ChildHomeScreenState extends ConsumerState<ChildHomeScreen> {
               icon: Icons.play_arrow_rounded,
               width: double.infinity,
               isLoading: planAsync.isLoading && !planAsync.hasValue,
-              onPressed: () {
-                // TODO(dev1): route to the lesson launcher once a
-                // dedicated lesson-start route exists.
-              },
+              onPressed: child.childId == null
+                  ? null
+                  : () => _launchLesson(context, child.childId!, nextLesson),
             ),
             if (nextLesson != null) ...[
               const SizedBox(height: MiTokens.space2),
@@ -163,8 +162,13 @@ class _ChildHomeScreenState extends ConsumerState<ChildHomeScreen> {
                   );
                 }
                 return Column(
-                  children:
-                      items.map((item) => _buildPlanItem(context, item)).toList(),
+                  children: items
+                      .map((item) => _buildPlanItem(
+                            context,
+                            item,
+                            childId: child.childId,
+                          ))
+                      .toList(),
                 );
               },
             ),
@@ -245,7 +249,31 @@ class _ChildHomeScreenState extends ConsumerState<ChildHomeScreen> {
     return '$title — $detail';
   }
 
-  Widget _buildPlanItem(BuildContext context, Map<String, dynamic> item) {
+  /// Launches today's featured game for [lesson], if a child is active.
+  ///
+  /// There is no per-lesson game mapping in the content model yet (see
+  /// docs/final/KNOWN_LIMITATIONS.md), so this always opens Memory Cards —
+  /// the one game whose completion flow saves a full result. The lesson_id
+  /// is still passed through so the server can attribute mastery to it.
+  void _launchLesson(
+    BuildContext context,
+    String childId,
+    Map<String, dynamic>? lesson,
+  ) {
+    final lessonId = lesson?['lesson_id'] as String?;
+    final query = {
+      'childId': childId,
+      if (lessonId != null) 'lessonId': lessonId,
+    };
+    final uri = Uri(path: '/game/memory_cards', queryParameters: query);
+    context.push(uri.toString());
+  }
+
+  Widget _buildPlanItem(
+    BuildContext context,
+    Map<String, dynamic> item, {
+    required String? childId,
+  }) {
     final title = item['title'] as String? ?? 'Bài học';
     final subject = item['subject'] as String? ?? '';
     final minutes = item['estimated_minutes'] ?? 5;
@@ -253,9 +281,9 @@ class _ChildHomeScreenState extends ConsumerState<ChildHomeScreen> {
     return Padding(
       padding: const EdgeInsets.only(bottom: MiTokens.space3),
       child: MiCard(
-        onTap: () {
-          // TODO(dev1): start lesson via lesson provider
-        },
+        onTap: childId == null
+            ? null
+            : () => _launchLesson(context, childId, item),
         child: Row(
           children: [
             Container(

@@ -5,6 +5,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:mi_game_core/mi_game_core.dart';
 import 'package:mi_game_ui/mi_game_ui.dart';
 import 'package:mi_game_content/mi_game_content.dart';
+import 'package:offline_sync/offline_sync.dart';
 
 import 'screens/parent_pin_screen.dart';
 import 'screens/parent_settings_screen.dart';
@@ -18,6 +19,9 @@ import 'src/games/word_builder/word_builder_screen.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  // Opens the Hive boxes the offline sync queue needs. Must run before any
+  // widget reads `syncServiceProvider`.
+  await initHive();
   final parentSettingsStore = await HiveParentSettingsStore.open();
   runApp(MiAcademyApp(parentSettingsStore: parentSettingsStore));
 }

@@ -10,8 +10,6 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  shared_models:
-    path: ../../packages/shared_models
   design_system:
     path: ../../packages/design_system
   localization:
