@@ -1,6 +1,6 @@
 """Parent routes — profile, PIN, reports."""
 
-from datetime import date, datetime, time
+from datetime import UTC, date, datetime, time
 from fastapi import APIRouter, Depends, HTTPException, status
 from sqlalchemy import Integer, func, select
 from sqlalchemy.ext.asyncio import AsyncSession
@@ -120,8 +120,16 @@ async def get_reports(
     lessons_completed = sum(s.lessons_completed for s in sessions)
     games_completed = sum(s.games_completed for s in sessions)
     total_seconds = sum(s.duration_seconds for s in sessions)
-    start_of_day = datetime.combine(today, time.min)
-    end_of_day = datetime.combine(today, time.max)
+    # `today` is the server's *local* calendar date, but unlocked_at is a
+    # UTC timestamp -- naively relabeling local midnight/end-of-day as UTC
+    # (tzinfo=UTC) is wrong whenever the server's local date differs from
+    # the UTC date (e.g. any timezone ahead of UTC in the evening/night
+    # hours). `.astimezone(UTC)` on a naive local datetime instead converts
+    # it to the equivalent UTC instant, so "today" means the same local day
+    # the DailySession query above already uses, not an off-by-one UTC day
+    # that silently undercounts rewards_today to 0.
+    start_of_day = datetime.combine(today, time.min).astimezone(UTC)
+    end_of_day = datetime.combine(today, time.max).astimezone(UTC)
     rewards_today_result = await db.execute(
         select(func.count(ChildReward.id)).where(
             ChildReward.child_id.in_(child_ids),

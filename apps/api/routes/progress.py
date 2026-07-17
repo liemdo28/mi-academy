@@ -4,6 +4,7 @@ from fastapi import APIRouter, Depends, HTTPException, status
 from sqlalchemy import Integer, select, func
 from sqlalchemy.ext.asyncio import AsyncSession
 
+from apps.api.adaptive_ranking import rank_lessons
 from apps.api.database import get_db
 from apps.api.dependencies import get_parent_profile
 from apps.api.models import ParentProfile, Progress, Attempt, Lesson
@@ -90,20 +91,27 @@ async def get_daily_plan(
     profile: ParentProfile = Depends(get_parent_profile),
     db: AsyncSession = Depends(get_db),
 ):
-    """Return today's recommended learning plan (up to 4 items)."""
+    """Return today's recommended learning plan (up to 4 items), ranked by
+    the child's own Progress -- see adaptive_ranking.rank_lessons. This is
+    the endpoint the child home screen's hero CTA and "today's mission"
+    list actually consume, so this ranking is what a child sees next, not
+    just an unused parallel recommendation."""
     _child_belongs_to_parent(profile, child_id)
     child = next(c for c in profile.children if c.id == child_id)
 
-    # Recommend one lesson from each subject area for this age group
     lessons_result = await db.execute(
-        select(Lesson)
-        .where(
+        select(Lesson).where(
             Lesson.age_group == child.age_group,
             Lesson.is_active == True,
         )
-        .limit(4)
     )
-    lessons = lessons_result.scalars().all()
+    all_lessons = lessons_result.scalars().all()
+
+    progress_result = await db.execute(
+        select(Progress).where(Progress.child_id == child_id)
+    )
+    progress_by_lesson = {p.lesson_id: p for p in progress_result.scalars().all()}
+    lessons = rank_lessons(all_lessons, progress_by_lesson)[:4]
     items = []
     for lesson in lessons:
         items.append(
