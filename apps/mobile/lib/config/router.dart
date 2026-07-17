@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
+import '../providers/providers.dart';
 import '../screens/splash_screen.dart';
 import '../screens/login_screen.dart';
 import '../screens/child_home_screen.dart';
@@ -24,8 +26,19 @@ import '../screens/garden_screen.dart';
 /// - /parent          → ParentDashboardScreen (PIN-protected via /parent-pin)
 /// - /parent-pin      → ParentPinScreen
 /// - /parent/settings → ParentSettingsScreen
+/// Parent routes that require a verified PIN this session. Enforced below
+/// via `redirect` — without this, `/parent` and `/parent/settings` were
+/// reachable by direct navigation, bypassing ParentPinScreen entirely.
+const _parentGatedPaths = {'/parent', '/parent/settings'};
+
 final routerProvider = GoRouter(
   initialLocation: '/',
+  redirect: (context, state) {
+    if (!_parentGatedPaths.contains(state.matchedLocation)) return null;
+    final verified = ProviderScope.containerOf(context, listen: false)
+        .read(parentGateProvider);
+    return verified ? null : '/parent-pin';
+  },
   routes: [
     GoRoute(
       path: '/',
@@ -70,7 +83,10 @@ final routerProvider = GoRouter(
     ),
     GoRoute(
       path: '/parent/settings',
-      builder: (context, state) => ParentSettingsScreen(),
+      builder: (context, state) => ParentSettingsScreen(
+        store: ProviderScope.containerOf(context, listen: false)
+            .read(parentSettingsStoreProvider),
+      ),
     ),
   ],
   errorBuilder: (context, state) => Scaffold(

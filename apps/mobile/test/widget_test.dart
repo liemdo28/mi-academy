@@ -20,9 +20,9 @@ import 'package:mi_academy/src/games/word_builder/word_builder_screen.dart';
 import 'game_test_fixtures.dart';
 
 void main() {
-  testWidgets('MI Academy shell renders the first playable game entries',
+  testWidgets('Debug game picker shell renders the first playable game entries',
       (tester) async {
-    await tester.pumpWidget(MiAcademyApp(key: UniqueKey()));
+    await tester.pumpWidget(DebugGamePickerApp(key: UniqueKey()));
     await pumpUntilFound(tester, find.text('Thế giới khám phá'));
 
     expect(find.text('MI Academy'), findsOneWidget);
