@@ -22,10 +22,10 @@ class MiGameColors {
   // --- Semantic Colors ---
 
   /// Success / correct answer feedback.
-  static const Color success = Color(0xFF4CAF50);
+  static const Color success = Color(0xFF2BB673);
 
   /// Warning / hint used feedback.
-  static const Color warning = Color(0xFFFFC107);
+  static const Color warning = Color(0xFFF5A623);
 
   /// Error / incorrect answer feedback (soft, not scary).
   static const Color error = Color(0xFFFF7043);
@@ -36,19 +36,19 @@ class MiGameColors {
   // --- Neutral Colors ---
 
   /// Main background color.
-  static const Color background = Color(0xFFF5F5F5);
+  static const Color background = Color(0xFFF7F7FE);
 
   /// Surface / card background.
   static const Color surface = Colors.white;
 
   /// Primary text color.
-  static const Color textPrimary = Color(0xFF2D3436);
+  static const Color textPrimary = Color(0xFF2D2D5F);
 
   /// Secondary / muted text color.
-  static const Color textSecondary = Color(0xFF636E72);
+  static const Color textSecondary = Color(0xFF6B6B8E);
 
   /// Divider / subtle lines.
-  static const Color divider = Color(0xFFE0E0E0);
+  static const Color divider = Color(0xFFE3E2F2);
 
   // --- Card Specific ---
 
@@ -59,15 +59,15 @@ class MiGameColors {
   static const Color cardBack = Color(0xFF6C63FF);
 
   /// Matched pair glow.
-  static const Color matchedGlow = Color(0xFF4CAF50);
+  static const Color matchedGlow = Color(0xFF2BB673);
 
   // --- Star Rating ---
 
   /// Active / earned star color.
-  static const Color starActive = Color(0xFFFFC107);
+  static const Color starActive = Color(0xFFFFC94D);
 
   /// Inactive / unearned star color.
-  static const Color starInactive = Color(0xFFE0E0E0);
+  static const Color starInactive = Color(0xFFE3E2F2);
 
   // --- Accessibility ---
 
