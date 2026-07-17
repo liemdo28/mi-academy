@@ -10,11 +10,15 @@ class SoundMatchScreen extends StatefulWidget {
     required this.level,
     required this.allLevels,
     this.onExit,
+    this.onComplete,
   });
 
   final MiLevel level;
   final List<MiLevel> allLevels;
   final VoidCallback? onExit;
+
+  /// Fired once per level completion — see WordBuilderScreen.onComplete.
+  final void Function(MiCompletionResult)? onComplete;
 
   @override
   State<SoundMatchScreen> createState() => _SoundMatchScreenState();
@@ -72,6 +76,19 @@ class _SoundMatchScreenState extends State<SoundMatchScreen> {
 
   void _showCompletion() {
     _stopwatch.stop();
+    widget.onComplete?.call(MiCompletionResult(
+      gameId: _level.gameId,
+      levelId: _level.id,
+      childProfileId: _session.childProfileId,
+      completedAt: DateTime.now(),
+      score: _session.score,
+      maxScore: 100,
+      attemptsUsed: _session.attempts,
+      hintsUsed: _session.hintsUsed,
+      duration: _stopwatch.elapsed,
+      perfectRun: _session.attempts <= 1 && _session.hintsUsed == 0,
+      newSkillsAcquired: const ['listening'],
+    ));
 
     showDialog(
       context: context,

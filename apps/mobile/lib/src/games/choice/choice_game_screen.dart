@@ -15,6 +15,7 @@ class ChoiceGameScreen extends StatefulWidget {
     required this.heroIcon,
     required this.primaryColor,
     this.onExit,
+    this.onComplete,
   });
 
   final String title;
@@ -24,6 +25,9 @@ class ChoiceGameScreen extends StatefulWidget {
   final IconData heroIcon;
   final Color primaryColor;
   final VoidCallback? onExit;
+
+  /// Fired once per level completion — see WordBuilderScreen.onComplete.
+  final void Function(MiCompletionResult)? onComplete;
 
   @override
   State<ChoiceGameScreen> createState() => _ChoiceGameScreenState();
@@ -74,6 +78,19 @@ class _ChoiceGameScreenState extends State<ChoiceGameScreen> {
 
   void _showCompletion() {
     _stopwatch.stop();
+    widget.onComplete?.call(MiCompletionResult(
+      gameId: _level.gameId,
+      levelId: _level.id,
+      childProfileId: _session.childProfileId,
+      completedAt: DateTime.now(),
+      score: _session.score,
+      maxScore: 100,
+      attemptsUsed: _session.attempts,
+      hintsUsed: _session.hintsUsed,
+      duration: _stopwatch.elapsed,
+      perfectRun: _session.attempts <= 1 && _session.hintsUsed == 0,
+      newSkillsAcquired: const ['math'],
+    ));
 
     showDialog(
       context: context,

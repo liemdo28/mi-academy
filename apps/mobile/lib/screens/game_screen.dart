@@ -2,11 +2,29 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import 'package:design_system/design_system.dart';
+import 'package:mi_game_core/mi_game_core.dart';
+import 'package:mi_game_ui/mi_game_ui.dart';
 import 'package:offline_sync/offline_sync.dart';
 import 'package:uuid/uuid.dart';
 
 import '../providers/providers.dart';
+import '../services/game_levels.dart';
+import '../src/games/choice/choice_game_screen.dart';
+import '../src/games/memory_cards/memory_cards_game.dart';
+import '../src/games/memory_cards/memory_cards_screen.dart';
+import '../src/games/robot_commands/robot_commands_screen.dart';
+import '../src/games/sound_match/sound_match_screen.dart';
+import '../src/games/word_builder/word_builder_screen.dart';
 
+/// Production game launcher — the real `/game/:gameId` destination.
+///
+/// Loads real level content for [gameType] and renders the matching game
+/// engine (the same widgets the debug picker in `main.dart` uses), so the
+/// production golden flow plays an actual game rather than a placeholder.
+/// Every game reports completion via `onComplete(MiCompletionResult)`; this
+/// screen — not the game itself — turns that into a `SaveGameResultRequest`
+/// call with an offline-queue fallback, per the "games don't call the
+/// backend directly" rule.
 class GameScreen extends ConsumerStatefulWidget {
   final String childId;
   final String gameType;
@@ -19,90 +37,81 @@ class GameScreen extends ConsumerStatefulWidget {
   });
 
   @override
-  ConsumerState<GameScreen> createState() => _GameState();
+  ConsumerState<GameScreen> createState() => _GameScreenState();
 }
 
-class _GameState extends ConsumerState<GameScreen> {
-  int _level = 1;
-  int _score = 0;
-  int _stars = 0;
-  bool _completed = false;
-  bool _resultSaved = false;
-  final _stopwatch = Stopwatch()..start();
+class _GameScreenState extends ConsumerState<GameScreen> {
+  List<MiLevel>? _levels;
+  String? _error;
 
-  /// This demo screen's gameplay is a stand-in (see docs/final/KNOWN_LIMITATIONS.md);
-  /// it doesn't track per-answer correctness. What it *does* now do for
-  /// real is save whatever session data it has through the actual
-  /// game-result -> mastery -> sync pipeline, so that pipeline is exercised
-  /// end-to-end from the UI instead of silently discarding the result.
-  Future<void> _saveResult() async {
-    if (_resultSaved || widget.childId == 'offline-child') return;
-    _resultSaved = true;
-    _stopwatch.stop();
+  @override
+  void initState() {
+    super.initState();
+    WidgetsBinding.instance.addPostFrameCallback((_) => _loadLevels());
+  }
+
+  Future<void> _loadLevels() async {
+    try {
+      final levels = await loadGameLevels(context, widget.gameType);
+      if (!mounted) return;
+      setState(() => _levels = levels);
+    } catch (e) {
+      if (!mounted) return;
+      setState(() => _error = e.toString());
+    }
+  }
+
+  Future<void> _saveResult(MiCompletionResult result) async {
+    if (widget.childId == 'offline-child') return;
+
+    final games = await ref.read(gamesCatalogProvider.future);
+    final game = games.firstWhere(
+      (g) => g['game_type'] == widget.gameType,
+      orElse: () => const {},
+    );
+    final dbGameId = game['id'] as String?;
+    if (dbGameId == null) return; // Game not in backend catalog yet.
+
+    final attemptId = const Uuid().v4();
+    final startedAt = result.completedAt.subtract(result.duration).toUtc();
+    final completedAt = result.completedAt.toUtc();
+    final correctCount = result.perfectRun ? result.attemptsUsed : (result.attemptsUsed - 1).clamp(0, result.attemptsUsed);
+    final incorrectCount = result.attemptsUsed - correctCount;
+    final body = {
+      'attempt_id': attemptId,
+      'child_profile_id': widget.childId,
+      'game_id': dbGameId,
+      'level_id': result.levelId,
+      if (widget.lessonId != null) 'lesson_id': widget.lessonId,
+      'started_at': startedAt.toIso8601String(),
+      'completed_at': completedAt.toIso8601String(),
+      'attempt_count': result.attemptsUsed,
+      'correct_count': correctCount,
+      'incorrect_count': incorrectCount,
+      'hint_count': result.hintsUsed,
+      'duration_seconds': result.duration.inSeconds,
+      'completed': true,
+      'mastery_evidence': result.maxScore > 0
+          ? (result.score / result.maxScore).clamp(0.0, 1.0)
+          : 0.0,
+      'skill_evidence': {
+        for (final skill in result.newSkillsAcquired) skill: true,
+      },
+      'metadata': result.metadata,
+    };
 
     try {
-      final games = await ref.read(gamesCatalogProvider.future);
-      final game = games.firstWhere(
-        (g) => g['game_type'] == widget.gameType,
-        orElse: () => const {},
-      );
-      final dbGameId = game['id'] as String?;
-      if (dbGameId == null) return; // Game not in backend catalog yet.
-
-      final now = DateTime.now().toUtc();
-      final attemptId = const Uuid().v4();
-      final body = {
-        'attempt_id': attemptId,
-        'child_profile_id': widget.childId,
-        'game_id': dbGameId,
-        'level_id': 'level_$_level',
-        if (widget.lessonId != null) 'lesson_id': widget.lessonId,
-        'started_at': now
-            .subtract(_stopwatch.elapsed)
-            .toIso8601String(),
-        'completed_at': now.toIso8601String(),
-        'attempt_count': _level,
-        'correct_count': _stars,
-        'incorrect_count': (_level - _stars).clamp(0, _level),
-        'hint_count': 0,
-        'duration_seconds': _stopwatch.elapsed.inSeconds,
-        'completed': _completed,
-        'mastery_evidence': (_stars / 10).clamp(0.0, 1.0),
-        'skill_evidence': const <String, dynamic>{},
-        'metadata': const <String, dynamic>{},
-      };
-
       final api = ref.read(apiServiceProvider);
       await api.submitGameResult(dbGameId, body);
     } catch (_) {
       // Offline, or the save didn't go through — queue it for later
       // instead of dropping the result on the floor.
       try {
-        final games = await ref.read(gamesCatalogProvider.future);
-        final game = games.firstWhere(
-          (g) => g['game_type'] == widget.gameType,
-          orElse: () => const {},
-        );
-        final dbGameId = game['id'] as String?;
-        if (dbGameId == null) return;
         await ref.read(syncServiceProvider).enqueue(
-          id: const Uuid().v4(),
+          id: attemptId,
           childProfileId: widget.childId,
           type: SyncItemType.gameResult,
-          payload: {
-            'attempt_id': const Uuid().v4(),
-            'child_profile_id': widget.childId,
-            'game_id': dbGameId,
-            'level_id': 'level_$_level',
-            if (widget.lessonId != null) 'lesson_id': widget.lessonId,
-            'attempt_count': _level,
-            'correct_count': _stars,
-            'incorrect_count': (_level - _stars).clamp(0, _level),
-            'hint_count': 0,
-            'duration_seconds': _stopwatch.elapsed.inSeconds,
-            'completed': _completed,
-            'mastery_evidence': (_stars / 10).clamp(0.0, 1.0),
-          },
+          payload: body,
         );
       } catch (_) {
         // Best-effort — nothing more we can do without a queue.
@@ -112,143 +121,178 @@ class _GameState extends ConsumerState<GameScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        leading: IconButton(
-            icon: const Icon(Icons.close), onPressed: () => context.pop()),
-        title: Text(_gameTitle()),
-        actions: [
-          Padding(
-            padding: const EdgeInsets.only(right: 16),
-            child: Row(children: [
-              const Icon(Icons.star, color: MiColors.accent),
-              const SizedBox(width: 4),
-              Text('$_stars',
-                  style: const TextStyle(
-                      fontSize: 18, fontWeight: FontWeight.w700)),
-              const SizedBox(width: 12),
-              Text('$_score điểm',
-                  style: const TextStyle(
-                      fontSize: 16, fontWeight: FontWeight.w700)),
-            ]),
-          ),
-        ],
-      ),
-      body: SafeArea(
-        child: Padding(
-          padding: const EdgeInsets.all(20),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: [
-              LinearProgressIndicator(
-                  value: _level / 10, color: MiColors.primary),
-              const SizedBox(height: 12),
-              Text('Cấp độ $_level',
-                  style: Theme.of(context).textTheme.bodyLarge),
-              const SizedBox(height: 20),
-              // MI robot helper
-              if (!_completed) ...[
-                Container(
-                  padding: const EdgeInsets.all(16),
-                  decoration: BoxDecoration(
-                    color: MiColors.primarySoft,
-                    borderRadius: BorderRadius.circular(16),
-                    border: Border.all(
-                        color: MiColors.primary.withValues(alpha: 0.2)),
-                  ),
-                  child: const Row(children: [
-                    Text('🤖', style: TextStyle(fontSize: 48)),
-                    SizedBox(width: 12),
-                    Expanded(
-                        child: Text('Gần đúng rồi, mình thử lại nhé!',
-                            style: TextStyle(fontSize: 16))),
-                  ]),
-                ),
-                const SizedBox(height: 20),
-                // Demo game action buttons
-                ElevatedButton(
-                  onPressed: _answer,
-                  child: const Text('Trả lời đúng'),
-                ),
-                const SizedBox(height: 12),
-                OutlinedButton(
-                  onPressed: _answer,
-                  child: const Text('Thử lại'),
-                ),
-                const SizedBox(height: 12),
-                TextButton.icon(
-                  onPressed: _hint,
-                  icon: const Icon(Icons.lightbulb),
-                  label: const Text('Gợi ý'),
-                ),
-              ] else ...[
-                Center(
-                  child: Column(children: [
-                    const Icon(Icons.celebration,
-                        size: 80, color: MiColors.accent),
-                    const SizedBox(height: 16),
-                    Text('Tuyệt vời!',
-                        style: Theme.of(context).textTheme.headlineLarge),
-                    const SizedBox(height: 8),
-                    const Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Icon(Icons.star, color: MiColors.accent, size: 32),
-                          Icon(Icons.star, color: MiColors.accent, size: 32),
-                          Icon(Icons.star, color: MiColors.accent, size: 32),
-                        ]),
-                    const SizedBox(height: 24),
-                    ElevatedButton(
-                        onPressed: () async {
-                          await _saveResult();
-                          if (context.mounted) context.pop();
-                        },
-                        child: const Text('Quay lại bản đồ')),
-                  ]),
-                ),
-              ],
-            ],
-          ),
+    if (_error != null) {
+      return Scaffold(
+        appBar: AppBar(leading: IconButton(icon: const Icon(Icons.close), onPressed: () => context.pop())),
+        body: MiErrorState(
+          title: 'Không thể tải trò chơi',
+          onRetry: () {
+            setState(() => _error = null);
+            _loadLevels();
+          },
         ),
-      ),
-    );
+      );
+    }
+
+    final levels = _levels;
+    if (levels == null) {
+      return const Scaffold(body: Center(child: CircularProgressIndicator()));
+    }
+    if (levels.isEmpty) {
+      return Scaffold(
+        appBar: AppBar(leading: IconButton(icon: const Icon(Icons.close), onPressed: () => context.pop())),
+        body: const Center(child: Text('Chưa có cấp độ nào cho trò chơi này')),
+      );
+    }
+
+    return _buildGame(levels.first, levels);
   }
 
-  void _answer() {
-    setState(() {
-      _score += 10;
-      _stars += 1;
-      if (_level >= 10) {
-        _completed = true;
-      } else {
-        _level += 1;
-      }
-    });
-  }
+  Widget _buildGame(MiLevel level, List<MiLevel> allLevels) {
+    void onExit() => context.pop();
 
-  void _hint() {
-    // Hint doesn't cost stars
-    ScaffoldMessenger.of(context).showSnackBar(
-      const SnackBar(content: Text('💡 MI gợi ý: hãy đếm từng bước nhé!')),
-    );
-  }
-
-  String _gameTitle() {
     switch (widget.gameType) {
       case 'word_builder':
-        return 'Ghép chữ tạo từ';
+        return WordBuilderScreen(
+          level: level,
+          allLevels: allLevels,
+          onExit: onExit,
+          onComplete: _saveResult,
+        );
       case 'sound_match':
-        return 'Nghe âm tìm chữ';
+        return SoundMatchScreen(
+          level: level,
+          allLevels: allLevels,
+          onExit: onExit,
+          onComplete: _saveResult,
+        );
       case 'math_race':
-        return 'Đường đua cộng trừ';
+        return ChoiceGameScreen(
+          title: 'Đường đua cộng trừ',
+          worldLabel: 'Xe MI tiến lên khi con chọn đúng.',
+          level: level,
+          allLevels: allLevels,
+          heroIcon: Icons.directions_car_rounded,
+          primaryColor: GameTheme.warning,
+          onExit: onExit,
+          onComplete: _saveResult,
+        );
       case 'math_supermarket':
-        return 'Siêu thị toán học';
-      case 'memory_cards':
-        return 'Ghi nhớ vị trí';
+        return ChoiceGameScreen(
+          title: 'Siêu thị toán học',
+          worldLabel: 'Giỏ hàng MI giúp con luyện tính tiền.',
+          level: level,
+          allLevels: allLevels,
+          heroIcon: Icons.shopping_cart_rounded,
+          primaryColor: MiGameColors.tertiary,
+          onExit: onExit,
+          onComplete: _saveResult,
+        );
       case 'robot_commands':
-        return 'Robot làm theo lệnh';
+        return RobotCommandsScreen(
+          level: level,
+          allLevels: allLevels,
+          onExit: onExit,
+          onComplete: _saveResult,
+        );
+      case 'memory_cards':
+        return _MemoryCardsHost(
+          level: level,
+          allLevels: allLevels,
+          onExit: onExit,
+          onComplete: _saveResult,
+        );
       default:
-        return 'Trò chơi';
+        return Scaffold(
+          appBar: AppBar(leading: IconButton(icon: const Icon(Icons.close), onPressed: onExit)),
+          body: Center(child: Text('Trò chơi "${widget.gameType}" chưa hỗ trợ')),
+        );
     }
+  }
+}
+
+/// Memory Cards' [MemoryCardsScreen] reports completion with no built-in
+/// "you did it" UI or level-advance logic (unlike the other 5 games) — the
+/// caller owns that, same as `main.dart`'s debug picker does for
+/// `_MemoryCardsEntry`. This mirrors that pattern for the production route.
+class _MemoryCardsHost extends StatefulWidget {
+  const _MemoryCardsHost({
+    required this.level,
+    required this.allLevels,
+    required this.onExit,
+    required this.onComplete,
+  });
+
+  final MiLevel level;
+  final List<MiLevel> allLevels;
+  final VoidCallback onExit;
+  final void Function(MiCompletionResult) onComplete;
+
+  @override
+  State<_MemoryCardsHost> createState() => _MemoryCardsHostState();
+}
+
+class _MemoryCardsHostState extends State<_MemoryCardsHost> {
+  late MemoryCardsGame _game;
+  late MiLevel _level;
+
+  @override
+  void initState() {
+    super.initState();
+    _level = widget.level;
+    _game = MemoryCardsGame();
+  }
+
+  @override
+  void dispose() {
+    _game.dispose();
+    super.dispose();
+  }
+
+  void _onGameComplete(MiCompletionResult result) {
+    widget.onComplete(result);
+    final stars = result.metadata['stars'] as int? ?? 1;
+    showDialog(
+      context: context,
+      barrierDismissible: false,
+      builder: (_) => CompletionOverlay(
+        starsEarned: stars,
+        maxStars: 3,
+        message: 'Chúc mừng!',
+        score: result.score,
+        onNext: () {
+          Navigator.of(context).pop();
+          final nextIndex =
+              widget.allLevels.indexWhere((l) => l.id == _level.id) + 1;
+          if (nextIndex < widget.allLevels.length) {
+            setState(() {
+              _game = MemoryCardsGame();
+              _level = widget.allLevels[nextIndex];
+            });
+          } else {
+            widget.onExit();
+          }
+        },
+        onReplay: () {
+          Navigator.of(context).pop();
+          setState(() => _game = MemoryCardsGame());
+        },
+        onExit: () {
+          Navigator.of(context).pop();
+          widget.onExit();
+        },
+      ),
+    );
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return MemoryCardsScreen(
+      key: ValueKey(_level.id),
+      game: _game,
+      level: _level,
+      onComplete: _onGameComplete,
+      onExit: widget.onExit,
+    );
   }
 }
