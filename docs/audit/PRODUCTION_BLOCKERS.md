@@ -31,8 +31,8 @@ All 6 games (`WordBuilderScreen`, `SoundMatchScreen`, `ChoiceGameScreen` for mat
 ### 5. Offline sync was built but inert (fixed this session)
 `packages/offline_sync`'s `SyncQueue`/`SyncService`/`ApiSyncProcessor` were fully implemented and unit-tested but never instantiated by the app, and `initHive()` never opened any Hive boxes (all commented out) — so even if instantiated, `Hive.box()` calls would have thrown. Both fixed: `initHive()` now opens the real boxes and registers the `SyncQueueItem` adapter; `syncServiceProvider` constructs and starts a `SyncService` with a real `ApiSyncProcessor`. A new `SyncItemType.gameResult` was added end-to-end (queue model → processor → `ApiService.submitGameResult`) so a failed/offline game-result save now queues instead of being silently dropped.
 
-### 6. Rate limiting has a non-prod-safe fallback
-`apps/api/middleware/rate_limit.py` has a Redis-backed limiter with an explicitly-documented in-memory fallback that is "per-process only, not for prod multi-replica." If Redis isn't configured in the production deployment, rate limiting silently becomes per-instance rather than global.
+### 6. ~~Rate limiting has a non-prod-safe fallback~~ — FIXED (fix/full-phase-1-to-19)
+`apps/api/config.py` and `apps/api/middleware/rate_limit.py` now reject `APP_ENV=production` unless `REDIS_URL` is configured, so the per-process in-memory limiter remains available only for local development and tests. `apps/api/main.py` passes `APP_ENV` into the middleware, and `tests/test_rate_limit_config.py` covers the production fail-closed behavior plus the non-production fallback.
 
 ### 7. Contract fragmentation beyond MiGameResult
 `Lesson`, `Child`, `Parent`, `Skill`, `Progress` each have 2-4 independently hand-maintained definitions across the Python and Dart layers (see `DUPLICATE_ANALYSIS.md`). Only `MiGameResult`/`SaveGameResultRequest` was verified field-for-field this session. No codegen/single-source-of-truth mechanism exists.

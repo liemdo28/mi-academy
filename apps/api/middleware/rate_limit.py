@@ -1,9 +1,8 @@
 """Rate limiting middleware for MI Academy API.
 
-Uses a Redis-backed fixed-window counter when REDIS_URL is configured so
-limits hold across multiple API processes/replicas. Falls back to an
-in-memory limiter for local dev and tests where no Redis is available —
-that fallback is per-process only and must not be relied on in production.
+Uses a Redis-backed fixed-window counter in production so limits hold
+across multiple API processes/replicas. Falls back to an in-memory limiter
+only for local dev and tests where no Redis is available.
 """
 
 import time
@@ -59,8 +58,13 @@ class RateLimitMiddleware(BaseHTTPMiddleware):
         sync_limit: int = 60,
         default_limit: int = 100,
         redis_url: Optional[str] = None,
+        app_env: str = "development",
     ):
         super().__init__(app)
+        if app_env.lower() == "production" and not redis_url:
+            raise RuntimeError(
+                "REDIS_URL is required in production so rate limits are shared across API replicas."
+            )
         self.limiter = RedisRateLimiter(redis_url) if redis_url else InMemoryRateLimiter()
         self.auth_limit = auth_limit
         self.sync_limit = sync_limit
