@@ -48,6 +48,7 @@ class _ParentPinScreenState extends ConsumerState<ParentPinScreen> {
       _lockedUntil != null && DateTime.now().isBefore(_lockedUntil!);
 
   void _unlock() {
+    ref.read(parentGateProvider.notifier).state = true;
     if (widget.onUnlocked != null) {
       widget.onUnlocked!();
       return;

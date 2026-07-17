@@ -112,6 +112,9 @@ class AuthNotifier extends Notifier<AuthState> {
     state = state.copyWith(isLoading: true);
     await _api.logout();
     state = const AuthState();
+    // Re-lock the parent area so a fresh sign-in (possibly a different
+    // parent, on a shared device) must re-verify the PIN.
+    ref.read(parentGateProvider.notifier).state = false;
   }
 
   String _extractError(Object e) {
