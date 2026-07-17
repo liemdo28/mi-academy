@@ -24,7 +24,7 @@
 | Mobile platform privacy audit | Android/iOS permissions, tracking prompts, ad/IAP/social SDKs | 6 tests ✅ |
 | Child-safety pre-signoff | Six-game automated evidence matrix and manual pending boundary | 5 tests ✅ |
 | Release evidence ledger | Local release gates, production blocker classification, and pending external proof boundaries | 6 tests ✅ |
-| `apps/mobile` | MVP game surfaces, parent flows, game-slice visual baselines, gentle retry/hint interactions, all-six MVP game save/restore, and sync adapter routing | 47 widget/golden/save-restore/sync tests ✅ |
+| `apps/mobile` | MVP game surfaces, parent flows, game-slice visual baselines, gentle retry/hint interactions, all-six MVP game save/restore, sync adapter routing, and backend API path contracts | 50 widget/golden/save-restore/sync/API-path tests ✅ |
 
 ### Layer 2: Contract tests
 
@@ -49,7 +49,7 @@
 | Offline → online | Play offline, reconnect, data syncs |
 | Parent dashboard | Local parent report shows gentle progress summary; backend progress data remains separate verification |
 | Parent API report/export/delete | FastAPI parent report summarizes sessions, parent export returns privacy-safe JSON without raw answers, and child deletion removes child-owned data |
-| Offline queue → sync API | Queued progress, attempt, and session-end items route to backend sync APIs; snapshots remain local until a backend contract exists |
+| Offline queue → sync API | Queued progress, attempt, and session-end items route to backend sync APIs; snapshots remain local until a backend contract exists; mobile API paths match FastAPI child/reward/sync routers |
 
 ### Layer 4: E2E tests
 

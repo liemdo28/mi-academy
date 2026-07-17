@@ -3,11 +3,12 @@
 import json
 import uuid
 
-from fastapi import APIRouter, Depends, HTTPException, Query
+from fastapi import APIRouter, Depends, HTTPException, Query, status
 from sqlalchemy import select
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from apps.api.database import get_db
+from apps.api.dependencies import get_parent_profile
 from apps.api.time import utc_now
 from apps.api.models import (
     Attempt,
@@ -17,6 +18,7 @@ from apps.api.models import (
     Question,
     Game,
     ContentVersion,
+    ParentProfile,
 )
 from apps.api.schemas import (
     SyncContentResponse,
@@ -27,6 +29,15 @@ from apps.api.schemas import (
 )
 
 router = APIRouter()
+
+
+def _ensure_children_owned(profile: ParentProfile, child_ids: set[str]) -> None:
+    owned_ids = {child.id for child in profile.children}
+    if not child_ids.issubset(owned_ids):
+        raise HTTPException(
+            status_code=status.HTTP_403_FORBIDDEN,
+            detail={"error": {"code": "FORBIDDEN", "message": "Child not owned by parent"}},
+        )
 
 
 @router.get("/status", response_model=SyncStatusResponse)
@@ -86,15 +97,24 @@ async def get_content(
 @router.post("/progress")
 async def sync_progress(
     items: list[SyncProgressItem],
+    profile: ParentProfile = Depends(get_parent_profile),
     db: AsyncSession = Depends(get_db),
 ):
     """Bulk upsert progress records from client."""
+    _ensure_children_owned(profile, {item.child_id for item in items})
+
     for item in items:
         existing = await db.execute(
             select(Progress).where(Progress.id == item.id)
         )
         row = existing.scalar_one_or_none()
         if row:
+            _ensure_children_owned(profile, {row.child_id})
+            if row.child_id != item.child_id:
+                raise HTTPException(
+                    status_code=status.HTTP_403_FORBIDDEN,
+                    detail={"error": {"code": "FORBIDDEN", "message": "Progress record child mismatch"}},
+                )
             row.status = item.status
             row.mastery_score = item.mastery_score
             row.total_attempts = item.total_attempts
@@ -117,15 +137,25 @@ async def sync_progress(
 @router.post("/attempts")
 async def sync_attempts(
     items: list[SyncAttemptItem],
+    profile: ParentProfile = Depends(get_parent_profile),
     db: AsyncSession = Depends(get_db),
 ):
     """Bulk insert attempts from client (idempotent by id)."""
+    _ensure_children_owned(profile, {item.child_id for item in items})
+
     accepted = 0
     for item in items:
         existing = await db.execute(
             select(Attempt).where(Attempt.id == item.id)
         )
-        if existing.scalar_one_or_none():
+        existing_attempt = existing.scalar_one_or_none()
+        if existing_attempt:
+            _ensure_children_owned(profile, {existing_attempt.child_id})
+            if existing_attempt.child_id != item.child_id:
+                raise HTTPException(
+                    status_code=status.HTTP_403_FORBIDDEN,
+                    detail={"error": {"code": "FORBIDDEN", "message": "Attempt record child mismatch"}},
+                )
             continue  # already synced
         attempt = Attempt(
             id=item.id,
@@ -148,9 +178,12 @@ async def sync_attempts(
 @router.post("/sessions")
 async def sync_sessions(
     items: list[SyncSessionItem],
+    profile: ParentProfile = Depends(get_parent_profile),
     db: AsyncSession = Depends(get_db),
 ):
     """Bulk upsert daily session summaries from offline clients."""
+    _ensure_children_owned(profile, {item.child_id for item in items})
+
     for item in items:
         row = None
         if item.id:
@@ -166,6 +199,12 @@ async def sync_sessions(
             row = existing.scalar_one_or_none()
 
         if row:
+            _ensure_children_owned(profile, {row.child_id})
+            if row.child_id != item.child_id:
+                raise HTTPException(
+                    status_code=status.HTTP_403_FORBIDDEN,
+                    detail={"error": {"code": "FORBIDDEN", "message": "Session record child mismatch"}},
+                )
             row.duration_seconds = item.duration_seconds
             row.lessons_completed = item.lessons_completed
             row.games_completed = item.games_completed

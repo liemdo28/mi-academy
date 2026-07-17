@@ -1,0 +1,25 @@
+name: analytics_sdk
+description: Analytics SDK for MI Academy — event tracking, session analytics, and reporting contracts.
+version: 1.0.0
+publish_to: none
+
+environment:
+  sdk: ">=3.0.0 <4.0.0"
+  flutter: ">=3.10.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  shared_models:
+    path: ../shared_models
+  http: ^1.1.0
+  json_annotation: ^4.8.1
+  uuid: ^4.2.1
+  collection: ^1.17.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  build_runner: ^2.4.0
+  json_serializable: ^6.7.0
+  mockito: ^5.4.0

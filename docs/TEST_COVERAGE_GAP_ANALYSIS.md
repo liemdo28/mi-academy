@@ -21,7 +21,7 @@
 | Mobile platform privacy audit | 6 ✅ | N/A | 0 ❌ |
 | Child-safety pre-signoff | 5 ✅ | N/A | 0 ❌ |
 | Release evidence ledger | 6 ✅ | N/A | 0 ❌ |
-| apps/mobile | 0 ❌ | 47 ✅ | 0 ❌ |
+| apps/mobile | 0 ❌ | 50 ✅ | 0 ❌ |
 
 ## Critical gaps
 
@@ -38,7 +38,8 @@ roundtrips.
 persistence, privacy-safe payloads, offline retention, FIFO flush, and retry
 retention. Backend sync routes now have local tests for progress upsert,
 attempt idempotency, JSON answer persistence, and daily session upsert; mobile
-has queue-to-API adapter tests for progress, attempt, and session-end items.
+has queue-to-API adapter tests for progress, attempt, and session-end items,
+plus API path contract tests for FastAPI child, reward, and sync routes.
 Mobile platform privacy audit tests cover sensitive Android/iOS permission
 detection, tracking prompts, ad/IAP/social dependencies, and the current
 debug/profile Internet warning boundary.

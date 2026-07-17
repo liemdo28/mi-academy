@@ -1,0 +1,21 @@
+{
+  "fixture_id": "FIX-GS-001",
+  "contract_id": "mi.game.snapshot",
+  "description": "In-progress game snapshot for save/resume",
+  "schema_version": 1,
+  "data": {
+    "schemaVersion": 1,
+    "gameId": "game-math-race-01",
+    "levelId": "level-math-race-01-02",
+    "childProfileId": "550e8400-e29b-41d4-a716-446655440001",
+    "savedAt": "2026-07-17T08:45:00Z",
+    "state": {
+      "currentQuestion": 3,
+      "score": 150,
+      "timeRemaining": 42,
+      "answeredCorrectly": [true, true, false],
+      "livesLeft": 2,
+      "powerUps": {"hint": 1, "skip": 0}
+    }
+  }
+}

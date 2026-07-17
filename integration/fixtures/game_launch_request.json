@@ -1,0 +1,36 @@
+{
+  "fixture_id": "FIX-GLR-001",
+  "contract_id": "mi.game.launch",
+  "description": "Standard game launch request for junior age group",
+  "schema_version": 1,
+  "data": {
+    "schemaVersion": 1,
+    "childProfileId": "550e8400-e29b-41d4-a716-446655440001",
+    "gameId": "game-memory-01",
+    "levelId": "level-memory-01-01",
+    "language": "vi",
+    "ageGroup": "junior",
+    "accessibility": {
+      "highContrast": false,
+      "largeText": false,
+      "reduceMotion": false,
+      "screenReader": false,
+      "fontSize": 1.0
+    },
+    "audioPreferences": {
+      "musicVolume": 0.8,
+      "sfxVolume": 1.0,
+      "speechEnabled": true
+    },
+    "levelContent": {
+      "pairs": [
+        {"id": "card-1", "type": "image", "value": "apple"},
+        {"id": "card-2", "type": "image", "value": "banana"},
+        {"id": "card-3", "type": "image", "value": "cat"},
+        {"id": "card-4", "type": "image", "value": "dog"}
+      ],
+      "gridSize": 4,
+      "timeLimit": 60
+    }
+  }
+}

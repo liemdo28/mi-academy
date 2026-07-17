@@ -79,7 +79,7 @@ CI must fail if any content or safety gate returns exit code 1.
 | Content validator | All 6 MVP games plus audio placeholder manifest |
 | Content validator unit tests | `tests/test_content_validator_tool.py` has 20 tests covering base level rules, card pairs, game-specific content, Robot Commands path simulation, game-file JSON failures, audio-key collection, and audio placeholder checks |
 | Level solver | All 6 MVP games: Word Builder letter construction, Sound Match answer/options, math choice uniqueness, Memory Cards pairs, Robot Commands BFS reachability |
-| Content safety audit | All 6 MVP level JSON files; 1,889 authored strings plus pressure metadata such as `timeLimitSec` |
+| Content safety audit | All 6 MVP level JSON files; 1,879 authored strings plus pressure metadata such as `timeLimitSec` |
 | Game network audit | All 6 child-facing game source directories under `apps/mobile/lib/src/games`; 10 Dart files scanned, 0 findings |
 | Mobile platform privacy audit | Android/iOS manifests, Flutter dependency files, and Gradle files; 8 files scanned, 0 failures, 2 expected debug/profile Internet warnings |
 | Child-safety pre-signoff | Six MVP games, 10 categories each; automated status passes for every game, manual status remains pending |
@@ -91,8 +91,8 @@ CI must fail if any content or safety gate returns exit code 1.
 | Game progress unit tests | `packages/mi_game_progress` has 15 tests covering attempt persistence, mastery scoring, difficulty recommendation, spaced recall, tracker persistence, and mastered-skill listing |
 | Offline sync unit tests | `packages/offline_sync` has 5 tests covering Hive-backed queue persistence, privacy-safe payloads, offline retention, FIFO online flush, retry retention without deleting local data, and sync type wire mapping |
 | Shared game UI widget/golden tests | `packages/mi_game_ui` has 20 tests covering shared game header, hint, retry, completion, offline indicator, feedback, progress, audio toggle, pause overlay, exit confirmation, tutorial overlay, loading/error states, and 8 visual golden baselines |
-| Mobile widget/golden/save-restore/sync tests | `apps/mobile` has 47 tests covering exploration hub, child profile/rewards summary, parent entry/report/settings path, six MVP game smoke paths, six game-slice golden baselines, all-six completion paths, gentle retry/hint interactions, privacy-safe offline snapshot save/restore for all six MVP game slices, mobile queue-to-API sync adapter routing for progress/attempt/session-end items, Robot command editing, parent PIN, and parent settings persistence/export/delete |
-| Backend parent/sync-data tests | Parent report summary, weekly report entries, privacy-safe export, child-data deletion cascade, progress sync upsert, idempotent attempt sync, valid JSON answer persistence, and daily session sync upsert; full Python suite currently passes at `112 passed` |
+| Mobile widget/golden/save-restore/sync tests | `apps/mobile` has 50 tests covering exploration hub, child profile/rewards summary, parent entry/report/settings path, six MVP game smoke paths, six game-slice golden baselines, all-six completion paths, gentle retry/hint interactions, privacy-safe offline snapshot save/restore for all six MVP game slices, mobile queue-to-API sync adapter routing for progress/attempt/session-end items, mobile API path contracts for child/reward/sync routes, Robot command editing, parent PIN, and parent settings persistence/export/delete |
+| Backend parent/sync-data tests | Parent report summary, weekly report entries, privacy-safe export, child-data deletion cascade, progress sync upsert, idempotent attempt sync, valid JSON answer persistence, child-owned route authorization, sync child-ownership authorization, admin login without parent profile, admin high-error analytics, and daily session sync upsert; full Python suite currently passes at `126 passed` |
 
 ## Blockers
 

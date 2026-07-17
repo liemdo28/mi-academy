@@ -140,7 +140,7 @@ class _ParentPinScreenState extends ConsumerState<ParentPinScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: MiTokens.backgroundPrimary,
+      backgroundColor: MiColors.background,
       appBar: AppBar(
         title: const Text('Phụ huynh'),
         leading: IconButton(
@@ -157,7 +157,7 @@ class _ParentPinScreenState extends ConsumerState<ParentPinScreen> {
                 mainAxisSize: MainAxisSize.min,
                 children: [
                   const Icon(Icons.lock_outline,
-                      size: 64, color: MiTokens.primaryBlue),
+                      size: 64, color: MiColors.primary),
                   const SizedBox(height: MiTokens.space4),
                   Text(
                     _showAdultChallenge
@@ -183,7 +183,7 @@ class _ParentPinScreenState extends ConsumerState<ParentPinScreen> {
                     const SizedBox(height: MiTokens.space4),
                     Text(
                       _error!,
-                      style: const TextStyle(color: MiTokens.error),
+                      style: const TextStyle(color: MiColors.error),
                     ),
                   ],
                   const SizedBox(height: MiTokens.space8),
@@ -221,8 +221,8 @@ class _ParentPinScreenState extends ConsumerState<ParentPinScreen> {
           height: 16,
           decoration: BoxDecoration(
             shape: BoxShape.circle,
-            color: isFilled ? MiTokens.primaryBlue : Colors.transparent,
-            border: Border.all(color: MiTokens.primaryBlue, width: 2),
+            color: isFilled ? MiColors.primary : Colors.transparent,
+            border: Border.all(color: MiColors.primary, width: 2),
           ),
         );
       }),
@@ -292,8 +292,8 @@ class _ParentPinScreenState extends ConsumerState<ParentPinScreen> {
         if (b == '⌫') {
           return MiIconButton(
             icon: Icons.backspace,
-            backgroundColor: MiTokens.border,
-            iconColor: MiTokens.textPrimary,
+            backgroundColor: MiColors.border,
+            iconColor: MiColors.textPrimary,
             onPressed: _isLocked ? null : _onDeletePressed,
           );
         }
@@ -303,8 +303,8 @@ class _ParentPinScreenState extends ConsumerState<ParentPinScreen> {
           child: OutlinedButton(
             onPressed: _isLocked ? null : () => _onNumberPressed(b),
             style: OutlinedButton.styleFrom(
-              backgroundColor: MiTokens.backgroundCard,
-              foregroundColor: MiTokens.textPrimary,
+              backgroundColor: MiColors.surface,
+              foregroundColor: MiColors.textPrimary,
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(MiTokens.radiusMd),
               ),

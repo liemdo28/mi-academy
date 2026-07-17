@@ -1,0 +1,31 @@
+{
+  "fixture_id": "FIX-GR-001",
+  "contract_id": "mi.game.result",
+  "description": "Completed game result with mastery evidence",
+  "schema_version": 1,
+  "data": {
+    "schemaVersion": 1,
+    "attemptId": "att-550e8400-e29b-41d4-a716-446655440001-001",
+    "childProfileId": "550e8400-e29b-41d4-a716-446655440001",
+    "gameId": "game-memory-01",
+    "levelId": "level-memory-01-01",
+    "startedAt": "2026-07-17T08:30:00Z",
+    "completedAt": "2026-07-17T08:31:45Z",
+    "attemptCount": 1,
+    "correctCount": 4,
+    "incorrectCount": 1,
+    "hintCount": 0,
+    "durationSeconds": 105,
+    "completed": true,
+    "masteryEvidence": 0.8,
+    "skillEvidence": {
+      "memory_recall": 0.9,
+      "pattern_recognition": 0.7,
+      "attention": 0.85
+    },
+    "metadata": {
+      "difficulty": 1,
+      "gameType": "memory"
+    }
+  }
+}

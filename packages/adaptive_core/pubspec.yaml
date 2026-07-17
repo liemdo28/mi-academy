@@ -1,0 +1,21 @@
+name: adaptive_core
+description: MI Academy — Adaptive learning core: learning paths, hint recommendation, difficulty calibration, student-state modeling.
+version: 0.1.0
+publish_to: 'none'
+
+environment:
+  sdk: '>=3.0.0 <4.0.0'
+
+dependencies:
+  equatable: ^2.0.5
+  mastery_core:
+    path: ../mastery_core
+  recommendation_core:
+    path: ../recommendation_core
+  spaced_repetition:
+    path: ../spaced_repetition
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  mocktail: ^1.0.0

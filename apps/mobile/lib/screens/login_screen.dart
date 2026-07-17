@@ -51,7 +51,7 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
                   style: Theme.of(context).textTheme.bodyLarge,
                   textAlign: TextAlign.center,
                 ),
-                const SizedBox(height: MiTokens.space10),
+                const SizedBox(height: MiTokens.space12),
 
                 // Toggle login/register
                 SegmentedButton<bool>(
@@ -109,12 +109,12 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
                   Container(
                     padding: const EdgeInsets.all(MiTokens.space3),
                     decoration: BoxDecoration(
-                      color: MiTokens.error.withValues(alpha: 0.1),
+                      color: MiColors.error.withValues(alpha: 0.1),
                       borderRadius: BorderRadius.circular(MiTokens.radiusSm),
                     ),
                     child: Text(
                       authState.error!,
-                      style: const TextStyle(color: MiTokens.error),
+                      style: const TextStyle(color: MiColors.error),
                     ),
                   ),
                   const SizedBox(height: MiTokens.space4),

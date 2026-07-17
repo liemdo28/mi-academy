@@ -1,0 +1,17 @@
+name: content_intelligence
+description: MI Academy — Content intelligence: content performance analytics, level difficulty analytics, content quality analysis.
+version: 0.1.0
+publish_to: 'none'
+
+environment:
+  sdk: '>=3.0.0 <4.0.0'
+
+dependencies:
+  equatable: ^2.0.5
+  mastery_core:
+    path: ../mastery_core
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  mocktail: ^1.0.0

@@ -20,7 +20,7 @@
 | Curriculum map | ✅ | 3 age groups, documented |
 | Content validator | ✅ | Python tool covers all six MVP game files and audio placeholders/manifest |
 | Level solver | ✅ | `python tools/level_validator/solve_levels.py` verifies all six MVP games: 10/10 levels solvable for each game |
-| Content safety audit | ✅ | `python tools/content_safety_audit.py --json` passes across all six MVP level files: 1,889 strings scanned, 0 failures, 0 warnings; Math Race countdown metadata is disabled |
+| Content safety audit | ✅ | `python tools/content_safety_audit.py --json` passes across all six MVP level files: 1,879 strings scanned, 0 failures, 0 warnings; Math Race countdown metadata is disabled |
 | Game network audit | ✅ | `python tools/game_network_audit.py --json` passes across 10 child-facing game Dart files: 0 outbound network/link/webview findings |
 | Mobile platform privacy audit | ⚠️ | `python tools/mobile_platform_privacy_audit.py --json` passes with 0 failures and 2 expected debug/profile Internet warnings; main/release manifests have no Internet, ad ID, sensitive permissions, tracking prompts, ad SDKs, IAP SDKs, or social SDKs |
 | Child-safety pre-signoff | ⚠️ | `python tools/child_safety_signoff.py --json` passes for all six MVP games across 10 automated categories and writes `docs/child-safety/MVP_GAME_SAFETY_PRESIGNOFF_2026-07-17.md`; manual release sign-off remains pending |
@@ -44,7 +44,7 @@
 | Game accessibility tests | ✅ | `packages/mi_game_accessibility` has 17 passing tests for child-safe prefs, motion timing, semantic labels, and accessible button touch targets |
 | Offline sync tests | ✅ | `packages/offline_sync` has 5 passing tests for Hive-backed queue persistence, privacy-safe payloads, offline retention, FIFO online flush, retry retention, and sync type wire mapping |
 | Shared game UI widget/golden tests | ✅ | `packages/mi_game_ui` now has 20 tests: 12 behavior/widget tests plus 8 real-font golden baselines for completion, tutorial, pause, exit confirmation, retry, error, loading, and compact control states |
-| Mobile sync adapter tests | ✅ | `apps/mobile` has ApiSyncProcessor tests proving queued progress, attempt, and session-end items route to backend sync APIs, while snapshots stay local until a backend contract exists |
+| Mobile sync adapter/API path tests | ✅ | `apps/mobile` has ApiSyncProcessor tests proving queued progress, attempt, and session-end items route to backend sync APIs, snapshots stay local until a backend contract exists, and mobile child/reward/sync API paths match FastAPI router prefixes |
 | Mobile web build | ✅ | `flutter build web --release` passed for `apps/mobile`; Wasm dry-run warnings remain for web plugin dependencies |
 | Android debug build | ✅ | `flutter build apk --debug` passed and produced `build/app/outputs/flutter-apk/app-debug.apk` |
 | Performance baseline | ⚠️ | Artifact-size baseline recorded in `docs/qa/PERFORMANCE_BASELINE_2026-07-17.md`; runtime FPS/memory/device performance still unmeasured |
@@ -67,7 +67,7 @@
 | Math Supermarket content | Dev 3 | ✅ 10 starter levels, VI/EN, covered by content validator |
 | Robot Commands content | Dev 3 | ✅ 10 starter levels, VI/EN, covered by content validator and required-path simulation |
 | Unit tests for mi_game_* | Dev 1 | ⚠️ package smoke/core tests, 22 block tests, 16 content tests, 16 audio unit tests, 15 progress tests, 17 accessibility tests, and 20 shared UI widget/golden tests pass; broader app integration coverage still needed |
-| Mobile game widget/golden/save-restore/sync tests | Dev 2 | ⚠️ hub + profile/reward/parent-entry coverage, local parent report coverage, six game render smoke coverage, six MVP game-slice golden baselines, completion-path smoke tests for all six MVP games, gentle retry/hint coverage for Word Builder, Sound Match, Math Race, Math Supermarket, and Robot Commands, privacy-safe offline snapshot save/restore coverage for all six MVP game slices, mobile queue-to-API sync adapter coverage, Robot command-editor move/remove/reset/retry coverage, parent PIN lockout/adult-gate coverage, and parent settings offline/export/delete/persistence coverage; real device/runtime and deployed backend sync coverage still needed |
+| Mobile game widget/golden/save-restore/sync tests | Dev 2 | ⚠️ hub + profile/reward/parent-entry coverage, local parent report coverage, six game render smoke coverage, six MVP game-slice golden baselines, completion-path smoke tests for all six MVP games, gentle retry/hint coverage for Word Builder, Sound Match, Math Race, Math Supermarket, and Robot Commands, privacy-safe offline snapshot save/restore coverage for all six MVP game slices, mobile queue-to-API sync adapter and API path contract coverage, Robot command-editor move/remove/reset/retry coverage, parent PIN lockout/adult-gate coverage, and parent settings offline/export/delete/persistence coverage; real device/runtime and deployed backend sync coverage still needed |
 | Accessibility widget tests | Dev 3 | ✅ prefs + accessible button widget tests added |
 | Mobile platform scaffolds | Dev 1 | ⚠️ Android/iOS/web scaffolds generated; Android debug APK and web release build pass; iOS build remains unproven on Windows |
 | Child-safety automation | Dev 3 | ⚠️ Content safety audit, game network audit, static mobile audit, mobile platform privacy audit, and automated per-game pre-signoff pass; manual per-game checklist/sign-off still required |
@@ -80,13 +80,13 @@ Based on current completion: **~94%** toward release 0.2 gate criteria.
 
 - `python tools/content_validator/validate_content.py` — pass (`ALL CONTENT VALID`)
 - `python tools/level_validator/solve_levels.py` — pass (`10/10` levels solvable for Word Builder, Sound Match, Math Race, Math Supermarket, Memory Cards, and Robot Commands)
-- `python tools/content_safety_audit.py --json` — pass (`6` files scanned, `1,889` strings scanned, `0` failures, `0` warnings)
+- `python tools/content_safety_audit.py --json` — pass (`6` files scanned, `1,879` strings scanned, `0` failures, `0` warnings)
 - `python tools/game_network_audit.py --json` — pass (`10` child-facing game Dart files scanned, `0` failures, `0` warnings)
 - `python tools/production_audio_audit.py --json` — fail by design (`18` assets scanned, `18` placeholders, `0` approved, `72` failures)
 - `python tools/mobile_platform_privacy_audit.py --json` — pass (`8` files scanned, `0` failures, `2` expected debug/profile Internet warnings)
 - `python tools/child_safety_signoff.py --json` — pass (six MVP games, `10` automated categories each, manual release sign-off `pending`)
 - `python tools/release_evidence.py --write --json` — blocked as expected (local automated gates pass except production audio; manual/device/deployed/remote CI proof remains pending)
-- `python -m pytest packages/game_core/tests tests test -q` — pass (`112 passed`; includes content validator unit tests, platform privacy audit tests, child-safety pre-signoff tests, release evidence ledger tests, parent report/weekly summary, privacy-safe export, child-data deletion cascade, progress sync upsert, idempotent attempt sync, and daily session sync upsert tests)
+- `python -m pytest packages/game_core/tests tests test -q` — pass (`126 passed`; includes content validator unit tests, platform privacy audit tests, child-safety pre-signoff tests, release evidence ledger tests, parent report/weekly summary, privacy-safe export, child-data deletion cascade, progress sync upsert, idempotent attempt sync, child-owned route authorization, sync child-ownership authorization, admin login without parent profile, admin high-error analytics, and daily session sync upsert tests)
 - FastAPI import smoke — pass (`from apps.api.main import app`)
 - `flutter analyze` in `packages/mi_blocks` — pass (`No issues found`)
 - `flutter test` in `packages/mi_blocks` — pass (`22 tests passed`; covers command names, block JSON, tree validation, direction math, grid walkability, interpreter movement, repeats, conditionals, collection, goal checks, runaway-program protection, and renderer compile compatibility)
@@ -101,7 +101,7 @@ Based on current completion: **~94%** toward release 0.2 gate criteria.
 - `flutter test` in `packages/mi_game_accessibility` — pass (`17 tests passed`; covers child-safe accessibility prefs, reduced motion, semantic labels, and 48/64dp accessible buttons)
 - `flutter test` in `packages/mi_game_ui` — pass (`20 tests passed`; covers shared game header, hint, retry, completion, offline indicator, feedback, progress, audio toggle, pause overlay, exit confirmation, tutorial overlay, loading/error states, and 8 visual golden baselines with real text/icon fonts)
 - `flutter analyze` in `apps/mobile` — pass (`No issues found`)
-- `flutter test` in `apps/mobile` — pass (`47 tests passed`; covers hub, profile/reward/parent-entry surface, local parent report/settings path, six MVP game render smoke tests, six MVP game-slice golden baselines, completion-path smoke tests for all six MVP games, gentle retry/hint coverage, privacy-safe offline snapshot save/restore for all six MVP game slices, mobile queue-to-API sync adapter routing, Robot command-editor move/remove/reset/retry coverage, parent PIN lockout/adult-gate coverage, and parent settings offline/export/delete/persistence coverage)
+- `flutter test` in `apps/mobile` — pass (`50 tests passed`; covers hub, profile/reward/parent-entry surface, local parent report/settings path, six MVP game render smoke tests, six MVP game-slice golden baselines, completion-path smoke tests for all six MVP games, gentle retry/hint coverage, privacy-safe offline snapshot save/restore for all six MVP game slices, mobile queue-to-API sync adapter routing, mobile API path contracts for child/reward/sync routes, Robot command-editor move/remove/reset/retry coverage, parent PIN lockout/adult-gate coverage, and parent settings offline/export/delete/persistence coverage)
 - `flutter build web --release` in `apps/mobile` — pass (`Built build\web`); Wasm dry-run warnings remain for `flutter_secure_storage_web` and `audioplayers_web`
 - `flutter build apk --debug` in `apps/mobile` — pass (`Built build\app\outputs\flutter-apk\app-debug.apk`)
 - `python tools/performance_baseline.py --json` — pass (Android debug APK `147.98 MiB`, web build `34.98 MiB`)

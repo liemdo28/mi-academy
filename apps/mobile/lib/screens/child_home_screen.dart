@@ -124,7 +124,7 @@ class ChildHomeScreen extends ConsumerWidget {
             width: 56,
             height: 56,
             decoration: BoxDecoration(
-              color: MiTokens.primaryBlue.withValues(alpha: 0.1),
+              color: MiColors.primary.withValues(alpha: 0.1),
               borderRadius: BorderRadius.circular(MiTokens.radiusMd),
             ),
             child: const Center(
@@ -149,7 +149,7 @@ class ChildHomeScreen extends ConsumerWidget {
               ],
             ),
           ),
-          const Icon(Icons.play_circle, color: MiTokens.primaryBlue, size: 32),
+          const Icon(Icons.play_circle, color: MiColors.primary, size: 32),
         ],
       ),
     );
@@ -157,11 +157,11 @@ class ChildHomeScreen extends ConsumerWidget {
 
   Widget _buildSubjectGrid(BuildContext context) {
     final subjects = [
-      {'title': 'Chữ cái', 'icon': '📝', 'color': MiTokens.primaryBlue},
-      {'title': 'Toán học', 'icon': '🔢', 'color': MiTokens.accentOrange},
-      {'title': 'Tư duy', 'icon': '🧠', 'color': MiTokens.accentPurple},
-      {'title': 'Khoa học', 'icon': '🔬', 'color': MiTokens.accentGreen},
-      {'title': 'Sáng tạo', 'icon': '🎨', 'color': MiTokens.accentPink},
+      {'title': 'Chữ cái', 'icon': '📝', 'color': MiColors.primary},
+      {'title': 'Toán học', 'icon': '🔢', 'color': MiColors.warning},
+      {'title': 'Tư duy', 'icon': '🧠', 'color': MiColors.primary},
+      {'title': 'Khoa học', 'icon': '🔬', 'color': MiColors.success},
+      {'title': 'Sáng tạo', 'icon': '🎨', 'color': MiColors.secondary},
     ];
 
     return GridView.count(

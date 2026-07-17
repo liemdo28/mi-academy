@@ -1,12 +1,15 @@
 """Games routes — list, detail, start session, attempt, complete."""
 
+import json
+import uuid
+
 from fastapi import APIRouter, Depends, HTTPException, status
 from sqlalchemy import select
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from apps.api.database import get_db
-from apps.api.dependencies import get_current_user
-from apps.api.models import ChildProfile, Game, Attempt, Progress, Reward, ChildReward
+from apps.api.dependencies import get_parent_profile
+from apps.api.models import Game, Attempt, Reward, ChildReward, ParentProfile
 from apps.api.time import utc_now
 from apps.api.schemas import (
     GameListItem,
@@ -15,9 +18,16 @@ from apps.api.schemas import (
     GameAttemptRequest,
     GameCompleteRequest,
 )
-from apps.api.models import User
 
 router = APIRouter()
+
+
+def _child_belongs_to_parent(profile: ParentProfile, child_id: str):
+    if child_id not in [c.id for c in profile.children]:
+        raise HTTPException(
+            status_code=status.HTTP_403_FORBIDDEN,
+            detail={"error": {"code": "FORBIDDEN", "message": "Child not owned by parent"}},
+        )
 
 
 @router.get("", response_model=list[GameListItem])
@@ -67,24 +77,16 @@ async def get_game(game_id: str, db: AsyncSession = Depends(get_db)):
 async def start_game(
     game_id: str,
     body: GameStartRequest,
-    user: User = Depends(get_current_user),
+    profile: ParentProfile = Depends(get_parent_profile),
     db: AsyncSession = Depends(get_db),
 ):
     """Mark a game session as started for a child."""
+    _child_belongs_to_parent(profile, body.child_id)
+
     result = await db.execute(select(Game).where(Game.id == game_id))
     game = result.scalar_one_or_none()
     if game is None:
         raise HTTPException(status_code=404, detail="Game not found")
-
-    result2 = await db.execute(
-        select(ChildProfile).where(
-            ChildProfile.id == body.child_id,
-            ChildProfile.parent_id == None,  # TODO: validate parent ownership
-        )
-    )
-    child = result2.scalar_one_or_none()
-    if child is None:
-        raise HTTPException(status_code=404, detail="Child not found")
 
     return {"session_id": game_id, "child_id": body.child_id, "started": True}
 
@@ -93,17 +95,21 @@ async def start_game(
 async def submit_attempt(
     game_id: str,
     body: GameAttemptRequest,
-    user: User = Depends(get_current_user),
+    profile: ParentProfile = Depends(get_parent_profile),
     db: AsyncSession = Depends(get_db),
 ):
     """Record an answer attempt within a game session."""
-    import uuid
+    _child_belongs_to_parent(profile, body.child_id)
+
+    result = await db.execute(select(Game).where(Game.id == game_id))
+    if result.scalar_one_or_none() is None:
+        raise HTTPException(status_code=404, detail="Game not found")
 
     attempt = Attempt(
         id=str(uuid.uuid4()),
         child_id=body.child_id,
         game_id=game_id,
-        answer_json=str(body.answer_json),
+        answer_json=json.dumps(body.answer_json, ensure_ascii=False, sort_keys=True),
         is_correct=body.answer_json.get("is_correct", False),
         response_time_ms=body.response_time_ms,
         hint_count=body.hint_count,
@@ -117,10 +123,16 @@ async def submit_attempt(
 async def complete_game(
     game_id: str,
     body: GameCompleteRequest,
-    user: User = Depends(get_current_user),
+    profile: ParentProfile = Depends(get_parent_profile),
     db: AsyncSession = Depends(get_db),
 ):
     """Mark game complete, award stars and check badge unlocks."""
+    _child_belongs_to_parent(profile, body.child_id)
+
+    result = await db.execute(select(Game).where(Game.id == game_id))
+    if result.scalar_one_or_none() is None:
+        raise HTTPException(status_code=404, detail="Game not found")
+
     # Award rewards
     unlocked_badges = []
     unlocked_rewards = []
@@ -138,7 +150,6 @@ async def complete_game(
         )
         badge = badge_result.scalar_one_or_none()
         if badge:
-            import uuid
             cr = ChildReward(
                 id=str(uuid.uuid4()),
                 child_id=body.child_id,

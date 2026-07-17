@@ -1,26 +1,34 @@
 """Progress routes — per-child progress, skills, daily plan."""
 
-from datetime import date, timedelta
-from fastapi import APIRouter, Depends, HTTPException, Query
+from fastapi import APIRouter, Depends, HTTPException, status
 from sqlalchemy import Integer, select, func
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from apps.api.database import get_db
-from apps.api.dependencies import get_current_user
-from apps.api.models import ChildProfile, Progress, Attempt, Lesson, DailySession
+from apps.api.dependencies import get_parent_profile
+from apps.api.models import ParentProfile, Progress, Attempt, Lesson
 from apps.api.schemas import ProgressResponse, SkillReport, DailyPlanItem
-from apps.api.models import User
 
 router = APIRouter()
+
+
+def _child_belongs_to_parent(profile: ParentProfile, child_id: str):
+    if child_id not in [c.id for c in profile.children]:
+        raise HTTPException(
+            status_code=status.HTTP_403_FORBIDDEN,
+            detail={"error": {"code": "FORBIDDEN", "message": "Child not owned by parent"}},
+        )
 
 
 @router.get("/children/{child_id}/progress", response_model=list[ProgressResponse])
 async def get_child_progress(
     child_id: str,
-    user: User = Depends(get_current_user),
+    profile: ParentProfile = Depends(get_parent_profile),
     db: AsyncSession = Depends(get_db),
 ):
     """Return per-lesson progress for a child."""
+    _child_belongs_to_parent(profile, child_id)
+
     result = await db.execute(
         select(Progress).where(Progress.child_id == child_id)
     )
@@ -32,7 +40,7 @@ async def get_child_progress(
             status=r.status,
             mastery_score=r.mastery_score,
             total_attempts=r.total_attempts,
-            last_played_at=r.last_played_at,
+            last_played_at=r.last_played_at.isoformat() if r.last_played_at else None,
         )
         for r in rows
     ]
@@ -41,10 +49,12 @@ async def get_child_progress(
 @router.get("/children/{child_id}/skills", response_model=list[SkillReport])
 async def get_child_skills(
     child_id: str,
-    user: User = Depends(get_current_user),
+    profile: ParentProfile = Depends(get_parent_profile),
     db: AsyncSession = Depends(get_db),
 ):
     """Analyze attempts to report strong and weak skills."""
+    _child_belongs_to_parent(profile, child_id)
+
     result = await db.execute(
         select(
             Lesson.subject_id,
@@ -77,16 +87,12 @@ async def get_child_skills(
 @router.get("/children/{child_id}/daily-plan", response_model=list[DailyPlanItem])
 async def get_daily_plan(
     child_id: str,
-    user: User = Depends(get_current_user),
+    profile: ParentProfile = Depends(get_parent_profile),
     db: AsyncSession = Depends(get_db),
 ):
     """Return today's recommended learning plan (up to 4 items)."""
-    child_result = await db.execute(
-        select(ChildProfile).where(ChildProfile.id == child_id)
-    )
-    child = child_result.scalar_one_or_none()
-    if not child:
-        raise HTTPException(status_code=404, detail="Child not found")
+    _child_belongs_to_parent(profile, child_id)
+    child = next(c for c in profile.children if c.id == child_id)
 
     # Recommend one lesson from each subject area for this age group
     lessons_result = await db.execute(

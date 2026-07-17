@@ -2,7 +2,7 @@
 
 from datetime import datetime
 from fastapi import APIRouter, HTTPException, status, Depends
-from sqlalchemy import select, func
+from sqlalchemy import Integer, select, func
 from sqlalchemy.ext.asyncio import AsyncSession
 import uuid
 import json
@@ -119,13 +119,18 @@ async def high_error_questions(
         select(
             Attempt.question_id,
             func.count(Attempt.id).label("total"),
-            func.sum(func.cast(~Attempt.is_correct, Integer)).label("errors"),
+            func.sum(func.cast(Attempt.is_correct == False, Integer)).label("errors"),
         )
+        .where(Attempt.question_id != None)
         .group_by(Attempt.question_id)
         .subquery()
     )
     result = await db.execute(
-        select(Question, (sub.c.errors / sub.c.total).label("error_rate"))
+        select(
+            Question,
+            (sub.c.errors / sub.c.total).label("error_rate"),
+            sub.c.total,
+        )
         .join(sub, sub.c.question_id == Question.id)
         .where((sub.c.errors / sub.c.total) > threshold)
     )
@@ -137,8 +142,7 @@ async def high_error_questions(
             "error_rate": round(er, 3),
             "total_attempts": t,
         }
-        for q, er, t in [(r[0], r[1], 0) for r in rows]
-        for t in [r.total]
+        for q, er, t in rows
     ]
 
 
