@@ -20,6 +20,7 @@ def register(
 ) -> callable:
     """Decorator to register a contract definition."""
     def decorator(cls: type) -> type:
+        cls.__contract_id__ = contract_id
         CONTRACT_REGISTRY[contract_id] = ContractDef(
             contract_id=contract_id,
             schema_version=schema_version,

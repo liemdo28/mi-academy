@@ -98,6 +98,56 @@ void main() {
     expect(service.pendingCount, 1);
   });
 
+  test('enqueue with duplicate id replaces the queued payload once', () async {
+    final service = SyncService(
+      queueBox: queueBox,
+      progressBox: progressBox,
+      attemptBox: attemptBox,
+      connectivityChecker: () async => false,
+      processor: (_) async {},
+    );
+
+    await service.enqueue(
+      id: 'attempt-1',
+      childProfileId: 'child-local',
+      type: SyncItemType.gameResult,
+      payload: {'attemptId': 'attempt-1', 'score': 50},
+    );
+    await service.enqueue(
+      id: 'attempt-1',
+      childProfileId: 'child-local',
+      type: SyncItemType.gameResult,
+      payload: {'attemptId': 'attempt-1', 'score': 90},
+    );
+
+    expect(queueBox.length, 1);
+    expect(service.pendingCount, 1);
+    expect(queueBox.get('attempt-1')!.payload['score'], 90);
+  });
+
+  test('queued items survive Hive close and reopen process restart', () async {
+    final service = SyncService(
+      queueBox: queueBox,
+      progressBox: progressBox,
+      attemptBox: attemptBox,
+      connectivityChecker: () async => false,
+      processor: (_) async {},
+    );
+
+    await service.enqueue(
+      id: 'restart-attempt',
+      childProfileId: 'child-local',
+      type: SyncItemType.gameResult,
+      payload: {'attemptId': 'restart-attempt'},
+    );
+    await queueBox.close();
+
+    queueBox = await Hive.openBox<SyncQueueItem>('sync_queue');
+
+    expect(queueBox.get('restart-attempt'), isNotNull);
+    expect(queueBox.get('restart-attempt')!.itemStatus, SyncItemStatus.pending);
+  });
+
   test('online sync drains pending items FIFO after server confirmation',
       () async {
     final processed = <String>[];

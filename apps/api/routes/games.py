@@ -2,6 +2,7 @@
 
 import json
 import uuid
+from datetime import datetime
 
 from fastapi import APIRouter, Depends, HTTPException, status
 from sqlalchemy import select
@@ -29,6 +30,13 @@ def _child_belongs_to_parent(profile: ParentProfile, child_id: str):
             status_code=status.HTTP_403_FORBIDDEN,
             detail={"error": {"code": "FORBIDDEN", "message": "Child not owned by parent"}},
         )
+
+
+def _compare_datetimes(left: datetime, right: datetime) -> int:
+    """Compare datetimes after normalizing timezone metadata for SQLite tests."""
+    left_cmp = left.replace(tzinfo=None)
+    right_cmp = right.replace(tzinfo=None)
+    return (left_cmp > right_cmp) - (left_cmp < right_cmp)
 
 
 @router.get("", response_model=list[GameListItem])
@@ -272,6 +280,18 @@ async def save_game_result(
                     total_attempts=0,
                 )
                 db.add(progress)
+            elif progress.last_played_at and _compare_datetimes(body.completed_at, progress.last_played_at) <= 0:
+                mastery_score = progress.mastery_score
+
+                await db.commit()
+                await db.refresh(attempt)
+                return {
+                    "attempt_id": attempt.id,
+                    "idempotent_replay": False,
+                    "out_of_order": True,
+                    "mastery_score": mastery_score,
+                    "badges_unlocked": [],
+                }
             else:
                 progress.mastery_score = max(
                     0.0, min(1.0, 0.5 * progress.mastery_score + 0.5 * session_evidence)

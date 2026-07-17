@@ -116,6 +116,60 @@ def test_save_game_result_is_idempotent_on_duplicate_attempt_id():
     asyncio.run(run())
 
 
+def test_save_game_result_does_not_rewrite_mastery_for_out_of_order_attempt():
+    async def run():
+        session_maker, engine = await _session_maker()
+        try:
+            async with session_maker() as db:
+                data = await _seed_world(db)
+                profile, child, lesson, game = data["profile"], data["child"], data["lesson"], data["game"]
+                started = utc_now()
+                progress = Progress(
+                    child_id=child.id,
+                    lesson_id=lesson.id,
+                    status="completed",
+                    mastery_score=0.9,
+                    total_attempts=3,
+                    last_played_at=started + timedelta(minutes=10),
+                )
+                db.add(progress)
+                await db.commit()
+
+                older_body = _result_body(
+                    child.id,
+                    game.id,
+                    lesson.id,
+                    attempt_id="older-attempt",
+                    correct=1,
+                    incorrect=4,
+                    mastery_evidence=0.1,
+                )
+                older_body.completed_at = started + timedelta(minutes=1)
+
+                response = await save_game_result(
+                    game_id=game.id,
+                    body=older_body,
+                    profile=profile,
+                    db=db,
+                )
+
+                assert response["idempotent_replay"] is False
+                assert response["out_of_order"] is True
+                assert response["mastery_score"] == 0.9
+                assert await _count(db, Attempt) == 1
+
+                progress_row = await db.execute(
+                    select(Progress).where(Progress.child_id == child.id, Progress.lesson_id == lesson.id)
+                )
+                saved_progress = progress_row.scalar_one()
+                assert saved_progress.mastery_score == 0.9
+                assert saved_progress.total_attempts == 3
+        finally:
+            await engine.dispose()
+
+    asyncio.run(run())
+
+
 def test_save_game_result_rejects_unowned_child():
     async def run():
         session_maker, engine = await _session_maker()
