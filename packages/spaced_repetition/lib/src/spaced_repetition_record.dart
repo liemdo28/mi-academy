@@ -1,5 +1,4 @@
 import 'package:equatable/equatable.dart';
-import 'package:mastery_core/mastery_core.dart';
 
 /// Record of a spaced repetition review event.
 class SpacedRepetitionRecord extends Equatable {

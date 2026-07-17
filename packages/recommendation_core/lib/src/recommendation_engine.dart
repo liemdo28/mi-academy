@@ -1,4 +1,3 @@
-import 'dart:math' as math;
 import 'package:mastery_core/mastery_core.dart';
 import 'recommendation_types.dart';
 import 'prerequisite_checker.dart';

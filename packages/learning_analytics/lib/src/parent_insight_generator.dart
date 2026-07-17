@@ -1,5 +1,4 @@
 import 'package:mastery_core/mastery_core.dart';
-import 'package:spaced_repetition/spaced_repetition.dart';
 import 'parent_insight.dart';
 
 /// Generates parent-facing insights from mastery data.
@@ -46,7 +45,8 @@ class ParentInsightGenerator {
 
     // Review due insight
     final dueSkills = masteries.values
-        .where((m) => m.nextReviewAt != null && m.nextReviewAt!.isBefore(DateTime.now()))
+        .where((m) =>
+            m.nextReviewAt != null && m.nextReviewAt!.isBefore(DateTime.now()))
         .toList();
     if (dueSkills.isNotEmpty) {
       insights.add(_buildReviewReminder(
@@ -57,7 +57,9 @@ class ParentInsightGenerator {
     }
 
     // New mastery achieved
-    final masteredSkills = masteries.values.where((m) => m.status == MasteryStatus.mastered).toList();
+    final masteredSkills = masteries.values
+        .where((m) => m.status == MasteryStatus.mastered)
+        .toList();
     if (masteredSkills.isNotEmpty) {
       insights.add(_buildMasteryProgress(
         childId: childId,
@@ -81,7 +83,8 @@ class ParentInsightGenerator {
     required String language,
   }) {
     final skillCount = practicedSkills.length;
-    final improvingSkills = practicedSkills.where((m) => m.masteryScore > 0.3).length;
+    final improvingSkills =
+        practicedSkills.where((m) => m.masteryScore > 0.3).length;
 
     return ParentInsight(
       insightId: 'insight-${DateTime.now().millisecondsSinceEpoch}',

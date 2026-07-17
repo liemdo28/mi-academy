@@ -1,8 +1,18 @@
+import 'dart:async';
 import 'dart:io';
 
 import 'package:flutter_test/flutter_test.dart';
 import 'package:hive/hive.dart';
 import 'package:offline_sync/offline_sync.dart';
+
+class _HttpFailure implements Exception {
+  const _HttpFailure(this.statusCode);
+
+  final int statusCode;
+
+  @override
+  String toString() => 'HTTP $statusCode';
+}
 
 void main() {
   late Directory tempDir;
@@ -225,6 +235,198 @@ void main() {
     expect(attemptBox.get('attempt-1'), {'score': 70});
     expect(service.failedCount, 1);
     expect(service.localAttemptCount, 1);
+  });
+
+  test('timeout and 500 failures remain retryable', () async {
+    final service = SyncService(
+      queueBox: queueBox,
+      progressBox: progressBox,
+      attemptBox: attemptBox,
+      connectivityChecker: () async => true,
+      processor: (item) async {
+        if (item.id == 'timeout') {
+          throw TimeoutException('upload timed out');
+        }
+        throw const _HttpFailure(500);
+      },
+      isPermanentFailure: (error, _) =>
+          error is _HttpFailure && error.statusCode >= 400 && error.statusCode < 500,
+    );
+
+    await service.enqueue(
+      id: 'timeout',
+      childProfileId: 'child-local',
+      type: SyncItemType.attempt,
+      payload: {'score': 70},
+    );
+    await service.enqueue(
+      id: 'server-500',
+      childProfileId: 'child-local',
+      type: SyncItemType.progress,
+      payload: {'mastery': 0.4},
+    );
+
+    final result = await service.sync();
+
+    expect(result.processed, 2);
+    expect(result.succeeded, 0);
+    expect(queueBox.get('timeout')!.shouldRetry, isTrue);
+    expect(queueBox.get('server-500')!.shouldRetry, isTrue);
+    expect(service.quarantinedCount, 0);
+  });
+
+  test('401 and malformed game result items are quarantined', () async {
+    final service = SyncService(
+      queueBox: queueBox,
+      progressBox: progressBox,
+      attemptBox: attemptBox,
+      connectivityChecker: () async => true,
+      processor: (item) async {
+        throw const _HttpFailure(401);
+      },
+      isPermanentFailure: (error, _) =>
+          error is _HttpFailure && error.statusCode == 401,
+    );
+
+    await service.enqueue(
+      id: 'bad-auth',
+      childProfileId: 'child-local',
+      type: SyncItemType.progress,
+      payload: {'mastery': 0.4},
+    );
+    await service.enqueue(
+      id: 'malformed-result',
+      childProfileId: 'child-local',
+      type: SyncItemType.gameResult,
+      payload: {'attempt_id': 'missing-game-id'},
+    );
+
+    final result = await service.sync();
+
+    expect(result.processed, 2);
+    expect(result.succeeded, 0);
+    expect(queueBox.get('bad-auth')!.itemStatus, SyncItemStatus.quarantined);
+    expect(queueBox.get('malformed-result')!.itemStatus, SyncItemStatus.quarantined);
+    expect(service.quarantinedCount, 2);
+    expect(service.failedCount, 0);
+  });
+
+  test('partial success keeps failed item and completes accepted items',
+      () async {
+    final service = SyncService(
+      queueBox: queueBox,
+      progressBox: progressBox,
+      attemptBox: attemptBox,
+      connectivityChecker: () async => true,
+      processor: (item) async {
+        if (item.id == 'fails') {
+          throw const _HttpFailure(500);
+        }
+      },
+    );
+
+    await service.enqueue(
+      id: 'succeeds',
+      childProfileId: 'child-local',
+      type: SyncItemType.progress,
+      payload: {'mastery': 0.7},
+    );
+    await service.enqueue(
+      id: 'fails',
+      childProfileId: 'child-local',
+      type: SyncItemType.attempt,
+      payload: {'score': 20},
+    );
+
+    final result = await service.sync();
+
+    expect(result.processed, 2);
+    expect(result.succeeded, 1);
+    expect(queueBox.get('succeeds')!.itemStatus, SyncItemStatus.completed);
+    expect(queueBox.get('fails')!.itemStatus, SyncItemStatus.failed);
+  });
+
+  test('oldest pending visibility ignores completed and quarantined items',
+      () async {
+    await queueBox.put(
+      'completed',
+      SyncQueueItem(
+        id: 'completed',
+        childProfileId: 'child-local',
+        type: SyncQueueItem.typeToWireValue(SyncItemType.progress),
+        payload: const {},
+        createdAt: DateTime(2026, 7, 17, 7),
+        status: 'completed',
+      ),
+    );
+    await queueBox.put(
+      'older',
+      SyncQueueItem(
+        id: 'older',
+        childProfileId: 'child-local',
+        type: SyncQueueItem.typeToWireValue(SyncItemType.progress),
+        payload: const {},
+        createdAt: DateTime(2026, 7, 17, 8),
+      ),
+    );
+    await queueBox.put(
+      'newer',
+      SyncQueueItem(
+        id: 'newer',
+        childProfileId: 'child-local',
+        type: SyncQueueItem.typeToWireValue(SyncItemType.progress),
+        payload: const {},
+        createdAt: DateTime(2026, 7, 17, 9),
+      ),
+    );
+    await queueBox.put(
+      'quarantined',
+      SyncQueueItem(
+        id: 'quarantined',
+        childProfileId: 'child-local',
+        type: SyncQueueItem.typeToWireValue(SyncItemType.progress),
+        payload: const {},
+        createdAt: DateTime(2026, 7, 17, 6),
+        status: 'quarantined',
+      ),
+    );
+    final service = SyncService(
+      queueBox: queueBox,
+      progressBox: progressBox,
+      attemptBox: attemptBox,
+      connectivityChecker: () async => false,
+    );
+
+    expect(service.oldestPending!.id, 'older');
+  });
+
+  test('child switching and logout clear profile-scoped queue entries',
+      () async {
+    final service = SyncService(
+      queueBox: queueBox,
+      progressBox: progressBox,
+      attemptBox: attemptBox,
+      connectivityChecker: () async => false,
+    );
+
+    await service.enqueue(
+      id: 'child-a-1',
+      childProfileId: 'child-a',
+      type: SyncItemType.progress,
+      payload: const {},
+    );
+    await service.enqueue(
+      id: 'child-b-1',
+      childProfileId: 'child-b',
+      type: SyncItemType.progress,
+      payload: const {},
+    );
+
+    expect(await service.clearForChild('child-a'), 1);
+    expect(queueBox.containsKey('child-a-1'), isFalse);
+    expect(queueBox.containsKey('child-b-1'), isTrue);
+    expect(await service.clearForLogout(), 1);
+    expect(queueBox.isEmpty, isTrue);
   });
 
   test('wire values round-trip for every sync item type', () {

@@ -217,6 +217,9 @@ class Reward(Base):
 
 class ChildReward(Base):
     __tablename__ = "child_rewards"
+    __table_args__ = (
+        UniqueConstraint("child_id", "reward_id", name="uq_child_reward_once"),
+    )
 
     id: Mapped[str] = mapped_column(String(36), primary_key=True, default=_uuid)
     child_id: Mapped[str] = mapped_column(String(36), ForeignKey("child_profiles.id"), nullable=False)

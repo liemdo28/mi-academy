@@ -8,6 +8,7 @@ import 'package:offline_sync/offline_sync.dart';
 import 'package:uuid/uuid.dart';
 
 import '../providers/providers.dart';
+import '../services/adaptive_learning_service.dart';
 import '../services/game_levels.dart';
 import '../src/games/choice/choice_game_screen.dart';
 import '../src/games/memory_cards/memory_cards_game.dart';
@@ -75,8 +76,26 @@ class _GameScreenState extends ConsumerState<GameScreen> {
     final attemptId = const Uuid().v4();
     final startedAt = result.completedAt.subtract(result.duration).toUtc();
     final completedAt = result.completedAt.toUtc();
-    final correctCount = result.perfectRun ? result.attemptsUsed : (result.attemptsUsed - 1).clamp(0, result.attemptsUsed);
+    final correctCount = result.perfectRun
+        ? result.attemptsUsed
+        : (result.attemptsUsed - 1).clamp(0, result.attemptsUsed);
     final incorrectCount = result.attemptsUsed - correctCount;
+    Map<String, dynamic> adaptiveShadow;
+    try {
+      adaptiveShadow = const AdaptiveLearningService()
+          .evaluateCompletion(
+            childProfileId: widget.childId,
+            result: result,
+            offlineMode: !await ref.read(connectivityProvider.future),
+          )
+          .toJson();
+    } catch (_) {
+      adaptiveShadow = {
+        'shadow_mode': true,
+        'used_fallback': true,
+        'reason_codes': ['ADAPTIVE_EXCEPTION_FALLBACK'],
+      };
+    }
     final body = {
       'attempt_id': attemptId,
       'child_profile_id': widget.childId,
@@ -97,7 +116,10 @@ class _GameScreenState extends ConsumerState<GameScreen> {
       'skill_evidence': {
         for (final skill in result.newSkillsAcquired) skill: true,
       },
-      'metadata': result.metadata,
+      'metadata': {
+        ...result.metadata,
+        'adaptive_shadow': adaptiveShadow,
+      },
     };
 
     try {
@@ -108,11 +130,11 @@ class _GameScreenState extends ConsumerState<GameScreen> {
       // instead of dropping the result on the floor.
       try {
         await ref.read(syncServiceProvider).enqueue(
-          id: attemptId,
-          childProfileId: widget.childId,
-          type: SyncItemType.gameResult,
-          payload: body,
-        );
+              id: attemptId,
+              childProfileId: widget.childId,
+              type: SyncItemType.gameResult,
+              payload: body,
+            );
       } catch (_) {
         // Best-effort — nothing more we can do without a queue.
       }
@@ -123,7 +145,9 @@ class _GameScreenState extends ConsumerState<GameScreen> {
   Widget build(BuildContext context) {
     if (_error != null) {
       return Scaffold(
-        appBar: AppBar(leading: IconButton(icon: const Icon(Icons.close), onPressed: () => context.pop())),
+        appBar: AppBar(
+            leading: IconButton(
+                icon: const Icon(Icons.close), onPressed: () => context.pop())),
         body: MiErrorState(
           title: 'Không thể tải trò chơi',
           onRetry: () {
@@ -140,7 +164,9 @@ class _GameScreenState extends ConsumerState<GameScreen> {
     }
     if (levels.isEmpty) {
       return Scaffold(
-        appBar: AppBar(leading: IconButton(icon: const Icon(Icons.close), onPressed: () => context.pop())),
+        appBar: AppBar(
+            leading: IconButton(
+                icon: const Icon(Icons.close), onPressed: () => context.pop())),
         body: const Center(child: Text('Chưa có cấp độ nào cho trò chơi này')),
       );
     }
@@ -204,8 +230,11 @@ class _GameScreenState extends ConsumerState<GameScreen> {
         );
       default:
         return Scaffold(
-          appBar: AppBar(leading: IconButton(icon: const Icon(Icons.close), onPressed: onExit)),
-          body: Center(child: Text('Trò chơi "${widget.gameType}" chưa hỗ trợ')),
+          appBar: AppBar(
+              leading:
+                  IconButton(icon: const Icon(Icons.close), onPressed: onExit)),
+          body:
+              Center(child: Text('Trò chơi "${widget.gameType}" chưa hỗ trợ')),
         );
     }
   }

@@ -1,6 +1,5 @@
 import 'package:mastery_core/mastery_core.dart';
 import 'spaced_repetition_config.dart';
-import 'spaced_repetition_record.dart';
 
 /// Spaced repetition scheduler.
 ///
@@ -88,7 +87,7 @@ class SpacedRepetitionScheduler {
       );
     }
 
-    return const DifficultyAdjustment(
+    return DifficultyAdjustment(
       changeDirection: DifficultyChangeDirection.none,
       newDifficulty: mastery.currentDifficulty,
       reason: 'STABLE',

@@ -18,6 +18,7 @@ enum SyncItemStatus {
   syncing,
   completed,
   failed,
+  quarantined,
 }
 
 /// A single item in the sync queue.
@@ -107,6 +108,8 @@ class SyncQueueItem extends HiveObject {
         return SyncItemStatus.completed;
       case 'failed':
         return SyncItemStatus.failed;
+      case 'quarantined':
+        return SyncItemStatus.quarantined;
       default:
         return SyncItemStatus.pending;
     }
@@ -124,6 +127,11 @@ class SyncQueueItem extends HiveObject {
     status = 'failed';
     lastError = error;
     retryCount += 1;
+  }
+
+  void markQuarantined(String error) {
+    status = 'quarantined';
+    lastError = error;
   }
 
   /// Should this item be retried? Max 5 retries.

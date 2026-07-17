@@ -2,9 +2,10 @@
   "fixture_id": "FIX-GS-001",
   "contract_id": "mi.game.snapshot",
   "description": "In-progress game snapshot for save/resume",
-  "schema_version": 1,
+  "schema_version": 2,
   "data": {
-    "schemaVersion": 1,
+    "schemaVersion": 2,
+    "gameVersion": "1.0.0",
     "gameId": "game-math-race-01",
     "levelId": "level-math-race-01-02",
     "childProfileId": "550e8400-e29b-41d4-a716-446655440001",
@@ -16,6 +17,7 @@
       "answeredCorrectly": [true, true, false],
       "livesLeft": 2,
       "powerUps": {"hint": 1, "skip": 0}
-    }
+    },
+    "checksum": "fixture-managed"
   }
 }

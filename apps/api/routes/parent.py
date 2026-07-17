@@ -1,6 +1,6 @@
 """Parent routes — profile, PIN, reports."""
 
-from datetime import date
+from datetime import date, datetime, time
 from fastapi import APIRouter, Depends, HTTPException, status
 from sqlalchemy import Integer, func, select
 from sqlalchemy.ext.asyncio import AsyncSession
@@ -115,14 +115,25 @@ async def get_reports(
     )
     sessions = sessions_result.scalars().all()
 
-    # Count completed lessons today from sessions
+    # Count completed lessons from sessions and rewards from persisted unlocks.
+    # This keeps the dashboard honest: no fabricated star totals.
     lessons_completed = sum(s.lessons_completed for s in sessions)
     games_completed = sum(s.games_completed for s in sessions)
     total_seconds = sum(s.duration_seconds for s in sessions)
+    start_of_day = datetime.combine(today, time.min)
+    end_of_day = datetime.combine(today, time.max)
+    rewards_today_result = await db.execute(
+        select(func.count(ChildReward.id)).where(
+            ChildReward.child_id.in_(child_ids),
+            ChildReward.unlocked_at >= start_of_day,
+            ChildReward.unlocked_at <= end_of_day,
+        )
+    )
+    rewards_today = rewards_today_result.scalar_one() or 0
 
     return ParentReportSummary(
         total_children=len(child_ids),
-        total_stars_today=lessons_completed,  # Simplified — stars tracked via rewards
+        total_stars_today=rewards_today,
         total_games_today=games_completed,
         total_lessons_today=lessons_completed,
         total_time_minutes_today=total_seconds // 60,

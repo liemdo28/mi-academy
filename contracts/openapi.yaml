@@ -558,11 +558,14 @@ components:
     MiGameSnapshot:
       type: object
       description: Game snapshot for save/resume. NEVER contains tokens or PII.
-      required: [schema_version, game_id, level_id, child_profile_id, saved_at, state]
+      required: [schema_version, game_version, game_id, level_id, child_profile_id, saved_at, state]
       properties:
         schema_version:
           type: integer
-          default: 1
+          default: 2
+        game_version:
+          type: string
+          default: "1.0.0"
         game_id:
           type: string
           format: uuid
@@ -578,6 +581,9 @@ components:
         state:
           type: object
           additionalProperties: true
+        checksum:
+          type: string
+          description: Optional deterministic integrity checksum over the stable snapshot payload.
 
     LessonStatusEnum:
       type: string

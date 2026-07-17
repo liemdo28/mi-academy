@@ -22,6 +22,3 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
   test: ^1.25.0
-
-flutter:
-  uses_flutter_rust_bridge: false

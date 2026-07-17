@@ -14,6 +14,7 @@ from sqlalchemy.ext.asyncio import async_sessionmaker, create_async_engine
 from apps.api.database import Base
 from apps.api.models import (
     Attempt,
+    ChildReward,
     ChildProfile,
     Game,
     Lesson,
@@ -110,6 +111,37 @@ def test_save_game_result_is_idempotent_on_duplicate_attempt_id():
                 )
                 progress = progress_row.scalar_one()
                 assert progress.total_attempts == 1  # not double-counted
+        finally:
+            await engine.dispose()
+
+    asyncio.run(run())
+
+
+def test_save_game_result_awards_first_badge_once_across_distinct_attempts():
+    async def run():
+        session_maker, engine = await _session_maker()
+        try:
+            async with session_maker() as db:
+                data = await _seed_world(db)
+                profile, child, lesson, game = data["profile"], data["child"], data["lesson"], data["game"]
+
+                first = await save_game_result(
+                    game_id=game.id,
+                    body=_result_body(child.id, game.id, lesson.id, attempt_id="attempt-1"),
+                    profile=profile,
+                    db=db,
+                )
+                second = await save_game_result(
+                    game_id=game.id,
+                    body=_result_body(child.id, game.id, lesson.id, attempt_id="attempt-2"),
+                    profile=profile,
+                    db=db,
+                )
+
+                assert first["badges_unlocked"] == ["Sao đầu tiên"]
+                assert second["badges_unlocked"] == []
+                assert await _count(db, Attempt) == 2
+                assert await _count(db, ChildReward) == 1
         finally:
             await engine.dispose()
 

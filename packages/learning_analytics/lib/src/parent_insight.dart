@@ -11,9 +11,9 @@ class ParentInsight extends Equatable {
     required this.insightType,
     required this.title,
     required this.summary,
+    required this.generatedAt,
     this.recommendedAction,
     this.skillId,
-    this.generatedAt,
     this.language = 'vi',
   });
 
@@ -64,7 +64,8 @@ class RecommendedAction extends Equatable {
   final String? gameId;
   final String? levelId;
 
-  String activity(String language) => language == 'en' ? activityEn : activityVi;
+  String activity(String language) =>
+      language == 'en' ? activityEn : activityVi;
 
   @override
   List<Object?> get props => [activityVi, activityEn, gameId, levelId];

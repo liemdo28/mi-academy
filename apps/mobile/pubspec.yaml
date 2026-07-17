@@ -34,6 +34,10 @@ dependencies:
     path: ../../packages/progress_core
   offline_sync:
     path: ../../packages/offline_sync
+  mastery_core:
+    path: ../../packages/mastery_core
+  recommendation_core:
+    path: ../../packages/recommendation_core
 
   # Networking
   dio: ^5.4.0

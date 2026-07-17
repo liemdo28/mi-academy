@@ -128,31 +128,51 @@ async def submit_attempt(
     return {"attempt_id": attempt.id, "recorded": True}
 
 
-async def _check_first_star_badge(db: AsyncSession, child_id: str, game_id: str) -> list[str]:
-    """Award the "first star" badge the first time a child attempts a game."""
-    result = await db.execute(
-        select(Attempt)
-        .where(Attempt.child_id == child_id, Attempt.game_id == game_id)
-        .limit(1)
+async def _unlock_reward_once(db: AsyncSession, child_id: str, reward: Reward) -> bool:
+    existing = await db.execute(
+        select(ChildReward).where(
+            ChildReward.child_id == child_id,
+            ChildReward.reward_id == reward.id,
+        )
     )
-    existing = result.scalar_one_or_none()
-    if existing is not None:
-        return []
+    if existing.scalar_one_or_none() is not None:
+        return False
+
+    db.add(
+        ChildReward(
+            id=str(uuid.uuid4()),
+            child_id=child_id,
+            reward_id=reward.id,
+            unlocked_at=utc_now(),
+        )
+    )
+    return True
+
+
+async def _check_first_star_badge(
+    db: AsyncSession,
+    child_id: str,
+    game_id: str,
+    *,
+    already_confirmed_first_attempt: bool = False,
+) -> list[str]:
+    """Award the "first star" badge the first time a child attempts a game."""
+    if not already_confirmed_first_attempt:
+        result = await db.execute(
+            select(Attempt)
+            .where(Attempt.child_id == child_id, Attempt.game_id == game_id)
+            .limit(1)
+        )
+        existing = result.scalar_one_or_none()
+        if existing is not None:
+            return []
 
     badge_result = await db.execute(select(Reward).where(Reward.name == "Sao đầu tiên"))
     badge = badge_result.scalar_one_or_none()
     if badge is None:
         return []
 
-    db.add(
-        ChildReward(
-            id=str(uuid.uuid4()),
-            child_id=child_id,
-            reward_id=badge.id,
-            unlocked_at=utc_now(),
-        )
-    )
-    return [badge.name]
+    return [badge.name] if await _unlock_reward_once(db, child_id, badge) else []
 
 
 @router.post("/{game_id}/complete")
@@ -206,6 +226,13 @@ async def save_game_result(
     game_result = await db.execute(select(Game).where(Game.id == game_id))
     if game_result.scalar_one_or_none() is None:
         raise HTTPException(status_code=404, detail="Game not found")
+
+    prior_attempt_result = await db.execute(
+        select(Attempt)
+        .where(Attempt.child_id == body.child_profile_id, Attempt.game_id == game_id)
+        .limit(1)
+    )
+    is_first_game_attempt = prior_attempt_result.scalar_one_or_none() is None
 
     # Idempotency: replaying the same attempt_id returns the original outcome
     # instead of double-counting attempts/rewards/mastery.
@@ -304,7 +331,12 @@ async def save_game_result(
             )
             mastery_score = progress.mastery_score
 
-    unlocked_badges = await _check_first_star_badge(db, body.child_profile_id, game_id)
+    unlocked_badges = await _check_first_star_badge(
+        db,
+        body.child_profile_id,
+        game_id,
+        already_confirmed_first_attempt=is_first_game_attempt,
+    )
 
     await db.commit()
     await db.refresh(attempt)

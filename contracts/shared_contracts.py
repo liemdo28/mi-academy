@@ -122,8 +122,8 @@ class MiGameResult:
 
 @register(
     contract_id="mi.game.snapshot",
-    schema_version=1,
-    semantic_version="1.0.0",
+    schema_version=2,
+    semantic_version="2.0.0",
     owner="dev-2",
     compatibility="backward",
     description="In-progress game state for save/resume across sessions.",
@@ -131,9 +131,9 @@ class MiGameResult:
 )
 class MiGameSnapshot:
     """Source: shared_models.dart MiGameSnapshot (v1)."""
-    SCHEMA_VERSION = 1
+    SCHEMA_VERSION = 2
     REQUIRED_FIELDS = frozenset([
-        "schemaVersion", "gameId", "levelId", "childProfileId", "savedAt", "state",
+        "schemaVersion", "gameVersion", "gameId", "levelId", "childProfileId", "savedAt", "state",
     ])
     FORBIDDEN_FIELDS = frozenset([
         "accessToken", "refreshToken", "password", "parentEmail",
@@ -209,6 +209,69 @@ class LessonContent:
 
 
 @register(
+    contract_id="mi.parent.profile",
+    schema_version=1,
+    semantic_version="1.0.0",
+    owner="dev-1",
+    compatibility="backward",
+    description="Parent profile returned by parent/profile APIs.",
+)
+class ParentProfileContract:
+    SCHEMA_VERSION = 1
+    FORBIDDEN_FIELDS = frozenset(["password", "pin", "accessToken", "refreshToken"])
+
+
+@register(
+    contract_id="mi.child.profile",
+    schema_version=1,
+    semantic_version="1.0.0",
+    owner="dev-1",
+    compatibility="backward",
+    description="Child profile owned by a parent account.",
+)
+class ChildProfileContract:
+    SCHEMA_VERSION = 1
+    FORBIDDEN_FIELDS = frozenset(["parentEmail", "password", "pin", "accessToken", "refreshToken"])
+
+
+@register(
+    contract_id="mi.auth.session",
+    schema_version=1,
+    semantic_version="1.0.0",
+    owner="dev-1",
+    compatibility="backward",
+    description="Authenticated session token response.",
+)
+class AuthSessionContract:
+    SCHEMA_VERSION = 1
+    REQUIRED_FIELDS = frozenset(["accessToken", "refreshToken", "tokenType"])
+
+
+@register(
+    contract_id="mi.lesson",
+    schema_version=1,
+    semantic_version="1.0.0",
+    owner="dev-3",
+    compatibility="backward",
+    description="Lesson catalog and detail payload.",
+)
+class LessonContract:
+    SCHEMA_VERSION = 1
+
+
+@register(
+    contract_id="mi.skill",
+    schema_version=1,
+    semantic_version="1.0.0",
+    owner="dev-3",
+    compatibility="backward",
+    description="Skill taxonomy entry.",
+)
+class SkillContract:
+    SCHEMA_VERSION = 1
+
+
+@register(
     contract_id="mi.content.level",
     schema_version=1,
     semantic_version="1.0.0",
@@ -219,6 +282,31 @@ class LessonContent:
 class LevelContent:
     """Source: schemas/level.schema.json (v1)."""
     SCHEMA_VERSION = 1
+
+
+@register(
+    contract_id="mi.reward",
+    schema_version=1,
+    semantic_version="1.0.0",
+    owner="dev-1",
+    compatibility="backward",
+    description="Reward catalog and child unlock state.",
+)
+class RewardContract:
+    SCHEMA_VERSION = 1
+
+
+@register(
+    contract_id="mi.sync.event",
+    schema_version=1,
+    semantic_version="1.0.0",
+    owner="dev-1",
+    compatibility="backward",
+    description="Offline sync queue event envelope.",
+)
+class SyncEventContract:
+    SCHEMA_VERSION = 1
+    REQUIRED_FIELDS = frozenset(["id", "childProfileId", "type", "payload", "createdAt"])
 
 
 # ─── Adaptive Contracts ───────────────────────────────────────────────────────
@@ -250,6 +338,30 @@ class RecommendationResult:
     SCHEMA_VERSION = 1
 
 
+@register(
+    contract_id="mi.mastery.evidence",
+    schema_version=1,
+    semantic_version="1.0.0",
+    owner="dev-5",
+    compatibility="backward",
+    description="Mastery evidence derived from game result skill signals.",
+)
+class MasteryEvidenceContract:
+    SCHEMA_VERSION = 1
+
+
+@register(
+    contract_id="mi.recommendation",
+    schema_version=1,
+    semantic_version="1.0.0",
+    owner="dev-5",
+    compatibility="backward",
+    description="Daily plan recommendation payload.",
+)
+class RecommendationContract:
+    SCHEMA_VERSION = 1
+
+
 # ─── Analytics Contracts ──────────────────────────────────────────────────────
 
 @register(
@@ -267,6 +379,43 @@ class AnalyticsEvent:
         "email", "password", "pin", "accessToken", "refreshToken",
         "parentName", "parentEmail", "ipAddress",
     ])
+
+
+@register(
+    contract_id="mi.content.manifest",
+    schema_version=1,
+    semantic_version="1.0.0",
+    owner="dev-3",
+    compatibility="backward",
+    description="Content manifest for language and curriculum bundles.",
+)
+class ContentManifestContract:
+    SCHEMA_VERSION = 1
+
+
+@register(
+    contract_id="mi.asset.manifest",
+    schema_version=1,
+    semantic_version="1.0.0",
+    owner="dev-4",
+    compatibility="backward",
+    description="Asset manifest and resolver payload.",
+)
+class AssetManifestContract:
+    SCHEMA_VERSION = 1
+
+
+@register(
+    contract_id="mi.api.error",
+    schema_version=1,
+    semantic_version="1.0.0",
+    owner="dev-7",
+    compatibility="backward",
+    description="Structured API error response.",
+)
+class ApiErrorContract:
+    SCHEMA_VERSION = 1
+    REQUIRED_FIELDS = frozenset(["error"])
 
 
 # ─── Compatibility ────────────────────────────────────────────────────────────
@@ -305,15 +454,13 @@ def validate_contract_data(contract_id: str, data: dict) -> dict:
         return {"valid": False, "error": f"Unknown contract: {contract_id}"}
 
     contract_def = CONTRACT_REGISTRY[contract_id]
-    # Find the registered class
-    for cls in [MiGameLaunchRequest, MiGameResult, MiGameSnapshot,
-                LessonProgress, SyncAttemptItem, SyncProgressItem,
-                LessonContent, LevelContent, SkillEvidence,
-                RecommendationResult, AnalyticsEvent]:
-        cid = getattr(cls, "__contract_id__", None)
-        if cid == contract_id:
-            break
-    else:
+    contract_classes = {
+        getattr(value, "__contract_id__", None): value
+        for value in globals().values()
+        if isinstance(value, type) and getattr(value, "__contract_id__", None)
+    }
+    cls = contract_classes.get(contract_id)
+    if cls is None:
         return {"valid": False, "error": "Contract class not found"}
 
     forbidden = check_forbidden_fields(data, cls)
