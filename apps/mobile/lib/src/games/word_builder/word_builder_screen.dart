@@ -1,3 +1,4 @@
+import 'package:design_system/design_system.dart';
 import 'package:flutter/material.dart';
 import 'package:mi_game_core/mi_game_core.dart';
 import 'package:mi_game_ui/mi_game_ui.dart';
@@ -211,7 +212,11 @@ class _MiPromptCard extends StatelessWidget {
         padding: const EdgeInsets.all(20),
         child: Column(
           children: [
-            const Text('MI', style: TextStyle(fontSize: 44)),
+            const MiCharacter(
+              expression: MiExpression.hinting,
+              size: 56,
+              semanticLabel: 'MI',
+            ),
             const SizedBox(height: 8),
             Text(prompt, style: GameTheme.headingMedium),
             const SizedBox(height: 8),

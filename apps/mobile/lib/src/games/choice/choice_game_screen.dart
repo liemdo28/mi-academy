@@ -1,3 +1,4 @@
+import 'package:design_system/design_system.dart';
 import 'package:flutter/material.dart';
 import 'package:mi_game_core/mi_game_core.dart';
 import 'package:mi_game_ui/mi_game_ui.dart';
@@ -230,7 +231,7 @@ class _RacePanel extends StatelessWidget {
                     progress,
                   ) ??
                   Alignment.centerLeft,
-              child: const Text('MI', style: TextStyle(fontSize: 30)),
+              child: const MiCharacterHead(size: 32, semanticLabel: 'MI'),
             ),
           ],
         ),

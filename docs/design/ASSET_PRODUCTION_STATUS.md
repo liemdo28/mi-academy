@@ -1,22 +1,50 @@
 # Asset Production Status — MI Academy
 
 - **Owner:** Dev 4
-- **Date:** 2026-07-17 (Wave 0), updated 2026-07-17 (Wave 1)
+- **Date:** 2026-07-17 (Wave 0), updated 2026-07-17 (Wave 1), updated 2026-07-17 (Wave 2)
 
 ## 1. Inventory (everything that exists today)
 
 | Category | Count | Detail | Production-ready? |
 |---|---|---|---|
 | Images / illustrations | 0 | `apps/mobile/assets/images/` contains only `.gitkeep`; manifest lists a `placeholder.webp` that **does not exist on disk** | No |
-| Character MI | 16 files | Direction B "Screen-Face Companion": 1 concept sheet, 1 icon-head still, 12 expression stills, 2 basic poses. Static SVG; Rive rig is a follow-up step. `assets/manifests/character-mi.manifest.json` | Draft — pending Dev 3 similarity/child-safety review |
+| Character MI | 15 runtime files + 1 docs-only | Direction B "Screen-Face Companion": 1 icon-head still, 12 expression stills, 2 basic poses, bundled by `packages/design_system` (moved off `apps/mobile` — see §2 note). 1 concept sheet kept as a docs-only reference under `design/characters/`. Static SVG; Rive rig is a follow-up step. Now integrated into `ErrorState`, Word Builder, Math Race, Math Supermarket. `assets/manifests/character-mi.manifest.json` | Draft — pending Dev 3 similarity/child-safety review |
 | World map | 0 | Zone illustrations not started; `WorldMapScreen` ships as an honest placeholder (zone name list, no locked/available state machine yet) | No |
-| Icons | 21 custom (26 files incl. filled variants) | Original SVG line icons, §19 list, `assets/manifests/app-core.manifest.json` | Draft — pending Dev 3 review |
+| Icons | 21 custom (26 files incl. filled variants) | Original SVG line icons, §19 list, bundled by `packages/design_system`. `assets/manifests/app-core.manifest.json` | Draft — pending Dev 3 review |
 | Animations (Rive/Lottie) | 0 | — | No |
 | Fonts | 1 bundled | Nunito variable font (OFL-1.1) declared in `apps/mobile/pubspec.yaml` at weights 400/600/700/800 | Draft — pending Dev 3 license sign-off |
 | Audio — voice | 12 files | All **silent placeholder WAVs** (vi + en words/letters/sentences), `reviewStatus: pending` | No |
 | Audio — SFX | 5 files | Silent placeholders (card_flip, correct, match_correct, try_again…) | No |
 | Audio — music | 0 | — | No |
 | Level data | 6 JSON | One per MVP game (Dev 2/Dev 3 owned) | n/a |
+
+## 1a. Wave 2 integration + a real bug found and fixed
+
+- Replaced the `Icons.sentiment_dissatisfied_rounded` sad-face icon in both
+  `MiErrorState` (design_system) and `ErrorState` (mi_game_ui) with
+  `MiCharacter(expression: errorRecovery)` — the sad face directly violated
+  our own rule (§12: MI never looks sad/scared, only thinking/hinting).
+- Wired `MiCharacter`/`MiCharacterHead` into Word Builder's prompt card and
+  the shared `ChoiceGameScreen` (Math Race + Math Supermarket) progress
+  marker, replacing plain `Text('MI')` placeholders.
+- Fixed a real accessibility gap in Robot Commands: command blocks were
+  text-only (color-independent-feedback rule violation, §9/§18). Each
+  `BlockType` now has a distinct icon + color in addition to its label.
+- **Found and fixed a asset-ownership bug**: icons/character assets were
+  declared only in `apps/mobile`'s pubspec even though `packages/design_system`
+  owns the widgets that reference them. This worked for the real app (Flutter
+  aggregates all package assets into the app bundle) but silently broke
+  `SvgPicture.asset` in every *other* package's own isolated `flutter test`
+  run (e.g. `mi_game_ui`'s golden tests rendered a blank box where MI's face
+  should be — no error, just nothing). Fixed by moving the assets into
+  `packages/design_system/assets/` and declaring them there instead; also
+  had to add `flutter: uses-material-design: true` to `mi_game_ui`'s pubspec,
+  which turned out to be the actual trigger Flutter's tooling checks before
+  it bothers building a package's full transitive asset manifest during
+  `flutter test`. Added a permanent regression test,
+  `packages/design_system/test/asset_loading_test.dart`, that loads every
+  icon/expression/pose and fails loudly if any of them silently return zero
+  bytes. See `assets/manifests/README.md` rule 9 for the write-up.
 
 ## 2. Manifest status
 
