@@ -1,18 +1,18 @@
 # Asset Production Status — MI Academy
 
 - **Owner:** Dev 4
-- **Date:** 2026-07-17
+- **Date:** 2026-07-17 (Wave 0), updated 2026-07-17 (Wave 1)
 
 ## 1. Inventory (everything that exists today)
 
 | Category | Count | Detail | Production-ready? |
 |---|---|---|---|
 | Images / illustrations | 0 | `apps/mobile/assets/images/` contains only `.gitkeep`; manifest lists a `placeholder.webp` that **does not exist on disk** | No |
-| Character MI | 0 | No concept art, no rig, no sprite | No |
-| World map | 0 | — | No |
-| Icons | 0 custom | Material defaults + Unicode emoji in code | No |
+| Character MI | 16 files | Direction B "Screen-Face Companion": 1 concept sheet, 1 icon-head still, 12 expression stills, 2 basic poses. Static SVG; Rive rig is a follow-up step. `assets/manifests/character-mi.manifest.json` | Draft — pending Dev 3 similarity/child-safety review |
+| World map | 0 | Zone illustrations not started; `WorldMapScreen` ships as an honest placeholder (zone name list, no locked/available state machine yet) | No |
+| Icons | 21 custom (26 files incl. filled variants) | Original SVG line icons, §19 list, `assets/manifests/app-core.manifest.json` | Draft — pending Dev 3 review |
 | Animations (Rive/Lottie) | 0 | — | No |
-| Fonts | 0 bundled | Theme names Nunito; nothing in pubspec | No |
+| Fonts | 1 bundled | Nunito variable font (OFL-1.1) declared in `apps/mobile/pubspec.yaml` at weights 400/600/700/800 | Draft — pending Dev 3 license sign-off |
 | Audio — voice | 12 files | All **silent placeholder WAVs** (vi + en words/letters/sentences), `reviewStatus: pending` | No |
 | Audio — SFX | 5 files | Silent placeholders (card_flip, correct, match_correct, try_again…) | No |
 | Audio — music | 0 | — | No |
@@ -43,14 +43,18 @@
 
 | Priority | Asset package | Blocking | Notes |
 |---|---|---|---|
-| P0 | Nunito font files (vi subset), OFL license entry | All text rendering | License → Dev 3 review |
-| P0 | Core icon set v1 (20 icons, §19 list) | Child Home v2, game shell | SVG, own production |
-| P0 | MI character: 3 concept sheets → 1 chosen → neutral/happy/thinking/celebrating poses | Everything child-facing | See `MI_CHARACTER_GUIDE.md` |
-| P1 | Memory Cards asset kit (card back, frame, glow, 5 themes × 8 pairs) | Wave 1 game | Kit spec delivered |
+| ~~P0~~ done | Nunito font files (vi subset), OFL license entry | All text rendering | Bundled; **Dev 3 sign-off still pending** |
+| ~~P0~~ done | Core icon set v1 (21 icons, §19 list) | Child Home v2, game shell | Bundled via `MiIcon`; **Dev 3 review still pending** |
+| ~~P0~~ done | MI character: 3 concept sheets → 1 chosen → 12 expressions + 2 poses | Everything child-facing | Bundled via `MiCharacter`; **Dev 3 similarity/safety review still pending**; Rive rig not started |
+| P1 | Memory Cards asset kit (card back, frame, glow, 5 themes × 8 pairs) | Wave 1 game | Kit spec delivered, art not started |
 | P1 | Voice pack vi-VN batch 1 (MI system phrases ~40 lines) | R3 risk | Script with Dev 3 |
 | P1 | SFX pack v1 (tap, place, match, collect, correct, hint, complete) | Games | Replace silent WAVs |
-| P2 | World map zone illustrations (6 zones × 4 states) | World map screen | After illustration style guide |
+| P2 | World map zone illustrations (6 zones × 4 states) | World map screen | Placeholder screen ships now; illustrations after style guide |
 | P2 | Home/map/game/completion music loops | Polish | Ducking rules in audio doc |
+
+All three P0 items above have `reviewStatus: draft` / `approved: false` in
+their manifests — they are wired into the running app but not yet cleared
+by Dev 3. Treat them as provisional until sign-off lands.
 
 ## 5. Rules now in force
 

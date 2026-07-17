@@ -111,10 +111,15 @@ Three levels only: `flat` (none), `raised` (y2 blur8 #14000000),
 Own SVG set, 24×24 grid, 2 px stroke, rounded caps, filled variant for active
 states. Minimum render size 20. Every icon ships with: outlined + filled,
 high-contrast variant, accessibility label key (vi + en).
-V1 set (20): play, pause, replay, audio, mute, slow-audio, hint, exit, home,
+V1 set (21): play, pause, replay, audio, mute, slow-audio, hint, exit, home,
 world, parent, settings, download, offline, lock, complete, star, badge,
-garden, language, accessibility.
-IDs: `icon_<name>_<variant>_v01.svg` under `assets/icons/`.
+garden, language, accessibility. Filled variant shipped only where an
+active/selected state exists (home, world, parent, star, garden); the rest
+are outlined-only for v1.
+IDs: `icon_<name>_<variant>_v01.svg` under `apps/mobile/assets/icons/`
+(referenced in code via `MiIcon(MiIconName.<name>)` in `packages/design_system`,
+never as a raw path). High-contrast is handled by the consuming color, not a
+separate SVG, since these are single-color `currentColor` icons.
 
 ## 9. Component library
 
