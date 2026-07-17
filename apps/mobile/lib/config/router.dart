@@ -8,6 +8,8 @@ import '../screens/parent_dashboard_screen.dart';
 import '../screens/parent_settings_screen.dart';
 import '../screens/parent_pin_screen.dart';
 import '../screens/child_selector_screen.dart';
+import '../screens/world_map_screen.dart';
+import '../screens/garden_screen.dart';
 
 /// MI Academy app router using go_router.
 ///
@@ -16,6 +18,8 @@ import '../screens/child_selector_screen.dart';
 /// - /login           → LoginScreen
 /// - /select-child    → ChildSelectorScreen
 /// - /home            → ChildHomeScreen
+/// - /world           → WorldMapScreen
+/// - /garden          → GardenScreen
 /// - /game/:id        → GameScreen
 /// - /parent          → ParentDashboardScreen (PIN-protected via /parent-pin)
 /// - /parent-pin      → ParentPinScreen
@@ -38,6 +42,14 @@ final routerProvider = GoRouter(
     GoRoute(
       path: '/home',
       builder: (context, state) => const ChildHomeScreen(),
+    ),
+    GoRoute(
+      path: '/world',
+      builder: (context, state) => const WorldMapScreen(),
+    ),
+    GoRoute(
+      path: '/garden',
+      builder: (context, state) => const GardenScreen(),
     ),
     GoRoute(
       path: '/game/:gameId',

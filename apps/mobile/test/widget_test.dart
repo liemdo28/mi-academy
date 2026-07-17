@@ -1,10 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:go_router/go_router.dart';
 import 'package:mi_academy/main.dart';
 import 'package:mi_academy/providers/providers.dart';
+import 'package:mi_academy/screens/child_home_screen.dart';
+import 'package:mi_academy/screens/garden_screen.dart';
 import 'package:mi_academy/screens/parent_pin_screen.dart';
 import 'package:mi_academy/screens/parent_settings_screen.dart';
+import 'package:mi_academy/screens/world_map_screen.dart';
 import 'package:mi_academy/services/parent_settings_store.dart';
 import 'package:mi_academy/src/games/choice/choice_game_screen.dart';
 import 'package:mi_academy/src/games/memory_cards/memory_cards_game.dart';
@@ -572,6 +576,94 @@ void main() {
     await tester.pump();
 
     expect(unlocked, isTrue);
+  });
+
+  group('Child Home v2', () {
+    GoRouter buildTestRouter() => GoRouter(
+          initialLocation: '/home',
+          routes: [
+            GoRoute(
+              path: '/home',
+              builder: (context, state) => const ChildHomeScreen(),
+            ),
+            GoRoute(
+              path: '/world',
+              builder: (context, state) => const WorldMapScreen(),
+            ),
+            GoRoute(
+              path: '/garden',
+              builder: (context, state) => const GardenScreen(),
+            ),
+            GoRoute(
+              path: '/parent-pin',
+              builder: (context, state) =>
+                  const Scaffold(body: Text('PARENT_GATE')),
+            ),
+          ],
+        );
+
+    testWidgets('shows one dominant CTA and no dead tabs', (tester) async {
+      await tester.pumpWidget(
+        ProviderScope(
+          child: MaterialApp.router(routerConfig: buildTestRouter()),
+        ),
+      );
+      await tester.pumpAndSettle();
+
+      expect(find.text('Bắt đầu học'), findsOneWidget);
+      expect(find.text('Sao'), findsNothing);
+      expect(find.text('Huy hiệu'), findsNothing);
+      expect(find.text('Trang chủ'), findsOneWidget);
+      expect(find.text('Bản đồ'), findsOneWidget);
+      expect(find.text('Vườn'), findsOneWidget);
+    });
+
+    testWidgets('world map and garden tabs navigate to real screens',
+        (tester) async {
+      await tester.pumpWidget(
+        ProviderScope(
+          child: MaterialApp.router(routerConfig: buildTestRouter()),
+        ),
+      );
+      await tester.pumpAndSettle();
+
+      await tester.tap(find.text('Bản đồ').last);
+      await tester.pumpAndSettle();
+      expect(find.text('Bản đồ thế giới'), findsOneWidget);
+
+      await tester.pageBack();
+      await tester.pumpAndSettle();
+
+      await tester.tap(find.text('Vườn').last);
+      await tester.pumpAndSettle();
+      expect(find.text('Vườn thành tích'), findsOneWidget);
+    });
+
+    testWidgets('parent gate requires a sustained hold, not a tap',
+        (tester) async {
+      await tester.pumpWidget(
+        ProviderScope(
+          child: MaterialApp.router(routerConfig: buildTestRouter()),
+        ),
+      );
+      await tester.pumpAndSettle();
+
+      await tester.tap(find.bySemanticsLabel(
+        'Khu vực phụ huynh, giữ 3 giây để mở',
+      ));
+      await tester.pump(const Duration(milliseconds: 200));
+      expect(find.text('PARENT_GATE'), findsNothing);
+
+      final gesture = await tester.startGesture(
+        tester
+            .getCenter(find.bySemanticsLabel('Khu vực phụ huynh, giữ 3 giây để mở')),
+      );
+      await tester.pump(const Duration(seconds: 3, milliseconds: 100));
+      await gesture.up();
+      await tester.pumpAndSettle();
+
+      expect(find.text('PARENT_GATE'), findsOneWidget);
+    });
   });
 
   testWidgets('Parent settings confirms offline download and data export',
