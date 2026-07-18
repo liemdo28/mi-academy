@@ -8,6 +8,9 @@ the child is struggling with resurfaces first, content they've mastered is
 deprioritized, and new/continuing content is targeted at the difficulty
 that matches their demonstrated mastery, not just introduced lowest-first).
 """
+
+from collections.abc import Sequence
+
 from apps.api.models import Lesson, Progress
 
 # Lower sorts first.
@@ -29,7 +32,7 @@ def target_difficulty(progress_rows: list[Progress]) -> int:
 
 
 def rank_lessons(
-    lessons: list[Lesson], progress_by_lesson: dict[str, Progress]
+    lessons: Sequence[Lesson], progress_by_lesson: dict[str, Progress]
 ) -> list[Lesson]:
     target = target_difficulty(list(progress_by_lesson.values()))
 

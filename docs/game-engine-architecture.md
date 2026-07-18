@@ -1,0 +1,158 @@
+# Game engine architecture
+
+The MI Academy 1.0 master spec (§5) requires ~10–12 reusable engines rather
+than 30 bespoke codebases. This document maps the **6 existing games**
+against the spec's 12 named engine types and records what already exists
+vs. what would need to be built for the 24 missing games. This is an
+architectural assessment, not a claim that the refactor has been done.
+
+## Current reality
+
+There is no formal shared-engine abstraction today. Each of the 6 existing
+games has its own `*Session` class (`WordBuilderSession`,
+`SoundMatchSession`, `ChoiceGameSession`, `RobotCommandsSession`,
+`MemoryCardsGame`) implementing the common `mi_game_core` contracts
+(`MiGameContext`, `MiGameResult`, `MiGameSnapshot`, `MiCompletionResult` —
+see `packages/game_core`) directly, with substantial duplicated
+scaffolding between them (score/stars formulas, hint counters, snapshot
+save/restore, locale-content lookup are each reimplemented per game rather
+than shared). `ChoiceGameScreen`/`ChoiceGameSession` is the one place two
+games (Math Race, Math Supermarket) already share one implementation —
+that's the closest existing precedent for the spec's engine-reuse model.
+
+## Mapping existing games to the spec's 12 engine types
+
+| Spec engine | Existing game(s) using this shape | Notes |
+|---|---|---|
+| 1. Choice Engine | Math Race, Math Supermarket (`ChoiceGameSession`) | Already shared between 2 games — closest thing to a real "engine" today |
+| 2. Multi-select Engine | none | Not built |
+| 3. Drag-and-drop Engine | Word Builder (letter placement is drag-like but implemented as tap-to-place, not a generic drag engine) | Partial precedent only |
+| 4. Matching Engine | none formally, but Sound Match's "pick the option matching the audio" is matching-shaped | Not extracted as a shared engine |
+| 5. Memory Engine | Memory Cards (`MemoryCardsGame`) | Single-game implementation, not yet generalized (e.g. can't easily spin up "Ghép bóng với vật" (Game 24) from it without duplicating the flip/match logic) |
+| 6. Sequence Engine | none | Not built (needed for Game 14 dãy số, Game 27 tìm quy luật) |
+| 7. Grid and Maze Engine | Robot Commands (`RobotGrid`, `RobotState`, `BlockInterpreter` in `packages/mi_blocks`) | Real grid/pathing logic exists but is coupled to the command-program interaction model; a plain maze game (Game 26) would need the grid/collision logic decoupled from the block-programming UI |
+| 8. Text Input Engine | none | Not built (needed for Game 07 chính tả, Game 08 sắp xếp câu) |
+| 9. Story and Quiz Engine | none | Not built (needed for Game 09 đọc hiểu) |
+| 10. Simulation Engine | none | Not built (needed for Game 30's garden/room design mode) |
+| 11. Puzzle Placement Engine | none | Not built (needed for Game 20 hình học lắp ghép) |
+| 12. Logic Grid Engine | none | Not built (needed for Game 28 Sudoku, Game 29 thám tử suy luận) |
+
+**4 of 12 engine types have any real precedent; 8 have none.** Building
+the missing 8 engines generically (rather than as 24 one-off
+implementations) is itself a multi-week architecture effort before any of
+the 24 missing games' content can be authored against them.
+
+## What a real consolidation would require
+
+1. Extract the duplicated cross-cutting concerns (score/stars formula,
+   hint budget tracking, snapshot save/restore, locale-content lookup,
+   pause/resume/exit state machine) out of the 5 existing `*Session`
+   classes into a shared base — this alone is a non-trivial refactor of
+   working, tested code and must preserve all currently-passing tests
+   (`flutter test`'s 86 passing tests exercise this logic today).
+2. Design each of the 8 missing engines' public contract (what content
+   schema it consumes, what actions it accepts, what result shape it
+   produces) *before* writing games against it, so games 07–09, 14, 16–21,
+   23–24, 26–30 aren't each hand-rolled again.
+3. Only then author the 24 games' content and thin per-game
+   configuration/skin on top of the shared engines.
+
+## Update: Matching Engine built (Milestone 1B, 2026-07-18)
+
+One of the four Milestone 1 WS5 engines — **Matching Engine** — is now a
+real, tested, shared component: `packages/mi_game_engines/` (new package,
+`lib/src/matching/{matching_content,matching_controller,matching_screen}.dart`).
+
+- **Typed content model**: `MatchingContent`/`MatchingPair`/`MatchingItem`
+  (not an untyped `Map`), parsed via `MatchingContent.fromJson` with
+  actionable `MatchingContentException` messages for malformed input
+  (missing fields, out-of-range difficulty, empty pairs, duplicate pair
+  IDs) rather than a bare cast failure.
+- **Controller**: `MatchingController` (plain `ChangeNotifier`, no
+  dependency on Riverpod/Provider/any child-profile repository) — tap-to-
+  match selection state, attempt counting, 3/2/1-star scoring (same
+  formula shape as the five Python game engines'
+  `calculate_stars`), hint show/dismiss, pause/resume, retry.
+- **Renderer**: `MatchingScreen` — two shuffled columns (deterministic
+  per-content-id shuffle, not `dart:math`'s `Random` directly, so tests are
+  reproducible), correct/incorrect feedback banner, hint banner, pause
+  overlay, completion view with stars, and a recoverable error screen for
+  malformed content (verified via a widget test that deliberately pumps
+  broken JSON and asserts the error state renders instead of throwing).
+  Responsive via `LayoutBuilder` (wider padding above 600 logical pixels);
+  `reducedMotion` collapses `AnimatedContainer` durations to zero
+  (verified by a widget test asserting every `AnimatedContainer.duration`
+  is `Duration.zero`); every tappable item has a `Semantics` label.
+- **Example content**: one Vietnamese and one English example (a letter↔
+  picture matching level), used directly in the test suite, not left as an
+  untested placeholder.
+- **Tests**: `packages/mi_game_engines/test/matching_engine_test.dart` — 19
+  tests covering content parsing (valid VI, valid EN, missing field,
+  invalid difficulty, empty pairs, duplicate IDs), controller behavior
+  (correct/incorrect pair, no-op on re-selecting a matched item, retry,
+  perfect-run 3 stars, degraded-attempts fewer stars, pause/resume, hint
+  toggle), and widget behavior (renders instruction + both columns, error
+  state for malformed content, full completion flow calling `onComplete`,
+  reduced-motion durations). All 19 pass; `flutter analyze` on the package
+  is clean.
+
+## Update: Sequence Engine built (Milestone 1C, 2026-07-18)
+
+The second of the four Milestone 1 WS5 engines is now real and tested:
+`packages/mi_game_engines/lib/src/sequence/{sequence_content,sequence_controller,sequence_screen}.dart`.
+
+- **Typed content model**: `SequenceContent`/`SequenceItem`/`SequenceRule`.
+  Supports both interaction modes required by the spec — full reorder
+  (child reconstructs a scrambled sequence) and missing-item (one or more
+  blanks filled from a choice list) — and five rule types: `fixed`,
+  `ascending`, `descending`, `alternating`, `repeating`. `fromJson`
+  cross-validates the authored `correctOrder` against the declared rule
+  (e.g. an `ascending` rule with `step: 2` is rejected if the authored
+  order doesn't actually increase by 2 each step), catching authoring
+  mistakes at load time rather than silently accepting a nonsensical
+  level.
+- **Controller**: `SequenceController` (`ChangeNotifier`, no framework/
+  child-profile dependency) — `moveItem` (shared by drag and tap-based
+  reordering), `submitReorder`/`submitMissingItems`, 3/2/1-star scoring,
+  hint, pause/resume, retry. Reorder mode's initial shuffle uses the same
+  deterministic-per-content-id PRNG pattern as Matching Engine.
+- **Renderer**: `SequenceScreen` — `ReorderableListView` for drag
+  reordering, plus explicit move-left/move-right buttons on every item as
+  the accessibility fallback the spec requires (verified by a widget test
+  that drives reordering *only* through those buttons, never a raw drag
+  gesture); missing-item mode renders known values as chips and blanks as
+  tappable slots with a shuffled choice row; recoverable error screen for
+  malformed content.
+- **Examples**: Vietnamese ascending (2,4,6,8), English descending
+  (12,9,6), a fixed-order Vietnamese picture-story sequence, and a
+  Vietnamese alternating-pattern missing-item level — four real samples,
+  not one.
+- **Tests**: 23 (10 content-parsing incl. 5 malformed-input cases testing
+  each rule type's own validation, 8 controller behavior, 5 widget incl.
+  the error state and the button-only reorder path). All pass; `flutter
+  analyze` clean.
+
+**Drag-and-drop Placement Engine and Multi-select Engine were not built
+this pass** — each still needs its own real interaction-model design
+(drop-target/snap semantics for Placement, min/max selection-set
+validation for Multi-select), comparable in scope to what Matching and
+Sequence each took. Neither is wired into the game registry or any
+existing game.
+
+**Not wired into any of the six existing games or the game registry this
+pass** — `packages/mi_game_engines` is a standalone package with its own
+tests; migrating an existing game onto it, or building a 7th
+game against it, is separate follow-up work (see docs/game-catalog.md and
+WS6 in docs/release-audit.md).
+
+## Recommendation
+
+Do not attempt this refactor opportunistically while also trying to ship
+24 new games in the same pass — the existing 6 games' tests (86 passing,
+0 failing) are the only regression safety net today, and a broad
+engine-consolidation refactor done under time pressure risks silently
+breaking them (violates the working rule against rewriting working
+architecture without a scoped, reviewed reason). This should be its own
+dedicated phase (matches the master spec's own §35 Phase 3 "Core
+architecture" step, sequenced *before* Phase 5's "Build game 7–15") with
+its own test-preservation plan, not folded into this session.

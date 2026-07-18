@@ -2,12 +2,11 @@
 Engine 4 (Runner), Engine 3 (Grid), Engine 6 (Block), Engine 5 (Simulation)."""
 
 import random
-from typing import Optional
+from typing import cast
 
 from packages.game_core.game_interface import (
     AnswerResult,
     CompletionResult,
-    GameConfig,
     GameInterface,
     LevelState,
     calculate_stars,
@@ -46,7 +45,9 @@ class MathRaceEngine(GameInterface):
             op = random.choice(ops)
             a, b, answer = self._make_problem(op)
             options = self._make_options(answer)
-            problems.append({"a": a, "b": b, "op": op, "answer": answer, "options": options})
+            problems.append(
+                {"a": a, "b": b, "op": op, "answer": answer, "options": options}
+            )
         return problems
 
     def _make_problem(self, op: str):
@@ -77,9 +78,13 @@ class MathRaceEngine(GameInterface):
         return options
 
     def submit_answer(self, answer: int) -> AnswerResult:
+        assert self._state is not None, (
+            "load_level() must be called before submit_answer()"
+        )
         self._attempt_count += 1
         correct_val = self._current_problem.get("answer")
-        is_correct = (answer == correct_val)
+        assert correct_val is not None, "current problem is missing its answer"
+        is_correct = answer == correct_val
 
         result = AnswerResult(
             is_correct=is_correct,
@@ -91,28 +96,33 @@ class MathRaceEngine(GameInterface):
 
         if is_correct:
             self._progress += 1
-            self._answers.append({
-                "problem": f"{self._current_problem['a']} {self._current_problem['op']} {self._current_problem['b']}",
-                "correct": True,
-                "attempts": self._attempt_count,
-            })
+            self._answers.append(
+                {
+                    "problem": f"{self._current_problem['a']} {self._current_problem['op']} {self._current_problem['b']}",
+                    "correct": True,
+                    "attempts": self._attempt_count,
+                }
+            )
             result.stars_earned = calculate_stars(self._attempt_count, self._goal)
             idx = self._problems.index(self._current_problem)
             if idx + 1 < len(self._problems):
                 self._current_problem = self._problems[idx + 1]
                 self._state.current_index = idx + 1
         else:
-            self._answers.append({
-                "problem": f"{self._current_problem['a']} {self._current_problem['op']} {self._current_problem['b']}",
-                "correct": False,
-                "attempt": answer,
-            })
+            self._answers.append(
+                {
+                    "problem": f"{self._current_problem['a']} {self._current_problem['op']} {self._current_problem['b']}",
+                    "correct": False,
+                    "attempt": answer,
+                }
+            )
         return result
 
     def complete(self) -> CompletionResult:
-        correct_count = sum(1 for a in self._answers if a.get("correct"))
         mastery = self._progress / self._goal
-        total_stars = calculate_stars(sum(a.get("attempts", 1) for a in self._answers), self._goal)
+        total_stars = calculate_stars(
+            sum(a.get("attempts", 1) for a in self._answers), self._goal
+        )
         badges = []
         if self._progress >= self._goal:
             badges.append("math_racer")
@@ -127,8 +137,10 @@ class MathRaceEngine(GameInterface):
 
     def _generate_hint(self) -> str:
         p = self._current_problem
-        return (f"Hãy đếm thử! {p['a']} {p['op']} {p['b']} = ? "
-                f"Đáp án nằm trong: {p['options']}")
+        return (
+            f"Hãy đếm thử! {p['a']} {p['op']} {p['b']} = ? "
+            f"Đáp án nằm trong: {p['options']}"
+        )
 
     def _get_explanation(self, correct: bool, answer: int) -> str:
         if correct:
@@ -154,8 +166,24 @@ class MemoryCardsEngine(GameInterface):
         return self._state
 
     def _generate_pairs(self, count: int) -> list[tuple[str, str]]:
-        icons = ["🌟", "🐱", "🐶", "🍎", "🚗", "🌸", "⭐", "🎈",
-                 "🔵", "🟢", "🟡", "🔴", "🌙", "☀️", "🌈", "🎯"]
+        icons = [
+            "🌟",
+            "🐱",
+            "🐶",
+            "🍎",
+            "🚗",
+            "🌸",
+            "⭐",
+            "🎈",
+            "🔵",
+            "🟢",
+            "🟡",
+            "🔴",
+            "🌙",
+            "☀️",
+            "🌈",
+            "🎯",
+        ]
         icons = icons[:count]
         pairs = [(i, i) for i in icons]
         random.shuffle(pairs)
@@ -209,9 +237,24 @@ class RobotCommandsEngine(GameInterface):
     """Robot Commands — sequence blocks to navigate a grid. Engine 6 (Block Programming)."""
 
     MAPS = {
-        1: {"grid": [[0, 0, 0], [0, 1, 0], [0, 0, 0]], "start": (0, 0), "goal": (2, 2), "max_cmds": 5},
-        2: {"grid": [[0, 0, 0, 0], [0, 1, 1, 0], [0, 0, 0, 0]], "start": (0, 0), "goal": (3, 2), "max_cmds": 7},
-        3: {"grid": [[0, 0, 0, 0, 0], [0, 1, 0, 1, 0], [0, 0, 0, 0, 0]], "start": (0, 0), "goal": (4, 2), "max_cmds": 10},
+        1: {
+            "grid": [[0, 0, 0], [0, 1, 0], [0, 0, 0]],
+            "start": (0, 0),
+            "goal": (2, 2),
+            "max_cmds": 5,
+        },
+        2: {
+            "grid": [[0, 0, 0, 0], [0, 1, 1, 0], [0, 0, 0, 0]],
+            "start": (0, 0),
+            "goal": (3, 2),
+            "max_cmds": 7,
+        },
+        3: {
+            "grid": [[0, 0, 0, 0, 0], [0, 1, 0, 1, 0], [0, 0, 0, 0, 0]],
+            "start": (0, 0),
+            "goal": (4, 2),
+            "max_cmds": 10,
+        },
     }
 
     def __init__(self):
@@ -224,9 +267,10 @@ class RobotCommandsEngine(GameInterface):
 
     def load_level(self, level: int) -> LevelState:
         map_data = self.MAPS.get(level, self.MAPS[1])
-        self._grid = [row[:] for row in map_data["grid"]]
-        self._start = tuple(map_data["start"])
-        self._goal = tuple(map_data["goal"])
+        grid_data = cast("list[list[int]]", map_data["grid"])
+        self._grid = [row[:] for row in grid_data]
+        self._start = cast("tuple[int, int]", map_data["start"])
+        self._goal = cast("tuple[int, int]", map_data["goal"])
         self._position = self._start
         self._commands = []
         self._state = LevelState(level=level, items=self._commands, difficulty=level)
@@ -246,7 +290,9 @@ class RobotCommandsEngine(GameInterface):
         return AnswerResult(
             is_correct=reached_goal,
             correct_answer=self._commands,
-            explanation="Robot đã đến đích!" if reached_goal else "Robot chưa đến đích, thử lại!",
+            explanation="Robot đã đến đích!"
+            if reached_goal
+            else "Robot chưa đến đích, thử lại!",
             stars_earned=1,
             hints_remaining=self._hints_remaining,
         )
@@ -266,6 +312,7 @@ class RobotCommandsEngine(GameInterface):
                 self._position = (x, y)
 
     def complete(self) -> CompletionResult:
+        assert self._state is not None, "load_level() must be called before complete()"
         mastery = 1.0 if self._position == self._goal else 0.5
         total_stars = calculate_stars(self._attempt_count, self._state.difficulty)
         return CompletionResult(

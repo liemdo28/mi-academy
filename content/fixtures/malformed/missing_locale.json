@@ -1,0 +1,13 @@
+{
+  "id": "malformed-missing-locale",
+  "gameId": "word_builder",
+  "levelNumber": 1,
+  "difficulty": 1,
+  "localizedContent": {
+    "en": {
+      "prompt": "Build the word!"
+    }
+  },
+  "hints": [{"text": "Missing vi localization on purpose"}],
+  "metadata": {"ageGroup": "junior", "skillIds": ["letters.word_building"]}
+}

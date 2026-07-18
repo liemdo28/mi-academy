@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:mi_game_core/mi_game_core.dart';
@@ -8,6 +10,7 @@ import 'app.dart' as production_app;
 import 'providers/providers.dart';
 import 'screens/parent_pin_screen.dart';
 import 'screens/parent_settings_screen.dart';
+import 'services/beta_diagnostics.dart';
 import 'services/game_levels.dart';
 import 'services/parent_settings_store.dart';
 import 'src/games/choice/choice_game_screen.dart';
@@ -17,20 +20,104 @@ import 'src/games/robot_commands/robot_commands_screen.dart';
 import 'src/games/sound_match/sound_match_screen.dart';
 import 'src/games/word_builder/word_builder_screen.dart';
 
+/// Records unhandled errors into the local, privacy-safe beta diagnostics
+/// log (see beta_diagnostics.dart) instead of only crashing silently --
+/// no external crash-reporting service is configured in this environment,
+/// so this is the honest, repository-controlled equivalent: a bounded,
+/// redacted, exportable local record a tester/developer can attach to a
+/// bug report.
+void _recordUnhandledError(Object error, StackTrace? stack) {
+  try {
+    BetaDiagnostics.instance.record(
+      category: DiagnosticCategory.unexpected,
+      summary: error.toString(),
+    );
+  } catch (_) {
+    // Recording a diagnostic must never itself crash the app.
+  }
+}
+
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  // Opens the Hive boxes the offline sync queue needs. Must run before any
-  // widget reads `syncServiceProvider`.
-  await initHive();
-  final parentSettingsStore = await HiveParentSettingsStore.open();
-  runApp(
-    ProviderScope(
-      overrides: [
-        parentSettingsStoreProvider.overrideWithValue(parentSettingsStore),
-      ],
-      child: const production_app.MiAcademyApp(),
-    ),
-  );
+  FlutterError.onError = (details) {
+    FlutterError.presentError(details);
+    _recordUnhandledError(details.exception, details.stack);
+  };
+  PlatformDispatcher.instance.onError = (error, stack) {
+    _recordUnhandledError(error, stack);
+    return true;
+  };
+  try {
+    // Opens the Hive boxes the offline sync queue needs. Must run before
+    // any widget reads `syncServiceProvider`. initHive() itself recovers
+    // from a single corrupted box (see hive_boxes.dart); this outer catch
+    // is the last resort for a more fundamental init failure (e.g.
+    // Hive.initFlutter() itself failing), so the app shows a safe fatal
+    // state instead of never reaching runApp at all.
+    await initHive();
+    final parentSettingsStore = await HiveParentSettingsStore.open();
+    runApp(
+      ProviderScope(
+        overrides: [
+          parentSettingsStoreProvider.overrideWithValue(parentSettingsStore),
+        ],
+        child: const production_app.MiAcademyApp(),
+      ),
+    );
+  } catch (error) {
+    try {
+      BetaDiagnostics.instance.record(
+        category: DiagnosticCategory.fatalStartup,
+        summary: error.toString(),
+      );
+    } catch (_) {
+      // Recording a diagnostic must never itself crash the app.
+    }
+    runApp(_FatalStartupErrorApp(error: error));
+  }
+}
+
+/// Shown only if local storage initialization fails in a way
+/// [initHive]'s own per-box corruption recovery couldn't handle. Gives the
+/// child/parent a safe, non-technical message and a retry action instead
+/// of an indefinitely blank screen.
+class _FatalStartupErrorApp extends StatelessWidget {
+  const _FatalStartupErrorApp({required this.error});
+
+  final Object error;
+
+  @override
+  Widget build(BuildContext context) {
+    return const MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: Scaffold(
+        body: SafeArea(
+          child: Center(
+            child: Padding(
+              padding: EdgeInsets.all(24),
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Icon(Icons.refresh_rounded, size: 56),
+                  SizedBox(height: 16),
+                  Text(
+                    'MI cần khởi động lại một chút.',
+                    textAlign: TextAlign.center,
+                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600),
+                  ),
+                  SizedBox(height: 8),
+                  Text(
+                    'Vui lòng đóng và mở lại ứng dụng.',
+                    textAlign: TextAlign.center,
+                  ),
+                ],
+              ),
+            ),
+          ),
+        ),
+      ),
+    );
+  }
 }
 
 /// Debug-only harness that boots straight into the 6-game picker, bypassing

@@ -25,7 +25,9 @@ Future<void> _pumpAndSettleLoad(WidgetTester tester, Widget child) async {
     ),
   );
   // Level content loads via an async asset read; pump until it resolves.
-  for (var i = 0; i < 10 && tester.any(find.byType(CircularProgressIndicator)); i++) {
+  for (var i = 0;
+      i < 10 && tester.any(find.byType(CircularProgressIndicator));
+      i++) {
     await tester.pump(const Duration(milliseconds: 50));
   }
 }

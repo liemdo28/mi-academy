@@ -2,65 +2,569 @@
   "gameId": "word_builder",
   "schemaVersion": "1.0.0",
   "levels": [
-    {"id": "wb-lv01","gameId":"word_builder","levelNumber":1,"difficulty":1,
-     "learningObjective":"Ghép 2-3 chữ cái thành từ đơn giản",
-     "localizedContent":{"vi":{"prompt":"Ghép chữ thành từ!","targetWord":"mèo","imageKey":"mi-animal-cat","letters":["m","è","o"],"distractors":["a","u"]},
-                          "en":{"prompt":"Build the word!","targetWord":"cat","imageKey":"mi-animal-cat","letters":["c","a","t"],"distractors":["b","r"]}},
-     "hints":[{"text":"Chữ đầu tiên là M"},{"text":"Thử tìm chữ cái còn thiếu"}],
-     "metadata":{"ageGroup":"junior","skillIds":["letters.word_building"]}},
-    {"id": "wb-lv02","gameId":"word_builder","levelNumber":2,"difficulty":1,
-     "learningObjective":"Ghép từ về động vật",
-     "localizedContent":{"vi":{"prompt":"Ghép tên con vật!","targetWord":"chó","imageKey":"mi-animal-dog","letters":["c","h","ó"],"distractors":["a","e"]},
-                          "en":{"prompt":"Build the animal name!","targetWord":"dog","imageKey":"mi-animal-dog","letters":["d","o","g"],"distractors":["b","r"]}},
-     "hints":[{"text":"Con vật hay sủa"},{"text":"Chữ đầu là D"}],
-     "metadata":{"ageGroup":"junior","skillIds":["letters.word_building"]}},
-    {"id": "wb-lv03","gameId":"word_builder","levelNumber":3,"difficulty":1,
-     "learningObjective":"Ghép từ về trái cây",
-     "localizedContent":{"vi":{"prompt":"Ghép tên trái cây!","targetWord":"táo","imageKey":"mi-fruit-apple","letters":["t","á","o"],"distractors":["i","u"]},
-                          "en":{"prompt":"Build the fruit name!","targetWord":"apple","imageKey":"mi-fruit-apple","letters":["a","p","p","l","e"],"distractors":["b","r"]}},
-     "hints":[{"text":"Trái cây màu đỏ"},{"text":"Chữ đầu là A"}],
-     "metadata":{"ageGroup":"junior","skillIds":["letters.word_building"]}},
-    {"id": "wb-lv04","gameId":"word_builder","levelNumber":4,"difficulty":2,
-     "learningObjective":"Ghép từ có 4 chữ cái",
-     "localizedContent":{"vi":{"prompt":"Ghép tên con vật!","targetWord":"cá","imageKey":"mi-animal-fish","letters":["c","á"],"distractors":["à","u"]},
-                          "en":{"prompt":"Build the animal!","targetWord":"fish","imageKey":"mi-animal-fish","letters":["f","i","s","h"],"distractors":["g","t"]}},
-     "hints":[{"text":"Sống dưới nước"},{"text":"Chữ đầu là F"}],
-     "metadata":{"ageGroup":"junior","skillIds":["letters.word_building"]}},
-    {"id": "wb-lv05","gameId":"word_builder","levelNumber":5,"difficulty":2,
-     "learningObjective":"Ghép từ về màu sắc",
-     "localizedContent":{"vi":{"prompt":"Ghép tên màu!","targetWord":"đỏ","imageKey":"mi-color-red","letters":["đ","ỏ"],"distractors":["a","u"]},
-                          "en":{"prompt":"Build the color name!","targetWord":"red","imageKey":"mi-color-red","letters":["r","e","d"],"distractors":["b","g"]}},
-     "hints":[{"text":"Màu của trái táo"},{"text":"Chữ đầu là R"}],
-     "metadata":{"ageGroup":"junior","skillIds":["letters.word_building"]}},
-    {"id": "wb-lv06","gameId":"word_builder","levelNumber":6,"difficulty":2,
-     "learningObjective":"Ghép từ về gia đình",
-     "localizedContent":{"vi":{"prompt":"Ghép từ!","targetWord":"bố","imageKey":"mi-family-dad","letters":["b","ố"],"distractors":["à","u"]},
-                          "en":{"prompt":"Build the family word!","targetWord":"dad","imageKey":"mi-family-dad","letters":["d","a","d"],"distractors":["m","g"]}},
-     "hints":[{"text":"Người bố trong gia đình"},{"text":"Chữ đầu là D"}],
-     "metadata":{"ageGroup":"junior","skillIds":["letters.word_building"]}},
-    {"id": "wb-lv07","gameId":"word_builder","levelNumber":7,"difficulty":3,
-     "learningObjective":"Ghép từ có dấu thanh phức tạp",
-     "localizedContent":{"vi":{"prompt":"Ghép từ!","targetWord":"chuột","imageKey":"mi-animal-mouse","letters":["c","h","u","ộ","t"],"distractors":["a","n"]},
-                          "en":{"prompt":"Build the word!","targetWord":"house","imageKey":"mi-house","letters":["h","o","u","s","e"],"distractors":["m","b"]}},
-     "hints":[{"text":"Con vật nhỏ"},{"text":"Chữ đầu là C"}],
-     "metadata":{"ageGroup":"junior","skillIds":["letters.word_building"]}},
-    {"id": "wb-lv08","gameId":"word_builder","levelNumber":8,"difficulty":3,
-     "learningObjective":"Ghép từ dài hơn",
-     "localizedContent":{"vi":{"prompt":"Ghép từ!","targetWord":"trường","imageKey":"mi-school","letters":["t","r","ư","ờ","n","g"],"distractors":["a","h"]},
-                          "en":{"prompt":"Build the word!","targetWord":"school","imageKey":"mi-school","letters":["s","c","h","o","o","l"],"distractors":["m","b"]}},
-     "hints":[{"text":"Nơi con học"},{"text":"Chữ đầu là S"}],
-     "metadata":{"ageGroup":"explorer","skillIds":["letters.word_building"]}},
-    {"id": "wb-lv09","gameId":"word_builder","levelNumber":9,"difficulty":4,
-     "learningObjective":"Ghép từ trừu tượng",
-     "localizedContent":{"vi":{"prompt":"Ghép từ!","targetWord":"hạnh phúc","imageKey":"mi-feeling-happy","letters":["h","ạ","n","h"," ","p","h","ú","c"],"distractors":["u","y"]},
-                          "en":{"prompt":"Build the word!","targetWord":"happy","imageKey":"mi-feeling-happy","letters":["h","a","p","p","y"],"distractors":["g","t"]}},
-     "hints":[{"text":"Cảm giác vui vẻ"},{"text":"Chữ đầu là H"}],
-     "metadata":{"ageGroup":"explorer","skillIds":["letters.vocabulary"]}},
-    {"id": "wb-lv10","gameId":"word_builder","levelNumber":10,"difficulty":5,
-     "learningObjective":"Ghép từ không có hình gợi ý",
-     "localizedContent":{"vi":{"prompt":"Ghép từ!","targetWord":"tự do","imageKey":null,"letters":["t","ự"," ","d","o"],"distractors":["a","h"]},
-                          "en":{"prompt":"Build the word!","targetWord":"freedom","imageKey":null,"letters":["f","r","e","e","d","o","m"],"distractors":["g","t"]}},
-     "hints":[{"text":"Khi con được làm điều mình muốn"},{"text":"Chữ đầu là F"}],
-     "metadata":{"ageGroup":"explorer","skillIds":["letters.vocabulary"]}}
+    {
+      "id": "wb-lv01",
+      "gameId": "word_builder",
+      "levelNumber": 1,
+      "difficulty": 1,
+      "learningObjective": "Ghép 2-3 chữ cái thành từ đơn giản",
+      "localizedContent": {
+        "vi": {
+          "prompt": "Ghép chữ thành từ!",
+          "targetWord": "mèo",
+          "imageKey": "mi-animal-cat",
+          "letters": [
+            "m",
+            "è",
+            "o"
+          ],
+          "distractors": [
+            "a",
+            "u"
+          ]
+        },
+        "en": {
+          "prompt": "Build the word!",
+          "targetWord": "cat",
+          "imageKey": "mi-animal-cat",
+          "letters": [
+            "c",
+            "a",
+            "t"
+          ],
+          "distractors": [
+            "b",
+            "r"
+          ]
+        }
+      },
+      "hints": [
+        {
+          "text": "Chữ đầu tiên là M"
+        },
+        {
+          "text": "Thử tìm chữ cái còn thiếu"
+        }
+      ],
+      "metadata": {
+        "ageGroup": "junior",
+        "skillIds": [
+          "letters.word_building"
+        ]
+      },
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "wb-lv02",
+      "gameId": "word_builder",
+      "levelNumber": 2,
+      "difficulty": 1,
+      "learningObjective": "Ghép từ về động vật",
+      "localizedContent": {
+        "vi": {
+          "prompt": "Ghép tên con vật!",
+          "targetWord": "chó",
+          "imageKey": "mi-animal-dog",
+          "letters": [
+            "c",
+            "h",
+            "ó"
+          ],
+          "distractors": [
+            "a",
+            "e"
+          ]
+        },
+        "en": {
+          "prompt": "Build the animal name!",
+          "targetWord": "dog",
+          "imageKey": "mi-animal-dog",
+          "letters": [
+            "d",
+            "o",
+            "g"
+          ],
+          "distractors": [
+            "b",
+            "r"
+          ]
+        }
+      },
+      "hints": [
+        {
+          "text": "Con vật hay sủa"
+        },
+        {
+          "text": "Chữ đầu là D"
+        }
+      ],
+      "metadata": {
+        "ageGroup": "junior",
+        "skillIds": [
+          "letters.word_building"
+        ]
+      },
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "wb-lv03",
+      "gameId": "word_builder",
+      "levelNumber": 3,
+      "difficulty": 1,
+      "learningObjective": "Ghép từ về trái cây",
+      "localizedContent": {
+        "vi": {
+          "prompt": "Ghép tên trái cây!",
+          "targetWord": "táo",
+          "imageKey": "mi-fruit-apple",
+          "letters": [
+            "t",
+            "á",
+            "o"
+          ],
+          "distractors": [
+            "i",
+            "u"
+          ]
+        },
+        "en": {
+          "prompt": "Build the fruit name!",
+          "targetWord": "apple",
+          "imageKey": "mi-fruit-apple",
+          "letters": [
+            "a",
+            "p",
+            "p",
+            "l",
+            "e"
+          ],
+          "distractors": [
+            "b",
+            "r"
+          ]
+        }
+      },
+      "hints": [
+        {
+          "text": "Trái cây màu đỏ"
+        },
+        {
+          "text": "Chữ đầu là A"
+        }
+      ],
+      "metadata": {
+        "ageGroup": "junior",
+        "skillIds": [
+          "letters.word_building"
+        ]
+      },
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "wb-lv04",
+      "gameId": "word_builder",
+      "levelNumber": 4,
+      "difficulty": 2,
+      "learningObjective": "Ghép từ có 4 chữ cái",
+      "localizedContent": {
+        "vi": {
+          "prompt": "Ghép tên con vật!",
+          "targetWord": "cá",
+          "imageKey": "mi-animal-fish",
+          "letters": [
+            "c",
+            "á"
+          ],
+          "distractors": [
+            "à",
+            "u"
+          ]
+        },
+        "en": {
+          "prompt": "Build the animal!",
+          "targetWord": "fish",
+          "imageKey": "mi-animal-fish",
+          "letters": [
+            "f",
+            "i",
+            "s",
+            "h"
+          ],
+          "distractors": [
+            "g",
+            "t"
+          ]
+        }
+      },
+      "hints": [
+        {
+          "text": "Sống dưới nước"
+        },
+        {
+          "text": "Chữ đầu là F"
+        }
+      ],
+      "metadata": {
+        "ageGroup": "junior",
+        "skillIds": [
+          "letters.word_building"
+        ]
+      },
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "wb-lv05",
+      "gameId": "word_builder",
+      "levelNumber": 5,
+      "difficulty": 2,
+      "learningObjective": "Ghép từ về màu sắc",
+      "localizedContent": {
+        "vi": {
+          "prompt": "Ghép tên màu!",
+          "targetWord": "đỏ",
+          "imageKey": "mi-color-red",
+          "letters": [
+            "đ",
+            "ỏ"
+          ],
+          "distractors": [
+            "a",
+            "u"
+          ]
+        },
+        "en": {
+          "prompt": "Build the color name!",
+          "targetWord": "red",
+          "imageKey": "mi-color-red",
+          "letters": [
+            "r",
+            "e",
+            "d"
+          ],
+          "distractors": [
+            "b",
+            "g"
+          ]
+        }
+      },
+      "hints": [
+        {
+          "text": "Màu của trái táo"
+        },
+        {
+          "text": "Chữ đầu là R"
+        }
+      ],
+      "metadata": {
+        "ageGroup": "junior",
+        "skillIds": [
+          "letters.word_building"
+        ]
+      },
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "wb-lv06",
+      "gameId": "word_builder",
+      "levelNumber": 6,
+      "difficulty": 2,
+      "learningObjective": "Ghép từ về gia đình",
+      "localizedContent": {
+        "vi": {
+          "prompt": "Ghép từ!",
+          "targetWord": "bố",
+          "imageKey": "mi-family-dad",
+          "letters": [
+            "b",
+            "ố"
+          ],
+          "distractors": [
+            "à",
+            "u"
+          ]
+        },
+        "en": {
+          "prompt": "Build the family word!",
+          "targetWord": "dad",
+          "imageKey": "mi-family-dad",
+          "letters": [
+            "d",
+            "a",
+            "d"
+          ],
+          "distractors": [
+            "m",
+            "g"
+          ]
+        }
+      },
+      "hints": [
+        {
+          "text": "Người bố trong gia đình"
+        },
+        {
+          "text": "Chữ đầu là D"
+        }
+      ],
+      "metadata": {
+        "ageGroup": "junior",
+        "skillIds": [
+          "letters.word_building"
+        ]
+      },
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "wb-lv07",
+      "gameId": "word_builder",
+      "levelNumber": 7,
+      "difficulty": 3,
+      "learningObjective": "Ghép từ có dấu thanh phức tạp",
+      "localizedContent": {
+        "vi": {
+          "prompt": "Ghép từ!",
+          "targetWord": "chuột",
+          "imageKey": "mi-animal-mouse",
+          "letters": [
+            "c",
+            "h",
+            "u",
+            "ộ",
+            "t"
+          ],
+          "distractors": [
+            "a",
+            "n"
+          ]
+        },
+        "en": {
+          "prompt": "Build the word!",
+          "targetWord": "house",
+          "imageKey": "mi-house",
+          "letters": [
+            "h",
+            "o",
+            "u",
+            "s",
+            "e"
+          ],
+          "distractors": [
+            "m",
+            "b"
+          ]
+        }
+      },
+      "hints": [
+        {
+          "text": "Con vật nhỏ"
+        },
+        {
+          "text": "Chữ đầu là C"
+        }
+      ],
+      "metadata": {
+        "ageGroup": "junior",
+        "skillIds": [
+          "letters.word_building"
+        ]
+      },
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "wb-lv08",
+      "gameId": "word_builder",
+      "levelNumber": 8,
+      "difficulty": 3,
+      "learningObjective": "Ghép từ dài hơn",
+      "localizedContent": {
+        "vi": {
+          "prompt": "Ghép từ!",
+          "targetWord": "trường",
+          "imageKey": "mi-school",
+          "letters": [
+            "t",
+            "r",
+            "ư",
+            "ờ",
+            "n",
+            "g"
+          ],
+          "distractors": [
+            "a",
+            "h"
+          ]
+        },
+        "en": {
+          "prompt": "Build the word!",
+          "targetWord": "school",
+          "imageKey": "mi-school",
+          "letters": [
+            "s",
+            "c",
+            "h",
+            "o",
+            "o",
+            "l"
+          ],
+          "distractors": [
+            "m",
+            "b"
+          ]
+        }
+      },
+      "hints": [
+        {
+          "text": "Nơi con học"
+        },
+        {
+          "text": "Chữ đầu là S"
+        }
+      ],
+      "metadata": {
+        "ageGroup": "explorer",
+        "skillIds": [
+          "letters.word_building"
+        ]
+      },
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "wb-lv09",
+      "gameId": "word_builder",
+      "levelNumber": 9,
+      "difficulty": 4,
+      "learningObjective": "Ghép từ trừu tượng",
+      "localizedContent": {
+        "vi": {
+          "prompt": "Ghép từ!",
+          "targetWord": "hạnh phúc",
+          "imageKey": "mi-feeling-happy",
+          "letters": [
+            "h",
+            "ạ",
+            "n",
+            "h",
+            " ",
+            "p",
+            "h",
+            "ú",
+            "c"
+          ],
+          "distractors": [
+            "u",
+            "y"
+          ]
+        },
+        "en": {
+          "prompt": "Build the word!",
+          "targetWord": "happy",
+          "imageKey": "mi-feeling-happy",
+          "letters": [
+            "h",
+            "a",
+            "p",
+            "p",
+            "y"
+          ],
+          "distractors": [
+            "g",
+            "t"
+          ]
+        }
+      },
+      "hints": [
+        {
+          "text": "Cảm giác vui vẻ"
+        },
+        {
+          "text": "Chữ đầu là H"
+        }
+      ],
+      "metadata": {
+        "ageGroup": "explorer",
+        "skillIds": [
+          "letters.vocabulary"
+        ]
+      },
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "wb-lv10",
+      "gameId": "word_builder",
+      "levelNumber": 10,
+      "difficulty": 5,
+      "learningObjective": "Ghép từ không có hình gợi ý",
+      "localizedContent": {
+        "vi": {
+          "prompt": "Ghép từ!",
+          "targetWord": "tự do",
+          "imageKey": null,
+          "letters": [
+            "t",
+            "ự",
+            " ",
+            "d",
+            "o"
+          ],
+          "distractors": [
+            "a",
+            "h"
+          ]
+        },
+        "en": {
+          "prompt": "Build the word!",
+          "targetWord": "freedom",
+          "imageKey": null,
+          "letters": [
+            "f",
+            "r",
+            "e",
+            "e",
+            "d",
+            "o",
+            "m"
+          ],
+          "distractors": [
+            "g",
+            "t"
+          ]
+        }
+      },
+      "hints": [
+        {
+          "text": "Khi con được làm điều mình muốn"
+        },
+        {
+          "text": "Chữ đầu là F"
+        }
+      ],
+      "metadata": {
+        "ageGroup": "explorer",
+        "skillIds": [
+          "letters.vocabulary"
+        ]
+      },
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    }
   ]
 }

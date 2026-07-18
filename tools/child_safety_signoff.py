@@ -18,7 +18,7 @@ ROOT = Path(__file__).resolve().parent.parent
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
-from tools import (
+from tools import (  # noqa: E402 -- must follow the sys.path.insert above
     child_safety_audit,
     content_safety_audit,
     game_network_audit,
@@ -27,7 +27,9 @@ from tools import (
 
 
 LEVEL_DIR = ROOT / "apps" / "mobile" / "assets" / "levels"
-REPORT_PATH = ROOT / "docs" / "child-safety" / "MVP_GAME_SAFETY_PRESIGNOFF_2026-07-17.md"
+REPORT_PATH = (
+    ROOT / "docs" / "child-safety" / "MVP_GAME_SAFETY_PRESIGNOFF_2026-07-17.md"
+)
 
 GAME_LABELS = {
     "word_builder": "Word Builder",
@@ -80,7 +82,7 @@ def build_report() -> SignoffReport:
     static_result = child_safety_audit.audit()
     platform_result = mobile_platform_privacy_audit.audit()
 
-    audit_summary = {
+    audit_summary: dict[str, dict[str, int | str]] = {
         "content_safety": {
             "status": content_result.status,
             "fail": content_result.summary["fail"],
@@ -156,8 +158,7 @@ def render_markdown(report: SignoffReport) -> str:
     )
     for game in report.games:
         category_summary = ", ".join(
-            f"{label}: {game.categories[key]}"
-            for key, label in CHECK_CATEGORIES
+            f"{label}: {game.categories[key]}" for key, label in CHECK_CATEGORIES
         )
         lines.append(
             f"| {game.game_name} | {game.levels} | {game.automated_status} | "

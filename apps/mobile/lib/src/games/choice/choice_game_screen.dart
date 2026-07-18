@@ -20,6 +20,7 @@ class ChoiceGameScreen extends StatefulWidget {
     this.onComplete,
     this.initialSnapshot,
     this.onSaveSnapshot,
+    this.locale = 'vi',
   });
 
   final String title;
@@ -38,6 +39,10 @@ class ChoiceGameScreen extends StatefulWidget {
 
   /// See WordBuilderScreen.onSaveSnapshot.
   final void Function(MiGameSnapshot)? onSaveSnapshot;
+
+  /// From the parent's language setting (see ParentSettingsSnapshot.language)
+  /// -- was previously hardcoded to 'vi' regardless of this setting.
+  final String locale;
 
   @override
   State<ChoiceGameScreen> createState() => _ChoiceGameScreenState();
@@ -75,7 +80,7 @@ class _ChoiceGameScreenState extends State<ChoiceGameScreen>
   void _loadLevel(MiLevel level, {MiGameSnapshot? snapshot}) {
     setState(() {
       _completed = false;
-      _session = ChoiceGameSession(level: level);
+      _session = ChoiceGameSession(level: level, locale: widget.locale);
       if (snapshot != null) {
         _session.restoreSnapshot(snapshot);
       }

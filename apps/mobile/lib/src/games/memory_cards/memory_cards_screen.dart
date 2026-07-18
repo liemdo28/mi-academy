@@ -18,6 +18,7 @@ class MemoryCardsScreen extends StatefulWidget {
     this.initialSnapshot,
     this.onSaveSnapshot,
     this.reduceMotion = false,
+    this.locale = 'vi',
   });
 
   final MemoryCardsGame game;
@@ -35,6 +36,10 @@ class MemoryCardsScreen extends StatefulWidget {
   /// animation to near-instant for children sensitive to motion, instead
   /// of always animating at a fixed duration regardless of preference.
   final bool reduceMotion;
+
+  /// From the parent's language setting (see ParentSettingsSnapshot.language)
+  /// -- was previously hardcoded to 'vi' regardless of this setting.
+  final String locale;
 
   /// See WordBuilderScreen.initialSnapshot.
   final MiGameSnapshot? initialSnapshot;
@@ -85,9 +90,10 @@ class _MemoryCardsScreenState extends State<MemoryCardsScreen>
     await widget.game.initialize(
       context: MiGameContext(
         childProfileId: widget.childProfileId,
-        language: 'vi',
+        language: widget.locale,
         ageGroup: '5-7',
-        accessibility: AccessibilityPreferences(reducedMotion: widget.reduceMotion),
+        accessibility:
+            AccessibilityPreferences(reducedMotion: widget.reduceMotion),
         audio: const AudioPreferences(),
         services: MiGameServices(
           saveSnapshot: _noopSave,
@@ -168,8 +174,7 @@ class _MemoryCardsScreenState extends State<MemoryCardsScreen>
   @override
   Widget build(BuildContext context) {
     final game = widget.game;
-    const locale = 'vi';
-    final content = widget.level.contentForLocale(locale);
+    final content = widget.level.contentForLocale(widget.locale);
     final prompt = content['prompt'] as String? ?? 'Tìm cặp giống nhau!';
 
     return Scaffold(
@@ -374,9 +379,8 @@ class _MemoryCardWidget extends StatelessWidget {
       child: GestureDetector(
         onTap: onTap,
         child: AnimatedContainer(
-          duration: reduceMotion
-              ? Duration.zero
-              : const Duration(milliseconds: 300),
+          duration:
+              reduceMotion ? Duration.zero : const Duration(milliseconds: 300),
           width: width,
           height: height,
           decoration: BoxDecoration(

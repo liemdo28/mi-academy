@@ -16,6 +16,16 @@ final parentSettingsStoreProvider = Provider<ParentSettingsStore>((ref) {
   return MemoryParentSettingsStore();
 });
 
+/// The parent's saved settings (language, accessibility, etc.), loaded from
+/// [parentSettingsStoreProvider]. Consumers that need to react to a settings
+/// change (e.g. MiAcademyApp's locale) should watch this and callers that
+/// change settings (ParentSettingsScreen) must `ref.invalidate` it after
+/// saving, since the underlying store has no change-notification of its own.
+final parentSettingsProvider = FutureProvider<ParentSettingsSnapshot>((ref) {
+  final store = ref.watch(parentSettingsStoreProvider);
+  return store.load();
+});
+
 /// API service provider — singleton, initialized once.
 ///
 /// Wires `onSessionExpired` so a mid-session unrecoverable 401 (refresh

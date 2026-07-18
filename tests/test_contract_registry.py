@@ -98,7 +98,10 @@ def test_openapi_snapshot_schema_matches_v2_contract_manifest():
     openapi = (PROJECT_ROOT / "contracts" / "openapi.yaml").read_text(encoding="utf-8")
 
     assert "MiGameSnapshot:" in openapi
-    assert "required: [schema_version, game_version, game_id, level_id, child_profile_id, saved_at, state]" in openapi
+    assert (
+        "required: [schema_version, game_version, game_id, level_id, child_profile_id, saved_at, state]"
+        in openapi
+    )
     assert "default: 2" in openapi
     assert "game_version:" in openapi
     assert "checksum:" in openapi
@@ -117,7 +120,9 @@ def test_contract_validation_rejects_missing_required_fields():
 def test_contract_validation_rejects_forbidden_parent_or_secret_fields():
     result = validate_contract_data(
         "mi.game.result",
-        _valid_game_result(accessToken="secret-token", parentEmail="parent@example.test"),
+        _valid_game_result(
+            accessToken="secret-token", parentEmail="parent@example.test"
+        ),
     )
 
     assert result["valid"] is False
@@ -142,24 +147,49 @@ _DART_CONTRACT_SOURCES = {
     "mi.game.launch": (
         "packages/mi_game_core/lib/src/contracts/mi_game_launch_request.dart",
         [
-            "schemaVersion", "childProfileId", "gameId", "levelId",
-            "language", "ageGroup", "accessibility", "audioPreferences", "levelContent",
+            "schemaVersion",
+            "childProfileId",
+            "gameId",
+            "levelId",
+            "language",
+            "ageGroup",
+            "accessibility",
+            "audioPreferences",
+            "levelContent",
         ],
     ),
     "mi.game.result": (
         "packages/mi_game_core/lib/src/contracts/mi_game_result.dart",
         [
-            "schemaVersion", "attemptId", "childProfileId", "gameId", "levelId",
-            "startedAt", "completedAt", "attemptCount", "correctCount",
-            "incorrectCount", "hintCount", "durationSeconds", "completed",
-            "masteryEvidence", "skillEvidence",
+            "schemaVersion",
+            "attemptId",
+            "childProfileId",
+            "gameId",
+            "levelId",
+            "startedAt",
+            "completedAt",
+            "attemptCount",
+            "correctCount",
+            "incorrectCount",
+            "hintCount",
+            "durationSeconds",
+            "completed",
+            "masteryEvidence",
+            "skillEvidence",
         ],
     ),
     "mi.game.snapshot": (
         "packages/mi_game_core/lib/src/models/mi_game_snapshot.dart",
         # savedAt is a getter alias for the real field createdAt -- see the
         # contract's own docstring note.
-        ["schemaVersion", "gameVersion", "gameId", "levelId", "childProfileId", "state"],
+        [
+            "schemaVersion",
+            "gameVersion",
+            "gameId",
+            "levelId",
+            "childProfileId",
+            "state",
+        ],
     ),
 }
 
@@ -167,7 +197,9 @@ _DART_CONTRACT_SOURCES = {
 def test_dart_contract_sources_still_declare_their_required_fields():
     for contract_id, (relative_path, expected_fields) in _DART_CONTRACT_SOURCES.items():
         path = PROJECT_ROOT / relative_path
-        assert path.exists(), f"{contract_id}'s cited source file no longer exists: {relative_path}"
+        assert path.exists(), (
+            f"{contract_id}'s cited source file no longer exists: {relative_path}"
+        )
         source = path.read_text(encoding="utf-8")
         missing = [f for f in expected_fields if f not in source]
         assert not missing, (

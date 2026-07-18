@@ -65,9 +65,16 @@ void main() {
       ),
     );
 
-    await expectLater(
+    // Semantic/widget assertions that hold on every host OS, so this test
+    // still gives real regression coverage where pixel comparison isn't
+    // authoritative (see _expectMatchesGoldenOnLinux).
+    expect(find.text('Ghép chữ thành từ!'), findsOneWidget);
+    expect(find.text('m'), findsOneWidget);
+
+    await _expectMatchesGoldenOnLinux(
+      tester,
       find.byType(MaterialApp),
-      matchesGoldenFile('goldens/word_builder_slice.png'),
+      'goldens/word_builder_slice.png',
     );
   });
 
@@ -83,9 +90,13 @@ void main() {
     await tester.tap(find.text('Nghe lại'));
     await tester.pump(const Duration(milliseconds: 100));
 
-    await expectLater(
+    expect(find.text('Nghe âm và chọn chữ cái!'), findsOneWidget);
+    expect(find.text('A'), findsWidgets);
+
+    await _expectMatchesGoldenOnLinux(
+      tester,
       find.byType(MaterialApp),
-      matchesGoldenFile('goldens/sound_match_slice.png'),
+      'goldens/sound_match_slice.png',
     );
   });
 
@@ -102,9 +113,14 @@ void main() {
       ),
     );
 
-    await expectLater(
+    expect(find.text('2 + 3 = ?'), findsOneWidget);
+    expect(find.text('4'), findsOneWidget);
+    expect(find.text('5'), findsOneWidget);
+
+    await _expectMatchesGoldenOnLinux(
+      tester,
       find.byType(MaterialApp),
-      matchesGoldenFile('goldens/math_race_slice.png'),
+      'goldens/math_race_slice.png',
     );
   });
 
@@ -121,9 +137,17 @@ void main() {
       ),
     );
 
-    await expectLater(
+    expect(
+      find.text('Quả táo 2 đồng, quả chuối 3 đồng. Tổng cộng bao nhiêu?'),
+      findsOneWidget,
+    );
+    expect(find.text('4 đồng'), findsOneWidget);
+    expect(find.text('5 đồng'), findsOneWidget);
+
+    await _expectMatchesGoldenOnLinux(
+      tester,
       find.byType(MaterialApp),
-      matchesGoldenFile('goldens/math_supermarket_slice.png'),
+      'goldens/math_supermarket_slice.png',
     );
   });
 
@@ -139,9 +163,13 @@ void main() {
     await tester.tap(find.text('Tiếp tục'));
     await tester.pump(const Duration(milliseconds: 200));
 
-    await expectLater(
+    expect(find.text('Tìm cặp giống nhau!'), findsOneWidget);
+    expect(find.byType(GestureDetector), findsWidgets);
+
+    await _expectMatchesGoldenOnLinux(
+      tester,
       find.byType(MaterialApp),
-      matchesGoldenFile('goldens/memory_cards_slice.png'),
+      'goldens/memory_cards_slice.png',
     );
   });
 
@@ -162,11 +190,42 @@ void main() {
     await tester.tap(find.widgetWithText(ElevatedButton, 'TIẾN'));
     await tester.pump(const Duration(milliseconds: 100));
 
-    await expectLater(
+    expect(find.text('Đưa MI tới ngôi sao bằng 2 bước tiến.'), findsOneWidget);
+
+    await _expectMatchesGoldenOnLinux(
+      tester,
       find.byType(MaterialApp),
-      matchesGoldenFile('goldens/robot_commands_slice.png'),
+      'goldens/robot_commands_slice.png',
     );
   });
+}
+
+/// Flutter's own golden-testing docs are explicit that pixel goldens are
+/// only guaranteed bit-identical when generated and compared on the same
+/// operating system: text hinting/anti-aliasing differ at the Skia/OS
+/// rasterizer level even with an identical bundled font loaded (confirmed:
+/// loading the bundled Nunito font above already removed the *font-choice*
+/// mismatch, but a 0.2-0.6% diff remains on Windows against the
+/// Linux-generated goldens in `goldens/`). These goldens are generated on
+/// and are authoritative for Linux (matching `.github/workflows/ci.yml`'s
+/// `mobile-test-build` job, which runs on `ubuntu-latest`); on any other
+/// host OS we skip the pixel comparison explicitly (not silently) and rely
+/// on the widget/semantic assertions above for regression coverage instead.
+/// See docs/testing.md#golden-tests.
+Future<void> _expectMatchesGoldenOnLinux(
+  WidgetTester tester,
+  Finder finder,
+  String golden,
+) async {
+  if (!Platform.isLinux) {
+    markTestSkipped(
+      'Pixel golden comparison for $golden only runs on Linux (the CI '
+      'platform that generates these goldens); skipped on '
+      '${Platform.operatingSystem}. See docs/testing.md#golden-tests.',
+    );
+    return;
+  }
+  await expectLater(finder, matchesGoldenFile(golden));
 }
 
 /// Bundled in the repo (already shipped as an app asset, OFL-licensed —

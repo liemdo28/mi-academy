@@ -20,7 +20,9 @@ def test_parent_login_returns_parent_profile(monkeypatch):
                 await _seed_users(db)
 
                 response = await login(
-                    LoginRequest(email="parent@example.com", password="correct-password"),
+                    LoginRequest(
+                        email="parent@example.com", password="correct-password"
+                    ),
                     db=db,
                 )
 
@@ -44,7 +46,9 @@ def test_admin_login_succeeds_without_parent_profile(monkeypatch):
                 await _seed_users(db)
 
                 response = await login(
-                    LoginRequest(email="admin@example.com", password="correct-password"),
+                    LoginRequest(
+                        email="admin@example.com", password="correct-password"
+                    ),
                     db=db,
                 )
 
@@ -67,8 +71,10 @@ def test_login_rejects_bad_credentials(monkeypatch):
                 await _seed_users(db)
 
                 with pytest.raises(HTTPException) as exc:
-                        await login(
-                        LoginRequest(email="admin@example.com", password="wrong-password"),
+                    await login(
+                        LoginRequest(
+                            email="admin@example.com", password="wrong-password"
+                        ),
                         db=db,
                     )
 
@@ -87,12 +93,16 @@ def test_refresh_rotates_the_token_and_rejects_the_old_one(monkeypatch):
             async with session_maker() as db:
                 await _seed_users(db)
                 login_response = await login(
-                    LoginRequest(email="parent@example.com", password="correct-password"),
+                    LoginRequest(
+                        email="parent@example.com", password="correct-password"
+                    ),
                     db=db,
                 )
                 old_refresh_token = login_response.refresh_token
 
-                refreshed = await refresh(RefreshRequest(refresh_token=old_refresh_token), db=db)
+                refreshed = await refresh(
+                    RefreshRequest(refresh_token=old_refresh_token), db=db
+                )
                 assert refreshed.access_token
                 assert refreshed.refresh_token
                 assert refreshed.refresh_token != old_refresh_token
@@ -100,12 +110,16 @@ def test_refresh_rotates_the_token_and_rejects_the_old_one(monkeypatch):
                 # The old refresh token was single-use -- replaying it must
                 # fail even though its JWT signature still verifies fine.
                 with pytest.raises(HTTPException) as exc:
-                    await refresh(RefreshRequest(refresh_token=old_refresh_token), db=db)
+                    await refresh(
+                        RefreshRequest(refresh_token=old_refresh_token), db=db
+                    )
                 assert exc.value.status_code == 401
                 assert exc.value.detail["error"]["code"] == "REFRESH_TOKEN_REVOKED"
 
                 # The newly-rotated token still works.
-                refreshed_again = await refresh(RefreshRequest(refresh_token=refreshed.refresh_token), db=db)
+                refreshed_again = await refresh(
+                    RefreshRequest(refresh_token=refreshed.refresh_token), db=db
+                )
                 assert refreshed_again.access_token
         finally:
             await engine.dispose()
@@ -121,7 +135,9 @@ def test_logout_revokes_every_outstanding_refresh_token(monkeypatch):
             async with session_maker() as db:
                 user, _admin = await _seed_users(db)
                 login_response = await login(
-                    LoginRequest(email="parent@example.com", password="correct-password"),
+                    LoginRequest(
+                        email="parent@example.com", password="correct-password"
+                    ),
                     db=db,
                 )
 
@@ -131,7 +147,10 @@ def test_logout_revokes_every_outstanding_refresh_token(monkeypatch):
                 # this refresh token valid until it naturally expired --
                 # logout must actually revoke it server-side.
                 with pytest.raises(HTTPException) as exc:
-                    await refresh(RefreshRequest(refresh_token=login_response.refresh_token), db=db)
+                    await refresh(
+                        RefreshRequest(refresh_token=login_response.refresh_token),
+                        db=db,
+                    )
                 assert exc.value.status_code == 401
                 assert exc.value.detail["error"]["code"] == "REFRESH_TOKEN_REVOKED"
         finally:
@@ -148,17 +167,35 @@ def test_refresh_token_row_is_created_and_revoked_in_the_database(monkeypatch):
             async with session_maker() as db:
                 user, _admin = await _seed_users(db)
                 await login(
-                    LoginRequest(email="parent@example.com", password="correct-password"),
+                    LoginRequest(
+                        email="parent@example.com", password="correct-password"
+                    ),
                     db=db,
                 )
 
-                rows = (await db.execute(select(RefreshToken).where(RefreshToken.user_id == user.id))).scalars().all()
+                rows = (
+                    (
+                        await db.execute(
+                            select(RefreshToken).where(RefreshToken.user_id == user.id)
+                        )
+                    )
+                    .scalars()
+                    .all()
+                )
                 assert len(rows) == 1
                 assert rows[0].revoked_at is None
 
                 await logout(user=user, db=db)
 
-                rows = (await db.execute(select(RefreshToken).where(RefreshToken.user_id == user.id))).scalars().all()
+                rows = (
+                    (
+                        await db.execute(
+                            select(RefreshToken).where(RefreshToken.user_id == user.id)
+                        )
+                    )
+                    .scalars()
+                    .all()
+                )
                 assert len(rows) == 1
                 assert rows[0].revoked_at is not None
         finally:

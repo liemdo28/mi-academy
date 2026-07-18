@@ -23,6 +23,7 @@ bearer_scheme = HTTPBearer(auto_error=False)
 
 # ── Password helpers ────────────────────────────────────────────────────────────
 
+
 def hash_password(password: str) -> str:
     return pwd_context.hash(password)
 
@@ -32,6 +33,7 @@ def verify_password(plain: str, hashed: str) -> bool:
 
 
 # ── JWT helpers ────────────────────────────────────────────────────────────────
+
 
 def create_access_token(data: dict, expires_delta: Optional[timedelta] = None) -> str:
     to_encode = data.copy()
@@ -65,7 +67,12 @@ async def redeem_refresh_token(db: AsyncSession, payload: dict) -> None:
     if not jti:
         raise HTTPException(
             status_code=status.HTTP_401_UNAUTHORIZED,
-            detail={"error": {"code": "INVALID_TOKEN", "message": "Refresh token missing jti"}},
+            detail={
+                "error": {
+                    "code": "INVALID_TOKEN",
+                    "message": "Refresh token missing jti",
+                }
+            },
         )
     result = await db.execute(select(RefreshToken).where(RefreshToken.jti == jti))
     record = result.scalar_one_or_none()
@@ -76,7 +83,12 @@ async def redeem_refresh_token(db: AsyncSession, payload: dict) -> None:
     ):
         raise HTTPException(
             status_code=status.HTTP_401_UNAUTHORIZED,
-            detail={"error": {"code": "REFRESH_TOKEN_REVOKED", "message": "Refresh token is no longer valid"}},
+            detail={
+                "error": {
+                    "code": "REFRESH_TOKEN_REVOKED",
+                    "message": "Refresh token is no longer valid",
+                }
+            },
         )
     record.revoked_at = utc_now()
 
@@ -97,7 +109,9 @@ async def revoke_all_refresh_tokens(db: AsyncSession, user_id: str) -> None:
 
 def decode_token(token: str) -> dict:
     try:
-        payload = jwt.decode(token, settings.SECRET_KEY, algorithms=[settings.ALGORITHM])
+        payload = jwt.decode(
+            token, settings.SECRET_KEY, algorithms=[settings.ALGORITHM]
+        )
         return payload
     except JWTError as exc:
         raise HTTPException(
@@ -108,6 +122,7 @@ def decode_token(token: str) -> dict:
 
 # ── Auth dependency ─────────────────────────────────────────────────────────────
 
+
 async def get_current_user(
     credentials: Optional[HTTPAuthorizationCredentials] = Depends(bearer_scheme),
     db: AsyncSession = Depends(get_db),
@@ -116,26 +131,40 @@ async def get_current_user(
     if credentials is None or credentials.scheme.lower() != "bearer":
         raise HTTPException(
             status_code=status.HTTP_401_UNAUTHORIZED,
-            detail={"error": {"code": "MISSING_TOKEN", "message": "Authorization header required"}},
+            detail={
+                "error": {
+                    "code": "MISSING_TOKEN",
+                    "message": "Authorization header required",
+                }
+            },
         )
     payload = decode_token(credentials.credentials)
     if payload.get("type") != "access":
         raise HTTPException(
             status_code=status.HTTP_401_UNAUTHORIZED,
-            detail={"error": {"code": "INVALID_TOKEN_TYPE", "message": "Not an access token"}},
+            detail={
+                "error": {
+                    "code": "INVALID_TOKEN_TYPE",
+                    "message": "Not an access token",
+                }
+            },
         )
-    user_id: str = payload.get("sub")
+    user_id: str | None = payload.get("sub")
     if not user_id:
         raise HTTPException(
             status_code=status.HTTP_401_UNAUTHORIZED,
-            detail={"error": {"code": "INVALID_TOKEN", "message": "Token missing subject"}},
+            detail={
+                "error": {"code": "INVALID_TOKEN", "message": "Token missing subject"}
+            },
         )
     result = await db.execute(select(User).where(User.id == user_id))
     user = result.scalar_one_or_none()
     if user is None:
         raise HTTPException(
             status_code=status.HTTP_401_UNAUTHORIZED,
-            detail={"error": {"code": "USER_NOT_FOUND", "message": "User no longer exists"}},
+            detail={
+                "error": {"code": "USER_NOT_FOUND", "message": "User no longer exists"}
+            },
         )
     return user
 
@@ -154,7 +183,12 @@ async def get_parent_profile(
     if profile is None:
         raise HTTPException(
             status_code=status.HTTP_404_NOT_FOUND,
-            detail={"error": {"code": "PROFILE_NOT_FOUND", "message": "Parent profile not found"}},
+            detail={
+                "error": {
+                    "code": "PROFILE_NOT_FOUND",
+                    "message": "Parent profile not found",
+                }
+            },
         )
     return profile
 
@@ -180,22 +214,38 @@ async def verify_parent_pin(
     if not profile.pin_hash:
         raise HTTPException(
             status_code=status.HTTP_403_FORBIDDEN,
-            detail={"error": {"code": "PIN_NOT_SET", "message": "Parent PIN has not been set"}},
+            detail={
+                "error": {
+                    "code": "PIN_NOT_SET",
+                    "message": "Parent PIN has not been set",
+                }
+            },
         )
-    if profile.pin_locked_until and profile.pin_locked_until.replace(tzinfo=None) > utc_now().replace(tzinfo=None):
+    if profile.pin_locked_until and profile.pin_locked_until.replace(
+        tzinfo=None
+    ) > utc_now().replace(tzinfo=None):
         raise HTTPException(
             status_code=status.HTTP_429_TOO_MANY_REQUESTS,
-            detail={"error": {"code": "PIN_LOCKED", "message": "Too many incorrect attempts. Try again shortly."}},
+            detail={
+                "error": {
+                    "code": "PIN_LOCKED",
+                    "message": "Too many incorrect attempts. Try again shortly.",
+                }
+            },
         )
     if not verify_password(x_parent_pin, profile.pin_hash):
         profile.pin_failed_attempts += 1
         if profile.pin_failed_attempts >= PIN_MAX_FAILED_ATTEMPTS:
-            profile.pin_locked_until = utc_now() + timedelta(seconds=PIN_LOCKOUT_SECONDS)
+            profile.pin_locked_until = utc_now() + timedelta(
+                seconds=PIN_LOCKOUT_SECONDS
+            )
             profile.pin_failed_attempts = 0
         await db.commit()
         raise HTTPException(
             status_code=status.HTTP_403_FORBIDDEN,
-            detail={"error": {"code": "INVALID_PIN", "message": "Incorrect parent PIN"}},
+            detail={
+                "error": {"code": "INVALID_PIN", "message": "Incorrect parent PIN"}
+            },
         )
     profile.pin_failed_attempts = 0
     profile.pin_locked_until = None
@@ -205,13 +255,21 @@ async def verify_parent_pin(
 
 # ── Admin-only dependency ────────────────────────────────────────────────────────
 
+
 def require_role(*roles: str):
     """Factory — returns a dependency that checks user.role is in roles."""
+
     async def checker(user: User = Depends(get_current_user)) -> User:
         if user.role not in roles:
             raise HTTPException(
                 status_code=status.HTTP_403_FORBIDDEN,
-                detail={"error": {"code": "FORBIDDEN", "message": f"Requires one of: {roles}"}},
+                detail={
+                    "error": {
+                        "code": "FORBIDDEN",
+                        "message": f"Requires one of: {roles}",
+                    }
+                },
             )
         return user
+
     return checker

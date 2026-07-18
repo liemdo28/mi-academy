@@ -9,8 +9,26 @@
   "properties": {
     "id": {
       "type": "string",
-      "format": "uuid",
-      "description": "Unique level identifier (UUID v4)."
+      "minLength": 1,
+      "description": "Unique level identifier. Real content uses short, readable, per-game-prefixed IDs (e.g. \"wb-lv01\", \"mc-lv1-001\"), not UUIDs -- uniqueness is enforced by the content validator across each game's level file, not by a UUID format constraint."
+    },
+    "contentVersion": {
+      "type": "integer",
+      "minimum": 1,
+      "default": 1,
+      "description": "Content revision within this level's stable id -- bumped when wording/answer/asset references change. Independent of this file's top-level schemaVersion, which versions the envelope shape, not any one level's content. See docs/content-schema.md."
+    },
+    "estimatedSeconds": {
+      "type": "integer",
+      "minimum": 1,
+      "default": 60,
+      "description": "Rough expected time-to-complete, for parent-facing duration estimates and daily-plan scheduling. Not enforced as a timer."
+    },
+    "publicationState": {
+      "type": "string",
+      "enum": ["draft", "published", "archived"],
+      "default": "published",
+      "description": "Content lifecycle state (see docs/content-schema.md)."
     },
     "gameId": {
       "type": "string",
@@ -34,8 +52,9 @@
     },
     "localizedContent": {
       "type": "object",
-      "description": "Map of locale code to localized content.",
+      "description": "Map of locale code to localized content. Vietnamese (vi) is the documented fallback locale (see docs/localization.md) and is therefore always required, regardless of which other locales a level provides.",
       "minProperties": 1,
+      "required": ["vi"],
       "additionalProperties": {
         "type": "object",
         "required": ["prompt"],
@@ -46,17 +65,26 @@
           },
           "options": {
             "type": "array",
-            "description": "Answer options (for choice-based levels).",
+            "description": "Answer options. Two real shapes exist: a structured object (Choice Engine games -- math_race, math_supermarket -- with id/text/correct so the correct option is authored explicitly) or a plain string (Sound Match's fixed option list, paired with a separate top-level correctAnswer field).",
             "items": {
-              "type": "object",
-              "required": ["id", "text"],
-              "properties": {
-                "id": { "type": "string" },
-                "text": { "type": "string" },
-                "correct": { "type": "boolean" },
-                "media": { "type": "string" }
-              }
+              "oneOf": [
+                {
+                  "type": "object",
+                  "required": ["id", "text"],
+                  "properties": {
+                    "id": { "type": "string" },
+                    "text": { "type": "string" },
+                    "correct": { "type": "boolean" },
+                    "media": { "type": "string" }
+                  }
+                },
+                { "type": "string", "minLength": 1 }
+              ]
             }
+          },
+          "correctAnswer": {
+            "type": "string",
+            "description": "Used together with a plain-string `options` list (see above) to name the correct option, instead of an inline `correct: true` per option."
           },
           "cards": {
             "type": "array",
@@ -108,7 +136,17 @@
     },
     "metadata": {
       "type": "object",
-      "description": "Game-specific metadata (grid size, timer settings, etc.)."
+      "description": "Game-specific metadata (grid size, timer settings, etc.), plus two conventional keys read by MiLevel.ageBand/MiLevel.skillTags: `ageGroup` (one of junior/explorer/master, see docs/age-bands.md) and `skillIds` (array of IDs from content/skills/skill_taxonomy.json).",
+      "properties": {
+        "ageGroup": {
+          "type": "string",
+          "enum": ["junior", "explorer", "master"]
+        },
+        "skillIds": {
+          "type": "array",
+          "items": { "type": "string", "minLength": 1 }
+        }
+      }
     },
     "assetRefs": {
       "type": "array",

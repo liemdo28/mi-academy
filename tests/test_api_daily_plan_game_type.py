@@ -6,6 +6,7 @@ tuc hoc" CTA and mission list always hardcoded /game/memory_cards regardless
 of which lesson was actually next -- see apps.api.routes.progress's
 _SUBJECT_TO_GAME_TYPE mapping.
 """
+
 import asyncio
 
 from sqlalchemy.ext.asyncio import async_sessionmaker, create_async_engine
@@ -24,21 +25,52 @@ async def _session_maker():
 
 async def _seed_world(db):
     user = User(role="parent", email="owner@example.test", password_hash="not-used")
-    profile = ParentProfile(user=user, display_name="Owner Parent", language="vi", timezone="Asia/Ho_Chi_Minh")
-    child = ChildProfile(parent=profile, nickname="Child", age_group="junior", preferred_language="vi")
+    profile = ParentProfile(
+        user=user,
+        display_name="Owner Parent",
+        language="vi",
+        timezone="Asia/Ho_Chi_Minh",
+    )
+    child = ChildProfile(
+        parent=profile, nickname="Child", age_group="junior", preferred_language="vi"
+    )
     letters = Subject(name="Letters", code="letters")
     math = Subject(name="Math", code="math")
     logic = Subject(name="Logic", code="logic")
     science = Subject(name="Science", code="science")
     lessons = [
-        Lesson(subject=letters, title="Letters Lesson", age_group="junior", language="vi",
-               estimated_minutes=5, is_active=True),
-        Lesson(subject=math, title="Math Lesson", age_group="junior", language="vi",
-               estimated_minutes=5, is_active=True),
-        Lesson(subject=logic, title="Logic Lesson", age_group="junior", language="vi",
-               estimated_minutes=5, is_active=True),
-        Lesson(subject=science, title="Science Lesson", age_group="junior", language="vi",
-               estimated_minutes=5, is_active=True),
+        Lesson(
+            subject=letters,
+            title="Letters Lesson",
+            age_group="junior",
+            language="vi",
+            estimated_minutes=5,
+            is_active=True,
+        ),
+        Lesson(
+            subject=math,
+            title="Math Lesson",
+            age_group="junior",
+            language="vi",
+            estimated_minutes=5,
+            is_active=True,
+        ),
+        Lesson(
+            subject=logic,
+            title="Logic Lesson",
+            age_group="junior",
+            language="vi",
+            estimated_minutes=5,
+            is_active=True,
+        ),
+        Lesson(
+            subject=science,
+            title="Science Lesson",
+            age_group="junior",
+            language="vi",
+            estimated_minutes=5,
+            is_active=True,
+        ),
     ]
     db.add_all([user, profile, child, letters, math, logic, science, *lessons])
     await db.flush()

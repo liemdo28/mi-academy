@@ -11,7 +11,15 @@ from sqlalchemy.ext.asyncio import AsyncSession
 
 from apps.api.database import get_db
 from apps.api.dependencies import get_parent_profile
-from apps.api.models import Game, Attempt, Lesson, Progress, Reward, ChildReward, ParentProfile
+from apps.api.models import (
+    Game,
+    Attempt,
+    Lesson,
+    Progress,
+    Reward,
+    ChildReward,
+    ParentProfile,
+)
 from apps.api.time import utc_now
 from apps.api.schemas import (
     GameListItem,
@@ -29,7 +37,9 @@ def _child_belongs_to_parent(profile: ParentProfile, child_id: str):
     if child_id not in [c.id for c in profile.children]:
         raise HTTPException(
             status_code=status.HTTP_403_FORBIDDEN,
-            detail={"error": {"code": "FORBIDDEN", "message": "Child not owned by parent"}},
+            detail={
+                "error": {"code": "FORBIDDEN", "message": "Child not owned by parent"}
+            },
         )
 
 
@@ -66,6 +76,7 @@ async def get_game(game_id: str, db: AsyncSession = Depends(get_db)):
             detail={"error": {"code": "GAME_NOT_FOUND", "message": "Game not found"}},
         )
     import json
+
     config = None
     if game.config_json:
         try:
@@ -248,7 +259,12 @@ async def save_game_result(
     if game_id != body.game_id:
         raise HTTPException(
             status_code=status.HTTP_400_BAD_REQUEST,
-            detail={"error": {"code": "GAME_ID_MISMATCH", "message": "Path and body game_id must match"}},
+            detail={
+                "error": {
+                    "code": "GAME_ID_MISMATCH",
+                    "message": "Path and body game_id must match",
+                }
+            },
         )
 
     game_result = await db.execute(select(Game).where(Game.id == game_id))
@@ -295,15 +311,21 @@ async def save_game_result(
 
         mastery_score = None
         if body.lesson_id:
-            lesson_result = await db.execute(select(Lesson).where(Lesson.id == body.lesson_id))
+            lesson_result = await db.execute(
+                select(Lesson).where(Lesson.id == body.lesson_id)
+            )
             if lesson_result.scalar_one_or_none() is not None:
                 correct_rate = (
-                    body.correct_count / body.attempt_count if body.attempt_count else 0.0
+                    body.correct_count / body.attempt_count
+                    if body.attempt_count
+                    else 0.0
                 )
                 # Blend this session's accuracy with the game's own mastery signal,
                 # then average against prior mastery so one weak session doesn't
                 # erase established progress.
-                session_evidence = max(0.0, min(1.0, 0.6 * correct_rate + 0.4 * body.mastery_evidence))
+                session_evidence = max(
+                    0.0, min(1.0, 0.6 * correct_rate + 0.4 * body.mastery_evidence)
+                )
 
                 progress_row = await db.execute(
                     select(Progress).where(
@@ -320,7 +342,11 @@ async def save_game_result(
                         total_attempts=0,
                     )
                     db.add(progress)
-                elif progress.last_played_at and _compare_datetimes(body.completed_at, progress.last_played_at) <= 0:
+                elif (
+                    progress.last_played_at
+                    and _compare_datetimes(body.completed_at, progress.last_played_at)
+                    <= 0
+                ):
                     mastery_score = progress.mastery_score
 
                     await db.commit()
@@ -334,13 +360,16 @@ async def save_game_result(
                     }
                 else:
                     progress.mastery_score = max(
-                        0.0, min(1.0, 0.5 * progress.mastery_score + 0.5 * session_evidence)
+                        0.0,
+                        min(1.0, 0.5 * progress.mastery_score + 0.5 * session_evidence),
                     )
 
                 progress.total_attempts += 1
                 progress.last_played_at = utc_now()
-                progress.status = "completed" if progress.mastery_score >= 0.7 else (
-                    "needs_practice" if body.completed else "learning"
+                progress.status = (
+                    "completed"
+                    if progress.mastery_score >= 0.7
+                    else ("needs_practice" if body.completed else "learning")
                 )
                 mastery_score = progress.mastery_score
 
@@ -364,7 +393,12 @@ async def save_game_result(
             return replay
         raise HTTPException(
             status_code=status.HTTP_409_CONFLICT,
-            detail={"error": {"code": "ATTEMPT_CONFLICT", "message": "Concurrent submission for this attempt_id"}},
+            detail={
+                "error": {
+                    "code": "ATTEMPT_CONFLICT",
+                    "message": "Concurrent submission for this attempt_id",
+                }
+            },
         )
 
     await db.refresh(attempt)

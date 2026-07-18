@@ -9,20 +9,16 @@ from apps.api.database import get_db
 from apps.api.dependencies import (
     create_access_token,
     get_parent_profile,
-    get_current_user,
     hash_password,
-    verify_password,
     verify_parent_pin,
 )
 from apps.api.models import (
-    ChildProfile,
     DailySession,
     Attempt,
     ParentProfile,
     Progress,
     Reward,
     ChildReward,
-    User,
 )
 from apps.api.schemas import (
     ParentProfileResponse,
@@ -159,7 +155,12 @@ async def get_weekly_report(
     if child_id not in [c.id for c in profile.children]:
         raise HTTPException(
             status_code=status.HTTP_403_FORBIDDEN,
-            detail={"error": {"code": "FORBIDDEN", "message": "Child not owned by this parent"}},
+            detail={
+                "error": {
+                    "code": "FORBIDDEN",
+                    "message": "Child not owned by this parent",
+                }
+            },
         )
 
     # Simple weekly: last 7 days from today
@@ -210,7 +211,9 @@ async def export_parent_data(
             select(
                 Attempt.child_id,
                 func.count(Attempt.id).label("total_attempts"),
-                func.sum(func.cast(Attempt.is_correct, Integer)).label("correct_attempts"),
+                func.sum(func.cast(Attempt.is_correct, Integer)).label(
+                    "correct_attempts"
+                ),
                 func.sum(Attempt.hint_count).label("hint_count"),
             )
             .where(Attempt.child_id.in_(child_ids))

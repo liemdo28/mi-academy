@@ -36,7 +36,9 @@ async def register(body: RegisterRequest, db: AsyncSession = Depends(get_db)):
     if existing.scalar_one_or_none():
         raise HTTPException(
             status_code=status.HTTP_409_CONFLICT,
-            detail={"error": {"code": "EMAIL_EXISTS", "message": "Email already registered"}},
+            detail={
+                "error": {"code": "EMAIL_EXISTS", "message": "Email already registered"}
+            },
         )
 
     # Create user
@@ -81,7 +83,12 @@ async def login(body: LoginRequest, db: AsyncSession = Depends(get_db)):
     if user is None or not verify_password(body.password, user.password_hash):
         raise HTTPException(
             status_code=status.HTTP_401_UNAUTHORIZED,
-            detail={"error": {"code": "INVALID_CREDENTIALS", "message": "Invalid email or password"}},
+            detail={
+                "error": {
+                    "code": "INVALID_CREDENTIALS",
+                    "message": "Invalid email or password",
+                }
+            },
         )
 
     profile_result = await db.execute(
@@ -106,7 +113,9 @@ async def login(body: LoginRequest, db: AsyncSession = Depends(get_db)):
 
 
 @router.post("/logout", response_model=dict)
-async def logout(user: User = Depends(get_current_user), db: AsyncSession = Depends(get_db)):
+async def logout(
+    user: User = Depends(get_current_user), db: AsyncSession = Depends(get_db)
+):
     # Revokes every refresh token issued to this user server-side -- a
     # stateless "client discards the token" logout can't actually stop a
     # stolen/leaked refresh token from remaining valid until it naturally
@@ -123,7 +132,12 @@ async def refresh(body: RefreshRequest, db: AsyncSession = Depends(get_db)):
     if payload.get("type") != "refresh":
         raise HTTPException(
             status_code=status.HTTP_401_UNAUTHORIZED,
-            detail={"error": {"code": "INVALID_TOKEN_TYPE", "message": "Not a refresh token"}},
+            detail={
+                "error": {
+                    "code": "INVALID_TOKEN_TYPE",
+                    "message": "Not a refresh token",
+                }
+            },
         )
 
     user_id = payload.get("sub")
@@ -133,7 +147,9 @@ async def refresh(body: RefreshRequest, db: AsyncSession = Depends(get_db)):
     if user is None:
         raise HTTPException(
             status_code=status.HTTP_401_UNAUTHORIZED,
-            detail={"error": {"code": "USER_NOT_FOUND", "message": "User no longer exists"}},
+            detail={
+                "error": {"code": "USER_NOT_FOUND", "message": "User no longer exists"}
+            },
         )
 
     # Refresh tokens are single-use (rotated on every call) -- this raises

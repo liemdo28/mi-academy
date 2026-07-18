@@ -15,7 +15,8 @@ class SecureTokenStore implements TokenStore {
   final _storage = const FlutterSecureStorage();
 
   @override
-  Future<void> write(String key, String value) => _storage.write(key: key, value: value);
+  Future<void> write(String key, String value) =>
+      _storage.write(key: key, value: value);
 
   @override
   Future<String?> read(String key) => _storage.read(key: key);
@@ -129,7 +130,8 @@ class ApiService {
         // loop, not just a missed edge case.
         final isRefreshCall = error.requestOptions.path == ApiPaths.authRefresh;
         if (error.response?.statusCode == 401 && !isRefreshCall) {
-          final wasAuthenticated = _accessToken != null || _refreshToken != null;
+          final wasAuthenticated =
+              _accessToken != null || _refreshToken != null;
           if (_refreshToken != null) {
             final refreshed = await _refreshAccessToken();
             if (refreshed) {
@@ -196,7 +198,26 @@ class ApiService {
     await _clearTokens();
   }
 
-  Future<bool> _refreshAccessToken() async {
+  Future<bool>? _inFlightRefresh;
+
+  /// Serializes concurrent refresh attempts behind one in-flight [Future].
+  ///
+  /// Without this, several screens hitting 401 at nearly the same moment
+  /// (the normal case right when an access token expires) would each call
+  /// this independently. Since refresh tokens are single-use/rotated
+  /// server-side, only the first of those calls actually succeeds; the
+  /// rest would present an already-redeemed token, get rejected, clear
+  /// tokens, and force a full logout via onSessionExpired -- even though
+  /// the session was, a moment earlier, perfectly valid. Sharing one
+  /// in-flight refresh means every concurrent caller gets the same
+  /// (successful) result.
+  Future<bool> _refreshAccessToken() {
+    return _inFlightRefresh ??= _doRefreshAccessToken().whenComplete(() {
+      _inFlightRefresh = null;
+    });
+  }
+
+  Future<bool> _doRefreshAccessToken() async {
     try {
       final response = await _dio.post(ApiPaths.authRefresh, data: {
         'refresh_token': _refreshToken,
@@ -312,20 +333,17 @@ class ApiService {
   // ─── Progress ──────────────────────────────────────────────────────────────
 
   Future<List<dynamic>> getChildProgress(String childId) async {
-    final response =
-        await _dio.get(ApiPaths.childProgress(childId));
+    final response = await _dio.get(ApiPaths.childProgress(childId));
     return response.data;
   }
 
   Future<List<dynamic>> getChildSkills(String childId) async {
-    final response =
-        await _dio.get(ApiPaths.childSkills(childId));
+    final response = await _dio.get(ApiPaths.childSkills(childId));
     return response.data;
   }
 
   Future<List<dynamic>> getDailyPlan(String childId) async {
-    final response =
-        await _dio.get(ApiPaths.dailyPlan(childId));
+    final response = await _dio.get(ApiPaths.dailyPlan(childId));
     return response.data;
   }
 
@@ -335,8 +353,7 @@ class ApiService {
     String gameId,
     Map<String, dynamic> result,
   ) async {
-    final response =
-        await _dio.post(ApiPaths.gameResult(gameId), data: result);
+    final response = await _dio.post(ApiPaths.gameResult(gameId), data: result);
     return response.data as Map<String, dynamic>;
   }
 

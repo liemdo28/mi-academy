@@ -5,13 +5,13 @@ Each engine is testable without Flutter or network dependencies.
 
 from __future__ import annotations
 
-import uuid
 from abc import ABC, abstractmethod
-from dataclasses import dataclass, field
+from dataclasses import dataclass
 from typing import Any, Optional
 
 
 # ── Core Types ──────────────────────────────────────────────────────────────────
+
 
 @dataclass
 class GameConfig:
@@ -67,6 +67,7 @@ class ProgressSnapshot:
 
 # ── Game Interface ──────────────────────────────────────────────────────────────
 
+
 class GameInterface(ABC):
     """Abstract base for all MI Academy game engines."""
 
@@ -100,8 +101,7 @@ class GameInterface(ABC):
         pass
 
     @abstractmethod
-    def submit_answer(self, answer: Any) -> AnswerResult:
-        ...
+    def submit_answer(self, answer: Any) -> AnswerResult: ...
 
     def use_hint(self) -> HintResult:
         if self._hints_remaining <= 0:
@@ -111,19 +111,19 @@ class GameInterface(ABC):
         return HintResult(hint_text=hint, hints_remaining=self._hints_remaining)
 
     @abstractmethod
-    def _generate_hint(self) -> str:
-        ...
+    def _generate_hint(self) -> str: ...
 
     @abstractmethod
-    def complete(self) -> CompletionResult:
-        ...
+    def complete(self) -> CompletionResult: ...
 
     def save_progress(self) -> ProgressSnapshot:
         return ProgressSnapshot(
             game_type=self._config.game_type if self._config else "unknown",
             level=self._state.level if self._state else 1,
             current_index=self._state.current_index if self._state else 0,
-            hints_used=self._config.hints_per_level - self._hints_remaining if self._config else 0,
+            hints_used=self._config.hints_per_level - self._hints_remaining
+            if self._config
+            else 0,
             attempt_count=self._attempt_count,
             answers=self._answers,
         )
@@ -134,6 +134,7 @@ class GameInterface(ABC):
 
 
 # ── Stars calculation ───────────────────────────────────────────────────────────
+
 
 def calculate_stars(attempt_count: int, total_items: int) -> int:
     """Stars: 3=first try, 2=retry, 1=completed.

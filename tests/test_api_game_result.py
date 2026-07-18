@@ -3,6 +3,7 @@
 Covers the previously-dead contract: MiGameResult -> Attempt -> server-side
 mastery -> Progress, with attempt_id idempotency.
 """
+
 import asyncio
 from datetime import timedelta
 from unittest import mock
@@ -31,7 +32,16 @@ from apps.api.schemas import SaveGameResultRequest
 from apps.api.time import utc_now
 
 
-def _result_body(child_id, game_id, lesson_id, *, attempt_id="attempt-1", correct=4, incorrect=1, mastery_evidence=0.8):
+def _result_body(
+    child_id,
+    game_id,
+    lesson_id,
+    *,
+    attempt_id="attempt-1",
+    correct=4,
+    incorrect=1,
+    mastery_evidence=0.8,
+):
     started = utc_now()
     return SaveGameResultRequest(
         attempt_id=attempt_id,
@@ -58,7 +68,12 @@ def test_save_game_result_creates_attempt_and_updates_mastery():
         try:
             async with session_maker() as db:
                 data = await _seed_world(db)
-                profile, child, lesson, game = data["profile"], data["child"], data["lesson"], data["game"]
+                profile, child, lesson, game = (
+                    data["profile"],
+                    data["child"],
+                    data["lesson"],
+                    data["game"],
+                )
 
                 response = await save_game_result(
                     game_id=game.id,
@@ -72,13 +87,17 @@ def test_save_game_result_creates_attempt_and_updates_mastery():
                 assert 0.0 <= response["mastery_score"] <= 1.0
 
                 progress_row = await db.execute(
-                    select(Progress).where(Progress.child_id == child.id, Progress.lesson_id == lesson.id)
+                    select(Progress).where(
+                        Progress.child_id == child.id, Progress.lesson_id == lesson.id
+                    )
                 )
                 progress = progress_row.scalar_one()
                 assert progress.total_attempts == 1
                 assert progress.mastery_score == response["mastery_score"]
 
-                attempt_row = await db.execute(select(Attempt).where(Attempt.client_attempt_id == "attempt-1"))
+                attempt_row = await db.execute(
+                    select(Attempt).where(Attempt.client_attempt_id == "attempt-1")
+                )
                 attempt = attempt_row.scalar_one()
                 assert attempt.lesson_id == lesson.id
                 assert attempt.game_id == game.id
@@ -94,13 +113,24 @@ def test_save_game_result_is_idempotent_on_duplicate_attempt_id():
         try:
             async with session_maker() as db:
                 data = await _seed_world(db)
-                profile, child, lesson, game = data["profile"], data["child"], data["lesson"], data["game"]
+                profile, child, lesson, game = (
+                    data["profile"],
+                    data["child"],
+                    data["lesson"],
+                    data["game"],
+                )
 
                 first = await save_game_result(
-                    game_id=game.id, body=_result_body(child.id, game.id, lesson.id), profile=profile, db=db
+                    game_id=game.id,
+                    body=_result_body(child.id, game.id, lesson.id),
+                    profile=profile,
+                    db=db,
                 )
                 second = await save_game_result(
-                    game_id=game.id, body=_result_body(child.id, game.id, lesson.id), profile=profile, db=db
+                    game_id=game.id,
+                    body=_result_body(child.id, game.id, lesson.id),
+                    profile=profile,
+                    db=db,
                 )
 
                 assert first["idempotent_replay"] is False
@@ -109,7 +139,9 @@ def test_save_game_result_is_idempotent_on_duplicate_attempt_id():
                 assert await _count(db, Attempt) == 1
 
                 progress_row = await db.execute(
-                    select(Progress).where(Progress.child_id == child.id, Progress.lesson_id == lesson.id)
+                    select(Progress).where(
+                        Progress.child_id == child.id, Progress.lesson_id == lesson.id
+                    )
                 )
                 progress = progress_row.scalar_one()
                 assert progress.total_attempts == 1  # not double-counted
@@ -131,7 +163,12 @@ def test_save_game_result_survives_concurrent_duplicate_submission():
         try:
             async with session_maker() as db:
                 data = await _seed_world(db)
-                profile, child, lesson, game = data["profile"], data["child"], data["lesson"], data["game"]
+                profile, child, lesson, game = (
+                    data["profile"],
+                    data["child"],
+                    data["lesson"],
+                    data["game"],
+                )
                 body = _result_body(child.id, game.id, lesson.id, attempt_id="race-1")
 
                 real_replay_lookup = games._idempotent_replay_response
@@ -145,7 +182,9 @@ def test_save_game_result_survives_concurrent_duplicate_submission():
                         return None
                     return await real_replay_lookup(db_arg, attempt_id)
 
-                with mock.patch.object(games, "_idempotent_replay_response", racy_replay_lookup):
+                with mock.patch.object(
+                    games, "_idempotent_replay_response", racy_replay_lookup
+                ):
                     # The "other" request actually commits first, in between
                     # this request's pre-check and its own insert.
                     other_attempt = Attempt(
@@ -177,17 +216,26 @@ def test_save_game_result_awards_first_badge_once_across_distinct_attempts():
         try:
             async with session_maker() as db:
                 data = await _seed_world(db)
-                profile, child, lesson, game = data["profile"], data["child"], data["lesson"], data["game"]
+                profile, child, lesson, game = (
+                    data["profile"],
+                    data["child"],
+                    data["lesson"],
+                    data["game"],
+                )
 
                 first = await save_game_result(
                     game_id=game.id,
-                    body=_result_body(child.id, game.id, lesson.id, attempt_id="attempt-1"),
+                    body=_result_body(
+                        child.id, game.id, lesson.id, attempt_id="attempt-1"
+                    ),
                     profile=profile,
                     db=db,
                 )
                 second = await save_game_result(
                     game_id=game.id,
-                    body=_result_body(child.id, game.id, lesson.id, attempt_id="attempt-2"),
+                    body=_result_body(
+                        child.id, game.id, lesson.id, attempt_id="attempt-2"
+                    ),
                     profile=profile,
                     db=db,
                 )
@@ -208,7 +256,12 @@ def test_save_game_result_does_not_rewrite_mastery_for_out_of_order_attempt():
         try:
             async with session_maker() as db:
                 data = await _seed_world(db)
-                profile, child, lesson, game = data["profile"], data["child"], data["lesson"], data["game"]
+                profile, child, lesson, game = (
+                    data["profile"],
+                    data["child"],
+                    data["lesson"],
+                    data["game"],
+                )
                 started = utc_now()
                 progress = Progress(
                     child_id=child.id,
@@ -245,7 +298,9 @@ def test_save_game_result_does_not_rewrite_mastery_for_out_of_order_attempt():
                 assert await _count(db, Attempt) == 1
 
                 progress_row = await db.execute(
-                    select(Progress).where(Progress.child_id == child.id, Progress.lesson_id == lesson.id)
+                    select(Progress).where(
+                        Progress.child_id == child.id, Progress.lesson_id == lesson.id
+                    )
                 )
                 saved_progress = progress_row.scalar_one()
                 assert saved_progress.mastery_score == 0.9
@@ -262,18 +317,32 @@ def test_save_game_result_rejects_unowned_child():
         try:
             async with session_maker() as db:
                 data = await _seed_world(db)
-                other_user = User(role="parent", email="other@example.com", password_hash="not-used")
-                other_profile = ParentProfile(user=other_user, display_name="Other", language="vi", timezone="Asia/Ho_Chi_Minh")
+                other_user = User(
+                    role="parent", email="other@example.com", password_hash="not-used"
+                )
+                other_profile = ParentProfile(
+                    user=other_user,
+                    display_name="Other",
+                    language="vi",
+                    timezone="Asia/Ho_Chi_Minh",
+                )
                 # Give it an unrelated child via back_populates so `.children`
                 # is populated in-memory (avoids a lazy-load under asyncio).
-                ChildProfile(parent=other_profile, nickname="Unrelated", age_group="junior", preferred_language="vi")
+                ChildProfile(
+                    parent=other_profile,
+                    nickname="Unrelated",
+                    age_group="junior",
+                    preferred_language="vi",
+                )
                 db.add_all([other_user, other_profile])
                 await db.flush()
 
                 with pytest.raises(HTTPException) as exc:
                     await save_game_result(
                         game_id=data["game"].id,
-                        body=_result_body(data["child"].id, data["game"].id, data["lesson"].id),
+                        body=_result_body(
+                            data["child"].id, data["game"].id, data["lesson"].id
+                        ),
                         profile=other_profile,
                         db=db,
                     )
@@ -293,8 +362,15 @@ async def _session_maker():
 
 async def _seed_world(db):
     user = User(role="parent", email="owner@example.test", password_hash="not-used")
-    profile = ParentProfile(user=user, display_name="Owner Parent", language="vi", timezone="Asia/Ho_Chi_Minh")
-    child = ChildProfile(parent=profile, nickname="Child", age_group="junior", preferred_language="vi")
+    profile = ParentProfile(
+        user=user,
+        display_name="Owner Parent",
+        language="vi",
+        timezone="Asia/Ho_Chi_Minh",
+    )
+    child = ChildProfile(
+        parent=profile, nickname="Child", age_group="junior", preferred_language="vi"
+    )
     subject = Subject(name="Math", code="math")
     lesson = Lesson(
         subject=subject,
@@ -304,7 +380,13 @@ async def _seed_world(db):
         estimated_minutes=5,
         is_active=True,
     )
-    game = Game(name="Memory Cards", game_type="memory_cards", age_min=5, age_max=12, is_active=True)
+    game = Game(
+        name="Memory Cards",
+        game_type="memory_cards",
+        age_min=5,
+        age_max=12,
+        is_active=True,
+    )
     reward = Reward(reward_type="badge", name="Sao đầu tiên", description="First star")
     db.add_all([user, profile, child, subject, lesson, game, reward])
     await db.flush()

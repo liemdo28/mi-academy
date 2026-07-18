@@ -19,15 +19,21 @@ import '../providers/providers.dart';
 ///   card covers first-run child creation).
 class SplashScreen extends ConsumerStatefulWidget {
   const SplashScreen({super.key});
-  @override ConsumerState<SplashScreen> createState() => _SplashState();
+  @override
+  ConsumerState<SplashScreen> createState() => _SplashState();
 }
 
 /// Pure routing decision, factored out of [SplashScreen] so it's testable
 /// without mocking secure storage / network — see `test/splash_routing_test.dart`.
+///
+/// [localeConfirmed] defaults to true so existing call sites that predate
+/// first-launch language selection don't need to opt in explicitly.
 String startRouteFor({
   required bool isAuthenticated,
   required bool hasSelectedChild,
+  bool localeConfirmed = true,
 }) {
+  if (!localeConfirmed) return '/locale-select';
   if (!isAuthenticated) return '/login';
   return hasSelectedChild ? '/home' : '/select-child';
 }
@@ -40,6 +46,18 @@ class _SplashState extends ConsumerState<SplashScreen> {
   }
 
   Future<void> _resolveStartRoute() async {
+    final settings = await ref.read(parentSettingsStoreProvider).load();
+    if (!mounted) return;
+
+    if (!settings.localeConfirmed) {
+      context.go(startRouteFor(
+        isAuthenticated: false,
+        hasSelectedChild: false,
+        localeConfirmed: false,
+      ));
+      return;
+    }
+
     await ref.read(authProvider.notifier).initialize();
     if (!mounted) return;
 
@@ -65,18 +83,29 @@ class _SplashState extends ConsumerState<SplashScreen> {
           mainAxisSize: MainAxisSize.min,
           children: [
             Container(
-              width: 120, height: 120,
+              width: 120,
+              height: 120,
               decoration: BoxDecoration(
                 color: Colors.white,
                 borderRadius: BorderRadius.circular(30),
-                boxShadow: [BoxShadow(color: Colors.black.withValues(alpha: 0.1), blurRadius: 20)],
+                boxShadow: [
+                  BoxShadow(
+                      color: Colors.black.withValues(alpha: 0.1),
+                      blurRadius: 20)
+                ],
               ),
-              child: const Icon(Icons.smart_toy, size: 72, color: MiColors.primary),
+              child: const Icon(Icons.smart_toy,
+                  size: 72, color: MiColors.primary),
             ),
             const SizedBox(height: 24),
-            const Text('MI Academy', style: TextStyle(fontSize: 32, fontWeight: FontWeight.w800, color: Colors.white)),
+            const Text('MI Academy',
+                style: TextStyle(
+                    fontSize: 32,
+                    fontWeight: FontWeight.w800,
+                    color: Colors.white)),
             const SizedBox(height: 8),
-            const Text('Học vui, chơi hay', style: TextStyle(fontSize: 16, color: Colors.white70)),
+            const Text('Học vui, chơi hay',
+                style: TextStyle(fontSize: 16, color: Colors.white70)),
             const SizedBox(height: 40),
             const CircularProgressIndicator(color: Colors.white),
           ],

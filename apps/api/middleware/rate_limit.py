@@ -67,7 +67,9 @@ class RateLimitMiddleware(BaseHTTPMiddleware):
             raise RuntimeError(
                 "REDIS_URL is required in production so rate limits are shared across API replicas."
             )
-        self.limiter = RedisRateLimiter(redis_url) if redis_url else InMemoryRateLimiter()
+        self.limiter = (
+            RedisRateLimiter(redis_url) if redis_url else InMemoryRateLimiter()
+        )
         self.auth_limit = auth_limit
         self.sync_limit = sync_limit
         self.pin_limit = pin_limit
@@ -95,7 +97,9 @@ class RateLimitMiddleware(BaseHTTPMiddleware):
             limit = self.default_limit
 
         # Check rate limit
-        key = f"{client_id}:{path.split('/')[2] if len(path.split('/')) > 2 else 'root'}"
+        key = (
+            f"{client_id}:{path.split('/')[2] if len(path.split('/')) > 2 else 'root'}"
+        )
         if not await self.limiter.is_allowed(key, limit):
             raise HTTPException(
                 status_code=status.HTTP_429_TOO_MANY_REQUESTS,

@@ -45,6 +45,36 @@ class ContentValidator {
       }
     }
 
+    // publicationState (docs/content-schema.md) -- optional, but must be a
+    // known value if present; ContentLoader defaults it to 'published'.
+    if (data.containsKey('publicationState')) {
+      const validStates = {'draft', 'published', 'archived'};
+      if (!validStates.contains(data['publicationState'])) {
+        errors.add(
+          'Field "publicationState" must be one of $validStates, '
+          'got ${data['publicationState']}',
+        );
+      }
+    }
+
+    // estimatedSeconds -- optional, but must be a positive duration if
+    // present (a level authored with 0 or a negative estimate is a content
+    // bug, not a valid "no estimate" state -- omit the field for that).
+    if (data.containsKey('estimatedSeconds')) {
+      final seconds = data['estimatedSeconds'];
+      if (seconds is! int || seconds < 1) {
+        errors.add('Field "estimatedSeconds" must be a positive integer');
+      }
+    }
+
+    // contentVersion -- optional, but must be a positive integer if present.
+    if (data.containsKey('contentVersion')) {
+      final version = data['contentVersion'];
+      if (version is! int || version < 1) {
+        errors.add('Field "contentVersion" must be a positive integer');
+      }
+    }
+
     // Hints
     if (data.containsKey('hints')) {
       final hints = data['hints'];

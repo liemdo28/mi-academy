@@ -1,5 +1,8 @@
+from packages.game_core.base import GameEngineBase
+
+
 class GameRegistry:
-    _games = {}
+    _games: dict[str, type] = {}
     _legacy_engine_types = {
         "word_builder",
         "sound_match",
@@ -37,20 +40,47 @@ class GameRegistry:
 
     @classmethod
     def get_available_games_for_age(cls, age: int) -> list:
-        age_map = {5: ["word_builder", "sound_match", "math_race", "memory_cards"],
+        age_map = {
+            5: ["word_builder", "sound_match", "math_race", "memory_cards"],
             6: ["word_builder", "sound_match", "math_race", "memory_cards"],
             7: ["word_builder", "sound_match", "math_race", "memory_cards"],
-            8: ["word_builder", "sound_match", "math_race", "math_supermarket", "memory_cards", "robot_commands"],
-            9: ["word_builder", "sound_match", "math_race", "math_supermarket", "memory_cards", "robot_commands"],
-            10: ["word_builder", "sound_match", "math_race", "math_supermarket", "memory_cards", "robot_commands"],
+            8: [
+                "word_builder",
+                "sound_match",
+                "math_race",
+                "math_supermarket",
+                "memory_cards",
+                "robot_commands",
+            ],
+            9: [
+                "word_builder",
+                "sound_match",
+                "math_race",
+                "math_supermarket",
+                "memory_cards",
+                "robot_commands",
+            ],
+            10: [
+                "word_builder",
+                "sound_match",
+                "math_race",
+                "math_supermarket",
+                "memory_cards",
+                "robot_commands",
+            ],
             11: ["math_race", "math_supermarket", "memory_cards", "robot_commands"],
-            12: ["math_race", "math_supermarket", "memory_cards", "robot_commands"],}
+            12: ["math_race", "math_supermarket", "memory_cards", "robot_commands"],
+        }
         return age_map.get(age, age_map.get(10, []))
 
     @staticmethod
     def _load_legacy_engines() -> dict:
         from packages.game_core.engines import WordBuilderEngine
-        from packages.game_core.math_race import MathRaceEngine, MemoryCardsEngine, RobotCommandsEngine
+        from packages.game_core.math_race import (
+            MathRaceEngine,
+            MemoryCardsEngine,
+            RobotCommandsEngine,
+        )
 
         # Sound Match and Math Supermarket have production game classes but no
         # standalone legacy engine class in the Python test surface yet.

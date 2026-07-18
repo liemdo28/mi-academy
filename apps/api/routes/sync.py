@@ -36,7 +36,9 @@ def _ensure_children_owned(profile: ParentProfile, child_ids: set[str]) -> None:
     if not child_ids.issubset(owned_ids):
         raise HTTPException(
             status_code=status.HTTP_403_FORBIDDEN,
-            detail={"error": {"code": "FORBIDDEN", "message": "Child not owned by parent"}},
+            detail={
+                "error": {"code": "FORBIDDEN", "message": "Child not owned by parent"}
+            },
         )
 
 
@@ -61,34 +63,61 @@ async def get_content(
 ):
     """Return content delta (or full snapshot if since_version=0)."""
     if content_type == "lessons":
-        model = Lesson
-        result = await db.execute(
-            select(model).where(model.is_active == True)
-        )
-        items = result.scalars().all()
+        lesson_result = await db.execute(select(Lesson).where(Lesson.is_active == True))
+        lessons = lesson_result.scalars().all()
         return SyncContentResponse(
             content_type="lessons",
             version=1,
-            items=[{"id": i.id, "title": i.title, "content_json": json.loads(i.content_json) if i.content_json else None} for i in items],
+            items=[
+                {
+                    "id": lesson.id,
+                    "title": lesson.title,
+                    "content_json": json.loads(lesson.content_json)
+                    if lesson.content_json
+                    else None,
+                }
+                for lesson in lessons
+            ],
             deleted_ids=[],
         )
     elif content_type == "questions":
-        model = Question
-        result = await db.execute(select(model))
-        items = result.scalars().all()
+        question_result = await db.execute(select(Question))
+        questions = question_result.scalars().all()
         return SyncContentResponse(
             content_type="questions",
             version=1,
-            items=[{"id": i.id, "prompt": i.prompt, "options_json": json.loads(i.options_json) if i.options_json else [], "correct_answer_json": json.loads(i.correct_answer_json) if i.correct_answer_json else None} for i in items],
+            items=[
+                {
+                    "id": question.id,
+                    "prompt": question.prompt,
+                    "options_json": json.loads(question.options_json)
+                    if question.options_json
+                    else [],
+                    "correct_answer_json": json.loads(question.correct_answer_json)
+                    if question.correct_answer_json
+                    else None,
+                }
+                for question in questions
+            ],
             deleted_ids=[],
         )
     elif content_type == "games":
-        result = await db.execute(select(Game).where(Game.is_active == True))
-        items = result.scalars().all()
+        game_result = await db.execute(select(Game).where(Game.is_active == True))
+        games = game_result.scalars().all()
         return SyncContentResponse(
             content_type="games",
             version=1,
-            items=[{"id": i.id, "name": i.name, "game_type": i.game_type, "config_json": json.loads(i.config_json) if i.config_json else None} for i in items],
+            items=[
+                {
+                    "id": game.id,
+                    "name": game.name,
+                    "game_type": game.game_type,
+                    "config_json": json.loads(game.config_json)
+                    if game.config_json
+                    else None,
+                }
+                for game in games
+            ],
             deleted_ids=[],
         )
     raise HTTPException(status_code=400, detail="Invalid content_type")
@@ -104,16 +133,19 @@ async def sync_progress(
     _ensure_children_owned(profile, {item.child_id for item in items})
 
     for item in items:
-        existing = await db.execute(
-            select(Progress).where(Progress.id == item.id)
-        )
+        existing = await db.execute(select(Progress).where(Progress.id == item.id))
         row = existing.scalar_one_or_none()
         if row:
             _ensure_children_owned(profile, {row.child_id})
             if row.child_id != item.child_id:
                 raise HTTPException(
                     status_code=status.HTTP_403_FORBIDDEN,
-                    detail={"error": {"code": "FORBIDDEN", "message": "Progress record child mismatch"}},
+                    detail={
+                        "error": {
+                            "code": "FORBIDDEN",
+                            "message": "Progress record child mismatch",
+                        }
+                    },
                 )
             row.status = item.status
             row.mastery_score = item.mastery_score
@@ -145,16 +177,19 @@ async def sync_attempts(
 
     accepted = 0
     for item in items:
-        existing = await db.execute(
-            select(Attempt).where(Attempt.id == item.id)
-        )
+        existing = await db.execute(select(Attempt).where(Attempt.id == item.id))
         existing_attempt = existing.scalar_one_or_none()
         if existing_attempt:
             _ensure_children_owned(profile, {existing_attempt.child_id})
             if existing_attempt.child_id != item.child_id:
                 raise HTTPException(
                     status_code=status.HTTP_403_FORBIDDEN,
-                    detail={"error": {"code": "FORBIDDEN", "message": "Attempt record child mismatch"}},
+                    detail={
+                        "error": {
+                            "code": "FORBIDDEN",
+                            "message": "Attempt record child mismatch",
+                        }
+                    },
                 )
             continue  # already synced
         attempt = Attempt(
@@ -187,7 +222,9 @@ async def sync_sessions(
     for item in items:
         row = None
         if item.id:
-            existing = await db.execute(select(DailySession).where(DailySession.id == item.id))
+            existing = await db.execute(
+                select(DailySession).where(DailySession.id == item.id)
+            )
             row = existing.scalar_one_or_none()
         if row is None:
             existing = await db.execute(
@@ -203,7 +240,12 @@ async def sync_sessions(
             if row.child_id != item.child_id:
                 raise HTTPException(
                     status_code=status.HTTP_403_FORBIDDEN,
-                    detail={"error": {"code": "FORBIDDEN", "message": "Session record child mismatch"}},
+                    detail={
+                        "error": {
+                            "code": "FORBIDDEN",
+                            "message": "Session record child mismatch",
+                        }
+                    },
                 )
             row.duration_seconds = item.duration_seconds
             row.lessons_completed = item.lessons_completed

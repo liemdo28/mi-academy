@@ -18,7 +18,6 @@ class TestDifficultyAdapter:
             adapter.record_attempt("c1", "math", False, 5000, False)
         assert adapter.get_recommended_level("c1", "math", 5) == 4
 
-
     def test_stays_same(self):
         adapter = DifficultyAdapter()
         adapter.record_attempt("c1", "math", True, 4000, True)

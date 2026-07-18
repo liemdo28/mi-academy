@@ -52,10 +52,13 @@
         },
         "ageGroup": "junior",
         "skillIds": [
-          "logic.programming_sequences"
+          "logic.sequence.programming"
         ]
       },
-      "assetRefs": []
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
     },
     {
       "id": "rc-lv02",
@@ -108,10 +111,13 @@
         },
         "ageGroup": "junior",
         "skillIds": [
-          "logic.programming_sequences"
+          "logic.sequence.programming"
         ]
       },
-      "assetRefs": []
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
     },
     {
       "id": "rc-lv03",
@@ -168,10 +174,13 @@
         },
         "ageGroup": "junior",
         "skillIds": [
-          "logic.programming_sequences"
+          "logic.sequence.programming"
         ]
       },
-      "assetRefs": []
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
     },
     {
       "id": "rc-lv04",
@@ -228,10 +237,13 @@
         },
         "ageGroup": "junior",
         "skillIds": [
-          "logic.programming_sequences"
+          "logic.sequence.programming"
         ]
       },
-      "assetRefs": []
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
     },
     {
       "id": "rc-lv05",
@@ -291,7 +303,10 @@
           "logic.loops"
         ]
       },
-      "assetRefs": []
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
     },
     {
       "id": "rc-lv06",
@@ -356,10 +371,13 @@
         },
         "ageGroup": "explorer",
         "skillIds": [
-          "logic.programming_sequences"
+          "logic.sequence.programming"
         ]
       },
-      "assetRefs": []
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
     },
     {
       "id": "rc-lv07",
@@ -425,10 +443,13 @@
         "ageGroup": "explorer",
         "skillIds": [
           "logic.loops",
-          "logic.programming_sequences"
+          "logic.sequence.programming"
         ]
       },
-      "assetRefs": []
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
     },
     {
       "id": "rc-lv08",
@@ -506,7 +527,10 @@
           }
         ]
       },
-      "assetRefs": []
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
     },
     {
       "id": "rc-lv09",
@@ -574,7 +598,10 @@
           "logic.algorithms"
         ]
       },
-      "assetRefs": []
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
     },
     {
       "id": "rc-lv10",
@@ -636,7 +663,7 @@
         "ageGroup": "master",
         "skillIds": [
           "logic.algorithms",
-          "logic.programming_sequences"
+          "logic.sequence.programming"
         ],
         "obstacles": [],
         "collectibles": [
@@ -650,7 +677,10 @@
           }
         ]
       },
-      "assetRefs": []
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
     }
   ]
 }

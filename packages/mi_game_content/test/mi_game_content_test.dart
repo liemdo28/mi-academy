@@ -98,6 +98,52 @@ void main() {
     });
   });
 
+  group('ContentValidator schema fields (contentVersion/publicationState/estimatedSeconds)',
+      () {
+    test('accepts a level with all new schema fields present and valid', () {
+      final data = _level()
+        ..addAll({
+          'contentVersion': 2,
+          'publicationState': 'published',
+          'estimatedSeconds': 90,
+        });
+      expect(const ContentValidator().validateLevel(data), isEmpty);
+    });
+
+    test('rejects an invalid publicationState', () {
+      final data = _level()..addAll({'publicationState': 'in_review'});
+      final errors = const ContentValidator().validateLevel(data);
+      expect(
+        errors,
+        contains(
+          'Field "publicationState" must be one of {draft, published, archived}, got in_review',
+        ),
+      );
+    });
+
+    test('rejects a non-positive estimatedSeconds', () {
+      final zero = const ContentValidator()
+          .validateLevel(_level()..addAll({'estimatedSeconds': 0}));
+      final negative = const ContentValidator()
+          .validateLevel(_level()..addAll({'estimatedSeconds': -5}));
+      for (final errors in [zero, negative]) {
+        expect(
+          errors,
+          contains('Field "estimatedSeconds" must be a positive integer'),
+        );
+      }
+    });
+
+    test('rejects a non-positive contentVersion', () {
+      final errors = const ContentValidator()
+          .validateLevel(_level()..addAll({'contentVersion': 0}));
+      expect(
+        errors,
+        contains('Field "contentVersion" must be a positive integer'),
+      );
+    });
+  });
+
   group('ContentValidator.validateGameLevels', () {
     test('counts valid levels and total levels', () {
       final result = const ContentValidator().validateGameLevels([
@@ -174,6 +220,60 @@ void main() {
             gameId: 'word_builder'),
         throwsA(isA<ContentLoadException>()),
       );
+    });
+
+    test('parses new schema fields with their documented defaults', () {
+      final withDefaults =
+          ContentLoader.parseLevel(_level(), gameId: 'word_builder');
+      expect(withDefaults.contentVersion, 1);
+      expect(withDefaults.estimatedSeconds, 60);
+      expect(withDefaults.publicationState, 'published');
+
+      final explicit = ContentLoader.parseLevel(
+        _level()
+          ..addAll({
+            'contentVersion': 3,
+            'estimatedSeconds': 120,
+            'publicationState': 'draft',
+            'metadata': {
+              'ageGroup': 'explorer',
+              'skillIds': ['letters.word_building'],
+            },
+          }),
+        gameId: 'word_builder',
+      );
+      expect(explicit.contentVersion, 3);
+      expect(explicit.estimatedSeconds, 120);
+      expect(explicit.publicationState, 'draft');
+      expect(explicit.ageBand, 'explorer');
+      expect(explicit.skillTags, ['letters.word_building']);
+    });
+
+    test('throws ContentLoadException for an invalid publicationState', () {
+      expect(
+        () => ContentLoader.parseLevel(
+          _level()..addAll({'publicationState': 'in_review'}),
+          gameId: 'word_builder',
+        ),
+        throwsA(isA<ContentLoadException>()),
+      );
+    });
+
+    test('throws ContentLoadException for out-of-range difficulty', () {
+      expect(
+        () => ContentLoader.parseLevel(
+          _level(difficulty: 9),
+          gameId: 'word_builder',
+        ),
+        throwsA(isA<ContentLoadException>()),
+      );
+    });
+
+    test('ageBand and skillTags default safely when metadata omits them', () {
+      final level =
+          ContentLoader.parseLevel(_level(), gameId: 'word_builder');
+      expect(level.ageBand, isNull);
+      expect(level.skillTags, isEmpty);
     });
 
     test('parses multiple levels in order', () {

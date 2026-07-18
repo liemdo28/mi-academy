@@ -8,7 +8,8 @@ import 'package:mi_academy/providers/providers.dart';
 /// `/parent/settings` must not be reachable by direct navigation without a
 /// verified parent PIN this session — previously nothing enforced that.
 void main() {
-  testWidgets('direct navigation to /parent redirects to the PIN gate when unverified',
+  testWidgets(
+      'direct navigation to /parent redirects to the PIN gate when unverified',
       (tester) async {
     await tester.pumpWidget(
       ProviderScope(

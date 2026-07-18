@@ -13,4 +13,11 @@ GameRegistry.register("math_supermarket", MathSupermarketGame)
 GameRegistry.register("memory_cards", MemoryCardsGame)
 GameRegistry.register("robot_commands", RobotCommandsGame)
 
-__all__ = ["WordBuilderGame", "SoundMatchGame", "MathRaceGame", "MathSupermarketGame", "MemoryCardsGame", "RobotCommandsGame"]
+__all__ = [
+    "WordBuilderGame",
+    "SoundMatchGame",
+    "MathRaceGame",
+    "MathSupermarketGame",
+    "MemoryCardsGame",
+    "RobotCommandsGame",
+]

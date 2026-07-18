@@ -653,7 +653,8 @@ void main() {
     testWidgets('shows a retryable error state when reports fail to load',
         (tester) async {
       await tester.pumpWidget(buildDashboard(overrides: [
-        reportsProvider.overrideWith((ref) async => throw Exception('network down')),
+        reportsProvider
+            .overrideWith((ref) async => throw Exception('network down')),
       ]));
       await tester.pump();
 
@@ -816,7 +817,8 @@ void main() {
                     'game_type': 'robot_commands',
                   },
                 ]),
-            activeChildProvider.overrideWith(() => _FixedActiveChildNotifier(fakeActiveChild())),
+            activeChildProvider.overrideWith(
+                () => _FixedActiveChildNotifier(fakeActiveChild())),
           ],
           child: MaterialApp.router(
             routerConfig: GoRouter(
@@ -828,8 +830,8 @@ void main() {
                 ),
                 GoRoute(
                   path: '/game/:gameId',
-                  builder: (context, state) => Text(
-                      'LAUNCHED_${state.pathParameters['gameId']}'),
+                  builder: (context, state) =>
+                      Text('LAUNCHED_${state.pathParameters['gameId']}'),
                 ),
               ],
             ),
@@ -860,8 +862,8 @@ void main() {
       expect(find.text('PARENT_GATE'), findsNothing);
 
       final gesture = await tester.startGesture(
-        tester
-            .getCenter(find.bySemanticsLabel('Khu vực phụ huynh, giữ 3 giây để mở')),
+        tester.getCenter(
+            find.bySemanticsLabel('Khu vực phụ huynh, giữ 3 giây để mở')),
       );
       await tester.pump(const Duration(seconds: 3, milliseconds: 100));
       await gesture.up();

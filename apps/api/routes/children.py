@@ -1,7 +1,6 @@
 """Children routes — CRUD for child profiles."""
 
 from fastapi import APIRouter, Depends, HTTPException, status
-from sqlalchemy import select
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from apps.api.database import get_db
@@ -16,7 +15,12 @@ def _check_child_ownership(profile: ParentProfile, child_id: str):
     if child_id not in [c.id for c in profile.children]:
         raise HTTPException(
             status_code=status.HTTP_403_FORBIDDEN,
-            detail={"error": {"code": "FORBIDDEN", "message": "Child not owned by this parent"}},
+            detail={
+                "error": {
+                    "code": "FORBIDDEN",
+                    "message": "Child not owned by this parent",
+                }
+            },
         )
 
 
@@ -37,7 +41,12 @@ async def create_child(
     if len(profile.children) >= 5:
         raise HTTPException(
             status_code=status.HTTP_400_BAD_REQUEST,
-            detail={"error": {"code": "MAX_CHILDREN_REACHED", "message": "Maximum 5 children per account"}},
+            detail={
+                "error": {
+                    "code": "MAX_CHILDREN_REACHED",
+                    "message": "Maximum 5 children per account",
+                }
+            },
         )
 
     child = ChildProfile(

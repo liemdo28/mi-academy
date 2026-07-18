@@ -64,7 +64,9 @@ def run_command(args: list[str]) -> subprocess.CompletedProcess[str]:
 
 
 def build_report(
-    command_runner: Callable[[list[str]], subprocess.CompletedProcess[str]] = run_command,
+    command_runner: Callable[
+        [list[str]], subprocess.CompletedProcess[str]
+    ] = run_command,
 ) -> ReleaseEvidence:
     local_gates = [
         _command_gate(
@@ -161,7 +163,9 @@ def _command_gate(
 ) -> GateEvidence:
     result = command_runner(command)
     status = "pass" if result.returncode == 0 else "fail"
-    evidence = _last_meaningful_line(result.stdout) or _last_meaningful_line(result.stderr)
+    evidence = _last_meaningful_line(result.stdout) or _last_meaningful_line(
+        result.stderr
+    )
     summary = pass_summary if status == "pass" else evidence or "Command failed."
     return GateEvidence(
         gate=gate,

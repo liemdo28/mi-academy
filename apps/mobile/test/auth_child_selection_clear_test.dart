@@ -16,7 +16,8 @@ void main() {
   test('logout() clears the previously-selected child', () async {
     final container = ProviderContainer(overrides: [
       apiServiceProvider.overrideWithValue(
-        ApiService(baseUrl: 'http://test.local', tokenStore: InMemoryTokenStore()),
+        ApiService(
+            baseUrl: 'http://test.local', tokenStore: InMemoryTokenStore()),
       ),
     ]);
     addTearDown(container.dispose);
@@ -38,7 +39,8 @@ void main() {
   test('forceLogout() clears the previously-selected child', () async {
     final container = ProviderContainer(overrides: [
       apiServiceProvider.overrideWithValue(
-        ApiService(baseUrl: 'http://test.local', tokenStore: InMemoryTokenStore()),
+        ApiService(
+            baseUrl: 'http://test.local', tokenStore: InMemoryTokenStore()),
       ),
     ]);
     addTearDown(container.dispose);

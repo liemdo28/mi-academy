@@ -7,12 +7,14 @@ class RobotCommandsSession {
   RobotCommandsSession({
     required MiLevel level,
     this.childProfileId = 'offline-child',
+    this.locale = 'vi',
   }) : _level = level {
     _resetForLevel(level);
   }
 
   MiLevel _level;
   final String childProfileId;
+  final String locale;
   late RobotGrid _grid;
   late RobotState _initialState;
   late RobotState _robotState;
@@ -33,7 +35,7 @@ class RobotCommandsSession {
   int get hintsUsed => _hintsUsed;
   String? get feedback => _feedback;
 
-  Map<String, dynamic> get content => _level.contentForLocale('vi');
+  Map<String, dynamic> get content => _level.contentForLocale(locale);
 
   int get score => max(10, 100 - (_attempts - 1) * 10 - _hintsUsed * 5);
 
@@ -177,7 +179,7 @@ class RobotCommandsSession {
     final gridData = metadata['grid'] as Map<String, dynamic>;
     final startData = metadata['start'] as Map<String, dynamic>;
     final goalData = metadata['goal'] as Map<String, dynamic>;
-    final content = level.contentForLocale('vi');
+    final content = level.contentForLocale(locale);
 
     _grid = RobotGrid(
       width: gridData['width'] as int,

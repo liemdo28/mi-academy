@@ -1,7 +1,8 @@
 import 'package:mi_game_core/mi_game_core.dart';
 
 /// Real per-level skill taxonomy IDs (e.g. `letters.word_building`,
-/// `math.addition_within_10`) authored in each game's level content
+/// `math.addition.within_10` — matching `content/skills/skill_taxonomy.json`)
+/// authored in each game's level content
 /// (`metadata.skillIds` in `assets/levels/*.json`), instead of a single
 /// hardcoded tag that was the same for every level of a game regardless
 /// of what that level actually taught.

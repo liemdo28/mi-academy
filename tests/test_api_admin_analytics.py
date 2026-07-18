@@ -3,7 +3,15 @@ import asyncio
 from sqlalchemy.ext.asyncio import async_sessionmaker, create_async_engine
 
 from apps.api.database import Base
-from apps.api.models import Attempt, ChildProfile, Lesson, ParentProfile, Question, Subject, User
+from apps.api.models import (
+    Attempt,
+    ChildProfile,
+    Lesson,
+    ParentProfile,
+    Question,
+    Subject,
+    User,
+)
 from apps.api.routes.admin import high_error_questions
 
 
@@ -88,13 +96,48 @@ async def _seed_question_attempts(db):
 
     db.add_all(
         [
-            Attempt(child_id=child.id, lesson_id=lesson.id, question_id=hard.id, is_correct=False),
-            Attempt(child_id=child.id, lesson_id=lesson.id, question_id=hard.id, is_correct=False),
-            Attempt(child_id=child.id, lesson_id=lesson.id, question_id=hard.id, is_correct=False),
-            Attempt(child_id=child.id, lesson_id=lesson.id, question_id=hard.id, is_correct=True),
-            Attempt(child_id=child.id, lesson_id=lesson.id, question_id=moderate.id, is_correct=False),
-            Attempt(child_id=child.id, lesson_id=lesson.id, question_id=moderate.id, is_correct=True),
-            Attempt(child_id=child.id, lesson_id=lesson.id, game_id="game-only", is_correct=False),
+            Attempt(
+                child_id=child.id,
+                lesson_id=lesson.id,
+                question_id=hard.id,
+                is_correct=False,
+            ),
+            Attempt(
+                child_id=child.id,
+                lesson_id=lesson.id,
+                question_id=hard.id,
+                is_correct=False,
+            ),
+            Attempt(
+                child_id=child.id,
+                lesson_id=lesson.id,
+                question_id=hard.id,
+                is_correct=False,
+            ),
+            Attempt(
+                child_id=child.id,
+                lesson_id=lesson.id,
+                question_id=hard.id,
+                is_correct=True,
+            ),
+            Attempt(
+                child_id=child.id,
+                lesson_id=lesson.id,
+                question_id=moderate.id,
+                is_correct=False,
+            ),
+            Attempt(
+                child_id=child.id,
+                lesson_id=lesson.id,
+                question_id=moderate.id,
+                is_correct=True,
+            ),
+            Attempt(
+                child_id=child.id,
+                lesson_id=lesson.id,
+                game_id="game-only",
+                is_correct=False,
+            ),
         ]
     )
     await db.commit()

@@ -28,7 +28,8 @@ class GardenScreen extends ConsumerWidget {
             if (rewards.isEmpty) {
               return const MiEmptyState(
                 title: 'Vườn của con còn trống',
-                subtitle: 'Hoàn thành nhiệm vụ để trồng những bông hoa đầu tiên!',
+                subtitle:
+                    'Hoàn thành nhiệm vụ để trồng những bông hoa đầu tiên!',
                 emoji: '🌱',
               );
             }

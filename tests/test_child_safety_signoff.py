@@ -10,7 +10,7 @@ def test_signoff_report_covers_all_mvp_games():
     assert {game.game_id for game in report.games} == set(
         child_safety_signoff.GAME_LABELS
     )
-    assert all(game.levels == 10 for game in report.games)
+    assert all(game.levels >= 10 for game in report.games)
 
 
 def test_every_game_has_ten_automated_categories_and_manual_pending():

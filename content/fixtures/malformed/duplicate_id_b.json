@@ -1,0 +1,12 @@
+{
+  "id": "malformed-duplicate-id",
+  "gameId": "sound_match",
+  "levelNumber": 1,
+  "difficulty": 1,
+  "localizedContent": {
+    "vi": {"prompt": "Nghe âm và chọn chữ cái!"},
+    "en": {"prompt": "Listen and choose the letter!"}
+  },
+  "hints": [{"text": "Same id as duplicate_id_a.json, on purpose"}],
+  "metadata": {"ageGroup": "junior", "skillIds": ["letters.initial_sound"]}
+}

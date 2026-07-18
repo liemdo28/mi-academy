@@ -30,7 +30,9 @@ def test_parent_reports_summarize_child_activity_without_scores_pressure():
                 profile, child = await _seed_parent_child_activity(db)
 
                 summary = await get_reports(profile=profile, db=db)
-                weekly = await get_weekly_report(child_id=child.id, profile=profile, db=db)
+                weekly = await get_weekly_report(
+                    child_id=child.id, profile=profile, db=db
+                )
 
                 assert summary.total_children == 1
                 assert summary.total_lessons_today == 2
@@ -89,7 +91,9 @@ def test_parent_export_is_privacy_safe_and_reviewable():
                         "age_group": "junior",
                         "preferred_language": "vi",
                         "daily_time_limit": 30,
-                        "created_at": child.created_at.isoformat().replace("+00:00", "Z"),
+                        "created_at": child.created_at.isoformat().replace(
+                            "+00:00", "Z"
+                        ),
                     }
                 ]
                 assert payload["daily_sessions"][0]["lessons_completed"] == 2

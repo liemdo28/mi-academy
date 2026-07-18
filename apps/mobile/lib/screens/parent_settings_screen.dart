@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:design_system/design_system.dart';
+import '../providers/providers.dart';
 import '../services/parent_settings_store.dart';
 
 class ParentSettingsScreen extends ConsumerStatefulWidget {
@@ -37,6 +38,10 @@ class _SettingsState extends ConsumerState<ParentSettingsScreen> {
   Future<void> _save(ParentSettingsSnapshot settings) async {
     setState(() => _settings = settings);
     await widget.store.save(settings);
+    // parentSettingsProvider has no way to observe the store directly, so
+    // this screen must tell it to re-load -- otherwise a language change
+    // here would never reach MiAcademyApp's locale.
+    ref.invalidate(parentSettingsProvider);
   }
 
   Future<void> _downloadOfflineContent() async {

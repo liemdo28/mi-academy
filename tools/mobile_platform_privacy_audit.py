@@ -201,7 +201,9 @@ def scan_dependency_line(
             )
 
 
-def scan_gradle_line(path: Path, line_no: int, line: str, findings: list[Finding]) -> None:
+def scan_gradle_line(
+    path: Path, line_no: int, line: str, findings: list[Finding]
+) -> None:
     for pattern, note in GRADLE_FAIL_PATTERNS.items():
         if re.search(pattern, line, flags=re.IGNORECASE):
             add_finding(
