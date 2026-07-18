@@ -9,6 +9,7 @@ class ParentSettingsSnapshot {
     this.subtitlesEnabled = false,
     this.reduceMotion = false,
     this.language = 'vi',
+    this.localeConfirmed = false,
     this.offlineReady = false,
     this.exportPreparedAt,
     this.deleteRequestedAt,
@@ -23,6 +24,12 @@ class ParentSettingsSnapshot {
   /// MiGameContext.accessibility -- see memory_cards_screen.dart.
   final bool reduceMotion;
   final String language;
+
+  /// Whether the first-launch language-selection screen has been completed.
+  /// Starts false (fresh install / after a full local-data reset via
+  /// [ParentSettingsStore.deleteChildData]) -- SplashScreen routes to
+  /// LocaleSelectionScreen until this is true.
+  final bool localeConfirmed;
   final bool offlineReady;
   final DateTime? exportPreparedAt;
   final DateTime? deleteRequestedAt;
@@ -36,6 +43,7 @@ class ParentSettingsSnapshot {
     bool? subtitlesEnabled,
     bool? reduceMotion,
     String? language,
+    bool? localeConfirmed,
     bool? offlineReady,
     DateTime? exportPreparedAt,
     DateTime? deleteRequestedAt,
@@ -48,6 +56,7 @@ class ParentSettingsSnapshot {
       subtitlesEnabled: subtitlesEnabled ?? this.subtitlesEnabled,
       reduceMotion: reduceMotion ?? this.reduceMotion,
       language: language ?? this.language,
+      localeConfirmed: localeConfirmed ?? this.localeConfirmed,
       offlineReady: offlineReady ?? this.offlineReady,
       exportPreparedAt: clearExportPreparedAt
           ? null
@@ -65,6 +74,7 @@ class ParentSettingsSnapshot {
       'subtitlesEnabled': subtitlesEnabled,
       'reduceMotion': reduceMotion,
       'language': language,
+      'localeConfirmed': localeConfirmed,
       'offlineReady': offlineReady,
       'exportPreparedAt': exportPreparedAt?.toIso8601String(),
       'deleteRequestedAt': deleteRequestedAt?.toIso8601String(),
@@ -102,6 +112,7 @@ class ParentSettingsSnapshot {
       subtitlesEnabled: _boolValue(json['subtitlesEnabled']),
       reduceMotion: _boolValue(json['reduceMotion']),
       language: json['language'] == 'en' ? 'en' : 'vi',
+      localeConfirmed: _boolValue(json['localeConfirmed']),
       offlineReady: _boolValue(json['offlineReady']),
       exportPreparedAt: _dateValue(json['exportPreparedAt']),
       deleteRequestedAt: _dateValue(json['deleteRequestedAt']),

@@ -25,10 +25,15 @@ class SplashScreen extends ConsumerStatefulWidget {
 
 /// Pure routing decision, factored out of [SplashScreen] so it's testable
 /// without mocking secure storage / network — see `test/splash_routing_test.dart`.
+///
+/// [localeConfirmed] defaults to true so existing call sites that predate
+/// first-launch language selection don't need to opt in explicitly.
 String startRouteFor({
   required bool isAuthenticated,
   required bool hasSelectedChild,
+  bool localeConfirmed = true,
 }) {
+  if (!localeConfirmed) return '/locale-select';
   if (!isAuthenticated) return '/login';
   return hasSelectedChild ? '/home' : '/select-child';
 }
@@ -41,6 +46,18 @@ class _SplashState extends ConsumerState<SplashScreen> {
   }
 
   Future<void> _resolveStartRoute() async {
+    final settings = await ref.read(parentSettingsStoreProvider).load();
+    if (!mounted) return;
+
+    if (!settings.localeConfirmed) {
+      context.go(startRouteFor(
+        isAuthenticated: false,
+        hasSelectedChild: false,
+        localeConfirmed: false,
+      ));
+      return;
+    }
+
     await ref.read(authProvider.notifier).initialize();
     if (!mounted) return;
 

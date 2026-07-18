@@ -3,6 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import '../providers/providers.dart';
 import '../screens/splash_screen.dart';
+import '../screens/locale_selection_screen.dart';
 import '../screens/login_screen.dart';
 import '../screens/child_home_screen.dart';
 import '../screens/game_screen.dart';
@@ -17,6 +18,7 @@ import '../screens/garden_screen.dart';
 ///
 /// Route structure:
 /// - /                → SplashScreen
+/// - /locale-select   → LocaleSelectionScreen (first-launch only)
 /// - /login           → LoginScreen
 /// - /select-child    → ChildSelectorScreen
 /// - /home            → ChildHomeScreen
@@ -43,6 +45,10 @@ final routerProvider = GoRouter(
     GoRoute(
       path: '/',
       builder: (context, state) => const SplashScreen(),
+    ),
+    GoRoute(
+      path: '/locale-select',
+      builder: (context, state) => const LocaleSelectionScreen(),
     ),
     GoRoute(
       path: '/login',
