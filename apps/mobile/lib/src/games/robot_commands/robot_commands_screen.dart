@@ -16,6 +16,7 @@ class RobotCommandsScreen extends StatefulWidget {
     this.onComplete,
     this.initialSnapshot,
     this.onSaveSnapshot,
+    this.locale = 'vi',
   });
 
   final MiLevel level;
@@ -30,6 +31,10 @@ class RobotCommandsScreen extends StatefulWidget {
 
   /// See WordBuilderScreen.onSaveSnapshot.
   final void Function(MiGameSnapshot)? onSaveSnapshot;
+
+  /// From the parent's language setting (see ParentSettingsSnapshot.language)
+  /// -- was previously hardcoded to 'vi' regardless of this setting.
+  final String locale;
 
   @override
   State<RobotCommandsScreen> createState() => _RobotCommandsScreenState();
@@ -67,7 +72,7 @@ class _RobotCommandsScreenState extends State<RobotCommandsScreen>
   void _loadLevel(MiLevel level, {MiGameSnapshot? snapshot}) {
     setState(() {
       _completed = false;
-      _session = RobotCommandsSession(level: level);
+      _session = RobotCommandsSession(level: level, locale: widget.locale);
       if (snapshot != null) {
         _session.restoreSnapshot(snapshot);
       }

@@ -6,12 +6,14 @@ class ChoiceGameSession {
   ChoiceGameSession({
     required MiLevel level,
     this.childProfileId = 'offline-child',
+    this.locale = 'vi',
   }) : _level = level {
     _resetForLevel(level);
   }
 
   MiLevel _level;
   final String childProfileId;
+  final String locale;
   late List<ChoiceGameOption> _options;
   int _attempts = 0;
   int _hintsUsed = 0;
@@ -25,7 +27,7 @@ class ChoiceGameSession {
   double get progress => _progress;
   String? get feedback => _feedback;
 
-  Map<String, dynamic> get content => _level.contentForLocale('vi');
+  Map<String, dynamic> get content => _level.contentForLocale(locale);
 
   int get score => max(10, 100 - (_attempts - 1) * 10 - _hintsUsed * 5);
 
@@ -96,7 +98,7 @@ class ChoiceGameSession {
   }
 
   void _resetForLevel(MiLevel level) {
-    final content = level.contentForLocale('vi');
+    final content = level.contentForLocale(locale);
     _options = (content['options'] as List)
         .map((option) => ChoiceGameOption.fromJson(option as Map))
         .toList();

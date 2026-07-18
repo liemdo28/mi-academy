@@ -16,11 +16,16 @@ class WordBuilderScreen extends StatefulWidget {
     this.onComplete,
     this.initialSnapshot,
     this.onSaveSnapshot,
+    this.locale = 'vi',
   });
 
   final MiLevel level;
   final List<MiLevel> allLevels;
   final VoidCallback? onExit;
+
+  /// From the parent's language setting (see ParentSettingsSnapshot.language)
+  /// -- was previously hardcoded to 'vi' regardless of this setting.
+  final String locale;
 
   /// Fired once per level completion with the session's score/attempts/hints,
   /// so a caller (e.g. the production game launcher) can save a real result
@@ -75,7 +80,7 @@ class _WordBuilderScreenState extends State<WordBuilderScreen>
   void _loadLevel(MiLevel level, {MiGameSnapshot? snapshot}) {
     setState(() {
       _completed = false;
-      _session = WordBuilderSession(level: level);
+      _session = WordBuilderSession(level: level, locale: widget.locale);
       if (snapshot != null) {
         _session.restoreSnapshot(snapshot);
       }

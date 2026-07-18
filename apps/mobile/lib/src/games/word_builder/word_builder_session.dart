@@ -6,12 +6,14 @@ class WordBuilderSession {
   WordBuilderSession({
     required MiLevel level,
     this.childProfileId = 'offline-child',
+    this.locale = 'vi',
   }) : _level = level {
     _resetForLevel(level);
   }
 
   MiLevel _level;
   final String childProfileId;
+  final String locale;
   late List<String> _bank;
   late List<String?> _placed;
   int _attempts = 0;
@@ -25,7 +27,7 @@ class WordBuilderSession {
   int get hintsUsed => _hintsUsed;
   String? get feedback => _feedback;
 
-  Map<String, dynamic> get content => _level.contentForLocale('vi');
+  Map<String, dynamic> get content => _level.contentForLocale(locale);
 
   String get targetWord => content['targetWord'] as String? ?? '';
 
@@ -122,7 +124,7 @@ class WordBuilderSession {
   }
 
   void _resetForLevel(MiLevel level) {
-    final content = level.contentForLocale('vi');
+    final content = level.contentForLocale(locale);
     final targetTokens = (content['letters'] as List).cast<String>();
     final distractors =
         (content['distractors'] as List? ?? const []).cast<String>();

@@ -46,6 +46,12 @@ class _GameScreenState extends ConsumerState<GameScreen> {
   String? _error;
   MiGameSnapshot? _initialSnapshot;
   bool _reduceMotion = false;
+  // Was hardcoded to 'vi' everywhere a game reads locale-specific content
+  // (every game session class, MiGameContext.language) regardless of the
+  // parent's actual language setting -- confirmed during the 1.0 release
+  // audit that ParentSettingsSnapshot.language was write-only, read by
+  // nothing. Sourced from the same settings load as _reduceMotion.
+  String _locale = 'vi';
 
   @override
   void initState() {
@@ -74,6 +80,7 @@ class _GameScreenState extends ConsumerState<GameScreen> {
         _levels = levels;
         _initialSnapshot = snapshot;
         _reduceMotion = settings.reduceMotion;
+        _locale = settings.language;
       });
     } catch (e) {
       if (!mounted) return;
@@ -232,6 +239,7 @@ class _GameScreenState extends ConsumerState<GameScreen> {
           onComplete: _saveResult,
           initialSnapshot: _initialSnapshot,
           onSaveSnapshot: _onSaveSnapshot,
+          locale: _locale,
         );
       case 'sound_match':
         return SoundMatchScreen(
@@ -241,6 +249,7 @@ class _GameScreenState extends ConsumerState<GameScreen> {
           onComplete: _saveResult,
           initialSnapshot: _initialSnapshot,
           onSaveSnapshot: _onSaveSnapshot,
+          locale: _locale,
         );
       case 'math_race':
         return ChoiceGameScreen(
@@ -254,6 +263,7 @@ class _GameScreenState extends ConsumerState<GameScreen> {
           onComplete: _saveResult,
           initialSnapshot: _initialSnapshot,
           onSaveSnapshot: _onSaveSnapshot,
+          locale: _locale,
         );
       case 'math_supermarket':
         return ChoiceGameScreen(
@@ -267,6 +277,7 @@ class _GameScreenState extends ConsumerState<GameScreen> {
           onComplete: _saveResult,
           initialSnapshot: _initialSnapshot,
           onSaveSnapshot: _onSaveSnapshot,
+          locale: _locale,
         );
       case 'robot_commands':
         return RobotCommandsScreen(
@@ -276,6 +287,7 @@ class _GameScreenState extends ConsumerState<GameScreen> {
           onComplete: _saveResult,
           initialSnapshot: _initialSnapshot,
           onSaveSnapshot: _onSaveSnapshot,
+          locale: _locale,
         );
       case 'memory_cards':
         return _MemoryCardsHost(
@@ -287,6 +299,7 @@ class _GameScreenState extends ConsumerState<GameScreen> {
           initialSnapshot: _initialSnapshot,
           onSaveSnapshot: _onSaveSnapshot,
           reduceMotion: _reduceMotion,
+          locale: _locale,
         );
       default:
         return Scaffold(
@@ -314,6 +327,7 @@ class _MemoryCardsHost extends StatefulWidget {
     this.initialSnapshot,
     this.onSaveSnapshot,
     this.reduceMotion = false,
+    this.locale = 'vi',
   });
 
   final MiLevel level;
@@ -324,6 +338,7 @@ class _MemoryCardsHost extends StatefulWidget {
   final MiGameSnapshot? initialSnapshot;
   final void Function(MiGameSnapshot)? onSaveSnapshot;
   final bool reduceMotion;
+  final String locale;
 
   @override
   State<_MemoryCardsHost> createState() => _MemoryCardsHostState();
@@ -397,6 +412,7 @@ class _MemoryCardsHostState extends State<_MemoryCardsHost> {
           _level.id == widget.level.id ? widget.initialSnapshot : null,
       onSaveSnapshot: widget.onSaveSnapshot,
       reduceMotion: widget.reduceMotion,
+      locale: widget.locale,
     );
   }
 }

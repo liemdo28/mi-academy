@@ -6,12 +6,14 @@ class SoundMatchSession {
   SoundMatchSession({
     required MiLevel level,
     this.childProfileId = 'offline-child',
+    this.locale = 'vi',
   }) : _level = level {
     _resetForLevel(level);
   }
 
   MiLevel _level;
   final String childProfileId;
+  final String locale;
   late List<String> _options;
   int _attempts = 0;
   int _hintsUsed = 0;
@@ -25,7 +27,7 @@ class SoundMatchSession {
   bool get showTranscript => _showTranscript;
   String? get feedback => _feedback;
 
-  Map<String, dynamic> get content => _level.contentForLocale('vi');
+  Map<String, dynamic> get content => _level.contentForLocale(locale);
 
   String get correctAnswer => content['correctAnswer'] as String;
 
@@ -107,7 +109,7 @@ class SoundMatchSession {
   }
 
   void _resetForLevel(MiLevel level) {
-    final content = level.contentForLocale('vi');
+    final content = level.contentForLocale(locale);
     final options =
         List<String>.of((content['options'] as List).cast<String>());
     options.shuffle(Random(level.levelNumber));
