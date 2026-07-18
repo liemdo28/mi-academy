@@ -22,6 +22,49 @@ these — it runs on `ubuntu-latest` (mobile/backend jobs) and `macos-latest`
 machine (Windows/macOS/Linux); the one documented platform-dependent
 exception is golden/pixel tests, covered next.
 
+## Database migrations — PostgreSQL is canonical
+
+`apps/api/alembic`'s migration chain includes operations (e.g.
+`op.create_unique_constraint` in `3aac9694cdd1_add_client_attempt_id.py`)
+that SQLite's `ALTER` support doesn't implement — running `alembic upgrade
+head` against a local SQLite file fails with `NotImplementedError: No
+support for ALTER of constraints in SQLite dialect`. This is expected, not
+a bug: **SQLite is a dev/test-only convenience for the app itself** (the
+non-Postgres-specific pytest suite uses it), **it is never the environment
+migrations are verified against.** PostgreSQL is canonical because:
+
+1. Production runs Postgres (see `apps/api/config.py`'s `DATABASE_URL`),
+   not SQLite.
+2. Several migrations use Postgres-only DDL that SQLite silently can't
+   perform at all, so a SQLite-only verification pass would never have
+   caught a broken migration in those revisions.
+
+Two ways to verify the migration chain against real Postgres:
+
+- **Locally**, via the disposable Docker Compose service in
+  `infrastructure/docker/docker-compose.yml`:
+  ```bash
+  docker compose -f infrastructure/docker/docker-compose.yml up -d db redis
+  cd apps/api
+  DATABASE_URL=postgresql+asyncpg://mi_user:mi_dev_password@localhost:5432/mi_academy \
+    python -m alembic upgrade head
+  ```
+  Verified directly during the Milestone 1 audit (2026-07-18): a fresh
+  `docker compose up -d db` container running PostgreSQL 16.13, migrated
+  from empty to head (`27676b1dea5d` → `3aac9694cdd1` → `9b7d3f1a6c21` →
+  `5f2a8c14e9b7` → `7c1d3e9a2f45` → `a3e6f0b8c1d2`, confirmed via `alembic
+  current` → `a3e6f0b8c1d2 (head)`), then the app itself was booted against
+  that same database with `APP_ENV=production` and `CREATE_TABLES_ON_STARTUP=false`
+  (so only the migrations, not the dev `create_all()` fallback, could have
+  created the schema) — `/health/live` returned `{"status": "ok"}` and
+  `/health/ready` returned `{"status": "ready"}` (the latter runs a real
+  `SELECT 1` against Postgres, not just a process-alive check).
+- **In CI**, the `postgres-integration` job in `.github/workflows/ci.yml`
+  runs the same migration-then-boot sequence against real `postgres:16` and
+  `redis:7` service containers on every dispatch — this is the CI proof
+  or WS8's acceptance criteria, and has been green on every recent run on
+  this branch (see `docs/release-audit.md` RA-23 for the exact run IDs).
+
 ## Golden tests
 
 `apps/mobile/test/game_slice_golden_test.dart` renders each of the six MVP
