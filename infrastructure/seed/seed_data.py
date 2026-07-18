@@ -1,10 +1,12 @@
-"""Seed data — populates MI Academy DB with 30 lessons, 500 questions, and 6 games."""
+"""Seed data — populates MI Academy DB with lessons, questions, and games."""
 
 import asyncio
 import json
 import uuid
 
+from sqlalchemy import select
 
+from apps.api.game_catalog import BUILT_GAME_CATALOG
 from apps.api.database import async_session_maker
 from apps.api.models import (
     ContentVersion,
@@ -14,6 +16,29 @@ from apps.api.models import (
     Reward,
     Subject,
 )
+
+
+async def seed_built_games(db) -> list[Game]:
+    """Insert canonical built games that are not already present."""
+    existing_game_types = {
+        row[0] for row in (await db.execute(select(Game.game_type))).all()
+    }
+    games = [
+        Game(
+            id=entry.id,
+            name=entry.name,
+            game_type=entry.game_type,
+            age_min=entry.age_min,
+            age_max=entry.age_max,
+            config_json=entry.config_json,
+            is_active=True,
+        )
+        for entry in BUILT_GAME_CATALOG
+        if entry.game_type not in existing_game_types
+    ]
+    for game in games:
+        db.add(game)
+    return games
 
 
 async def seed():
@@ -499,58 +524,7 @@ async def seed():
         await db.flush()
 
         # ── Games ─────────────────────────────────────────────────────────────
-        games = [
-            Game(
-                id=str(uuid.uuid4()),
-                name="Ghép chữ tạo từ",
-                game_type="word_builder",
-                age_min=5,
-                age_max=10,
-                is_active=True,
-            ),
-            Game(
-                id=str(uuid.uuid4()),
-                name="Nghe âm tìm chữ",
-                game_type="sound_match",
-                age_min=5,
-                age_max=10,
-                is_active=True,
-            ),
-            Game(
-                id=str(uuid.uuid4()),
-                name="Đường đua cộng trừ",
-                game_type="math_race",
-                age_min=5,
-                age_max=12,
-                is_active=True,
-            ),
-            Game(
-                id=str(uuid.uuid4()),
-                name="Siêu thị toán học",
-                game_type="math_supermarket",
-                age_min=8,
-                age_max=12,
-                is_active=True,
-            ),
-            Game(
-                id=str(uuid.uuid4()),
-                name="Ghi nhớ vị trí",
-                game_type="memory_cards",
-                age_min=5,
-                age_max=12,
-                is_active=True,
-            ),
-            Game(
-                id=str(uuid.uuid4()),
-                name="Robot làm theo lệnh",
-                game_type="robot_commands",
-                age_min=8,
-                age_max=12,
-                is_active=True,
-            ),
-        ]
-        for g in games:
-            db.add(g)
+        games = await seed_built_games(db)
 
         # ── Rewards ────────────────────────────────────────────────────────────
         rewards = [

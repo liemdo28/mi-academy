@@ -41,6 +41,7 @@ def _result_body(
     correct=4,
     incorrect=1,
     mastery_evidence=0.8,
+    skill_evidence=None,
 ):
     started = utc_now()
     return SaveGameResultRequest(
@@ -58,7 +59,7 @@ def _result_body(
         duration_seconds=60,
         completed=True,
         mastery_evidence=mastery_evidence,
-        skill_evidence={"math": ["addition"]},
+        skill_evidence=skill_evidence or {"math": ["addition"]},
     )
 
 
@@ -353,6 +354,190 @@ def test_save_game_result_rejects_unowned_child():
     asyncio.run(run())
 
 
+def test_save_game_result_accepts_alphabet_explorer_completion():
+    async def run():
+        session_maker, engine = await _session_maker()
+        try:
+            async with session_maker() as db:
+                data = await _seed_world(
+                    db,
+                    game_type="alphabet_explorer",
+                    game_name="Khám phá chữ cái",
+                    subject_code="letters",
+                    subject_name="Letters",
+                    lesson_title="Alphabet Explorer",
+                )
+
+                response = await save_game_result(
+                    game_id=data["game"].id,
+                    body=_result_body(
+                        data["child"].id,
+                        data["game"].id,
+                        data["lesson"].id,
+                        attempt_id="alphabet-attempt-1",
+                        skill_evidence={
+                            "letters.recognition.uppercase": ["ae-lv001"],
+                            "letters.initial_sound": ["ae-lv061"],
+                        },
+                    ),
+                    profile=data["profile"],
+                    db=db,
+                )
+
+                assert response["idempotent_replay"] is False
+                assert response["mastery_score"] is not None
+                attempt = (
+                    await db.execute(
+                        select(Attempt).where(
+                            Attempt.client_attempt_id == "alphabet-attempt-1"
+                        )
+                    )
+                ).scalar_one()
+                assert attempt.game_id == data["game"].id
+                assert "letters.initial_sound" in attempt.answer_json
+        finally:
+            await engine.dispose()
+
+    asyncio.run(run())
+
+
+def test_save_game_result_accepts_missing_letter_completion_and_idempotent_replay():
+    async def run():
+        session_maker, engine = await _session_maker()
+        try:
+            async with session_maker() as db:
+                data = await _seed_world(
+                    db,
+                    game_type="missing_letter",
+                    game_name="Tìm chữ còn thiếu",
+                    subject_code="letters",
+                    subject_name="Letters",
+                    lesson_title="Missing Letter",
+                )
+                body = _result_body(
+                    data["child"].id,
+                    data["game"].id,
+                    data["lesson"].id,
+                    attempt_id="missing-letter-attempt-1",
+                    skill_evidence={
+                        "letters.spelling": ["ml-lv001"],
+                        "letters.vocabulary": ["ml-lv001"],
+                    },
+                )
+
+                first = await save_game_result(
+                    game_id=data["game"].id,
+                    body=body,
+                    profile=data["profile"],
+                    db=db,
+                )
+                second = await save_game_result(
+                    game_id=data["game"].id,
+                    body=body,
+                    profile=data["profile"],
+                    db=db,
+                )
+
+                assert first["idempotent_replay"] is False
+                assert second["idempotent_replay"] is True
+                assert second["attempt_id"] == first["attempt_id"]
+                assert await _count(db, Attempt) == 1
+        finally:
+            await engine.dispose()
+
+    asyncio.run(run())
+
+
+def test_save_game_result_rejects_unknown_game_type():
+    async def run():
+        session_maker, engine = await _session_maker()
+        try:
+            async with session_maker() as db:
+                data = await _seed_world(db)
+                body = _result_body(
+                    data["child"].id,
+                    "game-does-not-exist",
+                    data["lesson"].id,
+                    attempt_id="unknown-game-attempt-1",
+                )
+
+                with pytest.raises(HTTPException) as exc:
+                    await save_game_result(
+                        game_id="game-does-not-exist",
+                        body=body,
+                        profile=data["profile"],
+                        db=db,
+                    )
+
+                assert exc.value.status_code == 404
+                assert await _count(db, Attempt) == 0
+        finally:
+            await engine.dispose()
+
+    asyncio.run(run())
+
+
+def test_game_7_8_results_update_progress_independently():
+    async def run():
+        session_maker, engine = await _session_maker()
+        try:
+            async with session_maker() as db:
+                alphabet = await _seed_world(
+                    db,
+                    game_type="alphabet_explorer",
+                    game_name="Khám phá chữ cái",
+                    subject_code="letters",
+                    subject_name="Letters",
+                    lesson_title="Alphabet Explorer",
+                    email="alphabet-owner@example.test",
+                )
+                missing = await _seed_world(
+                    db,
+                    game_type="missing_letter",
+                    game_name="Tìm chữ còn thiếu",
+                    subject_code="letters_missing",
+                    subject_name="Letters",
+                    lesson_title="Missing Letter",
+                    email="missing-owner@example.test",
+                )
+
+                await save_game_result(
+                    game_id=alphabet["game"].id,
+                    body=_result_body(
+                        alphabet["child"].id,
+                        alphabet["game"].id,
+                        alphabet["lesson"].id,
+                        attempt_id="progress-alphabet-1",
+                    ),
+                    profile=alphabet["profile"],
+                    db=db,
+                )
+                await save_game_result(
+                    game_id=missing["game"].id,
+                    body=_result_body(
+                        missing["child"].id,
+                        missing["game"].id,
+                        missing["lesson"].id,
+                        attempt_id="progress-missing-letter-1",
+                    ),
+                    profile=missing["profile"],
+                    db=db,
+                )
+
+                progress_rows = (await db.execute(select(Progress))).scalars().all()
+                attempts = (await db.execute(select(Attempt))).scalars().all()
+
+                assert len(progress_rows) == 2
+                assert {attempt.game_id for attempt in attempts} == {
+                    alphabet["game"].id,
+                    missing["game"].id,
+                }
+        finally:
+            await engine.dispose()
+
+    asyncio.run(run())
+
+
 async def _session_maker():
     engine = create_async_engine("sqlite+aiosqlite:///:memory:", future=True)
     async with engine.begin() as conn:
@@ -360,8 +545,17 @@ async def _session_maker():
     return async_sessionmaker(engine, expire_on_commit=False, autoflush=False), engine
 
 
-async def _seed_world(db):
-    user = User(role="parent", email="owner@example.test", password_hash="not-used")
+async def _seed_world(
+    db,
+    *,
+    game_type="memory_cards",
+    game_name="Memory Cards",
+    subject_code="math",
+    subject_name="Math",
+    lesson_title="Addition Basics",
+    email="owner@example.test",
+):
+    user = User(role="parent", email=email, password_hash="not-used")
     profile = ParentProfile(
         user=user,
         display_name="Owner Parent",
@@ -371,24 +565,31 @@ async def _seed_world(db):
     child = ChildProfile(
         parent=profile, nickname="Child", age_group="junior", preferred_language="vi"
     )
-    subject = Subject(name="Math", code="math")
+    subject = Subject(name=subject_name, code=subject_code)
     lesson = Lesson(
         subject=subject,
-        title="Addition Basics",
+        title=lesson_title,
         age_group="junior",
         language="vi",
         estimated_minutes=5,
         is_active=True,
     )
     game = Game(
-        name="Memory Cards",
-        game_type="memory_cards",
+        name=game_name,
+        game_type=game_type,
         age_min=5,
         age_max=12,
         is_active=True,
     )
-    reward = Reward(reward_type="badge", name="Sao đầu tiên", description="First star")
-    db.add_all([user, profile, child, subject, lesson, game, reward])
+    reward = (
+        await db.execute(select(Reward).where(Reward.name == "Sao đầu tiên"))
+    ).scalar_one_or_none()
+    entities = [user, profile, child, subject, lesson, game]
+    if reward is None:
+        entities.append(
+            Reward(reward_type="badge", name="Sao đầu tiên", description="First star")
+        )
+    db.add_all(entities)
     await db.flush()
     await db.commit()
     profile.children = [child]

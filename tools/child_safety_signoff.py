@@ -32,6 +32,8 @@ REPORT_PATH = (
 )
 
 GAME_LABELS = {
+    "alphabet_explorer": "Alphabet Explorer",
+    "missing_letter": "Missing Letter",
     "word_builder": "Word Builder",
     "sound_match": "Sound Match",
     "math_race": "Math Race",
@@ -132,7 +134,7 @@ def render_markdown(report: SignoffReport) -> str:
         "# MI Academy - MVP Game Safety Pre-Signoff",
         "",
         f"> **Generated:** {report.generated_on}",
-        "> **Scope:** Automated evidence for the six MVP games",
+        "> **Scope:** Automated evidence for the eight currently built MVP games",
         "> **Manual release sign-off:** pending",
         "",
         "This report compiles automated child-safety evidence. It does not replace the required human QA sign-off or real-device review.",
