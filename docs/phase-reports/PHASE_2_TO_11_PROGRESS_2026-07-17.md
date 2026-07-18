@@ -57,7 +57,7 @@ Evidence:
 
 Remaining blockers:
 - A full historical documentation cleanup is still not complete.
-- Full dead route/screen audit remains incomplete beyond code touched and referenced sweeps.
+- ~~Full dead route/screen audit~~ **Closed (2026-07-18, fix/full-phase-1-to-19).** Checked every `apps/mobile/lib/screens/*.dart` class and every `apps/mobile/lib/src/games/**/*.dart` file for at least one real reference elsewhere in the app -- all screens are reachable from `router.dart`, no orphaned game files remain beyond the `math_race`/`math_supermarket` dead files already deleted. Also removed a stale TODO in `login_screen.dart` whose comment described behavior the code already implemented.
 
 Next phase:
 - Continue content/admin/route sweep while progressing Phase 12.
@@ -141,7 +141,7 @@ Evidence:
 - Dashboard total stars are backed by persisted `ChildReward` rows.
 
 Remaining blockers:
-- Full Parent Dashboard UI stale/offline/error state verification remains incomplete.
+- ~~Full Parent Dashboard UI stale/offline/error state verification~~ **Closed (2026-07-18, fix/full-phase-1-to-19).** `ParentDashboardScreen` had zero test coverage; added 5 tests covering loading, error+retry, empty-activity, populated, and retry-after-error-shows-real-data. Also found and fixed a dead `// TODO: Navigate to child detail/progress view` `onTap` that implied the child card was interactive when it silently did nothing -- replaced with a plain non-tappable card since no child-detail route exists.
 
 Next phase:
 - Continue dashboard UI state tests as part of Phase 14/19 flow validation.
@@ -183,10 +183,10 @@ Evidence:
 - Transient failures remain retryable.
 
 Remaining blockers:
-- End-to-end 401 refresh with real `ApiService`, OS airplane mode, and network cable-loss tests are still not device/integration verified.
+- ~~End-to-end 401 refresh with real `ApiService`~~ **Closed (2026-07-18, fix/full-phase-1-to-19).** `apps/mobile/test/api_service_session_expiry_test.dart` exercises the real `ApiService` (scripted Dio adapter, not a mock of `ApiService` itself) through login -> 401 -> refresh -> retry, including the refresh-token-itself-rejected case and the recursive-refresh bug found and fixed along the way. OS airplane mode and network cable-loss remain genuinely device-only scenarios -- no device/emulator is available in this environment, so these stay an explicit, honest limitation rather than something claimed as covered.
 
 Next phase:
-- Carry offline/reconnect scenarios into Phase 19 final validation.
+- Carry offline/reconnect device scenarios into Phase 19 final validation, when a device/emulator is available.
 
 ## Phase 10 - Snapshot Versioning and Migrations
 
