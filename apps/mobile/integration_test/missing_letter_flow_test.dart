@@ -40,10 +40,6 @@ void main() {
 
     expect(find.text('Con đã tìm được chữ còn thiếu!'), findsOneWidget);
     expect(find.text('Tiếp tục'), findsOneWidget);
-    expect(find.text('Thoát'), findsOneWidget);
-
-    await tester.tap(find.text('Thoát'));
-    await tester.pumpAndSettle(const Duration(seconds: 2));
     await tester.runAsync(() async {
       await Future<void>.delayed(const Duration(milliseconds: 400));
     });
@@ -59,6 +55,9 @@ void main() {
       beforeRelaunch.payload['skill_evidence'],
       containsPair('letters.spelling', true),
     );
+
+    await tester.tap(find.text('Trang chính'));
+    await tester.pumpAndSettle(const Duration(seconds: 2));
 
     await launchApp(tester, overrides: overrides);
     expect(find.text('Chào Mi!'), findsOneWidget);
