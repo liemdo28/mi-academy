@@ -54,6 +54,16 @@
   "subjectCreative": "Creative House",
   "correct": "Correct!",
   "incorrect": "Not quite, try again!",
+  "missingLetterTitle": "Missing Letter",
+  "missingLetterInstruction": "Choose the missing letter to complete the word.",
+  "missingLetterChooseLetter": "Choose a letter",
+  "missingLetterChooseLetters": "Choose the letters in order",
+  "missingLetterHint": "Say each sound slowly and use the category hint.",
+  "missingLetterCorrect": "Correct, you completed the word!",
+  "missingLetterTryAgain": "Almost there, try another letter.",
+  "missingLetterCompleted": "You found the missing letter!",
+  "missingLetterImageUnavailable": "No picture yet; use the word hint.",
+  "missingLetterContentUnavailable": "Missing Letter content is not available yet.",
   "welcomeBack": "Welcome back, {name}!",
   "@welcomeBack": {
     "placeholders": {

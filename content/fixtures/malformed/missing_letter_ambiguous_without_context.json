@@ -1,0 +1,40 @@
+{
+  "id": "ml-bad-ambiguous",
+  "gameId": "missing_letter",
+  "levelNumber": 1,
+  "difficulty": 3,
+  "localizedContent": {
+    "vi": {
+      "prompt": "Chọn chữ còn thiếu: C__",
+      "displayWord": "C__",
+      "targetWord": "con",
+      "missingPositions": [1, 2],
+      "correctLetters": ["O", "N"],
+      "correctAnswer": "ON",
+      "options": [
+        {"id": "a", "text": "ON", "correct": true},
+        {"id": "b", "text": "AM", "correct": false},
+        {"id": "c", "text": "EM", "correct": false},
+        {"id": "d", "text": "IN", "correct": false}
+      ]
+    },
+    "en": {
+      "prompt": "Choose the missing letters: C__",
+      "displayWord": "C__",
+      "targetWord": "cat",
+      "missingPositions": [1, 2],
+      "correctLetters": ["A", "T"],
+      "correctAnswer": "AT",
+      "options": [
+        {"id": "a", "text": "AT", "correct": true},
+        {"id": "b", "text": "OT", "correct": false},
+        {"id": "c", "text": "UT", "correct": false},
+        {"id": "d", "text": "ET", "correct": false}
+      ]
+    }
+  },
+  "metadata": {"ageGroup": "explorer", "skillIds": ["letters.spelling"]},
+  "contentVersion": 1,
+  "estimatedSeconds": 50,
+  "publicationState": "published"
+}

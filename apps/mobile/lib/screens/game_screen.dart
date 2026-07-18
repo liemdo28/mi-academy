@@ -55,6 +55,12 @@ class _GameScreenState extends ConsumerState<GameScreen> {
 
   Future<void> _loadLevels() async {
     try {
+      final settings = await ref.read(parentSettingsStoreProvider).load();
+      if (!mounted) return;
+      setState(() {
+        _reduceMotion = settings.reduceMotion;
+        _locale = settings.language;
+      });
       final levels = await loadGameLevels(context, widget.gameType);
       if (!mounted) return;
       // Only ever the first level today (see _buildGame) -- resuming a
@@ -68,13 +74,9 @@ class _GameScreenState extends ConsumerState<GameScreen> {
                 gameId: widget.gameType,
                 levelId: firstLevel.id,
               );
-      final settings = await ref.read(parentSettingsStoreProvider).load();
-      if (!mounted) return;
       setState(() {
         _levels = levels;
         _initialSnapshot = snapshot;
-        _reduceMotion = settings.reduceMotion;
-        _locale = settings.language;
       });
     } catch (e) {
       if (!mounted) return;
@@ -196,7 +198,9 @@ class _GameScreenState extends ConsumerState<GameScreen> {
             leading: IconButton(
                 icon: const Icon(Icons.close), onPressed: () => context.pop())),
         body: MiErrorState(
-          title: 'Không thể tải trò chơi',
+          title: _locale == 'en'
+              ? 'This game could not be loaded'
+              : 'Không thể tải trò chơi',
           onRetry: () {
             setState(() => _error = null);
             _loadLevels();
@@ -214,7 +218,13 @@ class _GameScreenState extends ConsumerState<GameScreen> {
         appBar: AppBar(
             leading: IconButton(
                 icon: const Icon(Icons.close), onPressed: () => context.pop())),
-        body: const Center(child: Text('Chưa có cấp độ nào cho trò chơi này')),
+        body: Center(
+          child: Text(
+            _locale == 'en'
+                ? 'No levels are available for this game yet'
+                : 'Chưa có cấp độ nào cho trò chơi này',
+          ),
+        ),
       );
     }
 
@@ -232,7 +242,13 @@ class _GameScreenState extends ConsumerState<GameScreen> {
         appBar: AppBar(
             leading:
                 IconButton(icon: const Icon(Icons.close), onPressed: onExit)),
-        body: Center(child: Text('Trò chơi "${widget.gameType}" chưa hỗ trợ')),
+        body: Center(
+          child: Text(
+            _locale == 'en'
+                ? 'Game "${widget.gameType}" is not supported yet'
+                : 'Trò chơi "${widget.gameType}" chưa hỗ trợ',
+          ),
+        ),
       );
     }
 

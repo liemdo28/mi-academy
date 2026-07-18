@@ -120,7 +120,7 @@ class _FatalStartupErrorApp extends StatelessWidget {
   }
 }
 
-/// Debug-only harness that boots straight into the 6-game picker, bypassing
+/// Debug-only harness that boots straight into the local game picker, bypassing
 /// login/child selection. Not used by production `main()` — kept for local
 /// game-engine iteration and covered by widget_test.dart. See
 /// docs/final/INTEGRATION_REPORT.md (Phase 4) for why this was split out
@@ -231,6 +231,24 @@ class _HomeScreenState extends State<HomeScreen> {
         _ParentAreaCard(onTap: _openParentGate),
         const SizedBox(height: 16),
         _GameCard(
+          title: 'Khám phá chữ cái',
+          subtitle: 'Thành phố chữ cái - 95 cấp độ',
+          icon: Icons.abc_rounded,
+          color: GameTheme.primary,
+          levels: _levelsFor('alphabet_explorer'),
+          onLaunch: () => _launchGame('alphabet_explorer'),
+        ),
+        const SizedBox(height: 12),
+        _GameCard(
+          title: 'Tìm chữ còn thiếu',
+          subtitle: 'Thành phố chữ cái - 75 cấp độ',
+          icon: Icons.edit_note_rounded,
+          color: MiGameColors.secondary,
+          levels: _levelsFor('missing_letter'),
+          onLaunch: () => _launchGame('missing_letter'),
+        ),
+        const SizedBox(height: 12),
+        _GameCard(
           title: 'Ghép chữ tạo từ',
           subtitle: 'Thành phố chữ cái - 10 cấp độ',
           icon: Icons.abc_rounded,
@@ -295,6 +313,26 @@ class _HomeScreenState extends State<HomeScreen> {
 
     Widget screen;
     switch (gameId) {
+      case 'alphabet_explorer':
+        screen = ChoiceGameScreen(
+          title: 'Khám phá chữ cái',
+          worldLabel: 'MI cùng con khám phá chữ cái.',
+          level: levels.first,
+          allLevels: levels,
+          heroIcon: Icons.abc_rounded,
+          primaryColor: GameTheme.primary,
+          onExit: () => Navigator.of(context).pop(),
+        );
+      case 'missing_letter':
+        screen = ChoiceGameScreen(
+          title: 'Tìm chữ còn thiếu',
+          worldLabel: 'MI cùng con tìm chữ còn thiếu.',
+          level: levels.first,
+          allLevels: levels,
+          heroIcon: Icons.edit_note_rounded,
+          primaryColor: MiGameColors.secondary,
+          onExit: () => Navigator.of(context).pop(),
+        );
       case 'word_builder':
         screen = WordBuilderScreen(
           level: levels.first,
@@ -410,18 +448,18 @@ class _ChildProfileCard extends StatelessWidget {
               ],
             ),
             const SizedBox(height: 14),
-            const Wrap(
+            Wrap(
               spacing: 8,
               runSpacing: 8,
               children: [
-                _StatusChip(icon: Icons.star_rounded, label: 'Sao MI: 0'),
-                _StatusChip(
+                const _StatusChip(icon: Icons.star_rounded, label: 'Sao MI: 0'),
+                const _StatusChip(
                   icon: Icons.verified_rounded,
                   label: 'Huy hiệu: sẵn sàng',
                 ),
                 _StatusChip(
                   icon: Icons.offline_bolt_rounded,
-                  label: '6 game offline',
+                  label: '${gameLevelAssets.length} game offline',
                 ),
               ],
             ),

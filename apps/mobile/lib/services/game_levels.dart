@@ -9,6 +9,8 @@ import 'package:mi_game_core/mi_game_core.dart';
 /// (`screens/game_screen.dart`) so there's one source of truth for where
 /// level content lives.
 const gameLevelAssets = {
+  'alphabet_explorer': 'assets/levels/alphabet_explorer.json',
+  'missing_letter': 'assets/levels/missing_letter.json',
   'word_builder': 'assets/levels/word_builder.json',
   'sound_match': 'assets/levels/sound_match.json',
   'math_race': 'assets/levels/math_race.json',

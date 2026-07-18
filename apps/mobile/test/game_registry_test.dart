@@ -18,8 +18,10 @@ const _level = MiLevel(
 /// disabling a game via feature flag is safe.
 void main() {
   group('GameRegistry', () {
-    test('registers all six existing games', () {
+    test('registers all built games', () {
       const expectedIds = {
+        'alphabet_explorer',
+        'missing_letter',
         'word_builder',
         'sound_match',
         'math_race',
@@ -37,6 +39,44 @@ void main() {
       expect(entry!.category, 'letters');
       expect(entry.localizedName['vi'], isNotEmpty);
       expect(entry.localizedName['en'], isNotEmpty);
+    });
+
+    test('registers Alphabet Explorer as a bilingual choice-engine game', () {
+      final entry = GameRegistry.find('alphabet_explorer');
+      expect(entry, isNotNull);
+      expect(entry!.category, 'letters');
+      expect(entry.engineType, 'choice');
+      expect(entry.localizedName['vi'], 'Khám phá chữ cái');
+      expect(entry.localizedName['en'], 'Alphabet Explorer');
+      expect(entry.ageBands, containsAll(['junior', 'explorer']));
+      expect(
+        entry.supportedSkills,
+        containsAll([
+          'letters.recognition.uppercase',
+          'letters.recognition.lowercase',
+          'letters.case_matching',
+          'letters.initial_sound',
+        ]),
+      );
+    });
+
+    test('registers Missing Letter as a bilingual choice-engine game', () {
+      final entry = GameRegistry.find('missing_letter');
+      expect(entry, isNotNull);
+      expect(entry!.category, 'letters');
+      expect(entry.engineType, 'choice');
+      expect(entry.localizedName['vi'], 'Tìm chữ còn thiếu');
+      expect(entry.localizedName['en'], 'Missing Letter');
+      expect(entry.ageBands, containsAll(['junior', 'explorer']));
+      expect(
+        entry.supportedSkills,
+        containsAll([
+          'letters.recognition.lowercase',
+          'letters.spelling',
+          'letters.vocabulary',
+          'letters.initial_sound',
+        ]),
+      );
     });
 
     test('find() returns null for an unknown game ID', () {

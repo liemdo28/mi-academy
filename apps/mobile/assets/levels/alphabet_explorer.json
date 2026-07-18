@@ -1,0 +1,7728 @@
+{
+  "gameId": "alphabet_explorer",
+  "schemaVersion": "1.0.0",
+  "levels": [
+    {
+      "id": "ae-lv001",
+      "gameId": "alphabet_explorer",
+      "levelNumber": 1,
+      "difficulty": 1,
+      "learningObjective": "uppercase_recognition",
+      "localizedContent": {
+        "vi": {
+          "prompt": "Tìm chữ A.",
+          "options": [
+            {
+              "id": "o1",
+              "text": "A",
+              "correct": true
+            },
+            {
+              "id": "o2",
+              "text": "B",
+              "correct": false
+            },
+            {
+              "id": "o3",
+              "text": "G",
+              "correct": false
+            }
+          ]
+        },
+        "en": {
+          "prompt": "Find the letter A.",
+          "options": [
+            {
+              "id": "o1",
+              "text": "A",
+              "correct": true
+            },
+            {
+              "id": "o2",
+              "text": "E",
+              "correct": false
+            },
+            {
+              "id": "o3",
+              "text": "M",
+              "correct": false
+            }
+          ]
+        }
+      },
+      "hints": [
+        {
+          "text": "Nhìn thật kỹ hình dáng chữ cái."
+        },
+        {
+          "text": "Look closely at the letter shape."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "junior",
+        "skillIds": [
+          "letters.recognition.uppercase"
+        ],
+        "milestone": 2,
+        "reviewState": "technically_validated",
+        "contentKind": "uppercase_recognition"
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 45,
+      "publicationState": "published"
+    },
+    {
+      "id": "ae-lv002",
+      "gameId": "alphabet_explorer",
+      "levelNumber": 2,
+      "difficulty": 1,
+      "learningObjective": "uppercase_recognition",
+      "localizedContent": {
+        "vi": {
+          "prompt": "Tìm chữ Ă.",
+          "options": [
+            {
+              "id": "o1",
+              "text": "Ă",
+              "correct": true
+            },
+            {
+              "id": "o2",
+              "text": "C",
+              "correct": false
+            },
+            {
+              "id": "o3",
+              "text": "H",
+              "correct": false
+            }
+          ]
+        },
+        "en": {
+          "prompt": "Find the letter B.",
+          "options": [
+            {
+              "id": "o1",
+              "text": "B",
+              "correct": true
+            },
+            {
+              "id": "o2",
+              "text": "F",
+              "correct": false
+            },
+            {
+              "id": "o3",
+              "text": "N",
+              "correct": false
+            }
+          ]
+        }
+      },
+      "hints": [
+        {
+          "text": "Nhìn thật kỹ hình dáng chữ cái."
+        },
+        {
+          "text": "Look closely at the letter shape."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "junior",
+        "skillIds": [
+          "letters.recognition.uppercase"
+        ],
+        "milestone": 2,
+        "reviewState": "technically_validated",
+        "contentKind": "uppercase_recognition"
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 45,
+      "publicationState": "published"
+    },
+    {
+      "id": "ae-lv003",
+      "gameId": "alphabet_explorer",
+      "levelNumber": 3,
+      "difficulty": 1,
+      "learningObjective": "uppercase_recognition",
+      "localizedContent": {
+        "vi": {
+          "prompt": "Tìm chữ Â.",
+          "options": [
+            {
+              "id": "o1",
+              "text": "Â",
+              "correct": true
+            },
+            {
+              "id": "o2",
+              "text": "D",
+              "correct": false
+            },
+            {
+              "id": "o3",
+              "text": "I",
+              "correct": false
+            }
+          ]
+        },
+        "en": {
+          "prompt": "Find the letter C.",
+          "options": [
+            {
+              "id": "o1",
+              "text": "C",
+              "correct": true
+            },
+            {
+              "id": "o2",
+              "text": "G",
+              "correct": false
+            },
+            {
+              "id": "o3",
+              "text": "O",
+              "correct": false
+            }
+          ]
+        }
+      },
+      "hints": [
+        {
+          "text": "Nhìn thật kỹ hình dáng chữ cái."
+        },
+        {
+          "text": "Look closely at the letter shape."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "junior",
+        "skillIds": [
+          "letters.recognition.uppercase"
+        ],
+        "milestone": 2,
+        "reviewState": "technically_validated",
+        "contentKind": "uppercase_recognition"
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 45,
+      "publicationState": "published"
+    },
+    {
+      "id": "ae-lv004",
+      "gameId": "alphabet_explorer",
+      "levelNumber": 4,
+      "difficulty": 1,
+      "learningObjective": "uppercase_recognition",
+      "localizedContent": {
+        "vi": {
+          "prompt": "Tìm chữ B.",
+          "options": [
+            {
+              "id": "o1",
+              "text": "B",
+              "correct": true
+            },
+            {
+              "id": "o2",
+              "text": "Đ",
+              "correct": false
+            },
+            {
+              "id": "o3",
+              "text": "K",
+              "correct": false
+            }
+          ]
+        },
+        "en": {
+          "prompt": "Find the letter D.",
+          "options": [
+            {
+              "id": "o1",
+              "text": "D",
+              "correct": true
+            },
+            {
+              "id": "o2",
+              "text": "H",
+              "correct": false
+            },
+            {
+              "id": "o3",
+              "text": "P",
+              "correct": false
+            }
+          ]
+        }
+      },
+      "hints": [
+        {
+          "text": "Nhìn thật kỹ hình dáng chữ cái."
+        },
+        {
+          "text": "Look closely at the letter shape."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "junior",
+        "skillIds": [
+          "letters.recognition.uppercase"
+        ],
+        "milestone": 2,
+        "reviewState": "technically_validated",
+        "contentKind": "uppercase_recognition"
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 45,
+      "publicationState": "published"
+    },
+    {
+      "id": "ae-lv005",
+      "gameId": "alphabet_explorer",
+      "levelNumber": 5,
+      "difficulty": 1,
+      "learningObjective": "uppercase_recognition",
+      "localizedContent": {
+        "vi": {
+          "prompt": "Tìm chữ C.",
+          "options": [
+            {
+              "id": "o1",
+              "text": "C",
+              "correct": true
+            },
+            {
+              "id": "o2",
+              "text": "E",
+              "correct": false
+            },
+            {
+              "id": "o3",
+              "text": "L",
+              "correct": false
+            }
+          ]
+        },
+        "en": {
+          "prompt": "Find the letter E.",
+          "options": [
+            {
+              "id": "o1",
+              "text": "E",
+              "correct": true
+            },
+            {
+              "id": "o2",
+              "text": "I",
+              "correct": false
+            },
+            {
+              "id": "o3",
+              "text": "Q",
+              "correct": false
+            }
+          ]
+        }
+      },
+      "hints": [
+        {
+          "text": "Nhìn thật kỹ hình dáng chữ cái."
+        },
+        {
+          "text": "Look closely at the letter shape."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "junior",
+        "skillIds": [
+          "letters.recognition.uppercase"
+        ],
+        "milestone": 2,
+        "reviewState": "technically_validated",
+        "contentKind": "uppercase_recognition"
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 45,
+      "publicationState": "published"
+    },
+    {
+      "id": "ae-lv006",
+      "gameId": "alphabet_explorer",
+      "levelNumber": 6,
+      "difficulty": 1,
+      "learningObjective": "uppercase_recognition",
+      "localizedContent": {
+        "vi": {
+          "prompt": "Tìm chữ D.",
+          "options": [
+            {
+              "id": "o1",
+              "text": "D",
+              "correct": true
+            },
+            {
+              "id": "o2",
+              "text": "Ê",
+              "correct": false
+            },
+            {
+              "id": "o3",
+              "text": "M",
+              "correct": false
+            }
+          ]
+        },
+        "en": {
+          "prompt": "Find the letter F.",
+          "options": [
+            {
+              "id": "o1",
+              "text": "F",
+              "correct": true
+            },
+            {
+              "id": "o2",
+              "text": "J",
+              "correct": false
+            },
+            {
+              "id": "o3",
+              "text": "R",
+              "correct": false
+            }
+          ]
+        }
+      },
+      "hints": [
+        {
+          "text": "Nhìn thật kỹ hình dáng chữ cái."
+        },
+        {
+          "text": "Look closely at the letter shape."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "junior",
+        "skillIds": [
+          "letters.recognition.uppercase"
+        ],
+        "milestone": 2,
+        "reviewState": "technically_validated",
+        "contentKind": "uppercase_recognition"
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 45,
+      "publicationState": "published"
+    },
+    {
+      "id": "ae-lv007",
+      "gameId": "alphabet_explorer",
+      "levelNumber": 7,
+      "difficulty": 1,
+      "learningObjective": "uppercase_recognition",
+      "localizedContent": {
+        "vi": {
+          "prompt": "Tìm chữ Đ.",
+          "options": [
+            {
+              "id": "o1",
+              "text": "Đ",
+              "correct": true
+            },
+            {
+              "id": "o2",
+              "text": "G",
+              "correct": false
+            },
+            {
+              "id": "o3",
+              "text": "N",
+              "correct": false
+            }
+          ]
+        },
+        "en": {
+          "prompt": "Find the letter G.",
+          "options": [
+            {
+              "id": "o1",
+              "text": "G",
+              "correct": true
+            },
+            {
+              "id": "o2",
+              "text": "K",
+              "correct": false
+            },
+            {
+              "id": "o3",
+              "text": "S",
+              "correct": false
+            }
+          ]
+        }
+      },
+      "hints": [
+        {
+          "text": "Nhìn thật kỹ hình dáng chữ cái."
+        },
+        {
+          "text": "Look closely at the letter shape."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "junior",
+        "skillIds": [
+          "letters.recognition.uppercase"
+        ],
+        "milestone": 2,
+        "reviewState": "technically_validated",
+        "contentKind": "uppercase_recognition"
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 45,
+      "publicationState": "published"
+    },
+    {
+      "id": "ae-lv008",
+      "gameId": "alphabet_explorer",
+      "levelNumber": 8,
+      "difficulty": 1,
+      "learningObjective": "uppercase_recognition",
+      "localizedContent": {
+        "vi": {
+          "prompt": "Tìm chữ E.",
+          "options": [
+            {
+              "id": "o1",
+              "text": "E",
+              "correct": true
+            },
+            {
+              "id": "o2",
+              "text": "H",
+              "correct": false
+            },
+            {
+              "id": "o3",
+              "text": "O",
+              "correct": false
+            }
+          ]
+        },
+        "en": {
+          "prompt": "Find the letter H.",
+          "options": [
+            {
+              "id": "o1",
+              "text": "H",
+              "correct": true
+            },
+            {
+              "id": "o2",
+              "text": "L",
+              "correct": false
+            },
+            {
+              "id": "o3",
+              "text": "T",
+              "correct": false
+            }
+          ]
+        }
+      },
+      "hints": [
+        {
+          "text": "Nhìn thật kỹ hình dáng chữ cái."
+        },
+        {
+          "text": "Look closely at the letter shape."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "junior",
+        "skillIds": [
+          "letters.recognition.uppercase"
+        ],
+        "milestone": 2,
+        "reviewState": "technically_validated",
+        "contentKind": "uppercase_recognition"
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 45,
+      "publicationState": "published"
+    },
+    {
+      "id": "ae-lv009",
+      "gameId": "alphabet_explorer",
+      "levelNumber": 9,
+      "difficulty": 1,
+      "learningObjective": "uppercase_recognition",
+      "localizedContent": {
+        "vi": {
+          "prompt": "Tìm chữ Ê.",
+          "options": [
+            {
+              "id": "o1",
+              "text": "Ê",
+              "correct": true
+            },
+            {
+              "id": "o2",
+              "text": "I",
+              "correct": false
+            },
+            {
+              "id": "o3",
+              "text": "Ô",
+              "correct": false
+            }
+          ]
+        },
+        "en": {
+          "prompt": "Find the letter I.",
+          "options": [
+            {
+              "id": "o1",
+              "text": "I",
+              "correct": true
+            },
+            {
+              "id": "o2",
+              "text": "M",
+              "correct": false
+            },
+            {
+              "id": "o3",
+              "text": "U",
+              "correct": false
+            }
+          ]
+        }
+      },
+      "hints": [
+        {
+          "text": "Nhìn thật kỹ hình dáng chữ cái."
+        },
+        {
+          "text": "Look closely at the letter shape."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "junior",
+        "skillIds": [
+          "letters.recognition.uppercase"
+        ],
+        "milestone": 2,
+        "reviewState": "technically_validated",
+        "contentKind": "uppercase_recognition"
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 45,
+      "publicationState": "published"
+    },
+    {
+      "id": "ae-lv010",
+      "gameId": "alphabet_explorer",
+      "levelNumber": 10,
+      "difficulty": 1,
+      "learningObjective": "uppercase_recognition",
+      "localizedContent": {
+        "vi": {
+          "prompt": "Tìm chữ G.",
+          "options": [
+            {
+              "id": "o1",
+              "text": "G",
+              "correct": true
+            },
+            {
+              "id": "o2",
+              "text": "K",
+              "correct": false
+            },
+            {
+              "id": "o3",
+              "text": "Ơ",
+              "correct": false
+            }
+          ]
+        },
+        "en": {
+          "prompt": "Find the letter J.",
+          "options": [
+            {
+              "id": "o1",
+              "text": "J",
+              "correct": true
+            },
+            {
+              "id": "o2",
+              "text": "N",
+              "correct": false
+            },
+            {
+              "id": "o3",
+              "text": "V",
+              "correct": false
+            }
+          ]
+        }
+      },
+      "hints": [
+        {
+          "text": "Nhìn thật kỹ hình dáng chữ cái."
+        },
+        {
+          "text": "Look closely at the letter shape."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "junior",
+        "skillIds": [
+          "letters.recognition.uppercase"
+        ],
+        "milestone": 2,
+        "reviewState": "technically_validated",
+        "contentKind": "uppercase_recognition"
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 45,
+      "publicationState": "published"
+    },
+    {
+      "id": "ae-lv011",
+      "gameId": "alphabet_explorer",
+      "levelNumber": 11,
+      "difficulty": 1,
+      "learningObjective": "uppercase_recognition",
+      "localizedContent": {
+        "vi": {
+          "prompt": "Tìm chữ H.",
+          "options": [
+            {
+              "id": "o1",
+              "text": "H",
+              "correct": true
+            },
+            {
+              "id": "o2",
+              "text": "L",
+              "correct": false
+            },
+            {
+              "id": "o3",
+              "text": "P",
+              "correct": false
+            }
+          ]
+        },
+        "en": {
+          "prompt": "Find the letter K.",
+          "options": [
+            {
+              "id": "o1",
+              "text": "K",
+              "correct": true
+            },
+            {
+              "id": "o2",
+              "text": "O",
+              "correct": false
+            },
+            {
+              "id": "o3",
+              "text": "W",
+              "correct": false
+            }
+          ]
+        }
+      },
+      "hints": [
+        {
+          "text": "Nhìn thật kỹ hình dáng chữ cái."
+        },
+        {
+          "text": "Look closely at the letter shape."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "junior",
+        "skillIds": [
+          "letters.recognition.uppercase"
+        ],
+        "milestone": 2,
+        "reviewState": "technically_validated",
+        "contentKind": "uppercase_recognition"
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 45,
+      "publicationState": "published"
+    },
+    {
+      "id": "ae-lv012",
+      "gameId": "alphabet_explorer",
+      "levelNumber": 12,
+      "difficulty": 1,
+      "learningObjective": "uppercase_recognition",
+      "localizedContent": {
+        "vi": {
+          "prompt": "Tìm chữ I.",
+          "options": [
+            {
+              "id": "o1",
+              "text": "I",
+              "correct": true
+            },
+            {
+              "id": "o2",
+              "text": "M",
+              "correct": false
+            },
+            {
+              "id": "o3",
+              "text": "Q",
+              "correct": false
+            }
+          ]
+        },
+        "en": {
+          "prompt": "Find the letter L.",
+          "options": [
+            {
+              "id": "o1",
+              "text": "L",
+              "correct": true
+            },
+            {
+              "id": "o2",
+              "text": "P",
+              "correct": false
+            },
+            {
+              "id": "o3",
+              "text": "X",
+              "correct": false
+            }
+          ]
+        }
+      },
+      "hints": [
+        {
+          "text": "Nhìn thật kỹ hình dáng chữ cái."
+        },
+        {
+          "text": "Look closely at the letter shape."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "junior",
+        "skillIds": [
+          "letters.recognition.uppercase"
+        ],
+        "milestone": 2,
+        "reviewState": "technically_validated",
+        "contentKind": "uppercase_recognition"
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 45,
+      "publicationState": "published"
+    },
+    {
+      "id": "ae-lv013",
+      "gameId": "alphabet_explorer",
+      "levelNumber": 13,
+      "difficulty": 2,
+      "learningObjective": "uppercase_recognition",
+      "localizedContent": {
+        "vi": {
+          "prompt": "Tìm chữ K.",
+          "options": [
+            {
+              "id": "o1",
+              "text": "K",
+              "correct": true
+            },
+            {
+              "id": "o2",
+              "text": "N",
+              "correct": false
+            },
+            {
+              "id": "o3",
+              "text": "R",
+              "correct": false
+            },
+            {
+              "id": "o4",
+              "text": "A",
+              "correct": false
+            }
+          ]
+        },
+        "en": {
+          "prompt": "Find the letter M.",
+          "options": [
+            {
+              "id": "o1",
+              "text": "M",
+              "correct": true
+            },
+            {
+              "id": "o2",
+              "text": "Q",
+              "correct": false
+            },
+            {
+              "id": "o3",
+              "text": "Y",
+              "correct": false
+            },
+            {
+              "id": "o4",
+              "text": "F",
+              "correct": false
+            }
+          ]
+        }
+      },
+      "hints": [
+        {
+          "text": "Nhìn thật kỹ hình dáng chữ cái."
+        },
+        {
+          "text": "Look closely at the letter shape."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "junior",
+        "skillIds": [
+          "letters.recognition.uppercase"
+        ],
+        "milestone": 2,
+        "reviewState": "technically_validated",
+        "contentKind": "uppercase_recognition"
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 45,
+      "publicationState": "published"
+    },
+    {
+      "id": "ae-lv014",
+      "gameId": "alphabet_explorer",
+      "levelNumber": 14,
+      "difficulty": 2,
+      "learningObjective": "uppercase_recognition",
+      "localizedContent": {
+        "vi": {
+          "prompt": "Tìm chữ L.",
+          "options": [
+            {
+              "id": "o1",
+              "text": "L",
+              "correct": true
+            },
+            {
+              "id": "o2",
+              "text": "O",
+              "correct": false
+            },
+            {
+              "id": "o3",
+              "text": "S",
+              "correct": false
+            },
+            {
+              "id": "o4",
+              "text": "Ă",
+              "correct": false
+            }
+          ]
+        },
+        "en": {
+          "prompt": "Find the letter N.",
+          "options": [
+            {
+              "id": "o1",
+              "text": "N",
+              "correct": true
+            },
+            {
+              "id": "o2",
+              "text": "R",
+              "correct": false
+            },
+            {
+              "id": "o3",
+              "text": "Z",
+              "correct": false
+            },
+            {
+              "id": "o4",
+              "text": "G",
+              "correct": false
+            }
+          ]
+        }
+      },
+      "hints": [
+        {
+          "text": "Nhìn thật kỹ hình dáng chữ cái."
+        },
+        {
+          "text": "Look closely at the letter shape."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "junior",
+        "skillIds": [
+          "letters.recognition.uppercase"
+        ],
+        "milestone": 2,
+        "reviewState": "technically_validated",
+        "contentKind": "uppercase_recognition"
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 45,
+      "publicationState": "published"
+    },
+    {
+      "id": "ae-lv015",
+      "gameId": "alphabet_explorer",
+      "levelNumber": 15,
+      "difficulty": 2,
+      "learningObjective": "uppercase_recognition",
+      "localizedContent": {
+        "vi": {
+          "prompt": "Tìm chữ M.",
+          "options": [
+            {
+              "id": "o1",
+              "text": "M",
+              "correct": true
+            },
+            {
+              "id": "o2",
+              "text": "Ô",
+              "correct": false
+            },
+            {
+              "id": "o3",
+              "text": "T",
+              "correct": false
+            },
+            {
+              "id": "o4",
+              "text": "Â",
+              "correct": false
+            }
+          ]
+        },
+        "en": {
+          "prompt": "Find the letter O.",
+          "options": [
+            {
+              "id": "o1",
+              "text": "O",
+              "correct": true
+            },
+            {
+              "id": "o2",
+              "text": "S",
+              "correct": false
+            },
+            {
+              "id": "o3",
+              "text": "A",
+              "correct": false
+            },
+            {
+              "id": "o4",
+              "text": "H",
+              "correct": false
+            }
+          ]
+        }
+      },
+      "hints": [
+        {
+          "text": "Nhìn thật kỹ hình dáng chữ cái."
+        },
+        {
+          "text": "Look closely at the letter shape."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "junior",
+        "skillIds": [
+          "letters.recognition.uppercase"
+        ],
+        "milestone": 2,
+        "reviewState": "technically_validated",
+        "contentKind": "uppercase_recognition"
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 45,
+      "publicationState": "published"
+    },
+    {
+      "id": "ae-lv016",
+      "gameId": "alphabet_explorer",
+      "levelNumber": 16,
+      "difficulty": 2,
+      "learningObjective": "uppercase_recognition",
+      "localizedContent": {
+        "vi": {
+          "prompt": "Tìm chữ N.",
+          "options": [
+            {
+              "id": "o1",
+              "text": "N",
+              "correct": true
+            },
+            {
+              "id": "o2",
+              "text": "Ơ",
+              "correct": false
+            },
+            {
+              "id": "o3",
+              "text": "U",
+              "correct": false
+            },
+            {
+              "id": "o4",
+              "text": "B",
+              "correct": false
+            }
+          ]
+        },
+        "en": {
+          "prompt": "Find the letter P.",
+          "options": [
+            {
+              "id": "o1",
+              "text": "P",
+              "correct": true
+            },
+            {
+              "id": "o2",
+              "text": "T",
+              "correct": false
+            },
+            {
+              "id": "o3",
+              "text": "B",
+              "correct": false
+            },
+            {
+              "id": "o4",
+              "text": "I",
+              "correct": false
+            }
+          ]
+        }
+      },
+      "hints": [
+        {
+          "text": "Nhìn thật kỹ hình dáng chữ cái."
+        },
+        {
+          "text": "Look closely at the letter shape."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "junior",
+        "skillIds": [
+          "letters.recognition.uppercase"
+        ],
+        "milestone": 2,
+        "reviewState": "technically_validated",
+        "contentKind": "uppercase_recognition"
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 45,
+      "publicationState": "published"
+    },
+    {
+      "id": "ae-lv017",
+      "gameId": "alphabet_explorer",
+      "levelNumber": 17,
+      "difficulty": 2,
+      "learningObjective": "uppercase_recognition",
+      "localizedContent": {
+        "vi": {
+          "prompt": "Tìm chữ O.",
+          "options": [
+            {
+              "id": "o1",
+              "text": "O",
+              "correct": true
+            },
+            {
+              "id": "o2",
+              "text": "P",
+              "correct": false
+            },
+            {
+              "id": "o3",
+              "text": "Ư",
+              "correct": false
+            },
+            {
+              "id": "o4",
+              "text": "C",
+              "correct": false
+            }
+          ]
+        },
+        "en": {
+          "prompt": "Find the letter Q.",
+          "options": [
+            {
+              "id": "o1",
+              "text": "Q",
+              "correct": true
+            },
+            {
+              "id": "o2",
+              "text": "U",
+              "correct": false
+            },
+            {
+              "id": "o3",
+              "text": "C",
+              "correct": false
+            },
+            {
+              "id": "o4",
+              "text": "J",
+              "correct": false
+            }
+          ]
+        }
+      },
+      "hints": [
+        {
+          "text": "Nhìn thật kỹ hình dáng chữ cái."
+        },
+        {
+          "text": "Look closely at the letter shape."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "junior",
+        "skillIds": [
+          "letters.recognition.uppercase"
+        ],
+        "milestone": 2,
+        "reviewState": "technically_validated",
+        "contentKind": "uppercase_recognition"
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 45,
+      "publicationState": "published"
+    },
+    {
+      "id": "ae-lv018",
+      "gameId": "alphabet_explorer",
+      "levelNumber": 18,
+      "difficulty": 2,
+      "learningObjective": "uppercase_recognition",
+      "localizedContent": {
+        "vi": {
+          "prompt": "Tìm chữ Ô.",
+          "options": [
+            {
+              "id": "o1",
+              "text": "Ô",
+              "correct": true
+            },
+            {
+              "id": "o2",
+              "text": "Q",
+              "correct": false
+            },
+            {
+              "id": "o3",
+              "text": "V",
+              "correct": false
+            },
+            {
+              "id": "o4",
+              "text": "D",
+              "correct": false
+            }
+          ]
+        },
+        "en": {
+          "prompt": "Find the letter R.",
+          "options": [
+            {
+              "id": "o1",
+              "text": "R",
+              "correct": true
+            },
+            {
+              "id": "o2",
+              "text": "V",
+              "correct": false
+            },
+            {
+              "id": "o3",
+              "text": "D",
+              "correct": false
+            },
+            {
+              "id": "o4",
+              "text": "K",
+              "correct": false
+            }
+          ]
+        }
+      },
+      "hints": [
+        {
+          "text": "Nhìn thật kỹ hình dáng chữ cái."
+        },
+        {
+          "text": "Look closely at the letter shape."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "junior",
+        "skillIds": [
+          "letters.recognition.uppercase"
+        ],
+        "milestone": 2,
+        "reviewState": "technically_validated",
+        "contentKind": "uppercase_recognition"
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 45,
+      "publicationState": "published"
+    },
+    {
+      "id": "ae-lv019",
+      "gameId": "alphabet_explorer",
+      "levelNumber": 19,
+      "difficulty": 2,
+      "learningObjective": "uppercase_recognition",
+      "localizedContent": {
+        "vi": {
+          "prompt": "Tìm chữ Ơ.",
+          "options": [
+            {
+              "id": "o1",
+              "text": "Ơ",
+              "correct": true
+            },
+            {
+              "id": "o2",
+              "text": "R",
+              "correct": false
+            },
+            {
+              "id": "o3",
+              "text": "X",
+              "correct": false
+            },
+            {
+              "id": "o4",
+              "text": "Đ",
+              "correct": false
+            }
+          ]
+        },
+        "en": {
+          "prompt": "Find the letter S.",
+          "options": [
+            {
+              "id": "o1",
+              "text": "S",
+              "correct": true
+            },
+            {
+              "id": "o2",
+              "text": "W",
+              "correct": false
+            },
+            {
+              "id": "o3",
+              "text": "E",
+              "correct": false
+            },
+            {
+              "id": "o4",
+              "text": "L",
+              "correct": false
+            }
+          ]
+        }
+      },
+      "hints": [
+        {
+          "text": "Nhìn thật kỹ hình dáng chữ cái."
+        },
+        {
+          "text": "Look closely at the letter shape."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "junior",
+        "skillIds": [
+          "letters.recognition.uppercase"
+        ],
+        "milestone": 2,
+        "reviewState": "technically_validated",
+        "contentKind": "uppercase_recognition"
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 45,
+      "publicationState": "published"
+    },
+    {
+      "id": "ae-lv020",
+      "gameId": "alphabet_explorer",
+      "levelNumber": 20,
+      "difficulty": 2,
+      "learningObjective": "uppercase_recognition",
+      "localizedContent": {
+        "vi": {
+          "prompt": "Tìm chữ P.",
+          "options": [
+            {
+              "id": "o1",
+              "text": "P",
+              "correct": true
+            },
+            {
+              "id": "o2",
+              "text": "S",
+              "correct": false
+            },
+            {
+              "id": "o3",
+              "text": "Y",
+              "correct": false
+            },
+            {
+              "id": "o4",
+              "text": "E",
+              "correct": false
+            }
+          ]
+        },
+        "en": {
+          "prompt": "Find the letter T.",
+          "options": [
+            {
+              "id": "o1",
+              "text": "T",
+              "correct": true
+            },
+            {
+              "id": "o2",
+              "text": "X",
+              "correct": false
+            },
+            {
+              "id": "o3",
+              "text": "F",
+              "correct": false
+            },
+            {
+              "id": "o4",
+              "text": "M",
+              "correct": false
+            }
+          ]
+        }
+      },
+      "hints": [
+        {
+          "text": "Nhìn thật kỹ hình dáng chữ cái."
+        },
+        {
+          "text": "Look closely at the letter shape."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "junior",
+        "skillIds": [
+          "letters.recognition.uppercase"
+        ],
+        "milestone": 2,
+        "reviewState": "technically_validated",
+        "contentKind": "uppercase_recognition"
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 45,
+      "publicationState": "published"
+    },
+    {
+      "id": "ae-lv021",
+      "gameId": "alphabet_explorer",
+      "levelNumber": 21,
+      "difficulty": 2,
+      "learningObjective": "uppercase_recognition",
+      "localizedContent": {
+        "vi": {
+          "prompt": "Tìm chữ Q.",
+          "options": [
+            {
+              "id": "o1",
+              "text": "Q",
+              "correct": true
+            },
+            {
+              "id": "o2",
+              "text": "T",
+              "correct": false
+            },
+            {
+              "id": "o3",
+              "text": "A",
+              "correct": false
+            },
+            {
+              "id": "o4",
+              "text": "Ê",
+              "correct": false
+            }
+          ]
+        },
+        "en": {
+          "prompt": "Find the letter U.",
+          "options": [
+            {
+              "id": "o1",
+              "text": "U",
+              "correct": true
+            },
+            {
+              "id": "o2",
+              "text": "Y",
+              "correct": false
+            },
+            {
+              "id": "o3",
+              "text": "G",
+              "correct": false
+            },
+            {
+              "id": "o4",
+              "text": "N",
+              "correct": false
+            }
+          ]
+        }
+      },
+      "hints": [
+        {
+          "text": "Nhìn thật kỹ hình dáng chữ cái."
+        },
+        {
+          "text": "Look closely at the letter shape."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "junior",
+        "skillIds": [
+          "letters.recognition.uppercase"
+        ],
+        "milestone": 2,
+        "reviewState": "technically_validated",
+        "contentKind": "uppercase_recognition"
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 45,
+      "publicationState": "published"
+    },
+    {
+      "id": "ae-lv022",
+      "gameId": "alphabet_explorer",
+      "levelNumber": 22,
+      "difficulty": 2,
+      "learningObjective": "uppercase_recognition",
+      "localizedContent": {
+        "vi": {
+          "prompt": "Tìm chữ R.",
+          "options": [
+            {
+              "id": "o1",
+              "text": "R",
+              "correct": true
+            },
+            {
+              "id": "o2",
+              "text": "U",
+              "correct": false
+            },
+            {
+              "id": "o3",
+              "text": "Ă",
+              "correct": false
+            },
+            {
+              "id": "o4",
+              "text": "G",
+              "correct": false
+            }
+          ]
+        },
+        "en": {
+          "prompt": "Find the letter V.",
+          "options": [
+            {
+              "id": "o1",
+              "text": "V",
+              "correct": true
+            },
+            {
+              "id": "o2",
+              "text": "Z",
+              "correct": false
+            },
+            {
+              "id": "o3",
+              "text": "H",
+              "correct": false
+            },
+            {
+              "id": "o4",
+              "text": "O",
+              "correct": false
+            }
+          ]
+        }
+      },
+      "hints": [
+        {
+          "text": "Nhìn thật kỹ hình dáng chữ cái."
+        },
+        {
+          "text": "Look closely at the letter shape."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "junior",
+        "skillIds": [
+          "letters.recognition.uppercase"
+        ],
+        "milestone": 2,
+        "reviewState": "technically_validated",
+        "contentKind": "uppercase_recognition"
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 45,
+      "publicationState": "published"
+    },
+    {
+      "id": "ae-lv023",
+      "gameId": "alphabet_explorer",
+      "levelNumber": 23,
+      "difficulty": 2,
+      "learningObjective": "uppercase_recognition",
+      "localizedContent": {
+        "vi": {
+          "prompt": "Tìm chữ S.",
+          "options": [
+            {
+              "id": "o1",
+              "text": "S",
+              "correct": true
+            },
+            {
+              "id": "o2",
+              "text": "Ư",
+              "correct": false
+            },
+            {
+              "id": "o3",
+              "text": "Â",
+              "correct": false
+            },
+            {
+              "id": "o4",
+              "text": "H",
+              "correct": false
+            }
+          ]
+        },
+        "en": {
+          "prompt": "Find the letter W.",
+          "options": [
+            {
+              "id": "o1",
+              "text": "W",
+              "correct": true
+            },
+            {
+              "id": "o2",
+              "text": "A",
+              "correct": false
+            },
+            {
+              "id": "o3",
+              "text": "I",
+              "correct": false
+            },
+            {
+              "id": "o4",
+              "text": "P",
+              "correct": false
+            }
+          ]
+        }
+      },
+      "hints": [
+        {
+          "text": "Nhìn thật kỹ hình dáng chữ cái."
+        },
+        {
+          "text": "Look closely at the letter shape."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "junior",
+        "skillIds": [
+          "letters.recognition.uppercase"
+        ],
+        "milestone": 2,
+        "reviewState": "technically_validated",
+        "contentKind": "uppercase_recognition"
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 45,
+      "publicationState": "published"
+    },
+    {
+      "id": "ae-lv024",
+      "gameId": "alphabet_explorer",
+      "levelNumber": 24,
+      "difficulty": 2,
+      "learningObjective": "uppercase_recognition",
+      "localizedContent": {
+        "vi": {
+          "prompt": "Tìm chữ T.",
+          "options": [
+            {
+              "id": "o1",
+              "text": "T",
+              "correct": true
+            },
+            {
+              "id": "o2",
+              "text": "V",
+              "correct": false
+            },
+            {
+              "id": "o3",
+              "text": "B",
+              "correct": false
+            },
+            {
+              "id": "o4",
+              "text": "I",
+              "correct": false
+            }
+          ]
+        },
+        "en": {
+          "prompt": "Find the letter X.",
+          "options": [
+            {
+              "id": "o1",
+              "text": "X",
+              "correct": true
+            },
+            {
+              "id": "o2",
+              "text": "B",
+              "correct": false
+            },
+            {
+              "id": "o3",
+              "text": "J",
+              "correct": false
+            },
+            {
+              "id": "o4",
+              "text": "Q",
+              "correct": false
+            }
+          ]
+        }
+      },
+      "hints": [
+        {
+          "text": "Nhìn thật kỹ hình dáng chữ cái."
+        },
+        {
+          "text": "Look closely at the letter shape."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "junior",
+        "skillIds": [
+          "letters.recognition.uppercase"
+        ],
+        "milestone": 2,
+        "reviewState": "technically_validated",
+        "contentKind": "uppercase_recognition"
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 45,
+      "publicationState": "published"
+    },
+    {
+      "id": "ae-lv025",
+      "gameId": "alphabet_explorer",
+      "levelNumber": 25,
+      "difficulty": 2,
+      "learningObjective": "uppercase_recognition",
+      "localizedContent": {
+        "vi": {
+          "prompt": "Tìm chữ U.",
+          "options": [
+            {
+              "id": "o1",
+              "text": "U",
+              "correct": true
+            },
+            {
+              "id": "o2",
+              "text": "X",
+              "correct": false
+            },
+            {
+              "id": "o3",
+              "text": "C",
+              "correct": false
+            },
+            {
+              "id": "o4",
+              "text": "K",
+              "correct": false
+            }
+          ]
+        },
+        "en": {
+          "prompt": "Find the letter Y.",
+          "options": [
+            {
+              "id": "o1",
+              "text": "Y",
+              "correct": true
+            },
+            {
+              "id": "o2",
+              "text": "C",
+              "correct": false
+            },
+            {
+              "id": "o3",
+              "text": "K",
+              "correct": false
+            },
+            {
+              "id": "o4",
+              "text": "R",
+              "correct": false
+            }
+          ]
+        }
+      },
+      "hints": [
+        {
+          "text": "Nhìn thật kỹ hình dáng chữ cái."
+        },
+        {
+          "text": "Look closely at the letter shape."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "junior",
+        "skillIds": [
+          "letters.recognition.uppercase"
+        ],
+        "milestone": 2,
+        "reviewState": "technically_validated",
+        "contentKind": "uppercase_recognition"
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 45,
+      "publicationState": "published"
+    },
+    {
+      "id": "ae-lv026",
+      "gameId": "alphabet_explorer",
+      "levelNumber": 26,
+      "difficulty": 2,
+      "learningObjective": "uppercase_recognition",
+      "localizedContent": {
+        "vi": {
+          "prompt": "Tìm chữ Ư.",
+          "options": [
+            {
+              "id": "o1",
+              "text": "Ư",
+              "correct": true
+            },
+            {
+              "id": "o2",
+              "text": "Y",
+              "correct": false
+            },
+            {
+              "id": "o3",
+              "text": "D",
+              "correct": false
+            },
+            {
+              "id": "o4",
+              "text": "L",
+              "correct": false
+            }
+          ]
+        },
+        "en": {
+          "prompt": "Find the letter Z.",
+          "options": [
+            {
+              "id": "o1",
+              "text": "Z",
+              "correct": true
+            },
+            {
+              "id": "o2",
+              "text": "D",
+              "correct": false
+            },
+            {
+              "id": "o3",
+              "text": "L",
+              "correct": false
+            },
+            {
+              "id": "o4",
+              "text": "S",
+              "correct": false
+            }
+          ]
+        }
+      },
+      "hints": [
+        {
+          "text": "Nhìn thật kỹ hình dáng chữ cái."
+        },
+        {
+          "text": "Look closely at the letter shape."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "junior",
+        "skillIds": [
+          "letters.recognition.uppercase"
+        ],
+        "milestone": 2,
+        "reviewState": "technically_validated",
+        "contentKind": "uppercase_recognition"
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 45,
+      "publicationState": "published"
+    },
+    {
+      "id": "ae-lv027",
+      "gameId": "alphabet_explorer",
+      "levelNumber": 27,
+      "difficulty": 1,
+      "learningObjective": "lowercase_recognition",
+      "localizedContent": {
+        "vi": {
+          "prompt": "Tìm chữ thường ă.",
+          "options": [
+            {
+              "id": "o1",
+              "text": "ă",
+              "correct": true
+            },
+            {
+              "id": "o2",
+              "text": "a",
+              "correct": false
+            },
+            {
+              "id": "o3",
+              "text": "â",
+              "correct": false
+            },
+            {
+              "id": "o4",
+              "text": "b",
+              "correct": false
+            }
+          ]
+        },
+        "en": {
+          "prompt": "Find lowercase a.",
+          "options": [
+            {
+              "id": "o1",
+              "text": "a",
+              "correct": true
+            },
+            {
+              "id": "o2",
+              "text": "b",
+              "correct": false
+            },
+            {
+              "id": "o3",
+              "text": "d",
+              "correct": false
+            },
+            {
+              "id": "o4",
+              "text": "e",
+              "correct": false
+            }
+          ]
+        }
+      },
+      "hints": [
+        {
+          "text": "Nhìn thật kỹ hình dáng chữ cái."
+        },
+        {
+          "text": "Look closely at the letter shape."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "junior",
+        "skillIds": [
+          "letters.recognition.lowercase"
+        ],
+        "milestone": 2,
+        "reviewState": "technically_validated",
+        "contentKind": "lowercase_recognition"
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 45,
+      "publicationState": "published"
+    },
+    {
+      "id": "ae-lv028",
+      "gameId": "alphabet_explorer",
+      "levelNumber": 28,
+      "difficulty": 1,
+      "learningObjective": "lowercase_recognition",
+      "localizedContent": {
+        "vi": {
+          "prompt": "Tìm chữ thường â.",
+          "options": [
+            {
+              "id": "o1",
+              "text": "â",
+              "correct": true
+            },
+            {
+              "id": "o2",
+              "text": "a",
+              "correct": false
+            },
+            {
+              "id": "o3",
+              "text": "ă",
+              "correct": false
+            },
+            {
+              "id": "o4",
+              "text": "b",
+              "correct": false
+            }
+          ]
+        },
+        "en": {
+          "prompt": "Find lowercase c.",
+          "options": [
+            {
+              "id": "o1",
+              "text": "c",
+              "correct": true
+            },
+            {
+              "id": "o2",
+              "text": "a",
+              "correct": false
+            },
+            {
+              "id": "o3",
+              "text": "b",
+              "correct": false
+            },
+            {
+              "id": "o4",
+              "text": "d",
+              "correct": false
+            }
+          ]
+        }
+      },
+      "hints": [
+        {
+          "text": "Nhìn thật kỹ hình dáng chữ cái."
+        },
+        {
+          "text": "Look closely at the letter shape."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "junior",
+        "skillIds": [
+          "letters.recognition.lowercase"
+        ],
+        "milestone": 2,
+        "reviewState": "technically_validated",
+        "contentKind": "lowercase_recognition"
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 45,
+      "publicationState": "published"
+    },
+    {
+      "id": "ae-lv029",
+      "gameId": "alphabet_explorer",
+      "levelNumber": 29,
+      "difficulty": 1,
+      "learningObjective": "lowercase_recognition",
+      "localizedContent": {
+        "vi": {
+          "prompt": "Tìm chữ thường đ.",
+          "options": [
+            {
+              "id": "o1",
+              "text": "đ",
+              "correct": true
+            },
+            {
+              "id": "o2",
+              "text": "a",
+              "correct": false
+            },
+            {
+              "id": "o3",
+              "text": "ă",
+              "correct": false
+            },
+            {
+              "id": "o4",
+              "text": "â",
+              "correct": false
+            }
+          ]
+        },
+        "en": {
+          "prompt": "Find lowercase e.",
+          "options": [
+            {
+              "id": "o1",
+              "text": "e",
+              "correct": true
+            },
+            {
+              "id": "o2",
+              "text": "a",
+              "correct": false
+            },
+            {
+              "id": "o3",
+              "text": "b",
+              "correct": false
+            },
+            {
+              "id": "o4",
+              "text": "d",
+              "correct": false
+            }
+          ]
+        }
+      },
+      "hints": [
+        {
+          "text": "Nhìn thật kỹ hình dáng chữ cái."
+        },
+        {
+          "text": "Look closely at the letter shape."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "junior",
+        "skillIds": [
+          "letters.recognition.lowercase"
+        ],
+        "milestone": 2,
+        "reviewState": "technically_validated",
+        "contentKind": "lowercase_recognition"
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 45,
+      "publicationState": "published"
+    },
+    {
+      "id": "ae-lv030",
+      "gameId": "alphabet_explorer",
+      "levelNumber": 30,
+      "difficulty": 1,
+      "learningObjective": "lowercase_recognition",
+      "localizedContent": {
+        "vi": {
+          "prompt": "Tìm chữ thường ê.",
+          "options": [
+            {
+              "id": "o1",
+              "text": "ê",
+              "correct": true
+            },
+            {
+              "id": "o2",
+              "text": "a",
+              "correct": false
+            },
+            {
+              "id": "o3",
+              "text": "ă",
+              "correct": false
+            },
+            {
+              "id": "o4",
+              "text": "â",
+              "correct": false
+            }
+          ]
+        },
+        "en": {
+          "prompt": "Find lowercase g.",
+          "options": [
+            {
+              "id": "o1",
+              "text": "g",
+              "correct": true
+            },
+            {
+              "id": "o2",
+              "text": "a",
+              "correct": false
+            },
+            {
+              "id": "o3",
+              "text": "b",
+              "correct": false
+            },
+            {
+              "id": "o4",
+              "text": "d",
+              "correct": false
+            }
+          ]
+        }
+      },
+      "hints": [
+        {
+          "text": "Nhìn thật kỹ hình dáng chữ cái."
+        },
+        {
+          "text": "Look closely at the letter shape."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "junior",
+        "skillIds": [
+          "letters.recognition.lowercase"
+        ],
+        "milestone": 2,
+        "reviewState": "technically_validated",
+        "contentKind": "lowercase_recognition"
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 45,
+      "publicationState": "published"
+    },
+    {
+      "id": "ae-lv031",
+      "gameId": "alphabet_explorer",
+      "levelNumber": 31,
+      "difficulty": 1,
+      "learningObjective": "lowercase_recognition",
+      "localizedContent": {
+        "vi": {
+          "prompt": "Tìm chữ thường ô.",
+          "options": [
+            {
+              "id": "o1",
+              "text": "ô",
+              "correct": true
+            },
+            {
+              "id": "o2",
+              "text": "a",
+              "correct": false
+            },
+            {
+              "id": "o3",
+              "text": "ă",
+              "correct": false
+            },
+            {
+              "id": "o4",
+              "text": "â",
+              "correct": false
+            }
+          ]
+        },
+        "en": {
+          "prompt": "Find lowercase i.",
+          "options": [
+            {
+              "id": "o1",
+              "text": "i",
+              "correct": true
+            },
+            {
+              "id": "o2",
+              "text": "a",
+              "correct": false
+            },
+            {
+              "id": "o3",
+              "text": "b",
+              "correct": false
+            },
+            {
+              "id": "o4",
+              "text": "d",
+              "correct": false
+            }
+          ]
+        }
+      },
+      "hints": [
+        {
+          "text": "Nhìn thật kỹ hình dáng chữ cái."
+        },
+        {
+          "text": "Look closely at the letter shape."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "junior",
+        "skillIds": [
+          "letters.recognition.lowercase"
+        ],
+        "milestone": 2,
+        "reviewState": "technically_validated",
+        "contentKind": "lowercase_recognition"
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 45,
+      "publicationState": "published"
+    },
+    {
+      "id": "ae-lv032",
+      "gameId": "alphabet_explorer",
+      "levelNumber": 32,
+      "difficulty": 1,
+      "learningObjective": "lowercase_recognition",
+      "localizedContent": {
+        "vi": {
+          "prompt": "Tìm chữ thường ơ.",
+          "options": [
+            {
+              "id": "o1",
+              "text": "ơ",
+              "correct": true
+            },
+            {
+              "id": "o2",
+              "text": "a",
+              "correct": false
+            },
+            {
+              "id": "o3",
+              "text": "ă",
+              "correct": false
+            },
+            {
+              "id": "o4",
+              "text": "â",
+              "correct": false
+            }
+          ]
+        },
+        "en": {
+          "prompt": "Find lowercase m.",
+          "options": [
+            {
+              "id": "o1",
+              "text": "m",
+              "correct": true
+            },
+            {
+              "id": "o2",
+              "text": "a",
+              "correct": false
+            },
+            {
+              "id": "o3",
+              "text": "b",
+              "correct": false
+            },
+            {
+              "id": "o4",
+              "text": "d",
+              "correct": false
+            }
+          ]
+        }
+      },
+      "hints": [
+        {
+          "text": "Nhìn thật kỹ hình dáng chữ cái."
+        },
+        {
+          "text": "Look closely at the letter shape."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "junior",
+        "skillIds": [
+          "letters.recognition.lowercase"
+        ],
+        "milestone": 2,
+        "reviewState": "technically_validated",
+        "contentKind": "lowercase_recognition"
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 45,
+      "publicationState": "published"
+    },
+    {
+      "id": "ae-lv033",
+      "gameId": "alphabet_explorer",
+      "levelNumber": 33,
+      "difficulty": 2,
+      "learningObjective": "lowercase_recognition",
+      "localizedContent": {
+        "vi": {
+          "prompt": "Tìm chữ thường ư.",
+          "options": [
+            {
+              "id": "o1",
+              "text": "ư",
+              "correct": true
+            },
+            {
+              "id": "o2",
+              "text": "a",
+              "correct": false
+            },
+            {
+              "id": "o3",
+              "text": "ă",
+              "correct": false
+            },
+            {
+              "id": "o4",
+              "text": "â",
+              "correct": false
+            }
+          ]
+        },
+        "en": {
+          "prompt": "Find lowercase n.",
+          "options": [
+            {
+              "id": "o1",
+              "text": "n",
+              "correct": true
+            },
+            {
+              "id": "o2",
+              "text": "a",
+              "correct": false
+            },
+            {
+              "id": "o3",
+              "text": "b",
+              "correct": false
+            },
+            {
+              "id": "o4",
+              "text": "d",
+              "correct": false
+            }
+          ]
+        }
+      },
+      "hints": [
+        {
+          "text": "Nhìn thật kỹ hình dáng chữ cái."
+        },
+        {
+          "text": "Look closely at the letter shape."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "junior",
+        "skillIds": [
+          "letters.recognition.lowercase"
+        ],
+        "milestone": 2,
+        "reviewState": "technically_validated",
+        "contentKind": "lowercase_recognition"
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 45,
+      "publicationState": "published"
+    },
+    {
+      "id": "ae-lv034",
+      "gameId": "alphabet_explorer",
+      "levelNumber": 34,
+      "difficulty": 2,
+      "learningObjective": "lowercase_recognition",
+      "localizedContent": {
+        "vi": {
+          "prompt": "Tìm chữ thường b.",
+          "options": [
+            {
+              "id": "o1",
+              "text": "b",
+              "correct": true
+            },
+            {
+              "id": "o2",
+              "text": "a",
+              "correct": false
+            },
+            {
+              "id": "o3",
+              "text": "ă",
+              "correct": false
+            },
+            {
+              "id": "o4",
+              "text": "â",
+              "correct": false
+            }
+          ]
+        },
+        "en": {
+          "prompt": "Find lowercase o.",
+          "options": [
+            {
+              "id": "o1",
+              "text": "o",
+              "correct": true
+            },
+            {
+              "id": "o2",
+              "text": "a",
+              "correct": false
+            },
+            {
+              "id": "o3",
+              "text": "b",
+              "correct": false
+            },
+            {
+              "id": "o4",
+              "text": "d",
+              "correct": false
+            }
+          ]
+        }
+      },
+      "hints": [
+        {
+          "text": "Nhìn thật kỹ hình dáng chữ cái."
+        },
+        {
+          "text": "Look closely at the letter shape."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "junior",
+        "skillIds": [
+          "letters.recognition.lowercase"
+        ],
+        "milestone": 2,
+        "reviewState": "technically_validated",
+        "contentKind": "lowercase_recognition"
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 45,
+      "publicationState": "published"
+    },
+    {
+      "id": "ae-lv035",
+      "gameId": "alphabet_explorer",
+      "levelNumber": 35,
+      "difficulty": 2,
+      "learningObjective": "lowercase_recognition",
+      "localizedContent": {
+        "vi": {
+          "prompt": "Tìm chữ thường c.",
+          "options": [
+            {
+              "id": "o1",
+              "text": "c",
+              "correct": true
+            },
+            {
+              "id": "o2",
+              "text": "a",
+              "correct": false
+            },
+            {
+              "id": "o3",
+              "text": "ă",
+              "correct": false
+            },
+            {
+              "id": "o4",
+              "text": "â",
+              "correct": false
+            }
+          ]
+        },
+        "en": {
+          "prompt": "Find lowercase p.",
+          "options": [
+            {
+              "id": "o1",
+              "text": "p",
+              "correct": true
+            },
+            {
+              "id": "o2",
+              "text": "a",
+              "correct": false
+            },
+            {
+              "id": "o3",
+              "text": "b",
+              "correct": false
+            },
+            {
+              "id": "o4",
+              "text": "d",
+              "correct": false
+            }
+          ]
+        }
+      },
+      "hints": [
+        {
+          "text": "Nhìn thật kỹ hình dáng chữ cái."
+        },
+        {
+          "text": "Look closely at the letter shape."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "junior",
+        "skillIds": [
+          "letters.recognition.lowercase"
+        ],
+        "milestone": 2,
+        "reviewState": "technically_validated",
+        "contentKind": "lowercase_recognition"
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 45,
+      "publicationState": "published"
+    },
+    {
+      "id": "ae-lv036",
+      "gameId": "alphabet_explorer",
+      "levelNumber": 36,
+      "difficulty": 2,
+      "learningObjective": "lowercase_recognition",
+      "localizedContent": {
+        "vi": {
+          "prompt": "Tìm chữ thường d.",
+          "options": [
+            {
+              "id": "o1",
+              "text": "d",
+              "correct": true
+            },
+            {
+              "id": "o2",
+              "text": "a",
+              "correct": false
+            },
+            {
+              "id": "o3",
+              "text": "ă",
+              "correct": false
+            },
+            {
+              "id": "o4",
+              "text": "â",
+              "correct": false
+            }
+          ]
+        },
+        "en": {
+          "prompt": "Find lowercase q.",
+          "options": [
+            {
+              "id": "o1",
+              "text": "q",
+              "correct": true
+            },
+            {
+              "id": "o2",
+              "text": "a",
+              "correct": false
+            },
+            {
+              "id": "o3",
+              "text": "b",
+              "correct": false
+            },
+            {
+              "id": "o4",
+              "text": "d",
+              "correct": false
+            }
+          ]
+        }
+      },
+      "hints": [
+        {
+          "text": "Nhìn thật kỹ hình dáng chữ cái."
+        },
+        {
+          "text": "Look closely at the letter shape."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "junior",
+        "skillIds": [
+          "letters.recognition.lowercase"
+        ],
+        "milestone": 2,
+        "reviewState": "technically_validated",
+        "contentKind": "lowercase_recognition"
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 45,
+      "publicationState": "published"
+    },
+    {
+      "id": "ae-lv037",
+      "gameId": "alphabet_explorer",
+      "levelNumber": 37,
+      "difficulty": 2,
+      "learningObjective": "lowercase_recognition",
+      "localizedContent": {
+        "vi": {
+          "prompt": "Tìm chữ thường g.",
+          "options": [
+            {
+              "id": "o1",
+              "text": "g",
+              "correct": true
+            },
+            {
+              "id": "o2",
+              "text": "a",
+              "correct": false
+            },
+            {
+              "id": "o3",
+              "text": "ă",
+              "correct": false
+            },
+            {
+              "id": "o4",
+              "text": "â",
+              "correct": false
+            }
+          ]
+        },
+        "en": {
+          "prompt": "Find lowercase r.",
+          "options": [
+            {
+              "id": "o1",
+              "text": "r",
+              "correct": true
+            },
+            {
+              "id": "o2",
+              "text": "a",
+              "correct": false
+            },
+            {
+              "id": "o3",
+              "text": "b",
+              "correct": false
+            },
+            {
+              "id": "o4",
+              "text": "d",
+              "correct": false
+            }
+          ]
+        }
+      },
+      "hints": [
+        {
+          "text": "Nhìn thật kỹ hình dáng chữ cái."
+        },
+        {
+          "text": "Look closely at the letter shape."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "junior",
+        "skillIds": [
+          "letters.recognition.lowercase"
+        ],
+        "milestone": 2,
+        "reviewState": "technically_validated",
+        "contentKind": "lowercase_recognition"
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 45,
+      "publicationState": "published"
+    },
+    {
+      "id": "ae-lv038",
+      "gameId": "alphabet_explorer",
+      "levelNumber": 38,
+      "difficulty": 2,
+      "learningObjective": "lowercase_recognition",
+      "localizedContent": {
+        "vi": {
+          "prompt": "Tìm chữ thường h.",
+          "options": [
+            {
+              "id": "o1",
+              "text": "h",
+              "correct": true
+            },
+            {
+              "id": "o2",
+              "text": "a",
+              "correct": false
+            },
+            {
+              "id": "o3",
+              "text": "ă",
+              "correct": false
+            },
+            {
+              "id": "o4",
+              "text": "â",
+              "correct": false
+            }
+          ]
+        },
+        "en": {
+          "prompt": "Find lowercase s.",
+          "options": [
+            {
+              "id": "o1",
+              "text": "s",
+              "correct": true
+            },
+            {
+              "id": "o2",
+              "text": "a",
+              "correct": false
+            },
+            {
+              "id": "o3",
+              "text": "b",
+              "correct": false
+            },
+            {
+              "id": "o4",
+              "text": "d",
+              "correct": false
+            }
+          ]
+        }
+      },
+      "hints": [
+        {
+          "text": "Nhìn thật kỹ hình dáng chữ cái."
+        },
+        {
+          "text": "Look closely at the letter shape."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "junior",
+        "skillIds": [
+          "letters.recognition.lowercase"
+        ],
+        "milestone": 2,
+        "reviewState": "technically_validated",
+        "contentKind": "lowercase_recognition"
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 45,
+      "publicationState": "published"
+    },
+    {
+      "id": "ae-lv039",
+      "gameId": "alphabet_explorer",
+      "levelNumber": 39,
+      "difficulty": 2,
+      "learningObjective": "case_matching",
+      "localizedContent": {
+        "vi": {
+          "prompt": "Chữ thường của A là chữ nào?",
+          "options": [
+            {
+              "id": "o1",
+              "text": "a",
+              "correct": true
+            },
+            {
+              "id": "o2",
+              "text": "ă",
+              "correct": false
+            },
+            {
+              "id": "o3",
+              "text": "â",
+              "correct": false
+            },
+            {
+              "id": "o4",
+              "text": "b",
+              "correct": false
+            }
+          ]
+        },
+        "en": {
+          "prompt": "Which lowercase letter matches A?",
+          "options": [
+            {
+              "id": "o1",
+              "text": "a",
+              "correct": true
+            },
+            {
+              "id": "o2",
+              "text": "b",
+              "correct": false
+            },
+            {
+              "id": "o3",
+              "text": "c",
+              "correct": false
+            },
+            {
+              "id": "o4",
+              "text": "d",
+              "correct": false
+            }
+          ]
+        }
+      },
+      "hints": [
+        {
+          "text": "Nhìn thật kỹ hình dáng chữ cái."
+        },
+        {
+          "text": "Look closely at the letter shape."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "junior",
+        "skillIds": [
+          "letters.case_matching",
+          "letters.recognition.lowercase"
+        ],
+        "milestone": 2,
+        "reviewState": "technically_validated",
+        "contentKind": "case_matching"
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 45,
+      "publicationState": "published"
+    },
+    {
+      "id": "ae-lv040",
+      "gameId": "alphabet_explorer",
+      "levelNumber": 40,
+      "difficulty": 2,
+      "learningObjective": "case_matching",
+      "localizedContent": {
+        "vi": {
+          "prompt": "Chữ thường của Ă là chữ nào?",
+          "options": [
+            {
+              "id": "o1",
+              "text": "ă",
+              "correct": true
+            },
+            {
+              "id": "o2",
+              "text": "a",
+              "correct": false
+            },
+            {
+              "id": "o3",
+              "text": "â",
+              "correct": false
+            },
+            {
+              "id": "o4",
+              "text": "b",
+              "correct": false
+            }
+          ]
+        },
+        "en": {
+          "prompt": "Which lowercase letter matches B?",
+          "options": [
+            {
+              "id": "o1",
+              "text": "b",
+              "correct": true
+            },
+            {
+              "id": "o2",
+              "text": "c",
+              "correct": false
+            },
+            {
+              "id": "o3",
+              "text": "d",
+              "correct": false
+            },
+            {
+              "id": "o4",
+              "text": "e",
+              "correct": false
+            }
+          ]
+        }
+      },
+      "hints": [
+        {
+          "text": "Nhìn thật kỹ hình dáng chữ cái."
+        },
+        {
+          "text": "Look closely at the letter shape."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "junior",
+        "skillIds": [
+          "letters.case_matching",
+          "letters.recognition.lowercase"
+        ],
+        "milestone": 2,
+        "reviewState": "technically_validated",
+        "contentKind": "case_matching"
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 45,
+      "publicationState": "published"
+    },
+    {
+      "id": "ae-lv041",
+      "gameId": "alphabet_explorer",
+      "levelNumber": 41,
+      "difficulty": 2,
+      "learningObjective": "case_matching",
+      "localizedContent": {
+        "vi": {
+          "prompt": "Chữ thường của Â là chữ nào?",
+          "options": [
+            {
+              "id": "o1",
+              "text": "â",
+              "correct": true
+            },
+            {
+              "id": "o2",
+              "text": "a",
+              "correct": false
+            },
+            {
+              "id": "o3",
+              "text": "ă",
+              "correct": false
+            },
+            {
+              "id": "o4",
+              "text": "b",
+              "correct": false
+            }
+          ]
+        },
+        "en": {
+          "prompt": "Which lowercase letter matches C?",
+          "options": [
+            {
+              "id": "o1",
+              "text": "c",
+              "correct": true
+            },
+            {
+              "id": "o2",
+              "text": "d",
+              "correct": false
+            },
+            {
+              "id": "o3",
+              "text": "e",
+              "correct": false
+            },
+            {
+              "id": "o4",
+              "text": "f",
+              "correct": false
+            }
+          ]
+        }
+      },
+      "hints": [
+        {
+          "text": "Nhìn thật kỹ hình dáng chữ cái."
+        },
+        {
+          "text": "Look closely at the letter shape."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "junior",
+        "skillIds": [
+          "letters.case_matching",
+          "letters.recognition.lowercase"
+        ],
+        "milestone": 2,
+        "reviewState": "technically_validated",
+        "contentKind": "case_matching"
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 45,
+      "publicationState": "published"
+    },
+    {
+      "id": "ae-lv042",
+      "gameId": "alphabet_explorer",
+      "levelNumber": 42,
+      "difficulty": 2,
+      "learningObjective": "case_matching",
+      "localizedContent": {
+        "vi": {
+          "prompt": "Chữ thường của B là chữ nào?",
+          "options": [
+            {
+              "id": "o1",
+              "text": "b",
+              "correct": true
+            },
+            {
+              "id": "o2",
+              "text": "a",
+              "correct": false
+            },
+            {
+              "id": "o3",
+              "text": "ă",
+              "correct": false
+            },
+            {
+              "id": "o4",
+              "text": "â",
+              "correct": false
+            }
+          ]
+        },
+        "en": {
+          "prompt": "Which lowercase letter matches D?",
+          "options": [
+            {
+              "id": "o1",
+              "text": "d",
+              "correct": true
+            },
+            {
+              "id": "o2",
+              "text": "e",
+              "correct": false
+            },
+            {
+              "id": "o3",
+              "text": "f",
+              "correct": false
+            },
+            {
+              "id": "o4",
+              "text": "g",
+              "correct": false
+            }
+          ]
+        }
+      },
+      "hints": [
+        {
+          "text": "Nhìn thật kỹ hình dáng chữ cái."
+        },
+        {
+          "text": "Look closely at the letter shape."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "junior",
+        "skillIds": [
+          "letters.case_matching",
+          "letters.recognition.lowercase"
+        ],
+        "milestone": 2,
+        "reviewState": "technically_validated",
+        "contentKind": "case_matching"
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 45,
+      "publicationState": "published"
+    },
+    {
+      "id": "ae-lv043",
+      "gameId": "alphabet_explorer",
+      "levelNumber": 43,
+      "difficulty": 2,
+      "learningObjective": "case_matching",
+      "localizedContent": {
+        "vi": {
+          "prompt": "Chữ thường của C là chữ nào?",
+          "options": [
+            {
+              "id": "o1",
+              "text": "c",
+              "correct": true
+            },
+            {
+              "id": "o2",
+              "text": "a",
+              "correct": false
+            },
+            {
+              "id": "o3",
+              "text": "ă",
+              "correct": false
+            },
+            {
+              "id": "o4",
+              "text": "â",
+              "correct": false
+            }
+          ]
+        },
+        "en": {
+          "prompt": "Which lowercase letter matches E?",
+          "options": [
+            {
+              "id": "o1",
+              "text": "e",
+              "correct": true
+            },
+            {
+              "id": "o2",
+              "text": "f",
+              "correct": false
+            },
+            {
+              "id": "o3",
+              "text": "g",
+              "correct": false
+            },
+            {
+              "id": "o4",
+              "text": "h",
+              "correct": false
+            }
+          ]
+        }
+      },
+      "hints": [
+        {
+          "text": "Nhìn thật kỹ hình dáng chữ cái."
+        },
+        {
+          "text": "Look closely at the letter shape."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "junior",
+        "skillIds": [
+          "letters.case_matching",
+          "letters.recognition.lowercase"
+        ],
+        "milestone": 2,
+        "reviewState": "technically_validated",
+        "contentKind": "case_matching"
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 45,
+      "publicationState": "published"
+    },
+    {
+      "id": "ae-lv044",
+      "gameId": "alphabet_explorer",
+      "levelNumber": 44,
+      "difficulty": 2,
+      "learningObjective": "case_matching",
+      "localizedContent": {
+        "vi": {
+          "prompt": "Chữ thường của D là chữ nào?",
+          "options": [
+            {
+              "id": "o1",
+              "text": "d",
+              "correct": true
+            },
+            {
+              "id": "o2",
+              "text": "a",
+              "correct": false
+            },
+            {
+              "id": "o3",
+              "text": "ă",
+              "correct": false
+            },
+            {
+              "id": "o4",
+              "text": "â",
+              "correct": false
+            }
+          ]
+        },
+        "en": {
+          "prompt": "Which lowercase letter matches F?",
+          "options": [
+            {
+              "id": "o1",
+              "text": "f",
+              "correct": true
+            },
+            {
+              "id": "o2",
+              "text": "g",
+              "correct": false
+            },
+            {
+              "id": "o3",
+              "text": "h",
+              "correct": false
+            },
+            {
+              "id": "o4",
+              "text": "i",
+              "correct": false
+            }
+          ]
+        }
+      },
+      "hints": [
+        {
+          "text": "Nhìn thật kỹ hình dáng chữ cái."
+        },
+        {
+          "text": "Look closely at the letter shape."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "junior",
+        "skillIds": [
+          "letters.case_matching",
+          "letters.recognition.lowercase"
+        ],
+        "milestone": 2,
+        "reviewState": "technically_validated",
+        "contentKind": "case_matching"
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 45,
+      "publicationState": "published"
+    },
+    {
+      "id": "ae-lv045",
+      "gameId": "alphabet_explorer",
+      "levelNumber": 45,
+      "difficulty": 2,
+      "learningObjective": "case_matching",
+      "localizedContent": {
+        "vi": {
+          "prompt": "Chữ thường của Đ là chữ nào?",
+          "options": [
+            {
+              "id": "o1",
+              "text": "đ",
+              "correct": true
+            },
+            {
+              "id": "o2",
+              "text": "a",
+              "correct": false
+            },
+            {
+              "id": "o3",
+              "text": "ă",
+              "correct": false
+            },
+            {
+              "id": "o4",
+              "text": "â",
+              "correct": false
+            }
+          ]
+        },
+        "en": {
+          "prompt": "Which lowercase letter matches G?",
+          "options": [
+            {
+              "id": "o1",
+              "text": "g",
+              "correct": true
+            },
+            {
+              "id": "o2",
+              "text": "h",
+              "correct": false
+            },
+            {
+              "id": "o3",
+              "text": "i",
+              "correct": false
+            },
+            {
+              "id": "o4",
+              "text": "j",
+              "correct": false
+            }
+          ]
+        }
+      },
+      "hints": [
+        {
+          "text": "Nhìn thật kỹ hình dáng chữ cái."
+        },
+        {
+          "text": "Look closely at the letter shape."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "junior",
+        "skillIds": [
+          "letters.case_matching",
+          "letters.recognition.lowercase"
+        ],
+        "milestone": 2,
+        "reviewState": "technically_validated",
+        "contentKind": "case_matching"
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 45,
+      "publicationState": "published"
+    },
+    {
+      "id": "ae-lv046",
+      "gameId": "alphabet_explorer",
+      "levelNumber": 46,
+      "difficulty": 2,
+      "learningObjective": "case_matching",
+      "localizedContent": {
+        "vi": {
+          "prompt": "Chữ thường của E là chữ nào?",
+          "options": [
+            {
+              "id": "o1",
+              "text": "e",
+              "correct": true
+            },
+            {
+              "id": "o2",
+              "text": "a",
+              "correct": false
+            },
+            {
+              "id": "o3",
+              "text": "ă",
+              "correct": false
+            },
+            {
+              "id": "o4",
+              "text": "â",
+              "correct": false
+            }
+          ]
+        },
+        "en": {
+          "prompt": "Which lowercase letter matches H?",
+          "options": [
+            {
+              "id": "o1",
+              "text": "h",
+              "correct": true
+            },
+            {
+              "id": "o2",
+              "text": "i",
+              "correct": false
+            },
+            {
+              "id": "o3",
+              "text": "j",
+              "correct": false
+            },
+            {
+              "id": "o4",
+              "text": "k",
+              "correct": false
+            }
+          ]
+        }
+      },
+      "hints": [
+        {
+          "text": "Nhìn thật kỹ hình dáng chữ cái."
+        },
+        {
+          "text": "Look closely at the letter shape."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "junior",
+        "skillIds": [
+          "letters.case_matching",
+          "letters.recognition.lowercase"
+        ],
+        "milestone": 2,
+        "reviewState": "technically_validated",
+        "contentKind": "case_matching"
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 45,
+      "publicationState": "published"
+    },
+    {
+      "id": "ae-lv047",
+      "gameId": "alphabet_explorer",
+      "levelNumber": 47,
+      "difficulty": 2,
+      "learningObjective": "case_matching",
+      "localizedContent": {
+        "vi": {
+          "prompt": "Chữ thường của Ê là chữ nào?",
+          "options": [
+            {
+              "id": "o1",
+              "text": "ê",
+              "correct": true
+            },
+            {
+              "id": "o2",
+              "text": "a",
+              "correct": false
+            },
+            {
+              "id": "o3",
+              "text": "ă",
+              "correct": false
+            },
+            {
+              "id": "o4",
+              "text": "â",
+              "correct": false
+            }
+          ]
+        },
+        "en": {
+          "prompt": "Which lowercase letter matches I?",
+          "options": [
+            {
+              "id": "o1",
+              "text": "i",
+              "correct": true
+            },
+            {
+              "id": "o2",
+              "text": "j",
+              "correct": false
+            },
+            {
+              "id": "o3",
+              "text": "k",
+              "correct": false
+            },
+            {
+              "id": "o4",
+              "text": "l",
+              "correct": false
+            }
+          ]
+        }
+      },
+      "hints": [
+        {
+          "text": "Nhìn thật kỹ hình dáng chữ cái."
+        },
+        {
+          "text": "Look closely at the letter shape."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "junior",
+        "skillIds": [
+          "letters.case_matching",
+          "letters.recognition.lowercase"
+        ],
+        "milestone": 2,
+        "reviewState": "technically_validated",
+        "contentKind": "case_matching"
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 45,
+      "publicationState": "published"
+    },
+    {
+      "id": "ae-lv048",
+      "gameId": "alphabet_explorer",
+      "levelNumber": 48,
+      "difficulty": 2,
+      "learningObjective": "case_matching",
+      "localizedContent": {
+        "vi": {
+          "prompt": "Chữ thường của G là chữ nào?",
+          "options": [
+            {
+              "id": "o1",
+              "text": "g",
+              "correct": true
+            },
+            {
+              "id": "o2",
+              "text": "a",
+              "correct": false
+            },
+            {
+              "id": "o3",
+              "text": "ă",
+              "correct": false
+            },
+            {
+              "id": "o4",
+              "text": "â",
+              "correct": false
+            }
+          ]
+        },
+        "en": {
+          "prompt": "Which lowercase letter matches J?",
+          "options": [
+            {
+              "id": "o1",
+              "text": "j",
+              "correct": true
+            },
+            {
+              "id": "o2",
+              "text": "k",
+              "correct": false
+            },
+            {
+              "id": "o3",
+              "text": "l",
+              "correct": false
+            },
+            {
+              "id": "o4",
+              "text": "m",
+              "correct": false
+            }
+          ]
+        }
+      },
+      "hints": [
+        {
+          "text": "Nhìn thật kỹ hình dáng chữ cái."
+        },
+        {
+          "text": "Look closely at the letter shape."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "junior",
+        "skillIds": [
+          "letters.case_matching",
+          "letters.recognition.lowercase"
+        ],
+        "milestone": 2,
+        "reviewState": "technically_validated",
+        "contentKind": "case_matching"
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 45,
+      "publicationState": "published"
+    },
+    {
+      "id": "ae-lv049",
+      "gameId": "alphabet_explorer",
+      "levelNumber": 49,
+      "difficulty": 2,
+      "learningObjective": "case_matching",
+      "localizedContent": {
+        "vi": {
+          "prompt": "Chữ thường của H là chữ nào?",
+          "options": [
+            {
+              "id": "o1",
+              "text": "h",
+              "correct": true
+            },
+            {
+              "id": "o2",
+              "text": "a",
+              "correct": false
+            },
+            {
+              "id": "o3",
+              "text": "ă",
+              "correct": false
+            },
+            {
+              "id": "o4",
+              "text": "â",
+              "correct": false
+            }
+          ]
+        },
+        "en": {
+          "prompt": "Which lowercase letter matches K?",
+          "options": [
+            {
+              "id": "o1",
+              "text": "k",
+              "correct": true
+            },
+            {
+              "id": "o2",
+              "text": "l",
+              "correct": false
+            },
+            {
+              "id": "o3",
+              "text": "m",
+              "correct": false
+            },
+            {
+              "id": "o4",
+              "text": "n",
+              "correct": false
+            }
+          ]
+        }
+      },
+      "hints": [
+        {
+          "text": "Nhìn thật kỹ hình dáng chữ cái."
+        },
+        {
+          "text": "Look closely at the letter shape."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "junior",
+        "skillIds": [
+          "letters.case_matching",
+          "letters.recognition.lowercase"
+        ],
+        "milestone": 2,
+        "reviewState": "technically_validated",
+        "contentKind": "case_matching"
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 45,
+      "publicationState": "published"
+    },
+    {
+      "id": "ae-lv050",
+      "gameId": "alphabet_explorer",
+      "levelNumber": 50,
+      "difficulty": 2,
+      "learningObjective": "case_matching",
+      "localizedContent": {
+        "vi": {
+          "prompt": "Chữ thường của I là chữ nào?",
+          "options": [
+            {
+              "id": "o1",
+              "text": "i",
+              "correct": true
+            },
+            {
+              "id": "o2",
+              "text": "a",
+              "correct": false
+            },
+            {
+              "id": "o3",
+              "text": "ă",
+              "correct": false
+            },
+            {
+              "id": "o4",
+              "text": "â",
+              "correct": false
+            }
+          ]
+        },
+        "en": {
+          "prompt": "Which lowercase letter matches L?",
+          "options": [
+            {
+              "id": "o1",
+              "text": "l",
+              "correct": true
+            },
+            {
+              "id": "o2",
+              "text": "m",
+              "correct": false
+            },
+            {
+              "id": "o3",
+              "text": "n",
+              "correct": false
+            },
+            {
+              "id": "o4",
+              "text": "o",
+              "correct": false
+            }
+          ]
+        }
+      },
+      "hints": [
+        {
+          "text": "Nhìn thật kỹ hình dáng chữ cái."
+        },
+        {
+          "text": "Look closely at the letter shape."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "junior",
+        "skillIds": [
+          "letters.case_matching",
+          "letters.recognition.lowercase"
+        ],
+        "milestone": 2,
+        "reviewState": "technically_validated",
+        "contentKind": "case_matching"
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 45,
+      "publicationState": "published"
+    },
+    {
+      "id": "ae-lv051",
+      "gameId": "alphabet_explorer",
+      "levelNumber": 51,
+      "difficulty": 3,
+      "learningObjective": "case_matching",
+      "localizedContent": {
+        "vi": {
+          "prompt": "Chữ thường của K là chữ nào?",
+          "options": [
+            {
+              "id": "o1",
+              "text": "k",
+              "correct": true
+            },
+            {
+              "id": "o2",
+              "text": "a",
+              "correct": false
+            },
+            {
+              "id": "o3",
+              "text": "ă",
+              "correct": false
+            },
+            {
+              "id": "o4",
+              "text": "â",
+              "correct": false
+            }
+          ]
+        },
+        "en": {
+          "prompt": "Which lowercase letter matches M?",
+          "options": [
+            {
+              "id": "o1",
+              "text": "m",
+              "correct": true
+            },
+            {
+              "id": "o2",
+              "text": "n",
+              "correct": false
+            },
+            {
+              "id": "o3",
+              "text": "o",
+              "correct": false
+            },
+            {
+              "id": "o4",
+              "text": "p",
+              "correct": false
+            }
+          ]
+        }
+      },
+      "hints": [
+        {
+          "text": "Nhìn thật kỹ hình dáng chữ cái."
+        },
+        {
+          "text": "Look closely at the letter shape."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "junior",
+        "skillIds": [
+          "letters.case_matching",
+          "letters.recognition.lowercase"
+        ],
+        "milestone": 2,
+        "reviewState": "technically_validated",
+        "contentKind": "case_matching"
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 45,
+      "publicationState": "published"
+    },
+    {
+      "id": "ae-lv052",
+      "gameId": "alphabet_explorer",
+      "levelNumber": 52,
+      "difficulty": 3,
+      "learningObjective": "case_matching",
+      "localizedContent": {
+        "vi": {
+          "prompt": "Chữ thường của L là chữ nào?",
+          "options": [
+            {
+              "id": "o1",
+              "text": "l",
+              "correct": true
+            },
+            {
+              "id": "o2",
+              "text": "a",
+              "correct": false
+            },
+            {
+              "id": "o3",
+              "text": "ă",
+              "correct": false
+            },
+            {
+              "id": "o4",
+              "text": "â",
+              "correct": false
+            }
+          ]
+        },
+        "en": {
+          "prompt": "Which lowercase letter matches N?",
+          "options": [
+            {
+              "id": "o1",
+              "text": "n",
+              "correct": true
+            },
+            {
+              "id": "o2",
+              "text": "o",
+              "correct": false
+            },
+            {
+              "id": "o3",
+              "text": "p",
+              "correct": false
+            },
+            {
+              "id": "o4",
+              "text": "q",
+              "correct": false
+            }
+          ]
+        }
+      },
+      "hints": [
+        {
+          "text": "Nhìn thật kỹ hình dáng chữ cái."
+        },
+        {
+          "text": "Look closely at the letter shape."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "junior",
+        "skillIds": [
+          "letters.case_matching",
+          "letters.recognition.lowercase"
+        ],
+        "milestone": 2,
+        "reviewState": "technically_validated",
+        "contentKind": "case_matching"
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 45,
+      "publicationState": "published"
+    },
+    {
+      "id": "ae-lv053",
+      "gameId": "alphabet_explorer",
+      "levelNumber": 53,
+      "difficulty": 3,
+      "learningObjective": "case_matching",
+      "localizedContent": {
+        "vi": {
+          "prompt": "Chữ thường của M là chữ nào?",
+          "options": [
+            {
+              "id": "o1",
+              "text": "m",
+              "correct": true
+            },
+            {
+              "id": "o2",
+              "text": "a",
+              "correct": false
+            },
+            {
+              "id": "o3",
+              "text": "ă",
+              "correct": false
+            },
+            {
+              "id": "o4",
+              "text": "â",
+              "correct": false
+            }
+          ]
+        },
+        "en": {
+          "prompt": "Which lowercase letter matches O?",
+          "options": [
+            {
+              "id": "o1",
+              "text": "o",
+              "correct": true
+            },
+            {
+              "id": "o2",
+              "text": "p",
+              "correct": false
+            },
+            {
+              "id": "o3",
+              "text": "q",
+              "correct": false
+            },
+            {
+              "id": "o4",
+              "text": "r",
+              "correct": false
+            }
+          ]
+        }
+      },
+      "hints": [
+        {
+          "text": "Nhìn thật kỹ hình dáng chữ cái."
+        },
+        {
+          "text": "Look closely at the letter shape."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "junior",
+        "skillIds": [
+          "letters.case_matching",
+          "letters.recognition.lowercase"
+        ],
+        "milestone": 2,
+        "reviewState": "technically_validated",
+        "contentKind": "case_matching"
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 45,
+      "publicationState": "published"
+    },
+    {
+      "id": "ae-lv054",
+      "gameId": "alphabet_explorer",
+      "levelNumber": 54,
+      "difficulty": 3,
+      "learningObjective": "case_matching",
+      "localizedContent": {
+        "vi": {
+          "prompt": "Chữ thường của N là chữ nào?",
+          "options": [
+            {
+              "id": "o1",
+              "text": "n",
+              "correct": true
+            },
+            {
+              "id": "o2",
+              "text": "a",
+              "correct": false
+            },
+            {
+              "id": "o3",
+              "text": "ă",
+              "correct": false
+            },
+            {
+              "id": "o4",
+              "text": "â",
+              "correct": false
+            }
+          ]
+        },
+        "en": {
+          "prompt": "Which lowercase letter matches P?",
+          "options": [
+            {
+              "id": "o1",
+              "text": "p",
+              "correct": true
+            },
+            {
+              "id": "o2",
+              "text": "q",
+              "correct": false
+            },
+            {
+              "id": "o3",
+              "text": "r",
+              "correct": false
+            },
+            {
+              "id": "o4",
+              "text": "s",
+              "correct": false
+            }
+          ]
+        }
+      },
+      "hints": [
+        {
+          "text": "Nhìn thật kỹ hình dáng chữ cái."
+        },
+        {
+          "text": "Look closely at the letter shape."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "junior",
+        "skillIds": [
+          "letters.case_matching",
+          "letters.recognition.lowercase"
+        ],
+        "milestone": 2,
+        "reviewState": "technically_validated",
+        "contentKind": "case_matching"
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 45,
+      "publicationState": "published"
+    },
+    {
+      "id": "ae-lv055",
+      "gameId": "alphabet_explorer",
+      "levelNumber": 55,
+      "difficulty": 3,
+      "learningObjective": "case_matching",
+      "localizedContent": {
+        "vi": {
+          "prompt": "Chữ thường của O là chữ nào?",
+          "options": [
+            {
+              "id": "o1",
+              "text": "o",
+              "correct": true
+            },
+            {
+              "id": "o2",
+              "text": "a",
+              "correct": false
+            },
+            {
+              "id": "o3",
+              "text": "ă",
+              "correct": false
+            },
+            {
+              "id": "o4",
+              "text": "â",
+              "correct": false
+            }
+          ]
+        },
+        "en": {
+          "prompt": "Which lowercase letter matches Q?",
+          "options": [
+            {
+              "id": "o1",
+              "text": "q",
+              "correct": true
+            },
+            {
+              "id": "o2",
+              "text": "r",
+              "correct": false
+            },
+            {
+              "id": "o3",
+              "text": "s",
+              "correct": false
+            },
+            {
+              "id": "o4",
+              "text": "t",
+              "correct": false
+            }
+          ]
+        }
+      },
+      "hints": [
+        {
+          "text": "Nhìn thật kỹ hình dáng chữ cái."
+        },
+        {
+          "text": "Look closely at the letter shape."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "junior",
+        "skillIds": [
+          "letters.case_matching",
+          "letters.recognition.lowercase"
+        ],
+        "milestone": 2,
+        "reviewState": "technically_validated",
+        "contentKind": "case_matching"
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 45,
+      "publicationState": "published"
+    },
+    {
+      "id": "ae-lv056",
+      "gameId": "alphabet_explorer",
+      "levelNumber": 56,
+      "difficulty": 3,
+      "learningObjective": "case_matching",
+      "localizedContent": {
+        "vi": {
+          "prompt": "Chữ thường của Ô là chữ nào?",
+          "options": [
+            {
+              "id": "o1",
+              "text": "ô",
+              "correct": true
+            },
+            {
+              "id": "o2",
+              "text": "a",
+              "correct": false
+            },
+            {
+              "id": "o3",
+              "text": "ă",
+              "correct": false
+            },
+            {
+              "id": "o4",
+              "text": "â",
+              "correct": false
+            }
+          ]
+        },
+        "en": {
+          "prompt": "Which lowercase letter matches R?",
+          "options": [
+            {
+              "id": "o1",
+              "text": "r",
+              "correct": true
+            },
+            {
+              "id": "o2",
+              "text": "s",
+              "correct": false
+            },
+            {
+              "id": "o3",
+              "text": "t",
+              "correct": false
+            },
+            {
+              "id": "o4",
+              "text": "u",
+              "correct": false
+            }
+          ]
+        }
+      },
+      "hints": [
+        {
+          "text": "Nhìn thật kỹ hình dáng chữ cái."
+        },
+        {
+          "text": "Look closely at the letter shape."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "junior",
+        "skillIds": [
+          "letters.case_matching",
+          "letters.recognition.lowercase"
+        ],
+        "milestone": 2,
+        "reviewState": "technically_validated",
+        "contentKind": "case_matching"
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 45,
+      "publicationState": "published"
+    },
+    {
+      "id": "ae-lv057",
+      "gameId": "alphabet_explorer",
+      "levelNumber": 57,
+      "difficulty": 3,
+      "learningObjective": "case_matching",
+      "localizedContent": {
+        "vi": {
+          "prompt": "Chữ thường của Ơ là chữ nào?",
+          "options": [
+            {
+              "id": "o1",
+              "text": "ơ",
+              "correct": true
+            },
+            {
+              "id": "o2",
+              "text": "a",
+              "correct": false
+            },
+            {
+              "id": "o3",
+              "text": "ă",
+              "correct": false
+            },
+            {
+              "id": "o4",
+              "text": "â",
+              "correct": false
+            }
+          ]
+        },
+        "en": {
+          "prompt": "Which lowercase letter matches S?",
+          "options": [
+            {
+              "id": "o1",
+              "text": "s",
+              "correct": true
+            },
+            {
+              "id": "o2",
+              "text": "t",
+              "correct": false
+            },
+            {
+              "id": "o3",
+              "text": "u",
+              "correct": false
+            },
+            {
+              "id": "o4",
+              "text": "v",
+              "correct": false
+            }
+          ]
+        }
+      },
+      "hints": [
+        {
+          "text": "Nhìn thật kỹ hình dáng chữ cái."
+        },
+        {
+          "text": "Look closely at the letter shape."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "junior",
+        "skillIds": [
+          "letters.case_matching",
+          "letters.recognition.lowercase"
+        ],
+        "milestone": 2,
+        "reviewState": "technically_validated",
+        "contentKind": "case_matching"
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 45,
+      "publicationState": "published"
+    },
+    {
+      "id": "ae-lv058",
+      "gameId": "alphabet_explorer",
+      "levelNumber": 58,
+      "difficulty": 3,
+      "learningObjective": "case_matching",
+      "localizedContent": {
+        "vi": {
+          "prompt": "Chữ thường của P là chữ nào?",
+          "options": [
+            {
+              "id": "o1",
+              "text": "p",
+              "correct": true
+            },
+            {
+              "id": "o2",
+              "text": "a",
+              "correct": false
+            },
+            {
+              "id": "o3",
+              "text": "ă",
+              "correct": false
+            },
+            {
+              "id": "o4",
+              "text": "â",
+              "correct": false
+            }
+          ]
+        },
+        "en": {
+          "prompt": "Which lowercase letter matches T?",
+          "options": [
+            {
+              "id": "o1",
+              "text": "t",
+              "correct": true
+            },
+            {
+              "id": "o2",
+              "text": "u",
+              "correct": false
+            },
+            {
+              "id": "o3",
+              "text": "v",
+              "correct": false
+            },
+            {
+              "id": "o4",
+              "text": "w",
+              "correct": false
+            }
+          ]
+        }
+      },
+      "hints": [
+        {
+          "text": "Nhìn thật kỹ hình dáng chữ cái."
+        },
+        {
+          "text": "Look closely at the letter shape."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "junior",
+        "skillIds": [
+          "letters.case_matching",
+          "letters.recognition.lowercase"
+        ],
+        "milestone": 2,
+        "reviewState": "technically_validated",
+        "contentKind": "case_matching"
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 45,
+      "publicationState": "published"
+    },
+    {
+      "id": "ae-lv059",
+      "gameId": "alphabet_explorer",
+      "levelNumber": 59,
+      "difficulty": 3,
+      "learningObjective": "case_matching",
+      "localizedContent": {
+        "vi": {
+          "prompt": "Chữ thường của Q là chữ nào?",
+          "options": [
+            {
+              "id": "o1",
+              "text": "q",
+              "correct": true
+            },
+            {
+              "id": "o2",
+              "text": "a",
+              "correct": false
+            },
+            {
+              "id": "o3",
+              "text": "ă",
+              "correct": false
+            },
+            {
+              "id": "o4",
+              "text": "â",
+              "correct": false
+            }
+          ]
+        },
+        "en": {
+          "prompt": "Which lowercase letter matches U?",
+          "options": [
+            {
+              "id": "o1",
+              "text": "u",
+              "correct": true
+            },
+            {
+              "id": "o2",
+              "text": "v",
+              "correct": false
+            },
+            {
+              "id": "o3",
+              "text": "w",
+              "correct": false
+            },
+            {
+              "id": "o4",
+              "text": "x",
+              "correct": false
+            }
+          ]
+        }
+      },
+      "hints": [
+        {
+          "text": "Nhìn thật kỹ hình dáng chữ cái."
+        },
+        {
+          "text": "Look closely at the letter shape."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "junior",
+        "skillIds": [
+          "letters.case_matching",
+          "letters.recognition.lowercase"
+        ],
+        "milestone": 2,
+        "reviewState": "technically_validated",
+        "contentKind": "case_matching"
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 45,
+      "publicationState": "published"
+    },
+    {
+      "id": "ae-lv060",
+      "gameId": "alphabet_explorer",
+      "levelNumber": 60,
+      "difficulty": 3,
+      "learningObjective": "case_matching",
+      "localizedContent": {
+        "vi": {
+          "prompt": "Chữ thường của R là chữ nào?",
+          "options": [
+            {
+              "id": "o1",
+              "text": "r",
+              "correct": true
+            },
+            {
+              "id": "o2",
+              "text": "a",
+              "correct": false
+            },
+            {
+              "id": "o3",
+              "text": "ă",
+              "correct": false
+            },
+            {
+              "id": "o4",
+              "text": "â",
+              "correct": false
+            }
+          ]
+        },
+        "en": {
+          "prompt": "Which lowercase letter matches V?",
+          "options": [
+            {
+              "id": "o1",
+              "text": "v",
+              "correct": true
+            },
+            {
+              "id": "o2",
+              "text": "w",
+              "correct": false
+            },
+            {
+              "id": "o3",
+              "text": "x",
+              "correct": false
+            },
+            {
+              "id": "o4",
+              "text": "y",
+              "correct": false
+            }
+          ]
+        }
+      },
+      "hints": [
+        {
+          "text": "Nhìn thật kỹ hình dáng chữ cái."
+        },
+        {
+          "text": "Look closely at the letter shape."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "junior",
+        "skillIds": [
+          "letters.case_matching",
+          "letters.recognition.lowercase"
+        ],
+        "milestone": 2,
+        "reviewState": "technically_validated",
+        "contentKind": "case_matching"
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 45,
+      "publicationState": "published"
+    },
+    {
+      "id": "ae-lv061",
+      "gameId": "alphabet_explorer",
+      "levelNumber": 61,
+      "difficulty": 3,
+      "learningObjective": "first_letter",
+      "localizedContent": {
+        "vi": {
+          "prompt": "Từ “mèo” bắt đầu bằng chữ nào?",
+          "options": [
+            {
+              "id": "o1",
+              "text": "M",
+              "correct": true
+            },
+            {
+              "id": "o2",
+              "text": "A",
+              "correct": false
+            },
+            {
+              "id": "o3",
+              "text": "Ă",
+              "correct": false
+            },
+            {
+              "id": "o4",
+              "text": "Â",
+              "correct": false
+            },
+            {
+              "id": "o5",
+              "text": "B",
+              "correct": false
+            }
+          ]
+        },
+        "en": {
+          "prompt": "Which letter starts “apple”?",
+          "options": [
+            {
+              "id": "o1",
+              "text": "A",
+              "correct": true
+            },
+            {
+              "id": "o2",
+              "text": "B",
+              "correct": false
+            },
+            {
+              "id": "o3",
+              "text": "C",
+              "correct": false
+            },
+            {
+              "id": "o4",
+              "text": "D",
+              "correct": false
+            },
+            {
+              "id": "o5",
+              "text": "E",
+              "correct": false
+            }
+          ]
+        }
+      },
+      "hints": [
+        {
+          "text": "Nhìn thật kỹ hình dáng chữ cái."
+        },
+        {
+          "text": "Look closely at the letter shape."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "junior",
+        "skillIds": [
+          "letters.initial_sound",
+          "letters.vocabulary"
+        ],
+        "milestone": 2,
+        "reviewState": "technically_validated",
+        "contentKind": "first_letter"
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 45,
+      "publicationState": "published"
+    },
+    {
+      "id": "ae-lv062",
+      "gameId": "alphabet_explorer",
+      "levelNumber": 62,
+      "difficulty": 3,
+      "learningObjective": "first_letter",
+      "localizedContent": {
+        "vi": {
+          "prompt": "Từ “cá” bắt đầu bằng chữ nào?",
+          "options": [
+            {
+              "id": "o1",
+              "text": "C",
+              "correct": true
+            },
+            {
+              "id": "o2",
+              "text": "A",
+              "correct": false
+            },
+            {
+              "id": "o3",
+              "text": "Ă",
+              "correct": false
+            },
+            {
+              "id": "o4",
+              "text": "Â",
+              "correct": false
+            },
+            {
+              "id": "o5",
+              "text": "B",
+              "correct": false
+            }
+          ]
+        },
+        "en": {
+          "prompt": "Which letter starts “ball”?",
+          "options": [
+            {
+              "id": "o1",
+              "text": "B",
+              "correct": true
+            },
+            {
+              "id": "o2",
+              "text": "C",
+              "correct": false
+            },
+            {
+              "id": "o3",
+              "text": "D",
+              "correct": false
+            },
+            {
+              "id": "o4",
+              "text": "E",
+              "correct": false
+            },
+            {
+              "id": "o5",
+              "text": "F",
+              "correct": false
+            }
+          ]
+        }
+      },
+      "hints": [
+        {
+          "text": "Nhìn thật kỹ hình dáng chữ cái."
+        },
+        {
+          "text": "Look closely at the letter shape."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "junior",
+        "skillIds": [
+          "letters.initial_sound",
+          "letters.vocabulary"
+        ],
+        "milestone": 2,
+        "reviewState": "technically_validated",
+        "contentKind": "first_letter"
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 45,
+      "publicationState": "published"
+    },
+    {
+      "id": "ae-lv063",
+      "gameId": "alphabet_explorer",
+      "levelNumber": 63,
+      "difficulty": 3,
+      "learningObjective": "first_letter",
+      "localizedContent": {
+        "vi": {
+          "prompt": "Từ “bánh” bắt đầu bằng chữ nào?",
+          "options": [
+            {
+              "id": "o1",
+              "text": "B",
+              "correct": true
+            },
+            {
+              "id": "o2",
+              "text": "A",
+              "correct": false
+            },
+            {
+              "id": "o3",
+              "text": "Ă",
+              "correct": false
+            },
+            {
+              "id": "o4",
+              "text": "Â",
+              "correct": false
+            },
+            {
+              "id": "o5",
+              "text": "C",
+              "correct": false
+            }
+          ]
+        },
+        "en": {
+          "prompt": "Which letter starts “cat”?",
+          "options": [
+            {
+              "id": "o1",
+              "text": "C",
+              "correct": true
+            },
+            {
+              "id": "o2",
+              "text": "D",
+              "correct": false
+            },
+            {
+              "id": "o3",
+              "text": "E",
+              "correct": false
+            },
+            {
+              "id": "o4",
+              "text": "F",
+              "correct": false
+            },
+            {
+              "id": "o5",
+              "text": "G",
+              "correct": false
+            }
+          ]
+        }
+      },
+      "hints": [
+        {
+          "text": "Nhìn thật kỹ hình dáng chữ cái."
+        },
+        {
+          "text": "Look closely at the letter shape."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "junior",
+        "skillIds": [
+          "letters.initial_sound",
+          "letters.vocabulary"
+        ],
+        "milestone": 2,
+        "reviewState": "technically_validated",
+        "contentKind": "first_letter"
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 45,
+      "publicationState": "published"
+    },
+    {
+      "id": "ae-lv064",
+      "gameId": "alphabet_explorer",
+      "levelNumber": 64,
+      "difficulty": 3,
+      "learningObjective": "first_letter",
+      "localizedContent": {
+        "vi": {
+          "prompt": "Từ “hoa” bắt đầu bằng chữ nào?",
+          "options": [
+            {
+              "id": "o1",
+              "text": "H",
+              "correct": true
+            },
+            {
+              "id": "o2",
+              "text": "A",
+              "correct": false
+            },
+            {
+              "id": "o3",
+              "text": "Ă",
+              "correct": false
+            },
+            {
+              "id": "o4",
+              "text": "Â",
+              "correct": false
+            },
+            {
+              "id": "o5",
+              "text": "B",
+              "correct": false
+            }
+          ]
+        },
+        "en": {
+          "prompt": "Which letter starts “dog”?",
+          "options": [
+            {
+              "id": "o1",
+              "text": "D",
+              "correct": true
+            },
+            {
+              "id": "o2",
+              "text": "E",
+              "correct": false
+            },
+            {
+              "id": "o3",
+              "text": "F",
+              "correct": false
+            },
+            {
+              "id": "o4",
+              "text": "G",
+              "correct": false
+            },
+            {
+              "id": "o5",
+              "text": "H",
+              "correct": false
+            }
+          ]
+        }
+      },
+      "hints": [
+        {
+          "text": "Nhìn thật kỹ hình dáng chữ cái."
+        },
+        {
+          "text": "Look closely at the letter shape."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "junior",
+        "skillIds": [
+          "letters.initial_sound",
+          "letters.vocabulary"
+        ],
+        "milestone": 2,
+        "reviewState": "technically_validated",
+        "contentKind": "first_letter"
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 45,
+      "publicationState": "published"
+    },
+    {
+      "id": "ae-lv065",
+      "gameId": "alphabet_explorer",
+      "levelNumber": 65,
+      "difficulty": 3,
+      "learningObjective": "first_letter",
+      "localizedContent": {
+        "vi": {
+          "prompt": "Từ “đèn” bắt đầu bằng chữ nào?",
+          "options": [
+            {
+              "id": "o1",
+              "text": "Đ",
+              "correct": true
+            },
+            {
+              "id": "o2",
+              "text": "A",
+              "correct": false
+            },
+            {
+              "id": "o3",
+              "text": "Ă",
+              "correct": false
+            },
+            {
+              "id": "o4",
+              "text": "Â",
+              "correct": false
+            },
+            {
+              "id": "o5",
+              "text": "B",
+              "correct": false
+            }
+          ]
+        },
+        "en": {
+          "prompt": "Which letter starts “egg”?",
+          "options": [
+            {
+              "id": "o1",
+              "text": "E",
+              "correct": true
+            },
+            {
+              "id": "o2",
+              "text": "F",
+              "correct": false
+            },
+            {
+              "id": "o3",
+              "text": "G",
+              "correct": false
+            },
+            {
+              "id": "o4",
+              "text": "H",
+              "correct": false
+            },
+            {
+              "id": "o5",
+              "text": "I",
+              "correct": false
+            }
+          ]
+        }
+      },
+      "hints": [
+        {
+          "text": "Nhìn thật kỹ hình dáng chữ cái."
+        },
+        {
+          "text": "Look closely at the letter shape."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "junior",
+        "skillIds": [
+          "letters.initial_sound",
+          "letters.vocabulary"
+        ],
+        "milestone": 2,
+        "reviewState": "technically_validated",
+        "contentKind": "first_letter"
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 45,
+      "publicationState": "published"
+    },
+    {
+      "id": "ae-lv066",
+      "gameId": "alphabet_explorer",
+      "levelNumber": 66,
+      "difficulty": 3,
+      "learningObjective": "first_letter",
+      "localizedContent": {
+        "vi": {
+          "prompt": "Từ “ếch” bắt đầu bằng chữ nào?",
+          "options": [
+            {
+              "id": "o1",
+              "text": "Ê",
+              "correct": true
+            },
+            {
+              "id": "o2",
+              "text": "A",
+              "correct": false
+            },
+            {
+              "id": "o3",
+              "text": "Ă",
+              "correct": false
+            },
+            {
+              "id": "o4",
+              "text": "Â",
+              "correct": false
+            },
+            {
+              "id": "o5",
+              "text": "B",
+              "correct": false
+            }
+          ]
+        },
+        "en": {
+          "prompt": "Which letter starts “fish”?",
+          "options": [
+            {
+              "id": "o1",
+              "text": "F",
+              "correct": true
+            },
+            {
+              "id": "o2",
+              "text": "G",
+              "correct": false
+            },
+            {
+              "id": "o3",
+              "text": "H",
+              "correct": false
+            },
+            {
+              "id": "o4",
+              "text": "I",
+              "correct": false
+            },
+            {
+              "id": "o5",
+              "text": "J",
+              "correct": false
+            }
+          ]
+        }
+      },
+      "hints": [
+        {
+          "text": "Nhìn thật kỹ hình dáng chữ cái."
+        },
+        {
+          "text": "Look closely at the letter shape."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "junior",
+        "skillIds": [
+          "letters.initial_sound",
+          "letters.vocabulary"
+        ],
+        "milestone": 2,
+        "reviewState": "technically_validated",
+        "contentKind": "first_letter"
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 45,
+      "publicationState": "published"
+    },
+    {
+      "id": "ae-lv067",
+      "gameId": "alphabet_explorer",
+      "levelNumber": 67,
+      "difficulty": 3,
+      "learningObjective": "first_letter",
+      "localizedContent": {
+        "vi": {
+          "prompt": "Từ “ốc” bắt đầu bằng chữ nào?",
+          "options": [
+            {
+              "id": "o1",
+              "text": "Ô",
+              "correct": true
+            },
+            {
+              "id": "o2",
+              "text": "A",
+              "correct": false
+            },
+            {
+              "id": "o3",
+              "text": "Ă",
+              "correct": false
+            },
+            {
+              "id": "o4",
+              "text": "Â",
+              "correct": false
+            },
+            {
+              "id": "o5",
+              "text": "B",
+              "correct": false
+            }
+          ]
+        },
+        "en": {
+          "prompt": "Which letter starts “goat”?",
+          "options": [
+            {
+              "id": "o1",
+              "text": "G",
+              "correct": true
+            },
+            {
+              "id": "o2",
+              "text": "H",
+              "correct": false
+            },
+            {
+              "id": "o3",
+              "text": "I",
+              "correct": false
+            },
+            {
+              "id": "o4",
+              "text": "J",
+              "correct": false
+            },
+            {
+              "id": "o5",
+              "text": "K",
+              "correct": false
+            }
+          ]
+        }
+      },
+      "hints": [
+        {
+          "text": "Nhìn thật kỹ hình dáng chữ cái."
+        },
+        {
+          "text": "Look closely at the letter shape."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "junior",
+        "skillIds": [
+          "letters.initial_sound",
+          "letters.vocabulary"
+        ],
+        "milestone": 2,
+        "reviewState": "technically_validated",
+        "contentKind": "first_letter"
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 45,
+      "publicationState": "published"
+    },
+    {
+      "id": "ae-lv068",
+      "gameId": "alphabet_explorer",
+      "levelNumber": 68,
+      "difficulty": 3,
+      "learningObjective": "first_letter",
+      "localizedContent": {
+        "vi": {
+          "prompt": "Từ “ươm” bắt đầu bằng chữ nào?",
+          "options": [
+            {
+              "id": "o1",
+              "text": "Ư",
+              "correct": true
+            },
+            {
+              "id": "o2",
+              "text": "A",
+              "correct": false
+            },
+            {
+              "id": "o3",
+              "text": "Ă",
+              "correct": false
+            },
+            {
+              "id": "o4",
+              "text": "Â",
+              "correct": false
+            },
+            {
+              "id": "o5",
+              "text": "B",
+              "correct": false
+            }
+          ]
+        },
+        "en": {
+          "prompt": "Which letter starts “hat”?",
+          "options": [
+            {
+              "id": "o1",
+              "text": "H",
+              "correct": true
+            },
+            {
+              "id": "o2",
+              "text": "I",
+              "correct": false
+            },
+            {
+              "id": "o3",
+              "text": "J",
+              "correct": false
+            },
+            {
+              "id": "o4",
+              "text": "K",
+              "correct": false
+            },
+            {
+              "id": "o5",
+              "text": "L",
+              "correct": false
+            }
+          ]
+        }
+      },
+      "hints": [
+        {
+          "text": "Nhìn thật kỹ hình dáng chữ cái."
+        },
+        {
+          "text": "Look closely at the letter shape."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "junior",
+        "skillIds": [
+          "letters.initial_sound",
+          "letters.vocabulary"
+        ],
+        "milestone": 2,
+        "reviewState": "technically_validated",
+        "contentKind": "first_letter"
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 45,
+      "publicationState": "published"
+    },
+    {
+      "id": "ae-lv069",
+      "gameId": "alphabet_explorer",
+      "levelNumber": 69,
+      "difficulty": 3,
+      "learningObjective": "first_letter",
+      "localizedContent": {
+        "vi": {
+          "prompt": "Từ “ăn” bắt đầu bằng chữ nào?",
+          "options": [
+            {
+              "id": "o1",
+              "text": "Ă",
+              "correct": true
+            },
+            {
+              "id": "o2",
+              "text": "A",
+              "correct": false
+            },
+            {
+              "id": "o3",
+              "text": "Â",
+              "correct": false
+            },
+            {
+              "id": "o4",
+              "text": "B",
+              "correct": false
+            },
+            {
+              "id": "o5",
+              "text": "C",
+              "correct": false
+            }
+          ]
+        },
+        "en": {
+          "prompt": "Which letter starts “igloo”?",
+          "options": [
+            {
+              "id": "o1",
+              "text": "I",
+              "correct": true
+            },
+            {
+              "id": "o2",
+              "text": "J",
+              "correct": false
+            },
+            {
+              "id": "o3",
+              "text": "K",
+              "correct": false
+            },
+            {
+              "id": "o4",
+              "text": "L",
+              "correct": false
+            },
+            {
+              "id": "o5",
+              "text": "M",
+              "correct": false
+            }
+          ]
+        }
+      },
+      "hints": [
+        {
+          "text": "Nhìn thật kỹ hình dáng chữ cái."
+        },
+        {
+          "text": "Look closely at the letter shape."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "junior",
+        "skillIds": [
+          "letters.initial_sound",
+          "letters.vocabulary"
+        ],
+        "milestone": 2,
+        "reviewState": "technically_validated",
+        "contentKind": "first_letter"
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 45,
+      "publicationState": "published"
+    },
+    {
+      "id": "ae-lv070",
+      "gameId": "alphabet_explorer",
+      "levelNumber": 70,
+      "difficulty": 3,
+      "learningObjective": "first_letter",
+      "localizedContent": {
+        "vi": {
+          "prompt": "Từ “âm” bắt đầu bằng chữ nào?",
+          "options": [
+            {
+              "id": "o1",
+              "text": "Â",
+              "correct": true
+            },
+            {
+              "id": "o2",
+              "text": "A",
+              "correct": false
+            },
+            {
+              "id": "o3",
+              "text": "Ă",
+              "correct": false
+            },
+            {
+              "id": "o4",
+              "text": "B",
+              "correct": false
+            },
+            {
+              "id": "o5",
+              "text": "C",
+              "correct": false
+            }
+          ]
+        },
+        "en": {
+          "prompt": "Which letter starts “jam”?",
+          "options": [
+            {
+              "id": "o1",
+              "text": "J",
+              "correct": true
+            },
+            {
+              "id": "o2",
+              "text": "K",
+              "correct": false
+            },
+            {
+              "id": "o3",
+              "text": "L",
+              "correct": false
+            },
+            {
+              "id": "o4",
+              "text": "M",
+              "correct": false
+            },
+            {
+              "id": "o5",
+              "text": "N",
+              "correct": false
+            }
+          ]
+        }
+      },
+      "hints": [
+        {
+          "text": "Nhìn thật kỹ hình dáng chữ cái."
+        },
+        {
+          "text": "Look closely at the letter shape."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "junior",
+        "skillIds": [
+          "letters.initial_sound",
+          "letters.vocabulary"
+        ],
+        "milestone": 2,
+        "reviewState": "technically_validated",
+        "contentKind": "first_letter"
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 45,
+      "publicationState": "published"
+    },
+    {
+      "id": "ae-lv071",
+      "gameId": "alphabet_explorer",
+      "levelNumber": 71,
+      "difficulty": 3,
+      "learningObjective": "first_letter",
+      "localizedContent": {
+        "vi": {
+          "prompt": "Từ “sách” bắt đầu bằng chữ nào?",
+          "options": [
+            {
+              "id": "o1",
+              "text": "S",
+              "correct": true
+            },
+            {
+              "id": "o2",
+              "text": "A",
+              "correct": false
+            },
+            {
+              "id": "o3",
+              "text": "Ă",
+              "correct": false
+            },
+            {
+              "id": "o4",
+              "text": "Â",
+              "correct": false
+            },
+            {
+              "id": "o5",
+              "text": "B",
+              "correct": false
+            }
+          ]
+        },
+        "en": {
+          "prompt": "Which letter starts “kite”?",
+          "options": [
+            {
+              "id": "o1",
+              "text": "K",
+              "correct": true
+            },
+            {
+              "id": "o2",
+              "text": "L",
+              "correct": false
+            },
+            {
+              "id": "o3",
+              "text": "M",
+              "correct": false
+            },
+            {
+              "id": "o4",
+              "text": "N",
+              "correct": false
+            },
+            {
+              "id": "o5",
+              "text": "O",
+              "correct": false
+            }
+          ]
+        }
+      },
+      "hints": [
+        {
+          "text": "Nhìn thật kỹ hình dáng chữ cái."
+        },
+        {
+          "text": "Look closely at the letter shape."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "junior",
+        "skillIds": [
+          "letters.initial_sound",
+          "letters.vocabulary"
+        ],
+        "milestone": 2,
+        "reviewState": "technically_validated",
+        "contentKind": "first_letter"
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 45,
+      "publicationState": "published"
+    },
+    {
+      "id": "ae-lv072",
+      "gameId": "alphabet_explorer",
+      "levelNumber": 72,
+      "difficulty": 3,
+      "learningObjective": "first_letter",
+      "localizedContent": {
+        "vi": {
+          "prompt": "Từ “vở” bắt đầu bằng chữ nào?",
+          "options": [
+            {
+              "id": "o1",
+              "text": "V",
+              "correct": true
+            },
+            {
+              "id": "o2",
+              "text": "A",
+              "correct": false
+            },
+            {
+              "id": "o3",
+              "text": "Ă",
+              "correct": false
+            },
+            {
+              "id": "o4",
+              "text": "Â",
+              "correct": false
+            },
+            {
+              "id": "o5",
+              "text": "B",
+              "correct": false
+            }
+          ]
+        },
+        "en": {
+          "prompt": "Which letter starts “lion”?",
+          "options": [
+            {
+              "id": "o1",
+              "text": "L",
+              "correct": true
+            },
+            {
+              "id": "o2",
+              "text": "M",
+              "correct": false
+            },
+            {
+              "id": "o3",
+              "text": "N",
+              "correct": false
+            },
+            {
+              "id": "o4",
+              "text": "O",
+              "correct": false
+            },
+            {
+              "id": "o5",
+              "text": "P",
+              "correct": false
+            }
+          ]
+        }
+      },
+      "hints": [
+        {
+          "text": "Nhìn thật kỹ hình dáng chữ cái."
+        },
+        {
+          "text": "Look closely at the letter shape."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "junior",
+        "skillIds": [
+          "letters.initial_sound",
+          "letters.vocabulary"
+        ],
+        "milestone": 2,
+        "reviewState": "technically_validated",
+        "contentKind": "first_letter"
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 45,
+      "publicationState": "published"
+    },
+    {
+      "id": "ae-lv073",
+      "gameId": "alphabet_explorer",
+      "levelNumber": 73,
+      "difficulty": 3,
+      "learningObjective": "first_letter",
+      "localizedContent": {
+        "vi": {
+          "prompt": "Từ “xe” bắt đầu bằng chữ nào?",
+          "options": [
+            {
+              "id": "o1",
+              "text": "X",
+              "correct": true
+            },
+            {
+              "id": "o2",
+              "text": "A",
+              "correct": false
+            },
+            {
+              "id": "o3",
+              "text": "Ă",
+              "correct": false
+            },
+            {
+              "id": "o4",
+              "text": "Â",
+              "correct": false
+            },
+            {
+              "id": "o5",
+              "text": "B",
+              "correct": false
+            }
+          ]
+        },
+        "en": {
+          "prompt": "Which letter starts “moon”?",
+          "options": [
+            {
+              "id": "o1",
+              "text": "M",
+              "correct": true
+            },
+            {
+              "id": "o2",
+              "text": "N",
+              "correct": false
+            },
+            {
+              "id": "o3",
+              "text": "O",
+              "correct": false
+            },
+            {
+              "id": "o4",
+              "text": "P",
+              "correct": false
+            },
+            {
+              "id": "o5",
+              "text": "Q",
+              "correct": false
+            }
+          ]
+        }
+      },
+      "hints": [
+        {
+          "text": "Nhìn thật kỹ hình dáng chữ cái."
+        },
+        {
+          "text": "Look closely at the letter shape."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "junior",
+        "skillIds": [
+          "letters.initial_sound",
+          "letters.vocabulary"
+        ],
+        "milestone": 2,
+        "reviewState": "technically_validated",
+        "contentKind": "first_letter"
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 45,
+      "publicationState": "published"
+    },
+    {
+      "id": "ae-lv074",
+      "gameId": "alphabet_explorer",
+      "levelNumber": 74,
+      "difficulty": 3,
+      "learningObjective": "first_letter",
+      "localizedContent": {
+        "vi": {
+          "prompt": "Từ “gà” bắt đầu bằng chữ nào?",
+          "options": [
+            {
+              "id": "o1",
+              "text": "G",
+              "correct": true
+            },
+            {
+              "id": "o2",
+              "text": "A",
+              "correct": false
+            },
+            {
+              "id": "o3",
+              "text": "Ă",
+              "correct": false
+            },
+            {
+              "id": "o4",
+              "text": "Â",
+              "correct": false
+            },
+            {
+              "id": "o5",
+              "text": "B",
+              "correct": false
+            }
+          ]
+        },
+        "en": {
+          "prompt": "Which letter starts “nest”?",
+          "options": [
+            {
+              "id": "o1",
+              "text": "N",
+              "correct": true
+            },
+            {
+              "id": "o2",
+              "text": "O",
+              "correct": false
+            },
+            {
+              "id": "o3",
+              "text": "P",
+              "correct": false
+            },
+            {
+              "id": "o4",
+              "text": "Q",
+              "correct": false
+            },
+            {
+              "id": "o5",
+              "text": "R",
+              "correct": false
+            }
+          ]
+        }
+      },
+      "hints": [
+        {
+          "text": "Nhìn thật kỹ hình dáng chữ cái."
+        },
+        {
+          "text": "Look closely at the letter shape."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "junior",
+        "skillIds": [
+          "letters.initial_sound",
+          "letters.vocabulary"
+        ],
+        "milestone": 2,
+        "reviewState": "technically_validated",
+        "contentKind": "first_letter"
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 45,
+      "publicationState": "published"
+    },
+    {
+      "id": "ae-lv075",
+      "gameId": "alphabet_explorer",
+      "levelNumber": 75,
+      "difficulty": 3,
+      "learningObjective": "first_letter",
+      "localizedContent": {
+        "vi": {
+          "prompt": "Từ “nón” bắt đầu bằng chữ nào?",
+          "options": [
+            {
+              "id": "o1",
+              "text": "N",
+              "correct": true
+            },
+            {
+              "id": "o2",
+              "text": "A",
+              "correct": false
+            },
+            {
+              "id": "o3",
+              "text": "Ă",
+              "correct": false
+            },
+            {
+              "id": "o4",
+              "text": "Â",
+              "correct": false
+            },
+            {
+              "id": "o5",
+              "text": "B",
+              "correct": false
+            }
+          ]
+        },
+        "en": {
+          "prompt": "Which letter starts “orange”?",
+          "options": [
+            {
+              "id": "o1",
+              "text": "O",
+              "correct": true
+            },
+            {
+              "id": "o2",
+              "text": "P",
+              "correct": false
+            },
+            {
+              "id": "o3",
+              "text": "Q",
+              "correct": false
+            },
+            {
+              "id": "o4",
+              "text": "R",
+              "correct": false
+            },
+            {
+              "id": "o5",
+              "text": "S",
+              "correct": false
+            }
+          ]
+        }
+      },
+      "hints": [
+        {
+          "text": "Nhìn thật kỹ hình dáng chữ cái."
+        },
+        {
+          "text": "Look closely at the letter shape."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "junior",
+        "skillIds": [
+          "letters.initial_sound",
+          "letters.vocabulary"
+        ],
+        "milestone": 2,
+        "reviewState": "technically_validated",
+        "contentKind": "first_letter"
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 45,
+      "publicationState": "published"
+    },
+    {
+      "id": "ae-lv076",
+      "gameId": "alphabet_explorer",
+      "levelNumber": 76,
+      "difficulty": 3,
+      "learningObjective": "first_letter",
+      "localizedContent": {
+        "vi": {
+          "prompt": "Từ “quạt” bắt đầu bằng chữ nào?",
+          "options": [
+            {
+              "id": "o1",
+              "text": "Q",
+              "correct": true
+            },
+            {
+              "id": "o2",
+              "text": "A",
+              "correct": false
+            },
+            {
+              "id": "o3",
+              "text": "Ă",
+              "correct": false
+            },
+            {
+              "id": "o4",
+              "text": "Â",
+              "correct": false
+            },
+            {
+              "id": "o5",
+              "text": "B",
+              "correct": false
+            }
+          ]
+        },
+        "en": {
+          "prompt": "Which letter starts “pig”?",
+          "options": [
+            {
+              "id": "o1",
+              "text": "P",
+              "correct": true
+            },
+            {
+              "id": "o2",
+              "text": "Q",
+              "correct": false
+            },
+            {
+              "id": "o3",
+              "text": "R",
+              "correct": false
+            },
+            {
+              "id": "o4",
+              "text": "S",
+              "correct": false
+            },
+            {
+              "id": "o5",
+              "text": "T",
+              "correct": false
+            }
+          ]
+        }
+      },
+      "hints": [
+        {
+          "text": "Nhìn thật kỹ hình dáng chữ cái."
+        },
+        {
+          "text": "Look closely at the letter shape."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "junior",
+        "skillIds": [
+          "letters.initial_sound",
+          "letters.vocabulary"
+        ],
+        "milestone": 2,
+        "reviewState": "technically_validated",
+        "contentKind": "first_letter"
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 45,
+      "publicationState": "published"
+    },
+    {
+      "id": "ae-lv077",
+      "gameId": "alphabet_explorer",
+      "levelNumber": 77,
+      "difficulty": 3,
+      "learningObjective": "first_letter",
+      "localizedContent": {
+        "vi": {
+          "prompt": "Từ “trăng” bắt đầu bằng chữ nào?",
+          "options": [
+            {
+              "id": "o1",
+              "text": "T",
+              "correct": true
+            },
+            {
+              "id": "o2",
+              "text": "A",
+              "correct": false
+            },
+            {
+              "id": "o3",
+              "text": "Ă",
+              "correct": false
+            },
+            {
+              "id": "o4",
+              "text": "Â",
+              "correct": false
+            },
+            {
+              "id": "o5",
+              "text": "B",
+              "correct": false
+            }
+          ]
+        },
+        "en": {
+          "prompt": "Which letter starts “queen”?",
+          "options": [
+            {
+              "id": "o1",
+              "text": "Q",
+              "correct": true
+            },
+            {
+              "id": "o2",
+              "text": "R",
+              "correct": false
+            },
+            {
+              "id": "o3",
+              "text": "S",
+              "correct": false
+            },
+            {
+              "id": "o4",
+              "text": "T",
+              "correct": false
+            },
+            {
+              "id": "o5",
+              "text": "U",
+              "correct": false
+            }
+          ]
+        }
+      },
+      "hints": [
+        {
+          "text": "Nhìn thật kỹ hình dáng chữ cái."
+        },
+        {
+          "text": "Look closely at the letter shape."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "junior",
+        "skillIds": [
+          "letters.initial_sound",
+          "letters.vocabulary"
+        ],
+        "milestone": 2,
+        "reviewState": "technically_validated",
+        "contentKind": "first_letter"
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 45,
+      "publicationState": "published"
+    },
+    {
+      "id": "ae-lv078",
+      "gameId": "alphabet_explorer",
+      "levelNumber": 78,
+      "difficulty": 3,
+      "learningObjective": "first_letter",
+      "localizedContent": {
+        "vi": {
+          "prompt": "Từ “rổ” bắt đầu bằng chữ nào?",
+          "options": [
+            {
+              "id": "o1",
+              "text": "R",
+              "correct": true
+            },
+            {
+              "id": "o2",
+              "text": "A",
+              "correct": false
+            },
+            {
+              "id": "o3",
+              "text": "Ă",
+              "correct": false
+            },
+            {
+              "id": "o4",
+              "text": "Â",
+              "correct": false
+            },
+            {
+              "id": "o5",
+              "text": "B",
+              "correct": false
+            }
+          ]
+        },
+        "en": {
+          "prompt": "Which letter starts “rain”?",
+          "options": [
+            {
+              "id": "o1",
+              "text": "R",
+              "correct": true
+            },
+            {
+              "id": "o2",
+              "text": "S",
+              "correct": false
+            },
+            {
+              "id": "o3",
+              "text": "T",
+              "correct": false
+            },
+            {
+              "id": "o4",
+              "text": "U",
+              "correct": false
+            },
+            {
+              "id": "o5",
+              "text": "V",
+              "correct": false
+            }
+          ]
+        }
+      },
+      "hints": [
+        {
+          "text": "Nhìn thật kỹ hình dáng chữ cái."
+        },
+        {
+          "text": "Look closely at the letter shape."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "junior",
+        "skillIds": [
+          "letters.initial_sound",
+          "letters.vocabulary"
+        ],
+        "milestone": 2,
+        "reviewState": "technically_validated",
+        "contentKind": "first_letter"
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 45,
+      "publicationState": "published"
+    },
+    {
+      "id": "ae-lv079",
+      "gameId": "alphabet_explorer",
+      "levelNumber": 79,
+      "difficulty": 3,
+      "learningObjective": "first_letter",
+      "localizedContent": {
+        "vi": {
+          "prompt": "Từ “kéo” bắt đầu bằng chữ nào?",
+          "options": [
+            {
+              "id": "o1",
+              "text": "K",
+              "correct": true
+            },
+            {
+              "id": "o2",
+              "text": "A",
+              "correct": false
+            },
+            {
+              "id": "o3",
+              "text": "Ă",
+              "correct": false
+            },
+            {
+              "id": "o4",
+              "text": "Â",
+              "correct": false
+            },
+            {
+              "id": "o5",
+              "text": "B",
+              "correct": false
+            }
+          ]
+        },
+        "en": {
+          "prompt": "Which letter starts “sun”?",
+          "options": [
+            {
+              "id": "o1",
+              "text": "S",
+              "correct": true
+            },
+            {
+              "id": "o2",
+              "text": "T",
+              "correct": false
+            },
+            {
+              "id": "o3",
+              "text": "U",
+              "correct": false
+            },
+            {
+              "id": "o4",
+              "text": "V",
+              "correct": false
+            },
+            {
+              "id": "o5",
+              "text": "W",
+              "correct": false
+            }
+          ]
+        }
+      },
+      "hints": [
+        {
+          "text": "Nhìn thật kỹ hình dáng chữ cái."
+        },
+        {
+          "text": "Look closely at the letter shape."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "junior",
+        "skillIds": [
+          "letters.initial_sound",
+          "letters.vocabulary"
+        ],
+        "milestone": 2,
+        "reviewState": "technically_validated",
+        "contentKind": "first_letter"
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 45,
+      "publicationState": "published"
+    },
+    {
+      "id": "ae-lv080",
+      "gameId": "alphabet_explorer",
+      "levelNumber": 80,
+      "difficulty": 3,
+      "learningObjective": "first_letter",
+      "localizedContent": {
+        "vi": {
+          "prompt": "Từ “lá” bắt đầu bằng chữ nào?",
+          "options": [
+            {
+              "id": "o1",
+              "text": "L",
+              "correct": true
+            },
+            {
+              "id": "o2",
+              "text": "A",
+              "correct": false
+            },
+            {
+              "id": "o3",
+              "text": "Ă",
+              "correct": false
+            },
+            {
+              "id": "o4",
+              "text": "Â",
+              "correct": false
+            },
+            {
+              "id": "o5",
+              "text": "B",
+              "correct": false
+            }
+          ]
+        },
+        "en": {
+          "prompt": "Which letter starts “tree”?",
+          "options": [
+            {
+              "id": "o1",
+              "text": "T",
+              "correct": true
+            },
+            {
+              "id": "o2",
+              "text": "U",
+              "correct": false
+            },
+            {
+              "id": "o3",
+              "text": "V",
+              "correct": false
+            },
+            {
+              "id": "o4",
+              "text": "W",
+              "correct": false
+            },
+            {
+              "id": "o5",
+              "text": "X",
+              "correct": false
+            }
+          ]
+        }
+      },
+      "hints": [
+        {
+          "text": "Nhìn thật kỹ hình dáng chữ cái."
+        },
+        {
+          "text": "Look closely at the letter shape."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "junior",
+        "skillIds": [
+          "letters.initial_sound",
+          "letters.vocabulary"
+        ],
+        "milestone": 2,
+        "reviewState": "technically_validated",
+        "contentKind": "first_letter"
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 45,
+      "publicationState": "published"
+    },
+    {
+      "id": "ae-lv081",
+      "gameId": "alphabet_explorer",
+      "levelNumber": 81,
+      "difficulty": 3,
+      "learningObjective": "visual_discrimination",
+      "localizedContent": {
+        "vi": {
+          "prompt": "Tìm chữ b trong các chữ gần giống nhau.",
+          "options": [
+            {
+              "id": "o1",
+              "text": "b",
+              "correct": true
+            },
+            {
+              "id": "o2",
+              "text": "d",
+              "correct": false
+            },
+            {
+              "id": "o3",
+              "text": "p",
+              "correct": false
+            },
+            {
+              "id": "o4",
+              "text": "q",
+              "correct": false
+            }
+          ]
+        },
+        "en": {
+          "prompt": "Find b among similar letters.",
+          "options": [
+            {
+              "id": "o1",
+              "text": "b",
+              "correct": true
+            },
+            {
+              "id": "o2",
+              "text": "d",
+              "correct": false
+            },
+            {
+              "id": "o3",
+              "text": "p",
+              "correct": false
+            },
+            {
+              "id": "o4",
+              "text": "q",
+              "correct": false
+            }
+          ]
+        }
+      },
+      "hints": [
+        {
+          "text": "Nhìn thật kỹ hình dáng chữ cái."
+        },
+        {
+          "text": "Look closely at the letter shape."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "junior",
+        "skillIds": [
+          "letters.recognition.lowercase"
+        ],
+        "milestone": 2,
+        "reviewState": "technically_validated",
+        "contentKind": "visual_discrimination"
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 45,
+      "publicationState": "published"
+    },
+    {
+      "id": "ae-lv082",
+      "gameId": "alphabet_explorer",
+      "levelNumber": 82,
+      "difficulty": 3,
+      "learningObjective": "visual_discrimination",
+      "localizedContent": {
+        "vi": {
+          "prompt": "Tìm chữ d trong các chữ gần giống nhau.",
+          "options": [
+            {
+              "id": "o1",
+              "text": "b",
+              "correct": false
+            },
+            {
+              "id": "o2",
+              "text": "d",
+              "correct": true
+            },
+            {
+              "id": "o3",
+              "text": "p",
+              "correct": false
+            },
+            {
+              "id": "o4",
+              "text": "q",
+              "correct": false
+            }
+          ]
+        },
+        "en": {
+          "prompt": "Find d among similar letters.",
+          "options": [
+            {
+              "id": "o1",
+              "text": "b",
+              "correct": false
+            },
+            {
+              "id": "o2",
+              "text": "d",
+              "correct": true
+            },
+            {
+              "id": "o3",
+              "text": "p",
+              "correct": false
+            },
+            {
+              "id": "o4",
+              "text": "q",
+              "correct": false
+            }
+          ]
+        }
+      },
+      "hints": [
+        {
+          "text": "Nhìn thật kỹ hình dáng chữ cái."
+        },
+        {
+          "text": "Look closely at the letter shape."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "junior",
+        "skillIds": [
+          "letters.recognition.lowercase"
+        ],
+        "milestone": 2,
+        "reviewState": "technically_validated",
+        "contentKind": "visual_discrimination"
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 45,
+      "publicationState": "published"
+    },
+    {
+      "id": "ae-lv083",
+      "gameId": "alphabet_explorer",
+      "levelNumber": 83,
+      "difficulty": 3,
+      "learningObjective": "visual_discrimination",
+      "localizedContent": {
+        "vi": {
+          "prompt": "Tìm chữ p trong các chữ gần giống nhau.",
+          "options": [
+            {
+              "id": "o1",
+              "text": "p",
+              "correct": true
+            },
+            {
+              "id": "o2",
+              "text": "q",
+              "correct": false
+            },
+            {
+              "id": "o3",
+              "text": "b",
+              "correct": false
+            },
+            {
+              "id": "o4",
+              "text": "d",
+              "correct": false
+            }
+          ]
+        },
+        "en": {
+          "prompt": "Find p among similar letters.",
+          "options": [
+            {
+              "id": "o1",
+              "text": "p",
+              "correct": true
+            },
+            {
+              "id": "o2",
+              "text": "q",
+              "correct": false
+            },
+            {
+              "id": "o3",
+              "text": "b",
+              "correct": false
+            },
+            {
+              "id": "o4",
+              "text": "d",
+              "correct": false
+            }
+          ]
+        }
+      },
+      "hints": [
+        {
+          "text": "Nhìn thật kỹ hình dáng chữ cái."
+        },
+        {
+          "text": "Look closely at the letter shape."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "junior",
+        "skillIds": [
+          "letters.recognition.lowercase"
+        ],
+        "milestone": 2,
+        "reviewState": "technically_validated",
+        "contentKind": "visual_discrimination"
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 45,
+      "publicationState": "published"
+    },
+    {
+      "id": "ae-lv084",
+      "gameId": "alphabet_explorer",
+      "levelNumber": 84,
+      "difficulty": 3,
+      "learningObjective": "visual_discrimination",
+      "localizedContent": {
+        "vi": {
+          "prompt": "Tìm chữ q trong các chữ gần giống nhau.",
+          "options": [
+            {
+              "id": "o1",
+              "text": "p",
+              "correct": false
+            },
+            {
+              "id": "o2",
+              "text": "q",
+              "correct": true
+            },
+            {
+              "id": "o3",
+              "text": "b",
+              "correct": false
+            },
+            {
+              "id": "o4",
+              "text": "d",
+              "correct": false
+            }
+          ]
+        },
+        "en": {
+          "prompt": "Find q among similar letters.",
+          "options": [
+            {
+              "id": "o1",
+              "text": "p",
+              "correct": false
+            },
+            {
+              "id": "o2",
+              "text": "q",
+              "correct": true
+            },
+            {
+              "id": "o3",
+              "text": "b",
+              "correct": false
+            },
+            {
+              "id": "o4",
+              "text": "d",
+              "correct": false
+            }
+          ]
+        }
+      },
+      "hints": [
+        {
+          "text": "Nhìn thật kỹ hình dáng chữ cái."
+        },
+        {
+          "text": "Look closely at the letter shape."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "junior",
+        "skillIds": [
+          "letters.recognition.lowercase"
+        ],
+        "milestone": 2,
+        "reviewState": "technically_validated",
+        "contentKind": "visual_discrimination"
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 45,
+      "publicationState": "published"
+    },
+    {
+      "id": "ae-lv085",
+      "gameId": "alphabet_explorer",
+      "levelNumber": 85,
+      "difficulty": 3,
+      "learningObjective": "visual_discrimination",
+      "localizedContent": {
+        "vi": {
+          "prompt": "Tìm chữ m trong các chữ gần giống nhau.",
+          "options": [
+            {
+              "id": "o1",
+              "text": "m",
+              "correct": true
+            },
+            {
+              "id": "o2",
+              "text": "n",
+              "correct": false
+            },
+            {
+              "id": "o3",
+              "text": "u",
+              "correct": false
+            },
+            {
+              "id": "o4",
+              "text": "w",
+              "correct": false
+            }
+          ]
+        },
+        "en": {
+          "prompt": "Find m among similar letters.",
+          "options": [
+            {
+              "id": "o1",
+              "text": "m",
+              "correct": true
+            },
+            {
+              "id": "o2",
+              "text": "n",
+              "correct": false
+            },
+            {
+              "id": "o3",
+              "text": "u",
+              "correct": false
+            },
+            {
+              "id": "o4",
+              "text": "w",
+              "correct": false
+            }
+          ]
+        }
+      },
+      "hints": [
+        {
+          "text": "Nhìn thật kỹ hình dáng chữ cái."
+        },
+        {
+          "text": "Look closely at the letter shape."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "junior",
+        "skillIds": [
+          "letters.recognition.lowercase"
+        ],
+        "milestone": 2,
+        "reviewState": "technically_validated",
+        "contentKind": "visual_discrimination"
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 45,
+      "publicationState": "published"
+    },
+    {
+      "id": "ae-lv086",
+      "gameId": "alphabet_explorer",
+      "levelNumber": 86,
+      "difficulty": 3,
+      "learningObjective": "visual_discrimination",
+      "localizedContent": {
+        "vi": {
+          "prompt": "Tìm chữ n trong các chữ gần giống nhau.",
+          "options": [
+            {
+              "id": "o1",
+              "text": "m",
+              "correct": false
+            },
+            {
+              "id": "o2",
+              "text": "n",
+              "correct": true
+            },
+            {
+              "id": "o3",
+              "text": "u",
+              "correct": false
+            },
+            {
+              "id": "o4",
+              "text": "w",
+              "correct": false
+            }
+          ]
+        },
+        "en": {
+          "prompt": "Find n among similar letters.",
+          "options": [
+            {
+              "id": "o1",
+              "text": "m",
+              "correct": false
+            },
+            {
+              "id": "o2",
+              "text": "n",
+              "correct": true
+            },
+            {
+              "id": "o3",
+              "text": "u",
+              "correct": false
+            },
+            {
+              "id": "o4",
+              "text": "w",
+              "correct": false
+            }
+          ]
+        }
+      },
+      "hints": [
+        {
+          "text": "Nhìn thật kỹ hình dáng chữ cái."
+        },
+        {
+          "text": "Look closely at the letter shape."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "junior",
+        "skillIds": [
+          "letters.recognition.lowercase"
+        ],
+        "milestone": 2,
+        "reviewState": "technically_validated",
+        "contentKind": "visual_discrimination"
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 45,
+      "publicationState": "published"
+    },
+    {
+      "id": "ae-lv087",
+      "gameId": "alphabet_explorer",
+      "levelNumber": 87,
+      "difficulty": 3,
+      "learningObjective": "visual_discrimination",
+      "localizedContent": {
+        "vi": {
+          "prompt": "Tìm chữ O trong các chữ gần giống nhau.",
+          "options": [
+            {
+              "id": "o1",
+              "text": "O",
+              "correct": true
+            },
+            {
+              "id": "o2",
+              "text": "Q",
+              "correct": false
+            },
+            {
+              "id": "o3",
+              "text": "C",
+              "correct": false
+            },
+            {
+              "id": "o4",
+              "text": "G",
+              "correct": false
+            }
+          ]
+        },
+        "en": {
+          "prompt": "Find O among similar letters.",
+          "options": [
+            {
+              "id": "o1",
+              "text": "O",
+              "correct": true
+            },
+            {
+              "id": "o2",
+              "text": "Q",
+              "correct": false
+            },
+            {
+              "id": "o3",
+              "text": "C",
+              "correct": false
+            },
+            {
+              "id": "o4",
+              "text": "G",
+              "correct": false
+            }
+          ]
+        }
+      },
+      "hints": [
+        {
+          "text": "Nhìn thật kỹ hình dáng chữ cái."
+        },
+        {
+          "text": "Look closely at the letter shape."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "junior",
+        "skillIds": [
+          "letters.recognition.uppercase"
+        ],
+        "milestone": 2,
+        "reviewState": "technically_validated",
+        "contentKind": "visual_discrimination"
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 45,
+      "publicationState": "published"
+    },
+    {
+      "id": "ae-lv088",
+      "gameId": "alphabet_explorer",
+      "levelNumber": 88,
+      "difficulty": 3,
+      "learningObjective": "visual_discrimination",
+      "localizedContent": {
+        "vi": {
+          "prompt": "Tìm chữ Q trong các chữ gần giống nhau.",
+          "options": [
+            {
+              "id": "o1",
+              "text": "O",
+              "correct": false
+            },
+            {
+              "id": "o2",
+              "text": "Q",
+              "correct": true
+            },
+            {
+              "id": "o3",
+              "text": "C",
+              "correct": false
+            },
+            {
+              "id": "o4",
+              "text": "G",
+              "correct": false
+            }
+          ]
+        },
+        "en": {
+          "prompt": "Find Q among similar letters.",
+          "options": [
+            {
+              "id": "o1",
+              "text": "O",
+              "correct": false
+            },
+            {
+              "id": "o2",
+              "text": "Q",
+              "correct": true
+            },
+            {
+              "id": "o3",
+              "text": "C",
+              "correct": false
+            },
+            {
+              "id": "o4",
+              "text": "G",
+              "correct": false
+            }
+          ]
+        }
+      },
+      "hints": [
+        {
+          "text": "Nhìn thật kỹ hình dáng chữ cái."
+        },
+        {
+          "text": "Look closely at the letter shape."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "junior",
+        "skillIds": [
+          "letters.recognition.uppercase"
+        ],
+        "milestone": 2,
+        "reviewState": "technically_validated",
+        "contentKind": "visual_discrimination"
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 45,
+      "publicationState": "published"
+    },
+    {
+      "id": "ae-lv089",
+      "gameId": "alphabet_explorer",
+      "levelNumber": 89,
+      "difficulty": 3,
+      "learningObjective": "visual_discrimination",
+      "localizedContent": {
+        "vi": {
+          "prompt": "Tìm chữ I trong các chữ gần giống nhau.",
+          "options": [
+            {
+              "id": "o1",
+              "text": "I",
+              "correct": true
+            },
+            {
+              "id": "o2",
+              "text": "L",
+              "correct": false
+            },
+            {
+              "id": "o3",
+              "text": "T",
+              "correct": false
+            },
+            {
+              "id": "o4",
+              "text": "F",
+              "correct": false
+            }
+          ]
+        },
+        "en": {
+          "prompt": "Find I among similar letters.",
+          "options": [
+            {
+              "id": "o1",
+              "text": "I",
+              "correct": true
+            },
+            {
+              "id": "o2",
+              "text": "L",
+              "correct": false
+            },
+            {
+              "id": "o3",
+              "text": "T",
+              "correct": false
+            },
+            {
+              "id": "o4",
+              "text": "F",
+              "correct": false
+            }
+          ]
+        }
+      },
+      "hints": [
+        {
+          "text": "Nhìn thật kỹ hình dáng chữ cái."
+        },
+        {
+          "text": "Look closely at the letter shape."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "junior",
+        "skillIds": [
+          "letters.recognition.uppercase"
+        ],
+        "milestone": 2,
+        "reviewState": "technically_validated",
+        "contentKind": "visual_discrimination"
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 45,
+      "publicationState": "published"
+    },
+    {
+      "id": "ae-lv090",
+      "gameId": "alphabet_explorer",
+      "levelNumber": 90,
+      "difficulty": 3,
+      "learningObjective": "visual_discrimination",
+      "localizedContent": {
+        "vi": {
+          "prompt": "Tìm chữ L trong các chữ gần giống nhau.",
+          "options": [
+            {
+              "id": "o1",
+              "text": "I",
+              "correct": false
+            },
+            {
+              "id": "o2",
+              "text": "L",
+              "correct": true
+            },
+            {
+              "id": "o3",
+              "text": "T",
+              "correct": false
+            },
+            {
+              "id": "o4",
+              "text": "F",
+              "correct": false
+            }
+          ]
+        },
+        "en": {
+          "prompt": "Find L among similar letters.",
+          "options": [
+            {
+              "id": "o1",
+              "text": "I",
+              "correct": false
+            },
+            {
+              "id": "o2",
+              "text": "L",
+              "correct": true
+            },
+            {
+              "id": "o3",
+              "text": "T",
+              "correct": false
+            },
+            {
+              "id": "o4",
+              "text": "F",
+              "correct": false
+            }
+          ]
+        }
+      },
+      "hints": [
+        {
+          "text": "Nhìn thật kỹ hình dáng chữ cái."
+        },
+        {
+          "text": "Look closely at the letter shape."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "junior",
+        "skillIds": [
+          "letters.recognition.uppercase"
+        ],
+        "milestone": 2,
+        "reviewState": "technically_validated",
+        "contentKind": "visual_discrimination"
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 45,
+      "publicationState": "published"
+    },
+    {
+      "id": "ae-lv091",
+      "gameId": "alphabet_explorer",
+      "levelNumber": 91,
+      "difficulty": 3,
+      "learningObjective": "visual_discrimination",
+      "localizedContent": {
+        "vi": {
+          "prompt": "Tìm chữ Ă trong các chữ gần giống nhau.",
+          "options": [
+            {
+              "id": "o1",
+              "text": "Ă",
+              "correct": true
+            },
+            {
+              "id": "o2",
+              "text": "Â",
+              "correct": false
+            },
+            {
+              "id": "o3",
+              "text": "A",
+              "correct": false
+            },
+            {
+              "id": "o4",
+              "text": "Ê",
+              "correct": false
+            }
+          ]
+        },
+        "en": {
+          "prompt": "Find Ă among similar letters.",
+          "options": [
+            {
+              "id": "o1",
+              "text": "Ă",
+              "correct": true
+            },
+            {
+              "id": "o2",
+              "text": "Â",
+              "correct": false
+            },
+            {
+              "id": "o3",
+              "text": "A",
+              "correct": false
+            },
+            {
+              "id": "o4",
+              "text": "Ê",
+              "correct": false
+            }
+          ]
+        }
+      },
+      "hints": [
+        {
+          "text": "Nhìn thật kỹ hình dáng chữ cái."
+        },
+        {
+          "text": "Look closely at the letter shape."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "junior",
+        "skillIds": [
+          "letters.recognition.uppercase"
+        ],
+        "milestone": 2,
+        "reviewState": "technically_validated",
+        "contentKind": "visual_discrimination"
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 45,
+      "publicationState": "published"
+    },
+    {
+      "id": "ae-lv092",
+      "gameId": "alphabet_explorer",
+      "levelNumber": 92,
+      "difficulty": 3,
+      "learningObjective": "visual_discrimination",
+      "localizedContent": {
+        "vi": {
+          "prompt": "Tìm chữ Â trong các chữ gần giống nhau.",
+          "options": [
+            {
+              "id": "o1",
+              "text": "Ă",
+              "correct": false
+            },
+            {
+              "id": "o2",
+              "text": "Â",
+              "correct": true
+            },
+            {
+              "id": "o3",
+              "text": "A",
+              "correct": false
+            },
+            {
+              "id": "o4",
+              "text": "Ê",
+              "correct": false
+            }
+          ]
+        },
+        "en": {
+          "prompt": "Find Â among similar letters.",
+          "options": [
+            {
+              "id": "o1",
+              "text": "Ă",
+              "correct": false
+            },
+            {
+              "id": "o2",
+              "text": "Â",
+              "correct": true
+            },
+            {
+              "id": "o3",
+              "text": "A",
+              "correct": false
+            },
+            {
+              "id": "o4",
+              "text": "Ê",
+              "correct": false
+            }
+          ]
+        }
+      },
+      "hints": [
+        {
+          "text": "Nhìn thật kỹ hình dáng chữ cái."
+        },
+        {
+          "text": "Look closely at the letter shape."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "junior",
+        "skillIds": [
+          "letters.recognition.uppercase"
+        ],
+        "milestone": 2,
+        "reviewState": "technically_validated",
+        "contentKind": "visual_discrimination"
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 45,
+      "publicationState": "published"
+    },
+    {
+      "id": "ae-lv093",
+      "gameId": "alphabet_explorer",
+      "levelNumber": 93,
+      "difficulty": 3,
+      "learningObjective": "visual_discrimination",
+      "localizedContent": {
+        "vi": {
+          "prompt": "Tìm chữ Ô trong các chữ gần giống nhau.",
+          "options": [
+            {
+              "id": "o1",
+              "text": "Ô",
+              "correct": true
+            },
+            {
+              "id": "o2",
+              "text": "Ơ",
+              "correct": false
+            },
+            {
+              "id": "o3",
+              "text": "O",
+              "correct": false
+            },
+            {
+              "id": "o4",
+              "text": "Q",
+              "correct": false
+            }
+          ]
+        },
+        "en": {
+          "prompt": "Find Ô among similar letters.",
+          "options": [
+            {
+              "id": "o1",
+              "text": "Ô",
+              "correct": true
+            },
+            {
+              "id": "o2",
+              "text": "Ơ",
+              "correct": false
+            },
+            {
+              "id": "o3",
+              "text": "O",
+              "correct": false
+            },
+            {
+              "id": "o4",
+              "text": "Q",
+              "correct": false
+            }
+          ]
+        }
+      },
+      "hints": [
+        {
+          "text": "Nhìn thật kỹ hình dáng chữ cái."
+        },
+        {
+          "text": "Look closely at the letter shape."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "junior",
+        "skillIds": [
+          "letters.recognition.uppercase"
+        ],
+        "milestone": 2,
+        "reviewState": "technically_validated",
+        "contentKind": "visual_discrimination"
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 45,
+      "publicationState": "published"
+    },
+    {
+      "id": "ae-lv094",
+      "gameId": "alphabet_explorer",
+      "levelNumber": 94,
+      "difficulty": 3,
+      "learningObjective": "visual_discrimination",
+      "localizedContent": {
+        "vi": {
+          "prompt": "Tìm chữ Ơ trong các chữ gần giống nhau.",
+          "options": [
+            {
+              "id": "o1",
+              "text": "Ô",
+              "correct": false
+            },
+            {
+              "id": "o2",
+              "text": "Ơ",
+              "correct": true
+            },
+            {
+              "id": "o3",
+              "text": "O",
+              "correct": false
+            },
+            {
+              "id": "o4",
+              "text": "Q",
+              "correct": false
+            }
+          ]
+        },
+        "en": {
+          "prompt": "Find Ơ among similar letters.",
+          "options": [
+            {
+              "id": "o1",
+              "text": "Ô",
+              "correct": false
+            },
+            {
+              "id": "o2",
+              "text": "Ơ",
+              "correct": true
+            },
+            {
+              "id": "o3",
+              "text": "O",
+              "correct": false
+            },
+            {
+              "id": "o4",
+              "text": "Q",
+              "correct": false
+            }
+          ]
+        }
+      },
+      "hints": [
+        {
+          "text": "Nhìn thật kỹ hình dáng chữ cái."
+        },
+        {
+          "text": "Look closely at the letter shape."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "junior",
+        "skillIds": [
+          "letters.recognition.uppercase"
+        ],
+        "milestone": 2,
+        "reviewState": "technically_validated",
+        "contentKind": "visual_discrimination"
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 45,
+      "publicationState": "published"
+    },
+    {
+      "id": "ae-lv095",
+      "gameId": "alphabet_explorer",
+      "levelNumber": 95,
+      "difficulty": 3,
+      "learningObjective": "visual_discrimination",
+      "localizedContent": {
+        "vi": {
+          "prompt": "Tìm chữ Ư trong các chữ gần giống nhau.",
+          "options": [
+            {
+              "id": "o1",
+              "text": "U",
+              "correct": false
+            },
+            {
+              "id": "o2",
+              "text": "Ư",
+              "correct": true
+            },
+            {
+              "id": "o3",
+              "text": "V",
+              "correct": false
+            },
+            {
+              "id": "o4",
+              "text": "Y",
+              "correct": false
+            }
+          ]
+        },
+        "en": {
+          "prompt": "Find Ư among similar letters.",
+          "options": [
+            {
+              "id": "o1",
+              "text": "U",
+              "correct": false
+            },
+            {
+              "id": "o2",
+              "text": "Ư",
+              "correct": true
+            },
+            {
+              "id": "o3",
+              "text": "V",
+              "correct": false
+            },
+            {
+              "id": "o4",
+              "text": "Y",
+              "correct": false
+            }
+          ]
+        }
+      },
+      "hints": [
+        {
+          "text": "Nhìn thật kỹ hình dáng chữ cái."
+        },
+        {
+          "text": "Look closely at the letter shape."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "junior",
+        "skillIds": [
+          "letters.recognition.uppercase"
+        ],
+        "milestone": 2,
+        "reviewState": "technically_validated",
+        "contentKind": "visual_discrimination"
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 45,
+      "publicationState": "published"
+    }
+  ]
+}

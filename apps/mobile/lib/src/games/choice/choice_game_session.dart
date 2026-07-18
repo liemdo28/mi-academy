@@ -19,6 +19,7 @@ class ChoiceGameSession {
   int _hintsUsed = 0;
   double _progress = 0.12;
   String? _feedback;
+  bool? _lastCorrect;
 
   MiLevel get level => _level;
   List<ChoiceGameOption> get options => List.unmodifiable(_options);
@@ -26,6 +27,7 @@ class ChoiceGameSession {
   int get hintsUsed => _hintsUsed;
   double get progress => _progress;
   String? get feedback => _feedback;
+  bool? get lastCorrect => _lastCorrect;
 
   Map<String, dynamic> get content => _level.contentForLocale(locale);
 
@@ -46,12 +48,20 @@ class ChoiceGameSession {
     _attempts++;
     if (option.correct) {
       _progress = 1;
-      _feedback = 'Đúng rồi, xe của MI tiến lên!';
+      _feedback = _localized(
+        vi: 'Đúng rồi, xe của MI tiến lên!',
+        en: 'Correct, MI moves forward!',
+      );
+      _lastCorrect = true;
       return true;
     }
 
     _progress = min(0.86, _progress + 0.18);
-    _feedback = 'Gần đúng rồi, mình thử cách khác nhé!';
+    _feedback = _localized(
+      vi: 'Gần đúng rồi, mình thử cách khác nhé!',
+      en: 'Almost there, try another choice.',
+    );
+    _lastCorrect = false;
     return false;
   }
 
@@ -62,6 +72,7 @@ class ChoiceGameSession {
     final hint = hints[min(_hintsUsed, hints.length - 1)]['text'] as String;
     _hintsUsed = min(_hintsUsed + 1, hints.length);
     _feedback = hint;
+    _lastCorrect = null;
   }
 
   MiGameSnapshot saveSnapshot({DateTime? now}) {
@@ -72,6 +83,7 @@ class ChoiceGameSession {
       state: {
         'progress': _progress,
         'feedback': _feedback,
+        'lastCorrect': _lastCorrect,
       },
       createdAt: now ?? DateTime.now().toUtc(),
       score: score,
@@ -93,6 +105,7 @@ class ChoiceGameSession {
     final state = snapshot.state;
     _progress = (state['progress'] as num?)?.toDouble() ?? 0.12;
     _feedback = state['feedback'] as String?;
+    _lastCorrect = state['lastCorrect'] as bool?;
     _attempts = snapshot.attemptsUsed;
     _hintsUsed = snapshot.hintsUsed;
   }
@@ -106,6 +119,11 @@ class ChoiceGameSession {
     _hintsUsed = 0;
     _progress = 0.12;
     _feedback = null;
+    _lastCorrect = null;
+  }
+
+  String _localized({required String vi, required String en}) {
+    return locale == 'en' ? en : vi;
   }
 }
 

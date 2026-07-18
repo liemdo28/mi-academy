@@ -77,8 +77,8 @@ typedef GameScreenBuilder = Widget Function({
 });
 
 /// Central registry for all playable games. See docs/game-catalog.md for
-/// the full 30-game target list -- only the 6 built games are registered
-/// here; the other 24 simply don't have entries yet (not stubbed/faked).
+/// the full 30-game target list -- only built games are registered here;
+/// not-yet-built games simply don't have entries yet (not stubbed/faked).
 abstract final class GameRegistry {
   static final Map<String, GameRegistryEntry> _entries = {
     for (final entry in _buildEntries()) entry.gameId: entry,
@@ -95,6 +95,91 @@ abstract final class GameRegistry {
       .toList(growable: false);
 
   static List<GameRegistryEntry> _buildEntries() => [
+        GameRegistryEntry(
+          gameId: 'alphabet_explorer',
+          localizedName: const {
+            'vi': 'Khám phá chữ cái',
+            'en': 'Alphabet Explorer',
+          },
+          category: 'letters',
+          ageBands: const ['junior', 'explorer'],
+          supportedSkills: const [
+            'letters.recognition.uppercase',
+            'letters.recognition.lowercase',
+            'letters.case_matching',
+            'letters.initial_sound',
+            'letters.vocabulary',
+          ],
+          engineType: 'choice',
+          builder: ({
+            required level,
+            required allLevels,
+            required onExit,
+            required onComplete,
+            required childProfileId,
+            initialSnapshot,
+            onSaveSnapshot,
+            reduceMotion = false,
+            required locale,
+          }) =>
+              ChoiceGameScreen(
+            title: locale == 'en' ? 'Alphabet Explorer' : 'Khám phá chữ cái',
+            worldLabel: locale == 'en'
+                ? 'MI explores letters with you.'
+                : 'MI cùng con khám phá chữ cái.',
+            level: level,
+            allLevels: allLevels,
+            heroIcon: Icons.abc_rounded,
+            primaryColor: GameTheme.primary,
+            onExit: onExit,
+            onComplete: onComplete,
+            initialSnapshot: initialSnapshot,
+            onSaveSnapshot: onSaveSnapshot,
+            locale: locale,
+          ),
+        ),
+        GameRegistryEntry(
+          gameId: 'missing_letter',
+          localizedName: const {
+            'vi': 'Tìm chữ còn thiếu',
+            'en': 'Missing Letter',
+          },
+          category: 'letters',
+          ageBands: const ['junior', 'explorer'],
+          supportedSkills: const [
+            'letters.recognition.lowercase',
+            'letters.spelling',
+            'letters.vocabulary',
+            'letters.initial_sound',
+          ],
+          engineType: 'choice',
+          builder: ({
+            required level,
+            required allLevels,
+            required onExit,
+            required onComplete,
+            required childProfileId,
+            initialSnapshot,
+            onSaveSnapshot,
+            reduceMotion = false,
+            required locale,
+          }) =>
+              ChoiceGameScreen(
+            title: locale == 'en' ? 'Missing Letter' : 'Tìm chữ còn thiếu',
+            worldLabel: locale == 'en'
+                ? 'MI looks for the missing letters with you.'
+                : 'MI cùng con tìm chữ còn thiếu.',
+            level: level,
+            allLevels: allLevels,
+            heroIcon: Icons.edit_note_rounded,
+            primaryColor: MiGameColors.secondary,
+            onExit: onExit,
+            onComplete: onComplete,
+            initialSnapshot: initialSnapshot,
+            onSaveSnapshot: onSaveSnapshot,
+            locale: locale,
+          ),
+        ),
         GameRegistryEntry(
           gameId: 'word_builder',
           localizedName: const {'vi': 'Ghép chữ tạo từ', 'en': 'Word Builder'},

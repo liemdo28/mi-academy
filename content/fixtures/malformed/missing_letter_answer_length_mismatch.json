@@ -1,0 +1,42 @@
+{
+  "id": "ml-bad-answer-length",
+  "gameId": "missing_letter",
+  "levelNumber": 1,
+  "difficulty": 3,
+  "localizedContent": {
+    "vi": {
+      "prompt": "Chọn chữ còn thiếu: C__",
+      "displayWord": "C__",
+      "targetWord": "con",
+      "missingPositions": [1, 2],
+      "correctLetters": ["O", "N"],
+      "correctAnswer": "O",
+      "categoryHint": "con vật",
+      "options": [
+        {"id": "a", "text": "O", "correct": true},
+        {"id": "b", "text": "AN", "correct": false},
+        {"id": "c", "text": "EM", "correct": false},
+        {"id": "d", "text": "IN", "correct": false}
+      ]
+    },
+    "en": {
+      "prompt": "Choose the missing letters: C__",
+      "displayWord": "C__",
+      "targetWord": "cat",
+      "missingPositions": [1, 2],
+      "correctLetters": ["A", "T"],
+      "correctAnswer": "A",
+      "categoryHint": "animal",
+      "options": [
+        {"id": "a", "text": "A", "correct": true},
+        {"id": "b", "text": "OT", "correct": false},
+        {"id": "c", "text": "UT", "correct": false},
+        {"id": "d", "text": "ET", "correct": false}
+      ]
+    }
+  },
+  "metadata": {"ageGroup": "explorer", "skillIds": ["letters.spelling"]},
+  "contentVersion": 1,
+  "estimatedSeconds": 50,
+  "publicationState": "published"
+}

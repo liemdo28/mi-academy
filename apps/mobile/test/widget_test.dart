@@ -42,10 +42,15 @@ void main() {
     expect(find.text('Hồ sơ của bé'), findsOneWidget);
     expect(find.text('Sao MI: 0'), findsOneWidget);
     expect(find.text('Huy hiệu: sẵn sàng'), findsOneWidget);
-    expect(find.text('6 game offline'), findsOneWidget);
+    expect(find.text('8 game offline'), findsOneWidget);
     await dragUntilFound(tester, find.text('Khu vực phụ huynh'));
     expect(find.text('Khu vực phụ huynh'), findsOneWidget);
+    expect(find.text('Khám phá chữ cái'), findsOneWidget);
+    await dragUntilFound(tester, find.text('Tìm chữ còn thiếu'));
+    expect(find.text('Tìm chữ còn thiếu'), findsOneWidget);
+    await dragUntilFound(tester, find.text('Ghép chữ tạo từ'));
     expect(find.text('Ghép chữ tạo từ'), findsOneWidget);
+    await dragUntilFound(tester, find.text('Nghe âm tìm chữ'));
     expect(find.text('Nghe âm tìm chữ'), findsOneWidget);
     await dragUntilFound(tester, find.text('Đường đua cộng trừ'));
     expect(find.text('Đường đua cộng trừ'), findsOneWidget);
@@ -1052,9 +1057,12 @@ Future<void> _enterPin(WidgetTester tester, String pin) async {
 Future<void> pumpUntilFound(
   WidgetTester tester,
   Finder finder, {
-  int maxPumps = 60,
+  int maxPumps = 120,
 }) async {
   for (var i = 0; i < maxPumps; i++) {
+    await tester.runAsync(() async {
+      await Future<void>.delayed(const Duration(milliseconds: 20));
+    });
     await tester.pump(const Duration(milliseconds: 100));
     if (finder.evaluate().isNotEmpty) return;
   }

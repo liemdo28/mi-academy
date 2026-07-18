@@ -1,0 +1,40 @@
+{
+  "id": "ml-bad-missing-correct",
+  "gameId": "missing_letter",
+  "levelNumber": 1,
+  "difficulty": 1,
+  "localizedContent": {
+    "vi": {
+      "prompt": "Chọn chữ còn thiếu: M_O",
+      "displayWord": "M_O",
+      "targetWord": "mèo",
+      "missingPositions": [1],
+      "correctLetters": ["È"],
+      "correctAnswer": "È",
+      "categoryHint": "con vật",
+      "options": [
+        {"id": "a", "text": "A", "correct": false},
+        {"id": "b", "text": "O", "correct": false},
+        {"id": "c", "text": "U", "correct": false}
+      ]
+    },
+    "en": {
+      "prompt": "Choose the missing letter: C_T",
+      "displayWord": "C_T",
+      "targetWord": "cat",
+      "missingPositions": [1],
+      "correctLetters": ["A"],
+      "correctAnswer": "A",
+      "categoryHint": "animal",
+      "options": [
+        {"id": "a", "text": "O", "correct": false},
+        {"id": "b", "text": "U", "correct": false},
+        {"id": "c", "text": "E", "correct": false}
+      ]
+    }
+  },
+  "metadata": {"ageGroup": "junior", "skillIds": ["letters.spelling"]},
+  "contentVersion": 1,
+  "estimatedSeconds": 50,
+  "publicationState": "published"
+}

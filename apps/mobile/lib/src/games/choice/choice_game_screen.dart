@@ -130,7 +130,7 @@ class _ChoiceGameScreenState extends State<ChoiceGameScreen>
       builder: (_) => CompletionOverlay(
         starsEarned: _session.stars,
         maxStars: 3,
-        message: 'MI thấy con đã hiểu bài!',
+        message: _completionMessage(),
         score: _session.score,
         onNext: _goNext,
         onReplay: () {
@@ -205,7 +205,7 @@ class _ChoiceGameScreenState extends State<ChoiceGameScreen>
                   if (_session.feedback != null) ...[
                     const SizedBox(height: 8),
                     FeedbackBubble(
-                      isCorrect: _session.feedback!.contains('Đúng'),
+                      isCorrect: _session.lastCorrect ?? false,
                       message: _session.feedback!,
                     ),
                   ],
@@ -226,6 +226,17 @@ class _ChoiceGameScreenState extends State<ChoiceGameScreen>
         ),
       ),
     );
+  }
+
+  String _completionMessage() {
+    if (_level.gameId == 'missing_letter') {
+      return widget.locale == 'en'
+          ? 'You found the missing letter!'
+          : 'Con đã tìm được chữ còn thiếu!';
+    }
+    return widget.locale == 'en'
+        ? 'MI can see you understand this!'
+        : 'MI thấy con đã hiểu bài!';
   }
 }
 

@@ -54,6 +54,16 @@
   "subjectCreative": "Ngôi nhà sáng tạo",
   "correct": "Đúng rồi!",
   "incorrect": "Chưa đúng, thử lại nhé!",
+  "missingLetterTitle": "Tìm chữ còn thiếu",
+  "missingLetterInstruction": "Chọn chữ còn thiếu để hoàn thành từ.",
+  "missingLetterChooseLetter": "Chọn chữ",
+  "missingLetterChooseLetters": "Chọn các chữ theo đúng thứ tự",
+  "missingLetterHint": "Đọc chậm từng âm và nhìn gợi ý chủ đề.",
+  "missingLetterCorrect": "Đúng rồi, con đã hoàn thành từ!",
+  "missingLetterTryAgain": "Gần đúng rồi, mình thử chữ khác nhé!",
+  "missingLetterCompleted": "Con đã tìm được chữ còn thiếu!",
+  "missingLetterImageUnavailable": "Chưa có hình minh họa, dùng gợi ý chữ.",
+  "missingLetterContentUnavailable": "Chưa tải được nội dung Tìm chữ còn thiếu.",
   "welcomeBack": "Chào mừng quay lại, {name}!",
   "@welcomeBack": {
     "placeholders": {

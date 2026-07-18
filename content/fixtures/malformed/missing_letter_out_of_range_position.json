@@ -1,0 +1,40 @@
+{
+  "id": "ml-bad-position",
+  "gameId": "missing_letter",
+  "levelNumber": 1,
+  "difficulty": 1,
+  "localizedContent": {
+    "vi": {
+      "prompt": "Chọn chữ còn thiếu: C_",
+      "displayWord": "C_",
+      "targetWord": "cá",
+      "missingPositions": [5],
+      "correctLetters": ["Á"],
+      "correctAnswer": "Á",
+      "categoryHint": "con vật",
+      "options": [
+        {"id": "a", "text": "Á", "correct": true},
+        {"id": "b", "text": "O", "correct": false},
+        {"id": "c", "text": "Ê", "correct": false}
+      ]
+    },
+    "en": {
+      "prompt": "Choose the missing letter: D_G",
+      "displayWord": "D_G",
+      "targetWord": "dog",
+      "missingPositions": [9],
+      "correctLetters": ["O"],
+      "correctAnswer": "O",
+      "categoryHint": "animal",
+      "options": [
+        {"id": "a", "text": "O", "correct": true},
+        {"id": "b", "text": "A", "correct": false},
+        {"id": "c", "text": "E", "correct": false}
+      ]
+    }
+  },
+  "metadata": {"ageGroup": "junior", "skillIds": ["letters.spelling"]},
+  "contentVersion": 1,
+  "estimatedSeconds": 50,
+  "publicationState": "published"
+}

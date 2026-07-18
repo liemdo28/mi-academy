@@ -31,6 +31,7 @@ from __future__ import annotations
 import argparse
 import json
 import sys
+import unicodedata
 from pathlib import Path
 
 import jsonschema
@@ -92,6 +93,130 @@ def check_asset_refs(level: dict) -> list[str]:
     return errors
 
 
+def validate_missing_letter_content(level: dict) -> list[str]:
+    """Game-specific checks for Missing Letter content.
+
+    The shared JSON Schema intentionally allows game-specific localized
+    payload fields, so this function validates the authored word-gap
+    contract that the generic schema cannot express.
+    """
+    if level.get("gameId") != "missing_letter":
+        return []
+
+    errors: list[str] = []
+    localized = level.get("localizedContent")
+    if not isinstance(localized, dict):
+        return ["localizedContent: must be an object"]
+
+    if set(localized) - {"vi", "en"}:
+        errors.append("localizedContent: unsupported locale for missing_letter")
+
+    for locale in ("vi", "en"):
+        content = localized.get(locale)
+        field_prefix = f"localizedContent.{locale}"
+        if not isinstance(content, dict):
+            errors.append(f"{field_prefix}: locale content is required")
+            continue
+
+        target_word = content.get("targetWord")
+        display_word = content.get("displayWord")
+        positions = content.get("missingPositions")
+        correct_letters = content.get("correctLetters")
+        correct_answer = content.get("correctAnswer")
+        options = content.get("options")
+        category_hint = content.get("categoryHint")
+
+        if not isinstance(target_word, str) or not target_word:
+            errors.append(f"{field_prefix}.targetWord: required non-empty string")
+            continue
+        if unicodedata.normalize("NFC", target_word) != target_word:
+            errors.append(f"{field_prefix}.targetWord: must be NFC-normalized")
+        if not isinstance(display_word, str) or "_" not in display_word:
+            errors.append(f"{field_prefix}.displayWord: must contain one or more gaps")
+        if not isinstance(positions, list) or not positions:
+            errors.append(f"{field_prefix}.missingPositions: required non-empty list")
+            continue
+        if not all(isinstance(pos, int) for pos in positions):
+            errors.append(
+                f"{field_prefix}.missingPositions: every position must be an integer"
+            )
+            continue
+
+        target_upper = target_word.upper()
+        for pos in positions:
+            if pos < 0 or pos >= len(target_upper):
+                errors.append(
+                    f"{field_prefix}.missingPositions: position {pos} is outside targetWord"
+                )
+            elif isinstance(display_word, str) and (
+                pos >= len(display_word) or display_word[pos] != "_"
+            ):
+                errors.append(
+                    f"{field_prefix}.displayWord: missing position {pos} must be shown as '_'"
+                )
+
+        expected_letters = [
+            target_upper[pos] for pos in positions if 0 <= pos < len(target_upper)
+        ]
+        expected_answer = "".join(expected_letters)
+        if correct_letters != expected_letters:
+            errors.append(
+                f"{field_prefix}.correctLetters: must match targetWord at missingPositions"
+            )
+        if correct_answer != expected_answer:
+            errors.append(
+                f"{field_prefix}.correctAnswer: must equal ordered missing letters"
+            )
+        if isinstance(correct_answer, str) and len(correct_answer) != len(positions):
+            errors.append(
+                f"{field_prefix}.correctAnswer: length must match missingPositions"
+            )
+
+        if not isinstance(options, list) or not options:
+            errors.append(f"{field_prefix}.options: required non-empty list")
+            continue
+
+        option_ids: list[str] = []
+        option_texts: list[str] = []
+        correct_count = 0
+        for index, option in enumerate(options):
+            if not isinstance(option, dict):
+                errors.append(f"{field_prefix}.options[{index}]: must be an object")
+                continue
+            option_id = option.get("id")
+            option_text = option.get("text")
+            if not isinstance(option_id, str) or not option_id:
+                errors.append(f"{field_prefix}.options[{index}].id: required")
+            else:
+                option_ids.append(option_id)
+            if not isinstance(option_text, str) or not option_text:
+                errors.append(f"{field_prefix}.options[{index}].text: required")
+            else:
+                option_texts.append(option_text)
+            if option.get("correct") is True:
+                correct_count += 1
+
+        if len(option_ids) != len(set(option_ids)):
+            errors.append(f"{field_prefix}.options: duplicate option IDs")
+        if len(option_texts) != len(set(option_texts)):
+            errors.append(f"{field_prefix}.options: duplicate visible choices")
+        if correct_count != 1:
+            errors.append(f"{field_prefix}.options: exactly one option must be correct")
+        if isinstance(correct_answer, str) and correct_answer not in option_texts:
+            errors.append(
+                f"{field_prefix}.options: correct answer is absent from choices"
+            )
+
+        # If there are several one-letter gaps but no category/phonics hint,
+        # the item is too easy to make ambiguous for this game mode.
+        if len(positions) > 1 and not category_hint and not content.get("phonicsHint"):
+            errors.append(
+                f"{field_prefix}: multi-gap items require categoryHint or phonicsHint"
+            )
+
+    return errors
+
+
 def validate_production_content() -> tuple[bool, list[str]]:
     schema_dict = load_schema()
     validator_cls = jsonschema.validators.validator_for(schema_dict)
@@ -120,6 +245,9 @@ def validate_production_content() -> tuple[bool, list[str]]:
                 all_errors.append(f"{location}: {err}")
 
             for err in check_asset_refs(level):
+                all_errors.append(f"{location}: {err}")
+
+            for err in validate_missing_letter_content(level):
                 all_errors.append(f"{location}: {err}")
 
             if level_id in seen_ids and level_id != "<missing id>":
@@ -160,6 +288,7 @@ def check_malformed_fixtures() -> tuple[bool, list[str]]:
         data = json.loads(fixture_file.read_text(encoding="utf-8"))
         errors = validate_against_schema(data, validator)
         errors += cross_check_skill_tags(data, known_skills)
+        errors += validate_missing_letter_content(data)
 
         level_id = data.get("id")
         if level_id in seen_ids:
