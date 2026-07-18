@@ -16,7 +16,7 @@
 - No actual keystore has been generated or provisioned — this is scaffolding only, verified by YAML syntax validation and by confirming the debug-fallback path is unaffected. It has **not** been exercised end-to-end because doing so requires a real Android signing keystore, which nobody should generate casually inside an agent session.
 - No automated Play Store upload (`fastlane supply` or the Play Developer API) — the job stops at producing a signed artifact for manual upload.
 - No internal-testing-track automation.
-- `applicationId = "com.example.mi_academy"` in `build.gradle.kts` is still the Flutter template default. This **must** change to a real, unique application ID before any Play Store submission — but changing it is a product decision with real consequences (Play Store listing identity, any already-installed test builds), so it has intentionally not been changed here. Flag for Dev 1/product before first real release build.
+- ~~`applicationId = "com.example.mi_academy"`~~ **Resolved** (Milestone 1B): `applicationId`/`namespace` is now `com.liemteam.miacademy` (Android) and `PRODUCT_BUNDLE_IDENTIFIER` is `com.liemteam.miacademy` (iOS) — see `docs/release-audit.md` RA-21 and `docs/android-signing.md`.
 
 ## iOS
 

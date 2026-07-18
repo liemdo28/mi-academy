@@ -21,7 +21,7 @@ if (hasReleaseSigning) {
 }
 
 android {
-    namespace = "com.example.mi_academy"
+    namespace = "com.liemteam.miacademy"
     compileSdk = flutter.compileSdkVersion
     ndkVersion = flutter.ndkVersion
 
@@ -35,18 +35,15 @@ android {
     }
 
     defaultConfig {
-        // NOT YET A REAL, OWNED PACKAGE NAME -- this is Flutter's scaffold
-        // default. Google Play rejects "com.example.*" applications and
-        // package names cannot be changed after first Play Console upload,
-        // so this is a business decision (Play Console developer account /
-        // domain ownership) that must be made before the first production
-        // upload, not something to invent here. Tracked as a Blocker in
-        // docs/release-audit.md and docs/android-signing.md -- not a code
-        // TODO because there's no code fix, only an org decision.
-        applicationId = "com.example.mi_academy"
+        // Real, owned production identity (see docs/android-signing.md and
+        // docs/release-audit.md RA-21) -- replaces the "com.example.*"
+        // Flutter scaffold default that Google Play rejects. Package names
+        // cannot change after the first Play Console upload, so this is the
+        // one that ships.
+        applicationId = "com.liemteam.miacademy"
         // versionCode/versionName both come from pubspec.yaml's `version:`
-        // field (currently 0.9.0-beta.1+1) via Flutter's standard Gradle
-        // integration -- not hardcoded here, not a separate source of truth.
+        // field via Flutter's standard Gradle integration -- not hardcoded
+        // here, not a separate source of truth.
         minSdk = flutter.minSdkVersion
         targetSdk = flutter.targetSdkVersion
         versionCode = flutter.versionCode
