@@ -1,0 +1,23 @@
+# Gitleaks config for MI Academy.
+#
+# Extends the default ruleset (gitleaks scans full git history by default,
+# so a false-positive match in an old commit can't be fixed by editing the
+# file forward -- it must be allowlisted here instead of rewriting history).
+
+[extend]
+useDefault = true
+
+[allowlist]
+description = "Confirmed false positives -- not real secrets"
+regexes = [
+  # apps/mobile/test/beta_diagnostics_test.dart: an earlier version of this
+  # test used a plausible-looking-but-fake token fixture
+  # ("abc123.def456") to verify BetaDiagnostics' redaction logic actually
+  # scrubs token-shaped values before they're ever stored. Gitleaks'
+  # generic-api-key entropy heuristic flagged it. It was never a real
+  # credential -- confirmed by reading the file directly at the flagged
+  # commit/line. Superseded by an even-more-obviously-fake fixture string
+  # in a later commit, but the original commit remains in history, so this
+  # allowlist entry (rather than rewriting history) is the correct fix.
+  '''refresh_token"?\s*:\s*"abc123\.def456"''',
+]
