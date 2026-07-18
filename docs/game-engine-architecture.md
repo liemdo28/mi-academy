@@ -132,18 +132,93 @@ The second of the four Milestone 1 WS5 engines is now real and tested:
   the error state and the button-only reorder path). All pass; `flutter
   analyze` clean.
 
-**Drag-and-drop Placement Engine and Multi-select Engine were not built
-this pass** — each still needs its own real interaction-model design
-(drop-target/snap semantics for Placement, min/max selection-set
-validation for Multi-select), comparable in scope to what Matching and
-Sequence each took. Neither is wired into the game registry or any
-existing game.
+## Update: Drag-and-drop Placement Engine built (2026-07-19)
 
-**Not wired into any of the six existing games or the game registry this
-pass** — `packages/mi_game_engines` is a standalone package with its own
-tests; migrating an existing game onto it, or building a 7th
-game against it, is separate follow-up work (see docs/game-catalog.md and
-WS6 in docs/release-audit.md).
+The third of the four Milestone 1 WS5 engines is now real and tested:
+`packages/mi_game_engines/lib/src/placement/{placement_content,placement_controller,placement_screen}.dart`.
+
+- **Typed content model**: `PlacementItem`/`PlacementTarget`/
+  `PlacementRule`/`PlacementConfiguration`/`PlacementContent`. Supports
+  one-to-one placement (each item names exactly one target, each target
+  has capacity 1), many-to-one/category-sorting placement (several
+  items share one target with capacity > 1), and rotation-aware items
+  (`rotationDegrees`, validated against a configured allowed set).
+  `PlacementRule` supports two matching strategies: explicit id lists
+  (`item.acceptedTargetIds` / `target.acceptedItemIds`) or a shared
+  `metadata` category key, so category sorting doesn't require
+  repeating a target id on every item.
+- **Validation**: `PlacementContent.fromJson` rejects, with an
+  actionable message naming the content id and specific item/target at
+  fault, rather than a bare cast failure or a later assertion: duplicate
+  item/target ids, empty items/targets, unknown item/target references,
+  non-positive capacity, total demand exceeding total supply, an item
+  with no valid target, a target with no valid item, contradictory
+  explicit item/target rules, exclusive-demand impossible-completion
+  states (an item that can *only* go on one target, stacked past that
+  target's capacity — a stronger check than the blanket total-supply
+  one), unsupported rotation, invalid position/size metadata, and
+  unsupported schema versions.
+- **Controller**: `PlacementController` (`ChangeNotifier`, no framework/
+  child-profile dependency) — `selectItem`/`placeItem`/`moveItem`/
+  `removeItem`/`reset`/`restart`/`useHint` (as `requestHint`)/`pause`/
+  `resume`/`complete`. A failed placement or move never corrupts state:
+  the item's previous target is tentatively released and restored
+  exactly if the new placement fails validation. Completion requires
+  every item to be *validly* placed — not merely every target having at
+  least one item (the spec's own explicit warning against that
+  shortcut). 3/2/1 stars by incorrect-attempt count (same shape as
+  Matching/Sequence), a 0-100 score with moderate deductions floored at
+  0, and a `Duration` computed from an injectable clock (real
+  `DateTime.now` by default, a fake clock in tests).
+- **Normalized result**: `PlacementResult` (`engineId`/`contentId`/
+  `attempts`/`correctCount`/`incorrectCount`/`hintCount`/`score`/
+  `stars`/`duration`/`completed`/`placements`), delivered via an
+  `onComplete` callback — the engine never writes to Hive, a backend
+  API, or analytics itself.
+- **Renderer**: `PlacementScreen` — a `LayoutBuilder`-driven layout that
+  stacks target/source areas vertically on narrow phones and
+  side-by-side on wider/tablet screens, both built on `Wrap` rather than
+  a fixed-width `Row` for the dynamic item/target collections (the same
+  lesson learned from the `ProgressDots` overflow bug — see
+  `docs/final/MILESTONE_1C_REPORT_2026-07-19.md` §3.2 — dynamic
+  collection sizes must not depend on a layout that only worked for a
+  small sample). Drag interaction always accepts the drop itself (an
+  invalid drop still registers as an attempt and shows feedback, rather
+  than being silently swallowed by Flutter's own accept-gating); tap
+  accessibility (select an item, tap a target) makes every level
+  completable without any drag gesture. Reduced motion collapses the
+  target-highlight animation duration to zero without removing the
+  highlight itself. **Zero hardcoded Vietnamese/English production text
+  in the engine's own source** — every UI string is supplied by the host
+  via a required `PlacementLocalization`.
+- **Examples**: a Vietnamese one-to-one letter-placement level ("MÈO"),
+  an English one-to-one shape-placement level, a Vietnamese many-to-one
+  category-sorting level (animals/food, matched via shared metadata),
+  and an English rotation-aware shape level (text-only, no asset
+  dependency) — four real samples, not one.
+- **Tests**: 57 in `test/placement_engine_test.dart` (19 content-
+  validation, 18 controller, 20 widget covering both locales, drag and
+  tap interaction, capacity/move/remove, reduced motion, sound-disabled,
+  semantics, narrow-phone and tablet layouts, and malformed content).
+  All pass; `flutter analyze` on the package is clean.
+- **Shared engine contract suite**: `test/engine_contract_test.dart` now
+  checks Matching, Sequence, and Placement together — stable distinct
+  `engineId` (added as a purely additive constant to
+  `MatchingController`/`SequenceController`, changing nothing about
+  either's existing API), attempt counting, completion, star bounds for
+  all three, Placement's full normalized-result shape, and an automated
+  check that no engine source file imports a storage/backend/analytics
+  package.
+
+**Multi-select Engine was not built this pass** — it still needs its own
+real interaction-model design (min/max selection-set validation),
+comparable in scope to what Matching, Sequence, and Placement each took.
+
+**Not wired into any of the six (or seven) existing games or the game
+registry this pass** — `packages/mi_game_engines` is a standalone
+package with its own tests; migrating an existing game onto it, or
+building a new game against it, is separate follow-up work (see
+docs/game-catalog.md and WS6 in docs/release-audit.md).
 
 ## Recommendation
 

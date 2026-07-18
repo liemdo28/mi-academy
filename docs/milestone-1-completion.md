@@ -1,6 +1,11 @@
 # Milestone 1 — Completion Report
 
-Date: 2026-07-18. Branch: `fix/internal-beta-hardening`. This document is
+Date: 2026-07-18, WS5 section updated 2026-07-19 for the Sequence and
+Placement Engine passes (see docs/game-engine-architecture.md for full
+detail; the rest of this document's content/integration/localization
+sections were not re-verified in this update and may be stale relative
+to other concurrent work on this branch). Branch: `fix/internal-beta-hardening`.
+This document is
 the required summary of delivered workstreams, architecture, content
 counts, test coverage, remaining limitations, and command evidence for
 Milestone 1 as actually executed — not a restatement of the original
@@ -70,14 +75,22 @@ naming convention (e.g. `math.addition_within_10` vs. the taxonomy's
 `math.addition.within_10`) — silently broken skill-evidence tracking,
 now aligned.
 
-### WS5 — Reusable engines (partial: 1 of 4)
-**Matching Engine** (`packages/mi_game_engines/`) is fully real: typed
-content model, `ChangeNotifier` controller (no framework/child-profile
-dependency), responsive/accessible/reduced-motion-aware renderer, VI+EN
-example content, 19 passing tests including a malformed-content widget
-test. **Sequence Engine, Drag-and-drop Placement Engine, and Multi-select
-Engine were not built** — each needs its own real interaction-model
-design of comparable scope, not a copy of Matching Engine.
+### WS5 — Reusable engines (partial: 3 of 4, updated 2026-07-19)
+**Matching Engine**, **Sequence Engine**, and **Drag-and-drop Placement
+Engine** (`packages/mi_game_engines/`) are all fully real: typed content
+models, `ChangeNotifier` controllers (no framework/child-profile
+dependency), responsive/accessible/reduced-motion-aware renderers, VI+EN
+example content each, and a shared `test/engine_contract_test.dart`
+verifying all three against one common contract (stable engine id,
+attempt counting, completion, star bounds, and — for Placement, whose
+result is the most complete of the three — the full normalized-result
+shape and an automated no-persistence-dependency check). 105 tests total
+across the package (19 Matching + 23 Sequence + 57 Placement + 6
+contract), all passing; `flutter analyze` clean. **Multi-select Engine
+was not built** — it still needs its own real interaction-model design
+(min/max selection-set validation), comparable in scope to what the
+other three each took. None of the three built engines are wired into
+the game registry or any production game yet.
 
 ### WS2 — Integration-test harness (partial, CI-verified)
 `apps/mobile/integration_test/` (previously did not exist): 4 real,
@@ -133,14 +146,17 @@ None meet the 20-30 item/3-tier Milestone 1 content minimum.
 | `pytest packages/game_core/tests tests test -q` | 170 | all passed |
 | `flutter test` (apps/mobile) | 92 | 86 passed + 6 skipped (Linux-only goldens) |
 | `flutter test` (packages/mi_game_content) | 24 | all passed |
-| `flutter test` (packages/mi_game_engines) | 19 | all passed |
+| `flutter test` (packages/mi_game_engines) | 105 | all passed (updated 2026-07-19 for Sequence + Placement) |
 | `flutter test integration_test` (CI, real Android emulator) | 4 | all passed |
 
 ## Remaining limitations (honest, not hidden)
 
 - **RA-05**: 231 hardcoded Vietnamese UI-chrome strings across 39 files —
   full localization retrofit not done.
-- **Engines**: Sequence, Placement, and Multi-select engines don't exist.
+- **Engines**: Multi-select is the only remaining engine that doesn't
+  exist (Matching, Sequence, and Placement are now all real and tested —
+  see the updated WS5 section above); none of the three are wired into
+  the game registry or any production game yet.
 - **Content minimums**: all 6 games at 10 levels/1 tier, not 20-30/3 tiers.
 - **Integration suites B/D/F/G**: need a real or mocked backend reachable
   from the test device — not built.

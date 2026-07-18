@@ -14,6 +14,22 @@ summaries.
 | Flutter integration tests | `flutter test integration_test` | `apps/mobile` |
 | Python game-core + backend tests | `python -m pytest packages/game_core/tests tests test -q` | repo root |
 | Alembic migrations (real schema validation) | `python -m alembic upgrade head` | `apps/api`, against Postgres |
+| Shared game engines (Matching/Sequence/Placement) format | `dart format --set-exit-if-changed .` | `packages/mi_game_engines` |
+| Shared game engines analyze | `flutter analyze` | `packages/mi_game_engines` |
+| Shared game engines tests | `flutter test` | `packages/mi_game_engines` |
+
+`packages/mi_game_engines` is a standalone package (its own `pubspec.yaml`),
+not part of `apps/mobile`'s own `flutter test` run -- it must be verified
+separately with the working directory set to the package itself. As of the
+Placement Engine pass (2026-07-19) this package has 105 passing tests: 19
+Matching, 23 Sequence, 57 Placement, and 6 in a shared
+`test/engine_contract_test.dart` that checks all three engines against one
+"common engine contract" (stable engine id, attempt counting, completion,
+star bounds, and -- for Placement specifically, whose normalized result is
+the most complete of the three -- the full result shape and an automated
+check that no engine source file imports a storage/backend/analytics
+package). None of the three engines are wired into the game registry or any
+production game yet; see docs/game-engine-architecture.md.
 
 CI (`.github/workflows/ci.yml`) is the authoritative environment for all of
 these — it runs on `ubuntu-latest` (mobile/backend jobs) and `macos-latest`
