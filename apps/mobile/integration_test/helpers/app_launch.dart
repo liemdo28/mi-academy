@@ -25,13 +25,17 @@ import 'package:offline_sync/offline_sync.dart';
 /// launch navigated to. Forcing it back to `/` first is what makes each
 /// [launchApp] call actually re-run `SplashScreen`'s cold-start redirect
 /// logic, instead of silently resuming wherever the last call left off.
-Future<void> launchApp(WidgetTester tester) async {
+Future<void> launchApp(
+  WidgetTester tester, {
+  List<Override> overrides = const [],
+}) async {
   final parentSettingsStore = await HiveParentSettingsStore.open();
   routerProvider.go('/');
   await tester.pumpWidget(
     ProviderScope(
       overrides: [
         parentSettingsStoreProvider.overrideWithValue(parentSettingsStore),
+        ...overrides,
       ],
       child: const MiAcademyApp(),
     ),
