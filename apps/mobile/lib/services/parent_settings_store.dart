@@ -17,6 +17,7 @@ class ParentSettingsSnapshot {
   final int dailyLimitMinutes;
   final bool soundEnabled;
   final bool subtitlesEnabled;
+
   /// Skips/shortens game animations (e.g. Memory Cards' flip transition)
   /// for children sensitive to motion. Threaded down to games via
   /// MiGameContext.accessibility -- see memory_cards_screen.dart.
