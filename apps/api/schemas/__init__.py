@@ -1,8 +1,42 @@
 """Pydantic request/response schemas for all API routes."""
 
-# ─── Auth ────────────────────────────────────────────────────────────────────
+from pydantic import BaseModel, ConfigDict, EmailStr, Field
 
-from pydantic import BaseModel, EmailStr, Field
+from .admin import (
+    AdminGameUpdate,
+    AdminLessonCreate,
+    AdminLessonUpdate,
+    AdminQuestionCreate,
+    AdminQuestionUpdate,
+)
+from .child import ChildResponse, CreateChildRequest, UpdateChildRequest
+from .lesson import GameLevelResponse, LessonDetailResponse, LessonResponse
+from .progress import (
+    DailyPlanItem,
+    ProgressResponse,
+    SaveGameResultRequest,
+    SkillReport,
+)
+from .reports import (
+    AttemptExportSummary,
+    ChildExportProfile,
+    ParentDataExport,
+    ParentExportProfile,
+    ParentReportSummary,
+    ProgressExportItem,
+    RewardExportItem,
+    WeeklyReportEntry,
+)
+from .reward import ChildRewardResponse, RewardResponse
+from .sync import (
+    SyncAttemptItem,
+    SyncContentResponse,
+    SyncProgressItem,
+    SyncSessionItem,
+    SyncStatusResponse,
+)
+
+# ─── Auth ────────────────────────────────────────────────────────────────────
 
 
 class RegisterRequest(BaseModel):
@@ -43,8 +77,6 @@ class AuthResponse(BaseModel):
 
 # ─── Parent Profile ────────────────────────────────────────────────────────────
 
-from datetime import datetime
-
 
 class ParentProfileResponse(BaseModel):
     id: str
@@ -84,38 +116,6 @@ class VerifyPinResponse(BaseModel):
 
 
 # ─── Child Profile ─────────────────────────────────────────────────────────────
-
-from datetime import date
-from pydantic import ConfigDict
-
-from .admin import (
-    AdminGameUpdate,
-    AdminLessonCreate,
-    AdminLessonUpdate,
-    AdminQuestionCreate,
-    AdminQuestionUpdate,
-)
-from .child import ChildResponse, CreateChildRequest, UpdateChildRequest
-from .lesson import GameLevelResponse, LessonDetailResponse, LessonResponse
-from .progress import DailyPlanItem, ProgressResponse, SaveGameResultRequest, SkillReport
-from .reports import (
-    AttemptExportSummary,
-    ChildExportProfile,
-    ParentDataExport,
-    ParentExportProfile,
-    ParentReportSummary,
-    ProgressExportItem,
-    RewardExportItem,
-    WeeklyReportEntry,
-)
-from .reward import ChildRewardResponse, RewardResponse
-from .sync import (
-    SyncAttemptItem,
-    SyncContentResponse,
-    SyncProgressItem,
-    SyncSessionItem,
-    SyncStatusResponse,
-)
 
 
 ChildCreate = CreateChildRequest
@@ -193,6 +193,7 @@ class AdminGameCreate(BaseModel):
     age_min: int = Field(default=5, ge=5, le=12)
     age_max: int = Field(default=12, ge=5, le=12)
     config_json: dict | None = None
+
 
 __all__ = [
     # Auth

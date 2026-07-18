@@ -9,7 +9,7 @@ from sqlalchemy.orm import selectinload
 from apps.api.adaptive_ranking import rank_lessons
 from apps.api.database import get_db
 from apps.api.dependencies import get_parent_profile
-from apps.api.models import ChildProfile, Lesson, ParentProfile, Progress, Question
+from apps.api.models import Lesson, ParentProfile, Progress, Question
 from apps.api.time import utc_now
 from apps.api.schemas import (
     LessonListItem,
@@ -26,7 +26,9 @@ def _child_belongs_to_parent(profile: ParentProfile, child_id: str):
     if child_id not in [c.id for c in profile.children]:
         raise HTTPException(
             status_code=status.HTTP_403_FORBIDDEN,
-            detail={"error": {"code": "FORBIDDEN", "message": "Child not owned by parent"}},
+            detail={
+                "error": {"code": "FORBIDDEN", "message": "Child not owned by parent"}
+            },
         )
 
 
@@ -36,7 +38,11 @@ async def list_lessons(
     language: str = Query(None),
     db: AsyncSession = Depends(get_db),
 ):
-    query = select(Lesson).options(selectinload(Lesson.subject)).where(Lesson.is_active == True)
+    query = (
+        select(Lesson)
+        .options(selectinload(Lesson.subject))
+        .where(Lesson.is_active == True)
+    )
     if age_group:
         query = query.where(Lesson.age_group == age_group)
     if language:
@@ -47,18 +53,18 @@ async def list_lessons(
 
     return [
         LessonListItem(
-            id=l.id,
-            subject_id=l.subject_id,
-            title=l.title,
-            description=l.description,
-            age_group=l.age_group,
-            difficulty=l.difficulty,
-            language=l.language,
-            estimated_minutes=l.estimated_minutes,
-            is_active=l.is_active,
-            subject_name=l.subject.name if l.subject else None,
+            id=lesson.id,
+            subject_id=lesson.subject_id,
+            title=lesson.title,
+            description=lesson.description,
+            age_group=lesson.age_group,
+            difficulty=lesson.difficulty,
+            language=lesson.language,
+            estimated_minutes=lesson.estimated_minutes,
+            is_active=lesson.is_active,
+            subject_name=lesson.subject.name if lesson.subject else None,
         )
-        for l in lessons
+        for lesson in lessons
     ]
 
 
@@ -67,9 +73,7 @@ async def get_lesson(
     lesson_id: str,
     db: AsyncSession = Depends(get_db),
 ):
-    result = await db.execute(
-        select(Lesson).where(Lesson.id == lesson_id)
-    )
+    result = await db.execute(select(Lesson).where(Lesson.id == lesson_id))
     lesson = result.scalar_one_or_none()
     if not lesson:
         raise HTTPException(
@@ -78,9 +82,7 @@ async def get_lesson(
         )
 
     # Load questions
-    q_result = await db.execute(
-        select(Question).where(Question.lesson_id == lesson_id)
-    )
+    q_result = await db.execute(select(Question).where(Question.lesson_id == lesson_id))
     questions = q_result.scalars().all()
 
     content_json = None
@@ -92,12 +94,14 @@ async def get_lesson(
 
     return LessonDetail(
         id=lesson.id,
+        subject_id=lesson.subject_id,
         title=lesson.title,
         description=lesson.description,
         age_group=lesson.age_group,
         difficulty=lesson.difficulty,
         language=lesson.language,
         estimated_minutes=lesson.estimated_minutes,
+        is_active=lesson.is_active,
         content_json=content_json,
         questions=[
             QuestionResponse(
@@ -143,18 +147,18 @@ async def get_recommended(
 
     return [
         LessonListItem(
-            id=l.id,
-            subject_id=l.subject_id,
-            title=l.title,
-            description=l.description,
-            age_group=l.age_group,
-            difficulty=l.difficulty,
-            language=l.language,
-            estimated_minutes=l.estimated_minutes,
-            is_active=l.is_active,
-            subject_name=l.subject.name if l.subject else None,
+            id=lesson.id,
+            subject_id=lesson.subject_id,
+            title=lesson.title,
+            description=lesson.description,
+            age_group=lesson.age_group,
+            difficulty=lesson.difficulty,
+            language=lesson.language,
+            estimated_minutes=lesson.estimated_minutes,
+            is_active=lesson.is_active,
+            subject_name=lesson.subject.name if lesson.subject else None,
         )
-        for l in ranked[:3]
+        for lesson in ranked[:3]
     ]
 
 

@@ -1,10 +1,16 @@
 """MI Academy shared contracts — single source of truth for all contracts."""
+
 from __future__ import annotations
+
+from typing import Callable, TypeVar
 
 # ─── Contract Registry ───────────────────────────────────────────────────────
 # All contracts must be registered here with their current version.
 
 CONTRACT_REGISTRY: dict[str, ContractDef] = {}
+
+_T = TypeVar("_T", bound=type)
+
 
 def register(
     contract_id: str,
@@ -17,10 +23,14 @@ def register(
     migration_path: str | None = None,
     deprecation_date: str | None = None,
     minimum_app_version: str = "1.0.0",
-) -> callable:
+) -> Callable[[_T], _T]:
     """Decorator to register a contract definition."""
-    def decorator(cls: type) -> type:
-        cls.__contract_id__ = contract_id
+
+    def decorator(cls: _T) -> _T:
+        # Dynamic attribute injection -- every contract class gets a
+        # `__contract_id__` marker this way rather than each declaring it
+        # manually, so it isn't part of any class's static type.
+        cls.__contract_id__ = contract_id  # type: ignore[attr-defined]
         CONTRACT_REGISTRY[contract_id] = ContractDef(
             contract_id=contract_id,
             schema_version=schema_version,
@@ -34,15 +44,24 @@ def register(
             minimum_app_version=minimum_app_version,
         )
         return cls
+
     return decorator
 
 
 class ContractDef:
     """Immutable contract definition."""
+
     __slots__ = (
-        "contract_id", "schema_version", "semantic_version", "owner",
-        "compatibility", "description", "deprecated_fields",
-        "migration_path", "deprecation_date", "minimum_app_version",
+        "contract_id",
+        "schema_version",
+        "semantic_version",
+        "owner",
+        "compatibility",
+        "description",
+        "deprecated_fields",
+        "migration_path",
+        "deprecation_date",
+        "minimum_app_version",
     )
 
     def __init__(
@@ -75,6 +94,7 @@ class ContractDef:
 
 # ─── Game Contracts ──────────────────────────────────────────────────────────
 
+
 @register(
     contract_id="mi.game.launch",
     schema_version=1,
@@ -85,15 +105,32 @@ class ContractDef:
 )
 class MiGameLaunchRequest:
     """Source: packages/mi_game_core/lib/src/contracts/mi_game_launch_request.dart MiGameLaunchRequest (v1)."""
+
     SCHEMA_VERSION = 1
-    REQUIRED_FIELDS = frozenset([
-        "schemaVersion", "childProfileId", "gameId", "levelId",
-        "language", "ageGroup", "accessibility", "audioPreferences", "levelContent",
-    ])
-    FORBIDDEN_FIELDS = frozenset([
-        "accessToken", "refreshToken", "password", "parentEmail",
-        "parentId", "pin", "authToken",
-    ])
+    REQUIRED_FIELDS = frozenset(
+        [
+            "schemaVersion",
+            "childProfileId",
+            "gameId",
+            "levelId",
+            "language",
+            "ageGroup",
+            "accessibility",
+            "audioPreferences",
+            "levelContent",
+        ]
+    )
+    FORBIDDEN_FIELDS = frozenset(
+        [
+            "accessToken",
+            "refreshToken",
+            "password",
+            "parentEmail",
+            "parentId",
+            "pin",
+            "authToken",
+        ]
+    )
 
 
 @register(
@@ -106,17 +143,37 @@ class MiGameLaunchRequest:
 )
 class MiGameResult:
     """Source: packages/mi_game_core/lib/src/contracts/mi_game_result.dart MiGameResult (v1)."""
+
     SCHEMA_VERSION = 1
-    REQUIRED_FIELDS = frozenset([
-        "schemaVersion", "attemptId", "childProfileId", "gameId", "levelId",
-        "startedAt", "completedAt", "attemptCount", "correctCount",
-        "incorrectCount", "hintCount", "durationSeconds", "completed",
-        "masteryEvidence", "skillEvidence",
-    ])
-    FORBIDDEN_FIELDS = frozenset([
-        "accessToken", "refreshToken", "password", "parentEmail",
-        "parentId", "pin",
-    ])
+    REQUIRED_FIELDS = frozenset(
+        [
+            "schemaVersion",
+            "attemptId",
+            "childProfileId",
+            "gameId",
+            "levelId",
+            "startedAt",
+            "completedAt",
+            "attemptCount",
+            "correctCount",
+            "incorrectCount",
+            "hintCount",
+            "durationSeconds",
+            "completed",
+            "masteryEvidence",
+            "skillEvidence",
+        ]
+    )
+    FORBIDDEN_FIELDS = frozenset(
+        [
+            "accessToken",
+            "refreshToken",
+            "password",
+            "parentEmail",
+            "parentId",
+            "pin",
+        ]
+    )
     MASTERY_EVIDENCE_RANGE = (0.0, 1.0)
 
 
@@ -134,16 +191,31 @@ class MiGameSnapshot:
     Note: `savedAt` here is the contract-facing name; the Dart class's own
     field is `createdAt` with `savedAt` as a getter alias (see that file),
     and the wire JSON key is `saved_at`. Intentional, not drift."""
+
     SCHEMA_VERSION = 2
-    REQUIRED_FIELDS = frozenset([
-        "schemaVersion", "gameVersion", "gameId", "levelId", "childProfileId", "savedAt", "state",
-    ])
-    FORBIDDEN_FIELDS = frozenset([
-        "accessToken", "refreshToken", "password", "parentEmail",
-    ])
+    REQUIRED_FIELDS = frozenset(
+        [
+            "schemaVersion",
+            "gameVersion",
+            "gameId",
+            "levelId",
+            "childProfileId",
+            "savedAt",
+            "state",
+        ]
+    )
+    FORBIDDEN_FIELDS = frozenset(
+        [
+            "accessToken",
+            "refreshToken",
+            "password",
+            "parentEmail",
+        ]
+    )
 
 
 # ─── Progress Contracts ────────────────────────────────────────────────────────
+
 
 @register(
     contract_id="mi.progress",
@@ -162,8 +234,11 @@ class LessonProgress:
     and no mobile code branches on a camelCase status string either --
     this mapping is aspirational/unused on both sides today, not an
     active contract violation."""
+
     SCHEMA_VERSION = 1
-    STATUS_VALUES = frozenset(["notStarted", "learning", "completed", "needsPractice", "mastered"])
+    STATUS_VALUES = frozenset(
+        ["notStarted", "learning", "completed", "needsPractice", "mastered"]
+    )
     STATUS_PYTHON_MAP = {
         "not_started": "notStarted",
         "learning": "learning",
@@ -183,11 +258,22 @@ class LessonProgress:
 )
 class SyncAttemptItem:
     """Source: apps/api/schemas/sync.py SyncAttemptItem (v1)."""
+
     SCHEMA_VERSION = 1
-    REQUIRED_FIELDS = frozenset([
-        "id", "childId", "lessonId", "gameId", "questionId",
-        "answerJson", "isCorrect", "responseTimeMs", "hintCount", "createdAt",
-    ])
+    REQUIRED_FIELDS = frozenset(
+        [
+            "id",
+            "childId",
+            "lessonId",
+            "gameId",
+            "questionId",
+            "answerJson",
+            "isCorrect",
+            "responseTimeMs",
+            "hintCount",
+            "createdAt",
+        ]
+    )
 
 
 @register(
@@ -200,10 +286,12 @@ class SyncAttemptItem:
 )
 class SyncProgressItem:
     """Source: apps/api/schemas/sync.py SyncProgressItem (v1)."""
+
     SCHEMA_VERSION = 1
 
 
 # ─── Content Contracts ────────────────────────────────────────────────────────
+
 
 @register(
     contract_id="mi.content.lesson",
@@ -215,6 +303,7 @@ class SyncProgressItem:
 )
 class LessonContent:
     """Source: content/schemas/lesson.schema.json (v1)."""
+
     SCHEMA_VERSION = 1
 
 
@@ -241,7 +330,9 @@ class ParentProfileContract:
 )
 class ChildProfileContract:
     SCHEMA_VERSION = 1
-    FORBIDDEN_FIELDS = frozenset(["parentEmail", "password", "pin", "accessToken", "refreshToken"])
+    FORBIDDEN_FIELDS = frozenset(
+        ["parentEmail", "password", "pin", "accessToken", "refreshToken"]
+    )
 
 
 @register(
@@ -291,6 +382,7 @@ class SkillContract:
 )
 class LevelContent:
     """Source: schemas/level.schema.json (v1)."""
+
     SCHEMA_VERSION = 1
 
 
@@ -316,10 +408,13 @@ class RewardContract:
 )
 class SyncEventContract:
     SCHEMA_VERSION = 1
-    REQUIRED_FIELDS = frozenset(["id", "childProfileId", "type", "payload", "createdAt"])
+    REQUIRED_FIELDS = frozenset(
+        ["id", "childProfileId", "type", "payload", "createdAt"]
+    )
 
 
 # ─── Adaptive Contracts ───────────────────────────────────────────────────────
+
 
 @register(
     contract_id="mi.adaptive.evidence",
@@ -331,6 +426,7 @@ class SyncEventContract:
 )
 class SkillEvidence:
     """Evidence map: skillId -> masteryScore (0.0-1.0)."""
+
     SCHEMA_VERSION = 1
     SCORE_RANGE = (0.0, 1.0)
 
@@ -345,6 +441,7 @@ class SkillEvidence:
 )
 class RecommendationResult:
     """Source: packages/recommendation_core (v1)."""
+
     SCHEMA_VERSION = 1
 
 
@@ -374,6 +471,7 @@ class RecommendationContract:
 
 # ─── Analytics Contracts ──────────────────────────────────────────────────────
 
+
 @register(
     contract_id="mi.analytics.event",
     schema_version=1,
@@ -384,11 +482,20 @@ class RecommendationContract:
 )
 class AnalyticsEvent:
     """Analytics event schema."""
+
     SCHEMA_VERSION = 1
-    PII_FIELDS = frozenset([
-        "email", "password", "pin", "accessToken", "refreshToken",
-        "parentName", "parentEmail", "ipAddress",
-    ])
+    PII_FIELDS = frozenset(
+        [
+            "email",
+            "password",
+            "pin",
+            "accessToken",
+            "refreshToken",
+            "parentName",
+            "parentEmail",
+            "ipAddress",
+        ]
+    )
 
 
 @register(
@@ -440,8 +547,8 @@ COMPATIBILITY_LEVELS = {
 
 def check_forbidden_fields(data: dict, contract: type) -> list[str]:
     """Return list of forbidden fields found in data. Empty = clean."""
-    found = []
-    forbidden = getattr(contract, "FORBIDDEN_FIELDS", frozenset())
+    found: list[str] = []
+    forbidden: frozenset[str] = getattr(contract, "FORBIDDEN_FIELDS", frozenset())
     for field in forbidden:
         if field in data:
             found.append(field)
@@ -450,8 +557,8 @@ def check_forbidden_fields(data: dict, contract: type) -> list[str]:
 
 def check_required_fields(data: dict, contract: type) -> list[str]:
     """Return list of missing required fields. Empty = valid."""
-    missing = []
-    required = getattr(contract, "REQUIRED_FIELDS", frozenset())
+    missing: list[str] = []
+    required: frozenset[str] = getattr(contract, "REQUIRED_FIELDS", frozenset())
     for field in required:
         if field not in data:
             missing.append(field)

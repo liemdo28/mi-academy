@@ -1,5 +1,7 @@
 """Database configuration and session management."""
 
+from collections.abc import AsyncGenerator
+
 from sqlalchemy.ext.asyncio import AsyncSession, async_sessionmaker, create_async_engine
 from sqlalchemy.orm import DeclarativeBase
 
@@ -14,10 +16,14 @@ from apps.api.config import settings
 # process that's easy to exhaust under concurrent load without anyone
 # having decided that's the right number).
 _is_sqlite = settings.DATABASE_URL.startswith("sqlite")
-_pool_kwargs = {} if _is_sqlite else {
-    "pool_size": settings.DB_POOL_SIZE,
-    "max_overflow": settings.DB_MAX_OVERFLOW,
-}
+_pool_kwargs = (
+    {}
+    if _is_sqlite
+    else {
+        "pool_size": settings.DB_POOL_SIZE,
+        "max_overflow": settings.DB_MAX_OVERFLOW,
+    }
+)
 
 engine = create_async_engine(
     settings.DATABASE_URL,
@@ -37,10 +43,11 @@ async_session_maker = async_sessionmaker(
 
 class Base(DeclarativeBase):
     """Base class for all SQLAlchemy models."""
+
     pass
 
 
-async def get_db() -> AsyncSession:
+async def get_db() -> AsyncGenerator[AsyncSession, None]:
     """Dependency — yields a DB session per request."""
     async with async_session_maker() as session:
         try:

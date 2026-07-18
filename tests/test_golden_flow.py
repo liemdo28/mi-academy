@@ -6,6 +6,7 @@ Calls route handlers directly (same style as the other tests in this
 directory) rather than going through HTTP, since there is no ASGI test
 client wired up in this suite yet.
 """
+
 import asyncio
 from datetime import date, timedelta
 
@@ -41,7 +42,13 @@ def test_golden_flow_parent_login_to_weekly_report():
                     estimated_minutes=5,
                     is_active=True,
                 )
-                game = Game(name="Memory Cards", game_type="memory_cards", age_min=5, age_max=12, is_active=True)
+                game = Game(
+                    name="Memory Cards",
+                    game_type="memory_cards",
+                    age_min=5,
+                    age_max=12,
+                    is_active=True,
+                )
                 db.add_all([subject, lesson, game])
                 await db.flush()
                 await db.commit()
@@ -69,7 +76,7 @@ def test_golden_flow_parent_login_to_weekly_report():
 
                 # 3. Choose a lesson.
                 lessons = await list_lessons(age_group="junior", language=None, db=db)
-                assert any(l.id == lesson.id for l in lessons)
+                assert any(candidate.id == lesson.id for candidate in lessons)
 
                 # 4. Launch + play + finish the game, save the result.
                 started = utc_now()
@@ -98,7 +105,9 @@ def test_golden_flow_parent_login_to_weekly_report():
 
                 # 5. Mastery updated on the server.
                 progress_row = await db.execute(
-                    select(Progress).where(Progress.child_id == child.id, Progress.lesson_id == lesson.id)
+                    select(Progress).where(
+                        Progress.child_id == child.id, Progress.lesson_id == lesson.id
+                    )
                 )
                 progress = progress_row.scalar_one()
                 assert progress.mastery_score == result["mastery_score"]
@@ -125,7 +134,9 @@ def test_golden_flow_parent_login_to_weekly_report():
                 assert reports.total_games_today == 1
                 assert reports.total_lessons_today == 1
 
-                weekly = await get_weekly_report(child_id=child.id, week=0, profile=profile, db=db)
+                weekly = await get_weekly_report(
+                    child_id=child.id, week=0, profile=profile, db=db
+                )
                 assert len(weekly) == 1
                 assert weekly[0].games_completed == 1
         finally:

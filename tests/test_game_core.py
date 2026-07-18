@@ -2,13 +2,18 @@
 
 import sys
 from pathlib import Path
+
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
 import pytest
 
 from packages.game_core.game_interface import calculate_stars, GameConfig
 from packages.game_core.engines import WordBuilderEngine
-from packages.game_core.math_race import MathRaceEngine, MemoryCardsEngine, RobotCommandsEngine
+from packages.game_core.math_race import (
+    MathRaceEngine,
+    MemoryCardsEngine,
+    RobotCommandsEngine,
+)
 
 
 class TestCalculateStars:
@@ -115,7 +120,7 @@ class TestMemoryCardsEngine:
         engine.initialize(GameConfig(game_type="memory_cards"))
         engine.load_level(1)
         # Find a matching pair in items
-        items = engine._pairs
+        assert len(engine._pairs) > 0
         result = engine.submit_answer([0, 1])  # Generic — depends on shuffle
         assert isinstance(result.is_correct, bool)
 
@@ -132,6 +137,7 @@ class TestRobotCommandsEngine:
         engine = RobotCommandsEngine()
         engine.initialize(GameConfig(game_type="robot_commands"))
         state = engine.load_level(1)
+        assert state is not None
         assert len(engine._grid) > 0
         assert engine._position == (0, 0)
 
@@ -154,16 +160,19 @@ class TestRobotCommandsEngine:
 class TestGameRegistry:
     def test_registry_returns_engine(self):
         from packages.game_core.registry import GameRegistry
+
         engine = GameRegistry.get_engine("math_race")
         assert isinstance(engine, MathRaceEngine)
 
     def test_unknown_type_raises(self):
         from packages.game_core.registry import GameRegistry
+
         with pytest.raises(ValueError, match="Unknown game type"):
             GameRegistry.get_engine("nonexistent_game")
 
     def test_list_game_types(self):
         from packages.game_core.registry import GameRegistry
+
         types = GameRegistry.list_game_types()
         assert "math_race" in types
         assert "word_builder" in types

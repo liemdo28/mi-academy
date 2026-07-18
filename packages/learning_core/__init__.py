@@ -3,7 +3,6 @@
 from __future__ import annotations
 
 from dataclasses import dataclass
-from typing import Optional
 
 
 @dataclass
@@ -15,7 +14,7 @@ class AdaptationResult:
 
 class DifficultyAdapter:
     """Adapt difficulty based on child's recent performance.
-    
+
     Rules:
     - ≥85% correct AND avg hints ≤ 1 AND stable response time → level+1
     - <50% correct OR repeated hints → level-1 (silent, no UI message)
@@ -26,12 +25,16 @@ class DifficultyAdapter:
         self.max_level = max_level
         self._history: list[dict] = []  # [{correct, hints_used, response_time_ms}]
 
-    def record_attempt(self, is_correct: bool, hints_used: int, response_time_ms: int) -> None:
-        self._history.append({
-            "correct": is_correct,
-            "hints_used": hints_used,
-            "response_time_ms": response_time_ms,
-        })
+    def record_attempt(
+        self, is_correct: bool, hints_used: int, response_time_ms: int
+    ) -> None:
+        self._history.append(
+            {
+                "correct": is_correct,
+                "hints_used": hints_used,
+                "response_time_ms": response_time_ms,
+            }
+        )
         # Keep last 5 attempts for sliding window
         if len(self._history) > 5:
             self._history = self._history[-5:]
@@ -54,7 +57,7 @@ class DifficultyAdapter:
             new_level = min(self.current_level + 1, self.max_level)
             return AdaptationResult(
                 recommended_level=new_level,
-                reason=f"Excellent! {correct_rate*100:.0f}% correct, {avg_hints:.1f} hints avg",
+                reason=f"Excellent! {correct_rate * 100:.0f}% correct, {avg_hints:.1f} hints avg",
             )
 
         # Demote: struggling
@@ -117,6 +120,7 @@ class RewardEngine:
 
 
 # ── Universal star rules (never broken) ──────────────────────────────────────────
+
 
 def compute_stars_for_completion(
     correct_first_try: int,

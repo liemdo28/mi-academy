@@ -2,11 +2,49 @@
 name = "mi-academy"
 version = "0.1.0"
 description = "MI Academy — Offline-first educational games for children 5–12"
-requires-python = ">=3.10"
+# apps/api/time.py and apps/api/routes/parent.py use `datetime.UTC`, added
+# in Python 3.11 -- the prior ">=3.10" floor here was inaccurate (mypy
+# flagged `datetime.UTC` as not existing when checked against 3.10). CI
+# (.github/workflows/ci.yml) already runs 3.13, so this corrects the
+# declared floor to match actual usage rather than changing working code.
+requires-python = ">=3.11"
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
 pythonpath = ["."]
+
+[tool.ruff]
+target-version = "py310"
+extend-exclude = ["apps/api/alembic/versions"]
+
+[tool.ruff.lint]
+# E711/E712 (`== None` / `== True`) are intentionally allowed: SQLAlchemy's
+# query-building expressions require `Column == None` / `Column == True` to
+# construct `IS NULL`/`IS TRUE` SQL -- `is None`/`is True` would evaluate as
+# a plain Python boolean instead of building a query clause, silently
+# breaking the query. Every current occurrence is a SQLAlchemy column
+# comparison inside a `select()`/`.where()` call (apps/api/routes/*.py),
+# not a plain-Python equality check.
+ignore = ["E711", "E712"]
+
+[tool.ruff.lint.per-file-ignores]
+# packages/mi_game_testing/_decode.py and .write_helper.py are stray,
+# unused, non-functional files (no imports/references anywhere in the
+# repo, confirmed via a full-repo grep) that happen to live inside a Dart
+# package directory. Left in place rather than deleted without explicit
+# direction; suppressed here since ruff can't meaningfully lint their
+# content either way.
+"packages/mi_game_testing/_decode.py" = ["F821"]
+
+[tool.mypy]
+python_version = "3.11"
+mypy_path = "."
+explicit_package_bases = true
+# packages/mi_game_testing/_decode.py: see the matching ruff per-file-ignore
+# comment above -- stray, unused, non-functional file, not excluded via
+# deletion without explicit direction.
+exclude = ["infrastructure/scripts/", "packages/mi_game_testing/_decode.py"]
+ignore_missing_imports = true
 
 [tool.uv]
 dev-dependencies = [

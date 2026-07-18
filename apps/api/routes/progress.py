@@ -27,15 +27,18 @@ _DEFAULT_GAME_TYPE = "memory_cards"
 
 
 def _game_type_for_lesson(lesson: Lesson) -> str:
-    subject_code = lesson.subject.code if lesson.subject else None
-    return _SUBJECT_TO_GAME_TYPE.get(subject_code, _DEFAULT_GAME_TYPE)
+    if not lesson.subject:
+        return _DEFAULT_GAME_TYPE
+    return _SUBJECT_TO_GAME_TYPE.get(lesson.subject.code, _DEFAULT_GAME_TYPE)
 
 
 def _child_belongs_to_parent(profile: ParentProfile, child_id: str):
     if child_id not in [c.id for c in profile.children]:
         raise HTTPException(
             status_code=status.HTTP_403_FORBIDDEN,
-            detail={"error": {"code": "FORBIDDEN", "message": "Child not owned by parent"}},
+            detail={
+                "error": {"code": "FORBIDDEN", "message": "Child not owned by parent"}
+            },
         )
 
 
@@ -48,9 +51,7 @@ async def get_child_progress(
     """Return per-lesson progress for a child."""
     _child_belongs_to_parent(profile, child_id)
 
-    result = await db.execute(
-        select(Progress).where(Progress.child_id == child_id)
-    )
+    result = await db.execute(select(Progress).where(Progress.child_id == child_id))
     rows = result.scalars().all()
     return [
         ProgressResponse(

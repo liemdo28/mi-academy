@@ -105,8 +105,25 @@ regenerate blindly just to silence a failure.
 - **No automated translation-key parity check in CI.** `packages/localization/lib/l10n/app_en.arb`
   and `app_vi.arb` currently match exactly (57/57 keys both ways, verified
   by direct diff during this audit) but nothing enforces that going forward.
-- **Backend Python tooling (`ruff`, `mypy`) has no project configuration**
-  (no `pyproject.toml` `[tool.ruff]`/`[tool.mypy]` section, not installed via
-  `requirements.txt`, not run in CI). Running them ad hoc against
-  `apps/api` surfaces findings but there is no enforced baseline — see
-  `docs/release-audit.md` for exact counts.
+- ~~Backend Python tooling (`ruff`, `mypy`) has no project configuration~~
+  **Fixed** (Milestone 1, WS7): `pyproject.toml` now has `[tool.ruff]` and
+  `[tool.mypy]` sections. All four canonical backend commands
+  (`ruff format --check .`, `ruff check .`, `mypy .`, `pytest`) exit 0 from
+  the repo root on Python 3.11+ (declared `requires-python`, matching the
+  actual `datetime.UTC` usage in `apps/api/time.py` and
+  `apps/api/routes/parent.py`, and CI's Python 3.13). See
+  `docs/release-audit.md` RA-19 for what was fixed vs. narrowly suppressed
+  and why (SQLAlchemy's `== True`/`== None` idiom is the one deliberate
+  ignore; everything else is a real fix, not a broadened ignore list).
+  Not yet added to `.github/workflows/ci.yml` as a required job in this
+  pass — see RA-19's status.
+
+### Supported Python version and setup
+
+- Python **3.11+** (see `pyproject.toml`'s `requires-python`; CI runs 3.13).
+- `pip install -r apps/api/requirements.txt` installs the app + test
+  dependencies (pytest/pytest-asyncio/aiosqlite are pinned there already).
+- `ruff` and `mypy` are dev-only tools, not in `requirements.txt` (the app
+  doesn't need them at runtime) — install with `pip install ruff mypy` to
+  run them locally; both read their config from the repo-root
+  `pyproject.toml` automatically.

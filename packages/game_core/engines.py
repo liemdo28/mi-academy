@@ -1,13 +1,9 @@
 """Word Builder Engine — Engine 1 (Drag and Drop variant).
 Child drags letters into slots to spell a word."""
 
-from dataclasses import dataclass
-from typing import Optional
-
 from packages.game_core.game_interface import (
     AnswerResult,
     CompletionResult,
-    GameConfig,
     GameInterface,
     LevelState,
     calculate_stars,
@@ -46,8 +42,13 @@ class WordBuilderEngine(GameInterface):
         self._current_word: str = ""
 
     def load_level(self, level: int) -> LevelState:
+        assert self._config is not None, (
+            "initialize() must be called before load_level()"
+        )
         age_group = self._config.language  # Language doubles as age config here
-        word_list = self.LEVEL_DATA.get(age_group, self.LEVEL_DATA["junior"]).get(level, ["cat"])
+        word_list = self.LEVEL_DATA.get(age_group, self.LEVEL_DATA["junior"]).get(
+            level, ["cat"]
+        )
         difficulty = level
         self._words = word_list
         self._current_word = word_list[0] if word_list else ""
@@ -55,6 +56,9 @@ class WordBuilderEngine(GameInterface):
         return self._state
 
     def submit_answer(self, answer: str) -> AnswerResult:
+        assert self._state is not None, (
+            "load_level() must be called before submit_answer()"
+        )
         self._attempt_count += 1
         correct = answer.strip().lower() == self._current_word.lower()
 
@@ -68,11 +72,13 @@ class WordBuilderEngine(GameInterface):
 
         if correct:
             result.stars_earned = calculate_stars(self._attempt_count, len(self._words))
-            self._answers.append({
-                "word": self._current_word,
-                "correct": True,
-                "attempts": self._attempt_count,
-            })
+            self._answers.append(
+                {
+                    "word": self._current_word,
+                    "correct": True,
+                    "attempts": self._attempt_count,
+                }
+            )
             # Advance to next word
             idx = self._words.index(self._current_word)
             next_idx = idx + 1
@@ -82,11 +88,13 @@ class WordBuilderEngine(GameInterface):
             else:
                 self._state.current_index = len(self._words)
         else:
-            self._answers.append({
-                "word": self._current_word,
-                "correct": False,
-                "attempt": answer,
-            })
+            self._answers.append(
+                {
+                    "word": self._current_word,
+                    "correct": False,
+                    "attempt": answer,
+                }
+            )
 
         return result
 
@@ -94,8 +102,7 @@ class WordBuilderEngine(GameInterface):
         correct_count = sum(1 for a in self._answers if a.get("correct"))
         mastery = correct_count / max(len(self._answers), 1)
         total_stars = calculate_stars(
-            sum(a.get("attempts", 1) for a in self._answers),
-            len(self._answers)
+            sum(a.get("attempts", 1) for a in self._answers), len(self._answers)
         )
         badges = []
         if total_stars == 3:

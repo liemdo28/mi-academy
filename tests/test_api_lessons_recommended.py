@@ -6,9 +6,9 @@ history. It now ranks by Progress.status (struggling content resurfaces
 first, mastered content is deprioritized) and targets difficulty to the
 child's demonstrated mastery level.
 """
+
 import asyncio
 
-from sqlalchemy import select
 from sqlalchemy.ext.asyncio import async_sessionmaker, create_async_engine
 
 from apps.api.database import Base
@@ -32,8 +32,15 @@ async def _session_maker():
 
 async def _seed_world(db, *, lesson_count=5):
     user = User(role="parent", email="owner@example.test", password_hash="not-used")
-    profile = ParentProfile(user=user, display_name="Owner Parent", language="vi", timezone="Asia/Ho_Chi_Minh")
-    child = ChildProfile(parent=profile, nickname="Child", age_group="junior", preferred_language="vi")
+    profile = ParentProfile(
+        user=user,
+        display_name="Owner Parent",
+        language="vi",
+        timezone="Asia/Ho_Chi_Minh",
+    )
+    child = ChildProfile(
+        parent=profile, nickname="Child", age_group="junior", preferred_language="vi"
+    )
     subject = Subject(name="Math", code="math")
     lessons = [
         Lesson(
@@ -62,12 +69,14 @@ def test_recommends_by_difficulty_when_child_has_no_history():
                 data = await _seed_world(db)
                 profile, child = data["profile"], data["child"]
 
-                recommended = await get_recommended(child_id=child.id, profile=profile, db=db)
+                recommended = await get_recommended(
+                    child_id=child.id, profile=profile, db=db
+                )
 
                 # No track record -- start at the easiest content, same as
                 # the old static-difficulty behavior when nothing else is
                 # known about the child.
-                assert [l.difficulty for l in recommended] == [1, 2, 3]
+                assert [lesson.difficulty for lesson in recommended] == [1, 2, 3]
         finally:
             await engine.dispose()
 
@@ -80,21 +89,29 @@ def test_struggling_lesson_outranks_new_content():
         try:
             async with session_maker() as db:
                 data = await _seed_world(db)
-                profile, child, lessons = data["profile"], data["child"], data["lessons"]
+                profile, child, lessons = (
+                    data["profile"],
+                    data["child"],
+                    data["lessons"],
+                )
 
                 # The child struggled with the hardest lesson -- it must
                 # resurface first even though its difficulty is far from
                 # "start easy".
-                db.add(Progress(
-                    child_id=child.id,
-                    lesson_id=lessons[-1].id,
-                    status="needs_practice",
-                    mastery_score=0.3,
-                    total_attempts=2,
-                ))
+                db.add(
+                    Progress(
+                        child_id=child.id,
+                        lesson_id=lessons[-1].id,
+                        status="needs_practice",
+                        mastery_score=0.3,
+                        total_attempts=2,
+                    )
+                )
                 await db.commit()
 
-                recommended = await get_recommended(child_id=child.id, profile=profile, db=db)
+                recommended = await get_recommended(
+                    child_id=child.id, profile=profile, db=db
+                )
 
                 assert recommended[0].id == lessons[-1].id
         finally:
@@ -109,22 +126,30 @@ def test_mastered_lesson_is_deprioritized():
         try:
             async with session_maker() as db:
                 data = await _seed_world(db, lesson_count=4)
-                profile, child, lessons = data["profile"], data["child"], data["lessons"]
+                profile, child, lessons = (
+                    data["profile"],
+                    data["child"],
+                    data["lessons"],
+                )
 
                 # Mastering lesson 1 shouldn't keep it at the top forever --
                 # once mastered, new/continuing content should outrank it.
-                db.add(Progress(
-                    child_id=child.id,
-                    lesson_id=lessons[0].id,
-                    status="mastered",
-                    mastery_score=0.95,
-                    total_attempts=3,
-                ))
+                db.add(
+                    Progress(
+                        child_id=child.id,
+                        lesson_id=lessons[0].id,
+                        status="mastered",
+                        mastery_score=0.95,
+                        total_attempts=3,
+                    )
+                )
                 await db.commit()
 
-                recommended = await get_recommended(child_id=child.id, profile=profile, db=db)
+                recommended = await get_recommended(
+                    child_id=child.id, profile=profile, db=db
+                )
 
-                assert lessons[0].id not in [l.id for l in recommended]
+                assert lessons[0].id not in [lesson.id for lesson in recommended]
         finally:
             await engine.dispose()
 
@@ -137,22 +162,30 @@ def test_target_difficulty_rises_with_demonstrated_mastery():
         try:
             async with session_maker() as db:
                 data = await _seed_world(db, lesson_count=5)
-                profile, child, lessons = data["profile"], data["child"], data["lessons"]
+                profile, child, lessons = (
+                    data["profile"],
+                    data["child"],
+                    data["lessons"],
+                )
 
                 # High mastery on an easy lesson -- new-content recommendations
                 # should now aim higher than difficulty 1.
-                db.add(Progress(
-                    child_id=child.id,
-                    lesson_id=lessons[0].id,
-                    status="mastered",
-                    mastery_score=1.0,
-                    total_attempts=3,
-                ))
+                db.add(
+                    Progress(
+                        child_id=child.id,
+                        lesson_id=lessons[0].id,
+                        status="mastered",
+                        mastery_score=1.0,
+                        total_attempts=3,
+                    )
+                )
                 await db.commit()
 
-                recommended = await get_recommended(child_id=child.id, profile=profile, db=db)
+                recommended = await get_recommended(
+                    child_id=child.id, profile=profile, db=db
+                )
 
-                assert all(l.difficulty > 1 for l in recommended)
+                assert all(lesson.difficulty > 1 for lesson in recommended)
         finally:
             await engine.dispose()
 

@@ -9,6 +9,7 @@ Usage:
 
 Exit code 0 = all levels solvable, 1 = at least one unsolvable/invalid.
 """
+
 import json
 import sys
 from collections import deque
@@ -19,26 +20,27 @@ PROJECT_ROOT = Path(__file__).resolve().parent.parent.parent
 
 
 def load_json(path: Path) -> Any:
-    with open(path, 'r', encoding='utf-8') as f:
+    with open(path, "r", encoding="utf-8") as f:
         return json.load(f)
 
 
 # --- Memory Cards solver ---
 
+
 def solve_memory_cards(level: dict) -> list[str]:
     """A Memory Cards level is solvable if every card has exactly one match."""
     errors = []
-    content = level.get('localizedContent', {})
+    content = level.get("localizedContent", {})
     for locale, loc in content.items():
         if not isinstance(loc, dict):
             continue
-        cards = loc.get('cards', [])
+        cards = loc.get("cards", [])
         if not cards:
             continue
         # Group by pairId
-        pairs = {}
+        pairs: dict[object, list[object]] = {}
         for card in cards:
-            pairs.setdefault(card.get('pairId'), []).append(card.get('id'))
+            pairs.setdefault(card.get("pairId"), []).append(card.get("id"))
         for pair_id, ids in pairs.items():
             if len(ids) != 2:
                 errors.append(
@@ -53,18 +55,19 @@ def solve_memory_cards(level: dict) -> list[str]:
 
 # --- Robot Commands solver (BFS reachability) ---
 
+
 def solve_robot_map(map_data: dict) -> list[str]:
     """Robot map is solvable if goal is reachable from start via BFS."""
     errors = []
-    grid = map_data.get('grid', map_data)
-    width = grid.get('width', 0)
-    height = grid.get('height', 0)
-    obstacles = {(o['x'], o['y']) for o in map_data.get('obstacles', [])}
-    start = map_data.get('start', {'x': 0, 'y': 0})
-    goal = map_data.get('goal', {})
+    grid = map_data.get("grid", map_data)
+    width = grid.get("width", 0)
+    height = grid.get("height", 0)
+    obstacles = {(o["x"], o["y"]) for o in map_data.get("obstacles", [])}
+    start = map_data.get("start", {"x": 0, "y": 0})
+    goal = map_data.get("goal", {})
 
-    sx, sy = start.get('x', 0), start.get('y', 0)
-    gx, gy = goal.get('x', -1), goal.get('y', -1)
+    sx, sy = start.get("x", 0), start.get("y", 0)
+    gx, gy = goal.get("x", -1), goal.get("y", -1)
 
     if not (0 <= gx < width and 0 <= gy < height):
         return ["Goal out of bounds - not solvable"]
@@ -82,50 +85,55 @@ def solve_robot_map(map_data: dict) -> list[str]:
             break
         for dx, dy in [(0, 1), (0, -1), (1, 0), (-1, 0)]:
             nx, ny = x + dx, y + dy
-            if (0 <= nx < width and 0 <= ny < height
-                    and (nx, ny) not in obstacles
-                    and (nx, ny) not in visited):
+            if (
+                0 <= nx < width
+                and 0 <= ny < height
+                and (nx, ny) not in obstacles
+                and (nx, ny) not in visited
+            ):
                 visited.add((nx, ny))
                 queue.append((nx, ny))
 
     if not reachable:
-        errors.append(f"Goal ({gx},{gy}) unreachable from start ({sx},{sy}) - not solvable")
+        errors.append(
+            f"Goal ({gx},{gy}) unreachable from start ({sx},{sy}) - not solvable"
+        )
 
     return errors
 
 
 # --- Word Builder solver ---
 
+
 def solve_word_builder(level: dict) -> list[str]:
     """A Word Builder level is solvable if provided letters build the target."""
     errors = []
-    content = level.get('localizedContent', {})
+    content = level.get("localizedContent", {})
     for locale, loc in content.items():
         if not isinstance(loc, dict):
             continue
-        target = loc.get('targetWord')
-        letters = loc.get('letters', [])
+        target = loc.get("targetWord")
+        letters = loc.get("letters", [])
         if not isinstance(target, str) or not target:
             errors.append(f"[{locale}] Missing targetWord")
             continue
-        if ''.join(str(letter) for letter in letters) != target:
-            errors.append(
-                f"[{locale}] Letters do not build target '{target}'"
-            )
+        if "".join(str(letter) for letter in letters) != target:
+            errors.append(f"[{locale}] Letters do not build target '{target}'")
     return errors
 
 
 # --- Sound Match solver ---
 
+
 def solve_sound_match(level: dict) -> list[str]:
     """A Sound Match level is solvable if the answer is in unique options."""
     errors = []
-    content = level.get('localizedContent', {})
+    content = level.get("localizedContent", {})
     for locale, loc in content.items():
         if not isinstance(loc, dict):
             continue
-        answer = loc.get('correctAnswer')
-        options = [str(option) for option in loc.get('options', [])]
+        answer = loc.get("correctAnswer")
+        options = [str(option) for option in loc.get("options", [])]
         if not answer:
             errors.append(f"[{locale}] Missing correctAnswer")
         if answer not in options:
@@ -137,25 +145,26 @@ def solve_sound_match(level: dict) -> list[str]:
 
 # --- Multiple-choice math validator ---
 
+
 def solve_choice_level(level: dict) -> list[str]:
     """A choice level is solvable if exactly one option is marked correct."""
     errors = []
-    content = level.get('localizedContent', {})
+    content = level.get("localizedContent", {})
     for locale, loc in content.items():
         if not isinstance(loc, dict):
             continue
-        options = loc.get('options', [])
+        options = loc.get("options", [])
         correct_count = 0
         seen_text = set()
         for option in options:
             if not isinstance(option, dict):
                 errors.append(f"[{locale}] Option must be an object")
                 continue
-            text = option.get('text')
+            text = option.get("text")
             if text in seen_text:
                 errors.append(f"[{locale}] Duplicate option text '{text}'")
             seen_text.add(text)
-            if option.get('correct') is True:
+            if option.get("correct") is True:
                 correct_count += 1
         if correct_count != 1:
             errors.append(
@@ -172,13 +181,13 @@ def validate_game_levels(
     solver,
     label: str,
 ) -> None:
-    path = PROJECT_ROOT / 'apps' / 'mobile' / 'assets' / 'levels' / file_name
+    path = PROJECT_ROOT / "apps" / "mobile" / "assets" / "levels" / file_name
     if not path.exists():
         all_errors.append(f"[{game_id}] Missing content file: {path}")
         return
 
     data = load_json(path)
-    levels = data.get('levels', [])
+    levels = data.get("levels", [])
     solvable = 0
     for level in levels:
         errs = solver(level)
@@ -195,47 +204,49 @@ def main():
 
     validate_game_levels(
         all_errors=all_errors,
-        game_id='word_builder',
-        file_name='word_builder.json',
+        game_id="word_builder",
+        file_name="word_builder.json",
         solver=solve_word_builder,
-        label='Word Builder',
+        label="Word Builder",
     )
     validate_game_levels(
         all_errors=all_errors,
-        game_id='sound_match',
-        file_name='sound_match.json',
+        game_id="sound_match",
+        file_name="sound_match.json",
         solver=solve_sound_match,
-        label='Sound Match',
+        label="Sound Match",
     )
     validate_game_levels(
         all_errors=all_errors,
-        game_id='math_race',
-        file_name='math_race.json',
+        game_id="math_race",
+        file_name="math_race.json",
         solver=solve_choice_level,
-        label='Math Race',
+        label="Math Race",
     )
     validate_game_levels(
         all_errors=all_errors,
-        game_id='math_supermarket',
-        file_name='math_supermarket.json',
+        game_id="math_supermarket",
+        file_name="math_supermarket.json",
         solver=solve_choice_level,
-        label='Math Supermarket',
+        label="Math Supermarket",
     )
     validate_game_levels(
         all_errors=all_errors,
-        game_id='memory_cards',
-        file_name='memory_cards.json',
+        game_id="memory_cards",
+        file_name="memory_cards.json",
         solver=solve_memory_cards,
-        label='Memory Cards',
+        label="Memory Cards",
     )
 
-    rc_path = PROJECT_ROOT / 'apps' / 'mobile' / 'assets' / 'levels' / 'robot_commands.json'
+    rc_path = (
+        PROJECT_ROOT / "apps" / "mobile" / "assets" / "levels" / "robot_commands.json"
+    )
     if rc_path.exists():
         data = load_json(rc_path)
-        maps = data.get('maps', data.get('levels', []))
+        maps = data.get("maps", data.get("levels", []))
         solvable = 0
         for m in maps:
-            errs = solve_robot_map(m.get('metadata', m))
+            errs = solve_robot_map(m.get("metadata", m))
             if errs:
                 for e in errs:
                     all_errors.append(f"[robot_commands {m.get('id')}] {e}")
@@ -247,7 +258,9 @@ def main():
 
     print()
     if all_errors:
-        print(f"LEVEL VALIDATION FAILED - {len(all_errors)} unsolvable/invalid level(s):")
+        print(
+            f"LEVEL VALIDATION FAILED - {len(all_errors)} unsolvable/invalid level(s):"
+        )
         for err in all_errors:
             print(f"  [ERROR] {err}")
         sys.exit(1)
@@ -256,5 +269,5 @@ def main():
         sys.exit(0)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()
