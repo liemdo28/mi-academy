@@ -9,15 +9,17 @@ useDefault = true
 
 [allowlist]
 description = "Confirmed false positives -- not real secrets"
-regexes = [
-  # apps/mobile/test/beta_diagnostics_test.dart: an earlier version of this
-  # test used a plausible-looking-but-fake token fixture
-  # ("abc123.def456") to verify BetaDiagnostics' redaction logic actually
-  # scrubs token-shaped values before they're ever stored. Gitleaks'
-  # generic-api-key entropy heuristic flagged it. It was never a real
-  # credential -- confirmed by reading the file directly at the flagged
-  # commit/line. Superseded by an even-more-obviously-fake fixture string
-  # in a later commit, but the original commit remains in history, so this
-  # allowlist entry (rather than rewriting history) is the correct fix.
-  '''refresh_token"?\s*:\s*"abc123\.def456"''',
+# apps/mobile/test/beta_diagnostics_test.dart @ this exact commit used a
+# plausible-looking-but-fake token fixture ("abc123.def456") to verify
+# BetaDiagnostics' redaction logic actually scrubs token-shaped values
+# before they're ever stored. Gitleaks' generic-api-key entropy heuristic
+# flagged it (Fingerprint:
+# 83d22d0c9771f2c2709f64dcde1b34c0438d44a0:apps/mobile/test/beta_diagnostics_test.dart:generic-api-key:29).
+# Confirmed by reading the file directly at the flagged commit/line: not a
+# real credential. Superseded by an even-more-obviously-fake fixture
+# string in a later commit, but the original commit remains in history
+# (rewriting history to remove it would be a separate, more destructive
+# action), so allowlisting the specific commit is the correct fix.
+commits = [
+  "83d22d0c9771f2c2709f64dcde1b34c0438d44a0",
 ]
