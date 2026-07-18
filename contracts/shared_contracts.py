@@ -84,7 +84,7 @@ class ContractDef:
     description="Platform-to-game launch request with full context.",
 )
 class MiGameLaunchRequest:
-    """Source: shared_models.dart MiGameLaunchRequest (v1)."""
+    """Source: packages/mi_game_core/lib/src/contracts/mi_game_launch_request.dart MiGameLaunchRequest (v1)."""
     SCHEMA_VERSION = 1
     REQUIRED_FIELDS = frozenset([
         "schemaVersion", "childProfileId", "gameId", "levelId",
@@ -105,7 +105,7 @@ class MiGameLaunchRequest:
     description="Game-to-platform result with mastery and skill evidence.",
 )
 class MiGameResult:
-    """Source: shared_models.dart MiGameResult (v1)."""
+    """Source: packages/mi_game_core/lib/src/contracts/mi_game_result.dart MiGameResult (v1)."""
     SCHEMA_VERSION = 1
     REQUIRED_FIELDS = frozenset([
         "schemaVersion", "attemptId", "childProfileId", "gameId", "levelId",
@@ -130,7 +130,10 @@ class MiGameResult:
     migration_path="SnapshotMigrator.migrate",
 )
 class MiGameSnapshot:
-    """Source: shared_models.dart MiGameSnapshot (v1)."""
+    """Source: packages/mi_game_core/lib/src/models/mi_game_snapshot.dart MiGameSnapshot (v2).
+    Note: `savedAt` here is the contract-facing name; the Dart class's own
+    field is `createdAt` with `savedAt` as a getter alias (see that file),
+    and the wire JSON key is `saved_at`. Intentional, not drift."""
     SCHEMA_VERSION = 2
     REQUIRED_FIELDS = frozenset([
         "schemaVersion", "gameVersion", "gameId", "levelId", "childProfileId", "savedAt", "state",
@@ -151,7 +154,14 @@ class MiGameSnapshot:
     description="Lesson progress and mastery score.",
 )
 class LessonProgress:
-    """Source: shared_models.dart LessonProgress (v1)."""
+    """No current Dart-side model backs this contract -- the class this
+    docstring used to cite (shared_models.dart) was deleted as dead code
+    in a prior cleanup pass. STATUS_PYTHON_MAP is not read by any route
+    (apps/api/schemas' ProgressResponse.status returns the Python
+    snake_case value as-is, e.g. "needs_practice", not "needsPractice"),
+    and no mobile code branches on a camelCase status string either --
+    this mapping is aspirational/unused on both sides today, not an
+    active contract violation."""
     SCHEMA_VERSION = 1
     STATUS_VALUES = frozenset(["notStarted", "learning", "completed", "needsPractice", "mastered"])
     STATUS_PYTHON_MAP = {

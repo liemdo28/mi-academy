@@ -131,3 +131,47 @@ def test_contract_validation_allows_unknown_additive_fields_for_backward_compati
     )
 
     assert result["valid"] is True
+
+
+# Guards against exactly the drift found and fixed once already in this file's
+# docstrings: a contract's "Source: ..." comment silently going stale (the
+# cited file gets renamed/moved/deleted) without anything catching it. Not a
+# generic Dart parser -- just a precise existence + substring check per field,
+# on the specific files these contracts actually cite today.
+_DART_CONTRACT_SOURCES = {
+    "mi.game.launch": (
+        "packages/mi_game_core/lib/src/contracts/mi_game_launch_request.dart",
+        [
+            "schemaVersion", "childProfileId", "gameId", "levelId",
+            "language", "ageGroup", "accessibility", "audioPreferences", "levelContent",
+        ],
+    ),
+    "mi.game.result": (
+        "packages/mi_game_core/lib/src/contracts/mi_game_result.dart",
+        [
+            "schemaVersion", "attemptId", "childProfileId", "gameId", "levelId",
+            "startedAt", "completedAt", "attemptCount", "correctCount",
+            "incorrectCount", "hintCount", "durationSeconds", "completed",
+            "masteryEvidence", "skillEvidence",
+        ],
+    ),
+    "mi.game.snapshot": (
+        "packages/mi_game_core/lib/src/models/mi_game_snapshot.dart",
+        # savedAt is a getter alias for the real field createdAt -- see the
+        # contract's own docstring note.
+        ["schemaVersion", "gameVersion", "gameId", "levelId", "childProfileId", "state"],
+    ),
+}
+
+
+def test_dart_contract_sources_still_declare_their_required_fields():
+    for contract_id, (relative_path, expected_fields) in _DART_CONTRACT_SOURCES.items():
+        path = PROJECT_ROOT / relative_path
+        assert path.exists(), f"{contract_id}'s cited source file no longer exists: {relative_path}"
+        source = path.read_text(encoding="utf-8")
+        missing = [f for f in expected_fields if f not in source]
+        assert not missing, (
+            f"{contract_id}'s Python REQUIRED_FIELDS cite {missing} but "
+            f"{relative_path} no longer declares them -- contract drifted "
+            f"from its Dart source"
+        )
