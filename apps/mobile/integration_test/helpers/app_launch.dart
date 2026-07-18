@@ -36,7 +36,14 @@ Future<void> launchApp(WidgetTester tester) async {
 /// ran before it in the same process.
 Future<void> resetLocalState() async {
   await initHive();
-  const boxNames = [
+  // sync_queue is the one box opened with a typed adapter
+  // (Box<SyncQueueItem> -- see initHive); Hive.box(name) (implicitly
+  // Box<dynamic>) throws HiveError on a box that's already open with a
+  // different type parameter, so it needs its own correctly-typed clear.
+  if (Hive.isBoxOpen(MiBoxes.syncQueue)) {
+    await Hive.box<SyncQueueItem>(MiBoxes.syncQueue).clear();
+  }
+  const untypedBoxNames = [
     HiveParentSettingsStore.boxName,
     MiBoxes.auth,
     MiBoxes.profiles,
@@ -46,11 +53,10 @@ Future<void> resetLocalState() async {
     MiBoxes.attempts,
     MiBoxes.snapshots,
     MiBoxes.rewards,
-    MiBoxes.syncQueue,
     MiBoxes.settings,
     MiBoxes.mastery,
   ];
-  for (final boxName in boxNames) {
+  for (final boxName in untypedBoxNames) {
     if (Hive.isBoxOpen(boxName)) {
       await Hive.box(boxName).clear();
     }
