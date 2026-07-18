@@ -1,11 +1,25 @@
 # MI Academy 1.0 — Release Audit
 
-Date: 2026-07-18
-Branch: `fix/internal-beta-hardening` (HEAD at time of writing: `9e0fb34`)
+Date: 2026-07-18 (updated same day against the 30-game/full-CMS/Google-Play
+master spec — see RA-15 through RA-18 below)
+Branch: `fix/internal-beta-hardening` (HEAD at time of writing: `bd32d04`)
 Scope: Direct verification against this working tree, its test suite, and
 live CI runs on this branch. Nothing here is carried over from prior
 session summaries without re-verification — every finding below cites the
 exact command run and its actual output.
+
+## Update: 30-game master spec (2026-07-18, same day)
+
+A separate, much larger spec was issued the same day requiring 30 complete
+games (vs. the 6 that exist), a 12-engine architecture, a full admin CMS
+publishing workflow, and a complete Google Play submission package (store
+listing assets, Data Safety/Content Rating/Families Policy declarations,
+signed release keystore). This is genuinely a multi-month, multi-person
+scope. RA-15 through RA-18 below record what was directly verified against
+that spec; see `docs/game-catalog.md`, `docs/game-engine-architecture.md`,
+`docs/skill-taxonomy.md`, and `docs/age-bands.md` for the full detail. The
+findings already recorded below (RA-01–RA-14) still stand and are not
+superseded by this update.
 
 ## Executive summary
 
@@ -45,6 +59,10 @@ status on every item the audit was asked to cover.
 | RA-12 | Minor | Backend linting | `ruff check apps/api` (default ruleset, unconfigured) reports 34 findings: 12 `F401` unused-import, 10 `E402` import-not-at-top, 8 `E712`/2 `E711` true/false/None comparisons (these 10 are very likely false positives against SQLAlchemy's `== True`/`== None` idiom, which the ORM requires — `is True`/`is None` would break the generated SQL), 2 `E741` ambiguous variable names. | `apps/api/**/*.py` | No project `pyproject.toml [tool.ruff]` section exists to suppress the SQLAlchemy-idiom false positives or otherwise scope the ruleset. Recommend adding one (e.g. `ignore = ["E711", "E712"]` with a comment explaining why) before treating this as a real gate. Not added this pass. | `python -m ruff check apps/api --statistics` → `Found 34 errors` (breakdown above) | **Open** |
 | RA-13 | Minor | Backend typing | `mypy .` (repo root, unconfigured) fails immediately on an unrelated syntax error in `infrastructure/scripts/seed.py`; `mypy apps/api` fails immediately on a duplicate-module-name error (`config.py` resolvable as both `config` and `apps.api.config` with no `__init__.py`/explicit-package-bases). Neither points at a real type-safety issue in application code — both are configuration/module-resolution failures that occur before mypy checks a single expression. | n/a (config-level failure) | Add a `pyproject.toml [tool.mypy]` section (e.g. `mypy_path`, `explicit_package_bases = true`, and either fix or exclude `infrastructure/scripts/seed.py`'s syntax error) before mypy can be used as a real gate. Not added this pass — this is a tooling-adoption decision, not a quick fix. | `python -m mypy .` → `Found 1 error in 1 file (errors prevented further checking)` (seed.py syntax error); `python -m mypy apps/api` → `Found 1 error in 1 file` (module-path collision) | **Open** |
 | RA-14 | Minor | Content safety (informational) | `child_safety_audit.py` and `mobile_platform_privacy_audit.py` each report 2 pre-existing `warn`-severity findings (Dio/connectivity_plus dependencies present, `INTERNET` permission present in debug/profile manifests) — expected, since parent-area sync and login legitimately need network access; not a fail. | `apps/mobile/pubspec.yaml`, `apps/mobile/android/app/src/{debug,profile}/AndroidManifest.xml` | No action needed; these are advisory warns the tooling raises by design so a human confirms network use stays scoped to parent/sync flows, not child-facing gameplay. | `python tools/child_safety_signoff.py --json` → all four sub-checks `"status": "pass"`, `"fail": 0` | **Verified, no action needed** |
+| RA-15 | Blocker | Product scope | Only 6 of the 30 required games exist. 24 have no code, no content, no tests. | `apps/mobile/lib/src/games/` (5 directories + shared `choice` for 2 games = 6 games total) | Requires a multi-week, multi-phase build-out per `docs/game-catalog.md` — 8 of the 12 required engine types (§5.1) have no implementation precedent at all (see RA-18). Not attempted this pass; scoping and roadmap docs written instead of fabricated game code. | `find apps/mobile/lib/src/games -maxdepth 1 -type d` → 5 dirs; `docs/game-catalog.md` full breakdown | **Open — largest gap, blocks any "Google Play Ready" claim** |
+| RA-16 | Major | Content minimums | Even the 6 built games ship with 10 levels each (verified via `tools/level_validator/solve_levels.py`), well under the spec's §7 per-game minimums (≥60 quiz items, ≥30 puzzle levels, etc., depending on genre). | Level/content files under each game's directory | Author additional content per game against the existing schema; does not require new engine code for the 6 already-built games, only content-authoring time. Not attempted this pass. | `python tools/level_validator/solve_levels.py` → `10/10` for each of the 6 games | **Open** |
+| RA-17 | Major | Admin CMS | Admin app (`apps/admin/`) has basic login + CRUD screens (660 lines total across 8 files) but no publish/unpublish/version/rollback workflow, no JSON-validation-blocks-publish gate, no locale-parity or asset-reference checks — all required by spec §22. | `apps/admin/lib/screens/*.dart` | Requires a dedicated admin-workflow build-out phase (validation-gated publish pipeline, versioning, rollback). Not attempted this pass. | `find apps/admin/lib -name "*.dart" -exec wc -l {} +` → 660 total lines, no publish/version/rollback screens present | **Open** |
+| RA-18 | Major | Engine architecture | Only 4 of the 12 required reusable engine types (§5.1) have any implementation precedent (Choice, partial Drag-and-drop, Memory, Grid/Maze-coupled-to-Robot-Commands); 8 have none. Building the 24 missing games directly against ad hoc per-game code (as the 6 existing games were built) rather than shared engines would violate the spec's own "không xây 30 codebase riêng biệt" requirement. | See `docs/game-engine-architecture.md` full mapping | Design and extract the 8 missing engines' contracts *before* authoring games against them; refactor the 5 existing `*Session` classes' duplicated cross-cutting logic (score/stars/hints/snapshot/locale-lookup) into a shared base without breaking the 86 currently-passing mobile tests. Sequenced as its own phase, not attempted this pass. | `docs/game-engine-architecture.md` | **Open — architectural prerequisite for Phase 5+ of the master spec's own sequencing** |
 
 ### Items the audit explicitly asked to be recorded, with status
 
