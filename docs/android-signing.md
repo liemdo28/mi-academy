@@ -32,18 +32,18 @@
   branch show that job with conclusion `success`, meaning the secret-backed
   signed build path is live and proven, not just documented.
 
-## Blocker: application ID is still the Flutter scaffold default
+## Application ID — resolved (Milestone 1B, 2026-07-18)
 
-`applicationId`/`namespace` in `apps/mobile/android/app/build.gradle.kts`
-and `PRODUCT_BUNDLE_IDENTIFIER` in `apps/mobile/ios/Runner.xcodeproj/project.pbxproj`
-are both still `com.example.mi_academy` / `com.example.miAcademy`. Google
-Play rejects `com.example.*` applications, and an app's package name
-**cannot be changed after the first Play Console upload**. Choosing the
-real, owned package name (e.g. `com.<your org's real reverse-domain>.miacademy`)
-is a business/domain-ownership decision, not a code fix — deliberately not
-invented here. This is the single blocking item standing between the
-current build and a real Play Console upload; everything else in this
-document already works.
+~~`applicationId`/`namespace` were still the Flutter scaffold default~~
+**Fixed**: both are now `com.liemteam.miacademy` (Android
+`apps/mobile/android/app/build.gradle.kts`, iOS
+`PRODUCT_BUNDLE_IDENTIFIER` in `Runner.xcodeproj/project.pbxproj`), no
+longer `com.example.*`. Verified directly against the built artifact:
+`aapt dump badging app-release.apk` reports
+`package: name='com.liemteam.miacademy' versionCode='2' versionName='0.9.0-beta.2'`.
+See `docs/release-audit.md` RA-21. If this package name is not the org's
+final intended one, it can still be changed freely up until the first real
+Play Console upload — after that, it's permanent.
 
 ## Generating an upload keystore
 

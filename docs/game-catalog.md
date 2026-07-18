@@ -1,12 +1,26 @@
 # Game catalog — MI Academy 1.0 (30-game target)
 
 Status verified directly against the working tree on 2026-07-18 (branch
-`fix/internal-beta-hardening`, commit `bd32d04`) — not carried over from
-any prior summary. **6 of 30 games exist; 24 do not.** This is the single
-largest gap against the master spec and should not be understated.
+`fix/internal-beta-hardening`) — not carried over from any prior summary.
+**6 of 30 games exist; 24 do not.** This is the single largest gap against
+the master spec and should not be understated.
 
 Legend: **Built** = playable, has real content, has tests. **Not started**
 = no code, no content, no tests exist for this game.
+
+## Update (Milestone 1B): registry + versioned schema
+
+The 6 built games now launch through a central `GameRegistry`
+(`apps/mobile/lib/services/game_registry.dart`, see
+`docs/game-engine-architecture.md`) instead of a hand-maintained switch
+statement, and their level content (`apps/mobile/assets/levels/*.json`)
+now conforms to a real versioned schema (`schemas/level.schema.json`, see
+`docs/content-schema.md`) with a repository-level validator
+(`tools/content_schema_validator.py`). **Content minimums (30 quiz items /
+20 levels per locale, 3 real difficulty tiers per game) were NOT
+addressed this pass** — all 6 games still ship exactly 10 levels each at a
+single effective difficulty tier. See `docs/release-audit.md` for the
+open finding.
 
 ## Group A — Chữ và ngôn ngữ (Letters & language)
 
