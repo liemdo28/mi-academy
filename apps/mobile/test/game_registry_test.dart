@@ -44,8 +44,7 @@ void main() {
       expect(GameRegistry.find(''), isNull);
     });
 
-    test('every registered entry builds a real widget for a valid level',
-        () {
+    test('every registered entry builds a real widget for a valid level', () {
       for (final entry in GameRegistry.all) {
         final widget = entry.builder(
           level: _level,

@@ -134,17 +134,52 @@ PNGs won't be readable directly; use the CI job's uploaded
 `golden-failures` artifact or a local Linux run) before committing. Do not
 regenerate blindly just to silence a failure.
 
-## Known test-pyramid gaps (open, not silently accepted)
+## Integration tests (Milestone 1 WS2)
 
-- **`integration_test/` directory does not exist.** `flutter test
-  integration_test` currently fails immediately (no tests to run) and, even
-  once tests exist, requires a connected device or emulator — this
-  environment has the Android SDK and emulator tooling installed but no
-  emulator was booted for this audit pass, so true on-device integration
-  testing was not exercised here. Widget tests in `apps/mobile/test/`
-  substitute for a meaningful fraction of this today (full six-game
-  playthrough assertions, parent PIN gate, dashboard states, splash
-  routing) but do not replace a real device/emulator run.
+`apps/mobile/integration_test/` exists with real, deterministic tests
+(`first_launch_locale_test.dart` + `helpers/app_launch.dart`), covering the
+part of the required scenario matrix that needs no backend: fresh install
+shows language selection, selecting VI/EN persists across a simulated
+relaunch (a fresh widget tree against the same on-device Hive storage,
+since `flutter test integration_test` cannot kill and restart the OS
+process mid-test), and a full local-data reset returns to language
+selection. Verified: `flutter analyze` and `dart format --set-exit-if-changed .`
+are both clean on `integration_test/`, and `flutter test integration_test`
+correctly *discovers* these tests (confirmed via `flutter test integration_test
+-d chrome`/`-d windows`, which fail for unrelated platform-support reasons —
+this project only targets Android/iOS, so neither a desktop nor a web
+runner exists — but the failure message in both cases is a platform error,
+not "no tests found", proving the test file itself loads and parses).
+
+**Not run against a real Android emulator or device in this environment**:
+this sandbox has the Android SDK and emulator binary installed but no AVD
+system image, and downloading + booting one plus verifying execution was
+judged too large a time cost for this pass relative to the other Milestone
+1 work — an honest scope decision, not a hidden gap. The real, intended
+verification path is CI: `.github/workflows/ci.yml`'s new
+`mobile-integration-test` job runs these tests against a real, hardware-
+accelerated Android emulator (API 34, `google_apis`, `x86_64`, `pixel_6`
+profile, `vi-VN` locale, `Asia/Ho_Chi_Minh` timezone — fixed, not whatever
+the runner happens to default to) via `reactivecircus/android-emulator-runner`,
+with an explicit pre-flight step that fails the job if zero
+`integration_test/*_test.dart` files are discovered (guards against the
+"green because nothing ran" failure mode) and uploads `build/`/
+`integration_test/` as artifacts on failure. See `docs/release-audit.md`
+for the actual CI run result once dispatched.
+
+**Not covered by `first_launch_locale_test.dart`** — Suites B (multi-
+profile management), C (parent PIN protection beyond what
+`test/parent_route_guard_test.dart` already covers as a widget test), D
+(six-game completion end-to-end), F (offline play), and G (time-limit
+break screen) from the Milestone 1 spec's full A-H matrix. Each of B/D/F/G
+requires either a real or mocked backend reachable from the test device
+(the app's auth flow calls a live API to reach child home) — standing that
+up (a test-mode backend server, or a request-mocking layer reachable from
+an Android emulator) is itself a real, separate piece of infrastructure
+that was not built this pass. Treat the current integration-test coverage
+as a real, working foundation and pattern (reusable `launchApp`/
+`resetLocalState` helpers, deterministic IDs, no arbitrary sleeps), not the
+complete required matrix.
 - **No automated translation-key parity check in CI.** `packages/localization/lib/l10n/app_en.arb`
   and `app_vi.arb` currently match exactly (57/57 keys both ways, verified
   by direct diff during this audit) but nothing enforces that going forward.
