@@ -40,6 +40,9 @@ jobs:
       - name: Audit mobile platform privacy surfaces
         run: python tools/mobile_platform_privacy_audit.py --json
 
+      - name: Check translation-key parity (vi/en)
+        run: python tools/localization_audit.py --json
+
       - name: Generate child-safety pre-signoff evidence
         run: python tools/child_safety_signoff.py --json
 

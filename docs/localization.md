@@ -283,4 +283,36 @@ flutter:
 
 ---
 
+## 10. Verified implementation status (Milestone 1, 2026-07-18)
+
+The sections above are the design/PRD target. This section records what
+was directly verified against the current codebase — some of section 9's
+QA matrix checkmarks predate that verification and should not be trusted
+without re-confirming; this section supersedes them where they conflict.
+
+- **`.arb` key parity**: real, verified 57/57 keys matching between
+  `app_en.arb` and `app_vi.arb`. Now enforced in CI (`tools/localization_audit.py`,
+  wired into `.github/workflows/ci.yml`'s `content-and-safety` job) —
+  previously only true by coincidence, not gated.
+- **Hardcoded-string scan**: `tools/localization_audit.py` (no `--fail-on-hardcoded`)
+  reports, as of this pass, **231 hardcoded Vietnamese string literals
+  across 39 files** in `apps/mobile/lib`. This is report-only in CI, not
+  blocking — retrofitting all 39 files to use `AppLocalizations`/`L10nService`
+  instead of literals is tracked as open work (`docs/release-audit.md`
+  RA-05), not something this pass silently fixed or hid.
+- **Game content locale** (prompts, target words, hints, per-question
+  feedback from JSON level content): real, verified — every game session
+  class reads a `locale` parameter instead of a hardcoded `'vi'` (see
+  `docs/game-catalog.md` and the locale-wiring commits on this branch).
+- **App-shell locale** (`MaterialApp.locale`): real, reads from
+  `ParentSettingsSnapshot.language` via a reactive provider, verified.
+- **First-launch language selection**: real, exists (`LocaleSelectionScreen`),
+  with 8 passing tests covering fresh install, VI selection, EN selection,
+  persistence, later change in Parent Settings, and local-data-reset
+  returning to selection.
+- **Section 9's QA matrix**: not re-verified item-by-item this pass (no
+  device/emulator run was performed for these specific checks — see
+  `docs/testing.md`'s integration-test gap). Do not treat those checkmarks
+  as current verification.
+
 *Tài liệu này là phần của PRD MI Academy v1.0 MVP.*
