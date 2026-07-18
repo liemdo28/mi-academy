@@ -16,6 +16,10 @@ class Settings(BaseSettings):
     # Database
     DATABASE_URL: str = "sqlite+aiosqlite:///./mi_academy.db"
     CREATE_TABLES_ON_STARTUP: bool = True
+    # Only applied for Postgres (see database.py) -- SQLite doesn't support
+    # these pool kwargs.
+    DB_POOL_SIZE: int = 20
+    DB_MAX_OVERFLOW: int = 20
 
     # JWT
     SECRET_KEY: str = "CHANGE_ME_IN_PRODUCTION_USE_64_CHARS_RANDOM"

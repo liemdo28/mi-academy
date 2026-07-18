@@ -4,6 +4,7 @@ import json
 from fastapi import APIRouter, Depends, HTTPException, Query, status
 from sqlalchemy import select
 from sqlalchemy.ext.asyncio import AsyncSession
+from sqlalchemy.orm import selectinload
 
 from apps.api.adaptive_ranking import rank_lessons
 from apps.api.database import get_db
@@ -35,7 +36,7 @@ async def list_lessons(
     language: str = Query(None),
     db: AsyncSession = Depends(get_db),
 ):
-    query = select(Lesson).where(Lesson.is_active == True)
+    query = select(Lesson).options(selectinload(Lesson.subject)).where(Lesson.is_active == True)
     if age_group:
         query = query.where(Lesson.age_group == age_group)
     if language:
@@ -126,6 +127,7 @@ async def get_recommended(
 
     result = await db.execute(
         select(Lesson)
+        .options(selectinload(Lesson.subject))
         .where(
             Lesson.is_active == True,
             Lesson.age_group == child.age_group,

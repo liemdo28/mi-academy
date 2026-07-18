@@ -3,6 +3,7 @@
 from fastapi import APIRouter, Depends, HTTPException, status
 from sqlalchemy import Integer, select, func
 from sqlalchemy.ext.asyncio import AsyncSession
+from sqlalchemy.orm import selectinload
 
 from apps.api.adaptive_ranking import rank_lessons
 from apps.api.database import get_db
@@ -117,7 +118,9 @@ async def get_daily_plan(
     child = next(c for c in profile.children if c.id == child_id)
 
     lessons_result = await db.execute(
-        select(Lesson).where(
+        select(Lesson)
+        .options(selectinload(Lesson.subject))
+        .where(
             Lesson.age_group == child.age_group,
             Lesson.is_active == True,
         )

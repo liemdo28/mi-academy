@@ -225,6 +225,11 @@ class ChildReward(Base):
     __tablename__ = "child_rewards"
     __table_args__ = (
         UniqueConstraint("child_id", "reward_id", name="uq_child_reward_once"),
+        # The (child_id, reward_id) unique constraint's index only helps
+        # child_id-prefixed lookups, not the child_id + unlocked_at range
+        # scan get_reports()'s "rewards today" count does on every parent
+        # dashboard load.
+        Index("idx_child_rewards_child_unlocked", "child_id", "unlocked_at"),
     )
 
     id: Mapped[str] = mapped_column(String(36), primary_key=True, default=_uuid)
@@ -238,6 +243,12 @@ class ChildReward(Base):
 
 class DailySession(Base):
     __tablename__ = "daily_sessions"
+    __table_args__ = (
+        # Every parent dashboard/report load filters by child_id (single or
+        # in_(child_ids)) with no index at all otherwise -- a full table
+        # scan that only gets worse as sessions accumulate.
+        Index("idx_daily_sessions_child", "child_id"),
+    )
 
     id: Mapped[str] = mapped_column(String(36), primary_key=True, default=_uuid)
     child_id: Mapped[str] = mapped_column(String(36), ForeignKey("child_profiles.id"), nullable=False)
