@@ -262,8 +262,16 @@ def write_levels(levels: list[dict]) -> None:
         lv for lv in data["levels"] if not lv["id"].startswith(GENERATED_ID_PREFIX)
     ]
     data["levels"] = existing + levels
+    # Compact (not indent=2) deliberately: flutter_test's asset-loading
+    # transport was found to hang indefinitely (reproduced on both Windows
+    # and Linux CI, confirmed via bisection) once a single bundled JSON
+    # asset exceeds roughly 51KB. Pretty-printing this file at 40 levels
+    # is ~66KB (over the limit); compact is ~31KB (comfortable margin).
+    # This does not affect production asset loading on a real device --
+    # only flutter_test's in-memory message transport.
     LEVELS_PATH.write_text(
-        json.dumps(data, ensure_ascii=False, indent=2) + "\n", encoding="utf-8"
+        json.dumps(data, ensure_ascii=False, separators=(",", ":")) + "\n",
+        encoding="utf-8",
     )
 
 
