@@ -3,19 +3,13 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import 'package:design_system/design_system.dart';
 import 'package:mi_game_core/mi_game_core.dart';
-import 'package:mi_game_ui/mi_game_ui.dart';
 import 'package:offline_sync/offline_sync.dart';
 import 'package:uuid/uuid.dart';
 
 import '../providers/providers.dart';
 import '../services/adaptive_learning_service.dart';
 import '../services/game_levels.dart';
-import '../src/games/choice/choice_game_screen.dart';
-import '../src/games/memory_cards/memory_cards_game.dart';
-import '../src/games/memory_cards/memory_cards_screen.dart';
-import '../src/games/robot_commands/robot_commands_screen.dart';
-import '../src/games/sound_match/sound_match_screen.dart';
-import '../src/games/word_builder/word_builder_screen.dart';
+import '../services/game_registry.dart';
 
 /// Production game launcher — the real `/game/:gameId` destination.
 ///
@@ -230,189 +224,28 @@ class _GameScreenState extends ConsumerState<GameScreen> {
   Widget _buildGame(MiLevel level, List<MiLevel> allLevels) {
     void onExit() => context.pop();
 
-    switch (widget.gameType) {
-      case 'word_builder':
-        return WordBuilderScreen(
-          level: level,
-          allLevels: allLevels,
-          onExit: onExit,
-          onComplete: _saveResult,
-          initialSnapshot: _initialSnapshot,
-          onSaveSnapshot: _onSaveSnapshot,
-          locale: _locale,
-        );
-      case 'sound_match':
-        return SoundMatchScreen(
-          level: level,
-          allLevels: allLevels,
-          onExit: onExit,
-          onComplete: _saveResult,
-          initialSnapshot: _initialSnapshot,
-          onSaveSnapshot: _onSaveSnapshot,
-          locale: _locale,
-        );
-      case 'math_race':
-        return ChoiceGameScreen(
-          title: 'Đường đua cộng trừ',
-          worldLabel: 'Xe MI tiến lên khi con chọn đúng.',
-          level: level,
-          allLevels: allLevels,
-          heroIcon: Icons.directions_car_rounded,
-          primaryColor: GameTheme.warning,
-          onExit: onExit,
-          onComplete: _saveResult,
-          initialSnapshot: _initialSnapshot,
-          onSaveSnapshot: _onSaveSnapshot,
-          locale: _locale,
-        );
-      case 'math_supermarket':
-        return ChoiceGameScreen(
-          title: 'Siêu thị toán học',
-          worldLabel: 'Giỏ hàng MI giúp con luyện tính tiền.',
-          level: level,
-          allLevels: allLevels,
-          heroIcon: Icons.shopping_cart_rounded,
-          primaryColor: MiGameColors.tertiary,
-          onExit: onExit,
-          onComplete: _saveResult,
-          initialSnapshot: _initialSnapshot,
-          onSaveSnapshot: _onSaveSnapshot,
-          locale: _locale,
-        );
-      case 'robot_commands':
-        return RobotCommandsScreen(
-          level: level,
-          allLevels: allLevels,
-          onExit: onExit,
-          onComplete: _saveResult,
-          initialSnapshot: _initialSnapshot,
-          onSaveSnapshot: _onSaveSnapshot,
-          locale: _locale,
-        );
-      case 'memory_cards':
-        return _MemoryCardsHost(
-          level: level,
-          allLevels: allLevels,
-          onExit: onExit,
-          onComplete: _saveResult,
-          childProfileId: widget.childId,
-          initialSnapshot: _initialSnapshot,
-          onSaveSnapshot: _onSaveSnapshot,
-          reduceMotion: _reduceMotion,
-          locale: _locale,
-        );
-      default:
-        return Scaffold(
-          appBar: AppBar(
-              leading:
-                  IconButton(icon: const Icon(Icons.close), onPressed: onExit)),
-          body:
-              Center(child: Text('Trò chơi "${widget.gameType}" chưa hỗ trợ')),
-        );
+    final entry = GameRegistry.find(widget.gameType);
+    if (entry == null || !entry.enabled) {
+      // Unregistered game ID (typo, not-yet-built game, or a disabled
+      // feature-flagged one) -- safe fallback, never a crash.
+      return Scaffold(
+        appBar: AppBar(
+            leading:
+                IconButton(icon: const Icon(Icons.close), onPressed: onExit)),
+        body: Center(child: Text('Trò chơi "${widget.gameType}" chưa hỗ trợ')),
+      );
     }
-  }
-}
 
-/// Memory Cards' [MemoryCardsScreen] reports completion with no built-in
-/// "you did it" UI or level-advance logic (unlike the other 5 games) — the
-/// caller owns that, same as `main.dart`'s debug picker does for
-/// `_MemoryCardsEntry`. This mirrors that pattern for the production route.
-class _MemoryCardsHost extends StatefulWidget {
-  const _MemoryCardsHost({
-    required this.level,
-    required this.allLevels,
-    required this.onExit,
-    required this.onComplete,
-    required this.childProfileId,
-    this.initialSnapshot,
-    this.onSaveSnapshot,
-    this.reduceMotion = false,
-    this.locale = 'vi',
-  });
-
-  final MiLevel level;
-  final List<MiLevel> allLevels;
-  final VoidCallback onExit;
-  final void Function(MiCompletionResult) onComplete;
-  final String childProfileId;
-  final MiGameSnapshot? initialSnapshot;
-  final void Function(MiGameSnapshot)? onSaveSnapshot;
-  final bool reduceMotion;
-  final String locale;
-
-  @override
-  State<_MemoryCardsHost> createState() => _MemoryCardsHostState();
-}
-
-class _MemoryCardsHostState extends State<_MemoryCardsHost> {
-  late MemoryCardsGame _game;
-  late MiLevel _level;
-
-  @override
-  void initState() {
-    super.initState();
-    _level = widget.level;
-    _game = MemoryCardsGame();
-  }
-
-  @override
-  void dispose() {
-    _game.dispose();
-    super.dispose();
-  }
-
-  void _onGameComplete(MiCompletionResult result) {
-    widget.onComplete(result);
-    final stars = result.metadata['stars'] as int? ?? 1;
-    showDialog(
-      context: context,
-      barrierDismissible: false,
-      builder: (_) => CompletionOverlay(
-        starsEarned: stars,
-        maxStars: 3,
-        message: 'Chúc mừng!',
-        score: result.score,
-        onNext: () {
-          Navigator.of(context).pop();
-          final nextIndex =
-              widget.allLevels.indexWhere((l) => l.id == _level.id) + 1;
-          if (nextIndex < widget.allLevels.length) {
-            setState(() {
-              _game = MemoryCardsGame();
-              _level = widget.allLevels[nextIndex];
-            });
-          } else {
-            widget.onExit();
-          }
-        },
-        onReplay: () {
-          Navigator.of(context).pop();
-          setState(() => _game = MemoryCardsGame());
-        },
-        onExit: () {
-          Navigator.of(context).pop();
-          widget.onExit();
-        },
-      ),
-    );
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return MemoryCardsScreen(
-      key: ValueKey(_level.id),
-      game: _game,
-      level: _level,
-      onComplete: _onGameComplete,
-      onExit: widget.onExit,
-      childProfileId: widget.childProfileId,
-      // Only the very first level shown may resume from a saved snapshot --
-      // "next level"/"replay" always start that level fresh.
-      initialSnapshot:
-          _level.id == widget.level.id ? widget.initialSnapshot : null,
-      onSaveSnapshot: widget.onSaveSnapshot,
-      reduceMotion: widget.reduceMotion,
-      locale: widget.locale,
+    return entry.builder(
+      level: level,
+      allLevels: allLevels,
+      onExit: onExit,
+      onComplete: _saveResult,
+      childProfileId: widget.childId,
+      initialSnapshot: _initialSnapshot,
+      onSaveSnapshot: _onSaveSnapshot,
+      reduceMotion: _reduceMotion,
+      locale: _locale,
     );
   }
 }
