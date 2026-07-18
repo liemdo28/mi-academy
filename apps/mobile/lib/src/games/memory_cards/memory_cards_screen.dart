@@ -17,6 +17,7 @@ class MemoryCardsScreen extends StatefulWidget {
     this.childProfileId = 'local-child',
     this.initialSnapshot,
     this.onSaveSnapshot,
+    this.reduceMotion = false,
   });
 
   final MemoryCardsGame game;
@@ -28,6 +29,12 @@ class MemoryCardsScreen extends StatefulWidget {
   /// the prior hardcoded placeholder for the debug game picker, which
   /// doesn't have a real backend child.
   final String childProfileId;
+
+  /// From the parent's accessibility settings (see
+  /// ParentSettingsSnapshot.reduceMotion) -- shortens the card-flip
+  /// animation to near-instant for children sensitive to motion, instead
+  /// of always animating at a fixed duration regardless of preference.
+  final bool reduceMotion;
 
   /// See WordBuilderScreen.initialSnapshot.
   final MiGameSnapshot? initialSnapshot;
@@ -80,7 +87,7 @@ class _MemoryCardsScreenState extends State<MemoryCardsScreen>
         childProfileId: widget.childProfileId,
         language: 'vi',
         ageGroup: '5-7',
-        accessibility: const AccessibilityPreferences(),
+        accessibility: AccessibilityPreferences(reducedMotion: widget.reduceMotion),
         audio: const AudioPreferences(),
         services: MiGameServices(
           saveSnapshot: _noopSave,
@@ -209,6 +216,7 @@ class _MemoryCardsScreenState extends State<MemoryCardsScreen>
                       cols: game.gridCols,
                       onTap: _onCardTap,
                       isProcessing: game.isProcessing,
+                      reduceMotion: widget.reduceMotion,
                     ),
                   ),
                 ),
@@ -289,12 +297,14 @@ class _CardGrid extends StatelessWidget {
     required this.cols,
     required this.onTap,
     required this.isProcessing,
+    this.reduceMotion = false,
   });
 
   final List<MemoryCard> cards;
   final int cols;
   final void Function(int) onTap;
   final bool isProcessing;
+  final bool reduceMotion;
 
   @override
   Widget build(BuildContext context) {
@@ -313,6 +323,7 @@ class _CardGrid extends StatelessWidget {
               width: cardWidth,
               height: cardHeight,
               onTap: isProcessing ? null : () => onTap(i),
+              reduceMotion: reduceMotion,
             );
           }),
         );
@@ -329,6 +340,7 @@ class _MemoryCardWidget extends StatelessWidget {
     required this.width,
     required this.height,
     this.onTap,
+    this.reduceMotion = false,
   });
 
   final MemoryCard card;
@@ -336,6 +348,7 @@ class _MemoryCardWidget extends StatelessWidget {
   final double width;
   final double height;
   final VoidCallback? onTap;
+  final bool reduceMotion;
 
   bool get _isFaceUp =>
       card.state == CardState.faceUp ||
@@ -361,7 +374,9 @@ class _MemoryCardWidget extends StatelessWidget {
       child: GestureDetector(
         onTap: onTap,
         child: AnimatedContainer(
-          duration: const Duration(milliseconds: 300),
+          duration: reduceMotion
+              ? Duration.zero
+              : const Duration(milliseconds: 300),
           width: width,
           height: height,
           decoration: BoxDecoration(

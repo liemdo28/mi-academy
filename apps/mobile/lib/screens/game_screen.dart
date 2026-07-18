@@ -45,6 +45,7 @@ class _GameScreenState extends ConsumerState<GameScreen> {
   List<MiLevel>? _levels;
   String? _error;
   MiGameSnapshot? _initialSnapshot;
+  bool _reduceMotion = false;
 
   @override
   void initState() {
@@ -67,9 +68,12 @@ class _GameScreenState extends ConsumerState<GameScreen> {
                 gameId: widget.gameType,
                 levelId: firstLevel.id,
               );
+      final settings = await ref.read(parentSettingsStoreProvider).load();
+      if (!mounted) return;
       setState(() {
         _levels = levels;
         _initialSnapshot = snapshot;
+        _reduceMotion = settings.reduceMotion;
       });
     } catch (e) {
       if (!mounted) return;
@@ -282,6 +286,7 @@ class _GameScreenState extends ConsumerState<GameScreen> {
           childProfileId: widget.childId,
           initialSnapshot: _initialSnapshot,
           onSaveSnapshot: _onSaveSnapshot,
+          reduceMotion: _reduceMotion,
         );
       default:
         return Scaffold(
@@ -308,6 +313,7 @@ class _MemoryCardsHost extends StatefulWidget {
     required this.childProfileId,
     this.initialSnapshot,
     this.onSaveSnapshot,
+    this.reduceMotion = false,
   });
 
   final MiLevel level;
@@ -317,6 +323,7 @@ class _MemoryCardsHost extends StatefulWidget {
   final String childProfileId;
   final MiGameSnapshot? initialSnapshot;
   final void Function(MiGameSnapshot)? onSaveSnapshot;
+  final bool reduceMotion;
 
   @override
   State<_MemoryCardsHost> createState() => _MemoryCardsHostState();
@@ -389,6 +396,7 @@ class _MemoryCardsHostState extends State<_MemoryCardsHost> {
       initialSnapshot:
           _level.id == widget.level.id ? widget.initialSnapshot : null,
       onSaveSnapshot: widget.onSaveSnapshot,
+      reduceMotion: widget.reduceMotion,
     );
   }
 }

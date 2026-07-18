@@ -299,18 +299,26 @@ class _AnswerSlots extends StatelessWidget {
         return SizedBox(
           width: 54,
           height: 58,
-          child: OutlinedButton(
-            onPressed: letter == null ? null : () => onRemove(index),
-            style: OutlinedButton.styleFrom(
-              side: const BorderSide(color: GameTheme.primary, width: 2),
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(GameTheme.buttonRadius),
+          child: Semantics(
+            label: letter == null
+                ? 'Ô trống ${index + 1}'
+                : letter == ' '
+                    ? 'Khoảng trắng, chạm để bỏ ra'
+                    : 'Chữ $letter, chạm để bỏ ra',
+            button: letter != null,
+            child: OutlinedButton(
+              onPressed: letter == null ? null : () => onRemove(index),
+              style: OutlinedButton.styleFrom(
+                side: const BorderSide(color: GameTheme.primary, width: 2),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(GameTheme.buttonRadius),
+                ),
+                backgroundColor: Colors.white,
               ),
-              backgroundColor: Colors.white,
-            ),
-            child: Text(
-              letter == ' ' ? '␣' : letter ?? '',
-              style: GameTheme.headingMedium,
+              child: Text(
+                letter == ' ' ? '␣' : letter ?? '',
+                style: GameTheme.headingMedium,
+              ),
             ),
           ),
         );
@@ -336,18 +344,22 @@ class _LetterBank extends StatelessWidget {
         return SizedBox(
           width: 56,
           height: 56,
-          child: ElevatedButton(
-            onPressed: () => onPick(index),
-            style: ElevatedButton.styleFrom(
-              backgroundColor: GameTheme.secondary,
-              foregroundColor: Colors.white,
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(GameTheme.buttonRadius),
+          child: Semantics(
+            label: letter == ' ' ? 'Khoảng trắng' : 'Chữ $letter',
+            button: true,
+            child: ElevatedButton(
+              onPressed: () => onPick(index),
+              style: ElevatedButton.styleFrom(
+                backgroundColor: GameTheme.secondary,
+                foregroundColor: Colors.white,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(GameTheme.buttonRadius),
+                ),
               ),
-            ),
-            child: Text(
-              letter == ' ' ? '␣' : letter,
-              style: GameTheme.headingMedium.copyWith(color: Colors.white),
+              child: Text(
+                letter == ' ' ? '␣' : letter,
+                style: GameTheme.headingMedium.copyWith(color: Colors.white),
+              ),
             ),
           ),
         );

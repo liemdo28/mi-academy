@@ -391,6 +391,29 @@ void main() {
     expect(completed, isTrue);
   });
 
+  testWidgets(
+      'Memory Cards respects reduceMotion by collapsing the flip animation',
+      (tester) async {
+    await tester.pumpWidget(
+      MaterialApp(
+        home: MemoryCardsScreen(
+          game: MemoryCardsGame(),
+          level: memoryCardsLevel,
+          onComplete: (_) {},
+          reduceMotion: true,
+        ),
+      ),
+    );
+    await tester.pump(const Duration(milliseconds: 100));
+    await tester.tap(find.text('Tiếp tục'));
+    await tester.pump();
+
+    final container = tester.widget<AnimatedContainer>(
+      find.byType(AnimatedContainer).first,
+    );
+    expect(container.duration, Duration.zero);
+  });
+
   testWidgets('Robot Commands renders playable controls', (tester) async {
     await tester.pumpWidget(
       const MaterialApp(
@@ -741,6 +764,8 @@ void main() {
       240,
       scrollable: find.byType(Scrollable).first,
     );
+    await tester.drag(find.byType(Scrollable).first, const Offset(0, -80));
+    await tester.pump();
     await tester.tap(find.text('Tải nội dung offline'));
     await tester.pump();
 
@@ -755,12 +780,34 @@ void main() {
       240,
       scrollable: find.byType(Scrollable).first,
     );
+    await tester.drag(find.byType(Scrollable).first, const Offset(0, -80));
+    await tester.pump();
     await tester.tap(find.text('Xuất dữ liệu của bé'));
     await tester.pump();
 
     expect(find.text('Bản xuất dữ liệu đã sẵn sàng'), findsOneWidget);
     expect(
         store.lastExportJson, contains('mi-academy-parent-settings-export-v1'));
+  });
+
+  testWidgets('Parent settings reduce-motion toggle persists to the store',
+      (tester) async {
+    final store = MemoryParentSettingsStore();
+    await tester.pumpWidget(
+      ProviderScope(
+        child: MaterialApp(
+          home: ParentSettingsScreen(store: store),
+        ),
+      ),
+    );
+    await tester.pump();
+
+    expect((await store.load()).reduceMotion, isFalse);
+
+    await tester.tap(find.text('Giảm hiệu ứng chuyển động'));
+    await tester.pump();
+
+    expect((await store.load()).reduceMotion, isTrue);
   });
 
   testWidgets('Parent settings persist after reopening the screen',
@@ -776,6 +823,13 @@ void main() {
     );
     await tester.pump();
 
+    await tester.scrollUntilVisible(
+      find.text('English'),
+      240,
+      scrollable: find.byType(Scrollable).first,
+    );
+    await tester.drag(find.byType(Scrollable).first, const Offset(0, -80));
+    await tester.pump();
     await tester.tap(find.text('English'));
     await tester.pump();
     await tester.scrollUntilVisible(
@@ -783,7 +837,16 @@ void main() {
       240,
       scrollable: find.byType(Scrollable).first,
     );
+    await tester.drag(find.byType(Scrollable).first, const Offset(0, -80));
+    await tester.pump();
     await tester.tap(find.text('Tải nội dung offline'));
+    await tester.pump();
+    await tester.scrollUntilVisible(
+      find.text('Xuất dữ liệu của bé'),
+      240,
+      scrollable: find.byType(Scrollable).first,
+    );
+    await tester.drag(find.byType(Scrollable).first, const Offset(0, -80));
     await tester.pump();
     await tester.tap(find.text('Xuất dữ liệu của bé'));
     await tester.pump();
@@ -808,6 +871,8 @@ void main() {
       240,
       scrollable: find.byType(Scrollable).first,
     );
+    await tester.drag(find.byType(Scrollable).first, const Offset(0, -80));
+    await tester.pump();
     expect(find.text('Sẵn sàng học không cần mạng'), findsOneWidget);
     expect(find.text('Bản xuất dữ liệu đã sẵn sàng'), findsOneWidget);
   });
@@ -828,6 +893,8 @@ void main() {
       240,
       scrollable: find.byType(Scrollable).first,
     );
+    await tester.drag(find.byType(Scrollable).first, const Offset(0, -80));
+    await tester.pump();
     await tester.drag(find.byType(Scrollable).first, const Offset(0, -120));
     await tester.pump();
     await tester.tap(find.text('Xóa dữ liệu của bé'));
