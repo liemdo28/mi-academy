@@ -100,8 +100,9 @@ class _ChildHomeScreenState extends ConsumerState<ChildHomeScreen> {
                   height: MiTokens.touchTargetChild,
                   alignment: Alignment.center,
                   decoration: BoxDecoration(
-                    color:
-                        _parentGateHolding ? MiColors.primarySoft : Colors.transparent,
+                    color: _parentGateHolding
+                        ? MiColors.primarySoft
+                        : Colors.transparent,
                     shape: BoxShape.circle,
                   ),
                   child: const MiIcon(
@@ -232,8 +233,8 @@ class _ChildHomeScreenState extends ConsumerState<ChildHomeScreen> {
           ),
           BottomNavigationBarItem(
             icon: MiIcon(MiIconName.garden, color: MiColors.textSecondary),
-            activeIcon:
-                MiIcon(MiIconName.garden, filled: true, color: MiColors.primary),
+            activeIcon: MiIcon(MiIconName.garden,
+                filled: true, color: MiColors.primary),
             label: 'Vườn',
           ),
         ],
@@ -245,7 +246,8 @@ class _ChildHomeScreenState extends ConsumerState<ChildHomeScreen> {
     final title = item['title'] as String? ?? 'Bài học';
     final subject = item['subject'] as String? ?? '';
     final minutes = item['estimated_minutes'] ?? 5;
-    final detail = subject.isEmpty ? '$minutes phút' : '$subject · $minutes phút';
+    final detail =
+        subject.isEmpty ? '$minutes phút' : '$subject · $minutes phút';
     return '$title — $detail';
   }
 
@@ -308,7 +310,9 @@ class _ChildHomeScreenState extends ConsumerState<ChildHomeScreen> {
                     overflow: TextOverflow.ellipsis,
                   ),
                   Text(
-                    subject.isEmpty ? '$minutes phút' : '$subject - $minutes phút',
+                    subject.isEmpty
+                        ? '$minutes phút'
+                        : '$subject - $minutes phút',
                     style: Theme.of(context).textTheme.bodyMedium,
                   ),
                 ],

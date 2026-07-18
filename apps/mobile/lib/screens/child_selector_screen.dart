@@ -89,11 +89,9 @@ class _ChildSelectorScreenState extends ConsumerState<ChildSelectorScreen> {
                                 _ChildAvatarCard(
                                   avatarId: child['avatar_id'] as String? ??
                                       'avatar_01',
-                                  nickname:
-                                      child['nickname'] as String? ?? '',
+                                  nickname: child['nickname'] as String? ?? '',
                                   ageGroup:
-                                      child['age_group'] as String? ??
-                                          'junior',
+                                      child['age_group'] as String? ?? 'junior',
                                   onTap: () async {
                                     await ref
                                         .read(activeChildProvider.notifier)

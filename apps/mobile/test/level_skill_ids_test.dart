@@ -29,12 +29,14 @@ const _levelWithoutMetadata = MiLevel(
 
 void main() {
   test('uses the level\'s real authored skillIds when present', () {
-    final result = skillIdsFor(_levelWithSkillIds, fallback: const ['vocabulary']);
+    final result =
+        skillIdsFor(_levelWithSkillIds, fallback: const ['vocabulary']);
     expect(result, ['letters.word_building']);
   });
 
   test('falls back to the given default when a level has no skillIds', () {
-    final result = skillIdsFor(_levelWithoutMetadata, fallback: const ['vocabulary']);
+    final result =
+        skillIdsFor(_levelWithoutMetadata, fallback: const ['vocabulary']);
     expect(result, ['vocabulary']);
   });
 }

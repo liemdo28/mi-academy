@@ -63,8 +63,8 @@ class ParentDashboardScreen extends ConsumerWidget {
                   ),
                 )
               else
-                ...children.children.map((child) =>
-                    _buildChildCard(context, child)),
+                ...children.children
+                    .map((child) => _buildChildCard(context, child)),
             ],
           ),
         ),
@@ -183,7 +183,8 @@ class ParentDashboardScreen extends ConsumerWidget {
     );
   }
 
-  Future<void> _showCreateChildDialog(BuildContext context, WidgetRef ref) async {
+  Future<void> _showCreateChildDialog(
+      BuildContext context, WidgetRef ref) async {
     final result = await showDialog<({String nickname, String ageGroup})>(
       context: context,
       builder: (context) => const AddChildDialog(),

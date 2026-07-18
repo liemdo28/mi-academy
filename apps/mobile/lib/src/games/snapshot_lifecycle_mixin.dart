@@ -9,7 +9,8 @@ import 'package:mi_game_core/mi_game_core.dart';
 /// `onSaveSnapshot` callback at the right moments. The screen never writes
 /// to Hive or calls the backend itself — see [onSaveSnapshot]'s doc on the
 /// widget classes that use this.
-mixin SnapshotLifecycleMixin<T extends StatefulWidget> on State<T>, WidgetsBindingObserver {
+mixin SnapshotLifecycleMixin<T extends StatefulWidget>
+    on State<T>, WidgetsBindingObserver {
   /// Returns the current in-progress snapshot, or null if there's nothing
   /// worth saving right now (e.g. the level already completed).
   MiGameSnapshot? captureSnapshot();

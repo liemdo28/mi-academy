@@ -29,7 +29,8 @@ void main() {
     // secret-entropy heuristic in CI as a false positive.
     BetaDiagnostics.instance.record(
       category: DiagnosticCategory.authentication,
-      summary: 'refresh error: {"refresh_token": "placeholder-not-a-real-token-value", "password": "placeholder-not-a-real-password"}',
+      summary:
+          'refresh error: {"refresh_token": "placeholder-not-a-real-token-value", "password": "placeholder-not-a-real-password"}',
     );
 
     final stored = BetaDiagnostics.instance.records.single.summary;

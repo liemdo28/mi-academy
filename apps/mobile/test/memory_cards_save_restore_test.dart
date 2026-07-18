@@ -39,8 +39,9 @@ void main() {
         hasLength(2));
 
     final remainingPair = _pairIndexes(restoredGame).values.firstWhere(
-      (indexes) => restoredGame.cards[indexes[0]].state != CardState.matched,
-    );
+          (indexes) =>
+              restoredGame.cards[indexes[0]].state != CardState.matched,
+        );
     await restoredGame.handleAction(
       MiGameAction(type: 'tap', targetId: remainingPair[0].toString()),
     );
@@ -76,7 +77,8 @@ void main() {
     expect(encoded, isNot(contains('email')));
     expect(encoded, isNot(contains('token')));
     expect(encoded, isNot(contains('answer')));
-    expect(snapshot.storageKey, 'memory_cards_${memoryCardsLevel.id}_offline-child');
+    expect(snapshot.storageKey,
+        'memory_cards_${memoryCardsLevel.id}_offline-child');
 
     await game.dispose();
   });
