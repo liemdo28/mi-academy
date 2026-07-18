@@ -183,9 +183,15 @@ class ApiService {
 
   Future<void> logout() async {
     try {
+      // Revokes every refresh token the backend has issued for this user
+      // (see apps/api/routes/auth.py's logout). Best-effort: even if this
+      // call fails (offline, expired access token, etc.), still clear the
+      // local tokens below so the device stops presenting as signed in.
       await _dio.post(ApiPaths.authLogout);
     } catch (_) {
-      // Stateless logout — ignore errors
+      // Ignore -- the server-side revocation is a nice-to-have here since
+      // local tokens are cleared regardless; going offline shouldn't block
+      // a local sign-out.
     }
     await _clearTokens();
   }
