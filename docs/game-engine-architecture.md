@@ -57,6 +57,62 @@ the 24 missing games' content can be authored against them.
 3. Only then author the 24 games' content and thin per-game
    configuration/skin on top of the shared engines.
 
+## Update: Matching Engine built (Milestone 1B, 2026-07-18)
+
+One of the four Milestone 1 WS5 engines — **Matching Engine** — is now a
+real, tested, shared component: `packages/mi_game_engines/` (new package,
+`lib/src/matching/{matching_content,matching_controller,matching_screen}.dart`).
+
+- **Typed content model**: `MatchingContent`/`MatchingPair`/`MatchingItem`
+  (not an untyped `Map`), parsed via `MatchingContent.fromJson` with
+  actionable `MatchingContentException` messages for malformed input
+  (missing fields, out-of-range difficulty, empty pairs, duplicate pair
+  IDs) rather than a bare cast failure.
+- **Controller**: `MatchingController` (plain `ChangeNotifier`, no
+  dependency on Riverpod/Provider/any child-profile repository) — tap-to-
+  match selection state, attempt counting, 3/2/1-star scoring (same
+  formula shape as the five Python game engines'
+  `calculate_stars`), hint show/dismiss, pause/resume, retry.
+- **Renderer**: `MatchingScreen` — two shuffled columns (deterministic
+  per-content-id shuffle, not `dart:math`'s `Random` directly, so tests are
+  reproducible), correct/incorrect feedback banner, hint banner, pause
+  overlay, completion view with stars, and a recoverable error screen for
+  malformed content (verified via a widget test that deliberately pumps
+  broken JSON and asserts the error state renders instead of throwing).
+  Responsive via `LayoutBuilder` (wider padding above 600 logical pixels);
+  `reducedMotion` collapses `AnimatedContainer` durations to zero
+  (verified by a widget test asserting every `AnimatedContainer.duration`
+  is `Duration.zero`); every tappable item has a `Semantics` label.
+- **Example content**: one Vietnamese and one English example (a letter↔
+  picture matching level), used directly in the test suite, not left as an
+  untested placeholder.
+- **Tests**: `packages/mi_game_engines/test/matching_engine_test.dart` — 19
+  tests covering content parsing (valid VI, valid EN, missing field,
+  invalid difficulty, empty pairs, duplicate IDs), controller behavior
+  (correct/incorrect pair, no-op on re-selecting a matched item, retry,
+  perfect-run 3 stars, degraded-attempts fewer stars, pause/resume, hint
+  toggle), and widget behavior (renders instruction + both columns, error
+  state for malformed content, full completion flow calling `onComplete`,
+  reduced-motion durations). All 19 pass; `flutter analyze` on the package
+  is clean.
+
+**Sequence Engine, Drag-and-drop Placement Engine, and Multi-select
+Engine were not built this pass** — each is comparable in scope to what
+Matching Engine took, and building three more real (not stubbed) engines
+with the same bar (typed model, controller, renderer, VI+EN examples,
+unit+widget+accessibility+malformed-content tests) did not fit in this
+session. Do not read "one engine built" as "the pattern is proven, the
+rest are trivial" — each engine's interaction model is genuinely
+different (ordering/reordering for Sequence, drag targets/snapping for
+Placement, min/max selection constraints for Multi-select), so each needs
+its own real design, not a copy-paste of Matching Engine's shape.
+
+**Not wired into any of the six existing games or the game registry this
+pass** — `packages/mi_game_engines` is a standalone package with its own
+tests; migrating an existing game onto it, or building a 7th
+game against it, is separate follow-up work (see docs/game-catalog.md and
+WS6 in docs/release-audit.md).
+
 ## Recommendation
 
 Do not attempt this refactor opportunistically while also trying to ship
