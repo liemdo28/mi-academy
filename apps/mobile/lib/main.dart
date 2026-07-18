@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:mi_game_core/mi_game_core.dart';
@@ -8,6 +10,7 @@ import 'app.dart' as production_app;
 import 'providers/providers.dart';
 import 'screens/parent_pin_screen.dart';
 import 'screens/parent_settings_screen.dart';
+import 'services/beta_diagnostics.dart';
 import 'services/game_levels.dart';
 import 'services/parent_settings_store.dart';
 import 'src/games/choice/choice_game_screen.dart';
@@ -17,8 +20,33 @@ import 'src/games/robot_commands/robot_commands_screen.dart';
 import 'src/games/sound_match/sound_match_screen.dart';
 import 'src/games/word_builder/word_builder_screen.dart';
 
+/// Records unhandled errors into the local, privacy-safe beta diagnostics
+/// log (see beta_diagnostics.dart) instead of only crashing silently --
+/// no external crash-reporting service is configured in this environment,
+/// so this is the honest, repository-controlled equivalent: a bounded,
+/// redacted, exportable local record a tester/developer can attach to a
+/// bug report.
+void _recordUnhandledError(Object error, StackTrace? stack) {
+  try {
+    BetaDiagnostics.instance.record(
+      category: DiagnosticCategory.unexpected,
+      summary: error.toString(),
+    );
+  } catch (_) {
+    // Recording a diagnostic must never itself crash the app.
+  }
+}
+
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  FlutterError.onError = (details) {
+    FlutterError.presentError(details);
+    _recordUnhandledError(details.exception, details.stack);
+  };
+  PlatformDispatcher.instance.onError = (error, stack) {
+    _recordUnhandledError(error, stack);
+    return true;
+  };
   try {
     // Opens the Hive boxes the offline sync queue needs. Must run before
     // any widget reads `syncServiceProvider`. initHive() itself recovers
@@ -37,6 +65,14 @@ Future<void> main() async {
       ),
     );
   } catch (error) {
+    try {
+      BetaDiagnostics.instance.record(
+        category: DiagnosticCategory.fatalStartup,
+        summary: error.toString(),
+      );
+    } catch (_) {
+      // Recording a diagnostic must never itself crash the app.
+    }
     runApp(_FatalStartupErrorApp(error: error));
   }
 }
