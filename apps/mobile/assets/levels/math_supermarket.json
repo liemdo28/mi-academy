@@ -71,7 +71,10 @@
       "assetRefs": [
         "mi-fruit-orange",
         "mi-coin-1"
-      ]
+      ],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
     },
     {
       "id": "ms-lv02",
@@ -141,7 +144,10 @@
       "assetRefs": [
         "mi-fruit-apple",
         "mi-fruit-banana"
-      ]
+      ],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
     },
     {
       "id": "ms-lv03",
@@ -211,7 +217,10 @@
       "assetRefs": [
         "mi-drink-milk",
         "mi-drink-water"
-      ]
+      ],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
     },
     {
       "id": "ms-lv04",
@@ -282,7 +291,10 @@
         "mi-food-bread",
         "mi-drink-milk",
         "mi-fruit-mixed"
-      ]
+      ],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
     },
     {
       "id": "ms-lv05",
@@ -352,7 +364,10 @@
       "assetRefs": [
         "mi-school-book",
         "mi-school-pen"
-      ]
+      ],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
     },
     {
       "id": "ms-lv06",
@@ -421,7 +436,10 @@
       },
       "assetRefs": [
         "mi-clothes-shirt"
-      ]
+      ],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
     },
     {
       "id": "ms-lv07",
@@ -490,7 +508,10 @@
       },
       "assetRefs": [
         "mi-drink-milk"
-      ]
+      ],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
     },
     {
       "id": "ms-lv08",
@@ -561,7 +582,10 @@
         "mi-school-pen",
         "mi-school-notebook",
         "mi-candy"
-      ]
+      ],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
     },
     {
       "id": "ms-lv09",
@@ -630,7 +654,10 @@
       },
       "assetRefs": [
         "mi-clothes-shirt"
-      ]
+      ],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
     },
     {
       "id": "ms-lv10",
@@ -701,7 +728,10 @@
       "assetRefs": [
         "mi-food-rice",
         "mi-food-sugar"
-      ]
+      ],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
     }
   ]
 }

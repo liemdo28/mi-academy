@@ -69,7 +69,10 @@
       },
       "assetRefs": [
         "mi-fruit-apple"
-      ]
+      ],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
     },
     {
       "id": "mr-lv02",
@@ -135,7 +138,10 @@
         "trackLength": 100,
         "timeLimitSec": 0
       },
-      "assetRefs": []
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
     },
     {
       "id": "mr-lv03",
@@ -201,7 +207,10 @@
         "trackLength": 150,
         "timeLimitSec": 0
       },
-      "assetRefs": []
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
     },
     {
       "id": "mr-lv04",
@@ -267,7 +276,10 @@
         "trackLength": 150,
         "timeLimitSec": 0
       },
-      "assetRefs": []
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
     },
     {
       "id": "mr-lv05",
@@ -333,7 +345,10 @@
         "trackLength": 200,
         "timeLimitSec": 0
       },
-      "assetRefs": []
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
     },
     {
       "id": "mr-lv06",
@@ -399,7 +414,10 @@
         "trackLength": 200,
         "timeLimitSec": 0
       },
-      "assetRefs": []
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
     },
     {
       "id": "mr-lv07",
@@ -465,7 +483,10 @@
         "trackLength": 250,
         "timeLimitSec": 0
       },
-      "assetRefs": []
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
     },
     {
       "id": "mr-lv08",
@@ -532,7 +553,10 @@
         "trackLength": 250,
         "timeLimitSec": 0
       },
-      "assetRefs": []
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
     },
     {
       "id": "mr-lv09",
@@ -598,7 +622,10 @@
         "trackLength": 300,
         "timeLimitSec": 0
       },
-      "assetRefs": []
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
     },
     {
       "id": "mr-lv10",
@@ -664,7 +691,10 @@
         "trackLength": 300,
         "timeLimitSec": 0
       },
-      "assetRefs": []
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
     }
   ]
 }

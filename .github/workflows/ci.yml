@@ -22,8 +22,17 @@ jobs:
         with:
           python-version: ${{ env.PYTHON_VERSION }}
 
+      - name: Install content-schema validator dependency
+        run: python -m pip install jsonschema==4.26.0
+
       - name: Validate MVP content
         run: python tools/content_validator/validate_content.py
+
+      - name: Validate versioned content schema (WS3)
+        run: python tools/content_schema_validator.py --json
+
+      - name: Prove malformed content fixtures are rejected
+        run: python tools/content_schema_validator.py --check-malformed --json
 
       - name: Verify MVP levels are solvable
         run: python tools/level_validator/solve_levels.py

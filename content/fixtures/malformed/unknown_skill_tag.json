@@ -1,0 +1,12 @@
+{
+  "id": "malformed-unknown-skill-tag",
+  "gameId": "word_builder",
+  "levelNumber": 1,
+  "difficulty": 1,
+  "localizedContent": {
+    "vi": {"prompt": "Ghép chữ thành từ!"},
+    "en": {"prompt": "Build the word!"}
+  },
+  "hints": [{"text": "References a skill tag that doesn't exist, on purpose"}],
+  "metadata": {"ageGroup": "junior", "skillIds": ["letters.this_skill_does_not_exist"]}
+}
