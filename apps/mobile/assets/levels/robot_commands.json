@@ -52,7 +52,7 @@
         },
         "ageGroup": "junior",
         "skillIds": [
-          "logic.programming_sequences"
+          "logic.sequence.programming"
         ]
       },
       "assetRefs": []
@@ -108,7 +108,7 @@
         },
         "ageGroup": "junior",
         "skillIds": [
-          "logic.programming_sequences"
+          "logic.sequence.programming"
         ]
       },
       "assetRefs": []
@@ -168,7 +168,7 @@
         },
         "ageGroup": "junior",
         "skillIds": [
-          "logic.programming_sequences"
+          "logic.sequence.programming"
         ]
       },
       "assetRefs": []
@@ -228,7 +228,7 @@
         },
         "ageGroup": "junior",
         "skillIds": [
-          "logic.programming_sequences"
+          "logic.sequence.programming"
         ]
       },
       "assetRefs": []
@@ -356,7 +356,7 @@
         },
         "ageGroup": "explorer",
         "skillIds": [
-          "logic.programming_sequences"
+          "logic.sequence.programming"
         ]
       },
       "assetRefs": []
@@ -425,7 +425,7 @@
         "ageGroup": "explorer",
         "skillIds": [
           "logic.loops",
-          "logic.programming_sequences"
+          "logic.sequence.programming"
         ]
       },
       "assetRefs": []
@@ -636,7 +636,7 @@
         "ageGroup": "master",
         "skillIds": [
           "logic.algorithms",
-          "logic.programming_sequences"
+          "logic.sequence.programming"
         ],
         "obstacles": [],
         "collectibles": [
