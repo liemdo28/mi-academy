@@ -126,6 +126,14 @@ class AuthNotifier extends Notifier<AuthState> {
     // Re-lock the parent area so a fresh sign-in (possibly a different
     // parent, on a shared device) must re-verify the PIN.
     ref.read(parentGateProvider.notifier).state = false;
+    // Clear the selected child too -- ActiveChildNotifier.loadChildren()
+    // preserves the previous childId across a refresh (correct for the
+    // same parent's session), so without this a second parent logging in
+    // on the same device would inherit the first parent's childId until
+    // the backend's ownership check rejects it with 403s. The backend
+    // check means this was never a cross-family data leak, but it was a
+    // real broken-flow bug on shared devices.
+    ref.read(activeChildProvider.notifier).clearSelection();
   }
 
   /// Resets auth state after the session has already died server-side (an
@@ -135,6 +143,7 @@ class AuthNotifier extends Notifier<AuthState> {
   /// [ApiService] by the time this runs.
   void forceLogout() {
     state = const AuthState();
+    ref.read(activeChildProvider.notifier).clearSelection();
     ref.read(parentGateProvider.notifier).state = false;
   }
 
