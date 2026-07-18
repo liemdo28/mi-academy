@@ -9,7 +9,9 @@ from alembic import context
 
 # Make the repo root importable so `apps.api.*` resolves the same way it
 # does when the app runs (alembic is invoked with cwd=apps/api).
-sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..", "..")))
+sys.path.insert(
+    0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..", ".."))
+)
 
 from apps.api.config import settings  # noqa: E402
 from apps.api.database import Base  # noqa: E402
@@ -78,9 +80,7 @@ def run_migrations_online() -> None:
     )
 
     with connectable.connect() as connection:
-        context.configure(
-            connection=connection, target_metadata=target_metadata
-        )
+        context.configure(connection=connection, target_metadata=target_metadata)
 
         with context.begin_transaction():
             context.run_migrations()

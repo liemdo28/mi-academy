@@ -108,7 +108,10 @@ def measure(*, require_build: bool = True) -> PerformanceBaseline:
             if require_build
             else "Web build was not built in this context (not measured)."
         )
-    elif web.mib > thresholds["web_build_warn_mib"] and status not in {"fail", "not_built"}:
+    elif web.mib > thresholds["web_build_warn_mib"] and status not in {
+        "fail",
+        "not_built",
+    }:
         status = "warn"
         notes.append("Web build exceeds warning threshold.")
 
@@ -133,16 +136,16 @@ def main() -> int:
     result = measure()
     data = asdict(result)
     if args.json:
-      print(json.dumps(data, indent=2, ensure_ascii=False))
+        print(json.dumps(data, indent=2, ensure_ascii=False))
     else:
-      print(f"Status: {result.status}")
-      print(f"Android debug APK: {result.android_debug_apk.mib} MiB")
-      print(f"Web build: {result.web_build.mib} MiB")
-      print("Largest web files:")
-      for item in result.largest_web_files:
-          print(f"  {item.path}: {item.mib} MiB")
-      for note in result.notes:
-          print(f"Note: {note}")
+        print(f"Status: {result.status}")
+        print(f"Android debug APK: {result.android_debug_apk.mib} MiB")
+        print(f"Web build: {result.web_build.mib} MiB")
+        print("Largest web files:")
+        for item in result.largest_web_files:
+            print(f"  {item.path}: {item.mib} MiB")
+        for note in result.notes:
+            print(f"Note: {note}")
     return 0 if result.status in {"pass", "warn"} else 1
 
 

@@ -2,11 +2,13 @@ import pytest
 from starlette.applications import Starlette
 from starlette.requests import Request
 
-from apps.api.config import DEFAULT_SECRET_KEY, Settings, get_settings
+from apps.api.config import DEFAULT_SECRET_KEY, get_settings
 from apps.api.middleware.rate_limit import InMemoryRateLimiter, RateLimitMiddleware
 
 
-def _make_request(path: str = "/", headers: dict | None = None, client_host: str = "1.2.3.4") -> Request:
+def _make_request(
+    path: str = "/", headers: dict | None = None, client_host: str = "1.2.3.4"
+) -> Request:
     headers = headers or {}
     scope = {
         "type": "http",
@@ -58,7 +60,9 @@ def test_client_id_ignores_spoofed_forwarded_header_by_default():
     fresh rate-limit bucket on every request, defeating brute-force
     protection on login/PIN-verify entirely."""
     middleware = RateLimitMiddleware(Starlette(), app_env="test", redis_url=None)
-    request = _make_request(headers={"X-Forwarded-For": "9.9.9.9"}, client_host="1.2.3.4")
+    request = _make_request(
+        headers={"X-Forwarded-For": "9.9.9.9"}, client_host="1.2.3.4"
+    )
 
     assert middleware._get_client_id(request) == "1.2.3.4"
 
@@ -67,7 +71,9 @@ def test_client_id_honors_forwarded_header_when_proxy_is_trusted():
     middleware = RateLimitMiddleware(
         Starlette(), app_env="test", redis_url=None, trust_proxy_headers=True
     )
-    request = _make_request(headers={"X-Forwarded-For": "9.9.9.9"}, client_host="1.2.3.4")
+    request = _make_request(
+        headers={"X-Forwarded-For": "9.9.9.9"}, client_host="1.2.3.4"
+    )
 
     assert middleware._get_client_id(request) == "9.9.9.9"
 
@@ -93,6 +99,10 @@ def await_allowed(middleware: RateLimitMiddleware, request: Request) -> bool:
 
     client_id = middleware._get_client_id(request)
     path = request.url.path
-    limit = middleware.pin_limit if path.startswith("/api/v1/parent/pin") else middleware.default_limit
+    limit = (
+        middleware.pin_limit
+        if path.startswith("/api/v1/parent/pin")
+        else middleware.default_limit
+    )
     key = f"{client_id}:{path.split('/')[2] if len(path.split('/')) > 2 else 'root'}"
     return asyncio.run(middleware.limiter.is_allowed(key, limit))

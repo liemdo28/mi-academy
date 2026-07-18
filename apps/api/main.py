@@ -86,7 +86,11 @@ async def health_ready():
         async with engine.connect() as conn:
             await conn.execute(text("SELECT 1"))
     except Exception:
-        return Response(status_code=503, content='{"status":"not_ready"}', media_type="application/json")
+        return Response(
+            status_code=503,
+            content='{"status":"not_ready"}',
+            media_type="application/json",
+        )
     return {"status": "ready"}
 
 

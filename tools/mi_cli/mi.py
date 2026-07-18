@@ -16,11 +16,11 @@ Usage:
     mi scenario run   Run integration scenario
     mi report         Generate integration report
 """
+
 from __future__ import annotations
 
 import argparse
 import json
-import os
 import shutil
 import subprocess
 import sys
@@ -41,10 +41,12 @@ REQUIRED_DIRS = [CONTRACTS_DIR, PACKAGES_DIR, FIXTURES_DIR, SCENARIOS_DIR, MOCKS
 
 # ─── Helpers ──────────────────────────────────────────────────────────────────
 
+
 def _print_header(text: str):
-    print(f"\n{'='*60}")
+    print(f"\n{'=' * 60}")
     print(f"  MI Academy - {text}")
-    print(f"{'='*60}\n")
+    print(f"{'=' * 60}\n")
+
 
 def _print_check(label: str, status: str, detail: str = ""):
     icon = {"PASS": "[PASS]", "WARN": "[WARN]", "FAIL": "[FAIL]"}.get(status, "[?]")
@@ -53,16 +55,22 @@ def _print_check(label: str, status: str, detail: str = ""):
         line += f" - {detail}"
     print(line)
 
-def _run(cmd: list[str], cwd: Path | None = None, check: bool = False) -> subprocess.CompletedProcess:
+
+def _run(
+    cmd: list[str], cwd: Path | None = None, check: bool = False
+) -> subprocess.CompletedProcess:
     executable = shutil.which(cmd[0])
     resolved_cmd = [executable or cmd[0], *cmd[1:]]
     try:
-        return subprocess.run(resolved_cmd, cwd=cwd or PROJECT_ROOT, capture_output=True, text=True)
+        return subprocess.run(
+            resolved_cmd, cwd=cwd or PROJECT_ROOT, capture_output=True, text=True
+        )
     except FileNotFoundError as exc:
         return subprocess.CompletedProcess(cmd, 127, "", str(exc))
 
 
 # ─── mi doctor ──────────────────────────────────────────────────────────────
+
 
 def cmd_doctor(args):
     _print_header("Repository Doctor - Environment Health Check")
@@ -84,8 +92,26 @@ def cmd_doctor(args):
     _print_header("Required Files")
     required_files = [
         (CONTRACTS_DIR / "openapi.yaml", "OpenAPI spec"),
-        (PROJECT_ROOT / "packages" / "mi_game_core" / "lib" / "src" / "contracts" / "mi_game_result.dart", "Game result contract (Dart)"),
-        (PROJECT_ROOT / "packages" / "mi_game_core" / "lib" / "src" / "contracts" / "mi_progress_gateway.dart", "Progress gateway"),
+        (
+            PROJECT_ROOT
+            / "packages"
+            / "mi_game_core"
+            / "lib"
+            / "src"
+            / "contracts"
+            / "mi_game_result.dart",
+            "Game result contract (Dart)",
+        ),
+        (
+            PROJECT_ROOT
+            / "packages"
+            / "mi_game_core"
+            / "lib"
+            / "src"
+            / "contracts"
+            / "mi_progress_gateway.dart",
+            "Progress gateway",
+        ),
         (PROJECT_ROOT / "content" / "schemas" / "lesson.schema.json", "Lesson schema"),
         (PROJECT_ROOT / "schemas" / "level.schema.json", "Level schema"),
         (PROJECT_ROOT / "melos.yaml", "Melos config"),
@@ -117,7 +143,11 @@ def cmd_doctor(args):
         _print_check("Flutter", "PASS", first_line)
         checks_passed += 1
     else:
-        _print_check("Flutter", "WARN", "Flutter not found - required for mobile/game development")
+        _print_check(
+            "Flutter",
+            "WARN",
+            "Flutter not found - required for mobile/game development",
+        )
         warnings += 1
 
     result = _run(["dart", "--version"], check=False)
@@ -144,7 +174,9 @@ def cmd_doctor(args):
         _print_check("Docker", "PASS", result.stdout.strip())
         checks_passed += 1
     else:
-        _print_check("Docker", "WARN", "Docker not found - required for containerized services")
+        _print_check(
+            "Docker", "WARN", "Docker not found - required for containerized services"
+        )
         warnings += 1
 
     # Check contracts consistency
@@ -178,10 +210,18 @@ def cmd_doctor(args):
         removed_shared_models / "lib" / "shared_models.dart",
     ]
     if any(path.exists() for path in shared_models_source_files):
-        _print_check("Removed shared_models package", "FAIL", "Dead duplicate package has reappeared")
+        _print_check(
+            "Removed shared_models package",
+            "FAIL",
+            "Dead duplicate package has reappeared",
+        )
         checks_failed += 1
     else:
-        _print_check("Removed shared_models package", "PASS", "No stale duplicate package directory")
+        _print_check(
+            "Removed shared_models package",
+            "PASS",
+            "No stale duplicate package directory",
+        )
         checks_passed += 1
 
     # Summary
@@ -190,17 +230,22 @@ def cmd_doctor(args):
     print(f"  WARN: {warnings}")
     print(f"  FAIL: {checks_failed}")
     if checks_failed > 0:
-        print(f"\n  [WARN] {checks_failed} critical issue(s) found. Run 'mi doctor --fix' for suggestions.")
+        print(
+            f"\n  [WARN] {checks_failed} critical issue(s) found. Run 'mi doctor --fix' for suggestions."
+        )
         return 1
     elif warnings > 0:
-        print(f"\n  [WARN] {warnings} warning(s). System can run but may need attention.")
+        print(
+            f"\n  [WARN] {warnings} warning(s). System can run but may need attention."
+        )
         return 0
     else:
-        print(f"\n  [PASS] All checks passed. System is healthy.")
+        print("\n  [PASS] All checks passed. System is healthy.")
         return 0
 
 
 # ─── mi test contracts ─────────────────────────────────────────────────────
+
 
 def cmd_test_contracts(args):
     _print_header("Contract Tests")
@@ -213,10 +258,18 @@ def cmd_test_contracts(args):
     sys.path.insert(0, str(CONTRACTS_DIR))
     try:
         from shared_contracts import CONTRACT_REGISTRY
+
         print(f"  [PASS] Loaded {len(CONTRACT_REGISTRY)} contracts")
         for cid, cdef in sorted(CONTRACT_REGISTRY.items()):
-            compat_icon = {"patch": "[PATCH]", "backward": "[BACKWARD]", "potentially-breaking": "[REVIEW]", "breaking": "[BREAKING]"}.get(cdef.compatibility, "[?]")
-            print(f"    {compat_icon} {cid} v{cdef.schema_version} ({cdef.semantic_version}) [{cdef.owner}]")
+            compat_icon = {
+                "patch": "[PATCH]",
+                "backward": "[BACKWARD]",
+                "potentially-breaking": "[REVIEW]",
+                "breaking": "[BREAKING]",
+            }.get(cdef.compatibility, "[?]")
+            print(
+                f"    {compat_icon} {cid} v{cdef.schema_version} ({cdef.semantic_version}) [{cdef.owner}]"
+            )
         return 0
     except Exception as e:
         print(f"  [FAIL] Failed to load contracts: {e}")
@@ -225,16 +278,23 @@ def cmd_test_contracts(args):
 
 # ─── mi validate ──────────────────────────────────────────────────────────────
 
+
 def cmd_validate(args):
     _print_header("Validate All Contracts & Content")
     errors = 0
 
     # Validate JSON schemas
-    schema_files = list(PROJECT_ROOT.glob("content/schemas/*.json")) + list(PROJECT_ROOT.glob("schemas/*.json"))
+    schema_files = list(PROJECT_ROOT.glob("content/schemas/*.json")) + list(
+        PROJECT_ROOT.glob("schemas/*.json")
+    )
     for sf in schema_files:
         try:
             data = json.loads(sf.read_text(encoding="utf-8"))
-            _print_check(f"Schema: {sf.relative_to(PROJECT_ROOT)}", "PASS", f"Valid JSON, {len(data)} keys")
+            _print_check(
+                f"Schema: {sf.relative_to(PROJECT_ROOT)}",
+                "PASS",
+                f"Valid JSON, {len(data)} keys",
+            )
         except json.JSONDecodeError as e:
             _print_check(f"Schema: {sf.relative_to(PROJECT_ROOT)}", "FAIL", str(e))
             errors += 1
@@ -257,13 +317,16 @@ def cmd_validate(args):
             # Check for aliases
             if "game_core" == name or "game-core" == name:
                 if name in pkg_names:
-                    _print_check(f"Package alias: {name}", "WARN", "Duplicate package detected")
+                    _print_check(
+                        f"Package alias: {name}", "WARN", "Duplicate package detected"
+                    )
                 pkg_names.add(name)
 
     return 1 if errors > 0 else 0
 
 
 # ─── mi report ────────────────────────────────────────────────────────────────
+
 
 def cmd_report(args):
     _print_header("Integration Status Report")
@@ -276,6 +339,7 @@ def cmd_report(args):
         sys.path.insert(0, str(CONTRACTS_DIR))
         try:
             from shared_contracts import CONTRACT_REGISTRY
+
             print(f"\n  Contracts registered: {len(CONTRACT_REGISTRY)}")
             for cid, cdef in sorted(CONTRACT_REGISTRY.items()):
                 print(f"    - {cid} v{cdef.schema_version} [{cdef.compatibility}]")
@@ -308,6 +372,7 @@ def cmd_report(args):
 
 # ─── mi mock start / stop ────────────────────────────────────────────────────
 
+
 def cmd_mock_start(args):
     _print_header("Starting Mock Services")
     mock_main = MOCKS_DIR / "mock_server.py"
@@ -322,6 +387,7 @@ def cmd_mock_start(args):
         print("  [FAIL] Mock server not found. Run 'mi setup' first.")
         return 1
 
+
 def cmd_mock_stop(args):
     _print_header("Stopping Mock Services")
     print("  Mock services stopped (if running).")
@@ -330,21 +396,29 @@ def cmd_mock_stop(args):
 
 # ─── mi scenario run ────────────────────────────────────────────────────────
 
+
 def cmd_scenario_run(args):
-    scenario_name = args.scenario if hasattr(args, "scenario") and args.scenario else "first-time-offline"
+    scenario_name = (
+        args.scenario
+        if hasattr(args, "scenario") and args.scenario
+        else "first-time-offline"
+    )
     _print_header(f"Running Scenario: {scenario_name}")
     scenario_file = SCENARIOS_DIR / f"{scenario_name}.json"
     if scenario_file.exists():
         print(f"  [PASS] Scenario file found: {scenario_file}")
-        print(f"  (Full harness implementation pending - Wave 2)")
+        print("  (Full harness implementation pending - Wave 2)")
         return 0
     else:
         print(f"  [FAIL] Scenario not found: {scenario_file}")
-        print(f"  Available: first-time-offline, game-resume, content-upgrade, adaptive-fallback, full-mvp")
+        print(
+            "  Available: first-time-offline, game-resume, content-upgrade, adaptive-fallback, full-mvp"
+        )
         return 1
 
 
 # ─── mi generate ─────────────────────────────────────────────────────────────
+
 
 def cmd_generate(args):
     _print_header("Code Generation")
@@ -359,24 +433,39 @@ def cmd_generate(args):
 
 # ─── mi test / test integration ──────────────────────────────────────────────
 
+
 def cmd_test(args):
     _print_header("Running All Tests")
     # Run Python tests
-    result = _run([sys.executable, "-m", "pytest", "tests/", "-v", "--tb=short"], check=False)
+    result = _run(
+        [sys.executable, "-m", "pytest", "tests/", "-v", "--tb=short"], check=False
+    )
     if result.stdout:
         print(result.stdout[-2000:])
     if result.returncode != 0 and result.stderr:
         print(result.stderr[-1000:])
     return result.returncode
 
+
 def cmd_test_integration(args):
     _print_header("Running Integration Tests")
-    result = _run([sys.executable, "-m", "pytest", "packages/mi_contract_tests/", "-v", "--tb=short"], check=False)
+    result = _run(
+        [
+            sys.executable,
+            "-m",
+            "pytest",
+            "packages/mi_contract_tests/",
+            "-v",
+            "--tb=short",
+        ],
+        check=False,
+    )
     print(result.stdout or result.stderr)
     return result.returncode
 
 
 # ─── CLI Entry Point ────────────────────────────────────────────────────────
+
 
 def main():
     parser = argparse.ArgumentParser(
@@ -429,11 +518,23 @@ def main():
         return cmd_generate(args)
     elif args.command == "report":
         return cmd_report(args)
-    elif args.command == "scenario" and hasattr(args, "scenario_command") and args.scenario_command == "run":
+    elif (
+        args.command == "scenario"
+        and hasattr(args, "scenario_command")
+        and args.scenario_command == "run"
+    ):
         return cmd_scenario_run(args)
-    elif args.command == "mock" and hasattr(args, "mock_command") and args.mock_command == "start":
+    elif (
+        args.command == "mock"
+        and hasattr(args, "mock_command")
+        and args.mock_command == "start"
+    ):
         return cmd_mock_start(args)
-    elif args.command == "mock" and hasattr(args, "mock_command") and args.mock_command == "stop":
+    elif (
+        args.command == "mock"
+        and hasattr(args, "mock_command")
+        and args.mock_command == "stop"
+    ):
         return cmd_mock_stop(args)
     else:
         parser.print_help()

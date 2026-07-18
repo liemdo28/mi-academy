@@ -1,5 +1,8 @@
-import pytest
-from packages.game_core.scoring import calculate_stars, calculate_mastery_score, calculate_progress_percentage
+from packages.game_core.scoring import (
+    calculate_stars,
+    calculate_mastery_score,
+    calculate_progress_percentage,
+)
 
 
 class TestCalculateStars:
@@ -63,4 +66,4 @@ class TestProgressPercentage:
         assert calculate_progress_percentage(10, 10) == 100.0
 
     def test_none(self):
-        assert calculate_progress_percentage(3, 7) == round((3/7)*100, 1)
+        assert calculate_progress_percentage(3, 7) == round((3 / 7) * 100, 1)

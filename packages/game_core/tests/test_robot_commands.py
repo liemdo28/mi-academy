@@ -25,6 +25,7 @@ class TestRobotCommandsGame:
 
     def test_no_obstacles_level1(self):
         import random
+
         random.seed(0)
         cfg = GameConfig(game_type="robot_commands")
         g = RobotCommandsGame(cfg)
@@ -45,7 +46,12 @@ class TestRobotCommandsGame:
             east_ok = all(grid[0][x] == 0 for x in range(1, size))
             south_ok = all(grid[y][size - 1] == 0 for y in range(1, size))
             if east_ok and south_ok:
-                cmds = ["turn_right"] + ["forward"] * (size - 1) + ["turn_right"] + ["forward"] * (size - 1)
+                cmds = (
+                    ["turn_right"]
+                    + ["forward"] * (size - 1)
+                    + ["turn_right"]
+                    + ["forward"] * (size - 1)
+                )
                 g.start()
                 r = g.submit_answer(cmds)
                 if r.is_correct:

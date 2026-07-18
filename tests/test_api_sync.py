@@ -8,7 +8,17 @@ from sqlalchemy import func, select
 from sqlalchemy.ext.asyncio import async_sessionmaker, create_async_engine
 
 from apps.api.database import Base
-from apps.api.models import Attempt, ChildProfile, DailySession, Game, Lesson, ParentProfile, Progress, Subject, User
+from apps.api.models import (
+    Attempt,
+    ChildProfile,
+    DailySession,
+    Game,
+    Lesson,
+    ParentProfile,
+    Progress,
+    Subject,
+    User,
+)
 from apps.api.routes.sync import sync_attempts, sync_progress, sync_sessions
 from apps.api.schemas.sync import SyncAttemptItem, SyncProgressItem, SyncSessionItem
 from apps.api.time import utc_now
@@ -207,7 +217,9 @@ def test_sync_rejects_progress_for_child_not_owned_by_parent():
         session_maker, engine = await _session_maker()
         try:
             async with session_maker() as db:
-                owner, _, lesson, _, other_child = await _seed_two_parent_sync_entities(db)
+                owner, _, lesson, _, other_child = await _seed_two_parent_sync_entities(
+                    db
+                )
 
                 with pytest.raises(HTTPException) as exc:
                     await sync_progress(
@@ -239,7 +251,13 @@ def test_sync_rejects_cross_child_progress_id_reuse():
         session_maker, engine = await _session_maker()
         try:
             async with session_maker() as db:
-                owner, child, lesson, _, other_child = await _seed_two_parent_sync_entities(db)
+                (
+                    owner,
+                    child,
+                    lesson,
+                    _,
+                    other_child,
+                ) = await _seed_two_parent_sync_entities(db)
                 db.add(
                     Progress(
                         id="shared-progress-id",
@@ -285,7 +303,13 @@ def test_sync_rejects_attempt_for_child_not_owned_by_parent():
         session_maker, engine = await _session_maker()
         try:
             async with session_maker() as db:
-                owner, _, lesson, game, other_child = await _seed_two_parent_sync_entities(db)
+                (
+                    owner,
+                    _,
+                    lesson,
+                    game,
+                    other_child,
+                ) = await _seed_two_parent_sync_entities(db)
 
                 with pytest.raises(HTTPException) as exc:
                     await sync_attempts(
@@ -436,7 +460,19 @@ async def _seed_two_parent_sync_entities(db):
         age_min=5,
         age_max=12,
     )
-    db.add_all([owner_user, other_user, owner, other, child, other_child, subject, lesson, game])
+    db.add_all(
+        [
+            owner_user,
+            other_user,
+            owner,
+            other,
+            child,
+            other_child,
+            subject,
+            lesson,
+            game,
+        ]
+    )
     await db.commit()
     owner.children = [child]
     other.children = [other_child]

@@ -20,9 +20,18 @@ from apps.api.models import (
     User,
 )
 from apps.api.routes.games import complete_game, start_game, submit_attempt
-from apps.api.routes.progress import get_child_progress, get_child_skills, get_daily_plan
+from apps.api.routes.progress import (
+    get_child_progress,
+    get_child_skills,
+    get_daily_plan,
+)
 from apps.api.routes.rewards import get_child_rewards, unlock_reward
-from apps.api.schemas import GameAttemptRequest, GameCompleteRequest, GameStartRequest, UnlockRewardRequest
+from apps.api.schemas import (
+    GameAttemptRequest,
+    GameCompleteRequest,
+    GameStartRequest,
+    UnlockRewardRequest,
+)
 from apps.api.time import utc_now
 
 
@@ -36,9 +45,13 @@ def test_child_progress_routes_require_parent_ownership():
                 other_child = data["other_child"]
 
                 with pytest.raises(HTTPException) as progress_exc:
-                    await get_child_progress(child_id=other_child.id, profile=owner, db=db)
+                    await get_child_progress(
+                        child_id=other_child.id, profile=owner, db=db
+                    )
                 with pytest.raises(HTTPException) as skills_exc:
-                    await get_child_skills(child_id=other_child.id, profile=owner, db=db)
+                    await get_child_skills(
+                        child_id=other_child.id, profile=owner, db=db
+                    )
                 with pytest.raises(HTTPException) as plan_exc:
                     await get_daily_plan(child_id=other_child.id, profile=owner, db=db)
 
@@ -60,7 +73,9 @@ def test_owned_child_progress_and_daily_plan_still_work():
                 owner = data["owner"]
                 child = data["owner_child"]
 
-                progress = await get_child_progress(child_id=child.id, profile=owner, db=db)
+                progress = await get_child_progress(
+                    child_id=child.id, profile=owner, db=db
+                )
                 skills = await get_child_skills(child_id=child.id, profile=owner, db=db)
                 plan = await get_daily_plan(child_id=child.id, profile=owner, db=db)
 
@@ -87,7 +102,9 @@ def test_reward_routes_require_parent_ownership():
                 reward = data["reward"]
 
                 with pytest.raises(HTTPException) as list_exc:
-                    await get_child_rewards(child_id=other_child.id, profile=owner, db=db)
+                    await get_child_rewards(
+                        child_id=other_child.id, profile=owner, db=db
+                    )
                 with pytest.raises(HTTPException) as unlock_exc:
                     await unlock_reward(
                         child_id=other_child.id,
@@ -121,7 +138,9 @@ def test_owned_child_reward_unlock_still_works():
                     profile=owner,
                     db=db,
                 )
-                rewards = await get_child_rewards(child_id=child.id, profile=owner, db=db)
+                rewards = await get_child_rewards(
+                    child_id=child.id, profile=owner, db=db
+                )
 
                 assert unlocked == {"message": "Reward unlocked", "unlocked": True}
                 assert await _count(db, ChildReward) == 1
@@ -162,7 +181,9 @@ def test_game_routes_require_parent_ownership_without_writing_attempts():
                 with pytest.raises(HTTPException) as complete_exc:
                     await complete_game(
                         game_id=game.id,
-                        body=GameCompleteRequest(child_id=other_child.id, total_stars=2),
+                        body=GameCompleteRequest(
+                            child_id=other_child.id, total_stars=2
+                        ),
                         profile=owner,
                         db=db,
                     )
@@ -197,7 +218,11 @@ def test_owned_child_game_attempt_stores_valid_json():
                     game_id=game.id,
                     body=GameAttemptRequest(
                         child_id=child.id,
-                        answer_json={"is_correct": True, "locale": "vi", "choice_id": "b"},
+                        answer_json={
+                            "is_correct": True,
+                            "locale": "vi",
+                            "choice_id": "b",
+                        },
                         response_time_ms=900,
                         hint_count=1,
                     ),
@@ -205,7 +230,11 @@ def test_owned_child_game_attempt_stores_valid_json():
                     db=db,
                 )
 
-                assert started == {"session_id": game.id, "child_id": child.id, "started": True}
+                assert started == {
+                    "session_id": game.id,
+                    "child_id": child.id,
+                    "started": True,
+                }
                 assert recorded["recorded"] is True
                 result = await db.execute(
                     select(Attempt).where(Attempt.id == recorded["attempt_id"])

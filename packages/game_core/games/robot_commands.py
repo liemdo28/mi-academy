@@ -1,9 +1,20 @@
 import random
-from packages.game_core.base import GameEngineBase, GameConfig, LevelState, AnswerResult, HintResult, CompletionResult
+from packages.game_core.base import (
+    GameEngineBase,
+    LevelState,
+    AnswerResult,
+    HintResult,
+    CompletionResult,
+)
 
 
 class RobotCommandsGame(GameEngineBase):
-    DIRECTIONS = [(0, -1), (1, 0), (0, 1), (-1, 0)]  # N,E,S,W with y increasing downward
+    DIRECTIONS = [
+        (0, -1),
+        (1, 0),
+        (0, 1),
+        (-1, 0),
+    ]  # N,E,S,W with y increasing downward
     DIR_NAMES = ["N", "E", "S", "W"]
 
     def __init__(self, config):
@@ -11,13 +22,21 @@ class RobotCommandsGame(GameEngineBase):
         self._optimal_steps = 0
 
     def _level_size(self, level):
-        if level <= 2: return 5
-        if level <= 4: return 6
-        if level <= 6: return 7
+        if level <= 2:
+            return 5
+        if level <= 4:
+            return 6
+        if level <= 6:
+            return 7
         return 8
 
     def _level_features(self, level):
-        return {"turns": level >= 2, "obstacles": level >= 3, "loops": level >= 5, "nested_loops": level >= 7}
+        return {
+            "turns": level >= 2,
+            "obstacles": level >= 3,
+            "loops": level >= 5,
+            "nested_loops": level >= 7,
+        }
 
     def load_level(self, level):
         level = max(1, min(10, level))
@@ -39,8 +58,25 @@ class RobotCommandsGame(GameEngineBase):
         manhattan = abs(goal["x"] - start["x"]) + abs(goal["y"] - start["y"])
         optimal = manhattan + 1
         self._optimal_steps = optimal
-        item = {"grid": grid, "obstacles": obstacles, "start": start, "goal": goal, "size": size, "features": feats, "correct_answer": "reach_goal", "hint": "Den dich voi it buoc nhat", "explanation": "Dat den dich la thanh cong", "optimal_steps": optimal}
-        self._state = LevelState(level=level, items=[item], difficulty=level, current_index=0, total_questions=1)
+        item = {
+            "grid": grid,
+            "obstacles": obstacles,
+            "start": start,
+            "goal": goal,
+            "size": size,
+            "features": feats,
+            "correct_answer": "reach_goal",
+            "hint": "Den dich voi it buoc nhat",
+            "explanation": "Dat den dich la thanh cong",
+            "optimal_steps": optimal,
+        }
+        self._state = LevelState(
+            level=level,
+            items=[item],
+            difficulty=level,
+            current_index=0,
+            total_questions=1,
+        )
         return self._state
 
     def _run_commands(self, commands, grid, start, goal, size):
@@ -48,7 +84,8 @@ class RobotCommandsGame(GameEngineBase):
         obs = set()
         for ry, row in enumerate(grid):
             for rx, v in enumerate(row):
-                if v == 1: obs.add((rx, ry))
+                if v == 1:
+                    obs.add((rx, ry))
         cx, cy, cd = x, y, d
         for cmd in commands:
             if cmd == "forward":
@@ -73,14 +110,25 @@ class RobotCommandsGame(GameEngineBase):
         return cx, cy
 
     def submit_answer(self, answer):
-        if self._state is None: raise RuntimeError("Level not loaded")
+        if self._state is None:
+            raise RuntimeError("Level not loaded")
         if self._state.current_index >= len(self._state.items):
-            return AnswerResult(is_correct=False, correct_answer=None, explanation="No more", next_state=None, stars_earned=0, hints_remaining=self._hints_remaining, retry_allowed=False)
+            return AnswerResult(
+                is_correct=False,
+                correct_answer=None,
+                explanation="No more",
+                next_state=None,
+                stars_earned=0,
+                hints_remaining=self._hints_remaining,
+                retry_allowed=False,
+            )
         item = self._state.items[self._state.current_index]
         goal = item["goal"]
         commands = list(answer) if not isinstance(answer, list) else answer
-        x, y = self._run_commands(commands, item["grid"], item["start"], item["goal"], item["size"])
-        is_correct = (x == goal["x"] and y == goal["y"])
+        x, y = self._run_commands(
+            commands, item["grid"], item["start"], item["goal"], item["size"]
+        )
+        is_correct = x == goal["x"] and y == goal["y"]
         if is_correct:
             num_cmds = len(commands)
             opt = self._optimal_steps
@@ -92,27 +140,61 @@ class RobotCommandsGame(GameEngineBase):
                 stars = 1
             self._stars_per_question.append(stars)
             self._state.current_index += 1
-            ns = self._state if self._state.current_index < len(self._state.items) else None
-            return AnswerResult(is_correct=True, correct_answer={"x": goal["x"], "y": goal["y"]}, explanation="Robot dat dich", next_state=ns, stars_earned=stars, hints_remaining=self._hints_remaining, retry_allowed=False)
+            ns = (
+                self._state
+                if self._state.current_index < len(self._state.items)
+                else None
+            )
+            return AnswerResult(
+                is_correct=True,
+                correct_answer={"x": goal["x"], "y": goal["y"]},
+                explanation="Robot dat dich",
+                next_state=ns,
+                stars_earned=stars,
+                hints_remaining=self._hints_remaining,
+                retry_allowed=False,
+            )
         self._retry_count += 1
-        return AnswerResult(is_correct=False, correct_answer={"x": goal["x"], "y": goal["y"]}, explanation="Robot dung tai (" + str(x) + "," + str(y) + ")", next_state=self._state, stars_earned=0, hints_remaining=self._hints_remaining, retry_allowed=self._retry_count < 5)
+        return AnswerResult(
+            is_correct=False,
+            correct_answer={"x": goal["x"], "y": goal["y"]},
+            explanation="Robot dung tai (" + str(x) + "," + str(y) + ")",
+            next_state=self._state,
+            stars_earned=0,
+            hints_remaining=self._hints_remaining,
+            retry_allowed=self._retry_count < 5,
+        )
 
     def use_hint(self):
-        if self._hints_remaining <= 0: return HintResult(hint_text="", hints_remaining=0, hint_given=False)
-        if self._state is None: return HintResult(hint_text="", hints_remaining=self._hints_remaining, hint_given=False)
+        if self._hints_remaining <= 0:
+            return HintResult(hint_text="", hints_remaining=0, hint_given=False)
+        if self._state is None:
+            return HintResult(
+                hint_text="", hints_remaining=self._hints_remaining, hint_given=False
+            )
         item = self._state.items[self._state.current_index]
         goal = item["goal"]
         start = item["start"]
         dx = goal["x"] - start["x"]
         dy = goal["y"] - start["y"]
         self._hints_remaining -= 1
-        txt = "Di " + str(abs(dx)) + " buoc sang phai, " + str(abs(dy)) + " buoc len tren"
-        return HintResult(hint_text=txt, hints_remaining=self._hints_remaining, hint_given=True)
+        txt = (
+            "Di " + str(abs(dx)) + " buoc sang phai, " + str(abs(dy)) + " buoc len tren"
+        )
+        return HintResult(
+            hint_text=txt, hints_remaining=self._hints_remaining, hint_given=True
+        )
 
     def complete(self):
         total = sum(self._stars_per_question)
         item_count = len(self._state.items) if self._state and self._state.items else 1
         mastery = total / (item_count * 3) if item_count > 0 else 0.0
         badges = ["Lap trinh vien"] if total > 0 else []
-        if mastery >= 0.8: badges.append("Thu robot")
-        return CompletionResult(total_stars=total, badges_unlocked=badges, rewards_unlocked=[], mastery_score=min(1.0, mastery))
+        if mastery >= 0.8:
+            badges.append("Thu robot")
+        return CompletionResult(
+            total_stars=total,
+            badges_unlocked=badges,
+            rewards_unlocked=[],
+            mastery_score=min(1.0, mastery),
+        )

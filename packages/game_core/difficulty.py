@@ -9,7 +9,13 @@ class DifficultyAdapter:
         key = f"{child_id}:{game_type}"
         if key not in self._attempt_history:
             self._attempt_history[key] = []
-        self._attempt_history[key].append({"is_correct": is_correct, "response_ms": response_ms, "hint_used": hint_used})
+        self._attempt_history[key].append(
+            {
+                "is_correct": is_correct,
+                "response_ms": response_ms,
+                "hint_used": hint_used,
+            }
+        )
         if len(self._attempt_history[key]) > 5:
             self._attempt_history[key] = self._attempt_history[key][-5:]
 

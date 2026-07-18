@@ -1,6 +1,5 @@
 import json
 
-import pytest
 
 from tools.content_validator import validate_content as validator
 
@@ -193,14 +192,16 @@ def test_validate_robot_required_path_reports_obstacle_and_wrong_goal():
     )
 
     assert (
-        "Level 1 (vi): requiredCommands moves into obstacle at (1,0)"
-        in obstacle_errors
+        "Level 1 (vi): requiredCommands moves into obstacle at (1,0)" in obstacle_errors
     )
     assert (
         "Level 1 (vi): requiredCommands ends at (0,0), expected goal (1,0)"
         in wrong_goal_errors
     )
-    assert "Level 1 (vi): requiredCommands misses collectibles [(0, 0)]" in wrong_goal_errors
+    assert (
+        "Level 1 (vi): requiredCommands misses collectibles [(0, 0)]"
+        in wrong_goal_errors
+    )
 
 
 def test_validate_robot_commands_level_checks_metadata_and_commands():
@@ -251,10 +252,14 @@ def test_collect_audio_keys_reads_all_localizations(tmp_path):
     assert validator.collect_audio_keys(path) == {"letter_a", "word_cat"}
 
 
-def test_validate_audio_placeholders_accepts_manifest_and_wav_files(tmp_path, monkeypatch):
+def test_validate_audio_placeholders_accepts_manifest_and_wav_files(
+    tmp_path, monkeypatch
+):
     audio_dir = tmp_path / "audio"
     audio_dir.mkdir()
-    _write_json(audio_dir / "audio_manifest.json", {"assets": [{"assetKey": "letter_a"}]})
+    _write_json(
+        audio_dir / "audio_manifest.json", {"assets": [{"assetKey": "letter_a"}]}
+    )
     _write_wav_header(audio_dir / "letter_a.wav")
     monkeypatch.setattr(validator, "MOBILE_ASSETS", tmp_path)
 
@@ -267,7 +272,9 @@ def test_validate_audio_placeholders_reports_manifest_file_and_header_errors(
 ):
     audio_dir = tmp_path / "audio"
     audio_dir.mkdir()
-    _write_json(audio_dir / "audio_manifest.json", {"assets": [{"assetKey": "letter_a"}]})
+    _write_json(
+        audio_dir / "audio_manifest.json", {"assets": [{"assetKey": "letter_a"}]}
+    )
     (audio_dir / "letter_a.wav").write_bytes(b"not-a-wave")
     monkeypatch.setattr(validator, "MOBILE_ASSETS", tmp_path)
 

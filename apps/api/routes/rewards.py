@@ -19,7 +19,9 @@ def _child_belongs_to_parent(profile: ParentProfile, child_id: str):
     if child_id not in [c.id for c in profile.children]:
         raise HTTPException(
             status_code=status.HTTP_403_FORBIDDEN,
-            detail={"error": {"code": "FORBIDDEN", "message": "Child not owned by parent"}},
+            detail={
+                "error": {"code": "FORBIDDEN", "message": "Child not owned by parent"}
+            },
         )
 
 
@@ -52,7 +54,9 @@ async def get_child_rewards(
             description=r.description,
             asset_url=r.asset_url,
             is_unlocked=r.id in unlocked_rewards,
-            unlocked_at=unlocked_rewards[r.id].isoformat() if r.id in unlocked_rewards else None,
+            unlocked_at=unlocked_rewards[r.id].isoformat()
+            if r.id in unlocked_rewards
+            else None,
         )
         for r in all_rewards
     ]
@@ -69,9 +73,7 @@ async def unlock_reward(
     _child_belongs_to_parent(profile, child_id)
 
     # Verify reward exists
-    reward_result = await db.execute(
-        select(Reward).where(Reward.id == body.reward_id)
-    )
+    reward_result = await db.execute(select(Reward).where(Reward.id == body.reward_id))
     reward = reward_result.scalar_one_or_none()
     if not reward:
         raise HTTPException(status_code=404, detail="Reward not found")
@@ -98,5 +100,9 @@ async def unlock_reward(
         await db.commit()
     except IntegrityError:
         await db.rollback()
-        return {"message": "Already unlocked", "unlocked": True, "idempotent_replay": True}
+        return {
+            "message": "Already unlocked",
+            "unlocked": True,
+            "idempotent_replay": True,
+        }
     return {"message": "Reward unlocked", "unlocked": True}

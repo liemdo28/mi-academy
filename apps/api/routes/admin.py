@@ -1,6 +1,5 @@
 """Admin routes — lesson CRUD, question CRUD, game CRUD, analytics."""
 
-from datetime import datetime
 from fastapi import APIRouter, HTTPException, status, Depends
 from sqlalchemy import Integer, select, func
 from sqlalchemy.ext.asyncio import AsyncSession
@@ -10,12 +9,18 @@ import json
 from apps.api.database import get_db
 from apps.api.dependencies import require_role
 from apps.api.models import (
-    User, Lesson, Question, Game, Subject,
-    Attempt, Progress, ChildProfile,
+    Lesson,
+    Question,
+    Game,
+    Attempt,
+    Progress,
+    ChildProfile,
 )
 from apps.api.schemas import (
-    AdminLessonCreate, AdminLessonUpdate,
-    AdminQuestionCreate, AdminGameCreate,
+    AdminLessonCreate,
+    AdminLessonUpdate,
+    AdminQuestionCreate,
+    AdminGameCreate,
 )
 from apps.api.models import User as AuthUser
 
@@ -27,6 +32,7 @@ def _require_admin():
 
 
 # ── Lessons ─────────────────────────────────────────────────────────────────────
+
 
 @router.post("/lessons", status_code=status.HTTP_201_CREATED)
 async def create_lesson(
@@ -86,6 +92,7 @@ async def delete_lesson(
 
 # ── Questions ───────────────────────────────────────────────────────────────────
 
+
 @router.post("/questions", status_code=status.HTTP_201_CREATED)
 async def create_question(
     body: AdminQuestionCreate,
@@ -98,7 +105,9 @@ async def create_question(
         question_type=body.question_type,
         prompt=body.prompt,
         options_json=json.dumps(body.options_json) if body.options_json else None,
-        correct_answer_json=json.dumps(body.correct_answer_json) if body.correct_answer_json else None,
+        correct_answer_json=json.dumps(body.correct_answer_json)
+        if body.correct_answer_json
+        else None,
         explanation=body.explanation,
         media_url=body.media_url,
         difficulty=body.difficulty,
@@ -148,6 +157,7 @@ async def high_error_questions(
 
 # ── Games ───────────────────────────────────────────────────────────────────────
 
+
 @router.post("/games", status_code=status.HTTP_201_CREATED)
 async def create_game(
     body: AdminGameCreate,
@@ -190,6 +200,7 @@ async def update_game(
 
 # ── Analytics ───────────────────────────────────────────────────────────────────
 
+
 @router.get("/analytics")
 async def analytics(
     _: AuthUser = Depends(_require_admin()),
@@ -220,14 +231,20 @@ async def completion_rate(
     query = select(
         Progress.lesson_id,
         func.count(Progress.id).label("total"),
-        func.sum(func.cast(Progress.status.in_(["completed", "mastered"]), Integer)).label("done"),
+        func.sum(
+            func.cast(Progress.status.in_(["completed", "mastered"]), Integer)
+        ).label("done"),
     ).group_by(Progress.lesson_id)
     if lesson_id:
         query = query.where(Progress.lesson_id == lesson_id)
     result = await db.execute(query)
     rows = result.all()
     return [
-        {"lesson_id": r.lesson_id, "total": r.total, "completed": r.done or 0,
-         "rate": round((r.done or 0) / r.total * 100, 1) if r.total else 0}
+        {
+            "lesson_id": r.lesson_id,
+            "total": r.total,
+            "completed": r.done or 0,
+            "rate": round((r.done or 0) / r.total * 100, 1) if r.total else 0,
+        }
         for r in rows
     ]

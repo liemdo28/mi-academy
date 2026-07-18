@@ -6,6 +6,7 @@ calling the API directly bypassed it entirely, with only the generic
 per-IP rate limiter (100 req/min by default) standing between an attacker
 and a 4-6 digit PIN's full keyspace.
 """
+
 import asyncio
 
 import pytest
@@ -45,7 +46,9 @@ def test_correct_pin_succeeds_and_resets_attempt_counter():
             async with session_maker() as db:
                 profile = await _seed_profile(db)
 
-                result = await verify_parent_pin(x_parent_pin="1234", profile=profile, db=db)
+                result = await verify_parent_pin(
+                    x_parent_pin="1234", profile=profile, db=db
+                )
 
                 assert result is profile
                 assert profile.pin_failed_attempts == 0
@@ -65,7 +68,9 @@ def test_locks_out_after_three_wrong_attempts():
 
                 for _ in range(2):
                     with pytest.raises(HTTPException) as exc:
-                        await verify_parent_pin(x_parent_pin="0000", profile=profile, db=db)
+                        await verify_parent_pin(
+                            x_parent_pin="0000", profile=profile, db=db
+                        )
                     assert exc.value.detail["error"]["code"] == "INVALID_PIN"
 
                 # The 3rd wrong attempt trips the lockout.
@@ -96,9 +101,13 @@ def test_lockout_expires_and_allows_retry():
         try:
             async with session_maker() as db:
                 profile = await _seed_profile(db)
-                profile.pin_locked_until = utc_now() - timedelta(seconds=1)  # already expired
+                profile.pin_locked_until = utc_now() - timedelta(
+                    seconds=1
+                )  # already expired
 
-                result = await verify_parent_pin(x_parent_pin="1234", profile=profile, db=db)
+                result = await verify_parent_pin(
+                    x_parent_pin="1234", profile=profile, db=db
+                )
 
                 assert result is profile
         finally:

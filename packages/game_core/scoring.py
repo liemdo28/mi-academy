@@ -1,7 +1,9 @@
 """Scoring utilities for MI Academy games."""
 
 
-def calculate_stars(correct_first_try: bool, total_attempts: int, max_attempts: int = 3) -> int:
+def calculate_stars(
+    correct_first_try: bool, total_attempts: int, max_attempts: int = 3
+) -> int:
     """Returns 1-3 stars. Never returns 0."""
     if total_attempts == 1 and correct_first_try:
         return 3
@@ -11,7 +13,9 @@ def calculate_stars(correct_first_try: bool, total_attempts: int, max_attempts: 
         return 1
 
 
-def calculate_mastery_score(correct_count: int, total_count: int, avg_response_ms: float) -> float:
+def calculate_mastery_score(
+    correct_count: int, total_count: int, avg_response_ms: float
+) -> float:
     """Returns 0.0-1.0 mastery score."""
     if total_count == 0:
         return 0.0
