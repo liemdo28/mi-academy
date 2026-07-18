@@ -3,13 +3,32 @@
 from fastapi import APIRouter, Depends, HTTPException, status
 from sqlalchemy import Integer, select, func
 from sqlalchemy.ext.asyncio import AsyncSession
+from sqlalchemy.orm import selectinload
 
+from apps.api.adaptive_ranking import rank_lessons
 from apps.api.database import get_db
 from apps.api.dependencies import get_parent_profile
 from apps.api.models import ParentProfile, Progress, Attempt, Lesson
 from apps.api.schemas import ProgressResponse, SkillReport, DailyPlanItem
 
 router = APIRouter()
+
+# There is no explicit lesson/subject -> game data-model link, so this maps
+# each subject taxonomy code (see infrastructure/seed/seed_data.py) to the
+# game engine that best fits it. A content-modeling heuristic, not a
+# fabricated 1:1 mapping: subjects without a dedicated game (science,
+# life_skills) fall back to memory_cards rather than inventing a mismatch.
+_SUBJECT_TO_GAME_TYPE = {
+    "letters": "word_builder",
+    "math": "math_race",
+    "logic": "robot_commands",
+}
+_DEFAULT_GAME_TYPE = "memory_cards"
+
+
+def _game_type_for_lesson(lesson: Lesson) -> str:
+    subject_code = lesson.subject.code if lesson.subject else None
+    return _SUBJECT_TO_GAME_TYPE.get(subject_code, _DEFAULT_GAME_TYPE)
 
 
 def _child_belongs_to_parent(profile: ParentProfile, child_id: str):
@@ -90,20 +109,29 @@ async def get_daily_plan(
     profile: ParentProfile = Depends(get_parent_profile),
     db: AsyncSession = Depends(get_db),
 ):
-    """Return today's recommended learning plan (up to 4 items)."""
+    """Return today's recommended learning plan (up to 4 items), ranked by
+    the child's own Progress -- see adaptive_ranking.rank_lessons. This is
+    the endpoint the child home screen's hero CTA and "today's mission"
+    list actually consume, so this ranking is what a child sees next, not
+    just an unused parallel recommendation."""
     _child_belongs_to_parent(profile, child_id)
     child = next(c for c in profile.children if c.id == child_id)
 
-    # Recommend one lesson from each subject area for this age group
     lessons_result = await db.execute(
         select(Lesson)
+        .options(selectinload(Lesson.subject))
         .where(
             Lesson.age_group == child.age_group,
             Lesson.is_active == True,
         )
-        .limit(4)
     )
-    lessons = lessons_result.scalars().all()
+    all_lessons = lessons_result.scalars().all()
+
+    progress_result = await db.execute(
+        select(Progress).where(Progress.child_id == child_id)
+    )
+    progress_by_lesson = {p.lesson_id: p for p in progress_result.scalars().all()}
+    lessons = rank_lessons(all_lessons, progress_by_lesson)[:4]
     items = []
     for lesson in lessons:
         items.append(
@@ -114,6 +142,7 @@ async def get_daily_plan(
                 estimated_minutes=lesson.estimated_minutes,
                 type="lesson",
                 is_required=True,
+                game_type=_game_type_for_lesson(lesson),
             )
         )
     return items

@@ -61,7 +61,7 @@ def test_delete_child_removes_child_owned_data():
                 assert await _count(db, Progress) == 0
                 assert await _count(db, Attempt) == 0
                 assert await _count(db, ChildReward) == 0
-                assert await _count(db, Reward) == 1
+                assert await _count(db, Reward) == 2
                 assert await _count(db, ParentProfile) == 1
                 assert await _count(db, User) == 1
         finally:
@@ -155,7 +155,12 @@ async def _seed_parent_child_activity(db):
         name="First Steps",
         description="Completed a gentle learning step",
     )
-    db.add_all([user, profile, child, subject, lesson, reward])
+    second_reward = Reward(
+        reward_type="badge",
+        name="Practice Spark",
+        description="Practiced safely offline",
+    )
+    db.add_all([user, profile, child, subject, lesson, reward, second_reward])
     await db.flush()
 
     db.add_all(
@@ -185,6 +190,10 @@ async def _seed_parent_child_activity(db):
             ChildReward(
                 child_id=child.id,
                 reward_id=reward.id,
+            ),
+            ChildReward(
+                child_id=child.id,
+                reward_id=second_reward.id,
             ),
         ]
     )

@@ -1,11 +1,15 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:go_router/go_router.dart';
 import 'package:mi_academy/main.dart';
+import 'package:mi_academy/providers/child_provider.dart';
 import 'package:mi_academy/providers/providers.dart';
 import 'package:mi_academy/screens/child_home_screen.dart';
 import 'package:mi_academy/screens/garden_screen.dart';
+import 'package:mi_academy/screens/parent_dashboard_screen.dart';
 import 'package:mi_academy/screens/parent_pin_screen.dart';
 import 'package:mi_academy/screens/parent_settings_screen.dart';
 import 'package:mi_academy/screens/world_map_screen.dart';
@@ -19,10 +23,18 @@ import 'package:mi_academy/src/games/word_builder/word_builder_screen.dart';
 
 import 'game_test_fixtures.dart';
 
+class _FixedActiveChildNotifier extends ActiveChildNotifier {
+  _FixedActiveChildNotifier(this._state);
+  final ActiveChildState _state;
+
+  @override
+  ActiveChildState build() => _state;
+}
+
 void main() {
-  testWidgets('MI Academy shell renders the first playable game entries',
+  testWidgets('Debug game picker shell renders the first playable game entries',
       (tester) async {
-    await tester.pumpWidget(MiAcademyApp(key: UniqueKey()));
+    await tester.pumpWidget(DebugGamePickerApp(key: UniqueKey()));
     await pumpUntilFound(tester, find.text('Thế giới khám phá'));
 
     expect(find.text('MI Academy'), findsOneWidget);
@@ -382,6 +394,29 @@ void main() {
     expect(completed, isTrue);
   });
 
+  testWidgets(
+      'Memory Cards respects reduceMotion by collapsing the flip animation',
+      (tester) async {
+    await tester.pumpWidget(
+      MaterialApp(
+        home: MemoryCardsScreen(
+          game: MemoryCardsGame(),
+          level: memoryCardsLevel,
+          onComplete: (_) {},
+          reduceMotion: true,
+        ),
+      ),
+    );
+    await tester.pump(const Duration(milliseconds: 100));
+    await tester.tap(find.text('Tiếp tục'));
+    await tester.pump();
+
+    final container = tester.widget<AnimatedContainer>(
+      find.byType(AnimatedContainer).first,
+    );
+    expect(container.duration, Duration.zero);
+  });
+
   testWidgets('Robot Commands renders playable controls', (tester) async {
     await tester.pumpWidget(
       const MaterialApp(
@@ -578,7 +613,132 @@ void main() {
     expect(unlocked, isTrue);
   });
 
+  group('Parent Dashboard', () {
+    Widget buildDashboard({
+      required List<Override> overrides,
+    }) {
+      return ProviderScope(
+        overrides: overrides,
+        child: MaterialApp.router(
+          routerConfig: GoRouter(
+            initialLocation: '/dashboard',
+            routes: [
+              GoRoute(
+                path: '/dashboard',
+                builder: (context, state) => const ParentDashboardScreen(),
+              ),
+              GoRoute(
+                path: '/parent/settings',
+                builder: (context, state) =>
+                    const Scaffold(body: Text('SETTINGS')),
+              ),
+            ],
+          ),
+        ),
+      );
+    }
+
+    testWidgets('shows a loading state while reports are in flight',
+        (tester) async {
+      await tester.pumpWidget(buildDashboard(overrides: [
+        reportsProvider.overrideWith(
+          (ref) => Completer<List<Map<String, dynamic>>>().future,
+        ),
+      ]));
+      await tester.pump();
+
+      expect(find.text('Đang tải...'), findsOneWidget);
+    });
+
+    testWidgets('shows a retryable error state when reports fail to load',
+        (tester) async {
+      await tester.pumpWidget(buildDashboard(overrides: [
+        reportsProvider.overrideWith((ref) async => throw Exception('network down')),
+      ]));
+      await tester.pump();
+
+      expect(find.text('Không thể tải dữ liệu'), findsOneWidget);
+      expect(find.text('Thử lại'), findsOneWidget);
+    });
+
+    testWidgets('shows an empty-activity placeholder when no report exists yet',
+        (tester) async {
+      await tester.pumpWidget(buildDashboard(overrides: [
+        reportsProvider.overrideWith((ref) async => []),
+        activeChildProvider.overrideWith(
+          () => _FixedActiveChildNotifier(const ActiveChildState(children: [])),
+        ),
+      ]));
+      await tester.pump();
+
+      expect(find.text('Chưa có hoạt động'), findsOneWidget);
+      expect(find.text('Chưa có hồ sơ'), findsOneWidget);
+    });
+
+    testWidgets('shows today\'s summary and child cards once data loads',
+        (tester) async {
+      await tester.pumpWidget(buildDashboard(overrides: [
+        reportsProvider.overrideWith((ref) async => [
+              {
+                'total_lessons_today': 2,
+                'total_games_today': 3,
+                'total_time_minutes_today': 25,
+                'total_stars_today': 4,
+              },
+            ]),
+        activeChildProvider.overrideWith(() => _FixedActiveChildNotifier(
+              const ActiveChildState(
+                childId: 'child-1',
+                children: [
+                  {'id': 'child-1', 'nickname': 'Mi', 'age_group': 'junior'},
+                ],
+              ),
+            )),
+      ]));
+      await tester.pump();
+
+      expect(find.text('📊 Tổng quan hôm nay'), findsOneWidget);
+      expect(find.text('4'), findsOneWidget); // stars
+      expect(find.text('Mi'), findsOneWidget);
+    });
+
+    testWidgets('retry after an error re-fetches and shows real data',
+        (tester) async {
+      var attempt = 0;
+      await tester.pumpWidget(buildDashboard(overrides: [
+        reportsProvider.overrideWith((ref) async {
+          attempt += 1;
+          if (attempt == 1) throw Exception('network down');
+          return [
+            {
+              'total_lessons_today': 1,
+              'total_games_today': 1,
+              'total_time_minutes_today': 5,
+              'total_stars_today': 1,
+            },
+          ];
+        }),
+        activeChildProvider.overrideWith(
+          () => _FixedActiveChildNotifier(const ActiveChildState(children: [])),
+        ),
+      ]));
+      await tester.pump();
+
+      expect(find.text('Không thể tải dữ liệu'), findsOneWidget);
+
+      await tester.tap(find.text('Thử lại'));
+      await tester.pump();
+      await tester.pump();
+
+      expect(find.text('📊 Tổng quan hôm nay'), findsOneWidget);
+    });
+  });
+
   group('Child Home v2', () {
+    ActiveChildState fakeActiveChild() => const ActiveChildState(
+          childId: 'child-1',
+          child: {'id': 'child-1', 'nickname': 'Mi'},
+        );
     GoRouter buildTestRouter() => GoRouter(
           initialLocation: '/home',
           routes: [
@@ -639,6 +799,51 @@ void main() {
       expect(find.text('Vườn thành tích'), findsOneWidget);
     });
 
+    testWidgets(
+        "the hero CTA launches the daily plan's game_type, not always memory_cards",
+        (tester) async {
+      await tester.pumpWidget(
+        ProviderScope(
+          overrides: [
+            dailyPlanProvider.overrideWith((ref) async => [
+                  {
+                    'lesson_id': 'lesson-1',
+                    'title': 'Robot Lesson',
+                    'subject': 'logic',
+                    'estimated_minutes': 5,
+                    'type': 'lesson',
+                    'is_required': true,
+                    'game_type': 'robot_commands',
+                  },
+                ]),
+            activeChildProvider.overrideWith(() => _FixedActiveChildNotifier(fakeActiveChild())),
+          ],
+          child: MaterialApp.router(
+            routerConfig: GoRouter(
+              initialLocation: '/home',
+              routes: [
+                GoRoute(
+                  path: '/home',
+                  builder: (context, state) => const ChildHomeScreen(),
+                ),
+                GoRoute(
+                  path: '/game/:gameId',
+                  builder: (context, state) => Text(
+                      'LAUNCHED_${state.pathParameters['gameId']}'),
+                ),
+              ],
+            ),
+          ),
+        ),
+      );
+      await tester.pumpAndSettle();
+
+      await tester.tap(find.text('Tiếp tục học'));
+      await tester.pumpAndSettle();
+
+      expect(find.text('LAUNCHED_robot_commands'), findsOneWidget);
+    });
+
     testWidgets('parent gate requires a sustained hold, not a tap',
         (tester) async {
       await tester.pumpWidget(
@@ -683,6 +888,8 @@ void main() {
       240,
       scrollable: find.byType(Scrollable).first,
     );
+    await tester.drag(find.byType(Scrollable).first, const Offset(0, -80));
+    await tester.pump();
     await tester.tap(find.text('Tải nội dung offline'));
     await tester.pump();
 
@@ -697,12 +904,34 @@ void main() {
       240,
       scrollable: find.byType(Scrollable).first,
     );
+    await tester.drag(find.byType(Scrollable).first, const Offset(0, -80));
+    await tester.pump();
     await tester.tap(find.text('Xuất dữ liệu của bé'));
     await tester.pump();
 
     expect(find.text('Bản xuất dữ liệu đã sẵn sàng'), findsOneWidget);
     expect(
         store.lastExportJson, contains('mi-academy-parent-settings-export-v1'));
+  });
+
+  testWidgets('Parent settings reduce-motion toggle persists to the store',
+      (tester) async {
+    final store = MemoryParentSettingsStore();
+    await tester.pumpWidget(
+      ProviderScope(
+        child: MaterialApp(
+          home: ParentSettingsScreen(store: store),
+        ),
+      ),
+    );
+    await tester.pump();
+
+    expect((await store.load()).reduceMotion, isFalse);
+
+    await tester.tap(find.text('Giảm hiệu ứng chuyển động'));
+    await tester.pump();
+
+    expect((await store.load()).reduceMotion, isTrue);
   });
 
   testWidgets('Parent settings persist after reopening the screen',
@@ -718,6 +947,13 @@ void main() {
     );
     await tester.pump();
 
+    await tester.scrollUntilVisible(
+      find.text('English'),
+      240,
+      scrollable: find.byType(Scrollable).first,
+    );
+    await tester.drag(find.byType(Scrollable).first, const Offset(0, -80));
+    await tester.pump();
     await tester.tap(find.text('English'));
     await tester.pump();
     await tester.scrollUntilVisible(
@@ -725,7 +961,16 @@ void main() {
       240,
       scrollable: find.byType(Scrollable).first,
     );
+    await tester.drag(find.byType(Scrollable).first, const Offset(0, -80));
+    await tester.pump();
     await tester.tap(find.text('Tải nội dung offline'));
+    await tester.pump();
+    await tester.scrollUntilVisible(
+      find.text('Xuất dữ liệu của bé'),
+      240,
+      scrollable: find.byType(Scrollable).first,
+    );
+    await tester.drag(find.byType(Scrollable).first, const Offset(0, -80));
     await tester.pump();
     await tester.tap(find.text('Xuất dữ liệu của bé'));
     await tester.pump();
@@ -750,6 +995,8 @@ void main() {
       240,
       scrollable: find.byType(Scrollable).first,
     );
+    await tester.drag(find.byType(Scrollable).first, const Offset(0, -80));
+    await tester.pump();
     expect(find.text('Sẵn sàng học không cần mạng'), findsOneWidget);
     expect(find.text('Bản xuất dữ liệu đã sẵn sàng'), findsOneWidget);
   });
@@ -770,6 +1017,8 @@ void main() {
       240,
       scrollable: find.byType(Scrollable).first,
     );
+    await tester.drag(find.byType(Scrollable).first, const Offset(0, -80));
+    await tester.pump();
     await tester.drag(find.byType(Scrollable).first, const Offset(0, -120));
     await tester.pump();
     await tester.tap(find.text('Xóa dữ liệu của bé'));

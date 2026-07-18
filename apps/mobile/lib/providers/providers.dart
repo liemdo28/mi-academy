@@ -1,14 +1,34 @@
 import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:offline_sync/offline_sync.dart';
+import '../config/router.dart';
 import '../services/api_service.dart';
 import '../services/api_sync_processor.dart';
+import '../services/parent_settings_store.dart';
+import '../services/snapshot_store.dart';
 import 'auth_provider.dart';
 import 'child_provider.dart';
 
+/// Parent settings store — defaults to an in-memory store (e.g. for tests
+/// and the debug game picker); `main()` overrides this with a Hive-backed
+/// store for the real app so settings persist across launches.
+final parentSettingsStoreProvider = Provider<ParentSettingsStore>((ref) {
+  return MemoryParentSettingsStore();
+});
+
 /// API service provider — singleton, initialized once.
+///
+/// Wires `onSessionExpired` so a mid-session unrecoverable 401 (refresh
+/// token itself expired/rejected) doesn't just error out the screen that
+/// happened to be making the request -- it resets auth state and sends the
+/// whole app back to /login, same as an explicit logout would.
 final apiServiceProvider = Provider<ApiService>((ref) {
-  return ApiService();
+  final api = ApiService();
+  api.onSessionExpired = () {
+    ref.read(authProvider.notifier).forceLogout();
+    routerProvider.go('/login');
+  };
+  return api;
 });
 
 /// Parent PIN verifier.
@@ -28,21 +48,18 @@ final authProvider = NotifierProvider<AuthNotifier, AuthState>(
   () => AuthNotifier(),
 );
 
+/// Whether the parent has verified their PIN (or biometric/adult-challenge
+/// fallback) *this app session*. Gates `/parent` and `/parent/settings` via
+/// `router.dart`'s redirect — without this, either route was reachable by
+/// direct navigation without ever going through `ParentPinScreen`. Reset on
+/// logout so a fresh sign-in re-locks the parent area.
+final parentGateProvider = StateProvider<bool>((ref) => false);
+
 /// Active child profile provider.
 final activeChildProvider =
     NotifierProvider<ActiveChildNotifier, ActiveChildState>(
   () => ActiveChildNotifier(),
 );
-
-/// Lesson catalog provider.
-final lessonCatalogProvider =
-    FutureProvider<List<Map<String, dynamic>>>((ref) async {
-  final api = ref.read(apiServiceProvider);
-  final child = ref.watch(activeChildProvider);
-  final ageGroup = child.child?['age_group'];
-  final result = await api.getLessons(ageGroup: ageGroup);
-  return result.cast<Map<String, dynamic>>();
-});
 
 /// Daily plan provider.
 final dailyPlanProvider =
@@ -104,4 +121,10 @@ final syncServiceProvider = Provider<SyncService>((ref) {
   service.start();
   ref.onDispose(service.stop);
   return service;
+});
+
+/// Platform-owned snapshot save/load (Phase 10) — reads the `snapshots`
+/// Hive box opened by `initHive()`, same constraint as [syncServiceProvider].
+final snapshotStoreProvider = Provider<SnapshotStore>((ref) {
+  return HiveSnapshotStore(box(MiBoxes.snapshots));
 });

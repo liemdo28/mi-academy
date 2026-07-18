@@ -1,0 +1,150 @@
+{
+  "schemaVersion": 1,
+  "policy": {
+    "sourceOfTruth": "FastAPI/Pydantic/OpenAPI for API payloads; canonical Dart DTOs mirror OpenAPI through shared fixtures until generation is fully automated.",
+    "wireCasing": "snake_case",
+    "dartCasing": "camelCase",
+    "conversionLayer": "DTO toJson/fromJson only; screens and games must not map wire fields directly.",
+    "unknownFields": "Backward compatible v1 readers ignore unknown additive fields and reject forbidden secret/PII fields.",
+    "breakingChangePolicy": "Breaking changes require schemaVersion increment, migration entry, compatibility matrix update, and dual-read migration where local state exists."
+  },
+  "contracts": [
+    {
+      "id": "mi.parent.profile",
+      "schemaVersion": 1,
+      "source": "components.schemas.ParentProfileResponse",
+      "dart": "api_client parent DTO",
+      "fixture": "integration/fixtures/parent_profile.json",
+      "compatibility": "backward"
+    },
+    {
+      "id": "mi.child.profile",
+      "schemaVersion": 1,
+      "source": "components.schemas.ChildProfileResponse",
+      "dart": "apps/mobile/lib/models/child_profile.dart",
+      "fixture": "integration/fixtures/child_profile.json",
+      "compatibility": "backward"
+    },
+    {
+      "id": "mi.auth.session",
+      "schemaVersion": 1,
+      "source": "components.schemas.TokenResponse",
+      "dart": "apps/mobile/lib/services/api_service.dart",
+      "fixture": null,
+      "compatibility": "backward"
+    },
+    {
+      "id": "mi.lesson",
+      "schemaVersion": 1,
+      "source": "components.schemas.LessonDetail",
+      "dart": "packages/content_sdk/lib/src/models/lesson.dart",
+      "fixture": null,
+      "compatibility": "backward"
+    },
+    {
+      "id": "mi.skill",
+      "schemaVersion": 1,
+      "source": "content/skills/skill_taxonomy.json",
+      "dart": "packages/content_sdk/lib/src/models/skill.dart",
+      "fixture": null,
+      "compatibility": "backward"
+    },
+    {
+      "id": "mi.game.launch",
+      "schemaVersion": 1,
+      "source": "components.schemas.MiGameLaunchRequest",
+      "dart": "packages/mi_game_core/lib/src/contracts/mi_game_launch_request.dart",
+      "fixture": "integration/fixtures/game_launch_request.json",
+      "compatibility": "backward"
+    },
+    {
+      "id": "mi.game.result",
+      "schemaVersion": 1,
+      "source": "components.schemas.MiGameResult",
+      "dart": "packages/mi_game_core/lib/src/contracts/mi_game_result.dart",
+      "fixture": "integration/fixtures/game_result.json",
+      "compatibility": "backward"
+    },
+    {
+      "id": "mi.game.snapshot",
+      "schemaVersion": 2,
+      "source": "components.schemas.MiGameSnapshot",
+      "dart": "packages/mi_game_core/lib/src/models/mi_game_snapshot.dart",
+      "fixture": "integration/fixtures/game_snapshot.json",
+      "compatibility": "backward",
+      "migration": "MiGameSnapshot.fromJson reads legacy v1 snapshots, defaults gameVersion, validates v2 checksum, and rejects unsupported future versions at restore time"
+    },
+    {
+      "id": "mi.progress",
+      "schemaVersion": 1,
+      "source": "components.schemas.ProgressResponse",
+      "dart": "packages/progress_core/lib/src/skill_mastery.dart",
+      "fixture": null,
+      "compatibility": "backward"
+    },
+    {
+      "id": "mi.reward",
+      "schemaVersion": 1,
+      "source": "components.schemas.RewardResponse",
+      "dart": "apps/mobile/lib/providers/providers.dart rewardsProvider",
+      "fixture": null,
+      "compatibility": "backward"
+    },
+    {
+      "id": "mi.sync.event",
+      "schemaVersion": 1,
+      "source": "components.schemas.SyncAttemptItem/SyncProgressItem/SyncSessionItem",
+      "dart": "packages/offline_sync/lib/src/sync_queue.dart",
+      "fixture": "integration/fixtures/sync_payload.json",
+      "compatibility": "backward"
+    },
+    {
+      "id": "mi.analytics.event",
+      "schemaVersion": 1,
+      "source": "packages/analytics_sdk/lib/src/models/analytics_event.dart",
+      "dart": "packages/analytics_sdk/lib/src/models/analytics_event.dart",
+      "fixture": null,
+      "compatibility": "backward"
+    },
+    {
+      "id": "mi.mastery.evidence",
+      "schemaVersion": 1,
+      "source": "components.schemas.MiGameResult.skill_evidence/mastery_evidence",
+      "dart": "packages/mastery_core/lib/src/mastery_result.dart",
+      "fixture": "integration/fixtures/game_result.json",
+      "compatibility": "backward"
+    },
+    {
+      "id": "mi.recommendation",
+      "schemaVersion": 1,
+      "source": "packages/recommendation_core/lib/src/recommendation_types.dart",
+      "dart": "packages/recommendation_core/lib/src/recommendation_types.dart",
+      "fixture": null,
+      "compatibility": "backward"
+    },
+    {
+      "id": "mi.content.manifest",
+      "schemaVersion": 1,
+      "source": "content/manifests/manifest_en.json and content/manifests/manifest_vi.json",
+      "dart": "packages/content_sdk/lib/src/models/content_bundle.dart",
+      "fixture": null,
+      "compatibility": "backward"
+    },
+    {
+      "id": "mi.asset.manifest",
+      "schemaVersion": 1,
+      "source": "assets/manifests/asset_manifest.schema.json",
+      "dart": "packages/design_system asset resolver",
+      "fixture": null,
+      "compatibility": "backward"
+    },
+    {
+      "id": "mi.api.error",
+      "schemaVersion": 1,
+      "source": "components.schemas.Error",
+      "dart": "packages/api_client error handling",
+      "fixture": null,
+      "compatibility": "backward"
+    }
+  ]
+}

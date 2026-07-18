@@ -4,7 +4,9 @@ import json
 from fastapi import APIRouter, Depends, HTTPException, Query, status
 from sqlalchemy import select
 from sqlalchemy.ext.asyncio import AsyncSession
+from sqlalchemy.orm import selectinload
 
+from apps.api.adaptive_ranking import rank_lessons
 from apps.api.database import get_db
 from apps.api.dependencies import get_parent_profile
 from apps.api.models import ChildProfile, Lesson, ParentProfile, Progress, Question
@@ -34,7 +36,7 @@ async def list_lessons(
     language: str = Query(None),
     db: AsyncSession = Depends(get_db),
 ):
-    query = select(Lesson).where(Lesson.is_active == True)
+    query = select(Lesson).options(selectinload(Lesson.subject)).where(Lesson.is_active == True)
     if age_group:
         query = query.where(Lesson.age_group == age_group)
     if language:
@@ -125,15 +127,20 @@ async def get_recommended(
 
     result = await db.execute(
         select(Lesson)
+        .options(selectinload(Lesson.subject))
         .where(
             Lesson.is_active == True,
             Lesson.age_group == child.age_group,
         )
-        .order_by(Lesson.difficulty)
     )
     lessons = result.scalars().all()
 
-    # Return first 3 — in production this would use adaptive algorithm
+    progress_result = await db.execute(
+        select(Progress).where(Progress.child_id == child_id)
+    )
+    progress_by_lesson = {p.lesson_id: p for p in progress_result.scalars().all()}
+    ranked = rank_lessons(lessons, progress_by_lesson)
+
     return [
         LessonListItem(
             id=l.id,
@@ -147,7 +154,7 @@ async def get_recommended(
             is_active=l.is_active,
             subject_name=l.subject.name if l.subject else None,
         )
-        for l in lessons[:3]
+        for l in ranked[:3]
     ]
 
 

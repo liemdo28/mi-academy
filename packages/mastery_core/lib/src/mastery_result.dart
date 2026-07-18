@@ -1,6 +1,5 @@
 import 'package:equatable/equatable.dart';
 import 'mastery_state.dart';
-import 'mastery_status.dart';
 
 /// Result of a mastery evaluation.
 ///

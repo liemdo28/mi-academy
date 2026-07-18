@@ -132,10 +132,7 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
                 MiOutlinedButton(
                   label: 'Chế độ offline',
                   icon: Icons.offline_bolt,
-                  onPressed: () {
-                    // TODO: Skip auth, go directly to child selector
-                    context.go('/select-child');
-                  },
+                  onPressed: () => context.go('/select-child'),
                 ),
               ],
             ),

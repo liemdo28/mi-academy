@@ -20,14 +20,14 @@ class LessonsScreen extends StatelessWidget {
       context: context,
       builder: (ctx) => AlertDialog(
         title: const Text('New Lesson'),
-        content: const Column(
+        content: Column(
           mainAxisSize: MainAxisSize.min,
-          children: [
+          children: const [
             TextField(decoration: InputDecoration(labelText: 'Title')),
             SizedBox(height: 12),
             TextField(decoration: InputDecoration(labelText: 'Subject ID')),
             SizedBox(height: 12),
-            TextField(decoration: InputDecoration(labelText: 'Age Group'), controller: TextEditingController(text: 'explorer')),
+            TextField(decoration: InputDecoration(labelText: 'Age Group')),
           ],
         ),
         actions: [
@@ -49,7 +49,15 @@ class _LessonTable extends StatelessWidget {
           // Filter bar
           Row(
             children: [
-              Expanded(child: TextField(decoration: InputDecoration(hintText: 'Search lessons...', prefixIcon: const Icon(Icons.search), border: OutlineInputBorder(borderRadius: BorderRadius.circular(8)))),
+              Expanded(
+                child: TextField(
+                  decoration: InputDecoration(
+                    hintText: 'Search lessons...',
+                    prefixIcon: const Icon(Icons.search),
+                    border: OutlineInputBorder(borderRadius: BorderRadius.circular(8)),
+                  ),
+                ),
+              ),
               const SizedBox(width: 12),
               DropdownMenu<String>(label: const Text('Age Group'), dropdownMenuEntries: const [
                 DropdownMenuEntry(value: 'all', label: 'All'),

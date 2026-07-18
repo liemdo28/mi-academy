@@ -7,6 +7,7 @@ class ParentSettingsSnapshot {
     this.dailyLimitMinutes = 30,
     this.soundEnabled = true,
     this.subtitlesEnabled = false,
+    this.reduceMotion = false,
     this.language = 'vi',
     this.offlineReady = false,
     this.exportPreparedAt,
@@ -16,6 +17,10 @@ class ParentSettingsSnapshot {
   final int dailyLimitMinutes;
   final bool soundEnabled;
   final bool subtitlesEnabled;
+  /// Skips/shortens game animations (e.g. Memory Cards' flip transition)
+  /// for children sensitive to motion. Threaded down to games via
+  /// MiGameContext.accessibility -- see memory_cards_screen.dart.
+  final bool reduceMotion;
   final String language;
   final bool offlineReady;
   final DateTime? exportPreparedAt;
@@ -28,6 +33,7 @@ class ParentSettingsSnapshot {
     int? dailyLimitMinutes,
     bool? soundEnabled,
     bool? subtitlesEnabled,
+    bool? reduceMotion,
     String? language,
     bool? offlineReady,
     DateTime? exportPreparedAt,
@@ -39,6 +45,7 @@ class ParentSettingsSnapshot {
       dailyLimitMinutes: dailyLimitMinutes ?? this.dailyLimitMinutes,
       soundEnabled: soundEnabled ?? this.soundEnabled,
       subtitlesEnabled: subtitlesEnabled ?? this.subtitlesEnabled,
+      reduceMotion: reduceMotion ?? this.reduceMotion,
       language: language ?? this.language,
       offlineReady: offlineReady ?? this.offlineReady,
       exportPreparedAt: clearExportPreparedAt
@@ -55,6 +62,7 @@ class ParentSettingsSnapshot {
       'dailyLimitMinutes': dailyLimitMinutes,
       'soundEnabled': soundEnabled,
       'subtitlesEnabled': subtitlesEnabled,
+      'reduceMotion': reduceMotion,
       'language': language,
       'offlineReady': offlineReady,
       'exportPreparedAt': exportPreparedAt?.toIso8601String(),
@@ -91,6 +99,7 @@ class ParentSettingsSnapshot {
       dailyLimitMinutes: _intValue(json['dailyLimitMinutes'], fallback: 30),
       soundEnabled: _boolValue(json['soundEnabled'], fallback: true),
       subtitlesEnabled: _boolValue(json['subtitlesEnabled']),
+      reduceMotion: _boolValue(json['reduceMotion']),
       language: json['language'] == 'en' ? 'en' : 'vi',
       offlineReady: _boolValue(json['offlineReady']),
       exportPreparedAt: _dateValue(json['exportPreparedAt']),

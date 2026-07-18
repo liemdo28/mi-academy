@@ -249,23 +249,22 @@ class _ChildHomeScreenState extends ConsumerState<ChildHomeScreen> {
     return '$title — $detail';
   }
 
-  /// Launches today's featured game for [lesson], if a child is active.
-  ///
-  /// There is no per-lesson game mapping in the content model yet (see
-  /// docs/final/KNOWN_LIMITATIONS.md), so this always opens Memory Cards —
-  /// the one game whose completion flow saves a full result. The lesson_id
-  /// is still passed through so the server can attribute mastery to it.
+  /// Launches the game the daily plan maps [lesson]'s subject to (see the
+  /// backend's `_SUBJECT_TO_GAME_TYPE`), falling back to Memory Cards only
+  /// if there's no plan item at all (e.g. an empty plan) or the server
+  /// hasn't sent a `game_type` yet.
   void _launchLesson(
     BuildContext context,
     String childId,
     Map<String, dynamic>? lesson,
   ) {
     final lessonId = lesson?['lesson_id'] as String?;
+    final gameType = lesson?['game_type'] as String? ?? 'memory_cards';
     final query = {
       'childId': childId,
       if (lessonId != null) 'lessonId': lessonId,
     };
-    final uri = Uri(path: '/game/memory_cards', queryParameters: query);
+    final uri = Uri(path: '/game/$gameType', queryParameters: query);
     context.push(uri.toString());
   }
 

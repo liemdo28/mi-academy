@@ -9,7 +9,10 @@ from apps.api.dependencies import (
     create_access_token,
     create_refresh_token,
     decode_token,
+    get_current_user,
     hash_password,
+    redeem_refresh_token,
+    revoke_all_refresh_tokens,
     verify_password,
 )
 from apps.api.models import ParentProfile, User
@@ -55,7 +58,7 @@ async def register(body: RegisterRequest, db: AsyncSession = Depends(get_db)):
     await db.flush()
 
     access_token = create_access_token({"sub": user.id})
-    refresh_token = create_refresh_token({"sub": user.id})
+    refresh_token = await create_refresh_token(db, user.id)
 
     return AuthResponse(
         user=UserResponse(
@@ -87,7 +90,7 @@ async def login(body: LoginRequest, db: AsyncSession = Depends(get_db)):
     profile = profile_result.scalar_one_or_none()
 
     access_token = create_access_token({"sub": user.id})
-    refresh_token = create_refresh_token({"sub": user.id})
+    refresh_token = await create_refresh_token(db, user.id)
 
     return AuthResponse(
         user=UserResponse(
@@ -103,8 +106,13 @@ async def login(body: LoginRequest, db: AsyncSession = Depends(get_db)):
 
 
 @router.post("/logout", response_model=dict)
-async def logout():
-    # Stateless JWT — client discards the token
+async def logout(user: User = Depends(get_current_user), db: AsyncSession = Depends(get_db)):
+    # Revokes every refresh token issued to this user server-side -- a
+    # stateless "client discards the token" logout can't actually stop a
+    # stolen/leaked refresh token from remaining valid until it naturally
+    # expires (up to REFRESH_TOKEN_EXPIRE_DAYS).
+    await revoke_all_refresh_tokens(db, user.id)
+    await db.commit()
     return {"message": "Logged out successfully"}
 
 
@@ -128,7 +136,13 @@ async def refresh(body: RefreshRequest, db: AsyncSession = Depends(get_db)):
             detail={"error": {"code": "USER_NOT_FOUND", "message": "User no longer exists"}},
         )
 
+    # Refresh tokens are single-use (rotated on every call) -- this raises
+    # 401 if the jti was already redeemed, revoked (logout), or expired
+    # server-side, even if the JWT signature itself still verifies.
+    await redeem_refresh_token(db, payload)
+
     access_token = create_access_token({"sub": user.id})
-    new_refresh = create_refresh_token({"sub": user.id})
+    new_refresh = await create_refresh_token(db, user.id)
+    await db.commit()
 
     return TokenResponse(access_token=access_token, refresh_token=new_refresh)

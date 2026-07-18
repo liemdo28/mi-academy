@@ -162,6 +162,20 @@ class _SettingsState extends ConsumerState<ParentSettingsScreen> {
               onChanged: (v) => _save(_settings.copyWith(subtitlesEnabled: v)),
             ),
             const SizedBox(height: 24),
+            Text('Trợ năng', style: Theme.of(context).textTheme.headlineMedium),
+            const SizedBox(height: 12),
+            SwitchListTile(
+              title: const Text('Giảm hiệu ứng chuyển động',
+                  style: TextStyle(fontSize: 16)),
+              subtitle: const Text(
+                'Tắt bớt hoạt ảnh trong trò chơi cho trẻ nhạy cảm với chuyển động.',
+                style: TextStyle(fontSize: 13),
+              ),
+              value: _settings.reduceMotion,
+              activeThumbColor: MiColors.primary,
+              onChanged: (v) => _save(_settings.copyWith(reduceMotion: v)),
+            ),
+            const SizedBox(height: 24),
             Text('Ngôn ngữ', style: Theme.of(context).textTheme.headlineMedium),
             const SizedBox(height: 12),
             Card(

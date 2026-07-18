@@ -5,15 +5,18 @@ mastery -> Progress, with attempt_id idempotency.
 """
 import asyncio
 from datetime import timedelta
+from unittest import mock
 
 import pytest
 from fastapi import HTTPException
 from sqlalchemy import func, select
 from sqlalchemy.ext.asyncio import async_sessionmaker, create_async_engine
 
+import apps.api.routes.games as games
 from apps.api.database import Base
 from apps.api.models import (
     Attempt,
+    ChildReward,
     ChildProfile,
     Game,
     Lesson,
@@ -110,6 +113,143 @@ def test_save_game_result_is_idempotent_on_duplicate_attempt_id():
                 )
                 progress = progress_row.scalar_one()
                 assert progress.total_attempts == 1  # not double-counted
+        finally:
+            await engine.dispose()
+
+    asyncio.run(run())
+
+
+def test_save_game_result_survives_concurrent_duplicate_submission():
+    """Simulates two requests racing on the same attempt_id: both pass the
+    pre-check (SELECT finds nothing) before either commits. The second one
+    to reach the database must hit the client_attempt_id unique constraint
+    and gracefully return an idempotent-replay response, not a raw 500 --
+    the select-then-insert pre-check alone cannot rule this out."""
+
+    async def run():
+        session_maker, engine = await _session_maker()
+        try:
+            async with session_maker() as db:
+                data = await _seed_world(db)
+                profile, child, lesson, game = data["profile"], data["child"], data["lesson"], data["game"]
+                body = _result_body(child.id, game.id, lesson.id, attempt_id="race-1")
+
+                real_replay_lookup = games._idempotent_replay_response
+                call_count = {"n": 0}
+
+                async def racy_replay_lookup(db_arg, attempt_id):
+                    call_count["n"] += 1
+                    if call_count["n"] == 1:
+                        # This request's own pre-check: pretend the racing
+                        # request hasn't committed yet, so nothing is found.
+                        return None
+                    return await real_replay_lookup(db_arg, attempt_id)
+
+                with mock.patch.object(games, "_idempotent_replay_response", racy_replay_lookup):
+                    # The "other" request actually commits first, in between
+                    # this request's pre-check and its own insert.
+                    other_attempt = Attempt(
+                        client_attempt_id="race-1",
+                        child_id=child.id,
+                        lesson_id=lesson.id,
+                        game_id=game.id,
+                        answer_json="{}",
+                    )
+                    db.add(other_attempt)
+                    await db.commit()
+
+                    response = await save_game_result(
+                        game_id=game.id, body=body, profile=profile, db=db
+                    )
+
+                assert response["idempotent_replay"] is True
+                assert response["attempt_id"] == other_attempt.id
+                assert await _count(db, Attempt) == 1
+        finally:
+            await engine.dispose()
+
+    asyncio.run(run())
+
+
+def test_save_game_result_awards_first_badge_once_across_distinct_attempts():
+    async def run():
+        session_maker, engine = await _session_maker()
+        try:
+            async with session_maker() as db:
+                data = await _seed_world(db)
+                profile, child, lesson, game = data["profile"], data["child"], data["lesson"], data["game"]
+
+                first = await save_game_result(
+                    game_id=game.id,
+                    body=_result_body(child.id, game.id, lesson.id, attempt_id="attempt-1"),
+                    profile=profile,
+                    db=db,
+                )
+                second = await save_game_result(
+                    game_id=game.id,
+                    body=_result_body(child.id, game.id, lesson.id, attempt_id="attempt-2"),
+                    profile=profile,
+                    db=db,
+                )
+
+                assert first["badges_unlocked"] == ["Sao đầu tiên"]
+                assert second["badges_unlocked"] == []
+                assert await _count(db, Attempt) == 2
+                assert await _count(db, ChildReward) == 1
+        finally:
+            await engine.dispose()
+
+    asyncio.run(run())
+
+
+def test_save_game_result_does_not_rewrite_mastery_for_out_of_order_attempt():
+    async def run():
+        session_maker, engine = await _session_maker()
+        try:
+            async with session_maker() as db:
+                data = await _seed_world(db)
+                profile, child, lesson, game = data["profile"], data["child"], data["lesson"], data["game"]
+                started = utc_now()
+                progress = Progress(
+                    child_id=child.id,
+                    lesson_id=lesson.id,
+                    status="completed",
+                    mastery_score=0.9,
+                    total_attempts=3,
+                    last_played_at=started + timedelta(minutes=10),
+                )
+                db.add(progress)
+                await db.commit()
+
+                older_body = _result_body(
+                    child.id,
+                    game.id,
+                    lesson.id,
+                    attempt_id="older-attempt",
+                    correct=1,
+                    incorrect=4,
+                    mastery_evidence=0.1,
+                )
+                older_body.completed_at = started + timedelta(minutes=1)
+
+                response = await save_game_result(
+                    game_id=game.id,
+                    body=older_body,
+                    profile=profile,
+                    db=db,
+                )
+
+                assert response["idempotent_replay"] is False
+                assert response["out_of_order"] is True
+                assert response["mastery_score"] == 0.9
+                assert await _count(db, Attempt) == 1
+
+                progress_row = await db.execute(
+                    select(Progress).where(Progress.child_id == child.id, Progress.lesson_id == lesson.id)
+                )
+                saved_progress = progress_row.scalar_one()
+                assert saved_progress.mastery_score == 0.9
+                assert saved_progress.total_attempts == 3
         finally:
             await engine.dispose()
 

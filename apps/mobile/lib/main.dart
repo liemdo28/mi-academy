@@ -1,14 +1,14 @@
-import 'dart:convert' as convert;
-
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:mi_game_core/mi_game_core.dart';
 import 'package:mi_game_ui/mi_game_ui.dart';
-import 'package:mi_game_content/mi_game_content.dart';
 import 'package:offline_sync/offline_sync.dart';
 
+import 'app.dart' as production_app;
+import 'providers/providers.dart';
 import 'screens/parent_pin_screen.dart';
 import 'screens/parent_settings_screen.dart';
+import 'services/game_levels.dart';
 import 'services/parent_settings_store.dart';
 import 'src/games/choice/choice_game_screen.dart';
 import 'src/games/memory_cards/memory_cards_game.dart';
@@ -23,11 +23,23 @@ Future<void> main() async {
   // widget reads `syncServiceProvider`.
   await initHive();
   final parentSettingsStore = await HiveParentSettingsStore.open();
-  runApp(MiAcademyApp(parentSettingsStore: parentSettingsStore));
+  runApp(
+    ProviderScope(
+      overrides: [
+        parentSettingsStoreProvider.overrideWithValue(parentSettingsStore),
+      ],
+      child: const production_app.MiAcademyApp(),
+    ),
+  );
 }
 
-class MiAcademyApp extends StatelessWidget {
-  MiAcademyApp({
+/// Debug-only harness that boots straight into the 6-game picker, bypassing
+/// login/child selection. Not used by production `main()` — kept for local
+/// game-engine iteration and covered by widget_test.dart. See
+/// docs/final/INTEGRATION_REPORT.md (Phase 4) for why this was split out
+/// from the real app shell in `app.dart`.
+class DebugGamePickerApp extends StatelessWidget {
+  DebugGamePickerApp({
     super.key,
     ParentSettingsStore? parentSettingsStore,
   }) : parentSettingsStore = parentSettingsStore ?? MemoryParentSettingsStore();
@@ -76,19 +88,9 @@ class _HomeScreenState extends State<HomeScreen> {
 
   Future<void> _loadLevels() async {
     try {
-      final provider = GameContentProvider();
-      final assetBundle = DefaultAssetBundle.of(context);
       final levelsByGame = <String, List<MiLevel>>{};
-      for (final entry in _gameAssets.entries) {
-        final json = await assetBundle.loadString(entry.value);
-        final data = convert.jsonDecode(json) as Map<String, dynamic>;
-        final levelData = (data['levels'] as List)
-            .map((level) => Map<String, dynamic>.from(level as Map))
-            .toList();
-        levelsByGame[entry.key] = await provider.loadLevels(
-          levelData,
-          gameId: entry.key,
-        );
+      for (final gameId in gameLevelAssets.keys) {
+        levelsByGame[gameId] = await loadGameLevels(context, gameId);
       }
       setState(() {
         _levelsByGame = levelsByGame;
@@ -621,15 +623,6 @@ class _GameCard extends StatelessWidget {
     );
   }
 }
-
-const _gameAssets = {
-  'word_builder': 'assets/levels/word_builder.json',
-  'sound_match': 'assets/levels/sound_match.json',
-  'math_race': 'assets/levels/math_race.json',
-  'math_supermarket': 'assets/levels/math_supermarket.json',
-  'memory_cards': 'assets/levels/memory_cards.json',
-  'robot_commands': 'assets/levels/robot_commands.json',
-};
 
 class _MemoryCardsEntry extends StatefulWidget {
   const _MemoryCardsEntry({required this.level, required this.allLevels});

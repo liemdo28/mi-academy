@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:mi_game_core/mi_game_core.dart';
 import 'package:mi_game_ui/mi_game_ui.dart';
 
+import '../level_skill_ids.dart';
+import '../snapshot_lifecycle_mixin.dart';
 import 'sound_match_session.dart';
 
 class SoundMatchScreen extends StatefulWidget {
@@ -10,36 +12,64 @@ class SoundMatchScreen extends StatefulWidget {
     required this.level,
     required this.allLevels,
     this.onExit,
+    this.onComplete,
+    this.initialSnapshot,
+    this.onSaveSnapshot,
   });
 
   final MiLevel level;
   final List<MiLevel> allLevels;
   final VoidCallback? onExit;
 
+  /// Fired once per level completion — see WordBuilderScreen.onComplete.
+  final void Function(MiCompletionResult)? onComplete;
+
+  /// See WordBuilderScreen.initialSnapshot.
+  final MiGameSnapshot? initialSnapshot;
+
+  /// See WordBuilderScreen.onSaveSnapshot.
+  final void Function(MiGameSnapshot)? onSaveSnapshot;
+
   @override
   State<SoundMatchScreen> createState() => _SoundMatchScreenState();
 }
 
-class _SoundMatchScreenState extends State<SoundMatchScreen> {
+class _SoundMatchScreenState extends State<SoundMatchScreen>
+    with WidgetsBindingObserver, SnapshotLifecycleMixin<SoundMatchScreen> {
   late SoundMatchSession _session;
   late Stopwatch _stopwatch;
+  bool _completed = false;
+
+  @override
+  void Function(MiGameSnapshot)? get onSaveSnapshot => widget.onSaveSnapshot;
+
+  @override
+  MiGameSnapshot? captureSnapshot() {
+    if (_completed) return null;
+    return _session.saveSnapshot();
+  }
 
   @override
   void initState() {
     super.initState();
     _stopwatch = Stopwatch()..start();
-    _loadLevel(widget.level);
+    _loadLevel(widget.level, snapshot: widget.initialSnapshot);
   }
 
   @override
   void dispose() {
+    disposeSnapshotLifecycle();
     _stopwatch.stop();
     super.dispose();
   }
 
-  void _loadLevel(MiLevel level) {
+  void _loadLevel(MiLevel level, {MiGameSnapshot? snapshot}) {
     setState(() {
+      _completed = false;
       _session = SoundMatchSession(level: level);
+      if (snapshot != null) {
+        _session.restoreSnapshot(snapshot);
+      }
       _stopwatch
         ..reset()
         ..start();
@@ -71,7 +101,21 @@ class _SoundMatchScreenState extends State<SoundMatchScreen> {
   }
 
   void _showCompletion() {
+    _completed = true;
     _stopwatch.stop();
+    widget.onComplete?.call(MiCompletionResult(
+      gameId: _level.gameId,
+      levelId: _level.id,
+      childProfileId: _session.childProfileId,
+      completedAt: DateTime.now(),
+      score: _session.score,
+      maxScore: 100,
+      attemptsUsed: _session.attempts,
+      hintsUsed: _session.hintsUsed,
+      duration: _stopwatch.elapsed,
+      perfectRun: _session.attempts <= 1 && _session.hintsUsed == 0,
+      newSkillsAcquired: skillIdsFor(_level, fallback: const ['listening']),
+    ));
 
     showDialog(
       context: context,

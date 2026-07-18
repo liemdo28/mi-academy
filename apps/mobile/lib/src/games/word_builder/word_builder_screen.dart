@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:mi_game_core/mi_game_core.dart';
 import 'package:mi_game_ui/mi_game_ui.dart';
 
+import '../level_skill_ids.dart';
+import '../snapshot_lifecycle_mixin.dart';
 import 'word_builder_session.dart';
 
 class WordBuilderScreen extends StatefulWidget {
@@ -11,36 +13,72 @@ class WordBuilderScreen extends StatefulWidget {
     required this.level,
     required this.allLevels,
     this.onExit,
+    this.onComplete,
+    this.initialSnapshot,
+    this.onSaveSnapshot,
   });
 
   final MiLevel level;
   final List<MiLevel> allLevels;
   final VoidCallback? onExit;
 
+  /// Fired once per level completion with the session's score/attempts/hints,
+  /// so a caller (e.g. the production game launcher) can save a real result
+  /// without this screen calling the backend or Hive itself.
+  final void Function(MiCompletionResult)? onComplete;
+
+  /// A previously-saved in-progress snapshot for this exact (child, game,
+  /// level), already validated by the platform (checksum, child/level
+  /// match, schema version) -- this screen just applies it. Null means
+  /// start fresh.
+  final MiGameSnapshot? initialSnapshot;
+
+  /// Called with a snapshot of the current session when the app backgrounds
+  /// or this screen is exited mid-level. This screen never persists it
+  /// itself — see [SnapshotLifecycleMixin] and Phase 10's "platform owns
+  /// save/load" rule.
+  final void Function(MiGameSnapshot)? onSaveSnapshot;
+
   @override
   State<WordBuilderScreen> createState() => _WordBuilderScreenState();
 }
 
-class _WordBuilderScreenState extends State<WordBuilderScreen> {
+class _WordBuilderScreenState extends State<WordBuilderScreen>
+    with WidgetsBindingObserver, SnapshotLifecycleMixin<WordBuilderScreen> {
   late WordBuilderSession _session;
   late Stopwatch _stopwatch;
+  bool _completed = false;
+
+  @override
+  void Function(MiGameSnapshot)? get onSaveSnapshot => widget.onSaveSnapshot;
+
+  @override
+  MiGameSnapshot? captureSnapshot() {
+    if (_completed) return null;
+    return _session.saveSnapshot();
+  }
 
   @override
   void initState() {
     super.initState();
     _stopwatch = Stopwatch()..start();
-    _loadLevel(widget.level);
+    _loadLevel(widget.level, snapshot: widget.initialSnapshot);
   }
 
   @override
   void dispose() {
+    disposeSnapshotLifecycle();
     _stopwatch.stop();
     super.dispose();
   }
 
-  void _loadLevel(MiLevel level) {
+  void _loadLevel(MiLevel level, {MiGameSnapshot? snapshot}) {
     setState(() {
+      _completed = false;
       _session = WordBuilderSession(level: level);
+      if (snapshot != null) {
+        _session.restoreSnapshot(snapshot);
+      }
       _stopwatch
         ..reset()
         ..start();
@@ -84,7 +122,21 @@ class _WordBuilderScreenState extends State<WordBuilderScreen> {
   }
 
   void _showCompletion() {
+    _completed = true;
     _stopwatch.stop();
+    widget.onComplete?.call(MiCompletionResult(
+      gameId: _level.gameId,
+      levelId: _level.id,
+      childProfileId: _session.childProfileId,
+      completedAt: DateTime.now(),
+      score: _session.score,
+      maxScore: 100,
+      attemptsUsed: _session.attempts,
+      hintsUsed: _session.hintsUsed,
+      duration: _stopwatch.elapsed,
+      perfectRun: _session.attempts <= 1 && _session.hintsUsed == 0,
+      newSkillsAcquired: skillIdsFor(_level, fallback: const ['vocabulary']),
+    ));
 
     showDialog(
       context: context,
@@ -248,18 +300,26 @@ class _AnswerSlots extends StatelessWidget {
         return SizedBox(
           width: 54,
           height: 58,
-          child: OutlinedButton(
-            onPressed: letter == null ? null : () => onRemove(index),
-            style: OutlinedButton.styleFrom(
-              side: const BorderSide(color: GameTheme.primary, width: 2),
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(GameTheme.buttonRadius),
+          child: Semantics(
+            label: letter == null
+                ? 'Ô trống ${index + 1}'
+                : letter == ' '
+                    ? 'Khoảng trắng, chạm để bỏ ra'
+                    : 'Chữ $letter, chạm để bỏ ra',
+            button: letter != null,
+            child: OutlinedButton(
+              onPressed: letter == null ? null : () => onRemove(index),
+              style: OutlinedButton.styleFrom(
+                side: const BorderSide(color: GameTheme.primary, width: 2),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(GameTheme.buttonRadius),
+                ),
+                backgroundColor: Colors.white,
               ),
-              backgroundColor: Colors.white,
-            ),
-            child: Text(
-              letter == ' ' ? '␣' : letter ?? '',
-              style: GameTheme.headingMedium,
+              child: Text(
+                letter == ' ' ? '␣' : letter ?? '',
+                style: GameTheme.headingMedium,
+              ),
             ),
           ),
         );
@@ -285,18 +345,22 @@ class _LetterBank extends StatelessWidget {
         return SizedBox(
           width: 56,
           height: 56,
-          child: ElevatedButton(
-            onPressed: () => onPick(index),
-            style: ElevatedButton.styleFrom(
-              backgroundColor: GameTheme.secondary,
-              foregroundColor: Colors.white,
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(GameTheme.buttonRadius),
+          child: Semantics(
+            label: letter == ' ' ? 'Khoảng trắng' : 'Chữ $letter',
+            button: true,
+            child: ElevatedButton(
+              onPressed: () => onPick(index),
+              style: ElevatedButton.styleFrom(
+                backgroundColor: GameTheme.secondary,
+                foregroundColor: Colors.white,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(GameTheme.buttonRadius),
+                ),
               ),
-            ),
-            child: Text(
-              letter == ' ' ? '␣' : letter,
-              style: GameTheme.headingMedium.copyWith(color: Colors.white),
+              child: Text(
+                letter == ' ' ? '␣' : letter,
+                style: GameTheme.headingMedium.copyWith(color: Colors.white),
+              ),
             ),
           ),
         );

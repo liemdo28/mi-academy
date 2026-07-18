@@ -49,7 +49,10 @@ app.add_middleware(
     RateLimitMiddleware,
     auth_limit=settings.AUTH_RATE_LIMIT_PER_MIN,
     sync_limit=settings.SYNC_RATE_LIMIT_PER_MIN,
+    pin_limit=settings.PIN_RATE_LIMIT_PER_MIN,
     redis_url=settings.REDIS_URL,
+    app_env=settings.APP_ENV,
+    trust_proxy_headers=settings.TRUST_PROXY_HEADERS,
 )
 
 # Register routers

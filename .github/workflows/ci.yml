@@ -95,12 +95,104 @@ jobs:
           python-version: ${{ env.PYTHON_VERSION }}
 
       - name: Install test dependencies
+        # apps/api/requirements.txt already pins pytest/pytest-asyncio/aiosqlite
+        # alongside fastapi/sqlalchemy/starlette etc. Installing only a
+        # hand-picked subset here (as this job previously did) meant every
+        # test importing the actual backend app failed to collect with
+        # ModuleNotFoundError -- but the failure was masked because this
+        # workflow never scheduled a job before (see the CI-fix commit that
+        # touched android-release-signing's `if:`).
         run: |
           python -m pip install --upgrade pip
-          python -m pip install pytest pytest-asyncio aiosqlite
+          python -m pip install -r apps/api/requirements.txt
 
       - name: Run Python tests
         run: python -m pytest packages/game_core/tests tests test -q
+
+  postgres-integration:
+    # Everything above runs the test suite against SQLite in-memory, which
+    # can't exercise Postgres-only migration operations (e.g. ALTER
+    # CONSTRAINT, unsupported on SQLite -- see tools/migration docs) or
+    # confirm the app actually boots against production-shaped config
+    # (APP_ENV=production, a real Postgres URL, Redis-backed rate
+    # limiting). This job is the one place that validates both, closing
+    # the previously-documented "not validated against a real deployed
+    # environment" gap for Postgres/Redis.
+    name: Postgres + Redis production-config smoke test
+    runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:16
+        env:
+          POSTGRES_USER: mi_academy
+          POSTGRES_PASSWORD: mi_academy
+          POSTGRES_DB: mi_academy
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+      redis:
+        image: redis:7
+        ports:
+          - 6379:6379
+        options: >-
+          --health-cmd "redis-cli ping"
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+    env:
+      APP_ENV: production
+      SECRET_KEY: ci-postgres-smoke-test-secret-64-characters-long-not-a-real-secret
+      DATABASE_URL: postgresql+asyncpg://mi_academy:mi_academy@localhost:5432/mi_academy
+      REDIS_URL: redis://localhost:6379/0
+      CORS_ORIGINS: '["https://ci.smoke-test.invalid"]'
+      # Migrations own the schema here (see the Alembic step below) --
+      # production shouldn't rely on the dev-only create_all() fallback.
+      CREATE_TABLES_ON_STARTUP: "false"
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -r apps/api/requirements.txt
+
+      - name: Run Alembic migrations against real Postgres
+        working-directory: apps/api
+        run: python -m alembic upgrade head
+
+      - name: Boot the app against production-shaped config and check readiness
+        run: |
+          python -m uvicorn apps.api.main:app --host 127.0.0.1 --port 8000 &
+          server_pid=$!
+          ready=""
+          for i in $(seq 1 30); do
+            if curl -sf http://127.0.0.1:8000/health/live > /dev/null; then
+              ready=1
+              break
+            fi
+            sleep 1
+          done
+          if [ -z "$ready" ]; then
+            echo "App never became reachable" >&2
+            kill "$server_pid" 2>/dev/null || true
+            exit 1
+          fi
+          curl -sf http://127.0.0.1:8000/health/live
+          echo
+          # /health/ready actually queries the Postgres engine -- confirms
+          # the app is really talking to the service container, not just
+          # that the process started.
+          curl -sf http://127.0.0.1:8000/health/ready
+          echo
+          kill "$server_pid" 2>/dev/null || true
 
   mobile-test-build:
     name: Mobile analyze, tests, web, and Android build
@@ -134,6 +226,14 @@ jobs:
 
       - name: Run mobile widget tests
         run: flutter test
+
+      - name: Upload golden test failure diffs
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: golden-failures
+          path: apps/mobile/test/failures/
+          if-no-files-found: ignore
 
       - name: Build web release
         run: flutter build web --release
@@ -192,30 +292,53 @@ jobs:
     # see docs/security/SECRET_INVENTORY.md. Nothing is uploaded to Play
     # Store here; this only produces a signed .aab + mapping file artifact
     # for manual upload until a Play Store publishing step is added.
-    if: ${{ secrets.ANDROID_KEYSTORE_BASE64 != '' }}
+    #
+    # NOTE: the secret-presence check is deliberately a step-level `if`,
+    # not a job-level `if`. The `secrets` context is not reliably usable in
+    # a job-level `if` — using it there caused every CI run on this
+    # workflow to fail before any job was scheduled (visible as "This run
+    # likely failed because of a workflow file issue" with zero jobs).
     runs-on: ubuntu-latest
     needs: mobile-test-build
     defaults:
       run:
         working-directory: apps/mobile
     steps:
+      # Checkout unconditionally, before the working-directory default
+      # (apps/mobile) is used by any step -- a step-level `if` still
+      # inherits the job's `defaults.run.working-directory`, so running the
+      # secret check before checkout failed with "No such file or
+      # directory" since apps/mobile didn't exist yet.
       - uses: actions/checkout@v4
 
+      - name: Check release signing secret is configured
+        id: check-secret
+        run: |
+          if [ -n "${{ secrets.ANDROID_KEYSTORE_BASE64 }}" ]; then
+            echo "configured=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "configured=false" >> "$GITHUB_OUTPUT"
+          fi
+
       - uses: actions/setup-java@v4
+        if: steps.check-secret.outputs.configured == 'true'
         with:
           distribution: temurin
           java-version: "17"
 
       - uses: subosito/flutter-action@v2
+        if: steps.check-secret.outputs.configured == 'true'
         with:
           flutter-version: ${{ env.FLUTTER_VERSION }}
           channel: stable
           cache: true
 
       - name: Install Flutter dependencies
+        if: steps.check-secret.outputs.configured == 'true'
         run: flutter pub get
 
       - name: Decode release keystore
+        if: steps.check-secret.outputs.configured == 'true'
         run: |
           echo "${{ secrets.ANDROID_KEYSTORE_BASE64 }}" | base64 --decode > android/app/release.jks
           cat > android/key.properties <<KEYPROPS
@@ -226,9 +349,11 @@ jobs:
           KEYPROPS
 
       - name: Build signed app bundle
+        if: steps.check-secret.outputs.configured == 'true'
         run: flutter build appbundle --release
 
       - name: Upload signed app bundle + mapping file
+        if: steps.check-secret.outputs.configured == 'true'
         uses: actions/upload-artifact@v4
         with:
           name: mi-academy-release-aab
@@ -237,5 +362,5 @@ jobs:
             apps/mobile/build/app/outputs/mapping/release/mapping.txt
 
       - name: Remove decoded keystore
-        if: always()
+        if: always() && steps.check-secret.outputs.configured == 'true'
         run: rm -f android/app/release.jks android/key.properties

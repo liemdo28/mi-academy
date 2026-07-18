@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:mi_game_core/mi_game_core.dart';
 import 'package:mi_game_ui/mi_game_ui.dart';
 
+import '../level_skill_ids.dart';
+import '../snapshot_lifecycle_mixin.dart';
 import 'choice_game_session.dart';
 
 class ChoiceGameScreen extends StatefulWidget {
@@ -15,6 +17,9 @@ class ChoiceGameScreen extends StatefulWidget {
     required this.heroIcon,
     required this.primaryColor,
     this.onExit,
+    this.onComplete,
+    this.initialSnapshot,
+    this.onSaveSnapshot,
   });
 
   final String title;
@@ -25,30 +30,55 @@ class ChoiceGameScreen extends StatefulWidget {
   final Color primaryColor;
   final VoidCallback? onExit;
 
+  /// Fired once per level completion — see WordBuilderScreen.onComplete.
+  final void Function(MiCompletionResult)? onComplete;
+
+  /// See WordBuilderScreen.initialSnapshot.
+  final MiGameSnapshot? initialSnapshot;
+
+  /// See WordBuilderScreen.onSaveSnapshot.
+  final void Function(MiGameSnapshot)? onSaveSnapshot;
+
   @override
   State<ChoiceGameScreen> createState() => _ChoiceGameScreenState();
 }
 
-class _ChoiceGameScreenState extends State<ChoiceGameScreen> {
+class _ChoiceGameScreenState extends State<ChoiceGameScreen>
+    with WidgetsBindingObserver, SnapshotLifecycleMixin<ChoiceGameScreen> {
   late ChoiceGameSession _session;
   late Stopwatch _stopwatch;
+  bool _completed = false;
+
+  @override
+  void Function(MiGameSnapshot)? get onSaveSnapshot => widget.onSaveSnapshot;
+
+  @override
+  MiGameSnapshot? captureSnapshot() {
+    if (_completed) return null;
+    return _session.saveSnapshot();
+  }
 
   @override
   void initState() {
     super.initState();
     _stopwatch = Stopwatch()..start();
-    _loadLevel(widget.level);
+    _loadLevel(widget.level, snapshot: widget.initialSnapshot);
   }
 
   @override
   void dispose() {
+    disposeSnapshotLifecycle();
     _stopwatch.stop();
     super.dispose();
   }
 
-  void _loadLevel(MiLevel level) {
+  void _loadLevel(MiLevel level, {MiGameSnapshot? snapshot}) {
     setState(() {
+      _completed = false;
       _session = ChoiceGameSession(level: level);
+      if (snapshot != null) {
+        _session.restoreSnapshot(snapshot);
+      }
       _stopwatch
         ..reset()
         ..start();
@@ -73,7 +103,21 @@ class _ChoiceGameScreenState extends State<ChoiceGameScreen> {
   }
 
   void _showCompletion() {
+    _completed = true;
     _stopwatch.stop();
+    widget.onComplete?.call(MiCompletionResult(
+      gameId: _level.gameId,
+      levelId: _level.id,
+      childProfileId: _session.childProfileId,
+      completedAt: DateTime.now(),
+      score: _session.score,
+      maxScore: 100,
+      attemptsUsed: _session.attempts,
+      hintsUsed: _session.hintsUsed,
+      duration: _stopwatch.elapsed,
+      perfectRun: _session.attempts <= 1 && _session.hintsUsed == 0,
+      newSkillsAcquired: skillIdsFor(_level, fallback: const ['math']),
+    ));
 
     showDialog(
       context: context,

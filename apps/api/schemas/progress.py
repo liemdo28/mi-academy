@@ -29,6 +29,11 @@ class DailyPlanItem(BaseModel):
     estimated_minutes: int
     type: str = "lesson"  # lesson | game | review
     is_required: bool = True
+    # Which of the 6 game engines this lesson launches into -- see
+    # apps.api.routes.progress._SUBJECT_TO_GAME_TYPE. Without this, the
+    # mobile client had no way to know which game to open for a lesson and
+    # always hardcoded memory_cards regardless of what was tapped.
+    game_type: str = "memory_cards"
 
 
 # ─── Game Result (MiGameResult contract) ──────────────────────────────────────

@@ -4,6 +4,7 @@ from fastapi import APIRouter, HTTPException, Depends, status
 from sqlalchemy import select
 from sqlalchemy.ext.asyncio import AsyncSession
 import uuid
+from sqlalchemy.exc import IntegrityError
 
 from apps.api.database import get_db
 from apps.api.dependencies import get_parent_profile
@@ -75,7 +76,8 @@ async def unlock_reward(
     if not reward:
         raise HTTPException(status_code=404, detail="Reward not found")
 
-    # Check not already unlocked
+    # Check not already unlocked. The DB constraint is the second line of
+    # defense for retries or concurrent duplicate requests.
     existing = await db.execute(
         select(ChildReward).where(
             ChildReward.child_id == child_id,
@@ -92,5 +94,9 @@ async def unlock_reward(
         unlocked_at=utc_now(),
     )
     db.add(cr)
-    await db.commit()
+    try:
+        await db.commit()
+    except IntegrityError:
+        await db.rollback()
+        return {"message": "Already unlocked", "unlocked": True, "idempotent_replay": True}
     return {"message": "Reward unlocked", "unlocked": True}

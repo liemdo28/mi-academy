@@ -35,7 +35,8 @@ void main() {
       );
       final json = request.toJson();
       final restored = MiGameLaunchRequest.fromJson(json);
-      expect(restored.restoredState, equals({'current_question': 3, 'score': 50}));
+      expect(
+          restored.restoredState, equals({'current_question': 3, 'score': 50}));
     });
   });
 
@@ -103,8 +104,64 @@ void main() {
 
       expect(restored.gameId, equals('word_builder'));
       expect(restored.levelId, equals('level_1'));
-      expect(restored.schemaVersion, equals(1));
+      expect(restored.schemaVersion, equals(2));
+      expect(restored.gameVersion, equals('1.0.0'));
+      expect(restored.hasValidIntegrity, isTrue);
       expect(restored.state, isNotEmpty);
+    });
+
+    test('legacy v1 snapshot migrates with default game version', () {
+      final restored = MiGameSnapshot.fromJson({
+        'schema_version': 1,
+        'game_id': 'word_builder',
+        'level_id': 'level_1',
+        'child_profile_id': MiFixtures.childJunior,
+        'saved_at': DateTime(2026, 7, 17).toIso8601String(),
+        'state': {'current_question': 1},
+      });
+
+      expect(restored.schemaVersion, 1);
+      expect(restored.gameVersion, '1.0.0');
+      expect(restored.hasValidIntegrity, isTrue);
+    });
+
+    test('corrupt, wrong-child, and future snapshots are rejected for restore',
+        () {
+      final snapshot = MiFixtures.buildSnapshot();
+      final corruptJson = snapshot.toJson();
+      corruptJson['state'] = {'tampered': true};
+      final corrupt = MiGameSnapshot.fromJson(corruptJson);
+
+      expect(corrupt.hasValidIntegrity, isFalse);
+      expect(
+        snapshot.canRestoreFor(
+          childProfileId: 'other-child',
+          gameId: 'word_builder',
+          levelId: 'level_1',
+        ),
+        isFalse,
+      );
+      expect(
+        snapshot.canRestoreFor(
+          childProfileId: MiFixtures.childJunior,
+          gameId: 'word_builder',
+          levelId: 'level_1',
+        ),
+        isTrue,
+      );
+
+      final futureJson = snapshot.toJson();
+      futureJson['schema_version'] = 99;
+      futureJson['checksum'] = null;
+      final future = MiGameSnapshot.fromJson(futureJson);
+      expect(
+        future.canRestoreFor(
+          childProfileId: MiFixtures.childJunior,
+          gameId: 'word_builder',
+          levelId: 'level_1',
+        ),
+        isFalse,
+      );
     });
 
     test('state can store arbitrary game data', () {

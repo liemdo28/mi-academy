@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""MI Academy Developer CLI — unified dev tool for all teams.
+"""MI Academy Developer CLI - unified dev tool for all teams.
 
 Usage:
     mi doctor         Check environment health
@@ -21,6 +21,7 @@ from __future__ import annotations
 import argparse
 import json
 import os
+import shutil
 import subprocess
 import sys
 from pathlib import Path
@@ -42,25 +43,29 @@ REQUIRED_DIRS = [CONTRACTS_DIR, PACKAGES_DIR, FIXTURES_DIR, SCENARIOS_DIR, MOCKS
 
 def _print_header(text: str):
     print(f"\n{'='*60}")
-    print(f"  MI Academy — {text}")
+    print(f"  MI Academy - {text}")
     print(f"{'='*60}\n")
 
 def _print_check(label: str, status: str, detail: str = ""):
-    icon = {"PASS": "✅", "WARN": "⚠️", "FAIL": "❌"}.get(status, "?")
+    icon = {"PASS": "[PASS]", "WARN": "[WARN]", "FAIL": "[FAIL]"}.get(status, "[?]")
     line = f"  {icon} {label}"
     if detail:
-        line += f" — {detail}"
+        line += f" - {detail}"
     print(line)
 
 def _run(cmd: list[str], cwd: Path | None = None, check: bool = False) -> subprocess.CompletedProcess:
-    result = subprocess.run(cmd, cwd=cwd or PROJECT_ROOT, capture_output=True, text=True)
-    return result
+    executable = shutil.which(cmd[0])
+    resolved_cmd = [executable or cmd[0], *cmd[1:]]
+    try:
+        return subprocess.run(resolved_cmd, cwd=cwd or PROJECT_ROOT, capture_output=True, text=True)
+    except FileNotFoundError as exc:
+        return subprocess.CompletedProcess(cmd, 127, "", str(exc))
 
 
 # ─── mi doctor ──────────────────────────────────────────────────────────────
 
 def cmd_doctor(args):
-    _print_header("Repository Doctor — Environment Health Check")
+    _print_header("Repository Doctor - Environment Health Check")
     checks_passed = 0
     checks_failed = 0
     warnings = 0
@@ -79,8 +84,8 @@ def cmd_doctor(args):
     _print_header("Required Files")
     required_files = [
         (CONTRACTS_DIR / "openapi.yaml", "OpenAPI spec"),
-        (PROJECT_ROOT / "packages" / "shared_models" / "lib" / "shared_models.dart", "Shared models (Dart)"),
-        (PROJECT_ROOT / "packages" / "shared_models" / "lib" / "mi_progress_gateway.dart", "Progress gateway"),
+        (PROJECT_ROOT / "packages" / "mi_game_core" / "lib" / "src" / "contracts" / "mi_game_result.dart", "Game result contract (Dart)"),
+        (PROJECT_ROOT / "packages" / "mi_game_core" / "lib" / "src" / "contracts" / "mi_progress_gateway.dart", "Progress gateway"),
         (PROJECT_ROOT / "content" / "schemas" / "lesson.schema.json", "Lesson schema"),
         (PROJECT_ROOT / "schemas" / "level.schema.json", "Level schema"),
         (PROJECT_ROOT / "melos.yaml", "Melos config"),
@@ -112,7 +117,7 @@ def cmd_doctor(args):
         _print_check("Flutter", "PASS", first_line)
         checks_passed += 1
     else:
-        _print_check("Flutter", "WARN", "Flutter not found — required for mobile/game development")
+        _print_check("Flutter", "WARN", "Flutter not found - required for mobile/game development")
         warnings += 1
 
     result = _run(["dart", "--version"], check=False)
@@ -130,7 +135,7 @@ def cmd_doctor(args):
         _print_check("Node.js", "PASS", result.stdout.strip())
         checks_passed += 1
     else:
-        _print_check("Node.js", "WARN", "Node.js not found — required for admin tools")
+        _print_check("Node.js", "WARN", "Node.js not found - required for admin tools")
         warnings += 1
 
     # Check Docker
@@ -139,7 +144,7 @@ def cmd_doctor(args):
         _print_check("Docker", "PASS", result.stdout.strip())
         checks_passed += 1
     else:
-        _print_check("Docker", "WARN", "Docker not found — required for containerized services")
+        _print_check("Docker", "WARN", "Docker not found - required for containerized services")
         warnings += 1
 
     # Check contracts consistency
@@ -157,28 +162,27 @@ def cmd_doctor(args):
     save_game_result = PROJECT_ROOT / "apps" / "api" / "schemas" / "progress.py"
     if save_game_result.exists():
         content = save_game_result.read_text(encoding="utf-8")
-        if "SaveGameResultRequest" in content and "pass" not in content.lower():
-            _print_check("SaveGameResultRequest", "FAIL", "Empty model — see SD-01")
-            checks_failed += 1
-        elif "SaveGameResultRequest" not in content:
+        if "class SaveGameResultRequest(BaseModel):" not in content:
             _print_check("SaveGameResultRequest", "WARN", "Not defined")
             warnings += 1
+        elif "\n    pass\n" in content:
+            _print_check("SaveGameResultRequest", "FAIL", "Empty model - see SD-01")
+            checks_failed += 1
         else:
             _print_check("SaveGameResultRequest", "PASS")
             checks_passed += 1
 
-    # Check duplicate AccessibilitySettings/Preferences in shared_models
-    shared_models = PROJECT_ROOT / "packages" / "shared_models" / "lib" / "shared_models.dart"
-    if shared_models.exists():
-        content = shared_models.read_text(encoding="utf-8")
-        has_settings = "class AccessibilitySettings" in content
-        has_prefs = "class AccessibilityPreferences" in content
-        if has_settings and has_prefs:
-            _print_check("Accessibility model duplication", "WARN", "Both Settings and Preferences exist — see Cluster 6")
-            warnings += 1
-        else:
-            _print_check("Accessibility model", "PASS")
-            checks_passed += 1
+    removed_shared_models = PROJECT_ROOT / "packages" / "shared_models"
+    shared_models_source_files = [
+        removed_shared_models / "pubspec.yaml",
+        removed_shared_models / "lib" / "shared_models.dart",
+    ]
+    if any(path.exists() for path in shared_models_source_files):
+        _print_check("Removed shared_models package", "FAIL", "Dead duplicate package has reappeared")
+        checks_failed += 1
+    else:
+        _print_check("Removed shared_models package", "PASS", "No stale duplicate package directory")
+        checks_passed += 1
 
     # Summary
     _print_header("Summary")
@@ -186,13 +190,13 @@ def cmd_doctor(args):
     print(f"  WARN: {warnings}")
     print(f"  FAIL: {checks_failed}")
     if checks_failed > 0:
-        print(f"\n  ⚠️  {checks_failed} critical issue(s) found. Run 'mi doctor --fix' for suggestions.")
+        print(f"\n  [WARN] {checks_failed} critical issue(s) found. Run 'mi doctor --fix' for suggestions.")
         return 1
     elif warnings > 0:
-        print(f"\n  ⚠️  {warnings} warning(s). System can run but may need attention.")
+        print(f"\n  [WARN] {warnings} warning(s). System can run but may need attention.")
         return 0
     else:
-        print(f"\n  ✅ All checks passed. System is healthy.")
+        print(f"\n  [PASS] All checks passed. System is healthy.")
         return 0
 
 
@@ -202,20 +206,20 @@ def cmd_test_contracts(args):
     _print_header("Contract Tests")
     contracts_file = CONTRACTS_DIR / "shared_contracts.py"
     if not contracts_file.exists():
-        print("  ❌ No contract registry found at contracts/shared_contracts.py")
+        print("  [FAIL] No contract registry found at contracts/shared_contracts.py")
         return 1
 
     # Import and check contracts
     sys.path.insert(0, str(CONTRACTS_DIR))
     try:
         from shared_contracts import CONTRACT_REGISTRY
-        print(f"  ✅ Loaded {len(CONTRACT_REGISTRY)} contracts")
+        print(f"  [PASS] Loaded {len(CONTRACT_REGISTRY)} contracts")
         for cid, cdef in sorted(CONTRACT_REGISTRY.items()):
-            compat_icon = {"patch": "🟢", "backward": "🟢", "potentially-breaking": "🟡", "breaking": "🔴"}.get(cdef.compatibility, "?")
+            compat_icon = {"patch": "[PATCH]", "backward": "[BACKWARD]", "potentially-breaking": "[REVIEW]", "breaking": "[BREAKING]"}.get(cdef.compatibility, "[?]")
             print(f"    {compat_icon} {cid} v{cdef.schema_version} ({cdef.semantic_version}) [{cdef.owner}]")
         return 0
     except Exception as e:
-        print(f"  ❌ Failed to load contracts: {e}")
+        print(f"  [FAIL] Failed to load contracts: {e}")
         return 1
 
 
@@ -274,7 +278,7 @@ def cmd_report(args):
             from shared_contracts import CONTRACT_REGISTRY
             print(f"\n  Contracts registered: {len(CONTRACT_REGISTRY)}")
             for cid, cdef in sorted(CONTRACT_REGISTRY.items()):
-                print(f"    • {cid} v{cdef.schema_version} [{cdef.compatibility}]")
+                print(f"    - {cid} v{cdef.schema_version} [{cdef.compatibility}]")
         except ImportError:
             print("\n  Contracts: Unable to load registry")
 
@@ -311,11 +315,11 @@ def cmd_mock_start(args):
         print("  Starting mock API server on http://localhost:8090...")
         result = _run([sys.executable, str(mock_main)])
         if result.returncode != 0:
-            print(f"  ❌ Failed: {result.stderr}")
+            print(f"  [FAIL] Failed: {result.stderr}")
             return 1
         return 0
     else:
-        print("  ❌ Mock server not found. Run 'mi setup' first.")
+        print("  [FAIL] Mock server not found. Run 'mi setup' first.")
         return 1
 
 def cmd_mock_stop(args):
@@ -331,11 +335,11 @@ def cmd_scenario_run(args):
     _print_header(f"Running Scenario: {scenario_name}")
     scenario_file = SCENARIOS_DIR / f"{scenario_name}.json"
     if scenario_file.exists():
-        print(f"  ✅ Scenario file found: {scenario_file}")
-        print(f"  (Full harness implementation pending — Wave 2)")
+        print(f"  [PASS] Scenario file found: {scenario_file}")
+        print(f"  (Full harness implementation pending - Wave 2)")
         return 0
     else:
-        print(f"  ❌ Scenario not found: {scenario_file}")
+        print(f"  [FAIL] Scenario not found: {scenario_file}")
         print(f"  Available: first-time-offline, game-resume, content-upgrade, adaptive-fallback, full-mvp")
         return 1
 
@@ -345,11 +349,11 @@ def cmd_scenario_run(args):
 def cmd_generate(args):
     _print_header("Code Generation")
     print("  Generation targets:")
-    print("    • Dart API client from OpenAPI")
-    print("    • Dart model constants from contracts")
-    print("    • Fixture indexes")
-    print("    • Asset constants from manifest")
-    print("  (Full generator implementation pending — Wave 1)")
+    print("    - Dart API client from OpenAPI")
+    print("    - Dart model constants from contracts")
+    print("    - Fixture indexes")
+    print("    - Asset constants from manifest")
+    print("  (Full generator implementation pending - Wave 1)")
     return 0
 
 
@@ -377,28 +381,34 @@ def cmd_test_integration(args):
 def main():
     parser = argparse.ArgumentParser(
         prog="mi",
-        description="MI Academy Developer CLI — unified dev tool for all teams.",
+        description="MI Academy Developer CLI - unified dev tool for all teams.",
     )
     sub = parser.add_subparsers(dest="command")
 
     sub.add_parser("doctor", help="Check environment health")
     sub.add_parser("setup", help="Initialize dev environment")
 
-    test_sub = sub.add_parser("test", help="Run tests")
-    test_sub.add_parser("test", help="Run tests")  # alias
+    test_parser = sub.add_parser("test", help="Run tests")
+    test_parser.add_argument(
+        "target",
+        nargs="?",
+        choices=["all", "contracts", "integration"],
+        default="all",
+        help="Optional test target",
+    )
 
     sub.add_parser("validate", help="Validate contracts and content")
     sub.add_parser("generate", help="Generate code from schemas")
     sub.add_parser("seed", help="Seed test data")
     sub.add_parser("report", help="Generate integration report")
 
-    mock_sub = sub.add_parser("mock", help="Manage mock services")
-    mock_sub.add_subparsers(dest="mock_command")
+    mock_parser = sub.add_parser("mock", help="Manage mock services")
+    mock_sub = mock_parser.add_subparsers(dest="mock_command")
     mock_sub.add_parser("start", help="Start mock services")
     mock_sub.add_parser("stop", help="Stop mock services")
 
-    scenario_sub = sub.add_parser("scenario", help="Run integration scenarios")
-    scenario_sub.add_subparsers(dest="scenario_command")
+    scenario_parser = sub.add_parser("scenario", help="Run integration scenarios")
+    scenario_sub = scenario_parser.add_subparsers(dest="scenario_command")
     run_parser = scenario_sub.add_parser("run", help="Run a specific scenario")
     run_parser.add_argument("scenario", nargs="?", default="first-time-offline")
 
@@ -408,6 +418,10 @@ def main():
     if args.command == "doctor":
         return cmd_doctor(args)
     elif args.command == "test":
+        if args.target == "contracts":
+            return cmd_test_contracts(args)
+        if args.target == "integration":
+            return cmd_test_integration(args)
         return cmd_test(args)
     elif args.command == "validate":
         return cmd_validate(args)
