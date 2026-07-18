@@ -61,16 +61,6 @@ final activeChildProvider =
   () => ActiveChildNotifier(),
 );
 
-/// Lesson catalog provider.
-final lessonCatalogProvider =
-    FutureProvider<List<Map<String, dynamic>>>((ref) async {
-  final api = ref.read(apiServiceProvider);
-  final child = ref.watch(activeChildProvider);
-  final ageGroup = child.child?['age_group'];
-  final result = await api.getLessons(ageGroup: ageGroup);
-  return result.cast<Map<String, dynamic>>();
-});
-
 /// Daily plan provider.
 final dailyPlanProvider =
     FutureProvider<List<Map<String, dynamic>>>((ref) async {
