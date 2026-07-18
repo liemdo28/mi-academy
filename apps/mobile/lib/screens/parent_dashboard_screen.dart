@@ -144,10 +144,11 @@ class ParentDashboardScreen extends ConsumerWidget {
   }
 
   Widget _buildChildCard(BuildContext context, Map<String, dynamic> child) {
+    // No per-child detail/progress screen exists yet (no route for it) --
+    // showing a chevron and an onTap that silently does nothing would
+    // mislead a parent into thinking this card is interactive. A plain,
+    // non-tappable summary card is honest about what's actually here today.
     return MiCard(
-      onTap: () {
-        // TODO: Navigate to child detail/progress view
-      },
       child: Row(
         children: [
           Container(
@@ -177,7 +178,6 @@ class ParentDashboardScreen extends ConsumerWidget {
               ],
             ),
           ),
-          const Icon(Icons.chevron_right),
         ],
       ),
     );
