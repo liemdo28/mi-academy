@@ -5,6 +5,47 @@
 **Scope:** Full repository audit prior to any infrastructure change, per Wave 0 requirements.
 **Status:** Baseline snapshot. No infrastructure changes have been made yet.
 
+> **2026-07-18 update (fix/full-phase-1-to-19):** this is a Wave 0 baseline
+> snapshot and several of its findings are now stale -- most of §13's
+> priority list has since been addressed. Re-verified against the current
+> repository rather than assumed:
+> - §5 **"Migrations are a single hand-written SQL file, not Alembic"** --
+>   no longer true. `apps/api/alembic/` has a full linear migration chain
+>   (5 revisions), and a new CI job (`postgres-integration`) now runs
+>   `alembic upgrade head` against a real `postgres:16` service container
+>   on every push, closing the "not invoked by CI" gap too.
+> - §5 **"asyncpg is not declared anywhere... will fail at runtime"** --
+>   no longer true. `apps/api/requirements.txt` pins `asyncpg==0.31.0`;
+>   confirmed working against real Postgres in the CI job above.
+> - §6 **"no startup guard rejects the placeholder [SECRET_KEY]"** -- no
+>   longer true. `apps/api/config.py`'s `get_settings()` raises if
+>   `APP_ENV=production` and `SECRET_KEY` is still the placeholder.
+> - §7 **"None exist [monitoring/logging]"** -- partially resolved.
+>   `apps/api/logging_config.py` now emits structured JSON logs with a
+>   fixed sensitive-field redaction list, and `/health/live`, `/health/ready`
+>   (queries the DB engine), and `/version` all exist. No metrics/alerting/
+>   error-tracking service is wired up -- that part of the finding stands.
+> - §3's Dockerfile findings ("python:3.12-slim... COPY . ..., runs as
+>   root, no HEALTHCHECK") -- no longer true. `infrastructure/docker/
+>   Dockerfile.api` now uses `python:3.13-slim` (matching CI), only copies
+>   `apps/api`, runs as a non-root `api` user, and has a `HEALTHCHECK`
+>   hitting `/health/live`. A root-level `.dockerignore` also now exists.
+> - §9 **in-process rate limiter** -- resolved for the production path.
+>   `RateLimitMiddleware` now requires `REDIS_URL` and fails closed when
+>   `APP_ENV=production` without it (see `docs/phase-reports/
+>   PHASE_15_PROGRESS_2026-07-17.md`), and the new CI job validates
+>   Redis-backed rate limiting actually boots against a real Redis
+>   container.
+>
+> Still genuinely open (infrastructure-dependent, not fixable by writing
+> more code, and not fabricated as done): §4 real dev/staging/prod
+> environments (`docs/infrastructure/ENVIRONMENT_STRATEGY.md` is a design
+> doc for this, correctly marked "not yet provisioned"), §7 metrics/
+> alerting/error-tracking service, §10 rollback mechanism (needs a real
+> deployment pipeline first), §12 cost (no cloud infra provisioned), and
+> `docs/disaster-recovery/BACKUP_RESTORE_BASELINE.md`'s backup/restore
+> tooling (no production database exists yet to back up).
+
 ## 1. Repository & branch state
 
 - Branch: `main` (git status snapshot); a parallel `design/wave0-foundation` branch also observed with uncommitted work.
