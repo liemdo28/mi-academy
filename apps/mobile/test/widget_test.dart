@@ -3,6 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:go_router/go_router.dart';
 import 'package:mi_academy/main.dart';
+import 'package:mi_academy/providers/child_provider.dart';
 import 'package:mi_academy/providers/providers.dart';
 import 'package:mi_academy/screens/child_home_screen.dart';
 import 'package:mi_academy/screens/garden_screen.dart';
@@ -18,6 +19,14 @@ import 'package:mi_academy/src/games/sound_match/sound_match_screen.dart';
 import 'package:mi_academy/src/games/word_builder/word_builder_screen.dart';
 
 import 'game_test_fixtures.dart';
+
+class _FixedActiveChildNotifier extends ActiveChildNotifier {
+  _FixedActiveChildNotifier(this._state);
+  final ActiveChildState _state;
+
+  @override
+  ActiveChildState build() => _state;
+}
 
 void main() {
   testWidgets('Debug game picker shell renders the first playable game entries',
@@ -579,6 +588,10 @@ void main() {
   });
 
   group('Child Home v2', () {
+    ActiveChildState fakeActiveChild() => const ActiveChildState(
+          childId: 'child-1',
+          child: {'id': 'child-1', 'nickname': 'Mi'},
+        );
     GoRouter buildTestRouter() => GoRouter(
           initialLocation: '/home',
           routes: [
@@ -637,6 +650,51 @@ void main() {
       await tester.tap(find.text('Vườn').last);
       await tester.pumpAndSettle();
       expect(find.text('Vườn thành tích'), findsOneWidget);
+    });
+
+    testWidgets(
+        "the hero CTA launches the daily plan's game_type, not always memory_cards",
+        (tester) async {
+      await tester.pumpWidget(
+        ProviderScope(
+          overrides: [
+            dailyPlanProvider.overrideWith((ref) async => [
+                  {
+                    'lesson_id': 'lesson-1',
+                    'title': 'Robot Lesson',
+                    'subject': 'logic',
+                    'estimated_minutes': 5,
+                    'type': 'lesson',
+                    'is_required': true,
+                    'game_type': 'robot_commands',
+                  },
+                ]),
+            activeChildProvider.overrideWith(() => _FixedActiveChildNotifier(fakeActiveChild())),
+          ],
+          child: MaterialApp.router(
+            routerConfig: GoRouter(
+              initialLocation: '/home',
+              routes: [
+                GoRoute(
+                  path: '/home',
+                  builder: (context, state) => const ChildHomeScreen(),
+                ),
+                GoRoute(
+                  path: '/game/:gameId',
+                  builder: (context, state) => Text(
+                      'LAUNCHED_${state.pathParameters['gameId']}'),
+                ),
+              ],
+            ),
+          ),
+        ),
+      );
+      await tester.pumpAndSettle();
+
+      await tester.tap(find.text('Tiếp tục học'));
+      await tester.pumpAndSettle();
+
+      expect(find.text('LAUNCHED_robot_commands'), findsOneWidget);
     });
 
     testWidgets('parent gate requires a sustained hold, not a tap',

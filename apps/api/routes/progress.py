@@ -12,6 +12,23 @@ from apps.api.schemas import ProgressResponse, SkillReport, DailyPlanItem
 
 router = APIRouter()
 
+# There is no explicit lesson/subject -> game data-model link, so this maps
+# each subject taxonomy code (see infrastructure/seed/seed_data.py) to the
+# game engine that best fits it. A content-modeling heuristic, not a
+# fabricated 1:1 mapping: subjects without a dedicated game (science,
+# life_skills) fall back to memory_cards rather than inventing a mismatch.
+_SUBJECT_TO_GAME_TYPE = {
+    "letters": "word_builder",
+    "math": "math_race",
+    "logic": "robot_commands",
+}
+_DEFAULT_GAME_TYPE = "memory_cards"
+
+
+def _game_type_for_lesson(lesson: Lesson) -> str:
+    subject_code = lesson.subject.code if lesson.subject else None
+    return _SUBJECT_TO_GAME_TYPE.get(subject_code, _DEFAULT_GAME_TYPE)
+
 
 def _child_belongs_to_parent(profile: ParentProfile, child_id: str):
     if child_id not in [c.id for c in profile.children]:
@@ -122,6 +139,7 @@ async def get_daily_plan(
                 estimated_minutes=lesson.estimated_minutes,
                 type="lesson",
                 is_required=True,
+                game_type=_game_type_for_lesson(lesson),
             )
         )
     return items
