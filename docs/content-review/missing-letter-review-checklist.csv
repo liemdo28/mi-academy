@@ -1,0 +1,151 @@
+item_id,locale,difficulty,target_word,displayed_incomplete_word,correct_answer,distractors,ambiguity_check,spelling_check,age_tier_check,reviewer_status
+ml-lv001,vi,1,mèo,M_O,È,A|U,pending_human_review,pending_human_review,pending_human_review,pending
+ml-lv001,en,1,cat,C_T,A,O|U,pending_human_review,pending_human_review,pending_human_review,pending
+ml-lv002,vi,1,cá,C_,Á,O|Ê,pending_human_review,pending_human_review,pending_human_review,pending
+ml-lv002,en,1,dog,D_G,O,A|E,pending_human_review,pending_human_review,pending_human_review,pending
+ml-lv003,vi,1,bò,B_,Ò,A|Ê,pending_human_review,pending_human_review,pending_human_review,pending
+ml-lv003,en,1,pig,P_G,I,A|O,pending_human_review,pending_human_review,pending_human_review,pending
+ml-lv004,vi,1,gà,G_,À,Ô|U,pending_human_review,pending_human_review,pending_human_review,pending
+ml-lv004,en,1,hen,H_N,E,A|O,pending_human_review,pending_human_review,pending_human_review,pending
+ml-lv005,vi,1,chó,CH_,Ó,A|Ơ,pending_human_review,pending_human_review,pending_human_review,pending
+ml-lv005,en,1,fox,F_X,O,A|I,pending_human_review,pending_human_review,pending_human_review,pending
+ml-lv006,vi,1,vịt,V_T,Ị,A|Ê,pending_human_review,pending_human_review,pending_human_review,pending
+ml-lv006,en,1,fish,F_SH,I,A|O,pending_human_review,pending_human_review,pending_human_review,pending
+ml-lv007,vi,1,hoa,H_A,O,A|Ê,pending_human_review,pending_human_review,pending_human_review,pending
+ml-lv007,en,1,sun,S_N,U,A|E,pending_human_review,pending_human_review,pending_human_review,pending
+ml-lv008,vi,1,lá,L_,Á,O|U,pending_human_review,pending_human_review,pending_human_review,pending
+ml-lv008,en,1,rain,R_IN,A,O|E,pending_human_review,pending_human_review,pending_human_review,pending
+ml-lv009,vi,1,mưa,M_A,Ư,A|Ê,pending_human_review,pending_human_review,pending_human_review,pending
+ml-lv009,en,1,leaf,L_AF,E,A|O,pending_human_review,pending_human_review,pending_human_review,pending
+ml-lv010,vi,1,nắng,N_NG,Ắ,O|U,pending_human_review,pending_human_review,pending_human_review,pending
+ml-lv010,en,1,snow,SN_W,O,A|I,pending_human_review,pending_human_review,pending_human_review,pending
+ml-lv011,vi,1,cam,C_M,A,O|Ê,pending_human_review,pending_human_review,pending_human_review,pending
+ml-lv011,en,1,cake,C_KE,A,O|U,pending_human_review,pending_human_review,pending_human_review,pending
+ml-lv012,vi,1,cơm,C_M,Ơ,A|U,pending_human_review,pending_human_review,pending_human_review,pending
+ml-lv012,en,1,rice,R_CE,I,A|O,pending_human_review,pending_human_review,pending_human_review,pending
+ml-lv013,vi,1,bánh,B_NH,Á,Ê|Ô,pending_human_review,pending_human_review,pending_human_review,pending
+ml-lv013,en,1,milk,M_LK,I,A|E,pending_human_review,pending_human_review,pending_human_review,pending
+ml-lv014,vi,1,sữa,S_A,Ữ,A|Ô,pending_human_review,pending_human_review,pending_human_review,pending
+ml-lv014,en,1,soup,S_UP,O,A|E,pending_human_review,pending_human_review,pending_human_review,pending
+ml-lv015,vi,1,đèn,Đ_N,È,A|Ô,pending_human_review,pending_human_review,pending_human_review,pending
+ml-lv015,en,1,lamp,L_MP,A,O|E,pending_human_review,pending_human_review,pending_human_review,pending
+ml-lv016,vi,1,bút,B_T,Ú,A|Ê,pending_human_review,pending_human_review,pending_human_review,pending
+ml-lv016,en,1,book,B_OK,O,A|E,pending_human_review,pending_human_review,pending_human_review,pending
+ml-lv017,vi,1,bàn,B_N,À,O|U,pending_human_review,pending_human_review,pending_human_review,pending
+ml-lv017,en,1,desk,D_SK,E,A|O,pending_human_review,pending_human_review,pending_human_review,pending
+ml-lv018,vi,1,ghế,GH_,Ế,A|Ô,pending_human_review,pending_human_review,pending_human_review,pending
+ml-lv018,en,1,chair,CH_IR,A,O|E,pending_human_review,pending_human_review,pending_human_review,pending
+ml-lv019,vi,1,áo,Á_,O,Ê|U,pending_human_review,pending_human_review,pending_human_review,pending
+ml-lv019,en,1,coat,C_AT,O,A|E,pending_human_review,pending_human_review,pending_human_review,pending
+ml-lv020,vi,1,mũ,M_,Ũ,A|Ê,pending_human_review,pending_human_review,pending_human_review,pending
+ml-lv020,en,1,hat,H_T,A,O|I,pending_human_review,pending_human_review,pending_human_review,pending
+ml-lv021,vi,1,xe,X_,E,A|O,pending_human_review,pending_human_review,pending_human_review,pending
+ml-lv021,en,1,bus,B_S,U,A|E,pending_human_review,pending_human_review,pending_human_review,pending
+ml-lv022,vi,1,tàu,T_U,À,E|O,pending_human_review,pending_human_review,pending_human_review,pending
+ml-lv022,en,1,ship,SH_P,I,A|O,pending_human_review,pending_human_review,pending_human_review,pending
+ml-lv023,vi,1,đỏ,Đ_,Ỏ,A|U,pending_human_review,pending_human_review,pending_human_review,pending
+ml-lv023,en,1,red,R_D,E,A|O,pending_human_review,pending_human_review,pending_human_review,pending
+ml-lv024,vi,1,tím,T_M,Í,A|Ê,pending_human_review,pending_human_review,pending_human_review,pending
+ml-lv024,en,1,blue,BL_E,U,A|I,pending_human_review,pending_human_review,pending_human_review,pending
+ml-lv025,vi,1,bé,B_,É,A|O,pending_human_review,pending_human_review,pending_human_review,pending
+ml-lv025,en,1,kid,K_D,I,A|O,pending_human_review,pending_human_review,pending_human_review,pending
+ml-lv026,vi,2,chuối,CH_ỐI,U,Ô|Ư|A,pending_human_review,pending_human_review,pending_human_review,pending
+ml-lv026,en,2,banana,B_NANA,A,E|O|U,pending_human_review,pending_human_review,pending_human_review,pending
+ml-lv027,vi,2,xoài,XO_I,À,Á|A|O,pending_human_review,pending_human_review,pending_human_review,pending
+ml-lv027,en,2,orange,OR_NGE,A,E|I|O,pending_human_review,pending_human_review,pending_human_review,pending
+ml-lv028,vi,2,dưa,D_A,Ư,U|Ơ|A,pending_human_review,pending_human_review,pending_human_review,pending
+ml-lv028,en,2,grape,GR_PE,A,E|I|O,pending_human_review,pending_human_review,pending_human_review,pending
+ml-lv029,vi,2,khế,KH_,Ế,Ê|É|Ơ,pending_human_review,pending_human_review,pending_human_review,pending
+ml-lv029,en,2,melon,M_LON,E,A|O|U,pending_human_review,pending_human_review,pending_human_review,pending
+ml-lv030,vi,2,ngô,NG_,Ô,O|Ơ|A,pending_human_review,pending_human_review,pending_human_review,pending
+ml-lv030,en,2,corn,C_RN,O,A|E|U,pending_human_review,pending_human_review,pending_human_review,pending
+ml-lv031,vi,2,thỏ,TH_,Ỏ,O|Ô|Ơ,pending_human_review,pending_human_review,pending_human_review,pending
+ml-lv031,en,2,rabbit,R_BBIT,A,E|I|O,pending_human_review,pending_human_review,pending_human_review,pending
+ml-lv032,vi,2,hổ,H_,Ổ,Ô|O|Ơ,pending_human_review,pending_human_review,pending_human_review,pending
+ml-lv032,en,2,tiger,T_GER,I,A|E|O,pending_human_review,pending_human_review,pending_human_review,pending
+ml-lv033,vi,2,sóc,S_C,Ó,O|Ô|Ơ,pending_human_review,pending_human_review,pending_human_review,pending
+ml-lv033,en,2,mouse,M_USE,O,A|E|U,pending_human_review,pending_human_review,pending_human_review,pending
+ml-lv034,vi,2,chim,CH_M,I,A|E|U,pending_human_review,pending_human_review,pending_human_review,pending
+ml-lv034,en,2,bird,B_RD,I,A|E|O,pending_human_review,pending_human_review,pending_human_review,pending
+ml-lv035,vi,2,kiến,KI_N,Ế,Ê|É|I,pending_human_review,pending_human_review,pending_human_review,pending
+ml-lv035,en,2,insect,_NSECT,I,A|E|O,pending_human_review,pending_human_review,pending_human_review,pending
+ml-lv036,vi,2,trống,TR_NG,Ố,Ô|Ơ|O,pending_human_review,pending_human_review,pending_human_review,pending
+ml-lv036,en,2,drum,D_UM,R,A|E|O,pending_human_review,pending_human_review,pending_human_review,pending
+ml-lv037,vi,2,sách,S_CH,Á,A|Ă|Â,pending_human_review,pending_human_review,pending_human_review,pending
+ml-lv037,en,2,paper,P_PER,A,E|I|O,pending_human_review,pending_human_review,pending_human_review,pending
+ml-lv038,vi,2,thước,THƯ_C,Ớ,Ơ|Ư|Ô,pending_human_review,pending_human_review,pending_human_review,pending
+ml-lv038,en,2,pencil,P_NCIL,E,A|I|O,pending_human_review,pending_human_review,pending_human_review,pending
+ml-lv039,vi,2,mực,M_C,Ự,Ư|U|Ơ,pending_human_review,pending_human_review,pending_human_review,pending
+ml-lv039,en,2,marker,M_RKER,A,E|I|O,pending_human_review,pending_human_review,pending_human_review,pending
+ml-lv040,vi,2,bảng,B_NG,Ả,A|Ă|Â,pending_human_review,pending_human_review,pending_human_review,pending
+ml-lv040,en,2,board,B_ARD,O,A|E|U,pending_human_review,pending_human_review,pending_human_review,pending
+ml-lv041,vi,2,trăng,TR_NG,Ă,Â|A|Ê,pending_human_review,pending_human_review,pending_human_review,pending
+ml-lv041,en,2,moon,M_ON,O,A|E|U,pending_human_review,pending_human_review,pending_human_review,pending
+ml-lv042,vi,2,biển,BI_N,Ể,Ê|E|I,pending_human_review,pending_human_review,pending_human_review,pending
+ml-lv042,en,2,ocean,O_EAN,C,A|E|O,pending_human_review,pending_human_review,pending_human_review,pending
+ml-lv043,vi,2,núi,N_I,Ú,U|Ư|Ô,pending_human_review,pending_human_review,pending_human_review,pending
+ml-lv043,en,2,mountain,M_UNTAIN,O,A|U|E,pending_human_review,pending_human_review,pending_human_review,pending
+ml-lv044,vi,2,mây,M_Y,Â,Ă|A|Ê,pending_human_review,pending_human_review,pending_human_review,pending
+ml-lv044,en,2,cloud,CL_UD,O,A|E|U,pending_human_review,pending_human_review,pending_human_review,pending
+ml-lv045,vi,2,gió,G_Ó,I,Í|O|Ó,pending_human_review,pending_human_review,pending_human_review,pending
+ml-lv045,en,2,wind,W_ND,I,A|E|O,pending_human_review,pending_human_review,pending_human_review,pending
+ml-lv046,vi,2,đường,Đ_ỜNG,Ư,U|Ơ|Ô,pending_human_review,pending_human_review,pending_human_review,pending
+ml-lv046,en,2,street,STR_ET,E,A|I|O,pending_human_review,pending_human_review,pending_human_review,pending
+ml-lv047,vi,2,nhà,NH_,À,A|Ă|Â,pending_human_review,pending_human_review,pending_human_review,pending
+ml-lv047,en,2,house,H_USE,O,A|E|U,pending_human_review,pending_human_review,pending_human_review,pending
+ml-lv048,vi,2,cửa,C_A,Ử,Ư|Ơ|U,pending_human_review,pending_human_review,pending_human_review,pending
+ml-lv048,en,2,door,D_OR,O,A|E|U,pending_human_review,pending_human_review,pending_human_review,pending
+ml-lv049,vi,2,giày,GI_Y,À,A|Ă|Â,pending_human_review,pending_human_review,pending_human_review,pending
+ml-lv049,en,2,shoes,SH_ES,O,A|E|U,pending_human_review,pending_human_review,pending_human_review,pending
+ml-lv050,vi,2,khăn,KH_N,Ă,Â|A|Ê,pending_human_review,pending_human_review,pending_human_review,pending
+ml-lv050,en,2,scarf,SC_RF,A,E|I|O,pending_human_review,pending_human_review,pending_human_review,pending
+ml-lv051,vi,3,con mèo,C__ MÈO,ON,AN|OM|EM,pending_human_review,pending_human_review,pending_human_review,pending
+ml-lv051,en,3,kitten,K_TT_N,IE,IT|ET|IN,pending_human_review,pending_human_review,pending_human_review,pending
+ml-lv052,vi,3,bông hoa,B_NG _OA,ÔH,ON|OA|HO,pending_human_review,pending_human_review,pending_human_review,pending
+ml-lv052,en,3,flower,FL_W_R,OE,OW|AW|OU,pending_human_review,pending_human_review,pending_human_review,pending
+ml-lv053,vi,3,cầu vồng,C_U V_NG,ẦỒ,ẦÔ|ÂO|AU,pending_human_review,pending_human_review,pending_human_review,pending
+ml-lv053,en,3,rainbow,R_IN_OW,AB,AI|AY|IO,pending_human_review,pending_human_review,pending_human_review,pending
+ml-lv054,vi,3,quyển vở,QU_ỂN _Ở,YV,YỞ|IƠ|YƠ,pending_human_review,pending_human_review,pending_human_review,pending
+ml-lv054,en,3,notebook,N_TEB_OK,OO,OE|AE|OA,pending_human_review,pending_human_review,pending_human_review,pending
+ml-lv055,vi,3,trường học,TR_ỜNG _ỌC,ƯH,ƯỌ|UO|ƯO,pending_human_review,pending_human_review,pending_human_review,pending
+ml-lv055,en,3,school,SCH__L,OO,OU|OA|EE,pending_human_review,pending_human_review,pending_human_review,pending
+ml-lv056,vi,3,đồng hồ,Đ_NG H_,ỒỒ,ÔO|ƠÔ|ỒO,pending_human_review,pending_human_review,pending_human_review,pending
+ml-lv056,en,3,clock,C_O_K,LC,OC|OA|OO,pending_human_review,pending_human_review,pending_human_review,pending
+ml-lv057,vi,3,bữa cơm,B_A C_M,ỮƠ,ƯO|ỮO|ƯƠ,pending_human_review,pending_human_review,pending_human_review,pending
+ml-lv057,en,3,dinner,D_NN_R,IE,IA|EN|IN,pending_human_review,pending_human_review,pending_human_review,pending
+ml-lv058,vi,3,thành phố,TH_NH P_Ố,ÀH,ÀỐ|AÔ|ÀÔ,pending_human_review,pending_human_review,pending_human_review,pending
+ml-lv058,en,3,city,C__Y,IT,ET|AT|OT,pending_human_review,pending_human_review,pending_human_review,pending
+ml-lv059,vi,3,gia đình,GI_ ĐÌ_H,AN,AÌ|IÌ|AÍ,pending_human_review,pending_human_review,pending_human_review,pending
+ml-lv059,en,3,family,F_MI_Y,AL,AI|EI|IL,pending_human_review,pending_human_review,pending_human_review,pending
+ml-lv060,vi,3,khu vườn,KH_ VƯ_N,UỜ,UƯ|ƯƠ|UƠ,pending_human_review,pending_human_review,pending_human_review,pending
+ml-lv060,en,3,garden,G_RD_N,AE,AR|ER|OR,pending_human_review,pending_human_review,pending_human_review,pending
+ml-lv061,vi,3,quả bóng,QU_ BÓ_G,ẢN,ẢÓ|AÔ|ẢÔ,pending_human_review,pending_human_review,pending_human_review,pending
+ml-lv061,en,3,soccer,S_CC_R,OE,OC|OA|ER,pending_human_review,pending_human_review,pending_human_review,pending
+ml-lv062,vi,3,máy bay,M_Y B_Y,ÁA,AÁ|ÁÂ|ÀA,pending_human_review,pending_human_review,pending_human_review,pending
+ml-lv062,en,3,airplane,_IR_LANE,AP,AI|AE|IR,pending_human_review,pending_human_review,pending_human_review,pending
+ml-lv063,vi,3,bác sĩ,B_C S_,ÁĨ,AÍ|ÁÍ|ÀĨ,pending_human_review,pending_human_review,pending_human_review,pending
+ml-lv063,en,3,doctor,D_CT_R,OO,OC|OA|OT,pending_human_review,pending_human_review,pending_human_review,pending
+ml-lv064,vi,3,nông dân,N_NG D_N,ÔÂ,OĂ|ÔĂ|ƠÂ,pending_human_review,pending_human_review,pending_human_review,pending
+ml-lv064,en,3,farmer,F_RM_R,AE,AR|ER|AM,pending_human_review,pending_human_review,pending_human_review,pending
+ml-lv065,vi,3,học sinh,H_C S_NH,ỌI,OI|ỌÍ|ƠI,pending_human_review,pending_human_review,pending_human_review,pending
+ml-lv065,en,3,student,ST_DE_T,UN,UE|UD|EN,pending_human_review,pending_human_review,pending_human_review,pending
+ml-lv066,vi,3,điện thoại,Đ_ỆN T_OẠI,IH,IÔ|IỌ|IÓ,pending_human_review,pending_human_review,pending_human_review,pending
+ml-lv066,en,3,phone,P_O_E,HN,HO|HA|ON,pending_human_review,pending_human_review,pending_human_review,pending
+ml-lv067,vi,3,công viên,C_NG V_ÊN,ÔI,OI|ÔY|ƠI,pending_human_review,pending_human_review,pending_human_review,pending
+ml-lv067,en,3,park,P_R_,AK,AR|ER|OR,pending_human_review,pending_human_review,pending_human_review,pending
+ml-lv068,vi,3,bệnh viện,B_NH V_ỆN,ỆI,ÊI|ỆY|ÊY,pending_human_review,pending_human_review,pending_human_review,pending
+ml-lv068,en,3,hospital,H_SP_TAL,OI,OS|IP|IA,pending_human_review,pending_human_review,pending_human_review,pending
+ml-lv069,vi,3,máy tính,M_Y TÍ_H,ÁN,ÁÍ|AÍ|ÁI,pending_human_review,pending_human_review,pending_human_review,pending
+ml-lv069,en,3,computer,C_MPU_ER,OT,OO|OU|UP,pending_human_review,pending_human_review,pending_human_review,pending
+ml-lv070,vi,3,bưu điện,B_U Đ_ỆN,ƯI,UỆ|ƯỆ|ƯÊ,pending_human_review,pending_human_review,pending_human_review,pending
+ml-lv070,en,3,postcard,P_STC_RD,OA,OS|TC|OR,pending_human_review,pending_human_review,pending_human_review,pending
+ml-lv071,vi,3,chú thích,CH_ TH_CH,ÚÍ,UÍ|ÚI|ÙÍ,pending_human_review,pending_human_review,pending_human_review,pending
+ml-lv071,en,3,caption,C_PTI_N,AO,AI|AP|IO,pending_human_review,pending_human_review,pending_human_review,pending
+ml-lv072,vi,3,câu chuyện,C_U CH_YỆN,ÂU,AU|ÂY|ẦU,pending_human_review,pending_human_review,pending_human_review,pending
+ml-lv072,en,3,story,S_O_Y,TR,TO|TY|OR,pending_human_review,pending_human_review,pending_human_review,pending
+ml-lv073,vi,3,thiên nhiên,TH_ÊN N_IÊN,IH,IÊ|IỆ|YÊ,pending_human_review,pending_human_review,pending_human_review,pending
+ml-lv073,en,3,nature,N_TU_E,AR,AU|AE|UR,pending_human_review,pending_human_review,pending_human_review,pending
+ml-lv074,vi,3,ước mơ,_ỚC M_,ƯƠ,UO|ƯO|ƠƯ,pending_human_review,pending_human_review,pending_human_review,pending
+ml-lv074,en,3,dream,D_E_M,RA,RE|EA|EM,pending_human_review,pending_human_review,pending_human_review,pending
+ml-lv075,vi,3,đèn pin,Đ_N P_N,ÈI,EI|ÈÍ|ÊI,pending_human_review,pending_human_review,pending_human_review,pending
+ml-lv075,en,3,flashlight,FL_SHL_GHT,AI,AS|AL|LI,pending_human_review,pending_human_review,pending_human_review,pending

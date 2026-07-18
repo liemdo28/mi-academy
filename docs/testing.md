@@ -1,6 +1,6 @@
 # Testing
 
-Status as of the MI Academy 1.0 audit (2026-07-18), verified directly against
+Status as of the MI Academy 1.0 audit (2026-07-19), verified directly against
 this repository's working tree and CI — not carried over from prior report
 summaries.
 
@@ -59,6 +59,10 @@ Two ways to verify the migration chain against real Postgres:
   created the schema) — `/health/live` returned `{"status": "ok"}` and
   `/health/ready` returned `{"status": "ready"}` (the latter runs a real
   `SELECT 1` against Postgres, not just a process-alive check).
+  Re-verified during Game 8 closure (2026-07-19) through the new
+  `b4f7c2d9e801` Games 7-8 seed migration; `alembic current` reported
+  `b4f7c2d9e801 (head)`, the database contained `alphabet_explorer` and
+  `missing_letter`, and API readiness returned `live=ok; ready=ready`.
 - **In CI**, the `postgres-integration` job in `.github/workflows/ci.yml`
   runs the same migration-then-boot sequence against real `postgres:16` and
   `redis:7` service containers on every dispatch — this is the CI proof
@@ -117,7 +121,7 @@ Linux still gets full pixel-level regression detection; everyone else still
 gets meaningful functional coverage and an explicit (not silent) skip
 instead of a false failure.
 
-**Verification:** `flutter test` on this Windows dev machine reports `86
+**Verification:** `flutter test` on this Windows dev machine reports `108
 passed, 6 skipped` with the 6 skips being exactly these golden tests, each
 printing its skip reason. CI's `mobile-test-build` job (`ubuntu-latest`) was
 re-dispatched against the branch containing this change and passed with the
@@ -205,9 +209,37 @@ that was not built this pass. Treat the current integration-test coverage
 as a real, working foundation and pattern (reusable `launchApp`/
 `resetLocalState` helpers, deterministic IDs, no arbitrary sleeps), not the
 complete required matrix.
-- **No automated translation-key parity check in CI.** `packages/localization/lib/l10n/app_en.arb`
-  and `app_vi.arb` currently match exactly (57/57 keys both ways, verified
-  by direct diff during this audit) but nothing enforces that going forward.
+
+### Milestone 2 Slice 2 local verification
+
+On 2026-07-19, Missing Letter added
+`apps/mobile/test/missing_letter_content_test.dart`,
+`apps/mobile/integration_test/missing_letter_flow_test.dart`, plus registry
+and launcher coverage. Local command results:
+
+- `dart format --set-exit-if-changed .` from `apps/mobile`: pass.
+- `flutter analyze` from `apps/mobile`: pass, 0 issues.
+- `flutter test` from `apps/mobile`: pass, 108 passed and 6 Windows-only
+  golden skips.
+- `flutter test integration_test` from `apps/mobile`: not run locally because
+  no Android/iOS device was connected; Flutter listed desktop/web targets
+  instead. The Missing Letter integration scenario is authored but still
+  needs the Android emulator CI job for authoritative execution proof.
+- `python -m pytest packages/game_core/tests tests test -q` from repo root:
+  pass, 177 passed.
+- `python -m ruff check .` from repo root: pass.
+- `python -m ruff format --check .` from repo root: pass after targeted
+  formatting of Math Race and Math Supermarket generators.
+- `python -m mypy .` from repo root: pass after resolving the Math Race
+  generator tuple-key type inference issue.
+- `python -m alembic upgrade head` from `apps/api` against local disposable
+  Postgres: pass through revision `b4f7c2d9e801`.
+- API readiness against the migrated Postgres database: pass,
+  `/health/live` returned `ok` and `/health/ready` returned `ready`.
+- **Automated translation-key parity check in CI.** `packages/localization/lib/l10n/app_en.arb`
+  and `app_vi.arb` currently match exactly (67/67 keys both ways), and
+  `tools/localization_audit.py` enforces parity in CI. The same audit still
+  warns about hardcoded Vietnamese UI strings, which remains RA-05 scope.
 - ~~Backend Python tooling (`ruff`, `mypy`) has no project configuration~~
   **Fixed** (Milestone 1, WS7): `pyproject.toml` now has `[tool.ruff]` and
   `[tool.mypy]` sections. All four canonical backend commands

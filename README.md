@@ -4,7 +4,7 @@
 
 MI Academy là ứng dụng học tập kết hợp trò chơi dành cho trẻ 5–12 tuổi, tập trung vào toán, ngôn ngữ, tư duy logic, sáng tạo và kỹ năng sống.
 
-## Current verified status (2026-07-18)
+## Current verified status (2026-07-19)
 
 Do not treat the phased plan below as a completion claim — it is the
 original design roadmap. For what is actually built, tested, and verified
@@ -17,15 +17,16 @@ in the current codebase, see:
   Milestone 1's delivered scope, architecture, test coverage, and honest
   remaining limitations.
 - [docs/game-catalog.md](./docs/game-catalog.md) — real per-game status
-  (6 of 30 target games exist).
+  (8 of 30 target games exist).
 
-Quick facts, verified directly: 6 playable games with local persistence;
-`flutter analyze`/`ruff check .`/`mypy .` all clean; `pytest` 170 passed;
-`flutter test` 92 passed (6 Linux-only golden tests skipped elsewhere);
-a real Android-emulator integration-test suite passing in CI; Android
-`applicationId` is `com.liemteam.miacademy` (no longer the
-`com.example.*` scaffold default); unsigned APK/AAB builds succeed
-locally, signed builds succeed in CI given configured secrets.
+Quick facts, verified directly: 8 playable games with local persistence;
+`flutter analyze`, `ruff check .`, `ruff format --check .`, and `mypy .`
+are clean; `pytest` 177 passed; `flutter test` 108 passed (6 Linux-only
+golden tests skipped on Windows); content schema, malformed-fixture,
+content-safety, and ARB parity checks pass; Android `applicationId` is
+`com.liemteam.miacademy`; local APK/AAB release builds succeed with the
+documented debug-signing fallback. Milestone 2 is still **Not Ready**
+because games 9-15 and manual/device release gates remain open.
 
 ## Tài liệu phát triển
 

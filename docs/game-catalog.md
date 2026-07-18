@@ -1,8 +1,8 @@
 # Game catalog — MI Academy 1.0 (30-game target)
 
-Status verified directly against the working tree on 2026-07-18 (branch
-`fix/internal-beta-hardening`) — not carried over from any prior summary.
-**6 of 30 games exist; 24 do not.** This is the single largest gap against
+Status verified directly against the working tree on 2026-07-19 (branch
+`feature/game-8-closure`) — not carried over from any prior summary.
+**8 of 30 games exist; 22 do not.** This is the single largest gap against
 the master spec and should not be understated.
 
 Legend: **Built** = playable, has real content, has tests. **Not started**
@@ -10,7 +10,7 @@ Legend: **Built** = playable, has real content, has tests. **Not started**
 
 ## Update (Milestone 1B): registry + versioned schema
 
-The 6 built games now launch through a central `GameRegistry`
+The built games now launch through a central `GameRegistry`
 (`apps/mobile/lib/services/game_registry.dart`, see
 `docs/game-engine-architecture.md`) instead of a hand-maintained switch
 statement, and their level content (`apps/mobile/assets/levels/*.json`)
@@ -18,18 +18,43 @@ now conforms to a real versioned schema (`schemas/level.schema.json`, see
 `docs/content-schema.md`) with a repository-level validator
 (`tools/content_schema_validator.py`). **Content minimums (30 quiz items /
 20 levels per locale, 3 real difficulty tiers per game) were NOT
-addressed this pass** — all 6 games still ship exactly 10 levels each at a
-single effective difficulty tier. See `docs/release-audit.md` for the
-open finding.
+addressed for the original six games in this pass** — they still ship
+exactly 10 levels each at a single effective difficulty tier. Alphabet
+Explorer was added later with 95 bilingual levels across three tiers, and
+Missing Letter was added with 75 bilingual levels across three tiers. See
+`docs/release-audit.md` for the remaining open finding.
+
+## Update (Milestone 2 slice): Alphabet Explorer
+
+`alphabet_explorer` is now registered and playable through the existing
+Choice Engine path. It ships as `apps/mobile/assets/levels/alphabet_explorer.json`
+with 95 bilingual levels, three difficulty tiers, English A-Z coverage,
+Vietnamese extended-letter coverage (`Ă`, `Â`, `Đ`, `Ê`, `Ô`, `Ơ`, `Ư`),
+uppercase recognition, lowercase recognition, case matching, first-letter
+items, and visual-discrimination items. Evidence: `flutter analyze`,
+`flutter test`, `python tools/content_schema_validator.py`, and
+`python tools/content_safety_audit.py --json` all pass on 2026-07-18.
+
+## Update (Milestone 2 slice 2): Missing Letter
+
+`missing_letter` is now registered and playable through the existing Choice
+Engine path. It ships as `apps/mobile/assets/levels/missing_letter.json`
+with 75 bilingual levels, three difficulty tiers, missing-position metadata,
+exactly one correct choice per locale, and validator coverage for ambiguous
+multi-gap items, answer length mismatches, missing correct choices, and
+out-of-range positions. Evidence on 2026-07-19: `flutter analyze`,
+`flutter test`, `python tools/content_schema_validator.py`,
+`python tools/content_schema_validator.py --check-malformed`, and
+`python tools/content_safety_audit.py --json` pass.
 
 ## Group A — Chữ và ngôn ngữ (Letters & language)
 
 | # | Name | Age | Status | Evidence |
 |---|---|---|---|---|
-| 01 | Nhận biết chữ cái | 5–7 | Not started | No matching directory under `apps/mobile/lib/src/games`; no alphabet-recognition content file |
+| 01 | Khám phá chữ cái | 5–7 | **Built** | `alphabet_explorer` in `GameRegistry`; `apps/mobile/assets/levels/alphabet_explorer.json` has 95 bilingual Choice Engine levels across 3 tiers; covered by `alphabet_explorer_content_test.dart`, `game_registry_test.dart`, and `game_screen_test.dart` |
 | 02 | Ghép chữ tạo từ | 5–9 | **Built** | `apps/mobile/lib/src/games/word_builder/`; 10/10 levels solvable (`tools/level_validator/solve_levels.py`); VI content only in test fixtures — production level content locale coverage not separately re-verified this pass beyond the `contentForLocale` plumbing fix |
 | 03 | Nghe âm tìm chữ | 5–7 | **Built** | `apps/mobile/lib/src/games/sound_match/`; 10/10 levels solvable |
-| 04 | Tìm chữ còn thiếu | 6–9 | Not started | — |
+| 04 | Tìm chữ còn thiếu | 6–9 | **Built** | `missing_letter` in `GameRegistry`; `apps/mobile/assets/levels/missing_letter.json` has 75 bilingual Choice Engine levels across 3 tiers; covered by `missing_letter_content_test.dart`, `game_registry_test.dart`, and `game_screen_test.dart` |
 | 05 | Nối từ với hình | 5–8 | Not started | — |
 | 06 | Vần nào đúng? | 6–9 | Not started | — |
 | 07 | Chính tả nhanh | 8–12 | Not started | — |
@@ -69,11 +94,12 @@ open finding.
 
 ## Summary
 
-- **Built: 6/30** (word_builder, sound_match, math_race, math_supermarket,
-  memory_cards, robot_commands) — all six pass `flutter analyze`,
-  contribute to the 86-test `flutter test` total, and have 10/10 solvable
-  levels each per `tools/level_validator/solve_levels.py`.
-- **Not started: 24/30** — no engine code, no content, no tests exist. This
+- **Built: 8/30** (alphabet_explorer, missing_letter, word_builder,
+  sound_match, math_race, math_supermarket, memory_cards, robot_commands) —
+  all pass `flutter analyze`. Alphabet Explorer contributes 95 bilingual,
+  schema-validated levels; Missing Letter contributes 75 bilingual,
+  schema-validated levels; the earlier six remain at 10 levels each.
+- **Not started: 22/30** — no engine code, no content, no tests exist. This
   is not a content-authoring gap alone; several of these games map to
   engine types that don't exist yet at all (see
   `docs/game-engine-architecture.md`): Text Input Engine (07, 08), Story
@@ -86,7 +112,7 @@ open finding.
   either — the existing games currently ship with far fewer items (10
   levels each, used for both difficulty progression and content variety
   combined, not 60+ distinct quiz items). This is a real gap on the 6
-  "built" games too, not just the 24 missing ones — see
+  "built" games too, not just the 22 missing ones — see
   `docs/release-audit.md` RA-15.
 
 ## Honest effort estimate

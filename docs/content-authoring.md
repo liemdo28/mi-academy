@@ -1,6 +1,6 @@
 # Content authoring guide
 
-How to add or edit a level in one of the six existing games, against the
+How to add or edit a level in one of the existing games, against the
 schema described in `docs/content-schema.md`.
 
 ## Where content lives
@@ -12,8 +12,10 @@ shaped as `{"gameId": ..., "schemaVersion": "1.0.0", "levels": [...]}`.
 
 1. Copy an existing level entry in the target game's file as a starting
    point — this guarantees you inherit the right shape for that game's
-   `localizedContent` fields (Word Builder's `letters`/`targetWord`,
-   Sound Match's `options`/`correctAnswer`, Robot Commands' `metadata.grid`,
+   `localizedContent` fields (Alphabet Explorer's letter tasks, Missing
+   Letter's `displayWord`/`targetWord`/`missingPositions`/`correctAnswer`,
+   Word Builder's `letters`/`targetWord`, Sound Match's
+   `options`/`correctAnswer`, Robot Commands' `metadata.grid`,
    etc. all differ per game; there is no one generic template).
 2. Give it a unique `id` following the game's existing prefix convention
    (e.g. `wb-lv11` for an 11th Word Builder level) — run
@@ -70,6 +72,8 @@ migration policy.
 - Don't invent a new `metadata.skillIds` value instead of using or adding to
   `content/skills/skill_taxonomy.json` — an ad hoc tag breaks skill-evidence
   tracking silently (this exact drift was found and fixed once already,
-  see `docs/release-audit.md`'s skill-taxonomy-alignment finding).
+  see `docs/release-audit.md`'s skill-taxonomy-alignment finding). Missing
+  Letter currently uses `letters.recognition.lowercase`, `letters.spelling`,
+  `letters.vocabulary`, and `letters.initial_sound`.
 - Don't hardcode a level's user-facing strings anywhere outside
   `localizedContent` — see `docs/localization.md`.
