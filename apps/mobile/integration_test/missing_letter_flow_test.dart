@@ -38,7 +38,7 @@ void main() {
     await tester.tap(find.text('È'));
     await tester.pumpAndSettle(const Duration(seconds: 2));
 
-    expect(find.text('MI thấy con đã hiểu bài!'), findsOneWidget);
+    expect(find.text('Con đã tìm được chữ còn thiếu!'), findsOneWidget);
     expect(find.text('Tiếp tục'), findsOneWidget);
     expect(find.text('Thoát'), findsOneWidget);
 
