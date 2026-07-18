@@ -13,8 +13,8 @@ This session scoped down from the originally requested 19-phase full-repo produc
 - **CI**: no changes to `.github/workflows/ci.yml`. It was read (see `docs/audit/REPOSITORY_AUDIT.md`) but not modified, extended, or verified to actually pass end-to-end in this environment.
 - **Release/production readiness**: no work on release builds, signing, rollback, monitoring, logging infrastructure, or backup/restore.
 - **Admin app** (`apps/admin`): not audited beyond removing its dangling `shared_models` dependency.
-- **Snapshot versioning/migration**: `docs/PLATFORM_GAP_ANALYSIS.md` flags that `MiGameSnapshot` needs a version field for migration; not verified or fixed this session.
-- **Adaptive learning / spaced repetition**: `adaptive_core`, `mastery_core`, `recommendation_core`, `spaced_repetition` packages exist and are internally coherent (see `docs/audit/DUPLICATE_ANALYSIS.md`) but are not imported anywhere in `apps/mobile` — no adaptive behavior runs in the app.
+- ~~Snapshot versioning/migration~~ **Fixed in `fix/full-phase-1-to-19`** — `MiGameSnapshot` v2 (checksum, `gameVersion`) is wired into all 6 games via `SnapshotStore`/`SnapshotLifecycleMixin`, with local save/restore/clear-on-complete. Remaining gap: no backend snapshot persistence (local-only), full corruption/migration test matrix beyond v1->v2 not attempted.
+- ~~Adaptive learning / spaced repetition~~ **Partially fixed in `fix/full-phase-1-to-19`** — `AdaptiveLearningService` runs `MasteryEngine`/`RecommendationEngine` in shadow mode per completion (still write-only, no consumer of that specific output), but separately `GET /lessons/recommended` and the daily-plan endpoint driving `ChildHomeScreen` now rank by real per-child `Progress` data (`apps/api/adaptive_ranking.py`) instead of static difficulty. See `docs/phase-reports/PHASE_10_11_AUTH_PROGRESS_2026-07-18.md`.
 
 ## Structural gaps discovered but not resolved
 
