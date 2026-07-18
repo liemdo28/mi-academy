@@ -35,10 +35,18 @@ android {
     }
 
     defaultConfig {
-        // TODO: Specify your own unique Application ID (https://developer.android.com/studio/build/application-id.html).
+        // NOT YET A REAL, OWNED PACKAGE NAME -- this is Flutter's scaffold
+        // default. Google Play rejects "com.example.*" applications and
+        // package names cannot be changed after first Play Console upload,
+        // so this is a business decision (Play Console developer account /
+        // domain ownership) that must be made before the first production
+        // upload, not something to invent here. Tracked as a Blocker in
+        // docs/release-audit.md and docs/android-signing.md -- not a code
+        // TODO because there's no code fix, only an org decision.
         applicationId = "com.example.mi_academy"
-        // You can update the following values to match your application needs.
-        // For more information, see: https://flutter.dev/to/review-gradle-config.
+        // versionCode/versionName both come from pubspec.yaml's `version:`
+        // field (currently 0.9.0-beta.1+1) via Flutter's standard Gradle
+        // integration -- not hardcoded here, not a separate source of truth.
         minSdk = flutter.minSdkVersion
         targetSdk = flutter.targetSdkVersion
         versionCode = flutter.versionCode
@@ -54,6 +62,23 @@ android {
                 storePassword = keystoreProperties["storePassword"] as String
             }
         }
+    }
+
+    // `-PrequireReleaseSigning=true` opts into a hard failure instead of the
+    // silent debug-signing fallback below -- for CI/release-engineer runs
+    // that must produce a real, Play-Console-uploadable artifact and would
+    // rather fail loudly than ship a debug-signed AAB by mistake. Ordinary
+    // local/dev release builds (`flutter build apk --release` with no
+    // key.properties) are unaffected and keep working exactly as before.
+    val requireReleaseSigning = project.hasProperty("requireReleaseSigning") &&
+        project.property("requireReleaseSigning") == "true"
+    if (requireReleaseSigning && !hasReleaseSigning) {
+        throw GradleException(
+            "requireReleaseSigning=true was set but android/key.properties is " +
+                "missing. Generate it from android/key.properties.example (see " +
+                "docs/android-signing.md) or supply the signing secrets this CI " +
+                "job expects before requesting a production-signed build."
+        )
     }
 
     buildTypes {
