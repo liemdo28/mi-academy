@@ -36,7 +36,7 @@ must not be represented as complete.
 | `apps/mobile` | `flutter test test/missing_letter_content_test.dart test/game_registry_test.dart test/game_screen_test.dart test/widget_test.dart` | PASS, 54 passed |
 | `apps/mobile` | `flutter build apk --release` | PASS, built `build/app/outputs/flutter-apk/app-release.apk` |
 | `apps/mobile` | `flutter build appbundle --release` | PASS, built `build/app/outputs/bundle/release/app-release.aab` |
-| `apps/mobile` | `flutter test integration_test` | NOT RUN locally: no Android/iOS device connected; Flutter listed Windows/Chrome/Edge targets only |
+| `apps/mobile` | `flutter test integration_test` | NOT RUN locally: no Android/iOS device connected; Android emulator proof passed in CI run `29659041334` |
 | repo root | `python tools/content_schema_validator.py` | PASS |
 | repo root | `python tools/content_schema_validator.py --check-malformed` | PASS, 9 malformed fixtures checked |
 | repo root | `python tools/content_safety_audit.py --json` | PASS, 8 files and 9320 strings scanned, 0 findings |
@@ -83,10 +83,9 @@ covered by `tests/test_api_game_result.py`.
 
 - Games 9-15 are not implemented.
 - Missing Letter Android integration coverage exists in
-  `apps/mobile/integration_test/missing_letter_flow_test.dart`, but no local
-  Android/iOS integration-test run completed because no supported device was
-  connected. CI/emulator proof is still required before Game 8 can be marked
-  engineering complete.
+  `apps/mobile/integration_test/missing_letter_flow_test.dart`. Local
+  execution did not run because no supported Android/iOS device was connected;
+  CI run `29659041334` verified the scenario on the Android emulator.
 - No qualified human language or education review has approved the new
   Alphabet Explorer or Missing Letter content.
 - Human content review remains pending for VI language, EN language, and
@@ -94,4 +93,5 @@ covered by `tests/test_api_game_result.py`.
 
 ## Verdict
 
-Milestone 2 Not Ready.
+Game 8 Engineering Complete — Human Content Review Pending — Milestone 2
+Not Ready.

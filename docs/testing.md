@@ -223,8 +223,9 @@ and launcher coverage. Local command results:
   golden skips.
 - `flutter test integration_test` from `apps/mobile`: not run locally because
   no Android/iOS device was connected; Flutter listed desktop/web targets
-  instead. The Missing Letter integration scenario is authored but still
-  needs the Android emulator CI job for authoritative execution proof.
+  instead. The Missing Letter integration scenario is verified by CI run
+  `29659041334` on the `mobile-integration-test` Android emulator job
+  (`success`, 5 tests passed).
 - `python -m pytest packages/game_core/tests tests test -q` from repo root:
   pass, 177 passed.
 - `python -m ruff check .` from repo root: pass.
