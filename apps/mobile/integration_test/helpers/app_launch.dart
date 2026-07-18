@@ -2,6 +2,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:mi_academy/app.dart';
+import 'package:mi_academy/config/router.dart';
 import 'package:mi_academy/providers/providers.dart';
 import 'package:mi_academy/services/parent_settings_store.dart';
 import 'package:offline_sync/offline_sync.dart';
@@ -15,8 +16,18 @@ import 'package:offline_sync/offline_sync.dart';
 /// `main()` itself does the same override (it opens the store before
 /// `runApp` so it's available synchronously); every other provider is the
 /// real production one.
+///
+/// `config/router.dart`'s `routerProvider` is a top-level `GoRouter`
+/// singleton, not something scoped per [ProviderScope] -- re-pumping
+/// `MiAcademyApp` to simulate a relaunch (this test binary can't actually
+/// kill and restart the OS process) reattaches to that *same* GoRouter
+/// instance, which still remembers whatever route the previous simulated
+/// launch navigated to. Forcing it back to `/` first is what makes each
+/// [launchApp] call actually re-run `SplashScreen`'s cold-start redirect
+/// logic, instead of silently resuming wherever the last call left off.
 Future<void> launchApp(WidgetTester tester) async {
   final parentSettingsStore = await HiveParentSettingsStore.open();
+  routerProvider.go('/');
   await tester.pumpWidget(
     ProviderScope(
       overrides: [
