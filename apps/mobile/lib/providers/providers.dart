@@ -1,6 +1,7 @@
 import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:offline_sync/offline_sync.dart';
+import '../config/router.dart';
 import '../services/api_service.dart';
 import '../services/api_sync_processor.dart';
 import '../services/parent_settings_store.dart';
@@ -16,8 +17,18 @@ final parentSettingsStoreProvider = Provider<ParentSettingsStore>((ref) {
 });
 
 /// API service provider — singleton, initialized once.
+///
+/// Wires `onSessionExpired` so a mid-session unrecoverable 401 (refresh
+/// token itself expired/rejected) doesn't just error out the screen that
+/// happened to be making the request -- it resets auth state and sends the
+/// whole app back to /login, same as an explicit logout would.
 final apiServiceProvider = Provider<ApiService>((ref) {
-  return ApiService();
+  final api = ApiService();
+  api.onSessionExpired = () {
+    ref.read(authProvider.notifier).forceLogout();
+    routerProvider.go('/login');
+  };
+  return api;
 });
 
 /// Parent PIN verifier.

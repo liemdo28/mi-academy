@@ -1,6 +1,47 @@
 import 'package:dio/dio.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 
+/// Token persistence, abstracted so tests can supply an in-memory store
+/// instead of `FlutterSecureStorage` (which needs a real platform channel
+/// -- unavailable in plain `flutter_test`, and not reliably mockable since
+/// the concrete backend packages don't expose a stable raw MethodChannel).
+abstract class TokenStore {
+  Future<void> write(String key, String value);
+  Future<String?> read(String key);
+  Future<void> delete(String key);
+}
+
+class SecureTokenStore implements TokenStore {
+  final _storage = const FlutterSecureStorage();
+
+  @override
+  Future<void> write(String key, String value) => _storage.write(key: key, value: value);
+
+  @override
+  Future<String?> read(String key) => _storage.read(key: key);
+
+  @override
+  Future<void> delete(String key) => _storage.delete(key: key);
+}
+
+/// Test-only in-memory [TokenStore].
+class InMemoryTokenStore implements TokenStore {
+  final Map<String, String> _values = {};
+
+  @override
+  Future<void> write(String key, String value) async {
+    _values[key] = value;
+  }
+
+  @override
+  Future<String?> read(String key) async => _values[key];
+
+  @override
+  Future<void> delete(String key) async {
+    _values.remove(key);
+  }
+}
+
 class ApiPaths {
   static const authRegister = '/api/v1/auth/register';
   static const authLogin = '/api/v1/auth/login';
@@ -37,10 +78,20 @@ class ApiPaths {
 /// Stores tokens securely using flutter_secure_storage.
 class ApiService {
   late final Dio _dio;
-  final _storage = const FlutterSecureStorage();
+  final TokenStore _tokenStore;
 
   String? _accessToken;
   String? _refreshToken;
+
+  /// Fired when a request fails auth (401) and there's no way to recover
+  /// the session -- either the refresh token itself was rejected, or there
+  /// was no refresh token to try. Without this, a screen's request just
+  /// errors silently and the app is left showing stale authenticated UI
+  /// with a dead session until the user manually navigates. Set once from
+  /// `main()`/provider wiring to reset auth state and redirect to /login.
+  /// Never fires for requests that were never authenticated in the first
+  /// place (e.g. offline-child gameplay), since that's not a session loss.
+  void Function()? onSessionExpired;
 
   /// Base URL for the API.
   ///
@@ -50,7 +101,8 @@ class ApiService {
 
   ApiService({
     this.baseUrl = const String.fromEnvironment('MI_ACADEMY_API_BASE_URL'),
-  }) {
+    TokenStore? tokenStore,
+  }) : _tokenStore = tokenStore ?? SecureTokenStore() {
     _dio = Dio(BaseOptions(
       baseUrl: baseUrl,
       connectTimeout: const Duration(seconds: 10),
@@ -70,14 +122,29 @@ class ApiService {
         handler.next(options);
       },
       onError: (error, handler) async {
-        if (error.response?.statusCode == 401 && _refreshToken != null) {
-          final refreshed = await _refreshAccessToken();
-          if (refreshed) {
-            error.requestOptions.headers['Authorization'] =
-                'Bearer $_accessToken';
-            final response = await _dio.fetch(error.requestOptions);
-            return handler.resolve(response);
+        // The refresh call itself goes through this same interceptor. If it
+        // returns 401 (the refresh token was rejected) and this branch
+        // didn't exclude it, _refreshAccessToken would try to refresh again
+        // with the same known-bad token -- an unbounded recursive retry
+        // loop, not just a missed edge case.
+        final isRefreshCall = error.requestOptions.path == ApiPaths.authRefresh;
+        if (error.response?.statusCode == 401 && !isRefreshCall) {
+          final wasAuthenticated = _accessToken != null || _refreshToken != null;
+          if (_refreshToken != null) {
+            final refreshed = await _refreshAccessToken();
+            if (refreshed) {
+              error.requestOptions.headers['Authorization'] =
+                  'Bearer $_accessToken';
+              final response = await _dio.fetch(error.requestOptions);
+              return handler.resolve(response);
+            }
+            // _refreshAccessToken already cleared tokens on failure.
+          } else if (wasAuthenticated) {
+            // Had an access token but no refresh token to try -- an
+            // inconsistent state, but still means this session is over.
+            await _clearTokens();
           }
+          if (wasAuthenticated) onSessionExpired?.call();
         }
         handler.next(error);
       },
@@ -317,23 +384,27 @@ class ApiService {
   Future<void> _saveTokens(Map<String, dynamic> data) async {
     _accessToken = data['access_token'];
     _refreshToken = data['refresh_token'];
-    await _storage.write(key: 'access_token', value: _accessToken);
-    await _storage.write(key: 'refresh_token', value: _refreshToken);
+    await _tokenStore.write('access_token', _accessToken!);
+    await _tokenStore.write('refresh_token', _refreshToken!);
   }
 
   Future<void> _clearTokens() async {
     _accessToken = null;
     _refreshToken = null;
-    await _storage.delete(key: 'access_token');
-    await _storage.delete(key: 'refresh_token');
+    await _tokenStore.delete('access_token');
+    await _tokenStore.delete('refresh_token');
   }
 
   Future<void> restoreTokens() async {
-    _accessToken = await _storage.read(key: 'access_token');
-    _refreshToken = await _storage.read(key: 'refresh_token');
+    _accessToken = await _tokenStore.read('access_token');
+    _refreshToken = await _tokenStore.read('refresh_token');
   }
 
   bool get isAuthenticated => _accessToken != null;
+
+  /// Test-only seam for substituting a fake `HttpClientAdapter` instead of
+  /// hitting a real network -- see api_service_session_expiry_test.dart.
+  Dio get dioForTesting => _dio;
 
   /// Make an unauthenticated Dio request (for public endpoints).
   Future<Response> publicGet(String path, {Map<String, dynamic>? params}) {

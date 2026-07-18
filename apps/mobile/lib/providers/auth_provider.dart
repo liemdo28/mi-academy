@@ -128,6 +128,16 @@ class AuthNotifier extends Notifier<AuthState> {
     ref.read(parentGateProvider.notifier).state = false;
   }
 
+  /// Resets auth state after the session has already died server-side (an
+  /// unrecoverable 401 -- see [ApiService.onSessionExpired]), as opposed to
+  /// [logout] which is a user-initiated action that still owns network
+  /// logout + a best-effort sync flush. The tokens are already cleared by
+  /// [ApiService] by the time this runs.
+  void forceLogout() {
+    state = const AuthState();
+    ref.read(parentGateProvider.notifier).state = false;
+  }
+
   String _extractError(Object e) {
     final str = e.toString();
     if (str.contains('EMAIL_EXISTS')) return 'Email đã được đăng ký';
