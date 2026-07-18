@@ -32,9 +32,20 @@ class Settings(BaseSettings):
     # Sync
     SYNC_RATE_LIMIT_PER_MIN: int = 60
     AUTH_RATE_LIMIT_PER_MIN: int = 10
+    # Parent PIN verify -- deliberately stricter than AUTH_RATE_LIMIT_PER_MIN
+    # since a PIN is only 4-6 digits (far smaller keyspace than a password).
+    PIN_RATE_LIMIT_PER_MIN: int = 5
 
     # Redis (required in production for shared rate limiting across API replicas)
     REDIS_URL: str | None = None
+
+    # Only honor a client-supplied X-Forwarded-For header when the API is
+    # actually deployed behind a reverse proxy/load balancer that sets (and
+    # overwrites, not appends to) this header itself. Without a trusted
+    # proxy in front, any caller can spoof a new value on every request and
+    # get a fresh rate-limit bucket each time -- defeating the limiter
+    # entirely for brute-force endpoints (login, PIN verify).
+    TRUST_PROXY_HEADERS: bool = False
 
 
 DEFAULT_SECRET_KEY = "CHANGE_ME_IN_PRODUCTION_USE_64_CHARS_RANDOM"

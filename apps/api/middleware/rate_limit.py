@@ -56,9 +56,11 @@ class RateLimitMiddleware(BaseHTTPMiddleware):
         app,
         auth_limit: int = 10,
         sync_limit: int = 60,
+        pin_limit: int = 5,
         default_limit: int = 100,
         redis_url: Optional[str] = None,
         app_env: str = "development",
+        trust_proxy_headers: bool = False,
     ):
         super().__init__(app)
         if app_env.lower() == "production" and not redis_url:
@@ -68,7 +70,9 @@ class RateLimitMiddleware(BaseHTTPMiddleware):
         self.limiter = RedisRateLimiter(redis_url) if redis_url else InMemoryRateLimiter()
         self.auth_limit = auth_limit
         self.sync_limit = sync_limit
+        self.pin_limit = pin_limit
         self.default_limit = default_limit
+        self.trust_proxy_headers = trust_proxy_headers
 
     async def dispatch(
         self, request: Request, call_next: RequestResponseEndpoint
@@ -77,8 +81,13 @@ class RateLimitMiddleware(BaseHTTPMiddleware):
         client_id = self._get_client_id(request)
         path = request.url.path
 
-        # Determine limit based on path
-        if path.startswith("/api/v1/auth"):
+        # Determine limit based on path. PIN verify is checked before the
+        # general /api/v1/parent prefix since it needs a much stricter limit
+        # than the rest of that router (a 4-6 digit PIN is far more
+        # brute-forceable than a password).
+        if path.startswith("/api/v1/parent/pin"):
+            limit = self.pin_limit
+        elif path.startswith("/api/v1/auth"):
             limit = self.auth_limit
         elif path.startswith("/api/v1/sync"):
             limit = self.sync_limit
@@ -101,11 +110,18 @@ class RateLimitMiddleware(BaseHTTPMiddleware):
         return await call_next(request)
 
     def _get_client_id(self, request: Request) -> str:
-        """Get a client identifier from headers or IP."""
-        # Prefer X-Forwarded-For (behind proxy)
-        forwarded = request.headers.get("x-forwarded-for")
-        if forwarded:
-            return forwarded.split(",")[0].strip()
+        """Get a client identifier from headers or IP.
+
+        X-Forwarded-For is only trusted when explicitly configured
+        (trust_proxy_headers) -- otherwise any direct caller can set an
+        arbitrary value on every request and get a fresh rate-limit bucket
+        each time, defeating the limiter entirely for brute-force-sensitive
+        endpoints (login, PIN verify).
+        """
+        if self.trust_proxy_headers:
+            forwarded = request.headers.get("x-forwarded-for")
+            if forwarded:
+                return forwarded.split(",")[0].strip()
         if request.client:
             return request.client.host
         return "unknown"

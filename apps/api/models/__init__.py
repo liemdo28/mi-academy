@@ -54,6 +54,12 @@ class ParentProfile(Base):
     language: Mapped[str] = mapped_column(String(10), default="vi")
     timezone: Mapped[str] = mapped_column(String(50), default="Asia/Ho_Chi_Minh")
     pin_hash: Mapped[Optional[str]] = mapped_column(String(255), nullable=True)
+    # Server-side PIN brute-force lockout. The PIN is only 4-6 digits
+    # (10,000-1,000,000 combinations) and the mobile app's own 3-attempt
+    # lockout is client-side only -- calling the API directly bypasses it
+    # entirely, so this must be enforced here too.
+    pin_failed_attempts: Mapped[int] = mapped_column(Integer, default=0)
+    pin_locked_until: Mapped[Optional[datetime]] = mapped_column(DateTime(timezone=True), nullable=True)
 
     user: Mapped["User"] = relationship(back_populates="parent_profile")
     children: Mapped[list["ChildProfile"]] = relationship(
@@ -250,4 +256,22 @@ class ContentVersion(Base):
     content_type: Mapped[str] = mapped_column(String(30), nullable=False)  # lessons | questions | games
     version: Mapped[int] = mapped_column(Integer, default=1)
     checksum: Mapped[str] = mapped_column(String(64), nullable=True)
+    created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=utc_now)
+
+
+class RefreshToken(Base):
+    """Server-side record of every issued refresh token, keyed by its JWT
+    `jti` claim -- without this, refresh JWTs are self-validating forever
+    up to their expiry and `/auth/logout` cannot actually end a session
+    (a stolen refresh token would remain valid until it naturally expired,
+    regardless of "logout")."""
+    __tablename__ = "refresh_tokens"
+    __table_args__ = (
+        Index("idx_refresh_tokens_user", "user_id"),
+    )
+
+    jti: Mapped[str] = mapped_column(String(36), primary_key=True, default=_uuid)
+    user_id: Mapped[str] = mapped_column(String(36), ForeignKey("users.id"), nullable=False)
+    expires_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), nullable=False)
+    revoked_at: Mapped[Optional[datetime]] = mapped_column(DateTime(timezone=True), nullable=True)
     created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=utc_now)
