@@ -196,7 +196,26 @@ class ApiService {
     await _clearTokens();
   }
 
-  Future<bool> _refreshAccessToken() async {
+  Future<bool>? _inFlightRefresh;
+
+  /// Serializes concurrent refresh attempts behind one in-flight [Future].
+  ///
+  /// Without this, several screens hitting 401 at nearly the same moment
+  /// (the normal case right when an access token expires) would each call
+  /// this independently. Since refresh tokens are single-use/rotated
+  /// server-side, only the first of those calls actually succeeds; the
+  /// rest would present an already-redeemed token, get rejected, clear
+  /// tokens, and force a full logout via onSessionExpired -- even though
+  /// the session was, a moment earlier, perfectly valid. Sharing one
+  /// in-flight refresh means every concurrent caller gets the same
+  /// (successful) result.
+  Future<bool> _refreshAccessToken() {
+    return _inFlightRefresh ??= _doRefreshAccessToken().whenComplete(() {
+      _inFlightRefresh = null;
+    });
+  }
+
+  Future<bool> _doRefreshAccessToken() async {
     try {
       final response = await _dio.post(ApiPaths.authRefresh, data: {
         'refresh_token': _refreshToken,

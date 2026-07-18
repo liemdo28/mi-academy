@@ -19,18 +19,68 @@ import 'src/games/word_builder/word_builder_screen.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  // Opens the Hive boxes the offline sync queue needs. Must run before any
-  // widget reads `syncServiceProvider`.
-  await initHive();
-  final parentSettingsStore = await HiveParentSettingsStore.open();
-  runApp(
-    ProviderScope(
-      overrides: [
-        parentSettingsStoreProvider.overrideWithValue(parentSettingsStore),
-      ],
-      child: const production_app.MiAcademyApp(),
-    ),
-  );
+  try {
+    // Opens the Hive boxes the offline sync queue needs. Must run before
+    // any widget reads `syncServiceProvider`. initHive() itself recovers
+    // from a single corrupted box (see hive_boxes.dart); this outer catch
+    // is the last resort for a more fundamental init failure (e.g.
+    // Hive.initFlutter() itself failing), so the app shows a safe fatal
+    // state instead of never reaching runApp at all.
+    await initHive();
+    final parentSettingsStore = await HiveParentSettingsStore.open();
+    runApp(
+      ProviderScope(
+        overrides: [
+          parentSettingsStoreProvider.overrideWithValue(parentSettingsStore),
+        ],
+        child: const production_app.MiAcademyApp(),
+      ),
+    );
+  } catch (error) {
+    runApp(_FatalStartupErrorApp(error: error));
+  }
+}
+
+/// Shown only if local storage initialization fails in a way
+/// [initHive]'s own per-box corruption recovery couldn't handle. Gives the
+/// child/parent a safe, non-technical message and a retry action instead
+/// of an indefinitely blank screen.
+class _FatalStartupErrorApp extends StatelessWidget {
+  const _FatalStartupErrorApp({required this.error});
+
+  final Object error;
+
+  @override
+  Widget build(BuildContext context) {
+    return const MaterialApp(
+      home: Scaffold(
+        body: SafeArea(
+          child: Center(
+            child: Padding(
+              padding: EdgeInsets.all(24),
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Icon(Icons.refresh_rounded, size: 56),
+                  SizedBox(height: 16),
+                  Text(
+                    'MI cần khởi động lại một chút.',
+                    textAlign: TextAlign.center,
+                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600),
+                  ),
+                  SizedBox(height: 8),
+                  Text(
+                    'Vui lòng đóng và mở lại ứng dụng.',
+                    textAlign: TextAlign.center,
+                  ),
+                ],
+              ),
+            ),
+          ),
+        ),
+      ),
+    );
+  }
 }
 
 /// Debug-only harness that boots straight into the 6-game picker, bypassing
