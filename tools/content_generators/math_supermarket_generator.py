@@ -66,8 +66,14 @@ TIER_CONFIG: dict[Tier, dict] = {
 }
 
 
-def _make_options(correct: int, rng: random.Random, unit_vi: str, unit_en: str,
-                   template_vi: str, template_en: str) -> tuple[list[dict], list[dict]]:
+def _make_options(
+    correct: int,
+    rng: random.Random,
+    unit_vi: str,
+    unit_en: str,
+    template_vi: str,
+    template_en: str,
+) -> tuple[list[dict], list[dict]]:
     """3 options each (vi/en), one correct, all distinct non-negative values."""
     seen = {correct}
     distractors: list[int] = []
@@ -83,13 +89,19 @@ def _make_options(correct: int, rng: random.Random, unit_vi: str, unit_en: str,
     rng.shuffle(values)
     ids = ["a", "b", "c"]
     vi_options = [
-        {"id": ids[i], "text": template_vi.format(v=values[i], u=unit_vi),
-         "correct": values[i] == correct}
+        {
+            "id": ids[i],
+            "text": template_vi.format(v=values[i], u=unit_vi),
+            "correct": values[i] == correct,
+        }
         for i in range(3)
     ]
     en_options = [
-        {"id": ids[i], "text": template_en.format(v=values[i], u=unit_en),
-         "correct": values[i] == correct}
+        {
+            "id": ids[i],
+            "text": template_en.format(v=values[i], u=unit_en),
+            "correct": values[i] == correct,
+        }
         for i in range(3)
     ]
     return vi_options, en_options
@@ -121,7 +133,9 @@ def _tier1_problem(rng: random.Random, seen: set[tuple]) -> dict | None:
 
 def _tier2_problem(rng: random.Random, seen: set[tuple]) -> dict | None:
     """Two items, total or change within a budget of 20."""
-    (item_a, name_a_vi, name_a_en), (item_b, name_b_vi, name_b_en) = rng.sample(ITEMS, 2)
+    (item_a, name_a_vi, name_a_en), (item_b, name_b_vi, name_b_en) = rng.sample(
+        ITEMS, 2
+    )
     price_a = rng.randint(2, 9)
     price_b = rng.randint(2, 9)
     total = price_a + price_b
@@ -142,7 +156,11 @@ def _tier2_problem(rng: random.Random, seen: set[tuple]) -> dict | None:
             f"{name_b_en} for {price_b} coins. How much is left?"
         ),
         "answer": change,
-        "skills": ["math.currency.basic", "math.addition.within_20", "math.subtraction.within_20"],
+        "skills": [
+            "math.currency.basic",
+            "math.addition.within_20",
+            "math.subtraction.within_20",
+        ],
         "hint_vi": f"{price_a} + {price_b} = {total}, rồi {budget} - {total} = {change}",
         "hint_en": f"{price_a} + {price_b} = {total}, then {budget} - {total} = {change}",
         "assets": [item_a, item_b],
@@ -211,8 +229,10 @@ def generate_levels(seed: int = DEFAULT_SEED) -> list[dict]:
                 continue
 
             vi_options, en_options = _make_options(
-                problem["answer"], rng,
-                unit_vi="", unit_en="",
+                problem["answer"],
+                rng,
+                unit_vi="",
+                unit_en="",
                 template_vi=problem["unit_template_vi"],
                 template_en=problem["unit_template_en"],
             )

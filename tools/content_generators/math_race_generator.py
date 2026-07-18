@@ -100,7 +100,9 @@ def _tier1_problem(rng: random.Random, seen: set[tuple]) -> dict | None:
         "prompt_vi": f"{a} {op} {b} = ?",
         "prompt_en": f"{a} {op} {b} = ?",
         "answer": answer,
-        "skill": "math.addition.within_10" if op == "+" else "math.subtraction.within_10",
+        "skill": "math.addition.within_10"
+        if op == "+"
+        else "math.subtraction.within_10",
         "hint_vi": f"{a} {op} {b} = {answer}",
         "hint_en": f"{a} {op} {b} = {answer}",
     }
@@ -140,10 +142,10 @@ def _tier3_problem(rng: random.Random, seen: set[tuple]) -> dict | None:
         a = rng.randint(5, 40)
         b = rng.randint(1, 40)
         answer_val = a + b
-        key = ("missing", a, b)
-        if key in seen:
+        missing_key = ("missing", a, b)
+        if missing_key in seen:
             return None
-        seen.add(key)
+        seen.add(missing_key)
         return {
             "prompt_vi": f"{a} + ? = {answer_val}",
             "prompt_en": f"{a} + ? = {answer_val}",
@@ -159,10 +161,10 @@ def _tier3_problem(rng: random.Random, seen: set[tuple]) -> dict | None:
         answer = a + b - c
         if answer < 0:
             return None
-        key = ("two_step", a, b, c)
-        if key in seen:
+        two_step_key = ("two_step", a, b, c)
+        if two_step_key in seen:
             return None
-        seen.add(key)
+        seen.add(two_step_key)
         return {
             "prompt_vi": f"{a} + {b} - {c} = ?",
             "prompt_en": f"{a} + {b} - {c} = ?",
@@ -215,9 +217,7 @@ def generate_levels(seed: int = DEFAULT_SEED) -> list[dict]:
                         },
                         "en": {
                             "prompt": problem["prompt_en"],
-                            "options": [
-                                dict(o) for o in options
-                            ],
+                            "options": [dict(o) for o in options],
                         },
                     },
                     "hints": [
