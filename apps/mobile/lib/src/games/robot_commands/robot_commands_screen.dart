@@ -3,6 +3,7 @@ import 'package:mi_blocks/mi_blocks.dart';
 import 'package:mi_game_core/mi_game_core.dart';
 import 'package:mi_game_ui/mi_game_ui.dart';
 
+import '../level_skill_ids.dart';
 import '../snapshot_lifecycle_mixin.dart';
 import 'robot_commands_session.dart';
 
@@ -137,7 +138,7 @@ class _RobotCommandsScreenState extends State<RobotCommandsScreen>
       hintsUsed: _session.hintsUsed,
       duration: _stopwatch.elapsed,
       perfectRun: _session.attempts <= 1 && _session.hintsUsed == 0,
-      newSkillsAcquired: const ['sequencing'],
+      newSkillsAcquired: skillIdsFor(_level, fallback: const ['sequencing']),
     ));
 
     showDialog(

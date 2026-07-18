@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:mi_game_core/mi_game_core.dart';
 import 'package:mi_game_ui/mi_game_ui.dart';
 
+import '../level_skill_ids.dart';
 import '../snapshot_lifecycle_mixin.dart';
 import 'choice_game_session.dart';
 
@@ -115,7 +116,7 @@ class _ChoiceGameScreenState extends State<ChoiceGameScreen>
       hintsUsed: _session.hintsUsed,
       duration: _stopwatch.elapsed,
       perfectRun: _session.attempts <= 1 && _session.hintsUsed == 0,
-      newSkillsAcquired: const ['math'],
+      newSkillsAcquired: skillIdsFor(_level, fallback: const ['math']),
     ));
 
     showDialog(

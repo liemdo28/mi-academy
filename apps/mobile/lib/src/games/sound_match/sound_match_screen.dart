@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:mi_game_core/mi_game_core.dart';
 import 'package:mi_game_ui/mi_game_ui.dart';
 
+import '../level_skill_ids.dart';
 import '../snapshot_lifecycle_mixin.dart';
 import 'sound_match_session.dart';
 
@@ -113,7 +114,7 @@ class _SoundMatchScreenState extends State<SoundMatchScreen>
       hintsUsed: _session.hintsUsed,
       duration: _stopwatch.elapsed,
       perfectRun: _session.attempts <= 1 && _session.hintsUsed == 0,
-      newSkillsAcquired: const ['listening'],
+      newSkillsAcquired: skillIdsFor(_level, fallback: const ['listening']),
     ));
 
     showDialog(
