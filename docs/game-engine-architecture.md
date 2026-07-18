@@ -96,16 +96,48 @@ real, tested, shared component: `packages/mi_game_engines/` (new package,
   reduced-motion durations). All 19 pass; `flutter analyze` on the package
   is clean.
 
-**Sequence Engine, Drag-and-drop Placement Engine, and Multi-select
-Engine were not built this pass** — each is comparable in scope to what
-Matching Engine took, and building three more real (not stubbed) engines
-with the same bar (typed model, controller, renderer, VI+EN examples,
-unit+widget+accessibility+malformed-content tests) did not fit in this
-session. Do not read "one engine built" as "the pattern is proven, the
-rest are trivial" — each engine's interaction model is genuinely
-different (ordering/reordering for Sequence, drag targets/snapping for
-Placement, min/max selection constraints for Multi-select), so each needs
-its own real design, not a copy-paste of Matching Engine's shape.
+## Update: Sequence Engine built (Milestone 1C, 2026-07-18)
+
+The second of the four Milestone 1 WS5 engines is now real and tested:
+`packages/mi_game_engines/lib/src/sequence/{sequence_content,sequence_controller,sequence_screen}.dart`.
+
+- **Typed content model**: `SequenceContent`/`SequenceItem`/`SequenceRule`.
+  Supports both interaction modes required by the spec — full reorder
+  (child reconstructs a scrambled sequence) and missing-item (one or more
+  blanks filled from a choice list) — and five rule types: `fixed`,
+  `ascending`, `descending`, `alternating`, `repeating`. `fromJson`
+  cross-validates the authored `correctOrder` against the declared rule
+  (e.g. an `ascending` rule with `step: 2` is rejected if the authored
+  order doesn't actually increase by 2 each step), catching authoring
+  mistakes at load time rather than silently accepting a nonsensical
+  level.
+- **Controller**: `SequenceController` (`ChangeNotifier`, no framework/
+  child-profile dependency) — `moveItem` (shared by drag and tap-based
+  reordering), `submitReorder`/`submitMissingItems`, 3/2/1-star scoring,
+  hint, pause/resume, retry. Reorder mode's initial shuffle uses the same
+  deterministic-per-content-id PRNG pattern as Matching Engine.
+- **Renderer**: `SequenceScreen` — `ReorderableListView` for drag
+  reordering, plus explicit move-left/move-right buttons on every item as
+  the accessibility fallback the spec requires (verified by a widget test
+  that drives reordering *only* through those buttons, never a raw drag
+  gesture); missing-item mode renders known values as chips and blanks as
+  tappable slots with a shuffled choice row; recoverable error screen for
+  malformed content.
+- **Examples**: Vietnamese ascending (2,4,6,8), English descending
+  (12,9,6), a fixed-order Vietnamese picture-story sequence, and a
+  Vietnamese alternating-pattern missing-item level — four real samples,
+  not one.
+- **Tests**: 23 (10 content-parsing incl. 5 malformed-input cases testing
+  each rule type's own validation, 8 controller behavior, 5 widget incl.
+  the error state and the button-only reorder path). All pass; `flutter
+  analyze` clean.
+
+**Drag-and-drop Placement Engine and Multi-select Engine were not built
+this pass** — each still needs its own real interaction-model design
+(drop-target/snap semantics for Placement, min/max selection-set
+validation for Multi-select), comparable in scope to what Matching and
+Sequence each took. Neither is wired into the game registry or any
+existing game.
 
 **Not wired into any of the six existing games or the game registry this
 pass** — `packages/mi_game_engines` is a standalone package with its own
