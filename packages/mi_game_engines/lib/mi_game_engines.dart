@@ -7,3 +7,6 @@ export 'src/matching/matching_screen.dart';
 export 'src/sequence/sequence_content.dart';
 export 'src/sequence/sequence_controller.dart';
 export 'src/sequence/sequence_screen.dart';
+export 'src/placement/placement_content.dart';
+export 'src/placement/placement_controller.dart';
+export 'src/placement/placement_screen.dart';
