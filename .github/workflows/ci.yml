@@ -328,22 +328,28 @@ jobs:
       - name: Run integration tests on a fixed Android emulator profile
         uses: reactivecircus/android-emulator-runner@v2
         with:
-          # Fixed API level, profile, locale, and timezone -- deterministic
+          # Fixed API level, profile, and locale -- deterministic
           # environment per the WS2 CI requirements, not "whatever the
-          # runner happens to have".
+          # runner happens to have". Locale is set via the AVD's own
+          # `locale` input (applied at emulator boot) rather than a
+          # post-boot `adb shell setprop persist.sys.locale`, which fails
+          # on the stock (non-rooted) google_apis system image -- confirmed
+          # directly: `Failed to set property 'persist.sys.locale' to
+          # 'vi-VN'` on run 29643058794. Timezone has no equivalent AVD-
+          # config input in this action, and the app's own locale
+          # (LocaleSelectionScreen) doesn't depend on the OS locale anyway,
+          # so it's not set here.
           api-level: 34
           target: google_apis
           arch: x86_64
           profile: pixel_6
+          locale: vi-VN
           disk-size: 6000M
           heap-size: 512M
           emulator-options: -no-window -gpu swiftshader_indirect -noaudio -no-boot-anim -camera-back none
           disable-animations: true
           working-directory: apps/mobile
-          script: |
-            adb shell setprop persist.sys.locale vi-VN
-            adb shell "su 0 setprop persist.sys.timezone Asia/Ho_Chi_Minh" || true
-            flutter test integration_test
+          script: flutter test integration_test
 
       - name: Upload integration test failure artifacts
         if: failure()
