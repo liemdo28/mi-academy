@@ -1,0 +1,15 @@
+{
+  "id": "malformed-shape-builder-locale",
+  "gameId": "shape_builder",
+  "levelNumber": 2,
+  "difficulty": 1,
+  "localizedContent": {
+    "en": {
+      "prompt": "Place the shapes into their slots!",
+      "items": [{"id": "item-a", "label": "Square", "text": "Square", "acceptedTargetIds": ["slot-a"]}],
+      "targets": [{"id": "slot-a", "label": "Square slot", "capacity": 1, "acceptedItemIds": ["item-a"]}]
+    }
+  },
+  "hints": [{"text": "Missing vi localization on purpose"}],
+  "metadata": {"ageGroup": "junior", "skillIds": ["math.shapes.basic"], "tier": 1, "engineId": "placement"}
+}

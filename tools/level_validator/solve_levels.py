@@ -173,6 +173,81 @@ def solve_choice_level(level: dict) -> list[str]:
     return errors
 
 
+# --- Placement Engine games (Shape Builder, Word Sorter) ---
+
+
+def solve_placement_level(level: dict) -> list[str]:
+    """A Placement-based level is solvable per locale if:
+    - every item id and target id is unique;
+    - every item has at least one target it may legally occupy;
+    - every target is reachable by at least one item;
+    - total item count does not exceed total target capacity.
+
+    Mirrors (a lightweight Python re-check of) the same rules
+    packages/mi_game_engines' PlacementContent.fromJson enforces in Dart --
+    this does not replace that engine-side validation, it gives the
+    repository's Python content-validation pipeline (this script,
+    schema validator, safety audit) its own independent coverage of the
+    same two games, matching the pattern already used for the choice
+    games' `solve_choice_level`.
+    """
+    errors = []
+    content = level.get("localizedContent", {})
+    for locale, loc in content.items():
+        if not isinstance(loc, dict):
+            continue
+        items = loc.get("items", [])
+        targets = loc.get("targets", [])
+        if not items or not targets:
+            errors.append(f"[{locale}] Missing items or targets")
+            continue
+
+        item_ids = [i.get("id") for i in items]
+        target_ids = [t.get("id") for t in targets]
+        if len(item_ids) != len(set(item_ids)):
+            errors.append(f"[{locale}] Duplicate item id")
+        if len(target_ids) != len(set(target_ids)):
+            errors.append(f"[{locale}] Duplicate target id")
+
+        rule = loc.get("rule") or {}
+        by_category = rule.get("matchStrategy") == "metadataCategory"
+        category_key = rule.get("categoryMetadataKey")
+
+        def _accepts(item: dict, target: dict) -> bool:
+            if by_category and category_key:
+                return item.get("metadata", {}).get(
+                    category_key
+                ) is not None and item.get("metadata", {}).get(
+                    category_key
+                ) == target.get("metadata", {}).get(category_key)
+            item_targets = item.get("acceptedTargetIds", [])
+            target_items = target.get("acceptedItemIds", [])
+            item_allows = not item_targets or target.get("id") in item_targets
+            target_allows = not target_items or item.get("id") in target_items
+            return item_allows and target_allows
+
+        demand: dict = {}
+        for item in items:
+            acceptable = [t for t in targets if _accepts(item, t)]
+            if not acceptable:
+                errors.append(f"[{locale}] Item '{item.get('id')}' has no valid target")
+            for t in acceptable:
+                demand[t.get("id")] = demand.get(t.get("id"), 0) + 1
+
+        for target in targets:
+            if demand.get(target.get("id"), 0) == 0:
+                errors.append(
+                    f"[{locale}] Target '{target.get('id')}' has no valid item"
+                )
+
+        total_capacity = sum(t.get("capacity", 1) for t in targets)
+        if len(items) > total_capacity:
+            errors.append(
+                f"[{locale}] Total items ({len(items)}) exceed total capacity ({total_capacity})"
+            )
+    return errors
+
+
 def validate_game_levels(
     *,
     all_errors: list[str],
@@ -250,6 +325,13 @@ def main():
         file_name="memory_cards.json",
         solver=solve_memory_cards,
         label="Memory Cards",
+    )
+    validate_game_levels(
+        all_errors=all_errors,
+        game_id="shape_builder",
+        file_name="shape_builder.json",
+        solver=solve_placement_level,
+        label="Shape Builder",
     )
 
     rc_path = (

@@ -1,0 +1,15 @@
+{
+  "id": "malformed-shape-builder-difficulty",
+  "gameId": "shape_builder",
+  "levelNumber": 1,
+  "difficulty": 9,
+  "localizedContent": {
+    "vi": {
+      "prompt": "Đặt hình vào đúng vị trí!",
+      "items": [{"id": "item-a", "label": "Hình vuông", "text": "Hình vuông", "acceptedTargetIds": ["slot-a"]}],
+      "targets": [{"id": "slot-a", "label": "Ô hình vuông", "capacity": 1, "acceptedItemIds": ["item-a"]}]
+    }
+  },
+  "hints": [{"text": "Invalid difficulty on purpose"}],
+  "metadata": {"ageGroup": "junior", "skillIds": ["math.shapes.basic"], "tier": 1, "engineId": "placement"}
+}
