@@ -207,7 +207,7 @@ jobs:
           kill "$server_pid" 2>/dev/null || true
 
   shared-engines-test:
-    name: Shared game engines (Matching/Sequence/Placement) format, analyze, test
+    name: Shared game engines (Matching/Sequence/Placement/Multi-select) format, analyze, test
     runs-on: ubuntu-latest
     defaults:
       run:
