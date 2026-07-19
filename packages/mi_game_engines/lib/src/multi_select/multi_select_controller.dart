@@ -1,78 +1,254 @@
+import 'package:equatable/equatable.dart';
 import 'package:flutter/foundation.dart';
 
 import 'multi_select_content.dart';
 
-/// Which assistive action a hint call performed -- exposed so the
-/// renderer can show the right feedback for whichever hint was used.
-enum MultiSelectHintKind { authorHint, revealCorrectOption, eliminateOption }
+enum MultiSelectSelectionStatus {
+  accepted,
+  unknownOption,
+  maximumReached,
+  deselectDisabled,
+  paused,
+  complete,
+  eliminated,
+}
 
-/// Normalized, engine-agnostic result shape -- the "common engine
-/// contract" result, matching the shape already established by
-/// PlacementResult (see placement_controller.dart). A plain immutable
-/// data class with no dependency on child-profile storage, Hive, or any
-/// backend API.
-class MultiSelectResult {
+enum MultiSelectSubmissionStatus {
+  accepted,
+  belowMinimum,
+  aboveMaximum,
+  paused,
+  complete,
+}
+
+enum MultiSelectCompletionState { inProgress, completed, exhausted }
+
+enum MultiSelectFeedbackCode {
+  none,
+  minimumSelectionRequired,
+  maximumSelectionReached,
+  deselectDisabled,
+  incorrect,
+  correct,
+  noMoreHints,
+}
+
+enum MultiSelectHintKind {
+  authorHint,
+  revealCorrectOption,
+  eliminateOption,
+  expectedSelectionCount,
+}
+
+class MultiSelectSelectionOutcome extends Equatable {
+  const MultiSelectSelectionOutcome(this.status, {this.optionId});
+
+  final MultiSelectSelectionStatus status;
+  final String? optionId;
+  bool get accepted => status == MultiSelectSelectionStatus.accepted;
+
+  @override
+  List<Object?> get props => [status, optionId];
+}
+
+class MultiSelectSubmissionOutcome extends Equatable {
+  const MultiSelectSubmissionOutcome(this.status, {this.evaluation});
+
+  final MultiSelectSubmissionStatus status;
+  final MultiSelectEvaluation? evaluation;
+  bool get accepted => status == MultiSelectSubmissionStatus.accepted;
+
+  @override
+  List<Object?> get props => [status, evaluation];
+}
+
+class MultiSelectHintOutcome extends Equatable {
+  const MultiSelectHintOutcome(
+      {required this.applied, this.kind, this.message});
+
+  final bool applied;
+  final MultiSelectHintKind? kind;
+  final String? message;
+
+  @override
+  List<Object?> get props => [applied, kind, message];
+}
+
+class MultiSelectEvaluation extends Equatable {
+  const MultiSelectEvaluation({
+    required this.correctlySelectedIds,
+    required this.incorrectlySelectedIds,
+    required this.missedCorrectIds,
+    required this.score,
+    required this.exact,
+  });
+
+  final Set<String> correctlySelectedIds;
+  final Set<String> incorrectlySelectedIds;
+  final Set<String> missedCorrectIds;
+  final int score;
+  final bool exact;
+
+  @override
+  List<Object?> get props => [
+        correctlySelectedIds,
+        incorrectlySelectedIds,
+        missedCorrectIds,
+        score,
+        exact,
+      ];
+}
+
+class MultiSelectAttempt extends Equatable {
+  const MultiSelectAttempt({
+    required this.attemptNumber,
+    required this.selectedIds,
+    required this.evaluation,
+  });
+
+  final int attemptNumber;
+  final Set<String> selectedIds;
+  final MultiSelectEvaluation evaluation;
+
+  @override
+  List<Object?> get props => [attemptNumber, selectedIds, evaluation];
+}
+
+class MultiSelectState extends Equatable {
+  const MultiSelectState({
+    required this.selectedOptionIds,
+    required this.currentAttempt,
+    required this.attemptHistory,
+    required this.correctSubmissionCount,
+    required this.incorrectSubmissionCount,
+    required this.hintCount,
+    required this.revealedOptionIds,
+    required this.eliminatedOptionIds,
+    required this.validationFeedback,
+    required this.evaluation,
+    required this.completionState,
+    required this.score,
+    required this.stars,
+    required this.elapsedDuration,
+    required this.isPaused,
+  });
+
+  final Set<String> selectedOptionIds;
+  final int currentAttempt;
+  final List<MultiSelectAttempt> attemptHistory;
+  final int correctSubmissionCount;
+  final int incorrectSubmissionCount;
+  final int hintCount;
+  final Set<String> revealedOptionIds;
+  final Set<String> eliminatedOptionIds;
+  final MultiSelectFeedbackCode validationFeedback;
+  final MultiSelectEvaluation? evaluation;
+  final MultiSelectCompletionState completionState;
+  final int score;
+  final int stars;
+  final Duration elapsedDuration;
+  final bool isPaused;
+
+  @override
+  List<Object?> get props => [
+        selectedOptionIds,
+        currentAttempt,
+        attemptHistory,
+        correctSubmissionCount,
+        incorrectSubmissionCount,
+        hintCount,
+        revealedOptionIds,
+        eliminatedOptionIds,
+        validationFeedback,
+        evaluation,
+        completionState,
+        score,
+        stars,
+        elapsedDuration,
+        isPaused,
+      ];
+}
+
+class MultiSelectResult extends Equatable {
   const MultiSelectResult({
     required this.engineId,
     required this.contentId,
+    required this.attempts,
+    required this.correctSubmissionCount,
+    required this.incorrectSubmissionCount,
+    required this.hintCount,
     required this.score,
     required this.stars,
-    required this.attempts,
     required this.duration,
-    required this.selectedIds,
-    required this.correctIds,
-    required this.hintCount,
     required this.completed,
+    required this.selectedOptionIds,
+    required this.correctOptionIds,
+    required this.missedCorrectOptionIds,
+    required this.incorrectlySelectedOptionIds,
+    required this.evaluationMode,
+    required this.submissionMode,
   });
 
   final String engineId;
   final String contentId;
+  final int attempts;
+  final int correctSubmissionCount;
+  final int incorrectSubmissionCount;
+  final int hintCount;
   final int score;
   final int stars;
-  final int attempts;
   final Duration duration;
-  final Set<String> selectedIds;
-  final Set<String> correctIds;
-  final int hintCount;
   final bool completed;
+  final Set<String> selectedOptionIds;
+  Set<String> get selectedIds => selectedOptionIds;
+  final Set<String> correctOptionIds;
+  Set<String> get correctIds => correctOptionIds;
+  final Set<String> missedCorrectOptionIds;
+  final Set<String> incorrectlySelectedOptionIds;
+  final MultiSelectEvaluationMode evaluationMode;
+  final MultiSelectSubmissionMode submissionMode;
+
+  Map<String, Object?> toJson() => {
+        'engineId': engineId,
+        'contentId': contentId,
+        'attempts': attempts,
+        'correctSubmissionCount': correctSubmissionCount,
+        'incorrectSubmissionCount': incorrectSubmissionCount,
+        'hintCount': hintCount,
+        'score': score,
+        'stars': stars,
+        'durationMs': duration.inMilliseconds,
+        'completed': completed,
+        'selectedOptionIds': selectedOptionIds.toList()..sort(),
+        'correctOptionIds': correctOptionIds.toList()..sort(),
+        'missedCorrectOptionIds': missedCorrectOptionIds.toList()..sort(),
+        'incorrectlySelectedOptionIds': incorrectlySelectedOptionIds.toList()
+          ..sort(),
+        'evaluationMode': evaluationMode.name,
+        'submissionMode': submissionMode.name,
+      };
 
   @override
-  bool operator ==(Object other) =>
-      other is MultiSelectResult &&
-      other.engineId == engineId &&
-      other.contentId == contentId &&
-      other.score == score &&
-      other.stars == stars &&
-      other.attempts == attempts &&
-      other.duration == duration &&
-      setEquals(other.selectedIds, selectedIds) &&
-      setEquals(other.correctIds, correctIds) &&
-      other.hintCount == hintCount &&
-      other.completed == completed;
-
-  @override
-  int get hashCode => Object.hash(
+  List<Object?> get props => [
         engineId,
         contentId,
+        attempts,
+        correctSubmissionCount,
+        incorrectSubmissionCount,
+        hintCount,
         score,
         stars,
-        attempts,
         duration,
-        Object.hashAllUnordered(selectedIds),
-        Object.hashAllUnordered(correctIds),
-        hintCount,
+        selectedOptionIds,
+        correctOptionIds,
+        missedCorrectOptionIds,
+        incorrectlySelectedOptionIds,
+        evaluationMode,
+        submissionMode,
         completed,
-      );
+      ];
 }
 
-/// Drives one Multi-select Engine level: selection state, submit
-/// (explicit or automatic), exact-match/partial-credit evaluation,
-/// hints (author hint, reveal-correct, eliminate-incorrect), pause/
-/// resume, and completion -- the fourth Milestone 1 shared engine
-/// controller, alongside MatchingController, SequenceController, and
-/// PlacementController. A plain [ChangeNotifier], no dependency on any
-/// state-management framework or child-profile repository, and it never
-/// writes to storage/analytics/backends itself -- see [onComplete].
 class MultiSelectController extends ChangeNotifier {
   MultiSelectController({
     required MultiSelectContent content,
@@ -82,7 +258,7 @@ class MultiSelectController extends ChangeNotifier {
     this.onComplete,
   })  : _content = content,
         _clock = clock ?? DateTime.now {
-    _resetForContent(preserveSelection: false);
+    _resetForContent(reshuffle: true, preserveSelection: false);
   }
 
   static const String engineId = 'multi_select';
@@ -93,117 +269,240 @@ class MultiSelectController extends ChangeNotifier {
   final bool reducedMotion;
   final bool soundEnabled;
   final DateTime Function() _clock;
-
-  /// Invoked exactly once, the moment the level is completed. The engine
-  /// itself never persists this -- the host decides what to do with it.
   final void Function(MultiSelectResult result)? onComplete;
 
+  late List<MultiSelectOption> _orderedOptions;
   final Set<String> _selectedIds = {};
   final Set<String> _eliminatedIds = {};
   final Set<String> _revealedCorrectIds = {};
-  int _attempts = 0;
+  final List<MultiSelectAttempt> _attemptHistory = [];
   int _hintCount = 0;
+  int _correctSubmissionCount = 0;
+  int _incorrectSubmissionCount = 0;
+  int _hintCursor = 0;
   bool _showAuthorHint = false;
   bool _paused = false;
-  bool _isComplete = false;
-  bool? _lastSubmissionCorrect;
+  bool _completionCallbackSent = false;
+  bool _isSubmitting = false;
+  MultiSelectFeedbackCode _feedback = MultiSelectFeedbackCode.none;
+  MultiSelectEvaluation? _lastEvaluation;
   MultiSelectHintKind? _lastHintKind;
+  MultiSelectCompletionState _completionState =
+      MultiSelectCompletionState.inProgress;
   late DateTime _startedAt;
   DateTime? _completedAt;
+  Duration _pausedDuration = Duration.zero;
+  DateTime? _pausedAt;
 
-  Set<String> get selectedIds => Set.unmodifiable(_selectedIds);
-  Set<String> get eliminatedIds => Set.unmodifiable(_eliminatedIds);
-  Set<String> get revealedCorrectIds => Set.unmodifiable(_revealedCorrectIds);
-  int get attempts => _attempts;
+  List<MultiSelectOption> get orderedOptions =>
+      List.unmodifiable(_orderedOptions);
+  Set<String> get selectedOptionIds => Set.unmodifiable(_selectedIds);
+  Set<String> get selectedIds => selectedOptionIds;
+  Set<String> get eliminatedOptionIds => Set.unmodifiable(_eliminatedIds);
+  Set<String> get eliminatedIds => eliminatedOptionIds;
+  Set<String> get revealedOptionIds => Set.unmodifiable(_revealedCorrectIds);
+  Set<String> get revealedCorrectIds => revealedOptionIds;
+  List<MultiSelectAttempt> get attemptHistory =>
+      List.unmodifiable(_attemptHistory);
+  int get currentAttempt => _attemptHistory.length + 1;
+  int get attempts => _attemptHistory.length;
+  int get correctSubmissionCount => _correctSubmissionCount;
+  int get incorrectSubmissionCount => _incorrectSubmissionCount;
   int get hintCount => _hintCount;
   bool get showAuthorHint => _showAuthorHint;
   bool get isPaused => _paused;
-  bool get isComplete => _isComplete;
-  bool? get lastSubmissionCorrect => _lastSubmissionCorrect;
+  bool get isComplete =>
+      _completionState != MultiSelectCompletionState.inProgress;
+  bool? get lastSubmissionCorrect => _lastEvaluation?.exact;
   MultiSelectHintKind? get lastHintKind => _lastHintKind;
+  MultiSelectFeedbackCode get validationFeedback => _feedback;
+  MultiSelectEvaluation? get evaluation => _lastEvaluation;
+  MultiSelectCompletionState get completionState => _completionState;
 
-  Duration get duration => (_completedAt ?? _clock()).difference(_startedAt);
+  Duration get duration {
+    final end = _completedAt ?? (_pausedAt ?? _clock());
+    final active = end.difference(_startedAt) - _pausedDuration;
+    return active.isNegative ? Duration.zero : active;
+  }
+
+  MultiSelectState get state => MultiSelectState(
+        selectedOptionIds: selectedOptionIds,
+        currentAttempt: currentAttempt,
+        attemptHistory: attemptHistory,
+        correctSubmissionCount: correctSubmissionCount,
+        incorrectSubmissionCount: incorrectSubmissionCount,
+        hintCount: hintCount,
+        revealedOptionIds: revealedOptionIds,
+        eliminatedOptionIds: eliminatedOptionIds,
+        validationFeedback: validationFeedback,
+        evaluation: evaluation,
+        completionState: completionState,
+        score: score,
+        stars: starsEarned,
+        elapsedDuration: duration,
+        isPaused: isPaused,
+      );
 
   bool isSelected(String optionId) => _selectedIds.contains(optionId);
   bool isEliminated(String optionId) => _eliminatedIds.contains(optionId);
 
-  /// Toggles [optionId]'s selection. A no-op for an eliminated option
-  /// (the child already ruled it out via a hint) or while paused/complete.
-  void toggle(String optionId) {
-    if (_paused || _isComplete || _eliminatedIds.contains(optionId)) return;
-    if (_selectedIds.contains(optionId)) {
-      _selectedIds.remove(optionId);
-    } else {
-      if (_selectedIds.length >= _content.configuration.maxSelections) return;
-      _selectedIds.add(optionId);
+  MultiSelectSelectionOutcome selectOption(String optionId) {
+    if (_paused) return _rejectSelection(MultiSelectSelectionStatus.paused);
+    if (isComplete)
+      return _rejectSelection(MultiSelectSelectionStatus.complete);
+    if (!_validOptionIds.contains(optionId)) {
+      return _rejectSelection(MultiSelectSelectionStatus.unknownOption,
+          optionId: optionId);
     }
+    if (_eliminatedIds.contains(optionId)) {
+      return _rejectSelection(MultiSelectSelectionStatus.eliminated,
+          optionId: optionId);
+    }
+    if (_selectedIds.contains(optionId)) {
+      return const MultiSelectSelectionOutcome(
+          MultiSelectSelectionStatus.accepted);
+    }
+    if (_selectedIds.length >= _content.configuration.maximumSelections) {
+      _feedback = MultiSelectFeedbackCode.maximumSelectionReached;
+      notifyListeners();
+      return MultiSelectSelectionOutcome(
+          MultiSelectSelectionStatus.maximumReached,
+          optionId: optionId);
+    }
+    _selectedIds.add(optionId);
+    _feedback = MultiSelectFeedbackCode.none;
     notifyListeners();
     _maybeAutoSubmit();
+    return const MultiSelectSelectionOutcome(
+        MultiSelectSelectionStatus.accepted);
   }
 
-  void select(String optionId) {
-    if (_selectedIds.contains(optionId)) return;
-    toggle(optionId);
+  MultiSelectSelectionOutcome deselectOption(String optionId) {
+    if (_paused) return _rejectSelection(MultiSelectSelectionStatus.paused);
+    if (isComplete)
+      return _rejectSelection(MultiSelectSelectionStatus.complete);
+    if (!_validOptionIds.contains(optionId)) {
+      return _rejectSelection(MultiSelectSelectionStatus.unknownOption,
+          optionId: optionId);
+    }
+    if (!_selectedIds.contains(optionId)) {
+      return const MultiSelectSelectionOutcome(
+          MultiSelectSelectionStatus.accepted);
+    }
+    if (!_content.configuration.allowDeselect) {
+      _feedback = MultiSelectFeedbackCode.deselectDisabled;
+      notifyListeners();
+      return MultiSelectSelectionOutcome(
+          MultiSelectSelectionStatus.deselectDisabled,
+          optionId: optionId);
+    }
+    _selectedIds.remove(optionId);
+    _feedback = MultiSelectFeedbackCode.none;
+    notifyListeners();
+    return const MultiSelectSelectionOutcome(
+        MultiSelectSelectionStatus.accepted);
   }
 
-  void deselect(String optionId) {
-    if (!_selectedIds.contains(optionId)) return;
-    toggle(optionId);
-  }
+  MultiSelectSelectionOutcome toggleOption(String optionId) =>
+      _selectedIds.contains(optionId)
+          ? deselectOption(optionId)
+          : selectOption(optionId);
 
-  void clear() {
-    if (_paused || _isComplete) return;
+  void toggle(String optionId) => toggleOption(optionId);
+  void select(String optionId) => selectOption(optionId);
+  void deselect(String optionId) => deselectOption(optionId);
+
+  void clearSelection() {
+    if (_paused || isComplete || !content.configuration.allowDeselect) return;
     if (_selectedIds.isEmpty) return;
     _selectedIds.clear();
+    _feedback = MultiSelectFeedbackCode.none;
     notifyListeners();
   }
 
-  void _maybeAutoSubmit() {
-    if (_content.configuration.submitMode != MultiSelectSubmitMode.autoSubmit) {
-      return;
-    }
-    if (_selectedIds.length == _content.configuration.expectedAnswerCount) {
-      submit();
-    }
-  }
+  void clear() => clearSelection();
 
-  /// Explicit (or auto-triggered) submission. Validates the selection
-  /// size is within the configured range before counting it as a real
-  /// attempt -- a too-small/too-large selection is simply not
-  /// submittable, not a wasted attempt.
-  void submit() {
-    if (_paused || _isComplete) return;
+  MultiSelectSubmissionOutcome submit() {
+    if (_paused) {
+      return const MultiSelectSubmissionOutcome(
+          MultiSelectSubmissionStatus.paused);
+    }
+    if (isComplete) {
+      return const MultiSelectSubmissionOutcome(
+          MultiSelectSubmissionStatus.complete);
+    }
+    if (_isSubmitting) {
+      return const MultiSelectSubmissionOutcome(
+          MultiSelectSubmissionStatus.complete);
+    }
     final count = _selectedIds.length;
     final config = _content.configuration;
-    if (count < config.minSelections || count > config.maxSelections) return;
-
-    _attempts++;
-    final correctIds = _content.correctIds;
-
-    if (config.evaluationMode == MultiSelectEvaluationMode.exactMatch) {
-      final isExact = setEquals(_selectedIds, correctIds);
-      _lastSubmissionCorrect = isExact;
-      if (isExact) {
-        _isComplete = true;
-        _completedAt = _clock();
-        onComplete?.call(result);
-      }
-    } else {
-      // partialCredit: any valid-size submission completes the level.
-      _lastSubmissionCorrect = setEquals(_selectedIds, correctIds);
-      _isComplete = true;
-      _completedAt = _clock();
-      onComplete?.call(result);
+    if (count < config.minimumSelections) {
+      _feedback = MultiSelectFeedbackCode.minimumSelectionRequired;
+      notifyListeners();
+      return const MultiSelectSubmissionOutcome(
+          MultiSelectSubmissionStatus.belowMinimum);
     }
+    if (count > config.maximumSelections) {
+      _feedback = MultiSelectFeedbackCode.maximumSelectionReached;
+      notifyListeners();
+      return const MultiSelectSubmissionOutcome(
+          MultiSelectSubmissionStatus.aboveMaximum);
+    }
+
+    _isSubmitting = true;
+    final evaluation = _evaluate();
+    _lastEvaluation = evaluation;
+    _attemptHistory.add(MultiSelectAttempt(
+      attemptNumber: _attemptHistory.length + 1,
+      selectedIds: selectedOptionIds,
+      evaluation: evaluation,
+    ));
+    if (evaluation.exact) {
+      _correctSubmissionCount++;
+      _feedback = MultiSelectFeedbackCode.correct;
+    } else {
+      _incorrectSubmissionCount++;
+      _feedback = MultiSelectFeedbackCode.incorrect;
+    }
+
+    final terminal = evaluation.exact ||
+        config.evaluationMode == MultiSelectEvaluationMode.partialCredit ||
+        attempts >= config.maxAttempts ||
+        !config.allowRetry;
+    if (terminal) {
+      _complete(evaluation.exact
+          ? MultiSelectCompletionState.completed
+          : MultiSelectCompletionState.exhausted);
+    }
+    _isSubmitting = false;
     notifyListeners();
+    return MultiSelectSubmissionOutcome(MultiSelectSubmissionStatus.accepted,
+        evaluation: evaluation);
   }
 
-  /// Reveals the textual author-authored hint, if any.
+  MultiSelectHintOutcome requestHint() {
+    if (_paused || isComplete) {
+      return const MultiSelectHintOutcome(applied: false);
+    }
+    for (var i = 0; i < _content.configuration.hintModes.length; i++) {
+      final mode = _content.configuration.hintModes[
+          (_hintCursor + i) % _content.configuration.hintModes.length];
+      final outcome = _applyHint(mode);
+      if (outcome.applied) {
+        _hintCursor =
+            (_hintCursor + i + 1) % _content.configuration.hintModes.length;
+        notifyListeners();
+        return outcome;
+      }
+    }
+    _feedback = MultiSelectFeedbackCode.noMoreHints;
+    notifyListeners();
+    return const MultiSelectHintOutcome(applied: false);
+  }
+
   void requestAuthorHint() {
-    if (_content.hint == null) return;
-    _hintCount++;
-    _showAuthorHint = true;
-    _lastHintKind = MultiSelectHintKind.authorHint;
+    _applyHint(MultiSelectHintMode.authoredHint);
     notifyListeners();
   }
 
@@ -212,67 +511,67 @@ class MultiSelectController extends ChangeNotifier {
     notifyListeners();
   }
 
-  /// Reveals one not-yet-revealed correct option (a green "this one's
-  /// right" nudge) without selecting it for the child.
   void revealCorrectOption() {
-    final remaining = _content.correctIds.difference(_revealedCorrectIds);
-    if (remaining.isEmpty) return;
-    _hintCount++;
-    _revealedCorrectIds.add(remaining.first);
-    _lastHintKind = MultiSelectHintKind.revealCorrectOption;
+    _applyHint(MultiSelectHintMode.revealCorrectOption);
     notifyListeners();
   }
 
-  /// Eliminates one incorrect, not-yet-selected, not-yet-eliminated
-  /// option (narrows the field, classic assistive elimination).
+  void revealCorrectAnswers() {
+    if (!_content.configuration.revealCorrectAnswers) return;
+    _revealedCorrectIds.addAll(_content.correctIds);
+    notifyListeners();
+  }
+
   void eliminateIncorrectOption() {
-    final incorrect = _content.options
-        .where((o) =>
-            !o.isCorrect &&
-            !_eliminatedIds.contains(o.id) &&
-            !_selectedIds.contains(o.id))
-        .toList();
-    if (incorrect.isEmpty) return;
-    _hintCount++;
-    _eliminatedIds.add(incorrect.first.id);
-    _lastHintKind = MultiSelectHintKind.eliminateOption;
+    _applyHint(MultiSelectHintMode.eliminateIncorrectOption);
+    notifyListeners();
+  }
+
+  void retry() {
+    if (!_content.configuration.allowRetry) return;
+    final preserve = _content.configuration.retryMode ==
+        MultiSelectRetryMode.preserveSelection;
+    _completionState = MultiSelectCompletionState.inProgress;
+    _completedAt = null;
+    _completionCallbackSent = false;
+    _showAuthorHint = false;
+    _feedback = MultiSelectFeedbackCode.none;
+    if (!preserve) {
+      _selectedIds.clear();
+    }
+    notifyListeners();
+  }
+
+  void reset() {
+    _resetForContent(reshuffle: false, preserveSelection: false);
+    notifyListeners();
+  }
+
+  void restart() {
+    _resetForContent(reshuffle: true, preserveSelection: false);
     notifyListeners();
   }
 
   void pause() {
+    if (_paused || isComplete) return;
     _paused = true;
+    _pausedAt = _clock();
     notifyListeners();
   }
 
   void resume() {
+    if (!_paused) return;
     _paused = false;
+    final pausedAt = _pausedAt;
+    if (pausedAt != null) {
+      _pausedDuration += _clock().difference(pausedAt);
+    }
+    _pausedAt = null;
     notifyListeners();
   }
 
-  /// Clears progress; whether the current selection survives depends on
-  /// [MultiSelectConfiguration.retryMode].
-  void retry() {
-    final preserve = _content.configuration.retryMode ==
-        MultiSelectRetryMode.preserveSelection;
-    _resetForContent(preserveSelection: preserve);
-    notifyListeners();
-  }
-
-  /// A full fresh start -- always clears the selection, regardless of
-  /// [MultiSelectConfiguration.retryMode].
-  void restart() {
-    _resetForContent(preserveSelection: false);
-    notifyListeners();
-  }
-
-  /// Idempotent, explicit completion check -- exposed for API parity
-  /// with the other engines' `complete()`. Multi-select's real
-  /// completion happens inside [submit]; this only re-fires the
-  /// callback-safe check if somehow not yet marked complete despite an
-  /// exact-match selection already being present (defensive, not
-  /// expected in normal flow).
   void complete() {
-    if (_isComplete) return;
+    if (isComplete) return;
     if (_content.configuration.evaluationMode ==
             MultiSelectEvaluationMode.exactMatch &&
         setEquals(_selectedIds, _content.correctIds)) {
@@ -281,29 +580,14 @@ class MultiSelectController extends ChangeNotifier {
   }
 
   int get score {
-    final config = _content.configuration;
-    if (config.evaluationMode == MultiSelectEvaluationMode.exactMatch) {
-      if (!_isComplete) return 0;
-      final penalty = ((_attempts - 1) * 10) + (_hintCount * 5);
-      final raw = 100 - penalty;
-      return raw < 0 ? 0 : raw;
-    }
-    // partialCredit: proportional to net-correct selections.
-    final correctIds = _content.correctIds;
-    final correctSelected = _selectedIds.intersection(correctIds).length;
-    final incorrectSelected = _selectedIds.difference(correctIds).length;
-    final totalCorrect = correctIds.length;
-    if (totalCorrect == 0) return 0;
-    final net = correctSelected - incorrectSelected;
-    final raw = ((net / totalCorrect) * 100).round() - (_hintCount * 5);
-    return raw < 0 ? 0 : (raw > 100 ? 100 : raw);
+    if (_attemptHistory.isEmpty) return 0;
+    return _attemptHistory
+        .map((attempt) => attempt.evaluation.score)
+        .reduce((best, value) => value > best ? value : best);
   }
 
-  /// Deterministic 0-3 stars derived from [score] once complete -- the
-  /// same score-to-stars mapping for both evaluation modes, so the
-  /// child-facing meaning of "3 stars" doesn't silently differ by mode.
   int get starsEarned {
-    if (!_isComplete) return 0;
+    if (!isComplete) return 0;
     final s = score;
     if (s >= 90) return 3;
     if (s >= 60) return 2;
@@ -311,39 +595,225 @@ class MultiSelectController extends ChangeNotifier {
     return 0;
   }
 
-  MultiSelectResult get result => MultiSelectResult(
-        engineId: engineId,
-        contentId: _content.contentId,
-        score: score,
-        stars: starsEarned,
-        attempts: _attempts,
-        duration: duration,
-        selectedIds: selectedIds,
-        correctIds: _content.correctIds,
-        hintCount: _hintCount,
-        completed: _isComplete,
-      );
+  MultiSelectResult get result {
+    final eval = _lastEvaluation ?? _evaluate();
+    return MultiSelectResult(
+      engineId: engineId,
+      contentId: _content.contentId,
+      attempts: attempts,
+      correctSubmissionCount: correctSubmissionCount,
+      incorrectSubmissionCount: incorrectSubmissionCount,
+      hintCount: hintCount,
+      score: score,
+      stars: starsEarned,
+      duration: duration,
+      completed: isComplete,
+      selectedOptionIds: selectedOptionIds,
+      correctOptionIds: _content.correctIds,
+      missedCorrectOptionIds: eval.missedCorrectIds,
+      incorrectlySelectedOptionIds: eval.incorrectlySelectedIds,
+      evaluationMode: _content.configuration.evaluationMode,
+      submissionMode: _content.configuration.submissionMode,
+    );
+  }
 
   void loadContent(MultiSelectContent content) {
     _content = content;
-    _resetForContent(preserveSelection: false);
+    _resetForContent(reshuffle: true, preserveSelection: false);
     notifyListeners();
   }
 
-  void _resetForContent({required bool preserveSelection}) {
+  MultiSelectEvaluation _evaluate() {
+    final correctIds = _content.correctIds;
+    final correctlySelected = _selectedIds.intersection(correctIds);
+    final incorrectlySelected = _selectedIds.difference(correctIds);
+    final missedCorrect = correctIds.difference(_selectedIds);
+    final exact = setEquals(_selectedIds, correctIds);
+    final config = _content.configuration;
+    final baseScore =
+        config.evaluationMode == MultiSelectEvaluationMode.exactMatch
+            ? (exact ? 100 : 0)
+            : _partialScore(correctlySelected.length,
+                incorrectlySelected.length, correctIds.length);
+    final penalty =
+        (attempts * config.attemptPenalty) + (_hintCount * config.hintPenalty);
+    final score = (baseScore - penalty).clamp(0, 100);
+    return MultiSelectEvaluation(
+      correctlySelectedIds: correctlySelected,
+      incorrectlySelectedIds: incorrectlySelected,
+      missedCorrectIds: missedCorrect,
+      score: score,
+      exact: exact,
+    );
+  }
+
+  int _partialScore(
+      int correctSelected, int incorrectSelected, int totalCorrect) {
+    if (totalCorrect == 0) return 0;
+    final totalIncorrect = _content.options.length - totalCorrect;
+    final correctRatio = correctSelected / totalCorrect;
+    final incorrectRatio =
+        totalIncorrect == 0 ? 0 : incorrectSelected / totalIncorrect;
+    final rawAccuracy = correctRatio -
+        (incorrectRatio * _content.configuration.incorrectSelectionPenalty);
+    final normalizedAccuracy = rawAccuracy.clamp(0.0, 1.0);
+    return (normalizedAccuracy * 100).round();
+  }
+
+  MultiSelectHintOutcome _applyHint(MultiSelectHintMode mode) {
+    switch (mode) {
+      case MultiSelectHintMode.expectedSelectionCount:
+        _hintCount++;
+        _lastHintKind = MultiSelectHintKind.expectedSelectionCount;
+        return const MultiSelectHintOutcome(
+          applied: true,
+          kind: MultiSelectHintKind.expectedSelectionCount,
+        );
+      case MultiSelectHintMode.authoredHint:
+        if (_content.hint == null || _showAuthorHint) {
+          return const MultiSelectHintOutcome(applied: false);
+        }
+        _hintCount++;
+        _showAuthorHint = true;
+        _lastHintKind = MultiSelectHintKind.authorHint;
+        return const MultiSelectHintOutcome(
+          applied: true,
+          kind: MultiSelectHintKind.authorHint,
+        );
+      case MultiSelectHintMode.revealCorrectOption:
+        final remaining = _content.correctIds
+            .difference(_revealedCorrectIds)
+            .difference(_selectedIds);
+        if (remaining.isEmpty)
+          return const MultiSelectHintOutcome(applied: false);
+        _hintCount++;
+        _revealedCorrectIds.add(_orderedRemaining(remaining).first);
+        _lastHintKind = MultiSelectHintKind.revealCorrectOption;
+        return const MultiSelectHintOutcome(
+          applied: true,
+          kind: MultiSelectHintKind.revealCorrectOption,
+        );
+      case MultiSelectHintMode.eliminateIncorrectOption:
+        final remaining = _content.options
+            .where((option) =>
+                !option.isCorrect &&
+                !_eliminatedIds.contains(option.id) &&
+                !_selectedIds.contains(option.id))
+            .map((option) => option.id)
+            .toSet();
+        if (remaining.isEmpty)
+          return const MultiSelectHintOutcome(applied: false);
+        _hintCount++;
+        _eliminatedIds.add(_orderedRemaining(remaining).first);
+        _lastHintKind = MultiSelectHintKind.eliminateOption;
+        return const MultiSelectHintOutcome(
+          applied: true,
+          kind: MultiSelectHintKind.eliminateOption,
+        );
+    }
+  }
+
+  void _maybeAutoSubmit() {
+    final config = _content.configuration;
+    if (config.submissionMode != MultiSelectSubmissionMode.autoSubmit) return;
+    if (_selectedIds.length == config.autoSubmitSelectionCount &&
+        !_isSubmitting &&
+        !isComplete) {
+      submit();
+    }
+  }
+
+  void _complete(MultiSelectCompletionState state) {
+    _completionState = state;
+    _completedAt = _clock();
+    if (state == MultiSelectCompletionState.exhausted &&
+        _content.configuration.revealCorrectAnswers) {
+      _revealedCorrectIds.addAll(_content.correctIds);
+    }
+    if (!_completionCallbackSent) {
+      _completionCallbackSent = true;
+      onComplete?.call(result);
+    }
+  }
+
+  MultiSelectSelectionOutcome _rejectSelection(
+      MultiSelectSelectionStatus status,
+      {String? optionId}) {
+    return MultiSelectSelectionOutcome(status, optionId: optionId);
+  }
+
+  Set<String> get _validOptionIds => _content.options.map((o) => o.id).toSet();
+
+  List<String> _orderedRemaining(Set<String> ids) => [
+        for (final option in _orderedOptions)
+          if (ids.contains(option.id)) option.id,
+      ];
+
+  void _resetForContent({
+    required bool reshuffle,
+    required bool preserveSelection,
+  }) {
+    if (reshuffle || !_isInitialized) {
+      _orderedOptions = List.of(_content.options);
+      if (_content.configuration.shuffleOptions) {
+        final seed = _content.configuration.shuffleSeed ??
+            _stableSeed(_content.contentId);
+        _orderedOptions.shuffleSeeded(_DeterministicRandom(seed));
+      }
+    }
     if (!preserveSelection) {
       _selectedIds.clear();
     }
     _eliminatedIds.clear();
     _revealedCorrectIds.clear();
-    _attempts = 0;
+    _attemptHistory.clear();
     _hintCount = 0;
+    _correctSubmissionCount = 0;
+    _incorrectSubmissionCount = 0;
+    _hintCursor = 0;
     _showAuthorHint = false;
     _paused = false;
-    _isComplete = false;
-    _lastSubmissionCorrect = null;
+    _completionCallbackSent = false;
+    _isSubmitting = false;
+    _feedback = MultiSelectFeedbackCode.none;
+    _lastEvaluation = null;
     _lastHintKind = null;
+    _completionState = MultiSelectCompletionState.inProgress;
     _startedAt = _clock();
     _completedAt = null;
+    _pausedDuration = Duration.zero;
+    _pausedAt = null;
+    _isInitialized = true;
+  }
+
+  bool _isInitialized = false;
+}
+
+int _stableSeed(String value) {
+  var hash = 0;
+  for (final unit in value.codeUnits) {
+    hash = ((hash * 31) + unit) & 0x7fffffff;
+  }
+  return hash;
+}
+
+class _DeterministicRandom {
+  _DeterministicRandom(int seed) : _state = seed & 0x7fffffff;
+  int _state;
+
+  int nextInt(int max) {
+    _state = (_state * 1103515245 + 12345) & 0x7fffffff;
+    return _state % max;
+  }
+}
+
+extension on List<MultiSelectOption> {
+  void shuffleSeeded(_DeterministicRandom random) {
+    for (var i = length - 1; i > 0; i--) {
+      final j = random.nextInt(i + 1);
+      final tmp = this[i];
+      this[i] = this[j];
+      this[j] = tmp;
+    }
   }
 }

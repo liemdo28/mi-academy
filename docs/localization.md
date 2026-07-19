@@ -295,7 +295,7 @@ without re-confirming; this section supersedes them where they conflict.
   wired into `.github/workflows/ci.yml`'s `content-and-safety` job) —
   previously only true by coincidence, not gated.
 - **Hardcoded-string scan**: `tools/localization_audit.py` (no `--fail-on-hardcoded`)
-  reports, as of this pass, **231 hardcoded Vietnamese string literals
+  reports, as of this pass, **245 hardcoded Vietnamese string literals
   across 39 files** in `apps/mobile/lib`. This is report-only in CI, not
   blocking — retrofitting all 39 files to use `AppLocalizations`/`L10nService`
   instead of literals is tracked as open work (`docs/release-audit.md`

@@ -14,30 +14,52 @@ class MultiSelectLocalization {
     required this.pauseLabel,
     required this.resumeLabel,
     required this.submitLabel,
+    required this.checkAnswersLabel,
     required this.clearLabel,
     required this.retryLabel,
     required this.completionLabel,
     required this.authorHintLabel,
+    required this.hintLabel,
     required this.revealCorrectLabel,
+    required this.revealAnswersLabel,
     required this.eliminateIncorrectLabel,
+    required this.noMoreHintsLabel,
     required this.malformedContentMessage,
     required this.incorrectMessage,
+    required this.correctMessage,
+    required this.partiallyCorrectMessage,
+    required this.tryAgainMessage,
+    required this.minimumSelectionRequiredMessage,
+    required this.maximumSelectionReachedMessage,
     required this.selectionCountMessage,
     required this.optionAnnouncement,
+    required this.optionSelectedAnnouncement,
+    required this.optionDeselectedAnnouncement,
+    required this.correctOptionAnnouncement,
+    required this.incorrectOptionAnnouncement,
   });
 
   final String exitLabel;
   final String pauseLabel;
   final String resumeLabel;
   final String submitLabel;
+  final String checkAnswersLabel;
   final String clearLabel;
   final String retryLabel;
   final String completionLabel;
   final String authorHintLabel;
+  final String hintLabel;
   final String revealCorrectLabel;
+  final String revealAnswersLabel;
   final String eliminateIncorrectLabel;
+  final String noMoreHintsLabel;
   final String malformedContentMessage;
   final String incorrectMessage;
+  final String correctMessage;
+  final String partiallyCorrectMessage;
+  final String tryAgainMessage;
+  final String minimumSelectionRequiredMessage;
+  final String maximumSelectionReachedMessage;
 
   /// e.g. "Select between 2 and 3 answers" -- built from the configured
   /// min/max so the child knows how many to pick.
@@ -46,6 +68,10 @@ class MultiSelectLocalization {
   /// Semantics announcement for one option, given its label and whether
   /// it is currently selected.
   final String Function(String label, bool selected) optionAnnouncement;
+  final String Function(String label) optionSelectedAnnouncement;
+  final String Function(String label) optionDeselectedAnnouncement;
+  final String Function(String label) correctOptionAnnouncement;
+  final String Function(String label) incorrectOptionAnnouncement;
 }
 
 /// Renders one Multi-select Engine level end-to-end: instruction,
@@ -173,8 +199,8 @@ class _MultiSelectScreenState extends State<MultiSelectScreen> {
           if (content.hint != null)
             IconButton(
               icon: const Icon(Icons.lightbulb_outline),
-              tooltip: loc.authorHintLabel,
-              onPressed: controller.requestAuthorHint,
+              tooltip: loc.hintLabel,
+              onPressed: controller.requestHint,
             ),
           IconButton(
             icon: const Icon(Icons.visibility_outlined),
@@ -207,12 +233,24 @@ class _MultiSelectScreenState extends State<MultiSelectScreen> {
                       Padding(
                         padding: const EdgeInsets.symmetric(
                             horizontal: 16, vertical: 4),
-                        child: Text(
-                          loc.selectionCountMessage(
-                            config.minSelections,
-                            config.maxSelections,
-                          ),
-                          style: Theme.of(context).textTheme.bodySmall,
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.stretch,
+                          children: [
+                            if (config.showSelectionCount)
+                              Text(
+                                loc.selectionCountMessage(
+                                  config.minimumSelections,
+                                  config.maximumSelections,
+                                ),
+                                style: Theme.of(context).textTheme.bodySmall,
+                              ),
+                            const SizedBox(height: 8),
+                            Text(
+                              content.prompt,
+                              style: Theme.of(context).textTheme.titleMedium,
+                              textAlign: TextAlign.center,
+                            ),
+                          ],
                         ),
                       ),
                       if (controller.showAuthorHint && content.hint != null)
@@ -220,8 +258,14 @@ class _MultiSelectScreenState extends State<MultiSelectScreen> {
                           text: content.hint!,
                           onDismiss: controller.dismissAuthorHint,
                         ),
-                      if (controller.lastSubmissionCorrect == false)
-                        _FeedbackBanner(message: loc.incorrectMessage),
+                      if (controller.validationFeedback !=
+                          MultiSelectFeedbackCode.none)
+                        _FeedbackBanner(
+                          message: _feedbackMessage(
+                            controller.validationFeedback,
+                            loc,
+                          ),
+                        ),
                       Expanded(
                         child: SingleChildScrollView(
                           padding: const EdgeInsets.all(12),
@@ -230,7 +274,7 @@ class _MultiSelectScreenState extends State<MultiSelectScreen> {
                             runSpacing: 10,
                             alignment: WrapAlignment.center,
                             children: [
-                              for (final option in content.options)
+                              for (final option in controller.orderedOptions)
                                 _OptionTile(
                                   option: option,
                                   controller: controller,
@@ -255,7 +299,7 @@ class _MultiSelectScreenState extends State<MultiSelectScreen> {
                               const SizedBox(width: 12),
                               ElevatedButton(
                                 onPressed: controller.submit,
-                                child: Text(loc.submitLabel),
+                                child: Text(loc.checkAnswersLabel),
                               ),
                             ],
                           ),
@@ -265,6 +309,22 @@ class _MultiSelectScreenState extends State<MultiSelectScreen> {
       ),
     );
   }
+
+  String _feedbackMessage(
+    MultiSelectFeedbackCode code,
+    MultiSelectLocalization loc,
+  ) =>
+      switch (code) {
+        MultiSelectFeedbackCode.minimumSelectionRequired =>
+          loc.minimumSelectionRequiredMessage,
+        MultiSelectFeedbackCode.maximumSelectionReached =>
+          loc.maximumSelectionReachedMessage,
+        MultiSelectFeedbackCode.deselectDisabled => loc.tryAgainMessage,
+        MultiSelectFeedbackCode.incorrect => loc.incorrectMessage,
+        MultiSelectFeedbackCode.correct => loc.correctMessage,
+        MultiSelectFeedbackCode.noMoreHints => loc.noMoreHintsLabel,
+        MultiSelectFeedbackCode.none => '',
+      };
 }
 
 const double _kMinTouchSize = 48;
@@ -289,9 +349,10 @@ class _OptionTile extends StatelessWidget {
     final revealed = controller.revealedCorrectIds.contains(option.id);
 
     return Semantics(
-      label: localization.optionAnnouncement(option.label, selected),
+      label: localization.optionAnnouncement(option.accessibleLabel, selected),
       button: true,
       enabled: !eliminated,
+      selected: selected,
       excludeSemantics: true,
       child: ConstrainedBox(
         constraints: const BoxConstraints(
@@ -300,9 +361,17 @@ class _OptionTile extends StatelessWidget {
           avatar: option.assetId != null
               ? const Icon(Icons.image_outlined, size: 18)
               : null,
-          label: Text(option.text ?? option.label),
+          label: Row(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Flexible(child: Text(option.displayText)),
+              if (selected) const SizedBox(width: 6),
+              if (selected) const Icon(Icons.check, size: 16),
+            ],
+          ),
           selected: selected,
-          onSelected: eliminated ? null : (_) => controller.toggle(option.id),
+          onSelected:
+              eliminated ? null : (_) => controller.toggleOption(option.id),
           showCheckmark: true,
           side: revealed
               ? const BorderSide(color: Colors.green, width: 2)
@@ -412,6 +481,8 @@ class _CompletionView extends StatelessWidget {
           const SizedBox(height: 12),
           Text(localization.completionLabel),
           const SizedBox(height: 20),
+          if (stars == 0) Text(localization.tryAgainMessage),
+          if (stars == 0) const SizedBox(height: 12),
           Row(
             mainAxisSize: MainAxisSize.min,
             children: [

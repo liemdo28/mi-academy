@@ -43,7 +43,7 @@ async def seed_built_games(db) -> list[Game]:
 
 async def seed():
     """Seed the database with MVP content."""
-    async with async_session_maker() as db:
+    async with async_session_maker.begin() as db:
         # ── Subjects ──────────────────────────────────────────────────────────
         subjects = [
             Subject(

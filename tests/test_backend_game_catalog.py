@@ -7,7 +7,8 @@ from sqlalchemy.ext.asyncio import async_sessionmaker, create_async_engine
 
 from apps.api.database import Base
 from apps.api.game_catalog import BUILT_GAME_CATALOG, BUILT_GAME_TYPES
-from apps.api.models import Game
+from apps.api.models import Game, Subject
+import infrastructure.seed.seed_data as seed_data
 from infrastructure.seed.seed_data import seed_built_games
 
 
@@ -48,6 +49,91 @@ def test_seed_built_games_is_idempotent():
                 assert len(first) == 8
                 assert second == []
                 assert game_types == sorted(BUILT_GAME_TYPES)
+        finally:
+            await engine.dispose()
+
+    asyncio.run(run())
+
+
+def test_full_seed_transaction_persists_rows_across_new_session(monkeypatch):
+    async def run():
+        engine = create_async_engine("sqlite+aiosqlite:///:memory:", future=True)
+        try:
+            async with engine.begin() as conn:
+                await conn.run_sync(Base.metadata.create_all)
+            session_maker = async_sessionmaker(
+                engine, expire_on_commit=False, autoflush=False
+            )
+            monkeypatch.setattr(seed_data, "async_session_maker", session_maker)
+
+            await seed_data.seed()
+
+            async with session_maker() as db:
+                subject_count = (
+                    await db.execute(sa.select(sa.func.count(Subject.id)))
+                ).scalar_one()
+                game_types = (
+                    (
+                        await db.execute(
+                            sa.select(Game.game_type).order_by(Game.game_type)
+                        )
+                    )
+                    .scalars()
+                    .all()
+                )
+
+            assert subject_count == 5
+            assert sorted(game_types) == sorted(BUILT_GAME_TYPES)
+        finally:
+            await engine.dispose()
+
+    asyncio.run(run())
+
+
+def test_full_seed_transaction_rolls_back_on_failure(monkeypatch):
+    async def run():
+        engine = create_async_engine("sqlite+aiosqlite:///:memory:", future=True)
+        try:
+            async with engine.begin() as conn:
+                await conn.run_sync(Base.metadata.create_all)
+            session_maker = async_sessionmaker(
+                engine, expire_on_commit=False, autoflush=False
+            )
+
+            async def fail_after_subjects(db):
+                db.add(
+                    Game(
+                        id="forced-failure-game",
+                        name="Forced failure",
+                        game_type="forced_failure",
+                        age_min=5,
+                        age_max=10,
+                        config_json=None,
+                        is_active=True,
+                    )
+                )
+                raise RuntimeError("forced seed failure")
+
+            monkeypatch.setattr(seed_data, "async_session_maker", session_maker)
+            monkeypatch.setattr(seed_data, "seed_built_games", fail_after_subjects)
+
+            try:
+                await seed_data.seed()
+            except RuntimeError:
+                pass
+            else:
+                raise AssertionError("seed() should propagate failures")
+
+            async with session_maker() as db:
+                subject_count = (
+                    await db.execute(sa.select(sa.func.count(Subject.id)))
+                ).scalar_one()
+                game_count = (
+                    await db.execute(sa.select(sa.func.count(Game.id)))
+                ).scalar_one()
+
+            assert subject_count == 0
+            assert game_count == 0
         finally:
             await engine.dispose()
 

@@ -83,6 +83,7 @@ Map<String, dynamic> _multiSelectSample() => {
       'ageBand': 'junior',
       'difficulty': 1,
       'instruction': 'Chọn nguyên âm!',
+      'prompt': 'Chữ nào là nguyên âm?',
       'configuration': {
         'evaluationMode': 'exactMatch',
         'minSelections': 1,

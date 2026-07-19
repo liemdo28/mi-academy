@@ -25,8 +25,8 @@ has its own dedicated CI job (`shared-engines-test` in
 `.github/workflows/ci.yml`), added during the Games 7-8/Placement Engine
 consolidation pass so CI can't silently skip this package while still
 reporting green overall. As of the Multi-select Engine pass (2026-07-19)
-this package has 155 passing tests: 19 Matching, 23 Sequence, 57
-Placement, 48 Multi-select, and 8 in a shared
+this package has 165 passing tests: 19 Matching, 23 Sequence, 57
+Placement, 58 Multi-select, and 8 in a shared
 `test/engine_contract_test.dart` that checks all four engines against one
 "common engine contract" (stable engine id, attempt counting, completion,
 star bounds, and -- for Placement and Multi-select specifically, whose
@@ -35,6 +35,13 @@ shape and an automated check that no engine source file imports a
 storage/backend/analytics package). None of the four engines are wired
 into the game registry or any production game yet; see
 docs/game-engine-architecture.md.
+
+The Multi-select pass also fixed the full seed transaction boundary in
+`infrastructure/seed/seed_data.py`: successful seeding now exits through
+the sessionmaker transaction context, which commits once, while exceptions
+roll back. `tests/test_backend_game_catalog.py` covers canonical Games
+1-8, `seed_built_games` idempotency, full-seed persistence across a new
+session, and rollback after a forced seed failure.
 
 CI (`.github/workflows/ci.yml`) is the authoritative environment for all of
 these — it runs on `ubuntu-latest` (mobile/backend jobs) and `macos-latest`
@@ -248,7 +255,7 @@ and launcher coverage. Local command results:
   `29659041334` on the `mobile-integration-test` Android emulator job
   (`success`, 5 tests passed).
 - `python -m pytest packages/game_core/tests tests test -q` from repo root:
-  pass, 177 passed.
+  pass, 179 passed.
 - `python -m ruff check .` from repo root: pass.
 - `python -m ruff format --check .` from repo root: pass after targeted
   formatting of Math Race and Math Supermarket generators.

@@ -216,35 +216,49 @@ The fourth and final Milestone 1 WS5 engine is now real and tested:
 `packages/mi_game_engines/lib/src/multi_select/{multi_select_content,multi_select_controller,multi_select_screen}.dart`.
 
 - **Typed content model**: `MultiSelectOption`/`MultiSelectConfiguration`/
-  `MultiSelectContent`. `MultiSelectConfiguration` supports explicit or
-  automatic submission (`MultiSelectSubmitMode`), exact-match or
-  partial-credit evaluation (`MultiSelectEvaluationMode`), and a retry
-  mode (preserve vs. clear the current selection on `retry()`).
-- **Validation**: `MultiSelectContent.fromJson` rejects, with an
-  actionable message, duplicate option ids, zero correct answers,
-  invalid min/max (max < min, either exceeding the option count),
-  `autoSubmit` without a reachable `expectedAnswerCount`, an option with
-  neither text nor an asset (no visible representation) or an empty
-  asset id, a missing semantic label, an unsupported schema version, and
-  two distinct impossible-completion states: `minSelections` exceeding
-  the option count, and (specific to `exactMatch`) the correct-answer
-  count itself falling outside the configured selection window.
+  `MultiSelectContent`, plus typed validation errors, state, attempts,
+  evaluations, hints, outcomes, and normalized result objects. Content has
+  `schemaVersion`, `contentId`, `instruction`, `prompt`, `options`,
+  `configuration`, and `metadata`; options support text, image, mixed
+  text/image, semantic labels, explanations, correctness, and metadata.
+- **Configuration**: explicit or automatic submission
+  (`MultiSelectSubmissionMode`, with `MultiSelectSubmitMode` alias for
+  compatibility), exact-match or partial-credit evaluation, deterministic
+  shuffle (`shuffleOptions`/`shuffleSeed`), min/max selections,
+  `allowDeselect`, retry enablement/mode/max attempts, reveal policy,
+  selection-count display, auto-submit count, hint modes, and scoring
+  penalties.
+- **Validation**: `MultiSelectContent.fromJson` rejects with typed,
+  actionable `MultiSelectValidationError`s (`contentId`, field, code,
+  optional `optionId`, reason). Covered rejections include unsupported
+  schema version, blank required ids/instruction/prompt, empty options,
+  duplicate ids, duplicate visible options, no correct answer, invalid
+  min/max, impossible exact-match windows, invalid auto-submit counts,
+  invalid attempts, image-only options without semantics, missing visible
+  content, blank/unsupported asset ids, invalid penalty ranges, and
+  impossible completion states.
 - **Controller**: `MultiSelectController` (`ChangeNotifier`, no
   framework/child-profile dependency) — `select`/`deselect`/`toggle`/
-  `clear`, explicit or auto-triggered `submit`, three distinct hint
-  actions (`requestAuthorHint`, `revealCorrectOption`,
-  `eliminateIncorrectOption`), `pause`/`resume`, `retry` (honors
-  `retryMode`) vs. `restart` (always clears), idempotent `complete`.
+  `clear`, explicit or auto-triggered `submit`, typed hint sequencing
+  (`authoredHint`, `expectedSelectionCount`, `revealCorrectOption`,
+  `eliminateIncorrectOption`), `revealCorrectAnswers`, `pause`/`resume`
+  with injected-clock duration accounting, `retry` (honors `retryMode`)
+  vs. `restart` (always clears), reset, idempotent `complete`, max-attempt
+  terminal exhaustion, and callback-once completion.
   `exactMatch` only completes on an exact selection match (retryable
   otherwise); `partialCredit` completes on any valid-size submission,
-  with score prorated by net correct selections — both modes floor score
-  at 0 and share one score-to-stars mapping so "3 stars" means the same
-  thing regardless of evaluation mode.
+  with score using the documented formula:
+  `correctRatio - (incorrectRatio * incorrectSelectionPenalty)`, clamped
+  to 0..1, then converted to 0..100 and reduced by attempt/hint penalties.
+  Both modes floor score at 0 and share one score-to-stars mapping so "3
+  stars" means the same thing regardless of evaluation mode.
 - **Normalized result**: `MultiSelectResult` (`engineId`/`contentId`/
-  `score`/`stars`/`attempts`/`duration`/`selectedIds`/`correctIds`/
-  `hintCount`/`completed`) via an `onComplete` callback — no persistence
-  dependency, verified by the same automated check as the other three
-  engines.
+  `attempts`/`correctSubmissionCount`/`incorrectSubmissionCount`/
+  `hintCount`/`score`/`stars`/`duration`/`completed`/
+  `selectedOptionIds`/`correctOptionIds`/`missedCorrectOptionIds`/
+  `incorrectlySelectedOptionIds`/`evaluationMode`/`submissionMode`) via
+  an `onComplete` callback — no persistence dependency, verified by the
+  same automated check as the other three engines.
 - **Renderer**: `MultiSelectScreen` — options render as Material
   `FilterChip`s (selection state, an avatar slot for asset-flavored
   options, eliminated options visually greyed and disabled), chosen
@@ -262,8 +276,8 @@ The fourth and final Milestone 1 WS5 engine is now real and tested:
   dependency), and a Vietnamese auto-submit sample (submits the moment 2
   of 3 options are selected, no submit button rendered) — five real
   samples.
-- **Tests**: 48 in `test/multi_select_engine_test.dart` (5 valid-parse +
-  11 rejection, 20 controller, 12 widget covering both extra locale
+- **Tests**: 58 in `test/multi_select_engine_test.dart` (5 valid-parse +
+  15 rejection, 26 controller, 12 widget covering both extra locale
   samples, asset avatars, auto-submit, all three hint actions, reduced
   motion, sound-disabled, semantics, narrow-phone and tablet layouts,
   and malformed content). All pass; `flutter analyze` clean.
@@ -273,8 +287,8 @@ The fourth and final Milestone 1 WS5 engine is now real and tested:
   full normalized-result shape alongside Placement's.
 
 **All four Milestone 1 WS5 engines are now real and tested: Matching,
-Sequence, Placement, Multi-select.** 155 tests total in
-`packages/mi_game_engines` (19 + 23 + 57 + 48 + 8 shared contract).
+Sequence, Placement, Multi-select.** 165 tests total in
+`packages/mi_game_engines` (19 + 23 + 57 + 58 + 8 shared contract).
 
 **Not wired into any of the six (or eight) existing games or the game
 registry this pass** — `packages/mi_game_engines` is a standalone

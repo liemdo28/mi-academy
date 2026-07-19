@@ -42,7 +42,7 @@ must not be represented as complete.
 | repo root | `python tools/content_safety_audit.py --json` | PASS, 8 files and 9320 strings scanned, 0 findings |
 | repo root | `python tools/localization_audit.py` | PASS for ARB parity, 67 EN / 67 VI keys; WARN for existing hardcoded Vietnamese UI strings |
 | repo root | `python -m ruff check .` | PASS |
-| repo root | `python -m pytest packages/game_core/tests tests test -q` | PASS, 177 passed |
+| repo root | `python -m pytest packages/game_core/tests tests test -q` | PASS, 179 passed |
 | repo root | `python -m ruff format --check .` | PASS after targeted generator formatting |
 | repo root | `python -m mypy .` | PASS after resolving `math_race_generator.py` tuple-key inference |
 | `apps/api` + Postgres/Redis | `python -m alembic upgrade head`; `python -m alembic current`; API `/health/live` + `/health/ready` | PASS, current revision `b4f7c2d9e801 (head)`, readiness returned `live=ok; ready=ready` |

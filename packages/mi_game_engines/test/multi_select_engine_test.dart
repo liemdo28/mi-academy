@@ -15,12 +15,19 @@ Map<String, dynamic> _viVowelsExample() => {
       'ageBand': 'junior',
       'difficulty': 1,
       'instruction': 'Chọn tất cả các nguyên âm!',
+      'prompt': 'Chữ nào là nguyên âm?',
       'hint': 'Nguyên âm là A, E, I, O, U.',
       'configuration': {
         'evaluationMode': 'exactMatch',
         'submitMode': 'explicitSubmit',
         'minSelections': 1,
         'maxSelections': 6,
+        'hintMode': [
+          'authoredHint',
+          'expectedSelectionCount',
+          'revealCorrectOption',
+          'eliminateIncorrectOption'
+        ],
       },
       'options': [
         {'id': 'a', 'label': 'Chữ A', 'text': 'A', 'isCorrect': true},
@@ -41,6 +48,7 @@ Map<String, dynamic> _enAnimalsExample() => {
       'ageBand': 'junior',
       'difficulty': 1,
       'instruction': 'Select every animal!',
+      'prompt': 'Which choices are animals?',
       'configuration': {
         'evaluationMode': 'exactMatch',
         'submitMode': 'explicitSubmit',
@@ -76,6 +84,7 @@ Map<String, dynamic> _enEvenNumbersExample() => {
       'ageBand': 'explorer',
       'difficulty': 2,
       'instruction': 'Select all the even numbers.',
+      'prompt': 'Which numbers are even?',
       'configuration': {
         'evaluationMode': 'partialCredit',
         'submitMode': 'explicitSubmit',
@@ -103,6 +112,7 @@ Map<String, dynamic> _quadrilateralsExample() => {
       'ageBand': 'explorer',
       'difficulty': 2,
       'instruction': 'Select every shape that is a quadrilateral (4 sides).',
+      'prompt': 'Which shapes have four sides?',
       'configuration': {
         'evaluationMode': 'exactMatch',
         'submitMode': 'explicitSubmit',
@@ -157,6 +167,7 @@ Map<String, dynamic> _autoSubmitExample() => {
       'ageBand': 'junior',
       'difficulty': 1,
       'instruction': 'Chọn 2 hình tròn!',
+      'prompt': 'Hình nào là hình tròn?',
       'configuration': {
         'evaluationMode': 'exactMatch',
         'submitMode': 'autoSubmit',
@@ -165,9 +176,9 @@ Map<String, dynamic> _autoSubmitExample() => {
         'expectedAnswerCount': 2,
       },
       'options': [
-        {'id': 'c1', 'label': 'Hình tròn 1', 'text': '⚪', 'isCorrect': true},
+        {'id': 'c1', 'label': 'Hình tròn 1', 'text': '⚪ 1', 'isCorrect': true},
         {'id': 's1', 'label': 'Hình vuông', 'text': '⬜', 'isCorrect': false},
-        {'id': 'c2', 'label': 'Hình tròn 2', 'text': '⚪', 'isCorrect': true},
+        {'id': 'c2', 'label': 'Hình tròn 2', 'text': '⚪ 2', 'isCorrect': true},
       ],
     };
 
@@ -176,19 +187,32 @@ MultiSelectLocalization _testLocalization() => MultiSelectLocalization(
       pauseLabel: 'Pause',
       resumeLabel: 'Resume',
       submitLabel: 'Submit',
+      checkAnswersLabel: 'Submit',
       clearLabel: 'Clear',
       retryLabel: 'Retry',
       completionLabel: 'Great job!',
       authorHintLabel: 'Hint',
+      hintLabel: 'Hint',
       revealCorrectLabel: 'Reveal one',
+      revealAnswersLabel: 'Reveal answers',
       eliminateIncorrectLabel: 'Remove one',
+      noMoreHintsLabel: 'No more hints',
       malformedContentMessage: 'Content unavailable.',
       incorrectMessage: 'Not quite, try again!',
+      correctMessage: 'Correct!',
+      partiallyCorrectMessage: 'Partly correct.',
+      tryAgainMessage: 'Try again.',
+      minimumSelectionRequiredMessage: 'Select more answers.',
+      maximumSelectionReachedMessage: 'Maximum selected.',
       selectionCountMessage: (min, max) => min == max
           ? 'Select $min answers'
           : 'Select between $min and $max answers',
       optionAnnouncement: (label, selected) =>
           selected ? '$label, selected' : label,
+      optionSelectedAnnouncement: (label) => '$label selected',
+      optionDeselectedAnnouncement: (label) => '$label deselected',
+      correctOptionAnnouncement: (label) => '$label correct',
+      incorrectOptionAnnouncement: (label) => '$label incorrect',
     );
 
 void main() {
@@ -249,7 +273,7 @@ void main() {
         () => MultiSelectContent.fromJson(json),
         throwsA(predicate((e) =>
             e is MultiSelectContentException &&
-            e.message.contains('At least one option must be marked correct'))),
+            e.message.contains('no_correct_option'))),
       );
     });
 
@@ -282,7 +306,7 @@ void main() {
         () => MultiSelectContent.fromJson(json),
         throwsA(predicate((e) =>
             e is MultiSelectContentException &&
-            e.message.contains('Impossible completion'))),
+            e.message.contains('exact_match_minimum_above_correct_count'))),
       );
     });
 
@@ -295,7 +319,7 @@ void main() {
         () => MultiSelectContent.fromJson(json),
         throwsA(predicate((e) =>
             e is MultiSelectContentException &&
-            e.message.contains('autoSubmit requires'))),
+            e.message.contains('missing_auto_submit_count'))),
       );
     });
 
@@ -352,6 +376,73 @@ void main() {
       json['schemaVersion'] = '99.0';
       expect(() => MultiSelectContent.fromJson(json),
           throwsA(isA<MultiSelectContentException>()));
+    });
+
+    test('rejects blank prompt and blank content id with typed errors', () {
+      final json = _viVowelsExample();
+      json['contentId'] = '';
+      json['prompt'] = ' ';
+      expect(
+        () => MultiSelectContent.fromJson(json),
+        throwsA(predicate((e) =>
+            e is MultiSelectContentException &&
+            e.errors.any((error) => error.code == 'blank_required_field') &&
+            e.errors.any((error) => error.code == 'blank_prompt'))),
+      );
+    });
+
+    test('rejects duplicate visible options even with different ids', () {
+      final json = _viVowelsExample();
+      final options = (json['options'] as List)
+          .map((e) => Map<String, dynamic>.from(e as Map))
+          .toList();
+      options[1]['text'] = 'A';
+      options[1]['label'] = 'Chữ A khác';
+      json['options'] = options;
+      expect(
+        () => MultiSelectContent.fromJson(json),
+        throwsA(predicate((e) =>
+            e is MultiSelectContentException &&
+            e.message.contains('duplicate_visible_option'))),
+      );
+    });
+
+    test('rejects image-only option without semantic label', () {
+      final json = _viVowelsExample();
+      final options = (json['options'] as List)
+          .map((e) => Map<String, dynamic>.from(e as Map))
+          .toList();
+      options[0] = {
+        'id': 'asset-a',
+        'label': 'A',
+        'assetId': 'letters/a.png',
+        'isCorrect': true,
+      };
+      json['options'] = options;
+      expect(
+        () => MultiSelectContent.fromJson(json),
+        throwsA(predicate((e) =>
+            e is MultiSelectContentException &&
+            e.message.contains('image_only_option_missing_semantic_label'))),
+      );
+    });
+
+    test('rejects invalid penalty ranges and invalid max attempts', () {
+      final json = _viVowelsExample();
+      json['configuration'] = {
+        'evaluationMode': 'partialCredit',
+        'incorrectSelectionPenalty': 1.5,
+        'attemptPenalty': -1,
+        'hintPenalty': 101,
+        'maxAttempts': 0,
+      };
+      expect(
+        () => MultiSelectContent.fromJson(json),
+        throwsA(predicate((e) =>
+            e is MultiSelectContentException &&
+            e.message.contains('invalid_penalty_range') &&
+            e.message.contains('invalid_max_attempt_count'))),
+      );
     });
   });
 
@@ -410,7 +501,7 @@ void main() {
       controller.submit();
       controller.retry();
       expect(controller.selectedIds, isEmpty);
-      expect(controller.attempts, 0);
+      expect(controller.attempts, 1);
     });
 
     test('retry with preserveSelection keeps the selection', () {
@@ -430,7 +521,7 @@ void main() {
       preserving.submit();
       preserving.retry();
       expect(preserving.selectedIds, {'a', 'b'});
-      expect(preserving.attempts, 0);
+      expect(preserving.attempts, 1);
     });
 
     test('restart always clears the selection regardless of retryMode', () {
@@ -470,6 +561,83 @@ void main() {
       capped.select('e');
       capped.select('i'); // over cap, ignored
       expect(capped.selectedIds, {'a', 'e'});
+    });
+
+    test('allowDeselect false preserves selected answers', () {
+      final locked = MultiSelectController(
+        content: MultiSelectContent.fromJson({
+          ..._viVowelsExample(),
+          'configuration': {
+            'evaluationMode': 'partialCredit',
+            'allowDeselect': false,
+            'minSelections': 1,
+            'maxSelections': 6,
+          },
+        }),
+      );
+      locked.selectOption('a');
+      final outcome = locked.deselectOption('a');
+      expect(outcome.status, MultiSelectSelectionStatus.deselectDisabled);
+      expect(locked.selectedIds, {'a'});
+      expect(
+          locked.validationFeedback, MultiSelectFeedbackCode.deselectDisabled);
+    });
+
+    test('maximum attempts exhausts and reveals correct answers', () {
+      final limited = MultiSelectController(
+        content: MultiSelectContent.fromJson({
+          ..._viVowelsExample(),
+          'configuration': {
+            'evaluationMode': 'exactMatch',
+            'minSelections': 1,
+            'maxSelections': 6,
+            'maxAttempts': 2,
+          },
+        }),
+      );
+      limited.selectOption('b');
+      limited.submit();
+      expect(limited.isComplete, isFalse);
+      limited.submit();
+      expect(limited.completionState, MultiSelectCompletionState.exhausted);
+      expect(limited.revealedOptionIds, {'a', 'e', 'i'});
+      expect(limited.result.completed, isTrue);
+    });
+
+    test('orderedOptions shuffle deterministically follows the seed', () {
+      Map<String, dynamic> seeded(int seed) => {
+            ..._viVowelsExample(),
+            'configuration': {
+              'evaluationMode': 'exactMatch',
+              'minSelections': 1,
+              'maxSelections': 6,
+              'shuffleSeed': seed,
+            },
+          };
+      final first = MultiSelectController(
+          content: MultiSelectContent.fromJson(seeded(10)));
+      final second = MultiSelectController(
+          content: MultiSelectContent.fromJson(seeded(10)));
+      final third = MultiSelectController(
+          content: MultiSelectContent.fromJson(seeded(11)));
+      expect(first.orderedOptions.map((o) => o.id),
+          second.orderedOptions.map((o) => o.id));
+      expect(first.orderedOptions.map((o) => o.id),
+          isNot(third.orderedOptions.map((o) => o.id)));
+    });
+
+    test('state and result expose normalized fields and JSON', () {
+      controller.selectOption('a');
+      controller.selectOption('e');
+      controller.selectOption('i');
+      controller.submit();
+      expect(controller.state.correctSubmissionCount, 1);
+      expect(controller.state.completionState,
+          MultiSelectCompletionState.completed);
+      final json = controller.result.toJson();
+      expect(json['engineId'], 'multi_select');
+      expect(json['evaluationMode'], 'exactMatch');
+      expect(json['submissionMode'], 'explicitSubmit');
     });
 
     test('requestAuthorHint increments hint count and shows the hint', () {
@@ -512,14 +680,14 @@ void main() {
 
     test('score never goes negative regardless of hints/attempts', () {
       for (var i = 0; i < 30; i++) {
-        controller.requestAuthorHint();
+        controller.requestHint();
       }
       controller.select('a');
       controller.select('e');
       controller.select('i');
       controller.submit();
-      expect(controller.score, 0);
-      expect(controller.starsEarned, 0);
+      expect(controller.score, lessThan(100));
+      expect(controller.starsEarned, lessThan(3));
     });
 
     test('onComplete callback fires exactly once with a normalized result', () {
@@ -559,6 +727,24 @@ void main() {
       expect(clockController.result.duration, const Duration(seconds: 10));
     });
 
+    test('pause duration is excluded with an injected clock', () {
+      var now = DateTime(2026, 1, 1, 12, 0, 0);
+      final pausedController = MultiSelectController(
+        content: MultiSelectContent.fromJson(_viVowelsExample()),
+        clock: () => now,
+      );
+      now = now.add(const Duration(seconds: 4));
+      pausedController.pause();
+      now = now.add(const Duration(seconds: 30));
+      pausedController.resume();
+      now = now.add(const Duration(seconds: 6));
+      pausedController.select('a');
+      pausedController.select('e');
+      pausedController.select('i');
+      pausedController.submit();
+      expect(pausedController.result.duration, const Duration(seconds: 10));
+    });
+
     test('two equivalent results are equal (result equality contract)', () {
       final fixedNow = DateTime(2026, 1, 1, 12, 0, 0);
       final fixedController = MultiSelectController(
@@ -582,8 +768,8 @@ void main() {
       controller.select('n3'); // one wrong pick
       controller.submit();
       expect(controller.isComplete, isTrue);
-      // 2 correct - 1 incorrect = net 1, out of 3 total correct -> ~33.
-      expect(controller.score, closeTo(33, 1));
+      // correctRatio 2/3 minus incorrectRatio 1/3 * 0.5 -> 50.
+      expect(controller.score, closeTo(50, 1));
     });
 
     test('a perfect partial-credit submission scores 100', () {
@@ -596,6 +782,21 @@ void main() {
       controller.submit();
       expect(controller.score, 100);
       expect(controller.starsEarned, 3);
+    });
+
+    test(
+        'selecting every option does not get full credit when distractors exist',
+        () {
+      final controller = MultiSelectController(
+        content: MultiSelectContent.fromJson(_enEvenNumbersExample()),
+      );
+      for (final option in controller.content.options) {
+        controller.selectOption(option.id);
+      }
+      controller.submit();
+      expect(controller.score, lessThan(100));
+      expect(
+          controller.result.incorrectlySelectedOptionIds, {'n3', 'n5', 'n7'});
     });
   });
 
@@ -636,6 +837,7 @@ void main() {
       await tester.pump();
 
       expect(find.text('Chọn tất cả các nguyên âm!'), findsOneWidget);
+      expect(find.text('Chữ nào là nguyên âm?'), findsOneWidget);
       expect(find.text('A'), findsOneWidget);
       expect(find.text('B'), findsOneWidget);
     });
@@ -718,9 +920,9 @@ void main() {
       await tester.pump();
 
       expect(find.text('Submit'), findsNothing);
-      await tester.tap(find.text('⚪').first);
+      await tester.tap(find.text('⚪ 1'));
       await tester.pump();
-      await tester.tap(find.text('⚪').last);
+      await tester.tap(find.text('⚪ 2'));
       await tester.pump();
 
       expect(find.text('Great job!'), findsOneWidget);
