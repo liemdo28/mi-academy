@@ -752,9 +752,21 @@ void main() {
     test(
         'two equivalent results are equal (result equality/serialization contract)',
         () {
-      controller.placeItem('letter-m', 'slot-1');
-      final resultA = controller.result;
-      final resultB = controller.result;
+      // Uses an injected fixed clock rather than the real one: while the
+      // controller is incomplete, `duration` intentionally reflects
+      // elapsed wall-clock time (live progress), so two `.result` reads
+      // moments apart would legitimately differ by a few microseconds --
+      // not a real inequality, just live timing. A fixed clock removes
+      // that timing dependency so this test asserts the actual contract
+      // (structural equality of two reads of otherwise-unchanged state).
+      final fixedNow = DateTime(2026, 1, 1, 12, 0, 0);
+      final fixedClockController = PlacementController(
+        content: PlacementContent.fromJson(_viLetterPlacementExample()),
+        clock: () => fixedNow,
+      );
+      fixedClockController.placeItem('letter-m', 'slot-1');
+      final resultA = fixedClockController.result;
+      final resultB = fixedClockController.result;
       expect(resultA, resultB);
     });
   });
