@@ -39,7 +39,7 @@ class PlacementLocalization {
 
   /// Semantics label for a target, including its current occupancy.
   final String Function(String targetLabel, int occupied, int capacity)
-      targetAnnouncement;
+  targetAnnouncement;
 }
 
 /// Renders one Drag-and-drop Placement Engine level end-to-end:
@@ -178,58 +178,58 @@ class _PlacementScreenState extends State<PlacementScreen> {
                 onResume: controller.resume,
               )
             : controller.isComplete
-                ? _CompletionView(
-                    localization: loc,
-                    stars: controller.starsEarned,
-                    score: controller.score,
-                    onExit: widget.onExit,
-                    onRetry: () {
-                      _completionReported = false;
-                      controller.restart();
-                    },
-                  )
-                : Column(
-                    children: [
-                      if (controller.showHint && content.hint != null)
-                        _HintBanner(
-                          text: content.hint!,
-                          onDismiss: controller.dismissHint,
-                        ),
-                      if (controller.lastAttemptWasCorrect == false)
-                        _FeedbackBanner(message: loc.invalidPlacementMessage),
-                      Expanded(
-                        child: LayoutBuilder(
-                          builder: (context, constraints) {
-                            final isNarrow = constraints.maxWidth < 500;
-                            final targetArea = _TargetArea(
-                              controller: controller,
-                              localization: loc,
-                              reducedMotion: widget.reducedMotion,
-                            );
-                            final sourceArea = _SourceItemArea(
-                              controller: controller,
-                              localization: loc,
-                            );
-                            return isNarrow
-                                ? Column(
-                                    children: [
-                                      Expanded(flex: 3, child: targetArea),
-                                      const Divider(height: 1),
-                                      Expanded(flex: 2, child: sourceArea),
-                                    ],
-                                  )
-                                : Row(
-                                    children: [
-                                      Expanded(child: targetArea),
-                                      const VerticalDivider(width: 1),
-                                      Expanded(child: sourceArea),
-                                    ],
-                                  );
-                          },
-                        ),
-                      ),
-                    ],
+            ? _CompletionView(
+                localization: loc,
+                stars: controller.starsEarned,
+                score: controller.score,
+                onExit: widget.onExit,
+                onRetry: () {
+                  _completionReported = false;
+                  controller.restart();
+                },
+              )
+            : Column(
+                children: [
+                  if (controller.showHint && content.hint != null)
+                    _HintBanner(
+                      text: content.hint!,
+                      onDismiss: controller.dismissHint,
+                    ),
+                  if (controller.lastAttemptWasCorrect == false)
+                    _FeedbackBanner(message: loc.invalidPlacementMessage),
+                  Expanded(
+                    child: LayoutBuilder(
+                      builder: (context, constraints) {
+                        final isNarrow = constraints.maxWidth < 500;
+                        final targetArea = _TargetArea(
+                          controller: controller,
+                          localization: loc,
+                          reducedMotion: widget.reducedMotion,
+                        );
+                        final sourceArea = _SourceItemArea(
+                          controller: controller,
+                          localization: loc,
+                        );
+                        return isNarrow
+                            ? Column(
+                                children: [
+                                  Expanded(flex: 3, child: targetArea),
+                                  const Divider(height: 1),
+                                  Expanded(flex: 2, child: sourceArea),
+                                ],
+                              )
+                            : Row(
+                                children: [
+                                  Expanded(child: targetArea),
+                                  const VerticalDivider(width: 1),
+                                  Expanded(child: sourceArea),
+                                ],
+                              );
+                      },
+                    ),
                   ),
+                ],
+              ),
       ),
     );
   }
@@ -290,6 +290,7 @@ class _TargetSlot extends StatelessWidget {
     final placed = controller.placedItemsFor(target.id);
 
     return DragTarget<String>(
+      key: ValueKey('placement-target-${target.id}'),
       // Always accept the drop itself (rather than gating via
       // `canAccept`) -- an invalid drop must still register as an
       // attempt and produce feedback, not be silently swallowed by
@@ -335,16 +336,16 @@ class _TargetSlot extends StatelessWidget {
                   color: hovering && !wouldAccept
                       ? Colors.red
                       : highlight
-                          ? Colors.green
-                          : Colors.grey,
+                      ? Colors.green
+                      : Colors.grey,
                   width: highlight || (hovering && !wouldAccept) ? 3 : 1.5,
                 ),
                 borderRadius: BorderRadius.circular(12),
                 color: highlight
                     ? Colors.green.withValues(alpha: 0.12)
                     : hovering && !wouldAccept
-                        ? Colors.red.withValues(alpha: 0.08)
-                        : null,
+                    ? Colors.red.withValues(alpha: 0.08)
+                    : null,
               ),
               child: Column(
                 mainAxisSize: MainAxisSize.min,
@@ -393,6 +394,7 @@ class _PlacedItemChip extends StatelessWidget {
   Widget build(BuildContext context) {
     final canRemove = controller.content.configuration.allowRemoveFromTarget;
     return Draggable<String>(
+      key: ValueKey('placement-placed-${item.id}'),
       data: item.id,
       feedback: Material(
         color: Colors.transparent,
@@ -455,6 +457,7 @@ class _SourceItemArea extends StatelessWidget {
         children: [
           for (final item in controller.unplacedItems)
             Draggable<String>(
+              key: ValueKey('placement-source-${item.id}'),
               data: item.id,
               feedback: Material(
                 color: Colors.transparent,

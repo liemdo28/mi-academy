@@ -99,13 +99,13 @@ void main() {
       title: 'San tim chu cai',
       subject: 'letters',
     );
-    await _placeEntries(tester, const [
-      ('m', 'm-e-o'),
-      ('e', 'm-e-o'),
-      ('o', 'm-e-o'),
-      ('c', 'c-h-o'),
-      ('h', 'c-h-o'),
-      ('o', 'c-h-o'),
+    await _placeEntriesById(tester, const [
+      ('item0', 'left'),
+      ('item1', 'left'),
+      ('item2', 'left'),
+      ('item3', 'right'),
+      ('item4', 'right'),
+      ('item5', 'right'),
     ]);
     _expectQueuedResult('letter_hunt', 'lh-lv001');
   });
@@ -336,6 +336,23 @@ Future<void> _placeEntries(
   await tester.pumpAndSettle(const Duration(seconds: 2));
 }
 
+Future<void> _placeEntriesById(
+  WidgetTester tester,
+  List<(String, String)> itemToTarget,
+) async {
+  for (final (itemId, targetId) in itemToTarget) {
+    final item = find.byKey(ValueKey('placement-source-$itemId'));
+    await tester.ensureVisible(item);
+    await tester.tap(item);
+    await tester.pumpAndSettle(const Duration(milliseconds: 300));
+    final target = find.byKey(ValueKey('placement-target-$targetId'));
+    await tester.ensureVisible(target);
+    await tester.tap(target);
+    await tester.pumpAndSettle(const Duration(milliseconds: 300));
+  }
+  await tester.pumpAndSettle(const Duration(seconds: 2));
+}
+
 Future<void> _matchAll(
   WidgetTester tester,
   Map<String, String> leftToRight,
@@ -353,9 +370,11 @@ Future<void> _arrangeSequence(
   WidgetTester tester,
   List<String> desiredOrder,
 ) async {
-  for (var desiredIndex = 0;
-      desiredIndex < desiredOrder.length;
-      desiredIndex++) {
+  for (
+    var desiredIndex = 0;
+    desiredIndex < desiredOrder.length;
+    desiredIndex++
+  ) {
     final label = desiredOrder[desiredIndex];
     while (_sequenceIndex(tester, label, desiredOrder) > desiredIndex) {
       await tester.tap(
@@ -398,23 +417,22 @@ SyncQueueItem? _queuedGameResult(String gameId) {
   final dbGameId = _dbGameId(gameId);
   final box = Hive.box<SyncQueueItem>(MiBoxes.syncQueue);
   return box.values.cast<SyncQueueItem?>().firstWhere(
-        (item) =>
-            item?.type ==
-                SyncQueueItem.typeToWireValue(SyncItemType.gameResult) &&
-            item?.payload['game_id'] == dbGameId,
-        orElse: () => null,
-      );
+    (item) =>
+        item?.type == SyncQueueItem.typeToWireValue(SyncItemType.gameResult) &&
+        item?.payload['game_id'] == dbGameId,
+    orElse: () => null,
+  );
 }
 
 String _dbGameId(String gameId) => 'game-${gameId.replaceAll('_', '-')}';
 
 ActiveChildState _fakeActiveChild() => const ActiveChildState(
-      childId: TestIds.childA,
-      child: {'id': TestIds.childA, 'nickname': 'Mi', 'age_group': 'junior'},
-      children: [
-        {'id': TestIds.childA, 'nickname': 'Mi', 'age_group': 'junior'},
-      ],
-    );
+  childId: TestIds.childA,
+  child: {'id': TestIds.childA, 'nickname': 'Mi', 'age_group': 'junior'},
+  children: [
+    {'id': TestIds.childA, 'nickname': 'Mi', 'age_group': 'junior'},
+  ],
+);
 
 class _AuthenticatedAuthNotifier extends AuthNotifier {
   @override
@@ -444,7 +462,7 @@ class _FixedActiveChildNotifier extends ActiveChildNotifier {
 
 class _FailingGameResultApiService extends ApiService {
   _FailingGameResultApiService()
-      : super(baseUrl: 'http://127.0.0.1:9', tokenStore: InMemoryTokenStore());
+    : super(baseUrl: 'http://127.0.0.1:9', tokenStore: InMemoryTokenStore());
 
   @override
   Future<Map<String, dynamic>> submitGameResult(
