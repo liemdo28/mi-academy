@@ -370,11 +370,9 @@ Future<void> _arrangeSequence(
   WidgetTester tester,
   List<String> desiredOrder,
 ) async {
-  for (
-    var desiredIndex = 0;
-    desiredIndex < desiredOrder.length;
-    desiredIndex++
-  ) {
+  for (var desiredIndex = 0;
+      desiredIndex < desiredOrder.length;
+      desiredIndex++) {
     final label = desiredOrder[desiredIndex];
     while (_sequenceIndex(tester, label, desiredOrder) > desiredIndex) {
       await tester.tap(
@@ -417,22 +415,23 @@ SyncQueueItem? _queuedGameResult(String gameId) {
   final dbGameId = _dbGameId(gameId);
   final box = Hive.box<SyncQueueItem>(MiBoxes.syncQueue);
   return box.values.cast<SyncQueueItem?>().firstWhere(
-    (item) =>
-        item?.type == SyncQueueItem.typeToWireValue(SyncItemType.gameResult) &&
-        item?.payload['game_id'] == dbGameId,
-    orElse: () => null,
-  );
+        (item) =>
+            item?.type ==
+                SyncQueueItem.typeToWireValue(SyncItemType.gameResult) &&
+            item?.payload['game_id'] == dbGameId,
+        orElse: () => null,
+      );
 }
 
 String _dbGameId(String gameId) => 'game-${gameId.replaceAll('_', '-')}';
 
 ActiveChildState _fakeActiveChild() => const ActiveChildState(
-  childId: TestIds.childA,
-  child: {'id': TestIds.childA, 'nickname': 'Mi', 'age_group': 'junior'},
-  children: [
-    {'id': TestIds.childA, 'nickname': 'Mi', 'age_group': 'junior'},
-  ],
-);
+      childId: TestIds.childA,
+      child: {'id': TestIds.childA, 'nickname': 'Mi', 'age_group': 'junior'},
+      children: [
+        {'id': TestIds.childA, 'nickname': 'Mi', 'age_group': 'junior'},
+      ],
+    );
 
 class _AuthenticatedAuthNotifier extends AuthNotifier {
   @override
@@ -462,7 +461,7 @@ class _FixedActiveChildNotifier extends ActiveChildNotifier {
 
 class _FailingGameResultApiService extends ApiService {
   _FailingGameResultApiService()
-    : super(baseUrl: 'http://127.0.0.1:9', tokenStore: InMemoryTokenStore());
+      : super(baseUrl: 'http://127.0.0.1:9', tokenStore: InMemoryTokenStore());
 
   @override
   Future<Map<String, dynamic>> submitGameResult(
