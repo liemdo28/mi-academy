@@ -210,11 +210,73 @@ The third of the four Milestone 1 WS5 engines is now real and tested:
   check that no engine source file imports a storage/backend/analytics
   package.
 
-**Multi-select Engine was not built this pass** — it still needs its own
-real interaction-model design (min/max selection-set validation),
-comparable in scope to what Matching, Sequence, and Placement each took.
+## Update: Multi-select Engine built (2026-07-19)
 
-**Not wired into any of the six (or seven) existing games or the game
+The fourth and final Milestone 1 WS5 engine is now real and tested:
+`packages/mi_game_engines/lib/src/multi_select/{multi_select_content,multi_select_controller,multi_select_screen}.dart`.
+
+- **Typed content model**: `MultiSelectOption`/`MultiSelectConfiguration`/
+  `MultiSelectContent`. `MultiSelectConfiguration` supports explicit or
+  automatic submission (`MultiSelectSubmitMode`), exact-match or
+  partial-credit evaluation (`MultiSelectEvaluationMode`), and a retry
+  mode (preserve vs. clear the current selection on `retry()`).
+- **Validation**: `MultiSelectContent.fromJson` rejects, with an
+  actionable message, duplicate option ids, zero correct answers,
+  invalid min/max (max < min, either exceeding the option count),
+  `autoSubmit` without a reachable `expectedAnswerCount`, an option with
+  neither text nor an asset (no visible representation) or an empty
+  asset id, a missing semantic label, an unsupported schema version, and
+  two distinct impossible-completion states: `minSelections` exceeding
+  the option count, and (specific to `exactMatch`) the correct-answer
+  count itself falling outside the configured selection window.
+- **Controller**: `MultiSelectController` (`ChangeNotifier`, no
+  framework/child-profile dependency) — `select`/`deselect`/`toggle`/
+  `clear`, explicit or auto-triggered `submit`, three distinct hint
+  actions (`requestAuthorHint`, `revealCorrectOption`,
+  `eliminateIncorrectOption`), `pause`/`resume`, `retry` (honors
+  `retryMode`) vs. `restart` (always clears), idempotent `complete`.
+  `exactMatch` only completes on an exact selection match (retryable
+  otherwise); `partialCredit` completes on any valid-size submission,
+  with score prorated by net correct selections — both modes floor score
+  at 0 and share one score-to-stars mapping so "3 stars" means the same
+  thing regardless of evaluation mode.
+- **Normalized result**: `MultiSelectResult` (`engineId`/`contentId`/
+  `score`/`stars`/`attempts`/`duration`/`selectedIds`/`correctIds`/
+  `hintCount`/`completed`) via an `onComplete` callback — no persistence
+  dependency, verified by the same automated check as the other three
+  engines.
+- **Renderer**: `MultiSelectScreen` — options render as Material
+  `FilterChip`s (selection state, an avatar slot for asset-flavored
+  options, eliminated options visually greyed and disabled), chosen
+  because `FilterChip` already provides real keyboard focus/activation
+  and selection semantics built into the framework rather than
+  reimplementing that by hand. A `Wrap`, not a fixed-width `Row`, for the
+  same dynamic-collection-size reason as Placement/ProgressDots. Submit/
+  clear buttons are hidden entirely in auto-submit mode. **Zero
+  hardcoded Vietnamese/English production text** — every UI string comes
+  from a required `MultiSelectLocalization`.
+- **Examples**: Vietnamese vowels (exact match), English animals (exact
+  match, category sorting), English even numbers (partial credit —
+  score prorated rather than requiring an exact match to complete),
+  English quadrilaterals (asset-flavored options, no real asset file
+  dependency), and a Vietnamese auto-submit sample (submits the moment 2
+  of 3 options are selected, no submit button rendered) — five real
+  samples.
+- **Tests**: 48 in `test/multi_select_engine_test.dart` (5 valid-parse +
+  11 rejection, 20 controller, 12 widget covering both extra locale
+  samples, asset avatars, auto-submit, all three hint actions, reduced
+  motion, sound-disabled, semantics, narrow-phone and tablet layouts,
+  and malformed content). All pass; `flutter analyze` clean.
+- **Shared engine contract suite**: `test/engine_contract_test.dart`
+  extended to a 4th engine — Multi-select's stable `engineId` joins the
+  distinctness check, its own attempt-counting/completion test, and its
+  full normalized-result shape alongside Placement's.
+
+**All four Milestone 1 WS5 engines are now real and tested: Matching,
+Sequence, Placement, Multi-select.** 155 tests total in
+`packages/mi_game_engines` (19 + 23 + 57 + 48 + 8 shared contract).
+
+**Not wired into any of the six (or eight) existing games or the game
 registry this pass** — `packages/mi_game_engines` is a standalone
 package with its own tests; migrating an existing game onto it, or
 building a new game against it, is separate follow-up work (see

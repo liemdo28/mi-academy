@@ -28,6 +28,12 @@ content-safety, and ARB parity checks pass; Android `applicationId` is
 documented debug-signing fallback. Milestone 2 is still **Not Ready**
 because games 9-15 and manual/device release gates remain open.
 
+**Shared game engines** (`packages/mi_game_engines/`, see
+[docs/game-engine-architecture.md](./docs/game-engine-architecture.md)):
+all four Milestone 1 WS5 engines are now real and tested -- Matching,
+Sequence, Placement, and Multi-select -- 155 passing tests. None are
+yet wired into the game registry or a production game.
+
 ## Tài liệu phát triển
 
 | Tài liệu | Mô tả |
