@@ -24,6 +24,21 @@ const gameLevelAssets = {
   'number_balance': 'assets/levels/number_balance.json',
   'logic_detective': 'assets/levels/logic_detective.json',
   'story_steps': 'assets/levels/story_steps.json',
+  'picture_detective': 'assets/levels/picture_detective.json',
+  'color_builder': 'assets/levels/color_builder.json',
+  'animal_homes': 'assets/levels/animal_homes.json',
+  'daily_routine': 'assets/levels/daily_routine.json',
+  'healthy_foods': 'assets/levels/healthy_foods.json',
+  'letter_hunt': 'assets/levels/letter_hunt.json',
+  'number_train': 'assets/levels/number_train.json',
+  'emotion_match': 'assets/levels/emotion_match.json',
+  'puzzle_parts': 'assets/levels/puzzle_parts.json',
+  'odd_one_out': 'assets/levels/odd_one_out.json',
+  'opposites': 'assets/levels/opposites.json',
+  'weather_today': 'assets/levels/weather_today.json',
+  'memory_journey': 'assets/levels/memory_journey.json',
+  'category_expert': 'assets/levels/category_expert.json',
+  'build_the_story': 'assets/levels/build_the_story.json',
 };
 
 /// Loads all levels for a single game from its bundled asset.

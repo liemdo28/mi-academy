@@ -37,7 +37,7 @@ class GameRegistryEntry {
   /// docs/release-audit.md RA-05).
   final Map<String, String> localizedName;
 
-  /// One of 'letters', 'math', 'logic' (see docs/skill-taxonomy.md).
+  /// One of the subject IDs from docs/skill-taxonomy.md.
   final String category;
 
   /// Subset of 'junior' | 'explorer' | 'master' (see docs/age-bands.md).
@@ -97,6 +97,21 @@ abstract final class GameRegistry {
     'number_balance',
     'logic_detective',
     'story_steps',
+    'picture_detective',
+    'color_builder',
+    'animal_homes',
+    'daily_routine',
+    'healthy_foods',
+    'letter_hunt',
+    'number_train',
+    'emotion_match',
+    'puzzle_parts',
+    'odd_one_out',
+    'opposites',
+    'weather_today',
+    'memory_journey',
+    'category_expert',
+    'build_the_story',
   ];
 
   static final Map<String, GameRegistryEntry> _entries = {
@@ -479,6 +494,186 @@ abstract final class GameRegistry {
             'letters.reading_comprehension',
             'letters.storytelling',
             'logic.pattern.basic',
+          ],
+          engineType: 'sequence',
+          builder: _engineBackedBuilder(EngineBackedGameKind.sequence),
+        ),
+        GameRegistryEntry(
+          gameId: 'picture_detective',
+          localizedName: const {
+            'vi': 'Tham tu hinh anh',
+            'en': 'Picture Detective',
+          },
+          category: 'science',
+          ageBands: const ['junior', 'explorer', 'master'],
+          supportedSkills: const ['science.observation', 'logic.matching'],
+          engineType: 'matching',
+          builder: _engineBackedBuilder(EngineBackedGameKind.matching),
+        ),
+        GameRegistryEntry(
+          gameId: 'color_builder',
+          localizedName: const {'vi': 'Xay mau sac', 'en': 'Color Builder'},
+          category: 'creative',
+          ageBands: const ['junior', 'explorer', 'master'],
+          supportedSkills: const [
+            'creative.color_recognition',
+            'logic.spatial_reasoning',
+          ],
+          engineType: 'placement',
+          builder: _engineBackedBuilder(EngineBackedGameKind.placement),
+        ),
+        GameRegistryEntry(
+          gameId: 'animal_homes',
+          localizedName: const {'vi': 'Nha cua dong vat', 'en': 'Animal Homes'},
+          category: 'science',
+          ageBands: const ['junior', 'explorer', 'master'],
+          supportedSkills: const ['science.observation', 'logic.matching'],
+          engineType: 'matching',
+          builder: _engineBackedBuilder(EngineBackedGameKind.matching),
+        ),
+        GameRegistryEntry(
+          gameId: 'daily_routine',
+          localizedName: const {
+            'vi': 'Sinh hoat hang ngay',
+            'en': 'Daily Routine'
+          },
+          category: 'science',
+          ageBands: const ['junior', 'explorer', 'master'],
+          supportedSkills: const [
+            'logic.pattern.basic',
+            'science.cause_effect'
+          ],
+          engineType: 'sequence',
+          builder: _engineBackedBuilder(EngineBackedGameKind.sequence),
+        ),
+        GameRegistryEntry(
+          gameId: 'healthy_foods',
+          localizedName: const {
+            'vi': 'Thuc pham lanh manh',
+            'en': 'Healthy Foods'
+          },
+          category: 'science',
+          ageBands: const ['junior', 'explorer', 'master'],
+          supportedSkills: const [
+            'science.observation',
+            'logic.classification'
+          ],
+          engineType: 'multi_select',
+          builder: _engineBackedBuilder(EngineBackedGameKind.multiSelect),
+        ),
+        GameRegistryEntry(
+          gameId: 'letter_hunt',
+          localizedName: const {'vi': 'San tim chu cai', 'en': 'Letter Hunt'},
+          category: 'letters',
+          ageBands: const ['junior', 'explorer', 'master'],
+          supportedSkills: const [
+            'letters.recognition.lowercase',
+            'letters.spelling',
+          ],
+          engineType: 'placement',
+          builder: _engineBackedBuilder(EngineBackedGameKind.placement),
+        ),
+        GameRegistryEntry(
+          gameId: 'number_train',
+          localizedName: const {'vi': 'Doan tau so', 'en': 'Number Train'},
+          category: 'math',
+          ageBands: const ['junior', 'explorer', 'master'],
+          supportedSkills: const [
+            'math.number_recognition.1_20',
+            'math.counting'
+          ],
+          engineType: 'sequence',
+          builder: _engineBackedBuilder(EngineBackedGameKind.sequence),
+        ),
+        GameRegistryEntry(
+          gameId: 'emotion_match',
+          localizedName: const {'vi': 'Ghep cam xuc', 'en': 'Emotion Match'},
+          category: 'science',
+          ageBands: const ['junior', 'explorer', 'master'],
+          supportedSkills: const ['science.observation', 'logic.matching'],
+          engineType: 'matching',
+          builder: _engineBackedBuilder(EngineBackedGameKind.matching),
+        ),
+        GameRegistryEntry(
+          gameId: 'puzzle_parts',
+          localizedName: const {'vi': 'Manh ghep do vat', 'en': 'Puzzle Parts'},
+          category: 'creative',
+          ageBands: const ['junior', 'explorer', 'master'],
+          supportedSkills: const [
+            'creative.shape_construction',
+            'logic.spatial_reasoning',
+          ],
+          engineType: 'placement',
+          builder: _engineBackedBuilder(EngineBackedGameKind.placement),
+        ),
+        GameRegistryEntry(
+          gameId: 'odd_one_out',
+          localizedName: const {'vi': 'Tim vat khac nhom', 'en': 'Odd One Out'},
+          category: 'logic',
+          ageBands: const ['junior', 'explorer', 'master'],
+          supportedSkills: const ['logic.odd_one_out', 'logic.classification'],
+          engineType: 'multi_select',
+          builder: _engineBackedBuilder(EngineBackedGameKind.multiSelect),
+        ),
+        GameRegistryEntry(
+          gameId: 'opposites',
+          localizedName: const {'vi': 'Cap tu trai nghia', 'en': 'Opposites'},
+          category: 'letters',
+          ageBands: const ['junior', 'explorer', 'master'],
+          supportedSkills: const [
+            'letters.synonyms_antonyms',
+            'logic.matching'
+          ],
+          engineType: 'matching',
+          builder: _engineBackedBuilder(EngineBackedGameKind.matching),
+        ),
+        GameRegistryEntry(
+          gameId: 'weather_today',
+          localizedName: const {
+            'vi': 'Thoi tiet hom nay',
+            'en': 'Weather Today'
+          },
+          category: 'science',
+          ageBands: const ['junior', 'explorer', 'master'],
+          supportedSkills: const ['science.cause_effect', 'logic.matching'],
+          engineType: 'matching',
+          builder: _engineBackedBuilder(EngineBackedGameKind.matching),
+        ),
+        GameRegistryEntry(
+          gameId: 'memory_journey',
+          localizedName: const {
+            'vi': 'Hanh trinh ghi nho',
+            'en': 'Memory Journey'
+          },
+          category: 'logic',
+          ageBands: const ['junior', 'explorer', 'master'],
+          supportedSkills: const ['logic.memory', 'logic.pattern.basic'],
+          engineType: 'sequence',
+          builder: _engineBackedBuilder(EngineBackedGameKind.sequence),
+        ),
+        GameRegistryEntry(
+          gameId: 'category_expert',
+          localizedName: const {
+            'vi': 'Chuyen gia phan loai',
+            'en': 'Category Expert',
+          },
+          category: 'logic',
+          ageBands: const ['junior', 'explorer', 'master'],
+          supportedSkills: const ['logic.classification', 'letters.vocabulary'],
+          engineType: 'multi_select',
+          builder: _engineBackedBuilder(EngineBackedGameKind.multiSelect),
+        ),
+        GameRegistryEntry(
+          gameId: 'build_the_story',
+          localizedName: const {
+            'vi': 'Xay cau chuyen',
+            'en': 'Build the Story'
+          },
+          category: 'letters',
+          ageBands: const ['junior', 'explorer', 'master'],
+          supportedSkills: const [
+            'letters.storytelling',
+            'creative.storytelling'
           ],
           engineType: 'sequence',
           builder: _engineBackedBuilder(EngineBackedGameKind.sequence),

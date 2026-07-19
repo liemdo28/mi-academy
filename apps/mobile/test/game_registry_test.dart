@@ -35,6 +35,21 @@ void main() {
         'number_balance',
         'logic_detective',
         'story_steps',
+        'picture_detective',
+        'color_builder',
+        'animal_homes',
+        'daily_routine',
+        'healthy_foods',
+        'letter_hunt',
+        'number_train',
+        'emotion_match',
+        'puzzle_parts',
+        'odd_one_out',
+        'opposites',
+        'weather_today',
+        'memory_journey',
+        'category_expert',
+        'build_the_story',
       ];
       final registeredIds = GameRegistry.all.map((e) => e.gameId).toList();
       expect(registeredIds, expectedIds);
@@ -96,6 +111,35 @@ void main() {
         'number_balance': 'matching',
         'logic_detective': 'multi_select',
         'story_steps': 'sequence',
+      };
+
+      for (final item in expected.entries) {
+        final entry = GameRegistry.find(item.key);
+        expect(entry, isNotNull, reason: item.key);
+        expect(entry!.engineType, item.value);
+        expect(entry.localizedName['vi'], isNotEmpty);
+        expect(entry.localizedName['en'], isNotEmpty);
+        expect(entry.supportedSkills, isNotEmpty);
+      }
+    });
+
+    test('registers Games 16-30 with shared engine mappings', () {
+      final expected = {
+        'picture_detective': 'matching',
+        'color_builder': 'placement',
+        'animal_homes': 'matching',
+        'daily_routine': 'sequence',
+        'healthy_foods': 'multi_select',
+        'letter_hunt': 'placement',
+        'number_train': 'sequence',
+        'emotion_match': 'matching',
+        'puzzle_parts': 'placement',
+        'odd_one_out': 'multi_select',
+        'opposites': 'matching',
+        'weather_today': 'matching',
+        'memory_journey': 'sequence',
+        'category_expert': 'multi_select',
+        'build_the_story': 'sequence',
       };
 
       for (final item in expected.entries) {

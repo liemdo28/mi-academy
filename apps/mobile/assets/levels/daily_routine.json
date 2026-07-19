@@ -1,0 +1,5466 @@
+{
+  "schemaVersion": "1.0",
+  "gameId": "daily_routine",
+  "levels": [
+    {
+      "id": "dr-lv001",
+      "gameId": "daily_routine",
+      "levelNumber": 1,
+      "difficulty": 1,
+      "learningObjective": "daily routine sequencing",
+      "localizedContent": {
+        "en": {
+          "prompt": "Put the day in order.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Wake up",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Brush teeth",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Eat breakfast",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what comes first."
+        },
+        "vi": {
+          "prompt": "Sap xep mot ngay theo thu tu.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Thuc day",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Danh rang",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "An sang",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao den truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao den truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "junior",
+        "skillIds": [
+          "logic.pattern.basic",
+          "science.cause_effect"
+        ],
+        "engine": "sequence",
+        "generatedBy": "games_16_30_generator",
+        "generatorSeed": 20260720,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [
+        "asset-daily_routine-1"
+      ],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "dr-lv002",
+      "gameId": "daily_routine",
+      "levelNumber": 2,
+      "difficulty": 1,
+      "learningObjective": "daily routine sequencing",
+      "localizedContent": {
+        "en": {
+          "prompt": "Put the day in order.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Wake up",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Brush teeth",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Eat breakfast",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what comes first."
+        },
+        "vi": {
+          "prompt": "Sap xep mot ngay theo thu tu.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Thuc day",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Danh rang",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "An sang",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao den truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao den truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "junior",
+        "skillIds": [
+          "logic.pattern.basic",
+          "science.cause_effect"
+        ],
+        "engine": "sequence",
+        "generatedBy": "games_16_30_generator",
+        "generatorSeed": 20260720,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [
+        "asset-daily_routine-2"
+      ],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "dr-lv003",
+      "gameId": "daily_routine",
+      "levelNumber": 3,
+      "difficulty": 1,
+      "learningObjective": "daily routine sequencing",
+      "localizedContent": {
+        "en": {
+          "prompt": "Put the day in order.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Wake up",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Brush teeth",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Eat breakfast",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what comes first."
+        },
+        "vi": {
+          "prompt": "Sap xep mot ngay theo thu tu.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Thuc day",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Danh rang",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "An sang",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao den truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao den truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "junior",
+        "skillIds": [
+          "logic.pattern.basic",
+          "science.cause_effect"
+        ],
+        "engine": "sequence",
+        "generatedBy": "games_16_30_generator",
+        "generatorSeed": 20260720,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [
+        "asset-daily_routine-3"
+      ],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "dr-lv004",
+      "gameId": "daily_routine",
+      "levelNumber": 4,
+      "difficulty": 1,
+      "learningObjective": "daily routine sequencing",
+      "localizedContent": {
+        "en": {
+          "prompt": "Put the day in order.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Wake up",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Brush teeth",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Eat breakfast",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what comes first."
+        },
+        "vi": {
+          "prompt": "Sap xep mot ngay theo thu tu.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Thuc day",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Danh rang",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "An sang",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao den truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao den truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "junior",
+        "skillIds": [
+          "logic.pattern.basic",
+          "science.cause_effect"
+        ],
+        "engine": "sequence",
+        "generatedBy": "games_16_30_generator",
+        "generatorSeed": 20260720,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [
+        "asset-daily_routine-4"
+      ],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "dr-lv005",
+      "gameId": "daily_routine",
+      "levelNumber": 5,
+      "difficulty": 1,
+      "learningObjective": "daily routine sequencing",
+      "localizedContent": {
+        "en": {
+          "prompt": "Put the day in order.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Wake up",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Brush teeth",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Eat breakfast",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what comes first."
+        },
+        "vi": {
+          "prompt": "Sap xep mot ngay theo thu tu.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Thuc day",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Danh rang",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "An sang",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao den truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao den truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "junior",
+        "skillIds": [
+          "logic.pattern.basic",
+          "science.cause_effect"
+        ],
+        "engine": "sequence",
+        "generatedBy": "games_16_30_generator",
+        "generatorSeed": 20260720,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [
+        "asset-daily_routine-5"
+      ],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "dr-lv006",
+      "gameId": "daily_routine",
+      "levelNumber": 6,
+      "difficulty": 1,
+      "learningObjective": "daily routine sequencing",
+      "localizedContent": {
+        "en": {
+          "prompt": "Put the day in order.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Wake up",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Brush teeth",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Eat breakfast",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what comes first."
+        },
+        "vi": {
+          "prompt": "Sap xep mot ngay theo thu tu.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Thuc day",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Danh rang",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "An sang",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao den truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao den truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "junior",
+        "skillIds": [
+          "logic.pattern.basic",
+          "science.cause_effect"
+        ],
+        "engine": "sequence",
+        "generatedBy": "games_16_30_generator",
+        "generatorSeed": 20260720,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [
+        "asset-daily_routine-6"
+      ],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "dr-lv007",
+      "gameId": "daily_routine",
+      "levelNumber": 7,
+      "difficulty": 1,
+      "learningObjective": "daily routine sequencing",
+      "localizedContent": {
+        "en": {
+          "prompt": "Put the day in order.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Wake up",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Brush teeth",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Eat breakfast",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what comes first."
+        },
+        "vi": {
+          "prompt": "Sap xep mot ngay theo thu tu.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Thuc day",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Danh rang",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "An sang",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao den truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao den truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "junior",
+        "skillIds": [
+          "logic.pattern.basic",
+          "science.cause_effect"
+        ],
+        "engine": "sequence",
+        "generatedBy": "games_16_30_generator",
+        "generatorSeed": 20260720,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [
+        "asset-daily_routine-7"
+      ],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "dr-lv008",
+      "gameId": "daily_routine",
+      "levelNumber": 8,
+      "difficulty": 1,
+      "learningObjective": "daily routine sequencing",
+      "localizedContent": {
+        "en": {
+          "prompt": "Put the day in order.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Wake up",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Brush teeth",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Eat breakfast",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what comes first."
+        },
+        "vi": {
+          "prompt": "Sap xep mot ngay theo thu tu.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Thuc day",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Danh rang",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "An sang",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao den truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao den truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "junior",
+        "skillIds": [
+          "logic.pattern.basic",
+          "science.cause_effect"
+        ],
+        "engine": "sequence",
+        "generatedBy": "games_16_30_generator",
+        "generatorSeed": 20260720,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [
+        "asset-daily_routine-0"
+      ],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "dr-lv009",
+      "gameId": "daily_routine",
+      "levelNumber": 9,
+      "difficulty": 1,
+      "learningObjective": "daily routine sequencing",
+      "localizedContent": {
+        "en": {
+          "prompt": "Put the day in order.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Wake up",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Brush teeth",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Eat breakfast",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what comes first."
+        },
+        "vi": {
+          "prompt": "Sap xep mot ngay theo thu tu.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Thuc day",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Danh rang",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "An sang",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao den truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao den truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "junior",
+        "skillIds": [
+          "logic.pattern.basic",
+          "science.cause_effect"
+        ],
+        "engine": "sequence",
+        "generatedBy": "games_16_30_generator",
+        "generatorSeed": 20260720,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [
+        "asset-daily_routine-1"
+      ],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "dr-lv010",
+      "gameId": "daily_routine",
+      "levelNumber": 10,
+      "difficulty": 1,
+      "learningObjective": "daily routine sequencing",
+      "localizedContent": {
+        "en": {
+          "prompt": "Put the day in order.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Wake up",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Brush teeth",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Eat breakfast",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what comes first."
+        },
+        "vi": {
+          "prompt": "Sap xep mot ngay theo thu tu.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Thuc day",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Danh rang",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "An sang",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao den truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao den truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "junior",
+        "skillIds": [
+          "logic.pattern.basic",
+          "science.cause_effect"
+        ],
+        "engine": "sequence",
+        "generatedBy": "games_16_30_generator",
+        "generatorSeed": 20260720,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [
+        "asset-daily_routine-2"
+      ],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "dr-lv011",
+      "gameId": "daily_routine",
+      "levelNumber": 11,
+      "difficulty": 1,
+      "learningObjective": "daily routine sequencing",
+      "localizedContent": {
+        "en": {
+          "prompt": "Put the day in order.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Wake up",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Brush teeth",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Eat breakfast",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what comes first."
+        },
+        "vi": {
+          "prompt": "Sap xep mot ngay theo thu tu.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Thuc day",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Danh rang",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "An sang",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao den truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao den truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "junior",
+        "skillIds": [
+          "logic.pattern.basic",
+          "science.cause_effect"
+        ],
+        "engine": "sequence",
+        "generatedBy": "games_16_30_generator",
+        "generatorSeed": 20260720,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [
+        "asset-daily_routine-3"
+      ],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "dr-lv012",
+      "gameId": "daily_routine",
+      "levelNumber": 12,
+      "difficulty": 1,
+      "learningObjective": "daily routine sequencing",
+      "localizedContent": {
+        "en": {
+          "prompt": "Put the day in order.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Wake up",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Brush teeth",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Eat breakfast",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what comes first."
+        },
+        "vi": {
+          "prompt": "Sap xep mot ngay theo thu tu.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Thuc day",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Danh rang",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "An sang",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao den truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao den truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "junior",
+        "skillIds": [
+          "logic.pattern.basic",
+          "science.cause_effect"
+        ],
+        "engine": "sequence",
+        "generatedBy": "games_16_30_generator",
+        "generatorSeed": 20260720,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [
+        "asset-daily_routine-4"
+      ],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "dr-lv013",
+      "gameId": "daily_routine",
+      "levelNumber": 13,
+      "difficulty": 1,
+      "learningObjective": "daily routine sequencing",
+      "localizedContent": {
+        "en": {
+          "prompt": "Put the day in order.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Wake up",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Brush teeth",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Eat breakfast",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what comes first."
+        },
+        "vi": {
+          "prompt": "Sap xep mot ngay theo thu tu.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Thuc day",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Danh rang",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "An sang",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao den truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao den truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "junior",
+        "skillIds": [
+          "logic.pattern.basic",
+          "science.cause_effect"
+        ],
+        "engine": "sequence",
+        "generatedBy": "games_16_30_generator",
+        "generatorSeed": 20260720,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [
+        "asset-daily_routine-5"
+      ],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "dr-lv014",
+      "gameId": "daily_routine",
+      "levelNumber": 14,
+      "difficulty": 1,
+      "learningObjective": "daily routine sequencing",
+      "localizedContent": {
+        "en": {
+          "prompt": "Put the day in order.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Wake up",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Brush teeth",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Eat breakfast",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what comes first."
+        },
+        "vi": {
+          "prompt": "Sap xep mot ngay theo thu tu.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Thuc day",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Danh rang",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "An sang",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao den truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao den truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "junior",
+        "skillIds": [
+          "logic.pattern.basic",
+          "science.cause_effect"
+        ],
+        "engine": "sequence",
+        "generatedBy": "games_16_30_generator",
+        "generatorSeed": 20260720,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [
+        "asset-daily_routine-6"
+      ],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "dr-lv015",
+      "gameId": "daily_routine",
+      "levelNumber": 15,
+      "difficulty": 1,
+      "learningObjective": "daily routine sequencing",
+      "localizedContent": {
+        "en": {
+          "prompt": "Put the day in order.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Wake up",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Brush teeth",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Eat breakfast",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what comes first."
+        },
+        "vi": {
+          "prompt": "Sap xep mot ngay theo thu tu.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Thuc day",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Danh rang",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "An sang",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao den truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao den truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "junior",
+        "skillIds": [
+          "logic.pattern.basic",
+          "science.cause_effect"
+        ],
+        "engine": "sequence",
+        "generatedBy": "games_16_30_generator",
+        "generatorSeed": 20260720,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [
+        "asset-daily_routine-7"
+      ],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "dr-lv016",
+      "gameId": "daily_routine",
+      "levelNumber": 16,
+      "difficulty": 1,
+      "learningObjective": "daily routine sequencing",
+      "localizedContent": {
+        "en": {
+          "prompt": "Put the day in order.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Wake up",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Brush teeth",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Eat breakfast",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what comes first."
+        },
+        "vi": {
+          "prompt": "Sap xep mot ngay theo thu tu.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Thuc day",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Danh rang",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "An sang",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao den truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao den truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "junior",
+        "skillIds": [
+          "logic.pattern.basic",
+          "science.cause_effect"
+        ],
+        "engine": "sequence",
+        "generatedBy": "games_16_30_generator",
+        "generatorSeed": 20260720,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [
+        "asset-daily_routine-0"
+      ],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "dr-lv017",
+      "gameId": "daily_routine",
+      "levelNumber": 17,
+      "difficulty": 1,
+      "learningObjective": "daily routine sequencing",
+      "localizedContent": {
+        "en": {
+          "prompt": "Put the day in order.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Wake up",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Brush teeth",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Eat breakfast",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what comes first."
+        },
+        "vi": {
+          "prompt": "Sap xep mot ngay theo thu tu.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Thuc day",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Danh rang",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "An sang",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao den truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao den truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "junior",
+        "skillIds": [
+          "logic.pattern.basic",
+          "science.cause_effect"
+        ],
+        "engine": "sequence",
+        "generatedBy": "games_16_30_generator",
+        "generatorSeed": 20260720,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [
+        "asset-daily_routine-1"
+      ],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "dr-lv018",
+      "gameId": "daily_routine",
+      "levelNumber": 18,
+      "difficulty": 1,
+      "learningObjective": "daily routine sequencing",
+      "localizedContent": {
+        "en": {
+          "prompt": "Put the day in order.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Wake up",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Brush teeth",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Eat breakfast",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what comes first."
+        },
+        "vi": {
+          "prompt": "Sap xep mot ngay theo thu tu.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Thuc day",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Danh rang",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "An sang",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao den truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao den truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "junior",
+        "skillIds": [
+          "logic.pattern.basic",
+          "science.cause_effect"
+        ],
+        "engine": "sequence",
+        "generatedBy": "games_16_30_generator",
+        "generatorSeed": 20260720,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [
+        "asset-daily_routine-2"
+      ],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "dr-lv019",
+      "gameId": "daily_routine",
+      "levelNumber": 19,
+      "difficulty": 1,
+      "learningObjective": "daily routine sequencing",
+      "localizedContent": {
+        "en": {
+          "prompt": "Put the day in order.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Wake up",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Brush teeth",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Eat breakfast",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what comes first."
+        },
+        "vi": {
+          "prompt": "Sap xep mot ngay theo thu tu.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Thuc day",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Danh rang",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "An sang",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao den truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao den truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "junior",
+        "skillIds": [
+          "logic.pattern.basic",
+          "science.cause_effect"
+        ],
+        "engine": "sequence",
+        "generatedBy": "games_16_30_generator",
+        "generatorSeed": 20260720,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [
+        "asset-daily_routine-3"
+      ],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "dr-lv020",
+      "gameId": "daily_routine",
+      "levelNumber": 20,
+      "difficulty": 1,
+      "learningObjective": "daily routine sequencing",
+      "localizedContent": {
+        "en": {
+          "prompt": "Put the day in order.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Wake up",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Brush teeth",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Eat breakfast",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what comes first."
+        },
+        "vi": {
+          "prompt": "Sap xep mot ngay theo thu tu.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Thuc day",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Danh rang",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "An sang",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao den truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao den truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "junior",
+        "skillIds": [
+          "logic.pattern.basic",
+          "science.cause_effect"
+        ],
+        "engine": "sequence",
+        "generatedBy": "games_16_30_generator",
+        "generatorSeed": 20260720,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [
+        "asset-daily_routine-4"
+      ],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "dr-lv021",
+      "gameId": "daily_routine",
+      "levelNumber": 21,
+      "difficulty": 3,
+      "learningObjective": "daily routine sequencing",
+      "localizedContent": {
+        "en": {
+          "prompt": "Put the day in order.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Wake up",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Brush teeth",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Eat breakfast",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Go to school",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what comes first."
+        },
+        "vi": {
+          "prompt": "Sap xep mot ngay theo thu tu.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Thuc day",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Danh rang",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "An sang",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Den truong",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao den truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao den truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "explorer",
+        "skillIds": [
+          "logic.pattern.basic",
+          "science.cause_effect"
+        ],
+        "engine": "sequence",
+        "generatedBy": "games_16_30_generator",
+        "generatorSeed": 20260720,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [
+        "asset-daily_routine-5"
+      ],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "dr-lv022",
+      "gameId": "daily_routine",
+      "levelNumber": 22,
+      "difficulty": 3,
+      "learningObjective": "daily routine sequencing",
+      "localizedContent": {
+        "en": {
+          "prompt": "Put the day in order.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Wake up",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Brush teeth",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Eat breakfast",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Go to school",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what comes first."
+        },
+        "vi": {
+          "prompt": "Sap xep mot ngay theo thu tu.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Thuc day",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Danh rang",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "An sang",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Den truong",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao den truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao den truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "explorer",
+        "skillIds": [
+          "logic.pattern.basic",
+          "science.cause_effect"
+        ],
+        "engine": "sequence",
+        "generatedBy": "games_16_30_generator",
+        "generatorSeed": 20260720,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [
+        "asset-daily_routine-6"
+      ],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "dr-lv023",
+      "gameId": "daily_routine",
+      "levelNumber": 23,
+      "difficulty": 3,
+      "learningObjective": "daily routine sequencing",
+      "localizedContent": {
+        "en": {
+          "prompt": "Put the day in order.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Wake up",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Brush teeth",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Eat breakfast",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Go to school",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what comes first."
+        },
+        "vi": {
+          "prompt": "Sap xep mot ngay theo thu tu.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Thuc day",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Danh rang",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "An sang",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Den truong",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao den truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao den truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "explorer",
+        "skillIds": [
+          "logic.pattern.basic",
+          "science.cause_effect"
+        ],
+        "engine": "sequence",
+        "generatedBy": "games_16_30_generator",
+        "generatorSeed": 20260720,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [
+        "asset-daily_routine-7"
+      ],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "dr-lv024",
+      "gameId": "daily_routine",
+      "levelNumber": 24,
+      "difficulty": 3,
+      "learningObjective": "daily routine sequencing",
+      "localizedContent": {
+        "en": {
+          "prompt": "Put the day in order.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Wake up",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Brush teeth",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Eat breakfast",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Go to school",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what comes first."
+        },
+        "vi": {
+          "prompt": "Sap xep mot ngay theo thu tu.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Thuc day",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Danh rang",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "An sang",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Den truong",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao den truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao den truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "explorer",
+        "skillIds": [
+          "logic.pattern.basic",
+          "science.cause_effect"
+        ],
+        "engine": "sequence",
+        "generatedBy": "games_16_30_generator",
+        "generatorSeed": 20260720,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [
+        "asset-daily_routine-0"
+      ],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "dr-lv025",
+      "gameId": "daily_routine",
+      "levelNumber": 25,
+      "difficulty": 3,
+      "learningObjective": "daily routine sequencing",
+      "localizedContent": {
+        "en": {
+          "prompt": "Put the day in order.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Wake up",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Brush teeth",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Eat breakfast",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Go to school",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what comes first."
+        },
+        "vi": {
+          "prompt": "Sap xep mot ngay theo thu tu.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Thuc day",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Danh rang",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "An sang",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Den truong",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao den truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao den truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "explorer",
+        "skillIds": [
+          "logic.pattern.basic",
+          "science.cause_effect"
+        ],
+        "engine": "sequence",
+        "generatedBy": "games_16_30_generator",
+        "generatorSeed": 20260720,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [
+        "asset-daily_routine-1"
+      ],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "dr-lv026",
+      "gameId": "daily_routine",
+      "levelNumber": 26,
+      "difficulty": 3,
+      "learningObjective": "daily routine sequencing",
+      "localizedContent": {
+        "en": {
+          "prompt": "Put the day in order.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Wake up",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Brush teeth",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Eat breakfast",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Go to school",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what comes first."
+        },
+        "vi": {
+          "prompt": "Sap xep mot ngay theo thu tu.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Thuc day",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Danh rang",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "An sang",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Den truong",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao den truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao den truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "explorer",
+        "skillIds": [
+          "logic.pattern.basic",
+          "science.cause_effect"
+        ],
+        "engine": "sequence",
+        "generatedBy": "games_16_30_generator",
+        "generatorSeed": 20260720,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [
+        "asset-daily_routine-2"
+      ],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "dr-lv027",
+      "gameId": "daily_routine",
+      "levelNumber": 27,
+      "difficulty": 3,
+      "learningObjective": "daily routine sequencing",
+      "localizedContent": {
+        "en": {
+          "prompt": "Put the day in order.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Wake up",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Brush teeth",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Eat breakfast",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Go to school",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what comes first."
+        },
+        "vi": {
+          "prompt": "Sap xep mot ngay theo thu tu.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Thuc day",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Danh rang",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "An sang",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Den truong",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao den truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao den truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "explorer",
+        "skillIds": [
+          "logic.pattern.basic",
+          "science.cause_effect"
+        ],
+        "engine": "sequence",
+        "generatedBy": "games_16_30_generator",
+        "generatorSeed": 20260720,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [
+        "asset-daily_routine-3"
+      ],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "dr-lv028",
+      "gameId": "daily_routine",
+      "levelNumber": 28,
+      "difficulty": 3,
+      "learningObjective": "daily routine sequencing",
+      "localizedContent": {
+        "en": {
+          "prompt": "Put the day in order.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Wake up",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Brush teeth",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Eat breakfast",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Go to school",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what comes first."
+        },
+        "vi": {
+          "prompt": "Sap xep mot ngay theo thu tu.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Thuc day",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Danh rang",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "An sang",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Den truong",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao den truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao den truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "explorer",
+        "skillIds": [
+          "logic.pattern.basic",
+          "science.cause_effect"
+        ],
+        "engine": "sequence",
+        "generatedBy": "games_16_30_generator",
+        "generatorSeed": 20260720,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [
+        "asset-daily_routine-4"
+      ],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "dr-lv029",
+      "gameId": "daily_routine",
+      "levelNumber": 29,
+      "difficulty": 3,
+      "learningObjective": "daily routine sequencing",
+      "localizedContent": {
+        "en": {
+          "prompt": "Put the day in order.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Wake up",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Brush teeth",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Eat breakfast",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Go to school",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what comes first."
+        },
+        "vi": {
+          "prompt": "Sap xep mot ngay theo thu tu.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Thuc day",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Danh rang",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "An sang",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Den truong",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao den truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao den truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "explorer",
+        "skillIds": [
+          "logic.pattern.basic",
+          "science.cause_effect"
+        ],
+        "engine": "sequence",
+        "generatedBy": "games_16_30_generator",
+        "generatorSeed": 20260720,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [
+        "asset-daily_routine-5"
+      ],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "dr-lv030",
+      "gameId": "daily_routine",
+      "levelNumber": 30,
+      "difficulty": 3,
+      "learningObjective": "daily routine sequencing",
+      "localizedContent": {
+        "en": {
+          "prompt": "Put the day in order.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Wake up",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Brush teeth",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Eat breakfast",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Go to school",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what comes first."
+        },
+        "vi": {
+          "prompt": "Sap xep mot ngay theo thu tu.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Thuc day",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Danh rang",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "An sang",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Den truong",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao den truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao den truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "explorer",
+        "skillIds": [
+          "logic.pattern.basic",
+          "science.cause_effect"
+        ],
+        "engine": "sequence",
+        "generatedBy": "games_16_30_generator",
+        "generatorSeed": 20260720,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [
+        "asset-daily_routine-6"
+      ],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "dr-lv031",
+      "gameId": "daily_routine",
+      "levelNumber": 31,
+      "difficulty": 3,
+      "learningObjective": "daily routine sequencing",
+      "localizedContent": {
+        "en": {
+          "prompt": "Put the day in order.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Wake up",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Brush teeth",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Eat breakfast",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Go to school",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what comes first."
+        },
+        "vi": {
+          "prompt": "Sap xep mot ngay theo thu tu.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Thuc day",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Danh rang",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "An sang",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Den truong",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao den truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao den truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "explorer",
+        "skillIds": [
+          "logic.pattern.basic",
+          "science.cause_effect"
+        ],
+        "engine": "sequence",
+        "generatedBy": "games_16_30_generator",
+        "generatorSeed": 20260720,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [
+        "asset-daily_routine-7"
+      ],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "dr-lv032",
+      "gameId": "daily_routine",
+      "levelNumber": 32,
+      "difficulty": 3,
+      "learningObjective": "daily routine sequencing",
+      "localizedContent": {
+        "en": {
+          "prompt": "Put the day in order.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Wake up",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Brush teeth",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Eat breakfast",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Go to school",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what comes first."
+        },
+        "vi": {
+          "prompt": "Sap xep mot ngay theo thu tu.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Thuc day",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Danh rang",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "An sang",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Den truong",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao den truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao den truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "explorer",
+        "skillIds": [
+          "logic.pattern.basic",
+          "science.cause_effect"
+        ],
+        "engine": "sequence",
+        "generatedBy": "games_16_30_generator",
+        "generatorSeed": 20260720,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [
+        "asset-daily_routine-0"
+      ],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "dr-lv033",
+      "gameId": "daily_routine",
+      "levelNumber": 33,
+      "difficulty": 3,
+      "learningObjective": "daily routine sequencing",
+      "localizedContent": {
+        "en": {
+          "prompt": "Put the day in order.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Wake up",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Brush teeth",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Eat breakfast",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Go to school",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what comes first."
+        },
+        "vi": {
+          "prompt": "Sap xep mot ngay theo thu tu.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Thuc day",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Danh rang",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "An sang",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Den truong",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao den truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao den truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "explorer",
+        "skillIds": [
+          "logic.pattern.basic",
+          "science.cause_effect"
+        ],
+        "engine": "sequence",
+        "generatedBy": "games_16_30_generator",
+        "generatorSeed": 20260720,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [
+        "asset-daily_routine-1"
+      ],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "dr-lv034",
+      "gameId": "daily_routine",
+      "levelNumber": 34,
+      "difficulty": 3,
+      "learningObjective": "daily routine sequencing",
+      "localizedContent": {
+        "en": {
+          "prompt": "Put the day in order.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Wake up",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Brush teeth",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Eat breakfast",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Go to school",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what comes first."
+        },
+        "vi": {
+          "prompt": "Sap xep mot ngay theo thu tu.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Thuc day",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Danh rang",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "An sang",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Den truong",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao den truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao den truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "explorer",
+        "skillIds": [
+          "logic.pattern.basic",
+          "science.cause_effect"
+        ],
+        "engine": "sequence",
+        "generatedBy": "games_16_30_generator",
+        "generatorSeed": 20260720,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [
+        "asset-daily_routine-2"
+      ],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "dr-lv035",
+      "gameId": "daily_routine",
+      "levelNumber": 35,
+      "difficulty": 3,
+      "learningObjective": "daily routine sequencing",
+      "localizedContent": {
+        "en": {
+          "prompt": "Put the day in order.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Wake up",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Brush teeth",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Eat breakfast",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Go to school",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what comes first."
+        },
+        "vi": {
+          "prompt": "Sap xep mot ngay theo thu tu.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Thuc day",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Danh rang",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "An sang",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Den truong",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao den truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao den truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "explorer",
+        "skillIds": [
+          "logic.pattern.basic",
+          "science.cause_effect"
+        ],
+        "engine": "sequence",
+        "generatedBy": "games_16_30_generator",
+        "generatorSeed": 20260720,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [
+        "asset-daily_routine-3"
+      ],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "dr-lv036",
+      "gameId": "daily_routine",
+      "levelNumber": 36,
+      "difficulty": 3,
+      "learningObjective": "daily routine sequencing",
+      "localizedContent": {
+        "en": {
+          "prompt": "Put the day in order.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Wake up",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Brush teeth",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Eat breakfast",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Go to school",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what comes first."
+        },
+        "vi": {
+          "prompt": "Sap xep mot ngay theo thu tu.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Thuc day",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Danh rang",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "An sang",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Den truong",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao den truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao den truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "explorer",
+        "skillIds": [
+          "logic.pattern.basic",
+          "science.cause_effect"
+        ],
+        "engine": "sequence",
+        "generatedBy": "games_16_30_generator",
+        "generatorSeed": 20260720,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [
+        "asset-daily_routine-4"
+      ],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "dr-lv037",
+      "gameId": "daily_routine",
+      "levelNumber": 37,
+      "difficulty": 3,
+      "learningObjective": "daily routine sequencing",
+      "localizedContent": {
+        "en": {
+          "prompt": "Put the day in order.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Wake up",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Brush teeth",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Eat breakfast",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Go to school",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what comes first."
+        },
+        "vi": {
+          "prompt": "Sap xep mot ngay theo thu tu.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Thuc day",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Danh rang",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "An sang",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Den truong",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao den truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao den truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "explorer",
+        "skillIds": [
+          "logic.pattern.basic",
+          "science.cause_effect"
+        ],
+        "engine": "sequence",
+        "generatedBy": "games_16_30_generator",
+        "generatorSeed": 20260720,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [
+        "asset-daily_routine-5"
+      ],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "dr-lv038",
+      "gameId": "daily_routine",
+      "levelNumber": 38,
+      "difficulty": 3,
+      "learningObjective": "daily routine sequencing",
+      "localizedContent": {
+        "en": {
+          "prompt": "Put the day in order.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Wake up",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Brush teeth",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Eat breakfast",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Go to school",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what comes first."
+        },
+        "vi": {
+          "prompt": "Sap xep mot ngay theo thu tu.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Thuc day",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Danh rang",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "An sang",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Den truong",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao den truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao den truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "explorer",
+        "skillIds": [
+          "logic.pattern.basic",
+          "science.cause_effect"
+        ],
+        "engine": "sequence",
+        "generatedBy": "games_16_30_generator",
+        "generatorSeed": 20260720,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [
+        "asset-daily_routine-6"
+      ],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "dr-lv039",
+      "gameId": "daily_routine",
+      "levelNumber": 39,
+      "difficulty": 3,
+      "learningObjective": "daily routine sequencing",
+      "localizedContent": {
+        "en": {
+          "prompt": "Put the day in order.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Wake up",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Brush teeth",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Eat breakfast",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Go to school",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what comes first."
+        },
+        "vi": {
+          "prompt": "Sap xep mot ngay theo thu tu.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Thuc day",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Danh rang",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "An sang",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Den truong",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao den truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao den truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "explorer",
+        "skillIds": [
+          "logic.pattern.basic",
+          "science.cause_effect"
+        ],
+        "engine": "sequence",
+        "generatedBy": "games_16_30_generator",
+        "generatorSeed": 20260720,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [
+        "asset-daily_routine-7"
+      ],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "dr-lv040",
+      "gameId": "daily_routine",
+      "levelNumber": 40,
+      "difficulty": 3,
+      "learningObjective": "daily routine sequencing",
+      "localizedContent": {
+        "en": {
+          "prompt": "Put the day in order.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Wake up",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Brush teeth",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Eat breakfast",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Go to school",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what comes first."
+        },
+        "vi": {
+          "prompt": "Sap xep mot ngay theo thu tu.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Thuc day",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Danh rang",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "An sang",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Den truong",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao den truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao den truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "explorer",
+        "skillIds": [
+          "logic.pattern.basic",
+          "science.cause_effect"
+        ],
+        "engine": "sequence",
+        "generatedBy": "games_16_30_generator",
+        "generatorSeed": 20260720,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [
+        "asset-daily_routine-0"
+      ],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "dr-lv041",
+      "gameId": "daily_routine",
+      "levelNumber": 41,
+      "difficulty": 5,
+      "learningObjective": "daily routine sequencing",
+      "localizedContent": {
+        "en": {
+          "prompt": "Put the day in order.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Wake up",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Brush teeth",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Eat breakfast",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Go to school",
+              "type": "text"
+            },
+            {
+              "id": "s4",
+              "content": "Bedtime",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what comes first."
+        },
+        "vi": {
+          "prompt": "Sap xep mot ngay theo thu tu.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Thuc day",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Danh rang",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "An sang",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Den truong",
+              "type": "text"
+            },
+            {
+              "id": "s4",
+              "content": "Di ngu",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao den truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao den truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "master",
+        "skillIds": [
+          "logic.pattern.basic",
+          "science.cause_effect"
+        ],
+        "engine": "sequence",
+        "generatedBy": "games_16_30_generator",
+        "generatorSeed": 20260720,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [
+        "asset-daily_routine-1"
+      ],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "dr-lv042",
+      "gameId": "daily_routine",
+      "levelNumber": 42,
+      "difficulty": 5,
+      "learningObjective": "daily routine sequencing",
+      "localizedContent": {
+        "en": {
+          "prompt": "Put the day in order.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Wake up",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Brush teeth",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Eat breakfast",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Go to school",
+              "type": "text"
+            },
+            {
+              "id": "s4",
+              "content": "Bedtime",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what comes first."
+        },
+        "vi": {
+          "prompt": "Sap xep mot ngay theo thu tu.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Thuc day",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Danh rang",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "An sang",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Den truong",
+              "type": "text"
+            },
+            {
+              "id": "s4",
+              "content": "Di ngu",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao den truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao den truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "master",
+        "skillIds": [
+          "logic.pattern.basic",
+          "science.cause_effect"
+        ],
+        "engine": "sequence",
+        "generatedBy": "games_16_30_generator",
+        "generatorSeed": 20260720,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [
+        "asset-daily_routine-2"
+      ],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "dr-lv043",
+      "gameId": "daily_routine",
+      "levelNumber": 43,
+      "difficulty": 5,
+      "learningObjective": "daily routine sequencing",
+      "localizedContent": {
+        "en": {
+          "prompt": "Put the day in order.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Wake up",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Brush teeth",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Eat breakfast",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Go to school",
+              "type": "text"
+            },
+            {
+              "id": "s4",
+              "content": "Bedtime",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what comes first."
+        },
+        "vi": {
+          "prompt": "Sap xep mot ngay theo thu tu.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Thuc day",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Danh rang",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "An sang",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Den truong",
+              "type": "text"
+            },
+            {
+              "id": "s4",
+              "content": "Di ngu",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao den truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao den truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "master",
+        "skillIds": [
+          "logic.pattern.basic",
+          "science.cause_effect"
+        ],
+        "engine": "sequence",
+        "generatedBy": "games_16_30_generator",
+        "generatorSeed": 20260720,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [
+        "asset-daily_routine-3"
+      ],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "dr-lv044",
+      "gameId": "daily_routine",
+      "levelNumber": 44,
+      "difficulty": 5,
+      "learningObjective": "daily routine sequencing",
+      "localizedContent": {
+        "en": {
+          "prompt": "Put the day in order.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Wake up",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Brush teeth",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Eat breakfast",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Go to school",
+              "type": "text"
+            },
+            {
+              "id": "s4",
+              "content": "Bedtime",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what comes first."
+        },
+        "vi": {
+          "prompt": "Sap xep mot ngay theo thu tu.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Thuc day",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Danh rang",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "An sang",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Den truong",
+              "type": "text"
+            },
+            {
+              "id": "s4",
+              "content": "Di ngu",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao den truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao den truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "master",
+        "skillIds": [
+          "logic.pattern.basic",
+          "science.cause_effect"
+        ],
+        "engine": "sequence",
+        "generatedBy": "games_16_30_generator",
+        "generatorSeed": 20260720,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [
+        "asset-daily_routine-4"
+      ],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "dr-lv045",
+      "gameId": "daily_routine",
+      "levelNumber": 45,
+      "difficulty": 5,
+      "learningObjective": "daily routine sequencing",
+      "localizedContent": {
+        "en": {
+          "prompt": "Put the day in order.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Wake up",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Brush teeth",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Eat breakfast",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Go to school",
+              "type": "text"
+            },
+            {
+              "id": "s4",
+              "content": "Bedtime",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what comes first."
+        },
+        "vi": {
+          "prompt": "Sap xep mot ngay theo thu tu.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Thuc day",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Danh rang",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "An sang",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Den truong",
+              "type": "text"
+            },
+            {
+              "id": "s4",
+              "content": "Di ngu",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao den truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao den truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "master",
+        "skillIds": [
+          "logic.pattern.basic",
+          "science.cause_effect"
+        ],
+        "engine": "sequence",
+        "generatedBy": "games_16_30_generator",
+        "generatorSeed": 20260720,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [
+        "asset-daily_routine-5"
+      ],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "dr-lv046",
+      "gameId": "daily_routine",
+      "levelNumber": 46,
+      "difficulty": 5,
+      "learningObjective": "daily routine sequencing",
+      "localizedContent": {
+        "en": {
+          "prompt": "Put the day in order.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Wake up",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Brush teeth",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Eat breakfast",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Go to school",
+              "type": "text"
+            },
+            {
+              "id": "s4",
+              "content": "Bedtime",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what comes first."
+        },
+        "vi": {
+          "prompt": "Sap xep mot ngay theo thu tu.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Thuc day",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Danh rang",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "An sang",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Den truong",
+              "type": "text"
+            },
+            {
+              "id": "s4",
+              "content": "Di ngu",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao den truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao den truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "master",
+        "skillIds": [
+          "logic.pattern.basic",
+          "science.cause_effect"
+        ],
+        "engine": "sequence",
+        "generatedBy": "games_16_30_generator",
+        "generatorSeed": 20260720,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [
+        "asset-daily_routine-6"
+      ],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "dr-lv047",
+      "gameId": "daily_routine",
+      "levelNumber": 47,
+      "difficulty": 5,
+      "learningObjective": "daily routine sequencing",
+      "localizedContent": {
+        "en": {
+          "prompt": "Put the day in order.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Wake up",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Brush teeth",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Eat breakfast",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Go to school",
+              "type": "text"
+            },
+            {
+              "id": "s4",
+              "content": "Bedtime",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what comes first."
+        },
+        "vi": {
+          "prompt": "Sap xep mot ngay theo thu tu.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Thuc day",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Danh rang",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "An sang",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Den truong",
+              "type": "text"
+            },
+            {
+              "id": "s4",
+              "content": "Di ngu",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao den truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao den truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "master",
+        "skillIds": [
+          "logic.pattern.basic",
+          "science.cause_effect"
+        ],
+        "engine": "sequence",
+        "generatedBy": "games_16_30_generator",
+        "generatorSeed": 20260720,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [
+        "asset-daily_routine-7"
+      ],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "dr-lv048",
+      "gameId": "daily_routine",
+      "levelNumber": 48,
+      "difficulty": 5,
+      "learningObjective": "daily routine sequencing",
+      "localizedContent": {
+        "en": {
+          "prompt": "Put the day in order.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Wake up",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Brush teeth",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Eat breakfast",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Go to school",
+              "type": "text"
+            },
+            {
+              "id": "s4",
+              "content": "Bedtime",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what comes first."
+        },
+        "vi": {
+          "prompt": "Sap xep mot ngay theo thu tu.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Thuc day",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Danh rang",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "An sang",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Den truong",
+              "type": "text"
+            },
+            {
+              "id": "s4",
+              "content": "Di ngu",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao den truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao den truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "master",
+        "skillIds": [
+          "logic.pattern.basic",
+          "science.cause_effect"
+        ],
+        "engine": "sequence",
+        "generatedBy": "games_16_30_generator",
+        "generatorSeed": 20260720,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [
+        "asset-daily_routine-0"
+      ],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "dr-lv049",
+      "gameId": "daily_routine",
+      "levelNumber": 49,
+      "difficulty": 5,
+      "learningObjective": "daily routine sequencing",
+      "localizedContent": {
+        "en": {
+          "prompt": "Put the day in order.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Wake up",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Brush teeth",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Eat breakfast",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Go to school",
+              "type": "text"
+            },
+            {
+              "id": "s4",
+              "content": "Bedtime",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what comes first."
+        },
+        "vi": {
+          "prompt": "Sap xep mot ngay theo thu tu.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Thuc day",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Danh rang",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "An sang",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Den truong",
+              "type": "text"
+            },
+            {
+              "id": "s4",
+              "content": "Di ngu",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao den truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao den truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "master",
+        "skillIds": [
+          "logic.pattern.basic",
+          "science.cause_effect"
+        ],
+        "engine": "sequence",
+        "generatedBy": "games_16_30_generator",
+        "generatorSeed": 20260720,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [
+        "asset-daily_routine-1"
+      ],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "dr-lv050",
+      "gameId": "daily_routine",
+      "levelNumber": 50,
+      "difficulty": 5,
+      "learningObjective": "daily routine sequencing",
+      "localizedContent": {
+        "en": {
+          "prompt": "Put the day in order.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Wake up",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Brush teeth",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Eat breakfast",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Go to school",
+              "type": "text"
+            },
+            {
+              "id": "s4",
+              "content": "Bedtime",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what comes first."
+        },
+        "vi": {
+          "prompt": "Sap xep mot ngay theo thu tu.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Thuc day",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Danh rang",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "An sang",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Den truong",
+              "type": "text"
+            },
+            {
+              "id": "s4",
+              "content": "Di ngu",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao den truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao den truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "master",
+        "skillIds": [
+          "logic.pattern.basic",
+          "science.cause_effect"
+        ],
+        "engine": "sequence",
+        "generatedBy": "games_16_30_generator",
+        "generatorSeed": 20260720,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [
+        "asset-daily_routine-2"
+      ],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "dr-lv051",
+      "gameId": "daily_routine",
+      "levelNumber": 51,
+      "difficulty": 5,
+      "learningObjective": "daily routine sequencing",
+      "localizedContent": {
+        "en": {
+          "prompt": "Put the day in order.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Wake up",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Brush teeth",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Eat breakfast",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Go to school",
+              "type": "text"
+            },
+            {
+              "id": "s4",
+              "content": "Bedtime",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what comes first."
+        },
+        "vi": {
+          "prompt": "Sap xep mot ngay theo thu tu.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Thuc day",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Danh rang",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "An sang",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Den truong",
+              "type": "text"
+            },
+            {
+              "id": "s4",
+              "content": "Di ngu",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao den truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao den truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "master",
+        "skillIds": [
+          "logic.pattern.basic",
+          "science.cause_effect"
+        ],
+        "engine": "sequence",
+        "generatedBy": "games_16_30_generator",
+        "generatorSeed": 20260720,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [
+        "asset-daily_routine-3"
+      ],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "dr-lv052",
+      "gameId": "daily_routine",
+      "levelNumber": 52,
+      "difficulty": 5,
+      "learningObjective": "daily routine sequencing",
+      "localizedContent": {
+        "en": {
+          "prompt": "Put the day in order.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Wake up",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Brush teeth",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Eat breakfast",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Go to school",
+              "type": "text"
+            },
+            {
+              "id": "s4",
+              "content": "Bedtime",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what comes first."
+        },
+        "vi": {
+          "prompt": "Sap xep mot ngay theo thu tu.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Thuc day",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Danh rang",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "An sang",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Den truong",
+              "type": "text"
+            },
+            {
+              "id": "s4",
+              "content": "Di ngu",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao den truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao den truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "master",
+        "skillIds": [
+          "logic.pattern.basic",
+          "science.cause_effect"
+        ],
+        "engine": "sequence",
+        "generatedBy": "games_16_30_generator",
+        "generatorSeed": 20260720,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [
+        "asset-daily_routine-4"
+      ],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "dr-lv053",
+      "gameId": "daily_routine",
+      "levelNumber": 53,
+      "difficulty": 5,
+      "learningObjective": "daily routine sequencing",
+      "localizedContent": {
+        "en": {
+          "prompt": "Put the day in order.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Wake up",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Brush teeth",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Eat breakfast",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Go to school",
+              "type": "text"
+            },
+            {
+              "id": "s4",
+              "content": "Bedtime",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what comes first."
+        },
+        "vi": {
+          "prompt": "Sap xep mot ngay theo thu tu.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Thuc day",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Danh rang",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "An sang",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Den truong",
+              "type": "text"
+            },
+            {
+              "id": "s4",
+              "content": "Di ngu",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao den truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao den truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "master",
+        "skillIds": [
+          "logic.pattern.basic",
+          "science.cause_effect"
+        ],
+        "engine": "sequence",
+        "generatedBy": "games_16_30_generator",
+        "generatorSeed": 20260720,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [
+        "asset-daily_routine-5"
+      ],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "dr-lv054",
+      "gameId": "daily_routine",
+      "levelNumber": 54,
+      "difficulty": 5,
+      "learningObjective": "daily routine sequencing",
+      "localizedContent": {
+        "en": {
+          "prompt": "Put the day in order.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Wake up",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Brush teeth",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Eat breakfast",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Go to school",
+              "type": "text"
+            },
+            {
+              "id": "s4",
+              "content": "Bedtime",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what comes first."
+        },
+        "vi": {
+          "prompt": "Sap xep mot ngay theo thu tu.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Thuc day",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Danh rang",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "An sang",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Den truong",
+              "type": "text"
+            },
+            {
+              "id": "s4",
+              "content": "Di ngu",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao den truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao den truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "master",
+        "skillIds": [
+          "logic.pattern.basic",
+          "science.cause_effect"
+        ],
+        "engine": "sequence",
+        "generatedBy": "games_16_30_generator",
+        "generatorSeed": 20260720,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [
+        "asset-daily_routine-6"
+      ],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "dr-lv055",
+      "gameId": "daily_routine",
+      "levelNumber": 55,
+      "difficulty": 5,
+      "learningObjective": "daily routine sequencing",
+      "localizedContent": {
+        "en": {
+          "prompt": "Put the day in order.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Wake up",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Brush teeth",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Eat breakfast",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Go to school",
+              "type": "text"
+            },
+            {
+              "id": "s4",
+              "content": "Bedtime",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what comes first."
+        },
+        "vi": {
+          "prompt": "Sap xep mot ngay theo thu tu.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Thuc day",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Danh rang",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "An sang",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Den truong",
+              "type": "text"
+            },
+            {
+              "id": "s4",
+              "content": "Di ngu",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao den truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao den truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "master",
+        "skillIds": [
+          "logic.pattern.basic",
+          "science.cause_effect"
+        ],
+        "engine": "sequence",
+        "generatedBy": "games_16_30_generator",
+        "generatorSeed": 20260720,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [
+        "asset-daily_routine-7"
+      ],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "dr-lv056",
+      "gameId": "daily_routine",
+      "levelNumber": 56,
+      "difficulty": 5,
+      "learningObjective": "daily routine sequencing",
+      "localizedContent": {
+        "en": {
+          "prompt": "Put the day in order.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Wake up",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Brush teeth",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Eat breakfast",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Go to school",
+              "type": "text"
+            },
+            {
+              "id": "s4",
+              "content": "Bedtime",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what comes first."
+        },
+        "vi": {
+          "prompt": "Sap xep mot ngay theo thu tu.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Thuc day",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Danh rang",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "An sang",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Den truong",
+              "type": "text"
+            },
+            {
+              "id": "s4",
+              "content": "Di ngu",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao den truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao den truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "master",
+        "skillIds": [
+          "logic.pattern.basic",
+          "science.cause_effect"
+        ],
+        "engine": "sequence",
+        "generatedBy": "games_16_30_generator",
+        "generatorSeed": 20260720,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [
+        "asset-daily_routine-0"
+      ],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "dr-lv057",
+      "gameId": "daily_routine",
+      "levelNumber": 57,
+      "difficulty": 5,
+      "learningObjective": "daily routine sequencing",
+      "localizedContent": {
+        "en": {
+          "prompt": "Put the day in order.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Wake up",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Brush teeth",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Eat breakfast",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Go to school",
+              "type": "text"
+            },
+            {
+              "id": "s4",
+              "content": "Bedtime",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what comes first."
+        },
+        "vi": {
+          "prompt": "Sap xep mot ngay theo thu tu.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Thuc day",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Danh rang",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "An sang",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Den truong",
+              "type": "text"
+            },
+            {
+              "id": "s4",
+              "content": "Di ngu",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao den truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao den truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "master",
+        "skillIds": [
+          "logic.pattern.basic",
+          "science.cause_effect"
+        ],
+        "engine": "sequence",
+        "generatedBy": "games_16_30_generator",
+        "generatorSeed": 20260720,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [
+        "asset-daily_routine-1"
+      ],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "dr-lv058",
+      "gameId": "daily_routine",
+      "levelNumber": 58,
+      "difficulty": 5,
+      "learningObjective": "daily routine sequencing",
+      "localizedContent": {
+        "en": {
+          "prompt": "Put the day in order.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Wake up",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Brush teeth",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Eat breakfast",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Go to school",
+              "type": "text"
+            },
+            {
+              "id": "s4",
+              "content": "Bedtime",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what comes first."
+        },
+        "vi": {
+          "prompt": "Sap xep mot ngay theo thu tu.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Thuc day",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Danh rang",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "An sang",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Den truong",
+              "type": "text"
+            },
+            {
+              "id": "s4",
+              "content": "Di ngu",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao den truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao den truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "master",
+        "skillIds": [
+          "logic.pattern.basic",
+          "science.cause_effect"
+        ],
+        "engine": "sequence",
+        "generatedBy": "games_16_30_generator",
+        "generatorSeed": 20260720,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [
+        "asset-daily_routine-2"
+      ],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "dr-lv059",
+      "gameId": "daily_routine",
+      "levelNumber": 59,
+      "difficulty": 5,
+      "learningObjective": "daily routine sequencing",
+      "localizedContent": {
+        "en": {
+          "prompt": "Put the day in order.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Wake up",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Brush teeth",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Eat breakfast",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Go to school",
+              "type": "text"
+            },
+            {
+              "id": "s4",
+              "content": "Bedtime",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what comes first."
+        },
+        "vi": {
+          "prompt": "Sap xep mot ngay theo thu tu.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Thuc day",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Danh rang",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "An sang",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Den truong",
+              "type": "text"
+            },
+            {
+              "id": "s4",
+              "content": "Di ngu",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao den truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao den truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "master",
+        "skillIds": [
+          "logic.pattern.basic",
+          "science.cause_effect"
+        ],
+        "engine": "sequence",
+        "generatedBy": "games_16_30_generator",
+        "generatorSeed": 20260720,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [
+        "asset-daily_routine-3"
+      ],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "dr-lv060",
+      "gameId": "daily_routine",
+      "levelNumber": 60,
+      "difficulty": 5,
+      "learningObjective": "daily routine sequencing",
+      "localizedContent": {
+        "en": {
+          "prompt": "Put the day in order.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Wake up",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Brush teeth",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Eat breakfast",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Go to school",
+              "type": "text"
+            },
+            {
+              "id": "s4",
+              "content": "Bedtime",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what comes first."
+        },
+        "vi": {
+          "prompt": "Sap xep mot ngay theo thu tu.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Thuc day",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Danh rang",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "An sang",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Den truong",
+              "type": "text"
+            },
+            {
+              "id": "s4",
+              "content": "Di ngu",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao den truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao den truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "master",
+        "skillIds": [
+          "logic.pattern.basic",
+          "science.cause_effect"
+        ],
+        "engine": "sequence",
+        "generatedBy": "games_16_30_generator",
+        "generatorSeed": 20260720,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [
+        "asset-daily_routine-4"
+      ],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    }
+  ]
+}

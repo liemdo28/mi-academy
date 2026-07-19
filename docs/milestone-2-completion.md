@@ -5,6 +5,10 @@ Branch: `integration/m2-games-15-release-candidate`
 Base branch: `origin/integration/m2-games-15-complete`
 Base SHA: `25eb9fc9c2f11203063208c3b911d2c286b53e29`
 
+Historical note: this file records the Milestone 2 branch only. The current
+Milestone 3 branch implements Games 16-30; see
+`docs/milestone-3-completion.md` and `docs/game-catalog.md`.
+
 ## Executive Summary
 
 Verdict: **Games 1-15 Engineering Complete — External Release Gates Pending**

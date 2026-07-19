@@ -685,6 +685,21 @@ def validate_game_file(path: Path, game_id: str) -> list[str]:
         "number_balance": 60,
         "logic_detective": 45,
         "story_steps": 45,
+        "picture_detective": 60,
+        "color_builder": 60,
+        "animal_homes": 60,
+        "daily_routine": 60,
+        "healthy_foods": 60,
+        "letter_hunt": 75,
+        "number_train": 75,
+        "emotion_match": 60,
+        "puzzle_parts": 60,
+        "odd_one_out": 75,
+        "opposites": 60,
+        "weather_today": 60,
+        "memory_journey": 75,
+        "category_expert": 75,
+        "build_the_story": 75,
     }
     if game_id in minimums and len(levels) < minimums[game_id]:
         errors.append(
@@ -744,28 +759,54 @@ def validate_game_file(path: Path, game_id: str) -> list[str]:
                     level.get("levelNumber", i + 1),
                 )
             )
-        elif game_id in {"category_collector", "logic_detective"}:
+        elif game_id in {
+            "category_collector",
+            "logic_detective",
+            "healthy_foods",
+            "odd_one_out",
+            "category_expert",
+        }:
             errors.extend(
                 validate_multi_select_content(
                     level.get("localizedContent", {}),
                     level.get("levelNumber", i + 1),
                 )
             )
-        elif game_id in {"pattern_parade", "story_steps"}:
+        elif game_id in {
+            "pattern_parade",
+            "story_steps",
+            "daily_routine",
+            "number_train",
+            "memory_journey",
+            "build_the_story",
+        }:
             errors.extend(
                 validate_sequence_content(
                     level.get("localizedContent", {}),
                     level.get("levelNumber", i + 1),
                 )
             )
-        elif game_id in {"shape_builder", "word_sorter"}:
+        elif game_id in {
+            "shape_builder",
+            "word_sorter",
+            "color_builder",
+            "letter_hunt",
+            "puzzle_parts",
+        }:
             errors.extend(
                 validate_placement_content(
                     level.get("localizedContent", {}),
                     level.get("levelNumber", i + 1),
                 )
             )
-        elif game_id == "number_balance":
+        elif game_id in {
+            "number_balance",
+            "picture_detective",
+            "animal_homes",
+            "emotion_match",
+            "opposites",
+            "weather_today",
+        }:
             errors.extend(
                 validate_matching_content(
                     level.get("localizedContent", {}),
@@ -904,6 +945,96 @@ def main():
         / "assets"
         / "levels"
         / "story_steps.json",
+        "picture_detective": PROJECT_ROOT
+        / "apps"
+        / "mobile"
+        / "assets"
+        / "levels"
+        / "picture_detective.json",
+        "color_builder": PROJECT_ROOT
+        / "apps"
+        / "mobile"
+        / "assets"
+        / "levels"
+        / "color_builder.json",
+        "animal_homes": PROJECT_ROOT
+        / "apps"
+        / "mobile"
+        / "assets"
+        / "levels"
+        / "animal_homes.json",
+        "daily_routine": PROJECT_ROOT
+        / "apps"
+        / "mobile"
+        / "assets"
+        / "levels"
+        / "daily_routine.json",
+        "healthy_foods": PROJECT_ROOT
+        / "apps"
+        / "mobile"
+        / "assets"
+        / "levels"
+        / "healthy_foods.json",
+        "letter_hunt": PROJECT_ROOT
+        / "apps"
+        / "mobile"
+        / "assets"
+        / "levels"
+        / "letter_hunt.json",
+        "number_train": PROJECT_ROOT
+        / "apps"
+        / "mobile"
+        / "assets"
+        / "levels"
+        / "number_train.json",
+        "emotion_match": PROJECT_ROOT
+        / "apps"
+        / "mobile"
+        / "assets"
+        / "levels"
+        / "emotion_match.json",
+        "puzzle_parts": PROJECT_ROOT
+        / "apps"
+        / "mobile"
+        / "assets"
+        / "levels"
+        / "puzzle_parts.json",
+        "odd_one_out": PROJECT_ROOT
+        / "apps"
+        / "mobile"
+        / "assets"
+        / "levels"
+        / "odd_one_out.json",
+        "opposites": PROJECT_ROOT
+        / "apps"
+        / "mobile"
+        / "assets"
+        / "levels"
+        / "opposites.json",
+        "weather_today": PROJECT_ROOT
+        / "apps"
+        / "mobile"
+        / "assets"
+        / "levels"
+        / "weather_today.json",
+        "memory_journey": PROJECT_ROOT
+        / "apps"
+        / "mobile"
+        / "assets"
+        / "levels"
+        / "memory_journey.json",
+        "category_expert": PROJECT_ROOT
+        / "apps"
+        / "mobile"
+        / "assets"
+        / "levels"
+        / "category_expert.json",
+        "build_the_story": PROJECT_ROOT
+        / "apps"
+        / "mobile"
+        / "assets"
+        / "levels"
+        / "build_the_story.json",
     }
 
     all_errors = []

@@ -4,7 +4,7 @@
 
 MI Academy là ứng dụng học tập kết hợp trò chơi dành cho trẻ 5–12 tuổi, tập trung vào toán, ngôn ngữ, tư duy logic, sáng tạo và kỹ năng sống.
 
-## Current verified status (2026-07-19)
+## Current verified status (2026-07-20)
 
 Do not treat the phased plan below as a completion claim — it is the
 original design roadmap. For what is actually built, tested, and verified
@@ -17,25 +17,25 @@ in the current codebase, see:
   Milestone 1's delivered scope, architecture, test coverage, and honest
   remaining limitations.
 - [docs/game-catalog.md](./docs/game-catalog.md) — real per-game status
-  (15 of 30 target games exist).
+  (30 of 30 Milestone 3 target games exist).
 
 Quick facts for the release-candidate branch
-`integration/m2-games-15-release-candidate`: 15 playable games with local
-persistence and 665 production levels (`python tools/release_counts.py
---json`). The canonical local gates are `flutter analyze`, `flutter test`,
+`integration/m3-games-30`: 30 playable games with local persistence and
+1655 production levels (`python tools/release_counts.py --json`). The
+canonical local gates are `flutter analyze`, `flutter test`,
 shared engine format/analyze/tests, `ruff format --check .`, `ruff check .`,
 `mypy .`, `pytest`, content schema, malformed-fixture, content-safety,
 solvability, and ARB parity checks. Android `applicationId` is
 `com.liemteam.miacademy`. The final CI run must be taken from the release
 candidate handoff for the exact branch SHA; older run IDs are historical
-only. Games 1-15 engineering is complete; human educational review,
-production signing/Play release, Games 16-30, dependency-vulnerability
-triage, and broad localization cleanup remain pending.
+only. Games 1-30 engineering is implemented; human educational review,
+production signing/Play release, dependency-vulnerability triage, and broad
+localization cleanup remain pending.
 
 **Shared game engines** (`packages/mi_game_engines/`, see
 [docs/game-engine-architecture.md](./docs/game-engine-architecture.md)):
 all four Milestone 1 WS5 engines are now real and tested -- Matching,
-Sequence, Placement, and Multi-select -- 165 passing tests. Games 9-15
+Sequence, Placement, and Multi-select -- 165 passing tests. Games 9-30
 consume those shared engines through the public `mi_game_engines` barrel.
 
 ## Tài liệu phát triển

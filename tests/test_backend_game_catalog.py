@@ -12,7 +12,7 @@ import infrastructure.seed.seed_data as seed_data
 from infrastructure.seed.seed_data import seed_built_games
 
 
-def test_built_game_catalog_includes_games_1_through_15():
+def test_built_game_catalog_includes_games_1_through_30():
     assert BUILT_GAME_TYPES == (
         "word_builder",
         "sound_match",
@@ -29,9 +29,24 @@ def test_built_game_catalog_includes_games_1_through_15():
         "number_balance",
         "logic_detective",
         "story_steps",
+        "picture_detective",
+        "color_builder",
+        "animal_homes",
+        "daily_routine",
+        "healthy_foods",
+        "letter_hunt",
+        "number_train",
+        "emotion_match",
+        "puzzle_parts",
+        "odd_one_out",
+        "opposites",
+        "weather_today",
+        "memory_journey",
+        "category_expert",
+        "build_the_story",
     )
-    assert len({entry.id for entry in BUILT_GAME_CATALOG}) == 15
-    assert len(set(BUILT_GAME_TYPES)) == 15
+    assert len({entry.id for entry in BUILT_GAME_CATALOG}) == 30
+    assert len(set(BUILT_GAME_TYPES)) == 30
     assert all(entry.supported_skills for entry in BUILT_GAME_CATALOG)
 
 
@@ -53,7 +68,7 @@ def test_seed_built_games_is_idempotent():
                 result = await db.execute(select(Game.game_type))
                 game_types = sorted(result.scalars().all())
 
-                assert len(first) == 15
+                assert len(first) == 30
                 assert second == []
                 assert game_types == sorted(BUILT_GAME_TYPES)
         finally:
@@ -215,6 +230,43 @@ def test_games_7_8_migration_inserts_rows_for_fresh_and_existing_databases():
 def test_games_9_15_migration_inserts_rows_idempotently():
     migration = importlib.import_module(
         "apps.api.alembic.versions.c9f1a7b2d615_seed_games_9_15"
+    )
+    engine = sa.create_engine("sqlite:///:memory:", future=True)
+    games = sa.Table(
+        "games",
+        sa.MetaData(),
+        sa.Column("id", sa.String(length=36), primary_key=True),
+        sa.Column("name", sa.String(length=100), nullable=False),
+        sa.Column("game_type", sa.String(length=50), nullable=False),
+        sa.Column("age_min", sa.Integer(), nullable=False),
+        sa.Column("age_max", sa.Integer(), nullable=False),
+        sa.Column("config_json", sa.Text(), nullable=True),
+        sa.Column("is_active", sa.Boolean(), nullable=False),
+    )
+    games.create(engine)
+
+    with engine.begin() as conn:
+        original_get_bind = migration.op.get_bind
+        migration.op.get_bind = lambda: conn
+        try:
+            migration.upgrade()
+            migration.upgrade()
+        finally:
+            migration.op.get_bind = original_get_bind
+
+        rows = conn.execute(
+            sa.select(games.c.game_type, games.c.config_json).order_by(
+                games.c.game_type
+            )
+        ).all()
+
+    assert [row.game_type for row in rows] == sorted(migration.GAME_TYPES)
+    assert all("supportedSkills" in row.config_json for row in rows)
+
+
+def test_games_16_30_migration_inserts_rows_idempotently():
+    migration = importlib.import_module(
+        "apps.api.alembic.versions.d2a4f8e9b730_seed_games_16_30"
     )
     engine = sa.create_engine("sqlite:///:memory:", future=True)
     games = sa.Table(

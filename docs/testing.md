@@ -319,3 +319,25 @@ scanners with JSON artifacts and a mandatory step-summary reporter. Android
 production signing is split into a readiness job and a signed-artifact job;
 when signing secrets are absent, the signed-artifact job is skipped and no
 Play-upload-ready artifact is claimed.
+
+### Games 16-30 Milestone 3 verification
+
+Updated 2026-07-20 on `integration/m3-games-30`:
+
+| Command | Result |
+|---|---|
+| `flutter test` (`apps/mobile`) | PASS locally, 130 passed / 6 Windows golden skips |
+| `apps/mobile/integration_test/games_16_30_flow_test.dart` | Covers one offline completion-and-queue scenario for every Game 16-30 entry |
+| `flutter test` (`packages/mi_game_engines`) | PASS locally, 165 passed |
+| `python tools/release_counts.py --json` | PASS, 30 games / 1655 production levels |
+| `python tools/content_schema_validator.py` | PASS for Games 1-30 |
+| `python tools/content_schema_validator.py --check-malformed` | PASS, 14 malformed fixtures rejected |
+| `python tools/content_validator/validate_content.py` | PASS for Games 1-30 |
+| `python tools/level_validator/solve_levels.py` | PASS, all 1655 production levels solvable |
+| `python tools/content_safety_audit.py --json` | PASS, 0 findings |
+| `python tools/localization_audit.py` | PASS ARB parity; hardcoded-string cleanup warning remains |
+
+The new Android integration test file intentionally reuses the existing
+offline queue harness: it validates launch, completion, and queued progress
+for the first level of each new game without adding backend calls inside
+game widgets.

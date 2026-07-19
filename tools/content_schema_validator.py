@@ -344,11 +344,26 @@ def validate_engine_backed_content(level: dict) -> list[str]:
     engine_by_game = {
         "category_collector": "multi_select",
         "logic_detective": "multi_select",
+        "healthy_foods": "multi_select",
+        "odd_one_out": "multi_select",
+        "category_expert": "multi_select",
         "pattern_parade": "sequence",
         "story_steps": "sequence",
+        "daily_routine": "sequence",
+        "number_train": "sequence",
+        "memory_journey": "sequence",
+        "build_the_story": "sequence",
         "shape_builder": "placement",
         "word_sorter": "placement",
+        "color_builder": "placement",
+        "letter_hunt": "placement",
+        "puzzle_parts": "placement",
         "number_balance": "matching",
+        "picture_detective": "matching",
+        "animal_homes": "matching",
+        "emotion_match": "matching",
+        "opposites": "matching",
+        "weather_today": "matching",
     }
     engine = engine_by_game.get(game_id)
     if engine is None:

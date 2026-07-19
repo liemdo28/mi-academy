@@ -1,0 +1,6831 @@
+{
+  "schemaVersion": "1.0",
+  "gameId": "build_the_story",
+  "levels": [
+    {
+      "id": "bts-lv001",
+      "gameId": "build_the_story",
+      "levelNumber": 1,
+      "difficulty": 1,
+      "learningObjective": "story sequencing",
+      "localizedContent": {
+        "en": {
+          "prompt": "Build the story from first to last.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Find seed",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Plant seed",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Water seed",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what comes first."
+        },
+        "vi": {
+          "prompt": "Xay cau chuyen tu dau den cuoi.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Tim hat",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Gieo hat",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Tuoi nuoc",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao den truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao den truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "junior",
+        "skillIds": [
+          "letters.storytelling",
+          "creative.storytelling"
+        ],
+        "engine": "sequence",
+        "generatedBy": "games_16_30_generator",
+        "generatorSeed": 20260720,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [
+        "asset-build_the_story-1"
+      ],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "bts-lv002",
+      "gameId": "build_the_story",
+      "levelNumber": 2,
+      "difficulty": 1,
+      "learningObjective": "story sequencing",
+      "localizedContent": {
+        "en": {
+          "prompt": "Build the story from first to last.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Find seed",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Plant seed",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Water seed",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what comes first."
+        },
+        "vi": {
+          "prompt": "Xay cau chuyen tu dau den cuoi.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Tim hat",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Gieo hat",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Tuoi nuoc",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao den truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao den truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "junior",
+        "skillIds": [
+          "letters.storytelling",
+          "creative.storytelling"
+        ],
+        "engine": "sequence",
+        "generatedBy": "games_16_30_generator",
+        "generatorSeed": 20260720,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [
+        "asset-build_the_story-2"
+      ],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "bts-lv003",
+      "gameId": "build_the_story",
+      "levelNumber": 3,
+      "difficulty": 1,
+      "learningObjective": "story sequencing",
+      "localizedContent": {
+        "en": {
+          "prompt": "Build the story from first to last.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Find seed",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Plant seed",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Water seed",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what comes first."
+        },
+        "vi": {
+          "prompt": "Xay cau chuyen tu dau den cuoi.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Tim hat",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Gieo hat",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Tuoi nuoc",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao den truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao den truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "junior",
+        "skillIds": [
+          "letters.storytelling",
+          "creative.storytelling"
+        ],
+        "engine": "sequence",
+        "generatedBy": "games_16_30_generator",
+        "generatorSeed": 20260720,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [
+        "asset-build_the_story-3"
+      ],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "bts-lv004",
+      "gameId": "build_the_story",
+      "levelNumber": 4,
+      "difficulty": 1,
+      "learningObjective": "story sequencing",
+      "localizedContent": {
+        "en": {
+          "prompt": "Build the story from first to last.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Find seed",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Plant seed",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Water seed",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what comes first."
+        },
+        "vi": {
+          "prompt": "Xay cau chuyen tu dau den cuoi.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Tim hat",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Gieo hat",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Tuoi nuoc",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao den truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao den truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "junior",
+        "skillIds": [
+          "letters.storytelling",
+          "creative.storytelling"
+        ],
+        "engine": "sequence",
+        "generatedBy": "games_16_30_generator",
+        "generatorSeed": 20260720,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [
+        "asset-build_the_story-4"
+      ],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "bts-lv005",
+      "gameId": "build_the_story",
+      "levelNumber": 5,
+      "difficulty": 1,
+      "learningObjective": "story sequencing",
+      "localizedContent": {
+        "en": {
+          "prompt": "Build the story from first to last.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Find seed",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Plant seed",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Water seed",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what comes first."
+        },
+        "vi": {
+          "prompt": "Xay cau chuyen tu dau den cuoi.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Tim hat",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Gieo hat",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Tuoi nuoc",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao den truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao den truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "junior",
+        "skillIds": [
+          "letters.storytelling",
+          "creative.storytelling"
+        ],
+        "engine": "sequence",
+        "generatedBy": "games_16_30_generator",
+        "generatorSeed": 20260720,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [
+        "asset-build_the_story-5"
+      ],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "bts-lv006",
+      "gameId": "build_the_story",
+      "levelNumber": 6,
+      "difficulty": 1,
+      "learningObjective": "story sequencing",
+      "localizedContent": {
+        "en": {
+          "prompt": "Build the story from first to last.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Find seed",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Plant seed",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Water seed",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what comes first."
+        },
+        "vi": {
+          "prompt": "Xay cau chuyen tu dau den cuoi.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Tim hat",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Gieo hat",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Tuoi nuoc",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao den truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao den truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "junior",
+        "skillIds": [
+          "letters.storytelling",
+          "creative.storytelling"
+        ],
+        "engine": "sequence",
+        "generatedBy": "games_16_30_generator",
+        "generatorSeed": 20260720,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [
+        "asset-build_the_story-6"
+      ],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "bts-lv007",
+      "gameId": "build_the_story",
+      "levelNumber": 7,
+      "difficulty": 1,
+      "learningObjective": "story sequencing",
+      "localizedContent": {
+        "en": {
+          "prompt": "Build the story from first to last.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Find seed",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Plant seed",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Water seed",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what comes first."
+        },
+        "vi": {
+          "prompt": "Xay cau chuyen tu dau den cuoi.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Tim hat",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Gieo hat",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Tuoi nuoc",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao den truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao den truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "junior",
+        "skillIds": [
+          "letters.storytelling",
+          "creative.storytelling"
+        ],
+        "engine": "sequence",
+        "generatedBy": "games_16_30_generator",
+        "generatorSeed": 20260720,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [
+        "asset-build_the_story-7"
+      ],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "bts-lv008",
+      "gameId": "build_the_story",
+      "levelNumber": 8,
+      "difficulty": 1,
+      "learningObjective": "story sequencing",
+      "localizedContent": {
+        "en": {
+          "prompt": "Build the story from first to last.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Find seed",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Plant seed",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Water seed",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what comes first."
+        },
+        "vi": {
+          "prompt": "Xay cau chuyen tu dau den cuoi.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Tim hat",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Gieo hat",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Tuoi nuoc",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao den truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao den truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "junior",
+        "skillIds": [
+          "letters.storytelling",
+          "creative.storytelling"
+        ],
+        "engine": "sequence",
+        "generatedBy": "games_16_30_generator",
+        "generatorSeed": 20260720,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [
+        "asset-build_the_story-0"
+      ],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "bts-lv009",
+      "gameId": "build_the_story",
+      "levelNumber": 9,
+      "difficulty": 1,
+      "learningObjective": "story sequencing",
+      "localizedContent": {
+        "en": {
+          "prompt": "Build the story from first to last.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Find seed",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Plant seed",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Water seed",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what comes first."
+        },
+        "vi": {
+          "prompt": "Xay cau chuyen tu dau den cuoi.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Tim hat",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Gieo hat",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Tuoi nuoc",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao den truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao den truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "junior",
+        "skillIds": [
+          "letters.storytelling",
+          "creative.storytelling"
+        ],
+        "engine": "sequence",
+        "generatedBy": "games_16_30_generator",
+        "generatorSeed": 20260720,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [
+        "asset-build_the_story-1"
+      ],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "bts-lv010",
+      "gameId": "build_the_story",
+      "levelNumber": 10,
+      "difficulty": 1,
+      "learningObjective": "story sequencing",
+      "localizedContent": {
+        "en": {
+          "prompt": "Build the story from first to last.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Find seed",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Plant seed",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Water seed",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what comes first."
+        },
+        "vi": {
+          "prompt": "Xay cau chuyen tu dau den cuoi.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Tim hat",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Gieo hat",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Tuoi nuoc",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao den truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao den truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "junior",
+        "skillIds": [
+          "letters.storytelling",
+          "creative.storytelling"
+        ],
+        "engine": "sequence",
+        "generatedBy": "games_16_30_generator",
+        "generatorSeed": 20260720,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [
+        "asset-build_the_story-2"
+      ],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "bts-lv011",
+      "gameId": "build_the_story",
+      "levelNumber": 11,
+      "difficulty": 1,
+      "learningObjective": "story sequencing",
+      "localizedContent": {
+        "en": {
+          "prompt": "Build the story from first to last.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Find seed",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Plant seed",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Water seed",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what comes first."
+        },
+        "vi": {
+          "prompt": "Xay cau chuyen tu dau den cuoi.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Tim hat",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Gieo hat",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Tuoi nuoc",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao den truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao den truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "junior",
+        "skillIds": [
+          "letters.storytelling",
+          "creative.storytelling"
+        ],
+        "engine": "sequence",
+        "generatedBy": "games_16_30_generator",
+        "generatorSeed": 20260720,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [
+        "asset-build_the_story-3"
+      ],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "bts-lv012",
+      "gameId": "build_the_story",
+      "levelNumber": 12,
+      "difficulty": 1,
+      "learningObjective": "story sequencing",
+      "localizedContent": {
+        "en": {
+          "prompt": "Build the story from first to last.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Find seed",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Plant seed",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Water seed",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what comes first."
+        },
+        "vi": {
+          "prompt": "Xay cau chuyen tu dau den cuoi.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Tim hat",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Gieo hat",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Tuoi nuoc",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao den truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao den truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "junior",
+        "skillIds": [
+          "letters.storytelling",
+          "creative.storytelling"
+        ],
+        "engine": "sequence",
+        "generatedBy": "games_16_30_generator",
+        "generatorSeed": 20260720,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [
+        "asset-build_the_story-4"
+      ],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "bts-lv013",
+      "gameId": "build_the_story",
+      "levelNumber": 13,
+      "difficulty": 1,
+      "learningObjective": "story sequencing",
+      "localizedContent": {
+        "en": {
+          "prompt": "Build the story from first to last.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Find seed",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Plant seed",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Water seed",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what comes first."
+        },
+        "vi": {
+          "prompt": "Xay cau chuyen tu dau den cuoi.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Tim hat",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Gieo hat",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Tuoi nuoc",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao den truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao den truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "junior",
+        "skillIds": [
+          "letters.storytelling",
+          "creative.storytelling"
+        ],
+        "engine": "sequence",
+        "generatedBy": "games_16_30_generator",
+        "generatorSeed": 20260720,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [
+        "asset-build_the_story-5"
+      ],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "bts-lv014",
+      "gameId": "build_the_story",
+      "levelNumber": 14,
+      "difficulty": 1,
+      "learningObjective": "story sequencing",
+      "localizedContent": {
+        "en": {
+          "prompt": "Build the story from first to last.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Find seed",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Plant seed",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Water seed",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what comes first."
+        },
+        "vi": {
+          "prompt": "Xay cau chuyen tu dau den cuoi.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Tim hat",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Gieo hat",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Tuoi nuoc",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao den truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao den truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "junior",
+        "skillIds": [
+          "letters.storytelling",
+          "creative.storytelling"
+        ],
+        "engine": "sequence",
+        "generatedBy": "games_16_30_generator",
+        "generatorSeed": 20260720,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [
+        "asset-build_the_story-6"
+      ],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "bts-lv015",
+      "gameId": "build_the_story",
+      "levelNumber": 15,
+      "difficulty": 1,
+      "learningObjective": "story sequencing",
+      "localizedContent": {
+        "en": {
+          "prompt": "Build the story from first to last.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Find seed",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Plant seed",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Water seed",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what comes first."
+        },
+        "vi": {
+          "prompt": "Xay cau chuyen tu dau den cuoi.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Tim hat",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Gieo hat",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Tuoi nuoc",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao den truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao den truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "junior",
+        "skillIds": [
+          "letters.storytelling",
+          "creative.storytelling"
+        ],
+        "engine": "sequence",
+        "generatedBy": "games_16_30_generator",
+        "generatorSeed": 20260720,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [
+        "asset-build_the_story-7"
+      ],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "bts-lv016",
+      "gameId": "build_the_story",
+      "levelNumber": 16,
+      "difficulty": 1,
+      "learningObjective": "story sequencing",
+      "localizedContent": {
+        "en": {
+          "prompt": "Build the story from first to last.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Find seed",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Plant seed",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Water seed",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what comes first."
+        },
+        "vi": {
+          "prompt": "Xay cau chuyen tu dau den cuoi.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Tim hat",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Gieo hat",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Tuoi nuoc",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao den truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao den truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "junior",
+        "skillIds": [
+          "letters.storytelling",
+          "creative.storytelling"
+        ],
+        "engine": "sequence",
+        "generatedBy": "games_16_30_generator",
+        "generatorSeed": 20260720,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [
+        "asset-build_the_story-0"
+      ],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "bts-lv017",
+      "gameId": "build_the_story",
+      "levelNumber": 17,
+      "difficulty": 1,
+      "learningObjective": "story sequencing",
+      "localizedContent": {
+        "en": {
+          "prompt": "Build the story from first to last.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Find seed",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Plant seed",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Water seed",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what comes first."
+        },
+        "vi": {
+          "prompt": "Xay cau chuyen tu dau den cuoi.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Tim hat",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Gieo hat",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Tuoi nuoc",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao den truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao den truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "junior",
+        "skillIds": [
+          "letters.storytelling",
+          "creative.storytelling"
+        ],
+        "engine": "sequence",
+        "generatedBy": "games_16_30_generator",
+        "generatorSeed": 20260720,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [
+        "asset-build_the_story-1"
+      ],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "bts-lv018",
+      "gameId": "build_the_story",
+      "levelNumber": 18,
+      "difficulty": 1,
+      "learningObjective": "story sequencing",
+      "localizedContent": {
+        "en": {
+          "prompt": "Build the story from first to last.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Find seed",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Plant seed",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Water seed",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what comes first."
+        },
+        "vi": {
+          "prompt": "Xay cau chuyen tu dau den cuoi.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Tim hat",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Gieo hat",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Tuoi nuoc",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao den truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao den truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "junior",
+        "skillIds": [
+          "letters.storytelling",
+          "creative.storytelling"
+        ],
+        "engine": "sequence",
+        "generatedBy": "games_16_30_generator",
+        "generatorSeed": 20260720,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [
+        "asset-build_the_story-2"
+      ],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "bts-lv019",
+      "gameId": "build_the_story",
+      "levelNumber": 19,
+      "difficulty": 1,
+      "learningObjective": "story sequencing",
+      "localizedContent": {
+        "en": {
+          "prompt": "Build the story from first to last.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Find seed",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Plant seed",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Water seed",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what comes first."
+        },
+        "vi": {
+          "prompt": "Xay cau chuyen tu dau den cuoi.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Tim hat",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Gieo hat",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Tuoi nuoc",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao den truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao den truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "junior",
+        "skillIds": [
+          "letters.storytelling",
+          "creative.storytelling"
+        ],
+        "engine": "sequence",
+        "generatedBy": "games_16_30_generator",
+        "generatorSeed": 20260720,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [
+        "asset-build_the_story-3"
+      ],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "bts-lv020",
+      "gameId": "build_the_story",
+      "levelNumber": 20,
+      "difficulty": 1,
+      "learningObjective": "story sequencing",
+      "localizedContent": {
+        "en": {
+          "prompt": "Build the story from first to last.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Find seed",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Plant seed",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Water seed",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what comes first."
+        },
+        "vi": {
+          "prompt": "Xay cau chuyen tu dau den cuoi.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Tim hat",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Gieo hat",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Tuoi nuoc",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao den truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao den truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "junior",
+        "skillIds": [
+          "letters.storytelling",
+          "creative.storytelling"
+        ],
+        "engine": "sequence",
+        "generatedBy": "games_16_30_generator",
+        "generatorSeed": 20260720,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [
+        "asset-build_the_story-4"
+      ],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "bts-lv021",
+      "gameId": "build_the_story",
+      "levelNumber": 21,
+      "difficulty": 1,
+      "learningObjective": "story sequencing",
+      "localizedContent": {
+        "en": {
+          "prompt": "Build the story from first to last.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Find seed",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Plant seed",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Water seed",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what comes first."
+        },
+        "vi": {
+          "prompt": "Xay cau chuyen tu dau den cuoi.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Tim hat",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Gieo hat",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Tuoi nuoc",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao den truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao den truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "junior",
+        "skillIds": [
+          "letters.storytelling",
+          "creative.storytelling"
+        ],
+        "engine": "sequence",
+        "generatedBy": "games_16_30_generator",
+        "generatorSeed": 20260720,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [
+        "asset-build_the_story-5"
+      ],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "bts-lv022",
+      "gameId": "build_the_story",
+      "levelNumber": 22,
+      "difficulty": 1,
+      "learningObjective": "story sequencing",
+      "localizedContent": {
+        "en": {
+          "prompt": "Build the story from first to last.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Find seed",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Plant seed",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Water seed",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what comes first."
+        },
+        "vi": {
+          "prompt": "Xay cau chuyen tu dau den cuoi.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Tim hat",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Gieo hat",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Tuoi nuoc",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao den truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao den truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "junior",
+        "skillIds": [
+          "letters.storytelling",
+          "creative.storytelling"
+        ],
+        "engine": "sequence",
+        "generatedBy": "games_16_30_generator",
+        "generatorSeed": 20260720,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [
+        "asset-build_the_story-6"
+      ],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "bts-lv023",
+      "gameId": "build_the_story",
+      "levelNumber": 23,
+      "difficulty": 1,
+      "learningObjective": "story sequencing",
+      "localizedContent": {
+        "en": {
+          "prompt": "Build the story from first to last.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Find seed",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Plant seed",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Water seed",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what comes first."
+        },
+        "vi": {
+          "prompt": "Xay cau chuyen tu dau den cuoi.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Tim hat",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Gieo hat",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Tuoi nuoc",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao den truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao den truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "junior",
+        "skillIds": [
+          "letters.storytelling",
+          "creative.storytelling"
+        ],
+        "engine": "sequence",
+        "generatedBy": "games_16_30_generator",
+        "generatorSeed": 20260720,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [
+        "asset-build_the_story-7"
+      ],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "bts-lv024",
+      "gameId": "build_the_story",
+      "levelNumber": 24,
+      "difficulty": 1,
+      "learningObjective": "story sequencing",
+      "localizedContent": {
+        "en": {
+          "prompt": "Build the story from first to last.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Find seed",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Plant seed",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Water seed",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what comes first."
+        },
+        "vi": {
+          "prompt": "Xay cau chuyen tu dau den cuoi.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Tim hat",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Gieo hat",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Tuoi nuoc",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao den truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao den truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "junior",
+        "skillIds": [
+          "letters.storytelling",
+          "creative.storytelling"
+        ],
+        "engine": "sequence",
+        "generatedBy": "games_16_30_generator",
+        "generatorSeed": 20260720,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [
+        "asset-build_the_story-0"
+      ],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "bts-lv025",
+      "gameId": "build_the_story",
+      "levelNumber": 25,
+      "difficulty": 1,
+      "learningObjective": "story sequencing",
+      "localizedContent": {
+        "en": {
+          "prompt": "Build the story from first to last.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Find seed",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Plant seed",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Water seed",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what comes first."
+        },
+        "vi": {
+          "prompt": "Xay cau chuyen tu dau den cuoi.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Tim hat",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Gieo hat",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Tuoi nuoc",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao den truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao den truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "junior",
+        "skillIds": [
+          "letters.storytelling",
+          "creative.storytelling"
+        ],
+        "engine": "sequence",
+        "generatedBy": "games_16_30_generator",
+        "generatorSeed": 20260720,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [
+        "asset-build_the_story-1"
+      ],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "bts-lv026",
+      "gameId": "build_the_story",
+      "levelNumber": 26,
+      "difficulty": 3,
+      "learningObjective": "story sequencing",
+      "localizedContent": {
+        "en": {
+          "prompt": "Build the story from first to last.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Find seed",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Plant seed",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Water seed",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Watch sprout",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what comes first."
+        },
+        "vi": {
+          "prompt": "Xay cau chuyen tu dau den cuoi.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Tim hat",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Gieo hat",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Tuoi nuoc",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Thay mam",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao den truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao den truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "explorer",
+        "skillIds": [
+          "letters.storytelling",
+          "creative.storytelling"
+        ],
+        "engine": "sequence",
+        "generatedBy": "games_16_30_generator",
+        "generatorSeed": 20260720,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [
+        "asset-build_the_story-2"
+      ],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "bts-lv027",
+      "gameId": "build_the_story",
+      "levelNumber": 27,
+      "difficulty": 3,
+      "learningObjective": "story sequencing",
+      "localizedContent": {
+        "en": {
+          "prompt": "Build the story from first to last.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Find seed",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Plant seed",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Water seed",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Watch sprout",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what comes first."
+        },
+        "vi": {
+          "prompt": "Xay cau chuyen tu dau den cuoi.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Tim hat",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Gieo hat",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Tuoi nuoc",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Thay mam",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao den truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao den truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "explorer",
+        "skillIds": [
+          "letters.storytelling",
+          "creative.storytelling"
+        ],
+        "engine": "sequence",
+        "generatedBy": "games_16_30_generator",
+        "generatorSeed": 20260720,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [
+        "asset-build_the_story-3"
+      ],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "bts-lv028",
+      "gameId": "build_the_story",
+      "levelNumber": 28,
+      "difficulty": 3,
+      "learningObjective": "story sequencing",
+      "localizedContent": {
+        "en": {
+          "prompt": "Build the story from first to last.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Find seed",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Plant seed",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Water seed",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Watch sprout",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what comes first."
+        },
+        "vi": {
+          "prompt": "Xay cau chuyen tu dau den cuoi.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Tim hat",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Gieo hat",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Tuoi nuoc",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Thay mam",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao den truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao den truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "explorer",
+        "skillIds": [
+          "letters.storytelling",
+          "creative.storytelling"
+        ],
+        "engine": "sequence",
+        "generatedBy": "games_16_30_generator",
+        "generatorSeed": 20260720,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [
+        "asset-build_the_story-4"
+      ],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "bts-lv029",
+      "gameId": "build_the_story",
+      "levelNumber": 29,
+      "difficulty": 3,
+      "learningObjective": "story sequencing",
+      "localizedContent": {
+        "en": {
+          "prompt": "Build the story from first to last.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Find seed",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Plant seed",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Water seed",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Watch sprout",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what comes first."
+        },
+        "vi": {
+          "prompt": "Xay cau chuyen tu dau den cuoi.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Tim hat",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Gieo hat",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Tuoi nuoc",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Thay mam",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao den truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao den truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "explorer",
+        "skillIds": [
+          "letters.storytelling",
+          "creative.storytelling"
+        ],
+        "engine": "sequence",
+        "generatedBy": "games_16_30_generator",
+        "generatorSeed": 20260720,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [
+        "asset-build_the_story-5"
+      ],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "bts-lv030",
+      "gameId": "build_the_story",
+      "levelNumber": 30,
+      "difficulty": 3,
+      "learningObjective": "story sequencing",
+      "localizedContent": {
+        "en": {
+          "prompt": "Build the story from first to last.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Find seed",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Plant seed",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Water seed",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Watch sprout",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what comes first."
+        },
+        "vi": {
+          "prompt": "Xay cau chuyen tu dau den cuoi.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Tim hat",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Gieo hat",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Tuoi nuoc",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Thay mam",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao den truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao den truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "explorer",
+        "skillIds": [
+          "letters.storytelling",
+          "creative.storytelling"
+        ],
+        "engine": "sequence",
+        "generatedBy": "games_16_30_generator",
+        "generatorSeed": 20260720,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [
+        "asset-build_the_story-6"
+      ],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "bts-lv031",
+      "gameId": "build_the_story",
+      "levelNumber": 31,
+      "difficulty": 3,
+      "learningObjective": "story sequencing",
+      "localizedContent": {
+        "en": {
+          "prompt": "Build the story from first to last.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Find seed",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Plant seed",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Water seed",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Watch sprout",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what comes first."
+        },
+        "vi": {
+          "prompt": "Xay cau chuyen tu dau den cuoi.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Tim hat",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Gieo hat",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Tuoi nuoc",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Thay mam",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao den truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao den truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "explorer",
+        "skillIds": [
+          "letters.storytelling",
+          "creative.storytelling"
+        ],
+        "engine": "sequence",
+        "generatedBy": "games_16_30_generator",
+        "generatorSeed": 20260720,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [
+        "asset-build_the_story-7"
+      ],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "bts-lv032",
+      "gameId": "build_the_story",
+      "levelNumber": 32,
+      "difficulty": 3,
+      "learningObjective": "story sequencing",
+      "localizedContent": {
+        "en": {
+          "prompt": "Build the story from first to last.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Find seed",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Plant seed",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Water seed",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Watch sprout",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what comes first."
+        },
+        "vi": {
+          "prompt": "Xay cau chuyen tu dau den cuoi.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Tim hat",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Gieo hat",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Tuoi nuoc",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Thay mam",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao den truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao den truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "explorer",
+        "skillIds": [
+          "letters.storytelling",
+          "creative.storytelling"
+        ],
+        "engine": "sequence",
+        "generatedBy": "games_16_30_generator",
+        "generatorSeed": 20260720,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [
+        "asset-build_the_story-0"
+      ],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "bts-lv033",
+      "gameId": "build_the_story",
+      "levelNumber": 33,
+      "difficulty": 3,
+      "learningObjective": "story sequencing",
+      "localizedContent": {
+        "en": {
+          "prompt": "Build the story from first to last.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Find seed",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Plant seed",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Water seed",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Watch sprout",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what comes first."
+        },
+        "vi": {
+          "prompt": "Xay cau chuyen tu dau den cuoi.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Tim hat",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Gieo hat",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Tuoi nuoc",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Thay mam",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao den truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao den truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "explorer",
+        "skillIds": [
+          "letters.storytelling",
+          "creative.storytelling"
+        ],
+        "engine": "sequence",
+        "generatedBy": "games_16_30_generator",
+        "generatorSeed": 20260720,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [
+        "asset-build_the_story-1"
+      ],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "bts-lv034",
+      "gameId": "build_the_story",
+      "levelNumber": 34,
+      "difficulty": 3,
+      "learningObjective": "story sequencing",
+      "localizedContent": {
+        "en": {
+          "prompt": "Build the story from first to last.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Find seed",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Plant seed",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Water seed",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Watch sprout",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what comes first."
+        },
+        "vi": {
+          "prompt": "Xay cau chuyen tu dau den cuoi.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Tim hat",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Gieo hat",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Tuoi nuoc",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Thay mam",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao den truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao den truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "explorer",
+        "skillIds": [
+          "letters.storytelling",
+          "creative.storytelling"
+        ],
+        "engine": "sequence",
+        "generatedBy": "games_16_30_generator",
+        "generatorSeed": 20260720,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [
+        "asset-build_the_story-2"
+      ],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "bts-lv035",
+      "gameId": "build_the_story",
+      "levelNumber": 35,
+      "difficulty": 3,
+      "learningObjective": "story sequencing",
+      "localizedContent": {
+        "en": {
+          "prompt": "Build the story from first to last.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Find seed",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Plant seed",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Water seed",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Watch sprout",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what comes first."
+        },
+        "vi": {
+          "prompt": "Xay cau chuyen tu dau den cuoi.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Tim hat",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Gieo hat",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Tuoi nuoc",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Thay mam",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao den truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao den truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "explorer",
+        "skillIds": [
+          "letters.storytelling",
+          "creative.storytelling"
+        ],
+        "engine": "sequence",
+        "generatedBy": "games_16_30_generator",
+        "generatorSeed": 20260720,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [
+        "asset-build_the_story-3"
+      ],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "bts-lv036",
+      "gameId": "build_the_story",
+      "levelNumber": 36,
+      "difficulty": 3,
+      "learningObjective": "story sequencing",
+      "localizedContent": {
+        "en": {
+          "prompt": "Build the story from first to last.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Find seed",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Plant seed",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Water seed",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Watch sprout",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what comes first."
+        },
+        "vi": {
+          "prompt": "Xay cau chuyen tu dau den cuoi.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Tim hat",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Gieo hat",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Tuoi nuoc",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Thay mam",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao den truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao den truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "explorer",
+        "skillIds": [
+          "letters.storytelling",
+          "creative.storytelling"
+        ],
+        "engine": "sequence",
+        "generatedBy": "games_16_30_generator",
+        "generatorSeed": 20260720,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [
+        "asset-build_the_story-4"
+      ],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "bts-lv037",
+      "gameId": "build_the_story",
+      "levelNumber": 37,
+      "difficulty": 3,
+      "learningObjective": "story sequencing",
+      "localizedContent": {
+        "en": {
+          "prompt": "Build the story from first to last.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Find seed",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Plant seed",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Water seed",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Watch sprout",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what comes first."
+        },
+        "vi": {
+          "prompt": "Xay cau chuyen tu dau den cuoi.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Tim hat",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Gieo hat",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Tuoi nuoc",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Thay mam",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao den truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao den truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "explorer",
+        "skillIds": [
+          "letters.storytelling",
+          "creative.storytelling"
+        ],
+        "engine": "sequence",
+        "generatedBy": "games_16_30_generator",
+        "generatorSeed": 20260720,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [
+        "asset-build_the_story-5"
+      ],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "bts-lv038",
+      "gameId": "build_the_story",
+      "levelNumber": 38,
+      "difficulty": 3,
+      "learningObjective": "story sequencing",
+      "localizedContent": {
+        "en": {
+          "prompt": "Build the story from first to last.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Find seed",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Plant seed",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Water seed",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Watch sprout",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what comes first."
+        },
+        "vi": {
+          "prompt": "Xay cau chuyen tu dau den cuoi.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Tim hat",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Gieo hat",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Tuoi nuoc",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Thay mam",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao den truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao den truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "explorer",
+        "skillIds": [
+          "letters.storytelling",
+          "creative.storytelling"
+        ],
+        "engine": "sequence",
+        "generatedBy": "games_16_30_generator",
+        "generatorSeed": 20260720,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [
+        "asset-build_the_story-6"
+      ],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "bts-lv039",
+      "gameId": "build_the_story",
+      "levelNumber": 39,
+      "difficulty": 3,
+      "learningObjective": "story sequencing",
+      "localizedContent": {
+        "en": {
+          "prompt": "Build the story from first to last.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Find seed",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Plant seed",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Water seed",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Watch sprout",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what comes first."
+        },
+        "vi": {
+          "prompt": "Xay cau chuyen tu dau den cuoi.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Tim hat",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Gieo hat",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Tuoi nuoc",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Thay mam",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao den truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao den truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "explorer",
+        "skillIds": [
+          "letters.storytelling",
+          "creative.storytelling"
+        ],
+        "engine": "sequence",
+        "generatedBy": "games_16_30_generator",
+        "generatorSeed": 20260720,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [
+        "asset-build_the_story-7"
+      ],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "bts-lv040",
+      "gameId": "build_the_story",
+      "levelNumber": 40,
+      "difficulty": 3,
+      "learningObjective": "story sequencing",
+      "localizedContent": {
+        "en": {
+          "prompt": "Build the story from first to last.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Find seed",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Plant seed",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Water seed",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Watch sprout",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what comes first."
+        },
+        "vi": {
+          "prompt": "Xay cau chuyen tu dau den cuoi.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Tim hat",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Gieo hat",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Tuoi nuoc",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Thay mam",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao den truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao den truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "explorer",
+        "skillIds": [
+          "letters.storytelling",
+          "creative.storytelling"
+        ],
+        "engine": "sequence",
+        "generatedBy": "games_16_30_generator",
+        "generatorSeed": 20260720,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [
+        "asset-build_the_story-0"
+      ],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "bts-lv041",
+      "gameId": "build_the_story",
+      "levelNumber": 41,
+      "difficulty": 3,
+      "learningObjective": "story sequencing",
+      "localizedContent": {
+        "en": {
+          "prompt": "Build the story from first to last.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Find seed",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Plant seed",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Water seed",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Watch sprout",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what comes first."
+        },
+        "vi": {
+          "prompt": "Xay cau chuyen tu dau den cuoi.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Tim hat",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Gieo hat",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Tuoi nuoc",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Thay mam",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao den truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao den truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "explorer",
+        "skillIds": [
+          "letters.storytelling",
+          "creative.storytelling"
+        ],
+        "engine": "sequence",
+        "generatedBy": "games_16_30_generator",
+        "generatorSeed": 20260720,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [
+        "asset-build_the_story-1"
+      ],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "bts-lv042",
+      "gameId": "build_the_story",
+      "levelNumber": 42,
+      "difficulty": 3,
+      "learningObjective": "story sequencing",
+      "localizedContent": {
+        "en": {
+          "prompt": "Build the story from first to last.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Find seed",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Plant seed",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Water seed",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Watch sprout",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what comes first."
+        },
+        "vi": {
+          "prompt": "Xay cau chuyen tu dau den cuoi.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Tim hat",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Gieo hat",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Tuoi nuoc",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Thay mam",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao den truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao den truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "explorer",
+        "skillIds": [
+          "letters.storytelling",
+          "creative.storytelling"
+        ],
+        "engine": "sequence",
+        "generatedBy": "games_16_30_generator",
+        "generatorSeed": 20260720,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [
+        "asset-build_the_story-2"
+      ],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "bts-lv043",
+      "gameId": "build_the_story",
+      "levelNumber": 43,
+      "difficulty": 3,
+      "learningObjective": "story sequencing",
+      "localizedContent": {
+        "en": {
+          "prompt": "Build the story from first to last.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Find seed",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Plant seed",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Water seed",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Watch sprout",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what comes first."
+        },
+        "vi": {
+          "prompt": "Xay cau chuyen tu dau den cuoi.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Tim hat",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Gieo hat",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Tuoi nuoc",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Thay mam",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao den truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao den truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "explorer",
+        "skillIds": [
+          "letters.storytelling",
+          "creative.storytelling"
+        ],
+        "engine": "sequence",
+        "generatedBy": "games_16_30_generator",
+        "generatorSeed": 20260720,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [
+        "asset-build_the_story-3"
+      ],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "bts-lv044",
+      "gameId": "build_the_story",
+      "levelNumber": 44,
+      "difficulty": 3,
+      "learningObjective": "story sequencing",
+      "localizedContent": {
+        "en": {
+          "prompt": "Build the story from first to last.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Find seed",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Plant seed",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Water seed",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Watch sprout",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what comes first."
+        },
+        "vi": {
+          "prompt": "Xay cau chuyen tu dau den cuoi.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Tim hat",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Gieo hat",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Tuoi nuoc",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Thay mam",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao den truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao den truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "explorer",
+        "skillIds": [
+          "letters.storytelling",
+          "creative.storytelling"
+        ],
+        "engine": "sequence",
+        "generatedBy": "games_16_30_generator",
+        "generatorSeed": 20260720,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [
+        "asset-build_the_story-4"
+      ],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "bts-lv045",
+      "gameId": "build_the_story",
+      "levelNumber": 45,
+      "difficulty": 3,
+      "learningObjective": "story sequencing",
+      "localizedContent": {
+        "en": {
+          "prompt": "Build the story from first to last.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Find seed",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Plant seed",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Water seed",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Watch sprout",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what comes first."
+        },
+        "vi": {
+          "prompt": "Xay cau chuyen tu dau den cuoi.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Tim hat",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Gieo hat",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Tuoi nuoc",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Thay mam",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao den truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao den truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "explorer",
+        "skillIds": [
+          "letters.storytelling",
+          "creative.storytelling"
+        ],
+        "engine": "sequence",
+        "generatedBy": "games_16_30_generator",
+        "generatorSeed": 20260720,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [
+        "asset-build_the_story-5"
+      ],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "bts-lv046",
+      "gameId": "build_the_story",
+      "levelNumber": 46,
+      "difficulty": 3,
+      "learningObjective": "story sequencing",
+      "localizedContent": {
+        "en": {
+          "prompt": "Build the story from first to last.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Find seed",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Plant seed",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Water seed",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Watch sprout",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what comes first."
+        },
+        "vi": {
+          "prompt": "Xay cau chuyen tu dau den cuoi.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Tim hat",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Gieo hat",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Tuoi nuoc",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Thay mam",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao den truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao den truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "explorer",
+        "skillIds": [
+          "letters.storytelling",
+          "creative.storytelling"
+        ],
+        "engine": "sequence",
+        "generatedBy": "games_16_30_generator",
+        "generatorSeed": 20260720,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [
+        "asset-build_the_story-6"
+      ],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "bts-lv047",
+      "gameId": "build_the_story",
+      "levelNumber": 47,
+      "difficulty": 3,
+      "learningObjective": "story sequencing",
+      "localizedContent": {
+        "en": {
+          "prompt": "Build the story from first to last.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Find seed",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Plant seed",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Water seed",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Watch sprout",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what comes first."
+        },
+        "vi": {
+          "prompt": "Xay cau chuyen tu dau den cuoi.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Tim hat",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Gieo hat",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Tuoi nuoc",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Thay mam",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao den truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao den truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "explorer",
+        "skillIds": [
+          "letters.storytelling",
+          "creative.storytelling"
+        ],
+        "engine": "sequence",
+        "generatedBy": "games_16_30_generator",
+        "generatorSeed": 20260720,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [
+        "asset-build_the_story-7"
+      ],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "bts-lv048",
+      "gameId": "build_the_story",
+      "levelNumber": 48,
+      "difficulty": 3,
+      "learningObjective": "story sequencing",
+      "localizedContent": {
+        "en": {
+          "prompt": "Build the story from first to last.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Find seed",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Plant seed",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Water seed",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Watch sprout",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what comes first."
+        },
+        "vi": {
+          "prompt": "Xay cau chuyen tu dau den cuoi.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Tim hat",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Gieo hat",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Tuoi nuoc",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Thay mam",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao den truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao den truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "explorer",
+        "skillIds": [
+          "letters.storytelling",
+          "creative.storytelling"
+        ],
+        "engine": "sequence",
+        "generatedBy": "games_16_30_generator",
+        "generatorSeed": 20260720,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [
+        "asset-build_the_story-0"
+      ],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "bts-lv049",
+      "gameId": "build_the_story",
+      "levelNumber": 49,
+      "difficulty": 3,
+      "learningObjective": "story sequencing",
+      "localizedContent": {
+        "en": {
+          "prompt": "Build the story from first to last.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Find seed",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Plant seed",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Water seed",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Watch sprout",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what comes first."
+        },
+        "vi": {
+          "prompt": "Xay cau chuyen tu dau den cuoi.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Tim hat",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Gieo hat",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Tuoi nuoc",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Thay mam",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao den truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao den truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "explorer",
+        "skillIds": [
+          "letters.storytelling",
+          "creative.storytelling"
+        ],
+        "engine": "sequence",
+        "generatedBy": "games_16_30_generator",
+        "generatorSeed": 20260720,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [
+        "asset-build_the_story-1"
+      ],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "bts-lv050",
+      "gameId": "build_the_story",
+      "levelNumber": 50,
+      "difficulty": 3,
+      "learningObjective": "story sequencing",
+      "localizedContent": {
+        "en": {
+          "prompt": "Build the story from first to last.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Find seed",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Plant seed",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Water seed",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Watch sprout",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what comes first."
+        },
+        "vi": {
+          "prompt": "Xay cau chuyen tu dau den cuoi.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Tim hat",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Gieo hat",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Tuoi nuoc",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Thay mam",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao den truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao den truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "explorer",
+        "skillIds": [
+          "letters.storytelling",
+          "creative.storytelling"
+        ],
+        "engine": "sequence",
+        "generatedBy": "games_16_30_generator",
+        "generatorSeed": 20260720,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [
+        "asset-build_the_story-2"
+      ],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "bts-lv051",
+      "gameId": "build_the_story",
+      "levelNumber": 51,
+      "difficulty": 5,
+      "learningObjective": "story sequencing",
+      "localizedContent": {
+        "en": {
+          "prompt": "Build the story from first to last.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Find seed",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Plant seed",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Water seed",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Watch sprout",
+              "type": "text"
+            },
+            {
+              "id": "s4",
+              "content": "Share flower",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what comes first."
+        },
+        "vi": {
+          "prompt": "Xay cau chuyen tu dau den cuoi.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Tim hat",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Gieo hat",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Tuoi nuoc",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Thay mam",
+              "type": "text"
+            },
+            {
+              "id": "s4",
+              "content": "Tang hoa",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao den truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao den truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "master",
+        "skillIds": [
+          "letters.storytelling",
+          "creative.storytelling"
+        ],
+        "engine": "sequence",
+        "generatedBy": "games_16_30_generator",
+        "generatorSeed": 20260720,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [
+        "asset-build_the_story-3"
+      ],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "bts-lv052",
+      "gameId": "build_the_story",
+      "levelNumber": 52,
+      "difficulty": 5,
+      "learningObjective": "story sequencing",
+      "localizedContent": {
+        "en": {
+          "prompt": "Build the story from first to last.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Find seed",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Plant seed",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Water seed",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Watch sprout",
+              "type": "text"
+            },
+            {
+              "id": "s4",
+              "content": "Share flower",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what comes first."
+        },
+        "vi": {
+          "prompt": "Xay cau chuyen tu dau den cuoi.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Tim hat",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Gieo hat",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Tuoi nuoc",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Thay mam",
+              "type": "text"
+            },
+            {
+              "id": "s4",
+              "content": "Tang hoa",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao den truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao den truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "master",
+        "skillIds": [
+          "letters.storytelling",
+          "creative.storytelling"
+        ],
+        "engine": "sequence",
+        "generatedBy": "games_16_30_generator",
+        "generatorSeed": 20260720,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [
+        "asset-build_the_story-4"
+      ],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "bts-lv053",
+      "gameId": "build_the_story",
+      "levelNumber": 53,
+      "difficulty": 5,
+      "learningObjective": "story sequencing",
+      "localizedContent": {
+        "en": {
+          "prompt": "Build the story from first to last.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Find seed",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Plant seed",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Water seed",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Watch sprout",
+              "type": "text"
+            },
+            {
+              "id": "s4",
+              "content": "Share flower",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what comes first."
+        },
+        "vi": {
+          "prompt": "Xay cau chuyen tu dau den cuoi.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Tim hat",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Gieo hat",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Tuoi nuoc",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Thay mam",
+              "type": "text"
+            },
+            {
+              "id": "s4",
+              "content": "Tang hoa",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao den truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao den truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "master",
+        "skillIds": [
+          "letters.storytelling",
+          "creative.storytelling"
+        ],
+        "engine": "sequence",
+        "generatedBy": "games_16_30_generator",
+        "generatorSeed": 20260720,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [
+        "asset-build_the_story-5"
+      ],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "bts-lv054",
+      "gameId": "build_the_story",
+      "levelNumber": 54,
+      "difficulty": 5,
+      "learningObjective": "story sequencing",
+      "localizedContent": {
+        "en": {
+          "prompt": "Build the story from first to last.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Find seed",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Plant seed",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Water seed",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Watch sprout",
+              "type": "text"
+            },
+            {
+              "id": "s4",
+              "content": "Share flower",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what comes first."
+        },
+        "vi": {
+          "prompt": "Xay cau chuyen tu dau den cuoi.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Tim hat",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Gieo hat",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Tuoi nuoc",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Thay mam",
+              "type": "text"
+            },
+            {
+              "id": "s4",
+              "content": "Tang hoa",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao den truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao den truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "master",
+        "skillIds": [
+          "letters.storytelling",
+          "creative.storytelling"
+        ],
+        "engine": "sequence",
+        "generatedBy": "games_16_30_generator",
+        "generatorSeed": 20260720,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [
+        "asset-build_the_story-6"
+      ],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "bts-lv055",
+      "gameId": "build_the_story",
+      "levelNumber": 55,
+      "difficulty": 5,
+      "learningObjective": "story sequencing",
+      "localizedContent": {
+        "en": {
+          "prompt": "Build the story from first to last.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Find seed",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Plant seed",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Water seed",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Watch sprout",
+              "type": "text"
+            },
+            {
+              "id": "s4",
+              "content": "Share flower",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what comes first."
+        },
+        "vi": {
+          "prompt": "Xay cau chuyen tu dau den cuoi.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Tim hat",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Gieo hat",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Tuoi nuoc",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Thay mam",
+              "type": "text"
+            },
+            {
+              "id": "s4",
+              "content": "Tang hoa",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao den truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao den truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "master",
+        "skillIds": [
+          "letters.storytelling",
+          "creative.storytelling"
+        ],
+        "engine": "sequence",
+        "generatedBy": "games_16_30_generator",
+        "generatorSeed": 20260720,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [
+        "asset-build_the_story-7"
+      ],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "bts-lv056",
+      "gameId": "build_the_story",
+      "levelNumber": 56,
+      "difficulty": 5,
+      "learningObjective": "story sequencing",
+      "localizedContent": {
+        "en": {
+          "prompt": "Build the story from first to last.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Find seed",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Plant seed",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Water seed",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Watch sprout",
+              "type": "text"
+            },
+            {
+              "id": "s4",
+              "content": "Share flower",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what comes first."
+        },
+        "vi": {
+          "prompt": "Xay cau chuyen tu dau den cuoi.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Tim hat",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Gieo hat",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Tuoi nuoc",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Thay mam",
+              "type": "text"
+            },
+            {
+              "id": "s4",
+              "content": "Tang hoa",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao den truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao den truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "master",
+        "skillIds": [
+          "letters.storytelling",
+          "creative.storytelling"
+        ],
+        "engine": "sequence",
+        "generatedBy": "games_16_30_generator",
+        "generatorSeed": 20260720,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [
+        "asset-build_the_story-0"
+      ],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "bts-lv057",
+      "gameId": "build_the_story",
+      "levelNumber": 57,
+      "difficulty": 5,
+      "learningObjective": "story sequencing",
+      "localizedContent": {
+        "en": {
+          "prompt": "Build the story from first to last.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Find seed",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Plant seed",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Water seed",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Watch sprout",
+              "type": "text"
+            },
+            {
+              "id": "s4",
+              "content": "Share flower",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what comes first."
+        },
+        "vi": {
+          "prompt": "Xay cau chuyen tu dau den cuoi.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Tim hat",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Gieo hat",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Tuoi nuoc",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Thay mam",
+              "type": "text"
+            },
+            {
+              "id": "s4",
+              "content": "Tang hoa",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao den truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao den truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "master",
+        "skillIds": [
+          "letters.storytelling",
+          "creative.storytelling"
+        ],
+        "engine": "sequence",
+        "generatedBy": "games_16_30_generator",
+        "generatorSeed": 20260720,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [
+        "asset-build_the_story-1"
+      ],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "bts-lv058",
+      "gameId": "build_the_story",
+      "levelNumber": 58,
+      "difficulty": 5,
+      "learningObjective": "story sequencing",
+      "localizedContent": {
+        "en": {
+          "prompt": "Build the story from first to last.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Find seed",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Plant seed",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Water seed",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Watch sprout",
+              "type": "text"
+            },
+            {
+              "id": "s4",
+              "content": "Share flower",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what comes first."
+        },
+        "vi": {
+          "prompt": "Xay cau chuyen tu dau den cuoi.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Tim hat",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Gieo hat",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Tuoi nuoc",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Thay mam",
+              "type": "text"
+            },
+            {
+              "id": "s4",
+              "content": "Tang hoa",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao den truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao den truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "master",
+        "skillIds": [
+          "letters.storytelling",
+          "creative.storytelling"
+        ],
+        "engine": "sequence",
+        "generatedBy": "games_16_30_generator",
+        "generatorSeed": 20260720,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [
+        "asset-build_the_story-2"
+      ],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "bts-lv059",
+      "gameId": "build_the_story",
+      "levelNumber": 59,
+      "difficulty": 5,
+      "learningObjective": "story sequencing",
+      "localizedContent": {
+        "en": {
+          "prompt": "Build the story from first to last.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Find seed",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Plant seed",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Water seed",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Watch sprout",
+              "type": "text"
+            },
+            {
+              "id": "s4",
+              "content": "Share flower",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what comes first."
+        },
+        "vi": {
+          "prompt": "Xay cau chuyen tu dau den cuoi.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Tim hat",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Gieo hat",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Tuoi nuoc",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Thay mam",
+              "type": "text"
+            },
+            {
+              "id": "s4",
+              "content": "Tang hoa",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao den truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao den truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "master",
+        "skillIds": [
+          "letters.storytelling",
+          "creative.storytelling"
+        ],
+        "engine": "sequence",
+        "generatedBy": "games_16_30_generator",
+        "generatorSeed": 20260720,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [
+        "asset-build_the_story-3"
+      ],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "bts-lv060",
+      "gameId": "build_the_story",
+      "levelNumber": 60,
+      "difficulty": 5,
+      "learningObjective": "story sequencing",
+      "localizedContent": {
+        "en": {
+          "prompt": "Build the story from first to last.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Find seed",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Plant seed",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Water seed",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Watch sprout",
+              "type": "text"
+            },
+            {
+              "id": "s4",
+              "content": "Share flower",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what comes first."
+        },
+        "vi": {
+          "prompt": "Xay cau chuyen tu dau den cuoi.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Tim hat",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Gieo hat",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Tuoi nuoc",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Thay mam",
+              "type": "text"
+            },
+            {
+              "id": "s4",
+              "content": "Tang hoa",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao den truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao den truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "master",
+        "skillIds": [
+          "letters.storytelling",
+          "creative.storytelling"
+        ],
+        "engine": "sequence",
+        "generatedBy": "games_16_30_generator",
+        "generatorSeed": 20260720,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [
+        "asset-build_the_story-4"
+      ],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "bts-lv061",
+      "gameId": "build_the_story",
+      "levelNumber": 61,
+      "difficulty": 5,
+      "learningObjective": "story sequencing",
+      "localizedContent": {
+        "en": {
+          "prompt": "Build the story from first to last.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Find seed",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Plant seed",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Water seed",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Watch sprout",
+              "type": "text"
+            },
+            {
+              "id": "s4",
+              "content": "Share flower",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what comes first."
+        },
+        "vi": {
+          "prompt": "Xay cau chuyen tu dau den cuoi.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Tim hat",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Gieo hat",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Tuoi nuoc",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Thay mam",
+              "type": "text"
+            },
+            {
+              "id": "s4",
+              "content": "Tang hoa",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao den truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao den truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "master",
+        "skillIds": [
+          "letters.storytelling",
+          "creative.storytelling"
+        ],
+        "engine": "sequence",
+        "generatedBy": "games_16_30_generator",
+        "generatorSeed": 20260720,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [
+        "asset-build_the_story-5"
+      ],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "bts-lv062",
+      "gameId": "build_the_story",
+      "levelNumber": 62,
+      "difficulty": 5,
+      "learningObjective": "story sequencing",
+      "localizedContent": {
+        "en": {
+          "prompt": "Build the story from first to last.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Find seed",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Plant seed",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Water seed",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Watch sprout",
+              "type": "text"
+            },
+            {
+              "id": "s4",
+              "content": "Share flower",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what comes first."
+        },
+        "vi": {
+          "prompt": "Xay cau chuyen tu dau den cuoi.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Tim hat",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Gieo hat",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Tuoi nuoc",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Thay mam",
+              "type": "text"
+            },
+            {
+              "id": "s4",
+              "content": "Tang hoa",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao den truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao den truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "master",
+        "skillIds": [
+          "letters.storytelling",
+          "creative.storytelling"
+        ],
+        "engine": "sequence",
+        "generatedBy": "games_16_30_generator",
+        "generatorSeed": 20260720,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [
+        "asset-build_the_story-6"
+      ],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "bts-lv063",
+      "gameId": "build_the_story",
+      "levelNumber": 63,
+      "difficulty": 5,
+      "learningObjective": "story sequencing",
+      "localizedContent": {
+        "en": {
+          "prompt": "Build the story from first to last.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Find seed",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Plant seed",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Water seed",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Watch sprout",
+              "type": "text"
+            },
+            {
+              "id": "s4",
+              "content": "Share flower",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what comes first."
+        },
+        "vi": {
+          "prompt": "Xay cau chuyen tu dau den cuoi.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Tim hat",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Gieo hat",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Tuoi nuoc",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Thay mam",
+              "type": "text"
+            },
+            {
+              "id": "s4",
+              "content": "Tang hoa",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao den truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao den truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "master",
+        "skillIds": [
+          "letters.storytelling",
+          "creative.storytelling"
+        ],
+        "engine": "sequence",
+        "generatedBy": "games_16_30_generator",
+        "generatorSeed": 20260720,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [
+        "asset-build_the_story-7"
+      ],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "bts-lv064",
+      "gameId": "build_the_story",
+      "levelNumber": 64,
+      "difficulty": 5,
+      "learningObjective": "story sequencing",
+      "localizedContent": {
+        "en": {
+          "prompt": "Build the story from first to last.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Find seed",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Plant seed",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Water seed",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Watch sprout",
+              "type": "text"
+            },
+            {
+              "id": "s4",
+              "content": "Share flower",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what comes first."
+        },
+        "vi": {
+          "prompt": "Xay cau chuyen tu dau den cuoi.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Tim hat",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Gieo hat",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Tuoi nuoc",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Thay mam",
+              "type": "text"
+            },
+            {
+              "id": "s4",
+              "content": "Tang hoa",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao den truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao den truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "master",
+        "skillIds": [
+          "letters.storytelling",
+          "creative.storytelling"
+        ],
+        "engine": "sequence",
+        "generatedBy": "games_16_30_generator",
+        "generatorSeed": 20260720,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [
+        "asset-build_the_story-0"
+      ],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "bts-lv065",
+      "gameId": "build_the_story",
+      "levelNumber": 65,
+      "difficulty": 5,
+      "learningObjective": "story sequencing",
+      "localizedContent": {
+        "en": {
+          "prompt": "Build the story from first to last.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Find seed",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Plant seed",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Water seed",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Watch sprout",
+              "type": "text"
+            },
+            {
+              "id": "s4",
+              "content": "Share flower",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what comes first."
+        },
+        "vi": {
+          "prompt": "Xay cau chuyen tu dau den cuoi.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Tim hat",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Gieo hat",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Tuoi nuoc",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Thay mam",
+              "type": "text"
+            },
+            {
+              "id": "s4",
+              "content": "Tang hoa",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao den truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao den truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "master",
+        "skillIds": [
+          "letters.storytelling",
+          "creative.storytelling"
+        ],
+        "engine": "sequence",
+        "generatedBy": "games_16_30_generator",
+        "generatorSeed": 20260720,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [
+        "asset-build_the_story-1"
+      ],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "bts-lv066",
+      "gameId": "build_the_story",
+      "levelNumber": 66,
+      "difficulty": 5,
+      "learningObjective": "story sequencing",
+      "localizedContent": {
+        "en": {
+          "prompt": "Build the story from first to last.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Find seed",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Plant seed",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Water seed",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Watch sprout",
+              "type": "text"
+            },
+            {
+              "id": "s4",
+              "content": "Share flower",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what comes first."
+        },
+        "vi": {
+          "prompt": "Xay cau chuyen tu dau den cuoi.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Tim hat",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Gieo hat",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Tuoi nuoc",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Thay mam",
+              "type": "text"
+            },
+            {
+              "id": "s4",
+              "content": "Tang hoa",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao den truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao den truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "master",
+        "skillIds": [
+          "letters.storytelling",
+          "creative.storytelling"
+        ],
+        "engine": "sequence",
+        "generatedBy": "games_16_30_generator",
+        "generatorSeed": 20260720,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [
+        "asset-build_the_story-2"
+      ],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "bts-lv067",
+      "gameId": "build_the_story",
+      "levelNumber": 67,
+      "difficulty": 5,
+      "learningObjective": "story sequencing",
+      "localizedContent": {
+        "en": {
+          "prompt": "Build the story from first to last.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Find seed",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Plant seed",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Water seed",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Watch sprout",
+              "type": "text"
+            },
+            {
+              "id": "s4",
+              "content": "Share flower",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what comes first."
+        },
+        "vi": {
+          "prompt": "Xay cau chuyen tu dau den cuoi.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Tim hat",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Gieo hat",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Tuoi nuoc",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Thay mam",
+              "type": "text"
+            },
+            {
+              "id": "s4",
+              "content": "Tang hoa",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao den truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao den truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "master",
+        "skillIds": [
+          "letters.storytelling",
+          "creative.storytelling"
+        ],
+        "engine": "sequence",
+        "generatedBy": "games_16_30_generator",
+        "generatorSeed": 20260720,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [
+        "asset-build_the_story-3"
+      ],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "bts-lv068",
+      "gameId": "build_the_story",
+      "levelNumber": 68,
+      "difficulty": 5,
+      "learningObjective": "story sequencing",
+      "localizedContent": {
+        "en": {
+          "prompt": "Build the story from first to last.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Find seed",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Plant seed",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Water seed",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Watch sprout",
+              "type": "text"
+            },
+            {
+              "id": "s4",
+              "content": "Share flower",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what comes first."
+        },
+        "vi": {
+          "prompt": "Xay cau chuyen tu dau den cuoi.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Tim hat",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Gieo hat",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Tuoi nuoc",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Thay mam",
+              "type": "text"
+            },
+            {
+              "id": "s4",
+              "content": "Tang hoa",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao den truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao den truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "master",
+        "skillIds": [
+          "letters.storytelling",
+          "creative.storytelling"
+        ],
+        "engine": "sequence",
+        "generatedBy": "games_16_30_generator",
+        "generatorSeed": 20260720,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [
+        "asset-build_the_story-4"
+      ],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "bts-lv069",
+      "gameId": "build_the_story",
+      "levelNumber": 69,
+      "difficulty": 5,
+      "learningObjective": "story sequencing",
+      "localizedContent": {
+        "en": {
+          "prompt": "Build the story from first to last.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Find seed",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Plant seed",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Water seed",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Watch sprout",
+              "type": "text"
+            },
+            {
+              "id": "s4",
+              "content": "Share flower",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what comes first."
+        },
+        "vi": {
+          "prompt": "Xay cau chuyen tu dau den cuoi.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Tim hat",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Gieo hat",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Tuoi nuoc",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Thay mam",
+              "type": "text"
+            },
+            {
+              "id": "s4",
+              "content": "Tang hoa",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao den truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao den truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "master",
+        "skillIds": [
+          "letters.storytelling",
+          "creative.storytelling"
+        ],
+        "engine": "sequence",
+        "generatedBy": "games_16_30_generator",
+        "generatorSeed": 20260720,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [
+        "asset-build_the_story-5"
+      ],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "bts-lv070",
+      "gameId": "build_the_story",
+      "levelNumber": 70,
+      "difficulty": 5,
+      "learningObjective": "story sequencing",
+      "localizedContent": {
+        "en": {
+          "prompt": "Build the story from first to last.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Find seed",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Plant seed",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Water seed",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Watch sprout",
+              "type": "text"
+            },
+            {
+              "id": "s4",
+              "content": "Share flower",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what comes first."
+        },
+        "vi": {
+          "prompt": "Xay cau chuyen tu dau den cuoi.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Tim hat",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Gieo hat",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Tuoi nuoc",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Thay mam",
+              "type": "text"
+            },
+            {
+              "id": "s4",
+              "content": "Tang hoa",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao den truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao den truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "master",
+        "skillIds": [
+          "letters.storytelling",
+          "creative.storytelling"
+        ],
+        "engine": "sequence",
+        "generatedBy": "games_16_30_generator",
+        "generatorSeed": 20260720,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [
+        "asset-build_the_story-6"
+      ],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "bts-lv071",
+      "gameId": "build_the_story",
+      "levelNumber": 71,
+      "difficulty": 5,
+      "learningObjective": "story sequencing",
+      "localizedContent": {
+        "en": {
+          "prompt": "Build the story from first to last.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Find seed",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Plant seed",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Water seed",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Watch sprout",
+              "type": "text"
+            },
+            {
+              "id": "s4",
+              "content": "Share flower",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what comes first."
+        },
+        "vi": {
+          "prompt": "Xay cau chuyen tu dau den cuoi.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Tim hat",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Gieo hat",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Tuoi nuoc",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Thay mam",
+              "type": "text"
+            },
+            {
+              "id": "s4",
+              "content": "Tang hoa",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao den truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao den truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "master",
+        "skillIds": [
+          "letters.storytelling",
+          "creative.storytelling"
+        ],
+        "engine": "sequence",
+        "generatedBy": "games_16_30_generator",
+        "generatorSeed": 20260720,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [
+        "asset-build_the_story-7"
+      ],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "bts-lv072",
+      "gameId": "build_the_story",
+      "levelNumber": 72,
+      "difficulty": 5,
+      "learningObjective": "story sequencing",
+      "localizedContent": {
+        "en": {
+          "prompt": "Build the story from first to last.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Find seed",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Plant seed",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Water seed",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Watch sprout",
+              "type": "text"
+            },
+            {
+              "id": "s4",
+              "content": "Share flower",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what comes first."
+        },
+        "vi": {
+          "prompt": "Xay cau chuyen tu dau den cuoi.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Tim hat",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Gieo hat",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Tuoi nuoc",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Thay mam",
+              "type": "text"
+            },
+            {
+              "id": "s4",
+              "content": "Tang hoa",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao den truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao den truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "master",
+        "skillIds": [
+          "letters.storytelling",
+          "creative.storytelling"
+        ],
+        "engine": "sequence",
+        "generatedBy": "games_16_30_generator",
+        "generatorSeed": 20260720,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [
+        "asset-build_the_story-0"
+      ],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "bts-lv073",
+      "gameId": "build_the_story",
+      "levelNumber": 73,
+      "difficulty": 5,
+      "learningObjective": "story sequencing",
+      "localizedContent": {
+        "en": {
+          "prompt": "Build the story from first to last.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Find seed",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Plant seed",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Water seed",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Watch sprout",
+              "type": "text"
+            },
+            {
+              "id": "s4",
+              "content": "Share flower",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what comes first."
+        },
+        "vi": {
+          "prompt": "Xay cau chuyen tu dau den cuoi.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Tim hat",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Gieo hat",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Tuoi nuoc",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Thay mam",
+              "type": "text"
+            },
+            {
+              "id": "s4",
+              "content": "Tang hoa",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao den truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao den truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "master",
+        "skillIds": [
+          "letters.storytelling",
+          "creative.storytelling"
+        ],
+        "engine": "sequence",
+        "generatedBy": "games_16_30_generator",
+        "generatorSeed": 20260720,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [
+        "asset-build_the_story-1"
+      ],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "bts-lv074",
+      "gameId": "build_the_story",
+      "levelNumber": 74,
+      "difficulty": 5,
+      "learningObjective": "story sequencing",
+      "localizedContent": {
+        "en": {
+          "prompt": "Build the story from first to last.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Find seed",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Plant seed",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Water seed",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Watch sprout",
+              "type": "text"
+            },
+            {
+              "id": "s4",
+              "content": "Share flower",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what comes first."
+        },
+        "vi": {
+          "prompt": "Xay cau chuyen tu dau den cuoi.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Tim hat",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Gieo hat",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Tuoi nuoc",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Thay mam",
+              "type": "text"
+            },
+            {
+              "id": "s4",
+              "content": "Tang hoa",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao den truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao den truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "master",
+        "skillIds": [
+          "letters.storytelling",
+          "creative.storytelling"
+        ],
+        "engine": "sequence",
+        "generatedBy": "games_16_30_generator",
+        "generatorSeed": 20260720,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [
+        "asset-build_the_story-2"
+      ],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "bts-lv075",
+      "gameId": "build_the_story",
+      "levelNumber": 75,
+      "difficulty": 5,
+      "learningObjective": "story sequencing",
+      "localizedContent": {
+        "en": {
+          "prompt": "Build the story from first to last.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Find seed",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Plant seed",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Water seed",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Watch sprout",
+              "type": "text"
+            },
+            {
+              "id": "s4",
+              "content": "Share flower",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what comes first."
+        },
+        "vi": {
+          "prompt": "Xay cau chuyen tu dau den cuoi.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Tim hat",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Gieo hat",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Tuoi nuoc",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Thay mam",
+              "type": "text"
+            },
+            {
+              "id": "s4",
+              "content": "Tang hoa",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao den truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao den truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "master",
+        "skillIds": [
+          "letters.storytelling",
+          "creative.storytelling"
+        ],
+        "engine": "sequence",
+        "generatedBy": "games_16_30_generator",
+        "generatorSeed": 20260720,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [
+        "asset-build_the_story-3"
+      ],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    }
+  ]
+}

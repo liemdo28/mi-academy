@@ -1,39 +1,37 @@
 # Game engine architecture
 
 The MI Academy 1.0 master spec (§5) requires reusable engines rather than
-30 bespoke codebases. This document maps the **15 existing games** against
-the spec's engine types and records what already exists vs. what would need
-to be built for the 15 missing games.
+30 bespoke codebases. This document maps the **30 implemented games**
+against the spec's engine types and records what exists after Milestone 3.
 
 ## Current reality
 
 Matching, Sequence, Placement, and Multi-select are now real shared engines
 in `packages/mi_game_engines`, tested independently, exported through the
-public `mi_game_engines` barrel, and consumed by Games 9-15. The original
+public `mi_game_engines` barrel, and consumed by Games 9-30. The original
 six games still use their pre-existing game/session implementations except
 for the shared `ChoiceGameScreen` path used by Math Race and Math
-Supermarket. Games 16-30 are not implemented.
+Supermarket.
 
 ## Mapping existing games to the spec's 12 engine types
 
 | Spec engine | Existing game(s) using this shape | Notes |
 |---|---|---|
 | 1. Choice Engine | Math Race, Math Supermarket (`ChoiceGameSession`) | Already shared between 2 games — closest thing to a real "engine" today |
-| 2. Multi-select Engine | Category Collector, Logic Detective | Shared engine built and production-consumed |
+| 2. Multi-select Engine | Category Collector, Logic Detective, Healthy Foods, Odd One Out, Category Expert | Shared engine built and production-consumed |
 | 3. Drag-and-drop Engine | Word Builder (letter placement is drag-like but implemented as tap-to-place, not a generic drag engine) | Partial precedent only |
-| 4. Matching Engine | Number Balance | Shared engine built and production-consumed |
+| 4. Matching Engine | Number Balance, Picture Detective, Animal Homes, Emotion Match, Opposites, Weather Today | Shared engine built and production-consumed |
 | 5. Memory Engine | Memory Cards (`MemoryCardsGame`) | Single-game implementation, not yet generalized (e.g. can't easily spin up "Ghép bóng với vật" (Game 24) from it without duplicating the flip/match logic) |
-| 6. Sequence Engine | Pattern Parade, Story Steps | Shared engine built and production-consumed |
+| 6. Sequence Engine | Pattern Parade, Story Steps, Daily Routine, Number Train, Memory Journey, Build the Story | Shared engine built and production-consumed |
 | 7. Grid and Maze Engine | Robot Commands (`RobotGrid`, `RobotState`, `BlockInterpreter` in `packages/mi_blocks`) | Real grid/pathing logic exists but is coupled to the command-program interaction model; a plain maze game (Game 26) would need the grid/collision logic decoupled from the block-programming UI |
 | 8. Text Input Engine | none | Not built (needed for Game 07 chính tả, Game 08 sắp xếp câu) |
 | 9. Story and Quiz Engine | none | Not built (needed for Game 09 đọc hiểu) |
 | 10. Simulation Engine | none | Not built (needed for Game 30's garden/room design mode) |
-| 11. Puzzle Placement Engine | Shape Builder, Word Sorter | Shared Placement engine built and production-consumed |
+| 11. Puzzle Placement Engine | Shape Builder, Word Sorter, Color Builder, Letter Hunt, Puzzle Parts | Shared Placement engine built and production-consumed |
 | 12. Logic Grid Engine | none | Not built (needed for Game 28 Sudoku, Game 29 thám tử suy luận) |
 
-**Four shared engines are implemented and production-consumed.** Future
-engine scope for Games 16-30 remains open and should be added only when a
-future game actually needs it.
+**Four shared engines are implemented and production-consumed.** Milestone 3
+reuses those engines for Games 16-30 without adding new runtime engines.
 
 ## What a real consolidation would require
 

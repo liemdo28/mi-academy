@@ -1,0 +1,6831 @@
+{
+  "schemaVersion": "1.0",
+  "gameId": "memory_journey",
+  "levels": [
+    {
+      "id": "mj-lv001",
+      "gameId": "memory_journey",
+      "levelNumber": 1,
+      "difficulty": 1,
+      "learningObjective": "memory sequence replay",
+      "localizedContent": {
+        "en": {
+          "prompt": "Replay the journey in order.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Pack bag",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Ride bus",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Visit museum",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what comes first."
+        },
+        "vi": {
+          "prompt": "Lap lai hanh trinh theo thu tu.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Xep cap",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Len xe buyt",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Tham bao tang",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao den truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao den truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "junior",
+        "skillIds": [
+          "logic.memory",
+          "logic.pattern.basic"
+        ],
+        "engine": "sequence",
+        "generatedBy": "games_16_30_generator",
+        "generatorSeed": 20260720,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [
+        "asset-memory_journey-1"
+      ],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "mj-lv002",
+      "gameId": "memory_journey",
+      "levelNumber": 2,
+      "difficulty": 1,
+      "learningObjective": "memory sequence replay",
+      "localizedContent": {
+        "en": {
+          "prompt": "Replay the journey in order.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Pack bag",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Ride bus",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Visit museum",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what comes first."
+        },
+        "vi": {
+          "prompt": "Lap lai hanh trinh theo thu tu.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Xep cap",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Len xe buyt",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Tham bao tang",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao den truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao den truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "junior",
+        "skillIds": [
+          "logic.memory",
+          "logic.pattern.basic"
+        ],
+        "engine": "sequence",
+        "generatedBy": "games_16_30_generator",
+        "generatorSeed": 20260720,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [
+        "asset-memory_journey-2"
+      ],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "mj-lv003",
+      "gameId": "memory_journey",
+      "levelNumber": 3,
+      "difficulty": 1,
+      "learningObjective": "memory sequence replay",
+      "localizedContent": {
+        "en": {
+          "prompt": "Replay the journey in order.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Pack bag",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Ride bus",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Visit museum",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what comes first."
+        },
+        "vi": {
+          "prompt": "Lap lai hanh trinh theo thu tu.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Xep cap",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Len xe buyt",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Tham bao tang",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao den truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao den truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "junior",
+        "skillIds": [
+          "logic.memory",
+          "logic.pattern.basic"
+        ],
+        "engine": "sequence",
+        "generatedBy": "games_16_30_generator",
+        "generatorSeed": 20260720,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [
+        "asset-memory_journey-3"
+      ],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "mj-lv004",
+      "gameId": "memory_journey",
+      "levelNumber": 4,
+      "difficulty": 1,
+      "learningObjective": "memory sequence replay",
+      "localizedContent": {
+        "en": {
+          "prompt": "Replay the journey in order.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Pack bag",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Ride bus",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Visit museum",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what comes first."
+        },
+        "vi": {
+          "prompt": "Lap lai hanh trinh theo thu tu.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Xep cap",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Len xe buyt",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Tham bao tang",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao den truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao den truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "junior",
+        "skillIds": [
+          "logic.memory",
+          "logic.pattern.basic"
+        ],
+        "engine": "sequence",
+        "generatedBy": "games_16_30_generator",
+        "generatorSeed": 20260720,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [
+        "asset-memory_journey-4"
+      ],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "mj-lv005",
+      "gameId": "memory_journey",
+      "levelNumber": 5,
+      "difficulty": 1,
+      "learningObjective": "memory sequence replay",
+      "localizedContent": {
+        "en": {
+          "prompt": "Replay the journey in order.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Pack bag",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Ride bus",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Visit museum",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what comes first."
+        },
+        "vi": {
+          "prompt": "Lap lai hanh trinh theo thu tu.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Xep cap",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Len xe buyt",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Tham bao tang",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao den truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao den truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "junior",
+        "skillIds": [
+          "logic.memory",
+          "logic.pattern.basic"
+        ],
+        "engine": "sequence",
+        "generatedBy": "games_16_30_generator",
+        "generatorSeed": 20260720,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [
+        "asset-memory_journey-5"
+      ],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "mj-lv006",
+      "gameId": "memory_journey",
+      "levelNumber": 6,
+      "difficulty": 1,
+      "learningObjective": "memory sequence replay",
+      "localizedContent": {
+        "en": {
+          "prompt": "Replay the journey in order.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Pack bag",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Ride bus",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Visit museum",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what comes first."
+        },
+        "vi": {
+          "prompt": "Lap lai hanh trinh theo thu tu.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Xep cap",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Len xe buyt",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Tham bao tang",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao den truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao den truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "junior",
+        "skillIds": [
+          "logic.memory",
+          "logic.pattern.basic"
+        ],
+        "engine": "sequence",
+        "generatedBy": "games_16_30_generator",
+        "generatorSeed": 20260720,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [
+        "asset-memory_journey-6"
+      ],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "mj-lv007",
+      "gameId": "memory_journey",
+      "levelNumber": 7,
+      "difficulty": 1,
+      "learningObjective": "memory sequence replay",
+      "localizedContent": {
+        "en": {
+          "prompt": "Replay the journey in order.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Pack bag",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Ride bus",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Visit museum",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what comes first."
+        },
+        "vi": {
+          "prompt": "Lap lai hanh trinh theo thu tu.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Xep cap",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Len xe buyt",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Tham bao tang",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao den truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao den truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "junior",
+        "skillIds": [
+          "logic.memory",
+          "logic.pattern.basic"
+        ],
+        "engine": "sequence",
+        "generatedBy": "games_16_30_generator",
+        "generatorSeed": 20260720,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [
+        "asset-memory_journey-7"
+      ],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "mj-lv008",
+      "gameId": "memory_journey",
+      "levelNumber": 8,
+      "difficulty": 1,
+      "learningObjective": "memory sequence replay",
+      "localizedContent": {
+        "en": {
+          "prompt": "Replay the journey in order.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Pack bag",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Ride bus",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Visit museum",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what comes first."
+        },
+        "vi": {
+          "prompt": "Lap lai hanh trinh theo thu tu.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Xep cap",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Len xe buyt",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Tham bao tang",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao den truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao den truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "junior",
+        "skillIds": [
+          "logic.memory",
+          "logic.pattern.basic"
+        ],
+        "engine": "sequence",
+        "generatedBy": "games_16_30_generator",
+        "generatorSeed": 20260720,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [
+        "asset-memory_journey-0"
+      ],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "mj-lv009",
+      "gameId": "memory_journey",
+      "levelNumber": 9,
+      "difficulty": 1,
+      "learningObjective": "memory sequence replay",
+      "localizedContent": {
+        "en": {
+          "prompt": "Replay the journey in order.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Pack bag",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Ride bus",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Visit museum",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what comes first."
+        },
+        "vi": {
+          "prompt": "Lap lai hanh trinh theo thu tu.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Xep cap",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Len xe buyt",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Tham bao tang",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao den truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao den truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "junior",
+        "skillIds": [
+          "logic.memory",
+          "logic.pattern.basic"
+        ],
+        "engine": "sequence",
+        "generatedBy": "games_16_30_generator",
+        "generatorSeed": 20260720,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [
+        "asset-memory_journey-1"
+      ],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "mj-lv010",
+      "gameId": "memory_journey",
+      "levelNumber": 10,
+      "difficulty": 1,
+      "learningObjective": "memory sequence replay",
+      "localizedContent": {
+        "en": {
+          "prompt": "Replay the journey in order.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Pack bag",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Ride bus",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Visit museum",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what comes first."
+        },
+        "vi": {
+          "prompt": "Lap lai hanh trinh theo thu tu.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Xep cap",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Len xe buyt",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Tham bao tang",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao den truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao den truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "junior",
+        "skillIds": [
+          "logic.memory",
+          "logic.pattern.basic"
+        ],
+        "engine": "sequence",
+        "generatedBy": "games_16_30_generator",
+        "generatorSeed": 20260720,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [
+        "asset-memory_journey-2"
+      ],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "mj-lv011",
+      "gameId": "memory_journey",
+      "levelNumber": 11,
+      "difficulty": 1,
+      "learningObjective": "memory sequence replay",
+      "localizedContent": {
+        "en": {
+          "prompt": "Replay the journey in order.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Pack bag",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Ride bus",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Visit museum",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what comes first."
+        },
+        "vi": {
+          "prompt": "Lap lai hanh trinh theo thu tu.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Xep cap",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Len xe buyt",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Tham bao tang",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao den truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao den truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "junior",
+        "skillIds": [
+          "logic.memory",
+          "logic.pattern.basic"
+        ],
+        "engine": "sequence",
+        "generatedBy": "games_16_30_generator",
+        "generatorSeed": 20260720,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [
+        "asset-memory_journey-3"
+      ],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "mj-lv012",
+      "gameId": "memory_journey",
+      "levelNumber": 12,
+      "difficulty": 1,
+      "learningObjective": "memory sequence replay",
+      "localizedContent": {
+        "en": {
+          "prompt": "Replay the journey in order.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Pack bag",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Ride bus",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Visit museum",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what comes first."
+        },
+        "vi": {
+          "prompt": "Lap lai hanh trinh theo thu tu.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Xep cap",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Len xe buyt",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Tham bao tang",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao den truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao den truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "junior",
+        "skillIds": [
+          "logic.memory",
+          "logic.pattern.basic"
+        ],
+        "engine": "sequence",
+        "generatedBy": "games_16_30_generator",
+        "generatorSeed": 20260720,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [
+        "asset-memory_journey-4"
+      ],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "mj-lv013",
+      "gameId": "memory_journey",
+      "levelNumber": 13,
+      "difficulty": 1,
+      "learningObjective": "memory sequence replay",
+      "localizedContent": {
+        "en": {
+          "prompt": "Replay the journey in order.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Pack bag",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Ride bus",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Visit museum",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what comes first."
+        },
+        "vi": {
+          "prompt": "Lap lai hanh trinh theo thu tu.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Xep cap",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Len xe buyt",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Tham bao tang",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao den truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao den truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "junior",
+        "skillIds": [
+          "logic.memory",
+          "logic.pattern.basic"
+        ],
+        "engine": "sequence",
+        "generatedBy": "games_16_30_generator",
+        "generatorSeed": 20260720,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [
+        "asset-memory_journey-5"
+      ],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "mj-lv014",
+      "gameId": "memory_journey",
+      "levelNumber": 14,
+      "difficulty": 1,
+      "learningObjective": "memory sequence replay",
+      "localizedContent": {
+        "en": {
+          "prompt": "Replay the journey in order.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Pack bag",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Ride bus",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Visit museum",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what comes first."
+        },
+        "vi": {
+          "prompt": "Lap lai hanh trinh theo thu tu.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Xep cap",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Len xe buyt",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Tham bao tang",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao den truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao den truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "junior",
+        "skillIds": [
+          "logic.memory",
+          "logic.pattern.basic"
+        ],
+        "engine": "sequence",
+        "generatedBy": "games_16_30_generator",
+        "generatorSeed": 20260720,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [
+        "asset-memory_journey-6"
+      ],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "mj-lv015",
+      "gameId": "memory_journey",
+      "levelNumber": 15,
+      "difficulty": 1,
+      "learningObjective": "memory sequence replay",
+      "localizedContent": {
+        "en": {
+          "prompt": "Replay the journey in order.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Pack bag",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Ride bus",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Visit museum",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what comes first."
+        },
+        "vi": {
+          "prompt": "Lap lai hanh trinh theo thu tu.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Xep cap",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Len xe buyt",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Tham bao tang",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao den truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao den truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "junior",
+        "skillIds": [
+          "logic.memory",
+          "logic.pattern.basic"
+        ],
+        "engine": "sequence",
+        "generatedBy": "games_16_30_generator",
+        "generatorSeed": 20260720,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [
+        "asset-memory_journey-7"
+      ],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "mj-lv016",
+      "gameId": "memory_journey",
+      "levelNumber": 16,
+      "difficulty": 1,
+      "learningObjective": "memory sequence replay",
+      "localizedContent": {
+        "en": {
+          "prompt": "Replay the journey in order.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Pack bag",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Ride bus",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Visit museum",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what comes first."
+        },
+        "vi": {
+          "prompt": "Lap lai hanh trinh theo thu tu.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Xep cap",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Len xe buyt",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Tham bao tang",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao den truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao den truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "junior",
+        "skillIds": [
+          "logic.memory",
+          "logic.pattern.basic"
+        ],
+        "engine": "sequence",
+        "generatedBy": "games_16_30_generator",
+        "generatorSeed": 20260720,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [
+        "asset-memory_journey-0"
+      ],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "mj-lv017",
+      "gameId": "memory_journey",
+      "levelNumber": 17,
+      "difficulty": 1,
+      "learningObjective": "memory sequence replay",
+      "localizedContent": {
+        "en": {
+          "prompt": "Replay the journey in order.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Pack bag",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Ride bus",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Visit museum",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what comes first."
+        },
+        "vi": {
+          "prompt": "Lap lai hanh trinh theo thu tu.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Xep cap",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Len xe buyt",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Tham bao tang",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao den truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao den truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "junior",
+        "skillIds": [
+          "logic.memory",
+          "logic.pattern.basic"
+        ],
+        "engine": "sequence",
+        "generatedBy": "games_16_30_generator",
+        "generatorSeed": 20260720,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [
+        "asset-memory_journey-1"
+      ],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "mj-lv018",
+      "gameId": "memory_journey",
+      "levelNumber": 18,
+      "difficulty": 1,
+      "learningObjective": "memory sequence replay",
+      "localizedContent": {
+        "en": {
+          "prompt": "Replay the journey in order.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Pack bag",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Ride bus",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Visit museum",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what comes first."
+        },
+        "vi": {
+          "prompt": "Lap lai hanh trinh theo thu tu.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Xep cap",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Len xe buyt",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Tham bao tang",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao den truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao den truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "junior",
+        "skillIds": [
+          "logic.memory",
+          "logic.pattern.basic"
+        ],
+        "engine": "sequence",
+        "generatedBy": "games_16_30_generator",
+        "generatorSeed": 20260720,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [
+        "asset-memory_journey-2"
+      ],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "mj-lv019",
+      "gameId": "memory_journey",
+      "levelNumber": 19,
+      "difficulty": 1,
+      "learningObjective": "memory sequence replay",
+      "localizedContent": {
+        "en": {
+          "prompt": "Replay the journey in order.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Pack bag",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Ride bus",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Visit museum",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what comes first."
+        },
+        "vi": {
+          "prompt": "Lap lai hanh trinh theo thu tu.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Xep cap",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Len xe buyt",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Tham bao tang",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao den truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao den truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "junior",
+        "skillIds": [
+          "logic.memory",
+          "logic.pattern.basic"
+        ],
+        "engine": "sequence",
+        "generatedBy": "games_16_30_generator",
+        "generatorSeed": 20260720,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [
+        "asset-memory_journey-3"
+      ],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "mj-lv020",
+      "gameId": "memory_journey",
+      "levelNumber": 20,
+      "difficulty": 1,
+      "learningObjective": "memory sequence replay",
+      "localizedContent": {
+        "en": {
+          "prompt": "Replay the journey in order.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Pack bag",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Ride bus",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Visit museum",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what comes first."
+        },
+        "vi": {
+          "prompt": "Lap lai hanh trinh theo thu tu.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Xep cap",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Len xe buyt",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Tham bao tang",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao den truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao den truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "junior",
+        "skillIds": [
+          "logic.memory",
+          "logic.pattern.basic"
+        ],
+        "engine": "sequence",
+        "generatedBy": "games_16_30_generator",
+        "generatorSeed": 20260720,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [
+        "asset-memory_journey-4"
+      ],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "mj-lv021",
+      "gameId": "memory_journey",
+      "levelNumber": 21,
+      "difficulty": 1,
+      "learningObjective": "memory sequence replay",
+      "localizedContent": {
+        "en": {
+          "prompt": "Replay the journey in order.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Pack bag",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Ride bus",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Visit museum",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what comes first."
+        },
+        "vi": {
+          "prompt": "Lap lai hanh trinh theo thu tu.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Xep cap",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Len xe buyt",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Tham bao tang",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao den truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao den truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "junior",
+        "skillIds": [
+          "logic.memory",
+          "logic.pattern.basic"
+        ],
+        "engine": "sequence",
+        "generatedBy": "games_16_30_generator",
+        "generatorSeed": 20260720,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [
+        "asset-memory_journey-5"
+      ],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "mj-lv022",
+      "gameId": "memory_journey",
+      "levelNumber": 22,
+      "difficulty": 1,
+      "learningObjective": "memory sequence replay",
+      "localizedContent": {
+        "en": {
+          "prompt": "Replay the journey in order.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Pack bag",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Ride bus",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Visit museum",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what comes first."
+        },
+        "vi": {
+          "prompt": "Lap lai hanh trinh theo thu tu.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Xep cap",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Len xe buyt",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Tham bao tang",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao den truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao den truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "junior",
+        "skillIds": [
+          "logic.memory",
+          "logic.pattern.basic"
+        ],
+        "engine": "sequence",
+        "generatedBy": "games_16_30_generator",
+        "generatorSeed": 20260720,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [
+        "asset-memory_journey-6"
+      ],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "mj-lv023",
+      "gameId": "memory_journey",
+      "levelNumber": 23,
+      "difficulty": 1,
+      "learningObjective": "memory sequence replay",
+      "localizedContent": {
+        "en": {
+          "prompt": "Replay the journey in order.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Pack bag",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Ride bus",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Visit museum",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what comes first."
+        },
+        "vi": {
+          "prompt": "Lap lai hanh trinh theo thu tu.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Xep cap",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Len xe buyt",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Tham bao tang",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao den truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao den truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "junior",
+        "skillIds": [
+          "logic.memory",
+          "logic.pattern.basic"
+        ],
+        "engine": "sequence",
+        "generatedBy": "games_16_30_generator",
+        "generatorSeed": 20260720,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [
+        "asset-memory_journey-7"
+      ],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "mj-lv024",
+      "gameId": "memory_journey",
+      "levelNumber": 24,
+      "difficulty": 1,
+      "learningObjective": "memory sequence replay",
+      "localizedContent": {
+        "en": {
+          "prompt": "Replay the journey in order.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Pack bag",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Ride bus",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Visit museum",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what comes first."
+        },
+        "vi": {
+          "prompt": "Lap lai hanh trinh theo thu tu.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Xep cap",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Len xe buyt",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Tham bao tang",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao den truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao den truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "junior",
+        "skillIds": [
+          "logic.memory",
+          "logic.pattern.basic"
+        ],
+        "engine": "sequence",
+        "generatedBy": "games_16_30_generator",
+        "generatorSeed": 20260720,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [
+        "asset-memory_journey-0"
+      ],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "mj-lv025",
+      "gameId": "memory_journey",
+      "levelNumber": 25,
+      "difficulty": 1,
+      "learningObjective": "memory sequence replay",
+      "localizedContent": {
+        "en": {
+          "prompt": "Replay the journey in order.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Pack bag",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Ride bus",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Visit museum",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what comes first."
+        },
+        "vi": {
+          "prompt": "Lap lai hanh trinh theo thu tu.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Xep cap",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Len xe buyt",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Tham bao tang",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao den truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao den truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "junior",
+        "skillIds": [
+          "logic.memory",
+          "logic.pattern.basic"
+        ],
+        "engine": "sequence",
+        "generatedBy": "games_16_30_generator",
+        "generatorSeed": 20260720,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [
+        "asset-memory_journey-1"
+      ],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "mj-lv026",
+      "gameId": "memory_journey",
+      "levelNumber": 26,
+      "difficulty": 3,
+      "learningObjective": "memory sequence replay",
+      "localizedContent": {
+        "en": {
+          "prompt": "Replay the journey in order.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Pack bag",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Ride bus",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Visit museum",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Draw picture",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what comes first."
+        },
+        "vi": {
+          "prompt": "Lap lai hanh trinh theo thu tu.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Xep cap",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Len xe buyt",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Tham bao tang",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Ve tranh",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao den truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao den truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "explorer",
+        "skillIds": [
+          "logic.memory",
+          "logic.pattern.basic"
+        ],
+        "engine": "sequence",
+        "generatedBy": "games_16_30_generator",
+        "generatorSeed": 20260720,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [
+        "asset-memory_journey-2"
+      ],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "mj-lv027",
+      "gameId": "memory_journey",
+      "levelNumber": 27,
+      "difficulty": 3,
+      "learningObjective": "memory sequence replay",
+      "localizedContent": {
+        "en": {
+          "prompt": "Replay the journey in order.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Pack bag",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Ride bus",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Visit museum",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Draw picture",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what comes first."
+        },
+        "vi": {
+          "prompt": "Lap lai hanh trinh theo thu tu.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Xep cap",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Len xe buyt",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Tham bao tang",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Ve tranh",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao den truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao den truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "explorer",
+        "skillIds": [
+          "logic.memory",
+          "logic.pattern.basic"
+        ],
+        "engine": "sequence",
+        "generatedBy": "games_16_30_generator",
+        "generatorSeed": 20260720,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [
+        "asset-memory_journey-3"
+      ],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "mj-lv028",
+      "gameId": "memory_journey",
+      "levelNumber": 28,
+      "difficulty": 3,
+      "learningObjective": "memory sequence replay",
+      "localizedContent": {
+        "en": {
+          "prompt": "Replay the journey in order.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Pack bag",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Ride bus",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Visit museum",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Draw picture",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what comes first."
+        },
+        "vi": {
+          "prompt": "Lap lai hanh trinh theo thu tu.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Xep cap",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Len xe buyt",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Tham bao tang",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Ve tranh",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao den truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao den truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "explorer",
+        "skillIds": [
+          "logic.memory",
+          "logic.pattern.basic"
+        ],
+        "engine": "sequence",
+        "generatedBy": "games_16_30_generator",
+        "generatorSeed": 20260720,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [
+        "asset-memory_journey-4"
+      ],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "mj-lv029",
+      "gameId": "memory_journey",
+      "levelNumber": 29,
+      "difficulty": 3,
+      "learningObjective": "memory sequence replay",
+      "localizedContent": {
+        "en": {
+          "prompt": "Replay the journey in order.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Pack bag",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Ride bus",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Visit museum",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Draw picture",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what comes first."
+        },
+        "vi": {
+          "prompt": "Lap lai hanh trinh theo thu tu.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Xep cap",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Len xe buyt",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Tham bao tang",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Ve tranh",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao den truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao den truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "explorer",
+        "skillIds": [
+          "logic.memory",
+          "logic.pattern.basic"
+        ],
+        "engine": "sequence",
+        "generatedBy": "games_16_30_generator",
+        "generatorSeed": 20260720,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [
+        "asset-memory_journey-5"
+      ],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "mj-lv030",
+      "gameId": "memory_journey",
+      "levelNumber": 30,
+      "difficulty": 3,
+      "learningObjective": "memory sequence replay",
+      "localizedContent": {
+        "en": {
+          "prompt": "Replay the journey in order.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Pack bag",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Ride bus",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Visit museum",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Draw picture",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what comes first."
+        },
+        "vi": {
+          "prompt": "Lap lai hanh trinh theo thu tu.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Xep cap",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Len xe buyt",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Tham bao tang",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Ve tranh",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao den truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao den truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "explorer",
+        "skillIds": [
+          "logic.memory",
+          "logic.pattern.basic"
+        ],
+        "engine": "sequence",
+        "generatedBy": "games_16_30_generator",
+        "generatorSeed": 20260720,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [
+        "asset-memory_journey-6"
+      ],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "mj-lv031",
+      "gameId": "memory_journey",
+      "levelNumber": 31,
+      "difficulty": 3,
+      "learningObjective": "memory sequence replay",
+      "localizedContent": {
+        "en": {
+          "prompt": "Replay the journey in order.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Pack bag",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Ride bus",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Visit museum",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Draw picture",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what comes first."
+        },
+        "vi": {
+          "prompt": "Lap lai hanh trinh theo thu tu.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Xep cap",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Len xe buyt",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Tham bao tang",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Ve tranh",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao den truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao den truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "explorer",
+        "skillIds": [
+          "logic.memory",
+          "logic.pattern.basic"
+        ],
+        "engine": "sequence",
+        "generatedBy": "games_16_30_generator",
+        "generatorSeed": 20260720,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [
+        "asset-memory_journey-7"
+      ],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "mj-lv032",
+      "gameId": "memory_journey",
+      "levelNumber": 32,
+      "difficulty": 3,
+      "learningObjective": "memory sequence replay",
+      "localizedContent": {
+        "en": {
+          "prompt": "Replay the journey in order.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Pack bag",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Ride bus",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Visit museum",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Draw picture",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what comes first."
+        },
+        "vi": {
+          "prompt": "Lap lai hanh trinh theo thu tu.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Xep cap",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Len xe buyt",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Tham bao tang",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Ve tranh",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao den truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao den truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "explorer",
+        "skillIds": [
+          "logic.memory",
+          "logic.pattern.basic"
+        ],
+        "engine": "sequence",
+        "generatedBy": "games_16_30_generator",
+        "generatorSeed": 20260720,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [
+        "asset-memory_journey-0"
+      ],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "mj-lv033",
+      "gameId": "memory_journey",
+      "levelNumber": 33,
+      "difficulty": 3,
+      "learningObjective": "memory sequence replay",
+      "localizedContent": {
+        "en": {
+          "prompt": "Replay the journey in order.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Pack bag",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Ride bus",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Visit museum",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Draw picture",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what comes first."
+        },
+        "vi": {
+          "prompt": "Lap lai hanh trinh theo thu tu.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Xep cap",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Len xe buyt",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Tham bao tang",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Ve tranh",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao den truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao den truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "explorer",
+        "skillIds": [
+          "logic.memory",
+          "logic.pattern.basic"
+        ],
+        "engine": "sequence",
+        "generatedBy": "games_16_30_generator",
+        "generatorSeed": 20260720,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [
+        "asset-memory_journey-1"
+      ],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "mj-lv034",
+      "gameId": "memory_journey",
+      "levelNumber": 34,
+      "difficulty": 3,
+      "learningObjective": "memory sequence replay",
+      "localizedContent": {
+        "en": {
+          "prompt": "Replay the journey in order.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Pack bag",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Ride bus",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Visit museum",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Draw picture",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what comes first."
+        },
+        "vi": {
+          "prompt": "Lap lai hanh trinh theo thu tu.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Xep cap",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Len xe buyt",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Tham bao tang",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Ve tranh",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao den truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao den truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "explorer",
+        "skillIds": [
+          "logic.memory",
+          "logic.pattern.basic"
+        ],
+        "engine": "sequence",
+        "generatedBy": "games_16_30_generator",
+        "generatorSeed": 20260720,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [
+        "asset-memory_journey-2"
+      ],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "mj-lv035",
+      "gameId": "memory_journey",
+      "levelNumber": 35,
+      "difficulty": 3,
+      "learningObjective": "memory sequence replay",
+      "localizedContent": {
+        "en": {
+          "prompt": "Replay the journey in order.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Pack bag",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Ride bus",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Visit museum",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Draw picture",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what comes first."
+        },
+        "vi": {
+          "prompt": "Lap lai hanh trinh theo thu tu.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Xep cap",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Len xe buyt",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Tham bao tang",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Ve tranh",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao den truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao den truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "explorer",
+        "skillIds": [
+          "logic.memory",
+          "logic.pattern.basic"
+        ],
+        "engine": "sequence",
+        "generatedBy": "games_16_30_generator",
+        "generatorSeed": 20260720,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [
+        "asset-memory_journey-3"
+      ],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "mj-lv036",
+      "gameId": "memory_journey",
+      "levelNumber": 36,
+      "difficulty": 3,
+      "learningObjective": "memory sequence replay",
+      "localizedContent": {
+        "en": {
+          "prompt": "Replay the journey in order.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Pack bag",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Ride bus",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Visit museum",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Draw picture",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what comes first."
+        },
+        "vi": {
+          "prompt": "Lap lai hanh trinh theo thu tu.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Xep cap",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Len xe buyt",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Tham bao tang",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Ve tranh",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao den truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao den truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "explorer",
+        "skillIds": [
+          "logic.memory",
+          "logic.pattern.basic"
+        ],
+        "engine": "sequence",
+        "generatedBy": "games_16_30_generator",
+        "generatorSeed": 20260720,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [
+        "asset-memory_journey-4"
+      ],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "mj-lv037",
+      "gameId": "memory_journey",
+      "levelNumber": 37,
+      "difficulty": 3,
+      "learningObjective": "memory sequence replay",
+      "localizedContent": {
+        "en": {
+          "prompt": "Replay the journey in order.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Pack bag",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Ride bus",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Visit museum",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Draw picture",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what comes first."
+        },
+        "vi": {
+          "prompt": "Lap lai hanh trinh theo thu tu.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Xep cap",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Len xe buyt",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Tham bao tang",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Ve tranh",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao den truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao den truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "explorer",
+        "skillIds": [
+          "logic.memory",
+          "logic.pattern.basic"
+        ],
+        "engine": "sequence",
+        "generatedBy": "games_16_30_generator",
+        "generatorSeed": 20260720,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [
+        "asset-memory_journey-5"
+      ],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "mj-lv038",
+      "gameId": "memory_journey",
+      "levelNumber": 38,
+      "difficulty": 3,
+      "learningObjective": "memory sequence replay",
+      "localizedContent": {
+        "en": {
+          "prompt": "Replay the journey in order.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Pack bag",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Ride bus",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Visit museum",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Draw picture",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what comes first."
+        },
+        "vi": {
+          "prompt": "Lap lai hanh trinh theo thu tu.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Xep cap",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Len xe buyt",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Tham bao tang",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Ve tranh",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao den truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao den truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "explorer",
+        "skillIds": [
+          "logic.memory",
+          "logic.pattern.basic"
+        ],
+        "engine": "sequence",
+        "generatedBy": "games_16_30_generator",
+        "generatorSeed": 20260720,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [
+        "asset-memory_journey-6"
+      ],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "mj-lv039",
+      "gameId": "memory_journey",
+      "levelNumber": 39,
+      "difficulty": 3,
+      "learningObjective": "memory sequence replay",
+      "localizedContent": {
+        "en": {
+          "prompt": "Replay the journey in order.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Pack bag",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Ride bus",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Visit museum",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Draw picture",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what comes first."
+        },
+        "vi": {
+          "prompt": "Lap lai hanh trinh theo thu tu.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Xep cap",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Len xe buyt",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Tham bao tang",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Ve tranh",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao den truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao den truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "explorer",
+        "skillIds": [
+          "logic.memory",
+          "logic.pattern.basic"
+        ],
+        "engine": "sequence",
+        "generatedBy": "games_16_30_generator",
+        "generatorSeed": 20260720,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [
+        "asset-memory_journey-7"
+      ],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "mj-lv040",
+      "gameId": "memory_journey",
+      "levelNumber": 40,
+      "difficulty": 3,
+      "learningObjective": "memory sequence replay",
+      "localizedContent": {
+        "en": {
+          "prompt": "Replay the journey in order.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Pack bag",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Ride bus",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Visit museum",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Draw picture",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what comes first."
+        },
+        "vi": {
+          "prompt": "Lap lai hanh trinh theo thu tu.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Xep cap",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Len xe buyt",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Tham bao tang",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Ve tranh",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao den truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao den truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "explorer",
+        "skillIds": [
+          "logic.memory",
+          "logic.pattern.basic"
+        ],
+        "engine": "sequence",
+        "generatedBy": "games_16_30_generator",
+        "generatorSeed": 20260720,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [
+        "asset-memory_journey-0"
+      ],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "mj-lv041",
+      "gameId": "memory_journey",
+      "levelNumber": 41,
+      "difficulty": 3,
+      "learningObjective": "memory sequence replay",
+      "localizedContent": {
+        "en": {
+          "prompt": "Replay the journey in order.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Pack bag",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Ride bus",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Visit museum",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Draw picture",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what comes first."
+        },
+        "vi": {
+          "prompt": "Lap lai hanh trinh theo thu tu.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Xep cap",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Len xe buyt",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Tham bao tang",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Ve tranh",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao den truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao den truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "explorer",
+        "skillIds": [
+          "logic.memory",
+          "logic.pattern.basic"
+        ],
+        "engine": "sequence",
+        "generatedBy": "games_16_30_generator",
+        "generatorSeed": 20260720,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [
+        "asset-memory_journey-1"
+      ],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "mj-lv042",
+      "gameId": "memory_journey",
+      "levelNumber": 42,
+      "difficulty": 3,
+      "learningObjective": "memory sequence replay",
+      "localizedContent": {
+        "en": {
+          "prompt": "Replay the journey in order.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Pack bag",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Ride bus",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Visit museum",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Draw picture",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what comes first."
+        },
+        "vi": {
+          "prompt": "Lap lai hanh trinh theo thu tu.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Xep cap",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Len xe buyt",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Tham bao tang",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Ve tranh",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao den truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao den truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "explorer",
+        "skillIds": [
+          "logic.memory",
+          "logic.pattern.basic"
+        ],
+        "engine": "sequence",
+        "generatedBy": "games_16_30_generator",
+        "generatorSeed": 20260720,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [
+        "asset-memory_journey-2"
+      ],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "mj-lv043",
+      "gameId": "memory_journey",
+      "levelNumber": 43,
+      "difficulty": 3,
+      "learningObjective": "memory sequence replay",
+      "localizedContent": {
+        "en": {
+          "prompt": "Replay the journey in order.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Pack bag",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Ride bus",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Visit museum",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Draw picture",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what comes first."
+        },
+        "vi": {
+          "prompt": "Lap lai hanh trinh theo thu tu.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Xep cap",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Len xe buyt",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Tham bao tang",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Ve tranh",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao den truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao den truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "explorer",
+        "skillIds": [
+          "logic.memory",
+          "logic.pattern.basic"
+        ],
+        "engine": "sequence",
+        "generatedBy": "games_16_30_generator",
+        "generatorSeed": 20260720,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [
+        "asset-memory_journey-3"
+      ],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "mj-lv044",
+      "gameId": "memory_journey",
+      "levelNumber": 44,
+      "difficulty": 3,
+      "learningObjective": "memory sequence replay",
+      "localizedContent": {
+        "en": {
+          "prompt": "Replay the journey in order.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Pack bag",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Ride bus",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Visit museum",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Draw picture",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what comes first."
+        },
+        "vi": {
+          "prompt": "Lap lai hanh trinh theo thu tu.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Xep cap",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Len xe buyt",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Tham bao tang",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Ve tranh",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao den truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao den truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "explorer",
+        "skillIds": [
+          "logic.memory",
+          "logic.pattern.basic"
+        ],
+        "engine": "sequence",
+        "generatedBy": "games_16_30_generator",
+        "generatorSeed": 20260720,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [
+        "asset-memory_journey-4"
+      ],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "mj-lv045",
+      "gameId": "memory_journey",
+      "levelNumber": 45,
+      "difficulty": 3,
+      "learningObjective": "memory sequence replay",
+      "localizedContent": {
+        "en": {
+          "prompt": "Replay the journey in order.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Pack bag",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Ride bus",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Visit museum",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Draw picture",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what comes first."
+        },
+        "vi": {
+          "prompt": "Lap lai hanh trinh theo thu tu.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Xep cap",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Len xe buyt",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Tham bao tang",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Ve tranh",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao den truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao den truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "explorer",
+        "skillIds": [
+          "logic.memory",
+          "logic.pattern.basic"
+        ],
+        "engine": "sequence",
+        "generatedBy": "games_16_30_generator",
+        "generatorSeed": 20260720,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [
+        "asset-memory_journey-5"
+      ],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "mj-lv046",
+      "gameId": "memory_journey",
+      "levelNumber": 46,
+      "difficulty": 3,
+      "learningObjective": "memory sequence replay",
+      "localizedContent": {
+        "en": {
+          "prompt": "Replay the journey in order.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Pack bag",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Ride bus",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Visit museum",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Draw picture",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what comes first."
+        },
+        "vi": {
+          "prompt": "Lap lai hanh trinh theo thu tu.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Xep cap",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Len xe buyt",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Tham bao tang",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Ve tranh",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao den truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao den truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "explorer",
+        "skillIds": [
+          "logic.memory",
+          "logic.pattern.basic"
+        ],
+        "engine": "sequence",
+        "generatedBy": "games_16_30_generator",
+        "generatorSeed": 20260720,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [
+        "asset-memory_journey-6"
+      ],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "mj-lv047",
+      "gameId": "memory_journey",
+      "levelNumber": 47,
+      "difficulty": 3,
+      "learningObjective": "memory sequence replay",
+      "localizedContent": {
+        "en": {
+          "prompt": "Replay the journey in order.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Pack bag",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Ride bus",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Visit museum",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Draw picture",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what comes first."
+        },
+        "vi": {
+          "prompt": "Lap lai hanh trinh theo thu tu.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Xep cap",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Len xe buyt",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Tham bao tang",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Ve tranh",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao den truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao den truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "explorer",
+        "skillIds": [
+          "logic.memory",
+          "logic.pattern.basic"
+        ],
+        "engine": "sequence",
+        "generatedBy": "games_16_30_generator",
+        "generatorSeed": 20260720,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [
+        "asset-memory_journey-7"
+      ],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "mj-lv048",
+      "gameId": "memory_journey",
+      "levelNumber": 48,
+      "difficulty": 3,
+      "learningObjective": "memory sequence replay",
+      "localizedContent": {
+        "en": {
+          "prompt": "Replay the journey in order.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Pack bag",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Ride bus",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Visit museum",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Draw picture",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what comes first."
+        },
+        "vi": {
+          "prompt": "Lap lai hanh trinh theo thu tu.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Xep cap",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Len xe buyt",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Tham bao tang",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Ve tranh",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao den truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao den truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "explorer",
+        "skillIds": [
+          "logic.memory",
+          "logic.pattern.basic"
+        ],
+        "engine": "sequence",
+        "generatedBy": "games_16_30_generator",
+        "generatorSeed": 20260720,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [
+        "asset-memory_journey-0"
+      ],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "mj-lv049",
+      "gameId": "memory_journey",
+      "levelNumber": 49,
+      "difficulty": 3,
+      "learningObjective": "memory sequence replay",
+      "localizedContent": {
+        "en": {
+          "prompt": "Replay the journey in order.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Pack bag",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Ride bus",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Visit museum",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Draw picture",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what comes first."
+        },
+        "vi": {
+          "prompt": "Lap lai hanh trinh theo thu tu.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Xep cap",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Len xe buyt",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Tham bao tang",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Ve tranh",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao den truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao den truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "explorer",
+        "skillIds": [
+          "logic.memory",
+          "logic.pattern.basic"
+        ],
+        "engine": "sequence",
+        "generatedBy": "games_16_30_generator",
+        "generatorSeed": 20260720,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [
+        "asset-memory_journey-1"
+      ],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "mj-lv050",
+      "gameId": "memory_journey",
+      "levelNumber": 50,
+      "difficulty": 3,
+      "learningObjective": "memory sequence replay",
+      "localizedContent": {
+        "en": {
+          "prompt": "Replay the journey in order.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Pack bag",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Ride bus",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Visit museum",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Draw picture",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what comes first."
+        },
+        "vi": {
+          "prompt": "Lap lai hanh trinh theo thu tu.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Xep cap",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Len xe buyt",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Tham bao tang",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Ve tranh",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao den truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao den truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "explorer",
+        "skillIds": [
+          "logic.memory",
+          "logic.pattern.basic"
+        ],
+        "engine": "sequence",
+        "generatedBy": "games_16_30_generator",
+        "generatorSeed": 20260720,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [
+        "asset-memory_journey-2"
+      ],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "mj-lv051",
+      "gameId": "memory_journey",
+      "levelNumber": 51,
+      "difficulty": 5,
+      "learningObjective": "memory sequence replay",
+      "localizedContent": {
+        "en": {
+          "prompt": "Replay the journey in order.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Pack bag",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Ride bus",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Visit museum",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Draw picture",
+              "type": "text"
+            },
+            {
+              "id": "s4",
+              "content": "Return home",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what comes first."
+        },
+        "vi": {
+          "prompt": "Lap lai hanh trinh theo thu tu.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Xep cap",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Len xe buyt",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Tham bao tang",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Ve tranh",
+              "type": "text"
+            },
+            {
+              "id": "s4",
+              "content": "Ve nha",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao den truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao den truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "master",
+        "skillIds": [
+          "logic.memory",
+          "logic.pattern.basic"
+        ],
+        "engine": "sequence",
+        "generatedBy": "games_16_30_generator",
+        "generatorSeed": 20260720,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [
+        "asset-memory_journey-3"
+      ],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "mj-lv052",
+      "gameId": "memory_journey",
+      "levelNumber": 52,
+      "difficulty": 5,
+      "learningObjective": "memory sequence replay",
+      "localizedContent": {
+        "en": {
+          "prompt": "Replay the journey in order.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Pack bag",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Ride bus",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Visit museum",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Draw picture",
+              "type": "text"
+            },
+            {
+              "id": "s4",
+              "content": "Return home",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what comes first."
+        },
+        "vi": {
+          "prompt": "Lap lai hanh trinh theo thu tu.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Xep cap",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Len xe buyt",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Tham bao tang",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Ve tranh",
+              "type": "text"
+            },
+            {
+              "id": "s4",
+              "content": "Ve nha",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao den truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao den truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "master",
+        "skillIds": [
+          "logic.memory",
+          "logic.pattern.basic"
+        ],
+        "engine": "sequence",
+        "generatedBy": "games_16_30_generator",
+        "generatorSeed": 20260720,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [
+        "asset-memory_journey-4"
+      ],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "mj-lv053",
+      "gameId": "memory_journey",
+      "levelNumber": 53,
+      "difficulty": 5,
+      "learningObjective": "memory sequence replay",
+      "localizedContent": {
+        "en": {
+          "prompt": "Replay the journey in order.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Pack bag",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Ride bus",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Visit museum",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Draw picture",
+              "type": "text"
+            },
+            {
+              "id": "s4",
+              "content": "Return home",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what comes first."
+        },
+        "vi": {
+          "prompt": "Lap lai hanh trinh theo thu tu.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Xep cap",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Len xe buyt",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Tham bao tang",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Ve tranh",
+              "type": "text"
+            },
+            {
+              "id": "s4",
+              "content": "Ve nha",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao den truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao den truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "master",
+        "skillIds": [
+          "logic.memory",
+          "logic.pattern.basic"
+        ],
+        "engine": "sequence",
+        "generatedBy": "games_16_30_generator",
+        "generatorSeed": 20260720,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [
+        "asset-memory_journey-5"
+      ],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "mj-lv054",
+      "gameId": "memory_journey",
+      "levelNumber": 54,
+      "difficulty": 5,
+      "learningObjective": "memory sequence replay",
+      "localizedContent": {
+        "en": {
+          "prompt": "Replay the journey in order.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Pack bag",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Ride bus",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Visit museum",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Draw picture",
+              "type": "text"
+            },
+            {
+              "id": "s4",
+              "content": "Return home",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what comes first."
+        },
+        "vi": {
+          "prompt": "Lap lai hanh trinh theo thu tu.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Xep cap",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Len xe buyt",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Tham bao tang",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Ve tranh",
+              "type": "text"
+            },
+            {
+              "id": "s4",
+              "content": "Ve nha",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao den truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao den truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "master",
+        "skillIds": [
+          "logic.memory",
+          "logic.pattern.basic"
+        ],
+        "engine": "sequence",
+        "generatedBy": "games_16_30_generator",
+        "generatorSeed": 20260720,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [
+        "asset-memory_journey-6"
+      ],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "mj-lv055",
+      "gameId": "memory_journey",
+      "levelNumber": 55,
+      "difficulty": 5,
+      "learningObjective": "memory sequence replay",
+      "localizedContent": {
+        "en": {
+          "prompt": "Replay the journey in order.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Pack bag",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Ride bus",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Visit museum",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Draw picture",
+              "type": "text"
+            },
+            {
+              "id": "s4",
+              "content": "Return home",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what comes first."
+        },
+        "vi": {
+          "prompt": "Lap lai hanh trinh theo thu tu.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Xep cap",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Len xe buyt",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Tham bao tang",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Ve tranh",
+              "type": "text"
+            },
+            {
+              "id": "s4",
+              "content": "Ve nha",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao den truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao den truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "master",
+        "skillIds": [
+          "logic.memory",
+          "logic.pattern.basic"
+        ],
+        "engine": "sequence",
+        "generatedBy": "games_16_30_generator",
+        "generatorSeed": 20260720,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [
+        "asset-memory_journey-7"
+      ],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "mj-lv056",
+      "gameId": "memory_journey",
+      "levelNumber": 56,
+      "difficulty": 5,
+      "learningObjective": "memory sequence replay",
+      "localizedContent": {
+        "en": {
+          "prompt": "Replay the journey in order.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Pack bag",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Ride bus",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Visit museum",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Draw picture",
+              "type": "text"
+            },
+            {
+              "id": "s4",
+              "content": "Return home",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what comes first."
+        },
+        "vi": {
+          "prompt": "Lap lai hanh trinh theo thu tu.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Xep cap",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Len xe buyt",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Tham bao tang",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Ve tranh",
+              "type": "text"
+            },
+            {
+              "id": "s4",
+              "content": "Ve nha",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao den truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao den truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "master",
+        "skillIds": [
+          "logic.memory",
+          "logic.pattern.basic"
+        ],
+        "engine": "sequence",
+        "generatedBy": "games_16_30_generator",
+        "generatorSeed": 20260720,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [
+        "asset-memory_journey-0"
+      ],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "mj-lv057",
+      "gameId": "memory_journey",
+      "levelNumber": 57,
+      "difficulty": 5,
+      "learningObjective": "memory sequence replay",
+      "localizedContent": {
+        "en": {
+          "prompt": "Replay the journey in order.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Pack bag",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Ride bus",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Visit museum",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Draw picture",
+              "type": "text"
+            },
+            {
+              "id": "s4",
+              "content": "Return home",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what comes first."
+        },
+        "vi": {
+          "prompt": "Lap lai hanh trinh theo thu tu.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Xep cap",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Len xe buyt",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Tham bao tang",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Ve tranh",
+              "type": "text"
+            },
+            {
+              "id": "s4",
+              "content": "Ve nha",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao den truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao den truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "master",
+        "skillIds": [
+          "logic.memory",
+          "logic.pattern.basic"
+        ],
+        "engine": "sequence",
+        "generatedBy": "games_16_30_generator",
+        "generatorSeed": 20260720,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [
+        "asset-memory_journey-1"
+      ],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "mj-lv058",
+      "gameId": "memory_journey",
+      "levelNumber": 58,
+      "difficulty": 5,
+      "learningObjective": "memory sequence replay",
+      "localizedContent": {
+        "en": {
+          "prompt": "Replay the journey in order.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Pack bag",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Ride bus",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Visit museum",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Draw picture",
+              "type": "text"
+            },
+            {
+              "id": "s4",
+              "content": "Return home",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what comes first."
+        },
+        "vi": {
+          "prompt": "Lap lai hanh trinh theo thu tu.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Xep cap",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Len xe buyt",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Tham bao tang",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Ve tranh",
+              "type": "text"
+            },
+            {
+              "id": "s4",
+              "content": "Ve nha",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao den truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao den truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "master",
+        "skillIds": [
+          "logic.memory",
+          "logic.pattern.basic"
+        ],
+        "engine": "sequence",
+        "generatedBy": "games_16_30_generator",
+        "generatorSeed": 20260720,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [
+        "asset-memory_journey-2"
+      ],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "mj-lv059",
+      "gameId": "memory_journey",
+      "levelNumber": 59,
+      "difficulty": 5,
+      "learningObjective": "memory sequence replay",
+      "localizedContent": {
+        "en": {
+          "prompt": "Replay the journey in order.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Pack bag",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Ride bus",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Visit museum",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Draw picture",
+              "type": "text"
+            },
+            {
+              "id": "s4",
+              "content": "Return home",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what comes first."
+        },
+        "vi": {
+          "prompt": "Lap lai hanh trinh theo thu tu.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Xep cap",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Len xe buyt",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Tham bao tang",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Ve tranh",
+              "type": "text"
+            },
+            {
+              "id": "s4",
+              "content": "Ve nha",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao den truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao den truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "master",
+        "skillIds": [
+          "logic.memory",
+          "logic.pattern.basic"
+        ],
+        "engine": "sequence",
+        "generatedBy": "games_16_30_generator",
+        "generatorSeed": 20260720,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [
+        "asset-memory_journey-3"
+      ],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "mj-lv060",
+      "gameId": "memory_journey",
+      "levelNumber": 60,
+      "difficulty": 5,
+      "learningObjective": "memory sequence replay",
+      "localizedContent": {
+        "en": {
+          "prompt": "Replay the journey in order.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Pack bag",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Ride bus",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Visit museum",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Draw picture",
+              "type": "text"
+            },
+            {
+              "id": "s4",
+              "content": "Return home",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what comes first."
+        },
+        "vi": {
+          "prompt": "Lap lai hanh trinh theo thu tu.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Xep cap",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Len xe buyt",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Tham bao tang",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Ve tranh",
+              "type": "text"
+            },
+            {
+              "id": "s4",
+              "content": "Ve nha",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao den truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao den truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "master",
+        "skillIds": [
+          "logic.memory",
+          "logic.pattern.basic"
+        ],
+        "engine": "sequence",
+        "generatedBy": "games_16_30_generator",
+        "generatorSeed": 20260720,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [
+        "asset-memory_journey-4"
+      ],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "mj-lv061",
+      "gameId": "memory_journey",
+      "levelNumber": 61,
+      "difficulty": 5,
+      "learningObjective": "memory sequence replay",
+      "localizedContent": {
+        "en": {
+          "prompt": "Replay the journey in order.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Pack bag",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Ride bus",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Visit museum",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Draw picture",
+              "type": "text"
+            },
+            {
+              "id": "s4",
+              "content": "Return home",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what comes first."
+        },
+        "vi": {
+          "prompt": "Lap lai hanh trinh theo thu tu.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Xep cap",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Len xe buyt",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Tham bao tang",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Ve tranh",
+              "type": "text"
+            },
+            {
+              "id": "s4",
+              "content": "Ve nha",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao den truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao den truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "master",
+        "skillIds": [
+          "logic.memory",
+          "logic.pattern.basic"
+        ],
+        "engine": "sequence",
+        "generatedBy": "games_16_30_generator",
+        "generatorSeed": 20260720,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [
+        "asset-memory_journey-5"
+      ],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "mj-lv062",
+      "gameId": "memory_journey",
+      "levelNumber": 62,
+      "difficulty": 5,
+      "learningObjective": "memory sequence replay",
+      "localizedContent": {
+        "en": {
+          "prompt": "Replay the journey in order.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Pack bag",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Ride bus",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Visit museum",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Draw picture",
+              "type": "text"
+            },
+            {
+              "id": "s4",
+              "content": "Return home",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what comes first."
+        },
+        "vi": {
+          "prompt": "Lap lai hanh trinh theo thu tu.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Xep cap",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Len xe buyt",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Tham bao tang",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Ve tranh",
+              "type": "text"
+            },
+            {
+              "id": "s4",
+              "content": "Ve nha",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao den truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao den truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "master",
+        "skillIds": [
+          "logic.memory",
+          "logic.pattern.basic"
+        ],
+        "engine": "sequence",
+        "generatedBy": "games_16_30_generator",
+        "generatorSeed": 20260720,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [
+        "asset-memory_journey-6"
+      ],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "mj-lv063",
+      "gameId": "memory_journey",
+      "levelNumber": 63,
+      "difficulty": 5,
+      "learningObjective": "memory sequence replay",
+      "localizedContent": {
+        "en": {
+          "prompt": "Replay the journey in order.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Pack bag",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Ride bus",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Visit museum",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Draw picture",
+              "type": "text"
+            },
+            {
+              "id": "s4",
+              "content": "Return home",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what comes first."
+        },
+        "vi": {
+          "prompt": "Lap lai hanh trinh theo thu tu.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Xep cap",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Len xe buyt",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Tham bao tang",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Ve tranh",
+              "type": "text"
+            },
+            {
+              "id": "s4",
+              "content": "Ve nha",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao den truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao den truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "master",
+        "skillIds": [
+          "logic.memory",
+          "logic.pattern.basic"
+        ],
+        "engine": "sequence",
+        "generatedBy": "games_16_30_generator",
+        "generatorSeed": 20260720,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [
+        "asset-memory_journey-7"
+      ],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "mj-lv064",
+      "gameId": "memory_journey",
+      "levelNumber": 64,
+      "difficulty": 5,
+      "learningObjective": "memory sequence replay",
+      "localizedContent": {
+        "en": {
+          "prompt": "Replay the journey in order.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Pack bag",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Ride bus",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Visit museum",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Draw picture",
+              "type": "text"
+            },
+            {
+              "id": "s4",
+              "content": "Return home",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what comes first."
+        },
+        "vi": {
+          "prompt": "Lap lai hanh trinh theo thu tu.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Xep cap",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Len xe buyt",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Tham bao tang",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Ve tranh",
+              "type": "text"
+            },
+            {
+              "id": "s4",
+              "content": "Ve nha",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao den truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao den truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "master",
+        "skillIds": [
+          "logic.memory",
+          "logic.pattern.basic"
+        ],
+        "engine": "sequence",
+        "generatedBy": "games_16_30_generator",
+        "generatorSeed": 20260720,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [
+        "asset-memory_journey-0"
+      ],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "mj-lv065",
+      "gameId": "memory_journey",
+      "levelNumber": 65,
+      "difficulty": 5,
+      "learningObjective": "memory sequence replay",
+      "localizedContent": {
+        "en": {
+          "prompt": "Replay the journey in order.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Pack bag",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Ride bus",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Visit museum",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Draw picture",
+              "type": "text"
+            },
+            {
+              "id": "s4",
+              "content": "Return home",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what comes first."
+        },
+        "vi": {
+          "prompt": "Lap lai hanh trinh theo thu tu.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Xep cap",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Len xe buyt",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Tham bao tang",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Ve tranh",
+              "type": "text"
+            },
+            {
+              "id": "s4",
+              "content": "Ve nha",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao den truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao den truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "master",
+        "skillIds": [
+          "logic.memory",
+          "logic.pattern.basic"
+        ],
+        "engine": "sequence",
+        "generatedBy": "games_16_30_generator",
+        "generatorSeed": 20260720,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [
+        "asset-memory_journey-1"
+      ],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "mj-lv066",
+      "gameId": "memory_journey",
+      "levelNumber": 66,
+      "difficulty": 5,
+      "learningObjective": "memory sequence replay",
+      "localizedContent": {
+        "en": {
+          "prompt": "Replay the journey in order.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Pack bag",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Ride bus",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Visit museum",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Draw picture",
+              "type": "text"
+            },
+            {
+              "id": "s4",
+              "content": "Return home",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what comes first."
+        },
+        "vi": {
+          "prompt": "Lap lai hanh trinh theo thu tu.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Xep cap",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Len xe buyt",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Tham bao tang",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Ve tranh",
+              "type": "text"
+            },
+            {
+              "id": "s4",
+              "content": "Ve nha",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao den truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao den truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "master",
+        "skillIds": [
+          "logic.memory",
+          "logic.pattern.basic"
+        ],
+        "engine": "sequence",
+        "generatedBy": "games_16_30_generator",
+        "generatorSeed": 20260720,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [
+        "asset-memory_journey-2"
+      ],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "mj-lv067",
+      "gameId": "memory_journey",
+      "levelNumber": 67,
+      "difficulty": 5,
+      "learningObjective": "memory sequence replay",
+      "localizedContent": {
+        "en": {
+          "prompt": "Replay the journey in order.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Pack bag",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Ride bus",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Visit museum",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Draw picture",
+              "type": "text"
+            },
+            {
+              "id": "s4",
+              "content": "Return home",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what comes first."
+        },
+        "vi": {
+          "prompt": "Lap lai hanh trinh theo thu tu.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Xep cap",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Len xe buyt",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Tham bao tang",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Ve tranh",
+              "type": "text"
+            },
+            {
+              "id": "s4",
+              "content": "Ve nha",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao den truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao den truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "master",
+        "skillIds": [
+          "logic.memory",
+          "logic.pattern.basic"
+        ],
+        "engine": "sequence",
+        "generatedBy": "games_16_30_generator",
+        "generatorSeed": 20260720,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [
+        "asset-memory_journey-3"
+      ],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "mj-lv068",
+      "gameId": "memory_journey",
+      "levelNumber": 68,
+      "difficulty": 5,
+      "learningObjective": "memory sequence replay",
+      "localizedContent": {
+        "en": {
+          "prompt": "Replay the journey in order.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Pack bag",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Ride bus",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Visit museum",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Draw picture",
+              "type": "text"
+            },
+            {
+              "id": "s4",
+              "content": "Return home",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what comes first."
+        },
+        "vi": {
+          "prompt": "Lap lai hanh trinh theo thu tu.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Xep cap",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Len xe buyt",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Tham bao tang",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Ve tranh",
+              "type": "text"
+            },
+            {
+              "id": "s4",
+              "content": "Ve nha",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao den truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao den truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "master",
+        "skillIds": [
+          "logic.memory",
+          "logic.pattern.basic"
+        ],
+        "engine": "sequence",
+        "generatedBy": "games_16_30_generator",
+        "generatorSeed": 20260720,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [
+        "asset-memory_journey-4"
+      ],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "mj-lv069",
+      "gameId": "memory_journey",
+      "levelNumber": 69,
+      "difficulty": 5,
+      "learningObjective": "memory sequence replay",
+      "localizedContent": {
+        "en": {
+          "prompt": "Replay the journey in order.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Pack bag",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Ride bus",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Visit museum",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Draw picture",
+              "type": "text"
+            },
+            {
+              "id": "s4",
+              "content": "Return home",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what comes first."
+        },
+        "vi": {
+          "prompt": "Lap lai hanh trinh theo thu tu.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Xep cap",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Len xe buyt",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Tham bao tang",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Ve tranh",
+              "type": "text"
+            },
+            {
+              "id": "s4",
+              "content": "Ve nha",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao den truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao den truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "master",
+        "skillIds": [
+          "logic.memory",
+          "logic.pattern.basic"
+        ],
+        "engine": "sequence",
+        "generatedBy": "games_16_30_generator",
+        "generatorSeed": 20260720,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [
+        "asset-memory_journey-5"
+      ],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "mj-lv070",
+      "gameId": "memory_journey",
+      "levelNumber": 70,
+      "difficulty": 5,
+      "learningObjective": "memory sequence replay",
+      "localizedContent": {
+        "en": {
+          "prompt": "Replay the journey in order.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Pack bag",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Ride bus",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Visit museum",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Draw picture",
+              "type": "text"
+            },
+            {
+              "id": "s4",
+              "content": "Return home",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what comes first."
+        },
+        "vi": {
+          "prompt": "Lap lai hanh trinh theo thu tu.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Xep cap",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Len xe buyt",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Tham bao tang",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Ve tranh",
+              "type": "text"
+            },
+            {
+              "id": "s4",
+              "content": "Ve nha",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao den truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao den truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "master",
+        "skillIds": [
+          "logic.memory",
+          "logic.pattern.basic"
+        ],
+        "engine": "sequence",
+        "generatedBy": "games_16_30_generator",
+        "generatorSeed": 20260720,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [
+        "asset-memory_journey-6"
+      ],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "mj-lv071",
+      "gameId": "memory_journey",
+      "levelNumber": 71,
+      "difficulty": 5,
+      "learningObjective": "memory sequence replay",
+      "localizedContent": {
+        "en": {
+          "prompt": "Replay the journey in order.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Pack bag",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Ride bus",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Visit museum",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Draw picture",
+              "type": "text"
+            },
+            {
+              "id": "s4",
+              "content": "Return home",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what comes first."
+        },
+        "vi": {
+          "prompt": "Lap lai hanh trinh theo thu tu.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Xep cap",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Len xe buyt",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Tham bao tang",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Ve tranh",
+              "type": "text"
+            },
+            {
+              "id": "s4",
+              "content": "Ve nha",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao den truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao den truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "master",
+        "skillIds": [
+          "logic.memory",
+          "logic.pattern.basic"
+        ],
+        "engine": "sequence",
+        "generatedBy": "games_16_30_generator",
+        "generatorSeed": 20260720,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [
+        "asset-memory_journey-7"
+      ],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "mj-lv072",
+      "gameId": "memory_journey",
+      "levelNumber": 72,
+      "difficulty": 5,
+      "learningObjective": "memory sequence replay",
+      "localizedContent": {
+        "en": {
+          "prompt": "Replay the journey in order.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Pack bag",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Ride bus",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Visit museum",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Draw picture",
+              "type": "text"
+            },
+            {
+              "id": "s4",
+              "content": "Return home",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what comes first."
+        },
+        "vi": {
+          "prompt": "Lap lai hanh trinh theo thu tu.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Xep cap",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Len xe buyt",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Tham bao tang",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Ve tranh",
+              "type": "text"
+            },
+            {
+              "id": "s4",
+              "content": "Ve nha",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao den truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao den truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "master",
+        "skillIds": [
+          "logic.memory",
+          "logic.pattern.basic"
+        ],
+        "engine": "sequence",
+        "generatedBy": "games_16_30_generator",
+        "generatorSeed": 20260720,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [
+        "asset-memory_journey-0"
+      ],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "mj-lv073",
+      "gameId": "memory_journey",
+      "levelNumber": 73,
+      "difficulty": 5,
+      "learningObjective": "memory sequence replay",
+      "localizedContent": {
+        "en": {
+          "prompt": "Replay the journey in order.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Pack bag",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Ride bus",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Visit museum",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Draw picture",
+              "type": "text"
+            },
+            {
+              "id": "s4",
+              "content": "Return home",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what comes first."
+        },
+        "vi": {
+          "prompt": "Lap lai hanh trinh theo thu tu.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Xep cap",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Len xe buyt",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Tham bao tang",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Ve tranh",
+              "type": "text"
+            },
+            {
+              "id": "s4",
+              "content": "Ve nha",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao den truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao den truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "master",
+        "skillIds": [
+          "logic.memory",
+          "logic.pattern.basic"
+        ],
+        "engine": "sequence",
+        "generatedBy": "games_16_30_generator",
+        "generatorSeed": 20260720,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [
+        "asset-memory_journey-1"
+      ],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "mj-lv074",
+      "gameId": "memory_journey",
+      "levelNumber": 74,
+      "difficulty": 5,
+      "learningObjective": "memory sequence replay",
+      "localizedContent": {
+        "en": {
+          "prompt": "Replay the journey in order.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Pack bag",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Ride bus",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Visit museum",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Draw picture",
+              "type": "text"
+            },
+            {
+              "id": "s4",
+              "content": "Return home",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what comes first."
+        },
+        "vi": {
+          "prompt": "Lap lai hanh trinh theo thu tu.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Xep cap",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Len xe buyt",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Tham bao tang",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Ve tranh",
+              "type": "text"
+            },
+            {
+              "id": "s4",
+              "content": "Ve nha",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao den truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao den truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "master",
+        "skillIds": [
+          "logic.memory",
+          "logic.pattern.basic"
+        ],
+        "engine": "sequence",
+        "generatedBy": "games_16_30_generator",
+        "generatorSeed": 20260720,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [
+        "asset-memory_journey-2"
+      ],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "mj-lv075",
+      "gameId": "memory_journey",
+      "levelNumber": 75,
+      "difficulty": 5,
+      "learningObjective": "memory sequence replay",
+      "localizedContent": {
+        "en": {
+          "prompt": "Replay the journey in order.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Pack bag",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Ride bus",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Visit museum",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Draw picture",
+              "type": "text"
+            },
+            {
+              "id": "s4",
+              "content": "Return home",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what comes first."
+        },
+        "vi": {
+          "prompt": "Lap lai hanh trinh theo thu tu.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Xep cap",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Len xe buyt",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Tham bao tang",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Ve tranh",
+              "type": "text"
+            },
+            {
+              "id": "s4",
+              "content": "Ve nha",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao den truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao den truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "master",
+        "skillIds": [
+          "logic.memory",
+          "logic.pattern.basic"
+        ],
+        "engine": "sequence",
+        "generatedBy": "games_16_30_generator",
+        "generatorSeed": 20260720,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [
+        "asset-memory_journey-3"
+      ],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    }
+  ]
+}

@@ -1,0 +1,6831 @@
+{
+  "schemaVersion": "1.0",
+  "gameId": "number_train",
+  "levels": [
+    {
+      "id": "nt-lv001",
+      "gameId": "number_train",
+      "levelNumber": 1,
+      "difficulty": 1,
+      "learningObjective": "number sequencing",
+      "localizedContent": {
+        "en": {
+          "prompt": "Arrange the train numbers.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "1",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "2",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "3",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what comes first."
+        },
+        "vi": {
+          "prompt": "Sap xep cac so tren tau.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "1",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "2",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "3",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao den truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao den truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "junior",
+        "skillIds": [
+          "math.number_recognition.1_20",
+          "math.counting"
+        ],
+        "engine": "sequence",
+        "generatedBy": "games_16_30_generator",
+        "generatorSeed": 20260720,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [
+        "asset-number_train-1"
+      ],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "nt-lv002",
+      "gameId": "number_train",
+      "levelNumber": 2,
+      "difficulty": 1,
+      "learningObjective": "number sequencing",
+      "localizedContent": {
+        "en": {
+          "prompt": "Arrange the train numbers.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "2",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "3",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "4",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what comes first."
+        },
+        "vi": {
+          "prompt": "Sap xep cac so tren tau.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "2",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "3",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "4",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao den truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao den truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "junior",
+        "skillIds": [
+          "math.number_recognition.1_20",
+          "math.counting"
+        ],
+        "engine": "sequence",
+        "generatedBy": "games_16_30_generator",
+        "generatorSeed": 20260720,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [
+        "asset-number_train-2"
+      ],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "nt-lv003",
+      "gameId": "number_train",
+      "levelNumber": 3,
+      "difficulty": 1,
+      "learningObjective": "number sequencing",
+      "localizedContent": {
+        "en": {
+          "prompt": "Arrange the train numbers.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "3",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "4",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "5",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what comes first."
+        },
+        "vi": {
+          "prompt": "Sap xep cac so tren tau.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "3",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "4",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "5",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao den truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao den truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "junior",
+        "skillIds": [
+          "math.number_recognition.1_20",
+          "math.counting"
+        ],
+        "engine": "sequence",
+        "generatedBy": "games_16_30_generator",
+        "generatorSeed": 20260720,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [
+        "asset-number_train-3"
+      ],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "nt-lv004",
+      "gameId": "number_train",
+      "levelNumber": 4,
+      "difficulty": 1,
+      "learningObjective": "number sequencing",
+      "localizedContent": {
+        "en": {
+          "prompt": "Arrange the train numbers.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "4",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "5",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "6",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what comes first."
+        },
+        "vi": {
+          "prompt": "Sap xep cac so tren tau.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "4",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "5",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "6",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao den truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao den truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "junior",
+        "skillIds": [
+          "math.number_recognition.1_20",
+          "math.counting"
+        ],
+        "engine": "sequence",
+        "generatedBy": "games_16_30_generator",
+        "generatorSeed": 20260720,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [
+        "asset-number_train-4"
+      ],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "nt-lv005",
+      "gameId": "number_train",
+      "levelNumber": 5,
+      "difficulty": 1,
+      "learningObjective": "number sequencing",
+      "localizedContent": {
+        "en": {
+          "prompt": "Arrange the train numbers.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "5",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "6",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "7",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what comes first."
+        },
+        "vi": {
+          "prompt": "Sap xep cac so tren tau.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "5",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "6",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "7",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao den truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao den truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "junior",
+        "skillIds": [
+          "math.number_recognition.1_20",
+          "math.counting"
+        ],
+        "engine": "sequence",
+        "generatedBy": "games_16_30_generator",
+        "generatorSeed": 20260720,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [
+        "asset-number_train-5"
+      ],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "nt-lv006",
+      "gameId": "number_train",
+      "levelNumber": 6,
+      "difficulty": 1,
+      "learningObjective": "number sequencing",
+      "localizedContent": {
+        "en": {
+          "prompt": "Arrange the train numbers.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "6",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "7",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "8",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what comes first."
+        },
+        "vi": {
+          "prompt": "Sap xep cac so tren tau.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "6",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "7",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "8",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao den truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao den truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "junior",
+        "skillIds": [
+          "math.number_recognition.1_20",
+          "math.counting"
+        ],
+        "engine": "sequence",
+        "generatedBy": "games_16_30_generator",
+        "generatorSeed": 20260720,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [
+        "asset-number_train-6"
+      ],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "nt-lv007",
+      "gameId": "number_train",
+      "levelNumber": 7,
+      "difficulty": 1,
+      "learningObjective": "number sequencing",
+      "localizedContent": {
+        "en": {
+          "prompt": "Arrange the train numbers.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "7",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "8",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "9",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what comes first."
+        },
+        "vi": {
+          "prompt": "Sap xep cac so tren tau.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "7",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "8",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "9",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao den truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao den truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "junior",
+        "skillIds": [
+          "math.number_recognition.1_20",
+          "math.counting"
+        ],
+        "engine": "sequence",
+        "generatedBy": "games_16_30_generator",
+        "generatorSeed": 20260720,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [
+        "asset-number_train-7"
+      ],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "nt-lv008",
+      "gameId": "number_train",
+      "levelNumber": 8,
+      "difficulty": 1,
+      "learningObjective": "number sequencing",
+      "localizedContent": {
+        "en": {
+          "prompt": "Arrange the train numbers.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "8",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "9",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "10",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what comes first."
+        },
+        "vi": {
+          "prompt": "Sap xep cac so tren tau.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "8",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "9",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "10",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao den truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao den truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "junior",
+        "skillIds": [
+          "math.number_recognition.1_20",
+          "math.counting"
+        ],
+        "engine": "sequence",
+        "generatedBy": "games_16_30_generator",
+        "generatorSeed": 20260720,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [
+        "asset-number_train-0"
+      ],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "nt-lv009",
+      "gameId": "number_train",
+      "levelNumber": 9,
+      "difficulty": 1,
+      "learningObjective": "number sequencing",
+      "localizedContent": {
+        "en": {
+          "prompt": "Arrange the train numbers.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "9",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "10",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "11",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what comes first."
+        },
+        "vi": {
+          "prompt": "Sap xep cac so tren tau.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "9",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "10",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "11",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao den truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao den truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "junior",
+        "skillIds": [
+          "math.number_recognition.1_20",
+          "math.counting"
+        ],
+        "engine": "sequence",
+        "generatedBy": "games_16_30_generator",
+        "generatorSeed": 20260720,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [
+        "asset-number_train-1"
+      ],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "nt-lv010",
+      "gameId": "number_train",
+      "levelNumber": 10,
+      "difficulty": 1,
+      "learningObjective": "number sequencing",
+      "localizedContent": {
+        "en": {
+          "prompt": "Arrange the train numbers.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "10",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "11",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "12",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what comes first."
+        },
+        "vi": {
+          "prompt": "Sap xep cac so tren tau.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "10",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "11",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "12",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao den truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao den truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "junior",
+        "skillIds": [
+          "math.number_recognition.1_20",
+          "math.counting"
+        ],
+        "engine": "sequence",
+        "generatedBy": "games_16_30_generator",
+        "generatorSeed": 20260720,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [
+        "asset-number_train-2"
+      ],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "nt-lv011",
+      "gameId": "number_train",
+      "levelNumber": 11,
+      "difficulty": 1,
+      "learningObjective": "number sequencing",
+      "localizedContent": {
+        "en": {
+          "prompt": "Arrange the train numbers.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "11",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "12",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "13",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what comes first."
+        },
+        "vi": {
+          "prompt": "Sap xep cac so tren tau.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "11",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "12",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "13",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao den truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao den truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "junior",
+        "skillIds": [
+          "math.number_recognition.1_20",
+          "math.counting"
+        ],
+        "engine": "sequence",
+        "generatedBy": "games_16_30_generator",
+        "generatorSeed": 20260720,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [
+        "asset-number_train-3"
+      ],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "nt-lv012",
+      "gameId": "number_train",
+      "levelNumber": 12,
+      "difficulty": 1,
+      "learningObjective": "number sequencing",
+      "localizedContent": {
+        "en": {
+          "prompt": "Arrange the train numbers.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "12",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "13",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "14",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what comes first."
+        },
+        "vi": {
+          "prompt": "Sap xep cac so tren tau.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "12",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "13",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "14",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao den truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao den truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "junior",
+        "skillIds": [
+          "math.number_recognition.1_20",
+          "math.counting"
+        ],
+        "engine": "sequence",
+        "generatedBy": "games_16_30_generator",
+        "generatorSeed": 20260720,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [
+        "asset-number_train-4"
+      ],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "nt-lv013",
+      "gameId": "number_train",
+      "levelNumber": 13,
+      "difficulty": 1,
+      "learningObjective": "number sequencing",
+      "localizedContent": {
+        "en": {
+          "prompt": "Arrange the train numbers.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "13",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "14",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "15",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what comes first."
+        },
+        "vi": {
+          "prompt": "Sap xep cac so tren tau.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "13",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "14",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "15",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao den truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao den truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "junior",
+        "skillIds": [
+          "math.number_recognition.1_20",
+          "math.counting"
+        ],
+        "engine": "sequence",
+        "generatedBy": "games_16_30_generator",
+        "generatorSeed": 20260720,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [
+        "asset-number_train-5"
+      ],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "nt-lv014",
+      "gameId": "number_train",
+      "levelNumber": 14,
+      "difficulty": 1,
+      "learningObjective": "number sequencing",
+      "localizedContent": {
+        "en": {
+          "prompt": "Arrange the train numbers.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "14",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "15",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "16",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what comes first."
+        },
+        "vi": {
+          "prompt": "Sap xep cac so tren tau.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "14",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "15",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "16",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao den truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao den truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "junior",
+        "skillIds": [
+          "math.number_recognition.1_20",
+          "math.counting"
+        ],
+        "engine": "sequence",
+        "generatedBy": "games_16_30_generator",
+        "generatorSeed": 20260720,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [
+        "asset-number_train-6"
+      ],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "nt-lv015",
+      "gameId": "number_train",
+      "levelNumber": 15,
+      "difficulty": 1,
+      "learningObjective": "number sequencing",
+      "localizedContent": {
+        "en": {
+          "prompt": "Arrange the train numbers.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "15",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "16",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "17",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what comes first."
+        },
+        "vi": {
+          "prompt": "Sap xep cac so tren tau.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "15",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "16",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "17",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao den truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao den truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "junior",
+        "skillIds": [
+          "math.number_recognition.1_20",
+          "math.counting"
+        ],
+        "engine": "sequence",
+        "generatedBy": "games_16_30_generator",
+        "generatorSeed": 20260720,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [
+        "asset-number_train-7"
+      ],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "nt-lv016",
+      "gameId": "number_train",
+      "levelNumber": 16,
+      "difficulty": 1,
+      "learningObjective": "number sequencing",
+      "localizedContent": {
+        "en": {
+          "prompt": "Arrange the train numbers.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "16",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "17",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "18",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what comes first."
+        },
+        "vi": {
+          "prompt": "Sap xep cac so tren tau.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "16",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "17",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "18",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao den truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao den truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "junior",
+        "skillIds": [
+          "math.number_recognition.1_20",
+          "math.counting"
+        ],
+        "engine": "sequence",
+        "generatedBy": "games_16_30_generator",
+        "generatorSeed": 20260720,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [
+        "asset-number_train-0"
+      ],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "nt-lv017",
+      "gameId": "number_train",
+      "levelNumber": 17,
+      "difficulty": 1,
+      "learningObjective": "number sequencing",
+      "localizedContent": {
+        "en": {
+          "prompt": "Arrange the train numbers.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "17",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "18",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "19",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what comes first."
+        },
+        "vi": {
+          "prompt": "Sap xep cac so tren tau.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "17",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "18",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "19",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao den truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao den truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "junior",
+        "skillIds": [
+          "math.number_recognition.1_20",
+          "math.counting"
+        ],
+        "engine": "sequence",
+        "generatedBy": "games_16_30_generator",
+        "generatorSeed": 20260720,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [
+        "asset-number_train-1"
+      ],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "nt-lv018",
+      "gameId": "number_train",
+      "levelNumber": 18,
+      "difficulty": 1,
+      "learningObjective": "number sequencing",
+      "localizedContent": {
+        "en": {
+          "prompt": "Arrange the train numbers.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "18",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "19",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "20",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what comes first."
+        },
+        "vi": {
+          "prompt": "Sap xep cac so tren tau.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "18",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "19",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "20",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao den truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao den truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "junior",
+        "skillIds": [
+          "math.number_recognition.1_20",
+          "math.counting"
+        ],
+        "engine": "sequence",
+        "generatedBy": "games_16_30_generator",
+        "generatorSeed": 20260720,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [
+        "asset-number_train-2"
+      ],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "nt-lv019",
+      "gameId": "number_train",
+      "levelNumber": 19,
+      "difficulty": 1,
+      "learningObjective": "number sequencing",
+      "localizedContent": {
+        "en": {
+          "prompt": "Arrange the train numbers.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "19",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "20",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "21",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what comes first."
+        },
+        "vi": {
+          "prompt": "Sap xep cac so tren tau.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "19",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "20",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "21",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao den truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao den truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "junior",
+        "skillIds": [
+          "math.number_recognition.1_20",
+          "math.counting"
+        ],
+        "engine": "sequence",
+        "generatedBy": "games_16_30_generator",
+        "generatorSeed": 20260720,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [
+        "asset-number_train-3"
+      ],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "nt-lv020",
+      "gameId": "number_train",
+      "levelNumber": 20,
+      "difficulty": 1,
+      "learningObjective": "number sequencing",
+      "localizedContent": {
+        "en": {
+          "prompt": "Arrange the train numbers.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "20",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "21",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "22",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what comes first."
+        },
+        "vi": {
+          "prompt": "Sap xep cac so tren tau.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "20",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "21",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "22",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao den truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao den truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "junior",
+        "skillIds": [
+          "math.number_recognition.1_20",
+          "math.counting"
+        ],
+        "engine": "sequence",
+        "generatedBy": "games_16_30_generator",
+        "generatorSeed": 20260720,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [
+        "asset-number_train-4"
+      ],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "nt-lv021",
+      "gameId": "number_train",
+      "levelNumber": 21,
+      "difficulty": 1,
+      "learningObjective": "number sequencing",
+      "localizedContent": {
+        "en": {
+          "prompt": "Arrange the train numbers.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "21",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "22",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "23",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what comes first."
+        },
+        "vi": {
+          "prompt": "Sap xep cac so tren tau.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "21",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "22",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "23",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao den truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao den truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "junior",
+        "skillIds": [
+          "math.number_recognition.1_20",
+          "math.counting"
+        ],
+        "engine": "sequence",
+        "generatedBy": "games_16_30_generator",
+        "generatorSeed": 20260720,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [
+        "asset-number_train-5"
+      ],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "nt-lv022",
+      "gameId": "number_train",
+      "levelNumber": 22,
+      "difficulty": 1,
+      "learningObjective": "number sequencing",
+      "localizedContent": {
+        "en": {
+          "prompt": "Arrange the train numbers.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "22",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "23",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "24",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what comes first."
+        },
+        "vi": {
+          "prompt": "Sap xep cac so tren tau.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "22",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "23",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "24",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao den truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao den truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "junior",
+        "skillIds": [
+          "math.number_recognition.1_20",
+          "math.counting"
+        ],
+        "engine": "sequence",
+        "generatedBy": "games_16_30_generator",
+        "generatorSeed": 20260720,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [
+        "asset-number_train-6"
+      ],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "nt-lv023",
+      "gameId": "number_train",
+      "levelNumber": 23,
+      "difficulty": 1,
+      "learningObjective": "number sequencing",
+      "localizedContent": {
+        "en": {
+          "prompt": "Arrange the train numbers.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "23",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "24",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "25",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what comes first."
+        },
+        "vi": {
+          "prompt": "Sap xep cac so tren tau.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "23",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "24",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "25",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao den truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao den truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "junior",
+        "skillIds": [
+          "math.number_recognition.1_20",
+          "math.counting"
+        ],
+        "engine": "sequence",
+        "generatedBy": "games_16_30_generator",
+        "generatorSeed": 20260720,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [
+        "asset-number_train-7"
+      ],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "nt-lv024",
+      "gameId": "number_train",
+      "levelNumber": 24,
+      "difficulty": 1,
+      "learningObjective": "number sequencing",
+      "localizedContent": {
+        "en": {
+          "prompt": "Arrange the train numbers.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "24",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "25",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "26",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what comes first."
+        },
+        "vi": {
+          "prompt": "Sap xep cac so tren tau.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "24",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "25",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "26",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao den truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao den truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "junior",
+        "skillIds": [
+          "math.number_recognition.1_20",
+          "math.counting"
+        ],
+        "engine": "sequence",
+        "generatedBy": "games_16_30_generator",
+        "generatorSeed": 20260720,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [
+        "asset-number_train-0"
+      ],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "nt-lv025",
+      "gameId": "number_train",
+      "levelNumber": 25,
+      "difficulty": 1,
+      "learningObjective": "number sequencing",
+      "localizedContent": {
+        "en": {
+          "prompt": "Arrange the train numbers.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "25",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "26",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "27",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what comes first."
+        },
+        "vi": {
+          "prompt": "Sap xep cac so tren tau.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "25",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "26",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "27",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao den truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao den truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "junior",
+        "skillIds": [
+          "math.number_recognition.1_20",
+          "math.counting"
+        ],
+        "engine": "sequence",
+        "generatedBy": "games_16_30_generator",
+        "generatorSeed": 20260720,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [
+        "asset-number_train-1"
+      ],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "nt-lv026",
+      "gameId": "number_train",
+      "levelNumber": 26,
+      "difficulty": 3,
+      "learningObjective": "number sequencing",
+      "localizedContent": {
+        "en": {
+          "prompt": "Arrange the train numbers.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "26",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "27",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "28",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "29",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what comes first."
+        },
+        "vi": {
+          "prompt": "Sap xep cac so tren tau.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "26",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "27",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "28",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "29",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao den truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao den truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "explorer",
+        "skillIds": [
+          "math.number_recognition.1_20",
+          "math.counting"
+        ],
+        "engine": "sequence",
+        "generatedBy": "games_16_30_generator",
+        "generatorSeed": 20260720,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [
+        "asset-number_train-2"
+      ],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "nt-lv027",
+      "gameId": "number_train",
+      "levelNumber": 27,
+      "difficulty": 3,
+      "learningObjective": "number sequencing",
+      "localizedContent": {
+        "en": {
+          "prompt": "Arrange the train numbers.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "27",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "28",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "29",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "30",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what comes first."
+        },
+        "vi": {
+          "prompt": "Sap xep cac so tren tau.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "27",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "28",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "29",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "30",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao den truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao den truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "explorer",
+        "skillIds": [
+          "math.number_recognition.1_20",
+          "math.counting"
+        ],
+        "engine": "sequence",
+        "generatedBy": "games_16_30_generator",
+        "generatorSeed": 20260720,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [
+        "asset-number_train-3"
+      ],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "nt-lv028",
+      "gameId": "number_train",
+      "levelNumber": 28,
+      "difficulty": 3,
+      "learningObjective": "number sequencing",
+      "localizedContent": {
+        "en": {
+          "prompt": "Arrange the train numbers.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "28",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "29",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "30",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "31",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what comes first."
+        },
+        "vi": {
+          "prompt": "Sap xep cac so tren tau.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "28",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "29",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "30",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "31",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao den truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao den truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "explorer",
+        "skillIds": [
+          "math.number_recognition.1_20",
+          "math.counting"
+        ],
+        "engine": "sequence",
+        "generatedBy": "games_16_30_generator",
+        "generatorSeed": 20260720,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [
+        "asset-number_train-4"
+      ],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "nt-lv029",
+      "gameId": "number_train",
+      "levelNumber": 29,
+      "difficulty": 3,
+      "learningObjective": "number sequencing",
+      "localizedContent": {
+        "en": {
+          "prompt": "Arrange the train numbers.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "29",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "30",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "31",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "32",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what comes first."
+        },
+        "vi": {
+          "prompt": "Sap xep cac so tren tau.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "29",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "30",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "31",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "32",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao den truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao den truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "explorer",
+        "skillIds": [
+          "math.number_recognition.1_20",
+          "math.counting"
+        ],
+        "engine": "sequence",
+        "generatedBy": "games_16_30_generator",
+        "generatorSeed": 20260720,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [
+        "asset-number_train-5"
+      ],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "nt-lv030",
+      "gameId": "number_train",
+      "levelNumber": 30,
+      "difficulty": 3,
+      "learningObjective": "number sequencing",
+      "localizedContent": {
+        "en": {
+          "prompt": "Arrange the train numbers.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "30",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "31",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "32",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "33",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what comes first."
+        },
+        "vi": {
+          "prompt": "Sap xep cac so tren tau.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "30",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "31",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "32",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "33",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao den truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao den truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "explorer",
+        "skillIds": [
+          "math.number_recognition.1_20",
+          "math.counting"
+        ],
+        "engine": "sequence",
+        "generatedBy": "games_16_30_generator",
+        "generatorSeed": 20260720,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [
+        "asset-number_train-6"
+      ],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "nt-lv031",
+      "gameId": "number_train",
+      "levelNumber": 31,
+      "difficulty": 3,
+      "learningObjective": "number sequencing",
+      "localizedContent": {
+        "en": {
+          "prompt": "Arrange the train numbers.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "31",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "32",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "33",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "34",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what comes first."
+        },
+        "vi": {
+          "prompt": "Sap xep cac so tren tau.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "31",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "32",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "33",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "34",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao den truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao den truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "explorer",
+        "skillIds": [
+          "math.number_recognition.1_20",
+          "math.counting"
+        ],
+        "engine": "sequence",
+        "generatedBy": "games_16_30_generator",
+        "generatorSeed": 20260720,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [
+        "asset-number_train-7"
+      ],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "nt-lv032",
+      "gameId": "number_train",
+      "levelNumber": 32,
+      "difficulty": 3,
+      "learningObjective": "number sequencing",
+      "localizedContent": {
+        "en": {
+          "prompt": "Arrange the train numbers.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "32",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "33",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "34",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "35",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what comes first."
+        },
+        "vi": {
+          "prompt": "Sap xep cac so tren tau.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "32",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "33",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "34",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "35",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao den truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao den truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "explorer",
+        "skillIds": [
+          "math.number_recognition.1_20",
+          "math.counting"
+        ],
+        "engine": "sequence",
+        "generatedBy": "games_16_30_generator",
+        "generatorSeed": 20260720,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [
+        "asset-number_train-0"
+      ],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "nt-lv033",
+      "gameId": "number_train",
+      "levelNumber": 33,
+      "difficulty": 3,
+      "learningObjective": "number sequencing",
+      "localizedContent": {
+        "en": {
+          "prompt": "Arrange the train numbers.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "33",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "34",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "35",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "36",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what comes first."
+        },
+        "vi": {
+          "prompt": "Sap xep cac so tren tau.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "33",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "34",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "35",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "36",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao den truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao den truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "explorer",
+        "skillIds": [
+          "math.number_recognition.1_20",
+          "math.counting"
+        ],
+        "engine": "sequence",
+        "generatedBy": "games_16_30_generator",
+        "generatorSeed": 20260720,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [
+        "asset-number_train-1"
+      ],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "nt-lv034",
+      "gameId": "number_train",
+      "levelNumber": 34,
+      "difficulty": 3,
+      "learningObjective": "number sequencing",
+      "localizedContent": {
+        "en": {
+          "prompt": "Arrange the train numbers.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "34",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "35",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "36",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "37",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what comes first."
+        },
+        "vi": {
+          "prompt": "Sap xep cac so tren tau.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "34",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "35",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "36",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "37",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao den truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao den truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "explorer",
+        "skillIds": [
+          "math.number_recognition.1_20",
+          "math.counting"
+        ],
+        "engine": "sequence",
+        "generatedBy": "games_16_30_generator",
+        "generatorSeed": 20260720,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [
+        "asset-number_train-2"
+      ],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "nt-lv035",
+      "gameId": "number_train",
+      "levelNumber": 35,
+      "difficulty": 3,
+      "learningObjective": "number sequencing",
+      "localizedContent": {
+        "en": {
+          "prompt": "Arrange the train numbers.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "35",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "36",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "37",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "38",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what comes first."
+        },
+        "vi": {
+          "prompt": "Sap xep cac so tren tau.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "35",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "36",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "37",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "38",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao den truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao den truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "explorer",
+        "skillIds": [
+          "math.number_recognition.1_20",
+          "math.counting"
+        ],
+        "engine": "sequence",
+        "generatedBy": "games_16_30_generator",
+        "generatorSeed": 20260720,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [
+        "asset-number_train-3"
+      ],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "nt-lv036",
+      "gameId": "number_train",
+      "levelNumber": 36,
+      "difficulty": 3,
+      "learningObjective": "number sequencing",
+      "localizedContent": {
+        "en": {
+          "prompt": "Arrange the train numbers.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "36",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "37",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "38",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "39",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what comes first."
+        },
+        "vi": {
+          "prompt": "Sap xep cac so tren tau.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "36",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "37",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "38",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "39",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao den truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao den truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "explorer",
+        "skillIds": [
+          "math.number_recognition.1_20",
+          "math.counting"
+        ],
+        "engine": "sequence",
+        "generatedBy": "games_16_30_generator",
+        "generatorSeed": 20260720,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [
+        "asset-number_train-4"
+      ],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "nt-lv037",
+      "gameId": "number_train",
+      "levelNumber": 37,
+      "difficulty": 3,
+      "learningObjective": "number sequencing",
+      "localizedContent": {
+        "en": {
+          "prompt": "Arrange the train numbers.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "37",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "38",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "39",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "40",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what comes first."
+        },
+        "vi": {
+          "prompt": "Sap xep cac so tren tau.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "37",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "38",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "39",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "40",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao den truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao den truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "explorer",
+        "skillIds": [
+          "math.number_recognition.1_20",
+          "math.counting"
+        ],
+        "engine": "sequence",
+        "generatedBy": "games_16_30_generator",
+        "generatorSeed": 20260720,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [
+        "asset-number_train-5"
+      ],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "nt-lv038",
+      "gameId": "number_train",
+      "levelNumber": 38,
+      "difficulty": 3,
+      "learningObjective": "number sequencing",
+      "localizedContent": {
+        "en": {
+          "prompt": "Arrange the train numbers.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "38",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "39",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "40",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "41",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what comes first."
+        },
+        "vi": {
+          "prompt": "Sap xep cac so tren tau.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "38",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "39",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "40",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "41",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao den truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao den truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "explorer",
+        "skillIds": [
+          "math.number_recognition.1_20",
+          "math.counting"
+        ],
+        "engine": "sequence",
+        "generatedBy": "games_16_30_generator",
+        "generatorSeed": 20260720,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [
+        "asset-number_train-6"
+      ],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "nt-lv039",
+      "gameId": "number_train",
+      "levelNumber": 39,
+      "difficulty": 3,
+      "learningObjective": "number sequencing",
+      "localizedContent": {
+        "en": {
+          "prompt": "Arrange the train numbers.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "39",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "40",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "41",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "42",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what comes first."
+        },
+        "vi": {
+          "prompt": "Sap xep cac so tren tau.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "39",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "40",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "41",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "42",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao den truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao den truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "explorer",
+        "skillIds": [
+          "math.number_recognition.1_20",
+          "math.counting"
+        ],
+        "engine": "sequence",
+        "generatedBy": "games_16_30_generator",
+        "generatorSeed": 20260720,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [
+        "asset-number_train-7"
+      ],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "nt-lv040",
+      "gameId": "number_train",
+      "levelNumber": 40,
+      "difficulty": 3,
+      "learningObjective": "number sequencing",
+      "localizedContent": {
+        "en": {
+          "prompt": "Arrange the train numbers.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "40",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "41",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "42",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "43",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what comes first."
+        },
+        "vi": {
+          "prompt": "Sap xep cac so tren tau.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "40",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "41",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "42",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "43",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao den truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao den truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "explorer",
+        "skillIds": [
+          "math.number_recognition.1_20",
+          "math.counting"
+        ],
+        "engine": "sequence",
+        "generatedBy": "games_16_30_generator",
+        "generatorSeed": 20260720,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [
+        "asset-number_train-0"
+      ],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "nt-lv041",
+      "gameId": "number_train",
+      "levelNumber": 41,
+      "difficulty": 3,
+      "learningObjective": "number sequencing",
+      "localizedContent": {
+        "en": {
+          "prompt": "Arrange the train numbers.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "41",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "42",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "43",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "44",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what comes first."
+        },
+        "vi": {
+          "prompt": "Sap xep cac so tren tau.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "41",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "42",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "43",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "44",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao den truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao den truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "explorer",
+        "skillIds": [
+          "math.number_recognition.1_20",
+          "math.counting"
+        ],
+        "engine": "sequence",
+        "generatedBy": "games_16_30_generator",
+        "generatorSeed": 20260720,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [
+        "asset-number_train-1"
+      ],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "nt-lv042",
+      "gameId": "number_train",
+      "levelNumber": 42,
+      "difficulty": 3,
+      "learningObjective": "number sequencing",
+      "localizedContent": {
+        "en": {
+          "prompt": "Arrange the train numbers.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "42",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "43",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "44",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "45",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what comes first."
+        },
+        "vi": {
+          "prompt": "Sap xep cac so tren tau.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "42",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "43",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "44",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "45",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao den truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao den truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "explorer",
+        "skillIds": [
+          "math.number_recognition.1_20",
+          "math.counting"
+        ],
+        "engine": "sequence",
+        "generatedBy": "games_16_30_generator",
+        "generatorSeed": 20260720,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [
+        "asset-number_train-2"
+      ],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "nt-lv043",
+      "gameId": "number_train",
+      "levelNumber": 43,
+      "difficulty": 3,
+      "learningObjective": "number sequencing",
+      "localizedContent": {
+        "en": {
+          "prompt": "Arrange the train numbers.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "43",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "44",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "45",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "46",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what comes first."
+        },
+        "vi": {
+          "prompt": "Sap xep cac so tren tau.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "43",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "44",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "45",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "46",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao den truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao den truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "explorer",
+        "skillIds": [
+          "math.number_recognition.1_20",
+          "math.counting"
+        ],
+        "engine": "sequence",
+        "generatedBy": "games_16_30_generator",
+        "generatorSeed": 20260720,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [
+        "asset-number_train-3"
+      ],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "nt-lv044",
+      "gameId": "number_train",
+      "levelNumber": 44,
+      "difficulty": 3,
+      "learningObjective": "number sequencing",
+      "localizedContent": {
+        "en": {
+          "prompt": "Arrange the train numbers.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "44",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "45",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "46",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "47",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what comes first."
+        },
+        "vi": {
+          "prompt": "Sap xep cac so tren tau.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "44",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "45",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "46",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "47",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao den truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao den truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "explorer",
+        "skillIds": [
+          "math.number_recognition.1_20",
+          "math.counting"
+        ],
+        "engine": "sequence",
+        "generatedBy": "games_16_30_generator",
+        "generatorSeed": 20260720,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [
+        "asset-number_train-4"
+      ],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "nt-lv045",
+      "gameId": "number_train",
+      "levelNumber": 45,
+      "difficulty": 3,
+      "learningObjective": "number sequencing",
+      "localizedContent": {
+        "en": {
+          "prompt": "Arrange the train numbers.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "45",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "46",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "47",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "48",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what comes first."
+        },
+        "vi": {
+          "prompt": "Sap xep cac so tren tau.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "45",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "46",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "47",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "48",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao den truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao den truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "explorer",
+        "skillIds": [
+          "math.number_recognition.1_20",
+          "math.counting"
+        ],
+        "engine": "sequence",
+        "generatedBy": "games_16_30_generator",
+        "generatorSeed": 20260720,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [
+        "asset-number_train-5"
+      ],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "nt-lv046",
+      "gameId": "number_train",
+      "levelNumber": 46,
+      "difficulty": 3,
+      "learningObjective": "number sequencing",
+      "localizedContent": {
+        "en": {
+          "prompt": "Arrange the train numbers.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "46",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "47",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "48",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "49",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what comes first."
+        },
+        "vi": {
+          "prompt": "Sap xep cac so tren tau.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "46",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "47",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "48",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "49",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao den truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao den truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "explorer",
+        "skillIds": [
+          "math.number_recognition.1_20",
+          "math.counting"
+        ],
+        "engine": "sequence",
+        "generatedBy": "games_16_30_generator",
+        "generatorSeed": 20260720,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [
+        "asset-number_train-6"
+      ],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "nt-lv047",
+      "gameId": "number_train",
+      "levelNumber": 47,
+      "difficulty": 3,
+      "learningObjective": "number sequencing",
+      "localizedContent": {
+        "en": {
+          "prompt": "Arrange the train numbers.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "47",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "48",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "49",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "50",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what comes first."
+        },
+        "vi": {
+          "prompt": "Sap xep cac so tren tau.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "47",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "48",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "49",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "50",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao den truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao den truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "explorer",
+        "skillIds": [
+          "math.number_recognition.1_20",
+          "math.counting"
+        ],
+        "engine": "sequence",
+        "generatedBy": "games_16_30_generator",
+        "generatorSeed": 20260720,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [
+        "asset-number_train-7"
+      ],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "nt-lv048",
+      "gameId": "number_train",
+      "levelNumber": 48,
+      "difficulty": 3,
+      "learningObjective": "number sequencing",
+      "localizedContent": {
+        "en": {
+          "prompt": "Arrange the train numbers.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "48",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "49",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "50",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "51",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what comes first."
+        },
+        "vi": {
+          "prompt": "Sap xep cac so tren tau.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "48",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "49",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "50",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "51",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao den truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao den truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "explorer",
+        "skillIds": [
+          "math.number_recognition.1_20",
+          "math.counting"
+        ],
+        "engine": "sequence",
+        "generatedBy": "games_16_30_generator",
+        "generatorSeed": 20260720,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [
+        "asset-number_train-0"
+      ],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "nt-lv049",
+      "gameId": "number_train",
+      "levelNumber": 49,
+      "difficulty": 3,
+      "learningObjective": "number sequencing",
+      "localizedContent": {
+        "en": {
+          "prompt": "Arrange the train numbers.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "49",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "50",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "51",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "52",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what comes first."
+        },
+        "vi": {
+          "prompt": "Sap xep cac so tren tau.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "49",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "50",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "51",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "52",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao den truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao den truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "explorer",
+        "skillIds": [
+          "math.number_recognition.1_20",
+          "math.counting"
+        ],
+        "engine": "sequence",
+        "generatedBy": "games_16_30_generator",
+        "generatorSeed": 20260720,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [
+        "asset-number_train-1"
+      ],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "nt-lv050",
+      "gameId": "number_train",
+      "levelNumber": 50,
+      "difficulty": 3,
+      "learningObjective": "number sequencing",
+      "localizedContent": {
+        "en": {
+          "prompt": "Arrange the train numbers.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "50",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "51",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "52",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "53",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what comes first."
+        },
+        "vi": {
+          "prompt": "Sap xep cac so tren tau.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "50",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "51",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "52",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "53",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao den truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao den truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "explorer",
+        "skillIds": [
+          "math.number_recognition.1_20",
+          "math.counting"
+        ],
+        "engine": "sequence",
+        "generatedBy": "games_16_30_generator",
+        "generatorSeed": 20260720,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [
+        "asset-number_train-2"
+      ],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "nt-lv051",
+      "gameId": "number_train",
+      "levelNumber": 51,
+      "difficulty": 5,
+      "learningObjective": "number sequencing",
+      "localizedContent": {
+        "en": {
+          "prompt": "Arrange the train numbers.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "51",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "52",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "53",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "54",
+              "type": "text"
+            },
+            {
+              "id": "s4",
+              "content": "55",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what comes first."
+        },
+        "vi": {
+          "prompt": "Sap xep cac so tren tau.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "51",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "52",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "53",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "54",
+              "type": "text"
+            },
+            {
+              "id": "s4",
+              "content": "55",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao den truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao den truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "master",
+        "skillIds": [
+          "math.number_recognition.1_20",
+          "math.counting"
+        ],
+        "engine": "sequence",
+        "generatedBy": "games_16_30_generator",
+        "generatorSeed": 20260720,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [
+        "asset-number_train-3"
+      ],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "nt-lv052",
+      "gameId": "number_train",
+      "levelNumber": 52,
+      "difficulty": 5,
+      "learningObjective": "number sequencing",
+      "localizedContent": {
+        "en": {
+          "prompt": "Arrange the train numbers.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "52",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "53",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "54",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "55",
+              "type": "text"
+            },
+            {
+              "id": "s4",
+              "content": "56",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what comes first."
+        },
+        "vi": {
+          "prompt": "Sap xep cac so tren tau.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "52",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "53",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "54",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "55",
+              "type": "text"
+            },
+            {
+              "id": "s4",
+              "content": "56",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao den truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao den truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "master",
+        "skillIds": [
+          "math.number_recognition.1_20",
+          "math.counting"
+        ],
+        "engine": "sequence",
+        "generatedBy": "games_16_30_generator",
+        "generatorSeed": 20260720,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [
+        "asset-number_train-4"
+      ],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "nt-lv053",
+      "gameId": "number_train",
+      "levelNumber": 53,
+      "difficulty": 5,
+      "learningObjective": "number sequencing",
+      "localizedContent": {
+        "en": {
+          "prompt": "Arrange the train numbers.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "53",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "54",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "55",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "56",
+              "type": "text"
+            },
+            {
+              "id": "s4",
+              "content": "57",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what comes first."
+        },
+        "vi": {
+          "prompt": "Sap xep cac so tren tau.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "53",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "54",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "55",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "56",
+              "type": "text"
+            },
+            {
+              "id": "s4",
+              "content": "57",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao den truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao den truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "master",
+        "skillIds": [
+          "math.number_recognition.1_20",
+          "math.counting"
+        ],
+        "engine": "sequence",
+        "generatedBy": "games_16_30_generator",
+        "generatorSeed": 20260720,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [
+        "asset-number_train-5"
+      ],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "nt-lv054",
+      "gameId": "number_train",
+      "levelNumber": 54,
+      "difficulty": 5,
+      "learningObjective": "number sequencing",
+      "localizedContent": {
+        "en": {
+          "prompt": "Arrange the train numbers.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "54",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "55",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "56",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "57",
+              "type": "text"
+            },
+            {
+              "id": "s4",
+              "content": "58",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what comes first."
+        },
+        "vi": {
+          "prompt": "Sap xep cac so tren tau.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "54",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "55",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "56",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "57",
+              "type": "text"
+            },
+            {
+              "id": "s4",
+              "content": "58",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao den truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao den truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "master",
+        "skillIds": [
+          "math.number_recognition.1_20",
+          "math.counting"
+        ],
+        "engine": "sequence",
+        "generatedBy": "games_16_30_generator",
+        "generatorSeed": 20260720,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [
+        "asset-number_train-6"
+      ],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "nt-lv055",
+      "gameId": "number_train",
+      "levelNumber": 55,
+      "difficulty": 5,
+      "learningObjective": "number sequencing",
+      "localizedContent": {
+        "en": {
+          "prompt": "Arrange the train numbers.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "55",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "56",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "57",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "58",
+              "type": "text"
+            },
+            {
+              "id": "s4",
+              "content": "59",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what comes first."
+        },
+        "vi": {
+          "prompt": "Sap xep cac so tren tau.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "55",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "56",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "57",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "58",
+              "type": "text"
+            },
+            {
+              "id": "s4",
+              "content": "59",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao den truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao den truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "master",
+        "skillIds": [
+          "math.number_recognition.1_20",
+          "math.counting"
+        ],
+        "engine": "sequence",
+        "generatedBy": "games_16_30_generator",
+        "generatorSeed": 20260720,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [
+        "asset-number_train-7"
+      ],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "nt-lv056",
+      "gameId": "number_train",
+      "levelNumber": 56,
+      "difficulty": 5,
+      "learningObjective": "number sequencing",
+      "localizedContent": {
+        "en": {
+          "prompt": "Arrange the train numbers.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "56",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "57",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "58",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "59",
+              "type": "text"
+            },
+            {
+              "id": "s4",
+              "content": "60",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what comes first."
+        },
+        "vi": {
+          "prompt": "Sap xep cac so tren tau.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "56",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "57",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "58",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "59",
+              "type": "text"
+            },
+            {
+              "id": "s4",
+              "content": "60",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao den truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao den truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "master",
+        "skillIds": [
+          "math.number_recognition.1_20",
+          "math.counting"
+        ],
+        "engine": "sequence",
+        "generatedBy": "games_16_30_generator",
+        "generatorSeed": 20260720,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [
+        "asset-number_train-0"
+      ],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "nt-lv057",
+      "gameId": "number_train",
+      "levelNumber": 57,
+      "difficulty": 5,
+      "learningObjective": "number sequencing",
+      "localizedContent": {
+        "en": {
+          "prompt": "Arrange the train numbers.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "57",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "58",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "59",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "60",
+              "type": "text"
+            },
+            {
+              "id": "s4",
+              "content": "61",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what comes first."
+        },
+        "vi": {
+          "prompt": "Sap xep cac so tren tau.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "57",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "58",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "59",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "60",
+              "type": "text"
+            },
+            {
+              "id": "s4",
+              "content": "61",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao den truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao den truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "master",
+        "skillIds": [
+          "math.number_recognition.1_20",
+          "math.counting"
+        ],
+        "engine": "sequence",
+        "generatedBy": "games_16_30_generator",
+        "generatorSeed": 20260720,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [
+        "asset-number_train-1"
+      ],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "nt-lv058",
+      "gameId": "number_train",
+      "levelNumber": 58,
+      "difficulty": 5,
+      "learningObjective": "number sequencing",
+      "localizedContent": {
+        "en": {
+          "prompt": "Arrange the train numbers.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "58",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "59",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "60",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "61",
+              "type": "text"
+            },
+            {
+              "id": "s4",
+              "content": "62",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what comes first."
+        },
+        "vi": {
+          "prompt": "Sap xep cac so tren tau.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "58",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "59",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "60",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "61",
+              "type": "text"
+            },
+            {
+              "id": "s4",
+              "content": "62",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao den truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao den truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "master",
+        "skillIds": [
+          "math.number_recognition.1_20",
+          "math.counting"
+        ],
+        "engine": "sequence",
+        "generatedBy": "games_16_30_generator",
+        "generatorSeed": 20260720,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [
+        "asset-number_train-2"
+      ],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "nt-lv059",
+      "gameId": "number_train",
+      "levelNumber": 59,
+      "difficulty": 5,
+      "learningObjective": "number sequencing",
+      "localizedContent": {
+        "en": {
+          "prompt": "Arrange the train numbers.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "59",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "60",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "61",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "62",
+              "type": "text"
+            },
+            {
+              "id": "s4",
+              "content": "63",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what comes first."
+        },
+        "vi": {
+          "prompt": "Sap xep cac so tren tau.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "59",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "60",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "61",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "62",
+              "type": "text"
+            },
+            {
+              "id": "s4",
+              "content": "63",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao den truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao den truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "master",
+        "skillIds": [
+          "math.number_recognition.1_20",
+          "math.counting"
+        ],
+        "engine": "sequence",
+        "generatedBy": "games_16_30_generator",
+        "generatorSeed": 20260720,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [
+        "asset-number_train-3"
+      ],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "nt-lv060",
+      "gameId": "number_train",
+      "levelNumber": 60,
+      "difficulty": 5,
+      "learningObjective": "number sequencing",
+      "localizedContent": {
+        "en": {
+          "prompt": "Arrange the train numbers.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "60",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "61",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "62",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "63",
+              "type": "text"
+            },
+            {
+              "id": "s4",
+              "content": "64",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what comes first."
+        },
+        "vi": {
+          "prompt": "Sap xep cac so tren tau.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "60",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "61",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "62",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "63",
+              "type": "text"
+            },
+            {
+              "id": "s4",
+              "content": "64",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao den truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao den truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "master",
+        "skillIds": [
+          "math.number_recognition.1_20",
+          "math.counting"
+        ],
+        "engine": "sequence",
+        "generatedBy": "games_16_30_generator",
+        "generatorSeed": 20260720,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [
+        "asset-number_train-4"
+      ],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "nt-lv061",
+      "gameId": "number_train",
+      "levelNumber": 61,
+      "difficulty": 5,
+      "learningObjective": "number sequencing",
+      "localizedContent": {
+        "en": {
+          "prompt": "Arrange the train numbers.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "61",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "62",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "63",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "64",
+              "type": "text"
+            },
+            {
+              "id": "s4",
+              "content": "65",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what comes first."
+        },
+        "vi": {
+          "prompt": "Sap xep cac so tren tau.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "61",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "62",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "63",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "64",
+              "type": "text"
+            },
+            {
+              "id": "s4",
+              "content": "65",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao den truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao den truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "master",
+        "skillIds": [
+          "math.number_recognition.1_20",
+          "math.counting"
+        ],
+        "engine": "sequence",
+        "generatedBy": "games_16_30_generator",
+        "generatorSeed": 20260720,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [
+        "asset-number_train-5"
+      ],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "nt-lv062",
+      "gameId": "number_train",
+      "levelNumber": 62,
+      "difficulty": 5,
+      "learningObjective": "number sequencing",
+      "localizedContent": {
+        "en": {
+          "prompt": "Arrange the train numbers.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "62",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "63",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "64",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "65",
+              "type": "text"
+            },
+            {
+              "id": "s4",
+              "content": "66",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what comes first."
+        },
+        "vi": {
+          "prompt": "Sap xep cac so tren tau.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "62",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "63",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "64",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "65",
+              "type": "text"
+            },
+            {
+              "id": "s4",
+              "content": "66",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao den truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao den truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "master",
+        "skillIds": [
+          "math.number_recognition.1_20",
+          "math.counting"
+        ],
+        "engine": "sequence",
+        "generatedBy": "games_16_30_generator",
+        "generatorSeed": 20260720,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [
+        "asset-number_train-6"
+      ],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "nt-lv063",
+      "gameId": "number_train",
+      "levelNumber": 63,
+      "difficulty": 5,
+      "learningObjective": "number sequencing",
+      "localizedContent": {
+        "en": {
+          "prompt": "Arrange the train numbers.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "63",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "64",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "65",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "66",
+              "type": "text"
+            },
+            {
+              "id": "s4",
+              "content": "67",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what comes first."
+        },
+        "vi": {
+          "prompt": "Sap xep cac so tren tau.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "63",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "64",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "65",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "66",
+              "type": "text"
+            },
+            {
+              "id": "s4",
+              "content": "67",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao den truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao den truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "master",
+        "skillIds": [
+          "math.number_recognition.1_20",
+          "math.counting"
+        ],
+        "engine": "sequence",
+        "generatedBy": "games_16_30_generator",
+        "generatorSeed": 20260720,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [
+        "asset-number_train-7"
+      ],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "nt-lv064",
+      "gameId": "number_train",
+      "levelNumber": 64,
+      "difficulty": 5,
+      "learningObjective": "number sequencing",
+      "localizedContent": {
+        "en": {
+          "prompt": "Arrange the train numbers.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "64",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "65",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "66",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "67",
+              "type": "text"
+            },
+            {
+              "id": "s4",
+              "content": "68",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what comes first."
+        },
+        "vi": {
+          "prompt": "Sap xep cac so tren tau.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "64",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "65",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "66",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "67",
+              "type": "text"
+            },
+            {
+              "id": "s4",
+              "content": "68",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao den truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao den truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "master",
+        "skillIds": [
+          "math.number_recognition.1_20",
+          "math.counting"
+        ],
+        "engine": "sequence",
+        "generatedBy": "games_16_30_generator",
+        "generatorSeed": 20260720,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [
+        "asset-number_train-0"
+      ],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "nt-lv065",
+      "gameId": "number_train",
+      "levelNumber": 65,
+      "difficulty": 5,
+      "learningObjective": "number sequencing",
+      "localizedContent": {
+        "en": {
+          "prompt": "Arrange the train numbers.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "65",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "66",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "67",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "68",
+              "type": "text"
+            },
+            {
+              "id": "s4",
+              "content": "69",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what comes first."
+        },
+        "vi": {
+          "prompt": "Sap xep cac so tren tau.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "65",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "66",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "67",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "68",
+              "type": "text"
+            },
+            {
+              "id": "s4",
+              "content": "69",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao den truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao den truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "master",
+        "skillIds": [
+          "math.number_recognition.1_20",
+          "math.counting"
+        ],
+        "engine": "sequence",
+        "generatedBy": "games_16_30_generator",
+        "generatorSeed": 20260720,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [
+        "asset-number_train-1"
+      ],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "nt-lv066",
+      "gameId": "number_train",
+      "levelNumber": 66,
+      "difficulty": 5,
+      "learningObjective": "number sequencing",
+      "localizedContent": {
+        "en": {
+          "prompt": "Arrange the train numbers.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "66",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "67",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "68",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "69",
+              "type": "text"
+            },
+            {
+              "id": "s4",
+              "content": "70",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what comes first."
+        },
+        "vi": {
+          "prompt": "Sap xep cac so tren tau.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "66",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "67",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "68",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "69",
+              "type": "text"
+            },
+            {
+              "id": "s4",
+              "content": "70",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao den truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao den truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "master",
+        "skillIds": [
+          "math.number_recognition.1_20",
+          "math.counting"
+        ],
+        "engine": "sequence",
+        "generatedBy": "games_16_30_generator",
+        "generatorSeed": 20260720,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [
+        "asset-number_train-2"
+      ],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "nt-lv067",
+      "gameId": "number_train",
+      "levelNumber": 67,
+      "difficulty": 5,
+      "learningObjective": "number sequencing",
+      "localizedContent": {
+        "en": {
+          "prompt": "Arrange the train numbers.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "67",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "68",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "69",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "70",
+              "type": "text"
+            },
+            {
+              "id": "s4",
+              "content": "71",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what comes first."
+        },
+        "vi": {
+          "prompt": "Sap xep cac so tren tau.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "67",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "68",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "69",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "70",
+              "type": "text"
+            },
+            {
+              "id": "s4",
+              "content": "71",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao den truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao den truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "master",
+        "skillIds": [
+          "math.number_recognition.1_20",
+          "math.counting"
+        ],
+        "engine": "sequence",
+        "generatedBy": "games_16_30_generator",
+        "generatorSeed": 20260720,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [
+        "asset-number_train-3"
+      ],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "nt-lv068",
+      "gameId": "number_train",
+      "levelNumber": 68,
+      "difficulty": 5,
+      "learningObjective": "number sequencing",
+      "localizedContent": {
+        "en": {
+          "prompt": "Arrange the train numbers.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "68",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "69",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "70",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "71",
+              "type": "text"
+            },
+            {
+              "id": "s4",
+              "content": "72",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what comes first."
+        },
+        "vi": {
+          "prompt": "Sap xep cac so tren tau.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "68",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "69",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "70",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "71",
+              "type": "text"
+            },
+            {
+              "id": "s4",
+              "content": "72",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao den truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao den truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "master",
+        "skillIds": [
+          "math.number_recognition.1_20",
+          "math.counting"
+        ],
+        "engine": "sequence",
+        "generatedBy": "games_16_30_generator",
+        "generatorSeed": 20260720,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [
+        "asset-number_train-4"
+      ],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "nt-lv069",
+      "gameId": "number_train",
+      "levelNumber": 69,
+      "difficulty": 5,
+      "learningObjective": "number sequencing",
+      "localizedContent": {
+        "en": {
+          "prompt": "Arrange the train numbers.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "69",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "70",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "71",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "72",
+              "type": "text"
+            },
+            {
+              "id": "s4",
+              "content": "73",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what comes first."
+        },
+        "vi": {
+          "prompt": "Sap xep cac so tren tau.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "69",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "70",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "71",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "72",
+              "type": "text"
+            },
+            {
+              "id": "s4",
+              "content": "73",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao den truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao den truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "master",
+        "skillIds": [
+          "math.number_recognition.1_20",
+          "math.counting"
+        ],
+        "engine": "sequence",
+        "generatedBy": "games_16_30_generator",
+        "generatorSeed": 20260720,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [
+        "asset-number_train-5"
+      ],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "nt-lv070",
+      "gameId": "number_train",
+      "levelNumber": 70,
+      "difficulty": 5,
+      "learningObjective": "number sequencing",
+      "localizedContent": {
+        "en": {
+          "prompt": "Arrange the train numbers.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "70",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "71",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "72",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "73",
+              "type": "text"
+            },
+            {
+              "id": "s4",
+              "content": "74",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what comes first."
+        },
+        "vi": {
+          "prompt": "Sap xep cac so tren tau.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "70",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "71",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "72",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "73",
+              "type": "text"
+            },
+            {
+              "id": "s4",
+              "content": "74",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao den truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao den truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "master",
+        "skillIds": [
+          "math.number_recognition.1_20",
+          "math.counting"
+        ],
+        "engine": "sequence",
+        "generatedBy": "games_16_30_generator",
+        "generatorSeed": 20260720,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [
+        "asset-number_train-6"
+      ],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "nt-lv071",
+      "gameId": "number_train",
+      "levelNumber": 71,
+      "difficulty": 5,
+      "learningObjective": "number sequencing",
+      "localizedContent": {
+        "en": {
+          "prompt": "Arrange the train numbers.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "71",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "72",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "73",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "74",
+              "type": "text"
+            },
+            {
+              "id": "s4",
+              "content": "75",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what comes first."
+        },
+        "vi": {
+          "prompt": "Sap xep cac so tren tau.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "71",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "72",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "73",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "74",
+              "type": "text"
+            },
+            {
+              "id": "s4",
+              "content": "75",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao den truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao den truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "master",
+        "skillIds": [
+          "math.number_recognition.1_20",
+          "math.counting"
+        ],
+        "engine": "sequence",
+        "generatedBy": "games_16_30_generator",
+        "generatorSeed": 20260720,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [
+        "asset-number_train-7"
+      ],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "nt-lv072",
+      "gameId": "number_train",
+      "levelNumber": 72,
+      "difficulty": 5,
+      "learningObjective": "number sequencing",
+      "localizedContent": {
+        "en": {
+          "prompt": "Arrange the train numbers.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "72",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "73",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "74",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "75",
+              "type": "text"
+            },
+            {
+              "id": "s4",
+              "content": "76",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what comes first."
+        },
+        "vi": {
+          "prompt": "Sap xep cac so tren tau.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "72",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "73",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "74",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "75",
+              "type": "text"
+            },
+            {
+              "id": "s4",
+              "content": "76",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao den truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao den truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "master",
+        "skillIds": [
+          "math.number_recognition.1_20",
+          "math.counting"
+        ],
+        "engine": "sequence",
+        "generatedBy": "games_16_30_generator",
+        "generatorSeed": 20260720,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [
+        "asset-number_train-0"
+      ],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "nt-lv073",
+      "gameId": "number_train",
+      "levelNumber": 73,
+      "difficulty": 5,
+      "learningObjective": "number sequencing",
+      "localizedContent": {
+        "en": {
+          "prompt": "Arrange the train numbers.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "73",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "74",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "75",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "76",
+              "type": "text"
+            },
+            {
+              "id": "s4",
+              "content": "77",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what comes first."
+        },
+        "vi": {
+          "prompt": "Sap xep cac so tren tau.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "73",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "74",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "75",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "76",
+              "type": "text"
+            },
+            {
+              "id": "s4",
+              "content": "77",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao den truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao den truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "master",
+        "skillIds": [
+          "math.number_recognition.1_20",
+          "math.counting"
+        ],
+        "engine": "sequence",
+        "generatedBy": "games_16_30_generator",
+        "generatorSeed": 20260720,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [
+        "asset-number_train-1"
+      ],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "nt-lv074",
+      "gameId": "number_train",
+      "levelNumber": 74,
+      "difficulty": 5,
+      "learningObjective": "number sequencing",
+      "localizedContent": {
+        "en": {
+          "prompt": "Arrange the train numbers.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "74",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "75",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "76",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "77",
+              "type": "text"
+            },
+            {
+              "id": "s4",
+              "content": "78",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what comes first."
+        },
+        "vi": {
+          "prompt": "Sap xep cac so tren tau.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "74",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "75",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "76",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "77",
+              "type": "text"
+            },
+            {
+              "id": "s4",
+              "content": "78",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao den truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao den truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "master",
+        "skillIds": [
+          "math.number_recognition.1_20",
+          "math.counting"
+        ],
+        "engine": "sequence",
+        "generatedBy": "games_16_30_generator",
+        "generatorSeed": 20260720,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [
+        "asset-number_train-2"
+      ],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "nt-lv075",
+      "gameId": "number_train",
+      "levelNumber": 75,
+      "difficulty": 5,
+      "learningObjective": "number sequencing",
+      "localizedContent": {
+        "en": {
+          "prompt": "Arrange the train numbers.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "75",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "76",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "77",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "78",
+              "type": "text"
+            },
+            {
+              "id": "s4",
+              "content": "79",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what comes first."
+        },
+        "vi": {
+          "prompt": "Sap xep cac so tren tau.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "75",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "76",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "77",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "78",
+              "type": "text"
+            },
+            {
+              "id": "s4",
+              "content": "79",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao den truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao den truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "master",
+        "skillIds": [
+          "math.number_recognition.1_20",
+          "math.counting"
+        ],
+        "engine": "sequence",
+        "generatedBy": "games_16_30_generator",
+        "generatorSeed": 20260720,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [
+        "asset-number_train-3"
+      ],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    }
+  ]
+}

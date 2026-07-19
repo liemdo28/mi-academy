@@ -47,6 +47,21 @@ GAME_LABELS = {
     "number_balance": "Number Balance",
     "logic_detective": "Logic Detective",
     "story_steps": "Story Steps",
+    "picture_detective": "Picture Detective",
+    "color_builder": "Color Builder",
+    "animal_homes": "Animal Homes",
+    "daily_routine": "Daily Routine",
+    "healthy_foods": "Healthy Foods",
+    "letter_hunt": "Letter Hunt",
+    "number_train": "Number Train",
+    "emotion_match": "Emotion Match",
+    "puzzle_parts": "Puzzle Parts",
+    "odd_one_out": "Odd One Out",
+    "opposites": "Opposites",
+    "weather_today": "Weather Today",
+    "memory_journey": "Memory Journey",
+    "category_expert": "Category Expert",
+    "build_the_story": "Build the Story",
 }
 
 CHECK_CATEGORIES = [
