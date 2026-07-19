@@ -1,0 +1,16 @@
+{
+  "id": "malformed-word-sorter-difficulty",
+  "gameId": "word_sorter",
+  "levelNumber": 1,
+  "difficulty": 0,
+  "localizedContent": {
+    "vi": {
+      "prompt": "Sắp xếp các từ vào đúng nhóm!",
+      "items": [{"id": "item-a", "label": "con mèo", "text": "con mèo", "metadata": {"sortCategory": "vat_nuoi"}}],
+      "targets": [{"id": "group-vat_nuoi", "label": "Vật nuôi", "capacity": 1, "metadata": {"sortCategory": "vat_nuoi"}}],
+      "rule": {"matchStrategy": "metadataCategory", "categoryMetadataKey": "sortCategory"}
+    }
+  },
+  "hints": [{"text": "Invalid difficulty on purpose"}],
+  "metadata": {"ageGroup": "junior", "skillIds": ["letters.vocabulary"], "tier": 1, "engineId": "placement"}
+}

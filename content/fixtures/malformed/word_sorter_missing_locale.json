@@ -1,0 +1,16 @@
+{
+  "id": "malformed-word-sorter-locale",
+  "gameId": "word_sorter",
+  "levelNumber": 2,
+  "difficulty": 1,
+  "localizedContent": {
+    "en": {
+      "prompt": "Sort the words into their groups!",
+      "items": [{"id": "item-a", "label": "cat", "text": "cat", "metadata": {"sortCategory": "animals"}}],
+      "targets": [{"id": "group-animals", "label": "Animals", "capacity": 1, "metadata": {"sortCategory": "animals"}}],
+      "rule": {"matchStrategy": "metadataCategory", "categoryMetadataKey": "sortCategory"}
+    }
+  },
+  "hints": [{"text": "Missing vi localization on purpose"}],
+  "metadata": {"ageGroup": "junior", "skillIds": ["letters.vocabulary"], "tier": 1, "engineId": "placement"}
+}

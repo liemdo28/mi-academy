@@ -333,6 +333,13 @@ def main():
         solver=solve_placement_level,
         label="Shape Builder",
     )
+    validate_game_levels(
+        all_errors=all_errors,
+        game_id="word_sorter",
+        file_name="word_sorter.json",
+        solver=solve_placement_level,
+        label="Word Sorter",
+    )
 
     rc_path = (
         PROJECT_ROOT / "apps" / "mobile" / "assets" / "levels" / "robot_commands.json"
