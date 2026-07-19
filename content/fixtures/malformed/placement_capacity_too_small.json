@@ -1,0 +1,85 @@
+{
+  "id": "malformed-placement-capacity",
+  "gameId": "word_sorter",
+  "levelNumber": 1,
+  "difficulty": 1,
+  "learningObjective": "language sorting",
+  "localizedContent": {
+    "vi": {
+      "prompt": "Sap xep cac tu.",
+      "items": [
+        {
+          "id": "item1",
+          "label": "book",
+          "text": "book",
+          "acceptedTargetIds": ["left"]
+        },
+        {
+          "id": "item2",
+          "label": "cup",
+          "text": "cup",
+          "acceptedTargetIds": ["left"]
+        }
+      ],
+      "targets": [
+        {
+          "id": "left",
+          "label": "danh tu",
+          "text": "danh tu",
+          "capacity": 1
+        }
+      ],
+      "configuration": {
+        "tapAccessibilityMode": true
+      },
+      "rule": {
+        "matchStrategy": "explicitIds"
+      }
+    },
+    "en": {
+      "prompt": "Sort the words.",
+      "items": [
+        {
+          "id": "item1",
+          "label": "book",
+          "text": "book",
+          "acceptedTargetIds": ["left"]
+        },
+        {
+          "id": "item2",
+          "label": "cup",
+          "text": "cup",
+          "acceptedTargetIds": ["left"]
+        }
+      ],
+      "targets": [
+        {
+          "id": "left",
+          "label": "noun",
+          "text": "noun",
+          "capacity": 1
+        }
+      ],
+      "configuration": {
+        "tapAccessibilityMode": true
+      },
+      "rule": {
+        "matchStrategy": "explicitIds"
+      }
+    }
+  },
+  "hints": [
+    {
+      "text": "Chon nhom dung."
+    }
+  ],
+  "metadata": {
+    "ageGroup": "junior",
+    "skillIds": ["letters.vocabulary"],
+    "reviewStatus": "pending_human_review"
+  },
+  "assetRefs": [],
+  "contentVersion": 1,
+  "estimatedSeconds": 60,
+  "publicationState": "published"
+}

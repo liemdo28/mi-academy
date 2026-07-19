@@ -284,6 +284,41 @@ def validate_sequence_content(content: dict, level_num: int) -> list[str]:
     return errors
 
 
+def _duplicate_values(values: list[object]) -> set[object]:
+    seen: set[object] = set()
+    duplicates: set[object] = set()
+    for value in values:
+        if value in seen:
+            duplicates.add(value)
+        seen.add(value)
+    return duplicates
+
+
+def _placement_capacity(target: dict) -> int:
+    capacity = target.get("capacity", 1)
+    return capacity if isinstance(capacity, int) else 0
+
+
+def _placement_accepts(item: dict, target: dict, rule: dict) -> bool:
+    if rule.get("matchStrategy") == "metadataCategory":
+        key = rule.get("categoryMetadataKey")
+        item_metadata = item.get("metadata", {})
+        target_metadata = target.get("metadata", {})
+        if not isinstance(key, str) or not key:
+            return False
+        if not isinstance(item_metadata, dict) or not isinstance(target_metadata, dict):
+            return False
+        return item_metadata.get(key) is not None and item_metadata.get(
+            key
+        ) == target_metadata.get(key)
+
+    accepted_targets = item.get("acceptedTargetIds", [])
+    accepted_items = target.get("acceptedItemIds", [])
+    item_allows = not accepted_targets or target.get("id") in accepted_targets
+    target_allows = not accepted_items or item.get("id") in accepted_items
+    return item_allows and target_allows
+
+
 def validate_placement_content(content: dict, level_num: int) -> list[str]:
     """Validate Placement Engine localized content."""
     errors = []
@@ -298,24 +333,106 @@ def validate_placement_content(content: dict, level_num: int) -> list[str]:
         if not isinstance(targets, list) or not targets:
             errors.append(f"Level {level_num} ({locale}): placement targets required")
             continue
-        target_ids = {
-            target.get("id") for target in targets if isinstance(target, dict)
-        }
-        item_ids = set()
+        normalized_items = [item for item in items if isinstance(item, dict)]
+        normalized_targets = [target for target in targets if isinstance(target, dict)]
+        rule = loc_data.get("rule", {})
+        if not isinstance(rule, dict):
+            rule = {}
+
+        item_ids = [item.get("id") for item in normalized_items]
+        target_ids = [target.get("id") for target in normalized_targets]
+        for item_id in _duplicate_values(item_ids):
+            errors.append(f"Level {level_num} ({locale}): duplicate item ID {item_id}")
+        for target_id in _duplicate_values(target_ids):
+            errors.append(
+                f"Level {level_num} ({locale}): duplicate target ID {target_id}"
+            )
+
+        known_items = set(item_ids)
+        known_targets = set(target_ids)
         for item in items:
             if not isinstance(item, dict):
                 errors.append(f"Level {level_num} ({locale}): item must be a map")
                 continue
             item_id = item.get("id")
-            if item_id in item_ids:
+            accepted = item.get("acceptedTargetIds", [])
+            if not isinstance(accepted, list):
                 errors.append(
-                    f"Level {level_num} ({locale}): duplicate item ID {item_id}"
+                    f"Level {level_num} ({locale}): item {item_id} acceptedTargetIds must be a list"
                 )
-            item_ids.add(item_id)
-            accepted = item.get("acceptedTargetIds")
-            if not isinstance(accepted, list) or not set(accepted) & target_ids:
+                continue
+            for target_id in accepted:
+                if target_id not in known_targets:
+                    errors.append(
+                        f"Level {level_num} ({locale}): item {item_id} references unknown target {target_id}"
+                    )
+
+        for target in normalized_targets:
+            capacity = _placement_capacity(target)
+            if capacity < 1:
                 errors.append(
-                    f"Level {level_num} ({locale}): item {item_id} has no valid target"
+                    f"Level {level_num} ({locale}): target {target.get('id')} has invalid capacity"
+                )
+            accepted_items = target.get("acceptedItemIds", [])
+            if not isinstance(accepted_items, list):
+                errors.append(
+                    f"Level {level_num} ({locale}): target {target.get('id')} acceptedItemIds must be a list"
+                )
+                continue
+            for item_id in accepted_items:
+                if item_id not in known_items:
+                    errors.append(
+                        f"Level {level_num} ({locale}): target {target.get('id')} references unknown item {item_id}"
+                    )
+
+        if rule.get("matchStrategy") == "metadataCategory" and not rule.get(
+            "categoryMetadataKey"
+        ):
+            errors.append(
+                f"Level {level_num} ({locale}): metadataCategory rule requires categoryMetadataKey"
+            )
+
+        legal_targets_by_item: dict[object, list[dict]] = {}
+        for item in normalized_items:
+            legal = [
+                target
+                for target in normalized_targets
+                if _placement_accepts(item, target, rule)
+            ]
+            legal_targets_by_item[item.get("id")] = legal
+            if not legal:
+                errors.append(
+                    f"Level {level_num} ({locale}): item {item.get('id')} has no valid target"
+                )
+
+        for target in normalized_targets:
+            if not any(
+                _placement_accepts(item, target, rule) for item in normalized_items
+            ):
+                errors.append(
+                    f"Level {level_num} ({locale}): target {target.get('id')} has no valid item"
+                )
+
+        total_capacity = sum(
+            _placement_capacity(target) for target in normalized_targets
+        )
+        if len(normalized_items) > total_capacity:
+            errors.append(
+                f"Level {level_num} ({locale}): total item count exceeds target capacity"
+            )
+
+        exclusive_demand: dict[object, int] = {}
+        for item_id, legal_targets in legal_targets_by_item.items():
+            if len(legal_targets) == 1:
+                target_id = legal_targets[0].get("id")
+                exclusive_demand[target_id] = exclusive_demand.get(target_id, 0) + 1
+        for target in normalized_targets:
+            demand = exclusive_demand.get(target.get("id"), 0)
+            capacity = _placement_capacity(target)
+            if demand > capacity:
+                errors.append(
+                    f"Level {level_num} ({locale}): {demand} item(s) require target "
+                    f"{target.get('id')} but capacity is {capacity}"
                 )
     return errors
 

@@ -159,6 +159,7 @@ def category_level(index: int, total: int) -> dict[str, Any]:
 
 def pattern_level(index: int, total: int) -> dict[str, Any]:
     difficulty, _ = tier_for(index, total)
+    rule: dict[str, Any]
     if difficulty == 1:
         values = ["red", "blue", "red", "blue"]
         rule = {"type": "fixed"}
