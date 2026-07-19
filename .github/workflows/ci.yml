@@ -410,7 +410,7 @@ jobs:
         run: flutter build ios --debug --no-codesign
 
   android-release-signing:
-    name: Android release build (signed)
+    name: Android release build (signed, if keystore configured)
     # No-op until ANDROID_KEYSTORE_BASE64 is configured as a repo secret —
     # see docs/security/SECRET_INVENTORY.md. Nothing is uploaded to Play
     # Store here; this only produces a signed .aab + mapping file artifact
@@ -482,6 +482,15 @@ jobs:
           name: mi-academy-release-aab
           path: |
             apps/mobile/build/app/outputs/bundle/release/app-release.aab
+
+      - name: Report release signing outcome
+        if: always()
+        run: |
+          if [ "${{ steps.check-secret.outputs.configured }}" = "true" ]; then
+            echo "Signed Android app bundle produced (ANDROID_KEYSTORE_BASE64 configured)."
+          else
+            echo "::notice title=Release signing not configured::No signed Android artifact was produced by this job — ANDROID_KEYSTORE_BASE64/ANDROID_KEYSTORE_PASSWORD/ANDROID_KEY_ALIAS/ANDROID_KEY_PASSWORD are not set as repo secrets (see docs/security/SECRET_INVENTORY.md). A green job status here does NOT mean a signed release build exists; it only means no build/sign steps ran to fail."
+          fi
             apps/mobile/build/app/outputs/mapping/release/mapping.txt
 
       - name: Remove decoded keystore
