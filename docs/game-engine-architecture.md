@@ -290,11 +290,25 @@ The fourth and final Milestone 1 WS5 engine is now real and tested:
 Sequence, Placement, Multi-select.** 165 tests total in
 `packages/mi_game_engines` (19 + 23 + 57 + 58 + 8 shared contract).
 
-**Not wired into any of the six (or eight) existing games or the game
-registry this pass** — `packages/mi_game_engines` is a standalone
-package with its own tests; migrating an existing game onto it, or
-building a new game against it, is separate follow-up work (see
-docs/game-catalog.md and WS6 in docs/release-audit.md).
+## Update: Games 9-15 consume shared engines (2026-07-19)
+
+The production mobile registry now uses `mi_game_engines` through its
+public barrel for Games 9-15.
+
+| Game | Engine |
+|---|---|
+| Category Collector | Multi-select |
+| Pattern Parade | Sequence |
+| Shape Builder | Placement |
+| Word Sorter | Placement |
+| Number Balance | Matching |
+| Logic Detective | Multi-select |
+| Story Steps | Sequence |
+
+The shared engine package remains persistence-free. The mobile adapter in
+`apps/mobile/lib/src/games/engine_backed/` converts engine completion into
+`MiCompletionResult`; `GameScreen` still owns backend save and offline
+queue behavior.
 
 ## Recommendation
 

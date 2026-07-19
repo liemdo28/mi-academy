@@ -174,7 +174,9 @@ class _PlacementScreenState extends State<PlacementScreen> {
       body: SafeArea(
         child: controller.isPaused
             ? _PausedOverlay(
-                resumeLabel: loc.resumeLabel, onResume: controller.resume)
+                resumeLabel: loc.resumeLabel,
+                onResume: controller.resume,
+              )
             : controller.isComplete
                 ? _CompletionView(
                     localization: loc,
@@ -190,8 +192,9 @@ class _PlacementScreenState extends State<PlacementScreen> {
                     children: [
                       if (controller.showHint && content.hint != null)
                         _HintBanner(
-                            text: content.hint!,
-                            onDismiss: controller.dismissHint),
+                          text: content.hint!,
+                          onDismiss: controller.dismissHint,
+                        ),
                       if (controller.lastAttemptWasCorrect == false)
                         _FeedbackBanner(message: loc.invalidPlacementMessage),
                       Expanded(
@@ -346,10 +349,14 @@ class _TargetSlot extends StatelessWidget {
               child: Column(
                 mainAxisSize: MainAxisSize.min,
                 children: [
-                  Text(target.text ?? target.label,
-                      textAlign: TextAlign.center),
-                  Text('$occupancy/${target.capacity}',
-                      style: const TextStyle(fontSize: 12)),
+                  Text(
+                    target.text ?? target.label,
+                    textAlign: TextAlign.center,
+                  ),
+                  Text(
+                    '$occupancy/${target.capacity}',
+                    style: const TextStyle(fontSize: 12),
+                  ),
                   Wrap(
                     spacing: 4,
                     runSpacing: 4,
@@ -480,8 +487,11 @@ class _SourceItemArea extends StatelessWidget {
 }
 
 class _ItemChip extends StatelessWidget {
-  const _ItemChip(
-      {required this.item, required this.minSize, this.selected = false});
+  const _ItemChip({
+    required this.item,
+    required this.minSize,
+    this.selected = false,
+  });
   final PlacementItem item;
   final double minSize;
   final bool selected;
@@ -498,8 +508,9 @@ class _ItemChip extends StatelessWidget {
               ? Colors.blue.withValues(alpha: 0.2)
               : Colors.grey.withValues(alpha: 0.15),
           border: Border.all(
-              color: selected ? Colors.blue : Colors.grey.shade400,
-              width: selected ? 2 : 1),
+            color: selected ? Colors.blue : Colors.grey.shade400,
+            width: selected ? 2 : 1,
+          ),
           borderRadius: BorderRadius.circular(10),
         ),
         alignment: Alignment.center,
@@ -609,10 +620,14 @@ class _CompletionView extends StatelessWidget {
             mainAxisSize: MainAxisSize.min,
             children: [
               OutlinedButton(
-                  onPressed: onRetry, child: Text(localization.retryLabel)),
+                onPressed: onRetry,
+                child: Text(localization.retryLabel),
+              ),
               const SizedBox(width: 12),
               ElevatedButton(
-                  onPressed: onExit, child: Text(localization.exitLabel)),
+                onPressed: onExit,
+                child: Text(localization.exitLabel),
+              ),
             ],
           ),
         ],

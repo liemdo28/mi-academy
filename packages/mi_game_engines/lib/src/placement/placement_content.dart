@@ -207,7 +207,8 @@ class PlacementItem extends Equatable {
       if (!json.containsKey(field) ||
           (json[field] as String?)?.isEmpty == true) {
         throw PlacementContentException(
-            'Item is missing required field "$field"');
+          'Item is missing required field "$field"',
+        );
       }
     }
     final rawTargetIds = json['acceptedTargetIds'] as List? ?? const [];
@@ -270,7 +271,8 @@ class PlacementTarget extends Equatable {
       if (!json.containsKey(field) ||
           (json[field] as String?)?.isEmpty == true) {
         throw PlacementContentException(
-            'Target is missing required field "$field"');
+          'Target is missing required field "$field"',
+        );
       }
     }
     final capacity = json['capacity'] as int? ?? 1;
@@ -408,7 +410,8 @@ class PlacementContent extends Equatable {
     }
 
     final configuration = PlacementConfiguration.fromJson(
-        json['configuration'] as Map<String, dynamic>?);
+      json['configuration'] as Map<String, dynamic>?,
+    );
     final PlacementRule rule;
     try {
       rule = PlacementRule.fromJson(json['rule'] as Map<String, dynamic>?);

@@ -137,7 +137,8 @@ class PlacementController extends ChangeNotifier {
   /// Items not currently on any target, in their (possibly shuffled)
   /// source order.
   List<PlacementItem> get unplacedItems => List.unmodifiable(
-      _sourceOrder.where((i) => !_placements.containsKey(i.id)));
+        _sourceOrder.where((i) => !_placements.containsKey(i.id)),
+      );
 
   /// All items, in source order, regardless of placement -- useful for a
   /// renderer that wants to show placed items visually docked at their
@@ -265,12 +266,14 @@ class PlacementController extends ChangeNotifier {
     final isValid = acceptedByRule && hasCapacity;
 
     _attempts++;
-    _attemptLog.add(PlacementAttempt(
-      itemId: itemId,
-      targetId: targetId,
-      isCorrect: isValid,
-      attemptNumber: _attempts,
-    ));
+    _attemptLog.add(
+      PlacementAttempt(
+        itemId: itemId,
+        targetId: targetId,
+        isCorrect: isValid,
+        attemptNumber: _attempts,
+      ),
+    );
 
     if (isValid) {
       _placements[itemId] = targetId;
@@ -358,8 +361,9 @@ class PlacementController extends ChangeNotifier {
     if (_isComplete) return;
     if (!_content.configuration.requireAllItemsPlacedForCompletion) return;
 
-    final allPlaced =
-        _content.items.every((item) => _placements.containsKey(item.id));
+    final allPlaced = _content.items.every(
+      (item) => _placements.containsKey(item.id),
+    );
     if (!allPlaced) return;
 
     // Every current placement must still be valid under the rule (it

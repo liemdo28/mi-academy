@@ -1,0 +1,19 @@
+{
+  "id": "bad-place-001",
+  "gameId": "word_sorter",
+  "levelNumber": 1,
+  "difficulty": 1,
+  "localizedContent": {
+    "vi": {
+      "prompt": "Sap xep tu.",
+      "items": [{"id": "item1", "label": "book", "acceptedTargetIds": ["missing"]}],
+      "targets": [{"id": "noun", "label": "noun"}]
+    },
+    "en": {
+      "prompt": "Sort the word.",
+      "items": [{"id": "item1", "label": "book", "acceptedTargetIds": ["missing"]}],
+      "targets": [{"id": "noun", "label": "noun"}]
+    }
+  },
+  "metadata": {"ageGroup": "junior", "skillIds": ["letters.vocabulary"]}
+}

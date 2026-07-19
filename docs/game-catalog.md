@@ -1,8 +1,8 @@
 # Game catalog — MI Academy 1.0 (30-game target)
 
 Status verified directly against the working tree on 2026-07-19 (branch
-`feature/game-8-closure`) — not carried over from any prior summary.
-**8 of 30 games exist; 22 do not.** This is the single largest gap against
+`integration/m2-games-15-complete`) — not carried over from any prior summary.
+**15 of 30 games exist; 15 do not.** This is still the largest gap against
 the master spec and should not be understated.
 
 Legend: **Built** = playable, has real content, has tests. **Not started**
@@ -46,6 +46,26 @@ out-of-range positions. Evidence on 2026-07-19: `flutter analyze`,
 `flutter test`, `python tools/content_schema_validator.py`,
 `python tools/content_schema_validator.py --check-malformed`, and
 `python tools/content_safety_audit.py --json` pass.
+
+## Update (Games 9-15 implementation program)
+
+Games 9-15 are now registered, launchable, content-backed,
+backend-cataloged, and tested against shared engines.
+
+| # | Game | ID | Engine | Levels |
+|---|---|---|---|---:|
+| 09 | Category Collector | `category_collector` | Multi-select | 60 |
+| 10 | Pattern Parade | `pattern_parade` | Sequence | 60 |
+| 11 | Shape Builder | `shape_builder` | Placement | 45 |
+| 12 | Word Sorter | `word_sorter` | Placement | 60 |
+| 13 | Number Balance | `number_balance` | Matching | 60 |
+| 14 | Logic Detective | `logic_detective` | Multi-select | 45 |
+| 15 | Story Steps | `story_steps` | Sequence | 45 |
+
+All seven have EN/VI content, three difficulty tiers, schema validation,
+solvability checks, malformed fixture coverage for the new schema branches,
+mobile registry/loader tests, backend result/progress tests, and pending
+human review checklists under `docs/content-review/`.
 
 ## Group A — Chữ và ngôn ngữ (Letters & language)
 
@@ -94,12 +114,10 @@ out-of-range positions. Evidence on 2026-07-19: `flutter analyze`,
 
 ## Summary
 
-- **Built: 8/30** (alphabet_explorer, missing_letter, word_builder,
-  sound_match, math_race, math_supermarket, memory_cards, robot_commands) —
-  all pass `flutter analyze`. Alphabet Explorer contributes 95 bilingual,
-  schema-validated levels; Missing Letter contributes 75 bilingual,
-  schema-validated levels; the earlier six remain at 10 levels each.
-- **Not started: 22/30** — no engine code, no content, no tests exist. This
+- **Built: 15/30** (Games 1-15) — all pass `flutter analyze`. Games 9-15
+  contribute 375 bilingual, schema-validated levels and use Matching,
+  Sequence, Placement, or Multi-select through shared engine adapters.
+- **Not started: 15/30** — no engine code, no content, no tests exist. This
   is not a content-authoring gap alone; several of these games map to
   engine types that don't exist yet at all (see
   `docs/game-engine-architecture.md`): Text Input Engine (07, 08), Story

@@ -538,6 +538,59 @@ def test_game_7_8_results_update_progress_independently():
     asyncio.run(run())
 
 
+@pytest.mark.parametrize(
+    ("game_type", "subject_code", "skill"),
+    [
+        ("category_collector", "logic_category", "logic.classification"),
+        ("pattern_parade", "logic_pattern", "logic.pattern.recognition"),
+        ("shape_builder", "math_shape", "math.shapes.basic"),
+        ("word_sorter", "letters_sort", "letters.vocabulary"),
+        ("number_balance", "math_balance", "math.addition.within_20"),
+        ("logic_detective", "logic_detective", "logic.conditions"),
+        ("story_steps", "letters_story", "letters.reading_comprehension"),
+    ],
+)
+def test_games_9_15_results_update_progress(game_type, subject_code, skill):
+    async def run():
+        session_maker, engine = await _session_maker()
+        try:
+            async with session_maker() as db:
+                data = await _seed_world(
+                    db,
+                    game_type=game_type,
+                    game_name=game_type.replace("_", " ").title(),
+                    subject_code=subject_code,
+                    subject_name=subject_code,
+                    lesson_title=game_type,
+                )
+
+                response = await save_game_result(
+                    game_id=data["game"].id,
+                    body=_result_body(
+                        data["child"].id,
+                        data["game"].id,
+                        data["lesson"].id,
+                        attempt_id=f"{game_type}-attempt-1",
+                        skill_evidence={skill: [f"{game_type}-lv001"]},
+                    ),
+                    profile=data["profile"],
+                    db=db,
+                )
+
+                progress_rows = (await db.execute(select(Progress))).scalars().all()
+                attempts = (await db.execute(select(Attempt))).scalars().all()
+
+                assert response["idempotent_replay"] is False
+                assert len(progress_rows) == 1
+                assert len(attempts) == 1
+                assert attempts[0].game_id == data["game"].id
+                assert skill in attempts[0].answer_json
+        finally:
+            await engine.dispose()
+
+    asyncio.run(run())
+
+
 async def _session_maker():
     engine = create_async_engine("sqlite+aiosqlite:///:memory:", future=True)
     async with engine.begin() as conn:

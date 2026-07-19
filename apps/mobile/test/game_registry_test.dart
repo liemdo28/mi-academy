@@ -19,18 +19,26 @@ const _level = MiLevel(
 void main() {
   group('GameRegistry', () {
     test('registers all built games', () {
-      const expectedIds = {
-        'alphabet_explorer',
-        'missing_letter',
+      const expectedIds = [
         'word_builder',
         'sound_match',
         'math_race',
         'math_supermarket',
         'robot_commands',
         'memory_cards',
-      };
-      final registeredIds = GameRegistry.all.map((e) => e.gameId).toSet();
+        'alphabet_explorer',
+        'missing_letter',
+        'category_collector',
+        'pattern_parade',
+        'shape_builder',
+        'word_sorter',
+        'number_balance',
+        'logic_detective',
+        'story_steps',
+      ];
+      final registeredIds = GameRegistry.all.map((e) => e.gameId).toList();
       expect(registeredIds, expectedIds);
+      expect(registeredIds.toSet().length, expectedIds.length);
     });
 
     test('find() returns a real entry for a known game ID', () {
@@ -77,6 +85,27 @@ void main() {
           'letters.initial_sound',
         ]),
       );
+    });
+
+    test('registers Games 9-15 with shared engine mappings', () {
+      final expected = {
+        'category_collector': 'multi_select',
+        'pattern_parade': 'sequence',
+        'shape_builder': 'placement',
+        'word_sorter': 'placement',
+        'number_balance': 'matching',
+        'logic_detective': 'multi_select',
+        'story_steps': 'sequence',
+      };
+
+      for (final item in expected.entries) {
+        final entry = GameRegistry.find(item.key);
+        expect(entry, isNotNull, reason: item.key);
+        expect(entry!.engineType, item.value);
+        expect(entry.localizedName['vi'], isNotEmpty);
+        expect(entry.localizedName['en'], isNotEmpty);
+        expect(entry.supportedSkills, isNotEmpty);
+      }
     });
 
     test('find() returns null for an unknown game ID', () {

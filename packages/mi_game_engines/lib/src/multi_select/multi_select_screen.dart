@@ -217,7 +217,9 @@ class _MultiSelectScreenState extends State<MultiSelectScreen> {
       body: SafeArea(
         child: controller.isPaused
             ? _PausedOverlay(
-                resumeLabel: loc.resumeLabel, onResume: controller.resume)
+                resumeLabel: loc.resumeLabel,
+                onResume: controller.resume,
+              )
             : controller.isComplete
                 ? _CompletionView(
                     localization: loc,
@@ -232,7 +234,9 @@ class _MultiSelectScreenState extends State<MultiSelectScreen> {
                     children: [
                       Padding(
                         padding: const EdgeInsets.symmetric(
-                            horizontal: 16, vertical: 4),
+                          horizontal: 16,
+                          vertical: 4,
+                        ),
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.stretch,
                           children: [
@@ -356,7 +360,9 @@ class _OptionTile extends StatelessWidget {
       excludeSemantics: true,
       child: ConstrainedBox(
         constraints: const BoxConstraints(
-            minWidth: _kMinTouchSize, minHeight: _kMinTouchSize),
+          minWidth: _kMinTouchSize,
+          minHeight: _kMinTouchSize,
+        ),
         child: FilterChip(
           avatar: option.assetId != null
               ? const Icon(Icons.image_outlined, size: 18)
@@ -487,10 +493,14 @@ class _CompletionView extends StatelessWidget {
             mainAxisSize: MainAxisSize.min,
             children: [
               OutlinedButton(
-                  onPressed: onRetry, child: Text(localization.retryLabel)),
+                onPressed: onRetry,
+                child: Text(localization.retryLabel),
+              ),
               const SizedBox(width: 12),
               ElevatedButton(
-                  onPressed: onExit, child: Text(localization.exitLabel)),
+                onPressed: onExit,
+                child: Text(localization.exitLabel),
+              ),
             ],
           ),
         ],

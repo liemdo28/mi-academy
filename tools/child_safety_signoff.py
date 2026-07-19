@@ -40,6 +40,13 @@ GAME_LABELS = {
     "math_supermarket": "Math Supermarket",
     "memory_cards": "Memory Cards",
     "robot_commands": "Robot Commands",
+    "category_collector": "Category Collector",
+    "pattern_parade": "Pattern Parade",
+    "shape_builder": "Shape Builder",
+    "word_sorter": "Word Sorter",
+    "number_balance": "Number Balance",
+    "logic_detective": "Logic Detective",
+    "story_steps": "Story Steps",
 }
 
 CHECK_CATEGORIES = [
@@ -134,7 +141,7 @@ def render_markdown(report: SignoffReport) -> str:
         "# MI Academy - MVP Game Safety Pre-Signoff",
         "",
         f"> **Generated:** {report.generated_on}",
-        "> **Scope:** Automated evidence for the eight currently built MVP games",
+        "> **Scope:** Automated evidence for the 15 currently built MVP games",
         "> **Manual release sign-off:** pending",
         "",
         "This report compiles automated child-safety evidence. It does not replace the required human QA sign-off or real-device review.",

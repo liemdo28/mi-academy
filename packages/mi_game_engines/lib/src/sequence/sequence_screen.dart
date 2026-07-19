@@ -101,7 +101,9 @@ class _SequenceScreenState extends State<SequenceScreen> {
       return Scaffold(
         appBar: AppBar(
           leading: IconButton(
-              icon: const Icon(Icons.close), onPressed: widget.onExit),
+            icon: const Icon(Icons.close),
+            onPressed: widget.onExit,
+          ),
         ),
         body: Center(
           child: Padding(
@@ -111,8 +113,10 @@ class _SequenceScreenState extends State<SequenceScreen> {
               children: [
                 const Icon(Icons.error_outline, size: 48, color: Colors.grey),
                 const SizedBox(height: 12),
-                Text('Nội dung không khả dụng.\n$error',
-                    textAlign: TextAlign.center),
+                Text(
+                  'Nội dung không khả dụng.\n$error',
+                  textAlign: TextAlign.center,
+                ),
               ],
             ),
           ),
@@ -348,8 +352,10 @@ class _HintBanner extends StatelessWidget {
       child: ListTile(
         leading: const Icon(Icons.lightbulb),
         title: Text(text),
-        trailing:
-            IconButton(icon: const Icon(Icons.close), onPressed: onDismiss),
+        trailing: IconButton(
+          icon: const Icon(Icons.close),
+          onPressed: onDismiss,
+        ),
       ),
     );
   }
@@ -368,8 +374,10 @@ class _FeedbackBanner extends StatelessWidget {
         width: double.infinity,
         color: Colors.orange.withValues(alpha: 0.15),
         padding: const EdgeInsets.symmetric(vertical: 8),
-        child: const Text('Chưa đúng thứ tự, thử lại nhé!',
-            textAlign: TextAlign.center),
+        child: const Text(
+          'Chưa đúng thứ tự, thử lại nhé!',
+          textAlign: TextAlign.center,
+        ),
       ),
     );
   }

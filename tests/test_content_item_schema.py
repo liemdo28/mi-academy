@@ -31,10 +31,9 @@ def test_every_real_production_level_validates():
         item, errors = validate_content_item(level)
         assert item is not None, f"{filename}:{level.get('id')}: {errors}"
         checked += 1
-    # 4 games x 10 hand-authored levels + Math Race's 40 and Math
-    # Supermarket's 40, plus Milestone 2 Slice 1 Alphabet Explorer's 95
-    # and Slice 2 Missing Letter's 75 production levels.
-    assert checked == 290
+    # Games 1-8 total 290 production levels; Games 9-15 add 375 generated,
+    # schema-valid levels for a Games 1-15 total of 665.
+    assert checked == 665
 
 
 def test_age_band_and_skill_tags_readable_from_metadata():

@@ -17,6 +17,13 @@ const gameLevelAssets = {
   'math_supermarket': 'assets/levels/math_supermarket.json',
   'memory_cards': 'assets/levels/memory_cards.json',
   'robot_commands': 'assets/levels/robot_commands.json',
+  'category_collector': 'assets/levels/category_collector.json',
+  'pattern_parade': 'assets/levels/pattern_parade.json',
+  'shape_builder': 'assets/levels/shape_builder.json',
+  'word_sorter': 'assets/levels/word_sorter.json',
+  'number_balance': 'assets/levels/number_balance.json',
+  'logic_detective': 'assets/levels/logic_detective.json',
+  'story_steps': 'assets/levels/story_steps.json',
 };
 
 /// Loads all levels for a single game from its bundled asset.

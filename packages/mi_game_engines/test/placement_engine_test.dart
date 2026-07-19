@@ -22,19 +22,19 @@ Map<String, dynamic> _viLetterPlacementExample() => {
           'id': 'letter-m',
           'label': 'Chữ M',
           'text': 'M',
-          'acceptedTargetIds': ['slot-1']
+          'acceptedTargetIds': ['slot-1'],
         },
         {
           'id': 'letter-e',
           'label': 'Chữ È',
           'text': 'È',
-          'acceptedTargetIds': ['slot-2']
+          'acceptedTargetIds': ['slot-2'],
         },
         {
           'id': 'letter-o',
           'label': 'Chữ O',
           'text': 'O',
-          'acceptedTargetIds': ['slot-3']
+          'acceptedTargetIds': ['slot-3'],
         },
       ],
       'targets': [
@@ -42,19 +42,19 @@ Map<String, dynamic> _viLetterPlacementExample() => {
           'id': 'slot-1',
           'label': 'Ô trống 1',
           'capacity': 1,
-          'acceptedItemIds': ['letter-m']
+          'acceptedItemIds': ['letter-m'],
         },
         {
           'id': 'slot-2',
           'label': 'Ô trống 2',
           'capacity': 1,
-          'acceptedItemIds': ['letter-e']
+          'acceptedItemIds': ['letter-e'],
         },
         {
           'id': 'slot-3',
           'label': 'Ô trống 3',
           'capacity': 1,
-          'acceptedItemIds': ['letter-o']
+          'acceptedItemIds': ['letter-o'],
         },
       ],
     };
@@ -73,19 +73,19 @@ Map<String, dynamic> _enShapePlacementExample() => {
           'id': 'shape-circle',
           'label': 'Circle',
           'text': 'Circle',
-          'acceptedTargetIds': ['outline-circle']
+          'acceptedTargetIds': ['outline-circle'],
         },
         {
           'id': 'shape-square',
           'label': 'Square',
           'text': 'Square',
-          'acceptedTargetIds': ['outline-square']
+          'acceptedTargetIds': ['outline-square'],
         },
         {
           'id': 'shape-triangle',
           'label': 'Triangle',
           'text': 'Triangle',
-          'acceptedTargetIds': ['outline-triangle']
+          'acceptedTargetIds': ['outline-triangle'],
         },
       ],
       'targets': [
@@ -93,19 +93,19 @@ Map<String, dynamic> _enShapePlacementExample() => {
           'id': 'outline-circle',
           'label': 'Circle outline',
           'capacity': 1,
-          'acceptedItemIds': ['shape-circle']
+          'acceptedItemIds': ['shape-circle'],
         },
         {
           'id': 'outline-square',
           'label': 'Square outline',
           'capacity': 1,
-          'acceptedItemIds': ['shape-square']
+          'acceptedItemIds': ['shape-square'],
         },
         {
           'id': 'outline-triangle',
           'label': 'Triangle outline',
           'capacity': 1,
-          'acceptedItemIds': ['shape-triangle']
+          'acceptedItemIds': ['shape-triangle'],
         },
       ],
     };
@@ -122,38 +122,38 @@ Map<String, dynamic> _categorySortingExample() => {
       'instruction': 'Sắp xếp các đồ vật vào đúng nhóm!',
       'rule': {
         'matchStrategy': 'metadataCategory',
-        'categoryMetadataKey': 'category'
+        'categoryMetadataKey': 'category',
       },
       'items': [
         {
           'id': 'animal-dog',
           'label': 'Con chó',
           'text': '🐶',
-          'metadata': {'category': 'animal'}
+          'metadata': {'category': 'animal'},
         },
         {
           'id': 'animal-cat',
           'label': 'Con mèo',
           'text': '🐱',
-          'metadata': {'category': 'animal'}
+          'metadata': {'category': 'animal'},
         },
         {
           'id': 'animal-bird',
           'label': 'Con chim',
           'text': '🐦',
-          'metadata': {'category': 'animal'}
+          'metadata': {'category': 'animal'},
         },
         {
           'id': 'food-apple',
           'label': 'Quả táo',
           'text': '🍎',
-          'metadata': {'category': 'food'}
+          'metadata': {'category': 'food'},
         },
         {
           'id': 'food-bread',
           'label': 'Bánh mì',
           'text': '🍞',
-          'metadata': {'category': 'food'}
+          'metadata': {'category': 'food'},
         },
       ],
       'targets': [
@@ -161,13 +161,13 @@ Map<String, dynamic> _categorySortingExample() => {
           'id': 'target-animals',
           'label': 'Động vật',
           'capacity': 3,
-          'metadata': {'category': 'animal'}
+          'metadata': {'category': 'animal'},
         },
         {
           'id': 'target-food',
           'label': 'Thức ăn',
           'capacity': 2,
-          'metadata': {'category': 'food'}
+          'metadata': {'category': 'food'},
         },
       ],
     };
@@ -201,7 +201,7 @@ Map<String, dynamic> _rotationAwareExample() => {
           'id': 'arrow-slot',
           'label': 'Arrow slot',
           'capacity': 1,
-          'acceptedItemIds': ['arrow-1']
+          'acceptedItemIds': ['arrow-1'],
         },
       ],
     };
@@ -238,16 +238,19 @@ void main() {
 
     test('parses valid many-to-one category-sorting content', () {
       final content = PlacementContent.fromJson(_categorySortingExample());
-      final animalsTarget =
-          content.targets.firstWhere((t) => t.id == 'target-animals');
+      final animalsTarget = content.targets.firstWhere(
+        (t) => t.id == 'target-animals',
+      );
       expect(content.acceptableItemIdsFor(animalsTarget), hasLength(3));
     });
 
     test('parses and validates a rotation-aware item', () {
       final content = PlacementContent.fromJson(_rotationAwareExample());
       expect(content.items.single.rotationDegrees, 90);
-      expect(content.configuration.allowedRotations,
-          containsAll([0, 90, 180, 270]));
+      expect(
+        content.configuration.allowedRotations,
+        containsAll([0, 90, 180, 270]),
+      );
     });
   });
 
@@ -259,8 +262,10 @@ void main() {
           .toList();
       items[1] = Map<String, dynamic>.from(items[0]);
       json['items'] = items;
-      expect(() => PlacementContent.fromJson(json),
-          throwsA(isA<PlacementContentException>()));
+      expect(
+        () => PlacementContent.fromJson(json),
+        throwsA(isA<PlacementContentException>()),
+      );
     });
 
     test('rejects duplicate target IDs', () {
@@ -270,22 +275,28 @@ void main() {
           .toList();
       targets[1] = Map<String, dynamic>.from(targets[0]);
       json['targets'] = targets;
-      expect(() => PlacementContent.fromJson(json),
-          throwsA(isA<PlacementContentException>()));
+      expect(
+        () => PlacementContent.fromJson(json),
+        throwsA(isA<PlacementContentException>()),
+      );
     });
 
     test('rejects content with no items', () {
       final json = _viLetterPlacementExample();
       json['items'] = <Map<String, dynamic>>[];
-      expect(() => PlacementContent.fromJson(json),
-          throwsA(isA<PlacementContentException>()));
+      expect(
+        () => PlacementContent.fromJson(json),
+        throwsA(isA<PlacementContentException>()),
+      );
     });
 
     test('rejects content with no targets', () {
       final json = _viLetterPlacementExample();
       json['targets'] = <Map<String, dynamic>>[];
-      expect(() => PlacementContent.fromJson(json),
-          throwsA(isA<PlacementContentException>()));
+      expect(
+        () => PlacementContent.fromJson(json),
+        throwsA(isA<PlacementContentException>()),
+      );
     });
 
     test('rejects an item referencing a missing target', () {
@@ -297,9 +308,13 @@ void main() {
       };
       expect(
         () => PlacementContent.fromJson(json),
-        throwsA(predicate((e) =>
-            e is PlacementContentException &&
-            e.message.contains('unknown target'))),
+        throwsA(
+          predicate(
+            (e) =>
+                e is PlacementContentException &&
+                e.message.contains('unknown target'),
+          ),
+        ),
       );
     });
 
@@ -313,9 +328,13 @@ void main() {
       };
       expect(
         () => PlacementContent.fromJson(json),
-        throwsA(predicate((e) =>
-            e is PlacementContentException &&
-            e.message.contains('unknown item'))),
+        throwsA(
+          predicate(
+            (e) =>
+                e is PlacementContentException &&
+                e.message.contains('unknown item'),
+          ),
+        ),
       );
     });
 
@@ -327,8 +346,10 @@ void main() {
         'capacity': 0,
         'acceptedItemIds': ['letter-m'],
       };
-      expect(() => PlacementContent.fromJson(json),
-          throwsA(isA<PlacementContentException>()));
+      expect(
+        () => PlacementContent.fromJson(json),
+        throwsA(isA<PlacementContentException>()),
+      );
     });
 
     test('rejects total required placement exceeding all valid capacity', () {
@@ -347,17 +368,17 @@ void main() {
           {
             'id': 'a',
             'label': 'A',
-            'acceptedTargetIds': ['t1', 't2']
+            'acceptedTargetIds': ['t1', 't2'],
           },
           {
             'id': 'b',
             'label': 'B',
-            'acceptedTargetIds': ['t1', 't2']
+            'acceptedTargetIds': ['t1', 't2'],
           },
           {
             'id': 'c',
             'label': 'C',
-            'acceptedTargetIds': ['t1', 't2']
+            'acceptedTargetIds': ['t1', 't2'],
           },
         ],
         'targets': [
@@ -365,21 +386,25 @@ void main() {
             'id': 't1',
             'label': 'T1',
             'capacity': 1,
-            'acceptedItemIds': ['a', 'b', 'c']
+            'acceptedItemIds': ['a', 'b', 'c'],
           },
           {
             'id': 't2',
             'label': 'T2',
             'capacity': 1,
-            'acceptedItemIds': ['a', 'b', 'c']
+            'acceptedItemIds': ['a', 'b', 'c'],
           },
         ],
       };
       expect(
         () => PlacementContent.fromJson(json),
-        throwsA(predicate((e) =>
-            e is PlacementContentException &&
-            e.message.contains('exceed total target capacity'))),
+        throwsA(
+          predicate(
+            (e) =>
+                e is PlacementContentException &&
+                e.message.contains('exceed total target capacity'),
+          ),
+        ),
       );
     });
 
@@ -395,7 +420,7 @@ void main() {
           {
             'id': 'a',
             'label': 'A',
-            'acceptedTargetIds': ['t1']
+            'acceptedTargetIds': ['t1'],
           },
           {'id': 'orphan', 'label': 'Orphan', 'acceptedTargetIds': <String>[]},
         ],
@@ -407,15 +432,19 @@ void main() {
             'id': 't1',
             'label': 'T1',
             'capacity': 2,
-            'acceptedItemIds': ['a']
+            'acceptedItemIds': ['a'],
           },
         ],
       };
       expect(
         () => PlacementContent.fromJson(json),
-        throwsA(predicate((e) =>
-            e is PlacementContentException &&
-            e.message.contains('no valid target'))),
+        throwsA(
+          predicate(
+            (e) =>
+                e is PlacementContentException &&
+                e.message.contains('no valid target'),
+          ),
+        ),
       );
     });
 
@@ -431,76 +460,89 @@ void main() {
       // unreachable target.
       expect(
         () => PlacementContent.fromJson(json),
-        throwsA(predicate((e) =>
-            e is PlacementContentException &&
-            e.message.contains('no valid item'))),
+        throwsA(
+          predicate(
+            (e) =>
+                e is PlacementContentException &&
+                e.message.contains('no valid item'),
+          ),
+        ),
       );
     });
 
     test(
-        'rejects an impossible completion state (exclusive demand exceeds capacity)',
-        () {
-      // Total capacity (1+2=3) is NOT exceeded by the item count (3), so
-      // the blanket total-supply check passes -- but 'a' and 'b' can
-      // ONLY ever go on t1 (capacity 1), which is impossible regardless
-      // of slack capacity elsewhere ('c' can go on either).
-      final json = {
-        'contentId': 'placement-impossible',
-        'gameId': 'letter_placement',
-        'locale': 'vi',
-        'ageBand': 'junior',
-        'difficulty': 1,
-        'instruction': 'x',
-        'items': [
-          {
-            'id': 'a',
-            'label': 'A',
-            'acceptedTargetIds': ['t1']
-          },
-          {
-            'id': 'b',
-            'label': 'B',
-            'acceptedTargetIds': ['t1']
-          },
-          {
-            'id': 'c',
-            'label': 'C',
-            'acceptedTargetIds': ['t1', 't2']
-          },
-        ],
-        'targets': [
-          {
-            'id': 't1',
-            'label': 'T1',
-            'capacity': 1,
-            'acceptedItemIds': ['a', 'b', 'c']
-          },
-          {
-            'id': 't2',
-            'label': 'T2',
-            'capacity': 2,
-            'acceptedItemIds': ['c']
-          },
-        ],
-      };
-      expect(
-        () => PlacementContent.fromJson(json),
-        throwsA(predicate((e) =>
-            e is PlacementContentException &&
-            e.message.contains('Impossible completion'))),
-      );
-    });
+      'rejects an impossible completion state (exclusive demand exceeds capacity)',
+      () {
+        // Total capacity (1+2=3) is NOT exceeded by the item count (3), so
+        // the blanket total-supply check passes -- but 'a' and 'b' can
+        // ONLY ever go on t1 (capacity 1), which is impossible regardless
+        // of slack capacity elsewhere ('c' can go on either).
+        final json = {
+          'contentId': 'placement-impossible',
+          'gameId': 'letter_placement',
+          'locale': 'vi',
+          'ageBand': 'junior',
+          'difficulty': 1,
+          'instruction': 'x',
+          'items': [
+            {
+              'id': 'a',
+              'label': 'A',
+              'acceptedTargetIds': ['t1'],
+            },
+            {
+              'id': 'b',
+              'label': 'B',
+              'acceptedTargetIds': ['t1'],
+            },
+            {
+              'id': 'c',
+              'label': 'C',
+              'acceptedTargetIds': ['t1', 't2'],
+            },
+          ],
+          'targets': [
+            {
+              'id': 't1',
+              'label': 'T1',
+              'capacity': 1,
+              'acceptedItemIds': ['a', 'b', 'c'],
+            },
+            {
+              'id': 't2',
+              'label': 'T2',
+              'capacity': 2,
+              'acceptedItemIds': ['c'],
+            },
+          ],
+        };
+        expect(
+          () => PlacementContent.fromJson(json),
+          throwsA(
+            predicate(
+              (e) =>
+                  e is PlacementContentException &&
+                  e.message.contains('Impossible completion'),
+            ),
+          ),
+        );
+      },
+    );
 
     test('rejects unsupported rotation', () {
       final json = _rotationAwareExample();
       json['configuration'] = {
-        'allowedRotations': [0]
+        'allowedRotations': [0],
       };
       expect(
         () => PlacementContent.fromJson(json),
-        throwsA(predicate((e) =>
-            e is PlacementContentException &&
-            e.message.contains('unsupported rotationDegrees'))),
+        throwsA(
+          predicate(
+            (e) =>
+                e is PlacementContentException &&
+                e.message.contains('unsupported rotationDegrees'),
+          ),
+        ),
       );
     });
 
@@ -513,8 +555,10 @@ void main() {
         'acceptedItemIds': ['letter-m'],
         'position': {'x': 'not-a-number', 'y': 0},
       };
-      expect(() => PlacementContent.fromJson(json),
-          throwsA(isA<PlacementContentException>()));
+      expect(
+        () => PlacementContent.fromJson(json),
+        throwsA(isA<PlacementContentException>()),
+      );
     });
 
     test('rejects contradictory item and target acceptance rules', () {
@@ -535,24 +579,32 @@ void main() {
       };
       expect(
         () => PlacementContent.fromJson(json),
-        throwsA(predicate((e) =>
-            e is PlacementContentException &&
-            e.message.contains('Contradictory'))),
+        throwsA(
+          predicate(
+            (e) =>
+                e is PlacementContentException &&
+                e.message.contains('Contradictory'),
+          ),
+        ),
       );
     });
 
     test('rejects unsupported schema version', () {
       final json = _viLetterPlacementExample();
       json['schemaVersion'] = '99.0';
-      expect(() => PlacementContent.fromJson(json),
-          throwsA(isA<PlacementContentException>()));
+      expect(
+        () => PlacementContent.fromJson(json),
+        throwsA(isA<PlacementContentException>()),
+      );
     });
 
     test('rule requires categoryMetadataKey when using metadataCategory', () {
       final json = _categorySortingExample();
       json['rule'] = {'matchStrategy': 'metadataCategory'};
-      expect(() => PlacementContent.fromJson(json),
-          throwsA(isA<PlacementContentException>()));
+      expect(
+        () => PlacementContent.fromJson(json),
+        throwsA(isA<PlacementContentException>()),
+      );
     });
   });
 
@@ -609,7 +661,9 @@ void main() {
       // moving letter-m off and back on, then confirm slot-1 is free
       // in between.
       controller.moveItem(
-          'letter-m', 'slot-2'); // invalid: slot-2 only accepts letter-e
+        'letter-m',
+        'slot-2',
+      ); // invalid: slot-2 only accepts letter-e
       expect(controller.incorrectCount, 1);
       // Failed move restores the prior valid placement.
       expect(controller.targetOf('letter-m'), 'slot-1');
@@ -630,17 +684,21 @@ void main() {
       controller.reset();
       expect(controller.attempts, 0);
       expect(controller.placements, isEmpty);
-      expect(controller.allItemsInSourceOrder.map((i) => i.id).toList(),
-          orderBefore);
+      expect(
+        controller.allItemsInSourceOrder.map((i) => i.id).toList(),
+        orderBefore,
+      );
     });
 
-    test('restart clears progress (order determinism preserved by same seed)',
-        () {
-      controller.placeItem('letter-m', 'slot-1');
-      controller.restart();
-      expect(controller.attempts, 0);
-      expect(controller.placements, isEmpty);
-    });
+    test(
+      'restart clears progress (order determinism preserved by same seed)',
+      () {
+        controller.placeItem('letter-m', 'slot-1');
+        controller.restart();
+        expect(controller.attempts, 0);
+        expect(controller.placements, isEmpty);
+      },
+    );
 
     test('hint usage increments hint count and reduces score', () {
       final scoreBefore = controller.score;
@@ -650,14 +708,15 @@ void main() {
     });
 
     test(
-        'completion requires every item validly placed, not just every target filled',
-        () {
-      controller.placeItem('letter-m', 'slot-1');
-      controller.placeItem('letter-e', 'slot-2');
-      expect(controller.isComplete, isFalse);
-      controller.placeItem('letter-o', 'slot-3');
-      expect(controller.isComplete, isTrue);
-    });
+      'completion requires every item validly placed, not just every target filled',
+      () {
+        controller.placeItem('letter-m', 'slot-1');
+        controller.placeItem('letter-e', 'slot-2');
+        expect(controller.isComplete, isFalse);
+        controller.placeItem('letter-o', 'slot-3');
+        expect(controller.isComplete, isTrue);
+      },
+    );
 
     test('a perfect run earns 3 stars', () {
       controller.placeItem('letter-m', 'slot-1');
@@ -685,16 +744,18 @@ void main() {
       expect(controller.starsEarned, 1);
     });
 
-    test('score never goes negative regardless of incorrect attempts/hints',
-        () {
-      for (var i = 0; i < 50; i++) {
-        controller.placeItem('letter-m', 'slot-2');
-      }
-      for (var i = 0; i < 50; i++) {
-        controller.requestHint();
-      }
-      expect(controller.score, 0);
-    });
+    test(
+      'score never goes negative regardless of incorrect attempts/hints',
+      () {
+        for (var i = 0; i < 50; i++) {
+          controller.placeItem('letter-m', 'slot-2');
+        }
+        for (var i = 0; i < 50; i++) {
+          controller.requestHint();
+        }
+        expect(controller.score, 0);
+      },
+    );
 
     test('onComplete callback fires exactly once with a normalized result', () {
       var callCount = 0;
@@ -718,21 +779,22 @@ void main() {
     });
 
     test(
-        'result exposes attempts/correct/incorrect/hint/score/stars/duration/completed',
-        () {
-      controller.placeItem('letter-m', 'slot-2'); // incorrect
-      controller.requestHint();
-      controller.placeItem('letter-m', 'slot-1');
-      controller.placeItem('letter-e', 'slot-2');
-      controller.placeItem('letter-o', 'slot-3');
-      final result = controller.result;
-      expect(result.attempts, 4);
-      expect(result.correctCount, 3);
-      expect(result.incorrectCount, 1);
-      expect(result.hintCount, 1);
-      expect(result.completed, isTrue);
-      expect(result.duration, isNotNull);
-    });
+      'result exposes attempts/correct/incorrect/hint/score/stars/duration/completed',
+      () {
+        controller.placeItem('letter-m', 'slot-2'); // incorrect
+        controller.requestHint();
+        controller.placeItem('letter-m', 'slot-1');
+        controller.placeItem('letter-e', 'slot-2');
+        controller.placeItem('letter-o', 'slot-3');
+        final result = controller.result;
+        expect(result.attempts, 4);
+        expect(result.correctCount, 3);
+        expect(result.incorrectCount, 1);
+        expect(result.hintCount, 1);
+        expect(result.completed, isTrue);
+        expect(result.duration, isNotNull);
+      },
+    );
 
     test('duration reflects an injected clock rather than wall-clock time', () {
       var now = DateTime(2026, 1, 1, 12, 0, 0);
@@ -750,25 +812,26 @@ void main() {
     });
 
     test(
-        'two equivalent results are equal (result equality/serialization contract)',
-        () {
-      // Uses an injected fixed clock rather than the real one: while the
-      // controller is incomplete, `duration` intentionally reflects
-      // elapsed wall-clock time (live progress), so two `.result` reads
-      // moments apart would legitimately differ by a few microseconds --
-      // not a real inequality, just live timing. A fixed clock removes
-      // that timing dependency so this test asserts the actual contract
-      // (structural equality of two reads of otherwise-unchanged state).
-      final fixedNow = DateTime(2026, 1, 1, 12, 0, 0);
-      final fixedClockController = PlacementController(
-        content: PlacementContent.fromJson(_viLetterPlacementExample()),
-        clock: () => fixedNow,
-      );
-      fixedClockController.placeItem('letter-m', 'slot-1');
-      final resultA = fixedClockController.result;
-      final resultB = fixedClockController.result;
-      expect(resultA, resultB);
-    });
+      'two equivalent results are equal (result equality/serialization contract)',
+      () {
+        // Uses an injected fixed clock rather than the real one: while the
+        // controller is incomplete, `duration` intentionally reflects
+        // elapsed wall-clock time (live progress), so two `.result` reads
+        // moments apart would legitimately differ by a few microseconds --
+        // not a real inequality, just live timing. A fixed clock removes
+        // that timing dependency so this test asserts the actual contract
+        // (structural equality of two reads of otherwise-unchanged state).
+        final fixedNow = DateTime(2026, 1, 1, 12, 0, 0);
+        final fixedClockController = PlacementController(
+          content: PlacementContent.fromJson(_viLetterPlacementExample()),
+          clock: () => fixedNow,
+        );
+        fixedClockController.placeItem('letter-m', 'slot-1');
+        final resultA = fixedClockController.result;
+        final resultB = fixedClockController.result;
+        expect(resultA, resultB);
+      },
+    );
   });
 
   group('PlacementController -- many-to-one (category sorting)', () {
@@ -810,49 +873,59 @@ void main() {
   });
 
   group('PlacementScreen widget', () {
-    testWidgets('renders instruction, source items, and targets',
-        (tester) async {
-      await tester.pumpWidget(MaterialApp(
-        home: PlacementScreen(
-          rawContent: _viLetterPlacementExample(),
-          localization: _testLocalization(),
-          onExit: () {},
+    testWidgets('renders instruction, source items, and targets', (
+      tester,
+    ) async {
+      await tester.pumpWidget(
+        MaterialApp(
+          home: PlacementScreen(
+            rawContent: _viLetterPlacementExample(),
+            localization: _testLocalization(),
+            onExit: () {},
+          ),
         ),
-      ));
+      );
       await tester.pump();
 
       expect(
-          find.text('Đặt các chữ cái vào đúng vị trí để tạo thành từ "MÈO"!'),
-          findsOneWidget);
+        find.text('Đặt các chữ cái vào đúng vị trí để tạo thành từ "MÈO"!'),
+        findsOneWidget,
+      );
       expect(find.text('M'), findsOneWidget);
       expect(find.text('Ô trống 1'), findsOneWidget);
     });
 
-    testWidgets('shows a recoverable error state for malformed content',
-        (tester) async {
-      await tester.pumpWidget(MaterialApp(
-        home: PlacementScreen(
-          rawContent: const {'contentId': 'broken'},
-          localization: _testLocalization(),
-          onExit: () {},
+    testWidgets('shows a recoverable error state for malformed content', (
+      tester,
+    ) async {
+      await tester.pumpWidget(
+        MaterialApp(
+          home: PlacementScreen(
+            rawContent: const {'contentId': 'broken'},
+            localization: _testLocalization(),
+            onExit: () {},
+          ),
         ),
-      ));
+      );
       await tester.pump();
 
       expect(find.text('Content unavailable.'), findsOneWidget);
     });
 
-    testWidgets('tap-select an item then tap a target places it',
-        (tester) async {
+    testWidgets('tap-select an item then tap a target places it', (
+      tester,
+    ) async {
       PlacementResult? completedResult;
-      await tester.pumpWidget(MaterialApp(
-        home: PlacementScreen(
-          rawContent: _viLetterPlacementExample(),
-          localization: _testLocalization(),
-          onExit: () {},
-          onComplete: (r) => completedResult = r,
+      await tester.pumpWidget(
+        MaterialApp(
+          home: PlacementScreen(
+            rawContent: _viLetterPlacementExample(),
+            localization: _testLocalization(),
+            onExit: () {},
+            onComplete: (r) => completedResult = r,
+          ),
         ),
-      ));
+      );
       await tester.pump();
 
       await tester.tap(find.text('M'));
@@ -865,48 +938,59 @@ void main() {
     });
 
     testWidgets('renders the English sample', (tester) async {
-      await tester.pumpWidget(MaterialApp(
-        home: PlacementScreen(
-          rawContent: _enShapePlacementExample(),
-          localization: _testLocalization(),
-          onExit: () {},
+      await tester.pumpWidget(
+        MaterialApp(
+          home: PlacementScreen(
+            rawContent: _enShapePlacementExample(),
+            localization: _testLocalization(),
+            onExit: () {},
+          ),
         ),
-      ));
+      );
       await tester.pump();
 
-      expect(find.text('Drag each shape name to its matching outline!'),
-          findsOneWidget);
+      expect(
+        find.text('Drag each shape name to its matching outline!'),
+        findsOneWidget,
+      );
       expect(find.text('Circle'), findsOneWidget);
     });
 
-    testWidgets('reduced motion collapses target highlight animation duration',
-        (tester) async {
-      await tester.pumpWidget(MaterialApp(
-        home: PlacementScreen(
-          rawContent: _viLetterPlacementExample(),
-          localization: _testLocalization(),
-          onExit: () {},
-          reducedMotion: true,
-        ),
-      ));
-      await tester.pump();
+    testWidgets(
+      'reduced motion collapses target highlight animation duration',
+      (tester) async {
+        await tester.pumpWidget(
+          MaterialApp(
+            home: PlacementScreen(
+              rawContent: _viLetterPlacementExample(),
+              localization: _testLocalization(),
+              onExit: () {},
+              reducedMotion: true,
+            ),
+          ),
+        );
+        await tester.pump();
 
-      final animatedContainers =
-          tester.widgetList<AnimatedContainer>(find.byType(AnimatedContainer));
-      expect(animatedContainers, isNotEmpty);
-      for (final container in animatedContainers) {
-        expect(container.duration, Duration.zero);
-      }
-    });
+        final animatedContainers = tester.widgetList<AnimatedContainer>(
+          find.byType(AnimatedContainer),
+        );
+        expect(animatedContainers, isNotEmpty);
+        for (final container in animatedContainers) {
+          expect(container.duration, Duration.zero);
+        }
+      },
+    );
 
     testWidgets('hint banner shows and can be dismissed', (tester) async {
-      await tester.pumpWidget(MaterialApp(
-        home: PlacementScreen(
-          rawContent: _viLetterPlacementExample(),
-          localization: _testLocalization(),
-          onExit: () {},
+      await tester.pumpWidget(
+        MaterialApp(
+          home: PlacementScreen(
+            rawContent: _viLetterPlacementExample(),
+            localization: _testLocalization(),
+            onExit: () {},
+          ),
         ),
-      ));
+      );
       await tester.pump();
 
       await tester.tap(find.byTooltip('Hint'));
@@ -923,13 +1007,15 @@ void main() {
       tester.view.devicePixelRatio = 1.0;
       addTearDown(tester.view.reset);
 
-      await tester.pumpWidget(MaterialApp(
-        home: PlacementScreen(
-          rawContent: _categorySortingExample(),
-          localization: _testLocalization(),
-          onExit: () {},
+      await tester.pumpWidget(
+        MaterialApp(
+          home: PlacementScreen(
+            rawContent: _categorySortingExample(),
+            localization: _testLocalization(),
+            onExit: () {},
+          ),
         ),
-      ));
+      );
       await tester.pump();
 
       expect(tester.takeException(), isNull);
@@ -940,27 +1026,32 @@ void main() {
       tester.view.devicePixelRatio = 1.0;
       addTearDown(tester.view.reset);
 
-      await tester.pumpWidget(MaterialApp(
-        home: PlacementScreen(
-          rawContent: _categorySortingExample(),
-          localization: _testLocalization(),
-          onExit: () {},
+      await tester.pumpWidget(
+        MaterialApp(
+          home: PlacementScreen(
+            rawContent: _categorySortingExample(),
+            localization: _testLocalization(),
+            onExit: () {},
+          ),
         ),
-      ));
+      );
       await tester.pump();
 
       expect(tester.takeException(), isNull);
     });
 
-    testWidgets('completes and shows the completion view via full tap flow',
-        (tester) async {
-      await tester.pumpWidget(MaterialApp(
-        home: PlacementScreen(
-          rawContent: _viLetterPlacementExample(),
-          localization: _testLocalization(),
-          onExit: () {},
+    testWidgets('completes and shows the completion view via full tap flow', (
+      tester,
+    ) async {
+      await tester.pumpWidget(
+        MaterialApp(
+          home: PlacementScreen(
+            rawContent: _viLetterPlacementExample(),
+            localization: _testLocalization(),
+            onExit: () {},
+          ),
         ),
-      ));
+      );
       await tester.pump();
 
       await tester.tap(find.text('M'));
@@ -982,19 +1073,23 @@ void main() {
       expect(find.text('Great job!'), findsNothing);
     });
 
-    testWidgets('dragging the correct item to its target places it',
-        (tester) async {
-      await tester.pumpWidget(MaterialApp(
-        home: PlacementScreen(
-          rawContent: _viLetterPlacementExample(),
-          localization: _testLocalization(),
-          onExit: () {},
+    testWidgets('dragging the correct item to its target places it', (
+      tester,
+    ) async {
+      await tester.pumpWidget(
+        MaterialApp(
+          home: PlacementScreen(
+            rawContent: _viLetterPlacementExample(),
+            localization: _testLocalization(),
+            onExit: () {},
+          ),
         ),
-      ));
+      );
       await tester.pump();
 
-      final gesture =
-          await tester.startGesture(tester.getCenter(find.text('M')));
+      final gesture = await tester.startGesture(
+        tester.getCenter(find.text('M')),
+      );
       await tester.pump(const Duration(milliseconds: 50));
       await gesture.moveTo(tester.getCenter(find.text('Ô trống 1')));
       await tester.pump(const Duration(milliseconds: 50));
@@ -1004,19 +1099,23 @@ void main() {
       expect(find.text('1/1'), findsOneWidget);
     });
 
-    testWidgets('dragging an item to the wrong target does not place it',
-        (tester) async {
-      await tester.pumpWidget(MaterialApp(
-        home: PlacementScreen(
-          rawContent: _viLetterPlacementExample(),
-          localization: _testLocalization(),
-          onExit: () {},
+    testWidgets('dragging an item to the wrong target does not place it', (
+      tester,
+    ) async {
+      await tester.pumpWidget(
+        MaterialApp(
+          home: PlacementScreen(
+            rawContent: _viLetterPlacementExample(),
+            localization: _testLocalization(),
+            onExit: () {},
+          ),
         ),
-      ));
+      );
       await tester.pump();
 
-      final gesture =
-          await tester.startGesture(tester.getCenter(find.text('M')));
+      final gesture = await tester.startGesture(
+        tester.getCenter(find.text('M')),
+      );
       await tester.pump(const Duration(milliseconds: 50));
       await gesture.moveTo(tester.getCenter(find.text('Ô trống 2')));
       await tester.pump(const Duration(milliseconds: 50));
@@ -1027,15 +1126,18 @@ void main() {
       expect(find.text('0/1'), findsWidgets);
     });
 
-    testWidgets('removing a placed item returns it to the source tray',
-        (tester) async {
-      await tester.pumpWidget(MaterialApp(
-        home: PlacementScreen(
-          rawContent: _viLetterPlacementExample(),
-          localization: _testLocalization(),
-          onExit: () {},
+    testWidgets('removing a placed item returns it to the source tray', (
+      tester,
+    ) async {
+      await tester.pumpWidget(
+        MaterialApp(
+          home: PlacementScreen(
+            rawContent: _viLetterPlacementExample(),
+            localization: _testLocalization(),
+            onExit: () {},
+          ),
         ),
-      ));
+      );
       await tester.pump();
 
       await tester.tap(find.text('M'));
@@ -1050,42 +1152,48 @@ void main() {
     });
 
     testWidgets(
-        'moving a placed item to another target updates occupancy on both',
-        (tester) async {
-      await tester.pumpWidget(MaterialApp(
-        home: PlacementScreen(
-          rawContent: _categorySortingExample(),
-          localization: _testLocalization(),
-          onExit: () {},
+      'moving a placed item to another target updates occupancy on both',
+      (tester) async {
+        await tester.pumpWidget(
+          MaterialApp(
+            home: PlacementScreen(
+              rawContent: _categorySortingExample(),
+              localization: _testLocalization(),
+              onExit: () {},
+            ),
+          ),
+        );
+        await tester.pump();
+
+        await tester.tap(find.text('🐶'));
+        await tester.pump();
+        await tester.tap(find.text('Động vật'));
+        await tester.pump();
+        expect(find.text('1/3'), findsOneWidget);
+
+        // Re-select the now-placed dog chip and try to move it -- an
+        // invalid target (Food) should leave it exactly where it was.
+        await tester.tap(find.text('🐶'));
+        await tester.pump();
+        await tester.tap(find.text('Thức ăn'));
+        await tester.pump();
+        expect(find.text('1/3'), findsOneWidget);
+        expect(find.text('0/2'), findsOneWidget);
+      },
+    );
+
+    testWidgets('target occupancy feedback updates as capacity fills', (
+      tester,
+    ) async {
+      await tester.pumpWidget(
+        MaterialApp(
+          home: PlacementScreen(
+            rawContent: _categorySortingExample(),
+            localization: _testLocalization(),
+            onExit: () {},
+          ),
         ),
-      ));
-      await tester.pump();
-
-      await tester.tap(find.text('🐶'));
-      await tester.pump();
-      await tester.tap(find.text('Động vật'));
-      await tester.pump();
-      expect(find.text('1/3'), findsOneWidget);
-
-      // Re-select the now-placed dog chip and try to move it -- an
-      // invalid target (Food) should leave it exactly where it was.
-      await tester.tap(find.text('🐶'));
-      await tester.pump();
-      await tester.tap(find.text('Thức ăn'));
-      await tester.pump();
-      expect(find.text('1/3'), findsOneWidget);
-      expect(find.text('0/2'), findsOneWidget);
-    });
-
-    testWidgets('target occupancy feedback updates as capacity fills',
-        (tester) async {
-      await tester.pumpWidget(MaterialApp(
-        home: PlacementScreen(
-          rawContent: _categorySortingExample(),
-          localization: _testLocalization(),
-          onExit: () {},
-        ),
-      ));
+      );
       await tester.pump();
 
       expect(find.text('0/3'), findsOneWidget);
@@ -1096,16 +1204,19 @@ void main() {
       expect(find.text('1/3'), findsOneWidget);
     });
 
-    testWidgets('sound-disabled mode still renders and functions normally',
-        (tester) async {
-      await tester.pumpWidget(MaterialApp(
-        home: PlacementScreen(
-          rawContent: _viLetterPlacementExample(),
-          localization: _testLocalization(),
-          onExit: () {},
-          soundEnabled: false,
+    testWidgets('sound-disabled mode still renders and functions normally', (
+      tester,
+    ) async {
+      await tester.pumpWidget(
+        MaterialApp(
+          home: PlacementScreen(
+            rawContent: _viLetterPlacementExample(),
+            localization: _testLocalization(),
+            onExit: () {},
+            soundEnabled: false,
+          ),
         ),
-      ));
+      );
       await tester.pump();
 
       await tester.tap(find.text('M'));
@@ -1118,13 +1229,15 @@ void main() {
     });
 
     testWidgets('items and targets expose semantics labels', (tester) async {
-      await tester.pumpWidget(MaterialApp(
-        home: PlacementScreen(
-          rawContent: _viLetterPlacementExample(),
-          localization: _testLocalization(),
-          onExit: () {},
+      await tester.pumpWidget(
+        MaterialApp(
+          home: PlacementScreen(
+            rawContent: _viLetterPlacementExample(),
+            localization: _testLocalization(),
+            onExit: () {},
+          ),
         ),
-      ));
+      );
       await tester.pump();
 
       expect(find.bySemanticsLabel('Chữ M'), findsOneWidget);

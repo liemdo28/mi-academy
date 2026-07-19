@@ -1,0 +1,3966 @@
+{
+  "schemaVersion": "1.0",
+  "gameId": "story_steps",
+  "levels": [
+    {
+      "id": "ss-lv001",
+      "gameId": "story_steps",
+      "levelNumber": 1,
+      "difficulty": 1,
+      "learningObjective": "narrative sequencing",
+      "localizedContent": {
+        "en": {
+          "prompt": "Put the steps in order.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Wake up",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Brush teeth",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Eat breakfast",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what happens first."
+        },
+        "vi": {
+          "prompt": "Sap xep cac buoc theo thu tu.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Wake up",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Brush teeth",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Eat breakfast",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao xay ra truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao xay ra truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "junior",
+        "skillIds": [
+          "letters.reading_comprehension",
+          "logic.pattern.basic"
+        ],
+        "generatedBy": "games_9_15_generator",
+        "generatorSeed": 20260719,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "ss-lv002",
+      "gameId": "story_steps",
+      "levelNumber": 2,
+      "difficulty": 1,
+      "learningObjective": "narrative sequencing",
+      "localizedContent": {
+        "en": {
+          "prompt": "Put the steps in order.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Plant seed",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Water soil",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "See sprout",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what happens first."
+        },
+        "vi": {
+          "prompt": "Sap xep cac buoc theo thu tu.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Plant seed",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Water soil",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "See sprout",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao xay ra truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao xay ra truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "junior",
+        "skillIds": [
+          "letters.reading_comprehension",
+          "logic.pattern.basic"
+        ],
+        "generatedBy": "games_9_15_generator",
+        "generatorSeed": 20260719,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "ss-lv003",
+      "gameId": "story_steps",
+      "levelNumber": 3,
+      "difficulty": 1,
+      "learningObjective": "narrative sequencing",
+      "localizedContent": {
+        "en": {
+          "prompt": "Put the steps in order.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Read problem",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Choose operation",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Solve",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what happens first."
+        },
+        "vi": {
+          "prompt": "Sap xep cac buoc theo thu tu.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Read problem",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Choose operation",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Solve",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao xay ra truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao xay ra truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "junior",
+        "skillIds": [
+          "letters.reading_comprehension",
+          "logic.pattern.basic"
+        ],
+        "generatedBy": "games_9_15_generator",
+        "generatorSeed": 20260719,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "ss-lv004",
+      "gameId": "story_steps",
+      "levelNumber": 4,
+      "difficulty": 1,
+      "learningObjective": "narrative sequencing",
+      "localizedContent": {
+        "en": {
+          "prompt": "Put the steps in order.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Wake up",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Brush teeth",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Eat breakfast",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what happens first."
+        },
+        "vi": {
+          "prompt": "Sap xep cac buoc theo thu tu.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Wake up",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Brush teeth",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Eat breakfast",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao xay ra truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao xay ra truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "junior",
+        "skillIds": [
+          "letters.reading_comprehension",
+          "logic.pattern.basic"
+        ],
+        "generatedBy": "games_9_15_generator",
+        "generatorSeed": 20260719,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "ss-lv005",
+      "gameId": "story_steps",
+      "levelNumber": 5,
+      "difficulty": 1,
+      "learningObjective": "narrative sequencing",
+      "localizedContent": {
+        "en": {
+          "prompt": "Put the steps in order.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Plant seed",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Water soil",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "See sprout",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what happens first."
+        },
+        "vi": {
+          "prompt": "Sap xep cac buoc theo thu tu.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Plant seed",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Water soil",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "See sprout",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao xay ra truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao xay ra truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "junior",
+        "skillIds": [
+          "letters.reading_comprehension",
+          "logic.pattern.basic"
+        ],
+        "generatedBy": "games_9_15_generator",
+        "generatorSeed": 20260719,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "ss-lv006",
+      "gameId": "story_steps",
+      "levelNumber": 6,
+      "difficulty": 1,
+      "learningObjective": "narrative sequencing",
+      "localizedContent": {
+        "en": {
+          "prompt": "Put the steps in order.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Read problem",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Choose operation",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Solve",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what happens first."
+        },
+        "vi": {
+          "prompt": "Sap xep cac buoc theo thu tu.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Read problem",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Choose operation",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Solve",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao xay ra truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao xay ra truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "junior",
+        "skillIds": [
+          "letters.reading_comprehension",
+          "logic.pattern.basic"
+        ],
+        "generatedBy": "games_9_15_generator",
+        "generatorSeed": 20260719,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "ss-lv007",
+      "gameId": "story_steps",
+      "levelNumber": 7,
+      "difficulty": 1,
+      "learningObjective": "narrative sequencing",
+      "localizedContent": {
+        "en": {
+          "prompt": "Put the steps in order.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Wake up",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Brush teeth",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Eat breakfast",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what happens first."
+        },
+        "vi": {
+          "prompt": "Sap xep cac buoc theo thu tu.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Wake up",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Brush teeth",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Eat breakfast",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao xay ra truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao xay ra truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "junior",
+        "skillIds": [
+          "letters.reading_comprehension",
+          "logic.pattern.basic"
+        ],
+        "generatedBy": "games_9_15_generator",
+        "generatorSeed": 20260719,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "ss-lv008",
+      "gameId": "story_steps",
+      "levelNumber": 8,
+      "difficulty": 1,
+      "learningObjective": "narrative sequencing",
+      "localizedContent": {
+        "en": {
+          "prompt": "Put the steps in order.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Plant seed",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Water soil",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "See sprout",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what happens first."
+        },
+        "vi": {
+          "prompt": "Sap xep cac buoc theo thu tu.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Plant seed",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Water soil",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "See sprout",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao xay ra truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao xay ra truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "junior",
+        "skillIds": [
+          "letters.reading_comprehension",
+          "logic.pattern.basic"
+        ],
+        "generatedBy": "games_9_15_generator",
+        "generatorSeed": 20260719,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "ss-lv009",
+      "gameId": "story_steps",
+      "levelNumber": 9,
+      "difficulty": 1,
+      "learningObjective": "narrative sequencing",
+      "localizedContent": {
+        "en": {
+          "prompt": "Put the steps in order.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Read problem",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Choose operation",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Solve",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what happens first."
+        },
+        "vi": {
+          "prompt": "Sap xep cac buoc theo thu tu.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Read problem",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Choose operation",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Solve",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao xay ra truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao xay ra truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "junior",
+        "skillIds": [
+          "letters.reading_comprehension",
+          "logic.pattern.basic"
+        ],
+        "generatedBy": "games_9_15_generator",
+        "generatorSeed": 20260719,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "ss-lv010",
+      "gameId": "story_steps",
+      "levelNumber": 10,
+      "difficulty": 1,
+      "learningObjective": "narrative sequencing",
+      "localizedContent": {
+        "en": {
+          "prompt": "Put the steps in order.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Wake up",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Brush teeth",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Eat breakfast",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what happens first."
+        },
+        "vi": {
+          "prompt": "Sap xep cac buoc theo thu tu.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Wake up",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Brush teeth",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Eat breakfast",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao xay ra truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao xay ra truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "junior",
+        "skillIds": [
+          "letters.reading_comprehension",
+          "logic.pattern.basic"
+        ],
+        "generatedBy": "games_9_15_generator",
+        "generatorSeed": 20260719,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "ss-lv011",
+      "gameId": "story_steps",
+      "levelNumber": 11,
+      "difficulty": 1,
+      "learningObjective": "narrative sequencing",
+      "localizedContent": {
+        "en": {
+          "prompt": "Put the steps in order.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Plant seed",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Water soil",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "See sprout",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what happens first."
+        },
+        "vi": {
+          "prompt": "Sap xep cac buoc theo thu tu.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Plant seed",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Water soil",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "See sprout",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao xay ra truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao xay ra truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "junior",
+        "skillIds": [
+          "letters.reading_comprehension",
+          "logic.pattern.basic"
+        ],
+        "generatedBy": "games_9_15_generator",
+        "generatorSeed": 20260719,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "ss-lv012",
+      "gameId": "story_steps",
+      "levelNumber": 12,
+      "difficulty": 1,
+      "learningObjective": "narrative sequencing",
+      "localizedContent": {
+        "en": {
+          "prompt": "Put the steps in order.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Read problem",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Choose operation",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Solve",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what happens first."
+        },
+        "vi": {
+          "prompt": "Sap xep cac buoc theo thu tu.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Read problem",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Choose operation",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Solve",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao xay ra truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao xay ra truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "junior",
+        "skillIds": [
+          "letters.reading_comprehension",
+          "logic.pattern.basic"
+        ],
+        "generatedBy": "games_9_15_generator",
+        "generatorSeed": 20260719,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "ss-lv013",
+      "gameId": "story_steps",
+      "levelNumber": 13,
+      "difficulty": 1,
+      "learningObjective": "narrative sequencing",
+      "localizedContent": {
+        "en": {
+          "prompt": "Put the steps in order.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Wake up",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Brush teeth",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Eat breakfast",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what happens first."
+        },
+        "vi": {
+          "prompt": "Sap xep cac buoc theo thu tu.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Wake up",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Brush teeth",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Eat breakfast",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao xay ra truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao xay ra truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "junior",
+        "skillIds": [
+          "letters.reading_comprehension",
+          "logic.pattern.basic"
+        ],
+        "generatedBy": "games_9_15_generator",
+        "generatorSeed": 20260719,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "ss-lv014",
+      "gameId": "story_steps",
+      "levelNumber": 14,
+      "difficulty": 1,
+      "learningObjective": "narrative sequencing",
+      "localizedContent": {
+        "en": {
+          "prompt": "Put the steps in order.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Plant seed",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Water soil",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "See sprout",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what happens first."
+        },
+        "vi": {
+          "prompt": "Sap xep cac buoc theo thu tu.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Plant seed",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Water soil",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "See sprout",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao xay ra truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao xay ra truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "junior",
+        "skillIds": [
+          "letters.reading_comprehension",
+          "logic.pattern.basic"
+        ],
+        "generatedBy": "games_9_15_generator",
+        "generatorSeed": 20260719,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "ss-lv015",
+      "gameId": "story_steps",
+      "levelNumber": 15,
+      "difficulty": 1,
+      "learningObjective": "narrative sequencing",
+      "localizedContent": {
+        "en": {
+          "prompt": "Put the steps in order.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Read problem",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Choose operation",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Solve",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what happens first."
+        },
+        "vi": {
+          "prompt": "Sap xep cac buoc theo thu tu.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Read problem",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Choose operation",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Solve",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao xay ra truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao xay ra truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "junior",
+        "skillIds": [
+          "letters.reading_comprehension",
+          "logic.pattern.basic"
+        ],
+        "generatedBy": "games_9_15_generator",
+        "generatorSeed": 20260719,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "ss-lv016",
+      "gameId": "story_steps",
+      "levelNumber": 16,
+      "difficulty": 3,
+      "learningObjective": "narrative sequencing",
+      "localizedContent": {
+        "en": {
+          "prompt": "Put the steps in order.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Wake up",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Brush teeth",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Eat breakfast",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Go to school",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what happens first."
+        },
+        "vi": {
+          "prompt": "Sap xep cac buoc theo thu tu.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Wake up",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Brush teeth",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Eat breakfast",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Go to school",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao xay ra truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao xay ra truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "explorer",
+        "skillIds": [
+          "letters.reading_comprehension",
+          "logic.pattern.basic"
+        ],
+        "generatedBy": "games_9_15_generator",
+        "generatorSeed": 20260719,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "ss-lv017",
+      "gameId": "story_steps",
+      "levelNumber": 17,
+      "difficulty": 3,
+      "learningObjective": "narrative sequencing",
+      "localizedContent": {
+        "en": {
+          "prompt": "Put the steps in order.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Plant seed",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Water soil",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "See sprout",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Watch leaves grow",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what happens first."
+        },
+        "vi": {
+          "prompt": "Sap xep cac buoc theo thu tu.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Plant seed",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Water soil",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "See sprout",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Watch leaves grow",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao xay ra truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao xay ra truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "explorer",
+        "skillIds": [
+          "letters.reading_comprehension",
+          "logic.pattern.basic"
+        ],
+        "generatedBy": "games_9_15_generator",
+        "generatorSeed": 20260719,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "ss-lv018",
+      "gameId": "story_steps",
+      "levelNumber": 18,
+      "difficulty": 3,
+      "learningObjective": "narrative sequencing",
+      "localizedContent": {
+        "en": {
+          "prompt": "Put the steps in order.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Read problem",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Choose operation",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Solve",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Check answer",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what happens first."
+        },
+        "vi": {
+          "prompt": "Sap xep cac buoc theo thu tu.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Read problem",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Choose operation",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Solve",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Check answer",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao xay ra truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao xay ra truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "explorer",
+        "skillIds": [
+          "letters.reading_comprehension",
+          "logic.pattern.basic"
+        ],
+        "generatedBy": "games_9_15_generator",
+        "generatorSeed": 20260719,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "ss-lv019",
+      "gameId": "story_steps",
+      "levelNumber": 19,
+      "difficulty": 3,
+      "learningObjective": "narrative sequencing",
+      "localizedContent": {
+        "en": {
+          "prompt": "Put the steps in order.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Wake up",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Brush teeth",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Eat breakfast",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Go to school",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what happens first."
+        },
+        "vi": {
+          "prompt": "Sap xep cac buoc theo thu tu.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Wake up",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Brush teeth",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Eat breakfast",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Go to school",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao xay ra truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao xay ra truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "explorer",
+        "skillIds": [
+          "letters.reading_comprehension",
+          "logic.pattern.basic"
+        ],
+        "generatedBy": "games_9_15_generator",
+        "generatorSeed": 20260719,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "ss-lv020",
+      "gameId": "story_steps",
+      "levelNumber": 20,
+      "difficulty": 3,
+      "learningObjective": "narrative sequencing",
+      "localizedContent": {
+        "en": {
+          "prompt": "Put the steps in order.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Plant seed",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Water soil",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "See sprout",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Watch leaves grow",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what happens first."
+        },
+        "vi": {
+          "prompt": "Sap xep cac buoc theo thu tu.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Plant seed",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Water soil",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "See sprout",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Watch leaves grow",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao xay ra truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao xay ra truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "explorer",
+        "skillIds": [
+          "letters.reading_comprehension",
+          "logic.pattern.basic"
+        ],
+        "generatedBy": "games_9_15_generator",
+        "generatorSeed": 20260719,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "ss-lv021",
+      "gameId": "story_steps",
+      "levelNumber": 21,
+      "difficulty": 3,
+      "learningObjective": "narrative sequencing",
+      "localizedContent": {
+        "en": {
+          "prompt": "Put the steps in order.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Read problem",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Choose operation",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Solve",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Check answer",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what happens first."
+        },
+        "vi": {
+          "prompt": "Sap xep cac buoc theo thu tu.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Read problem",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Choose operation",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Solve",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Check answer",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao xay ra truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao xay ra truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "explorer",
+        "skillIds": [
+          "letters.reading_comprehension",
+          "logic.pattern.basic"
+        ],
+        "generatedBy": "games_9_15_generator",
+        "generatorSeed": 20260719,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "ss-lv022",
+      "gameId": "story_steps",
+      "levelNumber": 22,
+      "difficulty": 3,
+      "learningObjective": "narrative sequencing",
+      "localizedContent": {
+        "en": {
+          "prompt": "Put the steps in order.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Wake up",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Brush teeth",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Eat breakfast",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Go to school",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what happens first."
+        },
+        "vi": {
+          "prompt": "Sap xep cac buoc theo thu tu.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Wake up",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Brush teeth",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Eat breakfast",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Go to school",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao xay ra truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao xay ra truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "explorer",
+        "skillIds": [
+          "letters.reading_comprehension",
+          "logic.pattern.basic"
+        ],
+        "generatedBy": "games_9_15_generator",
+        "generatorSeed": 20260719,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "ss-lv023",
+      "gameId": "story_steps",
+      "levelNumber": 23,
+      "difficulty": 3,
+      "learningObjective": "narrative sequencing",
+      "localizedContent": {
+        "en": {
+          "prompt": "Put the steps in order.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Plant seed",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Water soil",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "See sprout",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Watch leaves grow",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what happens first."
+        },
+        "vi": {
+          "prompt": "Sap xep cac buoc theo thu tu.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Plant seed",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Water soil",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "See sprout",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Watch leaves grow",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao xay ra truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao xay ra truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "explorer",
+        "skillIds": [
+          "letters.reading_comprehension",
+          "logic.pattern.basic"
+        ],
+        "generatedBy": "games_9_15_generator",
+        "generatorSeed": 20260719,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "ss-lv024",
+      "gameId": "story_steps",
+      "levelNumber": 24,
+      "difficulty": 3,
+      "learningObjective": "narrative sequencing",
+      "localizedContent": {
+        "en": {
+          "prompt": "Put the steps in order.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Read problem",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Choose operation",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Solve",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Check answer",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what happens first."
+        },
+        "vi": {
+          "prompt": "Sap xep cac buoc theo thu tu.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Read problem",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Choose operation",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Solve",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Check answer",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao xay ra truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao xay ra truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "explorer",
+        "skillIds": [
+          "letters.reading_comprehension",
+          "logic.pattern.basic"
+        ],
+        "generatedBy": "games_9_15_generator",
+        "generatorSeed": 20260719,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "ss-lv025",
+      "gameId": "story_steps",
+      "levelNumber": 25,
+      "difficulty": 3,
+      "learningObjective": "narrative sequencing",
+      "localizedContent": {
+        "en": {
+          "prompt": "Put the steps in order.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Wake up",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Brush teeth",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Eat breakfast",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Go to school",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what happens first."
+        },
+        "vi": {
+          "prompt": "Sap xep cac buoc theo thu tu.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Wake up",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Brush teeth",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Eat breakfast",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Go to school",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao xay ra truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao xay ra truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "explorer",
+        "skillIds": [
+          "letters.reading_comprehension",
+          "logic.pattern.basic"
+        ],
+        "generatedBy": "games_9_15_generator",
+        "generatorSeed": 20260719,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "ss-lv026",
+      "gameId": "story_steps",
+      "levelNumber": 26,
+      "difficulty": 3,
+      "learningObjective": "narrative sequencing",
+      "localizedContent": {
+        "en": {
+          "prompt": "Put the steps in order.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Plant seed",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Water soil",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "See sprout",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Watch leaves grow",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what happens first."
+        },
+        "vi": {
+          "prompt": "Sap xep cac buoc theo thu tu.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Plant seed",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Water soil",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "See sprout",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Watch leaves grow",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao xay ra truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao xay ra truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "explorer",
+        "skillIds": [
+          "letters.reading_comprehension",
+          "logic.pattern.basic"
+        ],
+        "generatedBy": "games_9_15_generator",
+        "generatorSeed": 20260719,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "ss-lv027",
+      "gameId": "story_steps",
+      "levelNumber": 27,
+      "difficulty": 3,
+      "learningObjective": "narrative sequencing",
+      "localizedContent": {
+        "en": {
+          "prompt": "Put the steps in order.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Read problem",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Choose operation",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Solve",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Check answer",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what happens first."
+        },
+        "vi": {
+          "prompt": "Sap xep cac buoc theo thu tu.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Read problem",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Choose operation",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Solve",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Check answer",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao xay ra truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao xay ra truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "explorer",
+        "skillIds": [
+          "letters.reading_comprehension",
+          "logic.pattern.basic"
+        ],
+        "generatedBy": "games_9_15_generator",
+        "generatorSeed": 20260719,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "ss-lv028",
+      "gameId": "story_steps",
+      "levelNumber": 28,
+      "difficulty": 3,
+      "learningObjective": "narrative sequencing",
+      "localizedContent": {
+        "en": {
+          "prompt": "Put the steps in order.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Wake up",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Brush teeth",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Eat breakfast",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Go to school",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what happens first."
+        },
+        "vi": {
+          "prompt": "Sap xep cac buoc theo thu tu.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Wake up",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Brush teeth",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Eat breakfast",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Go to school",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao xay ra truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao xay ra truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "explorer",
+        "skillIds": [
+          "letters.reading_comprehension",
+          "logic.pattern.basic"
+        ],
+        "generatedBy": "games_9_15_generator",
+        "generatorSeed": 20260719,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "ss-lv029",
+      "gameId": "story_steps",
+      "levelNumber": 29,
+      "difficulty": 3,
+      "learningObjective": "narrative sequencing",
+      "localizedContent": {
+        "en": {
+          "prompt": "Put the steps in order.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Plant seed",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Water soil",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "See sprout",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Watch leaves grow",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what happens first."
+        },
+        "vi": {
+          "prompt": "Sap xep cac buoc theo thu tu.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Plant seed",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Water soil",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "See sprout",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Watch leaves grow",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao xay ra truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao xay ra truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "explorer",
+        "skillIds": [
+          "letters.reading_comprehension",
+          "logic.pattern.basic"
+        ],
+        "generatedBy": "games_9_15_generator",
+        "generatorSeed": 20260719,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "ss-lv030",
+      "gameId": "story_steps",
+      "levelNumber": 30,
+      "difficulty": 3,
+      "learningObjective": "narrative sequencing",
+      "localizedContent": {
+        "en": {
+          "prompt": "Put the steps in order.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Read problem",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Choose operation",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Solve",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Check answer",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what happens first."
+        },
+        "vi": {
+          "prompt": "Sap xep cac buoc theo thu tu.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Read problem",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Choose operation",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Solve",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Check answer",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao xay ra truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao xay ra truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "explorer",
+        "skillIds": [
+          "letters.reading_comprehension",
+          "logic.pattern.basic"
+        ],
+        "generatedBy": "games_9_15_generator",
+        "generatorSeed": 20260719,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "ss-lv031",
+      "gameId": "story_steps",
+      "levelNumber": 31,
+      "difficulty": 5,
+      "learningObjective": "narrative sequencing",
+      "localizedContent": {
+        "en": {
+          "prompt": "Put the steps in order.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Wake up",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Brush teeth",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Eat breakfast",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Go to school",
+              "type": "text"
+            },
+            {
+              "id": "s4",
+              "content": "Read a book",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what happens first."
+        },
+        "vi": {
+          "prompt": "Sap xep cac buoc theo thu tu.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Wake up",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Brush teeth",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Eat breakfast",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Go to school",
+              "type": "text"
+            },
+            {
+              "id": "s4",
+              "content": "Read a book",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao xay ra truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao xay ra truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "master",
+        "skillIds": [
+          "letters.reading_comprehension",
+          "logic.pattern.basic"
+        ],
+        "generatedBy": "games_9_15_generator",
+        "generatorSeed": 20260719,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "ss-lv032",
+      "gameId": "story_steps",
+      "levelNumber": 32,
+      "difficulty": 5,
+      "learningObjective": "narrative sequencing",
+      "localizedContent": {
+        "en": {
+          "prompt": "Put the steps in order.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Plant seed",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Water soil",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "See sprout",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Watch leaves grow",
+              "type": "text"
+            },
+            {
+              "id": "s4",
+              "content": "Pick flower",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what happens first."
+        },
+        "vi": {
+          "prompt": "Sap xep cac buoc theo thu tu.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Plant seed",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Water soil",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "See sprout",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Watch leaves grow",
+              "type": "text"
+            },
+            {
+              "id": "s4",
+              "content": "Pick flower",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao xay ra truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao xay ra truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "master",
+        "skillIds": [
+          "letters.reading_comprehension",
+          "logic.pattern.basic"
+        ],
+        "generatedBy": "games_9_15_generator",
+        "generatorSeed": 20260719,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "ss-lv033",
+      "gameId": "story_steps",
+      "levelNumber": 33,
+      "difficulty": 5,
+      "learningObjective": "narrative sequencing",
+      "localizedContent": {
+        "en": {
+          "prompt": "Put the steps in order.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Read problem",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Choose operation",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Solve",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Check answer",
+              "type": "text"
+            },
+            {
+              "id": "s4",
+              "content": "Share result",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what happens first."
+        },
+        "vi": {
+          "prompt": "Sap xep cac buoc theo thu tu.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Read problem",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Choose operation",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Solve",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Check answer",
+              "type": "text"
+            },
+            {
+              "id": "s4",
+              "content": "Share result",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao xay ra truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao xay ra truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "master",
+        "skillIds": [
+          "letters.reading_comprehension",
+          "logic.pattern.basic"
+        ],
+        "generatedBy": "games_9_15_generator",
+        "generatorSeed": 20260719,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "ss-lv034",
+      "gameId": "story_steps",
+      "levelNumber": 34,
+      "difficulty": 5,
+      "learningObjective": "narrative sequencing",
+      "localizedContent": {
+        "en": {
+          "prompt": "Put the steps in order.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Wake up",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Brush teeth",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Eat breakfast",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Go to school",
+              "type": "text"
+            },
+            {
+              "id": "s4",
+              "content": "Read a book",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what happens first."
+        },
+        "vi": {
+          "prompt": "Sap xep cac buoc theo thu tu.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Wake up",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Brush teeth",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Eat breakfast",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Go to school",
+              "type": "text"
+            },
+            {
+              "id": "s4",
+              "content": "Read a book",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao xay ra truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao xay ra truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "master",
+        "skillIds": [
+          "letters.reading_comprehension",
+          "logic.pattern.basic"
+        ],
+        "generatedBy": "games_9_15_generator",
+        "generatorSeed": 20260719,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "ss-lv035",
+      "gameId": "story_steps",
+      "levelNumber": 35,
+      "difficulty": 5,
+      "learningObjective": "narrative sequencing",
+      "localizedContent": {
+        "en": {
+          "prompt": "Put the steps in order.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Plant seed",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Water soil",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "See sprout",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Watch leaves grow",
+              "type": "text"
+            },
+            {
+              "id": "s4",
+              "content": "Pick flower",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what happens first."
+        },
+        "vi": {
+          "prompt": "Sap xep cac buoc theo thu tu.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Plant seed",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Water soil",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "See sprout",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Watch leaves grow",
+              "type": "text"
+            },
+            {
+              "id": "s4",
+              "content": "Pick flower",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao xay ra truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao xay ra truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "master",
+        "skillIds": [
+          "letters.reading_comprehension",
+          "logic.pattern.basic"
+        ],
+        "generatedBy": "games_9_15_generator",
+        "generatorSeed": 20260719,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "ss-lv036",
+      "gameId": "story_steps",
+      "levelNumber": 36,
+      "difficulty": 5,
+      "learningObjective": "narrative sequencing",
+      "localizedContent": {
+        "en": {
+          "prompt": "Put the steps in order.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Read problem",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Choose operation",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Solve",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Check answer",
+              "type": "text"
+            },
+            {
+              "id": "s4",
+              "content": "Share result",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what happens first."
+        },
+        "vi": {
+          "prompt": "Sap xep cac buoc theo thu tu.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Read problem",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Choose operation",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Solve",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Check answer",
+              "type": "text"
+            },
+            {
+              "id": "s4",
+              "content": "Share result",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao xay ra truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao xay ra truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "master",
+        "skillIds": [
+          "letters.reading_comprehension",
+          "logic.pattern.basic"
+        ],
+        "generatedBy": "games_9_15_generator",
+        "generatorSeed": 20260719,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "ss-lv037",
+      "gameId": "story_steps",
+      "levelNumber": 37,
+      "difficulty": 5,
+      "learningObjective": "narrative sequencing",
+      "localizedContent": {
+        "en": {
+          "prompt": "Put the steps in order.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Wake up",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Brush teeth",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Eat breakfast",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Go to school",
+              "type": "text"
+            },
+            {
+              "id": "s4",
+              "content": "Read a book",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what happens first."
+        },
+        "vi": {
+          "prompt": "Sap xep cac buoc theo thu tu.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Wake up",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Brush teeth",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Eat breakfast",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Go to school",
+              "type": "text"
+            },
+            {
+              "id": "s4",
+              "content": "Read a book",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao xay ra truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao xay ra truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "master",
+        "skillIds": [
+          "letters.reading_comprehension",
+          "logic.pattern.basic"
+        ],
+        "generatedBy": "games_9_15_generator",
+        "generatorSeed": 20260719,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "ss-lv038",
+      "gameId": "story_steps",
+      "levelNumber": 38,
+      "difficulty": 5,
+      "learningObjective": "narrative sequencing",
+      "localizedContent": {
+        "en": {
+          "prompt": "Put the steps in order.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Plant seed",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Water soil",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "See sprout",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Watch leaves grow",
+              "type": "text"
+            },
+            {
+              "id": "s4",
+              "content": "Pick flower",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what happens first."
+        },
+        "vi": {
+          "prompt": "Sap xep cac buoc theo thu tu.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Plant seed",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Water soil",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "See sprout",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Watch leaves grow",
+              "type": "text"
+            },
+            {
+              "id": "s4",
+              "content": "Pick flower",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao xay ra truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao xay ra truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "master",
+        "skillIds": [
+          "letters.reading_comprehension",
+          "logic.pattern.basic"
+        ],
+        "generatedBy": "games_9_15_generator",
+        "generatorSeed": 20260719,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "ss-lv039",
+      "gameId": "story_steps",
+      "levelNumber": 39,
+      "difficulty": 5,
+      "learningObjective": "narrative sequencing",
+      "localizedContent": {
+        "en": {
+          "prompt": "Put the steps in order.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Read problem",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Choose operation",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Solve",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Check answer",
+              "type": "text"
+            },
+            {
+              "id": "s4",
+              "content": "Share result",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what happens first."
+        },
+        "vi": {
+          "prompt": "Sap xep cac buoc theo thu tu.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Read problem",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Choose operation",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Solve",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Check answer",
+              "type": "text"
+            },
+            {
+              "id": "s4",
+              "content": "Share result",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao xay ra truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao xay ra truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "master",
+        "skillIds": [
+          "letters.reading_comprehension",
+          "logic.pattern.basic"
+        ],
+        "generatedBy": "games_9_15_generator",
+        "generatorSeed": 20260719,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "ss-lv040",
+      "gameId": "story_steps",
+      "levelNumber": 40,
+      "difficulty": 5,
+      "learningObjective": "narrative sequencing",
+      "localizedContent": {
+        "en": {
+          "prompt": "Put the steps in order.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Wake up",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Brush teeth",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Eat breakfast",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Go to school",
+              "type": "text"
+            },
+            {
+              "id": "s4",
+              "content": "Read a book",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what happens first."
+        },
+        "vi": {
+          "prompt": "Sap xep cac buoc theo thu tu.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Wake up",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Brush teeth",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Eat breakfast",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Go to school",
+              "type": "text"
+            },
+            {
+              "id": "s4",
+              "content": "Read a book",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao xay ra truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao xay ra truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "master",
+        "skillIds": [
+          "letters.reading_comprehension",
+          "logic.pattern.basic"
+        ],
+        "generatedBy": "games_9_15_generator",
+        "generatorSeed": 20260719,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "ss-lv041",
+      "gameId": "story_steps",
+      "levelNumber": 41,
+      "difficulty": 5,
+      "learningObjective": "narrative sequencing",
+      "localizedContent": {
+        "en": {
+          "prompt": "Put the steps in order.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Plant seed",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Water soil",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "See sprout",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Watch leaves grow",
+              "type": "text"
+            },
+            {
+              "id": "s4",
+              "content": "Pick flower",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what happens first."
+        },
+        "vi": {
+          "prompt": "Sap xep cac buoc theo thu tu.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Plant seed",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Water soil",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "See sprout",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Watch leaves grow",
+              "type": "text"
+            },
+            {
+              "id": "s4",
+              "content": "Pick flower",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao xay ra truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao xay ra truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "master",
+        "skillIds": [
+          "letters.reading_comprehension",
+          "logic.pattern.basic"
+        ],
+        "generatedBy": "games_9_15_generator",
+        "generatorSeed": 20260719,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "ss-lv042",
+      "gameId": "story_steps",
+      "levelNumber": 42,
+      "difficulty": 5,
+      "learningObjective": "narrative sequencing",
+      "localizedContent": {
+        "en": {
+          "prompt": "Put the steps in order.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Read problem",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Choose operation",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Solve",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Check answer",
+              "type": "text"
+            },
+            {
+              "id": "s4",
+              "content": "Share result",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what happens first."
+        },
+        "vi": {
+          "prompt": "Sap xep cac buoc theo thu tu.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Read problem",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Choose operation",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Solve",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Check answer",
+              "type": "text"
+            },
+            {
+              "id": "s4",
+              "content": "Share result",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao xay ra truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao xay ra truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "master",
+        "skillIds": [
+          "letters.reading_comprehension",
+          "logic.pattern.basic"
+        ],
+        "generatedBy": "games_9_15_generator",
+        "generatorSeed": 20260719,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "ss-lv043",
+      "gameId": "story_steps",
+      "levelNumber": 43,
+      "difficulty": 5,
+      "learningObjective": "narrative sequencing",
+      "localizedContent": {
+        "en": {
+          "prompt": "Put the steps in order.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Wake up",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Brush teeth",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Eat breakfast",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Go to school",
+              "type": "text"
+            },
+            {
+              "id": "s4",
+              "content": "Read a book",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what happens first."
+        },
+        "vi": {
+          "prompt": "Sap xep cac buoc theo thu tu.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Wake up",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Brush teeth",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Eat breakfast",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Go to school",
+              "type": "text"
+            },
+            {
+              "id": "s4",
+              "content": "Read a book",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao xay ra truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao xay ra truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "master",
+        "skillIds": [
+          "letters.reading_comprehension",
+          "logic.pattern.basic"
+        ],
+        "generatedBy": "games_9_15_generator",
+        "generatorSeed": 20260719,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "ss-lv044",
+      "gameId": "story_steps",
+      "levelNumber": 44,
+      "difficulty": 5,
+      "learningObjective": "narrative sequencing",
+      "localizedContent": {
+        "en": {
+          "prompt": "Put the steps in order.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Plant seed",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Water soil",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "See sprout",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Watch leaves grow",
+              "type": "text"
+            },
+            {
+              "id": "s4",
+              "content": "Pick flower",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what happens first."
+        },
+        "vi": {
+          "prompt": "Sap xep cac buoc theo thu tu.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Plant seed",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Water soil",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "See sprout",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Watch leaves grow",
+              "type": "text"
+            },
+            {
+              "id": "s4",
+              "content": "Pick flower",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao xay ra truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao xay ra truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "master",
+        "skillIds": [
+          "letters.reading_comprehension",
+          "logic.pattern.basic"
+        ],
+        "generatedBy": "games_9_15_generator",
+        "generatorSeed": 20260719,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "ss-lv045",
+      "gameId": "story_steps",
+      "levelNumber": 45,
+      "difficulty": 5,
+      "learningObjective": "narrative sequencing",
+      "localizedContent": {
+        "en": {
+          "prompt": "Put the steps in order.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Read problem",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Choose operation",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Solve",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Check answer",
+              "type": "text"
+            },
+            {
+              "id": "s4",
+              "content": "Share result",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Think about what happens first."
+        },
+        "vi": {
+          "prompt": "Sap xep cac buoc theo thu tu.",
+          "mode": "reorder",
+          "correctOrder": [
+            {
+              "id": "s0",
+              "content": "Read problem",
+              "type": "text"
+            },
+            {
+              "id": "s1",
+              "content": "Choose operation",
+              "type": "text"
+            },
+            {
+              "id": "s2",
+              "content": "Solve",
+              "type": "text"
+            },
+            {
+              "id": "s3",
+              "content": "Check answer",
+              "type": "text"
+            },
+            {
+              "id": "s4",
+              "content": "Share result",
+              "type": "text"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Nghi xem viec nao xay ra truoc."
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghi xem viec nao xay ra truoc."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "master",
+        "skillIds": [
+          "letters.reading_comprehension",
+          "logic.pattern.basic"
+        ],
+        "generatedBy": "games_9_15_generator",
+        "generatorSeed": 20260719,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    }
+  ]
+}

@@ -63,8 +63,11 @@ class MultiSelectSubmissionOutcome extends Equatable {
 }
 
 class MultiSelectHintOutcome extends Equatable {
-  const MultiSelectHintOutcome(
-      {required this.applied, this.kind, this.message});
+  const MultiSelectHintOutcome({
+    required this.applied,
+    this.kind,
+    this.message,
+  });
 
   final bool applied;
   final MultiSelectHintKind? kind;
@@ -351,30 +354,37 @@ class MultiSelectController extends ChangeNotifier {
     if (isComplete)
       return _rejectSelection(MultiSelectSelectionStatus.complete);
     if (!_validOptionIds.contains(optionId)) {
-      return _rejectSelection(MultiSelectSelectionStatus.unknownOption,
-          optionId: optionId);
+      return _rejectSelection(
+        MultiSelectSelectionStatus.unknownOption,
+        optionId: optionId,
+      );
     }
     if (_eliminatedIds.contains(optionId)) {
-      return _rejectSelection(MultiSelectSelectionStatus.eliminated,
-          optionId: optionId);
+      return _rejectSelection(
+        MultiSelectSelectionStatus.eliminated,
+        optionId: optionId,
+      );
     }
     if (_selectedIds.contains(optionId)) {
       return const MultiSelectSelectionOutcome(
-          MultiSelectSelectionStatus.accepted);
+        MultiSelectSelectionStatus.accepted,
+      );
     }
     if (_selectedIds.length >= _content.configuration.maximumSelections) {
       _feedback = MultiSelectFeedbackCode.maximumSelectionReached;
       notifyListeners();
       return MultiSelectSelectionOutcome(
-          MultiSelectSelectionStatus.maximumReached,
-          optionId: optionId);
+        MultiSelectSelectionStatus.maximumReached,
+        optionId: optionId,
+      );
     }
     _selectedIds.add(optionId);
     _feedback = MultiSelectFeedbackCode.none;
     notifyListeners();
     _maybeAutoSubmit();
     return const MultiSelectSelectionOutcome(
-        MultiSelectSelectionStatus.accepted);
+      MultiSelectSelectionStatus.accepted,
+    );
   }
 
   MultiSelectSelectionOutcome deselectOption(String optionId) {
@@ -382,25 +392,30 @@ class MultiSelectController extends ChangeNotifier {
     if (isComplete)
       return _rejectSelection(MultiSelectSelectionStatus.complete);
     if (!_validOptionIds.contains(optionId)) {
-      return _rejectSelection(MultiSelectSelectionStatus.unknownOption,
-          optionId: optionId);
+      return _rejectSelection(
+        MultiSelectSelectionStatus.unknownOption,
+        optionId: optionId,
+      );
     }
     if (!_selectedIds.contains(optionId)) {
       return const MultiSelectSelectionOutcome(
-          MultiSelectSelectionStatus.accepted);
+        MultiSelectSelectionStatus.accepted,
+      );
     }
     if (!_content.configuration.allowDeselect) {
       _feedback = MultiSelectFeedbackCode.deselectDisabled;
       notifyListeners();
       return MultiSelectSelectionOutcome(
-          MultiSelectSelectionStatus.deselectDisabled,
-          optionId: optionId);
+        MultiSelectSelectionStatus.deselectDisabled,
+        optionId: optionId,
+      );
     }
     _selectedIds.remove(optionId);
     _feedback = MultiSelectFeedbackCode.none;
     notifyListeners();
     return const MultiSelectSelectionOutcome(
-        MultiSelectSelectionStatus.accepted);
+      MultiSelectSelectionStatus.accepted,
+    );
   }
 
   MultiSelectSelectionOutcome toggleOption(String optionId) =>
@@ -425,15 +440,18 @@ class MultiSelectController extends ChangeNotifier {
   MultiSelectSubmissionOutcome submit() {
     if (_paused) {
       return const MultiSelectSubmissionOutcome(
-          MultiSelectSubmissionStatus.paused);
+        MultiSelectSubmissionStatus.paused,
+      );
     }
     if (isComplete) {
       return const MultiSelectSubmissionOutcome(
-          MultiSelectSubmissionStatus.complete);
+        MultiSelectSubmissionStatus.complete,
+      );
     }
     if (_isSubmitting) {
       return const MultiSelectSubmissionOutcome(
-          MultiSelectSubmissionStatus.complete);
+        MultiSelectSubmissionStatus.complete,
+      );
     }
     final count = _selectedIds.length;
     final config = _content.configuration;
@@ -441,23 +459,27 @@ class MultiSelectController extends ChangeNotifier {
       _feedback = MultiSelectFeedbackCode.minimumSelectionRequired;
       notifyListeners();
       return const MultiSelectSubmissionOutcome(
-          MultiSelectSubmissionStatus.belowMinimum);
+        MultiSelectSubmissionStatus.belowMinimum,
+      );
     }
     if (count > config.maximumSelections) {
       _feedback = MultiSelectFeedbackCode.maximumSelectionReached;
       notifyListeners();
       return const MultiSelectSubmissionOutcome(
-          MultiSelectSubmissionStatus.aboveMaximum);
+        MultiSelectSubmissionStatus.aboveMaximum,
+      );
     }
 
     _isSubmitting = true;
     final evaluation = _evaluate();
     _lastEvaluation = evaluation;
-    _attemptHistory.add(MultiSelectAttempt(
-      attemptNumber: _attemptHistory.length + 1,
-      selectedIds: selectedOptionIds,
-      evaluation: evaluation,
-    ));
+    _attemptHistory.add(
+      MultiSelectAttempt(
+        attemptNumber: _attemptHistory.length + 1,
+        selectedIds: selectedOptionIds,
+        evaluation: evaluation,
+      ),
+    );
     if (evaluation.exact) {
       _correctSubmissionCount++;
       _feedback = MultiSelectFeedbackCode.correct;
@@ -471,14 +493,18 @@ class MultiSelectController extends ChangeNotifier {
         attempts >= config.maxAttempts ||
         !config.allowRetry;
     if (terminal) {
-      _complete(evaluation.exact
-          ? MultiSelectCompletionState.completed
-          : MultiSelectCompletionState.exhausted);
+      _complete(
+        evaluation.exact
+            ? MultiSelectCompletionState.completed
+            : MultiSelectCompletionState.exhausted,
+      );
     }
     _isSubmitting = false;
     notifyListeners();
-    return MultiSelectSubmissionOutcome(MultiSelectSubmissionStatus.accepted,
-        evaluation: evaluation);
+    return MultiSelectSubmissionOutcome(
+      MultiSelectSubmissionStatus.accepted,
+      evaluation: evaluation,
+    );
   }
 
   MultiSelectHintOutcome requestHint() {
@@ -633,8 +659,11 @@ class MultiSelectController extends ChangeNotifier {
     final baseScore =
         config.evaluationMode == MultiSelectEvaluationMode.exactMatch
             ? (exact ? 100 : 0)
-            : _partialScore(correctlySelected.length,
-                incorrectlySelected.length, correctIds.length);
+            : _partialScore(
+                correctlySelected.length,
+                incorrectlySelected.length,
+                correctIds.length,
+              );
     final penalty =
         (attempts * config.attemptPenalty) + (_hintCount * config.hintPenalty);
     final score = (baseScore - penalty).clamp(0, 100);
@@ -648,7 +677,10 @@ class MultiSelectController extends ChangeNotifier {
   }
 
   int _partialScore(
-      int correctSelected, int incorrectSelected, int totalCorrect) {
+    int correctSelected,
+    int incorrectSelected,
+    int totalCorrect,
+  ) {
     if (totalCorrect == 0) return 0;
     final totalIncorrect = _content.options.length - totalCorrect;
     final correctRatio = correctSelected / totalCorrect;
@@ -695,10 +727,12 @@ class MultiSelectController extends ChangeNotifier {
         );
       case MultiSelectHintMode.eliminateIncorrectOption:
         final remaining = _content.options
-            .where((option) =>
-                !option.isCorrect &&
-                !_eliminatedIds.contains(option.id) &&
-                !_selectedIds.contains(option.id))
+            .where(
+              (option) =>
+                  !option.isCorrect &&
+                  !_eliminatedIds.contains(option.id) &&
+                  !_selectedIds.contains(option.id),
+            )
             .map((option) => option.id)
             .toSet();
         if (remaining.isEmpty)
@@ -737,8 +771,9 @@ class MultiSelectController extends ChangeNotifier {
   }
 
   MultiSelectSelectionOutcome _rejectSelection(
-      MultiSelectSelectionStatus status,
-      {String? optionId}) {
+    MultiSelectSelectionStatus status, {
+    String? optionId,
+  }) {
     return MultiSelectSelectionOutcome(status, optionId: optionId);
   }
 

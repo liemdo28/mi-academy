@@ -136,8 +136,9 @@ class SequenceController extends ChangeNotifier {
   void _resetForContent() {
     _arrangement = List.of(_content.correctOrder);
     if (_content.mode == SequenceMode.reorder) {
-      _arrangement
-          .shuffleSeeded(_DeterministicRandom(_content.contentId.hashCode));
+      _arrangement.shuffleSeeded(
+        _DeterministicRandom(_content.contentId.hashCode),
+      );
     }
     _missingSelections = {for (final i in _content.missingIndices) i: null};
     _attempts = 0;

@@ -1,0 +1,21 @@
+{
+  "id": "bad-match-001",
+  "gameId": "number_balance",
+  "levelNumber": 1,
+  "difficulty": 1,
+  "localizedContent": {
+    "vi": {
+      "prompt": "Ghep phep tinh.",
+      "pairs": [
+        {"left": {"id": "l1", "content": "1+1"}, "right": {"id": "r1", "content": "2"}}
+      ]
+    },
+    "en": {
+      "prompt": "Match the expression.",
+      "pairs": [
+        {"left": {"id": "l1", "content": "1+1"}, "right": {"id": "r1", "content": "2"}}
+      ]
+    }
+  },
+  "metadata": {"ageGroup": "junior", "skillIds": ["math.addition.within_20"]}
+}

@@ -32,9 +32,9 @@ Placement, 58 Multi-select, and 8 in a shared
 star bounds, and -- for Placement and Multi-select specifically, whose
 normalized results are the most complete of the four -- the full result
 shape and an automated check that no engine source file imports a
-storage/backend/analytics package). None of the four engines are wired
-into the game registry or any production game yet; see
-docs/game-engine-architecture.md.
+storage/backend/analytics package). Games 9-15 now consume Matching,
+Sequence, Placement, and Multi-select through the public
+`mi_game_engines` barrel; see docs/game-engine-architecture.md.
 
 The Multi-select pass also fixed the full seed transaction boundary in
 `infrastructure/seed/seed_data.py`: successful seeding now exits through
@@ -291,3 +291,17 @@ and launcher coverage. Local command results:
   doesn't need them at runtime) — install with `pip install ruff mypy` to
   run them locally; both read their config from the repo-root
   `pyproject.toml` automatically.
+### Games 9-15 local verification
+
+Updated 2026-07-19 on `integration/m2-games-15-complete`:
+
+| Command | Result |
+|---|---|
+| `flutter test` (`apps/mobile`) | PASS, 123 passed, 6 expected Windows golden skips |
+| `apps/mobile/integration_test/games_9_15_flow_test.dart` | ADDED, 7 new Android-emulator scenarios pending final CI |
+| `flutter test --reporter expanded` (`packages/mi_game_engines`) | PASS, 165 passed |
+| `python -m pytest packages/game_core/tests tests test -q` | PASS, 187 passed |
+| `python tools/content_schema_validator.py` | PASS for Games 1-15 |
+| `python tools/content_schema_validator.py --check-malformed` | PASS, 13 malformed fixtures rejected |
+| `python tools/level_validator/solve_levels.py` | PASS, 665/665 production levels solvable |
+| `python tools/localization_audit.py` | PASS ARB parity; existing hardcoded-string warning count remains 245 |

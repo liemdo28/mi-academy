@@ -26,7 +26,7 @@ Map<String, dynamic> _viVowelsExample() => {
           'authoredHint',
           'expectedSelectionCount',
           'revealCorrectOption',
-          'eliminateIncorrectOption'
+          'eliminateIncorrectOption',
         ],
       },
       'options': [
@@ -230,8 +230,10 @@ void main() {
 
     test('parses valid partial-credit even-numbers content', () {
       final content = MultiSelectContent.fromJson(_enEvenNumbersExample());
-      expect(content.configuration.evaluationMode,
-          MultiSelectEvaluationMode.partialCredit);
+      expect(
+        content.configuration.evaluationMode,
+        MultiSelectEvaluationMode.partialCredit,
+      );
     });
 
     test('parses valid quadrilaterals content with asset-flavored options', () {
@@ -243,7 +245,9 @@ void main() {
     test('parses valid auto-submit content', () {
       final content = MultiSelectContent.fromJson(_autoSubmitExample());
       expect(
-          content.configuration.submitMode, MultiSelectSubmitMode.autoSubmit);
+        content.configuration.submitMode,
+        MultiSelectSubmitMode.autoSubmit,
+      );
       expect(content.configuration.expectedAnswerCount, 2);
     });
   });
@@ -256,8 +260,10 @@ void main() {
           .toList();
       options[1] = Map<String, dynamic>.from(options[0]);
       json['options'] = options;
-      expect(() => MultiSelectContent.fromJson(json),
-          throwsA(isA<MultiSelectContentException>()));
+      expect(
+        () => MultiSelectContent.fromJson(json),
+        throwsA(isA<MultiSelectContentException>()),
+      );
     });
 
     test('rejects content with no correct answers', () {
@@ -271,44 +277,59 @@ void main() {
       json['options'] = options;
       expect(
         () => MultiSelectContent.fromJson(json),
-        throwsA(predicate((e) =>
-            e is MultiSelectContentException &&
-            e.message.contains('no_correct_option'))),
+        throwsA(
+          predicate(
+            (e) =>
+                e is MultiSelectContentException &&
+                e.message.contains('no_correct_option'),
+          ),
+        ),
       );
     });
 
     test('rejects invalid min/max (max < min)', () {
       final json = _viVowelsExample();
       json['configuration'] = {'minSelections': 3, 'maxSelections': 2};
-      expect(() => MultiSelectContent.fromJson(json),
-          throwsA(isA<MultiSelectContentException>()));
-    });
-
-    test('rejects an impossible config (minSelections exceeds option count)',
-        () {
-      // max >= min always, so requesting more selections than options exist
-      // is rejected -- whether the message names "maxSelections" or
-      // "minSelections" as the immediate cause, both describe the same
-      // impossible configuration.
-      final json = _viVowelsExample();
-      json['configuration'] = {'minSelections': 10, 'maxSelections': 10};
-      expect(() => MultiSelectContent.fromJson(json),
-          throwsA(isA<MultiSelectContentException>()));
+      expect(
+        () => MultiSelectContent.fromJson(json),
+        throwsA(isA<MultiSelectContentException>()),
+      );
     });
 
     test(
-        'rejects an impossible exactMatch config (correct count outside min/max)',
-        () {
-      final json = _viVowelsExample();
-      // 3 correct options, but the window only allows 4-5 selections.
-      json['configuration'] = {'minSelections': 4, 'maxSelections': 5};
-      expect(
-        () => MultiSelectContent.fromJson(json),
-        throwsA(predicate((e) =>
-            e is MultiSelectContentException &&
-            e.message.contains('exact_match_minimum_above_correct_count'))),
-      );
-    });
+      'rejects an impossible config (minSelections exceeds option count)',
+      () {
+        // max >= min always, so requesting more selections than options exist
+        // is rejected -- whether the message names "maxSelections" or
+        // "minSelections" as the immediate cause, both describe the same
+        // impossible configuration.
+        final json = _viVowelsExample();
+        json['configuration'] = {'minSelections': 10, 'maxSelections': 10};
+        expect(
+          () => MultiSelectContent.fromJson(json),
+          throwsA(isA<MultiSelectContentException>()),
+        );
+      },
+    );
+
+    test(
+      'rejects an impossible exactMatch config (correct count outside min/max)',
+      () {
+        final json = _viVowelsExample();
+        // 3 correct options, but the window only allows 4-5 selections.
+        json['configuration'] = {'minSelections': 4, 'maxSelections': 5};
+        expect(
+          () => MultiSelectContent.fromJson(json),
+          throwsA(
+            predicate(
+              (e) =>
+                  e is MultiSelectContentException &&
+                  e.message.contains('exact_match_minimum_above_correct_count'),
+            ),
+          ),
+        );
+      },
+    );
 
     test('rejects invalid auto-submit (missing expectedAnswerCount)', () {
       final json = _autoSubmitExample();
@@ -317,9 +338,13 @@ void main() {
       json['configuration'] = config;
       expect(
         () => MultiSelectContent.fromJson(json),
-        throwsA(predicate((e) =>
-            e is MultiSelectContentException &&
-            e.message.contains('missing_auto_submit_count'))),
+        throwsA(
+          predicate(
+            (e) =>
+                e is MultiSelectContentException &&
+                e.message.contains('missing_auto_submit_count'),
+          ),
+        ),
       );
     });
 
@@ -328,8 +353,10 @@ void main() {
       final config = Map<String, dynamic>.from(json['configuration'] as Map);
       config['expectedAnswerCount'] = 99;
       json['configuration'] = config;
-      expect(() => MultiSelectContent.fromJson(json),
-          throwsA(isA<MultiSelectContentException>()));
+      expect(
+        () => MultiSelectContent.fromJson(json),
+        throwsA(isA<MultiSelectContentException>()),
+      );
     });
 
     test('rejects an option with no text and no assetId (invalid asset)', () {
@@ -339,8 +366,10 @@ void main() {
           .toList();
       options[0] = {'id': 'a', 'label': 'Chữ A', 'isCorrect': true};
       json['options'] = options;
-      expect(() => MultiSelectContent.fromJson(json),
-          throwsA(isA<MultiSelectContentException>()));
+      expect(
+        () => MultiSelectContent.fromJson(json),
+        throwsA(isA<MultiSelectContentException>()),
+      );
     });
 
     test('rejects an option with an empty assetId', () {
@@ -356,8 +385,10 @@ void main() {
         'isCorrect': true,
       };
       json['options'] = options;
-      expect(() => MultiSelectContent.fromJson(json),
-          throwsA(isA<MultiSelectContentException>()));
+      expect(
+        () => MultiSelectContent.fromJson(json),
+        throwsA(isA<MultiSelectContentException>()),
+      );
     });
 
     test('rejects an option missing a semantic label', () {
@@ -367,15 +398,19 @@ void main() {
           .toList();
       options[0] = {'id': 'a', 'text': 'A', 'isCorrect': true};
       json['options'] = options;
-      expect(() => MultiSelectContent.fromJson(json),
-          throwsA(isA<MultiSelectContentException>()));
+      expect(
+        () => MultiSelectContent.fromJson(json),
+        throwsA(isA<MultiSelectContentException>()),
+      );
     });
 
     test('rejects unsupported schema version', () {
       final json = _viVowelsExample();
       json['schemaVersion'] = '99.0';
-      expect(() => MultiSelectContent.fromJson(json),
-          throwsA(isA<MultiSelectContentException>()));
+      expect(
+        () => MultiSelectContent.fromJson(json),
+        throwsA(isA<MultiSelectContentException>()),
+      );
     });
 
     test('rejects blank prompt and blank content id with typed errors', () {
@@ -384,10 +419,14 @@ void main() {
       json['prompt'] = ' ';
       expect(
         () => MultiSelectContent.fromJson(json),
-        throwsA(predicate((e) =>
-            e is MultiSelectContentException &&
-            e.errors.any((error) => error.code == 'blank_required_field') &&
-            e.errors.any((error) => error.code == 'blank_prompt'))),
+        throwsA(
+          predicate(
+            (e) =>
+                e is MultiSelectContentException &&
+                e.errors.any((error) => error.code == 'blank_required_field') &&
+                e.errors.any((error) => error.code == 'blank_prompt'),
+          ),
+        ),
       );
     });
 
@@ -401,9 +440,13 @@ void main() {
       json['options'] = options;
       expect(
         () => MultiSelectContent.fromJson(json),
-        throwsA(predicate((e) =>
-            e is MultiSelectContentException &&
-            e.message.contains('duplicate_visible_option'))),
+        throwsA(
+          predicate(
+            (e) =>
+                e is MultiSelectContentException &&
+                e.message.contains('duplicate_visible_option'),
+          ),
+        ),
       );
     });
 
@@ -421,9 +464,13 @@ void main() {
       json['options'] = options;
       expect(
         () => MultiSelectContent.fromJson(json),
-        throwsA(predicate((e) =>
-            e is MultiSelectContentException &&
-            e.message.contains('image_only_option_missing_semantic_label'))),
+        throwsA(
+          predicate(
+            (e) =>
+                e is MultiSelectContentException &&
+                e.message.contains('image_only_option_missing_semantic_label'),
+          ),
+        ),
       );
     });
 
@@ -438,10 +485,14 @@ void main() {
       };
       expect(
         () => MultiSelectContent.fromJson(json),
-        throwsA(predicate((e) =>
-            e is MultiSelectContentException &&
-            e.message.contains('invalid_penalty_range') &&
-            e.message.contains('invalid_max_attempt_count'))),
+        throwsA(
+          predicate(
+            (e) =>
+                e is MultiSelectContentException &&
+                e.message.contains('invalid_penalty_range') &&
+                e.message.contains('invalid_max_attempt_count'),
+          ),
+        ),
       );
     });
   });
@@ -450,7 +501,8 @@ void main() {
     late MultiSelectController controller;
     setUp(() {
       controller = MultiSelectController(
-          content: MultiSelectContent.fromJson(_viVowelsExample()));
+        content: MultiSelectContent.fromJson(_viVowelsExample()),
+      );
     });
 
     test('select/deselect/toggle update selection state', () {
@@ -580,7 +632,9 @@ void main() {
       expect(outcome.status, MultiSelectSelectionStatus.deselectDisabled);
       expect(locked.selectedIds, {'a'});
       expect(
-          locked.validationFeedback, MultiSelectFeedbackCode.deselectDisabled);
+        locked.validationFeedback,
+        MultiSelectFeedbackCode.deselectDisabled,
+      );
     });
 
     test('maximum attempts exhausts and reveals correct answers', () {
@@ -615,15 +669,22 @@ void main() {
             },
           };
       final first = MultiSelectController(
-          content: MultiSelectContent.fromJson(seeded(10)));
+        content: MultiSelectContent.fromJson(seeded(10)),
+      );
       final second = MultiSelectController(
-          content: MultiSelectContent.fromJson(seeded(10)));
+        content: MultiSelectContent.fromJson(seeded(10)),
+      );
       final third = MultiSelectController(
-          content: MultiSelectContent.fromJson(seeded(11)));
-      expect(first.orderedOptions.map((o) => o.id),
-          second.orderedOptions.map((o) => o.id));
-      expect(first.orderedOptions.map((o) => o.id),
-          isNot(third.orderedOptions.map((o) => o.id)));
+        content: MultiSelectContent.fromJson(seeded(11)),
+      );
+      expect(
+        first.orderedOptions.map((o) => o.id),
+        second.orderedOptions.map((o) => o.id),
+      );
+      expect(
+        first.orderedOptions.map((o) => o.id),
+        isNot(third.orderedOptions.map((o) => o.id)),
+      );
     });
 
     test('state and result expose normalized fields and JSON', () {
@@ -632,8 +693,10 @@ void main() {
       controller.selectOption('i');
       controller.submit();
       expect(controller.state.correctSubmissionCount, 1);
-      expect(controller.state.completionState,
-          MultiSelectCompletionState.completed);
+      expect(
+        controller.state.completionState,
+        MultiSelectCompletionState.completed,
+      );
       final json = controller.result.toJson();
       expect(json['engineId'], 'multi_select');
       expect(json['evaluationMode'], 'exactMatch');
@@ -785,55 +848,65 @@ void main() {
     });
 
     test(
-        'selecting every option does not get full credit when distractors exist',
-        () {
-      final controller = MultiSelectController(
-        content: MultiSelectContent.fromJson(_enEvenNumbersExample()),
-      );
-      for (final option in controller.content.options) {
-        controller.selectOption(option.id);
-      }
-      controller.submit();
-      expect(controller.score, lessThan(100));
-      expect(
-          controller.result.incorrectlySelectedOptionIds, {'n3', 'n5', 'n7'});
-    });
+      'selecting every option does not get full credit when distractors exist',
+      () {
+        final controller = MultiSelectController(
+          content: MultiSelectContent.fromJson(_enEvenNumbersExample()),
+        );
+        for (final option in controller.content.options) {
+          controller.selectOption(option.id);
+        }
+        controller.submit();
+        expect(controller.score, lessThan(100));
+        expect(controller.result.incorrectlySelectedOptionIds, {
+          'n3',
+          'n5',
+          'n7',
+        });
+      },
+    );
   });
 
   group('MultiSelectController -- auto-submit', () {
-    test('submits automatically once selection reaches expectedAnswerCount',
-        () {
-      final controller = MultiSelectController(
-        content: MultiSelectContent.fromJson(_autoSubmitExample()),
-      );
-      controller.select('c1');
-      expect(controller.attempts, 0); // not yet at expected count
-      controller.select('c2');
-      expect(controller.attempts, 1); // auto-submitted
-      expect(controller.isComplete, isTrue);
-    });
+    test(
+      'submits automatically once selection reaches expectedAnswerCount',
+      () {
+        final controller = MultiSelectController(
+          content: MultiSelectContent.fromJson(_autoSubmitExample()),
+        );
+        controller.select('c1');
+        expect(controller.attempts, 0); // not yet at expected count
+        controller.select('c2');
+        expect(controller.attempts, 1); // auto-submitted
+        expect(controller.isComplete, isTrue);
+      },
+    );
 
-    test('auto-submit with a wrong pair does not complete but does attempt',
-        () {
-      final controller = MultiSelectController(
-        content: MultiSelectContent.fromJson(_autoSubmitExample()),
-      );
-      controller.select('c1');
-      controller.select('s1');
-      expect(controller.attempts, 1);
-      expect(controller.isComplete, isFalse);
-    });
+    test(
+      'auto-submit with a wrong pair does not complete but does attempt',
+      () {
+        final controller = MultiSelectController(
+          content: MultiSelectContent.fromJson(_autoSubmitExample()),
+        );
+        controller.select('c1');
+        controller.select('s1');
+        expect(controller.attempts, 1);
+        expect(controller.isComplete, isFalse);
+      },
+    );
   });
 
   group('MultiSelectScreen widget', () {
     testWidgets('renders instruction and all options', (tester) async {
-      await tester.pumpWidget(MaterialApp(
-        home: MultiSelectScreen(
-          rawContent: _viVowelsExample(),
-          localization: _testLocalization(),
-          onExit: () {},
+      await tester.pumpWidget(
+        MaterialApp(
+          home: MultiSelectScreen(
+            rawContent: _viVowelsExample(),
+            localization: _testLocalization(),
+            onExit: () {},
+          ),
         ),
-      ));
+      );
       await tester.pump();
 
       expect(find.text('Chọn tất cả các nguyên âm!'), findsOneWidget);
@@ -842,29 +915,35 @@ void main() {
       expect(find.text('B'), findsOneWidget);
     });
 
-    testWidgets('shows a recoverable error state for malformed content',
-        (tester) async {
-      await tester.pumpWidget(MaterialApp(
-        home: MultiSelectScreen(
-          rawContent: const {'contentId': 'broken'},
-          localization: _testLocalization(),
-          onExit: () {},
+    testWidgets('shows a recoverable error state for malformed content', (
+      tester,
+    ) async {
+      await tester.pumpWidget(
+        MaterialApp(
+          home: MultiSelectScreen(
+            rawContent: const {'contentId': 'broken'},
+            localization: _testLocalization(),
+            onExit: () {},
+          ),
         ),
-      ));
+      );
       await tester.pump();
 
       expect(find.text('Content unavailable.'), findsOneWidget);
     });
 
-    testWidgets('selecting the correct set and submitting shows completion',
-        (tester) async {
-      await tester.pumpWidget(MaterialApp(
-        home: MultiSelectScreen(
-          rawContent: _viVowelsExample(),
-          localization: _testLocalization(),
-          onExit: () {},
+    testWidgets('selecting the correct set and submitting shows completion', (
+      tester,
+    ) async {
+      await tester.pumpWidget(
+        MaterialApp(
+          home: MultiSelectScreen(
+            rawContent: _viVowelsExample(),
+            localization: _testLocalization(),
+            onExit: () {},
+          ),
         ),
-      ));
+      );
       await tester.pump();
 
       await tester.tap(find.text('A'));
@@ -880,43 +959,51 @@ void main() {
     });
 
     testWidgets('renders the English animals sample', (tester) async {
-      await tester.pumpWidget(MaterialApp(
-        home: MultiSelectScreen(
-          rawContent: _enAnimalsExample(),
-          localization: _testLocalization(),
-          onExit: () {},
+      await tester.pumpWidget(
+        MaterialApp(
+          home: MultiSelectScreen(
+            rawContent: _enAnimalsExample(),
+            localization: _testLocalization(),
+            onExit: () {},
+          ),
         ),
-      ));
+      );
       await tester.pump();
 
       expect(find.text('Select every animal!'), findsOneWidget);
       expect(find.textContaining('Dog'), findsOneWidget);
     });
 
-    testWidgets('renders the quadrilaterals sample with asset avatars',
-        (tester) async {
-      await tester.pumpWidget(MaterialApp(
-        home: MultiSelectScreen(
-          rawContent: _quadrilateralsExample(),
-          localization: _testLocalization(),
-          onExit: () {},
+    testWidgets('renders the quadrilaterals sample with asset avatars', (
+      tester,
+    ) async {
+      await tester.pumpWidget(
+        MaterialApp(
+          home: MultiSelectScreen(
+            rawContent: _quadrilateralsExample(),
+            localization: _testLocalization(),
+            onExit: () {},
+          ),
         ),
-      ));
+      );
       await tester.pump();
 
       expect(find.text('Square'), findsOneWidget);
       expect(find.byIcon(Icons.image_outlined), findsWidgets);
     });
 
-    testWidgets('auto-submit sample completes without a submit button',
-        (tester) async {
-      await tester.pumpWidget(MaterialApp(
-        home: MultiSelectScreen(
-          rawContent: _autoSubmitExample(),
-          localization: _testLocalization(),
-          onExit: () {},
+    testWidgets('auto-submit sample completes without a submit button', (
+      tester,
+    ) async {
+      await tester.pumpWidget(
+        MaterialApp(
+          home: MultiSelectScreen(
+            rawContent: _autoSubmitExample(),
+            localization: _testLocalization(),
+            onExit: () {},
+          ),
         ),
-      ));
+      );
       await tester.pump();
 
       expect(find.text('Submit'), findsNothing);
@@ -928,15 +1015,18 @@ void main() {
       expect(find.text('Great job!'), findsOneWidget);
     });
 
-    testWidgets('hint actions reveal/eliminate/show author hint',
-        (tester) async {
-      await tester.pumpWidget(MaterialApp(
-        home: MultiSelectScreen(
-          rawContent: _viVowelsExample(),
-          localization: _testLocalization(),
-          onExit: () {},
+    testWidgets('hint actions reveal/eliminate/show author hint', (
+      tester,
+    ) async {
+      await tester.pumpWidget(
+        MaterialApp(
+          home: MultiSelectScreen(
+            rawContent: _viVowelsExample(),
+            localization: _testLocalization(),
+            onExit: () {},
+          ),
         ),
-      ));
+      );
       await tester.pump();
 
       await tester.tap(find.byTooltip('Hint'));
@@ -948,29 +1038,34 @@ void main() {
       expect(find.text('Nguyên âm là A, E, I, O, U.'), findsNothing);
     });
 
-    testWidgets('reduced motion still renders without exceptions',
-        (tester) async {
-      await tester.pumpWidget(MaterialApp(
-        home: MultiSelectScreen(
-          rawContent: _viVowelsExample(),
-          localization: _testLocalization(),
-          onExit: () {},
-          reducedMotion: true,
+    testWidgets('reduced motion still renders without exceptions', (
+      tester,
+    ) async {
+      await tester.pumpWidget(
+        MaterialApp(
+          home: MultiSelectScreen(
+            rawContent: _viVowelsExample(),
+            localization: _testLocalization(),
+            onExit: () {},
+            reducedMotion: true,
+          ),
         ),
-      ));
+      );
       await tester.pump();
       expect(tester.takeException(), isNull);
     });
 
     testWidgets('sound-disabled mode still functions normally', (tester) async {
-      await tester.pumpWidget(MaterialApp(
-        home: MultiSelectScreen(
-          rawContent: _viVowelsExample(),
-          localization: _testLocalization(),
-          onExit: () {},
-          soundEnabled: false,
+      await tester.pumpWidget(
+        MaterialApp(
+          home: MultiSelectScreen(
+            rawContent: _viVowelsExample(),
+            localization: _testLocalization(),
+            onExit: () {},
+            soundEnabled: false,
+          ),
         ),
-      ));
+      );
       await tester.pump();
       await tester.tap(find.text('A'));
       await tester.pump();
@@ -978,13 +1073,15 @@ void main() {
     });
 
     testWidgets('options expose semantics labels', (tester) async {
-      await tester.pumpWidget(MaterialApp(
-        home: MultiSelectScreen(
-          rawContent: _viVowelsExample(),
-          localization: _testLocalization(),
-          onExit: () {},
+      await tester.pumpWidget(
+        MaterialApp(
+          home: MultiSelectScreen(
+            rawContent: _viVowelsExample(),
+            localization: _testLocalization(),
+            onExit: () {},
+          ),
         ),
-      ));
+      );
       await tester.pump();
 
       expect(find.bySemanticsLabel('Chữ A'), findsOneWidget);
@@ -998,13 +1095,15 @@ void main() {
       tester.view.devicePixelRatio = 1.0;
       addTearDown(tester.view.reset);
 
-      await tester.pumpWidget(MaterialApp(
-        home: MultiSelectScreen(
-          rawContent: _enEvenNumbersExample(),
-          localization: _testLocalization(),
-          onExit: () {},
+      await tester.pumpWidget(
+        MaterialApp(
+          home: MultiSelectScreen(
+            rawContent: _enEvenNumbersExample(),
+            localization: _testLocalization(),
+            onExit: () {},
+          ),
         ),
-      ));
+      );
       await tester.pump();
       expect(tester.takeException(), isNull);
     });
@@ -1014,13 +1113,15 @@ void main() {
       tester.view.devicePixelRatio = 1.0;
       addTearDown(tester.view.reset);
 
-      await tester.pumpWidget(MaterialApp(
-        home: MultiSelectScreen(
-          rawContent: _enEvenNumbersExample(),
-          localization: _testLocalization(),
-          onExit: () {},
+      await tester.pumpWidget(
+        MaterialApp(
+          home: MultiSelectScreen(
+            rawContent: _enEvenNumbersExample(),
+            localization: _testLocalization(),
+            onExit: () {},
+          ),
         ),
-      ));
+      );
       await tester.pump();
       expect(tester.takeException(), isNull);
     });

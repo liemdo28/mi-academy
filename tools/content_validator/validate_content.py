@@ -203,6 +203,152 @@ def validate_choice_options(content: dict, level_num: int) -> list[str]:
     return errors
 
 
+def validate_multi_select_content(content: dict, level_num: int) -> list[str]:
+    """Validate Multi-select Engine localized content."""
+    errors = []
+    for locale, loc_data in content.items():
+        if not isinstance(loc_data, dict):
+            continue
+        options = loc_data.get("options")
+        config = loc_data.get("configuration", {})
+        if not isinstance(loc_data.get("prompt"), str) or not loc_data.get("prompt"):
+            errors.append(f"Level {level_num} ({locale}): prompt must not be empty")
+        if not isinstance(options, list) or len(options) < 2:
+            errors.append(
+                f"Level {level_num} ({locale}): multi-select options must contain at least 2 items"
+            )
+            continue
+        ids = []
+        correct = 0
+        for option_index, opt in enumerate(options):
+            if not isinstance(opt, dict):
+                errors.append(
+                    f"Level {level_num} ({locale}) option {option_index}: must be a map"
+                )
+                continue
+            option_id = opt.get("id")
+            label = opt.get("label")
+            if not isinstance(option_id, str) or not option_id:
+                errors.append(
+                    f"Level {level_num} ({locale}) option {option_index}: id required"
+                )
+            else:
+                ids.append(option_id)
+            if not isinstance(label, str) or not label:
+                errors.append(
+                    f"Level {level_num} ({locale}) option {option_index}: label required"
+                )
+            if opt.get("isCorrect") is True:
+                correct += 1
+        if len(ids) != len(set(ids)):
+            errors.append(f"Level {level_num} ({locale}): duplicate option IDs")
+        if correct < 1:
+            errors.append(
+                f"Level {level_num} ({locale}): at least one option must be correct"
+            )
+        if isinstance(config, dict):
+            minimum = config.get("minimumSelections", 1)
+            maximum = config.get("maximumSelections", len(options))
+            if minimum > correct or maximum < correct:
+                errors.append(
+                    f"Level {level_num} ({locale}): selection bounds exclude the correct answer set"
+                )
+    return errors
+
+
+def validate_sequence_content(content: dict, level_num: int) -> list[str]:
+    """Validate Sequence Engine localized content."""
+    errors = []
+    for locale, loc_data in content.items():
+        if not isinstance(loc_data, dict):
+            continue
+        order = loc_data.get("correctOrder")
+        rule = loc_data.get("rule")
+        mode = loc_data.get("mode")
+        if mode not in {"reorder", "missingItem"}:
+            errors.append(f"Level {level_num} ({locale}): invalid sequence mode")
+        if not isinstance(order, list) or len(order) < 2:
+            errors.append(
+                f"Level {level_num} ({locale}): correctOrder must contain at least 2 items"
+            )
+            continue
+        ids = [item.get("id") for item in order if isinstance(item, dict)]
+        if len(ids) != len(set(ids)):
+            errors.append(f"Level {level_num} ({locale}): duplicate sequence item IDs")
+        if not isinstance(rule, dict) or not rule.get("type"):
+            errors.append(f"Level {level_num} ({locale}): sequence rule required")
+        if mode == "missingItem" and not loc_data.get("missingIndices"):
+            errors.append(
+                f"Level {level_num} ({locale}): missingItem mode requires missingIndices"
+            )
+    return errors
+
+
+def validate_placement_content(content: dict, level_num: int) -> list[str]:
+    """Validate Placement Engine localized content."""
+    errors = []
+    for locale, loc_data in content.items():
+        if not isinstance(loc_data, dict):
+            continue
+        items = loc_data.get("items")
+        targets = loc_data.get("targets")
+        if not isinstance(items, list) or not items:
+            errors.append(f"Level {level_num} ({locale}): placement items required")
+            continue
+        if not isinstance(targets, list) or not targets:
+            errors.append(f"Level {level_num} ({locale}): placement targets required")
+            continue
+        target_ids = {
+            target.get("id") for target in targets if isinstance(target, dict)
+        }
+        item_ids = set()
+        for item in items:
+            if not isinstance(item, dict):
+                errors.append(f"Level {level_num} ({locale}): item must be a map")
+                continue
+            item_id = item.get("id")
+            if item_id in item_ids:
+                errors.append(
+                    f"Level {level_num} ({locale}): duplicate item ID {item_id}"
+                )
+            item_ids.add(item_id)
+            accepted = item.get("acceptedTargetIds")
+            if not isinstance(accepted, list) or not set(accepted) & target_ids:
+                errors.append(
+                    f"Level {level_num} ({locale}): item {item_id} has no valid target"
+                )
+    return errors
+
+
+def validate_matching_content(content: dict, level_num: int) -> list[str]:
+    """Validate Matching Engine localized content."""
+    errors = []
+    for locale, loc_data in content.items():
+        if not isinstance(loc_data, dict):
+            continue
+        pairs = loc_data.get("pairs")
+        if not isinstance(pairs, list) or len(pairs) < 2:
+            errors.append(
+                f"Level {level_num} ({locale}): matching pairs must contain at least 2 pairs"
+            )
+            continue
+        left_ids = []
+        right_ids = []
+        for pair in pairs:
+            if not isinstance(pair, dict):
+                errors.append(f"Level {level_num} ({locale}): pair must be a map")
+                continue
+            left = pair.get("left", {})
+            right = pair.get("right", {})
+            left_ids.append(left.get("id"))
+            right_ids.append(right.get("id"))
+        if len(left_ids) != len(set(left_ids)):
+            errors.append(f"Level {level_num} ({locale}): duplicate left IDs")
+        if len(right_ids) != len(set(right_ids)):
+            errors.append(f"Level {level_num} ({locale}): duplicate right IDs")
+    return errors
+
+
 def validate_robot_commands_level(level: dict, level_num: int) -> list[str]:
     """Validate Robot Commands grid and command content."""
     errors = []
@@ -414,6 +560,23 @@ def validate_game_file(path: Path, game_id: str) -> list[str]:
         return errors
     if game_id == "robot_commands" and len(levels) < 10:
         errors.append(f"{path.name}: Robot Commands must contain at least 10 levels")
+    minimums = {
+        "category_collector": 60,
+        "pattern_parade": 60,
+        "shape_builder": 45,
+        "word_sorter": 60,
+        "number_balance": 60,
+        "logic_detective": 45,
+        "story_steps": 45,
+    }
+    if game_id in minimums and len(levels) < minimums[game_id]:
+        errors.append(
+            f"{path.name}: {game_id} must contain at least {minimums[game_id]} levels"
+        )
+    if game_id in minimums:
+        tiers = {level.get("difficulty") for level in levels}
+        if not ({1, 3, 5} <= tiers):
+            errors.append(f"{path.name}: {game_id} must contain three difficulty tiers")
 
     level_ids = set()
     for i, level in enumerate(levels):
@@ -461,6 +624,34 @@ def validate_game_file(path: Path, game_id: str) -> list[str]:
             errors.extend(
                 validate_robot_commands_level(
                     level,
+                    level.get("levelNumber", i + 1),
+                )
+            )
+        elif game_id in {"category_collector", "logic_detective"}:
+            errors.extend(
+                validate_multi_select_content(
+                    level.get("localizedContent", {}),
+                    level.get("levelNumber", i + 1),
+                )
+            )
+        elif game_id in {"pattern_parade", "story_steps"}:
+            errors.extend(
+                validate_sequence_content(
+                    level.get("localizedContent", {}),
+                    level.get("levelNumber", i + 1),
+                )
+            )
+        elif game_id in {"shape_builder", "word_sorter"}:
+            errors.extend(
+                validate_placement_content(
+                    level.get("localizedContent", {}),
+                    level.get("levelNumber", i + 1),
+                )
+            )
+        elif game_id == "number_balance":
+            errors.extend(
+                validate_matching_content(
+                    level.get("localizedContent", {}),
                     level.get("levelNumber", i + 1),
                 )
             )
@@ -554,6 +745,48 @@ def main():
         / "assets"
         / "levels"
         / "robot_commands.json",
+        "category_collector": PROJECT_ROOT
+        / "apps"
+        / "mobile"
+        / "assets"
+        / "levels"
+        / "category_collector.json",
+        "pattern_parade": PROJECT_ROOT
+        / "apps"
+        / "mobile"
+        / "assets"
+        / "levels"
+        / "pattern_parade.json",
+        "shape_builder": PROJECT_ROOT
+        / "apps"
+        / "mobile"
+        / "assets"
+        / "levels"
+        / "shape_builder.json",
+        "word_sorter": PROJECT_ROOT
+        / "apps"
+        / "mobile"
+        / "assets"
+        / "levels"
+        / "word_sorter.json",
+        "number_balance": PROJECT_ROOT
+        / "apps"
+        / "mobile"
+        / "assets"
+        / "levels"
+        / "number_balance.json",
+        "logic_detective": PROJECT_ROOT
+        / "apps"
+        / "mobile"
+        / "assets"
+        / "levels"
+        / "logic_detective.json",
+        "story_steps": PROJECT_ROOT
+        / "apps"
+        / "mobile"
+        / "assets"
+        / "levels"
+        / "story_steps.json",
     }
 
     all_errors = []

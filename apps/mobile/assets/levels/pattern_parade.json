@@ -1,0 +1,7506 @@
+{
+  "schemaVersion": "1.0",
+  "gameId": "pattern_parade",
+  "levels": [
+    {
+      "id": "pp-lv001",
+      "gameId": "pattern_parade",
+      "levelNumber": 1,
+      "difficulty": 1,
+      "learningObjective": "pattern recognition",
+      "localizedContent": {
+        "en": {
+          "prompt": "Choose the missing pattern item.",
+          "mode": "missingItem",
+          "correctOrder": [
+            {
+              "id": "i0",
+              "content": "red",
+              "type": "text"
+            },
+            {
+              "id": "i1",
+              "content": "blue",
+              "type": "text"
+            },
+            {
+              "id": "i2",
+              "content": "red",
+              "type": "text"
+            },
+            {
+              "id": "i3",
+              "content": "blue",
+              "type": "text"
+            }
+          ],
+          "missingIndices": [
+            3
+          ],
+          "choices": [
+            {
+              "id": "x1",
+              "content": "star",
+              "type": "text"
+            },
+            {
+              "id": "x2",
+              "content": "11",
+              "type": "number"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Look at how the sequence changes."
+        },
+        "vi": {
+          "prompt": "Chon muc con thieu trong mau hinh.",
+          "mode": "missingItem",
+          "correctOrder": [
+            {
+              "id": "i0",
+              "content": "red",
+              "type": "text"
+            },
+            {
+              "id": "i1",
+              "content": "blue",
+              "type": "text"
+            },
+            {
+              "id": "i2",
+              "content": "red",
+              "type": "text"
+            },
+            {
+              "id": "i3",
+              "content": "blue",
+              "type": "text"
+            }
+          ],
+          "missingIndices": [
+            3
+          ],
+          "choices": [
+            {
+              "id": "x1",
+              "content": "star",
+              "type": "text"
+            },
+            {
+              "id": "x2",
+              "content": "11",
+              "type": "number"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Quan sat cach day thay doi."
+        }
+      },
+      "hints": [
+        {
+          "text": "Quan sat cach day thay doi."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "junior",
+        "skillIds": [
+          "logic.pattern.recognition"
+        ],
+        "generatedBy": "games_9_15_generator",
+        "generatorSeed": 20260719,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "pp-lv002",
+      "gameId": "pattern_parade",
+      "levelNumber": 2,
+      "difficulty": 1,
+      "learningObjective": "pattern recognition",
+      "localizedContent": {
+        "en": {
+          "prompt": "Choose the missing pattern item.",
+          "mode": "missingItem",
+          "correctOrder": [
+            {
+              "id": "i0",
+              "content": "red",
+              "type": "text"
+            },
+            {
+              "id": "i1",
+              "content": "blue",
+              "type": "text"
+            },
+            {
+              "id": "i2",
+              "content": "red",
+              "type": "text"
+            },
+            {
+              "id": "i3",
+              "content": "blue",
+              "type": "text"
+            }
+          ],
+          "missingIndices": [
+            3
+          ],
+          "choices": [
+            {
+              "id": "x1",
+              "content": "star",
+              "type": "text"
+            },
+            {
+              "id": "x2",
+              "content": "11",
+              "type": "number"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Look at how the sequence changes."
+        },
+        "vi": {
+          "prompt": "Chon muc con thieu trong mau hinh.",
+          "mode": "missingItem",
+          "correctOrder": [
+            {
+              "id": "i0",
+              "content": "red",
+              "type": "text"
+            },
+            {
+              "id": "i1",
+              "content": "blue",
+              "type": "text"
+            },
+            {
+              "id": "i2",
+              "content": "red",
+              "type": "text"
+            },
+            {
+              "id": "i3",
+              "content": "blue",
+              "type": "text"
+            }
+          ],
+          "missingIndices": [
+            3
+          ],
+          "choices": [
+            {
+              "id": "x1",
+              "content": "star",
+              "type": "text"
+            },
+            {
+              "id": "x2",
+              "content": "11",
+              "type": "number"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Quan sat cach day thay doi."
+        }
+      },
+      "hints": [
+        {
+          "text": "Quan sat cach day thay doi."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "junior",
+        "skillIds": [
+          "logic.pattern.recognition"
+        ],
+        "generatedBy": "games_9_15_generator",
+        "generatorSeed": 20260719,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "pp-lv003",
+      "gameId": "pattern_parade",
+      "levelNumber": 3,
+      "difficulty": 1,
+      "learningObjective": "pattern recognition",
+      "localizedContent": {
+        "en": {
+          "prompt": "Choose the missing pattern item.",
+          "mode": "missingItem",
+          "correctOrder": [
+            {
+              "id": "i0",
+              "content": "red",
+              "type": "text"
+            },
+            {
+              "id": "i1",
+              "content": "blue",
+              "type": "text"
+            },
+            {
+              "id": "i2",
+              "content": "red",
+              "type": "text"
+            },
+            {
+              "id": "i3",
+              "content": "blue",
+              "type": "text"
+            }
+          ],
+          "missingIndices": [
+            3
+          ],
+          "choices": [
+            {
+              "id": "x1",
+              "content": "star",
+              "type": "text"
+            },
+            {
+              "id": "x2",
+              "content": "11",
+              "type": "number"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Look at how the sequence changes."
+        },
+        "vi": {
+          "prompt": "Chon muc con thieu trong mau hinh.",
+          "mode": "missingItem",
+          "correctOrder": [
+            {
+              "id": "i0",
+              "content": "red",
+              "type": "text"
+            },
+            {
+              "id": "i1",
+              "content": "blue",
+              "type": "text"
+            },
+            {
+              "id": "i2",
+              "content": "red",
+              "type": "text"
+            },
+            {
+              "id": "i3",
+              "content": "blue",
+              "type": "text"
+            }
+          ],
+          "missingIndices": [
+            3
+          ],
+          "choices": [
+            {
+              "id": "x1",
+              "content": "star",
+              "type": "text"
+            },
+            {
+              "id": "x2",
+              "content": "11",
+              "type": "number"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Quan sat cach day thay doi."
+        }
+      },
+      "hints": [
+        {
+          "text": "Quan sat cach day thay doi."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "junior",
+        "skillIds": [
+          "logic.pattern.recognition"
+        ],
+        "generatedBy": "games_9_15_generator",
+        "generatorSeed": 20260719,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "pp-lv004",
+      "gameId": "pattern_parade",
+      "levelNumber": 4,
+      "difficulty": 1,
+      "learningObjective": "pattern recognition",
+      "localizedContent": {
+        "en": {
+          "prompt": "Choose the missing pattern item.",
+          "mode": "missingItem",
+          "correctOrder": [
+            {
+              "id": "i0",
+              "content": "red",
+              "type": "text"
+            },
+            {
+              "id": "i1",
+              "content": "blue",
+              "type": "text"
+            },
+            {
+              "id": "i2",
+              "content": "red",
+              "type": "text"
+            },
+            {
+              "id": "i3",
+              "content": "blue",
+              "type": "text"
+            }
+          ],
+          "missingIndices": [
+            3
+          ],
+          "choices": [
+            {
+              "id": "x1",
+              "content": "star",
+              "type": "text"
+            },
+            {
+              "id": "x2",
+              "content": "11",
+              "type": "number"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Look at how the sequence changes."
+        },
+        "vi": {
+          "prompt": "Chon muc con thieu trong mau hinh.",
+          "mode": "missingItem",
+          "correctOrder": [
+            {
+              "id": "i0",
+              "content": "red",
+              "type": "text"
+            },
+            {
+              "id": "i1",
+              "content": "blue",
+              "type": "text"
+            },
+            {
+              "id": "i2",
+              "content": "red",
+              "type": "text"
+            },
+            {
+              "id": "i3",
+              "content": "blue",
+              "type": "text"
+            }
+          ],
+          "missingIndices": [
+            3
+          ],
+          "choices": [
+            {
+              "id": "x1",
+              "content": "star",
+              "type": "text"
+            },
+            {
+              "id": "x2",
+              "content": "11",
+              "type": "number"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Quan sat cach day thay doi."
+        }
+      },
+      "hints": [
+        {
+          "text": "Quan sat cach day thay doi."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "junior",
+        "skillIds": [
+          "logic.pattern.recognition"
+        ],
+        "generatedBy": "games_9_15_generator",
+        "generatorSeed": 20260719,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "pp-lv005",
+      "gameId": "pattern_parade",
+      "levelNumber": 5,
+      "difficulty": 1,
+      "learningObjective": "pattern recognition",
+      "localizedContent": {
+        "en": {
+          "prompt": "Choose the missing pattern item.",
+          "mode": "missingItem",
+          "correctOrder": [
+            {
+              "id": "i0",
+              "content": "red",
+              "type": "text"
+            },
+            {
+              "id": "i1",
+              "content": "blue",
+              "type": "text"
+            },
+            {
+              "id": "i2",
+              "content": "red",
+              "type": "text"
+            },
+            {
+              "id": "i3",
+              "content": "blue",
+              "type": "text"
+            }
+          ],
+          "missingIndices": [
+            3
+          ],
+          "choices": [
+            {
+              "id": "x1",
+              "content": "star",
+              "type": "text"
+            },
+            {
+              "id": "x2",
+              "content": "11",
+              "type": "number"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Look at how the sequence changes."
+        },
+        "vi": {
+          "prompt": "Chon muc con thieu trong mau hinh.",
+          "mode": "missingItem",
+          "correctOrder": [
+            {
+              "id": "i0",
+              "content": "red",
+              "type": "text"
+            },
+            {
+              "id": "i1",
+              "content": "blue",
+              "type": "text"
+            },
+            {
+              "id": "i2",
+              "content": "red",
+              "type": "text"
+            },
+            {
+              "id": "i3",
+              "content": "blue",
+              "type": "text"
+            }
+          ],
+          "missingIndices": [
+            3
+          ],
+          "choices": [
+            {
+              "id": "x1",
+              "content": "star",
+              "type": "text"
+            },
+            {
+              "id": "x2",
+              "content": "11",
+              "type": "number"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Quan sat cach day thay doi."
+        }
+      },
+      "hints": [
+        {
+          "text": "Quan sat cach day thay doi."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "junior",
+        "skillIds": [
+          "logic.pattern.recognition"
+        ],
+        "generatedBy": "games_9_15_generator",
+        "generatorSeed": 20260719,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "pp-lv006",
+      "gameId": "pattern_parade",
+      "levelNumber": 6,
+      "difficulty": 1,
+      "learningObjective": "pattern recognition",
+      "localizedContent": {
+        "en": {
+          "prompt": "Choose the missing pattern item.",
+          "mode": "missingItem",
+          "correctOrder": [
+            {
+              "id": "i0",
+              "content": "red",
+              "type": "text"
+            },
+            {
+              "id": "i1",
+              "content": "blue",
+              "type": "text"
+            },
+            {
+              "id": "i2",
+              "content": "red",
+              "type": "text"
+            },
+            {
+              "id": "i3",
+              "content": "blue",
+              "type": "text"
+            }
+          ],
+          "missingIndices": [
+            3
+          ],
+          "choices": [
+            {
+              "id": "x1",
+              "content": "star",
+              "type": "text"
+            },
+            {
+              "id": "x2",
+              "content": "11",
+              "type": "number"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Look at how the sequence changes."
+        },
+        "vi": {
+          "prompt": "Chon muc con thieu trong mau hinh.",
+          "mode": "missingItem",
+          "correctOrder": [
+            {
+              "id": "i0",
+              "content": "red",
+              "type": "text"
+            },
+            {
+              "id": "i1",
+              "content": "blue",
+              "type": "text"
+            },
+            {
+              "id": "i2",
+              "content": "red",
+              "type": "text"
+            },
+            {
+              "id": "i3",
+              "content": "blue",
+              "type": "text"
+            }
+          ],
+          "missingIndices": [
+            3
+          ],
+          "choices": [
+            {
+              "id": "x1",
+              "content": "star",
+              "type": "text"
+            },
+            {
+              "id": "x2",
+              "content": "11",
+              "type": "number"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Quan sat cach day thay doi."
+        }
+      },
+      "hints": [
+        {
+          "text": "Quan sat cach day thay doi."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "junior",
+        "skillIds": [
+          "logic.pattern.recognition"
+        ],
+        "generatedBy": "games_9_15_generator",
+        "generatorSeed": 20260719,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "pp-lv007",
+      "gameId": "pattern_parade",
+      "levelNumber": 7,
+      "difficulty": 1,
+      "learningObjective": "pattern recognition",
+      "localizedContent": {
+        "en": {
+          "prompt": "Choose the missing pattern item.",
+          "mode": "missingItem",
+          "correctOrder": [
+            {
+              "id": "i0",
+              "content": "red",
+              "type": "text"
+            },
+            {
+              "id": "i1",
+              "content": "blue",
+              "type": "text"
+            },
+            {
+              "id": "i2",
+              "content": "red",
+              "type": "text"
+            },
+            {
+              "id": "i3",
+              "content": "blue",
+              "type": "text"
+            }
+          ],
+          "missingIndices": [
+            3
+          ],
+          "choices": [
+            {
+              "id": "x1",
+              "content": "star",
+              "type": "text"
+            },
+            {
+              "id": "x2",
+              "content": "11",
+              "type": "number"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Look at how the sequence changes."
+        },
+        "vi": {
+          "prompt": "Chon muc con thieu trong mau hinh.",
+          "mode": "missingItem",
+          "correctOrder": [
+            {
+              "id": "i0",
+              "content": "red",
+              "type": "text"
+            },
+            {
+              "id": "i1",
+              "content": "blue",
+              "type": "text"
+            },
+            {
+              "id": "i2",
+              "content": "red",
+              "type": "text"
+            },
+            {
+              "id": "i3",
+              "content": "blue",
+              "type": "text"
+            }
+          ],
+          "missingIndices": [
+            3
+          ],
+          "choices": [
+            {
+              "id": "x1",
+              "content": "star",
+              "type": "text"
+            },
+            {
+              "id": "x2",
+              "content": "11",
+              "type": "number"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Quan sat cach day thay doi."
+        }
+      },
+      "hints": [
+        {
+          "text": "Quan sat cach day thay doi."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "junior",
+        "skillIds": [
+          "logic.pattern.recognition"
+        ],
+        "generatedBy": "games_9_15_generator",
+        "generatorSeed": 20260719,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "pp-lv008",
+      "gameId": "pattern_parade",
+      "levelNumber": 8,
+      "difficulty": 1,
+      "learningObjective": "pattern recognition",
+      "localizedContent": {
+        "en": {
+          "prompt": "Choose the missing pattern item.",
+          "mode": "missingItem",
+          "correctOrder": [
+            {
+              "id": "i0",
+              "content": "red",
+              "type": "text"
+            },
+            {
+              "id": "i1",
+              "content": "blue",
+              "type": "text"
+            },
+            {
+              "id": "i2",
+              "content": "red",
+              "type": "text"
+            },
+            {
+              "id": "i3",
+              "content": "blue",
+              "type": "text"
+            }
+          ],
+          "missingIndices": [
+            3
+          ],
+          "choices": [
+            {
+              "id": "x1",
+              "content": "star",
+              "type": "text"
+            },
+            {
+              "id": "x2",
+              "content": "11",
+              "type": "number"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Look at how the sequence changes."
+        },
+        "vi": {
+          "prompt": "Chon muc con thieu trong mau hinh.",
+          "mode": "missingItem",
+          "correctOrder": [
+            {
+              "id": "i0",
+              "content": "red",
+              "type": "text"
+            },
+            {
+              "id": "i1",
+              "content": "blue",
+              "type": "text"
+            },
+            {
+              "id": "i2",
+              "content": "red",
+              "type": "text"
+            },
+            {
+              "id": "i3",
+              "content": "blue",
+              "type": "text"
+            }
+          ],
+          "missingIndices": [
+            3
+          ],
+          "choices": [
+            {
+              "id": "x1",
+              "content": "star",
+              "type": "text"
+            },
+            {
+              "id": "x2",
+              "content": "11",
+              "type": "number"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Quan sat cach day thay doi."
+        }
+      },
+      "hints": [
+        {
+          "text": "Quan sat cach day thay doi."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "junior",
+        "skillIds": [
+          "logic.pattern.recognition"
+        ],
+        "generatedBy": "games_9_15_generator",
+        "generatorSeed": 20260719,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "pp-lv009",
+      "gameId": "pattern_parade",
+      "levelNumber": 9,
+      "difficulty": 1,
+      "learningObjective": "pattern recognition",
+      "localizedContent": {
+        "en": {
+          "prompt": "Choose the missing pattern item.",
+          "mode": "missingItem",
+          "correctOrder": [
+            {
+              "id": "i0",
+              "content": "red",
+              "type": "text"
+            },
+            {
+              "id": "i1",
+              "content": "blue",
+              "type": "text"
+            },
+            {
+              "id": "i2",
+              "content": "red",
+              "type": "text"
+            },
+            {
+              "id": "i3",
+              "content": "blue",
+              "type": "text"
+            }
+          ],
+          "missingIndices": [
+            3
+          ],
+          "choices": [
+            {
+              "id": "x1",
+              "content": "star",
+              "type": "text"
+            },
+            {
+              "id": "x2",
+              "content": "11",
+              "type": "number"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Look at how the sequence changes."
+        },
+        "vi": {
+          "prompt": "Chon muc con thieu trong mau hinh.",
+          "mode": "missingItem",
+          "correctOrder": [
+            {
+              "id": "i0",
+              "content": "red",
+              "type": "text"
+            },
+            {
+              "id": "i1",
+              "content": "blue",
+              "type": "text"
+            },
+            {
+              "id": "i2",
+              "content": "red",
+              "type": "text"
+            },
+            {
+              "id": "i3",
+              "content": "blue",
+              "type": "text"
+            }
+          ],
+          "missingIndices": [
+            3
+          ],
+          "choices": [
+            {
+              "id": "x1",
+              "content": "star",
+              "type": "text"
+            },
+            {
+              "id": "x2",
+              "content": "11",
+              "type": "number"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Quan sat cach day thay doi."
+        }
+      },
+      "hints": [
+        {
+          "text": "Quan sat cach day thay doi."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "junior",
+        "skillIds": [
+          "logic.pattern.recognition"
+        ],
+        "generatedBy": "games_9_15_generator",
+        "generatorSeed": 20260719,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "pp-lv010",
+      "gameId": "pattern_parade",
+      "levelNumber": 10,
+      "difficulty": 1,
+      "learningObjective": "pattern recognition",
+      "localizedContent": {
+        "en": {
+          "prompt": "Choose the missing pattern item.",
+          "mode": "missingItem",
+          "correctOrder": [
+            {
+              "id": "i0",
+              "content": "red",
+              "type": "text"
+            },
+            {
+              "id": "i1",
+              "content": "blue",
+              "type": "text"
+            },
+            {
+              "id": "i2",
+              "content": "red",
+              "type": "text"
+            },
+            {
+              "id": "i3",
+              "content": "blue",
+              "type": "text"
+            }
+          ],
+          "missingIndices": [
+            3
+          ],
+          "choices": [
+            {
+              "id": "x1",
+              "content": "star",
+              "type": "text"
+            },
+            {
+              "id": "x2",
+              "content": "11",
+              "type": "number"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Look at how the sequence changes."
+        },
+        "vi": {
+          "prompt": "Chon muc con thieu trong mau hinh.",
+          "mode": "missingItem",
+          "correctOrder": [
+            {
+              "id": "i0",
+              "content": "red",
+              "type": "text"
+            },
+            {
+              "id": "i1",
+              "content": "blue",
+              "type": "text"
+            },
+            {
+              "id": "i2",
+              "content": "red",
+              "type": "text"
+            },
+            {
+              "id": "i3",
+              "content": "blue",
+              "type": "text"
+            }
+          ],
+          "missingIndices": [
+            3
+          ],
+          "choices": [
+            {
+              "id": "x1",
+              "content": "star",
+              "type": "text"
+            },
+            {
+              "id": "x2",
+              "content": "11",
+              "type": "number"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Quan sat cach day thay doi."
+        }
+      },
+      "hints": [
+        {
+          "text": "Quan sat cach day thay doi."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "junior",
+        "skillIds": [
+          "logic.pattern.recognition"
+        ],
+        "generatedBy": "games_9_15_generator",
+        "generatorSeed": 20260719,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "pp-lv011",
+      "gameId": "pattern_parade",
+      "levelNumber": 11,
+      "difficulty": 1,
+      "learningObjective": "pattern recognition",
+      "localizedContent": {
+        "en": {
+          "prompt": "Choose the missing pattern item.",
+          "mode": "missingItem",
+          "correctOrder": [
+            {
+              "id": "i0",
+              "content": "red",
+              "type": "text"
+            },
+            {
+              "id": "i1",
+              "content": "blue",
+              "type": "text"
+            },
+            {
+              "id": "i2",
+              "content": "red",
+              "type": "text"
+            },
+            {
+              "id": "i3",
+              "content": "blue",
+              "type": "text"
+            }
+          ],
+          "missingIndices": [
+            3
+          ],
+          "choices": [
+            {
+              "id": "x1",
+              "content": "star",
+              "type": "text"
+            },
+            {
+              "id": "x2",
+              "content": "11",
+              "type": "number"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Look at how the sequence changes."
+        },
+        "vi": {
+          "prompt": "Chon muc con thieu trong mau hinh.",
+          "mode": "missingItem",
+          "correctOrder": [
+            {
+              "id": "i0",
+              "content": "red",
+              "type": "text"
+            },
+            {
+              "id": "i1",
+              "content": "blue",
+              "type": "text"
+            },
+            {
+              "id": "i2",
+              "content": "red",
+              "type": "text"
+            },
+            {
+              "id": "i3",
+              "content": "blue",
+              "type": "text"
+            }
+          ],
+          "missingIndices": [
+            3
+          ],
+          "choices": [
+            {
+              "id": "x1",
+              "content": "star",
+              "type": "text"
+            },
+            {
+              "id": "x2",
+              "content": "11",
+              "type": "number"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Quan sat cach day thay doi."
+        }
+      },
+      "hints": [
+        {
+          "text": "Quan sat cach day thay doi."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "junior",
+        "skillIds": [
+          "logic.pattern.recognition"
+        ],
+        "generatedBy": "games_9_15_generator",
+        "generatorSeed": 20260719,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "pp-lv012",
+      "gameId": "pattern_parade",
+      "levelNumber": 12,
+      "difficulty": 1,
+      "learningObjective": "pattern recognition",
+      "localizedContent": {
+        "en": {
+          "prompt": "Choose the missing pattern item.",
+          "mode": "missingItem",
+          "correctOrder": [
+            {
+              "id": "i0",
+              "content": "red",
+              "type": "text"
+            },
+            {
+              "id": "i1",
+              "content": "blue",
+              "type": "text"
+            },
+            {
+              "id": "i2",
+              "content": "red",
+              "type": "text"
+            },
+            {
+              "id": "i3",
+              "content": "blue",
+              "type": "text"
+            }
+          ],
+          "missingIndices": [
+            3
+          ],
+          "choices": [
+            {
+              "id": "x1",
+              "content": "star",
+              "type": "text"
+            },
+            {
+              "id": "x2",
+              "content": "11",
+              "type": "number"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Look at how the sequence changes."
+        },
+        "vi": {
+          "prompt": "Chon muc con thieu trong mau hinh.",
+          "mode": "missingItem",
+          "correctOrder": [
+            {
+              "id": "i0",
+              "content": "red",
+              "type": "text"
+            },
+            {
+              "id": "i1",
+              "content": "blue",
+              "type": "text"
+            },
+            {
+              "id": "i2",
+              "content": "red",
+              "type": "text"
+            },
+            {
+              "id": "i3",
+              "content": "blue",
+              "type": "text"
+            }
+          ],
+          "missingIndices": [
+            3
+          ],
+          "choices": [
+            {
+              "id": "x1",
+              "content": "star",
+              "type": "text"
+            },
+            {
+              "id": "x2",
+              "content": "11",
+              "type": "number"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Quan sat cach day thay doi."
+        }
+      },
+      "hints": [
+        {
+          "text": "Quan sat cach day thay doi."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "junior",
+        "skillIds": [
+          "logic.pattern.recognition"
+        ],
+        "generatedBy": "games_9_15_generator",
+        "generatorSeed": 20260719,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "pp-lv013",
+      "gameId": "pattern_parade",
+      "levelNumber": 13,
+      "difficulty": 1,
+      "learningObjective": "pattern recognition",
+      "localizedContent": {
+        "en": {
+          "prompt": "Choose the missing pattern item.",
+          "mode": "missingItem",
+          "correctOrder": [
+            {
+              "id": "i0",
+              "content": "red",
+              "type": "text"
+            },
+            {
+              "id": "i1",
+              "content": "blue",
+              "type": "text"
+            },
+            {
+              "id": "i2",
+              "content": "red",
+              "type": "text"
+            },
+            {
+              "id": "i3",
+              "content": "blue",
+              "type": "text"
+            }
+          ],
+          "missingIndices": [
+            3
+          ],
+          "choices": [
+            {
+              "id": "x1",
+              "content": "star",
+              "type": "text"
+            },
+            {
+              "id": "x2",
+              "content": "11",
+              "type": "number"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Look at how the sequence changes."
+        },
+        "vi": {
+          "prompt": "Chon muc con thieu trong mau hinh.",
+          "mode": "missingItem",
+          "correctOrder": [
+            {
+              "id": "i0",
+              "content": "red",
+              "type": "text"
+            },
+            {
+              "id": "i1",
+              "content": "blue",
+              "type": "text"
+            },
+            {
+              "id": "i2",
+              "content": "red",
+              "type": "text"
+            },
+            {
+              "id": "i3",
+              "content": "blue",
+              "type": "text"
+            }
+          ],
+          "missingIndices": [
+            3
+          ],
+          "choices": [
+            {
+              "id": "x1",
+              "content": "star",
+              "type": "text"
+            },
+            {
+              "id": "x2",
+              "content": "11",
+              "type": "number"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Quan sat cach day thay doi."
+        }
+      },
+      "hints": [
+        {
+          "text": "Quan sat cach day thay doi."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "junior",
+        "skillIds": [
+          "logic.pattern.recognition"
+        ],
+        "generatedBy": "games_9_15_generator",
+        "generatorSeed": 20260719,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "pp-lv014",
+      "gameId": "pattern_parade",
+      "levelNumber": 14,
+      "difficulty": 1,
+      "learningObjective": "pattern recognition",
+      "localizedContent": {
+        "en": {
+          "prompt": "Choose the missing pattern item.",
+          "mode": "missingItem",
+          "correctOrder": [
+            {
+              "id": "i0",
+              "content": "red",
+              "type": "text"
+            },
+            {
+              "id": "i1",
+              "content": "blue",
+              "type": "text"
+            },
+            {
+              "id": "i2",
+              "content": "red",
+              "type": "text"
+            },
+            {
+              "id": "i3",
+              "content": "blue",
+              "type": "text"
+            }
+          ],
+          "missingIndices": [
+            3
+          ],
+          "choices": [
+            {
+              "id": "x1",
+              "content": "star",
+              "type": "text"
+            },
+            {
+              "id": "x2",
+              "content": "11",
+              "type": "number"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Look at how the sequence changes."
+        },
+        "vi": {
+          "prompt": "Chon muc con thieu trong mau hinh.",
+          "mode": "missingItem",
+          "correctOrder": [
+            {
+              "id": "i0",
+              "content": "red",
+              "type": "text"
+            },
+            {
+              "id": "i1",
+              "content": "blue",
+              "type": "text"
+            },
+            {
+              "id": "i2",
+              "content": "red",
+              "type": "text"
+            },
+            {
+              "id": "i3",
+              "content": "blue",
+              "type": "text"
+            }
+          ],
+          "missingIndices": [
+            3
+          ],
+          "choices": [
+            {
+              "id": "x1",
+              "content": "star",
+              "type": "text"
+            },
+            {
+              "id": "x2",
+              "content": "11",
+              "type": "number"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Quan sat cach day thay doi."
+        }
+      },
+      "hints": [
+        {
+          "text": "Quan sat cach day thay doi."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "junior",
+        "skillIds": [
+          "logic.pattern.recognition"
+        ],
+        "generatedBy": "games_9_15_generator",
+        "generatorSeed": 20260719,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "pp-lv015",
+      "gameId": "pattern_parade",
+      "levelNumber": 15,
+      "difficulty": 1,
+      "learningObjective": "pattern recognition",
+      "localizedContent": {
+        "en": {
+          "prompt": "Choose the missing pattern item.",
+          "mode": "missingItem",
+          "correctOrder": [
+            {
+              "id": "i0",
+              "content": "red",
+              "type": "text"
+            },
+            {
+              "id": "i1",
+              "content": "blue",
+              "type": "text"
+            },
+            {
+              "id": "i2",
+              "content": "red",
+              "type": "text"
+            },
+            {
+              "id": "i3",
+              "content": "blue",
+              "type": "text"
+            }
+          ],
+          "missingIndices": [
+            3
+          ],
+          "choices": [
+            {
+              "id": "x1",
+              "content": "star",
+              "type": "text"
+            },
+            {
+              "id": "x2",
+              "content": "11",
+              "type": "number"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Look at how the sequence changes."
+        },
+        "vi": {
+          "prompt": "Chon muc con thieu trong mau hinh.",
+          "mode": "missingItem",
+          "correctOrder": [
+            {
+              "id": "i0",
+              "content": "red",
+              "type": "text"
+            },
+            {
+              "id": "i1",
+              "content": "blue",
+              "type": "text"
+            },
+            {
+              "id": "i2",
+              "content": "red",
+              "type": "text"
+            },
+            {
+              "id": "i3",
+              "content": "blue",
+              "type": "text"
+            }
+          ],
+          "missingIndices": [
+            3
+          ],
+          "choices": [
+            {
+              "id": "x1",
+              "content": "star",
+              "type": "text"
+            },
+            {
+              "id": "x2",
+              "content": "11",
+              "type": "number"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Quan sat cach day thay doi."
+        }
+      },
+      "hints": [
+        {
+          "text": "Quan sat cach day thay doi."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "junior",
+        "skillIds": [
+          "logic.pattern.recognition"
+        ],
+        "generatedBy": "games_9_15_generator",
+        "generatorSeed": 20260719,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "pp-lv016",
+      "gameId": "pattern_parade",
+      "levelNumber": 16,
+      "difficulty": 1,
+      "learningObjective": "pattern recognition",
+      "localizedContent": {
+        "en": {
+          "prompt": "Choose the missing pattern item.",
+          "mode": "missingItem",
+          "correctOrder": [
+            {
+              "id": "i0",
+              "content": "red",
+              "type": "text"
+            },
+            {
+              "id": "i1",
+              "content": "blue",
+              "type": "text"
+            },
+            {
+              "id": "i2",
+              "content": "red",
+              "type": "text"
+            },
+            {
+              "id": "i3",
+              "content": "blue",
+              "type": "text"
+            }
+          ],
+          "missingIndices": [
+            3
+          ],
+          "choices": [
+            {
+              "id": "x1",
+              "content": "star",
+              "type": "text"
+            },
+            {
+              "id": "x2",
+              "content": "11",
+              "type": "number"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Look at how the sequence changes."
+        },
+        "vi": {
+          "prompt": "Chon muc con thieu trong mau hinh.",
+          "mode": "missingItem",
+          "correctOrder": [
+            {
+              "id": "i0",
+              "content": "red",
+              "type": "text"
+            },
+            {
+              "id": "i1",
+              "content": "blue",
+              "type": "text"
+            },
+            {
+              "id": "i2",
+              "content": "red",
+              "type": "text"
+            },
+            {
+              "id": "i3",
+              "content": "blue",
+              "type": "text"
+            }
+          ],
+          "missingIndices": [
+            3
+          ],
+          "choices": [
+            {
+              "id": "x1",
+              "content": "star",
+              "type": "text"
+            },
+            {
+              "id": "x2",
+              "content": "11",
+              "type": "number"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Quan sat cach day thay doi."
+        }
+      },
+      "hints": [
+        {
+          "text": "Quan sat cach day thay doi."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "junior",
+        "skillIds": [
+          "logic.pattern.recognition"
+        ],
+        "generatedBy": "games_9_15_generator",
+        "generatorSeed": 20260719,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "pp-lv017",
+      "gameId": "pattern_parade",
+      "levelNumber": 17,
+      "difficulty": 1,
+      "learningObjective": "pattern recognition",
+      "localizedContent": {
+        "en": {
+          "prompt": "Choose the missing pattern item.",
+          "mode": "missingItem",
+          "correctOrder": [
+            {
+              "id": "i0",
+              "content": "red",
+              "type": "text"
+            },
+            {
+              "id": "i1",
+              "content": "blue",
+              "type": "text"
+            },
+            {
+              "id": "i2",
+              "content": "red",
+              "type": "text"
+            },
+            {
+              "id": "i3",
+              "content": "blue",
+              "type": "text"
+            }
+          ],
+          "missingIndices": [
+            3
+          ],
+          "choices": [
+            {
+              "id": "x1",
+              "content": "star",
+              "type": "text"
+            },
+            {
+              "id": "x2",
+              "content": "11",
+              "type": "number"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Look at how the sequence changes."
+        },
+        "vi": {
+          "prompt": "Chon muc con thieu trong mau hinh.",
+          "mode": "missingItem",
+          "correctOrder": [
+            {
+              "id": "i0",
+              "content": "red",
+              "type": "text"
+            },
+            {
+              "id": "i1",
+              "content": "blue",
+              "type": "text"
+            },
+            {
+              "id": "i2",
+              "content": "red",
+              "type": "text"
+            },
+            {
+              "id": "i3",
+              "content": "blue",
+              "type": "text"
+            }
+          ],
+          "missingIndices": [
+            3
+          ],
+          "choices": [
+            {
+              "id": "x1",
+              "content": "star",
+              "type": "text"
+            },
+            {
+              "id": "x2",
+              "content": "11",
+              "type": "number"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Quan sat cach day thay doi."
+        }
+      },
+      "hints": [
+        {
+          "text": "Quan sat cach day thay doi."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "junior",
+        "skillIds": [
+          "logic.pattern.recognition"
+        ],
+        "generatedBy": "games_9_15_generator",
+        "generatorSeed": 20260719,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "pp-lv018",
+      "gameId": "pattern_parade",
+      "levelNumber": 18,
+      "difficulty": 1,
+      "learningObjective": "pattern recognition",
+      "localizedContent": {
+        "en": {
+          "prompt": "Choose the missing pattern item.",
+          "mode": "missingItem",
+          "correctOrder": [
+            {
+              "id": "i0",
+              "content": "red",
+              "type": "text"
+            },
+            {
+              "id": "i1",
+              "content": "blue",
+              "type": "text"
+            },
+            {
+              "id": "i2",
+              "content": "red",
+              "type": "text"
+            },
+            {
+              "id": "i3",
+              "content": "blue",
+              "type": "text"
+            }
+          ],
+          "missingIndices": [
+            3
+          ],
+          "choices": [
+            {
+              "id": "x1",
+              "content": "star",
+              "type": "text"
+            },
+            {
+              "id": "x2",
+              "content": "11",
+              "type": "number"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Look at how the sequence changes."
+        },
+        "vi": {
+          "prompt": "Chon muc con thieu trong mau hinh.",
+          "mode": "missingItem",
+          "correctOrder": [
+            {
+              "id": "i0",
+              "content": "red",
+              "type": "text"
+            },
+            {
+              "id": "i1",
+              "content": "blue",
+              "type": "text"
+            },
+            {
+              "id": "i2",
+              "content": "red",
+              "type": "text"
+            },
+            {
+              "id": "i3",
+              "content": "blue",
+              "type": "text"
+            }
+          ],
+          "missingIndices": [
+            3
+          ],
+          "choices": [
+            {
+              "id": "x1",
+              "content": "star",
+              "type": "text"
+            },
+            {
+              "id": "x2",
+              "content": "11",
+              "type": "number"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Quan sat cach day thay doi."
+        }
+      },
+      "hints": [
+        {
+          "text": "Quan sat cach day thay doi."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "junior",
+        "skillIds": [
+          "logic.pattern.recognition"
+        ],
+        "generatedBy": "games_9_15_generator",
+        "generatorSeed": 20260719,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "pp-lv019",
+      "gameId": "pattern_parade",
+      "levelNumber": 19,
+      "difficulty": 1,
+      "learningObjective": "pattern recognition",
+      "localizedContent": {
+        "en": {
+          "prompt": "Choose the missing pattern item.",
+          "mode": "missingItem",
+          "correctOrder": [
+            {
+              "id": "i0",
+              "content": "red",
+              "type": "text"
+            },
+            {
+              "id": "i1",
+              "content": "blue",
+              "type": "text"
+            },
+            {
+              "id": "i2",
+              "content": "red",
+              "type": "text"
+            },
+            {
+              "id": "i3",
+              "content": "blue",
+              "type": "text"
+            }
+          ],
+          "missingIndices": [
+            3
+          ],
+          "choices": [
+            {
+              "id": "x1",
+              "content": "star",
+              "type": "text"
+            },
+            {
+              "id": "x2",
+              "content": "11",
+              "type": "number"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Look at how the sequence changes."
+        },
+        "vi": {
+          "prompt": "Chon muc con thieu trong mau hinh.",
+          "mode": "missingItem",
+          "correctOrder": [
+            {
+              "id": "i0",
+              "content": "red",
+              "type": "text"
+            },
+            {
+              "id": "i1",
+              "content": "blue",
+              "type": "text"
+            },
+            {
+              "id": "i2",
+              "content": "red",
+              "type": "text"
+            },
+            {
+              "id": "i3",
+              "content": "blue",
+              "type": "text"
+            }
+          ],
+          "missingIndices": [
+            3
+          ],
+          "choices": [
+            {
+              "id": "x1",
+              "content": "star",
+              "type": "text"
+            },
+            {
+              "id": "x2",
+              "content": "11",
+              "type": "number"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Quan sat cach day thay doi."
+        }
+      },
+      "hints": [
+        {
+          "text": "Quan sat cach day thay doi."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "junior",
+        "skillIds": [
+          "logic.pattern.recognition"
+        ],
+        "generatedBy": "games_9_15_generator",
+        "generatorSeed": 20260719,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "pp-lv020",
+      "gameId": "pattern_parade",
+      "levelNumber": 20,
+      "difficulty": 1,
+      "learningObjective": "pattern recognition",
+      "localizedContent": {
+        "en": {
+          "prompt": "Choose the missing pattern item.",
+          "mode": "missingItem",
+          "correctOrder": [
+            {
+              "id": "i0",
+              "content": "red",
+              "type": "text"
+            },
+            {
+              "id": "i1",
+              "content": "blue",
+              "type": "text"
+            },
+            {
+              "id": "i2",
+              "content": "red",
+              "type": "text"
+            },
+            {
+              "id": "i3",
+              "content": "blue",
+              "type": "text"
+            }
+          ],
+          "missingIndices": [
+            3
+          ],
+          "choices": [
+            {
+              "id": "x1",
+              "content": "star",
+              "type": "text"
+            },
+            {
+              "id": "x2",
+              "content": "11",
+              "type": "number"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Look at how the sequence changes."
+        },
+        "vi": {
+          "prompt": "Chon muc con thieu trong mau hinh.",
+          "mode": "missingItem",
+          "correctOrder": [
+            {
+              "id": "i0",
+              "content": "red",
+              "type": "text"
+            },
+            {
+              "id": "i1",
+              "content": "blue",
+              "type": "text"
+            },
+            {
+              "id": "i2",
+              "content": "red",
+              "type": "text"
+            },
+            {
+              "id": "i3",
+              "content": "blue",
+              "type": "text"
+            }
+          ],
+          "missingIndices": [
+            3
+          ],
+          "choices": [
+            {
+              "id": "x1",
+              "content": "star",
+              "type": "text"
+            },
+            {
+              "id": "x2",
+              "content": "11",
+              "type": "number"
+            }
+          ],
+          "rule": {
+            "type": "fixed"
+          },
+          "hint": "Quan sat cach day thay doi."
+        }
+      },
+      "hints": [
+        {
+          "text": "Quan sat cach day thay doi."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "junior",
+        "skillIds": [
+          "logic.pattern.recognition"
+        ],
+        "generatedBy": "games_9_15_generator",
+        "generatorSeed": 20260719,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "pp-lv021",
+      "gameId": "pattern_parade",
+      "levelNumber": 21,
+      "difficulty": 3,
+      "learningObjective": "pattern recognition",
+      "localizedContent": {
+        "en": {
+          "prompt": "Choose the missing pattern item.",
+          "mode": "missingItem",
+          "correctOrder": [
+            {
+              "id": "i0",
+              "content": "3",
+              "type": "number"
+            },
+            {
+              "id": "i1",
+              "content": "5",
+              "type": "number"
+            },
+            {
+              "id": "i2",
+              "content": "7",
+              "type": "number"
+            },
+            {
+              "id": "i3",
+              "content": "9",
+              "type": "number"
+            },
+            {
+              "id": "i4",
+              "content": "11",
+              "type": "number"
+            }
+          ],
+          "missingIndices": [
+            4
+          ],
+          "choices": [
+            {
+              "id": "x1",
+              "content": "star",
+              "type": "text"
+            },
+            {
+              "id": "x2",
+              "content": "11",
+              "type": "number"
+            }
+          ],
+          "rule": {
+            "type": "ascending",
+            "step": 2
+          },
+          "hint": "Look at how the sequence changes."
+        },
+        "vi": {
+          "prompt": "Chon muc con thieu trong mau hinh.",
+          "mode": "missingItem",
+          "correctOrder": [
+            {
+              "id": "i0",
+              "content": "3",
+              "type": "number"
+            },
+            {
+              "id": "i1",
+              "content": "5",
+              "type": "number"
+            },
+            {
+              "id": "i2",
+              "content": "7",
+              "type": "number"
+            },
+            {
+              "id": "i3",
+              "content": "9",
+              "type": "number"
+            },
+            {
+              "id": "i4",
+              "content": "11",
+              "type": "number"
+            }
+          ],
+          "missingIndices": [
+            4
+          ],
+          "choices": [
+            {
+              "id": "x1",
+              "content": "star",
+              "type": "text"
+            },
+            {
+              "id": "x2",
+              "content": "11",
+              "type": "number"
+            }
+          ],
+          "rule": {
+            "type": "ascending",
+            "step": 2
+          },
+          "hint": "Quan sat cach day thay doi."
+        }
+      },
+      "hints": [
+        {
+          "text": "Quan sat cach day thay doi."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "explorer",
+        "skillIds": [
+          "logic.pattern.recognition"
+        ],
+        "generatedBy": "games_9_15_generator",
+        "generatorSeed": 20260719,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "pp-lv022",
+      "gameId": "pattern_parade",
+      "levelNumber": 22,
+      "difficulty": 3,
+      "learningObjective": "pattern recognition",
+      "localizedContent": {
+        "en": {
+          "prompt": "Choose the missing pattern item.",
+          "mode": "missingItem",
+          "correctOrder": [
+            {
+              "id": "i0",
+              "content": "4",
+              "type": "number"
+            },
+            {
+              "id": "i1",
+              "content": "6",
+              "type": "number"
+            },
+            {
+              "id": "i2",
+              "content": "8",
+              "type": "number"
+            },
+            {
+              "id": "i3",
+              "content": "10",
+              "type": "number"
+            },
+            {
+              "id": "i4",
+              "content": "12",
+              "type": "number"
+            }
+          ],
+          "missingIndices": [
+            4
+          ],
+          "choices": [
+            {
+              "id": "x1",
+              "content": "star",
+              "type": "text"
+            },
+            {
+              "id": "x2",
+              "content": "11",
+              "type": "number"
+            }
+          ],
+          "rule": {
+            "type": "ascending",
+            "step": 2
+          },
+          "hint": "Look at how the sequence changes."
+        },
+        "vi": {
+          "prompt": "Chon muc con thieu trong mau hinh.",
+          "mode": "missingItem",
+          "correctOrder": [
+            {
+              "id": "i0",
+              "content": "4",
+              "type": "number"
+            },
+            {
+              "id": "i1",
+              "content": "6",
+              "type": "number"
+            },
+            {
+              "id": "i2",
+              "content": "8",
+              "type": "number"
+            },
+            {
+              "id": "i3",
+              "content": "10",
+              "type": "number"
+            },
+            {
+              "id": "i4",
+              "content": "12",
+              "type": "number"
+            }
+          ],
+          "missingIndices": [
+            4
+          ],
+          "choices": [
+            {
+              "id": "x1",
+              "content": "star",
+              "type": "text"
+            },
+            {
+              "id": "x2",
+              "content": "11",
+              "type": "number"
+            }
+          ],
+          "rule": {
+            "type": "ascending",
+            "step": 2
+          },
+          "hint": "Quan sat cach day thay doi."
+        }
+      },
+      "hints": [
+        {
+          "text": "Quan sat cach day thay doi."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "explorer",
+        "skillIds": [
+          "logic.pattern.recognition"
+        ],
+        "generatedBy": "games_9_15_generator",
+        "generatorSeed": 20260719,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "pp-lv023",
+      "gameId": "pattern_parade",
+      "levelNumber": 23,
+      "difficulty": 3,
+      "learningObjective": "pattern recognition",
+      "localizedContent": {
+        "en": {
+          "prompt": "Choose the missing pattern item.",
+          "mode": "missingItem",
+          "correctOrder": [
+            {
+              "id": "i0",
+              "content": "5",
+              "type": "number"
+            },
+            {
+              "id": "i1",
+              "content": "7",
+              "type": "number"
+            },
+            {
+              "id": "i2",
+              "content": "9",
+              "type": "number"
+            },
+            {
+              "id": "i3",
+              "content": "11",
+              "type": "number"
+            },
+            {
+              "id": "i4",
+              "content": "13",
+              "type": "number"
+            }
+          ],
+          "missingIndices": [
+            4
+          ],
+          "choices": [
+            {
+              "id": "x1",
+              "content": "star",
+              "type": "text"
+            },
+            {
+              "id": "x2",
+              "content": "11",
+              "type": "number"
+            }
+          ],
+          "rule": {
+            "type": "ascending",
+            "step": 2
+          },
+          "hint": "Look at how the sequence changes."
+        },
+        "vi": {
+          "prompt": "Chon muc con thieu trong mau hinh.",
+          "mode": "missingItem",
+          "correctOrder": [
+            {
+              "id": "i0",
+              "content": "5",
+              "type": "number"
+            },
+            {
+              "id": "i1",
+              "content": "7",
+              "type": "number"
+            },
+            {
+              "id": "i2",
+              "content": "9",
+              "type": "number"
+            },
+            {
+              "id": "i3",
+              "content": "11",
+              "type": "number"
+            },
+            {
+              "id": "i4",
+              "content": "13",
+              "type": "number"
+            }
+          ],
+          "missingIndices": [
+            4
+          ],
+          "choices": [
+            {
+              "id": "x1",
+              "content": "star",
+              "type": "text"
+            },
+            {
+              "id": "x2",
+              "content": "11",
+              "type": "number"
+            }
+          ],
+          "rule": {
+            "type": "ascending",
+            "step": 2
+          },
+          "hint": "Quan sat cach day thay doi."
+        }
+      },
+      "hints": [
+        {
+          "text": "Quan sat cach day thay doi."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "explorer",
+        "skillIds": [
+          "logic.pattern.recognition"
+        ],
+        "generatedBy": "games_9_15_generator",
+        "generatorSeed": 20260719,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "pp-lv024",
+      "gameId": "pattern_parade",
+      "levelNumber": 24,
+      "difficulty": 3,
+      "learningObjective": "pattern recognition",
+      "localizedContent": {
+        "en": {
+          "prompt": "Choose the missing pattern item.",
+          "mode": "missingItem",
+          "correctOrder": [
+            {
+              "id": "i0",
+              "content": "6",
+              "type": "number"
+            },
+            {
+              "id": "i1",
+              "content": "8",
+              "type": "number"
+            },
+            {
+              "id": "i2",
+              "content": "10",
+              "type": "number"
+            },
+            {
+              "id": "i3",
+              "content": "12",
+              "type": "number"
+            },
+            {
+              "id": "i4",
+              "content": "14",
+              "type": "number"
+            }
+          ],
+          "missingIndices": [
+            4
+          ],
+          "choices": [
+            {
+              "id": "x1",
+              "content": "star",
+              "type": "text"
+            },
+            {
+              "id": "x2",
+              "content": "11",
+              "type": "number"
+            }
+          ],
+          "rule": {
+            "type": "ascending",
+            "step": 2
+          },
+          "hint": "Look at how the sequence changes."
+        },
+        "vi": {
+          "prompt": "Chon muc con thieu trong mau hinh.",
+          "mode": "missingItem",
+          "correctOrder": [
+            {
+              "id": "i0",
+              "content": "6",
+              "type": "number"
+            },
+            {
+              "id": "i1",
+              "content": "8",
+              "type": "number"
+            },
+            {
+              "id": "i2",
+              "content": "10",
+              "type": "number"
+            },
+            {
+              "id": "i3",
+              "content": "12",
+              "type": "number"
+            },
+            {
+              "id": "i4",
+              "content": "14",
+              "type": "number"
+            }
+          ],
+          "missingIndices": [
+            4
+          ],
+          "choices": [
+            {
+              "id": "x1",
+              "content": "star",
+              "type": "text"
+            },
+            {
+              "id": "x2",
+              "content": "11",
+              "type": "number"
+            }
+          ],
+          "rule": {
+            "type": "ascending",
+            "step": 2
+          },
+          "hint": "Quan sat cach day thay doi."
+        }
+      },
+      "hints": [
+        {
+          "text": "Quan sat cach day thay doi."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "explorer",
+        "skillIds": [
+          "logic.pattern.recognition"
+        ],
+        "generatedBy": "games_9_15_generator",
+        "generatorSeed": 20260719,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "pp-lv025",
+      "gameId": "pattern_parade",
+      "levelNumber": 25,
+      "difficulty": 3,
+      "learningObjective": "pattern recognition",
+      "localizedContent": {
+        "en": {
+          "prompt": "Choose the missing pattern item.",
+          "mode": "missingItem",
+          "correctOrder": [
+            {
+              "id": "i0",
+              "content": "2",
+              "type": "number"
+            },
+            {
+              "id": "i1",
+              "content": "4",
+              "type": "number"
+            },
+            {
+              "id": "i2",
+              "content": "6",
+              "type": "number"
+            },
+            {
+              "id": "i3",
+              "content": "8",
+              "type": "number"
+            },
+            {
+              "id": "i4",
+              "content": "10",
+              "type": "number"
+            }
+          ],
+          "missingIndices": [
+            4
+          ],
+          "choices": [
+            {
+              "id": "x1",
+              "content": "star",
+              "type": "text"
+            },
+            {
+              "id": "x2",
+              "content": "11",
+              "type": "number"
+            }
+          ],
+          "rule": {
+            "type": "ascending",
+            "step": 2
+          },
+          "hint": "Look at how the sequence changes."
+        },
+        "vi": {
+          "prompt": "Chon muc con thieu trong mau hinh.",
+          "mode": "missingItem",
+          "correctOrder": [
+            {
+              "id": "i0",
+              "content": "2",
+              "type": "number"
+            },
+            {
+              "id": "i1",
+              "content": "4",
+              "type": "number"
+            },
+            {
+              "id": "i2",
+              "content": "6",
+              "type": "number"
+            },
+            {
+              "id": "i3",
+              "content": "8",
+              "type": "number"
+            },
+            {
+              "id": "i4",
+              "content": "10",
+              "type": "number"
+            }
+          ],
+          "missingIndices": [
+            4
+          ],
+          "choices": [
+            {
+              "id": "x1",
+              "content": "star",
+              "type": "text"
+            },
+            {
+              "id": "x2",
+              "content": "11",
+              "type": "number"
+            }
+          ],
+          "rule": {
+            "type": "ascending",
+            "step": 2
+          },
+          "hint": "Quan sat cach day thay doi."
+        }
+      },
+      "hints": [
+        {
+          "text": "Quan sat cach day thay doi."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "explorer",
+        "skillIds": [
+          "logic.pattern.recognition"
+        ],
+        "generatedBy": "games_9_15_generator",
+        "generatorSeed": 20260719,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "pp-lv026",
+      "gameId": "pattern_parade",
+      "levelNumber": 26,
+      "difficulty": 3,
+      "learningObjective": "pattern recognition",
+      "localizedContent": {
+        "en": {
+          "prompt": "Choose the missing pattern item.",
+          "mode": "missingItem",
+          "correctOrder": [
+            {
+              "id": "i0",
+              "content": "3",
+              "type": "number"
+            },
+            {
+              "id": "i1",
+              "content": "5",
+              "type": "number"
+            },
+            {
+              "id": "i2",
+              "content": "7",
+              "type": "number"
+            },
+            {
+              "id": "i3",
+              "content": "9",
+              "type": "number"
+            },
+            {
+              "id": "i4",
+              "content": "11",
+              "type": "number"
+            }
+          ],
+          "missingIndices": [
+            4
+          ],
+          "choices": [
+            {
+              "id": "x1",
+              "content": "star",
+              "type": "text"
+            },
+            {
+              "id": "x2",
+              "content": "11",
+              "type": "number"
+            }
+          ],
+          "rule": {
+            "type": "ascending",
+            "step": 2
+          },
+          "hint": "Look at how the sequence changes."
+        },
+        "vi": {
+          "prompt": "Chon muc con thieu trong mau hinh.",
+          "mode": "missingItem",
+          "correctOrder": [
+            {
+              "id": "i0",
+              "content": "3",
+              "type": "number"
+            },
+            {
+              "id": "i1",
+              "content": "5",
+              "type": "number"
+            },
+            {
+              "id": "i2",
+              "content": "7",
+              "type": "number"
+            },
+            {
+              "id": "i3",
+              "content": "9",
+              "type": "number"
+            },
+            {
+              "id": "i4",
+              "content": "11",
+              "type": "number"
+            }
+          ],
+          "missingIndices": [
+            4
+          ],
+          "choices": [
+            {
+              "id": "x1",
+              "content": "star",
+              "type": "text"
+            },
+            {
+              "id": "x2",
+              "content": "11",
+              "type": "number"
+            }
+          ],
+          "rule": {
+            "type": "ascending",
+            "step": 2
+          },
+          "hint": "Quan sat cach day thay doi."
+        }
+      },
+      "hints": [
+        {
+          "text": "Quan sat cach day thay doi."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "explorer",
+        "skillIds": [
+          "logic.pattern.recognition"
+        ],
+        "generatedBy": "games_9_15_generator",
+        "generatorSeed": 20260719,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "pp-lv027",
+      "gameId": "pattern_parade",
+      "levelNumber": 27,
+      "difficulty": 3,
+      "learningObjective": "pattern recognition",
+      "localizedContent": {
+        "en": {
+          "prompt": "Choose the missing pattern item.",
+          "mode": "missingItem",
+          "correctOrder": [
+            {
+              "id": "i0",
+              "content": "4",
+              "type": "number"
+            },
+            {
+              "id": "i1",
+              "content": "6",
+              "type": "number"
+            },
+            {
+              "id": "i2",
+              "content": "8",
+              "type": "number"
+            },
+            {
+              "id": "i3",
+              "content": "10",
+              "type": "number"
+            },
+            {
+              "id": "i4",
+              "content": "12",
+              "type": "number"
+            }
+          ],
+          "missingIndices": [
+            4
+          ],
+          "choices": [
+            {
+              "id": "x1",
+              "content": "star",
+              "type": "text"
+            },
+            {
+              "id": "x2",
+              "content": "11",
+              "type": "number"
+            }
+          ],
+          "rule": {
+            "type": "ascending",
+            "step": 2
+          },
+          "hint": "Look at how the sequence changes."
+        },
+        "vi": {
+          "prompt": "Chon muc con thieu trong mau hinh.",
+          "mode": "missingItem",
+          "correctOrder": [
+            {
+              "id": "i0",
+              "content": "4",
+              "type": "number"
+            },
+            {
+              "id": "i1",
+              "content": "6",
+              "type": "number"
+            },
+            {
+              "id": "i2",
+              "content": "8",
+              "type": "number"
+            },
+            {
+              "id": "i3",
+              "content": "10",
+              "type": "number"
+            },
+            {
+              "id": "i4",
+              "content": "12",
+              "type": "number"
+            }
+          ],
+          "missingIndices": [
+            4
+          ],
+          "choices": [
+            {
+              "id": "x1",
+              "content": "star",
+              "type": "text"
+            },
+            {
+              "id": "x2",
+              "content": "11",
+              "type": "number"
+            }
+          ],
+          "rule": {
+            "type": "ascending",
+            "step": 2
+          },
+          "hint": "Quan sat cach day thay doi."
+        }
+      },
+      "hints": [
+        {
+          "text": "Quan sat cach day thay doi."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "explorer",
+        "skillIds": [
+          "logic.pattern.recognition"
+        ],
+        "generatedBy": "games_9_15_generator",
+        "generatorSeed": 20260719,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "pp-lv028",
+      "gameId": "pattern_parade",
+      "levelNumber": 28,
+      "difficulty": 3,
+      "learningObjective": "pattern recognition",
+      "localizedContent": {
+        "en": {
+          "prompt": "Choose the missing pattern item.",
+          "mode": "missingItem",
+          "correctOrder": [
+            {
+              "id": "i0",
+              "content": "5",
+              "type": "number"
+            },
+            {
+              "id": "i1",
+              "content": "7",
+              "type": "number"
+            },
+            {
+              "id": "i2",
+              "content": "9",
+              "type": "number"
+            },
+            {
+              "id": "i3",
+              "content": "11",
+              "type": "number"
+            },
+            {
+              "id": "i4",
+              "content": "13",
+              "type": "number"
+            }
+          ],
+          "missingIndices": [
+            4
+          ],
+          "choices": [
+            {
+              "id": "x1",
+              "content": "star",
+              "type": "text"
+            },
+            {
+              "id": "x2",
+              "content": "11",
+              "type": "number"
+            }
+          ],
+          "rule": {
+            "type": "ascending",
+            "step": 2
+          },
+          "hint": "Look at how the sequence changes."
+        },
+        "vi": {
+          "prompt": "Chon muc con thieu trong mau hinh.",
+          "mode": "missingItem",
+          "correctOrder": [
+            {
+              "id": "i0",
+              "content": "5",
+              "type": "number"
+            },
+            {
+              "id": "i1",
+              "content": "7",
+              "type": "number"
+            },
+            {
+              "id": "i2",
+              "content": "9",
+              "type": "number"
+            },
+            {
+              "id": "i3",
+              "content": "11",
+              "type": "number"
+            },
+            {
+              "id": "i4",
+              "content": "13",
+              "type": "number"
+            }
+          ],
+          "missingIndices": [
+            4
+          ],
+          "choices": [
+            {
+              "id": "x1",
+              "content": "star",
+              "type": "text"
+            },
+            {
+              "id": "x2",
+              "content": "11",
+              "type": "number"
+            }
+          ],
+          "rule": {
+            "type": "ascending",
+            "step": 2
+          },
+          "hint": "Quan sat cach day thay doi."
+        }
+      },
+      "hints": [
+        {
+          "text": "Quan sat cach day thay doi."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "explorer",
+        "skillIds": [
+          "logic.pattern.recognition"
+        ],
+        "generatedBy": "games_9_15_generator",
+        "generatorSeed": 20260719,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "pp-lv029",
+      "gameId": "pattern_parade",
+      "levelNumber": 29,
+      "difficulty": 3,
+      "learningObjective": "pattern recognition",
+      "localizedContent": {
+        "en": {
+          "prompt": "Choose the missing pattern item.",
+          "mode": "missingItem",
+          "correctOrder": [
+            {
+              "id": "i0",
+              "content": "6",
+              "type": "number"
+            },
+            {
+              "id": "i1",
+              "content": "8",
+              "type": "number"
+            },
+            {
+              "id": "i2",
+              "content": "10",
+              "type": "number"
+            },
+            {
+              "id": "i3",
+              "content": "12",
+              "type": "number"
+            },
+            {
+              "id": "i4",
+              "content": "14",
+              "type": "number"
+            }
+          ],
+          "missingIndices": [
+            4
+          ],
+          "choices": [
+            {
+              "id": "x1",
+              "content": "star",
+              "type": "text"
+            },
+            {
+              "id": "x2",
+              "content": "11",
+              "type": "number"
+            }
+          ],
+          "rule": {
+            "type": "ascending",
+            "step": 2
+          },
+          "hint": "Look at how the sequence changes."
+        },
+        "vi": {
+          "prompt": "Chon muc con thieu trong mau hinh.",
+          "mode": "missingItem",
+          "correctOrder": [
+            {
+              "id": "i0",
+              "content": "6",
+              "type": "number"
+            },
+            {
+              "id": "i1",
+              "content": "8",
+              "type": "number"
+            },
+            {
+              "id": "i2",
+              "content": "10",
+              "type": "number"
+            },
+            {
+              "id": "i3",
+              "content": "12",
+              "type": "number"
+            },
+            {
+              "id": "i4",
+              "content": "14",
+              "type": "number"
+            }
+          ],
+          "missingIndices": [
+            4
+          ],
+          "choices": [
+            {
+              "id": "x1",
+              "content": "star",
+              "type": "text"
+            },
+            {
+              "id": "x2",
+              "content": "11",
+              "type": "number"
+            }
+          ],
+          "rule": {
+            "type": "ascending",
+            "step": 2
+          },
+          "hint": "Quan sat cach day thay doi."
+        }
+      },
+      "hints": [
+        {
+          "text": "Quan sat cach day thay doi."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "explorer",
+        "skillIds": [
+          "logic.pattern.recognition"
+        ],
+        "generatedBy": "games_9_15_generator",
+        "generatorSeed": 20260719,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "pp-lv030",
+      "gameId": "pattern_parade",
+      "levelNumber": 30,
+      "difficulty": 3,
+      "learningObjective": "pattern recognition",
+      "localizedContent": {
+        "en": {
+          "prompt": "Choose the missing pattern item.",
+          "mode": "missingItem",
+          "correctOrder": [
+            {
+              "id": "i0",
+              "content": "2",
+              "type": "number"
+            },
+            {
+              "id": "i1",
+              "content": "4",
+              "type": "number"
+            },
+            {
+              "id": "i2",
+              "content": "6",
+              "type": "number"
+            },
+            {
+              "id": "i3",
+              "content": "8",
+              "type": "number"
+            },
+            {
+              "id": "i4",
+              "content": "10",
+              "type": "number"
+            }
+          ],
+          "missingIndices": [
+            4
+          ],
+          "choices": [
+            {
+              "id": "x1",
+              "content": "star",
+              "type": "text"
+            },
+            {
+              "id": "x2",
+              "content": "11",
+              "type": "number"
+            }
+          ],
+          "rule": {
+            "type": "ascending",
+            "step": 2
+          },
+          "hint": "Look at how the sequence changes."
+        },
+        "vi": {
+          "prompt": "Chon muc con thieu trong mau hinh.",
+          "mode": "missingItem",
+          "correctOrder": [
+            {
+              "id": "i0",
+              "content": "2",
+              "type": "number"
+            },
+            {
+              "id": "i1",
+              "content": "4",
+              "type": "number"
+            },
+            {
+              "id": "i2",
+              "content": "6",
+              "type": "number"
+            },
+            {
+              "id": "i3",
+              "content": "8",
+              "type": "number"
+            },
+            {
+              "id": "i4",
+              "content": "10",
+              "type": "number"
+            }
+          ],
+          "missingIndices": [
+            4
+          ],
+          "choices": [
+            {
+              "id": "x1",
+              "content": "star",
+              "type": "text"
+            },
+            {
+              "id": "x2",
+              "content": "11",
+              "type": "number"
+            }
+          ],
+          "rule": {
+            "type": "ascending",
+            "step": 2
+          },
+          "hint": "Quan sat cach day thay doi."
+        }
+      },
+      "hints": [
+        {
+          "text": "Quan sat cach day thay doi."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "explorer",
+        "skillIds": [
+          "logic.pattern.recognition"
+        ],
+        "generatedBy": "games_9_15_generator",
+        "generatorSeed": 20260719,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "pp-lv031",
+      "gameId": "pattern_parade",
+      "levelNumber": 31,
+      "difficulty": 3,
+      "learningObjective": "pattern recognition",
+      "localizedContent": {
+        "en": {
+          "prompt": "Choose the missing pattern item.",
+          "mode": "missingItem",
+          "correctOrder": [
+            {
+              "id": "i0",
+              "content": "3",
+              "type": "number"
+            },
+            {
+              "id": "i1",
+              "content": "5",
+              "type": "number"
+            },
+            {
+              "id": "i2",
+              "content": "7",
+              "type": "number"
+            },
+            {
+              "id": "i3",
+              "content": "9",
+              "type": "number"
+            },
+            {
+              "id": "i4",
+              "content": "11",
+              "type": "number"
+            }
+          ],
+          "missingIndices": [
+            4
+          ],
+          "choices": [
+            {
+              "id": "x1",
+              "content": "star",
+              "type": "text"
+            },
+            {
+              "id": "x2",
+              "content": "11",
+              "type": "number"
+            }
+          ],
+          "rule": {
+            "type": "ascending",
+            "step": 2
+          },
+          "hint": "Look at how the sequence changes."
+        },
+        "vi": {
+          "prompt": "Chon muc con thieu trong mau hinh.",
+          "mode": "missingItem",
+          "correctOrder": [
+            {
+              "id": "i0",
+              "content": "3",
+              "type": "number"
+            },
+            {
+              "id": "i1",
+              "content": "5",
+              "type": "number"
+            },
+            {
+              "id": "i2",
+              "content": "7",
+              "type": "number"
+            },
+            {
+              "id": "i3",
+              "content": "9",
+              "type": "number"
+            },
+            {
+              "id": "i4",
+              "content": "11",
+              "type": "number"
+            }
+          ],
+          "missingIndices": [
+            4
+          ],
+          "choices": [
+            {
+              "id": "x1",
+              "content": "star",
+              "type": "text"
+            },
+            {
+              "id": "x2",
+              "content": "11",
+              "type": "number"
+            }
+          ],
+          "rule": {
+            "type": "ascending",
+            "step": 2
+          },
+          "hint": "Quan sat cach day thay doi."
+        }
+      },
+      "hints": [
+        {
+          "text": "Quan sat cach day thay doi."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "explorer",
+        "skillIds": [
+          "logic.pattern.recognition"
+        ],
+        "generatedBy": "games_9_15_generator",
+        "generatorSeed": 20260719,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "pp-lv032",
+      "gameId": "pattern_parade",
+      "levelNumber": 32,
+      "difficulty": 3,
+      "learningObjective": "pattern recognition",
+      "localizedContent": {
+        "en": {
+          "prompt": "Choose the missing pattern item.",
+          "mode": "missingItem",
+          "correctOrder": [
+            {
+              "id": "i0",
+              "content": "4",
+              "type": "number"
+            },
+            {
+              "id": "i1",
+              "content": "6",
+              "type": "number"
+            },
+            {
+              "id": "i2",
+              "content": "8",
+              "type": "number"
+            },
+            {
+              "id": "i3",
+              "content": "10",
+              "type": "number"
+            },
+            {
+              "id": "i4",
+              "content": "12",
+              "type": "number"
+            }
+          ],
+          "missingIndices": [
+            4
+          ],
+          "choices": [
+            {
+              "id": "x1",
+              "content": "star",
+              "type": "text"
+            },
+            {
+              "id": "x2",
+              "content": "11",
+              "type": "number"
+            }
+          ],
+          "rule": {
+            "type": "ascending",
+            "step": 2
+          },
+          "hint": "Look at how the sequence changes."
+        },
+        "vi": {
+          "prompt": "Chon muc con thieu trong mau hinh.",
+          "mode": "missingItem",
+          "correctOrder": [
+            {
+              "id": "i0",
+              "content": "4",
+              "type": "number"
+            },
+            {
+              "id": "i1",
+              "content": "6",
+              "type": "number"
+            },
+            {
+              "id": "i2",
+              "content": "8",
+              "type": "number"
+            },
+            {
+              "id": "i3",
+              "content": "10",
+              "type": "number"
+            },
+            {
+              "id": "i4",
+              "content": "12",
+              "type": "number"
+            }
+          ],
+          "missingIndices": [
+            4
+          ],
+          "choices": [
+            {
+              "id": "x1",
+              "content": "star",
+              "type": "text"
+            },
+            {
+              "id": "x2",
+              "content": "11",
+              "type": "number"
+            }
+          ],
+          "rule": {
+            "type": "ascending",
+            "step": 2
+          },
+          "hint": "Quan sat cach day thay doi."
+        }
+      },
+      "hints": [
+        {
+          "text": "Quan sat cach day thay doi."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "explorer",
+        "skillIds": [
+          "logic.pattern.recognition"
+        ],
+        "generatedBy": "games_9_15_generator",
+        "generatorSeed": 20260719,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "pp-lv033",
+      "gameId": "pattern_parade",
+      "levelNumber": 33,
+      "difficulty": 3,
+      "learningObjective": "pattern recognition",
+      "localizedContent": {
+        "en": {
+          "prompt": "Choose the missing pattern item.",
+          "mode": "missingItem",
+          "correctOrder": [
+            {
+              "id": "i0",
+              "content": "5",
+              "type": "number"
+            },
+            {
+              "id": "i1",
+              "content": "7",
+              "type": "number"
+            },
+            {
+              "id": "i2",
+              "content": "9",
+              "type": "number"
+            },
+            {
+              "id": "i3",
+              "content": "11",
+              "type": "number"
+            },
+            {
+              "id": "i4",
+              "content": "13",
+              "type": "number"
+            }
+          ],
+          "missingIndices": [
+            4
+          ],
+          "choices": [
+            {
+              "id": "x1",
+              "content": "star",
+              "type": "text"
+            },
+            {
+              "id": "x2",
+              "content": "11",
+              "type": "number"
+            }
+          ],
+          "rule": {
+            "type": "ascending",
+            "step": 2
+          },
+          "hint": "Look at how the sequence changes."
+        },
+        "vi": {
+          "prompt": "Chon muc con thieu trong mau hinh.",
+          "mode": "missingItem",
+          "correctOrder": [
+            {
+              "id": "i0",
+              "content": "5",
+              "type": "number"
+            },
+            {
+              "id": "i1",
+              "content": "7",
+              "type": "number"
+            },
+            {
+              "id": "i2",
+              "content": "9",
+              "type": "number"
+            },
+            {
+              "id": "i3",
+              "content": "11",
+              "type": "number"
+            },
+            {
+              "id": "i4",
+              "content": "13",
+              "type": "number"
+            }
+          ],
+          "missingIndices": [
+            4
+          ],
+          "choices": [
+            {
+              "id": "x1",
+              "content": "star",
+              "type": "text"
+            },
+            {
+              "id": "x2",
+              "content": "11",
+              "type": "number"
+            }
+          ],
+          "rule": {
+            "type": "ascending",
+            "step": 2
+          },
+          "hint": "Quan sat cach day thay doi."
+        }
+      },
+      "hints": [
+        {
+          "text": "Quan sat cach day thay doi."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "explorer",
+        "skillIds": [
+          "logic.pattern.recognition"
+        ],
+        "generatedBy": "games_9_15_generator",
+        "generatorSeed": 20260719,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "pp-lv034",
+      "gameId": "pattern_parade",
+      "levelNumber": 34,
+      "difficulty": 3,
+      "learningObjective": "pattern recognition",
+      "localizedContent": {
+        "en": {
+          "prompt": "Choose the missing pattern item.",
+          "mode": "missingItem",
+          "correctOrder": [
+            {
+              "id": "i0",
+              "content": "6",
+              "type": "number"
+            },
+            {
+              "id": "i1",
+              "content": "8",
+              "type": "number"
+            },
+            {
+              "id": "i2",
+              "content": "10",
+              "type": "number"
+            },
+            {
+              "id": "i3",
+              "content": "12",
+              "type": "number"
+            },
+            {
+              "id": "i4",
+              "content": "14",
+              "type": "number"
+            }
+          ],
+          "missingIndices": [
+            4
+          ],
+          "choices": [
+            {
+              "id": "x1",
+              "content": "star",
+              "type": "text"
+            },
+            {
+              "id": "x2",
+              "content": "11",
+              "type": "number"
+            }
+          ],
+          "rule": {
+            "type": "ascending",
+            "step": 2
+          },
+          "hint": "Look at how the sequence changes."
+        },
+        "vi": {
+          "prompt": "Chon muc con thieu trong mau hinh.",
+          "mode": "missingItem",
+          "correctOrder": [
+            {
+              "id": "i0",
+              "content": "6",
+              "type": "number"
+            },
+            {
+              "id": "i1",
+              "content": "8",
+              "type": "number"
+            },
+            {
+              "id": "i2",
+              "content": "10",
+              "type": "number"
+            },
+            {
+              "id": "i3",
+              "content": "12",
+              "type": "number"
+            },
+            {
+              "id": "i4",
+              "content": "14",
+              "type": "number"
+            }
+          ],
+          "missingIndices": [
+            4
+          ],
+          "choices": [
+            {
+              "id": "x1",
+              "content": "star",
+              "type": "text"
+            },
+            {
+              "id": "x2",
+              "content": "11",
+              "type": "number"
+            }
+          ],
+          "rule": {
+            "type": "ascending",
+            "step": 2
+          },
+          "hint": "Quan sat cach day thay doi."
+        }
+      },
+      "hints": [
+        {
+          "text": "Quan sat cach day thay doi."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "explorer",
+        "skillIds": [
+          "logic.pattern.recognition"
+        ],
+        "generatedBy": "games_9_15_generator",
+        "generatorSeed": 20260719,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "pp-lv035",
+      "gameId": "pattern_parade",
+      "levelNumber": 35,
+      "difficulty": 3,
+      "learningObjective": "pattern recognition",
+      "localizedContent": {
+        "en": {
+          "prompt": "Choose the missing pattern item.",
+          "mode": "missingItem",
+          "correctOrder": [
+            {
+              "id": "i0",
+              "content": "2",
+              "type": "number"
+            },
+            {
+              "id": "i1",
+              "content": "4",
+              "type": "number"
+            },
+            {
+              "id": "i2",
+              "content": "6",
+              "type": "number"
+            },
+            {
+              "id": "i3",
+              "content": "8",
+              "type": "number"
+            },
+            {
+              "id": "i4",
+              "content": "10",
+              "type": "number"
+            }
+          ],
+          "missingIndices": [
+            4
+          ],
+          "choices": [
+            {
+              "id": "x1",
+              "content": "star",
+              "type": "text"
+            },
+            {
+              "id": "x2",
+              "content": "11",
+              "type": "number"
+            }
+          ],
+          "rule": {
+            "type": "ascending",
+            "step": 2
+          },
+          "hint": "Look at how the sequence changes."
+        },
+        "vi": {
+          "prompt": "Chon muc con thieu trong mau hinh.",
+          "mode": "missingItem",
+          "correctOrder": [
+            {
+              "id": "i0",
+              "content": "2",
+              "type": "number"
+            },
+            {
+              "id": "i1",
+              "content": "4",
+              "type": "number"
+            },
+            {
+              "id": "i2",
+              "content": "6",
+              "type": "number"
+            },
+            {
+              "id": "i3",
+              "content": "8",
+              "type": "number"
+            },
+            {
+              "id": "i4",
+              "content": "10",
+              "type": "number"
+            }
+          ],
+          "missingIndices": [
+            4
+          ],
+          "choices": [
+            {
+              "id": "x1",
+              "content": "star",
+              "type": "text"
+            },
+            {
+              "id": "x2",
+              "content": "11",
+              "type": "number"
+            }
+          ],
+          "rule": {
+            "type": "ascending",
+            "step": 2
+          },
+          "hint": "Quan sat cach day thay doi."
+        }
+      },
+      "hints": [
+        {
+          "text": "Quan sat cach day thay doi."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "explorer",
+        "skillIds": [
+          "logic.pattern.recognition"
+        ],
+        "generatedBy": "games_9_15_generator",
+        "generatorSeed": 20260719,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "pp-lv036",
+      "gameId": "pattern_parade",
+      "levelNumber": 36,
+      "difficulty": 3,
+      "learningObjective": "pattern recognition",
+      "localizedContent": {
+        "en": {
+          "prompt": "Choose the missing pattern item.",
+          "mode": "missingItem",
+          "correctOrder": [
+            {
+              "id": "i0",
+              "content": "3",
+              "type": "number"
+            },
+            {
+              "id": "i1",
+              "content": "5",
+              "type": "number"
+            },
+            {
+              "id": "i2",
+              "content": "7",
+              "type": "number"
+            },
+            {
+              "id": "i3",
+              "content": "9",
+              "type": "number"
+            },
+            {
+              "id": "i4",
+              "content": "11",
+              "type": "number"
+            }
+          ],
+          "missingIndices": [
+            4
+          ],
+          "choices": [
+            {
+              "id": "x1",
+              "content": "star",
+              "type": "text"
+            },
+            {
+              "id": "x2",
+              "content": "11",
+              "type": "number"
+            }
+          ],
+          "rule": {
+            "type": "ascending",
+            "step": 2
+          },
+          "hint": "Look at how the sequence changes."
+        },
+        "vi": {
+          "prompt": "Chon muc con thieu trong mau hinh.",
+          "mode": "missingItem",
+          "correctOrder": [
+            {
+              "id": "i0",
+              "content": "3",
+              "type": "number"
+            },
+            {
+              "id": "i1",
+              "content": "5",
+              "type": "number"
+            },
+            {
+              "id": "i2",
+              "content": "7",
+              "type": "number"
+            },
+            {
+              "id": "i3",
+              "content": "9",
+              "type": "number"
+            },
+            {
+              "id": "i4",
+              "content": "11",
+              "type": "number"
+            }
+          ],
+          "missingIndices": [
+            4
+          ],
+          "choices": [
+            {
+              "id": "x1",
+              "content": "star",
+              "type": "text"
+            },
+            {
+              "id": "x2",
+              "content": "11",
+              "type": "number"
+            }
+          ],
+          "rule": {
+            "type": "ascending",
+            "step": 2
+          },
+          "hint": "Quan sat cach day thay doi."
+        }
+      },
+      "hints": [
+        {
+          "text": "Quan sat cach day thay doi."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "explorer",
+        "skillIds": [
+          "logic.pattern.recognition"
+        ],
+        "generatedBy": "games_9_15_generator",
+        "generatorSeed": 20260719,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "pp-lv037",
+      "gameId": "pattern_parade",
+      "levelNumber": 37,
+      "difficulty": 3,
+      "learningObjective": "pattern recognition",
+      "localizedContent": {
+        "en": {
+          "prompt": "Choose the missing pattern item.",
+          "mode": "missingItem",
+          "correctOrder": [
+            {
+              "id": "i0",
+              "content": "4",
+              "type": "number"
+            },
+            {
+              "id": "i1",
+              "content": "6",
+              "type": "number"
+            },
+            {
+              "id": "i2",
+              "content": "8",
+              "type": "number"
+            },
+            {
+              "id": "i3",
+              "content": "10",
+              "type": "number"
+            },
+            {
+              "id": "i4",
+              "content": "12",
+              "type": "number"
+            }
+          ],
+          "missingIndices": [
+            4
+          ],
+          "choices": [
+            {
+              "id": "x1",
+              "content": "star",
+              "type": "text"
+            },
+            {
+              "id": "x2",
+              "content": "11",
+              "type": "number"
+            }
+          ],
+          "rule": {
+            "type": "ascending",
+            "step": 2
+          },
+          "hint": "Look at how the sequence changes."
+        },
+        "vi": {
+          "prompt": "Chon muc con thieu trong mau hinh.",
+          "mode": "missingItem",
+          "correctOrder": [
+            {
+              "id": "i0",
+              "content": "4",
+              "type": "number"
+            },
+            {
+              "id": "i1",
+              "content": "6",
+              "type": "number"
+            },
+            {
+              "id": "i2",
+              "content": "8",
+              "type": "number"
+            },
+            {
+              "id": "i3",
+              "content": "10",
+              "type": "number"
+            },
+            {
+              "id": "i4",
+              "content": "12",
+              "type": "number"
+            }
+          ],
+          "missingIndices": [
+            4
+          ],
+          "choices": [
+            {
+              "id": "x1",
+              "content": "star",
+              "type": "text"
+            },
+            {
+              "id": "x2",
+              "content": "11",
+              "type": "number"
+            }
+          ],
+          "rule": {
+            "type": "ascending",
+            "step": 2
+          },
+          "hint": "Quan sat cach day thay doi."
+        }
+      },
+      "hints": [
+        {
+          "text": "Quan sat cach day thay doi."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "explorer",
+        "skillIds": [
+          "logic.pattern.recognition"
+        ],
+        "generatedBy": "games_9_15_generator",
+        "generatorSeed": 20260719,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "pp-lv038",
+      "gameId": "pattern_parade",
+      "levelNumber": 38,
+      "difficulty": 3,
+      "learningObjective": "pattern recognition",
+      "localizedContent": {
+        "en": {
+          "prompt": "Choose the missing pattern item.",
+          "mode": "missingItem",
+          "correctOrder": [
+            {
+              "id": "i0",
+              "content": "5",
+              "type": "number"
+            },
+            {
+              "id": "i1",
+              "content": "7",
+              "type": "number"
+            },
+            {
+              "id": "i2",
+              "content": "9",
+              "type": "number"
+            },
+            {
+              "id": "i3",
+              "content": "11",
+              "type": "number"
+            },
+            {
+              "id": "i4",
+              "content": "13",
+              "type": "number"
+            }
+          ],
+          "missingIndices": [
+            4
+          ],
+          "choices": [
+            {
+              "id": "x1",
+              "content": "star",
+              "type": "text"
+            },
+            {
+              "id": "x2",
+              "content": "11",
+              "type": "number"
+            }
+          ],
+          "rule": {
+            "type": "ascending",
+            "step": 2
+          },
+          "hint": "Look at how the sequence changes."
+        },
+        "vi": {
+          "prompt": "Chon muc con thieu trong mau hinh.",
+          "mode": "missingItem",
+          "correctOrder": [
+            {
+              "id": "i0",
+              "content": "5",
+              "type": "number"
+            },
+            {
+              "id": "i1",
+              "content": "7",
+              "type": "number"
+            },
+            {
+              "id": "i2",
+              "content": "9",
+              "type": "number"
+            },
+            {
+              "id": "i3",
+              "content": "11",
+              "type": "number"
+            },
+            {
+              "id": "i4",
+              "content": "13",
+              "type": "number"
+            }
+          ],
+          "missingIndices": [
+            4
+          ],
+          "choices": [
+            {
+              "id": "x1",
+              "content": "star",
+              "type": "text"
+            },
+            {
+              "id": "x2",
+              "content": "11",
+              "type": "number"
+            }
+          ],
+          "rule": {
+            "type": "ascending",
+            "step": 2
+          },
+          "hint": "Quan sat cach day thay doi."
+        }
+      },
+      "hints": [
+        {
+          "text": "Quan sat cach day thay doi."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "explorer",
+        "skillIds": [
+          "logic.pattern.recognition"
+        ],
+        "generatedBy": "games_9_15_generator",
+        "generatorSeed": 20260719,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "pp-lv039",
+      "gameId": "pattern_parade",
+      "levelNumber": 39,
+      "difficulty": 3,
+      "learningObjective": "pattern recognition",
+      "localizedContent": {
+        "en": {
+          "prompt": "Choose the missing pattern item.",
+          "mode": "missingItem",
+          "correctOrder": [
+            {
+              "id": "i0",
+              "content": "6",
+              "type": "number"
+            },
+            {
+              "id": "i1",
+              "content": "8",
+              "type": "number"
+            },
+            {
+              "id": "i2",
+              "content": "10",
+              "type": "number"
+            },
+            {
+              "id": "i3",
+              "content": "12",
+              "type": "number"
+            },
+            {
+              "id": "i4",
+              "content": "14",
+              "type": "number"
+            }
+          ],
+          "missingIndices": [
+            4
+          ],
+          "choices": [
+            {
+              "id": "x1",
+              "content": "star",
+              "type": "text"
+            },
+            {
+              "id": "x2",
+              "content": "11",
+              "type": "number"
+            }
+          ],
+          "rule": {
+            "type": "ascending",
+            "step": 2
+          },
+          "hint": "Look at how the sequence changes."
+        },
+        "vi": {
+          "prompt": "Chon muc con thieu trong mau hinh.",
+          "mode": "missingItem",
+          "correctOrder": [
+            {
+              "id": "i0",
+              "content": "6",
+              "type": "number"
+            },
+            {
+              "id": "i1",
+              "content": "8",
+              "type": "number"
+            },
+            {
+              "id": "i2",
+              "content": "10",
+              "type": "number"
+            },
+            {
+              "id": "i3",
+              "content": "12",
+              "type": "number"
+            },
+            {
+              "id": "i4",
+              "content": "14",
+              "type": "number"
+            }
+          ],
+          "missingIndices": [
+            4
+          ],
+          "choices": [
+            {
+              "id": "x1",
+              "content": "star",
+              "type": "text"
+            },
+            {
+              "id": "x2",
+              "content": "11",
+              "type": "number"
+            }
+          ],
+          "rule": {
+            "type": "ascending",
+            "step": 2
+          },
+          "hint": "Quan sat cach day thay doi."
+        }
+      },
+      "hints": [
+        {
+          "text": "Quan sat cach day thay doi."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "explorer",
+        "skillIds": [
+          "logic.pattern.recognition"
+        ],
+        "generatedBy": "games_9_15_generator",
+        "generatorSeed": 20260719,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "pp-lv040",
+      "gameId": "pattern_parade",
+      "levelNumber": 40,
+      "difficulty": 3,
+      "learningObjective": "pattern recognition",
+      "localizedContent": {
+        "en": {
+          "prompt": "Choose the missing pattern item.",
+          "mode": "missingItem",
+          "correctOrder": [
+            {
+              "id": "i0",
+              "content": "2",
+              "type": "number"
+            },
+            {
+              "id": "i1",
+              "content": "4",
+              "type": "number"
+            },
+            {
+              "id": "i2",
+              "content": "6",
+              "type": "number"
+            },
+            {
+              "id": "i3",
+              "content": "8",
+              "type": "number"
+            },
+            {
+              "id": "i4",
+              "content": "10",
+              "type": "number"
+            }
+          ],
+          "missingIndices": [
+            4
+          ],
+          "choices": [
+            {
+              "id": "x1",
+              "content": "star",
+              "type": "text"
+            },
+            {
+              "id": "x2",
+              "content": "11",
+              "type": "number"
+            }
+          ],
+          "rule": {
+            "type": "ascending",
+            "step": 2
+          },
+          "hint": "Look at how the sequence changes."
+        },
+        "vi": {
+          "prompt": "Chon muc con thieu trong mau hinh.",
+          "mode": "missingItem",
+          "correctOrder": [
+            {
+              "id": "i0",
+              "content": "2",
+              "type": "number"
+            },
+            {
+              "id": "i1",
+              "content": "4",
+              "type": "number"
+            },
+            {
+              "id": "i2",
+              "content": "6",
+              "type": "number"
+            },
+            {
+              "id": "i3",
+              "content": "8",
+              "type": "number"
+            },
+            {
+              "id": "i4",
+              "content": "10",
+              "type": "number"
+            }
+          ],
+          "missingIndices": [
+            4
+          ],
+          "choices": [
+            {
+              "id": "x1",
+              "content": "star",
+              "type": "text"
+            },
+            {
+              "id": "x2",
+              "content": "11",
+              "type": "number"
+            }
+          ],
+          "rule": {
+            "type": "ascending",
+            "step": 2
+          },
+          "hint": "Quan sat cach day thay doi."
+        }
+      },
+      "hints": [
+        {
+          "text": "Quan sat cach day thay doi."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "explorer",
+        "skillIds": [
+          "logic.pattern.recognition"
+        ],
+        "generatedBy": "games_9_15_generator",
+        "generatorSeed": 20260719,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "pp-lv041",
+      "gameId": "pattern_parade",
+      "levelNumber": 41,
+      "difficulty": 5,
+      "learningObjective": "pattern recognition",
+      "localizedContent": {
+        "en": {
+          "prompt": "Choose the missing pattern item.",
+          "mode": "missingItem",
+          "correctOrder": [
+            {
+              "id": "i0",
+              "content": "61",
+              "type": "number"
+            },
+            {
+              "id": "i1",
+              "content": "58",
+              "type": "number"
+            },
+            {
+              "id": "i2",
+              "content": "55",
+              "type": "number"
+            },
+            {
+              "id": "i3",
+              "content": "52",
+              "type": "number"
+            },
+            {
+              "id": "i4",
+              "content": "49",
+              "type": "number"
+            }
+          ],
+          "missingIndices": [
+            4
+          ],
+          "choices": [
+            {
+              "id": "x1",
+              "content": "star",
+              "type": "text"
+            },
+            {
+              "id": "x2",
+              "content": "11",
+              "type": "number"
+            }
+          ],
+          "rule": {
+            "type": "descending",
+            "step": 3
+          },
+          "hint": "Look at how the sequence changes."
+        },
+        "vi": {
+          "prompt": "Chon muc con thieu trong mau hinh.",
+          "mode": "missingItem",
+          "correctOrder": [
+            {
+              "id": "i0",
+              "content": "61",
+              "type": "number"
+            },
+            {
+              "id": "i1",
+              "content": "58",
+              "type": "number"
+            },
+            {
+              "id": "i2",
+              "content": "55",
+              "type": "number"
+            },
+            {
+              "id": "i3",
+              "content": "52",
+              "type": "number"
+            },
+            {
+              "id": "i4",
+              "content": "49",
+              "type": "number"
+            }
+          ],
+          "missingIndices": [
+            4
+          ],
+          "choices": [
+            {
+              "id": "x1",
+              "content": "star",
+              "type": "text"
+            },
+            {
+              "id": "x2",
+              "content": "11",
+              "type": "number"
+            }
+          ],
+          "rule": {
+            "type": "descending",
+            "step": 3
+          },
+          "hint": "Quan sat cach day thay doi."
+        }
+      },
+      "hints": [
+        {
+          "text": "Quan sat cach day thay doi."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "master",
+        "skillIds": [
+          "logic.pattern.recognition"
+        ],
+        "generatedBy": "games_9_15_generator",
+        "generatorSeed": 20260719,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "pp-lv042",
+      "gameId": "pattern_parade",
+      "levelNumber": 42,
+      "difficulty": 5,
+      "learningObjective": "pattern recognition",
+      "localizedContent": {
+        "en": {
+          "prompt": "Choose the missing pattern item.",
+          "mode": "missingItem",
+          "correctOrder": [
+            {
+              "id": "i0",
+              "content": "62",
+              "type": "number"
+            },
+            {
+              "id": "i1",
+              "content": "59",
+              "type": "number"
+            },
+            {
+              "id": "i2",
+              "content": "56",
+              "type": "number"
+            },
+            {
+              "id": "i3",
+              "content": "53",
+              "type": "number"
+            },
+            {
+              "id": "i4",
+              "content": "50",
+              "type": "number"
+            }
+          ],
+          "missingIndices": [
+            4
+          ],
+          "choices": [
+            {
+              "id": "x1",
+              "content": "star",
+              "type": "text"
+            },
+            {
+              "id": "x2",
+              "content": "11",
+              "type": "number"
+            }
+          ],
+          "rule": {
+            "type": "descending",
+            "step": 3
+          },
+          "hint": "Look at how the sequence changes."
+        },
+        "vi": {
+          "prompt": "Chon muc con thieu trong mau hinh.",
+          "mode": "missingItem",
+          "correctOrder": [
+            {
+              "id": "i0",
+              "content": "62",
+              "type": "number"
+            },
+            {
+              "id": "i1",
+              "content": "59",
+              "type": "number"
+            },
+            {
+              "id": "i2",
+              "content": "56",
+              "type": "number"
+            },
+            {
+              "id": "i3",
+              "content": "53",
+              "type": "number"
+            },
+            {
+              "id": "i4",
+              "content": "50",
+              "type": "number"
+            }
+          ],
+          "missingIndices": [
+            4
+          ],
+          "choices": [
+            {
+              "id": "x1",
+              "content": "star",
+              "type": "text"
+            },
+            {
+              "id": "x2",
+              "content": "11",
+              "type": "number"
+            }
+          ],
+          "rule": {
+            "type": "descending",
+            "step": 3
+          },
+          "hint": "Quan sat cach day thay doi."
+        }
+      },
+      "hints": [
+        {
+          "text": "Quan sat cach day thay doi."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "master",
+        "skillIds": [
+          "logic.pattern.recognition"
+        ],
+        "generatedBy": "games_9_15_generator",
+        "generatorSeed": 20260719,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "pp-lv043",
+      "gameId": "pattern_parade",
+      "levelNumber": 43,
+      "difficulty": 5,
+      "learningObjective": "pattern recognition",
+      "localizedContent": {
+        "en": {
+          "prompt": "Choose the missing pattern item.",
+          "mode": "missingItem",
+          "correctOrder": [
+            {
+              "id": "i0",
+              "content": "63",
+              "type": "number"
+            },
+            {
+              "id": "i1",
+              "content": "60",
+              "type": "number"
+            },
+            {
+              "id": "i2",
+              "content": "57",
+              "type": "number"
+            },
+            {
+              "id": "i3",
+              "content": "54",
+              "type": "number"
+            },
+            {
+              "id": "i4",
+              "content": "51",
+              "type": "number"
+            }
+          ],
+          "missingIndices": [
+            4
+          ],
+          "choices": [
+            {
+              "id": "x1",
+              "content": "star",
+              "type": "text"
+            },
+            {
+              "id": "x2",
+              "content": "11",
+              "type": "number"
+            }
+          ],
+          "rule": {
+            "type": "descending",
+            "step": 3
+          },
+          "hint": "Look at how the sequence changes."
+        },
+        "vi": {
+          "prompt": "Chon muc con thieu trong mau hinh.",
+          "mode": "missingItem",
+          "correctOrder": [
+            {
+              "id": "i0",
+              "content": "63",
+              "type": "number"
+            },
+            {
+              "id": "i1",
+              "content": "60",
+              "type": "number"
+            },
+            {
+              "id": "i2",
+              "content": "57",
+              "type": "number"
+            },
+            {
+              "id": "i3",
+              "content": "54",
+              "type": "number"
+            },
+            {
+              "id": "i4",
+              "content": "51",
+              "type": "number"
+            }
+          ],
+          "missingIndices": [
+            4
+          ],
+          "choices": [
+            {
+              "id": "x1",
+              "content": "star",
+              "type": "text"
+            },
+            {
+              "id": "x2",
+              "content": "11",
+              "type": "number"
+            }
+          ],
+          "rule": {
+            "type": "descending",
+            "step": 3
+          },
+          "hint": "Quan sat cach day thay doi."
+        }
+      },
+      "hints": [
+        {
+          "text": "Quan sat cach day thay doi."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "master",
+        "skillIds": [
+          "logic.pattern.recognition"
+        ],
+        "generatedBy": "games_9_15_generator",
+        "generatorSeed": 20260719,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "pp-lv044",
+      "gameId": "pattern_parade",
+      "levelNumber": 44,
+      "difficulty": 5,
+      "learningObjective": "pattern recognition",
+      "localizedContent": {
+        "en": {
+          "prompt": "Choose the missing pattern item.",
+          "mode": "missingItem",
+          "correctOrder": [
+            {
+              "id": "i0",
+              "content": "64",
+              "type": "number"
+            },
+            {
+              "id": "i1",
+              "content": "61",
+              "type": "number"
+            },
+            {
+              "id": "i2",
+              "content": "58",
+              "type": "number"
+            },
+            {
+              "id": "i3",
+              "content": "55",
+              "type": "number"
+            },
+            {
+              "id": "i4",
+              "content": "52",
+              "type": "number"
+            }
+          ],
+          "missingIndices": [
+            4
+          ],
+          "choices": [
+            {
+              "id": "x1",
+              "content": "star",
+              "type": "text"
+            },
+            {
+              "id": "x2",
+              "content": "11",
+              "type": "number"
+            }
+          ],
+          "rule": {
+            "type": "descending",
+            "step": 3
+          },
+          "hint": "Look at how the sequence changes."
+        },
+        "vi": {
+          "prompt": "Chon muc con thieu trong mau hinh.",
+          "mode": "missingItem",
+          "correctOrder": [
+            {
+              "id": "i0",
+              "content": "64",
+              "type": "number"
+            },
+            {
+              "id": "i1",
+              "content": "61",
+              "type": "number"
+            },
+            {
+              "id": "i2",
+              "content": "58",
+              "type": "number"
+            },
+            {
+              "id": "i3",
+              "content": "55",
+              "type": "number"
+            },
+            {
+              "id": "i4",
+              "content": "52",
+              "type": "number"
+            }
+          ],
+          "missingIndices": [
+            4
+          ],
+          "choices": [
+            {
+              "id": "x1",
+              "content": "star",
+              "type": "text"
+            },
+            {
+              "id": "x2",
+              "content": "11",
+              "type": "number"
+            }
+          ],
+          "rule": {
+            "type": "descending",
+            "step": 3
+          },
+          "hint": "Quan sat cach day thay doi."
+        }
+      },
+      "hints": [
+        {
+          "text": "Quan sat cach day thay doi."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "master",
+        "skillIds": [
+          "logic.pattern.recognition"
+        ],
+        "generatedBy": "games_9_15_generator",
+        "generatorSeed": 20260719,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "pp-lv045",
+      "gameId": "pattern_parade",
+      "levelNumber": 45,
+      "difficulty": 5,
+      "learningObjective": "pattern recognition",
+      "localizedContent": {
+        "en": {
+          "prompt": "Choose the missing pattern item.",
+          "mode": "missingItem",
+          "correctOrder": [
+            {
+              "id": "i0",
+              "content": "65",
+              "type": "number"
+            },
+            {
+              "id": "i1",
+              "content": "62",
+              "type": "number"
+            },
+            {
+              "id": "i2",
+              "content": "59",
+              "type": "number"
+            },
+            {
+              "id": "i3",
+              "content": "56",
+              "type": "number"
+            },
+            {
+              "id": "i4",
+              "content": "53",
+              "type": "number"
+            }
+          ],
+          "missingIndices": [
+            4
+          ],
+          "choices": [
+            {
+              "id": "x1",
+              "content": "star",
+              "type": "text"
+            },
+            {
+              "id": "x2",
+              "content": "11",
+              "type": "number"
+            }
+          ],
+          "rule": {
+            "type": "descending",
+            "step": 3
+          },
+          "hint": "Look at how the sequence changes."
+        },
+        "vi": {
+          "prompt": "Chon muc con thieu trong mau hinh.",
+          "mode": "missingItem",
+          "correctOrder": [
+            {
+              "id": "i0",
+              "content": "65",
+              "type": "number"
+            },
+            {
+              "id": "i1",
+              "content": "62",
+              "type": "number"
+            },
+            {
+              "id": "i2",
+              "content": "59",
+              "type": "number"
+            },
+            {
+              "id": "i3",
+              "content": "56",
+              "type": "number"
+            },
+            {
+              "id": "i4",
+              "content": "53",
+              "type": "number"
+            }
+          ],
+          "missingIndices": [
+            4
+          ],
+          "choices": [
+            {
+              "id": "x1",
+              "content": "star",
+              "type": "text"
+            },
+            {
+              "id": "x2",
+              "content": "11",
+              "type": "number"
+            }
+          ],
+          "rule": {
+            "type": "descending",
+            "step": 3
+          },
+          "hint": "Quan sat cach day thay doi."
+        }
+      },
+      "hints": [
+        {
+          "text": "Quan sat cach day thay doi."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "master",
+        "skillIds": [
+          "logic.pattern.recognition"
+        ],
+        "generatedBy": "games_9_15_generator",
+        "generatorSeed": 20260719,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "pp-lv046",
+      "gameId": "pattern_parade",
+      "levelNumber": 46,
+      "difficulty": 5,
+      "learningObjective": "pattern recognition",
+      "localizedContent": {
+        "en": {
+          "prompt": "Choose the missing pattern item.",
+          "mode": "missingItem",
+          "correctOrder": [
+            {
+              "id": "i0",
+              "content": "66",
+              "type": "number"
+            },
+            {
+              "id": "i1",
+              "content": "63",
+              "type": "number"
+            },
+            {
+              "id": "i2",
+              "content": "60",
+              "type": "number"
+            },
+            {
+              "id": "i3",
+              "content": "57",
+              "type": "number"
+            },
+            {
+              "id": "i4",
+              "content": "54",
+              "type": "number"
+            }
+          ],
+          "missingIndices": [
+            4
+          ],
+          "choices": [
+            {
+              "id": "x1",
+              "content": "star",
+              "type": "text"
+            },
+            {
+              "id": "x2",
+              "content": "11",
+              "type": "number"
+            }
+          ],
+          "rule": {
+            "type": "descending",
+            "step": 3
+          },
+          "hint": "Look at how the sequence changes."
+        },
+        "vi": {
+          "prompt": "Chon muc con thieu trong mau hinh.",
+          "mode": "missingItem",
+          "correctOrder": [
+            {
+              "id": "i0",
+              "content": "66",
+              "type": "number"
+            },
+            {
+              "id": "i1",
+              "content": "63",
+              "type": "number"
+            },
+            {
+              "id": "i2",
+              "content": "60",
+              "type": "number"
+            },
+            {
+              "id": "i3",
+              "content": "57",
+              "type": "number"
+            },
+            {
+              "id": "i4",
+              "content": "54",
+              "type": "number"
+            }
+          ],
+          "missingIndices": [
+            4
+          ],
+          "choices": [
+            {
+              "id": "x1",
+              "content": "star",
+              "type": "text"
+            },
+            {
+              "id": "x2",
+              "content": "11",
+              "type": "number"
+            }
+          ],
+          "rule": {
+            "type": "descending",
+            "step": 3
+          },
+          "hint": "Quan sat cach day thay doi."
+        }
+      },
+      "hints": [
+        {
+          "text": "Quan sat cach day thay doi."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "master",
+        "skillIds": [
+          "logic.pattern.recognition"
+        ],
+        "generatedBy": "games_9_15_generator",
+        "generatorSeed": 20260719,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "pp-lv047",
+      "gameId": "pattern_parade",
+      "levelNumber": 47,
+      "difficulty": 5,
+      "learningObjective": "pattern recognition",
+      "localizedContent": {
+        "en": {
+          "prompt": "Choose the missing pattern item.",
+          "mode": "missingItem",
+          "correctOrder": [
+            {
+              "id": "i0",
+              "content": "67",
+              "type": "number"
+            },
+            {
+              "id": "i1",
+              "content": "64",
+              "type": "number"
+            },
+            {
+              "id": "i2",
+              "content": "61",
+              "type": "number"
+            },
+            {
+              "id": "i3",
+              "content": "58",
+              "type": "number"
+            },
+            {
+              "id": "i4",
+              "content": "55",
+              "type": "number"
+            }
+          ],
+          "missingIndices": [
+            4
+          ],
+          "choices": [
+            {
+              "id": "x1",
+              "content": "star",
+              "type": "text"
+            },
+            {
+              "id": "x2",
+              "content": "11",
+              "type": "number"
+            }
+          ],
+          "rule": {
+            "type": "descending",
+            "step": 3
+          },
+          "hint": "Look at how the sequence changes."
+        },
+        "vi": {
+          "prompt": "Chon muc con thieu trong mau hinh.",
+          "mode": "missingItem",
+          "correctOrder": [
+            {
+              "id": "i0",
+              "content": "67",
+              "type": "number"
+            },
+            {
+              "id": "i1",
+              "content": "64",
+              "type": "number"
+            },
+            {
+              "id": "i2",
+              "content": "61",
+              "type": "number"
+            },
+            {
+              "id": "i3",
+              "content": "58",
+              "type": "number"
+            },
+            {
+              "id": "i4",
+              "content": "55",
+              "type": "number"
+            }
+          ],
+          "missingIndices": [
+            4
+          ],
+          "choices": [
+            {
+              "id": "x1",
+              "content": "star",
+              "type": "text"
+            },
+            {
+              "id": "x2",
+              "content": "11",
+              "type": "number"
+            }
+          ],
+          "rule": {
+            "type": "descending",
+            "step": 3
+          },
+          "hint": "Quan sat cach day thay doi."
+        }
+      },
+      "hints": [
+        {
+          "text": "Quan sat cach day thay doi."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "master",
+        "skillIds": [
+          "logic.pattern.recognition"
+        ],
+        "generatedBy": "games_9_15_generator",
+        "generatorSeed": 20260719,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "pp-lv048",
+      "gameId": "pattern_parade",
+      "levelNumber": 48,
+      "difficulty": 5,
+      "learningObjective": "pattern recognition",
+      "localizedContent": {
+        "en": {
+          "prompt": "Choose the missing pattern item.",
+          "mode": "missingItem",
+          "correctOrder": [
+            {
+              "id": "i0",
+              "content": "68",
+              "type": "number"
+            },
+            {
+              "id": "i1",
+              "content": "65",
+              "type": "number"
+            },
+            {
+              "id": "i2",
+              "content": "62",
+              "type": "number"
+            },
+            {
+              "id": "i3",
+              "content": "59",
+              "type": "number"
+            },
+            {
+              "id": "i4",
+              "content": "56",
+              "type": "number"
+            }
+          ],
+          "missingIndices": [
+            4
+          ],
+          "choices": [
+            {
+              "id": "x1",
+              "content": "star",
+              "type": "text"
+            },
+            {
+              "id": "x2",
+              "content": "11",
+              "type": "number"
+            }
+          ],
+          "rule": {
+            "type": "descending",
+            "step": 3
+          },
+          "hint": "Look at how the sequence changes."
+        },
+        "vi": {
+          "prompt": "Chon muc con thieu trong mau hinh.",
+          "mode": "missingItem",
+          "correctOrder": [
+            {
+              "id": "i0",
+              "content": "68",
+              "type": "number"
+            },
+            {
+              "id": "i1",
+              "content": "65",
+              "type": "number"
+            },
+            {
+              "id": "i2",
+              "content": "62",
+              "type": "number"
+            },
+            {
+              "id": "i3",
+              "content": "59",
+              "type": "number"
+            },
+            {
+              "id": "i4",
+              "content": "56",
+              "type": "number"
+            }
+          ],
+          "missingIndices": [
+            4
+          ],
+          "choices": [
+            {
+              "id": "x1",
+              "content": "star",
+              "type": "text"
+            },
+            {
+              "id": "x2",
+              "content": "11",
+              "type": "number"
+            }
+          ],
+          "rule": {
+            "type": "descending",
+            "step": 3
+          },
+          "hint": "Quan sat cach day thay doi."
+        }
+      },
+      "hints": [
+        {
+          "text": "Quan sat cach day thay doi."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "master",
+        "skillIds": [
+          "logic.pattern.recognition"
+        ],
+        "generatedBy": "games_9_15_generator",
+        "generatorSeed": 20260719,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "pp-lv049",
+      "gameId": "pattern_parade",
+      "levelNumber": 49,
+      "difficulty": 5,
+      "learningObjective": "pattern recognition",
+      "localizedContent": {
+        "en": {
+          "prompt": "Choose the missing pattern item.",
+          "mode": "missingItem",
+          "correctOrder": [
+            {
+              "id": "i0",
+              "content": "69",
+              "type": "number"
+            },
+            {
+              "id": "i1",
+              "content": "66",
+              "type": "number"
+            },
+            {
+              "id": "i2",
+              "content": "63",
+              "type": "number"
+            },
+            {
+              "id": "i3",
+              "content": "60",
+              "type": "number"
+            },
+            {
+              "id": "i4",
+              "content": "57",
+              "type": "number"
+            }
+          ],
+          "missingIndices": [
+            4
+          ],
+          "choices": [
+            {
+              "id": "x1",
+              "content": "star",
+              "type": "text"
+            },
+            {
+              "id": "x2",
+              "content": "11",
+              "type": "number"
+            }
+          ],
+          "rule": {
+            "type": "descending",
+            "step": 3
+          },
+          "hint": "Look at how the sequence changes."
+        },
+        "vi": {
+          "prompt": "Chon muc con thieu trong mau hinh.",
+          "mode": "missingItem",
+          "correctOrder": [
+            {
+              "id": "i0",
+              "content": "69",
+              "type": "number"
+            },
+            {
+              "id": "i1",
+              "content": "66",
+              "type": "number"
+            },
+            {
+              "id": "i2",
+              "content": "63",
+              "type": "number"
+            },
+            {
+              "id": "i3",
+              "content": "60",
+              "type": "number"
+            },
+            {
+              "id": "i4",
+              "content": "57",
+              "type": "number"
+            }
+          ],
+          "missingIndices": [
+            4
+          ],
+          "choices": [
+            {
+              "id": "x1",
+              "content": "star",
+              "type": "text"
+            },
+            {
+              "id": "x2",
+              "content": "11",
+              "type": "number"
+            }
+          ],
+          "rule": {
+            "type": "descending",
+            "step": 3
+          },
+          "hint": "Quan sat cach day thay doi."
+        }
+      },
+      "hints": [
+        {
+          "text": "Quan sat cach day thay doi."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "master",
+        "skillIds": [
+          "logic.pattern.recognition"
+        ],
+        "generatedBy": "games_9_15_generator",
+        "generatorSeed": 20260719,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "pp-lv050",
+      "gameId": "pattern_parade",
+      "levelNumber": 50,
+      "difficulty": 5,
+      "learningObjective": "pattern recognition",
+      "localizedContent": {
+        "en": {
+          "prompt": "Choose the missing pattern item.",
+          "mode": "missingItem",
+          "correctOrder": [
+            {
+              "id": "i0",
+              "content": "70",
+              "type": "number"
+            },
+            {
+              "id": "i1",
+              "content": "67",
+              "type": "number"
+            },
+            {
+              "id": "i2",
+              "content": "64",
+              "type": "number"
+            },
+            {
+              "id": "i3",
+              "content": "61",
+              "type": "number"
+            },
+            {
+              "id": "i4",
+              "content": "58",
+              "type": "number"
+            }
+          ],
+          "missingIndices": [
+            4
+          ],
+          "choices": [
+            {
+              "id": "x1",
+              "content": "star",
+              "type": "text"
+            },
+            {
+              "id": "x2",
+              "content": "11",
+              "type": "number"
+            }
+          ],
+          "rule": {
+            "type": "descending",
+            "step": 3
+          },
+          "hint": "Look at how the sequence changes."
+        },
+        "vi": {
+          "prompt": "Chon muc con thieu trong mau hinh.",
+          "mode": "missingItem",
+          "correctOrder": [
+            {
+              "id": "i0",
+              "content": "70",
+              "type": "number"
+            },
+            {
+              "id": "i1",
+              "content": "67",
+              "type": "number"
+            },
+            {
+              "id": "i2",
+              "content": "64",
+              "type": "number"
+            },
+            {
+              "id": "i3",
+              "content": "61",
+              "type": "number"
+            },
+            {
+              "id": "i4",
+              "content": "58",
+              "type": "number"
+            }
+          ],
+          "missingIndices": [
+            4
+          ],
+          "choices": [
+            {
+              "id": "x1",
+              "content": "star",
+              "type": "text"
+            },
+            {
+              "id": "x2",
+              "content": "11",
+              "type": "number"
+            }
+          ],
+          "rule": {
+            "type": "descending",
+            "step": 3
+          },
+          "hint": "Quan sat cach day thay doi."
+        }
+      },
+      "hints": [
+        {
+          "text": "Quan sat cach day thay doi."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "master",
+        "skillIds": [
+          "logic.pattern.recognition"
+        ],
+        "generatedBy": "games_9_15_generator",
+        "generatorSeed": 20260719,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "pp-lv051",
+      "gameId": "pattern_parade",
+      "levelNumber": 51,
+      "difficulty": 5,
+      "learningObjective": "pattern recognition",
+      "localizedContent": {
+        "en": {
+          "prompt": "Choose the missing pattern item.",
+          "mode": "missingItem",
+          "correctOrder": [
+            {
+              "id": "i0",
+              "content": "71",
+              "type": "number"
+            },
+            {
+              "id": "i1",
+              "content": "68",
+              "type": "number"
+            },
+            {
+              "id": "i2",
+              "content": "65",
+              "type": "number"
+            },
+            {
+              "id": "i3",
+              "content": "62",
+              "type": "number"
+            },
+            {
+              "id": "i4",
+              "content": "59",
+              "type": "number"
+            }
+          ],
+          "missingIndices": [
+            4
+          ],
+          "choices": [
+            {
+              "id": "x1",
+              "content": "star",
+              "type": "text"
+            },
+            {
+              "id": "x2",
+              "content": "11",
+              "type": "number"
+            }
+          ],
+          "rule": {
+            "type": "descending",
+            "step": 3
+          },
+          "hint": "Look at how the sequence changes."
+        },
+        "vi": {
+          "prompt": "Chon muc con thieu trong mau hinh.",
+          "mode": "missingItem",
+          "correctOrder": [
+            {
+              "id": "i0",
+              "content": "71",
+              "type": "number"
+            },
+            {
+              "id": "i1",
+              "content": "68",
+              "type": "number"
+            },
+            {
+              "id": "i2",
+              "content": "65",
+              "type": "number"
+            },
+            {
+              "id": "i3",
+              "content": "62",
+              "type": "number"
+            },
+            {
+              "id": "i4",
+              "content": "59",
+              "type": "number"
+            }
+          ],
+          "missingIndices": [
+            4
+          ],
+          "choices": [
+            {
+              "id": "x1",
+              "content": "star",
+              "type": "text"
+            },
+            {
+              "id": "x2",
+              "content": "11",
+              "type": "number"
+            }
+          ],
+          "rule": {
+            "type": "descending",
+            "step": 3
+          },
+          "hint": "Quan sat cach day thay doi."
+        }
+      },
+      "hints": [
+        {
+          "text": "Quan sat cach day thay doi."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "master",
+        "skillIds": [
+          "logic.pattern.recognition"
+        ],
+        "generatedBy": "games_9_15_generator",
+        "generatorSeed": 20260719,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "pp-lv052",
+      "gameId": "pattern_parade",
+      "levelNumber": 52,
+      "difficulty": 5,
+      "learningObjective": "pattern recognition",
+      "localizedContent": {
+        "en": {
+          "prompt": "Choose the missing pattern item.",
+          "mode": "missingItem",
+          "correctOrder": [
+            {
+              "id": "i0",
+              "content": "72",
+              "type": "number"
+            },
+            {
+              "id": "i1",
+              "content": "69",
+              "type": "number"
+            },
+            {
+              "id": "i2",
+              "content": "66",
+              "type": "number"
+            },
+            {
+              "id": "i3",
+              "content": "63",
+              "type": "number"
+            },
+            {
+              "id": "i4",
+              "content": "60",
+              "type": "number"
+            }
+          ],
+          "missingIndices": [
+            4
+          ],
+          "choices": [
+            {
+              "id": "x1",
+              "content": "star",
+              "type": "text"
+            },
+            {
+              "id": "x2",
+              "content": "11",
+              "type": "number"
+            }
+          ],
+          "rule": {
+            "type": "descending",
+            "step": 3
+          },
+          "hint": "Look at how the sequence changes."
+        },
+        "vi": {
+          "prompt": "Chon muc con thieu trong mau hinh.",
+          "mode": "missingItem",
+          "correctOrder": [
+            {
+              "id": "i0",
+              "content": "72",
+              "type": "number"
+            },
+            {
+              "id": "i1",
+              "content": "69",
+              "type": "number"
+            },
+            {
+              "id": "i2",
+              "content": "66",
+              "type": "number"
+            },
+            {
+              "id": "i3",
+              "content": "63",
+              "type": "number"
+            },
+            {
+              "id": "i4",
+              "content": "60",
+              "type": "number"
+            }
+          ],
+          "missingIndices": [
+            4
+          ],
+          "choices": [
+            {
+              "id": "x1",
+              "content": "star",
+              "type": "text"
+            },
+            {
+              "id": "x2",
+              "content": "11",
+              "type": "number"
+            }
+          ],
+          "rule": {
+            "type": "descending",
+            "step": 3
+          },
+          "hint": "Quan sat cach day thay doi."
+        }
+      },
+      "hints": [
+        {
+          "text": "Quan sat cach day thay doi."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "master",
+        "skillIds": [
+          "logic.pattern.recognition"
+        ],
+        "generatedBy": "games_9_15_generator",
+        "generatorSeed": 20260719,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "pp-lv053",
+      "gameId": "pattern_parade",
+      "levelNumber": 53,
+      "difficulty": 5,
+      "learningObjective": "pattern recognition",
+      "localizedContent": {
+        "en": {
+          "prompt": "Choose the missing pattern item.",
+          "mode": "missingItem",
+          "correctOrder": [
+            {
+              "id": "i0",
+              "content": "73",
+              "type": "number"
+            },
+            {
+              "id": "i1",
+              "content": "70",
+              "type": "number"
+            },
+            {
+              "id": "i2",
+              "content": "67",
+              "type": "number"
+            },
+            {
+              "id": "i3",
+              "content": "64",
+              "type": "number"
+            },
+            {
+              "id": "i4",
+              "content": "61",
+              "type": "number"
+            }
+          ],
+          "missingIndices": [
+            4
+          ],
+          "choices": [
+            {
+              "id": "x1",
+              "content": "star",
+              "type": "text"
+            },
+            {
+              "id": "x2",
+              "content": "11",
+              "type": "number"
+            }
+          ],
+          "rule": {
+            "type": "descending",
+            "step": 3
+          },
+          "hint": "Look at how the sequence changes."
+        },
+        "vi": {
+          "prompt": "Chon muc con thieu trong mau hinh.",
+          "mode": "missingItem",
+          "correctOrder": [
+            {
+              "id": "i0",
+              "content": "73",
+              "type": "number"
+            },
+            {
+              "id": "i1",
+              "content": "70",
+              "type": "number"
+            },
+            {
+              "id": "i2",
+              "content": "67",
+              "type": "number"
+            },
+            {
+              "id": "i3",
+              "content": "64",
+              "type": "number"
+            },
+            {
+              "id": "i4",
+              "content": "61",
+              "type": "number"
+            }
+          ],
+          "missingIndices": [
+            4
+          ],
+          "choices": [
+            {
+              "id": "x1",
+              "content": "star",
+              "type": "text"
+            },
+            {
+              "id": "x2",
+              "content": "11",
+              "type": "number"
+            }
+          ],
+          "rule": {
+            "type": "descending",
+            "step": 3
+          },
+          "hint": "Quan sat cach day thay doi."
+        }
+      },
+      "hints": [
+        {
+          "text": "Quan sat cach day thay doi."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "master",
+        "skillIds": [
+          "logic.pattern.recognition"
+        ],
+        "generatedBy": "games_9_15_generator",
+        "generatorSeed": 20260719,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "pp-lv054",
+      "gameId": "pattern_parade",
+      "levelNumber": 54,
+      "difficulty": 5,
+      "learningObjective": "pattern recognition",
+      "localizedContent": {
+        "en": {
+          "prompt": "Choose the missing pattern item.",
+          "mode": "missingItem",
+          "correctOrder": [
+            {
+              "id": "i0",
+              "content": "74",
+              "type": "number"
+            },
+            {
+              "id": "i1",
+              "content": "71",
+              "type": "number"
+            },
+            {
+              "id": "i2",
+              "content": "68",
+              "type": "number"
+            },
+            {
+              "id": "i3",
+              "content": "65",
+              "type": "number"
+            },
+            {
+              "id": "i4",
+              "content": "62",
+              "type": "number"
+            }
+          ],
+          "missingIndices": [
+            4
+          ],
+          "choices": [
+            {
+              "id": "x1",
+              "content": "star",
+              "type": "text"
+            },
+            {
+              "id": "x2",
+              "content": "11",
+              "type": "number"
+            }
+          ],
+          "rule": {
+            "type": "descending",
+            "step": 3
+          },
+          "hint": "Look at how the sequence changes."
+        },
+        "vi": {
+          "prompt": "Chon muc con thieu trong mau hinh.",
+          "mode": "missingItem",
+          "correctOrder": [
+            {
+              "id": "i0",
+              "content": "74",
+              "type": "number"
+            },
+            {
+              "id": "i1",
+              "content": "71",
+              "type": "number"
+            },
+            {
+              "id": "i2",
+              "content": "68",
+              "type": "number"
+            },
+            {
+              "id": "i3",
+              "content": "65",
+              "type": "number"
+            },
+            {
+              "id": "i4",
+              "content": "62",
+              "type": "number"
+            }
+          ],
+          "missingIndices": [
+            4
+          ],
+          "choices": [
+            {
+              "id": "x1",
+              "content": "star",
+              "type": "text"
+            },
+            {
+              "id": "x2",
+              "content": "11",
+              "type": "number"
+            }
+          ],
+          "rule": {
+            "type": "descending",
+            "step": 3
+          },
+          "hint": "Quan sat cach day thay doi."
+        }
+      },
+      "hints": [
+        {
+          "text": "Quan sat cach day thay doi."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "master",
+        "skillIds": [
+          "logic.pattern.recognition"
+        ],
+        "generatedBy": "games_9_15_generator",
+        "generatorSeed": 20260719,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "pp-lv055",
+      "gameId": "pattern_parade",
+      "levelNumber": 55,
+      "difficulty": 5,
+      "learningObjective": "pattern recognition",
+      "localizedContent": {
+        "en": {
+          "prompt": "Choose the missing pattern item.",
+          "mode": "missingItem",
+          "correctOrder": [
+            {
+              "id": "i0",
+              "content": "75",
+              "type": "number"
+            },
+            {
+              "id": "i1",
+              "content": "72",
+              "type": "number"
+            },
+            {
+              "id": "i2",
+              "content": "69",
+              "type": "number"
+            },
+            {
+              "id": "i3",
+              "content": "66",
+              "type": "number"
+            },
+            {
+              "id": "i4",
+              "content": "63",
+              "type": "number"
+            }
+          ],
+          "missingIndices": [
+            4
+          ],
+          "choices": [
+            {
+              "id": "x1",
+              "content": "star",
+              "type": "text"
+            },
+            {
+              "id": "x2",
+              "content": "11",
+              "type": "number"
+            }
+          ],
+          "rule": {
+            "type": "descending",
+            "step": 3
+          },
+          "hint": "Look at how the sequence changes."
+        },
+        "vi": {
+          "prompt": "Chon muc con thieu trong mau hinh.",
+          "mode": "missingItem",
+          "correctOrder": [
+            {
+              "id": "i0",
+              "content": "75",
+              "type": "number"
+            },
+            {
+              "id": "i1",
+              "content": "72",
+              "type": "number"
+            },
+            {
+              "id": "i2",
+              "content": "69",
+              "type": "number"
+            },
+            {
+              "id": "i3",
+              "content": "66",
+              "type": "number"
+            },
+            {
+              "id": "i4",
+              "content": "63",
+              "type": "number"
+            }
+          ],
+          "missingIndices": [
+            4
+          ],
+          "choices": [
+            {
+              "id": "x1",
+              "content": "star",
+              "type": "text"
+            },
+            {
+              "id": "x2",
+              "content": "11",
+              "type": "number"
+            }
+          ],
+          "rule": {
+            "type": "descending",
+            "step": 3
+          },
+          "hint": "Quan sat cach day thay doi."
+        }
+      },
+      "hints": [
+        {
+          "text": "Quan sat cach day thay doi."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "master",
+        "skillIds": [
+          "logic.pattern.recognition"
+        ],
+        "generatedBy": "games_9_15_generator",
+        "generatorSeed": 20260719,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "pp-lv056",
+      "gameId": "pattern_parade",
+      "levelNumber": 56,
+      "difficulty": 5,
+      "learningObjective": "pattern recognition",
+      "localizedContent": {
+        "en": {
+          "prompt": "Choose the missing pattern item.",
+          "mode": "missingItem",
+          "correctOrder": [
+            {
+              "id": "i0",
+              "content": "76",
+              "type": "number"
+            },
+            {
+              "id": "i1",
+              "content": "73",
+              "type": "number"
+            },
+            {
+              "id": "i2",
+              "content": "70",
+              "type": "number"
+            },
+            {
+              "id": "i3",
+              "content": "67",
+              "type": "number"
+            },
+            {
+              "id": "i4",
+              "content": "64",
+              "type": "number"
+            }
+          ],
+          "missingIndices": [
+            4
+          ],
+          "choices": [
+            {
+              "id": "x1",
+              "content": "star",
+              "type": "text"
+            },
+            {
+              "id": "x2",
+              "content": "11",
+              "type": "number"
+            }
+          ],
+          "rule": {
+            "type": "descending",
+            "step": 3
+          },
+          "hint": "Look at how the sequence changes."
+        },
+        "vi": {
+          "prompt": "Chon muc con thieu trong mau hinh.",
+          "mode": "missingItem",
+          "correctOrder": [
+            {
+              "id": "i0",
+              "content": "76",
+              "type": "number"
+            },
+            {
+              "id": "i1",
+              "content": "73",
+              "type": "number"
+            },
+            {
+              "id": "i2",
+              "content": "70",
+              "type": "number"
+            },
+            {
+              "id": "i3",
+              "content": "67",
+              "type": "number"
+            },
+            {
+              "id": "i4",
+              "content": "64",
+              "type": "number"
+            }
+          ],
+          "missingIndices": [
+            4
+          ],
+          "choices": [
+            {
+              "id": "x1",
+              "content": "star",
+              "type": "text"
+            },
+            {
+              "id": "x2",
+              "content": "11",
+              "type": "number"
+            }
+          ],
+          "rule": {
+            "type": "descending",
+            "step": 3
+          },
+          "hint": "Quan sat cach day thay doi."
+        }
+      },
+      "hints": [
+        {
+          "text": "Quan sat cach day thay doi."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "master",
+        "skillIds": [
+          "logic.pattern.recognition"
+        ],
+        "generatedBy": "games_9_15_generator",
+        "generatorSeed": 20260719,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "pp-lv057",
+      "gameId": "pattern_parade",
+      "levelNumber": 57,
+      "difficulty": 5,
+      "learningObjective": "pattern recognition",
+      "localizedContent": {
+        "en": {
+          "prompt": "Choose the missing pattern item.",
+          "mode": "missingItem",
+          "correctOrder": [
+            {
+              "id": "i0",
+              "content": "77",
+              "type": "number"
+            },
+            {
+              "id": "i1",
+              "content": "74",
+              "type": "number"
+            },
+            {
+              "id": "i2",
+              "content": "71",
+              "type": "number"
+            },
+            {
+              "id": "i3",
+              "content": "68",
+              "type": "number"
+            },
+            {
+              "id": "i4",
+              "content": "65",
+              "type": "number"
+            }
+          ],
+          "missingIndices": [
+            4
+          ],
+          "choices": [
+            {
+              "id": "x1",
+              "content": "star",
+              "type": "text"
+            },
+            {
+              "id": "x2",
+              "content": "11",
+              "type": "number"
+            }
+          ],
+          "rule": {
+            "type": "descending",
+            "step": 3
+          },
+          "hint": "Look at how the sequence changes."
+        },
+        "vi": {
+          "prompt": "Chon muc con thieu trong mau hinh.",
+          "mode": "missingItem",
+          "correctOrder": [
+            {
+              "id": "i0",
+              "content": "77",
+              "type": "number"
+            },
+            {
+              "id": "i1",
+              "content": "74",
+              "type": "number"
+            },
+            {
+              "id": "i2",
+              "content": "71",
+              "type": "number"
+            },
+            {
+              "id": "i3",
+              "content": "68",
+              "type": "number"
+            },
+            {
+              "id": "i4",
+              "content": "65",
+              "type": "number"
+            }
+          ],
+          "missingIndices": [
+            4
+          ],
+          "choices": [
+            {
+              "id": "x1",
+              "content": "star",
+              "type": "text"
+            },
+            {
+              "id": "x2",
+              "content": "11",
+              "type": "number"
+            }
+          ],
+          "rule": {
+            "type": "descending",
+            "step": 3
+          },
+          "hint": "Quan sat cach day thay doi."
+        }
+      },
+      "hints": [
+        {
+          "text": "Quan sat cach day thay doi."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "master",
+        "skillIds": [
+          "logic.pattern.recognition"
+        ],
+        "generatedBy": "games_9_15_generator",
+        "generatorSeed": 20260719,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "pp-lv058",
+      "gameId": "pattern_parade",
+      "levelNumber": 58,
+      "difficulty": 5,
+      "learningObjective": "pattern recognition",
+      "localizedContent": {
+        "en": {
+          "prompt": "Choose the missing pattern item.",
+          "mode": "missingItem",
+          "correctOrder": [
+            {
+              "id": "i0",
+              "content": "78",
+              "type": "number"
+            },
+            {
+              "id": "i1",
+              "content": "75",
+              "type": "number"
+            },
+            {
+              "id": "i2",
+              "content": "72",
+              "type": "number"
+            },
+            {
+              "id": "i3",
+              "content": "69",
+              "type": "number"
+            },
+            {
+              "id": "i4",
+              "content": "66",
+              "type": "number"
+            }
+          ],
+          "missingIndices": [
+            4
+          ],
+          "choices": [
+            {
+              "id": "x1",
+              "content": "star",
+              "type": "text"
+            },
+            {
+              "id": "x2",
+              "content": "11",
+              "type": "number"
+            }
+          ],
+          "rule": {
+            "type": "descending",
+            "step": 3
+          },
+          "hint": "Look at how the sequence changes."
+        },
+        "vi": {
+          "prompt": "Chon muc con thieu trong mau hinh.",
+          "mode": "missingItem",
+          "correctOrder": [
+            {
+              "id": "i0",
+              "content": "78",
+              "type": "number"
+            },
+            {
+              "id": "i1",
+              "content": "75",
+              "type": "number"
+            },
+            {
+              "id": "i2",
+              "content": "72",
+              "type": "number"
+            },
+            {
+              "id": "i3",
+              "content": "69",
+              "type": "number"
+            },
+            {
+              "id": "i4",
+              "content": "66",
+              "type": "number"
+            }
+          ],
+          "missingIndices": [
+            4
+          ],
+          "choices": [
+            {
+              "id": "x1",
+              "content": "star",
+              "type": "text"
+            },
+            {
+              "id": "x2",
+              "content": "11",
+              "type": "number"
+            }
+          ],
+          "rule": {
+            "type": "descending",
+            "step": 3
+          },
+          "hint": "Quan sat cach day thay doi."
+        }
+      },
+      "hints": [
+        {
+          "text": "Quan sat cach day thay doi."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "master",
+        "skillIds": [
+          "logic.pattern.recognition"
+        ],
+        "generatedBy": "games_9_15_generator",
+        "generatorSeed": 20260719,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "pp-lv059",
+      "gameId": "pattern_parade",
+      "levelNumber": 59,
+      "difficulty": 5,
+      "learningObjective": "pattern recognition",
+      "localizedContent": {
+        "en": {
+          "prompt": "Choose the missing pattern item.",
+          "mode": "missingItem",
+          "correctOrder": [
+            {
+              "id": "i0",
+              "content": "79",
+              "type": "number"
+            },
+            {
+              "id": "i1",
+              "content": "76",
+              "type": "number"
+            },
+            {
+              "id": "i2",
+              "content": "73",
+              "type": "number"
+            },
+            {
+              "id": "i3",
+              "content": "70",
+              "type": "number"
+            },
+            {
+              "id": "i4",
+              "content": "67",
+              "type": "number"
+            }
+          ],
+          "missingIndices": [
+            4
+          ],
+          "choices": [
+            {
+              "id": "x1",
+              "content": "star",
+              "type": "text"
+            },
+            {
+              "id": "x2",
+              "content": "11",
+              "type": "number"
+            }
+          ],
+          "rule": {
+            "type": "descending",
+            "step": 3
+          },
+          "hint": "Look at how the sequence changes."
+        },
+        "vi": {
+          "prompt": "Chon muc con thieu trong mau hinh.",
+          "mode": "missingItem",
+          "correctOrder": [
+            {
+              "id": "i0",
+              "content": "79",
+              "type": "number"
+            },
+            {
+              "id": "i1",
+              "content": "76",
+              "type": "number"
+            },
+            {
+              "id": "i2",
+              "content": "73",
+              "type": "number"
+            },
+            {
+              "id": "i3",
+              "content": "70",
+              "type": "number"
+            },
+            {
+              "id": "i4",
+              "content": "67",
+              "type": "number"
+            }
+          ],
+          "missingIndices": [
+            4
+          ],
+          "choices": [
+            {
+              "id": "x1",
+              "content": "star",
+              "type": "text"
+            },
+            {
+              "id": "x2",
+              "content": "11",
+              "type": "number"
+            }
+          ],
+          "rule": {
+            "type": "descending",
+            "step": 3
+          },
+          "hint": "Quan sat cach day thay doi."
+        }
+      },
+      "hints": [
+        {
+          "text": "Quan sat cach day thay doi."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "master",
+        "skillIds": [
+          "logic.pattern.recognition"
+        ],
+        "generatedBy": "games_9_15_generator",
+        "generatorSeed": 20260719,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "pp-lv060",
+      "gameId": "pattern_parade",
+      "levelNumber": 60,
+      "difficulty": 5,
+      "learningObjective": "pattern recognition",
+      "localizedContent": {
+        "en": {
+          "prompt": "Choose the missing pattern item.",
+          "mode": "missingItem",
+          "correctOrder": [
+            {
+              "id": "i0",
+              "content": "80",
+              "type": "number"
+            },
+            {
+              "id": "i1",
+              "content": "77",
+              "type": "number"
+            },
+            {
+              "id": "i2",
+              "content": "74",
+              "type": "number"
+            },
+            {
+              "id": "i3",
+              "content": "71",
+              "type": "number"
+            },
+            {
+              "id": "i4",
+              "content": "68",
+              "type": "number"
+            }
+          ],
+          "missingIndices": [
+            4
+          ],
+          "choices": [
+            {
+              "id": "x1",
+              "content": "star",
+              "type": "text"
+            },
+            {
+              "id": "x2",
+              "content": "11",
+              "type": "number"
+            }
+          ],
+          "rule": {
+            "type": "descending",
+            "step": 3
+          },
+          "hint": "Look at how the sequence changes."
+        },
+        "vi": {
+          "prompt": "Chon muc con thieu trong mau hinh.",
+          "mode": "missingItem",
+          "correctOrder": [
+            {
+              "id": "i0",
+              "content": "80",
+              "type": "number"
+            },
+            {
+              "id": "i1",
+              "content": "77",
+              "type": "number"
+            },
+            {
+              "id": "i2",
+              "content": "74",
+              "type": "number"
+            },
+            {
+              "id": "i3",
+              "content": "71",
+              "type": "number"
+            },
+            {
+              "id": "i4",
+              "content": "68",
+              "type": "number"
+            }
+          ],
+          "missingIndices": [
+            4
+          ],
+          "choices": [
+            {
+              "id": "x1",
+              "content": "star",
+              "type": "text"
+            },
+            {
+              "id": "x2",
+              "content": "11",
+              "type": "number"
+            }
+          ],
+          "rule": {
+            "type": "descending",
+            "step": 3
+          },
+          "hint": "Quan sat cach day thay doi."
+        }
+      },
+      "hints": [
+        {
+          "text": "Quan sat cach day thay doi."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "master",
+        "skillIds": [
+          "logic.pattern.recognition"
+        ],
+        "generatedBy": "games_9_15_generator",
+        "generatorSeed": 20260719,
+        "reviewStatus": "pending_human_review"
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 60,
+      "publicationState": "published"
+    }
+  ]
+}

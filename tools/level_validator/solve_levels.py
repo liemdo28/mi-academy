@@ -173,6 +173,74 @@ def solve_choice_level(level: dict) -> list[str]:
     return errors
 
 
+def solve_multi_select(level: dict) -> list[str]:
+    errors = []
+    for locale, loc in level.get("localizedContent", {}).items():
+        if not isinstance(loc, dict):
+            continue
+        correct = [
+            opt for opt in loc.get("options", []) if opt.get("isCorrect") is True
+        ]
+        config = loc.get("configuration", {})
+        minimum = config.get("minimumSelections", 1) if isinstance(config, dict) else 1
+        maximum = (
+            config.get("maximumSelections", len(loc.get("options", [])))
+            if isinstance(config, dict)
+            else len(loc.get("options", []))
+        )
+        if not correct:
+            errors.append(f"[{locale}] No correct multi-select option")
+        if not (minimum <= len(correct) <= maximum):
+            errors.append(f"[{locale}] Correct answer count outside configured bounds")
+    return errors
+
+
+def solve_sequence(level: dict) -> list[str]:
+    errors = []
+    for locale, loc in level.get("localizedContent", {}).items():
+        if not isinstance(loc, dict):
+            continue
+        order = loc.get("correctOrder", [])
+        if len(order) < 2:
+            errors.append(f"[{locale}] Sequence has fewer than 2 steps")
+        ids = [item.get("id") for item in order if isinstance(item, dict)]
+        if len(ids) != len(set(ids)):
+            errors.append(f"[{locale}] Duplicate sequence item id")
+        if loc.get("mode") == "missingItem":
+            for index in loc.get("missingIndices", []):
+                if not isinstance(index, int) or index < 0 or index >= len(order):
+                    errors.append(f"[{locale}] Missing index out of range")
+    return errors
+
+
+def solve_placement(level: dict) -> list[str]:
+    errors = []
+    for locale, loc in level.get("localizedContent", {}).items():
+        if not isinstance(loc, dict):
+            continue
+        targets = {
+            target.get("id")
+            for target in loc.get("targets", [])
+            if isinstance(target, dict)
+        }
+        for item in loc.get("items", []):
+            accepted = set(item.get("acceptedTargetIds", []))
+            if not accepted & targets:
+                errors.append(f"[{locale}] Item {item.get('id')} has no valid target")
+    return errors
+
+
+def solve_matching(level: dict) -> list[str]:
+    errors = []
+    for locale, loc in level.get("localizedContent", {}).items():
+        if not isinstance(loc, dict):
+            continue
+        pairs = loc.get("pairs", [])
+        if len(pairs) < 2:
+            errors.append(f"[{locale}] Matching level has fewer than 2 pairs")
+    return errors
+
+
 def validate_game_levels(
     *,
     all_errors: list[str],
@@ -251,6 +319,32 @@ def main():
         solver=solve_memory_cards,
         label="Memory Cards",
     )
+    for game_id, file_name, solver, label in [
+        (
+            "category_collector",
+            "category_collector.json",
+            solve_multi_select,
+            "Category Collector",
+        ),
+        ("pattern_parade", "pattern_parade.json", solve_sequence, "Pattern Parade"),
+        ("shape_builder", "shape_builder.json", solve_placement, "Shape Builder"),
+        ("word_sorter", "word_sorter.json", solve_placement, "Word Sorter"),
+        ("number_balance", "number_balance.json", solve_matching, "Number Balance"),
+        (
+            "logic_detective",
+            "logic_detective.json",
+            solve_multi_select,
+            "Logic Detective",
+        ),
+        ("story_steps", "story_steps.json", solve_sequence, "Story Steps"),
+    ]:
+        validate_game_levels(
+            all_errors=all_errors,
+            game_id=game_id,
+            file_name=file_name,
+            solver=solver,
+            label=label,
+        )
 
     rc_path = (
         PROJECT_ROOT / "apps" / "mobile" / "assets" / "levels" / "robot_commands.json"

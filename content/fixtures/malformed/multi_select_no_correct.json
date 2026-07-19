@@ -1,0 +1,23 @@
+{
+  "id": "bad-ms-001",
+  "gameId": "category_collector",
+  "levelNumber": 1,
+  "difficulty": 1,
+  "localizedContent": {
+    "vi": {
+      "prompt": "Chon tat ca con vat.",
+      "options": [
+        {"id": "a", "label": "ghe", "isCorrect": false},
+        {"id": "b", "label": "ban", "isCorrect": false}
+      ]
+    },
+    "en": {
+      "prompt": "Select all animals.",
+      "options": [
+        {"id": "a", "label": "chair", "isCorrect": false},
+        {"id": "b", "label": "table", "isCorrect": false}
+      ]
+    }
+  },
+  "metadata": {"ageGroup": "junior", "skillIds": ["logic.classification"]}
+}

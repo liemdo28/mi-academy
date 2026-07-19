@@ -107,8 +107,9 @@ void main() {
     late MatchingController controller;
 
     setUp(() {
-      controller =
-          MatchingController(content: MatchingContent.fromJson(_viExample()));
+      controller = MatchingController(
+        content: MatchingContent.fromJson(_viExample()),
+      );
     });
 
     test('correct pair gets marked matched and increments attempts', () {
@@ -137,13 +138,15 @@ void main() {
       expect(controller.attempts, attemptsAfterMatch);
     });
 
-    test('duplicate selection on the same side just replaces the pending pick',
-        () {
-      controller.selectLeft('l1');
-      controller.selectLeft('l2'); // re-picks before a right is chosen
-      expect(controller.selectedLeftId, 'l2');
-      expect(controller.attempts, 0); // no right picked yet, no attempt made
-    });
+    test(
+      'duplicate selection on the same side just replaces the pending pick',
+      () {
+        controller.selectLeft('l1');
+        controller.selectLeft('l2'); // re-picks before a right is chosen
+        expect(controller.selectedLeftId, 'l2');
+        expect(controller.attempts, 0); // no right picked yet, no attempt made
+      },
+    );
 
     test('retry resets attempts and matches', () {
       controller.selectLeft('l1');
@@ -204,14 +207,14 @@ void main() {
   });
 
   group('MatchingScreen widget', () {
-    testWidgets('renders instruction and both columns for valid content',
-        (tester) async {
-      await tester.pumpWidget(MaterialApp(
-        home: MatchingScreen(
-          rawContent: _viExample(),
-          onExit: () {},
+    testWidgets('renders instruction and both columns for valid content', (
+      tester,
+    ) async {
+      await tester.pumpWidget(
+        MaterialApp(
+          home: MatchingScreen(rawContent: _viExample(), onExit: () {}),
         ),
-      ));
+      );
       await tester.pump();
 
       expect(find.text('Ghép chữ cái với hình ảnh!'), findsOneWidget);
@@ -219,14 +222,17 @@ void main() {
       expect(find.textContaining('mèo'), findsOneWidget);
     });
 
-    testWidgets('shows a recoverable error state for malformed content',
-        (tester) async {
-      await tester.pumpWidget(MaterialApp(
-        home: MatchingScreen(
-          rawContent: {'contentId': 'broken'}, // missing everything else
-          onExit: () {},
+    testWidgets('shows a recoverable error state for malformed content', (
+      tester,
+    ) async {
+      await tester.pumpWidget(
+        MaterialApp(
+          home: MatchingScreen(
+            rawContent: {'contentId': 'broken'}, // missing everything else
+            onExit: () {},
+          ),
         ),
-      ));
+      );
       await tester.pump();
 
       expect(find.textContaining('không khả dụng'), findsOneWidget);
@@ -234,51 +240,58 @@ void main() {
     });
 
     testWidgets(
-        'tapping matching items completes the level and calls onComplete',
-        (tester) async {
-      MatchingCompletionResult? result;
-      await tester.pumpWidget(MaterialApp(
-        home: MatchingScreen(
-          rawContent: _viExample(),
-          onExit: () {},
-          onComplete: (r) => result = r,
-          reducedMotion: true,
+      'tapping matching items completes the level and calls onComplete',
+      (tester) async {
+        MatchingCompletionResult? result;
+        await tester.pumpWidget(
+          MaterialApp(
+            home: MatchingScreen(
+              rawContent: _viExample(),
+              onExit: () {},
+              onComplete: (r) => result = r,
+              reducedMotion: true,
+            ),
+          ),
+        );
+        await tester.pump();
+
+        // Tap every left item then its correct right partner, in the order
+        // the columns actually render (shuffled) -- read displayed text back
+        // via a content->side map instead of assuming column order.
+        for (final pair in [
+          ('M', '🐱 mèo'),
+          ('C', '🐟 cá'),
+          ('B', '🐦 bồ câu'),
+        ]) {
+          await tester.tap(find.text(pair.$1));
+          await tester.pump();
+          await tester.tap(find.textContaining(pair.$2));
+          await tester.pump();
+        }
+
+        expect(result, isNotNull);
+        expect(result!.starsEarned, 3);
+        expect(find.textContaining('Hoàn thành'), findsOneWidget);
+      },
+    );
+
+    testWidgets('reduced motion is honored (no animation duration)', (
+      tester,
+    ) async {
+      await tester.pumpWidget(
+        MaterialApp(
+          home: MatchingScreen(
+            rawContent: _viExample(),
+            onExit: () {},
+            reducedMotion: true,
+          ),
         ),
-      ));
+      );
       await tester.pump();
 
-      // Tap every left item then its correct right partner, in the order
-      // the columns actually render (shuffled) -- read displayed text back
-      // via a content->side map instead of assuming column order.
-      for (final pair in [
-        ('M', '🐱 mèo'),
-        ('C', '🐟 cá'),
-        ('B', '🐦 bồ câu'),
-      ]) {
-        await tester.tap(find.text(pair.$1));
-        await tester.pump();
-        await tester.tap(find.textContaining(pair.$2));
-        await tester.pump();
-      }
-
-      expect(result, isNotNull);
-      expect(result!.starsEarned, 3);
-      expect(find.textContaining('Hoàn thành'), findsOneWidget);
-    });
-
-    testWidgets('reduced motion is honored (no animation duration)',
-        (tester) async {
-      await tester.pumpWidget(MaterialApp(
-        home: MatchingScreen(
-          rawContent: _viExample(),
-          onExit: () {},
-          reducedMotion: true,
-        ),
-      ));
-      await tester.pump();
-
-      final containers =
-          tester.widgetList<AnimatedContainer>(find.byType(AnimatedContainer));
+      final containers = tester.widgetList<AnimatedContainer>(
+        find.byType(AnimatedContainer),
+      );
       expect(containers, isNotEmpty);
       for (final c in containers) {
         expect(c.duration, Duration.zero);

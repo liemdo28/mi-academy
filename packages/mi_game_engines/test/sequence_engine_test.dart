@@ -181,7 +181,8 @@ void main() {
   group('SequenceController (reorder mode)', () {
     test('starting arrangement is shuffled but same items as correctOrder', () {
       final controller = SequenceController(
-          content: SequenceContent.fromJson(_ascendingViExample()));
+        content: SequenceContent.fromJson(_ascendingViExample()),
+      );
       final ids = controller.arrangement.map((i) => i.id).toSet();
       expect(ids, {'n1', 'n2', 'n3', 'n4'});
     });
@@ -193,8 +194,9 @@ void main() {
       // moveItem calls until it matches, regardless of the initial shuffle.
       for (var target = 0; target < content.correctOrder.length; target++) {
         final wantedId = content.correctOrder[target].id;
-        final currentIndex =
-            controller.arrangement.indexWhere((i) => i.id == wantedId);
+        final currentIndex = controller.arrangement.indexWhere(
+          (i) => i.id == wantedId,
+        );
         if (currentIndex != target) {
           controller.moveItem(currentIndex, target);
         }
@@ -206,7 +208,8 @@ void main() {
 
     test('submitReorder fails and increments attempts on a wrong order', () {
       final controller = SequenceController(
-          content: SequenceContent.fromJson(_ascendingViExample()));
+        content: SequenceContent.fromJson(_ascendingViExample()),
+      );
       // Deliberately reverse -- guaranteed wrong for a 4-item ascending list.
       controller.moveItem(0, 3);
       controller.submitReorder();
@@ -228,8 +231,9 @@ void main() {
       final controller = SequenceController(content: content);
       for (var target = 0; target < content.correctOrder.length; target++) {
         final wantedId = content.correctOrder[target].id;
-        final currentIndex =
-            controller.arrangement.indexWhere((i) => i.id == wantedId);
+        final currentIndex = controller.arrangement.indexWhere(
+          (i) => i.id == wantedId,
+        );
         if (currentIndex != target) {
           controller.moveItem(currentIndex, target);
         }
@@ -240,7 +244,8 @@ void main() {
 
     test('pause blocks moveItem/submit; resume re-enables it', () {
       final controller = SequenceController(
-          content: SequenceContent.fromJson(_ascendingViExample()));
+        content: SequenceContent.fromJson(_ascendingViExample()),
+      );
       controller.pause();
       controller.moveItem(0, 1);
       final beforeResume = List.of(controller.arrangement);
@@ -270,7 +275,8 @@ void main() {
 
     test('hint visibility toggles', () {
       final controller = SequenceController(
-          content: SequenceContent.fromJson(_alternatingExample()));
+        content: SequenceContent.fromJson(_alternatingExample()),
+      );
       expect(controller.showHint, isFalse);
       controller.requestHint();
       expect(controller.showHint, isTrue);
@@ -280,11 +286,17 @@ void main() {
   });
 
   group('SequenceScreen widget', () {
-    testWidgets('renders instruction and reorder items for valid content',
-        (tester) async {
-      await tester.pumpWidget(MaterialApp(
-        home: SequenceScreen(rawContent: _ascendingViExample(), onExit: () {}),
-      ));
+    testWidgets('renders instruction and reorder items for valid content', (
+      tester,
+    ) async {
+      await tester.pumpWidget(
+        MaterialApp(
+          home: SequenceScreen(
+            rawContent: _ascendingViExample(),
+            onExit: () {},
+          ),
+        ),
+      );
       await tester.pump();
 
       expect(find.text('Sắp xếp các số theo thứ tự tăng dần!'), findsOneWidget);
@@ -292,54 +304,68 @@ void main() {
       expect(find.text('4'), findsOneWidget);
     });
 
-    testWidgets('shows a recoverable error state for malformed content',
-        (tester) async {
-      await tester.pumpWidget(MaterialApp(
-        home: SequenceScreen(
-          rawContent: {'contentId': 'broken'},
-          onExit: () {},
+    testWidgets('shows a recoverable error state for malformed content', (
+      tester,
+    ) async {
+      await tester.pumpWidget(
+        MaterialApp(
+          home: SequenceScreen(
+            rawContent: {'contentId': 'broken'},
+            onExit: () {},
+          ),
         ),
-      ));
+      );
       await tester.pump();
 
       expect(find.textContaining('không khả dụng'), findsOneWidget);
     });
 
     testWidgets(
-        'tap-based move-right button changes the rendered order (accessibility fallback)',
-        (tester) async {
-      await tester.pumpWidget(MaterialApp(
-        home: SequenceScreen(
-          rawContent: _ascendingViExample(),
-          onExit: () {},
-          reducedMotion: true,
+      'tap-based move-right button changes the rendered order (accessibility fallback)',
+      (tester) async {
+        await tester.pumpWidget(
+          MaterialApp(
+            home: SequenceScreen(
+              rawContent: _ascendingViExample(),
+              onExit: () {},
+              reducedMotion: true,
+            ),
+          ),
+        );
+        await tester.pump();
+
+        List<String> currentOrder() => tester
+            .widgetList<Text>(
+              find.descendant(
+                of: find.byType(ListTile),
+                matching: find.byType(Text),
+              ),
+            )
+            .map((t) => t.data)
+            .whereType<String>()
+            .where((t) => int.tryParse(t) != null)
+            .toList();
+
+        final before = currentOrder();
+        await tester.tap(find.byTooltip('Di chuyển sang phải').first);
+        await tester.pump();
+        final after = currentOrder();
+
+        expect(after, isNot(equals(before)));
+      },
+    );
+
+    testWidgets('missing-item mode renders blanks and choice buttons', (
+      tester,
+    ) async {
+      await tester.pumpWidget(
+        MaterialApp(
+          home: SequenceScreen(
+            rawContent: _alternatingExample(),
+            onExit: () {},
+          ),
         ),
-      ));
-      await tester.pump();
-
-      List<String> currentOrder() => tester
-          .widgetList<Text>(find.descendant(
-            of: find.byType(ListTile),
-            matching: find.byType(Text),
-          ))
-          .map((t) => t.data)
-          .whereType<String>()
-          .where((t) => int.tryParse(t) != null)
-          .toList();
-
-      final before = currentOrder();
-      await tester.tap(find.byTooltip('Di chuyển sang phải').first);
-      await tester.pump();
-      final after = currentOrder();
-
-      expect(after, isNot(equals(before)));
-    });
-
-    testWidgets('missing-item mode renders blanks and choice buttons',
-        (tester) async {
-      await tester.pumpWidget(MaterialApp(
-        home: SequenceScreen(rawContent: _alternatingExample(), onExit: () {}),
-      ));
+      );
       await tester.pump();
 
       expect(find.text('Tìm quy luật xen kẽ!'), findsOneWidget);

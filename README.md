@@ -17,22 +17,22 @@ in the current codebase, see:
   Milestone 1's delivered scope, architecture, test coverage, and honest
   remaining limitations.
 - [docs/game-catalog.md](./docs/game-catalog.md) — real per-game status
-  (8 of 30 target games exist).
+  (15 of 30 target games exist).
 
-Quick facts, verified directly: 8 playable games with local persistence;
+Quick facts, verified directly: 15 playable games with local persistence;
 `flutter analyze`, `ruff check .`, `ruff format --check .`, and `mypy .`
-are clean; `pytest` 179 passed; `flutter test` 108 passed (6 Linux-only
+are clean; `pytest` 187 passed; `flutter test` 123 passed (6 Linux-only
 golden tests skipped on Windows); content schema, malformed-fixture,
-content-safety, and ARB parity checks pass; Android `applicationId` is
-`com.liemteam.miacademy`; local APK/AAB release builds succeed with the
-documented debug-signing fallback. Milestone 2 is still **Not Ready**
-because games 9-15 and manual/device release gates remain open.
+content-safety, solvability, and ARB parity checks pass; Android
+`applicationId` is `com.liemteam.miacademy`. Milestone 2 engineering is
+conditional until final CI, Android emulator proof, release builds, and
+human educational review are complete.
 
 **Shared game engines** (`packages/mi_game_engines/`, see
 [docs/game-engine-architecture.md](./docs/game-engine-architecture.md)):
 all four Milestone 1 WS5 engines are now real and tested -- Matching,
-Sequence, Placement, and Multi-select -- 165 passing tests. None are
-yet wired into the game registry or a production game.
+Sequence, Placement, and Multi-select -- 165 passing tests. Games 9-15
+consume those shared engines through the public `mi_game_engines` barrel.
 
 ## Tài liệu phát triển
 

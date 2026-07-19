@@ -133,7 +133,8 @@ class MultiSelectConfiguration extends Equatable {
     int optionCount,
   ) {
     final submissionMode = _submissionMode(
-        json?['submissionMode'] as String? ?? json?['submitMode'] as String?);
+      json?['submissionMode'] as String? ?? json?['submitMode'] as String?,
+    );
     final evaluationMode = _evaluationMode(json?['evaluationMode'] as String?);
     final retryMode = _retryMode(json?['retryMode'] as String?);
     final rawHintMode = json?['hintMode'];
@@ -319,13 +320,15 @@ class MultiSelectContentValidator {
     final errors = <MultiSelectValidationError>[];
     final contentId = (json['contentId'] as String?) ?? '(unknown)';
     void add(String field, String code, String reason, {String? optionId}) {
-      errors.add(MultiSelectValidationError(
-        contentId: contentId,
-        field: field,
-        code: code,
-        reason: reason,
-        optionId: optionId,
-      ));
+      errors.add(
+        MultiSelectValidationError(
+          contentId: contentId,
+          field: field,
+          code: code,
+          reason: reason,
+          optionId: optionId,
+        ),
+      );
     }
 
     final required = [
@@ -347,26 +350,38 @@ class MultiSelectContentValidator {
 
     for (final field in ['contentId', 'gameId', 'locale', 'ageBand']) {
       if (!_isNonBlankString(json[field])) {
-        add(field, 'blank_required_field',
-            '$field must be a non-empty string.');
+        add(
+          field,
+          'blank_required_field',
+          '$field must be a non-empty string.',
+        );
       }
     }
     if (!_isNonBlankString(json['instruction'])) {
-      add('instruction', 'blank_instruction',
-          'instruction must be a non-empty string.');
+      add(
+        'instruction',
+        'blank_instruction',
+        'instruction must be a non-empty string.',
+      );
     }
     if (!_isNonBlankString(json['prompt'])) {
       add('prompt', 'blank_prompt', 'prompt must be a non-empty string.');
     }
     final schemaVersion = json['schemaVersion'] as String? ?? '1.0';
     if (!MultiSelectContent.supportedSchemaVersions.contains(schemaVersion)) {
-      add('schemaVersion', 'unsupported_schema_version',
-          'Unsupported schemaVersion: $schemaVersion.');
+      add(
+        'schemaVersion',
+        'unsupported_schema_version',
+        'Unsupported schemaVersion: $schemaVersion.',
+      );
     }
     final difficulty = json['difficulty'];
     if (difficulty is! int || difficulty < 1 || difficulty > 5) {
-      add('difficulty', 'invalid_difficulty',
-          'difficulty must be an integer between 1 and 5.');
+      add(
+        'difficulty',
+        'invalid_difficulty',
+        'difficulty must be an integer between 1 and 5.',
+      );
     }
 
     final rawOptions = json['options'];
@@ -381,66 +396,95 @@ class MultiSelectContentValidator {
     for (var index = 0; index < rawOptions.length; index++) {
       final raw = rawOptions[index];
       if (raw is! Map) {
-        add('options[$index]', 'invalid_option_shape',
-            'Each option must be a JSON object.');
+        add(
+          'options[$index]',
+          'invalid_option_shape',
+          'Each option must be a JSON object.',
+        );
         continue;
       }
       final optionJson = raw.cast<String, dynamic>();
       final optionId = optionJson['id'] as String?;
       if (!_isNonBlankString(optionId)) {
-        add('options[$index].id', 'blank_option_id',
-            'Option id must be a non-empty string.');
+        add(
+          'options[$index].id',
+          'blank_option_id',
+          'Option id must be a non-empty string.',
+        );
         continue;
       }
       if (!seenIds.add(optionId!)) {
-        add('options.id', 'duplicate_option_id', 'Option ids must be unique.',
-            optionId: optionId);
+        add(
+          'options.id',
+          'duplicate_option_id',
+          'Option ids must be unique.',
+          optionId: optionId,
+        );
       }
       if (!_isNonBlankString(optionJson['label'])) {
-        add('options[$index].label', 'blank_option_label',
-            'Option label must be a non-empty string.',
-            optionId: optionId);
+        add(
+          'options[$index].label',
+          'blank_option_label',
+          'Option label must be a non-empty string.',
+          optionId: optionId,
+        );
       }
       final text = optionJson['text'] as String?;
       final assetId = optionJson['assetId'] as String?;
       final semanticLabel = optionJson['semanticLabel'] as String?;
       if ((text == null || text.trim().isEmpty) &&
           (assetId == null || assetId.trim().isEmpty)) {
-        add('options[$index]', 'option_without_visible_content',
-            'Option must provide text or assetId.',
-            optionId: optionId);
+        add(
+          'options[$index]',
+          'option_without_visible_content',
+          'Option must provide text or assetId.',
+          optionId: optionId,
+        );
       }
       if (assetId != null && assetId.trim().isEmpty) {
-        add('options[$index].assetId', 'blank_asset_id',
-            'assetId must be non-empty when supplied.',
-            optionId: optionId);
+        add(
+          'options[$index].assetId',
+          'blank_asset_id',
+          'assetId must be non-empty when supplied.',
+          optionId: optionId,
+        );
       }
       if ((assetId?.trim().isNotEmpty ?? false) &&
           (text == null || text.trim().isEmpty) &&
           !_isNonBlankString(semanticLabel)) {
         add(
-            'options[$index].semanticLabel',
-            'image_only_option_missing_semantic_label',
-            'Image-only options require semanticLabel.',
-            optionId: optionId);
+          'options[$index].semanticLabel',
+          'image_only_option_missing_semantic_label',
+          'Image-only options require semanticLabel.',
+          optionId: optionId,
+        );
       }
       if ((assetId?.isNotEmpty ?? false) &&
           !RegExp(r'^[a-zA-Z0-9_./-]+$').hasMatch(assetId!)) {
-        add('options[$index].assetId', 'unsupported_asset_reference',
-            'assetId contains unsupported characters.',
-            optionId: optionId);
+        add(
+          'options[$index].assetId',
+          'unsupported_asset_reference',
+          'assetId contains unsupported characters.',
+          optionId: optionId,
+        );
       }
       if (optionJson['isCorrect'] != null && optionJson['isCorrect'] is! bool) {
-        add('options[$index].isCorrect', 'invalid_correct_flag',
-            'isCorrect must be a boolean.',
-            optionId: optionId);
+        add(
+          'options[$index].isCorrect',
+          'invalid_correct_flag',
+          'isCorrect must be a boolean.',
+          optionId: optionId,
+        );
       }
       final visibleKey = '${(text ?? '').trim()}|'
           '${(assetId ?? '').trim()}|${(semanticLabel ?? '').trim()}';
       if (!seenVisible.add(visibleKey)) {
-        add('options[$index]', 'duplicate_visible_option',
-            'Visible option content must be distinguishable.',
-            optionId: optionId);
+        add(
+          'options[$index]',
+          'duplicate_visible_option',
+          'Visible option content must be distinguishable.',
+          optionId: optionId,
+        );
       }
       if (!errors.any((e) => e.optionId == optionId)) {
         options.add(MultiSelectOption.fromJson(optionJson));
@@ -448,27 +492,37 @@ class MultiSelectContentValidator {
     }
 
     if (options.where((o) => o.isCorrect).isEmpty) {
-      add('options', 'no_correct_option',
-          'At least one option must be marked correct.');
+      add(
+        'options',
+        'no_correct_option',
+        'At least one option must be marked correct.',
+      );
     }
     final configuration = MultiSelectConfiguration.fromJson(
       json['configuration'] as Map<String, dynamic>?,
       rawOptions.length,
     );
-    errors.addAll(_validateConfiguration(contentId, configuration,
+    errors.addAll(
+      _validateConfiguration(
+        contentId,
+        configuration,
         optionCount: rawOptions.length,
-        correctCount: options.where((o) => o.isCorrect).length));
+        correctCount: options.where((o) => o.isCorrect).length,
+      ),
+    );
     return MultiSelectValidationResult(errors);
   }
 
   static MultiSelectValidationResult validate(MultiSelectContent content) {
     final errors = <MultiSelectValidationError>[];
-    errors.addAll(_validateConfiguration(
-      content.contentId,
-      content.configuration,
-      optionCount: content.options.length,
-      correctCount: content.correctOptions.length,
-    ));
+    errors.addAll(
+      _validateConfiguration(
+        content.contentId,
+        content.configuration,
+        optionCount: content.options.length,
+        correctCount: content.correctOptions.length,
+      ),
+    );
     return MultiSelectValidationResult(errors);
   }
 
@@ -480,117 +534,158 @@ class MultiSelectContentValidator {
   }) {
     final errors = <MultiSelectValidationError>[];
     void add(String field, String code, String reason) {
-      errors.add(MultiSelectValidationError(
-        contentId: contentId,
-        field: field,
-        code: code,
-        reason: reason,
-      ));
+      errors.add(
+        MultiSelectValidationError(
+          contentId: contentId,
+          field: field,
+          code: code,
+          reason: reason,
+        ),
+      );
     }
 
     if (config.minimumSelections < 0) {
-      add('configuration.minimumSelections', 'negative_minimum_selection_count',
-          'minimumSelections cannot be negative.');
+      add(
+        'configuration.minimumSelections',
+        'negative_minimum_selection_count',
+        'minimumSelections cannot be negative.',
+      );
     }
     if (config.minimumSelections < 1) {
-      add('configuration.minimumSelections', 'minimum_selection_below_one',
-          'minimumSelections must be at least 1.');
+      add(
+        'configuration.minimumSelections',
+        'minimum_selection_below_one',
+        'minimumSelections must be at least 1.',
+      );
     }
     if (config.maximumSelections < 1) {
-      add('configuration.maximumSelections', 'maximum_selection_below_one',
-          'maximumSelections must be at least 1.');
+      add(
+        'configuration.maximumSelections',
+        'maximum_selection_below_one',
+        'maximumSelections must be at least 1.',
+      );
     }
     if (config.minimumSelections > config.maximumSelections) {
-      add('configuration', 'minimum_greater_than_maximum',
-          'minimumSelections must not exceed maximumSelections.');
+      add(
+        'configuration',
+        'minimum_greater_than_maximum',
+        'minimumSelections must not exceed maximumSelections.',
+      );
     }
     if (config.maximumSelections > optionCount) {
       add(
-          'configuration.maximumSelections',
-          'maximum_selection_exceeds_option_count',
-          'maximumSelections cannot exceed option count.');
+        'configuration.maximumSelections',
+        'maximum_selection_exceeds_option_count',
+        'maximumSelections cannot exceed option count.',
+      );
     }
     if (config.evaluationMode == MultiSelectEvaluationMode.exactMatch) {
       if (config.maximumSelections < correctCount) {
         add(
-            'configuration.maximumSelections',
-            'exact_match_maximum_below_correct_count',
-            'Exact match cannot succeed when maximumSelections is below the correct answer count.');
+          'configuration.maximumSelections',
+          'exact_match_maximum_below_correct_count',
+          'Exact match cannot succeed when maximumSelections is below the correct answer count.',
+        );
       }
       if (config.minimumSelections > correctCount) {
         add(
-            'configuration.minimumSelections',
-            'exact_match_minimum_above_correct_count',
-            'Exact match cannot succeed when minimumSelections is above the correct answer count.');
+          'configuration.minimumSelections',
+          'exact_match_minimum_above_correct_count',
+          'Exact match cannot succeed when minimumSelections is above the correct answer count.',
+        );
       }
     }
     if (config.submissionMode == MultiSelectSubmissionMode.autoSubmit) {
       final count = config.autoSubmitSelectionCount;
       if (count == null) {
         add(
-            'configuration.autoSubmitSelectionCount',
-            'missing_auto_submit_count',
-            'autoSubmit requires autoSubmitSelectionCount.');
+          'configuration.autoSubmitSelectionCount',
+          'missing_auto_submit_count',
+          'autoSubmit requires autoSubmitSelectionCount.',
+        );
       } else {
         if (count < config.minimumSelections || count < 1) {
           add(
-              'configuration.autoSubmitSelectionCount',
-              'invalid_auto_submit_count',
-              'autoSubmitSelectionCount must meet minimumSelections.');
+            'configuration.autoSubmitSelectionCount',
+            'invalid_auto_submit_count',
+            'autoSubmitSelectionCount must meet minimumSelections.',
+          );
         }
         if (count > optionCount) {
           add(
-              'configuration.autoSubmitSelectionCount',
-              'auto_submit_count_exceeds_option_count',
-              'autoSubmitSelectionCount cannot exceed option count.');
+            'configuration.autoSubmitSelectionCount',
+            'auto_submit_count_exceeds_option_count',
+            'autoSubmitSelectionCount cannot exceed option count.',
+          );
         }
         if (count > config.maximumSelections) {
           add(
-              'configuration.autoSubmitSelectionCount',
-              'auto_submit_count_exceeds_maximum',
-              'autoSubmitSelectionCount cannot exceed maximumSelections.');
+            'configuration.autoSubmitSelectionCount',
+            'auto_submit_count_exceeds_maximum',
+            'autoSubmitSelectionCount cannot exceed maximumSelections.',
+          );
         }
         if (config.evaluationMode == MultiSelectEvaluationMode.exactMatch &&
             count != correctCount) {
           add(
-              'configuration.autoSubmitSelectionCount',
-              'auto_submit_exact_match_incompatible',
-              'autoSubmit exact match requires the count to equal the correct answer count.');
+            'configuration.autoSubmitSelectionCount',
+            'auto_submit_exact_match_incompatible',
+            'autoSubmit exact match requires the count to equal the correct answer count.',
+          );
         }
       }
     }
     if (config.maxAttempts < 1) {
-      add('configuration.maxAttempts', 'invalid_max_attempt_count',
-          'maxAttempts must be at least 1.');
+      add(
+        'configuration.maxAttempts',
+        'invalid_max_attempt_count',
+        'maxAttempts must be at least 1.',
+      );
     }
     if (config.allowRetry && config.maxAttempts < 2) {
-      add('configuration', 'contradictory_retry_configuration',
-          'allowRetry requires maxAttempts of at least 2.');
+      add(
+        'configuration',
+        'contradictory_retry_configuration',
+        'allowRetry requires maxAttempts of at least 2.',
+      );
     }
     if (!config.revealCorrectAnswers &&
         config.evaluationMode == MultiSelectEvaluationMode.exactMatch &&
         config.maxAttempts < 1) {
       add(
-          'configuration.revealCorrectAnswers',
-          'unreachable_terminal_reveal_configuration',
-          'Reveal configuration must not create an unreachable terminal state.');
+        'configuration.revealCorrectAnswers',
+        'unreachable_terminal_reveal_configuration',
+        'Reveal configuration must not create an unreachable terminal state.',
+      );
     }
     if (config.incorrectSelectionPenalty < 0 ||
         config.incorrectSelectionPenalty > 1) {
-      add('configuration.incorrectSelectionPenalty', 'invalid_penalty_range',
-          'incorrectSelectionPenalty must be between 0 and 1.');
+      add(
+        'configuration.incorrectSelectionPenalty',
+        'invalid_penalty_range',
+        'incorrectSelectionPenalty must be between 0 and 1.',
+      );
     }
     if (config.attemptPenalty < 0 || config.attemptPenalty > 100) {
-      add('configuration.attemptPenalty', 'invalid_penalty_range',
-          'attemptPenalty must be between 0 and 100.');
+      add(
+        'configuration.attemptPenalty',
+        'invalid_penalty_range',
+        'attemptPenalty must be between 0 and 100.',
+      );
     }
     if (config.hintPenalty < 0 || config.hintPenalty > 100) {
-      add('configuration.hintPenalty', 'invalid_penalty_range',
-          'hintPenalty must be between 0 and 100.');
+      add(
+        'configuration.hintPenalty',
+        'invalid_penalty_range',
+        'hintPenalty must be between 0 and 100.',
+      );
     }
     if (correctCount == 0 || optionCount == 0) {
-      add('configuration', 'impossible_completion_state',
-          'Content must contain options and at least one correct answer.');
+      add(
+        'configuration',
+        'impossible_completion_state',
+        'Content must contain options and at least one correct answer.',
+      );
     }
     return errors;
   }

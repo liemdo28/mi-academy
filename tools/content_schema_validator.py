@@ -217,6 +217,85 @@ def validate_missing_letter_content(level: dict) -> list[str]:
     return errors
 
 
+def validate_engine_backed_content(level: dict) -> list[str]:
+    raw_game_id = level.get("gameId")
+    if not isinstance(raw_game_id, str):
+        return []
+    game_id = raw_game_id
+    engine_by_game = {
+        "category_collector": "multi_select",
+        "logic_detective": "multi_select",
+        "pattern_parade": "sequence",
+        "story_steps": "sequence",
+        "shape_builder": "placement",
+        "word_sorter": "placement",
+        "number_balance": "matching",
+    }
+    engine = engine_by_game.get(game_id)
+    if engine is None:
+        return []
+
+    errors: list[str] = []
+    localized = level.get("localizedContent")
+    if not isinstance(localized, dict):
+        return ["localizedContent: must be an object"]
+
+    for locale in ("vi", "en"):
+        content = localized.get(locale)
+        prefix = f"localizedContent.{locale}"
+        if not isinstance(content, dict):
+            errors.append(f"{prefix}: locale content is required")
+            continue
+        if engine == "multi_select":
+            options = content.get("options")
+            if not isinstance(options, list) or len(options) < 2:
+                errors.append(f"{prefix}.options: at least two options required")
+                continue
+            correct = [
+                opt
+                for opt in options
+                if isinstance(opt, dict) and opt.get("isCorrect") is True
+            ]
+            if not correct:
+                errors.append(f"{prefix}.options: at least one correct option required")
+            config = content.get("configuration", {})
+            if isinstance(config, dict):
+                minimum = config.get("minimumSelections", 1)
+                maximum = config.get("maximumSelections", len(options))
+                if not (minimum <= len(correct) <= maximum):
+                    errors.append(
+                        f"{prefix}.configuration: selection bounds exclude correct answers"
+                    )
+        elif engine == "sequence":
+            order = content.get("correctOrder")
+            if not isinstance(order, list) or len(order) < 2:
+                errors.append(f"{prefix}.correctOrder: at least two items required")
+            if content.get("mode") not in {"reorder", "missingItem"}:
+                errors.append(f"{prefix}.mode: unsupported sequence mode")
+        elif engine == "placement":
+            targets = {
+                target.get("id")
+                for target in content.get("targets", [])
+                if isinstance(target, dict)
+            }
+            if not targets:
+                errors.append(f"{prefix}.targets: at least one target required")
+            for item in content.get("items", []):
+                accepted = (
+                    set(item.get("acceptedTargetIds", []))
+                    if isinstance(item, dict)
+                    else set()
+                )
+                if not accepted & targets:
+                    errors.append(f"{prefix}.items: item has no valid target")
+        elif engine == "matching":
+            pairs = content.get("pairs")
+            if not isinstance(pairs, list) or len(pairs) < 2:
+                errors.append(f"{prefix}.pairs: at least two pairs required")
+
+    return errors
+
+
 def validate_production_content() -> tuple[bool, list[str]]:
     schema_dict = load_schema()
     validator_cls = jsonschema.validators.validator_for(schema_dict)
@@ -248,6 +327,9 @@ def validate_production_content() -> tuple[bool, list[str]]:
                 all_errors.append(f"{location}: {err}")
 
             for err in validate_missing_letter_content(level):
+                all_errors.append(f"{location}: {err}")
+
+            for err in validate_engine_backed_content(level):
                 all_errors.append(f"{location}: {err}")
 
             if level_id in seen_ids and level_id != "<missing id>":
@@ -289,6 +371,7 @@ def check_malformed_fixtures() -> tuple[bool, list[str]]:
         errors = validate_against_schema(data, validator)
         errors += cross_check_skill_tags(data, known_skills)
         errors += validate_missing_letter_content(data)
+        errors += validate_engine_backed_content(data)
 
         level_id = data.get("id")
         if level_id in seen_ids:

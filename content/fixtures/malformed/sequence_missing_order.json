@@ -1,0 +1,11 @@
+{
+  "id": "bad-seq-001",
+  "gameId": "pattern_parade",
+  "levelNumber": 1,
+  "difficulty": 1,
+  "localizedContent": {
+    "vi": {"prompt": "Sap xep mau hinh.", "mode": "reorder", "correctOrder": []},
+    "en": {"prompt": "Order the pattern.", "mode": "reorder", "correctOrder": []}
+  },
+  "metadata": {"ageGroup": "junior", "skillIds": ["logic.pattern.basic"]}
+}

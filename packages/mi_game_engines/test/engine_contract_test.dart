@@ -63,7 +63,7 @@ Map<String, dynamic> _placementSample() => {
         {
           'id': 'a',
           'label': 'A',
-          'acceptedTargetIds': ['t1']
+          'acceptedTargetIds': ['t1'],
         },
       ],
       'targets': [
@@ -71,7 +71,7 @@ Map<String, dynamic> _placementSample() => {
           'id': 't1',
           'label': 'T1',
           'capacity': 1,
-          'acceptedItemIds': ['a']
+          'acceptedItemIds': ['a'],
         },
       ],
     };
@@ -119,26 +119,28 @@ const _forbiddenImportSubstrings = [
 void main() {
   group('Shared engine contract -- stable identity', () {
     test(
-        'Matching, Sequence, Placement, and Multi-select each expose a distinct stable engineId',
-        () {
-      expect(MatchingController.engineId, 'matching');
-      expect(SequenceController.engineId, 'sequence');
-      expect(PlacementController.engineId, 'placement');
-      expect(MultiSelectController.engineId, 'multi_select');
-      final ids = {
-        MatchingController.engineId,
-        SequenceController.engineId,
-        PlacementController.engineId,
-        MultiSelectController.engineId,
-      };
-      expect(ids, hasLength(4), reason: 'engine ids must all be distinct');
-    });
+      'Matching, Sequence, Placement, and Multi-select each expose a distinct stable engineId',
+      () {
+        expect(MatchingController.engineId, 'matching');
+        expect(SequenceController.engineId, 'sequence');
+        expect(PlacementController.engineId, 'placement');
+        expect(MultiSelectController.engineId, 'multi_select');
+        final ids = {
+          MatchingController.engineId,
+          SequenceController.engineId,
+          PlacementController.engineId,
+          MultiSelectController.engineId,
+        };
+        expect(ids, hasLength(4), reason: 'engine ids must all be distinct');
+      },
+    );
   });
 
   group('Shared engine contract -- attempt counting and completion', () {
     test('MatchingController tracks attempts and completes correctly', () {
       final controller = MatchingController(
-          content: MatchingContent.fromJson(_matchingSample()));
+        content: MatchingContent.fromJson(_matchingSample()),
+      );
       expect(controller.attempts, 0);
       expect(controller.isComplete, isFalse);
 
@@ -154,7 +156,8 @@ void main() {
 
     test('SequenceController tracks attempts and completes correctly', () {
       final controller = SequenceController(
-          content: SequenceContent.fromJson(_sequenceSample()));
+        content: SequenceContent.fromJson(_sequenceSample()),
+      );
       expect(controller.attempts, 0);
       expect(controller.isComplete, isFalse);
 
@@ -162,8 +165,9 @@ void main() {
       // initial shuffle, then submit.
       final target = controller.content.correctOrder;
       for (var i = 0; i < target.length; i++) {
-        final currentIndex = controller.arrangement
-            .indexWhere((item) => item.id == target[i].id);
+        final currentIndex = controller.arrangement.indexWhere(
+          (item) => item.id == target[i].id,
+        );
         if (currentIndex != i) controller.moveItem(currentIndex, i);
       }
       controller.submitReorder();
@@ -175,7 +179,8 @@ void main() {
 
     test('PlacementController tracks attempts and completes correctly', () {
       final controller = PlacementController(
-          content: PlacementContent.fromJson(_placementSample()));
+        content: PlacementContent.fromJson(_placementSample()),
+      );
       expect(controller.attempts, 0);
       expect(controller.isComplete, isFalse);
 
@@ -188,7 +193,8 @@ void main() {
 
     test('MultiSelectController tracks attempts and completes correctly', () {
       final controller = MultiSelectController(
-          content: MultiSelectContent.fromJson(_multiSelectSample()));
+        content: MultiSelectContent.fromJson(_multiSelectSample()),
+      );
       expect(controller.attempts, 0);
       expect(controller.isComplete, isFalse);
 
@@ -204,63 +210,67 @@ void main() {
   group('Shared engine contract -- Placement/Multi-select normalized result',
       () {
     test(
-        "Placement's result carries the content id, score, stars, duration, and completion",
-        () {
-      PlacementResult? callbackResult;
-      final controller = PlacementController(
-        content: PlacementContent.fromJson(_placementSample()),
-        onComplete: (result) => callbackResult = result,
-      );
-      controller.placeItem('a', 't1');
+      "Placement's result carries the content id, score, stars, duration, and completion",
+      () {
+        PlacementResult? callbackResult;
+        final controller = PlacementController(
+          content: PlacementContent.fromJson(_placementSample()),
+          onComplete: (result) => callbackResult = result,
+        );
+        controller.placeItem('a', 't1');
 
-      expect(controller.result.contentId, 'contract-placement');
-      expect(controller.result.engineId, 'placement');
-      expect(controller.result.completed, isTrue);
-      expect(controller.result.score, inInclusiveRange(0, 100));
-      expect(controller.result.stars, inInclusiveRange(0, 3));
-      expect(controller.result.duration, isA<Duration>());
+        expect(controller.result.contentId, 'contract-placement');
+        expect(controller.result.engineId, 'placement');
+        expect(controller.result.completed, isTrue);
+        expect(controller.result.score, inInclusiveRange(0, 100));
+        expect(controller.result.stars, inInclusiveRange(0, 3));
+        expect(controller.result.duration, isA<Duration>());
 
-      // Callback behavior: fired exactly once, with the same shape.
-      expect(callbackResult, isNotNull);
-      expect(callbackResult!.contentId, 'contract-placement');
-    });
+        // Callback behavior: fired exactly once, with the same shape.
+        expect(callbackResult, isNotNull);
+        expect(callbackResult!.contentId, 'contract-placement');
+      },
+    );
 
     test(
-        "Multi-select's result carries the content id, score, stars, duration, and completion",
-        () {
-      MultiSelectResult? callbackResult;
-      final controller = MultiSelectController(
-        content: MultiSelectContent.fromJson(_multiSelectSample()),
-        onComplete: (result) => callbackResult = result,
-      );
-      controller.select('a');
-      controller.submit();
+      "Multi-select's result carries the content id, score, stars, duration, and completion",
+      () {
+        MultiSelectResult? callbackResult;
+        final controller = MultiSelectController(
+          content: MultiSelectContent.fromJson(_multiSelectSample()),
+          onComplete: (result) => callbackResult = result,
+        );
+        controller.select('a');
+        controller.submit();
 
-      expect(controller.result.contentId, 'contract-multi-select');
-      expect(controller.result.engineId, 'multi_select');
-      expect(controller.result.completed, isTrue);
-      expect(controller.result.score, inInclusiveRange(0, 100));
-      expect(controller.result.stars, inInclusiveRange(0, 3));
-      expect(controller.result.duration, isA<Duration>());
+        expect(controller.result.contentId, 'contract-multi-select');
+        expect(controller.result.engineId, 'multi_select');
+        expect(controller.result.completed, isTrue);
+        expect(controller.result.score, inInclusiveRange(0, 100));
+        expect(controller.result.stars, inInclusiveRange(0, 3));
+        expect(controller.result.duration, isA<Duration>());
 
-      expect(callbackResult, isNotNull);
-      expect(callbackResult!.contentId, 'contract-multi-select');
-    });
+        expect(callbackResult, isNotNull);
+        expect(callbackResult!.contentId, 'contract-multi-select');
+      },
+    );
   });
 
   group('Shared engine contract -- no direct persistence dependency', () {
-    test('no engine source file imports a storage/backend/analytics package',
-        () {
-      final offenders = <String>[];
-      for (final file in _engineSourceFiles()) {
-        final content = file.readAsStringSync();
-        for (final forbidden in _forbiddenImportSubstrings) {
-          if (content.contains(forbidden)) {
-            offenders.add('${file.path} imports $forbidden');
+    test(
+      'no engine source file imports a storage/backend/analytics package',
+      () {
+        final offenders = <String>[];
+        for (final file in _engineSourceFiles()) {
+          final content = file.readAsStringSync();
+          for (final forbidden in _forbiddenImportSubstrings) {
+            if (content.contains(forbidden)) {
+              offenders.add('${file.path} imports $forbidden');
+            }
           }
         }
-      }
-      expect(offenders, isEmpty, reason: offenders.join('; '));
-    });
+        expect(offenders, isEmpty, reason: offenders.join('; '));
+      },
+    );
   });
 }

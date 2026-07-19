@@ -3,6 +3,7 @@ import 'package:mi_game_core/mi_game_core.dart';
 import 'package:mi_game_ui/mi_game_ui.dart';
 
 import '../src/games/choice/choice_game_screen.dart';
+import '../src/games/engine_backed/engine_backed_game_screen.dart';
 import '../src/games/memory_cards/memory_cards_game.dart';
 import '../src/games/memory_cards/memory_cards_screen.dart';
 import '../src/games/robot_commands/robot_commands_screen.dart';
@@ -80,6 +81,24 @@ typedef GameScreenBuilder = Widget Function({
 /// the full 30-game target list -- only built games are registered here;
 /// not-yet-built games simply don't have entries yet (not stubbed/faked).
 abstract final class GameRegistry {
+  static const List<String> _canonicalOrder = [
+    'word_builder',
+    'sound_match',
+    'math_race',
+    'math_supermarket',
+    'robot_commands',
+    'memory_cards',
+    'alphabet_explorer',
+    'missing_letter',
+    'category_collector',
+    'pattern_parade',
+    'shape_builder',
+    'word_sorter',
+    'number_balance',
+    'logic_detective',
+    'story_steps',
+  ];
+
   static final Map<String, GameRegistryEntry> _entries = {
     for (final entry in _buildEntries()) entry.gameId: entry,
   };
@@ -88,11 +107,20 @@ abstract final class GameRegistry {
   /// handle that as a safe fallback, never assume a lookup succeeds.
   static GameRegistryEntry? find(String gameId) => _entries[gameId];
 
-  static List<GameRegistryEntry> get all => List.unmodifiable(_entries.values);
+  static List<GameRegistryEntry> get all {
+    final entries = List<GameRegistryEntry>.of(_entries.values)
+      ..sort((a, b) => _orderOf(a.gameId).compareTo(_orderOf(b.gameId)));
+    return List.unmodifiable(entries);
+  }
 
   static List<GameRegistryEntry> enabledForAgeBand(String ageBand) => all
       .where((entry) => entry.enabled && entry.ageBands.contains(ageBand))
       .toList(growable: false);
+
+  static int _orderOf(String gameId) {
+    final index = _canonicalOrder.indexOf(gameId);
+    return index < 0 ? _canonicalOrder.length : index;
+  }
 
   static List<GameRegistryEntry> _buildEntries() => [
         GameRegistryEntry(
@@ -370,8 +398,132 @@ abstract final class GameRegistry {
             locale: locale,
           ),
         ),
+        GameRegistryEntry(
+          gameId: 'category_collector',
+          localizedName: const {
+            'vi': 'Nhom do vat',
+            'en': 'Category Collector',
+          },
+          category: 'logic',
+          ageBands: const ['junior', 'explorer', 'master'],
+          supportedSkills: const [
+            'letters.vocabulary',
+            'math.number_comparison',
+            'math.shapes.basic',
+          ],
+          engineType: 'multi_select',
+          builder: _engineBackedBuilder(EngineBackedGameKind.multiSelect),
+        ),
+        GameRegistryEntry(
+          gameId: 'pattern_parade',
+          localizedName: const {
+            'vi': 'Dieu hanh mau hinh',
+            'en': 'Pattern Parade',
+          },
+          category: 'logic',
+          ageBands: const ['junior', 'explorer', 'master'],
+          supportedSkills: const [
+            'logic.pattern.basic',
+            'logic.pattern.recognition',
+          ],
+          engineType: 'sequence',
+          builder: _engineBackedBuilder(EngineBackedGameKind.sequence),
+        ),
+        GameRegistryEntry(
+          gameId: 'shape_builder',
+          localizedName: const {
+            'vi': 'Lap ghep hinh',
+            'en': 'Shape Builder',
+          },
+          category: 'math',
+          ageBands: const ['junior', 'explorer', 'master'],
+          supportedSkills: const ['math.shapes.basic', 'math.geometry'],
+          engineType: 'placement',
+          builder: _engineBackedBuilder(EngineBackedGameKind.placement),
+        ),
+        GameRegistryEntry(
+          gameId: 'word_sorter',
+          localizedName: const {
+            'vi': 'Sap xep tu',
+            'en': 'Word Sorter',
+          },
+          category: 'letters',
+          ageBands: const ['junior', 'explorer', 'master'],
+          supportedSkills: const [
+            'letters.initial_sound',
+            'letters.vocabulary',
+            'letters.simple_sentences',
+          ],
+          engineType: 'placement',
+          builder: _engineBackedBuilder(EngineBackedGameKind.placement),
+        ),
+        GameRegistryEntry(
+          gameId: 'number_balance',
+          localizedName: const {
+            'vi': 'Can bang so',
+            'en': 'Number Balance',
+          },
+          category: 'math',
+          ageBands: const ['junior', 'explorer', 'master'],
+          supportedSkills: const [
+            'math.addition.within_20',
+            'math.subtraction.within_20',
+            'math.multiplication.tables',
+          ],
+          engineType: 'matching',
+          builder: _engineBackedBuilder(EngineBackedGameKind.matching),
+        ),
+        GameRegistryEntry(
+          gameId: 'logic_detective',
+          localizedName: const {
+            'vi': 'Tham tu logic',
+            'en': 'Logic Detective',
+          },
+          category: 'logic',
+          ageBands: const ['explorer', 'master'],
+          supportedSkills: const ['logic.conditions', 'logic.algorithms'],
+          engineType: 'multi_select',
+          builder: _engineBackedBuilder(EngineBackedGameKind.multiSelect),
+        ),
+        GameRegistryEntry(
+          gameId: 'story_steps',
+          localizedName: const {
+            'vi': 'Cac buoc cau chuyen',
+            'en': 'Story Steps',
+          },
+          category: 'letters',
+          ageBands: const ['junior', 'explorer', 'master'],
+          supportedSkills: const [
+            'letters.reading_comprehension',
+            'letters.storytelling',
+            'logic.pattern.basic',
+          ],
+          engineType: 'sequence',
+          builder: _engineBackedBuilder(EngineBackedGameKind.sequence),
+        ),
       ];
 }
+
+GameScreenBuilder _engineBackedBuilder(EngineBackedGameKind kind) => ({
+      required level,
+      required allLevels,
+      required onExit,
+      required onComplete,
+      required childProfileId,
+      initialSnapshot,
+      onSaveSnapshot,
+      reduceMotion = false,
+      required locale,
+    }) =>
+        EngineBackedGameScreen(
+          kind: kind,
+          level: level,
+          onExit: onExit,
+          onComplete: onComplete,
+          childProfileId: childProfileId,
+          reduceMotion: reduceMotion,
+          locale: locale,
+        );
 
 /// Registry-facing wrapper around [MemoryCardsScreen] with the same
 /// level-advance/replay/exit host logic `GameScreen`'s old
