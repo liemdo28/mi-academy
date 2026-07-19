@@ -298,7 +298,7 @@ Updated 2026-07-19 on `integration/m2-games-15-complete`:
 | Command | Result |
 |---|---|
 | `flutter test` (`apps/mobile`) | PASS, 123 passed, 6 expected Windows golden skips |
-| `apps/mobile/integration_test/games_9_15_flow_test.dart` | PASS in CI run `29675400654`, 7 new Android-emulator scenarios |
+| `apps/mobile/integration_test/games_9_15_flow_test.dart` | PASS in CI run `29675995855`, 7 new Android-emulator scenarios |
 | `flutter test --reporter expanded` (`packages/mi_game_engines`) | PASS, 165 passed |
 | `python -m pytest packages/game_core/tests tests test -q` | PASS, 187 passed |
 | `python tools/content_schema_validator.py` | PASS for Games 1-15 |

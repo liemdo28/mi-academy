@@ -36,7 +36,7 @@ remain pending.
 | `apps/mobile` | `flutter test test/missing_letter_content_test.dart test/game_registry_test.dart test/game_screen_test.dart test/widget_test.dart` | PASS, 54 passed |
 | `apps/mobile` | `flutter build apk --release` | PASS, built `build/app/outputs/flutter-apk/app-release.apk` |
 | `apps/mobile` | `flutter build appbundle --release` | PASS, built `build/app/outputs/bundle/release/app-release.aab` |
-| `apps/mobile` | `flutter test integration_test` | NOT RUN locally: no Android/iOS device connected; CI run `29675400654` passed the Android-emulator integration job |
+| `apps/mobile` | `flutter test integration_test` | NOT RUN locally: no Android/iOS device connected; CI run `29675995855` passed the Android-emulator integration job |
 | repo root | `python tools/content_schema_validator.py` | PASS |
 | repo root | `python tools/content_schema_validator.py --check-malformed` | PASS, 13 malformed fixtures checked |
 | repo root | `python tools/content_safety_audit.py --json` | PASS, 15 files and 36154 strings scanned, 0 findings |
@@ -45,7 +45,7 @@ remain pending.
 | repo root | `python -m pytest packages/game_core/tests tests test -q` | PASS, 187 passed |
 | repo root | `python -m ruff format --check .` | PASS after targeted generator formatting |
 | repo root | `python -m mypy .` | PASS after resolving `math_race_generator.py` tuple-key inference |
-| `apps/api` + Postgres/Redis | Alembic upgrade path | Local migration tests pass for `b4f7c2d9e801` and `c9f1a7b2d615`; CI run `29675400654` passed the Postgres + Redis migration smoke test |
+| `apps/api` + Postgres/Redis | Alembic upgrade path | Local migration tests pass for `b4f7c2d9e801` and `c9f1a7b2d615`; CI run `29675995855` passed the Postgres + Redis migration smoke test |
 
 ## Missing Letter Content Matrix
 
@@ -85,7 +85,7 @@ progress aggregation, and idempotency are covered by
 ## Known Gaps
 
 - Games 16-30 are not implemented.
-- Games 9-15 Android integration scenarios pass in CI run `29675400654`.
+- Games 9-15 Android integration scenarios pass in CI run `29675995855`.
 - No qualified human language or education review has approved the new
   Games 9-15 content.
 - Human content review remains pending for VI language, EN language, and
