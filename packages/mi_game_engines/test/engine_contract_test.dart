@@ -1,12 +1,12 @@
 // Shared contract test suite: verifies every engine in this package
-// (Matching, Sequence, Placement) upholds the same "common engine
-// contract" -- a stable engine id, a content id surfaced somewhere in
-// its result/state, an attempt counter, a completed flag, a
+// (Matching, Sequence, Placement, Multi-select) upholds the same "common
+// engine contract" -- a stable engine id, a content id surfaced
+// somewhere in its result/state, an attempt counter, a completed flag, a
 // deterministic star rating, and zero direct dependency on
 // persistence/backend/analytics code. Extending this suite (rather than
-// writing a fourth, unrelated file) is what lets a regression in any one
-// engine's contract be caught here, not just in that engine's own test
-// file.
+// writing a fourth/fifth, unrelated file) is what lets a regression in
+// any one engine's contract be caught here, not just in that engine's
+// own test file.
 //
 // Matching and Sequence predate this file and intentionally are NOT
 // modified beyond adding a static `engineId` constant to each (a purely
@@ -76,6 +76,24 @@ Map<String, dynamic> _placementSample() => {
       ],
     };
 
+Map<String, dynamic> _multiSelectSample() => {
+      'contentId': 'contract-multi-select',
+      'gameId': 'letter_sorting',
+      'locale': 'vi',
+      'ageBand': 'junior',
+      'difficulty': 1,
+      'instruction': 'Chọn nguyên âm!',
+      'configuration': {
+        'evaluationMode': 'exactMatch',
+        'minSelections': 1,
+        'maxSelections': 2,
+      },
+      'options': [
+        {'id': 'a', 'label': 'A', 'text': 'A', 'isCorrect': true},
+        {'id': 'b', 'label': 'B', 'text': 'B', 'isCorrect': false},
+      ],
+    };
+
 /// Every source file this package's engines live in, so the
 /// no-persistence-dependency check below is exhaustive rather than
 /// listing files by hand (and silently going stale as engines are added).
@@ -100,17 +118,19 @@ const _forbiddenImportSubstrings = [
 void main() {
   group('Shared engine contract -- stable identity', () {
     test(
-        'Matching, Sequence, and Placement each expose a distinct stable engineId',
+        'Matching, Sequence, Placement, and Multi-select each expose a distinct stable engineId',
         () {
       expect(MatchingController.engineId, 'matching');
       expect(SequenceController.engineId, 'sequence');
       expect(PlacementController.engineId, 'placement');
+      expect(MultiSelectController.engineId, 'multi_select');
       final ids = {
         MatchingController.engineId,
         SequenceController.engineId,
         PlacementController.engineId,
+        MultiSelectController.engineId,
       };
-      expect(ids, hasLength(3), reason: 'engine ids must all be distinct');
+      expect(ids, hasLength(4), reason: 'engine ids must all be distinct');
     });
   });
 
@@ -164,11 +184,26 @@ void main() {
       expect(controller.isComplete, isTrue);
       expect(controller.starsEarned, inInclusiveRange(1, 3));
     });
+
+    test('MultiSelectController tracks attempts and completes correctly', () {
+      final controller = MultiSelectController(
+          content: MultiSelectContent.fromJson(_multiSelectSample()));
+      expect(controller.attempts, 0);
+      expect(controller.isComplete, isFalse);
+
+      controller.select('a');
+      controller.submit();
+
+      expect(controller.attempts, 1);
+      expect(controller.isComplete, isTrue);
+      expect(controller.starsEarned, inInclusiveRange(1, 3));
+    });
   });
 
-  group('Shared engine contract -- Placement\'s normalized result', () {
+  group('Shared engine contract -- Placement/Multi-select normalized result',
+      () {
     test(
-        'result carries the content id, score, stars, duration, and completion',
+        "Placement's result carries the content id, score, stars, duration, and completion",
         () {
       PlacementResult? callbackResult;
       final controller = PlacementController(
@@ -187,6 +222,28 @@ void main() {
       // Callback behavior: fired exactly once, with the same shape.
       expect(callbackResult, isNotNull);
       expect(callbackResult!.contentId, 'contract-placement');
+    });
+
+    test(
+        "Multi-select's result carries the content id, score, stars, duration, and completion",
+        () {
+      MultiSelectResult? callbackResult;
+      final controller = MultiSelectController(
+        content: MultiSelectContent.fromJson(_multiSelectSample()),
+        onComplete: (result) => callbackResult = result,
+      );
+      controller.select('a');
+      controller.submit();
+
+      expect(controller.result.contentId, 'contract-multi-select');
+      expect(controller.result.engineId, 'multi_select');
+      expect(controller.result.completed, isTrue);
+      expect(controller.result.score, inInclusiveRange(0, 100));
+      expect(controller.result.stars, inInclusiveRange(0, 3));
+      expect(controller.result.duration, isA<Duration>());
+
+      expect(callbackResult, isNotNull);
+      expect(callbackResult!.contentId, 'contract-multi-select');
     });
   });
 
