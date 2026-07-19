@@ -18,6 +18,8 @@ dependencies:
     path: ../../packages/mi_game_ui
   mi_game_content:
     path: ../../packages/mi_game_content
+  mi_game_engines:
+    path: ../../packages/mi_game_engines
   mi_game_audio:
     path: ../../packages/mi_game_audio
   mi_game_progress:
