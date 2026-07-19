@@ -4,12 +4,7 @@ import 'package:mi_game_engines/mi_game_engines.dart';
 
 import '../level_skill_ids.dart';
 
-enum EngineBackedGameKind {
-  matching,
-  sequence,
-  placement,
-  multiSelect,
-}
+enum EngineBackedGameKind { matching, sequence, placement, multiSelect }
 
 class EngineBackedGameScreen extends StatefulWidget {
   const EngineBackedGameScreen({
@@ -54,7 +49,8 @@ class _EngineBackedGameScreenState extends State<EngineBackedGameScreen> {
   Map<String, dynamic> get _rawContent {
     final localized = widget.level.contentForLocale(widget.locale);
     final engineContent = Map<String, dynamic>.from(
-        localized['engineContent'] as Map? ?? localized);
+      localized['engineContent'] as Map? ?? localized,
+    );
     final hint = localized['hint'] as String? ??
         (widget.level.hints.isEmpty
             ? null
@@ -74,7 +70,8 @@ class _EngineBackedGameScreenState extends State<EngineBackedGameScreen> {
       'estimatedSeconds': widget.level.estimatedSeconds,
       'metadata': {
         ...Map<String, dynamic>.from(
-            engineContent['metadata'] as Map? ?? const {}),
+          engineContent['metadata'] as Map? ?? const {},
+        ),
         'levelNumber': widget.level.levelNumber,
         'learningObjective': widget.level.learningObjective,
       },
@@ -94,10 +91,7 @@ class _EngineBackedGameScreenState extends State<EngineBackedGameScreen> {
             attempts: result.attempts,
             hints: 0,
             stars: result.starsEarned,
-            metadata: {
-              'engine_id': 'matching',
-              'content_id': result.contentId,
-            },
+            metadata: {'engine_id': 'matching', 'content_id': result.contentId},
           ),
         );
       case EngineBackedGameKind.sequence:
@@ -110,10 +104,7 @@ class _EngineBackedGameScreenState extends State<EngineBackedGameScreen> {
             attempts: result.attempts,
             hints: 0,
             stars: result.starsEarned,
-            metadata: {
-              'engine_id': 'sequence',
-              'content_id': result.contentId,
-            },
+            metadata: {'engine_id': 'sequence', 'content_id': result.contentId},
           ),
         );
       case EngineBackedGameKind.placement:
@@ -176,8 +167,10 @@ class _EngineBackedGameScreenState extends State<EngineBackedGameScreen> {
         hintsUsed: hints,
         duration: duration ?? _stopwatch.elapsed,
         perfectRun: stars >= 3 && hints == 0,
-        newSkillsAcquired:
-            skillIdsFor(widget.level, fallback: const ['logic.memory']),
+        newSkillsAcquired: skillIdsFor(
+          widget.level,
+          fallback: const ['logic.memory'],
+        ),
         metadata: metadata,
       ),
     );

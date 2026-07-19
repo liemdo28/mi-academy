@@ -50,6 +50,13 @@ these — it runs on `ubuntu-latest` (mobile/backend jobs) and `macos-latest`
 machine (Windows/macOS/Linux); the one documented platform-dependent
 exception is golden/pixel tests, covered next.
 
+For the release-candidate branch
+`integration/m2-games-15-release-candidate`, final CI evidence is recorded
+in the handoff report for the exact branch SHA. Historical run IDs in older
+sections are retained only as debugging provenance. Current release-scope
+game/level counts are computed with `python tools/release_counts.py --json`
+and protected by `tests/test_release_counts.py`.
+
 ## Database migrations — PostgreSQL is canonical
 
 `apps/api/alembic`'s migration chain includes operations (e.g.
@@ -291,17 +298,24 @@ and launcher coverage. Local command results:
   doesn't need them at runtime) — install with `pip install ruff mypy` to
   run them locally; both read their config from the repo-root
   `pyproject.toml` automatically.
-### Games 9-15 local verification
+### Games 9-15 release-candidate verification
 
-Updated 2026-07-19 on `integration/m2-games-15-complete`:
+Updated 2026-07-19 on `integration/m2-games-15-release-candidate`:
 
 | Command | Result |
 |---|---|
-| `flutter test` (`apps/mobile`) | PASS, 123 passed, 6 expected Windows golden skips |
-| `apps/mobile/integration_test/games_9_15_flow_test.dart` | PASS in CI run `29675400654`, 7 new Android-emulator scenarios |
+| `flutter test` (`apps/mobile`) | Must pass locally; final RC count recorded in handoff |
+| `apps/mobile/integration_test/*_test.dart` | Must pass in the final RC Android-emulator CI run with non-zero discovery |
 | `flutter test --reporter expanded` (`packages/mi_game_engines`) | PASS, 165 passed |
-| `python -m pytest packages/game_core/tests tests test -q` | PASS, 187 passed |
+| `python -m pytest packages/game_core/tests tests test -q` | Must pass locally and in final RC CI |
 | `python tools/content_schema_validator.py` | PASS for Games 1-15 |
-| `python tools/content_schema_validator.py --check-malformed` | PASS, 13 malformed fixtures rejected |
+| `python tools/content_schema_validator.py --check-malformed` | Must reject all malformed fixtures, including placement capacity checks |
 | `python tools/level_validator/solve_levels.py` | PASS, 665/665 production levels solvable |
 | `python tools/localization_audit.py` | PASS ARB parity; existing hardcoded-string warning count remains 245 |
+
+Security/release-signing semantics are intentionally explicit in CI:
+Gitleaks is blocking, while `pip-audit` and Bandit are advisory/report-only
+scanners with JSON artifacts and a mandatory step-summary reporter. Android
+production signing is split into a readiness job and a signed-artifact job;
+when signing secrets are absent, the signed-artifact job is skipped and no
+Play-upload-ready artifact is claimed.

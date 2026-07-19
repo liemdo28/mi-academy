@@ -105,12 +105,14 @@ class MemoryCardsGame extends BaseGame {
 
     _cards = [];
     for (final cardJson in cardData) {
-      _cards.add(MemoryCard(
-        id: cardJson['id'] as String,
-        pairId: cardJson['pairId'] as String,
-        content: cardJson['content'] as String,
-        type: cardJson['type'] as String? ?? 'text',
-      ));
+      _cards.add(
+        MemoryCard(
+          id: cardJson['id'] as String,
+          pairId: cardJson['pairId'] as String,
+          content: cardJson['content'] as String,
+          type: cardJson['type'] as String? ?? 'text',
+        ),
+      );
     }
 
     // Shuffle using Fisher-Yates
@@ -195,8 +197,9 @@ class MemoryCardsGame extends BaseGame {
 
       if (firstCard.pairId == card.pairId && firstCard.id != card.id) {
         // Match!
-        _cards[_firstFlippedIndex!] =
-            firstCard.copyWith(state: CardState.matched);
+        _cards[_firstFlippedIndex!] = firstCard.copyWith(
+          state: CardState.matched,
+        );
         _cards[index] = _cards[index].copyWith(state: CardState.matched);
         _matchedPairs++;
         _score += 10;

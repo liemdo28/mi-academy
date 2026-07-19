@@ -36,14 +36,18 @@ void main() {
         expect(levels.length, greaterThanOrEqualTo(minimum));
         expect(levels.map((level) => level['gameId']).toSet(), {gameId});
         expect(levels.map((level) => level['difficulty']).toSet(), {1, 3, 5});
-        expect(levels.map((level) => level['id']).toSet(),
-            hasLength(levels.length));
+        expect(
+          levels.map((level) => level['id']).toSet(),
+          hasLength(levels.length),
+        );
 
         for (final level in levels) {
           final localized = level['localizedContent'] as Map<String, dynamic>;
           expect(localized.keys, containsAll(['vi', 'en']));
-          expect((level['metadata'] as Map)['reviewStatus'],
-              'pending_human_review');
+          expect(
+            (level['metadata'] as Map)['reviewStatus'],
+            'pending_human_review',
+          );
           for (final locale in const ['vi', 'en']) {
             final content = localized[locale] as Map<String, dynamic>;
             expect(content['prompt'], isNotEmpty);
@@ -53,8 +57,10 @@ void main() {
       });
 
       test('loads through the shared content loader', () async {
-        final parsed =
-            await GameContentProvider().loadLevels(levels, gameId: gameId);
+        final parsed = await GameContentProvider().loadLevels(
+          levels,
+          gameId: gameId,
+        );
         expect(parsed, hasLength(levels.length));
         expect(parsed.first.gameId, gameId);
         expect(parsed.first.contentForLocale('en')['prompt'], isNotEmpty);
@@ -68,8 +74,10 @@ void _expectEnginePayload(String engine, Map<String, dynamic> content) {
     case 'multi_select':
       final options = content['options'] as List;
       expect(options.length, greaterThanOrEqualTo(2));
-      expect(options.where((option) => (option as Map)['isCorrect'] == true),
-          isNotEmpty);
+      expect(
+        options.where((option) => (option as Map)['isCorrect'] == true),
+        isNotEmpty,
+      );
       expect(content['configuration'], isA<Map>());
       break;
     case 'sequence':

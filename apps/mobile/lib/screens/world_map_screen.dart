@@ -56,11 +56,13 @@ class WorldMapScreen extends StatelessWidget {
                   runSpacing: MiTokens.space2,
                   alignment: WrapAlignment.center,
                   children: _zones
-                      .map((z) => Chip(
-                            label: Text(z),
-                            backgroundColor: MiColors.primarySoft,
-                            side: BorderSide.none,
-                          ))
+                      .map(
+                        (z) => Chip(
+                          label: Text(z),
+                          backgroundColor: MiColors.primarySoft,
+                          side: BorderSide.none,
+                        ),
+                      )
                       .toList(),
                 ),
               ],

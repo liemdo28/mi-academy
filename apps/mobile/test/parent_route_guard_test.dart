@@ -9,29 +9,29 @@ import 'package:mi_academy/providers/providers.dart';
 /// verified parent PIN this session — previously nothing enforced that.
 void main() {
   testWidgets(
-      'direct navigation to /parent redirects to the PIN gate when unverified',
-      (tester) async {
-    await tester.pumpWidget(
-      ProviderScope(
-        child: MaterialApp.router(routerConfig: routerProvider),
-      ),
-    );
-    // Let SplashScreen's own async redirect (auth restore -> /login) finish
-    // first, so it doesn't race with the explicit navigation below.
-    for (var i = 0; i < 10; i++) {
-      await tester.pump(const Duration(milliseconds: 200));
-    }
+    'direct navigation to /parent redirects to the PIN gate when unverified',
+    (tester) async {
+      await tester.pumpWidget(
+        ProviderScope(child: MaterialApp.router(routerConfig: routerProvider)),
+      );
+      // Let SplashScreen's own async redirect (auth restore -> /login) finish
+      // first, so it doesn't race with the explicit navigation below.
+      for (var i = 0; i < 10; i++) {
+        await tester.pump(const Duration(milliseconds: 200));
+      }
 
-    routerProvider.go('/parent');
-    for (var i = 0; i < 5; i++) {
-      await tester.pump(const Duration(milliseconds: 200));
-    }
+      routerProvider.go('/parent');
+      for (var i = 0; i < 5; i++) {
+        await tester.pump(const Duration(milliseconds: 200));
+      }
 
-    expect(find.text('Nhập mã PIN phụ huynh'), findsOneWidget);
-  });
+      expect(find.text('Nhập mã PIN phụ huynh'), findsOneWidget);
+    },
+  );
 
-  testWidgets('/parent is reachable once the parent gate is verified',
-      (tester) async {
+  testWidgets('/parent is reachable once the parent gate is verified', (
+    tester,
+  ) async {
     final container = ProviderContainer(
       overrides: [parentGateProvider.overrideWith((ref) => true)],
     );

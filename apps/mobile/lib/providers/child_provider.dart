@@ -63,10 +63,7 @@ class ActiveChildNotifier extends Notifier<ActiveChildState> {
 
   /// Select a child profile.
   Future<void> selectChild(Map<String, dynamic> child) async {
-    state = state.copyWith(
-      childId: child['id'] as String,
-      child: child,
-    );
+    state = state.copyWith(childId: child['id'] as String, child: child);
   }
 
   /// Create a new child profile, then select it.

@@ -44,8 +44,9 @@ final apiServiceProvider = Provider<ApiService>((ref) {
 /// Parent PIN verifier.
 ///
 /// Kept as a provider seam so the parent gate can be tested without network.
-final parentPinVerifierProvider =
-    Provider<Future<bool> Function(String)>((ref) {
+final parentPinVerifierProvider = Provider<Future<bool> Function(String)>((
+  ref,
+) {
   return (pin) async {
     final api = ref.read(apiServiceProvider);
     await api.verifyPin(pin);
@@ -72,8 +73,9 @@ final activeChildProvider =
 );
 
 /// Daily plan provider.
-final dailyPlanProvider =
-    FutureProvider<List<Map<String, dynamic>>>((ref) async {
+final dailyPlanProvider = FutureProvider<List<Map<String, dynamic>>>((
+  ref,
+) async {
   final api = ref.read(apiServiceProvider);
   final child = ref.watch(activeChildProvider);
   if (child.childId == null) return [];
@@ -102,8 +104,9 @@ final reportsProvider = FutureProvider<List<Map<String, dynamic>>>((ref) async {
 /// Games catalog provider — used to resolve a game_type (e.g.
 /// "memory_cards") to the backend's DB game id (a UUID), since
 /// SaveGameResultRequest / POST /games/{game_id}/result key on the DB id.
-final gamesCatalogProvider =
-    FutureProvider<List<Map<String, dynamic>>>((ref) async {
+final gamesCatalogProvider = FutureProvider<List<Map<String, dynamic>>>((
+  ref,
+) async {
   final api = ref.read(apiServiceProvider);
   final result = await api.getGames();
   return result.cast<Map<String, dynamic>>();

@@ -12,6 +12,7 @@ import json
 from pathlib import Path
 
 from apps.api.schemas.content_item import validate_content_item
+from tools.release_counts import compute_release_counts
 
 ROOT = Path(__file__).resolve().parent.parent
 LEVELS_DIR = ROOT / "apps" / "mobile" / "assets" / "levels"
@@ -31,9 +32,7 @@ def test_every_real_production_level_validates():
         item, errors = validate_content_item(level)
         assert item is not None, f"{filename}:{level.get('id')}: {errors}"
         checked += 1
-    # Games 1-8 total 290 production levels; Games 9-15 add 375 generated,
-    # schema-valid levels for a Games 1-15 total of 665.
-    assert checked == 665
+    assert checked == compute_release_counts().production_levels
 
 
 def test_age_band_and_skill_tags_readable_from_metadata():

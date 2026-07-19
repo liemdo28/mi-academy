@@ -170,7 +170,7 @@ abstract final class GameRegistry {
           gameId: 'missing_letter',
           localizedName: const {
             'vi': 'Tìm chữ còn thiếu',
-            'en': 'Missing Letter',
+            'en': 'Missing Letter'
           },
           category: 'letters',
           ageBands: const ['junior', 'explorer'],
@@ -238,10 +238,7 @@ abstract final class GameRegistry {
         ),
         GameRegistryEntry(
           gameId: 'sound_match',
-          localizedName: const {
-            'vi': 'Nghe âm tìm chữ',
-            'en': 'Sound Match',
-          },
+          localizedName: const {'vi': 'Nghe âm tìm chữ', 'en': 'Sound Match'},
           category: 'letters',
           ageBands: const ['junior'],
           supportedSkills: const ['letters.initial_sound'],
@@ -269,10 +266,7 @@ abstract final class GameRegistry {
         ),
         GameRegistryEntry(
           gameId: 'math_race',
-          localizedName: const {
-            'vi': 'Đường đua cộng trừ',
-            'en': 'Math Race',
-          },
+          localizedName: const {'vi': 'Đường đua cộng trừ', 'en': 'Math Race'},
           category: 'math',
           ageBands: const ['junior', 'explorer'],
           supportedSkills: const ['math.addition', 'math.subtraction'],
@@ -402,7 +396,7 @@ abstract final class GameRegistry {
           gameId: 'category_collector',
           localizedName: const {
             'vi': 'Nhom do vat',
-            'en': 'Category Collector',
+            'en': 'Category Collector'
           },
           category: 'logic',
           ageBands: const ['junior', 'explorer', 'master'],
@@ -418,7 +412,7 @@ abstract final class GameRegistry {
           gameId: 'pattern_parade',
           localizedName: const {
             'vi': 'Dieu hanh mau hinh',
-            'en': 'Pattern Parade',
+            'en': 'Pattern Parade'
           },
           category: 'logic',
           ageBands: const ['junior', 'explorer', 'master'],
@@ -431,10 +425,7 @@ abstract final class GameRegistry {
         ),
         GameRegistryEntry(
           gameId: 'shape_builder',
-          localizedName: const {
-            'vi': 'Lap ghep hinh',
-            'en': 'Shape Builder',
-          },
+          localizedName: const {'vi': 'Lap ghep hinh', 'en': 'Shape Builder'},
           category: 'math',
           ageBands: const ['junior', 'explorer', 'master'],
           supportedSkills: const ['math.shapes.basic', 'math.geometry'],
@@ -443,10 +434,7 @@ abstract final class GameRegistry {
         ),
         GameRegistryEntry(
           gameId: 'word_sorter',
-          localizedName: const {
-            'vi': 'Sap xep tu',
-            'en': 'Word Sorter',
-          },
+          localizedName: const {'vi': 'Sap xep tu', 'en': 'Word Sorter'},
           category: 'letters',
           ageBands: const ['junior', 'explorer', 'master'],
           supportedSkills: const [
@@ -459,10 +447,7 @@ abstract final class GameRegistry {
         ),
         GameRegistryEntry(
           gameId: 'number_balance',
-          localizedName: const {
-            'vi': 'Can bang so',
-            'en': 'Number Balance',
-          },
+          localizedName: const {'vi': 'Can bang so', 'en': 'Number Balance'},
           category: 'math',
           ageBands: const ['junior', 'explorer', 'master'],
           supportedSkills: const [
@@ -475,10 +460,7 @@ abstract final class GameRegistry {
         ),
         GameRegistryEntry(
           gameId: 'logic_detective',
-          localizedName: const {
-            'vi': 'Tham tu logic',
-            'en': 'Logic Detective',
-          },
+          localizedName: const {'vi': 'Tham tu logic', 'en': 'Logic Detective'},
           category: 'logic',
           ageBands: const ['explorer', 'master'],
           supportedSkills: const ['logic.conditions', 'logic.algorithms'],
@@ -489,7 +471,7 @@ abstract final class GameRegistry {
           gameId: 'story_steps',
           localizedName: const {
             'vi': 'Cac buoc cau chuyen',
-            'en': 'Story Steps',
+            'en': 'Story Steps'
           },
           category: 'letters',
           ageBands: const ['junior', 'explorer', 'master'],

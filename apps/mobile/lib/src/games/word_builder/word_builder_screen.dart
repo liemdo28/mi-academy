@@ -129,19 +129,21 @@ class _WordBuilderScreenState extends State<WordBuilderScreen>
   void _showCompletion() {
     _completed = true;
     _stopwatch.stop();
-    widget.onComplete?.call(MiCompletionResult(
-      gameId: _level.gameId,
-      levelId: _level.id,
-      childProfileId: _session.childProfileId,
-      completedAt: DateTime.now(),
-      score: _session.score,
-      maxScore: 100,
-      attemptsUsed: _session.attempts,
-      hintsUsed: _session.hintsUsed,
-      duration: _stopwatch.elapsed,
-      perfectRun: _session.attempts <= 1 && _session.hintsUsed == 0,
-      newSkillsAcquired: skillIdsFor(_level, fallback: const ['vocabulary']),
-    ));
+    widget.onComplete?.call(
+      MiCompletionResult(
+        gameId: _level.gameId,
+        levelId: _level.id,
+        childProfileId: _session.childProfileId,
+        completedAt: DateTime.now(),
+        score: _session.score,
+        maxScore: 100,
+        attemptsUsed: _session.attempts,
+        hintsUsed: _session.hintsUsed,
+        duration: _stopwatch.elapsed,
+        perfectRun: _session.attempts <= 1 && _session.hintsUsed == 0,
+        newSkillsAcquired: skillIdsFor(_level, fallback: const ['vocabulary']),
+      ),
+    );
 
     showDialog(
       context: context,
@@ -205,10 +207,7 @@ class _WordBuilderScreenState extends State<WordBuilderScreen>
                     onRemove: _removeLetter,
                   ),
                   const SizedBox(height: 24),
-                  _LetterBank(
-                    letters: _session.bank,
-                    onPick: _placeLetter,
-                  ),
+                  _LetterBank(letters: _session.bank, onPick: _placeLetter),
                   const SizedBox(height: 20),
                   if (_session.feedback != null)
                     FeedbackBubble(
@@ -277,10 +276,7 @@ class _MiPromptCard extends StatelessWidget {
             const SizedBox(height: 8),
             Text(prompt, style: GameTheme.headingMedium),
             const SizedBox(height: 8),
-            Text(
-              '${targetWord.length} ký tự',
-              style: GameTheme.bodyMedium,
-            ),
+            Text('${targetWord.length} ký tự', style: GameTheme.bodyMedium),
           ],
         ),
       ),

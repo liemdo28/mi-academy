@@ -18,8 +18,9 @@ void main() {
     await resetLocalState();
   });
 
-  testWidgets('Category Collector completes and queues offline progress',
-      (tester) async {
+  testWidgets('Category Collector completes and queues offline progress', (
+    tester,
+  ) async {
     await _launchGame(
       tester,
       gameId: 'category_collector',
@@ -34,8 +35,9 @@ void main() {
     _expectQueuedResult('category_collector', 'cc-lv001');
   });
 
-  testWidgets('Pattern Parade completes and queues offline progress',
-      (tester) async {
+  testWidgets('Pattern Parade completes and queues offline progress', (
+    tester,
+  ) async {
     await _launchGame(
       tester,
       gameId: 'pattern_parade',
@@ -53,8 +55,9 @@ void main() {
     _expectQueuedResult('pattern_parade', 'pp-lv001');
   });
 
-  testWidgets('Shape Builder completes and queues offline progress',
-      (tester) async {
+  testWidgets('Shape Builder completes and queues offline progress', (
+    tester,
+  ) async {
     await _launchGame(
       tester,
       gameId: 'shape_builder',
@@ -75,8 +78,9 @@ void main() {
     _expectQueuedResult('shape_builder', 'sb-lv001');
   });
 
-  testWidgets('Word Sorter completes and queues offline progress',
-      (tester) async {
+  testWidgets('Word Sorter completes and queues offline progress', (
+    tester,
+  ) async {
     await _launchGame(
       tester,
       gameId: 'word_sorter',
@@ -97,8 +101,9 @@ void main() {
     _expectQueuedResult('word_sorter', 'ws-lv001');
   });
 
-  testWidgets('Number Balance completes and queues offline progress',
-      (tester) async {
+  testWidgets('Number Balance completes and queues offline progress', (
+    tester,
+  ) async {
     await _launchGame(
       tester,
       gameId: 'number_balance',
@@ -107,7 +112,9 @@ void main() {
     );
 
     expect(
-        find.text('Ghep moi phep tinh voi gia tri bang nhau.'), findsWidgets);
+      find.text('Ghep moi phep tinh voi gia tri bang nhau.'),
+      findsWidgets,
+    );
     await _matchAll(tester, {
       '3 + 1': '4',
       '4 + 1': '5',
@@ -118,8 +125,9 @@ void main() {
     _expectQueuedResult('number_balance', 'nb-lv001');
   });
 
-  testWidgets('Logic Detective completes and queues offline progress',
-      (tester) async {
+  testWidgets('Logic Detective completes and queues offline progress', (
+    tester,
+  ) async {
     await _launchGame(
       tester,
       gameId: 'logic_detective',
@@ -134,8 +142,9 @@ void main() {
     _expectQueuedResult('logic_detective', 'ld-lv001');
   });
 
-  testWidgets('Story Steps completes and queues offline progress',
-      (tester) async {
+  testWidgets('Story Steps completes and queues offline progress', (
+    tester,
+  ) async {
     await _launchGame(
       tester,
       gameId: 'story_steps',
@@ -144,11 +153,7 @@ void main() {
     );
 
     expect(find.text('Sap xep cac buoc theo thu tu.'), findsWidgets);
-    await _arrangeSequence(tester, [
-      'Wake up',
-      'Brush teeth',
-      'Eat breakfast',
-    ]);
+    await _arrangeSequence(tester, ['Wake up', 'Brush teeth', 'Eat breakfast']);
     await tester.tap(find.widgetWithText(ElevatedButton, 'Kiểm tra'));
     await tester.pumpAndSettle(const Duration(seconds: 2));
 
@@ -192,27 +197,31 @@ List<Override> _offlineGameOverrides({
     activeChildProvider.overrideWith(
       () => _FixedActiveChildNotifier(_fakeActiveChild()),
     ),
-    dailyPlanProvider.overrideWith((ref) async => [
-          {
-            'lesson_id': 'lesson-$gameId',
-            'title': title,
-            'subject': subject,
-            'estimated_minutes': 5,
-            'type': 'lesson',
-            'is_required': true,
-            'game_type': gameId,
-          },
-        ]),
-    gamesCatalogProvider.overrideWith((ref) async => [
-          {
-            'id': dbGameId,
-            'name': title,
-            'game_type': gameId,
-            'age_min': 4,
-            'age_max': 9,
-            'is_active': true,
-          },
-        ]),
+    dailyPlanProvider.overrideWith(
+      (ref) async => [
+        {
+          'lesson_id': 'lesson-$gameId',
+          'title': title,
+          'subject': subject,
+          'estimated_minutes': 5,
+          'type': 'lesson',
+          'is_required': true,
+          'game_type': gameId,
+        },
+      ],
+    ),
+    gamesCatalogProvider.overrideWith(
+      (ref) async => [
+        {
+          'id': dbGameId,
+          'name': title,
+          'game_type': gameId,
+          'age_min': 4,
+          'age_max': 9,
+          'is_active': true,
+        },
+      ],
+    ),
     connectivityProvider.overrideWith((ref) async => false),
   ];
 }
@@ -320,17 +329,9 @@ String _dbGameId(String gameId) => 'game-${gameId.replaceAll('_', '-')}';
 
 ActiveChildState _fakeActiveChild() => const ActiveChildState(
       childId: TestIds.childA,
-      child: {
-        'id': TestIds.childA,
-        'nickname': 'Mi',
-        'age_group': 'junior',
-      },
+      child: {'id': TestIds.childA, 'nickname': 'Mi', 'age_group': 'junior'},
       children: [
-        {
-          'id': TestIds.childA,
-          'nickname': 'Mi',
-          'age_group': 'junior',
-        },
+        {'id': TestIds.childA, 'nickname': 'Mi', 'age_group': 'junior'},
       ],
     );
 

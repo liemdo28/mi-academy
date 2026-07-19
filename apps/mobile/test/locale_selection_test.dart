@@ -40,8 +40,9 @@ void main() {
     });
   });
 
-  testWidgets('fresh install shows the locale-selection screen, not content',
-      (tester) async {
+  testWidgets('fresh install shows the locale-selection screen, not content', (
+    tester,
+  ) async {
     final store = MemoryParentSettingsStore();
     final container = ProviderContainer(
       overrides: [parentSettingsStoreProvider.overrideWithValue(store)],
@@ -124,36 +125,43 @@ void main() {
     expect(find.text('post-selection destination'), findsOneWidget);
   });
 
-  test('selection persists across a simulated restart (new store read)',
-      () async {
-    final store = MemoryParentSettingsStore();
-    await store.save(
-      const ParentSettingsSnapshot(language: 'en', localeConfirmed: true),
-    );
+  test(
+    'selection persists across a simulated restart (new store read)',
+    () async {
+      final store = MemoryParentSettingsStore();
+      await store.save(
+        const ParentSettingsSnapshot(language: 'en', localeConfirmed: true),
+      );
 
-    // A restart just re-reads the same underlying store/box; simulate that
-    // by loading again rather than reusing any in-memory widget state.
-    final reloaded = await store.load();
-    expect(reloaded.language, 'en');
-    expect(reloaded.localeConfirmed, isTrue);
-  });
+      // A restart just re-reads the same underlying store/box; simulate that
+      // by loading again rather than reusing any in-memory widget state.
+      final reloaded = await store.load();
+      expect(reloaded.language, 'en');
+      expect(reloaded.localeConfirmed, isTrue);
+    },
+  );
 
-  test('changing language later (Parent Settings path) keeps localeConfirmed',
-      () async {
-    final store = MemoryParentSettingsStore();
-    await store.save(
-      const ParentSettingsSnapshot(language: 'vi', localeConfirmed: true),
-    );
+  test(
+    'changing language later (Parent Settings path) keeps localeConfirmed',
+    () async {
+      final store = MemoryParentSettingsStore();
+      await store.save(
+        const ParentSettingsSnapshot(language: 'vi', localeConfirmed: true),
+      );
 
-    final current = await store.load();
-    await store.save(current.copyWith(language: 'en'));
+      final current = await store.load();
+      await store.save(current.copyWith(language: 'en'));
 
-    final updated = await store.load();
-    expect(updated.language, 'en');
-    expect(updated.localeConfirmed, isTrue,
+      final updated = await store.load();
+      expect(updated.language, 'en');
+      expect(
+        updated.localeConfirmed,
+        isTrue,
         reason: 'Changing language later must not re-trigger first-launch '
-            'selection.');
-  });
+            'selection.',
+      );
+    },
+  );
 
   test('a full local-data reset clears localeConfirmed', () async {
     final store = MemoryParentSettingsStore();
@@ -164,8 +172,11 @@ void main() {
     await store.deleteChildData();
 
     final afterReset = await store.load();
-    expect(afterReset.localeConfirmed, isFalse,
-        reason: 'SplashScreen must route back to /locale-select after a '
-            'full local-data reset.');
+    expect(
+      afterReset.localeConfirmed,
+      isFalse,
+      reason: 'SplashScreen must route back to /locale-select after a '
+          'full local-data reset.',
+    );
   });
 }

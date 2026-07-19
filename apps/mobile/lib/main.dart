@@ -126,10 +126,9 @@ class _FatalStartupErrorApp extends StatelessWidget {
 /// docs/final/INTEGRATION_REPORT.md (Phase 4) for why this was split out
 /// from the real app shell in `app.dart`.
 class DebugGamePickerApp extends StatelessWidget {
-  DebugGamePickerApp({
-    super.key,
-    ParentSettingsStore? parentSettingsStore,
-  }) : parentSettingsStore = parentSettingsStore ?? MemoryParentSettingsStore();
+  DebugGamePickerApp({super.key, ParentSettingsStore? parentSettingsStore})
+      : parentSettingsStore =
+            parentSettingsStore ?? MemoryParentSettingsStore();
 
   final ParentSettingsStore parentSettingsStore;
 
@@ -500,8 +499,10 @@ class _ParentAreaCard extends StatelessWidget {
         borderRadius: BorderRadius.circular(GameTheme.cardRadius),
       ),
       child: ListTile(
-        leading:
-            const Icon(Icons.family_restroom_rounded, color: GameTheme.primary),
+        leading: const Icon(
+          Icons.family_restroom_rounded,
+          color: GameTheme.primary,
+        ),
         title: const Text('Khu vực phụ huynh', style: GameTheme.headingMedium),
         subtitle: const Text('Báo cáo tiến độ, cài đặt và dữ liệu của bé'),
         trailing: const Icon(Icons.lock_rounded, color: GameTheme.primary),
@@ -512,10 +513,7 @@ class _ParentAreaCard extends StatelessWidget {
 }
 
 class LocalParentAreaScreen extends StatelessWidget {
-  const LocalParentAreaScreen({
-    super.key,
-    required this.parentSettingsStore,
-  });
+  const LocalParentAreaScreen({super.key, required this.parentSettingsStore});
 
   final ParentSettingsStore parentSettingsStore;
 

@@ -92,8 +92,9 @@ class _MemoryCardsScreenState extends State<MemoryCardsScreen>
         childProfileId: widget.childProfileId,
         language: widget.locale,
         ageGroup: '5-7',
-        accessibility:
-            AccessibilityPreferences(reducedMotion: widget.reduceMotion),
+        accessibility: AccessibilityPreferences(
+          reducedMotion: widget.reduceMotion,
+        ),
         audio: const AudioPreferences(),
         services: MiGameServices(
           saveSnapshot: _noopSave,

@@ -20,7 +20,7 @@ None of these are provisioned yet — listed so the eventual secrets-manager set
 | `SECRET_KEY` (per env) | JWT signing | Dev 6 (infra) + Dev 1 (consumes) | Quarterly or on suspected compromise |
 | Production `DATABASE_URL` credentials | DB auth | Dev 6 | Per secrets-manager rotation policy |
 | `REDIS_URL` credentials (if Redis requires auth in prod) | Rate limiting, cache | Dev 6 | Per secrets-manager rotation policy |
-| `ANDROID_KEYSTORE_BASE64`, `ANDROID_KEYSTORE_PASSWORD`, `ANDROID_KEY_ALIAS`, `ANDROID_KEY_PASSWORD` (GitHub Actions repo secrets) | Play Store release signing — consumed by the `android-release-signing` CI job in `.github/workflows/ci.yml`, which is a no-op until these are set | Dev 6, restricted access | Not rotated (keystore must persist for app updates); back up the keystore file securely outside GitHub — loss means the app can never be updated again under the same listing |
+| `ANDROID_KEYSTORE_BASE64`, `ANDROID_KEYSTORE_PASSWORD`, `ANDROID_KEY_ALIAS`, `ANDROID_KEY_PASSWORD` (GitHub Actions repo secrets) | Play Store release signing — checked by `Android release signing readiness`; consumed by `Android signed Play artifact` only when all four exist | Dev 6, restricted access | Not rotated (keystore must persist for app updates); back up the keystore file securely outside GitHub — loss means the app can never be updated again under the same listing |
 | iOS distribution certificate + provisioning profile | App Store release signing | Dev 6, restricted access | Per Apple's certificate expiry (typically annual) |
 | App Store Connect API key | Automated TestFlight/App Store upload | Dev 6 | Per Apple rotation guidance |
 | Google Play service account JSON | Automated Play Store upload | Dev 6 | Per Google rotation guidance |

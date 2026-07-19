@@ -165,10 +165,7 @@ class _GameScreenState extends ConsumerState<GameScreen> {
       'skill_evidence': {
         for (final skill in result.newSkillsAcquired) skill: true,
       },
-      'metadata': {
-        ...result.metadata,
-        'adaptive_shadow': adaptiveShadow,
-      },
+      'metadata': {...result.metadata, 'adaptive_shadow': adaptiveShadow},
     };
 
     try {
@@ -195,8 +192,11 @@ class _GameScreenState extends ConsumerState<GameScreen> {
     if (_error != null) {
       return Scaffold(
         appBar: AppBar(
-            leading: IconButton(
-                icon: const Icon(Icons.close), onPressed: () => context.pop())),
+          leading: IconButton(
+            icon: const Icon(Icons.close),
+            onPressed: () => context.pop(),
+          ),
+        ),
         body: MiErrorState(
           title: _locale == 'en'
               ? 'This game could not be loaded'
@@ -216,8 +216,11 @@ class _GameScreenState extends ConsumerState<GameScreen> {
     if (levels.isEmpty) {
       return Scaffold(
         appBar: AppBar(
-            leading: IconButton(
-                icon: const Icon(Icons.close), onPressed: () => context.pop())),
+          leading: IconButton(
+            icon: const Icon(Icons.close),
+            onPressed: () => context.pop(),
+          ),
+        ),
         body: Center(
           child: Text(
             _locale == 'en'
@@ -240,8 +243,8 @@ class _GameScreenState extends ConsumerState<GameScreen> {
       // feature-flagged one) -- safe fallback, never a crash.
       return Scaffold(
         appBar: AppBar(
-            leading:
-                IconButton(icon: const Icon(Icons.close), onPressed: onExit)),
+          leading: IconButton(icon: const Icon(Icons.close), onPressed: onExit),
+        ),
         body: Center(
           child: Text(
             _locale == 'en'

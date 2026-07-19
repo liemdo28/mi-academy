@@ -46,8 +46,10 @@ void main() {
   test('has exact cue and missing-letter distribution', () {
     expect(_missingCount(1), 50);
     expect(_missingCount(2), 25);
-    expect(levels.where((level) => (level['assetRefs'] as List).isNotEmpty),
-        isEmpty);
+    expect(
+      levels.where((level) => (level['assetRefs'] as List).isNotEmpty),
+      isEmpty,
+    );
     expect(_levelsWithTextCues(), 75);
     expect(_duplicateLogicalQuestions('vi'), isEmpty);
     expect(_duplicateLogicalQuestions('en'), isEmpty);
@@ -55,13 +57,17 @@ void main() {
 
   test('tier 3 is materially harder than tier 1', () {
     for (final locale in const ['vi', 'en']) {
-      expect(_averageWordLength(locale, 3),
-          greaterThan(_averageWordLength(locale, 1)));
+      expect(
+        _averageWordLength(locale, 3),
+        greaterThan(_averageWordLength(locale, 1)),
+      );
     }
     expect(_averageChoiceCount(3), greaterThan(_averageChoiceCount(1)));
     expect(_averageMissingCount(3), greaterThan(_averageMissingCount(1)));
-    expect(_averageDistractorLengthDelta('en', 3),
-        lessThanOrEqualTo(_averageDistractorLengthDelta('en', 1)));
+    expect(
+      _averageDistractorLengthDelta('en', 3),
+      lessThanOrEqualTo(_averageDistractorLengthDelta('en', 1)),
+    );
   });
 
   test('every item has valid missing positions and exactly one answer', () {
@@ -76,12 +82,17 @@ void main() {
         final options = (content['options'] as List).cast<Map>();
         final optionTexts = options.map((option) => option['text']).toList();
 
-        expect(answer, content['correctAnswer'],
-            reason: '${level['id']} $locale');
+        expect(
+          answer,
+          content['correctAnswer'],
+          reason: '${level['id']} $locale',
+        );
         expect(content['correctLetters'], positions.map((pos) => target[pos]));
         expect(optionTexts, contains(answer));
         expect(
-            options.where((option) => option['correct'] == true), hasLength(1));
+          options.where((option) => option['correct'] == true),
+          hasLength(1),
+        );
         expect(optionTexts.toSet(), hasLength(optionTexts.length));
         for (final pos in positions) {
           expect(pos, inInclusiveRange(0, displayWord.length - 1));
@@ -153,8 +164,9 @@ double _averageWordLength(String locale, int difficulty) {
 
 double _averageDistractorLengthDelta(String locale, int difficulty) {
   final deltas = <int>[];
-  for (final level
-      in levels.where((level) => level['difficulty'] == difficulty)) {
+  for (final level in levels.where(
+    (level) => level['difficulty'] == difficulty,
+  )) {
     final content = (level['localizedContent'] as Map<String, dynamic>)[locale]
         as Map<String, dynamic>;
     final correct = content['correctAnswer'] as String;
@@ -204,6 +216,6 @@ Set<String> _uniqueWords(String locale) {
   return {
     for (final level in levels)
       (((level['localizedContent'] as Map<String, dynamic>)[locale]
-          as Map<String, dynamic>)['targetWord'] as String)
+          as Map<String, dynamic>)['targetWord'] as String),
   };
 }

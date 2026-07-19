@@ -1,6 +1,6 @@
 # Android release signing
 
-## Current state (verified 2026-07-18)
+## Current state (verified 2026-07-19)
 
 - `apps/mobile/android/app/build.gradle.kts` supports optional release
   signing via `android/key.properties` (gitignored, never committed —
@@ -26,11 +26,13 @@
   expects before requesting a production-signed build.
   ```
   Without the flag, the same command succeeds using the debug-key fallback.
-- `.github/workflows/ci.yml`'s `android-release-signing` job already builds
-  a real production-signed AAB when the `ANDROID_KEYSTORE_BASE64` secret is
-  configured — this is not hypothetical: the most recent CI runs on this
-  branch show that job with conclusion `success`, meaning the secret-backed
-  signed build path is live and proven, not just documented.
+- `.github/workflows/ci.yml` has two Android release-signing jobs:
+  `Android release signing readiness` and `Android signed Play artifact`.
+  The readiness job checks only whether all required signing secrets exist
+  and writes a truthful run summary. The signed-artifact job runs only when
+  all four secrets are configured; otherwise it is skipped. A green workflow
+  with the signed-artifact job skipped does **not** produce a
+  production-signed or Play-upload-ready artifact.
 
 ## Application ID — resolved (Milestone 1B, 2026-07-18)
 
@@ -76,9 +78,8 @@ holds the key that actually signs what end users install. This means:
 
 ## CI secret names
 
-`.github/workflows/ci.yml`'s `android-release-signing` job expects these
-repository secrets (already configured for this repo, per the green CI
-runs referenced above):
+`.github/workflows/ci.yml`'s signed-artifact job expects these repository
+secrets:
 
 | Secret | Purpose |
 |---|---|
@@ -87,9 +88,10 @@ runs referenced above):
 | `ANDROID_KEY_ALIAS` | `keyAlias` (e.g. `upload`) |
 | `ANDROID_KEY_PASSWORD` | `keyPassword` |
 
-The job decodes `ANDROID_KEYSTORE_BASE64` to `android/app/release.jks` and
-writes `android/key.properties` from the other three secrets at CI time —
-neither the decoded keystore nor `key.properties` is ever committed; both
+When all four secrets exist, the job decodes `ANDROID_KEYSTORE_BASE64` to
+`android/app/release.jks`, writes `android/key.properties` from the other
+three secrets at CI time, and builds with `requireReleaseSigning=true`.
+Neither the decoded keystore nor `key.properties` is ever committed; both
 exist only in the ephemeral CI runner's filesystem.
 
 ## Verifying a signed artifact locally

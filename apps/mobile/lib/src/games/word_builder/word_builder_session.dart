@@ -90,27 +90,22 @@ class WordBuilderSession {
       gameId: _level.gameId,
       levelId: _level.id,
       childProfileId: childProfileId,
-      state: {
-        'placed': _placed,
-        'bank': _bank,
-        'feedback': _feedback,
-      },
+      state: {'placed': _placed, 'bank': _bank, 'feedback': _feedback},
       createdAt: now ?? DateTime.now().toUtc(),
       score: score,
       attemptsUsed: _attempts,
       hintsUsed: _hintsUsed,
       itemsCompleted: _placed.whereType<String>().length,
       totalItems: _placed.length,
-      metadata: const {
-        'snapshotKind': 'word_builder_session',
-      },
+      metadata: const {'snapshotKind': 'word_builder_session'},
     );
   }
 
   void restoreSnapshot(MiGameSnapshot snapshot) {
     if (snapshot.gameId != _level.gameId || snapshot.levelId != _level.id) {
       throw ArgumentError(
-          'Snapshot does not belong to this Word Builder level.');
+        'Snapshot does not belong to this Word Builder level.',
+      );
     }
 
     final state = snapshot.state;

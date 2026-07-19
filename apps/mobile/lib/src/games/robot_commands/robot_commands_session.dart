@@ -139,24 +139,24 @@ class RobotCommandsSession {
       hintsUsed: _hintsUsed,
       itemsCompleted: _program.length,
       totalItems: _minimumExpectedCommands,
-      metadata: const {
-        'snapshotKind': 'robot_commands_session',
-      },
+      metadata: const {'snapshotKind': 'robot_commands_session'},
     );
   }
 
   void restoreSnapshot(MiGameSnapshot snapshot) {
     if (snapshot.gameId != _level.gameId || snapshot.levelId != _level.id) {
       throw ArgumentError(
-          'Snapshot does not belong to this Robot Commands level.');
+        'Snapshot does not belong to this Robot Commands level.',
+      );
     }
 
     final state = snapshot.state;
     _program
       ..clear()
       ..addAll((state['program'] as List).cast<String>().map(_blockFrom));
-    _robotState =
-        _robotStateFromJson(Map<String, dynamic>.from(state['robot'] as Map));
+    _robotState = _robotStateFromJson(
+      Map<String, dynamic>.from(state['robot'] as Map),
+    );
     _feedback = state['feedback'] as String?;
     _attempts = snapshot.attemptsUsed;
     _hintsUsed = snapshot.hintsUsed;
@@ -209,12 +209,8 @@ Map<String, dynamic> _robotStateToJson(RobotState state) => {
       'x': state.x,
       'y': state.y,
       'facing': state.facing.name,
-      'collected': state.collected
-          .map((point) => {
-                'x': point.x,
-                'y': point.y,
-              })
-          .toList(),
+      'collected':
+          state.collected.map((point) => {'x': point.x, 'y': point.y}).toList(),
     };
 
 RobotState _robotStateFromJson(Map<String, dynamic> json) {

@@ -49,70 +49,71 @@ Future<void> _pumpAndSettleLoad(
 }
 
 void main() {
-  testWidgets('renders Alphabet Explorer for gameType alphabet_explorer',
-      (tester) async {
+  testWidgets('renders Alphabet Explorer for gameType alphabet_explorer', (
+    tester,
+  ) async {
     await _pumpAndSettleLoad(
       tester,
-      const GameScreen(
-        childId: 'offline-child',
-        gameType: 'alphabet_explorer',
-      ),
+      const GameScreen(childId: 'offline-child', gameType: 'alphabet_explorer'),
     );
 
     expect(find.text('Tìm chữ A.'), findsOneWidget);
   });
 
-  testWidgets('renders Missing Letter for gameType missing_letter',
-      (tester) async {
+  testWidgets('renders Missing Letter for gameType missing_letter', (
+    tester,
+  ) async {
     await _pumpAndSettleLoad(
       tester,
-      const GameScreen(
-        childId: 'offline-child',
-        gameType: 'missing_letter',
-      ),
+      const GameScreen(childId: 'offline-child', gameType: 'missing_letter'),
     );
 
     expect(find.text('Chọn chữ còn thiếu: M_O'), findsOneWidget);
   });
 
-  testWidgets('renders localized Missing Letter feedback in English Choice UI',
-      (tester) async {
-    await tester.pumpWidget(
-      MaterialApp(
-        home: ChoiceGameScreen(
-          title: 'Missing Letter',
-          worldLabel: 'MI looks for the missing letters with you.',
-          level: _missingLetterFixture,
-          allLevels: const [_missingLetterFixture],
-          heroIcon: Icons.edit_note_rounded,
-          primaryColor: MiGameColors.secondary,
-          onExit: () {},
-          onComplete: (_) {},
-          locale: 'en',
+  testWidgets(
+    'renders localized Missing Letter feedback in English Choice UI',
+    (tester) async {
+      await tester.pumpWidget(
+        MaterialApp(
+          home: ChoiceGameScreen(
+            title: 'Missing Letter',
+            worldLabel: 'MI looks for the missing letters with you.',
+            level: _missingLetterFixture,
+            allLevels: const [_missingLetterFixture],
+            heroIcon: Icons.edit_note_rounded,
+            primaryColor: MiGameColors.secondary,
+            onExit: () {},
+            onComplete: (_) {},
+            locale: 'en',
+          ),
         ),
-      ),
-    );
-    await tester.pump();
+      );
+      await tester.pump();
 
-    expect(find.text('Missing Letter'), findsOneWidget);
-    expect(find.text('MI looks for the missing letters with you.'),
-        findsOneWidget);
-    expect(find.text('Choose the missing letter: C_T'), findsOneWidget);
+      expect(find.text('Missing Letter'), findsOneWidget);
+      expect(
+        find.text('MI looks for the missing letters with you.'),
+        findsOneWidget,
+      );
+      expect(find.text('Choose the missing letter: C_T'), findsOneWidget);
 
-    await tester.ensureVisible(find.text('O'));
-    await tester.tap(find.text('O').first);
-    await tester.pump(const Duration(milliseconds: 100));
-    expect(find.text('Almost there, try another choice.'), findsOneWidget);
+      await tester.ensureVisible(find.text('O'));
+      await tester.tap(find.text('O').first);
+      await tester.pump(const Duration(milliseconds: 100));
+      expect(find.text('Almost there, try another choice.'), findsOneWidget);
 
-    await tester.ensureVisible(find.text('A'));
-    await tester.tap(find.text('A').first);
-    await tester.pump();
-    await tester.pump(const Duration(milliseconds: 100));
-    expect(find.text('You found the missing letter!'), findsOneWidget);
-  });
+      await tester.ensureVisible(find.text('A'));
+      await tester.tap(find.text('A').first);
+      await tester.pump();
+      await tester.pump(const Duration(milliseconds: 100));
+      expect(find.text('You found the missing letter!'), findsOneWidget);
+    },
+  );
 
-  testWidgets('renders the real Word Builder game for gameType word_builder',
-      (tester) async {
+  testWidgets('renders the real Word Builder game for gameType word_builder', (
+    tester,
+  ) async {
     await _pumpAndSettleLoad(
       tester,
       const GameScreen(childId: 'offline-child', gameType: 'word_builder'),
@@ -121,8 +122,9 @@ void main() {
     expect(find.text('Ghép chữ thành từ!'), findsOneWidget);
   });
 
-  testWidgets('renders the real Memory Cards game for gameType memory_cards',
-      (tester) async {
+  testWidgets('renders the real Memory Cards game for gameType memory_cards', (
+    tester,
+  ) async {
     await _pumpAndSettleLoad(
       tester,
       const GameScreen(childId: 'offline-child', gameType: 'memory_cards'),
@@ -135,8 +137,9 @@ void main() {
     await tester.pump(const Duration(seconds: 2));
   });
 
-  testWidgets('shows an error state (with retry) for an unknown game type',
-      (tester) async {
+  testWidgets('shows an error state (with retry) for an unknown game type', (
+    tester,
+  ) async {
     await _pumpAndSettleLoad(
       tester,
       const GameScreen(childId: 'offline-child', gameType: 'not_a_real_game'),

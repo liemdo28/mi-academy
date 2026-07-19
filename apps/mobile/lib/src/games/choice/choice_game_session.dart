@@ -91,9 +91,7 @@ class ChoiceGameSession {
       hintsUsed: _hintsUsed,
       itemsCompleted: _attempts > 0 || _hintsUsed > 0 ? 1 : 0,
       totalItems: 2,
-      metadata: const {
-        'snapshotKind': 'choice_game_session',
-      },
+      metadata: const {'snapshotKind': 'choice_game_session'},
     );
   }
 

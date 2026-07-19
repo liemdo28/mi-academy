@@ -37,23 +37,19 @@ final routerProvider = GoRouter(
   initialLocation: '/',
   redirect: (context, state) {
     if (!_parentGatedPaths.contains(state.matchedLocation)) return null;
-    final verified = ProviderScope.containerOf(context, listen: false)
-        .read(parentGateProvider);
+    final verified = ProviderScope.containerOf(
+      context,
+      listen: false,
+    ).read(parentGateProvider);
     return verified ? null : '/parent-pin';
   },
   routes: [
-    GoRoute(
-      path: '/',
-      builder: (context, state) => const SplashScreen(),
-    ),
+    GoRoute(path: '/', builder: (context, state) => const SplashScreen()),
     GoRoute(
       path: '/locale-select',
       builder: (context, state) => const LocaleSelectionScreen(),
     ),
-    GoRoute(
-      path: '/login',
-      builder: (context, state) => const LoginScreen(),
-    ),
+    GoRoute(path: '/login', builder: (context, state) => const LoginScreen()),
     GoRoute(
       path: '/select-child',
       builder: (context, state) => const ChildSelectorScreen(),
@@ -66,10 +62,7 @@ final routerProvider = GoRouter(
       path: '/world',
       builder: (context, state) => const WorldMapScreen(),
     ),
-    GoRoute(
-      path: '/garden',
-      builder: (context, state) => const GardenScreen(),
-    ),
+    GoRoute(path: '/garden', builder: (context, state) => const GardenScreen()),
     GoRoute(
       path: '/game/:gameId',
       builder: (context, state) {
@@ -77,7 +70,10 @@ final routerProvider = GoRouter(
         final childId = state.uri.queryParameters['childId'] ?? 'offline-child';
         final lessonId = state.uri.queryParameters['lessonId'];
         return GameScreen(
-            childId: childId, gameType: gameId, lessonId: lessonId);
+          childId: childId,
+          gameType: gameId,
+          lessonId: lessonId,
+        );
       },
     ),
     GoRoute(
@@ -91,14 +87,13 @@ final routerProvider = GoRouter(
     GoRoute(
       path: '/parent/settings',
       builder: (context, state) => ParentSettingsScreen(
-        store: ProviderScope.containerOf(context, listen: false)
-            .read(parentSettingsStoreProvider),
+        store: ProviderScope.containerOf(
+          context,
+          listen: false,
+        ).read(parentSettingsStoreProvider),
       ),
     ),
   ],
-  errorBuilder: (context, state) => Scaffold(
-    body: Center(
-      child: Text('Page not found: ${state.uri}'),
-    ),
-  ),
+  errorBuilder: (context, state) =>
+      Scaffold(body: Center(child: Text('Page not found: ${state.uri}'))),
 );

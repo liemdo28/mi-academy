@@ -50,11 +50,13 @@ class _SplashState extends ConsumerState<SplashScreen> {
     if (!mounted) return;
 
     if (!settings.localeConfirmed) {
-      context.go(startRouteFor(
-        isAuthenticated: false,
-        hasSelectedChild: false,
-        localeConfirmed: false,
-      ));
+      context.go(
+        startRouteFor(
+          isAuthenticated: false,
+          hasSelectedChild: false,
+          localeConfirmed: false,
+        ),
+      );
       return;
     }
 
@@ -68,10 +70,12 @@ class _SplashState extends ConsumerState<SplashScreen> {
     }
 
     final hasSelectedChild = ref.read(activeChildProvider).childId != null;
-    context.go(startRouteFor(
-      isAuthenticated: isAuthenticated,
-      hasSelectedChild: hasSelectedChild,
-    ));
+    context.go(
+      startRouteFor(
+        isAuthenticated: isAuthenticated,
+        hasSelectedChild: hasSelectedChild,
+      ),
+    );
   }
 
   @override
@@ -90,22 +94,31 @@ class _SplashState extends ConsumerState<SplashScreen> {
                 borderRadius: BorderRadius.circular(30),
                 boxShadow: [
                   BoxShadow(
-                      color: Colors.black.withValues(alpha: 0.1),
-                      blurRadius: 20)
+                    color: Colors.black.withValues(alpha: 0.1),
+                    blurRadius: 20,
+                  ),
                 ],
               ),
-              child: const Icon(Icons.smart_toy,
-                  size: 72, color: MiColors.primary),
+              child: const Icon(
+                Icons.smart_toy,
+                size: 72,
+                color: MiColors.primary,
+              ),
             ),
             const SizedBox(height: 24),
-            const Text('MI Academy',
-                style: TextStyle(
-                    fontSize: 32,
-                    fontWeight: FontWeight.w800,
-                    color: Colors.white)),
+            const Text(
+              'MI Academy',
+              style: TextStyle(
+                fontSize: 32,
+                fontWeight: FontWeight.w800,
+                color: Colors.white,
+              ),
+            ),
             const SizedBox(height: 8),
-            const Text('Học vui, chơi hay',
-                style: TextStyle(fontSize: 16, color: Colors.white70)),
+            const Text(
+              'Học vui, chơi hay',
+              style: TextStyle(fontSize: 16, color: Colors.white70),
+            ),
             const SizedBox(height: 40),
             const CircularProgressIndicator(color: Colors.white),
           ],

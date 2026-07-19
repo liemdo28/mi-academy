@@ -76,8 +76,10 @@ const _sensitivePatterns = [
 String redact(String raw) {
   var result = raw;
   for (final pattern in _sensitivePatterns) {
-    final regex = RegExp('$pattern["\']?\\s*[:=]\\s*["\']?[^"\'\\s,}]*',
-        caseSensitive: false);
+    final regex = RegExp(
+      '$pattern["\']?\\s*[:=]\\s*["\']?[^"\'\\s,}]*',
+      caseSensitive: false,
+    );
     result = result.replaceAll(regex, '$pattern=[REDACTED]');
   }
   return result;
@@ -105,13 +107,15 @@ class BetaDiagnostics {
     String? screen,
     String? operation,
   }) {
-    _records.add(DiagnosticRecord(
-      timestamp: DateTime.now().toUtc(),
-      category: category,
-      summary: redact(summary),
-      screen: screen,
-      operation: operation,
-    ));
+    _records.add(
+      DiagnosticRecord(
+        timestamp: DateTime.now().toUtc(),
+        category: category,
+        summary: redact(summary),
+        screen: screen,
+        operation: operation,
+      ),
+    );
     // Bounded retention -- oldest entries drop off rather than growing
     // unbounded for the lifetime of the app session.
     while (_records.length > _maxRecords) {

@@ -160,8 +160,9 @@ class MemoryParentSettingsStore implements ParentSettingsStore {
 
   @override
   Future<String> prepareExport(ParentSettingsSnapshot snapshot) async {
-    lastExportJson = const convert.JsonEncoder.withIndent('  ')
-        .convert(snapshot.toParentExportJson());
+    lastExportJson = const convert.JsonEncoder.withIndent(
+      '  ',
+    ).convert(snapshot.toParentExportJson());
     return lastExportJson!;
   }
 
@@ -205,8 +206,9 @@ class HiveParentSettingsStore implements ParentSettingsStore {
 
   @override
   Future<String> prepareExport(ParentSettingsSnapshot snapshot) async {
-    final json = const convert.JsonEncoder.withIndent('  ')
-        .convert(snapshot.toParentExportJson());
+    final json = const convert.JsonEncoder.withIndent(
+      '  ',
+    ).convert(snapshot.toParentExportJson());
     await _box.put(_exportKey, json);
     return json;
   }

@@ -104,53 +104,58 @@ class ApiService {
     this.baseUrl = const String.fromEnvironment('MI_ACADEMY_API_BASE_URL'),
     TokenStore? tokenStore,
   }) : _tokenStore = tokenStore ?? SecureTokenStore() {
-    _dio = Dio(BaseOptions(
-      baseUrl: baseUrl,
-      connectTimeout: const Duration(seconds: 10),
-      receiveTimeout: const Duration(seconds: 10),
-      headers: {
-        'Content-Type': 'application/json',
-        'Accept': 'application/json',
-      },
-    ));
+    _dio = Dio(
+      BaseOptions(
+        baseUrl: baseUrl,
+        connectTimeout: const Duration(seconds: 10),
+        receiveTimeout: const Duration(seconds: 10),
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json',
+        },
+      ),
+    );
 
     // Interceptor for automatic token refresh
-    _dio.interceptors.add(InterceptorsWrapper(
-      onRequest: (options, handler) {
-        if (_accessToken != null) {
-          options.headers['Authorization'] = 'Bearer $_accessToken';
-        }
-        handler.next(options);
-      },
-      onError: (error, handler) async {
-        // The refresh call itself goes through this same interceptor. If it
-        // returns 401 (the refresh token was rejected) and this branch
-        // didn't exclude it, _refreshAccessToken would try to refresh again
-        // with the same known-bad token -- an unbounded recursive retry
-        // loop, not just a missed edge case.
-        final isRefreshCall = error.requestOptions.path == ApiPaths.authRefresh;
-        if (error.response?.statusCode == 401 && !isRefreshCall) {
-          final wasAuthenticated =
-              _accessToken != null || _refreshToken != null;
-          if (_refreshToken != null) {
-            final refreshed = await _refreshAccessToken();
-            if (refreshed) {
-              error.requestOptions.headers['Authorization'] =
-                  'Bearer $_accessToken';
-              final response = await _dio.fetch(error.requestOptions);
-              return handler.resolve(response);
-            }
-            // _refreshAccessToken already cleared tokens on failure.
-          } else if (wasAuthenticated) {
-            // Had an access token but no refresh token to try -- an
-            // inconsistent state, but still means this session is over.
-            await _clearTokens();
+    _dio.interceptors.add(
+      InterceptorsWrapper(
+        onRequest: (options, handler) {
+          if (_accessToken != null) {
+            options.headers['Authorization'] = 'Bearer $_accessToken';
           }
-          if (wasAuthenticated) onSessionExpired?.call();
-        }
-        handler.next(error);
-      },
-    ));
+          handler.next(options);
+        },
+        onError: (error, handler) async {
+          // The refresh call itself goes through this same interceptor. If it
+          // returns 401 (the refresh token was rejected) and this branch
+          // didn't exclude it, _refreshAccessToken would try to refresh again
+          // with the same known-bad token -- an unbounded recursive retry
+          // loop, not just a missed edge case.
+          final isRefreshCall =
+              error.requestOptions.path == ApiPaths.authRefresh;
+          if (error.response?.statusCode == 401 && !isRefreshCall) {
+            final wasAuthenticated =
+                _accessToken != null || _refreshToken != null;
+            if (_refreshToken != null) {
+              final refreshed = await _refreshAccessToken();
+              if (refreshed) {
+                error.requestOptions.headers['Authorization'] =
+                    'Bearer $_accessToken';
+                final response = await _dio.fetch(error.requestOptions);
+                return handler.resolve(response);
+              }
+              // _refreshAccessToken already cleared tokens on failure.
+            } else if (wasAuthenticated) {
+              // Had an access token but no refresh token to try -- an
+              // inconsistent state, but still means this session is over.
+              await _clearTokens();
+            }
+            if (wasAuthenticated) onSessionExpired?.call();
+          }
+          handler.next(error);
+        },
+      ),
+    );
   }
 
   // ─── Auth ──────────────────────────────────────────────────────────────────
@@ -161,12 +166,15 @@ class ApiService {
     required String displayName,
     String language = 'vi',
   }) async {
-    final response = await _dio.post(ApiPaths.authRegister, data: {
-      'email': email,
-      'password': password,
-      'display_name': displayName,
-      'language': language,
-    });
+    final response = await _dio.post(
+      ApiPaths.authRegister,
+      data: {
+        'email': email,
+        'password': password,
+        'display_name': displayName,
+        'language': language,
+      },
+    );
     await _saveTokens(response.data);
     return response.data;
   }
@@ -175,10 +183,10 @@ class ApiService {
     required String email,
     required String password,
   }) async {
-    final response = await _dio.post(ApiPaths.authLogin, data: {
-      'email': email,
-      'password': password,
-    });
+    final response = await _dio.post(
+      ApiPaths.authLogin,
+      data: {'email': email, 'password': password},
+    );
     await _saveTokens(response.data);
     return response.data;
   }
@@ -219,9 +227,10 @@ class ApiService {
 
   Future<bool> _doRefreshAccessToken() async {
     try {
-      final response = await _dio.post(ApiPaths.authRefresh, data: {
-        'refresh_token': _refreshToken,
-      });
+      final response = await _dio.post(
+        ApiPaths.authRefresh,
+        data: {'refresh_token': _refreshToken},
+      );
       await _saveTokens(response.data);
       return true;
     } catch (e) {
@@ -242,11 +251,14 @@ class ApiService {
     String? language,
     String? timezone,
   }) async {
-    final response = await _dio.put(ApiPaths.parentProfile, data: {
-      if (displayName != null) 'display_name': displayName,
-      if (language != null) 'language': language,
-      if (timezone != null) 'timezone': timezone,
-    });
+    final response = await _dio.put(
+      ApiPaths.parentProfile,
+      data: {
+        if (displayName != null) 'display_name': displayName,
+        if (language != null) 'language': language,
+        if (timezone != null) 'timezone': timezone,
+      },
+    );
     return response.data;
   }
 
@@ -255,8 +267,10 @@ class ApiService {
   }
 
   Future<Map<String, dynamic>> verifyPin(String pin) async {
-    final response =
-        await _dio.post(ApiPaths.parentPinVerify, data: {'pin': pin});
+    final response = await _dio.post(
+      ApiPaths.parentPinVerify,
+      data: {'pin': pin},
+    );
     return response.data;
   }
 
@@ -289,15 +303,18 @@ class ApiService {
     String preferredLanguage = 'vi',
     int? dailyTimeLimit,
   }) async {
-    final response = await _dio.post(ApiPaths.children, data: {
-      'nickname': nickname,
-      'age_group': ageGroup,
-      if (birthYear != null) 'birth_year': birthYear,
-      if (gradeLevel != null) 'grade_level': gradeLevel,
-      if (avatarId != null) 'avatar_id': avatarId,
-      'preferred_language': preferredLanguage,
-      if (dailyTimeLimit != null) 'daily_time_limit': dailyTimeLimit,
-    });
+    final response = await _dio.post(
+      ApiPaths.children,
+      data: {
+        'nickname': nickname,
+        'age_group': ageGroup,
+        if (birthYear != null) 'birth_year': birthYear,
+        if (gradeLevel != null) 'grade_level': gradeLevel,
+        if (avatarId != null) 'avatar_id': avatarId,
+        'preferred_language': preferredLanguage,
+        if (dailyTimeLimit != null) 'daily_time_limit': dailyTimeLimit,
+      },
+    );
     return response.data;
   }
 
@@ -311,10 +328,13 @@ class ApiService {
     String? ageGroup,
     String? subjectId,
   }) async {
-    final response = await _dio.get(ApiPaths.lessons, queryParameters: {
-      if (ageGroup != null) 'age_group': ageGroup,
-      if (subjectId != null) 'subject_id': subjectId,
-    });
+    final response = await _dio.get(
+      ApiPaths.lessons,
+      queryParameters: {
+        if (ageGroup != null) 'age_group': ageGroup,
+        if (subjectId != null) 'subject_id': subjectId,
+      },
+    );
     return response.data;
   }
 
@@ -395,10 +415,13 @@ class ApiService {
     required String contentType,
     int sinceVersion = 0,
   }) async {
-    final response = await _dio.get(ApiPaths.syncContent, queryParameters: {
-      'content_type': contentType,
-      'since_version': sinceVersion,
-    });
+    final response = await _dio.get(
+      ApiPaths.syncContent,
+      queryParameters: {
+        'content_type': contentType,
+        'since_version': sinceVersion,
+      },
+    );
     return response.data;
   }
 

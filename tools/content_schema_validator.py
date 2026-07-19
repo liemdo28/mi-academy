@@ -217,6 +217,125 @@ def validate_missing_letter_content(level: dict) -> list[str]:
     return errors
 
 
+def _duplicate_values(values: list[object]) -> set[object]:
+    seen: set[object] = set()
+    duplicates: set[object] = set()
+    for value in values:
+        if value in seen:
+            duplicates.add(value)
+        seen.add(value)
+    return duplicates
+
+
+def _placement_capacity(target: dict) -> int:
+    capacity = target.get("capacity", 1)
+    return capacity if isinstance(capacity, int) else 0
+
+
+def _placement_accepts(item: dict, target: dict, rule: dict) -> bool:
+    if rule.get("matchStrategy") == "metadataCategory":
+        key = rule.get("categoryMetadataKey")
+        item_metadata = item.get("metadata", {})
+        target_metadata = target.get("metadata", {})
+        if not isinstance(key, str) or not key:
+            return False
+        if not isinstance(item_metadata, dict) or not isinstance(target_metadata, dict):
+            return False
+        return item_metadata.get(key) is not None and item_metadata.get(
+            key
+        ) == target_metadata.get(key)
+
+    accepted_targets = item.get("acceptedTargetIds", [])
+    accepted_items = target.get("acceptedItemIds", [])
+    item_allows = not accepted_targets or target.get("id") in accepted_targets
+    target_allows = not accepted_items or item.get("id") in accepted_items
+    return item_allows and target_allows
+
+
+def validate_placement_payload(content: dict, prefix: str) -> list[str]:
+    errors: list[str] = []
+    items = [item for item in content.get("items", []) if isinstance(item, dict)]
+    targets = [
+        target for target in content.get("targets", []) if isinstance(target, dict)
+    ]
+    rule = content.get("rule", {})
+    if not isinstance(rule, dict):
+        rule = {}
+
+    if not items:
+        return [f"{prefix}.items: at least one item required"]
+    if not targets:
+        return [f"{prefix}.targets: at least one target required"]
+
+    item_ids = [item.get("id") for item in items]
+    target_ids = [target.get("id") for target in targets]
+    for item_id in _duplicate_values(item_ids):
+        errors.append(f"{prefix}.items: duplicate item id {item_id}")
+    for target_id in _duplicate_values(target_ids):
+        errors.append(f"{prefix}.targets: duplicate target id {target_id}")
+
+    known_items = set(item_ids)
+    known_targets = set(target_ids)
+    for item in items:
+        for target_id in item.get("acceptedTargetIds", []):
+            if target_id not in known_targets:
+                errors.append(
+                    f"{prefix}.items: item {item.get('id')} references unknown target {target_id}"
+                )
+    for target in targets:
+        capacity = _placement_capacity(target)
+        if capacity < 1:
+            errors.append(
+                f"{prefix}.targets: target {target.get('id')} has invalid capacity"
+            )
+        for item_id in target.get("acceptedItemIds", []):
+            if item_id not in known_items:
+                errors.append(
+                    f"{prefix}.targets: target {target.get('id')} references unknown item {item_id}"
+                )
+
+    if rule.get("matchStrategy") == "metadataCategory" and not rule.get(
+        "categoryMetadataKey"
+    ):
+        errors.append(f"{prefix}.rule: categoryMetadataKey is required")
+
+    legal_targets_by_item: dict[object, list[dict]] = {}
+    for item in items:
+        legal = [target for target in targets if _placement_accepts(item, target, rule)]
+        legal_targets_by_item[item.get("id")] = legal
+        if not legal:
+            errors.append(f"{prefix}.items: item {item.get('id')} has no valid target")
+
+    for target in targets:
+        if not any(_placement_accepts(item, target, rule) for item in items):
+            errors.append(
+                f"{prefix}.targets: target {target.get('id')} has no valid item"
+            )
+
+    total_capacity = sum(_placement_capacity(target) for target in targets)
+    if len(items) > total_capacity:
+        errors.append(
+            f"{prefix}.targets: total item count exceeds target capacity "
+            f"({len(items)} > {total_capacity})"
+        )
+
+    exclusive_demand: dict[object, int] = {}
+    for item_id, legal_targets in legal_targets_by_item.items():
+        if len(legal_targets) == 1:
+            target_id = legal_targets[0].get("id")
+            exclusive_demand[target_id] = exclusive_demand.get(target_id, 0) + 1
+    for target in targets:
+        demand = exclusive_demand.get(target.get("id"), 0)
+        capacity = _placement_capacity(target)
+        if demand > capacity:
+            errors.append(
+                f"{prefix}.targets: {demand} item(s) require target {target.get('id')} "
+                f"but capacity is {capacity}"
+            )
+
+    return errors
+
+
 def validate_engine_backed_content(level: dict) -> list[str]:
     raw_game_id = level.get("gameId")
     if not isinstance(raw_game_id, str):
@@ -273,21 +392,7 @@ def validate_engine_backed_content(level: dict) -> list[str]:
             if content.get("mode") not in {"reorder", "missingItem"}:
                 errors.append(f"{prefix}.mode: unsupported sequence mode")
         elif engine == "placement":
-            targets = {
-                target.get("id")
-                for target in content.get("targets", [])
-                if isinstance(target, dict)
-            }
-            if not targets:
-                errors.append(f"{prefix}.targets: at least one target required")
-            for item in content.get("items", []):
-                accepted = (
-                    set(item.get("acceptedTargetIds", []))
-                    if isinstance(item, dict)
-                    else set()
-                )
-                if not accepted & targets:
-                    errors.append(f"{prefix}.items: item has no valid target")
+            errors.extend(validate_placement_payload(content, prefix))
         elif engine == "matching":
             pairs = content.get("pairs")
             if not isinstance(pairs, list) or len(pairs) < 2:

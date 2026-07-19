@@ -110,19 +110,21 @@ class _ChoiceGameScreenState extends State<ChoiceGameScreen>
   void _showCompletion() {
     _completed = true;
     _stopwatch.stop();
-    widget.onComplete?.call(MiCompletionResult(
-      gameId: _level.gameId,
-      levelId: _level.id,
-      childProfileId: _session.childProfileId,
-      completedAt: DateTime.now(),
-      score: _session.score,
-      maxScore: 100,
-      attemptsUsed: _session.attempts,
-      hintsUsed: _session.hintsUsed,
-      duration: _stopwatch.elapsed,
-      perfectRun: _session.attempts <= 1 && _session.hintsUsed == 0,
-      newSkillsAcquired: skillIdsFor(_level, fallback: const ['math']),
-    ));
+    widget.onComplete?.call(
+      MiCompletionResult(
+        gameId: _level.gameId,
+        levelId: _level.id,
+        childProfileId: _session.childProfileId,
+        completedAt: DateTime.now(),
+        score: _session.score,
+        maxScore: 100,
+        attemptsUsed: _session.attempts,
+        hintsUsed: _session.hintsUsed,
+        duration: _stopwatch.elapsed,
+        perfectRun: _session.attempts <= 1 && _session.hintsUsed == 0,
+        newSkillsAcquired: skillIdsFor(_level, fallback: const ['math']),
+      ),
+    );
 
     showDialog(
       context: context,

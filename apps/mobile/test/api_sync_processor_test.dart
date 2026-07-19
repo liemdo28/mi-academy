@@ -107,9 +107,7 @@ void main() {
 
     await processor(item);
 
-    expect(client.gameResultCalls, [
-      ('game-uuid-1', item.payload),
-    ]);
+    expect(client.gameResultCalls, [('game-uuid-1', item.payload)]);
   });
 }
 

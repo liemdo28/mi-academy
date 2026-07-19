@@ -33,10 +33,9 @@ class _ChildSelectorScreenState extends ConsumerState<ChildSelectorScreen> {
     );
     if (result == null || !mounted) return;
 
-    final ok = await ref.read(activeChildProvider.notifier).createChild(
-          nickname: result.nickname,
-          ageGroup: result.ageGroup,
-        );
+    final ok = await ref
+        .read(activeChildProvider.notifier)
+        .createChild(nickname: result.nickname, ageGroup: result.ageGroup);
     if (ok && mounted) {
       context.go('/home');
     } else if (mounted) {
@@ -224,19 +223,15 @@ class _AddChildCard extends StatelessWidget {
               shape: BoxShape.circle,
             ),
             child: const Center(
-              child: Icon(
-                Icons.add,
-                size: 36,
-                color: MiColors.textSecondary,
-              ),
+              child: Icon(Icons.add, size: 36, color: MiColors.textSecondary),
             ),
           ),
           const SizedBox(height: MiTokens.space3),
           Text(
             'Thêm hồ sơ',
-            style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                  color: MiColors.textSecondary,
-                ),
+            style: Theme.of(
+              context,
+            ).textTheme.titleMedium?.copyWith(color: MiColors.textSecondary),
             textAlign: TextAlign.center,
           ),
         ],

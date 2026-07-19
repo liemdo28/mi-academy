@@ -32,38 +32,41 @@ class _FixedActiveChildNotifier extends ActiveChildNotifier {
 }
 
 void main() {
-  testWidgets('Debug game picker shell renders the first playable game entries',
-      (tester) async {
-    await tester.pumpWidget(DebugGamePickerApp(key: UniqueKey()));
-    await pumpUntilFound(tester, find.text('Thế giới khám phá'));
+  testWidgets(
+    'Debug game picker shell renders the first playable game entries',
+    (tester) async {
+      await tester.pumpWidget(DebugGamePickerApp(key: UniqueKey()));
+      await pumpUntilFound(tester, find.text('Thế giới khám phá'));
 
-    expect(find.text('MI Academy'), findsOneWidget);
-    expect(find.text('Thế giới khám phá'), findsOneWidget);
-    expect(find.text('Hồ sơ của bé'), findsOneWidget);
-    expect(find.text('Sao MI: 0'), findsOneWidget);
-    expect(find.text('Huy hiệu: sẵn sàng'), findsOneWidget);
-    expect(find.text('15 game offline'), findsOneWidget);
-    await dragUntilFound(tester, find.text('Khu vực phụ huynh'));
-    expect(find.text('Khu vực phụ huynh'), findsOneWidget);
-    expect(find.text('Khám phá chữ cái'), findsOneWidget);
-    await dragUntilFound(tester, find.text('Tìm chữ còn thiếu'));
-    expect(find.text('Tìm chữ còn thiếu'), findsOneWidget);
-    await dragUntilFound(tester, find.text('Ghép chữ tạo từ'));
-    expect(find.text('Ghép chữ tạo từ'), findsOneWidget);
-    await dragUntilFound(tester, find.text('Nghe âm tìm chữ'));
-    expect(find.text('Nghe âm tìm chữ'), findsOneWidget);
-    await dragUntilFound(tester, find.text('Đường đua cộng trừ'));
-    expect(find.text('Đường đua cộng trừ'), findsOneWidget);
-    await dragUntilFound(tester, find.text('Siêu thị toán học'));
-    expect(find.text('Siêu thị toán học'), findsOneWidget);
-    await dragUntilFound(tester, find.text('Ghi nhớ vị trí'));
-    expect(find.text('Ghi nhớ vị trí'), findsOneWidget);
-    await dragUntilFound(tester, find.text('Robot làm theo lệnh'));
-    expect(find.text('Robot làm theo lệnh'), findsOneWidget);
-  });
+      expect(find.text('MI Academy'), findsOneWidget);
+      expect(find.text('Thế giới khám phá'), findsOneWidget);
+      expect(find.text('Hồ sơ của bé'), findsOneWidget);
+      expect(find.text('Sao MI: 0'), findsOneWidget);
+      expect(find.text('Huy hiệu: sẵn sàng'), findsOneWidget);
+      expect(find.text('15 game offline'), findsOneWidget);
+      await dragUntilFound(tester, find.text('Khu vực phụ huynh'));
+      expect(find.text('Khu vực phụ huynh'), findsOneWidget);
+      expect(find.text('Khám phá chữ cái'), findsOneWidget);
+      await dragUntilFound(tester, find.text('Tìm chữ còn thiếu'));
+      expect(find.text('Tìm chữ còn thiếu'), findsOneWidget);
+      await dragUntilFound(tester, find.text('Ghép chữ tạo từ'));
+      expect(find.text('Ghép chữ tạo từ'), findsOneWidget);
+      await dragUntilFound(tester, find.text('Nghe âm tìm chữ'));
+      expect(find.text('Nghe âm tìm chữ'), findsOneWidget);
+      await dragUntilFound(tester, find.text('Đường đua cộng trừ'));
+      expect(find.text('Đường đua cộng trừ'), findsOneWidget);
+      await dragUntilFound(tester, find.text('Siêu thị toán học'));
+      expect(find.text('Siêu thị toán học'), findsOneWidget);
+      await dragUntilFound(tester, find.text('Ghi nhớ vị trí'));
+      expect(find.text('Ghi nhớ vị trí'), findsOneWidget);
+      await dragUntilFound(tester, find.text('Robot làm theo lệnh'));
+      expect(find.text('Robot làm theo lệnh'), findsOneWidget);
+    },
+  );
 
-  testWidgets('Local parent area shows gentle report and opens settings',
-      (tester) async {
+  testWidgets('Local parent area shows gentle report and opens settings', (
+    tester,
+  ) async {
     await tester.pumpWidget(
       MaterialApp(
         home: LocalParentAreaScreen(
@@ -129,8 +132,9 @@ void main() {
     expect(find.text('Con đã ghép đúng từ!'), findsOneWidget);
   });
 
-  testWidgets('Word Builder gives a gentle prompt for incomplete answers',
-      (tester) async {
+  testWidgets('Word Builder gives a gentle prompt for incomplete answers', (
+    tester,
+  ) async {
     await tester.pumpWidget(
       const MaterialApp(
         home: WordBuilderScreen(
@@ -182,31 +186,33 @@ void main() {
     expect(find.text('Con đã nghe và chọn đúng!'), findsOneWidget);
   });
 
-  testWidgets('Sound Match reveals transcript and gentle retry after mismatch',
-      (tester) async {
-    await tester.pumpWidget(
-      const MaterialApp(
-        home: SoundMatchScreen(
-          level: soundMatchLevel,
-          allLevels: [soundMatchLevel],
+  testWidgets(
+    'Sound Match reveals transcript and gentle retry after mismatch',
+    (tester) async {
+      await tester.pumpWidget(
+        const MaterialApp(
+          home: SoundMatchScreen(
+            level: soundMatchLevel,
+            allLevels: [soundMatchLevel],
+          ),
         ),
-      ),
-    );
-    await tester.pump();
+      );
+      await tester.pump();
 
-    await tester.tap(find.text('B'));
-    await tester.pump();
+      await tester.tap(find.text('B'));
+      await tester.pump();
 
-    expect(
-      find.text(
-        'Chưa khớp rồi, con nghe lại và thử đáp án khác nhé!',
-        skipOffstage: false,
-      ),
-      findsOneWidget,
-    );
-    expect(find.text('A'), findsWidgets);
-    expect(find.textContaining('sai'), findsNothing);
-  });
+      expect(
+        find.text(
+          'Chưa khớp rồi, con nghe lại và thử đáp án khác nhé!',
+          skipOffstage: false,
+        ),
+        findsOneWidget,
+      );
+      expect(find.text('A'), findsWidgets);
+      expect(find.textContaining('sai'), findsNothing);
+    },
+  );
 
   testWidgets('Math Race renders playable controls', (tester) async {
     await tester.pumpWidget(
@@ -249,8 +255,9 @@ void main() {
     expect(find.text('MI thấy con đã hiểu bài!'), findsOneWidget);
   });
 
-  testWidgets('Math Race keeps progress gentle after an incorrect choice',
-      (tester) async {
+  testWidgets('Math Race keeps progress gentle after an incorrect choice', (
+    tester,
+  ) async {
     await tester.pumpWidget(
       const MaterialApp(
         home: ChoiceGameScreen(
@@ -289,8 +296,10 @@ void main() {
     await tester.pump();
 
     expect(find.text('Siêu thị toán học'), findsWidgets);
-    expect(find.text('Quả táo 2 đồng, quả chuối 3 đồng. Tổng cộng bao nhiêu?'),
-        findsOneWidget);
+    expect(
+      find.text('Quả táo 2 đồng, quả chuối 3 đồng. Tổng cộng bao nhiêu?'),
+      findsOneWidget,
+    );
     expect(find.text('5 đồng'), findsOneWidget);
   });
 
@@ -315,8 +324,9 @@ void main() {
     expect(find.text('MI thấy con đã hiểu bài!'), findsOneWidget);
   });
 
-  testWidgets('Math Supermarket hint teaches without solving by pressure',
-      (tester) async {
+  testWidgets('Math Supermarket hint teaches without solving by pressure', (
+    tester,
+  ) async {
     await tester.pumpWidget(
       const MaterialApp(
         home: ChoiceGameScreen(
@@ -400,27 +410,28 @@ void main() {
   });
 
   testWidgets(
-      'Memory Cards respects reduceMotion by collapsing the flip animation',
-      (tester) async {
-    await tester.pumpWidget(
-      MaterialApp(
-        home: MemoryCardsScreen(
-          game: MemoryCardsGame(),
-          level: memoryCardsLevel,
-          onComplete: (_) {},
-          reduceMotion: true,
+    'Memory Cards respects reduceMotion by collapsing the flip animation',
+    (tester) async {
+      await tester.pumpWidget(
+        MaterialApp(
+          home: MemoryCardsScreen(
+            game: MemoryCardsGame(),
+            level: memoryCardsLevel,
+            onComplete: (_) {},
+            reduceMotion: true,
+          ),
         ),
-      ),
-    );
-    await tester.pump(const Duration(milliseconds: 100));
-    await tester.tap(find.text('Tiếp tục'));
-    await tester.pump();
+      );
+      await tester.pump(const Duration(milliseconds: 100));
+      await tester.tap(find.text('Tiếp tục'));
+      await tester.pump();
 
-    final container = tester.widget<AnimatedContainer>(
-      find.byType(AnimatedContainer).first,
-    );
-    expect(container.duration, Duration.zero);
-  });
+      final container = tester.widget<AnimatedContainer>(
+        find.byType(AnimatedContainer).first,
+      );
+      expect(container.duration, Duration.zero);
+    },
+  );
 
   testWidgets('Robot Commands renders playable controls', (tester) async {
     await tester.pumpWidget(
@@ -443,8 +454,9 @@ void main() {
     expect(find.text('TIẾN'), findsOneWidget);
   });
 
-  testWidgets('Robot Commands completes a valid command sequence',
-      (tester) async {
+  testWidgets('Robot Commands completes a valid command sequence', (
+    tester,
+  ) async {
     await tester.pumpWidget(
       const MaterialApp(
         home: RobotCommandsScreen(
@@ -470,8 +482,9 @@ void main() {
     expect(find.text('Con đã lập trình cho MI!'), findsOneWidget);
   });
 
-  testWidgets('Robot Commands moves and removes specific commands',
-      (tester) async {
+  testWidgets('Robot Commands moves and removes specific commands', (
+    tester,
+  ) async {
     await tester.pumpWidget(
       const MaterialApp(
         home: RobotCommandsScreen(
@@ -514,8 +527,9 @@ void main() {
     expect(find.text('1. TIẾN'), findsNothing);
   });
 
-  testWidgets('Robot Commands allows gentle retry after an incomplete run',
-      (tester) async {
+  testWidgets('Robot Commands allows gentle retry after an incomplete run', (
+    tester,
+  ) async {
     await tester.pumpWidget(
       const MaterialApp(
         home: RobotCommandsScreen(
@@ -584,8 +598,9 @@ void main() {
     expect(oneButton.onPressed, isNull);
   });
 
-  testWidgets('Parent PIN adult math fallback unlocks parent area',
-      (tester) async {
+  testWidgets('Parent PIN adult math fallback unlocks parent area', (
+    tester,
+  ) async {
     var unlocked = false;
     await tester.pumpWidget(
       ProviderScope(
@@ -619,9 +634,7 @@ void main() {
   });
 
   group('Parent Dashboard', () {
-    Widget buildDashboard({
-      required List<Override> overrides,
-    }) {
+    Widget buildDashboard({required List<Override> overrides}) {
       return ProviderScope(
         overrides: overrides,
         child: MaterialApp.router(
@@ -643,64 +656,92 @@ void main() {
       );
     }
 
-    testWidgets('shows a loading state while reports are in flight',
-        (tester) async {
-      await tester.pumpWidget(buildDashboard(overrides: [
-        reportsProvider.overrideWith(
-          (ref) => Completer<List<Map<String, dynamic>>>().future,
+    testWidgets('shows a loading state while reports are in flight', (
+      tester,
+    ) async {
+      await tester.pumpWidget(
+        buildDashboard(
+          overrides: [
+            reportsProvider.overrideWith(
+              (ref) => Completer<List<Map<String, dynamic>>>().future,
+            ),
+          ],
         ),
-      ]));
+      );
       await tester.pump();
 
       expect(find.text('Đang tải...'), findsOneWidget);
     });
 
-    testWidgets('shows a retryable error state when reports fail to load',
-        (tester) async {
-      await tester.pumpWidget(buildDashboard(overrides: [
-        reportsProvider
-            .overrideWith((ref) async => throw Exception('network down')),
-      ]));
+    testWidgets('shows a retryable error state when reports fail to load', (
+      tester,
+    ) async {
+      await tester.pumpWidget(
+        buildDashboard(
+          overrides: [
+            reportsProvider.overrideWith(
+              (ref) async => throw Exception('network down'),
+            ),
+          ],
+        ),
+      );
       await tester.pump();
 
       expect(find.text('Không thể tải dữ liệu'), findsOneWidget);
       expect(find.text('Thử lại'), findsOneWidget);
     });
 
-    testWidgets('shows an empty-activity placeholder when no report exists yet',
-        (tester) async {
-      await tester.pumpWidget(buildDashboard(overrides: [
-        reportsProvider.overrideWith((ref) async => []),
-        activeChildProvider.overrideWith(
-          () => _FixedActiveChildNotifier(const ActiveChildState(children: [])),
-        ),
-      ]));
-      await tester.pump();
-
-      expect(find.text('Chưa có hoạt động'), findsOneWidget);
-      expect(find.text('Chưa có hồ sơ'), findsOneWidget);
-    });
-
-    testWidgets('shows today\'s summary and child cards once data loads',
-        (tester) async {
-      await tester.pumpWidget(buildDashboard(overrides: [
-        reportsProvider.overrideWith((ref) async => [
-              {
-                'total_lessons_today': 2,
-                'total_games_today': 3,
-                'total_time_minutes_today': 25,
-                'total_stars_today': 4,
-              },
-            ]),
-        activeChildProvider.overrideWith(() => _FixedActiveChildNotifier(
-              const ActiveChildState(
-                childId: 'child-1',
-                children: [
-                  {'id': 'child-1', 'nickname': 'Mi', 'age_group': 'junior'},
-                ],
+    testWidgets(
+      'shows an empty-activity placeholder when no report exists yet',
+      (tester) async {
+        await tester.pumpWidget(
+          buildDashboard(
+            overrides: [
+              reportsProvider.overrideWith((ref) async => []),
+              activeChildProvider.overrideWith(
+                () => _FixedActiveChildNotifier(
+                  const ActiveChildState(children: []),
+                ),
               ),
-            )),
-      ]));
+            ],
+          ),
+        );
+        await tester.pump();
+
+        expect(find.text('Chưa có hoạt động'), findsOneWidget);
+        expect(find.text('Chưa có hồ sơ'), findsOneWidget);
+      },
+    );
+
+    testWidgets('shows today\'s summary and child cards once data loads', (
+      tester,
+    ) async {
+      await tester.pumpWidget(
+        buildDashboard(
+          overrides: [
+            reportsProvider.overrideWith(
+              (ref) async => [
+                {
+                  'total_lessons_today': 2,
+                  'total_games_today': 3,
+                  'total_time_minutes_today': 25,
+                  'total_stars_today': 4,
+                },
+              ],
+            ),
+            activeChildProvider.overrideWith(
+              () => _FixedActiveChildNotifier(
+                const ActiveChildState(
+                  childId: 'child-1',
+                  children: [
+                    {'id': 'child-1', 'nickname': 'Mi', 'age_group': 'junior'},
+                  ],
+                ),
+              ),
+            ),
+          ],
+        ),
+      );
       await tester.pump();
 
       expect(find.text('📊 Tổng quan hôm nay'), findsOneWidget);
@@ -708,26 +749,33 @@ void main() {
       expect(find.text('Mi'), findsOneWidget);
     });
 
-    testWidgets('retry after an error re-fetches and shows real data',
-        (tester) async {
+    testWidgets('retry after an error re-fetches and shows real data', (
+      tester,
+    ) async {
       var attempt = 0;
-      await tester.pumpWidget(buildDashboard(overrides: [
-        reportsProvider.overrideWith((ref) async {
-          attempt += 1;
-          if (attempt == 1) throw Exception('network down');
-          return [
-            {
-              'total_lessons_today': 1,
-              'total_games_today': 1,
-              'total_time_minutes_today': 5,
-              'total_stars_today': 1,
-            },
-          ];
-        }),
-        activeChildProvider.overrideWith(
-          () => _FixedActiveChildNotifier(const ActiveChildState(children: [])),
+      await tester.pumpWidget(
+        buildDashboard(
+          overrides: [
+            reportsProvider.overrideWith((ref) async {
+              attempt += 1;
+              if (attempt == 1) throw Exception('network down');
+              return [
+                {
+                  'total_lessons_today': 1,
+                  'total_games_today': 1,
+                  'total_time_minutes_today': 5,
+                  'total_stars_today': 1,
+                },
+              ];
+            }),
+            activeChildProvider.overrideWith(
+              () => _FixedActiveChildNotifier(
+                const ActiveChildState(children: []),
+              ),
+            ),
+          ],
         ),
-      ]));
+      );
       await tester.pump();
 
       expect(find.text('Không thể tải dữ liệu'), findsOneWidget);
@@ -784,8 +832,9 @@ void main() {
       expect(find.text('Vườn'), findsOneWidget);
     });
 
-    testWidgets('world map and garden tabs navigate to real screens',
-        (tester) async {
+    testWidgets('world map and garden tabs navigate to real screens', (
+      tester,
+    ) async {
       await tester.pumpWidget(
         ProviderScope(
           child: MaterialApp.router(routerConfig: buildTestRouter()),
@@ -806,12 +855,13 @@ void main() {
     });
 
     testWidgets(
-        "the hero CTA launches the daily plan's game_type, not always memory_cards",
-        (tester) async {
-      await tester.pumpWidget(
-        ProviderScope(
-          overrides: [
-            dailyPlanProvider.overrideWith((ref) async => [
+      "the hero CTA launches the daily plan's game_type, not always memory_cards",
+      (tester) async {
+        await tester.pumpWidget(
+          ProviderScope(
+            overrides: [
+              dailyPlanProvider.overrideWith(
+                (ref) async => [
                   {
                     'lesson_id': 'lesson-1',
                     'title': 'Robot Lesson',
@@ -821,38 +871,42 @@ void main() {
                     'is_required': true,
                     'game_type': 'robot_commands',
                   },
-                ]),
-            activeChildProvider.overrideWith(
-                () => _FixedActiveChildNotifier(fakeActiveChild())),
-          ],
-          child: MaterialApp.router(
-            routerConfig: GoRouter(
-              initialLocation: '/home',
-              routes: [
-                GoRoute(
-                  path: '/home',
-                  builder: (context, state) => const ChildHomeScreen(),
-                ),
-                GoRoute(
-                  path: '/game/:gameId',
-                  builder: (context, state) =>
-                      Text('LAUNCHED_${state.pathParameters['gameId']}'),
-                ),
-              ],
+                ],
+              ),
+              activeChildProvider.overrideWith(
+                () => _FixedActiveChildNotifier(fakeActiveChild()),
+              ),
+            ],
+            child: MaterialApp.router(
+              routerConfig: GoRouter(
+                initialLocation: '/home',
+                routes: [
+                  GoRoute(
+                    path: '/home',
+                    builder: (context, state) => const ChildHomeScreen(),
+                  ),
+                  GoRoute(
+                    path: '/game/:gameId',
+                    builder: (context, state) =>
+                        Text('LAUNCHED_${state.pathParameters['gameId']}'),
+                  ),
+                ],
+              ),
             ),
           ),
-        ),
-      );
-      await tester.pumpAndSettle();
+        );
+        await tester.pumpAndSettle();
 
-      await tester.tap(find.text('Tiếp tục học'));
-      await tester.pumpAndSettle();
+        await tester.tap(find.text('Tiếp tục học'));
+        await tester.pumpAndSettle();
 
-      expect(find.text('LAUNCHED_robot_commands'), findsOneWidget);
-    });
+        expect(find.text('LAUNCHED_robot_commands'), findsOneWidget);
+      },
+    );
 
-    testWidgets('parent gate requires a sustained hold, not a tap',
-        (tester) async {
+    testWidgets('parent gate requires a sustained hold, not a tap', (
+      tester,
+    ) async {
       await tester.pumpWidget(
         ProviderScope(
           child: MaterialApp.router(routerConfig: buildTestRouter()),
@@ -860,15 +914,16 @@ void main() {
       );
       await tester.pumpAndSettle();
 
-      await tester.tap(find.bySemanticsLabel(
-        'Khu vực phụ huynh, giữ 3 giây để mở',
-      ));
+      await tester.tap(
+        find.bySemanticsLabel('Khu vực phụ huynh, giữ 3 giây để mở'),
+      );
       await tester.pump(const Duration(milliseconds: 200));
       expect(find.text('PARENT_GATE'), findsNothing);
 
       final gesture = await tester.startGesture(
         tester.getCenter(
-            find.bySemanticsLabel('Khu vực phụ huynh, giữ 3 giây để mở')),
+          find.bySemanticsLabel('Khu vực phụ huynh, giữ 3 giây để mở'),
+        ),
       );
       await tester.pump(const Duration(seconds: 3, milliseconds: 100));
       await gesture.up();
@@ -878,14 +933,13 @@ void main() {
     });
   });
 
-  testWidgets('Parent settings confirms offline download and data export',
-      (tester) async {
+  testWidgets('Parent settings confirms offline download and data export', (
+    tester,
+  ) async {
     final store = MemoryParentSettingsStore();
     await tester.pumpWidget(
       ProviderScope(
-        child: MaterialApp(
-          home: ParentSettingsScreen(store: store),
-        ),
+        child: MaterialApp(home: ParentSettingsScreen(store: store)),
       ),
     );
     await tester.pump();
@@ -918,17 +972,18 @@ void main() {
 
     expect(find.text('Bản xuất dữ liệu đã sẵn sàng'), findsOneWidget);
     expect(
-        store.lastExportJson, contains('mi-academy-parent-settings-export-v1'));
+      store.lastExportJson,
+      contains('mi-academy-parent-settings-export-v1'),
+    );
   });
 
-  testWidgets('Parent settings reduce-motion toggle persists to the store',
-      (tester) async {
+  testWidgets('Parent settings reduce-motion toggle persists to the store', (
+    tester,
+  ) async {
     final store = MemoryParentSettingsStore();
     await tester.pumpWidget(
       ProviderScope(
-        child: MaterialApp(
-          home: ParentSettingsScreen(store: store),
-        ),
+        child: MaterialApp(home: ParentSettingsScreen(store: store)),
       ),
     );
     await tester.pump();
@@ -941,15 +996,14 @@ void main() {
     expect((await store.load()).reduceMotion, isTrue);
   });
 
-  testWidgets('Parent settings persist after reopening the screen',
-      (tester) async {
+  testWidgets('Parent settings persist after reopening the screen', (
+    tester,
+  ) async {
     final store = MemoryParentSettingsStore();
 
     await tester.pumpWidget(
       ProviderScope(
-        child: MaterialApp(
-          home: ParentSettingsScreen(store: store),
-        ),
+        child: MaterialApp(home: ParentSettingsScreen(store: store)),
       ),
     );
     await tester.pump();
@@ -984,9 +1038,7 @@ void main() {
 
     await tester.pumpWidget(
       ProviderScope(
-        child: MaterialApp(
-          home: ParentSettingsScreen(store: store),
-        ),
+        child: MaterialApp(home: ParentSettingsScreen(store: store)),
       ),
     );
     await tester.pump();
@@ -1008,8 +1060,9 @@ void main() {
     expect(find.text('Bản xuất dữ liệu đã sẵn sàng'), findsOneWidget);
   });
 
-  testWidgets('Parent settings requires confirmation before deleting data',
-      (tester) async {
+  testWidgets('Parent settings requires confirmation before deleting data', (
+    tester,
+  ) async {
     await tester.pumpWidget(
       ProviderScope(
         child: MaterialApp(

@@ -88,16 +88,15 @@ class SoundMatchSession {
       itemsCompleted:
           _showTranscript || _attempts > 0 || _hintsUsed > 0 ? 1 : 0,
       totalItems: 2,
-      metadata: const {
-        'snapshotKind': 'sound_match_session',
-      },
+      metadata: const {'snapshotKind': 'sound_match_session'},
     );
   }
 
   void restoreSnapshot(MiGameSnapshot snapshot) {
     if (snapshot.gameId != _level.gameId || snapshot.levelId != _level.id) {
       throw ArgumentError(
-          'Snapshot does not belong to this Sound Match level.');
+        'Snapshot does not belong to this Sound Match level.',
+      );
     }
 
     final state = snapshot.state;
@@ -110,8 +109,9 @@ class SoundMatchSession {
 
   void _resetForLevel(MiLevel level) {
     final content = level.contentForLocale(locale);
-    final options =
-        List<String>.of((content['options'] as List).cast<String>());
+    final options = List<String>.of(
+      (content['options'] as List).cast<String>(),
+    );
     options.shuffle(Random(level.levelNumber));
 
     _options = options;

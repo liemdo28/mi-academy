@@ -1,96 +1,90 @@
-# Milestone 2 Completion Report
+# Milestone 2 Release-Candidate Status
 
 Date: 2026-07-19
-Branch: `integration/m2-games-15-complete`
+Branch: `integration/m2-games-15-release-candidate`
+Base branch: `origin/integration/m2-games-15-complete`
+Base SHA: `25eb9fc9c2f11203063208c3b911d2c286b53e29`
 
 ## Executive Summary
 
-Verdict: **Games 1-15 Engineering Complete — Human Review and Play Release Pending**
+Verdict: **Games 1-15 Engineering Complete — External Release Gates Pending**
 
-Milestone 2 now has Games 1-15 registered, launchable, content-backed,
-backend-cataloged, and covered by local validation plus final branch CI.
-Engineering implementation is complete for Games 1-15. Human educational
-review, repository-wide localization cleanup, Games 16-30, and Play release
-remain pending.
+Milestone 2 has Games 1-15 registered, launchable, content-backed,
+backend-cataloged, and covered by automated validation. This document is a
+release-candidate status record, not a Play-ready claim. The exact final CI
+run ID for this RC is recorded in the handoff report because embedding a run
+ID here would require a post-CI commit and make the embedded run stale.
+
+## Game and Content Scope
+
+`python tools/release_counts.py --json` is the canonical count source for
+release-scope content. Current regression target:
+
+- Games implemented: 15
+- Production levels: 665
+- Games 16-30: not implemented
 
 ## New Game Matrix
 
-| Game ID | Content | Tiers | Engine | Age bands | Skills | Tests | Status |
-|---|---:|---:|---|---|---|---|---|
-| `alphabet_explorer` | 95 bilingual levels | 3 | Choice | junior, explorer | uppercase, lowercase, case matching, initial sound, vocabulary | content, registry, launcher, full mobile suite | Built in this slice |
-| `missing_letter` | 75 bilingual levels | 3 | Choice | junior, explorer | lowercase recognition, spelling, vocabulary, initial sound | content, registry, launcher, full mobile suite | Built in slice 2 |
-| `category_collector` | 60 bilingual levels | 3 | Multi-select | junior, explorer, master | classification, vocabulary | content, registry, backend | Built, human review pending |
-| `pattern_parade` | 60 bilingual levels | 3 | Sequence | junior, explorer, master | patterns | content, registry, backend | Built, human review pending |
-| `shape_builder` | 45 bilingual levels | 3 | Placement | junior, explorer, master | shapes, spatial reasoning | content, registry, backend | Built, human review pending |
-| `word_sorter` | 60 bilingual levels | 3 | Placement | junior, explorer, master | vocabulary, initial sound | content, registry, backend | Built, human review pending |
-| `number_balance` | 60 bilingual levels | 3 | Matching | junior, explorer, master | arithmetic equivalence | content, registry, backend | Built, human review pending |
-| `logic_detective` | 45 bilingual levels | 3 | Multi-select | explorer, master | conditions, algorithms | content, registry, backend | Built, human review pending |
-| `story_steps` | 45 bilingual levels | 3 | Sequence | junior, explorer, master | reading, sequencing | content, registry, backend | Built, human review pending |
-
-## Command Results
-
-| Directory | Command | Result |
-|---|---|---|
-| `apps/mobile` | `flutter analyze` | PASS, 0 issues |
-| `apps/mobile` | `flutter test` | PASS, 123 passed, 6 Windows-only golden skips |
-| `apps/mobile` | `flutter test test/missing_letter_content_test.dart test/game_registry_test.dart test/game_screen_test.dart test/widget_test.dart` | PASS, 54 passed |
-| `apps/mobile` | `flutter build apk --release` | PASS, built `build/app/outputs/flutter-apk/app-release.apk` |
-| `apps/mobile` | `flutter build appbundle --release` | PASS, built `build/app/outputs/bundle/release/app-release.aab` |
-| `apps/mobile` | `flutter test integration_test` | NOT RUN locally: no Android/iOS device connected; CI run `29675400654` passed the Android-emulator integration job |
-| repo root | `python tools/content_schema_validator.py` | PASS |
-| repo root | `python tools/content_schema_validator.py --check-malformed` | PASS, 13 malformed fixtures checked |
-| repo root | `python tools/content_safety_audit.py --json` | PASS, 15 files and 36154 strings scanned, 0 findings |
-| repo root | `python tools/localization_audit.py` | PASS for ARB parity, 67 EN / 67 VI keys; WARN for existing hardcoded Vietnamese UI strings |
-| repo root | `python -m ruff check .` | PASS |
-| repo root | `python -m pytest packages/game_core/tests tests test -q` | PASS, 187 passed |
-| repo root | `python -m ruff format --check .` | PASS after targeted generator formatting |
-| repo root | `python -m mypy .` | PASS after resolving `math_race_generator.py` tuple-key inference |
-| `apps/api` + Postgres/Redis | Alembic upgrade path | Local migration tests pass for `b4f7c2d9e801` and `c9f1a7b2d615`; CI run `29675400654` passed the Postgres + Redis migration smoke test |
-
-## Missing Letter Content Matrix
-
-| Locale | Tier 1 | Tier 2 | Tier 3 | Total |
-|---|---:|---:|---:|---:|
-| VI | 25 | 25 | 25 | 75 |
-| EN | 25 | 25 | 25 | 75 |
-
-- Unique target words: 75 VI, 75 EN.
-- Missing-letter distribution: 50 one-letter items, 25 two-letter items.
-- Image cues: 0; all items have text/category and phonics cues.
-- Duplicate logical questions: 0 VI, 0 EN.
-- Ambiguous malformed items rejected by validator fixtures.
-- Vietnamese extended-letter coverage includes `đ`, `ư`, and `ơ`.
-- Tier 3 is materially harder than Tier 1 by average word length, missing-letter count, choice count, and distractor similarity assertions in `missing_letter_content_test.dart`.
+| Game ID | Content | Tiers | Engine | Age bands | Status |
+|---|---:|---:|---|---|---|
+| `alphabet_explorer` | 95 bilingual levels | 3 | Choice | junior, explorer | Built |
+| `missing_letter` | 75 bilingual levels | 3 | Choice | junior, explorer | Built |
+| `category_collector` | 60 bilingual levels | 3 | Multi-select | junior, explorer, master | Built, human review pending |
+| `pattern_parade` | 60 bilingual levels | 3 | Sequence | junior, explorer, master | Built, human review pending |
+| `shape_builder` | 45 bilingual levels | 3 | Placement | junior, explorer, master | Built, human review pending |
+| `word_sorter` | 60 bilingual levels | 3 | Placement | junior, explorer, master | Built, human review pending |
+| `number_balance` | 60 bilingual levels | 3 | Matching | junior, explorer, master | Built, human review pending |
+| `logic_detective` | 45 bilingual levels | 3 | Multi-select | explorer, master | Built, human review pending |
+| `story_steps` | 45 bilingual levels | 3 | Sequence | junior, explorer, master | Built, human review pending |
 
 ## Backend Support
 
-The backend catalog now includes Games 1-15, including `alphabet_explorer`,
-`missing_letter`, `category_collector`, `pattern_parade`, `shape_builder`,
-`word_sorter`, `number_balance`, `logic_detective`, and `story_steps`.
-Fresh/upgraded database behavior is covered by the Games 7-8 and Games 9-15
-seed migrations plus `tests/test_backend_game_catalog.py`; result saving,
-progress aggregation, and idempotency are covered by
-`tests/test_api_game_result.py`.
+The backend catalog includes Games 1-15. The Games 7-8 Alembic migration
+`b4f7c2d9e801` inserts `alphabet_explorer` and `missing_letter`
+idempotently; `c9f1a7b2d615` adds Games 9-15. Progress/result aggregation is
+covered by backend tests and by the Postgres + Redis CI smoke job.
 
-## Release Artifact Evidence
+## Release Artifact Policy
 
 - Android package ID: `com.liemteam.miacademy`.
 - App version: `0.9.0-beta.2+2`.
-- Local signing state: `apps/mobile/android/key.properties` is absent, so
-  release builds used the documented debug-signing fallback, not production
-  Play signing.
-- APK SHA-256: `B75157F0AB43E98AEB29CE569BC390F9B5B77A9AEDEF09B77DC4EDC0E5751A2E`.
-- AAB SHA-256: `61028E9E9A6A012437B7C33A3E4AC198D4684384141166EBE8A2C05B39B836E3`.
+- Local release APK/AAB builds without `android/key.properties` use the
+  documented debug-signing fallback. They are not Play-upload-ready.
+- The CI job `Android release signing readiness` reports whether all signing
+  secrets are configured. `Android signed Play artifact` runs only when all
+  required secrets exist and sets `requireReleaseSigning=true`.
+- Fresh RC APK/AAB hashes are recorded in the final handoff report for the
+  exact build artifacts generated from this branch.
+- Fresh local APK SHA-256:
+  `B358CFD8805432ACBCC616A2AF358F4095275B8CCDE72775D45AAF41F34A31F7`.
+- Fresh local AAB SHA-256:
+  `8B790874F432D12228F9B91D9A61BEE7035ED4C1E1795B34F04BE44003FB530E`.
+
+## Required Validation
+
+The RC handoff must record the outcome of:
+
+- Shared package: `dart format --set-exit-if-changed .`, `flutter analyze`,
+  `flutter test`.
+- Mobile app: `dart format --set-exit-if-changed .`, `flutter analyze`,
+  `flutter test`, release APK/AAB builds.
+- Repository: `python -m ruff format --check .`, `python -m ruff check .`,
+  `python -m mypy .`, `python -m pytest packages/game_core/tests tests test -q`.
+- Content: schema validator, malformed fixtures, safety audit,
+  localization audit, solvability.
+- Backend: Alembic upgrade to head against Postgres, including
+  `b4f7c2d9e801`.
+- Integration: Android emulator CI job with non-zero test discovery.
 
 ## Known Gaps
 
 - Games 16-30 are not implemented.
-- Games 9-15 Android integration scenarios pass in CI run `29675400654`.
-- No qualified human language or education review has approved the new
-  Games 9-15 content.
-- Human content review remains pending for VI language, EN language, and
-  educational progression.
-
-## Verdict
-
-Games 1-15 Engineering Complete — Human Review and Play Release Pending.
+- Human educational/language review is pending for the generated Milestone 2
+  content.
+- Repository-wide hardcoded-string localization cleanup remains pending even
+  though ARB key parity is complete.
+- Production Android signing secrets and Play Console upload are not verified
+  in this repository.
+- `pip-audit` currently reports dependency vulnerabilities as an advisory
+  scanner; triage and promotion policy remain pending.

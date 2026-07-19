@@ -28,7 +28,9 @@ const gameLevelAssets = {
 
 /// Loads all levels for a single game from its bundled asset.
 Future<List<MiLevel>> loadGameLevels(
-    BuildContext context, String gameId) async {
+  BuildContext context,
+  String gameId,
+) async {
   final assetPath = gameLevelAssets[gameId];
   if (assetPath == null) {
     throw ArgumentError('Unknown game id: $gameId');

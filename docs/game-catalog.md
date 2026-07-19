@@ -1,9 +1,12 @@
 # Game catalog — MI Academy 1.0 (30-game target)
 
-Status verified directly against the working tree on 2026-07-19 (branch
-`integration/m2-games-15-complete`) — not carried over from any prior summary.
-**15 of 30 games exist; 15 do not.** This is still the largest gap against
-the master spec and should not be understated.
+Status verified directly against the release-candidate working tree on
+2026-07-19 (branch `integration/m2-games-15-release-candidate`) — not
+carried over from any prior summary. **15 of 30 games exist; 15 do not.**
+The built-game and production-level totals are computed by
+`python tools/release_counts.py --json` and protected by
+`tests/test_release_counts.py`. This is still the largest gap against the
+master spec and should not be understated.
 
 Legend: **Built** = playable, has real content, has tests. **Not started**
 = no code, no content, no tests exist for this game.
@@ -130,7 +133,7 @@ human review checklists under `docs/content-review/`.
   either — the existing games currently ship with far fewer items (10
   levels each, used for both difficulty progression and content variety
   combined, not 60+ distinct quiz items). This is a real gap on the 6
-  "built" games too, not just the 22 missing ones — see
+  "built" games too, not just the 15 missing ones — see
   `docs/release-audit.md` RA-15.
 
 ## Honest effort estimate

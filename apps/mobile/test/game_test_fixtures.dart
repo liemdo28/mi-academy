@@ -94,11 +94,7 @@ const memoryCardsLevel = MiLevel(
   hints: [
     {'text': 'Nhớ vị trí hai thẻ giống nhau'},
   ],
-  metadata: {
-    'gridCols': 2,
-    'gridRows': 2,
-    'initialRevealMs': 0,
-  },
+  metadata: {'gridCols': 2, 'gridRows': 2, 'initialRevealMs': 0},
 );
 
 const robotCommandsLevel = MiLevel(

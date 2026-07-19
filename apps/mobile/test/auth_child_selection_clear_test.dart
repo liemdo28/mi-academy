@@ -14,18 +14,23 @@ import 'package:mi_academy/services/api_service.dart';
 /// since the backend already validates ownership server-side.
 void main() {
   test('logout() clears the previously-selected child', () async {
-    final container = ProviderContainer(overrides: [
-      apiServiceProvider.overrideWithValue(
-        ApiService(
-            baseUrl: 'http://test.local', tokenStore: InMemoryTokenStore()),
-      ),
-    ]);
+    final container = ProviderContainer(
+      overrides: [
+        apiServiceProvider.overrideWithValue(
+          ApiService(
+            baseUrl: 'http://test.local',
+            tokenStore: InMemoryTokenStore(),
+          ),
+        ),
+      ],
+    );
     addTearDown(container.dispose);
 
     // Simulate a prior parent having selected a child.
-    await container
-        .read(activeChildProvider.notifier)
-        .selectChild({'id': 'child-from-parent-a', 'nickname': 'A kid'});
+    await container.read(activeChildProvider.notifier).selectChild({
+      'id': 'child-from-parent-a',
+      'nickname': 'A kid',
+    });
     expect(container.read(activeChildProvider).childId, 'child-from-parent-a');
 
     await container.read(authProvider.notifier).logout();
@@ -37,17 +42,22 @@ void main() {
   });
 
   test('forceLogout() clears the previously-selected child', () async {
-    final container = ProviderContainer(overrides: [
-      apiServiceProvider.overrideWithValue(
-        ApiService(
-            baseUrl: 'http://test.local', tokenStore: InMemoryTokenStore()),
-      ),
-    ]);
+    final container = ProviderContainer(
+      overrides: [
+        apiServiceProvider.overrideWithValue(
+          ApiService(
+            baseUrl: 'http://test.local',
+            tokenStore: InMemoryTokenStore(),
+          ),
+        ),
+      ],
+    );
     addTearDown(container.dispose);
 
-    await container
-        .read(activeChildProvider.notifier)
-        .selectChild({'id': 'child-from-parent-a', 'nickname': 'A kid'});
+    await container.read(activeChildProvider.notifier).selectChild({
+      'id': 'child-from-parent-a',
+      'nickname': 'A kid',
+    });
 
     container.read(authProvider.notifier).forceLogout();
 

@@ -125,7 +125,10 @@ class InMemorySnapshotStore implements SnapshotStore {
     int maxSupportedSchemaVersion = 2,
   }) {
     final snapshot = _store[SnapshotStore.keyFor(
-        childProfileId: childProfileId, gameId: gameId, levelId: levelId)];
+      childProfileId: childProfileId,
+      gameId: gameId,
+      levelId: levelId,
+    )];
     if (snapshot == null) return null;
     final valid = snapshot.canRestoreFor(
       childProfileId: childProfileId,
@@ -144,7 +147,10 @@ class InMemorySnapshotStore implements SnapshotStore {
   }) async {
     _store.remove(
       SnapshotStore.keyFor(
-          childProfileId: childProfileId, gameId: gameId, levelId: levelId),
+        childProfileId: childProfileId,
+        gameId: gameId,
+        levelId: levelId,
+      ),
     );
   }
 }

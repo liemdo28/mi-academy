@@ -19,15 +19,18 @@ in the current codebase, see:
 - [docs/game-catalog.md](./docs/game-catalog.md) — real per-game status
   (15 of 30 target games exist).
 
-Quick facts, verified directly: 15 playable games with local persistence;
-`flutter analyze`, `ruff check .`, `ruff format --check .`, and `mypy .`
-are clean; `pytest` 187 passed; `flutter test` 123 passed (6 Linux-only
-golden tests skipped on Windows); content schema, malformed-fixture,
-content-safety, solvability, and ARB parity checks pass; Android
-`applicationId` is `com.liemteam.miacademy`. CI run `29675400654` is green,
-including Android emulator integration tests. Games 1-15 engineering is
-complete; human educational review, Play release, Games 16-30, and broad
-localization cleanup remain pending.
+Quick facts for the release-candidate branch
+`integration/m2-games-15-release-candidate`: 15 playable games with local
+persistence and 665 production levels (`python tools/release_counts.py
+--json`). The canonical local gates are `flutter analyze`, `flutter test`,
+shared engine format/analyze/tests, `ruff format --check .`, `ruff check .`,
+`mypy .`, `pytest`, content schema, malformed-fixture, content-safety,
+solvability, and ARB parity checks. Android `applicationId` is
+`com.liemteam.miacademy`. The final CI run must be taken from the release
+candidate handoff for the exact branch SHA; older run IDs are historical
+only. Games 1-15 engineering is complete; human educational review,
+production signing/Play release, Games 16-30, dependency-vulnerability
+triage, and broad localization cleanup remain pending.
 
 **Shared game engines** (`packages/mi_game_engines/`, see
 [docs/game-engine-architecture.md](./docs/game-engine-architecture.md)):

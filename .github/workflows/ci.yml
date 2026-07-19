@@ -56,7 +56,7 @@ jobs:
         run: python tools/child_safety_signoff.py --json
 
   security-scans:
-    name: Secret, dependency, and SAST scans
+    name: Security scans (secret blocking; dependency/SAST advisory)
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -75,15 +75,40 @@ jobs:
       - name: Install scan tooling
         run: python -m pip install --upgrade pip pip-audit bandit cyclonedx-bom
 
-      - name: Python dependency vulnerability scan (report-only)
-        # Non-blocking while the team triages findings — see docs/security/SECURITY_BASELINE.md.
-        # Promote to blocking once a Critical/High triage owner is assigned.
+      - name: Python dependency vulnerability scan (advisory report)
+        id: pip-audit
+        # Non-blocking while the team triages findings -- see docs/security/SECURITY_BASELINE.md.
+        # The follow-up summary step is mandatory so an advisory failure is
+        # visible in the run summary and uploaded as an artifact.
         continue-on-error: true
-        run: python -m pip_audit -r apps/api/requirements.txt
+        run: |
+          mkdir -p reports/security
+          python -m pip_audit \
+            -r apps/api/requirements.txt \
+            --format json \
+            --output reports/security/pip-audit-${{ github.sha }}.json
 
-      - name: Python SAST scan (report-only)
+      - name: Python SAST scan (advisory report)
+        id: bandit
         continue-on-error: true
-        run: python -m bandit -r apps/api -x apps/api/alembic --severity-level medium
+        run: |
+          mkdir -p reports/security
+          python -m bandit \
+            -r apps/api \
+            -x apps/api/alembic \
+            --severity-level medium \
+            -f json \
+            -o reports/security/bandit-${{ github.sha }}.json
+
+      - name: Summarize advisory scanner outcomes
+        if: always()
+        run: |
+          python tools/ci/report_security_scanners.py \
+            --pip-audit-report reports/security/pip-audit-${{ github.sha }}.json \
+            --bandit-report reports/security/bandit-${{ github.sha }}.json \
+            --pip-audit-outcome "${{ steps.pip-audit.outcome }}" \
+            --bandit-outcome "${{ steps.bandit.outcome }}" \
+            --summary "$GITHUB_STEP_SUMMARY"
 
       - name: Generate backend SBOM
         run: |
@@ -95,6 +120,14 @@ jobs:
         with:
           name: sbom-api-${{ github.sha }}
           path: reports/sbom-api-${{ github.sha }}.json
+
+      - name: Upload advisory security reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: advisory-security-reports-${{ github.sha }}
+          path: reports/security/*.json
+          if-no-files-found: error
 
   python-tests:
     name: Python game-core tests
@@ -409,59 +442,74 @@ jobs:
       - name: Build iOS without codesigning
         run: flutter build ios --debug --no-codesign
 
-  android-release-signing:
-    name: Android release build (signed)
-    # No-op until ANDROID_KEYSTORE_BASE64 is configured as a repo secret —
-    # see docs/security/SECRET_INVENTORY.md. Nothing is uploaded to Play
-    # Store here; this only produces a signed .aab + mapping file artifact
-    # for manual upload until a Play Store publishing step is added.
-    #
-    # NOTE: the secret-presence check is deliberately a step-level `if`,
-    # not a job-level `if`. The `secrets` context is not reliably usable in
-    # a job-level `if` — using it there caused every CI run on this
-    # workflow to fail before any job was scheduled (visible as "This run
-    # likely failed because of a workflow file issue" with zero jobs).
+  android-release-readiness:
+    name: Android release signing readiness
     runs-on: ubuntu-latest
     needs: mobile-test-build
+    outputs:
+      configured: ${{ steps.signing-secrets.outputs.configured }}
+    steps:
+      - name: Check required Android release signing secrets
+        id: signing-secrets
+        run: |
+          missing=()
+          [ -n "${{ secrets.ANDROID_KEYSTORE_BASE64 }}" ] || missing+=("ANDROID_KEYSTORE_BASE64")
+          [ -n "${{ secrets.ANDROID_KEYSTORE_PASSWORD }}" ] || missing+=("ANDROID_KEYSTORE_PASSWORD")
+          [ -n "${{ secrets.ANDROID_KEY_ALIAS }}" ] || missing+=("ANDROID_KEY_ALIAS")
+          [ -n "${{ secrets.ANDROID_KEY_PASSWORD }}" ] || missing+=("ANDROID_KEY_PASSWORD")
+
+          if [ "${#missing[@]}" -eq 0 ]; then
+            configured=true
+          else
+            configured=false
+          fi
+
+          echo "configured=$configured" >> "$GITHUB_OUTPUT"
+          {
+            echo "### Android release signing readiness"
+            echo
+            if [ "$configured" = "true" ]; then
+              echo "Production signing secrets are configured. The signed Play artifact job is expected to run."
+            else
+              echo "Production signing secrets are not fully configured."
+              echo
+              echo "Missing secret names:"
+              printf -- "- %s\n" "${missing[@]}"
+              echo
+              echo "No production-signed or Play-upload-ready artifact is produced by this workflow run."
+            fi
+          } >> "$GITHUB_STEP_SUMMARY"
+
+  android-release-signing:
+    name: Android signed Play artifact
+    # Runs only after all Android release signing secrets are present. When
+    # the readiness job reports missing secrets, this job is skipped so the
+    # workflow is truthful: green CI can still mean "no production-signed
+    # artifact was produced."
+    runs-on: ubuntu-latest
+    needs: [mobile-test-build, android-release-readiness]
+    if: needs.android-release-readiness.outputs.configured == 'true'
     defaults:
       run:
         working-directory: apps/mobile
     steps:
-      # Checkout unconditionally, before the working-directory default
-      # (apps/mobile) is used by any step -- a step-level `if` still
-      # inherits the job's `defaults.run.working-directory`, so running the
-      # secret check before checkout failed with "No such file or
-      # directory" since apps/mobile didn't exist yet.
       - uses: actions/checkout@v4
 
-      - name: Check release signing secret is configured
-        id: check-secret
-        run: |
-          if [ -n "${{ secrets.ANDROID_KEYSTORE_BASE64 }}" ]; then
-            echo "configured=true" >> "$GITHUB_OUTPUT"
-          else
-            echo "configured=false" >> "$GITHUB_OUTPUT"
-          fi
-
       - uses: actions/setup-java@v4
-        if: steps.check-secret.outputs.configured == 'true'
         with:
           distribution: temurin
           java-version: "17"
 
       - uses: subosito/flutter-action@v2
-        if: steps.check-secret.outputs.configured == 'true'
         with:
           flutter-version: ${{ env.FLUTTER_VERSION }}
           channel: stable
           cache: true
 
       - name: Install Flutter dependencies
-        if: steps.check-secret.outputs.configured == 'true'
         run: flutter pub get
 
       - name: Decode release keystore
-        if: steps.check-secret.outputs.configured == 'true'
         run: |
           echo "${{ secrets.ANDROID_KEYSTORE_BASE64 }}" | base64 --decode > android/app/release.jks
           cat > android/key.properties <<KEYPROPS
@@ -472,11 +520,11 @@ jobs:
           KEYPROPS
 
       - name: Build signed app bundle
-        if: steps.check-secret.outputs.configured == 'true'
+        env:
+          ORG_GRADLE_PROJECT_requireReleaseSigning: "true"
         run: flutter build appbundle --release
 
       - name: Upload signed app bundle + mapping file
-        if: steps.check-secret.outputs.configured == 'true'
         uses: actions/upload-artifact@v4
         with:
           name: mi-academy-release-aab
@@ -485,5 +533,5 @@ jobs:
             apps/mobile/build/app/outputs/mapping/release/mapping.txt
 
       - name: Remove decoded keystore
-        if: always() && steps.check-secret.outputs.configured == 'true'
+        if: always()
         run: rm -f android/app/release.jks android/key.properties

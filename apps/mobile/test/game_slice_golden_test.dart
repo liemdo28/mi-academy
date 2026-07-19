@@ -26,13 +26,10 @@ void main() {
     // metrics differ from Arial's. Loading one font file bundled in the
     // repo, the same on every platform, removes that source of divergence.
     await _loadFonts('Roboto', [_bundledFontPath]);
-    await _loadFonts(
-      'MaterialIcons',
-      [
-        if (Platform.environment['FLUTTER_ROOT'] case final root?)
-          '$root/bin/cache/artifacts/material_fonts/MaterialIcons-Regular.otf',
-      ],
-    );
+    await _loadFonts('MaterialIcons', [
+      if (Platform.environment['FLUTTER_ROOT'] case final root?)
+        '$root/bin/cache/artifacts/material_fonts/MaterialIcons-Regular.otf',
+    ]);
   });
 
   Future<void> pumpGame(
@@ -78,8 +75,9 @@ void main() {
     );
   });
 
-  testWidgets('golden: Sound Match MVP slice with transcript support',
-      (tester) async {
+  testWidgets('golden: Sound Match MVP slice with transcript support', (
+    tester,
+  ) async {
     await pumpGame(
       tester,
       const SoundMatchScreen(
@@ -173,8 +171,9 @@ void main() {
     );
   });
 
-  testWidgets('golden: Robot Commands MVP slice with one command',
-      (tester) async {
+  testWidgets('golden: Robot Commands MVP slice with one command', (
+    tester,
+  ) async {
     await pumpGame(
       tester,
       const RobotCommandsScreen(

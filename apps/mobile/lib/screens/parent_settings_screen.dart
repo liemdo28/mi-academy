@@ -5,10 +5,8 @@ import '../providers/providers.dart';
 import '../services/parent_settings_store.dart';
 
 class ParentSettingsScreen extends ConsumerStatefulWidget {
-  ParentSettingsScreen({
-    super.key,
-    ParentSettingsStore? store,
-  }) : store = store ?? MemoryParentSettingsStore();
+  ParentSettingsScreen({super.key, ParentSettingsStore? store})
+      : store = store ?? MemoryParentSettingsStore();
 
   final ParentSettingsStore store;
 
@@ -81,25 +79,23 @@ class _SettingsState extends ConsumerState<ParentSettingsScreen> {
     if (confirmed != true) return;
     await widget.store.deleteChildData();
     await _save(
-      const ParentSettingsSnapshot(deleteRequestedAt: null).copyWith(
-        deleteRequestedAt: DateTime.now(),
-      ),
+      const ParentSettingsSnapshot(
+        deleteRequestedAt: null,
+      ).copyWith(deleteRequestedAt: DateTime.now()),
     );
     _showMessage('Đã ghi nhận yêu cầu xóa dữ liệu trên thiết bị.');
   }
 
   void _showMessage(String message) {
-    ScaffoldMessenger.of(context).showSnackBar(
-      SnackBar(content: Text(message)),
-    );
+    ScaffoldMessenger.of(
+      context,
+    ).showSnackBar(SnackBar(content: Text(message)));
   }
 
   @override
   Widget build(BuildContext context) {
     if (_isLoading) {
-      return const Scaffold(
-        body: Center(child: CircularProgressIndicator()),
-      );
+      return const Scaffold(body: Center(child: CircularProgressIndicator()));
     }
 
     return Scaffold(
@@ -109,8 +105,10 @@ class _SettingsState extends ConsumerState<ParentSettingsScreen> {
           padding: const EdgeInsets.all(16),
           children: [
             const SizedBox(height: 8),
-            Text('Giới hạn thời gian',
-                style: Theme.of(context).textTheme.headlineMedium),
+            Text(
+              'Giới hạn thời gian',
+              style: Theme.of(context).textTheme.headlineMedium,
+            ),
             const SizedBox(height: 12),
             Card(
               child: Padding(
@@ -121,8 +119,10 @@ class _SettingsState extends ConsumerState<ParentSettingsScreen> {
                     Row(
                       children: [
                         const Expanded(
-                          child:
-                              Text('Hằng ngày', style: TextStyle(fontSize: 16)),
+                          child: Text(
+                            'Hằng ngày',
+                            style: TextStyle(fontSize: 16),
+                          ),
                         ),
                         Text(
                           '${_settings.dailyLimitMinutes} phút',
@@ -150,8 +150,10 @@ class _SettingsState extends ConsumerState<ParentSettingsScreen> {
               ),
             ),
             const SizedBox(height: 24),
-            Text('Âm thanh & phụ đề',
-                style: Theme.of(context).textTheme.headlineMedium),
+            Text(
+              'Âm thanh & phụ đề',
+              style: Theme.of(context).textTheme.headlineMedium,
+            ),
             const SizedBox(height: 12),
             SwitchListTile(
               title: const Text('Âm thanh', style: TextStyle(fontSize: 16)),
@@ -160,8 +162,10 @@ class _SettingsState extends ConsumerState<ParentSettingsScreen> {
               onChanged: (v) => _save(_settings.copyWith(soundEnabled: v)),
             ),
             SwitchListTile(
-              title: const Text('Phụ đề cho giọng đọc',
-                  style: TextStyle(fontSize: 16)),
+              title: const Text(
+                'Phụ đề cho giọng đọc',
+                style: TextStyle(fontSize: 16),
+              ),
               value: _settings.subtitlesEnabled,
               activeThumbColor: MiColors.primary,
               onChanged: (v) => _save(_settings.copyWith(subtitlesEnabled: v)),
@@ -170,8 +174,10 @@ class _SettingsState extends ConsumerState<ParentSettingsScreen> {
             Text('Trợ năng', style: Theme.of(context).textTheme.headlineMedium),
             const SizedBox(height: 12),
             SwitchListTile(
-              title: const Text('Giảm hiệu ứng chuyển động',
-                  style: TextStyle(fontSize: 16)),
+              title: const Text(
+                'Giảm hiệu ứng chuyển động',
+                style: TextStyle(fontSize: 16),
+              ),
               subtitle: const Text(
                 'Tắt bớt hoạt ảnh trong trò chơi cho trẻ nhạy cảm với chuyển động.',
                 style: TextStyle(fontSize: 13),
@@ -275,10 +281,9 @@ class _SettingsState extends ConsumerState<ParentSettingsScreen> {
             Center(
               child: Text(
                 'MI Academy v1.0.0',
-                style: Theme.of(context)
-                    .textTheme
-                    .bodyMedium
-                    ?.copyWith(color: MiColors.textSecondary),
+                style: Theme.of(
+                  context,
+                ).textTheme.bodyMedium?.copyWith(color: MiColors.textSecondary),
               ),
             ),
             const SizedBox(height: 32),

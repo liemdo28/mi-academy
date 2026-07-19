@@ -63,8 +63,9 @@ class ParentDashboardScreen extends ConsumerWidget {
                   ),
                 )
               else
-                ...children.children
-                    .map((child) => _buildChildCard(context, child)),
+                ...children.children.map(
+                  (child) => _buildChildCard(context, child),
+                ),
             ],
           ),
         ),
@@ -131,14 +132,8 @@ class ParentDashboardScreen extends ConsumerWidget {
       children: [
         Text(emoji, style: const TextStyle(fontSize: 24)),
         const SizedBox(height: MiTokens.space1),
-        Text(
-          value,
-          style: Theme.of(context).textTheme.headlineMedium,
-        ),
-        Text(
-          label,
-          style: Theme.of(context).textTheme.bodyMedium,
-        ),
+        Text(value, style: Theme.of(context).textTheme.headlineMedium),
+        Text(label, style: Theme.of(context).textTheme.bodyMedium),
       ],
     );
   }
@@ -184,17 +179,18 @@ class ParentDashboardScreen extends ConsumerWidget {
   }
 
   Future<void> _showCreateChildDialog(
-      BuildContext context, WidgetRef ref) async {
+    BuildContext context,
+    WidgetRef ref,
+  ) async {
     final result = await showDialog<({String nickname, String ageGroup})>(
       context: context,
       builder: (context) => const AddChildDialog(),
     );
     if (result == null) return;
 
-    final ok = await ref.read(activeChildProvider.notifier).createChild(
-          nickname: result.nickname,
-          ageGroup: result.ageGroup,
-        );
+    final ok = await ref
+        .read(activeChildProvider.notifier)
+        .createChild(nickname: result.nickname, ageGroup: result.ageGroup);
     if (!context.mounted) return;
     if (!ok) {
       final error = ref.read(activeChildProvider).error;

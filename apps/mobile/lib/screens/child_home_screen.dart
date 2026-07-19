@@ -78,10 +78,7 @@ class _ChildHomeScreenState extends ConsumerState<ChildHomeScreen> {
             ),
             const SizedBox(width: MiTokens.space3),
             Expanded(
-              child: Text(
-                'Chào $nickname!',
-                overflow: TextOverflow.ellipsis,
-              ),
+              child: Text('Chào $nickname!', overflow: TextOverflow.ellipsis),
             ),
           ],
         ),
@@ -164,11 +161,13 @@ class _ChildHomeScreenState extends ConsumerState<ChildHomeScreen> {
                 }
                 return Column(
                   children: items
-                      .map((item) => _buildPlanItem(
-                            context,
-                            item,
-                            childId: child.childId,
-                          ))
+                      .map(
+                        (item) => _buildPlanItem(
+                          context,
+                          item,
+                          childId: child.childId,
+                        ),
+                      )
                       .toList(),
                 );
               },
@@ -221,20 +220,29 @@ class _ChildHomeScreenState extends ConsumerState<ChildHomeScreen> {
         items: const [
           BottomNavigationBarItem(
             icon: MiIcon(MiIconName.home, color: MiColors.textSecondary),
-            activeIcon:
-                MiIcon(MiIconName.home, filled: true, color: MiColors.primary),
+            activeIcon: MiIcon(
+              MiIconName.home,
+              filled: true,
+              color: MiColors.primary,
+            ),
             label: 'Trang chủ',
           ),
           BottomNavigationBarItem(
             icon: MiIcon(MiIconName.world, color: MiColors.textSecondary),
-            activeIcon:
-                MiIcon(MiIconName.world, filled: true, color: MiColors.primary),
+            activeIcon: MiIcon(
+              MiIconName.world,
+              filled: true,
+              color: MiColors.primary,
+            ),
             label: 'Bản đồ',
           ),
           BottomNavigationBarItem(
             icon: MiIcon(MiIconName.garden, color: MiColors.textSecondary),
-            activeIcon: MiIcon(MiIconName.garden,
-                filled: true, color: MiColors.primary),
+            activeIcon: MiIcon(
+              MiIconName.garden,
+              filled: true,
+              color: MiColors.primary,
+            ),
             label: 'Vườn',
           ),
         ],

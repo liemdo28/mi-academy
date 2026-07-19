@@ -18,56 +18,59 @@ void main() {
   });
 
   testWidgets(
-      'Missing Letter completes from the real home route and queues offline progress after relaunch',
-      (tester) async {
-    final overrides = _offlineMissingLetterOverrides();
+    'Missing Letter completes from the real home route and queues offline progress after relaunch',
+    (tester) async {
+      final overrides = _offlineMissingLetterOverrides();
 
-    await launchApp(tester, overrides: overrides);
-    await tester.tap(find.text('Tiếng Việt'));
-    await tester.pumpAndSettle(const Duration(seconds: 2));
+      await launchApp(tester, overrides: overrides);
+      await tester.tap(find.text('Tiếng Việt'));
+      await tester.pumpAndSettle(const Duration(seconds: 2));
 
-    expect(find.text('Chào Mi!'), findsOneWidget);
-    expect(find.text('Tìm chữ còn thiếu'), findsOneWidget);
+      expect(find.text('Chào Mi!'), findsOneWidget);
+      expect(find.text('Tìm chữ còn thiếu'), findsOneWidget);
 
-    await tester.tap(find.text('Tiếp tục học'));
-    await tester.pumpAndSettle(const Duration(seconds: 2));
+      await tester.tap(find.text('Tiếp tục học'));
+      await tester.pumpAndSettle(const Duration(seconds: 2));
 
-    expect(find.text('Tìm chữ còn thiếu'), findsOneWidget);
-    expect(find.text('Chọn chữ còn thiếu: M_O'), findsOneWidget);
+      expect(find.text('Tìm chữ còn thiếu'), findsOneWidget);
+      expect(find.text('Chọn chữ còn thiếu: M_O'), findsOneWidget);
 
-    await tester.tap(find.text('È'));
-    await tester.pumpAndSettle(const Duration(seconds: 2));
+      await tester.tap(find.text('È'));
+      await tester.pumpAndSettle(const Duration(seconds: 2));
 
-    expect(find.text('Con đã tìm được chữ còn thiếu!'), findsOneWidget);
-    expect(find.text('Tiếp tục'), findsOneWidget);
-    await tester.runAsync(() async {
-      await Future<void>.delayed(const Duration(milliseconds: 400));
-    });
+      expect(find.text('Con đã tìm được chữ còn thiếu!'), findsOneWidget);
+      expect(find.text('Tiếp tục'), findsOneWidget);
+      await tester.runAsync(() async {
+        await Future<void>.delayed(const Duration(milliseconds: 400));
+      });
 
-    final beforeRelaunch = _queuedMissingLetterResult();
-    expect(beforeRelaunch, isNotNull);
-    expect(beforeRelaunch!.childProfileId, TestIds.childA);
-    expect(beforeRelaunch.payload['game_id'], 'game-missing-letter');
-    expect(beforeRelaunch.payload['level_id'], 'ml-lv001');
-    expect(beforeRelaunch.payload['completed'], isTrue);
-    expect(beforeRelaunch.payload['mastery_evidence'], 1.0);
-    expect(
-      beforeRelaunch.payload['skill_evidence'],
-      containsPair('letters.spelling', true),
-    );
+      final beforeRelaunch = _queuedMissingLetterResult();
+      expect(beforeRelaunch, isNotNull);
+      expect(beforeRelaunch!.childProfileId, TestIds.childA);
+      expect(beforeRelaunch.payload['game_id'], 'game-missing-letter');
+      expect(beforeRelaunch.payload['level_id'], 'ml-lv001');
+      expect(beforeRelaunch.payload['completed'], isTrue);
+      expect(beforeRelaunch.payload['mastery_evidence'], 1.0);
+      expect(
+        beforeRelaunch.payload['skill_evidence'],
+        containsPair('letters.spelling', true),
+      );
 
-    await tester.tap(find.text('Trang chính'));
-    await tester.pumpAndSettle(const Duration(seconds: 2));
+      await tester.tap(find.text('Trang chính'));
+      await tester.pumpAndSettle(const Duration(seconds: 2));
 
-    await launchApp(tester, overrides: overrides);
-    expect(find.text('Chào Mi!'), findsOneWidget);
+      await launchApp(tester, overrides: overrides);
+      expect(find.text('Chào Mi!'), findsOneWidget);
 
-    final afterRelaunch = _queuedMissingLetterResult();
-    expect(afterRelaunch, isNotNull);
-    expect(afterRelaunch!.payload['attempt_id'],
-        beforeRelaunch.payload['attempt_id']);
-    expect(afterRelaunch.payload['level_id'], 'ml-lv001');
-  });
+      final afterRelaunch = _queuedMissingLetterResult();
+      expect(afterRelaunch, isNotNull);
+      expect(
+        afterRelaunch!.payload['attempt_id'],
+        beforeRelaunch.payload['attempt_id'],
+      );
+      expect(afterRelaunch.payload['level_id'], 'ml-lv001');
+    },
+  );
 }
 
 List<Override> _offlineMissingLetterOverrides() {
@@ -77,44 +80,40 @@ List<Override> _offlineMissingLetterOverrides() {
     activeChildProvider.overrideWith(
       () => _FixedActiveChildNotifier(_fakeActiveChild()),
     ),
-    dailyPlanProvider.overrideWith((ref) async => [
-          {
-            'lesson_id': 'lesson-missing-letter',
-            'title': 'Tìm chữ còn thiếu',
-            'subject': 'letters',
-            'estimated_minutes': 5,
-            'type': 'lesson',
-            'is_required': true,
-            'game_type': 'missing_letter',
-          },
-        ]),
-    gamesCatalogProvider.overrideWith((ref) async => [
-          {
-            'id': 'game-missing-letter',
-            'name': 'Tìm chữ còn thiếu',
-            'game_type': 'missing_letter',
-            'age_min': 6,
-            'age_max': 9,
-            'is_active': true,
-          },
-        ]),
+    dailyPlanProvider.overrideWith(
+      (ref) async => [
+        {
+          'lesson_id': 'lesson-missing-letter',
+          'title': 'Tìm chữ còn thiếu',
+          'subject': 'letters',
+          'estimated_minutes': 5,
+          'type': 'lesson',
+          'is_required': true,
+          'game_type': 'missing_letter',
+        },
+      ],
+    ),
+    gamesCatalogProvider.overrideWith(
+      (ref) async => [
+        {
+          'id': 'game-missing-letter',
+          'name': 'Tìm chữ còn thiếu',
+          'game_type': 'missing_letter',
+          'age_min': 6,
+          'age_max': 9,
+          'is_active': true,
+        },
+      ],
+    ),
     connectivityProvider.overrideWith((ref) async => false),
   ];
 }
 
 ActiveChildState _fakeActiveChild() => const ActiveChildState(
       childId: TestIds.childA,
-      child: {
-        'id': TestIds.childA,
-        'nickname': 'Mi',
-        'age_group': 'junior',
-      },
+      child: {'id': TestIds.childA, 'nickname': 'Mi', 'age_group': 'junior'},
       children: [
-        {
-          'id': TestIds.childA,
-          'nickname': 'Mi',
-          'age_group': 'junior',
-        },
+        {'id': TestIds.childA, 'nickname': 'Mi', 'age_group': 'junior'},
       ],
     );
 

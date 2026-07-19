@@ -69,8 +69,10 @@ void main() {
   });
 
   test('loads through the shared content loader', () async {
-    final parsed = await GameContentProvider()
-        .loadLevels(levels, gameId: 'alphabet_explorer');
+    final parsed = await GameContentProvider().loadLevels(
+      levels,
+      gameId: 'alphabet_explorer',
+    );
 
     expect(parsed, hasLength(levels.length));
     expect(parsed.first.gameId, 'alphabet_explorer');

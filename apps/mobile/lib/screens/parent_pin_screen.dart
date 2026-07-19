@@ -157,8 +157,11 @@ class _ParentPinScreenState extends ConsumerState<ParentPinScreen> {
               child: Column(
                 mainAxisSize: MainAxisSize.min,
                 children: [
-                  const Icon(Icons.lock_outline,
-                      size: 64, color: MiColors.primary),
+                  const Icon(
+                    Icons.lock_outline,
+                    size: 64,
+                    color: MiColors.primary,
+                  ),
                   const SizedBox(height: MiTokens.space4),
                   Text(
                     _showAdultChallenge
@@ -269,20 +272,7 @@ class _ParentPinScreenState extends ConsumerState<ParentPinScreen> {
   }
 
   Widget _buildNumberPad() {
-    final buttons = [
-      '1',
-      '2',
-      '3',
-      '4',
-      '5',
-      '6',
-      '7',
-      '8',
-      '9',
-      '',
-      '0',
-      '⌫',
-    ];
+    final buttons = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '', '0', '⌫'];
     return GridView.count(
       crossAxisCount: 3,
       shrinkWrap: true,
@@ -312,10 +302,7 @@ class _ParentPinScreenState extends ConsumerState<ParentPinScreen> {
             ),
             child: Text(
               b,
-              style: const TextStyle(
-                fontSize: 24,
-                fontWeight: FontWeight.w700,
-              ),
+              style: const TextStyle(fontSize: 24, fontWeight: FontWeight.w700),
             ),
           ),
         );
