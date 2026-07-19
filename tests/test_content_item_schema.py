@@ -33,8 +33,9 @@ def test_every_real_production_level_validates():
         checked += 1
     # 4 games x 10 hand-authored levels + Math Race's 40 and Math
     # Supermarket's 40, plus Milestone 2 Slice 1 Alphabet Explorer's 95
-    # and Slice 2 Missing Letter's 75 production levels.
-    assert checked == 290
+    # and Slice 2 Missing Letter's 75 production levels, plus Games 11-12's
+    # Shape Builder (45) and Word Sorter (60) generated production levels.
+    assert checked == 395
 
 
 def test_age_band_and_skill_tags_readable_from_metadata():

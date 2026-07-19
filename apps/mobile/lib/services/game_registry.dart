@@ -6,8 +6,10 @@ import '../src/games/choice/choice_game_screen.dart';
 import '../src/games/memory_cards/memory_cards_game.dart';
 import '../src/games/memory_cards/memory_cards_screen.dart';
 import '../src/games/robot_commands/robot_commands_screen.dart';
+import '../src/games/shape_builder/shape_builder_screen.dart';
 import '../src/games/sound_match/sound_match_screen.dart';
 import '../src/games/word_builder/word_builder_screen.dart';
+import '../src/games/word_sorter/word_sorter_screen.dart';
 
 /// Everything a caller (GameScreen, the child home/world-map navigation,
 /// and parent-facing reporting) needs to launch or describe a game, without
@@ -359,6 +361,77 @@ abstract final class GameRegistry {
             required locale,
           }) =>
               _MemoryCardsRegistryHost(
+            level: level,
+            allLevels: allLevels,
+            onExit: onExit,
+            onComplete: onComplete,
+            childProfileId: childProfileId,
+            initialSnapshot: initialSnapshot,
+            onSaveSnapshot: onSaveSnapshot,
+            reduceMotion: reduceMotion,
+            locale: locale,
+          ),
+        ),
+        GameRegistryEntry(
+          gameId: 'shape_builder',
+          localizedName: const {'vi': 'Xây hình khối', 'en': 'Shape Builder'},
+          category: 'logic',
+          ageBands: const ['junior', 'explorer', 'master'],
+          supportedSkills: const [
+            'math.shapes.basic',
+            'logic.spatial_reasoning',
+            'creative.shape_construction',
+            'creative.tangram',
+            'math.geometry',
+          ],
+          engineType: 'placement',
+          builder: ({
+            required level,
+            required allLevels,
+            required onExit,
+            required onComplete,
+            required childProfileId,
+            initialSnapshot,
+            onSaveSnapshot,
+            reduceMotion = false,
+            required locale,
+          }) =>
+              ShapeBuilderScreen(
+            level: level,
+            allLevels: allLevels,
+            onExit: onExit,
+            onComplete: onComplete,
+            childProfileId: childProfileId,
+            initialSnapshot: initialSnapshot,
+            onSaveSnapshot: onSaveSnapshot,
+            reduceMotion: reduceMotion,
+            locale: locale,
+          ),
+        ),
+        GameRegistryEntry(
+          gameId: 'word_sorter',
+          localizedName: const {'vi': 'Phân loại từ', 'en': 'Word Sorter'},
+          category: 'letters',
+          ageBands: const ['junior', 'explorer', 'master'],
+          supportedSkills: const [
+            'letters.vocabulary',
+            'letters.initial_sound',
+            'letters.rhyming',
+            'logic.classification',
+          ],
+          engineType: 'placement',
+          builder: ({
+            required level,
+            required allLevels,
+            required onExit,
+            required onComplete,
+            required childProfileId,
+            initialSnapshot,
+            onSaveSnapshot,
+            reduceMotion = false,
+            required locale,
+          }) =>
+              WordSorterScreen(
             level: level,
             allLevels: allLevels,
             onExit: onExit,

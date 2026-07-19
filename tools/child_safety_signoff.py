@@ -40,6 +40,8 @@ GAME_LABELS = {
     "math_supermarket": "Math Supermarket",
     "memory_cards": "Memory Cards",
     "robot_commands": "Robot Commands",
+    "shape_builder": "Shape Builder",
+    "word_sorter": "Word Sorter",
 }
 
 CHECK_CATEGORIES = [

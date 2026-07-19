@@ -42,7 +42,7 @@ void main() {
     expect(find.text('Hồ sơ của bé'), findsOneWidget);
     expect(find.text('Sao MI: 0'), findsOneWidget);
     expect(find.text('Huy hiệu: sẵn sàng'), findsOneWidget);
-    expect(find.text('8 game offline'), findsOneWidget);
+    expect(find.text('10 game offline'), findsOneWidget);
     await dragUntilFound(tester, find.text('Khu vực phụ huynh'));
     expect(find.text('Khu vực phụ huynh'), findsOneWidget);
     expect(find.text('Khám phá chữ cái'), findsOneWidget);

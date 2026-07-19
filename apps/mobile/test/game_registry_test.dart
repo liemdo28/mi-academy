@@ -28,6 +28,8 @@ void main() {
         'math_supermarket',
         'robot_commands',
         'memory_cards',
+        'shape_builder',
+        'word_sorter',
       };
       final registeredIds = GameRegistry.all.map((e) => e.gameId).toSet();
       expect(registeredIds, expectedIds);
