@@ -24,9 +24,10 @@ Quick facts, verified directly: 15 playable games with local persistence;
 are clean; `pytest` 187 passed; `flutter test` 123 passed (6 Linux-only
 golden tests skipped on Windows); content schema, malformed-fixture,
 content-safety, solvability, and ARB parity checks pass; Android
-`applicationId` is `com.liemteam.miacademy`. Milestone 2 engineering is
-conditional until final CI, Android emulator proof, release builds, and
-human educational review are complete.
+`applicationId` is `com.liemteam.miacademy`. CI run `29675400654` is green,
+including Android emulator integration tests. Games 1-15 engineering is
+complete; human educational review, Play release, Games 16-30, and broad
+localization cleanup remain pending.
 
 **Shared game engines** (`packages/mi_game_engines/`, see
 [docs/game-engine-architecture.md](./docs/game-engine-architecture.md)):

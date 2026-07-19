@@ -5,12 +5,13 @@ Branch: `integration/m2-games-15-complete`
 
 ## Executive Summary
 
-Verdict: **Games 9-15 Conditional — Milestone 2 Conditional**
+Verdict: **Games 1-15 Engineering Complete — Human Review and Play Release Pending**
 
 Milestone 2 now has Games 1-15 registered, launchable, content-backed,
-backend-cataloged, and covered by local validation. Engineering completion
-remains conditional until final branch CI, Android emulator integration,
-fresh release artifacts, and qualified human educational review are complete.
+backend-cataloged, and covered by local validation plus final branch CI.
+Engineering implementation is complete for Games 1-15. Human educational
+review, repository-wide localization cleanup, Games 16-30, and Play release
+remain pending.
 
 ## New Game Matrix
 
@@ -35,7 +36,7 @@ fresh release artifacts, and qualified human educational review are complete.
 | `apps/mobile` | `flutter test test/missing_letter_content_test.dart test/game_registry_test.dart test/game_screen_test.dart test/widget_test.dart` | PASS, 54 passed |
 | `apps/mobile` | `flutter build apk --release` | PASS, built `build/app/outputs/flutter-apk/app-release.apk` |
 | `apps/mobile` | `flutter build appbundle --release` | PASS, built `build/app/outputs/bundle/release/app-release.aab` |
-| `apps/mobile` | `flutter test integration_test` | NOT RUN locally: no Android/iOS device connected; final Android-emulator CI pending for Games 9-15 |
+| `apps/mobile` | `flutter test integration_test` | NOT RUN locally: no Android/iOS device connected; CI run `29675400654` passed the Android-emulator integration job |
 | repo root | `python tools/content_schema_validator.py` | PASS |
 | repo root | `python tools/content_schema_validator.py --check-malformed` | PASS, 13 malformed fixtures checked |
 | repo root | `python tools/content_safety_audit.py --json` | PASS, 15 files and 36154 strings scanned, 0 findings |
@@ -44,7 +45,7 @@ fresh release artifacts, and qualified human educational review are complete.
 | repo root | `python -m pytest packages/game_core/tests tests test -q` | PASS, 187 passed |
 | repo root | `python -m ruff format --check .` | PASS after targeted generator formatting |
 | repo root | `python -m mypy .` | PASS after resolving `math_race_generator.py` tuple-key inference |
-| `apps/api` + Postgres/Redis | Alembic upgrade path | Local migration tests pass for `b4f7c2d9e801` and `c9f1a7b2d615`; final Postgres CI evidence pending |
+| `apps/api` + Postgres/Redis | Alembic upgrade path | Local migration tests pass for `b4f7c2d9e801` and `c9f1a7b2d615`; CI run `29675400654` passed the Postgres + Redis migration smoke test |
 
 ## Missing Letter Content Matrix
 
@@ -78,16 +79,13 @@ progress aggregation, and idempotency are covered by
 - Local signing state: `apps/mobile/android/key.properties` is absent, so
   release builds used the documented debug-signing fallback, not production
   Play signing.
-- APK SHA-256: `0C016F8C7930B7AF4C91325C7E9C505FA13FCCAB587EA27B74CA9586AB997DAB`.
-- AAB SHA-256: `BCB8080B5B0BDCEF232B3C451F12689ED52769E22F1C88EEF960403F80F41B8A`.
+- APK SHA-256: `B75157F0AB43E98AEB29CE569BC390F9B5B77A9AEDEF09B77DC4EDC0E5751A2E`.
+- AAB SHA-256: `61028E9E9A6A012437B7C33A3E4AC198D4684384141166EBE8A2C05B39B836E3`.
 
 ## Known Gaps
 
 - Games 16-30 are not implemented.
-- Games 9-15 Android integration scenarios exist in
-  `apps/mobile/integration_test/games_9_15_flow_test.dart`; local execution
-  did not run because no supported Android/iOS device was connected, so final
-  device proof must come from CI.
+- Games 9-15 Android integration scenarios pass in CI run `29675400654`.
 - No qualified human language or education review has approved the new
   Games 9-15 content.
 - Human content review remains pending for VI language, EN language, and
@@ -95,4 +93,4 @@ progress aggregation, and idempotency are covered by
 
 ## Verdict
 
-Games 9-15 Conditional — Milestone 2 Conditional.
+Games 1-15 Engineering Complete — Human Review and Play Release Pending.

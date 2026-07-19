@@ -1,8 +1,8 @@
 # MI Academy 1.0 — Release Audit
 
-Date: 2026-07-18 (updated 2026-07-19 for Milestone 2 slices 1-2 against the 30-game/full-CMS/Google-Play
+Date: 2026-07-18 (updated 2026-07-19 for Milestone 2 Games 1-15 against the 30-game/full-CMS/Google-Play
 master spec — see RA-15 through RA-18 below)
-Branch: `feature/game-8-closure`
+Branch: `integration/m2-games-15-complete`
 Scope: Direct verification against this working tree, its test suite, and
 live CI runs on this branch. Nothing here is carried over from prior
 session summaries without re-verification — every finding below cites the
@@ -19,19 +19,21 @@ scope. RA-15 through RA-18 below record what was directly verified against
 that spec; see `docs/game-catalog.md`, `docs/game-engine-architecture.md`,
 `docs/skill-taxonomy.md`, and `docs/age-bands.md` for the full detail. The
 findings already recorded below (RA-01–RA-14) still stand and are not
-superseded by this update. Milestone 2 slices 1-2 added
-`alphabet_explorer` and `missing_letter`, bringing the verified count to 8
-of 30 games; the release verdict remains blocked by the remaining 22 games,
-manual review, and device/release gates.
+superseded by this update. Milestone 2 now has Games 1-15 engineered and
+CI-verified on run `29675400654`; the release verdict remains blocked by
+Games 16-30, manual educational review, repository-wide localization
+cleanup, and Play release work.
 
 ## Executive summary
 
-The mobile app's eight currently built games, offline persistence, parent
+The mobile app's 15 currently built games, offline persistence, parent
 PIN gate, and backend API are functionally real (not stubbed) and the
 canonical mobile/backend test suites are green where they can run locally:
-`flutter analyze` (0 issues), `flutter test` (108 passed, 6
+`flutter analyze` (0 issues), `flutter test` (123 passed, 6
 explicitly-skipped platform-limited golden tests, 0 failed), and `pytest`
-(179 passed). Android release artifacts (APK + AAB) build successfully
+(187 passed). CI run `29675400654` passed all jobs, including Android
+emulator integration tests and the Postgres migration smoke test. Android
+release artifacts (APK + AAB) build successfully
 locally with the documented debug-signing fallback; iOS requires macOS
 tooling not available here and is verified via CI's `ios-build` job instead.
 
@@ -88,7 +90,7 @@ status on every item the audit was asked to cover.
 - **Parent PIN route protection** — enforced via `router.dart`'s `redirect` guard on `/parent` and `/parent/settings`; covered by `test/parent_route_guard_test.dart` (2/2 passing, part of the 108-test `flutter test` total). **Verified.**
 - **Local offline startup** — `SplashScreen._resolveStartRoute` degrades to `/login` on any auth-restore error (storage failure, API unavailable), confirmed by existing splash-routing tests plus this pass's addition of the `localeConfirmed` gate ahead of it. **Verified.**
 - **Settings persistence** — `test/widget_test.dart`: "Parent settings persist after reopening the screen" passing; this pass added `localeConfirmed`/language persistence tests in `test/locale_selection_test.dart` (8/8 passing). **Verified.**
-- **Game completion paths** — the 15 currently built games have local launcher/content/registry coverage in `flutter test`. Games 7-8 retain real Android-emulator offline queue coverage, and `apps/mobile/integration_test/games_9_15_flow_test.dart` adds one deterministic completion-and-queue scenario for each of Games 9-15. **Verified for built scope; final Android CI is the authoritative device proof.**
+- **Game completion paths** — the 15 currently built games have local launcher/content/registry coverage in `flutter test`. Games 7-8 retain real Android-emulator offline queue coverage, and `apps/mobile/integration_test/games_9_15_flow_test.dart` adds one deterministic completion-and-queue scenario for each of Games 9-15. **Verified for built scope; CI run `29675400654` is the authoritative Android device proof.**
 - **Backend formatting, linting, typing, tests, migrations** — tests pass (187/187); `ruff format --check .`, `ruff check .`, and `mypy .` are clean; migrations are covered locally by migration tests and in CI against real Postgres.
 - **Release-build status (APK, AAB, unsigned iOS)** — see command battery below. APK and AAB both built successfully in this environment; iOS requires macOS tooling not present here, verified via CI's `ios-build` job instead.
 

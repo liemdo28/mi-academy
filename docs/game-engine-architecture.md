@@ -1,46 +1,39 @@
 # Game engine architecture
 
-The MI Academy 1.0 master spec (§5) requires ~10–12 reusable engines rather
-than 30 bespoke codebases. This document maps the **6 existing games**
-against the spec's 12 named engine types and records what already exists
-vs. what would need to be built for the 24 missing games. This is an
-architectural assessment, not a claim that the refactor has been done.
+The MI Academy 1.0 master spec (§5) requires reusable engines rather than
+30 bespoke codebases. This document maps the **15 existing games** against
+the spec's engine types and records what already exists vs. what would need
+to be built for the 15 missing games.
 
 ## Current reality
 
-There is no formal shared-engine abstraction today. Each of the 6 existing
-games has its own `*Session` class (`WordBuilderSession`,
-`SoundMatchSession`, `ChoiceGameSession`, `RobotCommandsSession`,
-`MemoryCardsGame`) implementing the common `mi_game_core` contracts
-(`MiGameContext`, `MiGameResult`, `MiGameSnapshot`, `MiCompletionResult` —
-see `packages/game_core`) directly, with substantial duplicated
-scaffolding between them (score/stars formulas, hint counters, snapshot
-save/restore, locale-content lookup are each reimplemented per game rather
-than shared). `ChoiceGameScreen`/`ChoiceGameSession` is the one place two
-games (Math Race, Math Supermarket) already share one implementation —
-that's the closest existing precedent for the spec's engine-reuse model.
+Matching, Sequence, Placement, and Multi-select are now real shared engines
+in `packages/mi_game_engines`, tested independently, exported through the
+public `mi_game_engines` barrel, and consumed by Games 9-15. The original
+six games still use their pre-existing game/session implementations except
+for the shared `ChoiceGameScreen` path used by Math Race and Math
+Supermarket. Games 16-30 are not implemented.
 
 ## Mapping existing games to the spec's 12 engine types
 
 | Spec engine | Existing game(s) using this shape | Notes |
 |---|---|---|
 | 1. Choice Engine | Math Race, Math Supermarket (`ChoiceGameSession`) | Already shared between 2 games — closest thing to a real "engine" today |
-| 2. Multi-select Engine | none | Not built |
+| 2. Multi-select Engine | Category Collector, Logic Detective | Shared engine built and production-consumed |
 | 3. Drag-and-drop Engine | Word Builder (letter placement is drag-like but implemented as tap-to-place, not a generic drag engine) | Partial precedent only |
-| 4. Matching Engine | none formally, but Sound Match's "pick the option matching the audio" is matching-shaped | Not extracted as a shared engine |
+| 4. Matching Engine | Number Balance | Shared engine built and production-consumed |
 | 5. Memory Engine | Memory Cards (`MemoryCardsGame`) | Single-game implementation, not yet generalized (e.g. can't easily spin up "Ghép bóng với vật" (Game 24) from it without duplicating the flip/match logic) |
-| 6. Sequence Engine | none | Not built (needed for Game 14 dãy số, Game 27 tìm quy luật) |
+| 6. Sequence Engine | Pattern Parade, Story Steps | Shared engine built and production-consumed |
 | 7. Grid and Maze Engine | Robot Commands (`RobotGrid`, `RobotState`, `BlockInterpreter` in `packages/mi_blocks`) | Real grid/pathing logic exists but is coupled to the command-program interaction model; a plain maze game (Game 26) would need the grid/collision logic decoupled from the block-programming UI |
 | 8. Text Input Engine | none | Not built (needed for Game 07 chính tả, Game 08 sắp xếp câu) |
 | 9. Story and Quiz Engine | none | Not built (needed for Game 09 đọc hiểu) |
 | 10. Simulation Engine | none | Not built (needed for Game 30's garden/room design mode) |
-| 11. Puzzle Placement Engine | none | Not built (needed for Game 20 hình học lắp ghép) |
+| 11. Puzzle Placement Engine | Shape Builder, Word Sorter | Shared Placement engine built and production-consumed |
 | 12. Logic Grid Engine | none | Not built (needed for Game 28 Sudoku, Game 29 thám tử suy luận) |
 
-**4 of 12 engine types have any real precedent; 8 have none.** Building
-the missing 8 engines generically (rather than as 24 one-off
-implementations) is itself a multi-week architecture effort before any of
-the 24 missing games' content can be authored against them.
+**Four shared engines are implemented and production-consumed.** Future
+engine scope for Games 16-30 remains open and should be added only when a
+future game actually needs it.
 
 ## What a real consolidation would require
 
