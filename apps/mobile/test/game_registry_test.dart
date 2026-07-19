@@ -19,17 +19,17 @@ const _level = MiLevel(
 void main() {
   group('GameRegistry', () {
     test('registers all built games', () {
-      const expectedIds = {
-        'alphabet_explorer',
-        'missing_letter',
+      const expectedIds = [
         'word_builder',
         'sound_match',
         'math_race',
         'math_supermarket',
         'robot_commands',
         'memory_cards',
-      };
-      final registeredIds = GameRegistry.all.map((e) => e.gameId).toSet();
+        'alphabet_explorer',
+        'missing_letter',
+      ];
+      final registeredIds = GameRegistry.all.map((e) => e.gameId).toList();
       expect(registeredIds, expectedIds);
     });
 

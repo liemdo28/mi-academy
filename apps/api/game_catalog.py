@@ -112,7 +112,16 @@ BUILT_GAME_CATALOG: tuple[GameCatalogEntry, ...] = (
 )
 
 
-BUILT_GAME_TYPES = tuple(entry.game_type for entry in BUILT_GAME_CATALOG)
+BUILT_GAME_TYPES = (
+    "word_builder",
+    "sound_match",
+    "math_race",
+    "math_supermarket",
+    "robot_commands",
+    "memory_cards",
+    "alphabet_explorer",
+    "missing_letter",
+)
 
 
 def built_game_by_type(game_type: str) -> GameCatalogEntry | None:

@@ -7,6 +7,11 @@ import 'sequence_content.dart';
 /// resume, retry. No dependency on any state-management framework or
 /// child-profile repository.
 class SequenceController extends ChangeNotifier {
+  /// Stable identifier for this engine, used by the shared engine
+  /// contract test suite (test/engine_contract_test.dart) to verify
+  /// every engine reports a consistent identity alongside its result.
+  static const String engineId = 'sequence';
+
   SequenceController({
     required SequenceContent content,
     this.reducedMotion = false,

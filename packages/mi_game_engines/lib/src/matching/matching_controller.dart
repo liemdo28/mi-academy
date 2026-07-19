@@ -30,6 +30,11 @@ class MatchingAttemptResult {
 /// has no dependency on the host app's state-management choice, let alone
 /// a child-profile repository.
 class MatchingController extends ChangeNotifier {
+  /// Stable identifier for this engine, used by the shared engine
+  /// contract test suite (test/engine_contract_test.dart) to verify
+  /// every engine reports a consistent identity alongside its result.
+  static const String engineId = 'matching';
+
   MatchingController({
     required MatchingContent content,
     this.reducedMotion = false,

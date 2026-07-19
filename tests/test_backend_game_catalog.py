@@ -15,12 +15,12 @@ def test_built_game_catalog_includes_games_1_through_8():
     assert BUILT_GAME_TYPES == (
         "word_builder",
         "sound_match",
-        "alphabet_explorer",
-        "missing_letter",
         "math_race",
         "math_supermarket",
-        "memory_cards",
         "robot_commands",
+        "memory_cards",
+        "alphabet_explorer",
+        "missing_letter",
     )
     assert len({entry.id for entry in BUILT_GAME_CATALOG}) == 8
     assert len(set(BUILT_GAME_TYPES)) == 8

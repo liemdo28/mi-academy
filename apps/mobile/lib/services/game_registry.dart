@@ -80,6 +80,17 @@ typedef GameScreenBuilder = Widget Function({
 /// the full 30-game target list -- only built games are registered here;
 /// not-yet-built games simply don't have entries yet (not stubbed/faked).
 abstract final class GameRegistry {
+  static const List<String> _canonicalGameIds = [
+    'word_builder',
+    'sound_match',
+    'math_race',
+    'math_supermarket',
+    'robot_commands',
+    'memory_cards',
+    'alphabet_explorer',
+    'missing_letter',
+  ];
+
   static final Map<String, GameRegistryEntry> _entries = {
     for (final entry in _buildEntries()) entry.gameId: entry,
   };
@@ -88,7 +99,9 @@ abstract final class GameRegistry {
   /// handle that as a safe fallback, never assume a lookup succeeds.
   static GameRegistryEntry? find(String gameId) => _entries[gameId];
 
-  static List<GameRegistryEntry> get all => List.unmodifiable(_entries.values);
+  static List<GameRegistryEntry> get all => List.unmodifiable(
+        _canonicalGameIds.map((gameId) => _entries[gameId]!),
+      );
 
   static List<GameRegistryEntry> enabledForAgeBand(String ageBand) => all
       .where((entry) => entry.enabled && entry.ageBands.contains(ageBand))
