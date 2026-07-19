@@ -99,7 +99,7 @@ void main() {
       title: 'San tim chu cai',
       subject: 'letters',
     );
-    await _placeEntriesById(tester, const [
+    await _dragEntriesById(tester, const [
       ('item0', 'left'),
       ('item1', 'left'),
       ('item2', 'left'),
@@ -336,19 +336,18 @@ Future<void> _placeEntries(
   await tester.pumpAndSettle(const Duration(seconds: 2));
 }
 
-Future<void> _placeEntriesById(
+Future<void> _dragEntriesById(
   WidgetTester tester,
   List<(String, String)> itemToTarget,
 ) async {
   for (final (itemId, targetId) in itemToTarget) {
     final item = find.byKey(ValueKey('placement-source-$itemId'));
     await tester.ensureVisible(item);
-    await tester.tap(item);
-    await tester.pumpAndSettle(const Duration(milliseconds: 300));
     final target = find.byKey(ValueKey('placement-target-$targetId'));
     await tester.ensureVisible(target);
-    await tester.tap(target);
-    await tester.pumpAndSettle(const Duration(milliseconds: 300));
+    final offset = tester.getCenter(target) - tester.getCenter(item);
+    await tester.drag(item, offset);
+    await tester.pumpAndSettle(const Duration(milliseconds: 500));
   }
   await tester.pumpAndSettle(const Duration(seconds: 2));
 }
