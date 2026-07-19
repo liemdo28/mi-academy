@@ -482,6 +482,7 @@ jobs:
           name: mi-academy-release-aab
           path: |
             apps/mobile/build/app/outputs/bundle/release/app-release.aab
+            apps/mobile/build/app/outputs/mapping/release/mapping.txt
 
       - name: Report release signing outcome
         if: always()
@@ -491,7 +492,6 @@ jobs:
           else
             echo "::notice title=Release signing not configured::No signed Android artifact was produced by this job — ANDROID_KEYSTORE_BASE64/ANDROID_KEYSTORE_PASSWORD/ANDROID_KEY_ALIAS/ANDROID_KEY_PASSWORD are not set as repo secrets (see docs/security/SECRET_INVENTORY.md). A green job status here does NOT mean a signed release build exists; it only means no build/sign steps ran to fail."
           fi
-            apps/mobile/build/app/outputs/mapping/release/mapping.txt
 
       - name: Remove decoded keystore
         if: always() && steps.check-secret.outputs.configured == 'true'
