@@ -24,7 +24,7 @@ This document records the gap between the security policy already defined in [`d
 |---|---|---|
 | Python deps pinned | ✅ | `requirements.txt`, exact `==` pins |
 | Python deps hash-locked | ❌ | no lock file |
-| `pip-audit` in CI | ❌ | required by `docs/security.md` §6, not implemented |
+| `pip-audit` in CI | ⚠️ | implemented in `.github/workflows/ci.yml`'s `security-scans` job, but `continue-on-error: true` (report-only) per this doc's own recommendation #4 below — currently reports 23 known vulnerabilities across 5 pinned packages (`python-jose`, `python-multipart`, `pytest`, `starlette`, `ecdsa`); no Critical/High triage owner has been assigned yet, so the job stays non-blocking |
 | Flutter/Dart deps pinned | ✅ | `pubspec.lock` committed per package |
 | `flutter pub outdated` check in CI | ❌ | required by policy, not implemented |
 | Container scanning | ❌ | no image scan step, and no image is even built in CI today |
@@ -80,7 +80,7 @@ This document records the gap between the security policy already defined in [`d
 - No secret scanning in CI.
 
 **High:**
-- No dependency vulnerability scanning (`pip-audit`, Flutter equivalent).
+- Dependency vulnerability scanning (`pip-audit`) is implemented but non-blocking (see §2 above); 23 known vulnerabilities are currently unactioned. No Flutter/Dart equivalent (`flutter pub outdated` / `dart pub outdated`) exists in CI yet.
 - No container scanning / no `.dockerignore` / root container user.
 - Rate limiter not viable across multiple replicas.
 
