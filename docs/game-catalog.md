@@ -1,7 +1,7 @@
 # Game catalog — MI Academy 1.0 (30-game target)
 
 Status verified directly against the working tree on 2026-07-19 (branch
-`feature/game-8-closure`) — not carried over from any prior summary.
+`integration/m1-m2-baseline`) — not carried over from any prior summary.
 **8 of 30 games exist; 22 do not.** This is the single largest gap against
 the master spec and should not be understated.
 
@@ -16,13 +16,12 @@ The built games now launch through a central `GameRegistry`
 statement, and their level content (`apps/mobile/assets/levels/*.json`)
 now conforms to a real versioned schema (`schemas/level.schema.json`, see
 `docs/content-schema.md`) with a repository-level validator
-(`tools/content_schema_validator.py`). **Content minimums (30 quiz items /
-20 levels per locale, 3 real difficulty tiers per game) were NOT
-addressed for the original six games in this pass** — they still ship
-exactly 10 levels each at a single effective difficulty tier. Alphabet
-Explorer was added later with 95 bilingual levels across three tiers, and
-Missing Letter was added with 75 bilingual levels across three tiers. See
-`docs/release-audit.md` for the remaining open finding.
+(`tools/content_schema_validator.py`). Math Race and Math Supermarket are
+expanded to 40 levels each. Word Builder, Sound Match, Robot Commands,
+and Memory Cards still need expansion. Alphabet Explorer has 95 bilingual
+levels across three tiers, and Missing Letter has 75 bilingual levels
+across three tiers. See `docs/release-audit.md` for the remaining open
+finding.
 
 ## Update (Milestone 2 slice): Alphabet Explorer
 
@@ -68,9 +67,9 @@ out-of-range positions. Evidence on 2026-07-19: `flutter analyze`,
 | 10 | Đếm đồ vật | 5–7 | Not started | — |
 | 11 | Ghép số với số lượng | 5–7 | Not started | — |
 | 12 | So sánh lớn và bé | 5–8 | Not started | — |
-| 13 | Đường đua cộng trừ | 6–10 | **Built** | `apps/mobile/lib/src/games/choice/` (shared `ChoiceGameScreen`, `mathRaceLevel` content); 10/10 levels solvable |
+| 13 | Đường đua cộng trừ | 6–10 | **Built** | `apps/mobile/lib/src/games/choice/` (shared `ChoiceGameScreen`); 40 levels; expansion complete |
 | 14 | Hoàn thành dãy số | 6–10 | Not started | — |
-| 15 | Siêu thị toán học | 7–11 | **Built** | Same `choice` engine, `mathSupermarketLevel` content; 10/10 levels solvable |
+| 15 | Siêu thị toán học | 7–11 | **Built** | Same `choice` engine; 40 levels; expansion complete |
 | 16 | Bảng nhân phiêu lưu | 8–11 | Not started | — |
 | 17 | Chia đều kho báu | 8–11 | Not started | — |
 | 18 | Đồng hồ và thời gian | 7–11 | Not started | — |

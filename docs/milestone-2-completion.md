@@ -1,7 +1,7 @@
 # Milestone 2 Completion Report
 
 Date: 2026-07-19
-Branch: `feature/game-8-closure`
+Branch: `integration/m1-m2-baseline`
 
 ## Executive Summary
 
@@ -76,12 +76,13 @@ covered by `tests/test_api_game_result.py`.
 - Local signing state: `apps/mobile/android/key.properties` is absent, so
   release builds used the documented debug-signing fallback, not production
   Play signing.
-- APK SHA-256: `34097EFA5F786020FB06A674BADE313F5EF9503E61BBAF03E2E3350A13FA1752`.
-- AAB SHA-256: `39E03249CC778DB3B7323427CBFF68E95D7E0AA30381609706B409F180410CF9`.
+- APK SHA-256: `319309B61162D35ECD513A28266602C16786A943F467F21542E7FE39D2EC83BF`.
+- AAB SHA-256: `7AA2A9108CD92AF5903564E34DEEFE0AED10E3D703B62E61BC5CB6DA0B4FE829`.
 
 ## Known Gaps
 
 - Games 9-15 are not implemented.
+- Multi-select Engine is not implemented.
 - Missing Letter Android integration coverage exists in
   `apps/mobile/integration_test/missing_letter_flow_test.dart`. Local
   execution did not run because no supported Android/iOS device was connected;

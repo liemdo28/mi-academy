@@ -31,6 +31,30 @@ check that no engine source file imports a storage/backend/analytics
 package). None of the three engines are wired into the game registry or any
 production game yet; see docs/game-engine-architecture.md.
 
+## Baseline consolidation verification (2026-07-19)
+
+Branch `integration/m1-m2-baseline` was verified locally after merging
+`feature/game-8-closure` and `feature/placement-engine`:
+
+- `packages/mi_game_engines`: format pass, analyze pass, `flutter test`
+  pass with 105 tests.
+- `apps/mobile`: format pass, analyze pass, `flutter test` pass with 108
+  tests and 6 Windows-only golden skips; `flutter build apk --release`
+  and `flutter build appbundle --release` pass.
+- Repo root: `ruff format --check`, `ruff check`, `mypy`, and `pytest`
+  pass; pytest count is 177.
+- Content: production schema validation, malformed-fixture validation,
+  content-safety audit, and ARB parity pass. The localization audit still
+  warns on 245 hardcoded Vietnamese strings across 39 files; that remains
+  RA-05 scope.
+- Backend: `alembic upgrade head` against disposable Postgres reaches
+  `b4f7c2d9e801 (head)`, and the migrated database contains
+  `alphabet_explorer` and `missing_letter`.
+- Local `flutter test integration_test` did not run because no Android/iOS
+  device was connected; Windows/Chrome/Edge are visible but unsupported for
+  this app's integration tests. Android emulator execution is verified in
+  CI.
+
 CI (`.github/workflows/ci.yml`) is the authoritative environment for all of
 these — it runs on `ubuntu-latest` (mobile/backend jobs) and `macos-latest`
 (iOS build), matching the constraints below. `flutter test` and

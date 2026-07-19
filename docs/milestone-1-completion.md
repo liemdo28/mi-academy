@@ -1,10 +1,8 @@
 # Milestone 1 — Completion Report
 
-Date: 2026-07-18, WS5 section updated 2026-07-19 for the Sequence and
-Placement Engine passes (see docs/game-engine-architecture.md for full
-detail; the rest of this document's content/integration/localization
-sections were not re-verified in this update and may be stale relative
-to other concurrent work on this branch). Branch: `fix/internal-beta-hardening`.
+Date: 2026-07-18, updated 2026-07-19 for baseline consolidation
+(`integration/m1-m2-baseline`). See `docs/game-engine-architecture.md`
+for engine detail and `docs/milestone-2-completion.md` for Games 7-8.
 This document is
 the required summary of delivered workstreams, architecture, content
 counts, test coverage, remaining limitations, and command evidence for
@@ -23,8 +21,8 @@ yet (see "Remaining limitations"). Not **Not Ready**: every backend and
 mobile canonical command is green, the application-identity blocker is
 resolved, a versioned content schema exists and validates all production
 content, a real (if partial) integration-test suite passes on a real
-Android emulator in CI, and one of four required engines is fully real
-and tested.
+Android emulator in CI, three of four required engines are fully real and
+tested, and Math Race / Math Supermarket have been expanded.
 
 ## Delivered workstreams
 
@@ -55,18 +53,21 @@ unaffected; `docs/android-signing.md` documents keystore generation, Play
 App Signing, and CI secret names.
 
 ### WS4 — Game registry (complete)
-`GameRegistry` (`apps/mobile/lib/services/game_registry.dart`) replaces
-`GameScreen`'s hand-maintained switch statement. All 6 games registered
-with metadata; 6 new unit tests (known/unknown ID lookup, every entry's
-builder producing a real widget, age-band filtering).
+`GameRegistry` (`apps/mobile/lib/services/game_registry.dart`) is the
+central mobile registry. The consolidated baseline registers exactly 8
+games, in canonical order: Word Builder, Sound Match, Math Race, Math
+Supermarket, Robot Commands, Memory Cards, Alphabet Explorer, Missing
+Letter.
 
 ### WS3 — Versioned content schema (complete)
 `schemas/level.schema.json` (JSON Schema draft 2020-12) formalizes the
 real content shape already in use, extended with `contentVersion`/
 `estimatedSeconds`/`publicationState`. Dart (`MiLevel`/`ContentLoader`)
 and Python (`apps/api/schemas/content_item.py`, Pydantic) both validate
-against the same rules — proven by tests, not asserted. All 60 real
-production levels (6 games × 10) validate; 5 deliberately malformed
+against the same rules — proven by tests, not asserted. All current
+production levels validate: 10 Word Builder, 10 Sound Match, 40 Math
+Race, 40 Math Supermarket, 10 Robot Commands, 10 Memory Cards, 95
+Alphabet Explorer, and 75 Missing Letter. 9 deliberately malformed
 fixtures are proven to fail with actionable messages
 (`tools/content_schema_validator.py --check-malformed`). A genuine content
 bug was found and fixed along the way: 12 of 23 skill IDs authored in
@@ -107,57 +108,58 @@ time limits) are not covered — each needs a real or mocked backend
 reachable from the test device, not built this pass.
 
 ### WS1 — Localization (partial)
-`.arb` key parity (57/57) is real and now CI-enforced
+`.arb` key parity (67/67) is real and now CI-enforced
 (`tools/localization_audit.py`, wired into `content-and-safety`). Game
 *content* locale (prompts/hints/feedback from JSON) and the app-shell
 locale were fixed in the prior session. **UI-chrome strings are not
-localized**: the hardcoded-string scanner currently reports 231 findings
+localized**: the hardcoded-string scanner currently reports 245 findings
 across 39 files, unchanged this pass — full retrofit to
 `AppLocalizations`/`L10nService` was not attempted given the scope of
 everything else in this pass.
 
-### WS6 — Six-game stabilization and content expansion (not attempted this pass)
-All 6 games already launch through the registry (WS4) and their content
-conforms to the versioned schema (WS3) — that portion of WS6 is complete
-as a side effect of WS3/WS4. **Content-minimum expansion (30 quiz items
-or 20 levels per locale) and real 3-tier difficulty were not attempted**:
-all 6 games still ship exactly 10 levels each at one effective difficulty
-tier. This is a content-authoring effort (writing genuinely varied
-questions/levels per game, not a mechanical or architectural task) and
-was judged out of scope for this pass's remaining time.
+### WS6 — Existing-game stabilization and content expansion (partial)
+All built games launch through the registry and their content conforms to
+the versioned schema. Math Race and Math Supermarket have been expanded
+to 40 levels each across the intended difficulty spread. Word Builder,
+Sound Match, Robot Commands, and Memory Cards still need expansion.
 
 ## Content counts (verified)
 
 | Game | Levels | Locales/level | Difficulty tiers | Schema-valid |
 |---|---|---|---|---|
-| word_builder | 10 | vi+en | 1 | yes |
-| sound_match | 10 | vi+en | 1 | yes |
-| math_race | 10 | vi+en | 1 | yes |
-| math_supermarket | 10 | vi+en | 1 | yes |
-| robot_commands | 10 | vi+en | 1 | yes |
-| memory_cards | 10 | vi+en | 1 | yes |
+| word_builder | 10 | vi+en | pending expansion | yes |
+| sound_match | 10 | vi+en | pending expansion | yes |
+| math_race | 40 | vi+en | expanded | yes |
+| math_supermarket | 40 | vi+en | expanded | yes |
+| robot_commands | 10 | vi+en | pending expansion | yes |
+| memory_cards | 10 | vi+en | pending expansion | yes |
+| alphabet_explorer | 95 | vi+en | 3 | yes |
+| missing_letter | 75 | vi+en | 3 | yes |
 
-None meet the 20-30 item/3-tier Milestone 1 content minimum.
+Math Race and Math Supermarket are complete for the current existing-game
+expansion scope; Word Builder, Sound Match, Robot Commands, and Memory
+Cards remain pending.
 
 ## Test coverage (verified)
 
 | Suite | Count | Result |
 |---|---|---|
-| `pytest packages/game_core/tests tests test -q` | 170 | all passed |
-| `flutter test` (apps/mobile) | 92 | 86 passed + 6 skipped (Linux-only goldens) |
+| `pytest packages/game_core/tests tests test -q` | 177 | all passed |
+| `flutter test` (apps/mobile) | 108 | all passed + 6 skipped (Linux-only goldens on Windows) |
 | `flutter test` (packages/mi_game_content) | 24 | all passed |
 | `flutter test` (packages/mi_game_engines) | 105 | all passed (updated 2026-07-19 for Sequence + Placement) |
 | `flutter test integration_test` (CI, real Android emulator) | 4 | all passed |
 
 ## Remaining limitations (honest, not hidden)
 
-- **RA-05**: 231 hardcoded Vietnamese UI-chrome strings across 39 files —
+- **RA-05**: 245 hardcoded Vietnamese UI-chrome strings across 39 files —
   full localization retrofit not done.
 - **Engines**: Multi-select is the only remaining engine that doesn't
   exist (Matching, Sequence, and Placement are now all real and tested —
   see the updated WS5 section above); none of the three are wired into
   the game registry or any production game yet.
-- **Content minimums**: all 6 games at 10 levels/1 tier, not 20-30/3 tiers.
+- **Content expansion**: Word Builder, Sound Match, Robot Commands, and
+  Memory Cards still need expansion.
 - **Integration suites B/D/F/G**: need a real or mocked backend reachable
   from the test device — not built.
 - **RA-08**: 5-child-profile boundary is real and enforced but untested.

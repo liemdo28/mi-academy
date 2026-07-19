@@ -19,14 +19,20 @@ in the current codebase, see:
 - [docs/game-catalog.md](./docs/game-catalog.md) — real per-game status
   (8 of 30 target games exist).
 
-Quick facts, verified directly: 8 playable games with local persistence;
-`flutter analyze`, `ruff check .`, `ruff format --check .`, and `mypy .`
-are clean; `pytest` 177 passed; `flutter test` 108 passed (6 Linux-only
-golden tests skipped on Windows); content schema, malformed-fixture,
-content-safety, and ARB parity checks pass; Android `applicationId` is
+Quick facts, verified directly on branch `integration/m1-m2-baseline`: 8
+playable games with local persistence; Matching, Sequence, and Placement
+shared engines exist and pass their package tests; Multi-select is not
+implemented. Math Race and Math Supermarket are expanded to 40 levels each;
+Word Builder, Sound Match, Robot Commands, and Memory Cards still need
+expansion. `flutter analyze`, `ruff check .`, `ruff format --check .`,
+and `mypy .` are clean; `pytest` 177 passed; `flutter test` 108 passed
+(6 Linux-only golden tests skipped on Windows); content schema,
+malformed-fixture, content-safety, and ARB parity checks pass. Repository-
+wide hardcoded-string cleanup remains pending. Android `applicationId` is
 `com.liemteam.miacademy`; local APK/AAB release builds succeed with the
-documented debug-signing fallback. Milestone 2 is still **Not Ready**
-because games 9-15 and manual/device release gates remain open.
+documented debug-signing fallback. Milestone 1 is **Conditional** and
+Milestone 2 is **Not Ready** because games 9-15, human educational review,
+and remaining cleanup gates are still open.
 
 ## Tài liệu phát triển
 
