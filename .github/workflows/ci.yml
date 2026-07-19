@@ -206,6 +206,33 @@ jobs:
           echo
           kill "$server_pid" 2>/dev/null || true
 
+  shared-engines-test:
+    name: Shared game engines (Matching/Sequence/Placement) format, analyze, test
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: packages/mi_game_engines
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: subosito/flutter-action@v2
+        with:
+          flutter-version: ${{ env.FLUTTER_VERSION }}
+          channel: stable
+          cache: true
+
+      - name: Install dependencies
+        run: flutter pub get
+
+      - name: Format check
+        run: dart format --set-exit-if-changed .
+
+      - name: Analyze
+        run: flutter analyze
+
+      - name: Test
+        run: flutter test
+
   mobile-test-build:
     name: Mobile analyze, tests, web, and Android build
     runs-on: ubuntu-latest
