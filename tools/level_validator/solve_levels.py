@@ -232,6 +232,20 @@ def main():
     )
     validate_game_levels(
         all_errors=all_errors,
+        game_id="alphabet_explorer",
+        file_name="alphabet_explorer.json",
+        solver=solve_choice_level,
+        label="Alphabet Explorer",
+    )
+    validate_game_levels(
+        all_errors=all_errors,
+        game_id="missing_letter",
+        file_name="missing_letter.json",
+        solver=solve_choice_level,
+        label="Missing Letter",
+    )
+    validate_game_levels(
+        all_errors=all_errors,
         game_id="memory_cards",
         file_name="memory_cards.json",
         solver=solve_memory_cards,
