@@ -5,6 +5,7 @@ import 'package:design_system/design_system.dart';
 import 'package:mi_game_core/mi_game_core.dart';
 import 'package:offline_sync/offline_sync.dart';
 import 'package:uuid/uuid.dart';
+import 'package:localization/localization.dart';
 
 import '../providers/providers.dart';
 import '../services/adaptive_learning_service.dart';
@@ -200,7 +201,7 @@ class _GameScreenState extends ConsumerState<GameScreen> {
         body: MiErrorState(
           title: _locale == 'en'
               ? 'This game could not be loaded'
-              : 'Không thể tải trò chơi',
+              : MiMobileStrings.m068,
           onRetry: () {
             setState(() => _error = null);
             _loadLevels();
@@ -225,7 +226,7 @@ class _GameScreenState extends ConsumerState<GameScreen> {
           child: Text(
             _locale == 'en'
                 ? 'No levels are available for this game yet'
-                : 'Chưa có cấp độ nào cho trò chơi này',
+                : MiMobileStrings.m069,
           ),
         ),
       );
@@ -249,7 +250,7 @@ class _GameScreenState extends ConsumerState<GameScreen> {
           child: Text(
             _locale == 'en'
                 ? 'Game "${widget.gameType}" is not supported yet'
-                : 'Trò chơi "${widget.gameType}" chưa hỗ trợ',
+                : MiMobileStrings.text('m070', {'p0': widget.gameType}),
           ),
         ),
       );

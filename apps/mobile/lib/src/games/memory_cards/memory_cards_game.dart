@@ -3,6 +3,7 @@ import 'dart:math';
 
 import 'package:equatable/equatable.dart';
 import 'package:mi_game_core/mi_game_core.dart';
+import 'package:localization/localization.dart';
 
 /// Card state during gameplay.
 enum CardState {
@@ -211,7 +212,7 @@ class MemoryCardsGame extends BaseGame {
 
         return MiActionResult(
           correct: true,
-          feedback: completed ? 'Hoàn thành!' : 'Ghép đúng!',
+          feedback: completed ? MiMobileStrings.m199 : MiMobileStrings.m249,
           audioRef: 'match_correct',
           isLevelComplete: completed,
           metadata: {
@@ -226,7 +227,7 @@ class MemoryCardsGame extends BaseGame {
         _cards[index] = _cards[index].copyWith(state: CardState.mismatched);
 
         final feedback = MiActionResult.incorrect(
-          feedback: 'Không khớp, thử lại nhé!',
+          feedback: MiMobileStrings.m200,
           metadata: {'cards': _cards.map((c) => c.toJson()).toList()},
         );
 

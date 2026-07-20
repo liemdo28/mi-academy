@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import 'package:design_system/design_system.dart';
+import 'package:localization/localization.dart';
 import '../providers/providers.dart';
 import '../widgets/add_child_dialog.dart';
 
@@ -41,7 +42,7 @@ class _ChildSelectorScreenState extends ConsumerState<ChildSelectorScreen> {
     } else if (mounted) {
       final error = ref.read(activeChildProvider).error;
       ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text(error ?? 'Không thể tạo hồ sơ, thử lại nhé')),
+        SnackBar(content: Text(error ?? MiMobileStrings.m060)),
       );
     }
   }
@@ -59,12 +60,12 @@ class _ChildSelectorScreenState extends ConsumerState<ChildSelectorScreen> {
             children: [
               const SizedBox(height: MiTokens.space8),
               Text(
-                'Chọn hồ sơ của bạn',
+                MiMobileStrings.m061,
                 style: Theme.of(context).textTheme.displayMedium,
               ),
               const SizedBox(height: MiTokens.space2),
               Text(
-                'Bạn là ai hôm nay?',
+                MiMobileStrings.m062,
                 style: Theme.of(context).textTheme.bodyLarge,
               ),
               const SizedBox(height: MiTokens.space8),
@@ -73,7 +74,7 @@ class _ChildSelectorScreenState extends ConsumerState<ChildSelectorScreen> {
                     ? const MiLoading()
                     : state.error != null && state.children.isEmpty
                         ? MiErrorState(
-                            title: 'Không thể tải hồ sơ',
+                            title: MiMobileStrings.m063,
                             onRetry: () => ref
                                 .read(activeChildProvider.notifier)
                                 .loadChildren(),
@@ -177,11 +178,11 @@ class _ChildAvatarCard extends StatelessWidget {
   String _ageGroupLabel(String ag) {
     switch (ag) {
       case 'junior':
-        return '5-7 tuổi';
+        return MiMobileStrings.m064;
       case 'explorer':
-        return '8-10 tuổi';
+        return MiMobileStrings.m065;
       case 'master':
-        return '11-12 tuổi';
+        return MiMobileStrings.m066;
       default:
         return '';
     }
@@ -228,7 +229,7 @@ class _AddChildCard extends StatelessWidget {
           ),
           const SizedBox(height: MiTokens.space3),
           Text(
-            'Thêm hồ sơ',
+            MiMobileStrings.m067,
             style: Theme.of(
               context,
             ).textTheme.titleMedium?.copyWith(color: MiColors.textSecondary),

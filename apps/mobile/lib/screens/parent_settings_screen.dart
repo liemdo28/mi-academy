@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:design_system/design_system.dart';
+import 'package:localization/localization.dart';
 import '../providers/providers.dart';
 import '../services/parent_settings_store.dart';
 
@@ -44,34 +45,34 @@ class _SettingsState extends ConsumerState<ParentSettingsScreen> {
 
   Future<void> _downloadOfflineContent() async {
     await _save(_settings.copyWith(offlineReady: true));
-    _showMessage('Nội dung MVP đã sẵn sàng để học offline.');
+    _showMessage(MiMobileStrings.m115);
   }
 
   Future<void> _prepareExport() async {
     final settings = _settings.copyWith(exportPreparedAt: DateTime.now());
     await _save(settings);
     await widget.store.prepareExport(settings);
-    _showMessage('Đã chuẩn bị bản xuất dữ liệu cho phụ huynh.');
+    _showMessage(MiMobileStrings.m116);
   }
 
   Future<void> _confirmDeleteData() async {
     final confirmed = await showDialog<bool>(
       context: context,
       builder: (context) => AlertDialog(
-        title: const Text('Xóa dữ liệu của bé?'),
+        title: const Text(MiMobileStrings.m117),
         content: const Text(
-          'Thao tác này chỉ dành cho phụ huynh và cần xác nhận rõ ràng.',
+          MiMobileStrings.m247,
         ),
         actions: [
           TextButton(
             onPressed: () => Navigator.of(context).pop(false),
-            child: const Text('Hủy'),
+            child: const Text(MiMobileStrings.m119),
           ),
           FilledButton(
             key: const ValueKey('confirm-delete-child-data'),
             style: FilledButton.styleFrom(backgroundColor: MiColors.error),
             onPressed: () => Navigator.of(context).pop(true),
-            child: const Text('Xác nhận xóa'),
+            child: const Text(MiMobileStrings.m120),
           ),
         ],
       ),
@@ -83,7 +84,7 @@ class _SettingsState extends ConsumerState<ParentSettingsScreen> {
         deleteRequestedAt: null,
       ).copyWith(deleteRequestedAt: DateTime.now()),
     );
-    _showMessage('Đã ghi nhận yêu cầu xóa dữ liệu trên thiết bị.');
+    _showMessage(MiMobileStrings.m121);
   }
 
   void _showMessage(String message) {
@@ -99,14 +100,14 @@ class _SettingsState extends ConsumerState<ParentSettingsScreen> {
     }
 
     return Scaffold(
-      appBar: AppBar(title: const Text('Cài đặt')),
+      appBar: AppBar(title: const Text(MiMobileStrings.m028)),
       body: SafeArea(
         child: ListView(
           padding: const EdgeInsets.all(16),
           children: [
             const SizedBox(height: 8),
             Text(
-              'Giới hạn thời gian',
+              MiMobileStrings.m122,
               style: Theme.of(context).textTheme.headlineMedium,
             ),
             const SizedBox(height: 12),
@@ -120,12 +121,13 @@ class _SettingsState extends ConsumerState<ParentSettingsScreen> {
                       children: [
                         const Expanded(
                           child: Text(
-                            'Hằng ngày',
+                            MiMobileStrings.m123,
                             style: TextStyle(fontSize: 16),
                           ),
                         ),
                         Text(
-                          '${_settings.dailyLimitMinutes} phút',
+                          MiMobileStrings.text(
+                              'm124', {'p0': _settings.dailyLimitMinutes}),
                           style: Theme.of(context).textTheme.titleLarge,
                         ),
                       ],
@@ -142,7 +144,7 @@ class _SettingsState extends ConsumerState<ParentSettingsScreen> {
                       ),
                     ),
                     const Text(
-                      'MI sẽ nhắc nghỉ khi sắp hết giờ.',
+                      MiMobileStrings.m125,
                       style: TextStyle(fontSize: 13),
                     ),
                   ],
@@ -151,19 +153,20 @@ class _SettingsState extends ConsumerState<ParentSettingsScreen> {
             ),
             const SizedBox(height: 24),
             Text(
-              'Âm thanh & phụ đề',
+              MiMobileStrings.m126,
               style: Theme.of(context).textTheme.headlineMedium,
             ),
             const SizedBox(height: 12),
             SwitchListTile(
-              title: const Text('Âm thanh', style: TextStyle(fontSize: 16)),
+              title: const Text(MiMobileStrings.m127,
+                  style: TextStyle(fontSize: 16)),
               value: _settings.soundEnabled,
               activeThumbColor: MiColors.primary,
               onChanged: (v) => _save(_settings.copyWith(soundEnabled: v)),
             ),
             SwitchListTile(
               title: const Text(
-                'Phụ đề cho giọng đọc',
+                MiMobileStrings.m128,
                 style: TextStyle(fontSize: 16),
               ),
               value: _settings.subtitlesEnabled,
@@ -171,15 +174,16 @@ class _SettingsState extends ConsumerState<ParentSettingsScreen> {
               onChanged: (v) => _save(_settings.copyWith(subtitlesEnabled: v)),
             ),
             const SizedBox(height: 24),
-            Text('Trợ năng', style: Theme.of(context).textTheme.headlineMedium),
+            Text(MiMobileStrings.m129,
+                style: Theme.of(context).textTheme.headlineMedium),
             const SizedBox(height: 12),
             SwitchListTile(
               title: const Text(
-                'Giảm hiệu ứng chuyển động',
+                MiMobileStrings.m130,
                 style: TextStyle(fontSize: 16),
               ),
               subtitle: const Text(
-                'Tắt bớt hoạt ảnh trong trò chơi cho trẻ nhạy cảm với chuyển động.',
+                MiMobileStrings.m248,
                 style: TextStyle(fontSize: 13),
               ),
               value: _settings.reduceMotion,
@@ -187,7 +191,8 @@ class _SettingsState extends ConsumerState<ParentSettingsScreen> {
               onChanged: (v) => _save(_settings.copyWith(reduceMotion: v)),
             ),
             const SizedBox(height: 24),
-            Text('Ngôn ngữ', style: Theme.of(context).textTheme.headlineMedium),
+            Text(MiMobileStrings.m132,
+                style: Theme.of(context).textTheme.headlineMedium),
             const SizedBox(height: 12),
             Card(
               child: Padding(
@@ -196,7 +201,7 @@ class _SettingsState extends ConsumerState<ParentSettingsScreen> {
                   children: [
                     Expanded(
                       child: ChoiceChip(
-                        label: const Text('Tiếng Việt'),
+                        label: const Text(MiMobileStrings.m077),
                         selected: _settings.language == 'vi',
                         onSelected: (_) =>
                             _save(_settings.copyWith(language: 'vi')),
@@ -216,7 +221,8 @@ class _SettingsState extends ConsumerState<ParentSettingsScreen> {
               ),
             ),
             const SizedBox(height: 24),
-            Text('Dữ liệu', style: Theme.of(context).textTheme.headlineMedium),
+            Text(MiMobileStrings.m133,
+                style: Theme.of(context).textTheme.headlineMedium),
             const SizedBox(height: 12),
             Card(
               child: Column(
@@ -228,11 +234,11 @@ class _SettingsState extends ConsumerState<ParentSettingsScreen> {
                           : Icons.cloud_download,
                       color: _settings.offlineReady ? MiColors.success : null,
                     ),
-                    title: const Text('Tải nội dung offline'),
+                    title: const Text(MiMobileStrings.m134),
                     subtitle: Text(
                       _settings.offlineReady
-                          ? 'Sẵn sàng học không cần mạng'
-                          : 'Lưu 6 trò chơi MVP trên thiết bị',
+                          ? MiMobileStrings.m135
+                          : MiMobileStrings.m136,
                     ),
                     trailing: const Icon(Icons.chevron_right),
                     onTap: _downloadOfflineContent,
@@ -245,11 +251,11 @@ class _SettingsState extends ConsumerState<ParentSettingsScreen> {
                           : Icons.file_download,
                       color: _settings.exportReady ? MiColors.success : null,
                     ),
-                    title: const Text('Xuất dữ liệu của bé'),
+                    title: const Text(MiMobileStrings.m137),
                     subtitle: Text(
                       _settings.exportReady
-                          ? 'Bản xuất dữ liệu đã sẵn sàng'
-                          : 'Chuẩn bị báo cáo cho phụ huynh',
+                          ? MiMobileStrings.m138
+                          : MiMobileStrings.m139,
                     ),
                     trailing: const Icon(Icons.chevron_right),
                     onTap: _prepareExport,
@@ -263,13 +269,13 @@ class _SettingsState extends ConsumerState<ParentSettingsScreen> {
                       color: MiColors.error,
                     ),
                     title: const Text(
-                      'Xóa dữ liệu của bé',
+                      MiMobileStrings.m140,
                       style: TextStyle(color: MiColors.error),
                     ),
                     subtitle: Text(
                       _settings.deleteConfirmed
-                          ? 'Yêu cầu xóa đã được ghi nhận'
-                          : 'Cần xác nhận của phụ huynh',
+                          ? MiMobileStrings.m141
+                          : MiMobileStrings.m142,
                     ),
                     trailing: const Icon(Icons.chevron_right),
                     onTap: _confirmDeleteData,

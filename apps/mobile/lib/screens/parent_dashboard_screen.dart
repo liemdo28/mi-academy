@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import 'package:design_system/design_system.dart';
+import 'package:localization/localization.dart';
 import '../providers/providers.dart';
 import '../widgets/add_child_dialog.dart';
 
@@ -19,7 +20,7 @@ class ParentDashboardScreen extends ConsumerWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Bảng điều khiển phụ huynh'),
+        title: const Text(MiMobileStrings.m088),
         actions: [
           IconButton(
             icon: const Icon(Icons.settings),
@@ -28,9 +29,9 @@ class ParentDashboardScreen extends ConsumerWidget {
         ],
       ),
       body: reportsAsync.when(
-        loading: () => const MiLoading(message: 'Đang tải...'),
+        loading: () => const MiLoading(message: MiMobileStrings.m089),
         error: (e, _) => MiErrorState(
-          title: 'Không thể tải dữ liệu',
+          title: MiMobileStrings.m090,
           onRetry: () => ref.invalidate(reportsProvider),
         ),
         data: (reports) => RefreshIndicator(
@@ -48,17 +49,17 @@ class ParentDashboardScreen extends ConsumerWidget {
 
               // ─── Children section ────────────────────────────────────────
               Text(
-                'Hồ sơ trẻ em',
+                MiMobileStrings.m091,
                 style: Theme.of(context).textTheme.headlineMedium,
               ),
               const SizedBox(height: MiTokens.space3),
               if (children.children.isEmpty)
                 MiEmptyState(
-                  title: 'Chưa có hồ sơ',
-                  subtitle: 'Tạo hồ sơ cho con bạn',
+                  title: MiMobileStrings.m092,
+                  subtitle: MiMobileStrings.m093,
                   emoji: '👶',
                   action: MiButton(
-                    label: 'Tạo hồ sơ',
+                    label: MiMobileStrings.m094,
                     onPressed: () => _showCreateChildDialog(context, ref),
                   ),
                 )
@@ -84,7 +85,7 @@ class ParentDashboardScreen extends ConsumerWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
-            '📊 Tổng quan hôm nay',
+            MiMobileStrings.m095,
             style: Theme.of(context).textTheme.titleLarge,
           ),
           const SizedBox(height: MiTokens.space4),
@@ -92,9 +93,9 @@ class ParentDashboardScreen extends ConsumerWidget {
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
               _buildStatItem(context, '⭐', '$stars', 'Sao'),
-              _buildStatItem(context, '📚', '$lessons', 'Bài học'),
-              _buildStatItem(context, '🎮', '$games', 'Trò chơi'),
-              _buildStatItem(context, '⏱️', '$minutes', 'Phút'),
+              _buildStatItem(context, '📚', '$lessons', MiMobileStrings.m057),
+              _buildStatItem(context, '🎮', '$games', MiMobileStrings.m096),
+              _buildStatItem(context, '⏱️', '$minutes', MiMobileStrings.m097),
             ],
           ),
         ],
@@ -108,13 +109,13 @@ class ParentDashboardScreen extends ConsumerWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
-            '📊 Tổng quan hôm nay',
+            MiMobileStrings.m095,
             style: Theme.of(context).textTheme.titleLarge,
           ),
           const SizedBox(height: MiTokens.space4),
           const MiEmptyState(
-            title: 'Chưa có hoạt động',
-            subtitle: 'Con bạn chưa học hôm nay',
+            title: MiMobileStrings.m098,
+            subtitle: MiMobileStrings.m099,
             emoji: '📚',
           ),
         ],
@@ -163,7 +164,7 @@ class ParentDashboardScreen extends ConsumerWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  child['nickname'] ?? 'Trẻ',
+                  child['nickname'] ?? MiMobileStrings.m100,
                   style: Theme.of(context).textTheme.titleMedium,
                 ),
                 Text(
@@ -195,7 +196,7 @@ class ParentDashboardScreen extends ConsumerWidget {
     if (!ok) {
       final error = ref.read(activeChildProvider).error;
       ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text(error ?? 'Không thể tạo hồ sơ, thử lại nhé')),
+        SnackBar(content: Text(error ?? MiMobileStrings.m060)),
       );
     }
   }

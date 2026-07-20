@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:mi_game_core/mi_game_core.dart';
 import 'package:mi_game_ui/mi_game_ui.dart';
+import 'package:localization/localization.dart';
 
 import '../src/games/choice/choice_game_screen.dart';
 import '../src/games/engine_backed/engine_backed_game_screen.dart';
@@ -141,7 +142,7 @@ abstract final class GameRegistry {
         GameRegistryEntry(
           gameId: 'alphabet_explorer',
           localizedName: const {
-            'vi': 'Khám phá chữ cái',
+            'vi': MiMobileStrings.m006,
             'en': 'Alphabet Explorer',
           },
           category: 'letters',
@@ -166,10 +167,10 @@ abstract final class GameRegistry {
             required locale,
           }) =>
               ChoiceGameScreen(
-            title: locale == 'en' ? 'Alphabet Explorer' : 'Khám phá chữ cái',
+            title: locale == 'en' ? 'Alphabet Explorer' : MiMobileStrings.m006,
             worldLabel: locale == 'en'
                 ? 'MI explores letters with you.'
-                : 'MI cùng con khám phá chữ cái.',
+                : MiMobileStrings.m019,
             level: level,
             allLevels: allLevels,
             heroIcon: Icons.abc_rounded,
@@ -184,7 +185,7 @@ abstract final class GameRegistry {
         GameRegistryEntry(
           gameId: 'missing_letter',
           localizedName: const {
-            'vi': 'Tìm chữ còn thiếu',
+            'vi': MiMobileStrings.m008,
             'en': 'Missing Letter'
           },
           category: 'letters',
@@ -208,10 +209,10 @@ abstract final class GameRegistry {
             required locale,
           }) =>
               ChoiceGameScreen(
-            title: locale == 'en' ? 'Missing Letter' : 'Tìm chữ còn thiếu',
+            title: locale == 'en' ? 'Missing Letter' : MiMobileStrings.m008,
             worldLabel: locale == 'en'
                 ? 'MI looks for the missing letters with you.'
-                : 'MI cùng con tìm chữ còn thiếu.',
+                : MiMobileStrings.m020,
             level: level,
             allLevels: allLevels,
             heroIcon: Icons.edit_note_rounded,
@@ -225,7 +226,10 @@ abstract final class GameRegistry {
         ),
         GameRegistryEntry(
           gameId: 'word_builder',
-          localizedName: const {'vi': 'Ghép chữ tạo từ', 'en': 'Word Builder'},
+          localizedName: const {
+            'vi': MiMobileStrings.m010,
+            'en': 'Word Builder'
+          },
           category: 'letters',
           ageBands: const ['junior', 'explorer'],
           supportedSkills: const ['letters.word_building'],
@@ -253,7 +257,10 @@ abstract final class GameRegistry {
         ),
         GameRegistryEntry(
           gameId: 'sound_match',
-          localizedName: const {'vi': 'Nghe âm tìm chữ', 'en': 'Sound Match'},
+          localizedName: const {
+            'vi': MiMobileStrings.m012,
+            'en': 'Sound Match'
+          },
           category: 'letters',
           ageBands: const ['junior'],
           supportedSkills: const ['letters.initial_sound'],
@@ -281,7 +288,7 @@ abstract final class GameRegistry {
         ),
         GameRegistryEntry(
           gameId: 'math_race',
-          localizedName: const {'vi': 'Đường đua cộng trừ', 'en': 'Math Race'},
+          localizedName: const {'vi': MiMobileStrings.m013, 'en': 'Math Race'},
           category: 'math',
           ageBands: const ['junior', 'explorer'],
           supportedSkills: const ['math.addition', 'math.subtraction'],
@@ -298,8 +305,8 @@ abstract final class GameRegistry {
             required locale,
           }) =>
               ChoiceGameScreen(
-            title: 'Đường đua cộng trừ',
-            worldLabel: 'Xe MI tiến lên khi con chọn đúng.',
+            title: MiMobileStrings.m013,
+            worldLabel: MiMobileStrings.m021,
             level: level,
             allLevels: allLevels,
             heroIcon: Icons.directions_car_rounded,
@@ -314,7 +321,7 @@ abstract final class GameRegistry {
         GameRegistryEntry(
           gameId: 'math_supermarket',
           localizedName: const {
-            'vi': 'Siêu thị toán học',
+            'vi': MiMobileStrings.m015,
             'en': 'Math Supermarket',
           },
           category: 'math',
@@ -333,8 +340,8 @@ abstract final class GameRegistry {
             required locale,
           }) =>
               ChoiceGameScreen(
-            title: 'Siêu thị toán học',
-            worldLabel: 'Giỏ hàng MI giúp con luyện tính tiền.',
+            title: MiMobileStrings.m015,
+            worldLabel: MiMobileStrings.m022,
             level: level,
             allLevels: allLevels,
             heroIcon: Icons.shopping_cart_rounded,
@@ -349,7 +356,7 @@ abstract final class GameRegistry {
         GameRegistryEntry(
           gameId: 'robot_commands',
           localizedName: const {
-            'vi': 'Robot làm theo lệnh',
+            'vi': MiMobileStrings.m018,
             'en': 'Robot Commands',
           },
           category: 'logic',
@@ -379,7 +386,10 @@ abstract final class GameRegistry {
         ),
         GameRegistryEntry(
           gameId: 'memory_cards',
-          localizedName: const {'vi': 'Ghi nhớ vị trí', 'en': 'Memory Cards'},
+          localizedName: const {
+            'vi': MiMobileStrings.m016,
+            'en': 'Memory Cards'
+          },
           category: 'logic',
           ageBands: const ['junior', 'explorer', 'master'],
           supportedSkills: const ['logic.memory'],
@@ -501,7 +511,7 @@ abstract final class GameRegistry {
         GameRegistryEntry(
           gameId: 'picture_detective',
           localizedName: const {
-            'vi': 'Thám tử hình ảnh',
+            'vi': MiMobileStrings.m153,
             'en': 'Picture Detective',
           },
           category: 'science',
@@ -512,7 +522,10 @@ abstract final class GameRegistry {
         ),
         GameRegistryEntry(
           gameId: 'color_builder',
-          localizedName: const {'vi': 'Xây màu sắc', 'en': 'Color Builder'},
+          localizedName: const {
+            'vi': MiMobileStrings.m154,
+            'en': 'Color Builder'
+          },
           category: 'creative',
           ageBands: const ['junior', 'explorer', 'master'],
           supportedSkills: const [
@@ -524,7 +537,10 @@ abstract final class GameRegistry {
         ),
         GameRegistryEntry(
           gameId: 'animal_homes',
-          localizedName: const {'vi': 'Nhà của động vật', 'en': 'Animal Homes'},
+          localizedName: const {
+            'vi': MiMobileStrings.m155,
+            'en': 'Animal Homes'
+          },
           category: 'science',
           ageBands: const ['junior', 'explorer', 'master'],
           supportedSkills: const ['science.observation', 'logic.matching'],
@@ -534,7 +550,7 @@ abstract final class GameRegistry {
         GameRegistryEntry(
           gameId: 'daily_routine',
           localizedName: const {
-            'vi': 'Sinh hoạt hằng ngày',
+            'vi': MiMobileStrings.m156,
             'en': 'Daily Routine'
           },
           category: 'science',
@@ -549,7 +565,7 @@ abstract final class GameRegistry {
         GameRegistryEntry(
           gameId: 'healthy_foods',
           localizedName: const {
-            'vi': 'Thực phẩm lành mạnh',
+            'vi': MiMobileStrings.m157,
             'en': 'Healthy Foods'
           },
           category: 'science',
@@ -563,7 +579,10 @@ abstract final class GameRegistry {
         ),
         GameRegistryEntry(
           gameId: 'letter_hunt',
-          localizedName: const {'vi': 'Săn tìm chữ cái', 'en': 'Letter Hunt'},
+          localizedName: const {
+            'vi': MiMobileStrings.m158,
+            'en': 'Letter Hunt'
+          },
           category: 'letters',
           ageBands: const ['junior', 'explorer', 'master'],
           supportedSkills: const [
@@ -575,7 +594,10 @@ abstract final class GameRegistry {
         ),
         GameRegistryEntry(
           gameId: 'number_train',
-          localizedName: const {'vi': 'Đoàn tàu số', 'en': 'Number Train'},
+          localizedName: const {
+            'vi': MiMobileStrings.m159,
+            'en': 'Number Train'
+          },
           category: 'math',
           ageBands: const ['junior', 'explorer', 'master'],
           supportedSkills: const [
@@ -587,7 +609,10 @@ abstract final class GameRegistry {
         ),
         GameRegistryEntry(
           gameId: 'emotion_match',
-          localizedName: const {'vi': 'Ghép cảm xúc', 'en': 'Emotion Match'},
+          localizedName: const {
+            'vi': MiMobileStrings.m160,
+            'en': 'Emotion Match'
+          },
           category: 'science',
           ageBands: const ['junior', 'explorer', 'master'],
           supportedSkills: const ['science.observation', 'logic.matching'],
@@ -596,7 +621,10 @@ abstract final class GameRegistry {
         ),
         GameRegistryEntry(
           gameId: 'puzzle_parts',
-          localizedName: const {'vi': 'Mảnh ghép đồ vật', 'en': 'Puzzle Parts'},
+          localizedName: const {
+            'vi': MiMobileStrings.m161,
+            'en': 'Puzzle Parts'
+          },
           category: 'creative',
           ageBands: const ['junior', 'explorer', 'master'],
           supportedSkills: const [
@@ -608,7 +636,10 @@ abstract final class GameRegistry {
         ),
         GameRegistryEntry(
           gameId: 'odd_one_out',
-          localizedName: const {'vi': 'Tìm vật khác nhóm', 'en': 'Odd One Out'},
+          localizedName: const {
+            'vi': MiMobileStrings.m162,
+            'en': 'Odd One Out'
+          },
           category: 'logic',
           ageBands: const ['junior', 'explorer', 'master'],
           supportedSkills: const ['logic.odd_one_out', 'logic.classification'],
@@ -617,7 +648,7 @@ abstract final class GameRegistry {
         ),
         GameRegistryEntry(
           gameId: 'opposites',
-          localizedName: const {'vi': 'Cặp từ trái nghĩa', 'en': 'Opposites'},
+          localizedName: const {'vi': MiMobileStrings.m163, 'en': 'Opposites'},
           category: 'letters',
           ageBands: const ['junior', 'explorer', 'master'],
           supportedSkills: const [
@@ -630,7 +661,7 @@ abstract final class GameRegistry {
         GameRegistryEntry(
           gameId: 'weather_today',
           localizedName: const {
-            'vi': 'Thời tiết hôm nay',
+            'vi': MiMobileStrings.m164,
             'en': 'Weather Today'
           },
           category: 'science',
@@ -642,7 +673,7 @@ abstract final class GameRegistry {
         GameRegistryEntry(
           gameId: 'memory_journey',
           localizedName: const {
-            'vi': 'Hành trình ghi nhớ',
+            'vi': MiMobileStrings.m165,
             'en': 'Memory Journey'
           },
           category: 'logic',
@@ -654,7 +685,7 @@ abstract final class GameRegistry {
         GameRegistryEntry(
           gameId: 'category_expert',
           localizedName: const {
-            'vi': 'Chuyên gia phân loại',
+            'vi': MiMobileStrings.m166,
             'en': 'Category Expert',
           },
           category: 'logic',
@@ -666,7 +697,7 @@ abstract final class GameRegistry {
         GameRegistryEntry(
           gameId: 'build_the_story',
           localizedName: const {
-            'vi': 'Xây câu chuyện',
+            'vi': MiMobileStrings.m167,
             'en': 'Build the Story'
           },
           category: 'letters',
@@ -762,7 +793,7 @@ class _MemoryCardsRegistryHostState extends State<_MemoryCardsRegistryHost> {
       builder: (_) => CompletionOverlay(
         starsEarned: stars,
         maxStars: 3,
-        message: 'Chúc mừng!',
+        message: MiMobileStrings.m040,
         score: result.score,
         onNext: () {
           Navigator.of(context).pop();

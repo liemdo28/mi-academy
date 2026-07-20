@@ -22,14 +22,14 @@ void main() {
     await _launchGame(
       tester,
       gameId: 'picture_detective',
-      title: 'Tham tu hinh anh',
+      title: 'Thám tử hình ảnh',
       subject: 'science',
     );
     await _matchAll(tester, {
-      'giay': 'bong giay',
-      'la cay': 'anh la cay',
-      'coc': 'net coc',
-      'thia': 'net thia',
+      'giày': 'bóng giày',
+      'lá cây': 'ảnh lá cây',
+      'cốc': 'nét cốc',
+      'thìa': 'nét thìa',
     });
     _expectQueuedResult('picture_detective', 'pd-lv001');
   });
@@ -38,16 +38,16 @@ void main() {
     await _launchGame(
       tester,
       gameId: 'color_builder',
-      title: 'Xay mau sac',
+      title: 'Xây màu sắc',
       subject: 'creative',
     );
     await _placeEntries(tester, const [
-      ('do', 'mau nong'),
-      ('vang', 'mau nong'),
-      ('cam', 'mau nong'),
-      ('xanh duong', 'mau mat'),
-      ('xanh la', 'mau mat'),
-      ('tim', 'mau mat'),
+      ('đỏ', 'màu nóng'),
+      ('vàng', 'màu nóng'),
+      ('cam', 'màu nóng'),
+      ('xanh dương', 'màu mát'),
+      ('xanh lá', 'màu mát'),
+      ('tím', 'màu mát'),
     ]);
     _expectQueuedResult('color_builder', 'cb-lv001');
   });
@@ -56,14 +56,14 @@ void main() {
     await _launchGame(
       tester,
       gameId: 'animal_homes',
-      title: 'Nha cua dong vat',
+      title: 'Nhà của động vật',
       subject: 'science',
     );
     await _matchAll(tester, {
-      'ca': 'ao',
-      'ong': 'to ong',
-      'tho': 'hang tho',
-      'chim': 'to chim',
+      'cá': 'ao',
+      'ong': 'tổ ong',
+      'thỏ': 'hang thỏ',
+      'chim': 'tổ chim',
     });
     _expectQueuedResult('animal_homes', 'ah-lv001');
   });
@@ -72,10 +72,10 @@ void main() {
     await _launchGame(
       tester,
       gameId: 'daily_routine',
-      title: 'Sinh hoat hang ngay',
+      title: 'Sinh hoạt hằng ngày',
       subject: 'science',
     );
-    await _arrangeSequence(tester, ['Thuc day', 'Danh rang', 'An sang']);
+    await _arrangeSequence(tester, ['Thức dậy', 'Đánh răng', 'Ăn sáng']);
     await _submitSequence(tester);
     _expectQueuedResult('daily_routine', 'dr-lv001');
   });
@@ -84,10 +84,10 @@ void main() {
     await _launchGame(
       tester,
       gameId: 'healthy_foods',
-      title: 'Thuc pham lanh manh',
+      title: 'Thực phẩm lành mạnh',
       subject: 'science',
     );
-    await _tapAll(tester, ['tao', 'ca rot', 'nuoc']);
+    await _tapAll(tester, ['táo', 'cà rốt', 'nước']);
     await _tapCheckAnswers(tester);
     _expectQueuedResult('healthy_foods', 'hf-lv001');
   });
@@ -96,7 +96,7 @@ void main() {
     await _launchGame(
       tester,
       gameId: 'letter_hunt',
-      title: 'San tim chu cai',
+      title: 'Săn tìm chữ cái',
       subject: 'letters',
     );
     await _dragEntriesById(tester, const [
@@ -114,7 +114,7 @@ void main() {
     await _launchGame(
       tester,
       gameId: 'number_train',
-      title: 'Doan tau so',
+      title: 'Đoàn tàu số',
       subject: 'math',
     );
     await _arrangeSequence(tester, ['1', '2', '3']);
@@ -126,14 +126,14 @@ void main() {
     await _launchGame(
       tester,
       gameId: 'emotion_match',
-      title: 'Ghep cam xuc',
+      title: 'Ghép cảm xúc',
       subject: 'science',
     );
     await _matchAll(tester, {
-      'mat buon': 'nuoc mat',
-      'mat gian': 'nhan mat',
-      'ngac nhien': 'mat tron',
-      'mat vui': 'nu cuoi',
+      'mặt buồn': 'nước mắt',
+      'mặt giận': 'nhăn mặt',
+      'ngạc nhiên': 'mắt tròn',
+      'mặt vui': 'nụ cười',
     });
     _expectQueuedResult('emotion_match', 'em-lv001');
   });
@@ -142,16 +142,16 @@ void main() {
     await _launchGame(
       tester,
       gameId: 'puzzle_parts',
-      title: 'Manh ghep do vat',
+      title: 'Mảnh ghép đồ vật',
       subject: 'creative',
     );
     await _placeEntries(tester, const [
-      ('banh xe', 'xe dap'),
-      ('yen xe', 'xe dap'),
-      ('tay lai', 'xe dap'),
-      ('mai nha', 'ngoi nha'),
-      ('cua', 'ngoi nha'),
-      ('cua so', 'ngoi nha'),
+      ('bánh xe', 'xe đạp'),
+      ('yên xe', 'xe đạp'),
+      ('tay lái', 'xe đạp'),
+      ('mái nhà', 'ngôi nhà'),
+      ('cửa', 'ngôi nhà'),
+      ('cửa sổ', 'ngôi nhà'),
     ]);
     _expectQueuedResult('puzzle_parts', 'pp2-lv001');
   });
@@ -160,10 +160,10 @@ void main() {
     await _launchGame(
       tester,
       gameId: 'odd_one_out',
-      title: 'Tim vat khac nhom',
+      title: 'Tìm vật khác nhóm',
       subject: 'logic',
     );
-    await _tapAll(tester, ['ghe', 'thia', 'giay']);
+    await _tapAll(tester, ['ghế', 'thìa', 'giày']);
     await _tapCheckAnswers(tester);
     _expectQueuedResult('odd_one_out', 'ooo-lv001');
   });
@@ -172,14 +172,14 @@ void main() {
     await _launchGame(
       tester,
       gameId: 'opposites',
-      title: 'Cap tu trai nghia',
+      title: 'Cặp từ trái nghĩa',
       subject: 'letters',
     );
     await _matchAll(tester, {
-      'to': 'nho',
-      'nhanh': 'cham',
-      'ngay': 'dem',
-      'nong': 'lanh',
+      'to': 'nhỏ',
+      'nhanh': 'chậm',
+      'ngày': 'đêm',
+      'nóng': 'lạnh',
     });
     _expectQueuedResult('opposites', 'op-lv001');
   });
@@ -188,14 +188,14 @@ void main() {
     await _launchGame(
       tester,
       gameId: 'weather_today',
-      title: 'Thoi tiet hom nay',
+      title: 'Thời tiết hôm nay',
       subject: 'science',
     );
     await _matchAll(tester, {
-      'tuyet': 'ao am',
-      'nang': 'mu',
-      'gio': 'dieu',
-      'mua': 'o',
+      'tuyết': 'áo ấm',
+      'nắng': 'mũ',
+      'gió': 'diều',
+      'mưa': 'ô',
     });
     _expectQueuedResult('weather_today', 'wt-lv001');
   });
@@ -204,10 +204,11 @@ void main() {
     await _launchGame(
       tester,
       gameId: 'memory_journey',
-      title: 'Hanh trinh ghi nho',
+      title: 'Hành trình ghi nhớ',
       subject: 'logic',
     );
-    await _arrangeSequence(tester, ['Xep cap', 'Len xe buyt', 'Tham bao tang']);
+    await _arrangeSequence(
+        tester, ['Xếp cặp sách', 'Lên xe buýt', 'Thăm bảo tàng']);
     await _submitSequence(tester);
     _expectQueuedResult('memory_journey', 'mj-lv001');
   });
@@ -216,10 +217,10 @@ void main() {
     await _launchGame(
       tester,
       gameId: 'category_expert',
-      title: 'Chuyen gia phan loai',
+      title: 'Chuyên gia phân loại',
       subject: 'logic',
     );
-    await _tapAll(tester, ['but chi', 'sach', 'thuoc']);
+    await _tapAll(tester, ['bút chì', 'sách', 'thước']);
     await _tapCheckAnswers(tester);
     _expectQueuedResult('category_expert', 'ce-lv001');
   });
@@ -228,10 +229,10 @@ void main() {
     await _launchGame(
       tester,
       gameId: 'build_the_story',
-      title: 'Xay cau chuyen',
+      title: 'Xây câu chuyện',
       subject: 'letters',
     );
-    await _arrangeSequence(tester, ['Tim hat', 'Gieo hat', 'Tuoi nuoc']);
+    await _arrangeSequence(tester, ['Tìm hạt', 'Gieo hạt', 'Tưới nước']);
     await _submitSequence(tester);
     _expectQueuedResult('build_the_story', 'bts-lv001');
   });
@@ -310,7 +311,7 @@ Future<void> _tapAll(WidgetTester tester, List<String> labels) async {
 }
 
 Future<void> _tapCheckAnswers(WidgetTester tester) async {
-  await tester.tap(find.widgetWithText(ElevatedButton, 'Kiem tra'));
+  await tester.tap(find.widgetWithText(ElevatedButton, 'Kiểm tra'));
   await tester.pumpAndSettle(const Duration(seconds: 2));
 }
 

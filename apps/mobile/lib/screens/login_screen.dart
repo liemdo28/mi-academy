@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import 'package:design_system/design_system.dart';
+import 'package:localization/localization.dart';
 import '../providers/providers.dart';
 
 /// Login screen for parents.
@@ -47,7 +48,7 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
                 ),
                 const SizedBox(height: MiTokens.space2),
                 Text(
-                  'Học tập qua trò chơi',
+                  MiMobileStrings.m079,
                   style: Theme.of(context).textTheme.bodyLarge,
                   textAlign: TextAlign.center,
                 ),
@@ -56,8 +57,10 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
                 // Toggle login/register
                 SegmentedButton<bool>(
                   segments: const [
-                    ButtonSegment(value: true, label: Text('Đăng nhập')),
-                    ButtonSegment(value: false, label: Text('Đăng ký')),
+                    ButtonSegment(
+                        value: true, label: Text(MiMobileStrings.m080)),
+                    ButtonSegment(
+                        value: false, label: Text(MiMobileStrings.m081)),
                   ],
                   selected: {_isLogin},
                   onSelectionChanged: (value) {
@@ -70,11 +73,11 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
                   TextFormField(
                     controller: _emailController,
                     decoration: const InputDecoration(
-                      labelText: 'Tên hiển thị',
+                      labelText: MiMobileStrings.m082,
                       prefixIcon: Icon(Icons.person),
                     ),
                     validator: (v) => v == null || v.trim().isEmpty
-                        ? 'Nhập tên hiển thị'
+                        ? MiMobileStrings.m083
                         : null,
                   ),
                 if (!_isLogin) const SizedBox(height: MiTokens.space4),
@@ -87,7 +90,7 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
                   ),
                   keyboardType: TextInputType.emailAddress,
                   validator: (v) => v == null || !v.contains('@')
-                      ? 'Nhập email hợp lệ'
+                      ? MiMobileStrings.m084
                       : null,
                 ),
                 const SizedBox(height: MiTokens.space4),
@@ -95,12 +98,12 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
                 TextFormField(
                   controller: _passwordController,
                   decoration: const InputDecoration(
-                    labelText: 'Mật khẩu',
+                    labelText: MiMobileStrings.m085,
                     prefixIcon: Icon(Icons.lock),
                   ),
                   obscureText: true,
                   validator: (v) =>
-                      v == null || v.length < 8 ? 'Tối thiểu 8 ký tự' : null,
+                      v == null || v.length < 8 ? MiMobileStrings.m086 : null,
                 ),
                 const SizedBox(height: MiTokens.space6),
 
@@ -122,7 +125,7 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
 
                 // Submit button
                 MiButton(
-                  label: _isLogin ? 'Đăng nhập' : 'Đăng ký',
+                  label: _isLogin ? MiMobileStrings.m080 : MiMobileStrings.m081,
                   isLoading: authState.isLoading,
                   onPressed: _submit,
                 ),
@@ -130,7 +133,7 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
 
                 // Offline mode button
                 MiOutlinedButton(
-                  label: 'Chế độ offline',
+                  label: MiMobileStrings.m087,
                   icon: Icons.offline_bolt,
                   onPressed: () => context.go('/select-child'),
                 ),

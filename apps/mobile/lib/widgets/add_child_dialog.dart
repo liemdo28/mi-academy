@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:design_system/design_system.dart';
+import 'package:localization/localization.dart';
 
 /// Shared "create child" dialog used by both the child selector and the
 /// parent dashboard's empty-state CTA.
@@ -23,24 +24,27 @@ class _AddChildDialogState extends State<AddChildDialog> {
   @override
   Widget build(BuildContext context) {
     return AlertDialog(
-      title: const Text('Thêm hồ sơ mới'),
+      title: const Text(MiMobileStrings.m239),
       content: Column(
         mainAxisSize: MainAxisSize.min,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           TextField(
             controller: _nicknameController,
-            decoration: const InputDecoration(labelText: 'Tên của bé'),
+            decoration: const InputDecoration(labelText: MiMobileStrings.m240),
             autofocus: true,
           ),
           const SizedBox(height: MiTokens.space3),
           DropdownButtonFormField<String>(
             initialValue: _ageGroup,
-            decoration: const InputDecoration(labelText: 'Độ tuổi'),
+            decoration: const InputDecoration(labelText: MiMobileStrings.m241),
             items: const [
-              DropdownMenuItem(value: 'junior', child: Text('5-7 tuổi')),
-              DropdownMenuItem(value: 'explorer', child: Text('8-10 tuổi')),
-              DropdownMenuItem(value: 'master', child: Text('11-12 tuổi')),
+              DropdownMenuItem(
+                  value: 'junior', child: Text(MiMobileStrings.m064)),
+              DropdownMenuItem(
+                  value: 'explorer', child: Text(MiMobileStrings.m065)),
+              DropdownMenuItem(
+                  value: 'master', child: Text(MiMobileStrings.m066)),
             ],
             onChanged: (value) =>
                 setState(() => _ageGroup = value ?? _ageGroup),
@@ -50,7 +54,7 @@ class _AddChildDialogState extends State<AddChildDialog> {
       actions: [
         TextButton(
           onPressed: () => Navigator.of(context).pop(),
-          child: const Text('Hủy'),
+          child: const Text(MiMobileStrings.m119),
         ),
         FilledButton(
           onPressed: _nicknameController.text.trim().isEmpty
@@ -59,7 +63,7 @@ class _AddChildDialogState extends State<AddChildDialog> {
                     nickname: _nicknameController.text.trim(),
                     ageGroup: _ageGroup,
                   )),
-          child: const Text('Tạo hồ sơ'),
+          child: const Text(MiMobileStrings.m094),
         ),
       ],
     );

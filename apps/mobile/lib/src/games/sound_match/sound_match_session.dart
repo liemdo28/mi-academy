@@ -1,6 +1,7 @@
 import 'dart:math';
 
 import 'package:mi_game_core/mi_game_core.dart';
+import 'package:localization/localization.dart';
 
 class SoundMatchSession {
   SoundMatchSession({
@@ -46,7 +47,7 @@ class SoundMatchSession {
 
   void playPrompt() {
     _showTranscript = true;
-    _feedback = 'MI đang đọc âm thanh mẫu.';
+    _feedback = MiMobileStrings.m228;
   }
 
   bool choose(String option) {
@@ -56,7 +57,7 @@ class SoundMatchSession {
       return true;
     }
 
-    _feedback = 'Chưa khớp rồi, con nghe lại và thử đáp án khác nhé!';
+    _feedback = MiMobileStrings.m229;
     _showTranscript = true;
     return false;
   }

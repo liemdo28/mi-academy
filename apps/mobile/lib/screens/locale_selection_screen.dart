@@ -2,6 +2,7 @@ import 'package:design_system/design_system.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
+import 'package:localization/localization.dart';
 
 import '../providers/providers.dart';
 
@@ -61,7 +62,7 @@ class _LocaleSelectionScreenState extends ConsumerState<LocaleSelectionScreen> {
                   ),
                   const SizedBox(height: 16),
                   const Text(
-                    'Chọn ngôn ngữ / Choose your language',
+                    MiMobileStrings.m076,
                     textAlign: TextAlign.center,
                     style: TextStyle(
                       fontSize: 22,
@@ -71,8 +72,8 @@ class _LocaleSelectionScreenState extends ConsumerState<LocaleSelectionScreen> {
                   ),
                   const SizedBox(height: 32),
                   _LanguageOption(
-                    label: 'Tiếng Việt',
-                    semanticLabel: 'Chọn Tiếng Việt',
+                    label: MiMobileStrings.m077,
+                    semanticLabel: MiMobileStrings.m078,
                     enabled: !_saving,
                     onTap: () => _choose('vi'),
                   ),

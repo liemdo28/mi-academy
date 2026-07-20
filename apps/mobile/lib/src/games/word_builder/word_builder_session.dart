@@ -1,6 +1,7 @@
 import 'dart:math';
 
 import 'package:mi_game_core/mi_game_core.dart';
+import 'package:localization/localization.dart';
 
 class WordBuilderSession {
   WordBuilderSession({
@@ -62,7 +63,7 @@ class WordBuilderSession {
 
   bool checkAnswer() {
     if (_placed.any((letter) => letter == null)) {
-      _feedback = 'Mình còn ô trống, thử ghép thêm nhé!';
+      _feedback = MiMobileStrings.m237;
       return false;
     }
 
@@ -72,7 +73,7 @@ class WordBuilderSession {
       return true;
     }
 
-    _feedback = 'Gần đúng rồi, mình đổi lại vài chữ nhé!';
+    _feedback = MiMobileStrings.m238;
     return false;
   }
 

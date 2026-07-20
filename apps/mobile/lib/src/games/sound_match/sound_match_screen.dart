@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:mi_game_core/mi_game_core.dart';
 import 'package:mi_game_ui/mi_game_ui.dart';
+import 'package:localization/localization.dart';
 
 import '../level_skill_ids.dart';
 import '../snapshot_lifecycle_mixin.dart';
@@ -130,7 +131,7 @@ class _SoundMatchScreenState extends State<SoundMatchScreen>
       builder: (_) => CompletionOverlay(
         starsEarned: _session.stars,
         maxStars: 3,
-        message: 'Con đã nghe và chọn đúng!',
+        message: MiMobileStrings.m224,
         score: _session.score,
         onNext: _goNext,
         onReplay: () {
@@ -158,7 +159,7 @@ class _SoundMatchScreenState extends State<SoundMatchScreen>
 
   @override
   Widget build(BuildContext context) {
-    final prompt = _content['prompt'] as String? ?? 'Nghe và chọn đáp án đúng!';
+    final prompt = _content['prompt'] as String? ?? MiMobileStrings.m225;
     final transcript = _content['audioTranscript'] as String? ?? '';
     final audioKey = _content['audioKey'] as String? ?? '';
 
@@ -168,7 +169,7 @@ class _SoundMatchScreenState extends State<SoundMatchScreen>
         child: Column(
           children: [
             GameHeader(
-              title: 'Nghe âm tìm chữ',
+              title: MiMobileStrings.m012,
               score: _level.levelNumber,
               onExit: widget.onExit,
             ),
@@ -200,7 +201,8 @@ class _SoundMatchScreenState extends State<SoundMatchScreen>
                   if (_session.feedback != null) ...[
                     const SizedBox(height: 8),
                     FeedbackBubble(
-                      isCorrect: _session.feedback!.contains('đúng'),
+                      isCorrect:
+                          _session.feedback!.contains(MiMobileStrings.m202),
                       message: _session.feedback!,
                     ),
                   ],
@@ -223,7 +225,7 @@ class _SoundMatchScreenState extends State<SoundMatchScreen>
                     child: OutlinedButton.icon(
                       onPressed: _playPrompt,
                       icon: const Icon(Icons.volume_up_rounded),
-                      label: const Text('Nghe lại'),
+                      label: const Text(MiMobileStrings.m226),
                       style: OutlinedButton.styleFrom(
                         foregroundColor: GameTheme.primary,
                         padding: GameTheme.buttonPadding,
@@ -283,7 +285,7 @@ class _SoundPromptCard extends StatelessWidget {
             ),
             const SizedBox(height: 12),
             Text(
-              'Âm thanh: $audioKey',
+              MiMobileStrings.text('m227', {'p0': audioKey}),
               style: GameTheme.bodyMedium,
               textAlign: TextAlign.center,
             ),

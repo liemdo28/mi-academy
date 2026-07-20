@@ -2,6 +2,7 @@ import 'package:design_system/design_system.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
+import 'package:localization/localization.dart';
 import '../providers/providers.dart';
 
 /// Decides where the app lands after cold start, based on restored auth
@@ -116,7 +117,7 @@ class _SplashState extends ConsumerState<SplashScreen> {
             ),
             const SizedBox(height: 8),
             const Text(
-              'Học vui, chơi hay',
+              MiMobileStrings.m143,
               style: TextStyle(fontSize: 16, color: Colors.white70),
             ),
             const SizedBox(height: 40),

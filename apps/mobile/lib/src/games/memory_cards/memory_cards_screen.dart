@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:mi_game_core/mi_game_core.dart';
 import 'package:mi_game_ui/mi_game_ui.dart';
+import 'package:localization/localization.dart';
 
 import 'memory_cards_game.dart';
 
@@ -176,7 +177,7 @@ class _MemoryCardsScreenState extends State<MemoryCardsScreen>
   Widget build(BuildContext context) {
     final game = widget.game;
     final content = widget.level.contentForLocale(widget.locale);
-    final prompt = content['prompt'] as String? ?? 'Tìm cặp giống nhau!';
+    final prompt = content['prompt'] as String? ?? MiMobileStrings.m201;
 
     return Scaffold(
       backgroundColor: GameTheme.background,
@@ -247,8 +248,9 @@ class _MemoryCardsScreenState extends State<MemoryCardsScreen>
                 right: 0,
                 child: Center(
                   child: FeedbackBubble(
-                    isCorrect: _feedbackMessage!.contains('đúng') ||
-                        _feedbackMessage!.contains('Hoàn thành'),
+                    isCorrect:
+                        _feedbackMessage!.contains(MiMobileStrings.m202) ||
+                            _feedbackMessage!.contains(MiMobileStrings.m177),
                     message: _feedbackMessage!,
                   ),
                 ),
@@ -281,9 +283,9 @@ class _MemoryCardsScreenState extends State<MemoryCardsScreen>
             if (_showTutorial)
               TutorialOverlay(
                 title: 'Memory Cards',
-                message: 'Chạm vào thẻ để lật lên.\n'
-                    'Tìm hai thẻ có hình giống nhau.\n'
-                    'Ghép tất cả cặp để thắng!',
+                message: MiMobileStrings.m203 +
+                    MiMobileStrings.m204 +
+                    MiMobileStrings.m205,
                 onContinue: () => setState(() => _showTutorial = false),
                 imageHint: Icons.style_rounded,
                 pageNumber: 1,
@@ -375,7 +377,9 @@ class _MemoryCardWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Semantics(
-      label: _isFaceUp ? 'Thẻ ${card.content}' : 'Thẻ úp, vị trí ${index + 1}',
+      label: _isFaceUp
+          ? MiMobileStrings.text('m206', {'p0': card.content})
+          : MiMobileStrings.text('m250', {'p0': index + 1}),
       button: true,
       child: GestureDetector(
         onTap: onTap,

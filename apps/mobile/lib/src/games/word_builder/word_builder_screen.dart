@@ -2,6 +2,7 @@ import 'package:design_system/design_system.dart';
 import 'package:flutter/material.dart';
 import 'package:mi_game_core/mi_game_core.dart';
 import 'package:mi_game_ui/mi_game_ui.dart';
+import 'package:localization/localization.dart';
 
 import '../level_skill_ids.dart';
 import '../snapshot_lifecycle_mixin.dart';
@@ -151,7 +152,7 @@ class _WordBuilderScreenState extends State<WordBuilderScreen>
       builder: (_) => CompletionOverlay(
         starsEarned: _session.stars,
         maxStars: 3,
-        message: 'Con đã ghép đúng từ!',
+        message: MiMobileStrings.m230,
         score: _session.score,
         onNext: _goNext,
         onReplay: () {
@@ -179,7 +180,7 @@ class _WordBuilderScreenState extends State<WordBuilderScreen>
 
   @override
   Widget build(BuildContext context) {
-    final prompt = _content['prompt'] as String? ?? 'Ghép chữ thành từ!';
+    final prompt = _content['prompt'] as String? ?? MiMobileStrings.m231;
     final targetWord = _content['targetWord'] as String? ?? '';
 
     return Scaffold(
@@ -188,7 +189,7 @@ class _WordBuilderScreenState extends State<WordBuilderScreen>
         child: Column(
           children: [
             GameHeader(
-              title: 'Ghép chữ tạo từ',
+              title: MiMobileStrings.m010,
               score: _level.levelNumber,
               onExit: widget.onExit,
             ),
@@ -211,7 +212,8 @@ class _WordBuilderScreenState extends State<WordBuilderScreen>
                   const SizedBox(height: 20),
                   if (_session.feedback != null)
                     FeedbackBubble(
-                      isCorrect: _session.feedback!.contains('đúng'),
+                      isCorrect:
+                          _session.feedback!.contains(MiMobileStrings.m202),
                       message: _session.feedback!,
                     ),
                 ],
@@ -233,7 +235,7 @@ class _WordBuilderScreenState extends State<WordBuilderScreen>
                     child: ElevatedButton.icon(
                       onPressed: _checkAnswer,
                       icon: const Icon(Icons.check_rounded),
-                      label: const Text('Kiểm tra'),
+                      label: const Text(MiMobileStrings.m184),
                       style: ElevatedButton.styleFrom(
                         backgroundColor: GameTheme.primary,
                         foregroundColor: Colors.white,
@@ -276,7 +278,8 @@ class _MiPromptCard extends StatelessWidget {
             const SizedBox(height: 8),
             Text(prompt, style: GameTheme.headingMedium),
             const SizedBox(height: 8),
-            Text('${targetWord.length} ký tự', style: GameTheme.bodyMedium),
+            Text(MiMobileStrings.text('m232', {'p0': targetWord.length}),
+                style: GameTheme.bodyMedium),
           ],
         ),
       ),
@@ -303,10 +306,10 @@ class _AnswerSlots extends StatelessWidget {
           height: 58,
           child: Semantics(
             label: letter == null
-                ? 'Ô trống ${index + 1}'
+                ? MiMobileStrings.text('m233', {'p0': index + 1})
                 : letter == ' '
-                    ? 'Khoảng trắng, chạm để bỏ ra'
-                    : 'Chữ $letter, chạm để bỏ ra',
+                    ? MiMobileStrings.m234
+                    : MiMobileStrings.text('m235', {'p0': letter}),
             button: letter != null,
             child: OutlinedButton(
               onPressed: letter == null ? null : () => onRemove(index),
@@ -347,7 +350,9 @@ class _LetterBank extends StatelessWidget {
           width: 56,
           height: 56,
           child: Semantics(
-            label: letter == ' ' ? 'Khoảng trắng' : 'Chữ $letter',
+            label: letter == ' '
+                ? MiMobileStrings.m236
+                : MiMobileStrings.text('m251', {'p0': letter}),
             button: true,
             child: ElevatedButton(
               onPressed: () => onPick(index),

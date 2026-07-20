@@ -1,6 +1,7 @@
 import 'dart:math';
 
 import 'package:mi_game_core/mi_game_core.dart';
+import 'package:localization/localization.dart';
 
 class ChoiceGameSession {
   ChoiceGameSession({
@@ -49,7 +50,7 @@ class ChoiceGameSession {
     if (option.correct) {
       _progress = 1;
       _feedback = _localized(
-        vi: 'Đúng rồi, xe của MI tiến lên!',
+        vi: MiMobileStrings.m170,
         en: 'Correct, MI moves forward!',
       );
       _lastCorrect = true;
@@ -58,7 +59,7 @@ class ChoiceGameSession {
 
     _progress = min(0.86, _progress + 0.18);
     _feedback = _localized(
-      vi: 'Gần đúng rồi, mình thử cách khác nhé!',
+      vi: MiMobileStrings.m171,
       en: 'Almost there, try another choice.',
     );
     _lastCorrect = false;

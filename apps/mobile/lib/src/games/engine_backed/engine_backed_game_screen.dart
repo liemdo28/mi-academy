@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:mi_game_core/mi_game_core.dart';
 import 'package:mi_game_engines/mi_game_engines.dart';
+import 'package:localization/localization.dart';
 
 import '../level_skill_ids.dart';
 import '../snapshot_lifecycle_mixin.dart';
@@ -295,61 +296,66 @@ int _scoreFromStars(int stars) {
 PlacementLocalization _placementLocalization(String locale) {
   final en = locale == 'en';
   return PlacementLocalization(
-    exitLabel: en ? 'Exit' : 'Thoát',
-    pauseLabel: en ? 'Pause' : 'Tạm dừng',
-    resumeLabel: en ? 'Resume' : 'Tiếp tục',
-    hintLabel: en ? 'Hint' : 'Gợi ý',
-    retryLabel: en ? 'Try again' : 'Thử lại',
-    completionLabel: en ? 'Complete' : 'Hoàn thành',
-    invalidPlacementMessage: en ? 'Try another place.' : 'Thử vị trí khác.',
+    exitLabel: en ? 'Exit' : MiMobileStrings.m172,
+    pauseLabel: en ? 'Pause' : MiMobileStrings.m173,
+    resumeLabel: en ? 'Resume' : MiMobileStrings.m174,
+    hintLabel: en ? 'Hint' : MiMobileStrings.m175,
+    retryLabel: en ? 'Try again' : MiMobileStrings.m176,
+    completionLabel: en ? 'Complete' : MiMobileStrings.m177,
+    invalidPlacementMessage: en ? 'Try another place.' : MiMobileStrings.m178,
     malformedContentMessage:
-        en ? 'This level is not available.' : 'Cấp độ này chưa sẵn sàng.',
-    selectedAnnouncement: (label) => en ? '$label selected' : 'Đã chọn $label',
+        en ? 'This level is not available.' : MiMobileStrings.m179,
+    selectedAnnouncement: (label) =>
+        en ? '$label selected' : MiMobileStrings.text('m180', {'p0': label}),
     targetAnnouncement: (label, occupied, capacity) => en
         ? '$label, $occupied of $capacity'
-        : '$label, $occupied trên $capacity',
-    removeLabel: en ? 'Remove' : 'Bỏ ra',
+        : MiMobileStrings.text(
+            'm181', {'p0': label, 'p1': occupied, 'p2': capacity}),
+    removeLabel: en ? 'Remove' : MiMobileStrings.m182,
   );
 }
 
 MultiSelectLocalization _multiSelectLocalization(String locale) {
   final en = locale == 'en';
   return MultiSelectLocalization(
-    exitLabel: en ? 'Exit' : 'Thoát',
-    pauseLabel: en ? 'Pause' : 'Tạm dừng',
-    resumeLabel: en ? 'Resume' : 'Tiếp tục',
-    submitLabel: en ? 'Submit' : 'Nộp bài',
-    checkAnswersLabel: en ? 'Check answers' : 'Kiểm tra',
-    clearLabel: en ? 'Clear' : 'Xóa chọn',
-    retryLabel: en ? 'Try again' : 'Thử lại',
-    completionLabel: en ? 'Complete' : 'Hoàn thành',
-    authorHintLabel: en ? 'Hint' : 'Gợi ý',
-    hintLabel: en ? 'Hint' : 'Gợi ý',
-    revealCorrectLabel: en ? 'Reveal one' : 'Mở một đáp án',
-    revealAnswersLabel: en ? 'Reveal answers' : 'Mở đáp án',
-    eliminateIncorrectLabel: en ? 'Remove one' : 'Bỏ một đáp án sai',
-    noMoreHintsLabel: en ? 'No more hints' : 'Hết gợi ý',
+    exitLabel: en ? 'Exit' : MiMobileStrings.m172,
+    pauseLabel: en ? 'Pause' : MiMobileStrings.m173,
+    resumeLabel: en ? 'Resume' : MiMobileStrings.m174,
+    submitLabel: en ? 'Submit' : MiMobileStrings.m183,
+    checkAnswersLabel: en ? 'Check answers' : MiMobileStrings.m184,
+    clearLabel: en ? 'Clear' : MiMobileStrings.m185,
+    retryLabel: en ? 'Try again' : MiMobileStrings.m176,
+    completionLabel: en ? 'Complete' : MiMobileStrings.m177,
+    authorHintLabel: en ? 'Hint' : MiMobileStrings.m175,
+    hintLabel: en ? 'Hint' : MiMobileStrings.m175,
+    revealCorrectLabel: en ? 'Reveal one' : MiMobileStrings.m186,
+    revealAnswersLabel: en ? 'Reveal answers' : MiMobileStrings.m187,
+    eliminateIncorrectLabel: en ? 'Remove one' : MiMobileStrings.m188,
+    noMoreHintsLabel: en ? 'No more hints' : MiMobileStrings.m189,
     malformedContentMessage:
-        en ? 'This level is not available.' : 'Cấp độ này chưa sẵn sàng.',
-    incorrectMessage: en ? 'Try again.' : 'Thử lại nhé.',
-    correctMessage: en ? 'Nice work.' : 'Làm tốt lắm.',
-    partiallyCorrectMessage: en ? 'Some answers are right.' : 'Có đáp án đúng.',
-    tryAgainMessage: en ? 'Try again.' : 'Thử lại nhé.',
+        en ? 'This level is not available.' : MiMobileStrings.m179,
+    incorrectMessage: en ? 'Try again.' : MiMobileStrings.m190,
+    correctMessage: en ? 'Nice work.' : MiMobileStrings.m191,
+    partiallyCorrectMessage:
+        en ? 'Some answers are right.' : MiMobileStrings.m192,
+    tryAgainMessage: en ? 'Try again.' : MiMobileStrings.m190,
     minimumSelectionRequiredMessage:
-        en ? 'Choose a few more answers.' : 'Hãy chọn thêm đáp án.',
+        en ? 'Choose a few more answers.' : MiMobileStrings.m193,
     maximumSelectionReachedMessage:
-        en ? 'That is enough choices.' : 'Đã đủ lựa chọn.',
-    selectionCountMessage: (min, max) =>
-        en ? 'Choose $min to $max answers.' : 'Chọn $min đến $max đáp án.',
+        en ? 'That is enough choices.' : MiMobileStrings.m194,
+    selectionCountMessage: (min, max) => en
+        ? 'Choose $min to $max answers.'
+        : MiMobileStrings.text('m195', {'p0': min, 'p1': max}),
     optionAnnouncement: (label, selected) =>
         en ? '$label, ${selected ? 'selected' : 'not selected'}' : label,
     optionSelectedAnnouncement: (label) =>
-        en ? '$label selected' : 'Đã chọn $label',
+        en ? '$label selected' : MiMobileStrings.text('m180', {'p0': label}),
     optionDeselectedAnnouncement: (label) =>
-        en ? '$label cleared' : 'Bỏ chọn $label',
+        en ? '$label cleared' : MiMobileStrings.text('m196', {'p0': label}),
     correctOptionAnnouncement: (label) =>
-        en ? '$label is correct' : '$label đúng',
-    incorrectOptionAnnouncement: (label) =>
-        en ? '$label is not correct' : '$label chưa đúng',
+        en ? '$label is correct' : MiMobileStrings.text('m197', {'p0': label}),
+    incorrectOptionAnnouncement: (label) => en
+        ? '$label is not correct'
+        : MiMobileStrings.text('m198', {'p0': label}),
   );
 }

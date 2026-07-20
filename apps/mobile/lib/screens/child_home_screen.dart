@@ -4,11 +4,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import 'package:design_system/design_system.dart';
+import 'package:localization/localization.dart';
 import '../providers/providers.dart';
 
 /// Child home screen — main learning interface.
 ///
-/// One dominant CTA ("Tiếp tục học"), a daily mission list, and entry
+/// One dominant CTA (MiMobileStrings.m047), a daily mission list, and entry
 /// points to the world map and achievement garden. See
 /// design/screens/CHILD_HOME_WIREFRAME.md for the full spec.
 ///
@@ -61,7 +62,8 @@ class _ChildHomeScreenState extends ConsumerState<ChildHomeScreen> {
   Widget build(BuildContext context) {
     final child = ref.watch(activeChildProvider);
     final planAsync = ref.watch(dailyPlanProvider);
-    final nickname = child.child?['nickname'] as String? ?? 'Bạn';
+    final nickname =
+        child.child?['nickname'] as String? ?? MiMobileStrings.m044;
     final plan = planAsync.valueOrNull ?? const <Map<String, dynamic>>[];
     final nextLesson = plan.isNotEmpty ? plan.first : null;
 
@@ -78,7 +80,8 @@ class _ChildHomeScreenState extends ConsumerState<ChildHomeScreen> {
             ),
             const SizedBox(width: MiTokens.space3),
             Expanded(
-              child: Text('Chào $nickname!', overflow: TextOverflow.ellipsis),
+              child: Text(MiMobileStrings.text('m045', {'p0': nickname}),
+                  overflow: TextOverflow.ellipsis),
             ),
           ],
         ),
@@ -90,7 +93,7 @@ class _ChildHomeScreenState extends ConsumerState<ChildHomeScreen> {
               onTapUp: (_) => _cancelParentGateHold(),
               onTapCancel: _cancelParentGateHold,
               child: Semantics(
-                label: 'Khu vực phụ huynh, giữ 3 giây để mở',
+                label: MiMobileStrings.m046,
                 button: true,
                 child: Container(
                   width: MiTokens.touchTargetChild,
@@ -120,7 +123,9 @@ class _ChildHomeScreenState extends ConsumerState<ChildHomeScreen> {
           children: [
             // ─── Hero CTA ────────────────────────────────────────────
             MiButton(
-              label: nextLesson != null ? 'Tiếp tục học' : 'Bắt đầu học',
+              label: nextLesson != null
+                  ? MiMobileStrings.m047
+                  : MiMobileStrings.m245,
               icon: Icons.play_arrow_rounded,
               width: double.infinity,
               isLoading: planAsync.isLoading && !planAsync.hasValue,
@@ -141,21 +146,21 @@ class _ChildHomeScreenState extends ConsumerState<ChildHomeScreen> {
 
             // ─── Daily mission ───────────────────────────────────────
             Text(
-              'Nhiệm vụ hôm nay',
+              MiMobileStrings.m048,
               style: Theme.of(context).textTheme.headlineMedium,
             ),
             const SizedBox(height: MiTokens.space3),
             planAsync.when(
               loading: () => const MiLoading(),
               error: (e, _) => MiErrorState(
-                title: 'Không thể tải kế hoạch',
+                title: MiMobileStrings.m049,
                 onRetry: () => ref.invalidate(dailyPlanProvider),
               ),
               data: (items) {
                 if (items.isEmpty) {
                   return const MiEmptyState(
-                    title: 'Chưa có nhiệm vụ hôm nay',
-                    subtitle: 'MI sẽ gợi ý bài học mới sớm thôi!',
+                    title: MiMobileStrings.m050,
+                    subtitle: MiMobileStrings.m051,
                     emoji: '✨',
                   );
                 }
@@ -183,7 +188,7 @@ class _ChildHomeScreenState extends ConsumerState<ChildHomeScreen> {
                     context,
                     icon: MiIconName.world,
                     color: MiColors.primary,
-                    label: 'Bản đồ\nthế giới',
+                    label: MiMobileStrings.m052,
                     onTap: () => context.push('/world'),
                   ),
                 ),
@@ -193,7 +198,7 @@ class _ChildHomeScreenState extends ConsumerState<ChildHomeScreen> {
                     context,
                     icon: MiIconName.garden,
                     color: MiColors.secondary,
-                    label: 'Vườn\nthành tích',
+                    label: MiMobileStrings.m053,
                     onTap: () => context.push('/garden'),
                   ),
                 ),
@@ -225,7 +230,7 @@ class _ChildHomeScreenState extends ConsumerState<ChildHomeScreen> {
               filled: true,
               color: MiColors.primary,
             ),
-            label: 'Trang chủ',
+            label: MiMobileStrings.m054,
           ),
           BottomNavigationBarItem(
             icon: MiIcon(MiIconName.world, color: MiColors.textSecondary),
@@ -234,7 +239,7 @@ class _ChildHomeScreenState extends ConsumerState<ChildHomeScreen> {
               filled: true,
               color: MiColors.primary,
             ),
-            label: 'Bản đồ',
+            label: MiMobileStrings.m055,
           ),
           BottomNavigationBarItem(
             icon: MiIcon(MiIconName.garden, color: MiColors.textSecondary),
@@ -243,7 +248,7 @@ class _ChildHomeScreenState extends ConsumerState<ChildHomeScreen> {
               filled: true,
               color: MiColors.primary,
             ),
-            label: 'Vườn',
+            label: MiMobileStrings.m056,
           ),
         ],
       ),
@@ -251,11 +256,12 @@ class _ChildHomeScreenState extends ConsumerState<ChildHomeScreen> {
   }
 
   String _planSubtitle(Map<String, dynamic> item) {
-    final title = item['title'] as String? ?? 'Bài học';
+    final title = item['title'] as String? ?? MiMobileStrings.m057;
     final subject = item['subject'] as String? ?? '';
     final minutes = item['estimated_minutes'] ?? 5;
-    final detail =
-        subject.isEmpty ? '$minutes phút' : '$subject · $minutes phút';
+    final detail = subject.isEmpty
+        ? MiMobileStrings.text('m058', {'p0': minutes})
+        : MiMobileStrings.text('m246', {'p0': subject, 'p1': minutes});
     return '$title — $detail';
   }
 
@@ -283,7 +289,7 @@ class _ChildHomeScreenState extends ConsumerState<ChildHomeScreen> {
     Map<String, dynamic> item, {
     required String? childId,
   }) {
-    final title = item['title'] as String? ?? 'Bài học';
+    final title = item['title'] as String? ?? MiMobileStrings.m057;
     final subject = item['subject'] as String? ?? '';
     final minutes = item['estimated_minutes'] ?? 5;
 
@@ -319,8 +325,9 @@ class _ChildHomeScreenState extends ConsumerState<ChildHomeScreen> {
                   ),
                   Text(
                     subject.isEmpty
-                        ? '$minutes phút'
-                        : '$subject - $minutes phút',
+                        ? MiMobileStrings.text('m058', {'p0': minutes})
+                        : MiMobileStrings.text(
+                            'm059', {'p0': subject, 'p1': minutes}),
                     style: Theme.of(context).textTheme.bodyMedium,
                   ),
                 ],

@@ -3,6 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import 'package:design_system/design_system.dart';
 import 'package:local_auth/local_auth.dart';
+import 'package:localization/localization.dart';
 import '../providers/providers.dart';
 
 /// Parent PIN screen — unlocks the parent dashboard.
@@ -64,7 +65,7 @@ class _ParentPinScreenState extends ConsumerState<ParentPinScreen> {
       if (!available) return;
 
       final authenticated = await _localAuth.authenticate(
-        localizedReason: 'Xác thực để vào khu vực phụ huynh',
+        localizedReason: MiMobileStrings.m101,
         options: const AuthenticationOptions(
           biometricOnly: false,
           stickyAuth: true,
@@ -109,10 +110,10 @@ class _ParentPinScreenState extends ConsumerState<ParentPinScreen> {
         _failedAttempts = nextAttempts;
         if (nextAttempts >= 3) {
           _lockedUntil = DateTime.now().add(widget.lockoutDuration);
-          _error =
-              'Tạm khóa khu vực phụ huynh trong ${widget.lockoutDuration.inSeconds} giây.';
+          _error = MiMobileStrings.text(
+              'm102', {'p0': widget.lockoutDuration.inSeconds});
         } else {
-          _error = 'Mã PIN chưa đúng. Phụ huynh có thể thử lại nhẹ nhàng.';
+          _error = MiMobileStrings.m103;
         }
         _pin = '';
       });
@@ -133,7 +134,7 @@ class _ParentPinScreenState extends ConsumerState<ParentPinScreen> {
       return;
     }
     setState(() {
-      _error = 'Câu trả lời chưa đúng. Phụ huynh thử lại nhé.';
+      _error = MiMobileStrings.m104;
       _adultAnswer = '';
     });
   }
@@ -143,7 +144,7 @@ class _ParentPinScreenState extends ConsumerState<ParentPinScreen> {
     return Scaffold(
       backgroundColor: MiColors.background,
       appBar: AppBar(
-        title: const Text('Phụ huynh'),
+        title: const Text(MiMobileStrings.m105),
         leading: IconButton(
           icon: const Icon(Icons.close),
           onPressed: widget.onClose ?? () => context.go('/home'),
@@ -165,16 +166,16 @@ class _ParentPinScreenState extends ConsumerState<ParentPinScreen> {
                   const SizedBox(height: MiTokens.space4),
                   Text(
                     _showAdultChallenge
-                        ? 'Xác nhận dành cho phụ huynh'
-                        : 'Nhập mã PIN phụ huynh',
+                        ? MiMobileStrings.m106
+                        : MiMobileStrings.m107,
                     style: Theme.of(context).textTheme.headlineMedium,
                     textAlign: TextAlign.center,
                   ),
                   const SizedBox(height: MiTokens.space2),
                   Text(
                     _showAdultChallenge
-                        ? 'Trả lời phép tính để mở khu vực phụ huynh.'
-                        : 'Để vào khu vực phụ huynh',
+                        ? MiMobileStrings.m108
+                        : MiMobileStrings.m109,
                     style: Theme.of(context).textTheme.bodyMedium,
                     textAlign: TextAlign.center,
                   ),
@@ -196,11 +197,11 @@ class _ParentPinScreenState extends ConsumerState<ParentPinScreen> {
                     const SizedBox(height: MiTokens.space4),
                     TextButton(
                       onPressed: _openAdultChallenge,
-                      child: const Text('Quên PIN?'),
+                      child: const Text(MiMobileStrings.m110),
                     ),
                     const SizedBox(height: MiTokens.space2),
                     MiOutlinedButton(
-                      label: 'Dùng vân tay',
+                      label: MiMobileStrings.m111,
                       icon: Icons.fingerprint,
                       onPressed: _tryBiometric,
                     ),
@@ -247,7 +248,7 @@ class _ParentPinScreenState extends ConsumerState<ParentPinScreen> {
           keyboardType: TextInputType.number,
           textAlign: TextAlign.center,
           decoration: const InputDecoration(
-            labelText: 'Câu trả lời',
+            labelText: MiMobileStrings.m112,
             border: OutlineInputBorder(),
           ),
           onChanged: (value) => _adultAnswer = value,
@@ -255,7 +256,7 @@ class _ParentPinScreenState extends ConsumerState<ParentPinScreen> {
         ),
         const SizedBox(height: MiTokens.space4),
         MiButton(
-          label: 'Mở khu vực phụ huynh',
+          label: MiMobileStrings.m113,
           icon: Icons.lock_open,
           onPressed: _submitAdultChallenge,
         ),
@@ -265,7 +266,7 @@ class _ParentPinScreenState extends ConsumerState<ParentPinScreen> {
             _adultAnswer = '';
             _error = null;
           }),
-          child: const Text('Quay lại nhập PIN'),
+          child: const Text(MiMobileStrings.m114),
         ),
       ],
     );

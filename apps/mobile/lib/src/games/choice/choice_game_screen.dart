@@ -2,6 +2,7 @@ import 'package:design_system/design_system.dart';
 import 'package:flutter/material.dart';
 import 'package:mi_game_core/mi_game_core.dart';
 import 'package:mi_game_ui/mi_game_ui.dart';
+import 'package:localization/localization.dart';
 
 import '../level_skill_ids.dart';
 import '../snapshot_lifecycle_mixin.dart';
@@ -234,11 +235,11 @@ class _ChoiceGameScreenState extends State<ChoiceGameScreen>
     if (_level.gameId == 'missing_letter') {
       return widget.locale == 'en'
           ? 'You found the missing letter!'
-          : 'Con đã tìm được chữ còn thiếu!';
+          : MiMobileStrings.m168;
     }
     return widget.locale == 'en'
         ? 'MI can see you understand this!'
-        : 'MI thấy con đã hiểu bài!';
+        : MiMobileStrings.m169;
   }
 }
 

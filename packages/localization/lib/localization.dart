@@ -3,3 +3,4 @@
 library localization;
 
 export 'src/l10n_service.dart';
+export 'src/mobile_strings.dart';

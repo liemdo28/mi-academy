@@ -1,6 +1,7 @@
 import 'package:design_system/design_system.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:localization/localization.dart';
 import '../providers/providers.dart';
 
 /// Achievement Garden — placeholder shell.
@@ -16,20 +17,19 @@ class GardenScreen extends ConsumerWidget {
     final rewardsAsync = ref.watch(rewardsProvider);
 
     return Scaffold(
-      appBar: AppBar(title: const Text('Vườn thành tích')),
+      appBar: AppBar(title: const Text(MiMobileStrings.m071)),
       body: SafeArea(
         child: rewardsAsync.when(
           loading: () => const MiLoading(),
           error: (e, _) => MiErrorState(
-            title: 'Không thể tải vườn thành tích',
+            title: MiMobileStrings.m072,
             onRetry: () => ref.invalidate(rewardsProvider),
           ),
           data: (rewards) {
             if (rewards.isEmpty) {
               return const MiEmptyState(
-                title: 'Vườn của con còn trống',
-                subtitle:
-                    'Hoàn thành nhiệm vụ để trồng những bông hoa đầu tiên!',
+                title: MiMobileStrings.m073,
+                subtitle: MiMobileStrings.m074,
                 emoji: '🌱',
               );
             }
@@ -44,7 +44,8 @@ class GardenScreen extends ConsumerWidget {
               itemCount: rewards.length,
               itemBuilder: (context, index) {
                 final reward = rewards[index];
-                final title = reward['title'] as String? ?? 'Huy hiệu';
+                final title =
+                    reward['title'] as String? ?? MiMobileStrings.m075;
                 return MiCard(
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,

@@ -1,4 +1,5 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:localization/localization.dart';
 import '../services/api_service.dart';
 import 'providers.dart';
 
@@ -149,8 +150,8 @@ class AuthNotifier extends Notifier<AuthState> {
 
   String _extractError(Object e) {
     final str = e.toString();
-    if (str.contains('EMAIL_EXISTS')) return 'Email đã được đăng ký';
-    if (str.contains('INVALID_CREDENTIALS')) return 'Sai email hoặc mật khẩu';
-    return 'Có lỗi xảy ra, vui lòng thử lại';
+    if (str.contains('EMAIL_EXISTS')) return MiMobileStrings.m041;
+    if (str.contains('INVALID_CREDENTIALS')) return MiMobileStrings.m042;
+    return MiMobileStrings.m043;
   }
 }

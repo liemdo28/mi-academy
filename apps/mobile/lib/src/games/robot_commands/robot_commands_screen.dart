@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:mi_blocks/mi_blocks.dart';
 import 'package:mi_game_core/mi_game_core.dart';
 import 'package:mi_game_ui/mi_game_ui.dart';
+import 'package:localization/localization.dart';
 
 import '../level_skill_ids.dart';
 import '../snapshot_lifecycle_mixin.dart';
@@ -154,7 +155,7 @@ class _RobotCommandsScreenState extends State<RobotCommandsScreen>
       builder: (_) => CompletionOverlay(
         starsEarned: _session.stars,
         maxStars: 3,
-        message: 'Con đã lập trình cho MI!',
+        message: MiMobileStrings.m207,
         score: _session.score,
         onNext: _goNext,
         onReplay: () {
@@ -190,7 +191,7 @@ class _RobotCommandsScreenState extends State<RobotCommandsScreen>
         child: Column(
           children: [
             GameHeader(
-              title: 'Robot làm theo lệnh',
+              title: MiMobileStrings.m018,
               score: _level.levelNumber,
               onExit: widget.onExit,
             ),
@@ -210,7 +211,8 @@ class _RobotCommandsScreenState extends State<RobotCommandsScreen>
                     state: _session.robotState,
                   ),
                   const SizedBox(height: 16),
-                  const Text('Chương trình', style: GameTheme.headingMedium),
+                  const Text(MiMobileStrings.m208,
+                      style: GameTheme.headingMedium),
                   const SizedBox(height: 8),
                   _ProgramView(
                     program: _session.program,
@@ -239,7 +241,8 @@ class _RobotCommandsScreenState extends State<RobotCommandsScreen>
                   if (_session.feedback != null) ...[
                     const SizedBox(height: 16),
                     FeedbackBubble(
-                      isCorrect: _session.feedback!.contains('hoàn thành'),
+                      isCorrect:
+                          _session.feedback!.contains(MiMobileStrings.m209),
                       message: _session.feedback!,
                     ),
                   ],
@@ -261,19 +264,19 @@ class _RobotCommandsScreenState extends State<RobotCommandsScreen>
                   IconButton(
                     onPressed: _removeLast,
                     icon: const Icon(Icons.undo_rounded),
-                    tooltip: 'Xóa lệnh cuối',
+                    tooltip: MiMobileStrings.m210,
                   ),
                   IconButton(
                     onPressed: _resetProgram,
                     icon: const Icon(Icons.refresh_rounded),
-                    tooltip: 'Làm lại',
+                    tooltip: MiMobileStrings.m211,
                   ),
                   const SizedBox(width: 8),
                   Expanded(
                     child: ElevatedButton.icon(
                       onPressed: _runProgram,
                       icon: const Icon(Icons.play_arrow_rounded),
-                      label: const Text('Chạy lệnh'),
+                      label: const Text(MiMobileStrings.m212),
                       style: ElevatedButton.styleFrom(
                         backgroundColor: GameTheme.primary,
                         foregroundColor: Colors.white,
@@ -461,21 +464,21 @@ class _ProgramCommandChip extends StatelessWidget {
                       key: ValueKey('robot-command-move-left-$index'),
                       onPressed: canMoveLeft ? onMoveLeft : null,
                       icon: const Icon(Icons.chevron_left_rounded),
-                      tooltip: 'Đưa lệnh lên trước',
+                      tooltip: MiMobileStrings.m213,
                       visualDensity: VisualDensity.compact,
                     ),
                     IconButton(
                       key: ValueKey('robot-command-move-right-$index'),
                       onPressed: canMoveRight ? onMoveRight : null,
                       icon: const Icon(Icons.chevron_right_rounded),
-                      tooltip: 'Đưa lệnh ra sau',
+                      tooltip: MiMobileStrings.m214,
                       visualDensity: VisualDensity.compact,
                     ),
                     IconButton(
                       key: ValueKey('robot-command-remove-$index'),
                       onPressed: onRemove,
                       icon: const Icon(Icons.close_rounded),
-                      tooltip: 'Xóa lệnh này',
+                      tooltip: MiMobileStrings.m215,
                       visualDensity: VisualDensity.compact,
                     ),
                   ],
@@ -492,19 +495,19 @@ class _ProgramCommandChip extends StatelessWidget {
 String _labelFor(BlockType type) {
   switch (type) {
     case BlockType.moveForward:
-      return 'TIẾN';
+      return MiMobileStrings.m216;
     case BlockType.turnLeft:
-      return 'RẼ TRÁI';
+      return MiMobileStrings.m217;
     case BlockType.turnRight:
-      return 'RẼ PHẢI';
+      return MiMobileStrings.m218;
     case BlockType.collect:
-      return 'NHẶT';
+      return MiMobileStrings.m219;
     case BlockType.start:
       return 'START';
     case BlockType.repeat:
-      return 'LẶP';
+      return MiMobileStrings.m220;
     case BlockType.ifPathAhead:
-      return 'NẾU TRỐNG';
+      return MiMobileStrings.m221;
   }
 }
 

@@ -2,6 +2,7 @@ import 'dart:math';
 
 import 'package:mi_blocks/mi_blocks.dart';
 import 'package:mi_game_core/mi_game_core.dart';
+import 'package:localization/localization.dart';
 
 class RobotCommandsSession {
   RobotCommandsSession({
@@ -108,8 +109,8 @@ class RobotCommandsSession {
     _feedback = steps.isNotEmpty && steps.last.hasError
         ? steps.last.error
         : reachedGoal && collectedAll
-            ? 'Robot MI đã hoàn thành nhiệm vụ!'
-            : 'Robot MI chưa tới đủ mục tiêu, mình thử đổi lệnh nhé!';
+            ? MiMobileStrings.m222
+            : MiMobileStrings.m223;
 
     return reachedGoal && collectedAll;
   }

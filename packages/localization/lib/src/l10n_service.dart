@@ -2,10 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 
 /// Supported locales in MI Academy.
-const supportedLocales = [
-  Locale('vi'),
-  Locale('en'),
-];
+const supportedLocales = [Locale('vi'), Locale('en')];
 
 /// Returns the appropriate Locale for a language code.
 Locale localeFromCode(String code) {
@@ -63,7 +60,10 @@ class L10nService extends ChangeNotifier {
   /// Get a translated string by key.
   /// Falls back to English if the key is not found.
   String translate(String key, [Map<String, dynamic>? params]) {
-    final value = _translations[_locale.languageCode]?[key] ?? _translations['en']?[key] ?? key;
+    final value =
+        _translations[_locale.languageCode]?[key] ??
+        _translations['en']?[key] ??
+        key;
     if (params == null) return value;
     return _format(value, params);
   }

@@ -1,5 +1,6 @@
 import 'package:design_system/design_system.dart';
 import 'package:flutter/material.dart';
+import 'package:localization/localization.dart';
 
 /// World map — placeholder shell.
 ///
@@ -9,23 +10,23 @@ import 'package:flutter/material.dart';
 /// but zone illustrations and the locked/available/in-progress/completed
 /// state machine are a later production wave (Dev 1 owns the navigation
 /// data; Dev 4 owns the zone art). This screen exists so the Child Home
-/// "Bản đồ thế giới" entry point is never a dead tap.
+/// MiMobileStrings.m149 entry point is never a dead tap.
 class WorldMapScreen extends StatelessWidget {
   const WorldMapScreen({super.key});
 
   static const _zones = [
-    'Thành phố chữ cái',
-    'Vương quốc toán học',
-    'Đảo tư duy',
-    'Phòng thí nghiệm khoa học',
-    'Nhà sáng tạo',
-    'Vườn thành tích',
+    MiMobileStrings.m144,
+    MiMobileStrings.m145,
+    MiMobileStrings.m146,
+    MiMobileStrings.m147,
+    MiMobileStrings.m148,
+    MiMobileStrings.m071,
   ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Bản đồ thế giới')),
+      appBar: AppBar(title: const Text(MiMobileStrings.m149)),
       body: SafeArea(
         child: Center(
           child: Padding(
@@ -36,17 +37,17 @@ class WorldMapScreen extends StatelessWidget {
                 const MiCharacter(
                   expression: MiExpression.thinking,
                   size: 96,
-                  semanticLabel: 'MI đang chuẩn bị bản đồ',
+                  semanticLabel: MiMobileStrings.m150,
                 ),
                 const SizedBox(height: MiTokens.space6),
                 Text(
-                  'Bản đồ đang được xây dựng',
+                  MiMobileStrings.m151,
                   style: Theme.of(context).textTheme.headlineMedium,
                   textAlign: TextAlign.center,
                 ),
                 const SizedBox(height: MiTokens.space3),
                 Text(
-                  'MI sẽ sớm dẫn con khám phá 6 vùng đất học tập:',
+                  MiMobileStrings.m152,
                   style: Theme.of(context).textTheme.bodyMedium,
                   textAlign: TextAlign.center,
                 ),
