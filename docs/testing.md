@@ -322,20 +322,25 @@ Play-upload-ready artifact is claimed.
 
 ### Games 16-30 Milestone 3 verification
 
-Updated 2026-07-20 on `integration/m3-games-30`:
+Updated 2026-07-20 on `integration/m3-games-30-release-candidate`:
 
 | Command | Result |
 |---|---|
-| `flutter test` (`apps/mobile`) | PASS locally, 130 passed / 6 Windows golden skips |
-| `apps/mobile/integration_test/games_16_30_flow_test.dart` | Covers one offline completion-and-queue scenario for every Game 16-30 entry |
-| `flutter test` (`packages/mi_game_engines`) | PASS locally, 165 passed |
+| `flutter test` (`apps/mobile`) | PASS locally, 130 passed / 6 Windows golden skips. The skips are Linux-only pixel golden comparisons; semantic/widget assertions still run on Windows. |
+| `flutter test integration_test -d emulator-5554` (`apps/mobile`) | PASS locally on Android API 36 emulator, 28 passed / 0 failed / 0 skipped. Covers first launch locale, Games 9-15, Games 16-30, Alphabet Explorer, and Missing Letter offline queue flows. |
+| `apps/mobile/integration_test/games_16_30_flow_test.dart` | PASS as part of the full emulator suite, 15 passed / 0 failed / 0 skipped; covers one offline completion-and-queue scenario for every Game 16-30 entry. |
+| `flutter test` (`packages/mi_game_engines`) | PASS locally, 169 passed / 0 failed / 0 skipped |
 | `python tools/release_counts.py --json` | PASS, 30 games / 1655 production levels |
 | `python tools/content_schema_validator.py` | PASS for Games 1-30 |
 | `python tools/content_schema_validator.py --check-malformed` | PASS, 14 malformed fixtures rejected |
 | `python tools/content_validator/validate_content.py` | PASS for Games 1-30 |
 | `python tools/level_validator/solve_levels.py` | PASS, all 1655 production levels solvable |
 | `python tools/content_safety_audit.py --json` | PASS, 0 findings |
-| `python tools/localization_audit.py` | PASS ARB parity; hardcoded-string cleanup warning remains |
+| `python tools/localization_audit.py --json` | PASS ARB parity and hardcoded-string scan, 0 findings |
+| `python -m pytest packages/game_core/tests tests test -q` | PASS locally, 204 passed / 0 failed / 0 skipped |
+| `python -m ruff format --check .` / `python -m ruff check .` / `python -m mypy packages apps tests tools --explicit-package-bases` | PASS locally after a whitespace-only Ruff format fix in the Games 16-30 generator |
+| `flutter build apk --release` | PASS locally, built `app-release.apk` as a non-production RC artifact using debug-signing fallback |
+| `flutter build appbundle --release` | PASS locally when run sequentially after APK build, built `app-release.aab` as a non-production RC artifact using debug-signing fallback |
 
 The new Android integration test file intentionally reuses the existing
 offline queue harness: it validates launch, completion, and queued progress

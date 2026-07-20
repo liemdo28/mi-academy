@@ -201,8 +201,9 @@ class _SoundMatchScreenState extends State<SoundMatchScreen>
                   if (_session.feedback != null) ...[
                     const SizedBox(height: 8),
                     FeedbackBubble(
-                      isCorrect:
-                          _session.feedback!.contains(MiMobileStrings.m202),
+                      isCorrect: _session.feedback!.contains(
+                        MiMobileStrings.m202,
+                      ),
                       message: _session.feedback!,
                     ),
                   ],

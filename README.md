@@ -20,22 +20,22 @@ in the current codebase, see:
   (30 of 30 Milestone 3 target games exist).
 
 Quick facts for the release-candidate branch
-`integration/m3-games-30`: 30 playable games with local persistence and
-1655 production levels (`python tools/release_counts.py --json`). The
+`integration/m3-games-30-release-candidate`: 30 playable games with local
+persistence and 1655 production levels (`python tools/release_counts.py --json`). The
 canonical local gates are `flutter analyze`, `flutter test`,
 shared engine format/analyze/tests, `ruff format --check .`, `ruff check .`,
 `mypy .`, `pytest`, content schema, malformed-fixture, content-safety,
 solvability, and ARB parity checks. Android `applicationId` is
-`com.liemteam.miacademy`. The final CI run must be taken from the release
-candidate handoff for the exact branch SHA; older run IDs are historical
-only. Games 1-30 engineering is implemented; human educational review,
-production signing/Play release, dependency-vulnerability triage, and broad
-localization cleanup remain pending.
+`com.liemteam.miacademy`; the RC app version is `0.9.0-rc.1+3`. The final
+CI run must be taken from the release candidate handoff for the exact branch
+SHA; older run IDs are historical only. Games 1-30 engineering is implemented;
+manual TalkBack/VoiceOver sign-off and production Android signing/Play release
+remain external publication gates.
 
 **Shared game engines** (`packages/mi_game_engines/`, see
 [docs/game-engine-architecture.md](./docs/game-engine-architecture.md)):
 all four Milestone 1 WS5 engines are now real and tested -- Matching,
-Sequence, Placement, and Multi-select -- 165 passing tests. Games 9-30
+Sequence, Placement, and Multi-select -- 169 passing tests. Games 9-30
 consume those shared engines through the public `mi_game_engines` barrel.
 
 ## Tài liệu phát triển

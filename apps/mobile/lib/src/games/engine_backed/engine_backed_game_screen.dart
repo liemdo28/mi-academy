@@ -309,8 +309,11 @@ PlacementLocalization _placementLocalization(String locale) {
         en ? '$label selected' : MiMobileStrings.text('m180', {'p0': label}),
     targetAnnouncement: (label, occupied, capacity) => en
         ? '$label, $occupied of $capacity'
-        : MiMobileStrings.text(
-            'm181', {'p0': label, 'p1': occupied, 'p2': capacity}),
+        : MiMobileStrings.text('m181', {
+            'p0': label,
+            'p1': occupied,
+            'p2': capacity,
+          }),
     removeLabel: en ? 'Remove' : MiMobileStrings.m182,
   );
 }

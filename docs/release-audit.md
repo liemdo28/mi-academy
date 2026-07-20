@@ -1,7 +1,7 @@
 # MI Academy 1.0 — Release Audit
 
-Date: 2026-07-18 (updated 2026-07-20 for Milestone 3 Games 16-30)
-Branch: `integration/m3-games-30`
+Date: 2026-07-18 (updated 2026-07-20 for Milestone 3 Games 1-30 RC)
+Branch: `integration/m3-games-30-release-candidate`
 Scope: Direct verification against this working tree, its test suite, and
 the final CI run recorded in the release-candidate handoff. Older CI run IDs
 in historical findings are retained only as debugging provenance; they are
@@ -22,6 +22,29 @@ superseded. Milestone 3 now has Games 1-30 engineered; the release verdict
 remains blocked by manual educational review, repository-wide localization
 cleanup, dependency-vulnerability triage, and production signing/Play
 release work.
+
+## Release candidate update (2026-07-20)
+
+Milestone 3 RC engineering continues from verified SHA
+`0406864d1ab0f4b1d7c9558bd912d2d37c2d59dd` on
+`integration/m3-games-30-release-candidate`. Local validation reran from source:
+30 registered games, 1655 production levels, 990 Games 16-30 levels, Alembic
+head `d2a4f8e9b730`, all production levels solvable, malformed fixtures
+correctly rejected, and deterministic Games 16-30 regeneration produced no
+content diff.
+
+The RC app version is `0.9.0-rc.1+3` with Android package
+`com.liemteam.miacademy`. Fresh local release-mode artifacts were generated for
+engineering inspection only: APK SHA-256
+`9079DC2C66071D830C2DB78CBC70D6954EE7415AD4BA7CDF91BF2AE698D5C2CB` and AAB
+SHA-256 `65C8DF41DEB0A860F48A8CD66181150AB2F7F5C5B1CF8EB84A3D486ABB610853`.
+Both are debug-signed fallback artifacts (`CN=Android Debug`) and are not
+Play-upload-ready.
+
+External publication gates remain pending: production Android signing secrets,
+Play Console upload access, manual TalkBack/VoiceOver sign-off, and final
+stakeholder release approval. These block production publication, not
+engineering RC validation.
 
 ## Executive summary
 

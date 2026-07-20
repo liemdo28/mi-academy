@@ -195,9 +195,9 @@ class ParentDashboardScreen extends ConsumerWidget {
     if (!context.mounted) return;
     if (!ok) {
       final error = ref.read(activeChildProvider).error;
-      ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text(error ?? MiMobileStrings.m060)),
-      );
+      ScaffoldMessenger.of(
+        context,
+      ).showSnackBar(SnackBar(content: Text(error ?? MiMobileStrings.m060)));
     }
   }
 }

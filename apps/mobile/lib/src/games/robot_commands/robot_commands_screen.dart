@@ -211,8 +211,10 @@ class _RobotCommandsScreenState extends State<RobotCommandsScreen>
                     state: _session.robotState,
                   ),
                   const SizedBox(height: 16),
-                  const Text(MiMobileStrings.m208,
-                      style: GameTheme.headingMedium),
+                  const Text(
+                    MiMobileStrings.m208,
+                    style: GameTheme.headingMedium,
+                  ),
                   const SizedBox(height: 8),
                   _ProgramView(
                     program: _session.program,
@@ -241,8 +243,9 @@ class _RobotCommandsScreenState extends State<RobotCommandsScreen>
                   if (_session.feedback != null) ...[
                     const SizedBox(height: 16),
                     FeedbackBubble(
-                      isCorrect:
-                          _session.feedback!.contains(MiMobileStrings.m209),
+                      isCorrect: _session.feedback!.contains(
+                        MiMobileStrings.m209,
+                      ),
                       message: _session.feedback!,
                     ),
                   ],

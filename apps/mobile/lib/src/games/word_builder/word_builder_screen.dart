@@ -212,8 +212,9 @@ class _WordBuilderScreenState extends State<WordBuilderScreen>
                   const SizedBox(height: 20),
                   if (_session.feedback != null)
                     FeedbackBubble(
-                      isCorrect:
-                          _session.feedback!.contains(MiMobileStrings.m202),
+                      isCorrect: _session.feedback!.contains(
+                        MiMobileStrings.m202,
+                      ),
                       message: _session.feedback!,
                     ),
                 ],
@@ -278,8 +279,10 @@ class _MiPromptCard extends StatelessWidget {
             const SizedBox(height: 8),
             Text(prompt, style: GameTheme.headingMedium),
             const SizedBox(height: 8),
-            Text(MiMobileStrings.text('m232', {'p0': targetWord.length}),
-                style: GameTheme.bodyMedium),
+            Text(
+              MiMobileStrings.text('m232', {'p0': targetWord.length}),
+              style: GameTheme.bodyMedium,
+            ),
           ],
         ),
       ),

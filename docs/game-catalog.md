@@ -1,6 +1,7 @@
 # Game catalog - MI Academy Milestone 3
 
-Status verified on 2026-07-20 against branch `integration/m3-games-30`.
+Status verified on 2026-07-20 against branch
+`integration/m3-games-30-release-candidate`.
 The canonical count source is `python tools/release_counts.py --json`.
 
 ## Summary
@@ -11,7 +12,7 @@ The canonical count source is `python tools/release_counts.py --json`.
 - Shared engines used: Matching, Sequence, Placement, Multi-select.
 - Games 31+ are not in scope.
 - Human educational/language review remains pending.
-- Repository-wide hardcoded-string localization cleanup remains pending.
+- Manual TalkBack/VoiceOver release sign-off remains pending.
 
 ## Games 1-15
 
@@ -60,10 +61,10 @@ Games 16-30 are registered in `GameRegistry`, loaded from
 Alembic revision `d2a4f8e9b730`, and covered by deterministic content
 generation in `tools/content_generators/games_16_30_generator.py`.
 
-Automated gates cover schema validation, malformed fixtures, solvability,
-safety audit, backend catalog/migration idempotency, mobile registry tests,
-shared-engine regression tests, and Android integration-test scenarios for
-offline completion and queueing.
+Automated gates cover schema validation, malformed fixtures, deterministic
+regeneration, solvability, safety audit, backend catalog/migration idempotency,
+mobile registry tests, shared-engine regression tests, and Android
+integration-test scenarios for offline completion and queueing.
 
 Human review checklists live at
 `docs/content-review/milestone-3-games-16-30-review-checklist.csv`.

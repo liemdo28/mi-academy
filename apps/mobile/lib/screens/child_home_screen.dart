@@ -80,8 +80,10 @@ class _ChildHomeScreenState extends ConsumerState<ChildHomeScreen> {
             ),
             const SizedBox(width: MiTokens.space3),
             Expanded(
-              child: Text(MiMobileStrings.text('m045', {'p0': nickname}),
-                  overflow: TextOverflow.ellipsis),
+              child: Text(
+                MiMobileStrings.text('m045', {'p0': nickname}),
+                overflow: TextOverflow.ellipsis,
+              ),
             ),
           ],
         ),
@@ -326,8 +328,10 @@ class _ChildHomeScreenState extends ConsumerState<ChildHomeScreen> {
                   Text(
                     subject.isEmpty
                         ? MiMobileStrings.text('m058', {'p0': minutes})
-                        : MiMobileStrings.text(
-                            'm059', {'p0': subject, 'p1': minutes}),
+                        : MiMobileStrings.text('m059', {
+                            'p0': subject,
+                            'p1': minutes,
+                          }),
                     style: Theme.of(context).textTheme.bodyMedium,
                   ),
                 ],

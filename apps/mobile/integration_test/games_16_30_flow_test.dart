@@ -207,8 +207,11 @@ void main() {
       title: 'Hành trình ghi nhớ',
       subject: 'logic',
     );
-    await _arrangeSequence(
-        tester, ['Xếp cặp sách', 'Lên xe buýt', 'Thăm bảo tàng']);
+    await _arrangeSequence(tester, [
+      'Xếp cặp sách',
+      'Lên xe buýt',
+      'Thăm bảo tàng',
+    ]);
     await _submitSequence(tester);
     _expectQueuedResult('memory_journey', 'mj-lv001');
   });

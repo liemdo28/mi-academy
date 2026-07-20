@@ -60,9 +60,7 @@ class _SettingsState extends ConsumerState<ParentSettingsScreen> {
       context: context,
       builder: (context) => AlertDialog(
         title: const Text(MiMobileStrings.m117),
-        content: const Text(
-          MiMobileStrings.m247,
-        ),
+        content: const Text(MiMobileStrings.m247),
         actions: [
           TextButton(
             onPressed: () => Navigator.of(context).pop(false),
@@ -126,8 +124,9 @@ class _SettingsState extends ConsumerState<ParentSettingsScreen> {
                           ),
                         ),
                         Text(
-                          MiMobileStrings.text(
-                              'm124', {'p0': _settings.dailyLimitMinutes}),
+                          MiMobileStrings.text('m124', {
+                            'p0': _settings.dailyLimitMinutes,
+                          }),
                           style: Theme.of(context).textTheme.titleLarge,
                         ),
                       ],
@@ -158,8 +157,10 @@ class _SettingsState extends ConsumerState<ParentSettingsScreen> {
             ),
             const SizedBox(height: 12),
             SwitchListTile(
-              title: const Text(MiMobileStrings.m127,
-                  style: TextStyle(fontSize: 16)),
+              title: const Text(
+                MiMobileStrings.m127,
+                style: TextStyle(fontSize: 16),
+              ),
               value: _settings.soundEnabled,
               activeThumbColor: MiColors.primary,
               onChanged: (v) => _save(_settings.copyWith(soundEnabled: v)),
@@ -174,8 +175,10 @@ class _SettingsState extends ConsumerState<ParentSettingsScreen> {
               onChanged: (v) => _save(_settings.copyWith(subtitlesEnabled: v)),
             ),
             const SizedBox(height: 24),
-            Text(MiMobileStrings.m129,
-                style: Theme.of(context).textTheme.headlineMedium),
+            Text(
+              MiMobileStrings.m129,
+              style: Theme.of(context).textTheme.headlineMedium,
+            ),
             const SizedBox(height: 12),
             SwitchListTile(
               title: const Text(
@@ -191,8 +194,10 @@ class _SettingsState extends ConsumerState<ParentSettingsScreen> {
               onChanged: (v) => _save(_settings.copyWith(reduceMotion: v)),
             ),
             const SizedBox(height: 24),
-            Text(MiMobileStrings.m132,
-                style: Theme.of(context).textTheme.headlineMedium),
+            Text(
+              MiMobileStrings.m132,
+              style: Theme.of(context).textTheme.headlineMedium,
+            ),
             const SizedBox(height: 12),
             Card(
               child: Padding(
@@ -221,8 +226,10 @@ class _SettingsState extends ConsumerState<ParentSettingsScreen> {
               ),
             ),
             const SizedBox(height: 24),
-            Text(MiMobileStrings.m133,
-                style: Theme.of(context).textTheme.headlineMedium),
+            Text(
+              MiMobileStrings.m133,
+              style: Theme.of(context).textTheme.headlineMedium,
+            ),
             const SizedBox(height: 12),
             Card(
               child: Column(

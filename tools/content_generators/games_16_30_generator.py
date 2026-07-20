@@ -314,26 +314,26 @@ def matching_level(game_id: str, index: int) -> dict[str, Any]:
         match_pair(i, left, right) for i, (_, _, left, right) in enumerate(rotated[:4])
     ]
     prompts = {
-            "picture_detective": (
-                "Match each object to its clue.",
-                "Ghép mỗi vật với dấu hiệu của nó.",
-            ),
-            "animal_homes": (
-                "Match each animal to its home.",
-                "Ghép mỗi con vật với nhà của nó.",
-            ),
-            "emotion_match": (
-                "Match each feeling to the clue.",
-                "Ghép mỗi cảm xúc với dấu hiệu.",
-            ),
-            "opposites": (
-                "Match each word to its opposite.",
-                "Ghép mỗi từ với từ trái nghĩa.",
-            ),
-            "weather_today": (
-                "Match the weather to what helps.",
-                "Ghép thời tiết với vật phù hợp.",
-            ),
+        "picture_detective": (
+            "Match each object to its clue.",
+            "Ghép mỗi vật với dấu hiệu của nó.",
+        ),
+        "animal_homes": (
+            "Match each animal to its home.",
+            "Ghép mỗi con vật với nhà của nó.",
+        ),
+        "emotion_match": (
+            "Match each feeling to the clue.",
+            "Ghép mỗi cảm xúc với dấu hiệu.",
+        ),
+        "opposites": (
+            "Match each word to its opposite.",
+            "Ghép mỗi từ với từ trái nghĩa.",
+        ),
+        "weather_today": (
+            "Match the weather to what helps.",
+            "Ghép thời tiết với vật phù hợp.",
+        ),
     }
     objective = {
         "picture_detective": "visual observation and matching",
@@ -696,9 +696,9 @@ def write_review_checklist(levels_by_game: dict[str, list[dict[str, Any]]]) -> N
                             "level_id": level["id"],
                             "locale": locale,
                             "tier": level["metadata"]["ageGroup"],
-                            "learning_objective": level["localizedContent"][
-                                locale
-                            ]["learningObjective"],
+                            "learning_objective": level["localizedContent"][locale][
+                                "learningObjective"
+                            ],
                             "correctness_review": "",
                             "language_review": "",
                             "age_review": "",

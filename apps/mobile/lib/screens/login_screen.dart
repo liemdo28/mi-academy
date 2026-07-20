@@ -58,9 +58,13 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
                 SegmentedButton<bool>(
                   segments: const [
                     ButtonSegment(
-                        value: true, label: Text(MiMobileStrings.m080)),
+                      value: true,
+                      label: Text(MiMobileStrings.m080),
+                    ),
                     ButtonSegment(
-                        value: false, label: Text(MiMobileStrings.m081)),
+                      value: false,
+                      label: Text(MiMobileStrings.m081),
+                    ),
                   ],
                   selected: {_isLogin},
                   onSelectionChanged: (value) {

@@ -357,7 +357,7 @@ abstract final class GameRegistry {
           gameId: 'robot_commands',
           localizedName: const {
             'vi': MiMobileStrings.m018,
-            'en': 'Robot Commands',
+            'en': 'Robot Commands'
           },
           category: 'logic',
           ageBands: const ['explorer', 'master'],
@@ -698,7 +698,7 @@ abstract final class GameRegistry {
           gameId: 'build_the_story',
           localizedName: const {
             'vi': MiMobileStrings.m167,
-            'en': 'Build the Story'
+            'en': 'Build the Story',
           },
           category: 'letters',
           ageBands: const ['junior', 'explorer', 'master'],

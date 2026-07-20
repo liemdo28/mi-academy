@@ -107,10 +107,7 @@ class _FatalStartupErrorApp extends StatelessWidget {
                     style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600),
                   ),
                   SizedBox(height: 8),
-                  Text(
-                    MiMobileStrings.m002,
-                    textAlign: TextAlign.center,
-                  ),
+                  Text(MiMobileStrings.m002, textAlign: TextAlign.center),
                 ],
               ),
             ),
@@ -221,10 +218,7 @@ class _HomeScreenState extends State<HomeScreen> {
       children: [
         const Text(MiMobileStrings.m004, style: GameTheme.headingLarge),
         const SizedBox(height: 8),
-        const Text(
-          MiMobileStrings.m005,
-          style: GameTheme.bodyMedium,
-        ),
+        const Text(MiMobileStrings.m005, style: GameTheme.bodyMedium),
         const SizedBox(height: 16),
         const _ChildProfileCard(),
         const SizedBox(height: 12),
@@ -436,13 +430,12 @@ class _ChildProfileCard extends StatelessWidget {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text(MiMobileStrings.m023,
-                          style: GameTheme.headingMedium),
-                      SizedBox(height: 4),
                       Text(
-                        MiMobileStrings.m024,
-                        style: GameTheme.bodyMedium,
+                        MiMobileStrings.m023,
+                        style: GameTheme.headingMedium,
                       ),
+                      SizedBox(height: 4),
+                      Text(MiMobileStrings.m024, style: GameTheme.bodyMedium),
                     ],
                   ),
                 ),
@@ -546,9 +539,7 @@ class LocalParentAreaScreen extends StatelessWidget {
           children: [
             const Text(MiMobileStrings.m029, style: GameTheme.headingLarge),
             const SizedBox(height: 8),
-            const Text(
-              MiMobileStrings.m242,
-            ),
+            const Text(MiMobileStrings.m242),
             const SizedBox(height: 16),
             const _ParentMetricGrid(),
             const SizedBox(height: 16),
@@ -604,16 +595,21 @@ class _ParentMetricGrid extends StatelessWidget {
       childAspectRatio: 1.55,
       children: const [
         _MetricTile(
-            label: MiMobileStrings.m037,
-            value: MiMobileStrings.m243,
-            icon: Icons.timer),
+          label: MiMobileStrings.m037,
+          value: MiMobileStrings.m243,
+          icon: Icons.timer,
+        ),
         _MetricTile(
-            label: MiMobileStrings.m038, value: '0', icon: Icons.task_alt),
+          label: MiMobileStrings.m038,
+          value: '0',
+          icon: Icons.task_alt,
+        ),
         _MetricTile(label: 'Sao MI', value: '0', icon: Icons.star),
         _MetricTile(
-            label: MiMobileStrings.m039,
-            value: MiMobileStrings.m244,
-            icon: Icons.bar_chart),
+          label: MiMobileStrings.m039,
+          value: MiMobileStrings.m244,
+          icon: Icons.bar_chart,
+        ),
       ],
     );
   }

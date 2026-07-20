@@ -110,8 +110,9 @@ class _ParentPinScreenState extends ConsumerState<ParentPinScreen> {
         _failedAttempts = nextAttempts;
         if (nextAttempts >= 3) {
           _lockedUntil = DateTime.now().add(widget.lockoutDuration);
-          _error = MiMobileStrings.text(
-              'm102', {'p0': widget.lockoutDuration.inSeconds});
+          _error = MiMobileStrings.text('m102', {
+            'p0': widget.lockoutDuration.inSeconds,
+          });
         } else {
           _error = MiMobileStrings.m103;
         }

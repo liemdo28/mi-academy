@@ -40,11 +40,17 @@ class _AddChildDialogState extends State<AddChildDialog> {
             decoration: const InputDecoration(labelText: MiMobileStrings.m241),
             items: const [
               DropdownMenuItem(
-                  value: 'junior', child: Text(MiMobileStrings.m064)),
+                value: 'junior',
+                child: Text(MiMobileStrings.m064),
+              ),
               DropdownMenuItem(
-                  value: 'explorer', child: Text(MiMobileStrings.m065)),
+                value: 'explorer',
+                child: Text(MiMobileStrings.m065),
+              ),
               DropdownMenuItem(
-                  value: 'master', child: Text(MiMobileStrings.m066)),
+                value: 'master',
+                child: Text(MiMobileStrings.m066),
+              ),
             ],
             onChanged: (value) =>
                 setState(() => _ageGroup = value ?? _ageGroup),

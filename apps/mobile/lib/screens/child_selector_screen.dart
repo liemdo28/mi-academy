@@ -41,9 +41,9 @@ class _ChildSelectorScreenState extends ConsumerState<ChildSelectorScreen> {
       context.go('/home');
     } else if (mounted) {
       final error = ref.read(activeChildProvider).error;
-      ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text(error ?? MiMobileStrings.m060)),
-      );
+      ScaffoldMessenger.of(
+        context,
+      ).showSnackBar(SnackBar(content: Text(error ?? MiMobileStrings.m060)));
     }
   }
 
