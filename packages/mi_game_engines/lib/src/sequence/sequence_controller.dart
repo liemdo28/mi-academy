@@ -43,6 +43,49 @@ class SequenceController extends ChangeNotifier {
   bool get isComplete => _isComplete;
   bool? get lastSubmissionCorrect => _lastSubmissionCorrect;
 
+  Map<String, dynamic> exportState() => {
+        'arrangementIds': _arrangement.map((item) => item.id).toList(),
+        'missingSelections': {
+          for (final entry in _missingSelections.entries)
+            entry.key.toString(): entry.value,
+        },
+        'attempts': _attempts,
+        'showHint': _showHint,
+        'lastSubmissionCorrect': _lastSubmissionCorrect,
+      };
+
+  void restoreState(Map<String, dynamic> state) {
+    final byId = {for (final item in _content.correctOrder) item.id: item};
+    final restoredArrangement = <SequenceItem>[];
+    final rawIds = state['arrangementIds'];
+    if (rawIds is Iterable) {
+      for (final id in rawIds.map((item) => item.toString())) {
+        final item = byId[id];
+        if (item != null && !restoredArrangement.contains(item)) {
+          restoredArrangement.add(item);
+        }
+      }
+    }
+    if (restoredArrangement.length == _content.correctOrder.length) {
+      _arrangement = restoredArrangement;
+    }
+
+    final rawSelections = state['missingSelections'];
+    if (rawSelections is Map) {
+      _missingSelections = {
+        for (final index in _content.missingIndices)
+          index: rawSelections[index.toString()] as String?,
+      };
+    }
+
+    _attempts = state['attempts'] as int? ?? 0;
+    _showHint = state['showHint'] as bool? ?? false;
+    _paused = false;
+    _isComplete = false;
+    _lastSubmissionCorrect = state['lastSubmissionCorrect'] as bool?;
+    notifyListeners();
+  }
+
   int get starsEarned {
     if (!_isComplete) return 0;
     if (_attempts <= 1) return 3;

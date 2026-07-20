@@ -322,6 +322,69 @@ class MultiSelectController extends ChangeNotifier {
   MultiSelectEvaluation? get evaluation => _lastEvaluation;
   MultiSelectCompletionState get completionState => _completionState;
 
+  Map<String, dynamic> exportState() => {
+        'orderedOptionIds': _orderedOptions.map((option) => option.id).toList(),
+        'selectedIds': _selectedIds.toList()..sort(),
+        'eliminatedIds': _eliminatedIds.toList()..sort(),
+        'revealedCorrectIds': _revealedCorrectIds.toList()..sort(),
+        'hintCount': _hintCount,
+        'correctSubmissionCount': _correctSubmissionCount,
+        'incorrectSubmissionCount': _incorrectSubmissionCount,
+        'hintCursor': _hintCursor,
+        'showAuthorHint': _showAuthorHint,
+        'validationFeedback': _feedback.name,
+        'lastHintKind': _lastHintKind?.name,
+        'attempts': attempts,
+      };
+
+  void restoreState(Map<String, dynamic> state) {
+    final byId = {for (final option in _content.options) option.id: option};
+    final restoredOrder = <MultiSelectOption>[];
+    final rawOrder = state['orderedOptionIds'];
+    if (rawOrder is Iterable) {
+      for (final id in rawOrder.map((item) => item.toString())) {
+        final option = byId[id];
+        if (option != null && !restoredOrder.contains(option)) {
+          restoredOrder.add(option);
+        }
+      }
+    }
+    if (restoredOrder.length == _content.options.length) {
+      _orderedOptions = restoredOrder;
+    }
+
+    _selectedIds
+      ..clear()
+      ..addAll(_stringSet(state['selectedIds']));
+    _eliminatedIds
+      ..clear()
+      ..addAll(_stringSet(state['eliminatedIds']));
+    _revealedCorrectIds
+      ..clear()
+      ..addAll(_stringSet(state['revealedCorrectIds']));
+    _attemptHistory
+      ..clear()
+      ..addAll(_placeholderAttempts(state['attempts'] as int? ?? 0));
+    _hintCount = state['hintCount'] as int? ?? 0;
+    _correctSubmissionCount = state['correctSubmissionCount'] as int? ?? 0;
+    _incorrectSubmissionCount = state['incorrectSubmissionCount'] as int? ?? 0;
+    _hintCursor = state['hintCursor'] as int? ?? 0;
+    _showAuthorHint = state['showAuthorHint'] as bool? ?? false;
+    _paused = false;
+    _completionCallbackSent = false;
+    _isSubmitting = false;
+    _feedback = _feedbackCode(state['validationFeedback']);
+    _lastEvaluation = null;
+    _lastHintKind = _hintKind(state['lastHintKind']);
+    _completionState = MultiSelectCompletionState.inProgress;
+    _startedAt = _clock();
+    _completedAt = null;
+    _pausedDuration = Duration.zero;
+    _pausedAt = null;
+    _isInitialized = true;
+    notifyListeners();
+  }
+
   Duration get duration {
     final end = _completedAt ?? (_pausedAt ?? _clock());
     final active = end.difference(_startedAt) - _pausedDuration;
@@ -841,6 +904,42 @@ class _DeterministicRandom {
     return _state % max;
   }
 }
+
+Set<String> _stringSet(Object? value) {
+  if (value is Iterable) return value.map((item) => item.toString()).toSet();
+  return const {};
+}
+
+MultiSelectFeedbackCode _feedbackCode(Object? value) {
+  final name = value?.toString();
+  return MultiSelectFeedbackCode.values.firstWhere(
+    (code) => code.name == name,
+    orElse: () => MultiSelectFeedbackCode.none,
+  );
+}
+
+MultiSelectHintKind? _hintKind(Object? value) {
+  final name = value?.toString();
+  for (final kind in MultiSelectHintKind.values) {
+    if (kind.name == name) return kind;
+  }
+  return null;
+}
+
+List<MultiSelectAttempt> _placeholderAttempts(int count) => [
+      for (var i = 0; i < count; i++)
+        MultiSelectAttempt(
+          attemptNumber: i + 1,
+          selectedIds: const {},
+          evaluation: const MultiSelectEvaluation(
+            correctlySelectedIds: {},
+            incorrectlySelectedIds: {},
+            missedCorrectIds: {},
+            score: 0,
+            exact: false,
+          ),
+        ),
+    ];
 
 extension on List<MultiSelectOption> {
   void shuffleSeeded(_DeterministicRandom random) {

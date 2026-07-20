@@ -184,6 +184,55 @@ class PlacementController extends ChangeNotifier {
 
   Duration get duration => (_completedAt ?? _clock()).difference(_startedAt);
 
+  Map<String, dynamic> exportState() => {
+        'sourceOrderIds': _sourceOrder.map((item) => item.id).toList(),
+        'placements': Map<String, String>.from(_placements),
+        'selectedItemId': _selectedItemId,
+        'attempts': _attempts,
+        'correctCount': _correctCount,
+        'incorrectCount': _incorrectCount,
+        'hintCount': _hintCount,
+        'showHint': _showHint,
+        'lastInvalidItemId': _lastInvalidItemId,
+        'lastAttemptWasCorrect': _lastAttemptWasCorrect,
+      };
+
+  void restoreState(Map<String, dynamic> state) {
+    final byId = {for (final item in _content.items) item.id: item};
+    final restoredOrder = <PlacementItem>[];
+    final rawOrder = state['sourceOrderIds'];
+    if (rawOrder is Iterable) {
+      for (final id in rawOrder.map((item) => item.toString())) {
+        final item = byId[id];
+        if (item != null && !restoredOrder.contains(item)) {
+          restoredOrder.add(item);
+        }
+      }
+    }
+    if (restoredOrder.length == _content.items.length) {
+      _sourceOrder = restoredOrder;
+    }
+
+    _placements
+      ..clear()
+      ..addAll(_stringMap(state['placements']));
+    _attemptLog.clear();
+    _selectedItemId = state['selectedItemId'] as String?;
+    _attempts = state['attempts'] as int? ?? 0;
+    _correctCount = state['correctCount'] as int? ?? _placements.length;
+    _incorrectCount = state['incorrectCount'] as int? ?? 0;
+    _hintCount = state['hintCount'] as int? ?? 0;
+    _showHint = state['showHint'] as bool? ?? false;
+    _paused = false;
+    _isComplete = false;
+    _lastInvalidItemId = state['lastInvalidItemId'] as String?;
+    _lastAttemptWasCorrect = state['lastAttemptWasCorrect'] as bool?;
+    _startedAt = _clock();
+    _completedAt = null;
+    _isInitialized = true;
+    notifyListeners();
+  }
+
   /// 3/2/1 stars by placement accuracy, same shape as Matching/Sequence's
   /// attempt-efficiency scoring: a perfect run (zero incorrect attempts)
   /// is 3 stars, up to one incorrect per item is 2, more is 1. Never
@@ -419,6 +468,14 @@ class PlacementController extends ChangeNotifier {
 
 extension _FirstOrNull<T> on Iterable<T> {
   T? get firstOrNull => isEmpty ? null : first;
+}
+
+Map<String, String> _stringMap(Object? value) {
+  if (value is! Map) return const {};
+  return {
+    for (final entry in value.entries)
+      entry.key.toString(): entry.value.toString(),
+  };
 }
 
 /// Minimal deterministic PRNG so the initial shuffle is reproducible per

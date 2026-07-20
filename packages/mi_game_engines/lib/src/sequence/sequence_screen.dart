@@ -15,6 +15,9 @@ class SequenceScreen extends StatefulWidget {
     required this.onExit,
     this.onComplete,
     this.onSaveProgress,
+    this.initialState,
+    this.onSaveState,
+    this.locale = 'vi',
     this.reducedMotion = false,
     this.soundEnabled = true,
   });
@@ -23,6 +26,9 @@ class SequenceScreen extends StatefulWidget {
   final VoidCallback onExit;
   final void Function(SequenceCompletionResult)? onComplete;
   final void Function(int attempts)? onSaveProgress;
+  final Map<String, dynamic>? initialState;
+  final void Function(Map<String, dynamic> state)? onSaveState;
+  final String locale;
   final bool reducedMotion;
   final bool soundEnabled;
 
@@ -61,13 +67,18 @@ class _SequenceScreenState extends State<SequenceScreen> {
         reducedMotion: widget.reducedMotion,
         soundEnabled: widget.soundEnabled,
       );
+      final initialState = widget.initialState;
+      if (initialState != null) {
+        controller.restoreState(initialState);
+      }
       controller.addListener(_onControllerChanged);
       _controller = controller;
       _loadError = null;
     } catch (e) {
       _loadError = e is SequenceContentException
           ? e.message
-          : 'Không thể tải nội dung trò chơi.';
+          : _text('Không thể tải nội dung trò chơi.',
+              'Unable to load game content.');
     }
   }
 
@@ -85,6 +96,7 @@ class _SequenceScreenState extends State<SequenceScreen> {
       );
     }
     widget.onSaveProgress?.call(controller.attempts);
+    widget.onSaveState?.call(controller.exportState());
     setState(() {});
   }
 
@@ -114,7 +126,7 @@ class _SequenceScreenState extends State<SequenceScreen> {
                 const Icon(Icons.error_outline, size: 48, color: Colors.grey),
                 const SizedBox(height: 12),
                 Text(
-                  'Nội dung không khả dụng.\n$error',
+                  '${_text('Nội dung không khả dụng.', 'Content unavailable.')}\n$error',
                   textAlign: TextAlign.center,
                 ),
               ],
@@ -132,32 +144,42 @@ class _SequenceScreenState extends State<SequenceScreen> {
         leading: IconButton(
           icon: const Icon(Icons.close),
           onPressed: widget.onExit,
-          tooltip: 'Thoát',
+          tooltip: _text('Thoát', 'Exit'),
         ),
         title: Text(content.instruction),
         actions: [
           IconButton(
             icon: Icon(controller.isPaused ? Icons.play_arrow : Icons.pause),
-            tooltip: controller.isPaused ? 'Tiếp tục' : 'Tạm dừng',
+            tooltip: controller.isPaused
+                ? _text('Tiếp tục', 'Resume')
+                : _text('Tạm dừng', 'Pause'),
             onPressed: () =>
                 controller.isPaused ? controller.resume() : controller.pause(),
           ),
           if (content.hint != null)
             IconButton(
               icon: const Icon(Icons.lightbulb_outline),
-              tooltip: 'Gợi ý',
+              tooltip: _text('Gợi ý', 'Hint'),
               onPressed: controller.requestHint,
             ),
         ],
       ),
       body: SafeArea(
         child: controller.isPaused
-            ? _PausedOverlay(onResume: controller.resume)
+            ? _PausedOverlay(
+                onResume: controller.resume,
+                resumeLabel: _text('Tiếp tục', 'Resume'),
+              )
             : controller.isComplete
                 ? _CompletionView(
                     stars: controller.starsEarned,
                     attempts: controller.attempts,
                     onExit: widget.onExit,
+                    exitLabel: _text('Thoát', 'Exit'),
+                    retryLabel: _text('Chơi lại', 'Play again'),
+                    completionLabel: _text('Hoàn thành', 'Complete'),
+                    attemptsLabel: _text('lượt thử', 'attempts'),
+                    starsLabel: _text('trên 3 sao', 'out of 3 stars'),
                     onRetry: () {
                       _completionReported = false;
                       controller.retry();
@@ -171,11 +193,26 @@ class _SequenceScreenState extends State<SequenceScreen> {
                           onDismiss: controller.dismissHint,
                         ),
                       if (controller.lastSubmissionCorrect == false)
-                        const _FeedbackBanner(isCorrect: false),
+                        _FeedbackBanner(
+                          message: _text(
+                            'Chưa đúng thứ tự, thử lại nhé!',
+                            'Not in the right order. Try again!',
+                          ),
+                        ),
                       Expanded(
                         child: content.mode == SequenceMode.reorder
-                            ? _ReorderBody(controller: controller)
-                            : _MissingItemBody(controller: controller),
+                            ? _ReorderBody(
+                                controller: controller,
+                                moveLabel: _text('Di chuyển', 'Move'),
+                                moveLeftLabel:
+                                    _text('Di chuyển sang trái', 'Move left'),
+                                moveRightLabel:
+                                    _text('Di chuyển sang phải', 'Move right'),
+                              )
+                            : _MissingItemBody(
+                                controller: controller,
+                                chooseLabel: _text('Chọn', 'Choose'),
+                              ),
                       ),
                       Padding(
                         padding: const EdgeInsets.all(16),
@@ -183,7 +220,7 @@ class _SequenceScreenState extends State<SequenceScreen> {
                           onPressed: content.mode == SequenceMode.reorder
                               ? controller.submitReorder
                               : controller.submitMissingItems,
-                          child: const Text('Kiểm tra'),
+                          child: Text(_text('Kiểm tra', 'Check')),
                         ),
                       ),
                     ],
@@ -191,11 +228,21 @@ class _SequenceScreenState extends State<SequenceScreen> {
       ),
     );
   }
+
+  String _text(String vi, String en) => widget.locale == 'en' ? en : vi;
 }
 
 class _ReorderBody extends StatelessWidget {
-  const _ReorderBody({required this.controller});
+  const _ReorderBody({
+    required this.controller,
+    required this.moveLabel,
+    required this.moveLeftLabel,
+    required this.moveRightLabel,
+  });
   final SequenceController controller;
+  final String moveLabel;
+  final String moveLeftLabel;
+  final String moveRightLabel;
 
   @override
   Widget build(BuildContext context) {
@@ -214,20 +261,20 @@ class _ReorderBody extends StatelessWidget {
           child: ListTile(
             title: Text(item.content, style: const TextStyle(fontSize: 20)),
             trailing: Semantics(
-              label: 'Di chuyển ${item.content}',
+              label: '$moveLabel ${item.content}',
               child: Row(
                 mainAxisSize: MainAxisSize.min,
                 children: [
                   IconButton(
                     icon: const Icon(Icons.arrow_back),
-                    tooltip: 'Di chuyển sang trái',
+                    tooltip: moveLeftLabel,
                     onPressed: index > 0
                         ? () => controller.moveItem(index, index - 1)
                         : null,
                   ),
                   IconButton(
                     icon: const Icon(Icons.arrow_forward),
-                    tooltip: 'Di chuyển sang phải',
+                    tooltip: moveRightLabel,
                     onPressed: index < items.length - 1
                         ? () => controller.moveItem(index, index + 1)
                         : null,
@@ -250,8 +297,9 @@ class _ReorderBody extends StatelessWidget {
 }
 
 class _MissingItemBody extends StatelessWidget {
-  const _MissingItemBody({required this.controller});
+  const _MissingItemBody({required this.controller, required this.chooseLabel});
   final SequenceController controller;
+  final String chooseLabel;
 
   @override
   Widget build(BuildContext context) {
@@ -293,7 +341,7 @@ class _MissingItemBody extends StatelessWidget {
               for (final choice in allChoices)
                 Semantics(
                   button: true,
-                  label: 'Chọn ${choice.content}',
+                  label: '$chooseLabel ${choice.content}',
                   child: SizedBox(
                     height: 48,
                     child: ElevatedButton(
@@ -362,30 +410,28 @@ class _HintBanner extends StatelessWidget {
 }
 
 class _FeedbackBanner extends StatelessWidget {
-  const _FeedbackBanner({required this.isCorrect});
-  final bool isCorrect;
+  const _FeedbackBanner({required this.message});
+  final String message;
 
   @override
   Widget build(BuildContext context) {
     return Semantics(
       liveRegion: true,
-      label: 'Chưa đúng thứ tự, thử lại nhé!',
+      label: message,
       child: Container(
         width: double.infinity,
         color: Colors.orange.withValues(alpha: 0.15),
         padding: const EdgeInsets.symmetric(vertical: 8),
-        child: const Text(
-          'Chưa đúng thứ tự, thử lại nhé!',
-          textAlign: TextAlign.center,
-        ),
+        child: Text(message, textAlign: TextAlign.center),
       ),
     );
   }
 }
 
 class _PausedOverlay extends StatelessWidget {
-  const _PausedOverlay({required this.onResume});
+  const _PausedOverlay({required this.onResume, required this.resumeLabel});
   final VoidCallback onResume;
+  final String resumeLabel;
 
   @override
   Widget build(BuildContext context) {
@@ -393,7 +439,7 @@ class _PausedOverlay extends StatelessWidget {
       child: ElevatedButton.icon(
         onPressed: onResume,
         icon: const Icon(Icons.play_arrow),
-        label: const Text('Tiếp tục'),
+        label: Text(resumeLabel),
       ),
     );
   }
@@ -405,12 +451,22 @@ class _CompletionView extends StatelessWidget {
     required this.attempts,
     required this.onExit,
     required this.onRetry,
+    required this.exitLabel,
+    required this.retryLabel,
+    required this.completionLabel,
+    required this.attemptsLabel,
+    required this.starsLabel,
   });
 
   final int stars;
   final int attempts;
   final VoidCallback onExit;
   final VoidCallback onRetry;
+  final String exitLabel;
+  final String retryLabel;
+  final String completionLabel;
+  final String attemptsLabel;
+  final String starsLabel;
 
   @override
   Widget build(BuildContext context) {
@@ -419,7 +475,7 @@ class _CompletionView extends StatelessWidget {
         mainAxisSize: MainAxisSize.min,
         children: [
           Semantics(
-            label: '$stars trên 3 sao',
+            label: '$stars $starsLabel',
             child: Row(
               mainAxisSize: MainAxisSize.min,
               children: List.generate(
@@ -433,14 +489,14 @@ class _CompletionView extends StatelessWidget {
             ),
           ),
           const SizedBox(height: 12),
-          Text('Hoàn thành sau $attempts lượt thử!'),
+          Text('$completionLabel: $attempts $attemptsLabel'),
           const SizedBox(height: 20),
           Row(
             mainAxisSize: MainAxisSize.min,
             children: [
-              OutlinedButton(onPressed: onRetry, child: const Text('Chơi lại')),
+              OutlinedButton(onPressed: onRetry, child: Text(retryLabel)),
               const SizedBox(width: 12),
-              ElevatedButton(onPressed: onExit, child: const Text('Thoát')),
+              ElevatedButton(onPressed: onExit, child: Text(exitLabel)),
             ],
           ),
         ],

@@ -733,6 +733,25 @@ void main() {
       expect(controller.isSelected(eliminatedId), isFalse);
     });
 
+    test('exports and restores selection and hint state', () {
+      controller.select('a');
+      controller.select('e');
+      controller.revealCorrectOption();
+      controller.eliminateIncorrectOption();
+      controller.submit();
+
+      final restored = MultiSelectController(
+        content: MultiSelectContent.fromJson(_viVowelsExample()),
+      )..restoreState(controller.exportState());
+
+      expect(restored.selectedIds, {'a', 'e'});
+      expect(restored.attempts, 1);
+      expect(restored.hintCount, 2);
+      expect(restored.revealedCorrectIds, hasLength(1));
+      expect(restored.eliminatedIds, hasLength(1));
+      expect(restored.isComplete, isFalse);
+    });
+
     test('a perfect single-attempt run earns 3 stars', () {
       controller.select('a');
       controller.select('e');

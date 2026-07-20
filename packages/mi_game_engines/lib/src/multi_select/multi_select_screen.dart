@@ -88,6 +88,8 @@ class MultiSelectScreen extends StatefulWidget {
     required this.onExit,
     this.onComplete,
     this.onSaveProgress,
+    this.initialState,
+    this.onSaveState,
     this.reducedMotion = false,
     this.soundEnabled = true,
   });
@@ -97,6 +99,8 @@ class MultiSelectScreen extends StatefulWidget {
   final VoidCallback onExit;
   final void Function(MultiSelectResult)? onComplete;
   final void Function(int attempts)? onSaveProgress;
+  final Map<String, dynamic>? initialState;
+  final void Function(Map<String, dynamic> state)? onSaveState;
   final bool reducedMotion;
   final bool soundEnabled;
 
@@ -123,6 +127,10 @@ class _MultiSelectScreenState extends State<MultiSelectScreen> {
         reducedMotion: widget.reducedMotion,
         soundEnabled: widget.soundEnabled,
       );
+      final initialState = widget.initialState;
+      if (initialState != null) {
+        controller.restoreState(initialState);
+      }
       controller.addListener(_onControllerChanged);
       _controller = controller;
       _loadError = null;
@@ -139,6 +147,7 @@ class _MultiSelectScreenState extends State<MultiSelectScreen> {
       widget.onComplete?.call(controller.result);
     }
     widget.onSaveProgress?.call(controller.attempts);
+    widget.onSaveState?.call(controller.exportState());
     setState(() {});
   }
 

@@ -3,6 +3,7 @@ import 'package:mi_game_core/mi_game_core.dart';
 import 'package:mi_game_engines/mi_game_engines.dart';
 
 import '../level_skill_ids.dart';
+import '../snapshot_lifecycle_mixin.dart';
 
 enum EngineBackedGameKind { matching, sequence, placement, multiSelect }
 
@@ -15,6 +16,8 @@ class EngineBackedGameScreen extends StatefulWidget {
     required this.onComplete,
     required this.childProfileId,
     required this.locale,
+    this.initialSnapshot,
+    this.onSaveSnapshot,
     this.reduceMotion = false,
   });
 
@@ -24,15 +27,25 @@ class EngineBackedGameScreen extends StatefulWidget {
   final void Function(MiCompletionResult) onComplete;
   final String childProfileId;
   final String locale;
+  final MiGameSnapshot? initialSnapshot;
+  final void Function(MiGameSnapshot)? onSaveSnapshot;
   final bool reduceMotion;
 
   @override
   State<EngineBackedGameScreen> createState() => _EngineBackedGameScreenState();
 }
 
-class _EngineBackedGameScreenState extends State<EngineBackedGameScreen> {
+class _EngineBackedGameScreenState extends State<EngineBackedGameScreen>
+    with
+        WidgetsBindingObserver,
+        SnapshotLifecycleMixin<EngineBackedGameScreen> {
   late final Stopwatch _stopwatch;
   bool _completionSent = false;
+  Map<String, dynamic>? _latestEngineState;
+  int _attempts = 0;
+  int _itemsCompleted = 0;
+  int _totalItems = 0;
+  int _hints = 0;
 
   @override
   void initState() {
@@ -42,8 +55,33 @@ class _EngineBackedGameScreenState extends State<EngineBackedGameScreen> {
 
   @override
   void dispose() {
+    disposeSnapshotLifecycle();
     _stopwatch.stop();
     super.dispose();
+  }
+
+  @override
+  void Function(MiGameSnapshot)? get onSaveSnapshot => widget.onSaveSnapshot;
+
+  @override
+  MiGameSnapshot? captureSnapshot() {
+    if (_completionSent || _latestEngineState == null) return null;
+    if (_attempts == 0 && _itemsCompleted == 0 && _hints == 0) return null;
+    return MiGameSnapshot(
+      gameId: widget.level.gameId,
+      levelId: widget.level.id,
+      childProfileId: widget.childProfileId,
+      state: {
+        'engineKind': widget.kind.name,
+        'engineState': _latestEngineState,
+      },
+      createdAt: DateTime.now(),
+      attemptsUsed: _attempts,
+      hintsUsed: _hints,
+      itemsCompleted: _itemsCompleted,
+      totalItems: _totalItems,
+      metadata: {'engine_id': widget.kind.name},
+    );
   }
 
   Map<String, dynamic> get _rawContent {
@@ -86,6 +124,15 @@ class _EngineBackedGameScreenState extends State<EngineBackedGameScreen> {
           rawContent: _rawContent,
           onExit: widget.onExit,
           reducedMotion: widget.reduceMotion,
+          locale: widget.locale,
+          initialState: _initialEngineState(),
+          onSaveState: (state) => _rememberState(
+            state,
+            attempts: state['attempts'] as int? ?? 0,
+            itemsCompleted: (state['matchedLeftIds'] as List?)?.length ?? 0,
+            totalItems: (state['totalPairCount'] as int?) ??
+                ((state['matchedLeftIds'] as List?)?.length ?? 0),
+          ),
           onComplete: (result) => _complete(
             score: _scoreFromStars(result.starsEarned),
             attempts: result.attempts,
@@ -99,6 +146,14 @@ class _EngineBackedGameScreenState extends State<EngineBackedGameScreen> {
           rawContent: _rawContent,
           onExit: widget.onExit,
           reducedMotion: widget.reduceMotion,
+          locale: widget.locale,
+          initialState: _initialEngineState(),
+          onSaveState: (state) => _rememberState(
+            state,
+            attempts: state['attempts'] as int? ?? 0,
+            itemsCompleted: state['attempts'] as int? ?? 0,
+            totalItems: 1,
+          ),
           onComplete: (result) => _complete(
             score: _scoreFromStars(result.starsEarned),
             attempts: result.attempts,
@@ -113,6 +168,14 @@ class _EngineBackedGameScreenState extends State<EngineBackedGameScreen> {
           localization: _placementLocalization(widget.locale),
           onExit: widget.onExit,
           reducedMotion: widget.reduceMotion,
+          initialState: _initialEngineState(),
+          onSaveState: (state) => _rememberState(
+            state,
+            attempts: state['attempts'] as int? ?? 0,
+            itemsCompleted: (state['placements'] as Map?)?.length ?? 0,
+            totalItems: (_rawContent['items'] as List?)?.length ?? 0,
+            hints: state['hintCount'] as int? ?? 0,
+          ),
           onComplete: (result) => _complete(
             score: result.score,
             attempts: result.attempts,
@@ -132,6 +195,14 @@ class _EngineBackedGameScreenState extends State<EngineBackedGameScreen> {
           localization: _multiSelectLocalization(widget.locale),
           onExit: widget.onExit,
           reducedMotion: widget.reduceMotion,
+          initialState: _initialEngineState(),
+          onSaveState: (state) => _rememberState(
+            state,
+            attempts: state['attempts'] as int? ?? 0,
+            itemsCompleted: (state['selectedIds'] as List?)?.length ?? 0,
+            totalItems: (_rawContent['options'] as List?)?.length ?? 0,
+            hints: state['hintCount'] as int? ?? 0,
+          ),
           onComplete: (result) => _complete(
             score: result.score,
             attempts: result.attempts,
@@ -142,6 +213,38 @@ class _EngineBackedGameScreenState extends State<EngineBackedGameScreen> {
           ),
         );
     }
+  }
+
+  Map<String, dynamic>? _initialEngineState() {
+    final snapshot = widget.initialSnapshot;
+    if (snapshot == null) return null;
+    if (!snapshot.canRestoreFor(
+      childProfileId: widget.childProfileId,
+      gameId: widget.level.gameId,
+      levelId: widget.level.id,
+    )) {
+      return null;
+    }
+    if (snapshot.state['engineKind'] != widget.kind.name) return null;
+    final engineState = snapshot.state['engineState'];
+    if (engineState is Map) {
+      return Map<String, dynamic>.from(engineState);
+    }
+    return null;
+  }
+
+  void _rememberState(
+    Map<String, dynamic> state, {
+    required int attempts,
+    required int itemsCompleted,
+    required int totalItems,
+    int hints = 0,
+  }) {
+    _latestEngineState = Map<String, dynamic>.from(state);
+    _attempts = attempts;
+    _itemsCompleted = itemsCompleted;
+    _totalItems = totalItems;
+    _hints = hints;
   }
 
   void _complete({
@@ -192,61 +295,61 @@ int _scoreFromStars(int stars) {
 PlacementLocalization _placementLocalization(String locale) {
   final en = locale == 'en';
   return PlacementLocalization(
-    exitLabel: en ? 'Exit' : 'Thoat',
-    pauseLabel: en ? 'Pause' : 'Tam dung',
-    resumeLabel: en ? 'Resume' : 'Tiep tuc',
-    hintLabel: en ? 'Hint' : 'Goi y',
-    retryLabel: en ? 'Try again' : 'Thu lai',
-    completionLabel: en ? 'Complete' : 'Hoan thanh',
-    invalidPlacementMessage: en ? 'Try another place.' : 'Thu vi tri khac.',
+    exitLabel: en ? 'Exit' : 'Thoát',
+    pauseLabel: en ? 'Pause' : 'Tạm dừng',
+    resumeLabel: en ? 'Resume' : 'Tiếp tục',
+    hintLabel: en ? 'Hint' : 'Gợi ý',
+    retryLabel: en ? 'Try again' : 'Thử lại',
+    completionLabel: en ? 'Complete' : 'Hoàn thành',
+    invalidPlacementMessage: en ? 'Try another place.' : 'Thử vị trí khác.',
     malformedContentMessage:
-        en ? 'This level is not available.' : 'Cap do nay chua san sang.',
-    selectedAnnouncement: (label) => en ? '$label selected' : 'Da chon $label',
+        en ? 'This level is not available.' : 'Cấp độ này chưa sẵn sàng.',
+    selectedAnnouncement: (label) => en ? '$label selected' : 'Đã chọn $label',
     targetAnnouncement: (label, occupied, capacity) => en
         ? '$label, $occupied of $capacity'
-        : '$label, $occupied tren $capacity',
-    removeLabel: en ? 'Remove' : 'Bo ra',
+        : '$label, $occupied trên $capacity',
+    removeLabel: en ? 'Remove' : 'Bỏ ra',
   );
 }
 
 MultiSelectLocalization _multiSelectLocalization(String locale) {
   final en = locale == 'en';
   return MultiSelectLocalization(
-    exitLabel: en ? 'Exit' : 'Thoat',
-    pauseLabel: en ? 'Pause' : 'Tam dung',
-    resumeLabel: en ? 'Resume' : 'Tiep tuc',
-    submitLabel: en ? 'Submit' : 'Nop bai',
-    checkAnswersLabel: en ? 'Check answers' : 'Kiem tra',
-    clearLabel: en ? 'Clear' : 'Xoa chon',
-    retryLabel: en ? 'Try again' : 'Thu lai',
-    completionLabel: en ? 'Complete' : 'Hoan thanh',
-    authorHintLabel: en ? 'Hint' : 'Goi y',
-    hintLabel: en ? 'Hint' : 'Goi y',
-    revealCorrectLabel: en ? 'Reveal one' : 'Mo mot dap an',
-    revealAnswersLabel: en ? 'Reveal answers' : 'Mo dap an',
-    eliminateIncorrectLabel: en ? 'Remove one' : 'Bo mot dap an sai',
-    noMoreHintsLabel: en ? 'No more hints' : 'Het goi y',
+    exitLabel: en ? 'Exit' : 'Thoát',
+    pauseLabel: en ? 'Pause' : 'Tạm dừng',
+    resumeLabel: en ? 'Resume' : 'Tiếp tục',
+    submitLabel: en ? 'Submit' : 'Nộp bài',
+    checkAnswersLabel: en ? 'Check answers' : 'Kiểm tra',
+    clearLabel: en ? 'Clear' : 'Xóa chọn',
+    retryLabel: en ? 'Try again' : 'Thử lại',
+    completionLabel: en ? 'Complete' : 'Hoàn thành',
+    authorHintLabel: en ? 'Hint' : 'Gợi ý',
+    hintLabel: en ? 'Hint' : 'Gợi ý',
+    revealCorrectLabel: en ? 'Reveal one' : 'Mở một đáp án',
+    revealAnswersLabel: en ? 'Reveal answers' : 'Mở đáp án',
+    eliminateIncorrectLabel: en ? 'Remove one' : 'Bỏ một đáp án sai',
+    noMoreHintsLabel: en ? 'No more hints' : 'Hết gợi ý',
     malformedContentMessage:
-        en ? 'This level is not available.' : 'Cap do nay chua san sang.',
-    incorrectMessage: en ? 'Try again.' : 'Thu lai nhe.',
-    correctMessage: en ? 'Nice work.' : 'Lam tot lam.',
-    partiallyCorrectMessage: en ? 'Some answers are right.' : 'Co dap an dung.',
-    tryAgainMessage: en ? 'Try again.' : 'Thu lai nhe.',
+        en ? 'This level is not available.' : 'Cấp độ này chưa sẵn sàng.',
+    incorrectMessage: en ? 'Try again.' : 'Thử lại nhé.',
+    correctMessage: en ? 'Nice work.' : 'Làm tốt lắm.',
+    partiallyCorrectMessage: en ? 'Some answers are right.' : 'Có đáp án đúng.',
+    tryAgainMessage: en ? 'Try again.' : 'Thử lại nhé.',
     minimumSelectionRequiredMessage:
-        en ? 'Choose a few more answers.' : 'Hay chon them dap an.',
+        en ? 'Choose a few more answers.' : 'Hãy chọn thêm đáp án.',
     maximumSelectionReachedMessage:
-        en ? 'That is enough choices.' : 'Da du lua chon.',
+        en ? 'That is enough choices.' : 'Đã đủ lựa chọn.',
     selectionCountMessage: (min, max) =>
-        en ? 'Choose $min to $max answers.' : 'Chon $min den $max dap an.',
+        en ? 'Choose $min to $max answers.' : 'Chọn $min đến $max đáp án.',
     optionAnnouncement: (label, selected) =>
         en ? '$label, ${selected ? 'selected' : 'not selected'}' : label,
     optionSelectedAnnouncement: (label) =>
-        en ? '$label selected' : 'Da chon $label',
+        en ? '$label selected' : 'Đã chọn $label',
     optionDeselectedAnnouncement: (label) =>
-        en ? '$label cleared' : 'Bo chon $label',
+        en ? '$label cleared' : 'Bỏ chọn $label',
     correctOptionAnnouncement: (label) =>
-        en ? '$label is correct' : '$label dung',
+        en ? '$label is correct' : '$label đúng',
     incorrectOptionAnnouncement: (label) =>
-        en ? '$label is not correct' : '$label chua dung',
+        en ? '$label is not correct' : '$label chưa đúng',
   );
 }

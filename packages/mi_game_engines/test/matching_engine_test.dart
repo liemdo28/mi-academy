@@ -204,6 +204,22 @@ void main() {
       controller.dismissHint();
       expect(controller.showHint, isFalse);
     });
+
+    test('exports and restores in-progress matches', () {
+      controller.selectLeft('l1');
+      controller.selectRight('r1');
+      controller.requestHint();
+
+      final restored = MatchingController(
+        content: MatchingContent.fromJson(_viExample()),
+      )..restoreState(controller.exportState());
+
+      expect(restored.isLeftMatched('l1'), isTrue);
+      expect(restored.isRightMatched('r1'), isTrue);
+      expect(restored.attempts, 1);
+      expect(restored.showHint, isTrue);
+      expect(restored.isComplete, isFalse);
+    });
   });
 
   group('MatchingScreen widget', () {

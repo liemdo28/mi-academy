@@ -56,6 +56,8 @@ class PlacementScreen extends StatefulWidget {
     required this.onExit,
     this.onComplete,
     this.onSaveProgress,
+    this.initialState,
+    this.onSaveState,
     this.reducedMotion = false,
     this.soundEnabled = true,
   });
@@ -65,6 +67,8 @@ class PlacementScreen extends StatefulWidget {
   final VoidCallback onExit;
   final void Function(PlacementResult)? onComplete;
   final void Function(int attempts)? onSaveProgress;
+  final Map<String, dynamic>? initialState;
+  final void Function(Map<String, dynamic> state)? onSaveState;
   final bool reducedMotion;
   final bool soundEnabled;
 
@@ -91,6 +95,10 @@ class _PlacementScreenState extends State<PlacementScreen> {
         reducedMotion: widget.reducedMotion,
         soundEnabled: widget.soundEnabled,
       );
+      final initialState = widget.initialState;
+      if (initialState != null) {
+        controller.restoreState(initialState);
+      }
       controller.addListener(_onControllerChanged);
       _controller = controller;
       _loadError = null;
@@ -107,6 +115,7 @@ class _PlacementScreenState extends State<PlacementScreen> {
       widget.onComplete?.call(controller.result);
     }
     widget.onSaveProgress?.call(controller.attempts);
+    widget.onSaveState?.call(controller.exportState());
     setState(() {});
   }
 

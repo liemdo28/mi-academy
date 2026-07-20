@@ -72,6 +72,35 @@ class MatchingController extends ChangeNotifier {
   int get totalPairCount => _content.pairs.length;
   bool get isComplete => matchedPairCount == totalPairCount;
 
+  Map<String, dynamic> exportState() => {
+        'selectedLeftId': _selectedLeftId,
+        'selectedRightId': _selectedRightId,
+        'matchedLeftIds': _matchedLeftIds.toList()..sort(),
+        'matchedRightIds': _matchedRightIds.toList()..sort(),
+        'attempts': _attempts,
+        'totalPairCount': totalPairCount,
+        'showHint': _showHint,
+        'lastFeedback': _lastFeedback,
+        'lastFeedbackWasCorrect': _lastFeedbackWasCorrect,
+      };
+
+  void restoreState(Map<String, dynamic> state) {
+    _selectedLeftId = state['selectedLeftId'] as String?;
+    _selectedRightId = state['selectedRightId'] as String?;
+    _matchedLeftIds
+      ..clear()
+      ..addAll(_stringSet(state['matchedLeftIds']));
+    _matchedRightIds
+      ..clear()
+      ..addAll(_stringSet(state['matchedRightIds']));
+    _attempts = state['attempts'] as int? ?? 0;
+    _showHint = state['showHint'] as bool? ?? false;
+    _paused = false;
+    _lastFeedback = state['lastFeedback'] as String?;
+    _lastFeedbackWasCorrect = state['lastFeedbackWasCorrect'] as bool? ?? false;
+    notifyListeners();
+  }
+
   /// 3/2/1 stars by attempt efficiency, same shape as the existing five
   /// games' scoring (see packages/game_core/scoring.py's calculate_stars)
   /// -- perfect (one attempt per pair) is 3 stars, up to double is 2, more
@@ -167,4 +196,9 @@ class MatchingController extends ChangeNotifier {
     _lastFeedback = null;
     _lastFeedbackWasCorrect = false;
   }
+}
+
+Set<String> _stringSet(Object? value) {
+  if (value is Iterable) return value.map((item) => item.toString()).toSet();
+  return const {};
 }

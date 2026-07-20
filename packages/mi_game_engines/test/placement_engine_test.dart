@@ -707,6 +707,25 @@ void main() {
       expect(controller.score, lessThan(scoreBefore));
     });
 
+    test('exports and restores placements, counters, and hints', () {
+      controller.placeItem('letter-m', 'slot-1');
+      controller.placeItem('letter-e', 'slot-3');
+      controller.requestHint();
+      controller.selectItem('letter-o');
+
+      final restored = PlacementController(
+        content: PlacementContent.fromJson(_viLetterPlacementExample()),
+      )..restoreState(controller.exportState());
+
+      expect(restored.placements, {'letter-m': 'slot-1'});
+      expect(restored.attempts, 2);
+      expect(restored.correctCount, 1);
+      expect(restored.incorrectCount, 1);
+      expect(restored.hintCount, 1);
+      expect(restored.selectedItemId, 'letter-o');
+      expect(restored.isComplete, isFalse);
+    });
+
     test(
       'completion requires every item validly placed, not just every target filled',
       () {

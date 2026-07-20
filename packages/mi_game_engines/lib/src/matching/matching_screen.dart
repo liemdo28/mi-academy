@@ -16,6 +16,9 @@ class MatchingScreen extends StatefulWidget {
     required this.onExit,
     this.onComplete,
     this.onSaveProgress,
+    this.initialState,
+    this.onSaveState,
+    this.locale = 'vi',
     this.reducedMotion = false,
     this.soundEnabled = true,
   });
@@ -27,6 +30,9 @@ class MatchingScreen extends StatefulWidget {
   final VoidCallback onExit;
   final void Function(MatchingCompletionResult)? onComplete;
   final void Function(int attempts, int matchedPairs)? onSaveProgress;
+  final Map<String, dynamic>? initialState;
+  final void Function(Map<String, dynamic> state)? onSaveState;
+  final String locale;
   final bool reducedMotion;
   final bool soundEnabled;
 
@@ -67,6 +73,10 @@ class _MatchingScreenState extends State<MatchingScreen> {
         reducedMotion: widget.reducedMotion,
         soundEnabled: widget.soundEnabled,
       );
+      final initialState = widget.initialState;
+      if (initialState != null) {
+        controller.restoreState(initialState);
+      }
       controller.addListener(_onControllerChanged);
       _controller = controller;
       _loadError = null;
@@ -81,7 +91,8 @@ class _MatchingScreenState extends State<MatchingScreen> {
     } catch (e) {
       _loadError = e is MatchingContentException
           ? e.message
-          : 'Không thể tải nội dung trò chơi.';
+          : _text('Không thể tải nội dung trò chơi.',
+              'Unable to load game content.');
     }
   }
 
@@ -102,6 +113,7 @@ class _MatchingScreenState extends State<MatchingScreen> {
       controller.attempts,
       controller.matchedPairCount,
     );
+    widget.onSaveState?.call(controller.exportState());
     setState(() {});
   }
 
@@ -131,7 +143,7 @@ class _MatchingScreenState extends State<MatchingScreen> {
                 const Icon(Icons.error_outline, size: 48, color: Colors.grey),
                 const SizedBox(height: 12),
                 Text(
-                  'Nội dung không khả dụng.\n$error',
+                  '${_text('Nội dung không khả dụng.', 'Content unavailable.')}\n$error',
                   textAlign: TextAlign.center,
                 ),
               ],
@@ -149,32 +161,42 @@ class _MatchingScreenState extends State<MatchingScreen> {
         leading: IconButton(
           icon: const Icon(Icons.close),
           onPressed: widget.onExit,
-          tooltip: 'Thoát',
+          tooltip: _text('Thoát', 'Exit'),
         ),
         title: Text(content.instruction),
         actions: [
           IconButton(
             icon: Icon(controller.isPaused ? Icons.play_arrow : Icons.pause),
-            tooltip: controller.isPaused ? 'Tiếp tục' : 'Tạm dừng',
+            tooltip: controller.isPaused
+                ? _text('Tiếp tục', 'Resume')
+                : _text('Tạm dừng', 'Pause'),
             onPressed: () =>
                 controller.isPaused ? controller.resume() : controller.pause(),
           ),
           if (content.hint != null)
             IconButton(
               icon: const Icon(Icons.lightbulb_outline),
-              tooltip: 'Gợi ý',
+              tooltip: _text('Gợi ý', 'Hint'),
               onPressed: controller.requestHint,
             ),
         ],
       ),
       body: SafeArea(
         child: controller.isPaused
-            ? _PausedOverlay(onResume: controller.resume)
+            ? _PausedOverlay(
+                onResume: controller.resume,
+                resumeLabel: _text('Tiếp tục', 'Resume'),
+              )
             : controller.isComplete
                 ? _CompletionView(
                     stars: controller.starsEarned,
                     attempts: controller.attempts,
                     onExit: widget.onExit,
+                    exitLabel: _text('Thoát', 'Exit'),
+                    retryLabel: _text('Chơi lại', 'Play again'),
+                    completionLabel: _text('Hoàn thành', 'Complete'),
+                    attemptsLabel: _text('lượt thử', 'attempts'),
+                    starsLabel: _text('trên 3 sao', 'out of 3 stars'),
                     onRetry: () {
                       _completionReported = false;
                       controller.retry();
@@ -193,6 +215,11 @@ class _MatchingScreenState extends State<MatchingScreen> {
                           if (controller.lastFeedback != null)
                             _FeedbackBanner(
                               isCorrect: controller.lastFeedbackWasCorrect,
+                              correctMessage: _text('Ghép đúng!', 'Matched!'),
+                              incorrectMessage: _text(
+                                'Chưa khớp, thử lại nhé!',
+                                'Not a match. Try again!',
+                              ),
                             ),
                           Expanded(
                             child: Padding(
@@ -210,7 +237,10 @@ class _MatchingScreenState extends State<MatchingScreen> {
                                       isMatched: controller.isLeftMatched,
                                       onTap: controller.selectLeft,
                                       reducedMotion: widget.reducedMotion,
-                                      semanticPrefix: 'Mục bên trái',
+                                      semanticPrefix:
+                                          _text('Mục bên trái', 'Left item'),
+                                      matchedSuffix:
+                                          _text('đã ghép đúng', 'matched'),
                                     ),
                                   ),
                                   const SizedBox(width: 16),
@@ -221,7 +251,10 @@ class _MatchingScreenState extends State<MatchingScreen> {
                                       isMatched: controller.isRightMatched,
                                       onTap: controller.selectRight,
                                       reducedMotion: widget.reducedMotion,
-                                      semanticPrefix: 'Mục bên phải',
+                                      semanticPrefix:
+                                          _text('Mục bên phải', 'Right item'),
+                                      matchedSuffix:
+                                          _text('đã ghép đúng', 'matched'),
                                     ),
                                   ),
                                 ],
@@ -235,6 +268,8 @@ class _MatchingScreenState extends State<MatchingScreen> {
       ),
     );
   }
+
+  String _text(String vi, String en) => widget.locale == 'en' ? en : vi;
 }
 
 class _MatchColumn extends StatelessWidget {
@@ -245,6 +280,7 @@ class _MatchColumn extends StatelessWidget {
     required this.onTap,
     required this.reducedMotion,
     required this.semanticPrefix,
+    required this.matchedSuffix,
   });
 
   final List<MatchingItem> items;
@@ -253,6 +289,7 @@ class _MatchColumn extends StatelessWidget {
   final void Function(String id) onTap;
   final bool reducedMotion;
   final String semanticPrefix;
+  final String matchedSuffix;
 
   @override
   Widget build(BuildContext context) {
@@ -265,7 +302,7 @@ class _MatchColumn extends StatelessWidget {
               button: true,
               selected: selectedId == item.id,
               label: '$semanticPrefix: ${item.content}'
-                  '${isMatched(item.id) ? ", đã ghép đúng" : ""}',
+                  '${isMatched(item.id) ? ", $matchedSuffix" : ""}',
               child: AnimatedContainer(
                 duration: reducedMotion
                     ? Duration.zero
@@ -327,14 +364,20 @@ class _HintBanner extends StatelessWidget {
 }
 
 class _FeedbackBanner extends StatelessWidget {
-  const _FeedbackBanner({required this.isCorrect});
+  const _FeedbackBanner({
+    required this.isCorrect,
+    required this.correctMessage,
+    required this.incorrectMessage,
+  });
   final bool isCorrect;
+  final String correctMessage;
+  final String incorrectMessage;
 
   @override
   Widget build(BuildContext context) {
     return Semantics(
       liveRegion: true,
-      label: isCorrect ? 'Ghép đúng!' : 'Chưa khớp, thử lại nhé!',
+      label: isCorrect ? correctMessage : incorrectMessage,
       child: Container(
         width: double.infinity,
         color: isCorrect
@@ -342,7 +385,7 @@ class _FeedbackBanner extends StatelessWidget {
             : Colors.orange.withValues(alpha: 0.15),
         padding: const EdgeInsets.symmetric(vertical: 8),
         child: Text(
-          isCorrect ? 'Ghép đúng!' : 'Chưa khớp, thử lại nhé!',
+          isCorrect ? correctMessage : incorrectMessage,
           textAlign: TextAlign.center,
         ),
       ),
@@ -351,8 +394,9 @@ class _FeedbackBanner extends StatelessWidget {
 }
 
 class _PausedOverlay extends StatelessWidget {
-  const _PausedOverlay({required this.onResume});
+  const _PausedOverlay({required this.onResume, required this.resumeLabel});
   final VoidCallback onResume;
+  final String resumeLabel;
 
   @override
   Widget build(BuildContext context) {
@@ -360,7 +404,7 @@ class _PausedOverlay extends StatelessWidget {
       child: ElevatedButton.icon(
         onPressed: onResume,
         icon: const Icon(Icons.play_arrow),
-        label: const Text('Tiếp tục'),
+        label: Text(resumeLabel),
       ),
     );
   }
@@ -372,12 +416,22 @@ class _CompletionView extends StatelessWidget {
     required this.attempts,
     required this.onExit,
     required this.onRetry,
+    required this.exitLabel,
+    required this.retryLabel,
+    required this.completionLabel,
+    required this.attemptsLabel,
+    required this.starsLabel,
   });
 
   final int stars;
   final int attempts;
   final VoidCallback onExit;
   final VoidCallback onRetry;
+  final String exitLabel;
+  final String retryLabel;
+  final String completionLabel;
+  final String attemptsLabel;
+  final String starsLabel;
 
   @override
   Widget build(BuildContext context) {
@@ -386,7 +440,7 @@ class _CompletionView extends StatelessWidget {
         mainAxisSize: MainAxisSize.min,
         children: [
           Semantics(
-            label: '$stars trên 3 sao',
+            label: '$stars $starsLabel',
             child: Row(
               mainAxisSize: MainAxisSize.min,
               children: List.generate(
@@ -400,14 +454,14 @@ class _CompletionView extends StatelessWidget {
             ),
           ),
           const SizedBox(height: 12),
-          Text('Hoàn thành sau $attempts lượt thử!'),
+          Text('$completionLabel: $attempts $attemptsLabel'),
           const SizedBox(height: 20),
           Row(
             mainAxisSize: MainAxisSize.min,
             children: [
-              OutlinedButton(onPressed: onRetry, child: const Text('Chơi lại')),
+              OutlinedButton(onPressed: onRetry, child: Text(retryLabel)),
               const SizedBox(width: 12),
-              ElevatedButton(onPressed: onExit, child: const Text('Thoát')),
+              ElevatedButton(onPressed: onExit, child: Text(exitLabel)),
             ],
           ),
         ],

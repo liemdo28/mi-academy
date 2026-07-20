@@ -226,6 +226,23 @@ void main() {
       expect(controller.isComplete, isFalse);
     });
 
+    test('exports and restores reorder progress', () {
+      final content = SequenceContent.fromJson(_ascendingViExample());
+      final controller = SequenceController(content: content);
+      controller.moveItem(0, 1);
+      controller.submitReorder();
+
+      final restored = SequenceController(content: content)
+        ..restoreState(controller.exportState());
+
+      expect(
+        restored.arrangement.map((item) => item.id),
+        controller.arrangement.map((item) => item.id),
+      );
+      expect(restored.attempts, 1);
+      expect(restored.isComplete, isFalse);
+    });
+
     test('perfect run (first attempt correct) earns 3 stars', () {
       final content = SequenceContent.fromJson(_ascendingViExample());
       final controller = SequenceController(content: content);

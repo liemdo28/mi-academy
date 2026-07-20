@@ -501,7 +501,7 @@ abstract final class GameRegistry {
         GameRegistryEntry(
           gameId: 'picture_detective',
           localizedName: const {
-            'vi': 'Tham tu hinh anh',
+            'vi': 'Thám tử hình ảnh',
             'en': 'Picture Detective',
           },
           category: 'science',
@@ -512,7 +512,7 @@ abstract final class GameRegistry {
         ),
         GameRegistryEntry(
           gameId: 'color_builder',
-          localizedName: const {'vi': 'Xay mau sac', 'en': 'Color Builder'},
+          localizedName: const {'vi': 'Xây màu sắc', 'en': 'Color Builder'},
           category: 'creative',
           ageBands: const ['junior', 'explorer', 'master'],
           supportedSkills: const [
@@ -524,7 +524,7 @@ abstract final class GameRegistry {
         ),
         GameRegistryEntry(
           gameId: 'animal_homes',
-          localizedName: const {'vi': 'Nha cua dong vat', 'en': 'Animal Homes'},
+          localizedName: const {'vi': 'Nhà của động vật', 'en': 'Animal Homes'},
           category: 'science',
           ageBands: const ['junior', 'explorer', 'master'],
           supportedSkills: const ['science.observation', 'logic.matching'],
@@ -534,7 +534,7 @@ abstract final class GameRegistry {
         GameRegistryEntry(
           gameId: 'daily_routine',
           localizedName: const {
-            'vi': 'Sinh hoat hang ngay',
+            'vi': 'Sinh hoạt hằng ngày',
             'en': 'Daily Routine'
           },
           category: 'science',
@@ -549,7 +549,7 @@ abstract final class GameRegistry {
         GameRegistryEntry(
           gameId: 'healthy_foods',
           localizedName: const {
-            'vi': 'Thuc pham lanh manh',
+            'vi': 'Thực phẩm lành mạnh',
             'en': 'Healthy Foods'
           },
           category: 'science',
@@ -563,7 +563,7 @@ abstract final class GameRegistry {
         ),
         GameRegistryEntry(
           gameId: 'letter_hunt',
-          localizedName: const {'vi': 'San tim chu cai', 'en': 'Letter Hunt'},
+          localizedName: const {'vi': 'Săn tìm chữ cái', 'en': 'Letter Hunt'},
           category: 'letters',
           ageBands: const ['junior', 'explorer', 'master'],
           supportedSkills: const [
@@ -575,7 +575,7 @@ abstract final class GameRegistry {
         ),
         GameRegistryEntry(
           gameId: 'number_train',
-          localizedName: const {'vi': 'Doan tau so', 'en': 'Number Train'},
+          localizedName: const {'vi': 'Đoàn tàu số', 'en': 'Number Train'},
           category: 'math',
           ageBands: const ['junior', 'explorer', 'master'],
           supportedSkills: const [
@@ -587,7 +587,7 @@ abstract final class GameRegistry {
         ),
         GameRegistryEntry(
           gameId: 'emotion_match',
-          localizedName: const {'vi': 'Ghep cam xuc', 'en': 'Emotion Match'},
+          localizedName: const {'vi': 'Ghép cảm xúc', 'en': 'Emotion Match'},
           category: 'science',
           ageBands: const ['junior', 'explorer', 'master'],
           supportedSkills: const ['science.observation', 'logic.matching'],
@@ -596,7 +596,7 @@ abstract final class GameRegistry {
         ),
         GameRegistryEntry(
           gameId: 'puzzle_parts',
-          localizedName: const {'vi': 'Manh ghep do vat', 'en': 'Puzzle Parts'},
+          localizedName: const {'vi': 'Mảnh ghép đồ vật', 'en': 'Puzzle Parts'},
           category: 'creative',
           ageBands: const ['junior', 'explorer', 'master'],
           supportedSkills: const [
@@ -608,7 +608,7 @@ abstract final class GameRegistry {
         ),
         GameRegistryEntry(
           gameId: 'odd_one_out',
-          localizedName: const {'vi': 'Tim vat khac nhom', 'en': 'Odd One Out'},
+          localizedName: const {'vi': 'Tìm vật khác nhóm', 'en': 'Odd One Out'},
           category: 'logic',
           ageBands: const ['junior', 'explorer', 'master'],
           supportedSkills: const ['logic.odd_one_out', 'logic.classification'],
@@ -617,7 +617,7 @@ abstract final class GameRegistry {
         ),
         GameRegistryEntry(
           gameId: 'opposites',
-          localizedName: const {'vi': 'Cap tu trai nghia', 'en': 'Opposites'},
+          localizedName: const {'vi': 'Cặp từ trái nghĩa', 'en': 'Opposites'},
           category: 'letters',
           ageBands: const ['junior', 'explorer', 'master'],
           supportedSkills: const [
@@ -630,7 +630,7 @@ abstract final class GameRegistry {
         GameRegistryEntry(
           gameId: 'weather_today',
           localizedName: const {
-            'vi': 'Thoi tiet hom nay',
+            'vi': 'Thời tiết hôm nay',
             'en': 'Weather Today'
           },
           category: 'science',
@@ -642,7 +642,7 @@ abstract final class GameRegistry {
         GameRegistryEntry(
           gameId: 'memory_journey',
           localizedName: const {
-            'vi': 'Hanh trinh ghi nho',
+            'vi': 'Hành trình ghi nhớ',
             'en': 'Memory Journey'
           },
           category: 'logic',
@@ -654,7 +654,7 @@ abstract final class GameRegistry {
         GameRegistryEntry(
           gameId: 'category_expert',
           localizedName: const {
-            'vi': 'Chuyen gia phan loai',
+            'vi': 'Chuyên gia phân loại',
             'en': 'Category Expert',
           },
           category: 'logic',
@@ -666,7 +666,7 @@ abstract final class GameRegistry {
         GameRegistryEntry(
           gameId: 'build_the_story',
           localizedName: const {
-            'vi': 'Xay cau chuyen',
+            'vi': 'Xây câu chuyện',
             'en': 'Build the Story'
           },
           category: 'letters',
@@ -698,6 +698,8 @@ GameScreenBuilder _engineBackedBuilder(EngineBackedGameKind kind) => ({
           onExit: onExit,
           onComplete: onComplete,
           childProfileId: childProfileId,
+          initialSnapshot: initialSnapshot,
+          onSaveSnapshot: onSaveSnapshot,
           reduceMotion: reduceMotion,
           locale: locale,
         );
