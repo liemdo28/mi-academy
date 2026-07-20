@@ -33,8 +33,10 @@ String startRouteFor({
   required bool isAuthenticated,
   required bool hasSelectedChild,
   bool localeConfirmed = true,
+  bool backendConfigured = true,
 }) {
   if (!localeConfirmed) return '/locale-select';
+  if (!backendConfigured) return hasSelectedChild ? '/home' : '/select-child';
   if (!isAuthenticated) return '/login';
   return hasSelectedChild ? '/home' : '/select-child';
 }
@@ -56,6 +58,21 @@ class _SplashState extends ConsumerState<SplashScreen> {
           isAuthenticated: false,
           hasSelectedChild: false,
           localeConfirmed: false,
+        ),
+      );
+      return;
+    }
+
+    final api = ref.read(apiServiceProvider);
+    if (!api.hasConfiguredBackend) {
+      await ref.read(activeChildProvider.notifier).loadChildren();
+      if (!mounted) return;
+      final hasSelectedChild = ref.read(activeChildProvider).childId != null;
+      context.go(
+        startRouteFor(
+          isAuthenticated: false,
+          hasSelectedChild: hasSelectedChild,
+          backendConfigured: false,
         ),
       );
       return;

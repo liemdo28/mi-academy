@@ -158,6 +158,8 @@ class ApiService {
     );
   }
 
+  bool get hasConfiguredBackend => baseUrl.trim().isNotEmpty;
+
   // ─── Auth ──────────────────────────────────────────────────────────────────
 
   Future<Map<String, dynamic>> register({

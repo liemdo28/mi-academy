@@ -113,15 +113,20 @@ class _GameScreenState extends ConsumerState<GameScreen> {
           levelId: result.levelId,
         );
 
-    if (widget.childId == 'offline-child') return;
-
-    final games = await ref.read(gamesCatalogProvider.future);
-    final game = games.firstWhere(
-      (g) => g['game_type'] == widget.gameType,
-      orElse: () => const {},
-    );
-    final dbGameId = game['id'] as String?;
-    if (dbGameId == null) return; // Game not in backend catalog yet.
+    var dbGameId = widget.gameType;
+    final hasBackend = ref.read(apiServiceProvider).hasConfiguredBackend;
+    if (hasBackend) {
+      try {
+        final games = await ref.read(gamesCatalogProvider.future);
+        final game = games.firstWhere(
+          (g) => g['game_type'] == widget.gameType,
+          orElse: () => const {},
+        );
+        dbGameId = game['id'] as String? ?? widget.gameType;
+      } catch (_) {
+        dbGameId = widget.gameType;
+      }
+    }
 
     final attemptId = const Uuid().v4();
     final startedAt = result.completedAt.subtract(result.duration).toUtc();
@@ -171,6 +176,7 @@ class _GameScreenState extends ConsumerState<GameScreen> {
 
     try {
       final api = ref.read(apiServiceProvider);
+      if (!api.hasConfiguredBackend) throw StateError('Backend not configured');
       await api.submitGameResult(dbGameId, body);
     } catch (_) {
       // Offline, or the save didn't go through — queue it for later

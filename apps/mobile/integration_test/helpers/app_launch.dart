@@ -46,6 +46,13 @@ Future<void> launchApp(
   await tester.pumpAndSettle(const Duration(seconds: 2));
 }
 
+Future<void> confirmVietnameseIfShown(WidgetTester tester) async {
+  final vietnameseButton = find.text('Tiếng Việt');
+  if (vietnameseButton.evaluate().isEmpty) return;
+  await tester.tap(vietnameseButton);
+  await tester.pumpAndSettle(const Duration(seconds: 2));
+}
+
 /// Clears all local app state (Hive boxes) so each test scenario starts
 /// from a true fresh-install state, independent of any other test that
 /// ran before it in the same process.

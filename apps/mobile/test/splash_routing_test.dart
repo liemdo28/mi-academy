@@ -32,4 +32,23 @@ void main() {
       '/select-child',
     );
   });
+
+  test('family mode without backend starts from local profile flow', () {
+    expect(
+      startRouteFor(
+        isAuthenticated: false,
+        hasSelectedChild: false,
+        backendConfigured: false,
+      ),
+      '/select-child',
+    );
+    expect(
+      startRouteFor(
+        isAuthenticated: false,
+        hasSelectedChild: true,
+        backendConfigured: false,
+      ),
+      '/home',
+    );
+  });
 }

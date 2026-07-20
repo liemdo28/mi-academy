@@ -23,8 +23,7 @@ void main() {
       final overrides = _offlineMissingLetterOverrides();
 
       await launchApp(tester, overrides: overrides);
-      await tester.tap(find.text('Tiếng Việt'));
-      await tester.pumpAndSettle(const Duration(seconds: 2));
+      await confirmVietnameseIfShown(tester);
 
       expect(find.text('Chào Mi!'), findsOneWidget);
       expect(find.text('Tìm chữ còn thiếu'), findsOneWidget);

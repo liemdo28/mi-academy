@@ -33,6 +33,7 @@ class _AddChildDialogState extends State<AddChildDialog> {
             controller: _nicknameController,
             decoration: const InputDecoration(labelText: MiMobileStrings.m240),
             autofocus: true,
+            onChanged: (_) => setState(() {}),
           ),
           const SizedBox(height: MiTokens.space3),
           DropdownButtonFormField<String>(

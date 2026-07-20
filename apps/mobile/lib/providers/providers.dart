@@ -4,6 +4,7 @@ import 'package:offline_sync/offline_sync.dart';
 import '../config/router.dart';
 import '../services/api_service.dart';
 import '../services/api_sync_processor.dart';
+import '../services/child_profile_store.dart';
 import '../services/parent_settings_store.dart';
 import '../services/snapshot_store.dart';
 import 'auth_provider.dart';
@@ -39,6 +40,11 @@ final apiServiceProvider = Provider<ApiService>((ref) {
     routerProvider.go('/login');
   };
   return api;
+});
+
+final childProfileStoreProvider = Provider<ChildProfileStore>((ref) {
+  if (!HiveChildProfileStore.isReady) return MemoryChildProfileStore();
+  return HiveChildProfileStore();
 });
 
 /// Parent PIN verifier.
@@ -79,6 +85,7 @@ final dailyPlanProvider = FutureProvider<List<Map<String, dynamic>>>((
   final api = ref.read(apiServiceProvider);
   final child = ref.watch(activeChildProvider);
   if (child.childId == null) return [];
+  if (!api.hasConfiguredBackend) return [];
   final result = await api.getDailyPlan(child.childId!);
   return result.cast<Map<String, dynamic>>();
 });
@@ -88,6 +95,7 @@ final rewardsProvider = FutureProvider<List<Map<String, dynamic>>>((ref) async {
   final api = ref.read(apiServiceProvider);
   final child = ref.watch(activeChildProvider);
   if (child.childId == null) return [];
+  if (!api.hasConfiguredBackend) return [];
   final result = await api.getChildRewards(child.childId!);
   return result.cast<Map<String, dynamic>>();
 });
@@ -95,6 +103,7 @@ final rewardsProvider = FutureProvider<List<Map<String, dynamic>>>((ref) async {
 /// Parent report provider.
 final reportsProvider = FutureProvider<List<Map<String, dynamic>>>((ref) async {
   final api = ref.read(apiServiceProvider);
+  if (!api.hasConfiguredBackend) return [];
   final result = await api.getReports();
   final reports = result['reports'];
   if (reports is List) return reports.cast<Map<String, dynamic>>();
@@ -108,6 +117,7 @@ final gamesCatalogProvider = FutureProvider<List<Map<String, dynamic>>>((
   ref,
 ) async {
   final api = ref.read(apiServiceProvider);
+  if (!api.hasConfiguredBackend) return [];
   final result = await api.getGames();
   return result.cast<Map<String, dynamic>>();
 });

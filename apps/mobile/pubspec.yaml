@@ -1,6 +1,6 @@
 name: mi_academy
 description: MI Academy — Free educational games for children aged 5-12
-version: 1.0.0+4
+version: 1.0.0-family.1+4
 publish_to: none
 
 environment:

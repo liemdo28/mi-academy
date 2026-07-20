@@ -175,8 +175,7 @@ Future<void> _launchGame(
       subject: subject,
     ),
   );
-  await tester.tap(find.text('Tiếng Việt'));
-  await tester.pumpAndSettle(const Duration(seconds: 2));
+  await confirmVietnameseIfShown(tester);
 
   expect(find.text('Chào Mi!'), findsOneWidget);
   expect(find.text(title), findsOneWidget);
