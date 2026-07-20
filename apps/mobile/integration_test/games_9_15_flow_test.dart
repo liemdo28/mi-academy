@@ -234,7 +234,7 @@ Future<void> _tapAll(WidgetTester tester, List<String> labels) async {
 }
 
 Future<void> _tapCheckAnswers(WidgetTester tester) async {
-  await tester.tap(find.widgetWithText(ElevatedButton, 'Kiem tra'));
+  await tester.tap(find.widgetWithText(ElevatedButton, 'Kiểm tra'));
   await tester.pumpAndSettle(const Duration(seconds: 2));
 }
 
