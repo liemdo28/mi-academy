@@ -11,6 +11,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Place each card into warm colors or cool colors.",
+          "learningObjective": "color classification",
           "items": [
             {
               "id": "item0",
@@ -101,12 +102,13 @@
           "hint": "Tap a card, then tap its target."
         },
         "vi": {
-          "prompt": "Dat moi the vao mau nong hoac mau mat.",
+          "prompt": "Đặt mỗi thẻ vào màu nóng hoặc màu mát.",
+          "learningObjective": "phân loại màu sắc",
           "items": [
             {
               "id": "item0",
-              "label": "do",
-              "text": "do",
+              "label": "đỏ",
+              "text": "đỏ",
               "acceptedTargetIds": [
                 "left"
               ],
@@ -114,8 +116,8 @@
             },
             {
               "id": "item1",
-              "label": "vang",
-              "text": "vang",
+              "label": "vàng",
+              "text": "vàng",
               "acceptedTargetIds": [
                 "left"
               ],
@@ -132,8 +134,8 @@
             },
             {
               "id": "item3",
-              "label": "xanh duong",
-              "text": "xanh duong",
+              "label": "xanh dương",
+              "text": "xanh dương",
               "acceptedTargetIds": [
                 "right"
               ],
@@ -141,8 +143,8 @@
             },
             {
               "id": "item4",
-              "label": "xanh la",
-              "text": "xanh la",
+              "label": "xanh lá",
+              "text": "xanh lá",
               "acceptedTargetIds": [
                 "right"
               ],
@@ -150,8 +152,8 @@
             },
             {
               "id": "item5",
-              "label": "tim",
-              "text": "tim",
+              "label": "tím",
+              "text": "tím",
               "acceptedTargetIds": [
                 "right"
               ],
@@ -161,8 +163,8 @@
           "targets": [
             {
               "id": "left",
-              "label": "mau nong",
-              "text": "mau nong",
+              "label": "màu nóng",
+              "text": "màu nóng",
               "capacity": 3,
               "acceptedItemIds": [
                 "item0",
@@ -172,8 +174,8 @@
             },
             {
               "id": "right",
-              "label": "mau mat",
-              "text": "mau mat",
+              "label": "màu mát",
+              "text": "màu mát",
               "capacity": 3,
               "acceptedItemIds": [
                 "item3",
@@ -189,12 +191,12 @@
           "rule": {
             "matchStrategy": "explicitIds"
           },
-          "hint": "Cham vao the, roi cham vao dich den."
+          "hint": "Chạm vào thẻ, rồi chạm vào đích đến."
         }
       },
       "hints": [
         {
-          "text": "Cham vao the, roi cham vao dich den."
+          "text": "Chạm vào thẻ, rồi chạm vào đích đến."
         }
       ],
       "metadata": {
@@ -224,6 +226,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Place each card into warm colors or cool colors.",
+          "learningObjective": "color classification",
           "items": [
             {
               "id": "item0",
@@ -314,12 +317,13 @@
           "hint": "Tap a card, then tap its target."
         },
         "vi": {
-          "prompt": "Dat moi the vao mau nong hoac mau mat.",
+          "prompt": "Đặt mỗi thẻ vào màu nóng hoặc màu mát.",
+          "learningObjective": "phân loại màu sắc",
           "items": [
             {
               "id": "item0",
-              "label": "do",
-              "text": "do",
+              "label": "đỏ",
+              "text": "đỏ",
               "acceptedTargetIds": [
                 "left"
               ],
@@ -327,8 +331,8 @@
             },
             {
               "id": "item1",
-              "label": "vang",
-              "text": "vang",
+              "label": "vàng",
+              "text": "vàng",
               "acceptedTargetIds": [
                 "left"
               ],
@@ -345,8 +349,8 @@
             },
             {
               "id": "item3",
-              "label": "xanh duong",
-              "text": "xanh duong",
+              "label": "xanh dương",
+              "text": "xanh dương",
               "acceptedTargetIds": [
                 "right"
               ],
@@ -354,8 +358,8 @@
             },
             {
               "id": "item4",
-              "label": "xanh la",
-              "text": "xanh la",
+              "label": "xanh lá",
+              "text": "xanh lá",
               "acceptedTargetIds": [
                 "right"
               ],
@@ -363,8 +367,8 @@
             },
             {
               "id": "item5",
-              "label": "tim",
-              "text": "tim",
+              "label": "tím",
+              "text": "tím",
               "acceptedTargetIds": [
                 "right"
               ],
@@ -374,8 +378,8 @@
           "targets": [
             {
               "id": "left",
-              "label": "mau nong",
-              "text": "mau nong",
+              "label": "màu nóng",
+              "text": "màu nóng",
               "capacity": 3,
               "acceptedItemIds": [
                 "item0",
@@ -385,8 +389,8 @@
             },
             {
               "id": "right",
-              "label": "mau mat",
-              "text": "mau mat",
+              "label": "màu mát",
+              "text": "màu mát",
               "capacity": 3,
               "acceptedItemIds": [
                 "item3",
@@ -402,12 +406,12 @@
           "rule": {
             "matchStrategy": "explicitIds"
           },
-          "hint": "Cham vao the, roi cham vao dich den."
+          "hint": "Chạm vào thẻ, rồi chạm vào đích đến."
         }
       },
       "hints": [
         {
-          "text": "Cham vao the, roi cham vao dich den."
+          "text": "Chạm vào thẻ, rồi chạm vào đích đến."
         }
       ],
       "metadata": {
@@ -437,6 +441,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Place each card into warm colors or cool colors.",
+          "learningObjective": "color classification",
           "items": [
             {
               "id": "item0",
@@ -527,12 +532,13 @@
           "hint": "Tap a card, then tap its target."
         },
         "vi": {
-          "prompt": "Dat moi the vao mau nong hoac mau mat.",
+          "prompt": "Đặt mỗi thẻ vào màu nóng hoặc màu mát.",
+          "learningObjective": "phân loại màu sắc",
           "items": [
             {
               "id": "item0",
-              "label": "do",
-              "text": "do",
+              "label": "đỏ",
+              "text": "đỏ",
               "acceptedTargetIds": [
                 "left"
               ],
@@ -540,8 +546,8 @@
             },
             {
               "id": "item1",
-              "label": "vang",
-              "text": "vang",
+              "label": "vàng",
+              "text": "vàng",
               "acceptedTargetIds": [
                 "left"
               ],
@@ -558,8 +564,8 @@
             },
             {
               "id": "item3",
-              "label": "xanh duong",
-              "text": "xanh duong",
+              "label": "xanh dương",
+              "text": "xanh dương",
               "acceptedTargetIds": [
                 "right"
               ],
@@ -567,8 +573,8 @@
             },
             {
               "id": "item4",
-              "label": "xanh la",
-              "text": "xanh la",
+              "label": "xanh lá",
+              "text": "xanh lá",
               "acceptedTargetIds": [
                 "right"
               ],
@@ -576,8 +582,8 @@
             },
             {
               "id": "item5",
-              "label": "tim",
-              "text": "tim",
+              "label": "tím",
+              "text": "tím",
               "acceptedTargetIds": [
                 "right"
               ],
@@ -587,8 +593,8 @@
           "targets": [
             {
               "id": "left",
-              "label": "mau nong",
-              "text": "mau nong",
+              "label": "màu nóng",
+              "text": "màu nóng",
               "capacity": 3,
               "acceptedItemIds": [
                 "item0",
@@ -598,8 +604,8 @@
             },
             {
               "id": "right",
-              "label": "mau mat",
-              "text": "mau mat",
+              "label": "màu mát",
+              "text": "màu mát",
               "capacity": 3,
               "acceptedItemIds": [
                 "item3",
@@ -615,12 +621,12 @@
           "rule": {
             "matchStrategy": "explicitIds"
           },
-          "hint": "Cham vao the, roi cham vao dich den."
+          "hint": "Chạm vào thẻ, rồi chạm vào đích đến."
         }
       },
       "hints": [
         {
-          "text": "Cham vao the, roi cham vao dich den."
+          "text": "Chạm vào thẻ, rồi chạm vào đích đến."
         }
       ],
       "metadata": {
@@ -650,6 +656,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Place each card into warm colors or cool colors.",
+          "learningObjective": "color classification",
           "items": [
             {
               "id": "item0",
@@ -740,12 +747,13 @@
           "hint": "Tap a card, then tap its target."
         },
         "vi": {
-          "prompt": "Dat moi the vao mau nong hoac mau mat.",
+          "prompt": "Đặt mỗi thẻ vào màu nóng hoặc màu mát.",
+          "learningObjective": "phân loại màu sắc",
           "items": [
             {
               "id": "item0",
-              "label": "do",
-              "text": "do",
+              "label": "đỏ",
+              "text": "đỏ",
               "acceptedTargetIds": [
                 "left"
               ],
@@ -753,8 +761,8 @@
             },
             {
               "id": "item1",
-              "label": "vang",
-              "text": "vang",
+              "label": "vàng",
+              "text": "vàng",
               "acceptedTargetIds": [
                 "left"
               ],
@@ -771,8 +779,8 @@
             },
             {
               "id": "item3",
-              "label": "xanh duong",
-              "text": "xanh duong",
+              "label": "xanh dương",
+              "text": "xanh dương",
               "acceptedTargetIds": [
                 "right"
               ],
@@ -780,8 +788,8 @@
             },
             {
               "id": "item4",
-              "label": "xanh la",
-              "text": "xanh la",
+              "label": "xanh lá",
+              "text": "xanh lá",
               "acceptedTargetIds": [
                 "right"
               ],
@@ -789,8 +797,8 @@
             },
             {
               "id": "item5",
-              "label": "tim",
-              "text": "tim",
+              "label": "tím",
+              "text": "tím",
               "acceptedTargetIds": [
                 "right"
               ],
@@ -800,8 +808,8 @@
           "targets": [
             {
               "id": "left",
-              "label": "mau nong",
-              "text": "mau nong",
+              "label": "màu nóng",
+              "text": "màu nóng",
               "capacity": 3,
               "acceptedItemIds": [
                 "item0",
@@ -811,8 +819,8 @@
             },
             {
               "id": "right",
-              "label": "mau mat",
-              "text": "mau mat",
+              "label": "màu mát",
+              "text": "màu mát",
               "capacity": 3,
               "acceptedItemIds": [
                 "item3",
@@ -828,12 +836,12 @@
           "rule": {
             "matchStrategy": "explicitIds"
           },
-          "hint": "Cham vao the, roi cham vao dich den."
+          "hint": "Chạm vào thẻ, rồi chạm vào đích đến."
         }
       },
       "hints": [
         {
-          "text": "Cham vao the, roi cham vao dich den."
+          "text": "Chạm vào thẻ, rồi chạm vào đích đến."
         }
       ],
       "metadata": {
@@ -863,6 +871,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Place each card into warm colors or cool colors.",
+          "learningObjective": "color classification",
           "items": [
             {
               "id": "item0",
@@ -953,12 +962,13 @@
           "hint": "Tap a card, then tap its target."
         },
         "vi": {
-          "prompt": "Dat moi the vao mau nong hoac mau mat.",
+          "prompt": "Đặt mỗi thẻ vào màu nóng hoặc màu mát.",
+          "learningObjective": "phân loại màu sắc",
           "items": [
             {
               "id": "item0",
-              "label": "do",
-              "text": "do",
+              "label": "đỏ",
+              "text": "đỏ",
               "acceptedTargetIds": [
                 "left"
               ],
@@ -966,8 +976,8 @@
             },
             {
               "id": "item1",
-              "label": "vang",
-              "text": "vang",
+              "label": "vàng",
+              "text": "vàng",
               "acceptedTargetIds": [
                 "left"
               ],
@@ -984,8 +994,8 @@
             },
             {
               "id": "item3",
-              "label": "xanh duong",
-              "text": "xanh duong",
+              "label": "xanh dương",
+              "text": "xanh dương",
               "acceptedTargetIds": [
                 "right"
               ],
@@ -993,8 +1003,8 @@
             },
             {
               "id": "item4",
-              "label": "xanh la",
-              "text": "xanh la",
+              "label": "xanh lá",
+              "text": "xanh lá",
               "acceptedTargetIds": [
                 "right"
               ],
@@ -1002,8 +1012,8 @@
             },
             {
               "id": "item5",
-              "label": "tim",
-              "text": "tim",
+              "label": "tím",
+              "text": "tím",
               "acceptedTargetIds": [
                 "right"
               ],
@@ -1013,8 +1023,8 @@
           "targets": [
             {
               "id": "left",
-              "label": "mau nong",
-              "text": "mau nong",
+              "label": "màu nóng",
+              "text": "màu nóng",
               "capacity": 3,
               "acceptedItemIds": [
                 "item0",
@@ -1024,8 +1034,8 @@
             },
             {
               "id": "right",
-              "label": "mau mat",
-              "text": "mau mat",
+              "label": "màu mát",
+              "text": "màu mát",
               "capacity": 3,
               "acceptedItemIds": [
                 "item3",
@@ -1041,12 +1051,12 @@
           "rule": {
             "matchStrategy": "explicitIds"
           },
-          "hint": "Cham vao the, roi cham vao dich den."
+          "hint": "Chạm vào thẻ, rồi chạm vào đích đến."
         }
       },
       "hints": [
         {
-          "text": "Cham vao the, roi cham vao dich den."
+          "text": "Chạm vào thẻ, rồi chạm vào đích đến."
         }
       ],
       "metadata": {
@@ -1076,6 +1086,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Place each card into warm colors or cool colors.",
+          "learningObjective": "color classification",
           "items": [
             {
               "id": "item0",
@@ -1166,12 +1177,13 @@
           "hint": "Tap a card, then tap its target."
         },
         "vi": {
-          "prompt": "Dat moi the vao mau nong hoac mau mat.",
+          "prompt": "Đặt mỗi thẻ vào màu nóng hoặc màu mát.",
+          "learningObjective": "phân loại màu sắc",
           "items": [
             {
               "id": "item0",
-              "label": "do",
-              "text": "do",
+              "label": "đỏ",
+              "text": "đỏ",
               "acceptedTargetIds": [
                 "left"
               ],
@@ -1179,8 +1191,8 @@
             },
             {
               "id": "item1",
-              "label": "vang",
-              "text": "vang",
+              "label": "vàng",
+              "text": "vàng",
               "acceptedTargetIds": [
                 "left"
               ],
@@ -1197,8 +1209,8 @@
             },
             {
               "id": "item3",
-              "label": "xanh duong",
-              "text": "xanh duong",
+              "label": "xanh dương",
+              "text": "xanh dương",
               "acceptedTargetIds": [
                 "right"
               ],
@@ -1206,8 +1218,8 @@
             },
             {
               "id": "item4",
-              "label": "xanh la",
-              "text": "xanh la",
+              "label": "xanh lá",
+              "text": "xanh lá",
               "acceptedTargetIds": [
                 "right"
               ],
@@ -1215,8 +1227,8 @@
             },
             {
               "id": "item5",
-              "label": "tim",
-              "text": "tim",
+              "label": "tím",
+              "text": "tím",
               "acceptedTargetIds": [
                 "right"
               ],
@@ -1226,8 +1238,8 @@
           "targets": [
             {
               "id": "left",
-              "label": "mau nong",
-              "text": "mau nong",
+              "label": "màu nóng",
+              "text": "màu nóng",
               "capacity": 3,
               "acceptedItemIds": [
                 "item0",
@@ -1237,8 +1249,8 @@
             },
             {
               "id": "right",
-              "label": "mau mat",
-              "text": "mau mat",
+              "label": "màu mát",
+              "text": "màu mát",
               "capacity": 3,
               "acceptedItemIds": [
                 "item3",
@@ -1254,12 +1266,12 @@
           "rule": {
             "matchStrategy": "explicitIds"
           },
-          "hint": "Cham vao the, roi cham vao dich den."
+          "hint": "Chạm vào thẻ, rồi chạm vào đích đến."
         }
       },
       "hints": [
         {
-          "text": "Cham vao the, roi cham vao dich den."
+          "text": "Chạm vào thẻ, rồi chạm vào đích đến."
         }
       ],
       "metadata": {
@@ -1289,6 +1301,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Place each card into warm colors or cool colors.",
+          "learningObjective": "color classification",
           "items": [
             {
               "id": "item0",
@@ -1379,12 +1392,13 @@
           "hint": "Tap a card, then tap its target."
         },
         "vi": {
-          "prompt": "Dat moi the vao mau nong hoac mau mat.",
+          "prompt": "Đặt mỗi thẻ vào màu nóng hoặc màu mát.",
+          "learningObjective": "phân loại màu sắc",
           "items": [
             {
               "id": "item0",
-              "label": "do",
-              "text": "do",
+              "label": "đỏ",
+              "text": "đỏ",
               "acceptedTargetIds": [
                 "left"
               ],
@@ -1392,8 +1406,8 @@
             },
             {
               "id": "item1",
-              "label": "vang",
-              "text": "vang",
+              "label": "vàng",
+              "text": "vàng",
               "acceptedTargetIds": [
                 "left"
               ],
@@ -1410,8 +1424,8 @@
             },
             {
               "id": "item3",
-              "label": "xanh duong",
-              "text": "xanh duong",
+              "label": "xanh dương",
+              "text": "xanh dương",
               "acceptedTargetIds": [
                 "right"
               ],
@@ -1419,8 +1433,8 @@
             },
             {
               "id": "item4",
-              "label": "xanh la",
-              "text": "xanh la",
+              "label": "xanh lá",
+              "text": "xanh lá",
               "acceptedTargetIds": [
                 "right"
               ],
@@ -1428,8 +1442,8 @@
             },
             {
               "id": "item5",
-              "label": "tim",
-              "text": "tim",
+              "label": "tím",
+              "text": "tím",
               "acceptedTargetIds": [
                 "right"
               ],
@@ -1439,8 +1453,8 @@
           "targets": [
             {
               "id": "left",
-              "label": "mau nong",
-              "text": "mau nong",
+              "label": "màu nóng",
+              "text": "màu nóng",
               "capacity": 3,
               "acceptedItemIds": [
                 "item0",
@@ -1450,8 +1464,8 @@
             },
             {
               "id": "right",
-              "label": "mau mat",
-              "text": "mau mat",
+              "label": "màu mát",
+              "text": "màu mát",
               "capacity": 3,
               "acceptedItemIds": [
                 "item3",
@@ -1467,12 +1481,12 @@
           "rule": {
             "matchStrategy": "explicitIds"
           },
-          "hint": "Cham vao the, roi cham vao dich den."
+          "hint": "Chạm vào thẻ, rồi chạm vào đích đến."
         }
       },
       "hints": [
         {
-          "text": "Cham vao the, roi cham vao dich den."
+          "text": "Chạm vào thẻ, rồi chạm vào đích đến."
         }
       ],
       "metadata": {
@@ -1502,6 +1516,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Place each card into warm colors or cool colors.",
+          "learningObjective": "color classification",
           "items": [
             {
               "id": "item0",
@@ -1592,12 +1607,13 @@
           "hint": "Tap a card, then tap its target."
         },
         "vi": {
-          "prompt": "Dat moi the vao mau nong hoac mau mat.",
+          "prompt": "Đặt mỗi thẻ vào màu nóng hoặc màu mát.",
+          "learningObjective": "phân loại màu sắc",
           "items": [
             {
               "id": "item0",
-              "label": "do",
-              "text": "do",
+              "label": "đỏ",
+              "text": "đỏ",
               "acceptedTargetIds": [
                 "left"
               ],
@@ -1605,8 +1621,8 @@
             },
             {
               "id": "item1",
-              "label": "vang",
-              "text": "vang",
+              "label": "vàng",
+              "text": "vàng",
               "acceptedTargetIds": [
                 "left"
               ],
@@ -1623,8 +1639,8 @@
             },
             {
               "id": "item3",
-              "label": "xanh duong",
-              "text": "xanh duong",
+              "label": "xanh dương",
+              "text": "xanh dương",
               "acceptedTargetIds": [
                 "right"
               ],
@@ -1632,8 +1648,8 @@
             },
             {
               "id": "item4",
-              "label": "xanh la",
-              "text": "xanh la",
+              "label": "xanh lá",
+              "text": "xanh lá",
               "acceptedTargetIds": [
                 "right"
               ],
@@ -1641,8 +1657,8 @@
             },
             {
               "id": "item5",
-              "label": "tim",
-              "text": "tim",
+              "label": "tím",
+              "text": "tím",
               "acceptedTargetIds": [
                 "right"
               ],
@@ -1652,8 +1668,8 @@
           "targets": [
             {
               "id": "left",
-              "label": "mau nong",
-              "text": "mau nong",
+              "label": "màu nóng",
+              "text": "màu nóng",
               "capacity": 3,
               "acceptedItemIds": [
                 "item0",
@@ -1663,8 +1679,8 @@
             },
             {
               "id": "right",
-              "label": "mau mat",
-              "text": "mau mat",
+              "label": "màu mát",
+              "text": "màu mát",
               "capacity": 3,
               "acceptedItemIds": [
                 "item3",
@@ -1680,12 +1696,12 @@
           "rule": {
             "matchStrategy": "explicitIds"
           },
-          "hint": "Cham vao the, roi cham vao dich den."
+          "hint": "Chạm vào thẻ, rồi chạm vào đích đến."
         }
       },
       "hints": [
         {
-          "text": "Cham vao the, roi cham vao dich den."
+          "text": "Chạm vào thẻ, rồi chạm vào đích đến."
         }
       ],
       "metadata": {
@@ -1715,6 +1731,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Place each card into warm colors or cool colors.",
+          "learningObjective": "color classification",
           "items": [
             {
               "id": "item0",
@@ -1805,12 +1822,13 @@
           "hint": "Tap a card, then tap its target."
         },
         "vi": {
-          "prompt": "Dat moi the vao mau nong hoac mau mat.",
+          "prompt": "Đặt mỗi thẻ vào màu nóng hoặc màu mát.",
+          "learningObjective": "phân loại màu sắc",
           "items": [
             {
               "id": "item0",
-              "label": "do",
-              "text": "do",
+              "label": "đỏ",
+              "text": "đỏ",
               "acceptedTargetIds": [
                 "left"
               ],
@@ -1818,8 +1836,8 @@
             },
             {
               "id": "item1",
-              "label": "vang",
-              "text": "vang",
+              "label": "vàng",
+              "text": "vàng",
               "acceptedTargetIds": [
                 "left"
               ],
@@ -1836,8 +1854,8 @@
             },
             {
               "id": "item3",
-              "label": "xanh duong",
-              "text": "xanh duong",
+              "label": "xanh dương",
+              "text": "xanh dương",
               "acceptedTargetIds": [
                 "right"
               ],
@@ -1845,8 +1863,8 @@
             },
             {
               "id": "item4",
-              "label": "xanh la",
-              "text": "xanh la",
+              "label": "xanh lá",
+              "text": "xanh lá",
               "acceptedTargetIds": [
                 "right"
               ],
@@ -1854,8 +1872,8 @@
             },
             {
               "id": "item5",
-              "label": "tim",
-              "text": "tim",
+              "label": "tím",
+              "text": "tím",
               "acceptedTargetIds": [
                 "right"
               ],
@@ -1865,8 +1883,8 @@
           "targets": [
             {
               "id": "left",
-              "label": "mau nong",
-              "text": "mau nong",
+              "label": "màu nóng",
+              "text": "màu nóng",
               "capacity": 3,
               "acceptedItemIds": [
                 "item0",
@@ -1876,8 +1894,8 @@
             },
             {
               "id": "right",
-              "label": "mau mat",
-              "text": "mau mat",
+              "label": "màu mát",
+              "text": "màu mát",
               "capacity": 3,
               "acceptedItemIds": [
                 "item3",
@@ -1893,12 +1911,12 @@
           "rule": {
             "matchStrategy": "explicitIds"
           },
-          "hint": "Cham vao the, roi cham vao dich den."
+          "hint": "Chạm vào thẻ, rồi chạm vào đích đến."
         }
       },
       "hints": [
         {
-          "text": "Cham vao the, roi cham vao dich den."
+          "text": "Chạm vào thẻ, rồi chạm vào đích đến."
         }
       ],
       "metadata": {
@@ -1928,6 +1946,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Place each card into warm colors or cool colors.",
+          "learningObjective": "color classification",
           "items": [
             {
               "id": "item0",
@@ -2018,12 +2037,13 @@
           "hint": "Tap a card, then tap its target."
         },
         "vi": {
-          "prompt": "Dat moi the vao mau nong hoac mau mat.",
+          "prompt": "Đặt mỗi thẻ vào màu nóng hoặc màu mát.",
+          "learningObjective": "phân loại màu sắc",
           "items": [
             {
               "id": "item0",
-              "label": "do",
-              "text": "do",
+              "label": "đỏ",
+              "text": "đỏ",
               "acceptedTargetIds": [
                 "left"
               ],
@@ -2031,8 +2051,8 @@
             },
             {
               "id": "item1",
-              "label": "vang",
-              "text": "vang",
+              "label": "vàng",
+              "text": "vàng",
               "acceptedTargetIds": [
                 "left"
               ],
@@ -2049,8 +2069,8 @@
             },
             {
               "id": "item3",
-              "label": "xanh duong",
-              "text": "xanh duong",
+              "label": "xanh dương",
+              "text": "xanh dương",
               "acceptedTargetIds": [
                 "right"
               ],
@@ -2058,8 +2078,8 @@
             },
             {
               "id": "item4",
-              "label": "xanh la",
-              "text": "xanh la",
+              "label": "xanh lá",
+              "text": "xanh lá",
               "acceptedTargetIds": [
                 "right"
               ],
@@ -2067,8 +2087,8 @@
             },
             {
               "id": "item5",
-              "label": "tim",
-              "text": "tim",
+              "label": "tím",
+              "text": "tím",
               "acceptedTargetIds": [
                 "right"
               ],
@@ -2078,8 +2098,8 @@
           "targets": [
             {
               "id": "left",
-              "label": "mau nong",
-              "text": "mau nong",
+              "label": "màu nóng",
+              "text": "màu nóng",
               "capacity": 3,
               "acceptedItemIds": [
                 "item0",
@@ -2089,8 +2109,8 @@
             },
             {
               "id": "right",
-              "label": "mau mat",
-              "text": "mau mat",
+              "label": "màu mát",
+              "text": "màu mát",
               "capacity": 3,
               "acceptedItemIds": [
                 "item3",
@@ -2106,12 +2126,12 @@
           "rule": {
             "matchStrategy": "explicitIds"
           },
-          "hint": "Cham vao the, roi cham vao dich den."
+          "hint": "Chạm vào thẻ, rồi chạm vào đích đến."
         }
       },
       "hints": [
         {
-          "text": "Cham vao the, roi cham vao dich den."
+          "text": "Chạm vào thẻ, rồi chạm vào đích đến."
         }
       ],
       "metadata": {
@@ -2141,6 +2161,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Place each card into warm colors or cool colors.",
+          "learningObjective": "color classification",
           "items": [
             {
               "id": "item0",
@@ -2231,12 +2252,13 @@
           "hint": "Tap a card, then tap its target."
         },
         "vi": {
-          "prompt": "Dat moi the vao mau nong hoac mau mat.",
+          "prompt": "Đặt mỗi thẻ vào màu nóng hoặc màu mát.",
+          "learningObjective": "phân loại màu sắc",
           "items": [
             {
               "id": "item0",
-              "label": "do",
-              "text": "do",
+              "label": "đỏ",
+              "text": "đỏ",
               "acceptedTargetIds": [
                 "left"
               ],
@@ -2244,8 +2266,8 @@
             },
             {
               "id": "item1",
-              "label": "vang",
-              "text": "vang",
+              "label": "vàng",
+              "text": "vàng",
               "acceptedTargetIds": [
                 "left"
               ],
@@ -2262,8 +2284,8 @@
             },
             {
               "id": "item3",
-              "label": "xanh duong",
-              "text": "xanh duong",
+              "label": "xanh dương",
+              "text": "xanh dương",
               "acceptedTargetIds": [
                 "right"
               ],
@@ -2271,8 +2293,8 @@
             },
             {
               "id": "item4",
-              "label": "xanh la",
-              "text": "xanh la",
+              "label": "xanh lá",
+              "text": "xanh lá",
               "acceptedTargetIds": [
                 "right"
               ],
@@ -2280,8 +2302,8 @@
             },
             {
               "id": "item5",
-              "label": "tim",
-              "text": "tim",
+              "label": "tím",
+              "text": "tím",
               "acceptedTargetIds": [
                 "right"
               ],
@@ -2291,8 +2313,8 @@
           "targets": [
             {
               "id": "left",
-              "label": "mau nong",
-              "text": "mau nong",
+              "label": "màu nóng",
+              "text": "màu nóng",
               "capacity": 3,
               "acceptedItemIds": [
                 "item0",
@@ -2302,8 +2324,8 @@
             },
             {
               "id": "right",
-              "label": "mau mat",
-              "text": "mau mat",
+              "label": "màu mát",
+              "text": "màu mát",
               "capacity": 3,
               "acceptedItemIds": [
                 "item3",
@@ -2319,12 +2341,12 @@
           "rule": {
             "matchStrategy": "explicitIds"
           },
-          "hint": "Cham vao the, roi cham vao dich den."
+          "hint": "Chạm vào thẻ, rồi chạm vào đích đến."
         }
       },
       "hints": [
         {
-          "text": "Cham vao the, roi cham vao dich den."
+          "text": "Chạm vào thẻ, rồi chạm vào đích đến."
         }
       ],
       "metadata": {
@@ -2354,6 +2376,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Place each card into warm colors or cool colors.",
+          "learningObjective": "color classification",
           "items": [
             {
               "id": "item0",
@@ -2444,12 +2467,13 @@
           "hint": "Tap a card, then tap its target."
         },
         "vi": {
-          "prompt": "Dat moi the vao mau nong hoac mau mat.",
+          "prompt": "Đặt mỗi thẻ vào màu nóng hoặc màu mát.",
+          "learningObjective": "phân loại màu sắc",
           "items": [
             {
               "id": "item0",
-              "label": "do",
-              "text": "do",
+              "label": "đỏ",
+              "text": "đỏ",
               "acceptedTargetIds": [
                 "left"
               ],
@@ -2457,8 +2481,8 @@
             },
             {
               "id": "item1",
-              "label": "vang",
-              "text": "vang",
+              "label": "vàng",
+              "text": "vàng",
               "acceptedTargetIds": [
                 "left"
               ],
@@ -2475,8 +2499,8 @@
             },
             {
               "id": "item3",
-              "label": "xanh duong",
-              "text": "xanh duong",
+              "label": "xanh dương",
+              "text": "xanh dương",
               "acceptedTargetIds": [
                 "right"
               ],
@@ -2484,8 +2508,8 @@
             },
             {
               "id": "item4",
-              "label": "xanh la",
-              "text": "xanh la",
+              "label": "xanh lá",
+              "text": "xanh lá",
               "acceptedTargetIds": [
                 "right"
               ],
@@ -2493,8 +2517,8 @@
             },
             {
               "id": "item5",
-              "label": "tim",
-              "text": "tim",
+              "label": "tím",
+              "text": "tím",
               "acceptedTargetIds": [
                 "right"
               ],
@@ -2504,8 +2528,8 @@
           "targets": [
             {
               "id": "left",
-              "label": "mau nong",
-              "text": "mau nong",
+              "label": "màu nóng",
+              "text": "màu nóng",
               "capacity": 3,
               "acceptedItemIds": [
                 "item0",
@@ -2515,8 +2539,8 @@
             },
             {
               "id": "right",
-              "label": "mau mat",
-              "text": "mau mat",
+              "label": "màu mát",
+              "text": "màu mát",
               "capacity": 3,
               "acceptedItemIds": [
                 "item3",
@@ -2532,12 +2556,12 @@
           "rule": {
             "matchStrategy": "explicitIds"
           },
-          "hint": "Cham vao the, roi cham vao dich den."
+          "hint": "Chạm vào thẻ, rồi chạm vào đích đến."
         }
       },
       "hints": [
         {
-          "text": "Cham vao the, roi cham vao dich den."
+          "text": "Chạm vào thẻ, rồi chạm vào đích đến."
         }
       ],
       "metadata": {
@@ -2567,6 +2591,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Place each card into warm colors or cool colors.",
+          "learningObjective": "color classification",
           "items": [
             {
               "id": "item0",
@@ -2657,12 +2682,13 @@
           "hint": "Tap a card, then tap its target."
         },
         "vi": {
-          "prompt": "Dat moi the vao mau nong hoac mau mat.",
+          "prompt": "Đặt mỗi thẻ vào màu nóng hoặc màu mát.",
+          "learningObjective": "phân loại màu sắc",
           "items": [
             {
               "id": "item0",
-              "label": "do",
-              "text": "do",
+              "label": "đỏ",
+              "text": "đỏ",
               "acceptedTargetIds": [
                 "left"
               ],
@@ -2670,8 +2696,8 @@
             },
             {
               "id": "item1",
-              "label": "vang",
-              "text": "vang",
+              "label": "vàng",
+              "text": "vàng",
               "acceptedTargetIds": [
                 "left"
               ],
@@ -2688,8 +2714,8 @@
             },
             {
               "id": "item3",
-              "label": "xanh duong",
-              "text": "xanh duong",
+              "label": "xanh dương",
+              "text": "xanh dương",
               "acceptedTargetIds": [
                 "right"
               ],
@@ -2697,8 +2723,8 @@
             },
             {
               "id": "item4",
-              "label": "xanh la",
-              "text": "xanh la",
+              "label": "xanh lá",
+              "text": "xanh lá",
               "acceptedTargetIds": [
                 "right"
               ],
@@ -2706,8 +2732,8 @@
             },
             {
               "id": "item5",
-              "label": "tim",
-              "text": "tim",
+              "label": "tím",
+              "text": "tím",
               "acceptedTargetIds": [
                 "right"
               ],
@@ -2717,8 +2743,8 @@
           "targets": [
             {
               "id": "left",
-              "label": "mau nong",
-              "text": "mau nong",
+              "label": "màu nóng",
+              "text": "màu nóng",
               "capacity": 3,
               "acceptedItemIds": [
                 "item0",
@@ -2728,8 +2754,8 @@
             },
             {
               "id": "right",
-              "label": "mau mat",
-              "text": "mau mat",
+              "label": "màu mát",
+              "text": "màu mát",
               "capacity": 3,
               "acceptedItemIds": [
                 "item3",
@@ -2745,12 +2771,12 @@
           "rule": {
             "matchStrategy": "explicitIds"
           },
-          "hint": "Cham vao the, roi cham vao dich den."
+          "hint": "Chạm vào thẻ, rồi chạm vào đích đến."
         }
       },
       "hints": [
         {
-          "text": "Cham vao the, roi cham vao dich den."
+          "text": "Chạm vào thẻ, rồi chạm vào đích đến."
         }
       ],
       "metadata": {
@@ -2780,6 +2806,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Place each card into warm colors or cool colors.",
+          "learningObjective": "color classification",
           "items": [
             {
               "id": "item0",
@@ -2870,12 +2897,13 @@
           "hint": "Tap a card, then tap its target."
         },
         "vi": {
-          "prompt": "Dat moi the vao mau nong hoac mau mat.",
+          "prompt": "Đặt mỗi thẻ vào màu nóng hoặc màu mát.",
+          "learningObjective": "phân loại màu sắc",
           "items": [
             {
               "id": "item0",
-              "label": "do",
-              "text": "do",
+              "label": "đỏ",
+              "text": "đỏ",
               "acceptedTargetIds": [
                 "left"
               ],
@@ -2883,8 +2911,8 @@
             },
             {
               "id": "item1",
-              "label": "vang",
-              "text": "vang",
+              "label": "vàng",
+              "text": "vàng",
               "acceptedTargetIds": [
                 "left"
               ],
@@ -2901,8 +2929,8 @@
             },
             {
               "id": "item3",
-              "label": "xanh duong",
-              "text": "xanh duong",
+              "label": "xanh dương",
+              "text": "xanh dương",
               "acceptedTargetIds": [
                 "right"
               ],
@@ -2910,8 +2938,8 @@
             },
             {
               "id": "item4",
-              "label": "xanh la",
-              "text": "xanh la",
+              "label": "xanh lá",
+              "text": "xanh lá",
               "acceptedTargetIds": [
                 "right"
               ],
@@ -2919,8 +2947,8 @@
             },
             {
               "id": "item5",
-              "label": "tim",
-              "text": "tim",
+              "label": "tím",
+              "text": "tím",
               "acceptedTargetIds": [
                 "right"
               ],
@@ -2930,8 +2958,8 @@
           "targets": [
             {
               "id": "left",
-              "label": "mau nong",
-              "text": "mau nong",
+              "label": "màu nóng",
+              "text": "màu nóng",
               "capacity": 3,
               "acceptedItemIds": [
                 "item0",
@@ -2941,8 +2969,8 @@
             },
             {
               "id": "right",
-              "label": "mau mat",
-              "text": "mau mat",
+              "label": "màu mát",
+              "text": "màu mát",
               "capacity": 3,
               "acceptedItemIds": [
                 "item3",
@@ -2958,12 +2986,12 @@
           "rule": {
             "matchStrategy": "explicitIds"
           },
-          "hint": "Cham vao the, roi cham vao dich den."
+          "hint": "Chạm vào thẻ, rồi chạm vào đích đến."
         }
       },
       "hints": [
         {
-          "text": "Cham vao the, roi cham vao dich den."
+          "text": "Chạm vào thẻ, rồi chạm vào đích đến."
         }
       ],
       "metadata": {
@@ -2993,6 +3021,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Place each card into warm colors or cool colors.",
+          "learningObjective": "color classification",
           "items": [
             {
               "id": "item0",
@@ -3083,12 +3112,13 @@
           "hint": "Tap a card, then tap its target."
         },
         "vi": {
-          "prompt": "Dat moi the vao mau nong hoac mau mat.",
+          "prompt": "Đặt mỗi thẻ vào màu nóng hoặc màu mát.",
+          "learningObjective": "phân loại màu sắc",
           "items": [
             {
               "id": "item0",
-              "label": "do",
-              "text": "do",
+              "label": "đỏ",
+              "text": "đỏ",
               "acceptedTargetIds": [
                 "left"
               ],
@@ -3096,8 +3126,8 @@
             },
             {
               "id": "item1",
-              "label": "vang",
-              "text": "vang",
+              "label": "vàng",
+              "text": "vàng",
               "acceptedTargetIds": [
                 "left"
               ],
@@ -3114,8 +3144,8 @@
             },
             {
               "id": "item3",
-              "label": "xanh duong",
-              "text": "xanh duong",
+              "label": "xanh dương",
+              "text": "xanh dương",
               "acceptedTargetIds": [
                 "right"
               ],
@@ -3123,8 +3153,8 @@
             },
             {
               "id": "item4",
-              "label": "xanh la",
-              "text": "xanh la",
+              "label": "xanh lá",
+              "text": "xanh lá",
               "acceptedTargetIds": [
                 "right"
               ],
@@ -3132,8 +3162,8 @@
             },
             {
               "id": "item5",
-              "label": "tim",
-              "text": "tim",
+              "label": "tím",
+              "text": "tím",
               "acceptedTargetIds": [
                 "right"
               ],
@@ -3143,8 +3173,8 @@
           "targets": [
             {
               "id": "left",
-              "label": "mau nong",
-              "text": "mau nong",
+              "label": "màu nóng",
+              "text": "màu nóng",
               "capacity": 3,
               "acceptedItemIds": [
                 "item0",
@@ -3154,8 +3184,8 @@
             },
             {
               "id": "right",
-              "label": "mau mat",
-              "text": "mau mat",
+              "label": "màu mát",
+              "text": "màu mát",
               "capacity": 3,
               "acceptedItemIds": [
                 "item3",
@@ -3171,12 +3201,12 @@
           "rule": {
             "matchStrategy": "explicitIds"
           },
-          "hint": "Cham vao the, roi cham vao dich den."
+          "hint": "Chạm vào thẻ, rồi chạm vào đích đến."
         }
       },
       "hints": [
         {
-          "text": "Cham vao the, roi cham vao dich den."
+          "text": "Chạm vào thẻ, rồi chạm vào đích đến."
         }
       ],
       "metadata": {
@@ -3206,6 +3236,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Place each card into warm colors or cool colors.",
+          "learningObjective": "color classification",
           "items": [
             {
               "id": "item0",
@@ -3296,12 +3327,13 @@
           "hint": "Tap a card, then tap its target."
         },
         "vi": {
-          "prompt": "Dat moi the vao mau nong hoac mau mat.",
+          "prompt": "Đặt mỗi thẻ vào màu nóng hoặc màu mát.",
+          "learningObjective": "phân loại màu sắc",
           "items": [
             {
               "id": "item0",
-              "label": "do",
-              "text": "do",
+              "label": "đỏ",
+              "text": "đỏ",
               "acceptedTargetIds": [
                 "left"
               ],
@@ -3309,8 +3341,8 @@
             },
             {
               "id": "item1",
-              "label": "vang",
-              "text": "vang",
+              "label": "vàng",
+              "text": "vàng",
               "acceptedTargetIds": [
                 "left"
               ],
@@ -3327,8 +3359,8 @@
             },
             {
               "id": "item3",
-              "label": "xanh duong",
-              "text": "xanh duong",
+              "label": "xanh dương",
+              "text": "xanh dương",
               "acceptedTargetIds": [
                 "right"
               ],
@@ -3336,8 +3368,8 @@
             },
             {
               "id": "item4",
-              "label": "xanh la",
-              "text": "xanh la",
+              "label": "xanh lá",
+              "text": "xanh lá",
               "acceptedTargetIds": [
                 "right"
               ],
@@ -3345,8 +3377,8 @@
             },
             {
               "id": "item5",
-              "label": "tim",
-              "text": "tim",
+              "label": "tím",
+              "text": "tím",
               "acceptedTargetIds": [
                 "right"
               ],
@@ -3356,8 +3388,8 @@
           "targets": [
             {
               "id": "left",
-              "label": "mau nong",
-              "text": "mau nong",
+              "label": "màu nóng",
+              "text": "màu nóng",
               "capacity": 3,
               "acceptedItemIds": [
                 "item0",
@@ -3367,8 +3399,8 @@
             },
             {
               "id": "right",
-              "label": "mau mat",
-              "text": "mau mat",
+              "label": "màu mát",
+              "text": "màu mát",
               "capacity": 3,
               "acceptedItemIds": [
                 "item3",
@@ -3384,12 +3416,12 @@
           "rule": {
             "matchStrategy": "explicitIds"
           },
-          "hint": "Cham vao the, roi cham vao dich den."
+          "hint": "Chạm vào thẻ, rồi chạm vào đích đến."
         }
       },
       "hints": [
         {
-          "text": "Cham vao the, roi cham vao dich den."
+          "text": "Chạm vào thẻ, rồi chạm vào đích đến."
         }
       ],
       "metadata": {
@@ -3419,6 +3451,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Place each card into warm colors or cool colors.",
+          "learningObjective": "color classification",
           "items": [
             {
               "id": "item0",
@@ -3509,12 +3542,13 @@
           "hint": "Tap a card, then tap its target."
         },
         "vi": {
-          "prompt": "Dat moi the vao mau nong hoac mau mat.",
+          "prompt": "Đặt mỗi thẻ vào màu nóng hoặc màu mát.",
+          "learningObjective": "phân loại màu sắc",
           "items": [
             {
               "id": "item0",
-              "label": "do",
-              "text": "do",
+              "label": "đỏ",
+              "text": "đỏ",
               "acceptedTargetIds": [
                 "left"
               ],
@@ -3522,8 +3556,8 @@
             },
             {
               "id": "item1",
-              "label": "vang",
-              "text": "vang",
+              "label": "vàng",
+              "text": "vàng",
               "acceptedTargetIds": [
                 "left"
               ],
@@ -3540,8 +3574,8 @@
             },
             {
               "id": "item3",
-              "label": "xanh duong",
-              "text": "xanh duong",
+              "label": "xanh dương",
+              "text": "xanh dương",
               "acceptedTargetIds": [
                 "right"
               ],
@@ -3549,8 +3583,8 @@
             },
             {
               "id": "item4",
-              "label": "xanh la",
-              "text": "xanh la",
+              "label": "xanh lá",
+              "text": "xanh lá",
               "acceptedTargetIds": [
                 "right"
               ],
@@ -3558,8 +3592,8 @@
             },
             {
               "id": "item5",
-              "label": "tim",
-              "text": "tim",
+              "label": "tím",
+              "text": "tím",
               "acceptedTargetIds": [
                 "right"
               ],
@@ -3569,8 +3603,8 @@
           "targets": [
             {
               "id": "left",
-              "label": "mau nong",
-              "text": "mau nong",
+              "label": "màu nóng",
+              "text": "màu nóng",
               "capacity": 3,
               "acceptedItemIds": [
                 "item0",
@@ -3580,8 +3614,8 @@
             },
             {
               "id": "right",
-              "label": "mau mat",
-              "text": "mau mat",
+              "label": "màu mát",
+              "text": "màu mát",
               "capacity": 3,
               "acceptedItemIds": [
                 "item3",
@@ -3597,12 +3631,12 @@
           "rule": {
             "matchStrategy": "explicitIds"
           },
-          "hint": "Cham vao the, roi cham vao dich den."
+          "hint": "Chạm vào thẻ, rồi chạm vào đích đến."
         }
       },
       "hints": [
         {
-          "text": "Cham vao the, roi cham vao dich den."
+          "text": "Chạm vào thẻ, rồi chạm vào đích đến."
         }
       ],
       "metadata": {
@@ -3632,6 +3666,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Place each card into warm colors or cool colors.",
+          "learningObjective": "color classification",
           "items": [
             {
               "id": "item0",
@@ -3722,12 +3757,13 @@
           "hint": "Tap a card, then tap its target."
         },
         "vi": {
-          "prompt": "Dat moi the vao mau nong hoac mau mat.",
+          "prompt": "Đặt mỗi thẻ vào màu nóng hoặc màu mát.",
+          "learningObjective": "phân loại màu sắc",
           "items": [
             {
               "id": "item0",
-              "label": "do",
-              "text": "do",
+              "label": "đỏ",
+              "text": "đỏ",
               "acceptedTargetIds": [
                 "left"
               ],
@@ -3735,8 +3771,8 @@
             },
             {
               "id": "item1",
-              "label": "vang",
-              "text": "vang",
+              "label": "vàng",
+              "text": "vàng",
               "acceptedTargetIds": [
                 "left"
               ],
@@ -3753,8 +3789,8 @@
             },
             {
               "id": "item3",
-              "label": "xanh duong",
-              "text": "xanh duong",
+              "label": "xanh dương",
+              "text": "xanh dương",
               "acceptedTargetIds": [
                 "right"
               ],
@@ -3762,8 +3798,8 @@
             },
             {
               "id": "item4",
-              "label": "xanh la",
-              "text": "xanh la",
+              "label": "xanh lá",
+              "text": "xanh lá",
               "acceptedTargetIds": [
                 "right"
               ],
@@ -3771,8 +3807,8 @@
             },
             {
               "id": "item5",
-              "label": "tim",
-              "text": "tim",
+              "label": "tím",
+              "text": "tím",
               "acceptedTargetIds": [
                 "right"
               ],
@@ -3782,8 +3818,8 @@
           "targets": [
             {
               "id": "left",
-              "label": "mau nong",
-              "text": "mau nong",
+              "label": "màu nóng",
+              "text": "màu nóng",
               "capacity": 3,
               "acceptedItemIds": [
                 "item0",
@@ -3793,8 +3829,8 @@
             },
             {
               "id": "right",
-              "label": "mau mat",
-              "text": "mau mat",
+              "label": "màu mát",
+              "text": "màu mát",
               "capacity": 3,
               "acceptedItemIds": [
                 "item3",
@@ -3810,12 +3846,12 @@
           "rule": {
             "matchStrategy": "explicitIds"
           },
-          "hint": "Cham vao the, roi cham vao dich den."
+          "hint": "Chạm vào thẻ, rồi chạm vào đích đến."
         }
       },
       "hints": [
         {
-          "text": "Cham vao the, roi cham vao dich den."
+          "text": "Chạm vào thẻ, rồi chạm vào đích đến."
         }
       ],
       "metadata": {
@@ -3845,6 +3881,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Place each card into warm colors or cool colors.",
+          "learningObjective": "color classification",
           "items": [
             {
               "id": "item0",
@@ -3935,12 +3972,13 @@
           "hint": "Tap a card, then tap its target."
         },
         "vi": {
-          "prompt": "Dat moi the vao mau nong hoac mau mat.",
+          "prompt": "Đặt mỗi thẻ vào màu nóng hoặc màu mát.",
+          "learningObjective": "phân loại màu sắc",
           "items": [
             {
               "id": "item0",
-              "label": "do",
-              "text": "do",
+              "label": "đỏ",
+              "text": "đỏ",
               "acceptedTargetIds": [
                 "left"
               ],
@@ -3948,8 +3986,8 @@
             },
             {
               "id": "item1",
-              "label": "vang",
-              "text": "vang",
+              "label": "vàng",
+              "text": "vàng",
               "acceptedTargetIds": [
                 "left"
               ],
@@ -3966,8 +4004,8 @@
             },
             {
               "id": "item3",
-              "label": "xanh duong",
-              "text": "xanh duong",
+              "label": "xanh dương",
+              "text": "xanh dương",
               "acceptedTargetIds": [
                 "right"
               ],
@@ -3975,8 +4013,8 @@
             },
             {
               "id": "item4",
-              "label": "xanh la",
-              "text": "xanh la",
+              "label": "xanh lá",
+              "text": "xanh lá",
               "acceptedTargetIds": [
                 "right"
               ],
@@ -3984,8 +4022,8 @@
             },
             {
               "id": "item5",
-              "label": "tim",
-              "text": "tim",
+              "label": "tím",
+              "text": "tím",
               "acceptedTargetIds": [
                 "right"
               ],
@@ -3995,8 +4033,8 @@
           "targets": [
             {
               "id": "left",
-              "label": "mau nong",
-              "text": "mau nong",
+              "label": "màu nóng",
+              "text": "màu nóng",
               "capacity": 3,
               "acceptedItemIds": [
                 "item0",
@@ -4006,8 +4044,8 @@
             },
             {
               "id": "right",
-              "label": "mau mat",
-              "text": "mau mat",
+              "label": "màu mát",
+              "text": "màu mát",
               "capacity": 3,
               "acceptedItemIds": [
                 "item3",
@@ -4023,12 +4061,12 @@
           "rule": {
             "matchStrategy": "explicitIds"
           },
-          "hint": "Cham vao the, roi cham vao dich den."
+          "hint": "Chạm vào thẻ, rồi chạm vào đích đến."
         }
       },
       "hints": [
         {
-          "text": "Cham vao the, roi cham vao dich den."
+          "text": "Chạm vào thẻ, rồi chạm vào đích đến."
         }
       ],
       "metadata": {
@@ -4058,6 +4096,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Place each card into warm colors or cool colors.",
+          "learningObjective": "color classification",
           "items": [
             {
               "id": "item0",
@@ -4148,12 +4187,13 @@
           "hint": "Tap a card, then tap its target."
         },
         "vi": {
-          "prompt": "Dat moi the vao mau nong hoac mau mat.",
+          "prompt": "Đặt mỗi thẻ vào màu nóng hoặc màu mát.",
+          "learningObjective": "phân loại màu sắc",
           "items": [
             {
               "id": "item0",
-              "label": "do",
-              "text": "do",
+              "label": "đỏ",
+              "text": "đỏ",
               "acceptedTargetIds": [
                 "left"
               ],
@@ -4161,8 +4201,8 @@
             },
             {
               "id": "item1",
-              "label": "vang",
-              "text": "vang",
+              "label": "vàng",
+              "text": "vàng",
               "acceptedTargetIds": [
                 "left"
               ],
@@ -4179,8 +4219,8 @@
             },
             {
               "id": "item3",
-              "label": "xanh duong",
-              "text": "xanh duong",
+              "label": "xanh dương",
+              "text": "xanh dương",
               "acceptedTargetIds": [
                 "right"
               ],
@@ -4188,8 +4228,8 @@
             },
             {
               "id": "item4",
-              "label": "xanh la",
-              "text": "xanh la",
+              "label": "xanh lá",
+              "text": "xanh lá",
               "acceptedTargetIds": [
                 "right"
               ],
@@ -4197,8 +4237,8 @@
             },
             {
               "id": "item5",
-              "label": "tim",
-              "text": "tim",
+              "label": "tím",
+              "text": "tím",
               "acceptedTargetIds": [
                 "right"
               ],
@@ -4208,8 +4248,8 @@
           "targets": [
             {
               "id": "left",
-              "label": "mau nong",
-              "text": "mau nong",
+              "label": "màu nóng",
+              "text": "màu nóng",
               "capacity": 3,
               "acceptedItemIds": [
                 "item0",
@@ -4219,8 +4259,8 @@
             },
             {
               "id": "right",
-              "label": "mau mat",
-              "text": "mau mat",
+              "label": "màu mát",
+              "text": "màu mát",
               "capacity": 3,
               "acceptedItemIds": [
                 "item3",
@@ -4236,12 +4276,12 @@
           "rule": {
             "matchStrategy": "explicitIds"
           },
-          "hint": "Cham vao the, roi cham vao dich den."
+          "hint": "Chạm vào thẻ, rồi chạm vào đích đến."
         }
       },
       "hints": [
         {
-          "text": "Cham vao the, roi cham vao dich den."
+          "text": "Chạm vào thẻ, rồi chạm vào đích đến."
         }
       ],
       "metadata": {
@@ -4271,6 +4311,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Place each card into warm colors or cool colors.",
+          "learningObjective": "color classification",
           "items": [
             {
               "id": "item0",
@@ -4361,12 +4402,13 @@
           "hint": "Tap a card, then tap its target."
         },
         "vi": {
-          "prompt": "Dat moi the vao mau nong hoac mau mat.",
+          "prompt": "Đặt mỗi thẻ vào màu nóng hoặc màu mát.",
+          "learningObjective": "phân loại màu sắc",
           "items": [
             {
               "id": "item0",
-              "label": "do",
-              "text": "do",
+              "label": "đỏ",
+              "text": "đỏ",
               "acceptedTargetIds": [
                 "left"
               ],
@@ -4374,8 +4416,8 @@
             },
             {
               "id": "item1",
-              "label": "vang",
-              "text": "vang",
+              "label": "vàng",
+              "text": "vàng",
               "acceptedTargetIds": [
                 "left"
               ],
@@ -4392,8 +4434,8 @@
             },
             {
               "id": "item3",
-              "label": "xanh duong",
-              "text": "xanh duong",
+              "label": "xanh dương",
+              "text": "xanh dương",
               "acceptedTargetIds": [
                 "right"
               ],
@@ -4401,8 +4443,8 @@
             },
             {
               "id": "item4",
-              "label": "xanh la",
-              "text": "xanh la",
+              "label": "xanh lá",
+              "text": "xanh lá",
               "acceptedTargetIds": [
                 "right"
               ],
@@ -4410,8 +4452,8 @@
             },
             {
               "id": "item5",
-              "label": "tim",
-              "text": "tim",
+              "label": "tím",
+              "text": "tím",
               "acceptedTargetIds": [
                 "right"
               ],
@@ -4421,8 +4463,8 @@
           "targets": [
             {
               "id": "left",
-              "label": "mau nong",
-              "text": "mau nong",
+              "label": "màu nóng",
+              "text": "màu nóng",
               "capacity": 3,
               "acceptedItemIds": [
                 "item0",
@@ -4432,8 +4474,8 @@
             },
             {
               "id": "right",
-              "label": "mau mat",
-              "text": "mau mat",
+              "label": "màu mát",
+              "text": "màu mát",
               "capacity": 3,
               "acceptedItemIds": [
                 "item3",
@@ -4449,12 +4491,12 @@
           "rule": {
             "matchStrategy": "explicitIds"
           },
-          "hint": "Cham vao the, roi cham vao dich den."
+          "hint": "Chạm vào thẻ, rồi chạm vào đích đến."
         }
       },
       "hints": [
         {
-          "text": "Cham vao the, roi cham vao dich den."
+          "text": "Chạm vào thẻ, rồi chạm vào đích đến."
         }
       ],
       "metadata": {
@@ -4484,6 +4526,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Place each card into warm colors or cool colors.",
+          "learningObjective": "color classification",
           "items": [
             {
               "id": "item0",
@@ -4574,12 +4617,13 @@
           "hint": "Tap a card, then tap its target."
         },
         "vi": {
-          "prompt": "Dat moi the vao mau nong hoac mau mat.",
+          "prompt": "Đặt mỗi thẻ vào màu nóng hoặc màu mát.",
+          "learningObjective": "phân loại màu sắc",
           "items": [
             {
               "id": "item0",
-              "label": "do",
-              "text": "do",
+              "label": "đỏ",
+              "text": "đỏ",
               "acceptedTargetIds": [
                 "left"
               ],
@@ -4587,8 +4631,8 @@
             },
             {
               "id": "item1",
-              "label": "vang",
-              "text": "vang",
+              "label": "vàng",
+              "text": "vàng",
               "acceptedTargetIds": [
                 "left"
               ],
@@ -4605,8 +4649,8 @@
             },
             {
               "id": "item3",
-              "label": "xanh duong",
-              "text": "xanh duong",
+              "label": "xanh dương",
+              "text": "xanh dương",
               "acceptedTargetIds": [
                 "right"
               ],
@@ -4614,8 +4658,8 @@
             },
             {
               "id": "item4",
-              "label": "xanh la",
-              "text": "xanh la",
+              "label": "xanh lá",
+              "text": "xanh lá",
               "acceptedTargetIds": [
                 "right"
               ],
@@ -4623,8 +4667,8 @@
             },
             {
               "id": "item5",
-              "label": "tim",
-              "text": "tim",
+              "label": "tím",
+              "text": "tím",
               "acceptedTargetIds": [
                 "right"
               ],
@@ -4634,8 +4678,8 @@
           "targets": [
             {
               "id": "left",
-              "label": "mau nong",
-              "text": "mau nong",
+              "label": "màu nóng",
+              "text": "màu nóng",
               "capacity": 3,
               "acceptedItemIds": [
                 "item0",
@@ -4645,8 +4689,8 @@
             },
             {
               "id": "right",
-              "label": "mau mat",
-              "text": "mau mat",
+              "label": "màu mát",
+              "text": "màu mát",
               "capacity": 3,
               "acceptedItemIds": [
                 "item3",
@@ -4662,12 +4706,12 @@
           "rule": {
             "matchStrategy": "explicitIds"
           },
-          "hint": "Cham vao the, roi cham vao dich den."
+          "hint": "Chạm vào thẻ, rồi chạm vào đích đến."
         }
       },
       "hints": [
         {
-          "text": "Cham vao the, roi cham vao dich den."
+          "text": "Chạm vào thẻ, rồi chạm vào đích đến."
         }
       ],
       "metadata": {
@@ -4697,6 +4741,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Place each card into warm colors or cool colors.",
+          "learningObjective": "color classification",
           "items": [
             {
               "id": "item0",
@@ -4787,12 +4832,13 @@
           "hint": "Tap a card, then tap its target."
         },
         "vi": {
-          "prompt": "Dat moi the vao mau nong hoac mau mat.",
+          "prompt": "Đặt mỗi thẻ vào màu nóng hoặc màu mát.",
+          "learningObjective": "phân loại màu sắc",
           "items": [
             {
               "id": "item0",
-              "label": "do",
-              "text": "do",
+              "label": "đỏ",
+              "text": "đỏ",
               "acceptedTargetIds": [
                 "left"
               ],
@@ -4800,8 +4846,8 @@
             },
             {
               "id": "item1",
-              "label": "vang",
-              "text": "vang",
+              "label": "vàng",
+              "text": "vàng",
               "acceptedTargetIds": [
                 "left"
               ],
@@ -4818,8 +4864,8 @@
             },
             {
               "id": "item3",
-              "label": "xanh duong",
-              "text": "xanh duong",
+              "label": "xanh dương",
+              "text": "xanh dương",
               "acceptedTargetIds": [
                 "right"
               ],
@@ -4827,8 +4873,8 @@
             },
             {
               "id": "item4",
-              "label": "xanh la",
-              "text": "xanh la",
+              "label": "xanh lá",
+              "text": "xanh lá",
               "acceptedTargetIds": [
                 "right"
               ],
@@ -4836,8 +4882,8 @@
             },
             {
               "id": "item5",
-              "label": "tim",
-              "text": "tim",
+              "label": "tím",
+              "text": "tím",
               "acceptedTargetIds": [
                 "right"
               ],
@@ -4847,8 +4893,8 @@
           "targets": [
             {
               "id": "left",
-              "label": "mau nong",
-              "text": "mau nong",
+              "label": "màu nóng",
+              "text": "màu nóng",
               "capacity": 3,
               "acceptedItemIds": [
                 "item0",
@@ -4858,8 +4904,8 @@
             },
             {
               "id": "right",
-              "label": "mau mat",
-              "text": "mau mat",
+              "label": "màu mát",
+              "text": "màu mát",
               "capacity": 3,
               "acceptedItemIds": [
                 "item3",
@@ -4875,12 +4921,12 @@
           "rule": {
             "matchStrategy": "explicitIds"
           },
-          "hint": "Cham vao the, roi cham vao dich den."
+          "hint": "Chạm vào thẻ, rồi chạm vào đích đến."
         }
       },
       "hints": [
         {
-          "text": "Cham vao the, roi cham vao dich den."
+          "text": "Chạm vào thẻ, rồi chạm vào đích đến."
         }
       ],
       "metadata": {
@@ -4910,6 +4956,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Place each card into warm colors or cool colors.",
+          "learningObjective": "color classification",
           "items": [
             {
               "id": "item0",
@@ -5000,12 +5047,13 @@
           "hint": "Tap a card, then tap its target."
         },
         "vi": {
-          "prompt": "Dat moi the vao mau nong hoac mau mat.",
+          "prompt": "Đặt mỗi thẻ vào màu nóng hoặc màu mát.",
+          "learningObjective": "phân loại màu sắc",
           "items": [
             {
               "id": "item0",
-              "label": "do",
-              "text": "do",
+              "label": "đỏ",
+              "text": "đỏ",
               "acceptedTargetIds": [
                 "left"
               ],
@@ -5013,8 +5061,8 @@
             },
             {
               "id": "item1",
-              "label": "vang",
-              "text": "vang",
+              "label": "vàng",
+              "text": "vàng",
               "acceptedTargetIds": [
                 "left"
               ],
@@ -5031,8 +5079,8 @@
             },
             {
               "id": "item3",
-              "label": "xanh duong",
-              "text": "xanh duong",
+              "label": "xanh dương",
+              "text": "xanh dương",
               "acceptedTargetIds": [
                 "right"
               ],
@@ -5040,8 +5088,8 @@
             },
             {
               "id": "item4",
-              "label": "xanh la",
-              "text": "xanh la",
+              "label": "xanh lá",
+              "text": "xanh lá",
               "acceptedTargetIds": [
                 "right"
               ],
@@ -5049,8 +5097,8 @@
             },
             {
               "id": "item5",
-              "label": "tim",
-              "text": "tim",
+              "label": "tím",
+              "text": "tím",
               "acceptedTargetIds": [
                 "right"
               ],
@@ -5060,8 +5108,8 @@
           "targets": [
             {
               "id": "left",
-              "label": "mau nong",
-              "text": "mau nong",
+              "label": "màu nóng",
+              "text": "màu nóng",
               "capacity": 3,
               "acceptedItemIds": [
                 "item0",
@@ -5071,8 +5119,8 @@
             },
             {
               "id": "right",
-              "label": "mau mat",
-              "text": "mau mat",
+              "label": "màu mát",
+              "text": "màu mát",
               "capacity": 3,
               "acceptedItemIds": [
                 "item3",
@@ -5088,12 +5136,12 @@
           "rule": {
             "matchStrategy": "explicitIds"
           },
-          "hint": "Cham vao the, roi cham vao dich den."
+          "hint": "Chạm vào thẻ, rồi chạm vào đích đến."
         }
       },
       "hints": [
         {
-          "text": "Cham vao the, roi cham vao dich den."
+          "text": "Chạm vào thẻ, rồi chạm vào đích đến."
         }
       ],
       "metadata": {
@@ -5123,6 +5171,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Place each card into warm colors or cool colors.",
+          "learningObjective": "color classification",
           "items": [
             {
               "id": "item0",
@@ -5213,12 +5262,13 @@
           "hint": "Tap a card, then tap its target."
         },
         "vi": {
-          "prompt": "Dat moi the vao mau nong hoac mau mat.",
+          "prompt": "Đặt mỗi thẻ vào màu nóng hoặc màu mát.",
+          "learningObjective": "phân loại màu sắc",
           "items": [
             {
               "id": "item0",
-              "label": "do",
-              "text": "do",
+              "label": "đỏ",
+              "text": "đỏ",
               "acceptedTargetIds": [
                 "left"
               ],
@@ -5226,8 +5276,8 @@
             },
             {
               "id": "item1",
-              "label": "vang",
-              "text": "vang",
+              "label": "vàng",
+              "text": "vàng",
               "acceptedTargetIds": [
                 "left"
               ],
@@ -5244,8 +5294,8 @@
             },
             {
               "id": "item3",
-              "label": "xanh duong",
-              "text": "xanh duong",
+              "label": "xanh dương",
+              "text": "xanh dương",
               "acceptedTargetIds": [
                 "right"
               ],
@@ -5253,8 +5303,8 @@
             },
             {
               "id": "item4",
-              "label": "xanh la",
-              "text": "xanh la",
+              "label": "xanh lá",
+              "text": "xanh lá",
               "acceptedTargetIds": [
                 "right"
               ],
@@ -5262,8 +5312,8 @@
             },
             {
               "id": "item5",
-              "label": "tim",
-              "text": "tim",
+              "label": "tím",
+              "text": "tím",
               "acceptedTargetIds": [
                 "right"
               ],
@@ -5273,8 +5323,8 @@
           "targets": [
             {
               "id": "left",
-              "label": "mau nong",
-              "text": "mau nong",
+              "label": "màu nóng",
+              "text": "màu nóng",
               "capacity": 3,
               "acceptedItemIds": [
                 "item0",
@@ -5284,8 +5334,8 @@
             },
             {
               "id": "right",
-              "label": "mau mat",
-              "text": "mau mat",
+              "label": "màu mát",
+              "text": "màu mát",
               "capacity": 3,
               "acceptedItemIds": [
                 "item3",
@@ -5301,12 +5351,12 @@
           "rule": {
             "matchStrategy": "explicitIds"
           },
-          "hint": "Cham vao the, roi cham vao dich den."
+          "hint": "Chạm vào thẻ, rồi chạm vào đích đến."
         }
       },
       "hints": [
         {
-          "text": "Cham vao the, roi cham vao dich den."
+          "text": "Chạm vào thẻ, rồi chạm vào đích đến."
         }
       ],
       "metadata": {
@@ -5336,6 +5386,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Place each card into warm colors or cool colors.",
+          "learningObjective": "color classification",
           "items": [
             {
               "id": "item0",
@@ -5426,12 +5477,13 @@
           "hint": "Tap a card, then tap its target."
         },
         "vi": {
-          "prompt": "Dat moi the vao mau nong hoac mau mat.",
+          "prompt": "Đặt mỗi thẻ vào màu nóng hoặc màu mát.",
+          "learningObjective": "phân loại màu sắc",
           "items": [
             {
               "id": "item0",
-              "label": "do",
-              "text": "do",
+              "label": "đỏ",
+              "text": "đỏ",
               "acceptedTargetIds": [
                 "left"
               ],
@@ -5439,8 +5491,8 @@
             },
             {
               "id": "item1",
-              "label": "vang",
-              "text": "vang",
+              "label": "vàng",
+              "text": "vàng",
               "acceptedTargetIds": [
                 "left"
               ],
@@ -5457,8 +5509,8 @@
             },
             {
               "id": "item3",
-              "label": "xanh duong",
-              "text": "xanh duong",
+              "label": "xanh dương",
+              "text": "xanh dương",
               "acceptedTargetIds": [
                 "right"
               ],
@@ -5466,8 +5518,8 @@
             },
             {
               "id": "item4",
-              "label": "xanh la",
-              "text": "xanh la",
+              "label": "xanh lá",
+              "text": "xanh lá",
               "acceptedTargetIds": [
                 "right"
               ],
@@ -5475,8 +5527,8 @@
             },
             {
               "id": "item5",
-              "label": "tim",
-              "text": "tim",
+              "label": "tím",
+              "text": "tím",
               "acceptedTargetIds": [
                 "right"
               ],
@@ -5486,8 +5538,8 @@
           "targets": [
             {
               "id": "left",
-              "label": "mau nong",
-              "text": "mau nong",
+              "label": "màu nóng",
+              "text": "màu nóng",
               "capacity": 3,
               "acceptedItemIds": [
                 "item0",
@@ -5497,8 +5549,8 @@
             },
             {
               "id": "right",
-              "label": "mau mat",
-              "text": "mau mat",
+              "label": "màu mát",
+              "text": "màu mát",
               "capacity": 3,
               "acceptedItemIds": [
                 "item3",
@@ -5514,12 +5566,12 @@
           "rule": {
             "matchStrategy": "explicitIds"
           },
-          "hint": "Cham vao the, roi cham vao dich den."
+          "hint": "Chạm vào thẻ, rồi chạm vào đích đến."
         }
       },
       "hints": [
         {
-          "text": "Cham vao the, roi cham vao dich den."
+          "text": "Chạm vào thẻ, rồi chạm vào đích đến."
         }
       ],
       "metadata": {
@@ -5549,6 +5601,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Place each card into warm colors or cool colors.",
+          "learningObjective": "color classification",
           "items": [
             {
               "id": "item0",
@@ -5639,12 +5692,13 @@
           "hint": "Tap a card, then tap its target."
         },
         "vi": {
-          "prompt": "Dat moi the vao mau nong hoac mau mat.",
+          "prompt": "Đặt mỗi thẻ vào màu nóng hoặc màu mát.",
+          "learningObjective": "phân loại màu sắc",
           "items": [
             {
               "id": "item0",
-              "label": "do",
-              "text": "do",
+              "label": "đỏ",
+              "text": "đỏ",
               "acceptedTargetIds": [
                 "left"
               ],
@@ -5652,8 +5706,8 @@
             },
             {
               "id": "item1",
-              "label": "vang",
-              "text": "vang",
+              "label": "vàng",
+              "text": "vàng",
               "acceptedTargetIds": [
                 "left"
               ],
@@ -5670,8 +5724,8 @@
             },
             {
               "id": "item3",
-              "label": "xanh duong",
-              "text": "xanh duong",
+              "label": "xanh dương",
+              "text": "xanh dương",
               "acceptedTargetIds": [
                 "right"
               ],
@@ -5679,8 +5733,8 @@
             },
             {
               "id": "item4",
-              "label": "xanh la",
-              "text": "xanh la",
+              "label": "xanh lá",
+              "text": "xanh lá",
               "acceptedTargetIds": [
                 "right"
               ],
@@ -5688,8 +5742,8 @@
             },
             {
               "id": "item5",
-              "label": "tim",
-              "text": "tim",
+              "label": "tím",
+              "text": "tím",
               "acceptedTargetIds": [
                 "right"
               ],
@@ -5699,8 +5753,8 @@
           "targets": [
             {
               "id": "left",
-              "label": "mau nong",
-              "text": "mau nong",
+              "label": "màu nóng",
+              "text": "màu nóng",
               "capacity": 3,
               "acceptedItemIds": [
                 "item0",
@@ -5710,8 +5764,8 @@
             },
             {
               "id": "right",
-              "label": "mau mat",
-              "text": "mau mat",
+              "label": "màu mát",
+              "text": "màu mát",
               "capacity": 3,
               "acceptedItemIds": [
                 "item3",
@@ -5727,12 +5781,12 @@
           "rule": {
             "matchStrategy": "explicitIds"
           },
-          "hint": "Cham vao the, roi cham vao dich den."
+          "hint": "Chạm vào thẻ, rồi chạm vào đích đến."
         }
       },
       "hints": [
         {
-          "text": "Cham vao the, roi cham vao dich den."
+          "text": "Chạm vào thẻ, rồi chạm vào đích đến."
         }
       ],
       "metadata": {
@@ -5762,6 +5816,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Place each card into warm colors or cool colors.",
+          "learningObjective": "color classification",
           "items": [
             {
               "id": "item0",
@@ -5852,12 +5907,13 @@
           "hint": "Tap a card, then tap its target."
         },
         "vi": {
-          "prompt": "Dat moi the vao mau nong hoac mau mat.",
+          "prompt": "Đặt mỗi thẻ vào màu nóng hoặc màu mát.",
+          "learningObjective": "phân loại màu sắc",
           "items": [
             {
               "id": "item0",
-              "label": "do",
-              "text": "do",
+              "label": "đỏ",
+              "text": "đỏ",
               "acceptedTargetIds": [
                 "left"
               ],
@@ -5865,8 +5921,8 @@
             },
             {
               "id": "item1",
-              "label": "vang",
-              "text": "vang",
+              "label": "vàng",
+              "text": "vàng",
               "acceptedTargetIds": [
                 "left"
               ],
@@ -5883,8 +5939,8 @@
             },
             {
               "id": "item3",
-              "label": "xanh duong",
-              "text": "xanh duong",
+              "label": "xanh dương",
+              "text": "xanh dương",
               "acceptedTargetIds": [
                 "right"
               ],
@@ -5892,8 +5948,8 @@
             },
             {
               "id": "item4",
-              "label": "xanh la",
-              "text": "xanh la",
+              "label": "xanh lá",
+              "text": "xanh lá",
               "acceptedTargetIds": [
                 "right"
               ],
@@ -5901,8 +5957,8 @@
             },
             {
               "id": "item5",
-              "label": "tim",
-              "text": "tim",
+              "label": "tím",
+              "text": "tím",
               "acceptedTargetIds": [
                 "right"
               ],
@@ -5912,8 +5968,8 @@
           "targets": [
             {
               "id": "left",
-              "label": "mau nong",
-              "text": "mau nong",
+              "label": "màu nóng",
+              "text": "màu nóng",
               "capacity": 3,
               "acceptedItemIds": [
                 "item0",
@@ -5923,8 +5979,8 @@
             },
             {
               "id": "right",
-              "label": "mau mat",
-              "text": "mau mat",
+              "label": "màu mát",
+              "text": "màu mát",
               "capacity": 3,
               "acceptedItemIds": [
                 "item3",
@@ -5940,12 +5996,12 @@
           "rule": {
             "matchStrategy": "explicitIds"
           },
-          "hint": "Cham vao the, roi cham vao dich den."
+          "hint": "Chạm vào thẻ, rồi chạm vào đích đến."
         }
       },
       "hints": [
         {
-          "text": "Cham vao the, roi cham vao dich den."
+          "text": "Chạm vào thẻ, rồi chạm vào đích đến."
         }
       ],
       "metadata": {
@@ -5975,6 +6031,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Place each card into warm colors or cool colors.",
+          "learningObjective": "color classification",
           "items": [
             {
               "id": "item0",
@@ -6065,12 +6122,13 @@
           "hint": "Tap a card, then tap its target."
         },
         "vi": {
-          "prompt": "Dat moi the vao mau nong hoac mau mat.",
+          "prompt": "Đặt mỗi thẻ vào màu nóng hoặc màu mát.",
+          "learningObjective": "phân loại màu sắc",
           "items": [
             {
               "id": "item0",
-              "label": "do",
-              "text": "do",
+              "label": "đỏ",
+              "text": "đỏ",
               "acceptedTargetIds": [
                 "left"
               ],
@@ -6078,8 +6136,8 @@
             },
             {
               "id": "item1",
-              "label": "vang",
-              "text": "vang",
+              "label": "vàng",
+              "text": "vàng",
               "acceptedTargetIds": [
                 "left"
               ],
@@ -6096,8 +6154,8 @@
             },
             {
               "id": "item3",
-              "label": "xanh duong",
-              "text": "xanh duong",
+              "label": "xanh dương",
+              "text": "xanh dương",
               "acceptedTargetIds": [
                 "right"
               ],
@@ -6105,8 +6163,8 @@
             },
             {
               "id": "item4",
-              "label": "xanh la",
-              "text": "xanh la",
+              "label": "xanh lá",
+              "text": "xanh lá",
               "acceptedTargetIds": [
                 "right"
               ],
@@ -6114,8 +6172,8 @@
             },
             {
               "id": "item5",
-              "label": "tim",
-              "text": "tim",
+              "label": "tím",
+              "text": "tím",
               "acceptedTargetIds": [
                 "right"
               ],
@@ -6125,8 +6183,8 @@
           "targets": [
             {
               "id": "left",
-              "label": "mau nong",
-              "text": "mau nong",
+              "label": "màu nóng",
+              "text": "màu nóng",
               "capacity": 3,
               "acceptedItemIds": [
                 "item0",
@@ -6136,8 +6194,8 @@
             },
             {
               "id": "right",
-              "label": "mau mat",
-              "text": "mau mat",
+              "label": "màu mát",
+              "text": "màu mát",
               "capacity": 3,
               "acceptedItemIds": [
                 "item3",
@@ -6153,12 +6211,12 @@
           "rule": {
             "matchStrategy": "explicitIds"
           },
-          "hint": "Cham vao the, roi cham vao dich den."
+          "hint": "Chạm vào thẻ, rồi chạm vào đích đến."
         }
       },
       "hints": [
         {
-          "text": "Cham vao the, roi cham vao dich den."
+          "text": "Chạm vào thẻ, rồi chạm vào đích đến."
         }
       ],
       "metadata": {
@@ -6188,6 +6246,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Place each card into warm colors or cool colors.",
+          "learningObjective": "color classification",
           "items": [
             {
               "id": "item0",
@@ -6278,12 +6337,13 @@
           "hint": "Tap a card, then tap its target."
         },
         "vi": {
-          "prompt": "Dat moi the vao mau nong hoac mau mat.",
+          "prompt": "Đặt mỗi thẻ vào màu nóng hoặc màu mát.",
+          "learningObjective": "phân loại màu sắc",
           "items": [
             {
               "id": "item0",
-              "label": "do",
-              "text": "do",
+              "label": "đỏ",
+              "text": "đỏ",
               "acceptedTargetIds": [
                 "left"
               ],
@@ -6291,8 +6351,8 @@
             },
             {
               "id": "item1",
-              "label": "vang",
-              "text": "vang",
+              "label": "vàng",
+              "text": "vàng",
               "acceptedTargetIds": [
                 "left"
               ],
@@ -6309,8 +6369,8 @@
             },
             {
               "id": "item3",
-              "label": "xanh duong",
-              "text": "xanh duong",
+              "label": "xanh dương",
+              "text": "xanh dương",
               "acceptedTargetIds": [
                 "right"
               ],
@@ -6318,8 +6378,8 @@
             },
             {
               "id": "item4",
-              "label": "xanh la",
-              "text": "xanh la",
+              "label": "xanh lá",
+              "text": "xanh lá",
               "acceptedTargetIds": [
                 "right"
               ],
@@ -6327,8 +6387,8 @@
             },
             {
               "id": "item5",
-              "label": "tim",
-              "text": "tim",
+              "label": "tím",
+              "text": "tím",
               "acceptedTargetIds": [
                 "right"
               ],
@@ -6338,8 +6398,8 @@
           "targets": [
             {
               "id": "left",
-              "label": "mau nong",
-              "text": "mau nong",
+              "label": "màu nóng",
+              "text": "màu nóng",
               "capacity": 3,
               "acceptedItemIds": [
                 "item0",
@@ -6349,8 +6409,8 @@
             },
             {
               "id": "right",
-              "label": "mau mat",
-              "text": "mau mat",
+              "label": "màu mát",
+              "text": "màu mát",
               "capacity": 3,
               "acceptedItemIds": [
                 "item3",
@@ -6366,12 +6426,12 @@
           "rule": {
             "matchStrategy": "explicitIds"
           },
-          "hint": "Cham vao the, roi cham vao dich den."
+          "hint": "Chạm vào thẻ, rồi chạm vào đích đến."
         }
       },
       "hints": [
         {
-          "text": "Cham vao the, roi cham vao dich den."
+          "text": "Chạm vào thẻ, rồi chạm vào đích đến."
         }
       ],
       "metadata": {
@@ -6401,6 +6461,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Place each card into warm colors or cool colors.",
+          "learningObjective": "color classification",
           "items": [
             {
               "id": "item0",
@@ -6491,12 +6552,13 @@
           "hint": "Tap a card, then tap its target."
         },
         "vi": {
-          "prompt": "Dat moi the vao mau nong hoac mau mat.",
+          "prompt": "Đặt mỗi thẻ vào màu nóng hoặc màu mát.",
+          "learningObjective": "phân loại màu sắc",
           "items": [
             {
               "id": "item0",
-              "label": "do",
-              "text": "do",
+              "label": "đỏ",
+              "text": "đỏ",
               "acceptedTargetIds": [
                 "left"
               ],
@@ -6504,8 +6566,8 @@
             },
             {
               "id": "item1",
-              "label": "vang",
-              "text": "vang",
+              "label": "vàng",
+              "text": "vàng",
               "acceptedTargetIds": [
                 "left"
               ],
@@ -6522,8 +6584,8 @@
             },
             {
               "id": "item3",
-              "label": "xanh duong",
-              "text": "xanh duong",
+              "label": "xanh dương",
+              "text": "xanh dương",
               "acceptedTargetIds": [
                 "right"
               ],
@@ -6531,8 +6593,8 @@
             },
             {
               "id": "item4",
-              "label": "xanh la",
-              "text": "xanh la",
+              "label": "xanh lá",
+              "text": "xanh lá",
               "acceptedTargetIds": [
                 "right"
               ],
@@ -6540,8 +6602,8 @@
             },
             {
               "id": "item5",
-              "label": "tim",
-              "text": "tim",
+              "label": "tím",
+              "text": "tím",
               "acceptedTargetIds": [
                 "right"
               ],
@@ -6551,8 +6613,8 @@
           "targets": [
             {
               "id": "left",
-              "label": "mau nong",
-              "text": "mau nong",
+              "label": "màu nóng",
+              "text": "màu nóng",
               "capacity": 3,
               "acceptedItemIds": [
                 "item0",
@@ -6562,8 +6624,8 @@
             },
             {
               "id": "right",
-              "label": "mau mat",
-              "text": "mau mat",
+              "label": "màu mát",
+              "text": "màu mát",
               "capacity": 3,
               "acceptedItemIds": [
                 "item3",
@@ -6579,12 +6641,12 @@
           "rule": {
             "matchStrategy": "explicitIds"
           },
-          "hint": "Cham vao the, roi cham vao dich den."
+          "hint": "Chạm vào thẻ, rồi chạm vào đích đến."
         }
       },
       "hints": [
         {
-          "text": "Cham vao the, roi cham vao dich den."
+          "text": "Chạm vào thẻ, rồi chạm vào đích đến."
         }
       ],
       "metadata": {
@@ -6614,6 +6676,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Place each card into warm colors or cool colors.",
+          "learningObjective": "color classification",
           "items": [
             {
               "id": "item0",
@@ -6704,12 +6767,13 @@
           "hint": "Tap a card, then tap its target."
         },
         "vi": {
-          "prompt": "Dat moi the vao mau nong hoac mau mat.",
+          "prompt": "Đặt mỗi thẻ vào màu nóng hoặc màu mát.",
+          "learningObjective": "phân loại màu sắc",
           "items": [
             {
               "id": "item0",
-              "label": "do",
-              "text": "do",
+              "label": "đỏ",
+              "text": "đỏ",
               "acceptedTargetIds": [
                 "left"
               ],
@@ -6717,8 +6781,8 @@
             },
             {
               "id": "item1",
-              "label": "vang",
-              "text": "vang",
+              "label": "vàng",
+              "text": "vàng",
               "acceptedTargetIds": [
                 "left"
               ],
@@ -6735,8 +6799,8 @@
             },
             {
               "id": "item3",
-              "label": "xanh duong",
-              "text": "xanh duong",
+              "label": "xanh dương",
+              "text": "xanh dương",
               "acceptedTargetIds": [
                 "right"
               ],
@@ -6744,8 +6808,8 @@
             },
             {
               "id": "item4",
-              "label": "xanh la",
-              "text": "xanh la",
+              "label": "xanh lá",
+              "text": "xanh lá",
               "acceptedTargetIds": [
                 "right"
               ],
@@ -6753,8 +6817,8 @@
             },
             {
               "id": "item5",
-              "label": "tim",
-              "text": "tim",
+              "label": "tím",
+              "text": "tím",
               "acceptedTargetIds": [
                 "right"
               ],
@@ -6764,8 +6828,8 @@
           "targets": [
             {
               "id": "left",
-              "label": "mau nong",
-              "text": "mau nong",
+              "label": "màu nóng",
+              "text": "màu nóng",
               "capacity": 3,
               "acceptedItemIds": [
                 "item0",
@@ -6775,8 +6839,8 @@
             },
             {
               "id": "right",
-              "label": "mau mat",
-              "text": "mau mat",
+              "label": "màu mát",
+              "text": "màu mát",
               "capacity": 3,
               "acceptedItemIds": [
                 "item3",
@@ -6792,12 +6856,12 @@
           "rule": {
             "matchStrategy": "explicitIds"
           },
-          "hint": "Cham vao the, roi cham vao dich den."
+          "hint": "Chạm vào thẻ, rồi chạm vào đích đến."
         }
       },
       "hints": [
         {
-          "text": "Cham vao the, roi cham vao dich den."
+          "text": "Chạm vào thẻ, rồi chạm vào đích đến."
         }
       ],
       "metadata": {
@@ -6827,6 +6891,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Place each card into warm colors or cool colors.",
+          "learningObjective": "color classification",
           "items": [
             {
               "id": "item0",
@@ -6917,12 +6982,13 @@
           "hint": "Tap a card, then tap its target."
         },
         "vi": {
-          "prompt": "Dat moi the vao mau nong hoac mau mat.",
+          "prompt": "Đặt mỗi thẻ vào màu nóng hoặc màu mát.",
+          "learningObjective": "phân loại màu sắc",
           "items": [
             {
               "id": "item0",
-              "label": "do",
-              "text": "do",
+              "label": "đỏ",
+              "text": "đỏ",
               "acceptedTargetIds": [
                 "left"
               ],
@@ -6930,8 +6996,8 @@
             },
             {
               "id": "item1",
-              "label": "vang",
-              "text": "vang",
+              "label": "vàng",
+              "text": "vàng",
               "acceptedTargetIds": [
                 "left"
               ],
@@ -6948,8 +7014,8 @@
             },
             {
               "id": "item3",
-              "label": "xanh duong",
-              "text": "xanh duong",
+              "label": "xanh dương",
+              "text": "xanh dương",
               "acceptedTargetIds": [
                 "right"
               ],
@@ -6957,8 +7023,8 @@
             },
             {
               "id": "item4",
-              "label": "xanh la",
-              "text": "xanh la",
+              "label": "xanh lá",
+              "text": "xanh lá",
               "acceptedTargetIds": [
                 "right"
               ],
@@ -6966,8 +7032,8 @@
             },
             {
               "id": "item5",
-              "label": "tim",
-              "text": "tim",
+              "label": "tím",
+              "text": "tím",
               "acceptedTargetIds": [
                 "right"
               ],
@@ -6977,8 +7043,8 @@
           "targets": [
             {
               "id": "left",
-              "label": "mau nong",
-              "text": "mau nong",
+              "label": "màu nóng",
+              "text": "màu nóng",
               "capacity": 3,
               "acceptedItemIds": [
                 "item0",
@@ -6988,8 +7054,8 @@
             },
             {
               "id": "right",
-              "label": "mau mat",
-              "text": "mau mat",
+              "label": "màu mát",
+              "text": "màu mát",
               "capacity": 3,
               "acceptedItemIds": [
                 "item3",
@@ -7005,12 +7071,12 @@
           "rule": {
             "matchStrategy": "explicitIds"
           },
-          "hint": "Cham vao the, roi cham vao dich den."
+          "hint": "Chạm vào thẻ, rồi chạm vào đích đến."
         }
       },
       "hints": [
         {
-          "text": "Cham vao the, roi cham vao dich den."
+          "text": "Chạm vào thẻ, rồi chạm vào đích đến."
         }
       ],
       "metadata": {
@@ -7040,6 +7106,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Place each card into warm colors or cool colors.",
+          "learningObjective": "color classification",
           "items": [
             {
               "id": "item0",
@@ -7130,12 +7197,13 @@
           "hint": "Tap a card, then tap its target."
         },
         "vi": {
-          "prompt": "Dat moi the vao mau nong hoac mau mat.",
+          "prompt": "Đặt mỗi thẻ vào màu nóng hoặc màu mát.",
+          "learningObjective": "phân loại màu sắc",
           "items": [
             {
               "id": "item0",
-              "label": "do",
-              "text": "do",
+              "label": "đỏ",
+              "text": "đỏ",
               "acceptedTargetIds": [
                 "left"
               ],
@@ -7143,8 +7211,8 @@
             },
             {
               "id": "item1",
-              "label": "vang",
-              "text": "vang",
+              "label": "vàng",
+              "text": "vàng",
               "acceptedTargetIds": [
                 "left"
               ],
@@ -7161,8 +7229,8 @@
             },
             {
               "id": "item3",
-              "label": "xanh duong",
-              "text": "xanh duong",
+              "label": "xanh dương",
+              "text": "xanh dương",
               "acceptedTargetIds": [
                 "right"
               ],
@@ -7170,8 +7238,8 @@
             },
             {
               "id": "item4",
-              "label": "xanh la",
-              "text": "xanh la",
+              "label": "xanh lá",
+              "text": "xanh lá",
               "acceptedTargetIds": [
                 "right"
               ],
@@ -7179,8 +7247,8 @@
             },
             {
               "id": "item5",
-              "label": "tim",
-              "text": "tim",
+              "label": "tím",
+              "text": "tím",
               "acceptedTargetIds": [
                 "right"
               ],
@@ -7190,8 +7258,8 @@
           "targets": [
             {
               "id": "left",
-              "label": "mau nong",
-              "text": "mau nong",
+              "label": "màu nóng",
+              "text": "màu nóng",
               "capacity": 3,
               "acceptedItemIds": [
                 "item0",
@@ -7201,8 +7269,8 @@
             },
             {
               "id": "right",
-              "label": "mau mat",
-              "text": "mau mat",
+              "label": "màu mát",
+              "text": "màu mát",
               "capacity": 3,
               "acceptedItemIds": [
                 "item3",
@@ -7218,12 +7286,12 @@
           "rule": {
             "matchStrategy": "explicitIds"
           },
-          "hint": "Cham vao the, roi cham vao dich den."
+          "hint": "Chạm vào thẻ, rồi chạm vào đích đến."
         }
       },
       "hints": [
         {
-          "text": "Cham vao the, roi cham vao dich den."
+          "text": "Chạm vào thẻ, rồi chạm vào đích đến."
         }
       ],
       "metadata": {
@@ -7253,6 +7321,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Place each card into warm colors or cool colors.",
+          "learningObjective": "color classification",
           "items": [
             {
               "id": "item0",
@@ -7343,12 +7412,13 @@
           "hint": "Tap a card, then tap its target."
         },
         "vi": {
-          "prompt": "Dat moi the vao mau nong hoac mau mat.",
+          "prompt": "Đặt mỗi thẻ vào màu nóng hoặc màu mát.",
+          "learningObjective": "phân loại màu sắc",
           "items": [
             {
               "id": "item0",
-              "label": "do",
-              "text": "do",
+              "label": "đỏ",
+              "text": "đỏ",
               "acceptedTargetIds": [
                 "left"
               ],
@@ -7356,8 +7426,8 @@
             },
             {
               "id": "item1",
-              "label": "vang",
-              "text": "vang",
+              "label": "vàng",
+              "text": "vàng",
               "acceptedTargetIds": [
                 "left"
               ],
@@ -7374,8 +7444,8 @@
             },
             {
               "id": "item3",
-              "label": "xanh duong",
-              "text": "xanh duong",
+              "label": "xanh dương",
+              "text": "xanh dương",
               "acceptedTargetIds": [
                 "right"
               ],
@@ -7383,8 +7453,8 @@
             },
             {
               "id": "item4",
-              "label": "xanh la",
-              "text": "xanh la",
+              "label": "xanh lá",
+              "text": "xanh lá",
               "acceptedTargetIds": [
                 "right"
               ],
@@ -7392,8 +7462,8 @@
             },
             {
               "id": "item5",
-              "label": "tim",
-              "text": "tim",
+              "label": "tím",
+              "text": "tím",
               "acceptedTargetIds": [
                 "right"
               ],
@@ -7403,8 +7473,8 @@
           "targets": [
             {
               "id": "left",
-              "label": "mau nong",
-              "text": "mau nong",
+              "label": "màu nóng",
+              "text": "màu nóng",
               "capacity": 3,
               "acceptedItemIds": [
                 "item0",
@@ -7414,8 +7484,8 @@
             },
             {
               "id": "right",
-              "label": "mau mat",
-              "text": "mau mat",
+              "label": "màu mát",
+              "text": "màu mát",
               "capacity": 3,
               "acceptedItemIds": [
                 "item3",
@@ -7431,12 +7501,12 @@
           "rule": {
             "matchStrategy": "explicitIds"
           },
-          "hint": "Cham vao the, roi cham vao dich den."
+          "hint": "Chạm vào thẻ, rồi chạm vào đích đến."
         }
       },
       "hints": [
         {
-          "text": "Cham vao the, roi cham vao dich den."
+          "text": "Chạm vào thẻ, rồi chạm vào đích đến."
         }
       ],
       "metadata": {
@@ -7466,6 +7536,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Place each card into warm colors or cool colors.",
+          "learningObjective": "color classification",
           "items": [
             {
               "id": "item0",
@@ -7556,12 +7627,13 @@
           "hint": "Tap a card, then tap its target."
         },
         "vi": {
-          "prompt": "Dat moi the vao mau nong hoac mau mat.",
+          "prompt": "Đặt mỗi thẻ vào màu nóng hoặc màu mát.",
+          "learningObjective": "phân loại màu sắc",
           "items": [
             {
               "id": "item0",
-              "label": "do",
-              "text": "do",
+              "label": "đỏ",
+              "text": "đỏ",
               "acceptedTargetIds": [
                 "left"
               ],
@@ -7569,8 +7641,8 @@
             },
             {
               "id": "item1",
-              "label": "vang",
-              "text": "vang",
+              "label": "vàng",
+              "text": "vàng",
               "acceptedTargetIds": [
                 "left"
               ],
@@ -7587,8 +7659,8 @@
             },
             {
               "id": "item3",
-              "label": "xanh duong",
-              "text": "xanh duong",
+              "label": "xanh dương",
+              "text": "xanh dương",
               "acceptedTargetIds": [
                 "right"
               ],
@@ -7596,8 +7668,8 @@
             },
             {
               "id": "item4",
-              "label": "xanh la",
-              "text": "xanh la",
+              "label": "xanh lá",
+              "text": "xanh lá",
               "acceptedTargetIds": [
                 "right"
               ],
@@ -7605,8 +7677,8 @@
             },
             {
               "id": "item5",
-              "label": "tim",
-              "text": "tim",
+              "label": "tím",
+              "text": "tím",
               "acceptedTargetIds": [
                 "right"
               ],
@@ -7616,8 +7688,8 @@
           "targets": [
             {
               "id": "left",
-              "label": "mau nong",
-              "text": "mau nong",
+              "label": "màu nóng",
+              "text": "màu nóng",
               "capacity": 3,
               "acceptedItemIds": [
                 "item0",
@@ -7627,8 +7699,8 @@
             },
             {
               "id": "right",
-              "label": "mau mat",
-              "text": "mau mat",
+              "label": "màu mát",
+              "text": "màu mát",
               "capacity": 3,
               "acceptedItemIds": [
                 "item3",
@@ -7644,12 +7716,12 @@
           "rule": {
             "matchStrategy": "explicitIds"
           },
-          "hint": "Cham vao the, roi cham vao dich den."
+          "hint": "Chạm vào thẻ, rồi chạm vào đích đến."
         }
       },
       "hints": [
         {
-          "text": "Cham vao the, roi cham vao dich den."
+          "text": "Chạm vào thẻ, rồi chạm vào đích đến."
         }
       ],
       "metadata": {
@@ -7679,6 +7751,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Place each card into warm colors or cool colors.",
+          "learningObjective": "color classification",
           "items": [
             {
               "id": "item0",
@@ -7769,12 +7842,13 @@
           "hint": "Tap a card, then tap its target."
         },
         "vi": {
-          "prompt": "Dat moi the vao mau nong hoac mau mat.",
+          "prompt": "Đặt mỗi thẻ vào màu nóng hoặc màu mát.",
+          "learningObjective": "phân loại màu sắc",
           "items": [
             {
               "id": "item0",
-              "label": "do",
-              "text": "do",
+              "label": "đỏ",
+              "text": "đỏ",
               "acceptedTargetIds": [
                 "left"
               ],
@@ -7782,8 +7856,8 @@
             },
             {
               "id": "item1",
-              "label": "vang",
-              "text": "vang",
+              "label": "vàng",
+              "text": "vàng",
               "acceptedTargetIds": [
                 "left"
               ],
@@ -7800,8 +7874,8 @@
             },
             {
               "id": "item3",
-              "label": "xanh duong",
-              "text": "xanh duong",
+              "label": "xanh dương",
+              "text": "xanh dương",
               "acceptedTargetIds": [
                 "right"
               ],
@@ -7809,8 +7883,8 @@
             },
             {
               "id": "item4",
-              "label": "xanh la",
-              "text": "xanh la",
+              "label": "xanh lá",
+              "text": "xanh lá",
               "acceptedTargetIds": [
                 "right"
               ],
@@ -7818,8 +7892,8 @@
             },
             {
               "id": "item5",
-              "label": "tim",
-              "text": "tim",
+              "label": "tím",
+              "text": "tím",
               "acceptedTargetIds": [
                 "right"
               ],
@@ -7829,8 +7903,8 @@
           "targets": [
             {
               "id": "left",
-              "label": "mau nong",
-              "text": "mau nong",
+              "label": "màu nóng",
+              "text": "màu nóng",
               "capacity": 3,
               "acceptedItemIds": [
                 "item0",
@@ -7840,8 +7914,8 @@
             },
             {
               "id": "right",
-              "label": "mau mat",
-              "text": "mau mat",
+              "label": "màu mát",
+              "text": "màu mát",
               "capacity": 3,
               "acceptedItemIds": [
                 "item3",
@@ -7857,12 +7931,12 @@
           "rule": {
             "matchStrategy": "explicitIds"
           },
-          "hint": "Cham vao the, roi cham vao dich den."
+          "hint": "Chạm vào thẻ, rồi chạm vào đích đến."
         }
       },
       "hints": [
         {
-          "text": "Cham vao the, roi cham vao dich den."
+          "text": "Chạm vào thẻ, rồi chạm vào đích đến."
         }
       ],
       "metadata": {
@@ -7892,6 +7966,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Place each card into warm colors or cool colors.",
+          "learningObjective": "color classification",
           "items": [
             {
               "id": "item0",
@@ -7982,12 +8057,13 @@
           "hint": "Tap a card, then tap its target."
         },
         "vi": {
-          "prompt": "Dat moi the vao mau nong hoac mau mat.",
+          "prompt": "Đặt mỗi thẻ vào màu nóng hoặc màu mát.",
+          "learningObjective": "phân loại màu sắc",
           "items": [
             {
               "id": "item0",
-              "label": "do",
-              "text": "do",
+              "label": "đỏ",
+              "text": "đỏ",
               "acceptedTargetIds": [
                 "left"
               ],
@@ -7995,8 +8071,8 @@
             },
             {
               "id": "item1",
-              "label": "vang",
-              "text": "vang",
+              "label": "vàng",
+              "text": "vàng",
               "acceptedTargetIds": [
                 "left"
               ],
@@ -8013,8 +8089,8 @@
             },
             {
               "id": "item3",
-              "label": "xanh duong",
-              "text": "xanh duong",
+              "label": "xanh dương",
+              "text": "xanh dương",
               "acceptedTargetIds": [
                 "right"
               ],
@@ -8022,8 +8098,8 @@
             },
             {
               "id": "item4",
-              "label": "xanh la",
-              "text": "xanh la",
+              "label": "xanh lá",
+              "text": "xanh lá",
               "acceptedTargetIds": [
                 "right"
               ],
@@ -8031,8 +8107,8 @@
             },
             {
               "id": "item5",
-              "label": "tim",
-              "text": "tim",
+              "label": "tím",
+              "text": "tím",
               "acceptedTargetIds": [
                 "right"
               ],
@@ -8042,8 +8118,8 @@
           "targets": [
             {
               "id": "left",
-              "label": "mau nong",
-              "text": "mau nong",
+              "label": "màu nóng",
+              "text": "màu nóng",
               "capacity": 3,
               "acceptedItemIds": [
                 "item0",
@@ -8053,8 +8129,8 @@
             },
             {
               "id": "right",
-              "label": "mau mat",
-              "text": "mau mat",
+              "label": "màu mát",
+              "text": "màu mát",
               "capacity": 3,
               "acceptedItemIds": [
                 "item3",
@@ -8070,12 +8146,12 @@
           "rule": {
             "matchStrategy": "explicitIds"
           },
-          "hint": "Cham vao the, roi cham vao dich den."
+          "hint": "Chạm vào thẻ, rồi chạm vào đích đến."
         }
       },
       "hints": [
         {
-          "text": "Cham vao the, roi cham vao dich den."
+          "text": "Chạm vào thẻ, rồi chạm vào đích đến."
         }
       ],
       "metadata": {
@@ -8105,6 +8181,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Place each card into warm colors or cool colors.",
+          "learningObjective": "color classification",
           "items": [
             {
               "id": "item0",
@@ -8195,12 +8272,13 @@
           "hint": "Tap a card, then tap its target."
         },
         "vi": {
-          "prompt": "Dat moi the vao mau nong hoac mau mat.",
+          "prompt": "Đặt mỗi thẻ vào màu nóng hoặc màu mát.",
+          "learningObjective": "phân loại màu sắc",
           "items": [
             {
               "id": "item0",
-              "label": "do",
-              "text": "do",
+              "label": "đỏ",
+              "text": "đỏ",
               "acceptedTargetIds": [
                 "left"
               ],
@@ -8208,8 +8286,8 @@
             },
             {
               "id": "item1",
-              "label": "vang",
-              "text": "vang",
+              "label": "vàng",
+              "text": "vàng",
               "acceptedTargetIds": [
                 "left"
               ],
@@ -8226,8 +8304,8 @@
             },
             {
               "id": "item3",
-              "label": "xanh duong",
-              "text": "xanh duong",
+              "label": "xanh dương",
+              "text": "xanh dương",
               "acceptedTargetIds": [
                 "right"
               ],
@@ -8235,8 +8313,8 @@
             },
             {
               "id": "item4",
-              "label": "xanh la",
-              "text": "xanh la",
+              "label": "xanh lá",
+              "text": "xanh lá",
               "acceptedTargetIds": [
                 "right"
               ],
@@ -8244,8 +8322,8 @@
             },
             {
               "id": "item5",
-              "label": "tim",
-              "text": "tim",
+              "label": "tím",
+              "text": "tím",
               "acceptedTargetIds": [
                 "right"
               ],
@@ -8255,8 +8333,8 @@
           "targets": [
             {
               "id": "left",
-              "label": "mau nong",
-              "text": "mau nong",
+              "label": "màu nóng",
+              "text": "màu nóng",
               "capacity": 3,
               "acceptedItemIds": [
                 "item0",
@@ -8266,8 +8344,8 @@
             },
             {
               "id": "right",
-              "label": "mau mat",
-              "text": "mau mat",
+              "label": "màu mát",
+              "text": "màu mát",
               "capacity": 3,
               "acceptedItemIds": [
                 "item3",
@@ -8283,12 +8361,12 @@
           "rule": {
             "matchStrategy": "explicitIds"
           },
-          "hint": "Cham vao the, roi cham vao dich den."
+          "hint": "Chạm vào thẻ, rồi chạm vào đích đến."
         }
       },
       "hints": [
         {
-          "text": "Cham vao the, roi cham vao dich den."
+          "text": "Chạm vào thẻ, rồi chạm vào đích đến."
         }
       ],
       "metadata": {
@@ -8318,6 +8396,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Place each card into warm colors or cool colors.",
+          "learningObjective": "color classification",
           "items": [
             {
               "id": "item0",
@@ -8408,12 +8487,13 @@
           "hint": "Tap a card, then tap its target."
         },
         "vi": {
-          "prompt": "Dat moi the vao mau nong hoac mau mat.",
+          "prompt": "Đặt mỗi thẻ vào màu nóng hoặc màu mát.",
+          "learningObjective": "phân loại màu sắc",
           "items": [
             {
               "id": "item0",
-              "label": "do",
-              "text": "do",
+              "label": "đỏ",
+              "text": "đỏ",
               "acceptedTargetIds": [
                 "left"
               ],
@@ -8421,8 +8501,8 @@
             },
             {
               "id": "item1",
-              "label": "vang",
-              "text": "vang",
+              "label": "vàng",
+              "text": "vàng",
               "acceptedTargetIds": [
                 "left"
               ],
@@ -8439,8 +8519,8 @@
             },
             {
               "id": "item3",
-              "label": "xanh duong",
-              "text": "xanh duong",
+              "label": "xanh dương",
+              "text": "xanh dương",
               "acceptedTargetIds": [
                 "right"
               ],
@@ -8448,8 +8528,8 @@
             },
             {
               "id": "item4",
-              "label": "xanh la",
-              "text": "xanh la",
+              "label": "xanh lá",
+              "text": "xanh lá",
               "acceptedTargetIds": [
                 "right"
               ],
@@ -8457,8 +8537,8 @@
             },
             {
               "id": "item5",
-              "label": "tim",
-              "text": "tim",
+              "label": "tím",
+              "text": "tím",
               "acceptedTargetIds": [
                 "right"
               ],
@@ -8468,8 +8548,8 @@
           "targets": [
             {
               "id": "left",
-              "label": "mau nong",
-              "text": "mau nong",
+              "label": "màu nóng",
+              "text": "màu nóng",
               "capacity": 3,
               "acceptedItemIds": [
                 "item0",
@@ -8479,8 +8559,8 @@
             },
             {
               "id": "right",
-              "label": "mau mat",
-              "text": "mau mat",
+              "label": "màu mát",
+              "text": "màu mát",
               "capacity": 3,
               "acceptedItemIds": [
                 "item3",
@@ -8496,12 +8576,12 @@
           "rule": {
             "matchStrategy": "explicitIds"
           },
-          "hint": "Cham vao the, roi cham vao dich den."
+          "hint": "Chạm vào thẻ, rồi chạm vào đích đến."
         }
       },
       "hints": [
         {
-          "text": "Cham vao the, roi cham vao dich den."
+          "text": "Chạm vào thẻ, rồi chạm vào đích đến."
         }
       ],
       "metadata": {
@@ -8531,6 +8611,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Place each card into warm colors or cool colors.",
+          "learningObjective": "color classification",
           "items": [
             {
               "id": "item0",
@@ -8621,12 +8702,13 @@
           "hint": "Tap a card, then tap its target."
         },
         "vi": {
-          "prompt": "Dat moi the vao mau nong hoac mau mat.",
+          "prompt": "Đặt mỗi thẻ vào màu nóng hoặc màu mát.",
+          "learningObjective": "phân loại màu sắc",
           "items": [
             {
               "id": "item0",
-              "label": "do",
-              "text": "do",
+              "label": "đỏ",
+              "text": "đỏ",
               "acceptedTargetIds": [
                 "left"
               ],
@@ -8634,8 +8716,8 @@
             },
             {
               "id": "item1",
-              "label": "vang",
-              "text": "vang",
+              "label": "vàng",
+              "text": "vàng",
               "acceptedTargetIds": [
                 "left"
               ],
@@ -8652,8 +8734,8 @@
             },
             {
               "id": "item3",
-              "label": "xanh duong",
-              "text": "xanh duong",
+              "label": "xanh dương",
+              "text": "xanh dương",
               "acceptedTargetIds": [
                 "right"
               ],
@@ -8661,8 +8743,8 @@
             },
             {
               "id": "item4",
-              "label": "xanh la",
-              "text": "xanh la",
+              "label": "xanh lá",
+              "text": "xanh lá",
               "acceptedTargetIds": [
                 "right"
               ],
@@ -8670,8 +8752,8 @@
             },
             {
               "id": "item5",
-              "label": "tim",
-              "text": "tim",
+              "label": "tím",
+              "text": "tím",
               "acceptedTargetIds": [
                 "right"
               ],
@@ -8681,8 +8763,8 @@
           "targets": [
             {
               "id": "left",
-              "label": "mau nong",
-              "text": "mau nong",
+              "label": "màu nóng",
+              "text": "màu nóng",
               "capacity": 3,
               "acceptedItemIds": [
                 "item0",
@@ -8692,8 +8774,8 @@
             },
             {
               "id": "right",
-              "label": "mau mat",
-              "text": "mau mat",
+              "label": "màu mát",
+              "text": "màu mát",
               "capacity": 3,
               "acceptedItemIds": [
                 "item3",
@@ -8709,12 +8791,12 @@
           "rule": {
             "matchStrategy": "explicitIds"
           },
-          "hint": "Cham vao the, roi cham vao dich den."
+          "hint": "Chạm vào thẻ, rồi chạm vào đích đến."
         }
       },
       "hints": [
         {
-          "text": "Cham vao the, roi cham vao dich den."
+          "text": "Chạm vào thẻ, rồi chạm vào đích đến."
         }
       ],
       "metadata": {
@@ -8744,6 +8826,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Place each card into warm colors or cool colors.",
+          "learningObjective": "color classification",
           "items": [
             {
               "id": "item0",
@@ -8834,12 +8917,13 @@
           "hint": "Tap a card, then tap its target."
         },
         "vi": {
-          "prompt": "Dat moi the vao mau nong hoac mau mat.",
+          "prompt": "Đặt mỗi thẻ vào màu nóng hoặc màu mát.",
+          "learningObjective": "phân loại màu sắc",
           "items": [
             {
               "id": "item0",
-              "label": "do",
-              "text": "do",
+              "label": "đỏ",
+              "text": "đỏ",
               "acceptedTargetIds": [
                 "left"
               ],
@@ -8847,8 +8931,8 @@
             },
             {
               "id": "item1",
-              "label": "vang",
-              "text": "vang",
+              "label": "vàng",
+              "text": "vàng",
               "acceptedTargetIds": [
                 "left"
               ],
@@ -8865,8 +8949,8 @@
             },
             {
               "id": "item3",
-              "label": "xanh duong",
-              "text": "xanh duong",
+              "label": "xanh dương",
+              "text": "xanh dương",
               "acceptedTargetIds": [
                 "right"
               ],
@@ -8874,8 +8958,8 @@
             },
             {
               "id": "item4",
-              "label": "xanh la",
-              "text": "xanh la",
+              "label": "xanh lá",
+              "text": "xanh lá",
               "acceptedTargetIds": [
                 "right"
               ],
@@ -8883,8 +8967,8 @@
             },
             {
               "id": "item5",
-              "label": "tim",
-              "text": "tim",
+              "label": "tím",
+              "text": "tím",
               "acceptedTargetIds": [
                 "right"
               ],
@@ -8894,8 +8978,8 @@
           "targets": [
             {
               "id": "left",
-              "label": "mau nong",
-              "text": "mau nong",
+              "label": "màu nóng",
+              "text": "màu nóng",
               "capacity": 3,
               "acceptedItemIds": [
                 "item0",
@@ -8905,8 +8989,8 @@
             },
             {
               "id": "right",
-              "label": "mau mat",
-              "text": "mau mat",
+              "label": "màu mát",
+              "text": "màu mát",
               "capacity": 3,
               "acceptedItemIds": [
                 "item3",
@@ -8922,12 +9006,12 @@
           "rule": {
             "matchStrategy": "explicitIds"
           },
-          "hint": "Cham vao the, roi cham vao dich den."
+          "hint": "Chạm vào thẻ, rồi chạm vào đích đến."
         }
       },
       "hints": [
         {
-          "text": "Cham vao the, roi cham vao dich den."
+          "text": "Chạm vào thẻ, rồi chạm vào đích đến."
         }
       ],
       "metadata": {
@@ -8957,6 +9041,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Place each card into warm colors or cool colors.",
+          "learningObjective": "color classification",
           "items": [
             {
               "id": "item0",
@@ -9047,12 +9132,13 @@
           "hint": "Tap a card, then tap its target."
         },
         "vi": {
-          "prompt": "Dat moi the vao mau nong hoac mau mat.",
+          "prompt": "Đặt mỗi thẻ vào màu nóng hoặc màu mát.",
+          "learningObjective": "phân loại màu sắc",
           "items": [
             {
               "id": "item0",
-              "label": "do",
-              "text": "do",
+              "label": "đỏ",
+              "text": "đỏ",
               "acceptedTargetIds": [
                 "left"
               ],
@@ -9060,8 +9146,8 @@
             },
             {
               "id": "item1",
-              "label": "vang",
-              "text": "vang",
+              "label": "vàng",
+              "text": "vàng",
               "acceptedTargetIds": [
                 "left"
               ],
@@ -9078,8 +9164,8 @@
             },
             {
               "id": "item3",
-              "label": "xanh duong",
-              "text": "xanh duong",
+              "label": "xanh dương",
+              "text": "xanh dương",
               "acceptedTargetIds": [
                 "right"
               ],
@@ -9087,8 +9173,8 @@
             },
             {
               "id": "item4",
-              "label": "xanh la",
-              "text": "xanh la",
+              "label": "xanh lá",
+              "text": "xanh lá",
               "acceptedTargetIds": [
                 "right"
               ],
@@ -9096,8 +9182,8 @@
             },
             {
               "id": "item5",
-              "label": "tim",
-              "text": "tim",
+              "label": "tím",
+              "text": "tím",
               "acceptedTargetIds": [
                 "right"
               ],
@@ -9107,8 +9193,8 @@
           "targets": [
             {
               "id": "left",
-              "label": "mau nong",
-              "text": "mau nong",
+              "label": "màu nóng",
+              "text": "màu nóng",
               "capacity": 3,
               "acceptedItemIds": [
                 "item0",
@@ -9118,8 +9204,8 @@
             },
             {
               "id": "right",
-              "label": "mau mat",
-              "text": "mau mat",
+              "label": "màu mát",
+              "text": "màu mát",
               "capacity": 3,
               "acceptedItemIds": [
                 "item3",
@@ -9135,12 +9221,12 @@
           "rule": {
             "matchStrategy": "explicitIds"
           },
-          "hint": "Cham vao the, roi cham vao dich den."
+          "hint": "Chạm vào thẻ, rồi chạm vào đích đến."
         }
       },
       "hints": [
         {
-          "text": "Cham vao the, roi cham vao dich den."
+          "text": "Chạm vào thẻ, rồi chạm vào đích đến."
         }
       ],
       "metadata": {
@@ -9170,6 +9256,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Place each card into warm colors or cool colors.",
+          "learningObjective": "color classification",
           "items": [
             {
               "id": "item0",
@@ -9260,12 +9347,13 @@
           "hint": "Tap a card, then tap its target."
         },
         "vi": {
-          "prompt": "Dat moi the vao mau nong hoac mau mat.",
+          "prompt": "Đặt mỗi thẻ vào màu nóng hoặc màu mát.",
+          "learningObjective": "phân loại màu sắc",
           "items": [
             {
               "id": "item0",
-              "label": "do",
-              "text": "do",
+              "label": "đỏ",
+              "text": "đỏ",
               "acceptedTargetIds": [
                 "left"
               ],
@@ -9273,8 +9361,8 @@
             },
             {
               "id": "item1",
-              "label": "vang",
-              "text": "vang",
+              "label": "vàng",
+              "text": "vàng",
               "acceptedTargetIds": [
                 "left"
               ],
@@ -9291,8 +9379,8 @@
             },
             {
               "id": "item3",
-              "label": "xanh duong",
-              "text": "xanh duong",
+              "label": "xanh dương",
+              "text": "xanh dương",
               "acceptedTargetIds": [
                 "right"
               ],
@@ -9300,8 +9388,8 @@
             },
             {
               "id": "item4",
-              "label": "xanh la",
-              "text": "xanh la",
+              "label": "xanh lá",
+              "text": "xanh lá",
               "acceptedTargetIds": [
                 "right"
               ],
@@ -9309,8 +9397,8 @@
             },
             {
               "id": "item5",
-              "label": "tim",
-              "text": "tim",
+              "label": "tím",
+              "text": "tím",
               "acceptedTargetIds": [
                 "right"
               ],
@@ -9320,8 +9408,8 @@
           "targets": [
             {
               "id": "left",
-              "label": "mau nong",
-              "text": "mau nong",
+              "label": "màu nóng",
+              "text": "màu nóng",
               "capacity": 3,
               "acceptedItemIds": [
                 "item0",
@@ -9331,8 +9419,8 @@
             },
             {
               "id": "right",
-              "label": "mau mat",
-              "text": "mau mat",
+              "label": "màu mát",
+              "text": "màu mát",
               "capacity": 3,
               "acceptedItemIds": [
                 "item3",
@@ -9348,12 +9436,12 @@
           "rule": {
             "matchStrategy": "explicitIds"
           },
-          "hint": "Cham vao the, roi cham vao dich den."
+          "hint": "Chạm vào thẻ, rồi chạm vào đích đến."
         }
       },
       "hints": [
         {
-          "text": "Cham vao the, roi cham vao dich den."
+          "text": "Chạm vào thẻ, rồi chạm vào đích đến."
         }
       ],
       "metadata": {
@@ -9383,6 +9471,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Place each card into warm colors or cool colors.",
+          "learningObjective": "color classification",
           "items": [
             {
               "id": "item0",
@@ -9473,12 +9562,13 @@
           "hint": "Tap a card, then tap its target."
         },
         "vi": {
-          "prompt": "Dat moi the vao mau nong hoac mau mat.",
+          "prompt": "Đặt mỗi thẻ vào màu nóng hoặc màu mát.",
+          "learningObjective": "phân loại màu sắc",
           "items": [
             {
               "id": "item0",
-              "label": "do",
-              "text": "do",
+              "label": "đỏ",
+              "text": "đỏ",
               "acceptedTargetIds": [
                 "left"
               ],
@@ -9486,8 +9576,8 @@
             },
             {
               "id": "item1",
-              "label": "vang",
-              "text": "vang",
+              "label": "vàng",
+              "text": "vàng",
               "acceptedTargetIds": [
                 "left"
               ],
@@ -9504,8 +9594,8 @@
             },
             {
               "id": "item3",
-              "label": "xanh duong",
-              "text": "xanh duong",
+              "label": "xanh dương",
+              "text": "xanh dương",
               "acceptedTargetIds": [
                 "right"
               ],
@@ -9513,8 +9603,8 @@
             },
             {
               "id": "item4",
-              "label": "xanh la",
-              "text": "xanh la",
+              "label": "xanh lá",
+              "text": "xanh lá",
               "acceptedTargetIds": [
                 "right"
               ],
@@ -9522,8 +9612,8 @@
             },
             {
               "id": "item5",
-              "label": "tim",
-              "text": "tim",
+              "label": "tím",
+              "text": "tím",
               "acceptedTargetIds": [
                 "right"
               ],
@@ -9533,8 +9623,8 @@
           "targets": [
             {
               "id": "left",
-              "label": "mau nong",
-              "text": "mau nong",
+              "label": "màu nóng",
+              "text": "màu nóng",
               "capacity": 3,
               "acceptedItemIds": [
                 "item0",
@@ -9544,8 +9634,8 @@
             },
             {
               "id": "right",
-              "label": "mau mat",
-              "text": "mau mat",
+              "label": "màu mát",
+              "text": "màu mát",
               "capacity": 3,
               "acceptedItemIds": [
                 "item3",
@@ -9561,12 +9651,12 @@
           "rule": {
             "matchStrategy": "explicitIds"
           },
-          "hint": "Cham vao the, roi cham vao dich den."
+          "hint": "Chạm vào thẻ, rồi chạm vào đích đến."
         }
       },
       "hints": [
         {
-          "text": "Cham vao the, roi cham vao dich den."
+          "text": "Chạm vào thẻ, rồi chạm vào đích đến."
         }
       ],
       "metadata": {
@@ -9596,6 +9686,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Place each card into warm colors or cool colors.",
+          "learningObjective": "color classification",
           "items": [
             {
               "id": "item0",
@@ -9686,12 +9777,13 @@
           "hint": "Tap a card, then tap its target."
         },
         "vi": {
-          "prompt": "Dat moi the vao mau nong hoac mau mat.",
+          "prompt": "Đặt mỗi thẻ vào màu nóng hoặc màu mát.",
+          "learningObjective": "phân loại màu sắc",
           "items": [
             {
               "id": "item0",
-              "label": "do",
-              "text": "do",
+              "label": "đỏ",
+              "text": "đỏ",
               "acceptedTargetIds": [
                 "left"
               ],
@@ -9699,8 +9791,8 @@
             },
             {
               "id": "item1",
-              "label": "vang",
-              "text": "vang",
+              "label": "vàng",
+              "text": "vàng",
               "acceptedTargetIds": [
                 "left"
               ],
@@ -9717,8 +9809,8 @@
             },
             {
               "id": "item3",
-              "label": "xanh duong",
-              "text": "xanh duong",
+              "label": "xanh dương",
+              "text": "xanh dương",
               "acceptedTargetIds": [
                 "right"
               ],
@@ -9726,8 +9818,8 @@
             },
             {
               "id": "item4",
-              "label": "xanh la",
-              "text": "xanh la",
+              "label": "xanh lá",
+              "text": "xanh lá",
               "acceptedTargetIds": [
                 "right"
               ],
@@ -9735,8 +9827,8 @@
             },
             {
               "id": "item5",
-              "label": "tim",
-              "text": "tim",
+              "label": "tím",
+              "text": "tím",
               "acceptedTargetIds": [
                 "right"
               ],
@@ -9746,8 +9838,8 @@
           "targets": [
             {
               "id": "left",
-              "label": "mau nong",
-              "text": "mau nong",
+              "label": "màu nóng",
+              "text": "màu nóng",
               "capacity": 3,
               "acceptedItemIds": [
                 "item0",
@@ -9757,8 +9849,8 @@
             },
             {
               "id": "right",
-              "label": "mau mat",
-              "text": "mau mat",
+              "label": "màu mát",
+              "text": "màu mát",
               "capacity": 3,
               "acceptedItemIds": [
                 "item3",
@@ -9774,12 +9866,12 @@
           "rule": {
             "matchStrategy": "explicitIds"
           },
-          "hint": "Cham vao the, roi cham vao dich den."
+          "hint": "Chạm vào thẻ, rồi chạm vào đích đến."
         }
       },
       "hints": [
         {
-          "text": "Cham vao the, roi cham vao dich den."
+          "text": "Chạm vào thẻ, rồi chạm vào đích đến."
         }
       ],
       "metadata": {
@@ -9809,6 +9901,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Place each card into warm colors or cool colors.",
+          "learningObjective": "color classification",
           "items": [
             {
               "id": "item0",
@@ -9899,12 +9992,13 @@
           "hint": "Tap a card, then tap its target."
         },
         "vi": {
-          "prompt": "Dat moi the vao mau nong hoac mau mat.",
+          "prompt": "Đặt mỗi thẻ vào màu nóng hoặc màu mát.",
+          "learningObjective": "phân loại màu sắc",
           "items": [
             {
               "id": "item0",
-              "label": "do",
-              "text": "do",
+              "label": "đỏ",
+              "text": "đỏ",
               "acceptedTargetIds": [
                 "left"
               ],
@@ -9912,8 +10006,8 @@
             },
             {
               "id": "item1",
-              "label": "vang",
-              "text": "vang",
+              "label": "vàng",
+              "text": "vàng",
               "acceptedTargetIds": [
                 "left"
               ],
@@ -9930,8 +10024,8 @@
             },
             {
               "id": "item3",
-              "label": "xanh duong",
-              "text": "xanh duong",
+              "label": "xanh dương",
+              "text": "xanh dương",
               "acceptedTargetIds": [
                 "right"
               ],
@@ -9939,8 +10033,8 @@
             },
             {
               "id": "item4",
-              "label": "xanh la",
-              "text": "xanh la",
+              "label": "xanh lá",
+              "text": "xanh lá",
               "acceptedTargetIds": [
                 "right"
               ],
@@ -9948,8 +10042,8 @@
             },
             {
               "id": "item5",
-              "label": "tim",
-              "text": "tim",
+              "label": "tím",
+              "text": "tím",
               "acceptedTargetIds": [
                 "right"
               ],
@@ -9959,8 +10053,8 @@
           "targets": [
             {
               "id": "left",
-              "label": "mau nong",
-              "text": "mau nong",
+              "label": "màu nóng",
+              "text": "màu nóng",
               "capacity": 3,
               "acceptedItemIds": [
                 "item0",
@@ -9970,8 +10064,8 @@
             },
             {
               "id": "right",
-              "label": "mau mat",
-              "text": "mau mat",
+              "label": "màu mát",
+              "text": "màu mát",
               "capacity": 3,
               "acceptedItemIds": [
                 "item3",
@@ -9987,12 +10081,12 @@
           "rule": {
             "matchStrategy": "explicitIds"
           },
-          "hint": "Cham vao the, roi cham vao dich den."
+          "hint": "Chạm vào thẻ, rồi chạm vào đích đến."
         }
       },
       "hints": [
         {
-          "text": "Cham vao the, roi cham vao dich den."
+          "text": "Chạm vào thẻ, rồi chạm vào đích đến."
         }
       ],
       "metadata": {
@@ -10022,6 +10116,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Place each card into warm colors or cool colors.",
+          "learningObjective": "color classification",
           "items": [
             {
               "id": "item0",
@@ -10112,12 +10207,13 @@
           "hint": "Tap a card, then tap its target."
         },
         "vi": {
-          "prompt": "Dat moi the vao mau nong hoac mau mat.",
+          "prompt": "Đặt mỗi thẻ vào màu nóng hoặc màu mát.",
+          "learningObjective": "phân loại màu sắc",
           "items": [
             {
               "id": "item0",
-              "label": "do",
-              "text": "do",
+              "label": "đỏ",
+              "text": "đỏ",
               "acceptedTargetIds": [
                 "left"
               ],
@@ -10125,8 +10221,8 @@
             },
             {
               "id": "item1",
-              "label": "vang",
-              "text": "vang",
+              "label": "vàng",
+              "text": "vàng",
               "acceptedTargetIds": [
                 "left"
               ],
@@ -10143,8 +10239,8 @@
             },
             {
               "id": "item3",
-              "label": "xanh duong",
-              "text": "xanh duong",
+              "label": "xanh dương",
+              "text": "xanh dương",
               "acceptedTargetIds": [
                 "right"
               ],
@@ -10152,8 +10248,8 @@
             },
             {
               "id": "item4",
-              "label": "xanh la",
-              "text": "xanh la",
+              "label": "xanh lá",
+              "text": "xanh lá",
               "acceptedTargetIds": [
                 "right"
               ],
@@ -10161,8 +10257,8 @@
             },
             {
               "id": "item5",
-              "label": "tim",
-              "text": "tim",
+              "label": "tím",
+              "text": "tím",
               "acceptedTargetIds": [
                 "right"
               ],
@@ -10172,8 +10268,8 @@
           "targets": [
             {
               "id": "left",
-              "label": "mau nong",
-              "text": "mau nong",
+              "label": "màu nóng",
+              "text": "màu nóng",
               "capacity": 3,
               "acceptedItemIds": [
                 "item0",
@@ -10183,8 +10279,8 @@
             },
             {
               "id": "right",
-              "label": "mau mat",
-              "text": "mau mat",
+              "label": "màu mát",
+              "text": "màu mát",
               "capacity": 3,
               "acceptedItemIds": [
                 "item3",
@@ -10200,12 +10296,12 @@
           "rule": {
             "matchStrategy": "explicitIds"
           },
-          "hint": "Cham vao the, roi cham vao dich den."
+          "hint": "Chạm vào thẻ, rồi chạm vào đích đến."
         }
       },
       "hints": [
         {
-          "text": "Cham vao the, roi cham vao dich den."
+          "text": "Chạm vào thẻ, rồi chạm vào đích đến."
         }
       ],
       "metadata": {
@@ -10235,6 +10331,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Place each card into warm colors or cool colors.",
+          "learningObjective": "color classification",
           "items": [
             {
               "id": "item0",
@@ -10325,12 +10422,13 @@
           "hint": "Tap a card, then tap its target."
         },
         "vi": {
-          "prompt": "Dat moi the vao mau nong hoac mau mat.",
+          "prompt": "Đặt mỗi thẻ vào màu nóng hoặc màu mát.",
+          "learningObjective": "phân loại màu sắc",
           "items": [
             {
               "id": "item0",
-              "label": "do",
-              "text": "do",
+              "label": "đỏ",
+              "text": "đỏ",
               "acceptedTargetIds": [
                 "left"
               ],
@@ -10338,8 +10436,8 @@
             },
             {
               "id": "item1",
-              "label": "vang",
-              "text": "vang",
+              "label": "vàng",
+              "text": "vàng",
               "acceptedTargetIds": [
                 "left"
               ],
@@ -10356,8 +10454,8 @@
             },
             {
               "id": "item3",
-              "label": "xanh duong",
-              "text": "xanh duong",
+              "label": "xanh dương",
+              "text": "xanh dương",
               "acceptedTargetIds": [
                 "right"
               ],
@@ -10365,8 +10463,8 @@
             },
             {
               "id": "item4",
-              "label": "xanh la",
-              "text": "xanh la",
+              "label": "xanh lá",
+              "text": "xanh lá",
               "acceptedTargetIds": [
                 "right"
               ],
@@ -10374,8 +10472,8 @@
             },
             {
               "id": "item5",
-              "label": "tim",
-              "text": "tim",
+              "label": "tím",
+              "text": "tím",
               "acceptedTargetIds": [
                 "right"
               ],
@@ -10385,8 +10483,8 @@
           "targets": [
             {
               "id": "left",
-              "label": "mau nong",
-              "text": "mau nong",
+              "label": "màu nóng",
+              "text": "màu nóng",
               "capacity": 3,
               "acceptedItemIds": [
                 "item0",
@@ -10396,8 +10494,8 @@
             },
             {
               "id": "right",
-              "label": "mau mat",
-              "text": "mau mat",
+              "label": "màu mát",
+              "text": "màu mát",
               "capacity": 3,
               "acceptedItemIds": [
                 "item3",
@@ -10413,12 +10511,12 @@
           "rule": {
             "matchStrategy": "explicitIds"
           },
-          "hint": "Cham vao the, roi cham vao dich den."
+          "hint": "Chạm vào thẻ, rồi chạm vào đích đến."
         }
       },
       "hints": [
         {
-          "text": "Cham vao the, roi cham vao dich den."
+          "text": "Chạm vào thẻ, rồi chạm vào đích đến."
         }
       ],
       "metadata": {
@@ -10448,6 +10546,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Place each card into warm colors or cool colors.",
+          "learningObjective": "color classification",
           "items": [
             {
               "id": "item0",
@@ -10538,12 +10637,13 @@
           "hint": "Tap a card, then tap its target."
         },
         "vi": {
-          "prompt": "Dat moi the vao mau nong hoac mau mat.",
+          "prompt": "Đặt mỗi thẻ vào màu nóng hoặc màu mát.",
+          "learningObjective": "phân loại màu sắc",
           "items": [
             {
               "id": "item0",
-              "label": "do",
-              "text": "do",
+              "label": "đỏ",
+              "text": "đỏ",
               "acceptedTargetIds": [
                 "left"
               ],
@@ -10551,8 +10651,8 @@
             },
             {
               "id": "item1",
-              "label": "vang",
-              "text": "vang",
+              "label": "vàng",
+              "text": "vàng",
               "acceptedTargetIds": [
                 "left"
               ],
@@ -10569,8 +10669,8 @@
             },
             {
               "id": "item3",
-              "label": "xanh duong",
-              "text": "xanh duong",
+              "label": "xanh dương",
+              "text": "xanh dương",
               "acceptedTargetIds": [
                 "right"
               ],
@@ -10578,8 +10678,8 @@
             },
             {
               "id": "item4",
-              "label": "xanh la",
-              "text": "xanh la",
+              "label": "xanh lá",
+              "text": "xanh lá",
               "acceptedTargetIds": [
                 "right"
               ],
@@ -10587,8 +10687,8 @@
             },
             {
               "id": "item5",
-              "label": "tim",
-              "text": "tim",
+              "label": "tím",
+              "text": "tím",
               "acceptedTargetIds": [
                 "right"
               ],
@@ -10598,8 +10698,8 @@
           "targets": [
             {
               "id": "left",
-              "label": "mau nong",
-              "text": "mau nong",
+              "label": "màu nóng",
+              "text": "màu nóng",
               "capacity": 3,
               "acceptedItemIds": [
                 "item0",
@@ -10609,8 +10709,8 @@
             },
             {
               "id": "right",
-              "label": "mau mat",
-              "text": "mau mat",
+              "label": "màu mát",
+              "text": "màu mát",
               "capacity": 3,
               "acceptedItemIds": [
                 "item3",
@@ -10626,12 +10726,12 @@
           "rule": {
             "matchStrategy": "explicitIds"
           },
-          "hint": "Cham vao the, roi cham vao dich den."
+          "hint": "Chạm vào thẻ, rồi chạm vào đích đến."
         }
       },
       "hints": [
         {
-          "text": "Cham vao the, roi cham vao dich den."
+          "text": "Chạm vào thẻ, rồi chạm vào đích đến."
         }
       ],
       "metadata": {
@@ -10661,6 +10761,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Place each card into warm colors or cool colors.",
+          "learningObjective": "color classification",
           "items": [
             {
               "id": "item0",
@@ -10751,12 +10852,13 @@
           "hint": "Tap a card, then tap its target."
         },
         "vi": {
-          "prompt": "Dat moi the vao mau nong hoac mau mat.",
+          "prompt": "Đặt mỗi thẻ vào màu nóng hoặc màu mát.",
+          "learningObjective": "phân loại màu sắc",
           "items": [
             {
               "id": "item0",
-              "label": "do",
-              "text": "do",
+              "label": "đỏ",
+              "text": "đỏ",
               "acceptedTargetIds": [
                 "left"
               ],
@@ -10764,8 +10866,8 @@
             },
             {
               "id": "item1",
-              "label": "vang",
-              "text": "vang",
+              "label": "vàng",
+              "text": "vàng",
               "acceptedTargetIds": [
                 "left"
               ],
@@ -10782,8 +10884,8 @@
             },
             {
               "id": "item3",
-              "label": "xanh duong",
-              "text": "xanh duong",
+              "label": "xanh dương",
+              "text": "xanh dương",
               "acceptedTargetIds": [
                 "right"
               ],
@@ -10791,8 +10893,8 @@
             },
             {
               "id": "item4",
-              "label": "xanh la",
-              "text": "xanh la",
+              "label": "xanh lá",
+              "text": "xanh lá",
               "acceptedTargetIds": [
                 "right"
               ],
@@ -10800,8 +10902,8 @@
             },
             {
               "id": "item5",
-              "label": "tim",
-              "text": "tim",
+              "label": "tím",
+              "text": "tím",
               "acceptedTargetIds": [
                 "right"
               ],
@@ -10811,8 +10913,8 @@
           "targets": [
             {
               "id": "left",
-              "label": "mau nong",
-              "text": "mau nong",
+              "label": "màu nóng",
+              "text": "màu nóng",
               "capacity": 3,
               "acceptedItemIds": [
                 "item0",
@@ -10822,8 +10924,8 @@
             },
             {
               "id": "right",
-              "label": "mau mat",
-              "text": "mau mat",
+              "label": "màu mát",
+              "text": "màu mát",
               "capacity": 3,
               "acceptedItemIds": [
                 "item3",
@@ -10839,12 +10941,12 @@
           "rule": {
             "matchStrategy": "explicitIds"
           },
-          "hint": "Cham vao the, roi cham vao dich den."
+          "hint": "Chạm vào thẻ, rồi chạm vào đích đến."
         }
       },
       "hints": [
         {
-          "text": "Cham vao the, roi cham vao dich den."
+          "text": "Chạm vào thẻ, rồi chạm vào đích đến."
         }
       ],
       "metadata": {
@@ -10874,6 +10976,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Place each card into warm colors or cool colors.",
+          "learningObjective": "color classification",
           "items": [
             {
               "id": "item0",
@@ -10964,12 +11067,13 @@
           "hint": "Tap a card, then tap its target."
         },
         "vi": {
-          "prompt": "Dat moi the vao mau nong hoac mau mat.",
+          "prompt": "Đặt mỗi thẻ vào màu nóng hoặc màu mát.",
+          "learningObjective": "phân loại màu sắc",
           "items": [
             {
               "id": "item0",
-              "label": "do",
-              "text": "do",
+              "label": "đỏ",
+              "text": "đỏ",
               "acceptedTargetIds": [
                 "left"
               ],
@@ -10977,8 +11081,8 @@
             },
             {
               "id": "item1",
-              "label": "vang",
-              "text": "vang",
+              "label": "vàng",
+              "text": "vàng",
               "acceptedTargetIds": [
                 "left"
               ],
@@ -10995,8 +11099,8 @@
             },
             {
               "id": "item3",
-              "label": "xanh duong",
-              "text": "xanh duong",
+              "label": "xanh dương",
+              "text": "xanh dương",
               "acceptedTargetIds": [
                 "right"
               ],
@@ -11004,8 +11108,8 @@
             },
             {
               "id": "item4",
-              "label": "xanh la",
-              "text": "xanh la",
+              "label": "xanh lá",
+              "text": "xanh lá",
               "acceptedTargetIds": [
                 "right"
               ],
@@ -11013,8 +11117,8 @@
             },
             {
               "id": "item5",
-              "label": "tim",
-              "text": "tim",
+              "label": "tím",
+              "text": "tím",
               "acceptedTargetIds": [
                 "right"
               ],
@@ -11024,8 +11128,8 @@
           "targets": [
             {
               "id": "left",
-              "label": "mau nong",
-              "text": "mau nong",
+              "label": "màu nóng",
+              "text": "màu nóng",
               "capacity": 3,
               "acceptedItemIds": [
                 "item0",
@@ -11035,8 +11139,8 @@
             },
             {
               "id": "right",
-              "label": "mau mat",
-              "text": "mau mat",
+              "label": "màu mát",
+              "text": "màu mát",
               "capacity": 3,
               "acceptedItemIds": [
                 "item3",
@@ -11052,12 +11156,12 @@
           "rule": {
             "matchStrategy": "explicitIds"
           },
-          "hint": "Cham vao the, roi cham vao dich den."
+          "hint": "Chạm vào thẻ, rồi chạm vào đích đến."
         }
       },
       "hints": [
         {
-          "text": "Cham vao the, roi cham vao dich den."
+          "text": "Chạm vào thẻ, rồi chạm vào đích đến."
         }
       ],
       "metadata": {
@@ -11087,6 +11191,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Place each card into warm colors or cool colors.",
+          "learningObjective": "color classification",
           "items": [
             {
               "id": "item0",
@@ -11177,12 +11282,13 @@
           "hint": "Tap a card, then tap its target."
         },
         "vi": {
-          "prompt": "Dat moi the vao mau nong hoac mau mat.",
+          "prompt": "Đặt mỗi thẻ vào màu nóng hoặc màu mát.",
+          "learningObjective": "phân loại màu sắc",
           "items": [
             {
               "id": "item0",
-              "label": "do",
-              "text": "do",
+              "label": "đỏ",
+              "text": "đỏ",
               "acceptedTargetIds": [
                 "left"
               ],
@@ -11190,8 +11296,8 @@
             },
             {
               "id": "item1",
-              "label": "vang",
-              "text": "vang",
+              "label": "vàng",
+              "text": "vàng",
               "acceptedTargetIds": [
                 "left"
               ],
@@ -11208,8 +11314,8 @@
             },
             {
               "id": "item3",
-              "label": "xanh duong",
-              "text": "xanh duong",
+              "label": "xanh dương",
+              "text": "xanh dương",
               "acceptedTargetIds": [
                 "right"
               ],
@@ -11217,8 +11323,8 @@
             },
             {
               "id": "item4",
-              "label": "xanh la",
-              "text": "xanh la",
+              "label": "xanh lá",
+              "text": "xanh lá",
               "acceptedTargetIds": [
                 "right"
               ],
@@ -11226,8 +11332,8 @@
             },
             {
               "id": "item5",
-              "label": "tim",
-              "text": "tim",
+              "label": "tím",
+              "text": "tím",
               "acceptedTargetIds": [
                 "right"
               ],
@@ -11237,8 +11343,8 @@
           "targets": [
             {
               "id": "left",
-              "label": "mau nong",
-              "text": "mau nong",
+              "label": "màu nóng",
+              "text": "màu nóng",
               "capacity": 3,
               "acceptedItemIds": [
                 "item0",
@@ -11248,8 +11354,8 @@
             },
             {
               "id": "right",
-              "label": "mau mat",
-              "text": "mau mat",
+              "label": "màu mát",
+              "text": "màu mát",
               "capacity": 3,
               "acceptedItemIds": [
                 "item3",
@@ -11265,12 +11371,12 @@
           "rule": {
             "matchStrategy": "explicitIds"
           },
-          "hint": "Cham vao the, roi cham vao dich den."
+          "hint": "Chạm vào thẻ, rồi chạm vào đích đến."
         }
       },
       "hints": [
         {
-          "text": "Cham vao the, roi cham vao dich den."
+          "text": "Chạm vào thẻ, rồi chạm vào đích đến."
         }
       ],
       "metadata": {
@@ -11300,6 +11406,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Place each card into warm colors or cool colors.",
+          "learningObjective": "color classification",
           "items": [
             {
               "id": "item0",
@@ -11390,12 +11497,13 @@
           "hint": "Tap a card, then tap its target."
         },
         "vi": {
-          "prompt": "Dat moi the vao mau nong hoac mau mat.",
+          "prompt": "Đặt mỗi thẻ vào màu nóng hoặc màu mát.",
+          "learningObjective": "phân loại màu sắc",
           "items": [
             {
               "id": "item0",
-              "label": "do",
-              "text": "do",
+              "label": "đỏ",
+              "text": "đỏ",
               "acceptedTargetIds": [
                 "left"
               ],
@@ -11403,8 +11511,8 @@
             },
             {
               "id": "item1",
-              "label": "vang",
-              "text": "vang",
+              "label": "vàng",
+              "text": "vàng",
               "acceptedTargetIds": [
                 "left"
               ],
@@ -11421,8 +11529,8 @@
             },
             {
               "id": "item3",
-              "label": "xanh duong",
-              "text": "xanh duong",
+              "label": "xanh dương",
+              "text": "xanh dương",
               "acceptedTargetIds": [
                 "right"
               ],
@@ -11430,8 +11538,8 @@
             },
             {
               "id": "item4",
-              "label": "xanh la",
-              "text": "xanh la",
+              "label": "xanh lá",
+              "text": "xanh lá",
               "acceptedTargetIds": [
                 "right"
               ],
@@ -11439,8 +11547,8 @@
             },
             {
               "id": "item5",
-              "label": "tim",
-              "text": "tim",
+              "label": "tím",
+              "text": "tím",
               "acceptedTargetIds": [
                 "right"
               ],
@@ -11450,8 +11558,8 @@
           "targets": [
             {
               "id": "left",
-              "label": "mau nong",
-              "text": "mau nong",
+              "label": "màu nóng",
+              "text": "màu nóng",
               "capacity": 3,
               "acceptedItemIds": [
                 "item0",
@@ -11461,8 +11569,8 @@
             },
             {
               "id": "right",
-              "label": "mau mat",
-              "text": "mau mat",
+              "label": "màu mát",
+              "text": "màu mát",
               "capacity": 3,
               "acceptedItemIds": [
                 "item3",
@@ -11478,12 +11586,12 @@
           "rule": {
             "matchStrategy": "explicitIds"
           },
-          "hint": "Cham vao the, roi cham vao dich den."
+          "hint": "Chạm vào thẻ, rồi chạm vào đích đến."
         }
       },
       "hints": [
         {
-          "text": "Cham vao the, roi cham vao dich den."
+          "text": "Chạm vào thẻ, rồi chạm vào đích đến."
         }
       ],
       "metadata": {
@@ -11513,6 +11621,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Place each card into warm colors or cool colors.",
+          "learningObjective": "color classification",
           "items": [
             {
               "id": "item0",
@@ -11603,12 +11712,13 @@
           "hint": "Tap a card, then tap its target."
         },
         "vi": {
-          "prompt": "Dat moi the vao mau nong hoac mau mat.",
+          "prompt": "Đặt mỗi thẻ vào màu nóng hoặc màu mát.",
+          "learningObjective": "phân loại màu sắc",
           "items": [
             {
               "id": "item0",
-              "label": "do",
-              "text": "do",
+              "label": "đỏ",
+              "text": "đỏ",
               "acceptedTargetIds": [
                 "left"
               ],
@@ -11616,8 +11726,8 @@
             },
             {
               "id": "item1",
-              "label": "vang",
-              "text": "vang",
+              "label": "vàng",
+              "text": "vàng",
               "acceptedTargetIds": [
                 "left"
               ],
@@ -11634,8 +11744,8 @@
             },
             {
               "id": "item3",
-              "label": "xanh duong",
-              "text": "xanh duong",
+              "label": "xanh dương",
+              "text": "xanh dương",
               "acceptedTargetIds": [
                 "right"
               ],
@@ -11643,8 +11753,8 @@
             },
             {
               "id": "item4",
-              "label": "xanh la",
-              "text": "xanh la",
+              "label": "xanh lá",
+              "text": "xanh lá",
               "acceptedTargetIds": [
                 "right"
               ],
@@ -11652,8 +11762,8 @@
             },
             {
               "id": "item5",
-              "label": "tim",
-              "text": "tim",
+              "label": "tím",
+              "text": "tím",
               "acceptedTargetIds": [
                 "right"
               ],
@@ -11663,8 +11773,8 @@
           "targets": [
             {
               "id": "left",
-              "label": "mau nong",
-              "text": "mau nong",
+              "label": "màu nóng",
+              "text": "màu nóng",
               "capacity": 3,
               "acceptedItemIds": [
                 "item0",
@@ -11674,8 +11784,8 @@
             },
             {
               "id": "right",
-              "label": "mau mat",
-              "text": "mau mat",
+              "label": "màu mát",
+              "text": "màu mát",
               "capacity": 3,
               "acceptedItemIds": [
                 "item3",
@@ -11691,12 +11801,12 @@
           "rule": {
             "matchStrategy": "explicitIds"
           },
-          "hint": "Cham vao the, roi cham vao dich den."
+          "hint": "Chạm vào thẻ, rồi chạm vào đích đến."
         }
       },
       "hints": [
         {
-          "text": "Cham vao the, roi cham vao dich den."
+          "text": "Chạm vào thẻ, rồi chạm vào đích đến."
         }
       ],
       "metadata": {
@@ -11726,6 +11836,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Place each card into warm colors or cool colors.",
+          "learningObjective": "color classification",
           "items": [
             {
               "id": "item0",
@@ -11816,12 +11927,13 @@
           "hint": "Tap a card, then tap its target."
         },
         "vi": {
-          "prompt": "Dat moi the vao mau nong hoac mau mat.",
+          "prompt": "Đặt mỗi thẻ vào màu nóng hoặc màu mát.",
+          "learningObjective": "phân loại màu sắc",
           "items": [
             {
               "id": "item0",
-              "label": "do",
-              "text": "do",
+              "label": "đỏ",
+              "text": "đỏ",
               "acceptedTargetIds": [
                 "left"
               ],
@@ -11829,8 +11941,8 @@
             },
             {
               "id": "item1",
-              "label": "vang",
-              "text": "vang",
+              "label": "vàng",
+              "text": "vàng",
               "acceptedTargetIds": [
                 "left"
               ],
@@ -11847,8 +11959,8 @@
             },
             {
               "id": "item3",
-              "label": "xanh duong",
-              "text": "xanh duong",
+              "label": "xanh dương",
+              "text": "xanh dương",
               "acceptedTargetIds": [
                 "right"
               ],
@@ -11856,8 +11968,8 @@
             },
             {
               "id": "item4",
-              "label": "xanh la",
-              "text": "xanh la",
+              "label": "xanh lá",
+              "text": "xanh lá",
               "acceptedTargetIds": [
                 "right"
               ],
@@ -11865,8 +11977,8 @@
             },
             {
               "id": "item5",
-              "label": "tim",
-              "text": "tim",
+              "label": "tím",
+              "text": "tím",
               "acceptedTargetIds": [
                 "right"
               ],
@@ -11876,8 +11988,8 @@
           "targets": [
             {
               "id": "left",
-              "label": "mau nong",
-              "text": "mau nong",
+              "label": "màu nóng",
+              "text": "màu nóng",
               "capacity": 3,
               "acceptedItemIds": [
                 "item0",
@@ -11887,8 +11999,8 @@
             },
             {
               "id": "right",
-              "label": "mau mat",
-              "text": "mau mat",
+              "label": "màu mát",
+              "text": "màu mát",
               "capacity": 3,
               "acceptedItemIds": [
                 "item3",
@@ -11904,12 +12016,12 @@
           "rule": {
             "matchStrategy": "explicitIds"
           },
-          "hint": "Cham vao the, roi cham vao dich den."
+          "hint": "Chạm vào thẻ, rồi chạm vào đích đến."
         }
       },
       "hints": [
         {
-          "text": "Cham vao the, roi cham vao dich den."
+          "text": "Chạm vào thẻ, rồi chạm vào đích đến."
         }
       ],
       "metadata": {
@@ -11939,6 +12051,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Place each card into warm colors or cool colors.",
+          "learningObjective": "color classification",
           "items": [
             {
               "id": "item0",
@@ -12029,12 +12142,13 @@
           "hint": "Tap a card, then tap its target."
         },
         "vi": {
-          "prompt": "Dat moi the vao mau nong hoac mau mat.",
+          "prompt": "Đặt mỗi thẻ vào màu nóng hoặc màu mát.",
+          "learningObjective": "phân loại màu sắc",
           "items": [
             {
               "id": "item0",
-              "label": "do",
-              "text": "do",
+              "label": "đỏ",
+              "text": "đỏ",
               "acceptedTargetIds": [
                 "left"
               ],
@@ -12042,8 +12156,8 @@
             },
             {
               "id": "item1",
-              "label": "vang",
-              "text": "vang",
+              "label": "vàng",
+              "text": "vàng",
               "acceptedTargetIds": [
                 "left"
               ],
@@ -12060,8 +12174,8 @@
             },
             {
               "id": "item3",
-              "label": "xanh duong",
-              "text": "xanh duong",
+              "label": "xanh dương",
+              "text": "xanh dương",
               "acceptedTargetIds": [
                 "right"
               ],
@@ -12069,8 +12183,8 @@
             },
             {
               "id": "item4",
-              "label": "xanh la",
-              "text": "xanh la",
+              "label": "xanh lá",
+              "text": "xanh lá",
               "acceptedTargetIds": [
                 "right"
               ],
@@ -12078,8 +12192,8 @@
             },
             {
               "id": "item5",
-              "label": "tim",
-              "text": "tim",
+              "label": "tím",
+              "text": "tím",
               "acceptedTargetIds": [
                 "right"
               ],
@@ -12089,8 +12203,8 @@
           "targets": [
             {
               "id": "left",
-              "label": "mau nong",
-              "text": "mau nong",
+              "label": "màu nóng",
+              "text": "màu nóng",
               "capacity": 3,
               "acceptedItemIds": [
                 "item0",
@@ -12100,8 +12214,8 @@
             },
             {
               "id": "right",
-              "label": "mau mat",
-              "text": "mau mat",
+              "label": "màu mát",
+              "text": "màu mát",
               "capacity": 3,
               "acceptedItemIds": [
                 "item3",
@@ -12117,12 +12231,12 @@
           "rule": {
             "matchStrategy": "explicitIds"
           },
-          "hint": "Cham vao the, roi cham vao dich den."
+          "hint": "Chạm vào thẻ, rồi chạm vào đích đến."
         }
       },
       "hints": [
         {
-          "text": "Cham vao the, roi cham vao dich den."
+          "text": "Chạm vào thẻ, rồi chạm vào đích đến."
         }
       ],
       "metadata": {
@@ -12152,6 +12266,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Place each card into warm colors or cool colors.",
+          "learningObjective": "color classification",
           "items": [
             {
               "id": "item0",
@@ -12242,12 +12357,13 @@
           "hint": "Tap a card, then tap its target."
         },
         "vi": {
-          "prompt": "Dat moi the vao mau nong hoac mau mat.",
+          "prompt": "Đặt mỗi thẻ vào màu nóng hoặc màu mát.",
+          "learningObjective": "phân loại màu sắc",
           "items": [
             {
               "id": "item0",
-              "label": "do",
-              "text": "do",
+              "label": "đỏ",
+              "text": "đỏ",
               "acceptedTargetIds": [
                 "left"
               ],
@@ -12255,8 +12371,8 @@
             },
             {
               "id": "item1",
-              "label": "vang",
-              "text": "vang",
+              "label": "vàng",
+              "text": "vàng",
               "acceptedTargetIds": [
                 "left"
               ],
@@ -12273,8 +12389,8 @@
             },
             {
               "id": "item3",
-              "label": "xanh duong",
-              "text": "xanh duong",
+              "label": "xanh dương",
+              "text": "xanh dương",
               "acceptedTargetIds": [
                 "right"
               ],
@@ -12282,8 +12398,8 @@
             },
             {
               "id": "item4",
-              "label": "xanh la",
-              "text": "xanh la",
+              "label": "xanh lá",
+              "text": "xanh lá",
               "acceptedTargetIds": [
                 "right"
               ],
@@ -12291,8 +12407,8 @@
             },
             {
               "id": "item5",
-              "label": "tim",
-              "text": "tim",
+              "label": "tím",
+              "text": "tím",
               "acceptedTargetIds": [
                 "right"
               ],
@@ -12302,8 +12418,8 @@
           "targets": [
             {
               "id": "left",
-              "label": "mau nong",
-              "text": "mau nong",
+              "label": "màu nóng",
+              "text": "màu nóng",
               "capacity": 3,
               "acceptedItemIds": [
                 "item0",
@@ -12313,8 +12429,8 @@
             },
             {
               "id": "right",
-              "label": "mau mat",
-              "text": "mau mat",
+              "label": "màu mát",
+              "text": "màu mát",
               "capacity": 3,
               "acceptedItemIds": [
                 "item3",
@@ -12330,12 +12446,12 @@
           "rule": {
             "matchStrategy": "explicitIds"
           },
-          "hint": "Cham vao the, roi cham vao dich den."
+          "hint": "Chạm vào thẻ, rồi chạm vào đích đến."
         }
       },
       "hints": [
         {
-          "text": "Cham vao the, roi cham vao dich den."
+          "text": "Chạm vào thẻ, rồi chạm vào đích đến."
         }
       ],
       "metadata": {
@@ -12365,6 +12481,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Place each card into warm colors or cool colors.",
+          "learningObjective": "color classification",
           "items": [
             {
               "id": "item0",
@@ -12455,12 +12572,13 @@
           "hint": "Tap a card, then tap its target."
         },
         "vi": {
-          "prompt": "Dat moi the vao mau nong hoac mau mat.",
+          "prompt": "Đặt mỗi thẻ vào màu nóng hoặc màu mát.",
+          "learningObjective": "phân loại màu sắc",
           "items": [
             {
               "id": "item0",
-              "label": "do",
-              "text": "do",
+              "label": "đỏ",
+              "text": "đỏ",
               "acceptedTargetIds": [
                 "left"
               ],
@@ -12468,8 +12586,8 @@
             },
             {
               "id": "item1",
-              "label": "vang",
-              "text": "vang",
+              "label": "vàng",
+              "text": "vàng",
               "acceptedTargetIds": [
                 "left"
               ],
@@ -12486,8 +12604,8 @@
             },
             {
               "id": "item3",
-              "label": "xanh duong",
-              "text": "xanh duong",
+              "label": "xanh dương",
+              "text": "xanh dương",
               "acceptedTargetIds": [
                 "right"
               ],
@@ -12495,8 +12613,8 @@
             },
             {
               "id": "item4",
-              "label": "xanh la",
-              "text": "xanh la",
+              "label": "xanh lá",
+              "text": "xanh lá",
               "acceptedTargetIds": [
                 "right"
               ],
@@ -12504,8 +12622,8 @@
             },
             {
               "id": "item5",
-              "label": "tim",
-              "text": "tim",
+              "label": "tím",
+              "text": "tím",
               "acceptedTargetIds": [
                 "right"
               ],
@@ -12515,8 +12633,8 @@
           "targets": [
             {
               "id": "left",
-              "label": "mau nong",
-              "text": "mau nong",
+              "label": "màu nóng",
+              "text": "màu nóng",
               "capacity": 3,
               "acceptedItemIds": [
                 "item0",
@@ -12526,8 +12644,8 @@
             },
             {
               "id": "right",
-              "label": "mau mat",
-              "text": "mau mat",
+              "label": "màu mát",
+              "text": "màu mát",
               "capacity": 3,
               "acceptedItemIds": [
                 "item3",
@@ -12543,12 +12661,12 @@
           "rule": {
             "matchStrategy": "explicitIds"
           },
-          "hint": "Cham vao the, roi cham vao dich den."
+          "hint": "Chạm vào thẻ, rồi chạm vào đích đến."
         }
       },
       "hints": [
         {
-          "text": "Cham vao the, roi cham vao dich den."
+          "text": "Chạm vào thẻ, rồi chạm vào đích đến."
         }
       ],
       "metadata": {
@@ -12578,6 +12696,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Place each card into warm colors or cool colors.",
+          "learningObjective": "color classification",
           "items": [
             {
               "id": "item0",
@@ -12668,12 +12787,13 @@
           "hint": "Tap a card, then tap its target."
         },
         "vi": {
-          "prompt": "Dat moi the vao mau nong hoac mau mat.",
+          "prompt": "Đặt mỗi thẻ vào màu nóng hoặc màu mát.",
+          "learningObjective": "phân loại màu sắc",
           "items": [
             {
               "id": "item0",
-              "label": "do",
-              "text": "do",
+              "label": "đỏ",
+              "text": "đỏ",
               "acceptedTargetIds": [
                 "left"
               ],
@@ -12681,8 +12801,8 @@
             },
             {
               "id": "item1",
-              "label": "vang",
-              "text": "vang",
+              "label": "vàng",
+              "text": "vàng",
               "acceptedTargetIds": [
                 "left"
               ],
@@ -12699,8 +12819,8 @@
             },
             {
               "id": "item3",
-              "label": "xanh duong",
-              "text": "xanh duong",
+              "label": "xanh dương",
+              "text": "xanh dương",
               "acceptedTargetIds": [
                 "right"
               ],
@@ -12708,8 +12828,8 @@
             },
             {
               "id": "item4",
-              "label": "xanh la",
-              "text": "xanh la",
+              "label": "xanh lá",
+              "text": "xanh lá",
               "acceptedTargetIds": [
                 "right"
               ],
@@ -12717,8 +12837,8 @@
             },
             {
               "id": "item5",
-              "label": "tim",
-              "text": "tim",
+              "label": "tím",
+              "text": "tím",
               "acceptedTargetIds": [
                 "right"
               ],
@@ -12728,8 +12848,8 @@
           "targets": [
             {
               "id": "left",
-              "label": "mau nong",
-              "text": "mau nong",
+              "label": "màu nóng",
+              "text": "màu nóng",
               "capacity": 3,
               "acceptedItemIds": [
                 "item0",
@@ -12739,8 +12859,8 @@
             },
             {
               "id": "right",
-              "label": "mau mat",
-              "text": "mau mat",
+              "label": "màu mát",
+              "text": "màu mát",
               "capacity": 3,
               "acceptedItemIds": [
                 "item3",
@@ -12756,12 +12876,12 @@
           "rule": {
             "matchStrategy": "explicitIds"
           },
-          "hint": "Cham vao the, roi cham vao dich den."
+          "hint": "Chạm vào thẻ, rồi chạm vào đích đến."
         }
       },
       "hints": [
         {
-          "text": "Cham vao the, roi cham vao dich den."
+          "text": "Chạm vào thẻ, rồi chạm vào đích đến."
         }
       ],
       "metadata": {

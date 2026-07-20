@@ -11,6 +11,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Put the day in order.",
+          "learningObjective": "daily routine sequencing",
           "mode": "reorder",
           "correctOrder": [
             {
@@ -35,34 +36,35 @@
           "hint": "Think about what comes first."
         },
         "vi": {
-          "prompt": "Sap xep mot ngay theo thu tu.",
+          "prompt": "Sắp xếp một ngày theo thứ tự.",
+          "learningObjective": "sắp xếp trình tự sinh hoạt hằng ngày",
           "mode": "reorder",
           "correctOrder": [
             {
               "id": "s0",
-              "content": "Thuc day",
+              "content": "Thức dậy",
               "type": "text"
             },
             {
               "id": "s1",
-              "content": "Danh rang",
+              "content": "Đánh răng",
               "type": "text"
             },
             {
               "id": "s2",
-              "content": "An sang",
+              "content": "Ăn sáng",
               "type": "text"
             }
           ],
           "rule": {
             "type": "fixed"
           },
-          "hint": "Nghi xem viec nao den truoc."
+          "hint": "Nghĩ xem việc nào đến trước."
         }
       },
       "hints": [
         {
-          "text": "Nghi xem viec nao den truoc."
+          "text": "Nghĩ xem việc nào đến trước."
         }
       ],
       "metadata": {
@@ -92,6 +94,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Put the day in order.",
+          "learningObjective": "daily routine sequencing",
           "mode": "reorder",
           "correctOrder": [
             {
@@ -116,34 +119,35 @@
           "hint": "Think about what comes first."
         },
         "vi": {
-          "prompt": "Sap xep mot ngay theo thu tu.",
+          "prompt": "Sắp xếp một ngày theo thứ tự.",
+          "learningObjective": "sắp xếp trình tự sinh hoạt hằng ngày",
           "mode": "reorder",
           "correctOrder": [
             {
               "id": "s0",
-              "content": "Thuc day",
+              "content": "Thức dậy",
               "type": "text"
             },
             {
               "id": "s1",
-              "content": "Danh rang",
+              "content": "Đánh răng",
               "type": "text"
             },
             {
               "id": "s2",
-              "content": "An sang",
+              "content": "Ăn sáng",
               "type": "text"
             }
           ],
           "rule": {
             "type": "fixed"
           },
-          "hint": "Nghi xem viec nao den truoc."
+          "hint": "Nghĩ xem việc nào đến trước."
         }
       },
       "hints": [
         {
-          "text": "Nghi xem viec nao den truoc."
+          "text": "Nghĩ xem việc nào đến trước."
         }
       ],
       "metadata": {
@@ -173,6 +177,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Put the day in order.",
+          "learningObjective": "daily routine sequencing",
           "mode": "reorder",
           "correctOrder": [
             {
@@ -197,34 +202,35 @@
           "hint": "Think about what comes first."
         },
         "vi": {
-          "prompt": "Sap xep mot ngay theo thu tu.",
+          "prompt": "Sắp xếp một ngày theo thứ tự.",
+          "learningObjective": "sắp xếp trình tự sinh hoạt hằng ngày",
           "mode": "reorder",
           "correctOrder": [
             {
               "id": "s0",
-              "content": "Thuc day",
+              "content": "Thức dậy",
               "type": "text"
             },
             {
               "id": "s1",
-              "content": "Danh rang",
+              "content": "Đánh răng",
               "type": "text"
             },
             {
               "id": "s2",
-              "content": "An sang",
+              "content": "Ăn sáng",
               "type": "text"
             }
           ],
           "rule": {
             "type": "fixed"
           },
-          "hint": "Nghi xem viec nao den truoc."
+          "hint": "Nghĩ xem việc nào đến trước."
         }
       },
       "hints": [
         {
-          "text": "Nghi xem viec nao den truoc."
+          "text": "Nghĩ xem việc nào đến trước."
         }
       ],
       "metadata": {
@@ -254,6 +260,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Put the day in order.",
+          "learningObjective": "daily routine sequencing",
           "mode": "reorder",
           "correctOrder": [
             {
@@ -278,34 +285,35 @@
           "hint": "Think about what comes first."
         },
         "vi": {
-          "prompt": "Sap xep mot ngay theo thu tu.",
+          "prompt": "Sắp xếp một ngày theo thứ tự.",
+          "learningObjective": "sắp xếp trình tự sinh hoạt hằng ngày",
           "mode": "reorder",
           "correctOrder": [
             {
               "id": "s0",
-              "content": "Thuc day",
+              "content": "Thức dậy",
               "type": "text"
             },
             {
               "id": "s1",
-              "content": "Danh rang",
+              "content": "Đánh răng",
               "type": "text"
             },
             {
               "id": "s2",
-              "content": "An sang",
+              "content": "Ăn sáng",
               "type": "text"
             }
           ],
           "rule": {
             "type": "fixed"
           },
-          "hint": "Nghi xem viec nao den truoc."
+          "hint": "Nghĩ xem việc nào đến trước."
         }
       },
       "hints": [
         {
-          "text": "Nghi xem viec nao den truoc."
+          "text": "Nghĩ xem việc nào đến trước."
         }
       ],
       "metadata": {
@@ -335,6 +343,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Put the day in order.",
+          "learningObjective": "daily routine sequencing",
           "mode": "reorder",
           "correctOrder": [
             {
@@ -359,34 +368,35 @@
           "hint": "Think about what comes first."
         },
         "vi": {
-          "prompt": "Sap xep mot ngay theo thu tu.",
+          "prompt": "Sắp xếp một ngày theo thứ tự.",
+          "learningObjective": "sắp xếp trình tự sinh hoạt hằng ngày",
           "mode": "reorder",
           "correctOrder": [
             {
               "id": "s0",
-              "content": "Thuc day",
+              "content": "Thức dậy",
               "type": "text"
             },
             {
               "id": "s1",
-              "content": "Danh rang",
+              "content": "Đánh răng",
               "type": "text"
             },
             {
               "id": "s2",
-              "content": "An sang",
+              "content": "Ăn sáng",
               "type": "text"
             }
           ],
           "rule": {
             "type": "fixed"
           },
-          "hint": "Nghi xem viec nao den truoc."
+          "hint": "Nghĩ xem việc nào đến trước."
         }
       },
       "hints": [
         {
-          "text": "Nghi xem viec nao den truoc."
+          "text": "Nghĩ xem việc nào đến trước."
         }
       ],
       "metadata": {
@@ -416,6 +426,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Put the day in order.",
+          "learningObjective": "daily routine sequencing",
           "mode": "reorder",
           "correctOrder": [
             {
@@ -440,34 +451,35 @@
           "hint": "Think about what comes first."
         },
         "vi": {
-          "prompt": "Sap xep mot ngay theo thu tu.",
+          "prompt": "Sắp xếp một ngày theo thứ tự.",
+          "learningObjective": "sắp xếp trình tự sinh hoạt hằng ngày",
           "mode": "reorder",
           "correctOrder": [
             {
               "id": "s0",
-              "content": "Thuc day",
+              "content": "Thức dậy",
               "type": "text"
             },
             {
               "id": "s1",
-              "content": "Danh rang",
+              "content": "Đánh răng",
               "type": "text"
             },
             {
               "id": "s2",
-              "content": "An sang",
+              "content": "Ăn sáng",
               "type": "text"
             }
           ],
           "rule": {
             "type": "fixed"
           },
-          "hint": "Nghi xem viec nao den truoc."
+          "hint": "Nghĩ xem việc nào đến trước."
         }
       },
       "hints": [
         {
-          "text": "Nghi xem viec nao den truoc."
+          "text": "Nghĩ xem việc nào đến trước."
         }
       ],
       "metadata": {
@@ -497,6 +509,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Put the day in order.",
+          "learningObjective": "daily routine sequencing",
           "mode": "reorder",
           "correctOrder": [
             {
@@ -521,34 +534,35 @@
           "hint": "Think about what comes first."
         },
         "vi": {
-          "prompt": "Sap xep mot ngay theo thu tu.",
+          "prompt": "Sắp xếp một ngày theo thứ tự.",
+          "learningObjective": "sắp xếp trình tự sinh hoạt hằng ngày",
           "mode": "reorder",
           "correctOrder": [
             {
               "id": "s0",
-              "content": "Thuc day",
+              "content": "Thức dậy",
               "type": "text"
             },
             {
               "id": "s1",
-              "content": "Danh rang",
+              "content": "Đánh răng",
               "type": "text"
             },
             {
               "id": "s2",
-              "content": "An sang",
+              "content": "Ăn sáng",
               "type": "text"
             }
           ],
           "rule": {
             "type": "fixed"
           },
-          "hint": "Nghi xem viec nao den truoc."
+          "hint": "Nghĩ xem việc nào đến trước."
         }
       },
       "hints": [
         {
-          "text": "Nghi xem viec nao den truoc."
+          "text": "Nghĩ xem việc nào đến trước."
         }
       ],
       "metadata": {
@@ -578,6 +592,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Put the day in order.",
+          "learningObjective": "daily routine sequencing",
           "mode": "reorder",
           "correctOrder": [
             {
@@ -602,34 +617,35 @@
           "hint": "Think about what comes first."
         },
         "vi": {
-          "prompt": "Sap xep mot ngay theo thu tu.",
+          "prompt": "Sắp xếp một ngày theo thứ tự.",
+          "learningObjective": "sắp xếp trình tự sinh hoạt hằng ngày",
           "mode": "reorder",
           "correctOrder": [
             {
               "id": "s0",
-              "content": "Thuc day",
+              "content": "Thức dậy",
               "type": "text"
             },
             {
               "id": "s1",
-              "content": "Danh rang",
+              "content": "Đánh răng",
               "type": "text"
             },
             {
               "id": "s2",
-              "content": "An sang",
+              "content": "Ăn sáng",
               "type": "text"
             }
           ],
           "rule": {
             "type": "fixed"
           },
-          "hint": "Nghi xem viec nao den truoc."
+          "hint": "Nghĩ xem việc nào đến trước."
         }
       },
       "hints": [
         {
-          "text": "Nghi xem viec nao den truoc."
+          "text": "Nghĩ xem việc nào đến trước."
         }
       ],
       "metadata": {
@@ -659,6 +675,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Put the day in order.",
+          "learningObjective": "daily routine sequencing",
           "mode": "reorder",
           "correctOrder": [
             {
@@ -683,34 +700,35 @@
           "hint": "Think about what comes first."
         },
         "vi": {
-          "prompt": "Sap xep mot ngay theo thu tu.",
+          "prompt": "Sắp xếp một ngày theo thứ tự.",
+          "learningObjective": "sắp xếp trình tự sinh hoạt hằng ngày",
           "mode": "reorder",
           "correctOrder": [
             {
               "id": "s0",
-              "content": "Thuc day",
+              "content": "Thức dậy",
               "type": "text"
             },
             {
               "id": "s1",
-              "content": "Danh rang",
+              "content": "Đánh răng",
               "type": "text"
             },
             {
               "id": "s2",
-              "content": "An sang",
+              "content": "Ăn sáng",
               "type": "text"
             }
           ],
           "rule": {
             "type": "fixed"
           },
-          "hint": "Nghi xem viec nao den truoc."
+          "hint": "Nghĩ xem việc nào đến trước."
         }
       },
       "hints": [
         {
-          "text": "Nghi xem viec nao den truoc."
+          "text": "Nghĩ xem việc nào đến trước."
         }
       ],
       "metadata": {
@@ -740,6 +758,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Put the day in order.",
+          "learningObjective": "daily routine sequencing",
           "mode": "reorder",
           "correctOrder": [
             {
@@ -764,34 +783,35 @@
           "hint": "Think about what comes first."
         },
         "vi": {
-          "prompt": "Sap xep mot ngay theo thu tu.",
+          "prompt": "Sắp xếp một ngày theo thứ tự.",
+          "learningObjective": "sắp xếp trình tự sinh hoạt hằng ngày",
           "mode": "reorder",
           "correctOrder": [
             {
               "id": "s0",
-              "content": "Thuc day",
+              "content": "Thức dậy",
               "type": "text"
             },
             {
               "id": "s1",
-              "content": "Danh rang",
+              "content": "Đánh răng",
               "type": "text"
             },
             {
               "id": "s2",
-              "content": "An sang",
+              "content": "Ăn sáng",
               "type": "text"
             }
           ],
           "rule": {
             "type": "fixed"
           },
-          "hint": "Nghi xem viec nao den truoc."
+          "hint": "Nghĩ xem việc nào đến trước."
         }
       },
       "hints": [
         {
-          "text": "Nghi xem viec nao den truoc."
+          "text": "Nghĩ xem việc nào đến trước."
         }
       ],
       "metadata": {
@@ -821,6 +841,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Put the day in order.",
+          "learningObjective": "daily routine sequencing",
           "mode": "reorder",
           "correctOrder": [
             {
@@ -845,34 +866,35 @@
           "hint": "Think about what comes first."
         },
         "vi": {
-          "prompt": "Sap xep mot ngay theo thu tu.",
+          "prompt": "Sắp xếp một ngày theo thứ tự.",
+          "learningObjective": "sắp xếp trình tự sinh hoạt hằng ngày",
           "mode": "reorder",
           "correctOrder": [
             {
               "id": "s0",
-              "content": "Thuc day",
+              "content": "Thức dậy",
               "type": "text"
             },
             {
               "id": "s1",
-              "content": "Danh rang",
+              "content": "Đánh răng",
               "type": "text"
             },
             {
               "id": "s2",
-              "content": "An sang",
+              "content": "Ăn sáng",
               "type": "text"
             }
           ],
           "rule": {
             "type": "fixed"
           },
-          "hint": "Nghi xem viec nao den truoc."
+          "hint": "Nghĩ xem việc nào đến trước."
         }
       },
       "hints": [
         {
-          "text": "Nghi xem viec nao den truoc."
+          "text": "Nghĩ xem việc nào đến trước."
         }
       ],
       "metadata": {
@@ -902,6 +924,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Put the day in order.",
+          "learningObjective": "daily routine sequencing",
           "mode": "reorder",
           "correctOrder": [
             {
@@ -926,34 +949,35 @@
           "hint": "Think about what comes first."
         },
         "vi": {
-          "prompt": "Sap xep mot ngay theo thu tu.",
+          "prompt": "Sắp xếp một ngày theo thứ tự.",
+          "learningObjective": "sắp xếp trình tự sinh hoạt hằng ngày",
           "mode": "reorder",
           "correctOrder": [
             {
               "id": "s0",
-              "content": "Thuc day",
+              "content": "Thức dậy",
               "type": "text"
             },
             {
               "id": "s1",
-              "content": "Danh rang",
+              "content": "Đánh răng",
               "type": "text"
             },
             {
               "id": "s2",
-              "content": "An sang",
+              "content": "Ăn sáng",
               "type": "text"
             }
           ],
           "rule": {
             "type": "fixed"
           },
-          "hint": "Nghi xem viec nao den truoc."
+          "hint": "Nghĩ xem việc nào đến trước."
         }
       },
       "hints": [
         {
-          "text": "Nghi xem viec nao den truoc."
+          "text": "Nghĩ xem việc nào đến trước."
         }
       ],
       "metadata": {
@@ -983,6 +1007,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Put the day in order.",
+          "learningObjective": "daily routine sequencing",
           "mode": "reorder",
           "correctOrder": [
             {
@@ -1007,34 +1032,35 @@
           "hint": "Think about what comes first."
         },
         "vi": {
-          "prompt": "Sap xep mot ngay theo thu tu.",
+          "prompt": "Sắp xếp một ngày theo thứ tự.",
+          "learningObjective": "sắp xếp trình tự sinh hoạt hằng ngày",
           "mode": "reorder",
           "correctOrder": [
             {
               "id": "s0",
-              "content": "Thuc day",
+              "content": "Thức dậy",
               "type": "text"
             },
             {
               "id": "s1",
-              "content": "Danh rang",
+              "content": "Đánh răng",
               "type": "text"
             },
             {
               "id": "s2",
-              "content": "An sang",
+              "content": "Ăn sáng",
               "type": "text"
             }
           ],
           "rule": {
             "type": "fixed"
           },
-          "hint": "Nghi xem viec nao den truoc."
+          "hint": "Nghĩ xem việc nào đến trước."
         }
       },
       "hints": [
         {
-          "text": "Nghi xem viec nao den truoc."
+          "text": "Nghĩ xem việc nào đến trước."
         }
       ],
       "metadata": {
@@ -1064,6 +1090,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Put the day in order.",
+          "learningObjective": "daily routine sequencing",
           "mode": "reorder",
           "correctOrder": [
             {
@@ -1088,34 +1115,35 @@
           "hint": "Think about what comes first."
         },
         "vi": {
-          "prompt": "Sap xep mot ngay theo thu tu.",
+          "prompt": "Sắp xếp một ngày theo thứ tự.",
+          "learningObjective": "sắp xếp trình tự sinh hoạt hằng ngày",
           "mode": "reorder",
           "correctOrder": [
             {
               "id": "s0",
-              "content": "Thuc day",
+              "content": "Thức dậy",
               "type": "text"
             },
             {
               "id": "s1",
-              "content": "Danh rang",
+              "content": "Đánh răng",
               "type": "text"
             },
             {
               "id": "s2",
-              "content": "An sang",
+              "content": "Ăn sáng",
               "type": "text"
             }
           ],
           "rule": {
             "type": "fixed"
           },
-          "hint": "Nghi xem viec nao den truoc."
+          "hint": "Nghĩ xem việc nào đến trước."
         }
       },
       "hints": [
         {
-          "text": "Nghi xem viec nao den truoc."
+          "text": "Nghĩ xem việc nào đến trước."
         }
       ],
       "metadata": {
@@ -1145,6 +1173,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Put the day in order.",
+          "learningObjective": "daily routine sequencing",
           "mode": "reorder",
           "correctOrder": [
             {
@@ -1169,34 +1198,35 @@
           "hint": "Think about what comes first."
         },
         "vi": {
-          "prompt": "Sap xep mot ngay theo thu tu.",
+          "prompt": "Sắp xếp một ngày theo thứ tự.",
+          "learningObjective": "sắp xếp trình tự sinh hoạt hằng ngày",
           "mode": "reorder",
           "correctOrder": [
             {
               "id": "s0",
-              "content": "Thuc day",
+              "content": "Thức dậy",
               "type": "text"
             },
             {
               "id": "s1",
-              "content": "Danh rang",
+              "content": "Đánh răng",
               "type": "text"
             },
             {
               "id": "s2",
-              "content": "An sang",
+              "content": "Ăn sáng",
               "type": "text"
             }
           ],
           "rule": {
             "type": "fixed"
           },
-          "hint": "Nghi xem viec nao den truoc."
+          "hint": "Nghĩ xem việc nào đến trước."
         }
       },
       "hints": [
         {
-          "text": "Nghi xem viec nao den truoc."
+          "text": "Nghĩ xem việc nào đến trước."
         }
       ],
       "metadata": {
@@ -1226,6 +1256,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Put the day in order.",
+          "learningObjective": "daily routine sequencing",
           "mode": "reorder",
           "correctOrder": [
             {
@@ -1250,34 +1281,35 @@
           "hint": "Think about what comes first."
         },
         "vi": {
-          "prompt": "Sap xep mot ngay theo thu tu.",
+          "prompt": "Sắp xếp một ngày theo thứ tự.",
+          "learningObjective": "sắp xếp trình tự sinh hoạt hằng ngày",
           "mode": "reorder",
           "correctOrder": [
             {
               "id": "s0",
-              "content": "Thuc day",
+              "content": "Thức dậy",
               "type": "text"
             },
             {
               "id": "s1",
-              "content": "Danh rang",
+              "content": "Đánh răng",
               "type": "text"
             },
             {
               "id": "s2",
-              "content": "An sang",
+              "content": "Ăn sáng",
               "type": "text"
             }
           ],
           "rule": {
             "type": "fixed"
           },
-          "hint": "Nghi xem viec nao den truoc."
+          "hint": "Nghĩ xem việc nào đến trước."
         }
       },
       "hints": [
         {
-          "text": "Nghi xem viec nao den truoc."
+          "text": "Nghĩ xem việc nào đến trước."
         }
       ],
       "metadata": {
@@ -1307,6 +1339,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Put the day in order.",
+          "learningObjective": "daily routine sequencing",
           "mode": "reorder",
           "correctOrder": [
             {
@@ -1331,34 +1364,35 @@
           "hint": "Think about what comes first."
         },
         "vi": {
-          "prompt": "Sap xep mot ngay theo thu tu.",
+          "prompt": "Sắp xếp một ngày theo thứ tự.",
+          "learningObjective": "sắp xếp trình tự sinh hoạt hằng ngày",
           "mode": "reorder",
           "correctOrder": [
             {
               "id": "s0",
-              "content": "Thuc day",
+              "content": "Thức dậy",
               "type": "text"
             },
             {
               "id": "s1",
-              "content": "Danh rang",
+              "content": "Đánh răng",
               "type": "text"
             },
             {
               "id": "s2",
-              "content": "An sang",
+              "content": "Ăn sáng",
               "type": "text"
             }
           ],
           "rule": {
             "type": "fixed"
           },
-          "hint": "Nghi xem viec nao den truoc."
+          "hint": "Nghĩ xem việc nào đến trước."
         }
       },
       "hints": [
         {
-          "text": "Nghi xem viec nao den truoc."
+          "text": "Nghĩ xem việc nào đến trước."
         }
       ],
       "metadata": {
@@ -1388,6 +1422,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Put the day in order.",
+          "learningObjective": "daily routine sequencing",
           "mode": "reorder",
           "correctOrder": [
             {
@@ -1412,34 +1447,35 @@
           "hint": "Think about what comes first."
         },
         "vi": {
-          "prompt": "Sap xep mot ngay theo thu tu.",
+          "prompt": "Sắp xếp một ngày theo thứ tự.",
+          "learningObjective": "sắp xếp trình tự sinh hoạt hằng ngày",
           "mode": "reorder",
           "correctOrder": [
             {
               "id": "s0",
-              "content": "Thuc day",
+              "content": "Thức dậy",
               "type": "text"
             },
             {
               "id": "s1",
-              "content": "Danh rang",
+              "content": "Đánh răng",
               "type": "text"
             },
             {
               "id": "s2",
-              "content": "An sang",
+              "content": "Ăn sáng",
               "type": "text"
             }
           ],
           "rule": {
             "type": "fixed"
           },
-          "hint": "Nghi xem viec nao den truoc."
+          "hint": "Nghĩ xem việc nào đến trước."
         }
       },
       "hints": [
         {
-          "text": "Nghi xem viec nao den truoc."
+          "text": "Nghĩ xem việc nào đến trước."
         }
       ],
       "metadata": {
@@ -1469,6 +1505,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Put the day in order.",
+          "learningObjective": "daily routine sequencing",
           "mode": "reorder",
           "correctOrder": [
             {
@@ -1493,34 +1530,35 @@
           "hint": "Think about what comes first."
         },
         "vi": {
-          "prompt": "Sap xep mot ngay theo thu tu.",
+          "prompt": "Sắp xếp một ngày theo thứ tự.",
+          "learningObjective": "sắp xếp trình tự sinh hoạt hằng ngày",
           "mode": "reorder",
           "correctOrder": [
             {
               "id": "s0",
-              "content": "Thuc day",
+              "content": "Thức dậy",
               "type": "text"
             },
             {
               "id": "s1",
-              "content": "Danh rang",
+              "content": "Đánh răng",
               "type": "text"
             },
             {
               "id": "s2",
-              "content": "An sang",
+              "content": "Ăn sáng",
               "type": "text"
             }
           ],
           "rule": {
             "type": "fixed"
           },
-          "hint": "Nghi xem viec nao den truoc."
+          "hint": "Nghĩ xem việc nào đến trước."
         }
       },
       "hints": [
         {
-          "text": "Nghi xem viec nao den truoc."
+          "text": "Nghĩ xem việc nào đến trước."
         }
       ],
       "metadata": {
@@ -1550,6 +1588,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Put the day in order.",
+          "learningObjective": "daily routine sequencing",
           "mode": "reorder",
           "correctOrder": [
             {
@@ -1574,34 +1613,35 @@
           "hint": "Think about what comes first."
         },
         "vi": {
-          "prompt": "Sap xep mot ngay theo thu tu.",
+          "prompt": "Sắp xếp một ngày theo thứ tự.",
+          "learningObjective": "sắp xếp trình tự sinh hoạt hằng ngày",
           "mode": "reorder",
           "correctOrder": [
             {
               "id": "s0",
-              "content": "Thuc day",
+              "content": "Thức dậy",
               "type": "text"
             },
             {
               "id": "s1",
-              "content": "Danh rang",
+              "content": "Đánh răng",
               "type": "text"
             },
             {
               "id": "s2",
-              "content": "An sang",
+              "content": "Ăn sáng",
               "type": "text"
             }
           ],
           "rule": {
             "type": "fixed"
           },
-          "hint": "Nghi xem viec nao den truoc."
+          "hint": "Nghĩ xem việc nào đến trước."
         }
       },
       "hints": [
         {
-          "text": "Nghi xem viec nao den truoc."
+          "text": "Nghĩ xem việc nào đến trước."
         }
       ],
       "metadata": {
@@ -1631,6 +1671,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Put the day in order.",
+          "learningObjective": "daily routine sequencing",
           "mode": "reorder",
           "correctOrder": [
             {
@@ -1660,39 +1701,40 @@
           "hint": "Think about what comes first."
         },
         "vi": {
-          "prompt": "Sap xep mot ngay theo thu tu.",
+          "prompt": "Sắp xếp một ngày theo thứ tự.",
+          "learningObjective": "sắp xếp trình tự sinh hoạt hằng ngày",
           "mode": "reorder",
           "correctOrder": [
             {
               "id": "s0",
-              "content": "Thuc day",
+              "content": "Thức dậy",
               "type": "text"
             },
             {
               "id": "s1",
-              "content": "Danh rang",
+              "content": "Đánh răng",
               "type": "text"
             },
             {
               "id": "s2",
-              "content": "An sang",
+              "content": "Ăn sáng",
               "type": "text"
             },
             {
               "id": "s3",
-              "content": "Den truong",
+              "content": "Đến trường",
               "type": "text"
             }
           ],
           "rule": {
             "type": "fixed"
           },
-          "hint": "Nghi xem viec nao den truoc."
+          "hint": "Nghĩ xem việc nào đến trước."
         }
       },
       "hints": [
         {
-          "text": "Nghi xem viec nao den truoc."
+          "text": "Nghĩ xem việc nào đến trước."
         }
       ],
       "metadata": {
@@ -1722,6 +1764,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Put the day in order.",
+          "learningObjective": "daily routine sequencing",
           "mode": "reorder",
           "correctOrder": [
             {
@@ -1751,39 +1794,40 @@
           "hint": "Think about what comes first."
         },
         "vi": {
-          "prompt": "Sap xep mot ngay theo thu tu.",
+          "prompt": "Sắp xếp một ngày theo thứ tự.",
+          "learningObjective": "sắp xếp trình tự sinh hoạt hằng ngày",
           "mode": "reorder",
           "correctOrder": [
             {
               "id": "s0",
-              "content": "Thuc day",
+              "content": "Thức dậy",
               "type": "text"
             },
             {
               "id": "s1",
-              "content": "Danh rang",
+              "content": "Đánh răng",
               "type": "text"
             },
             {
               "id": "s2",
-              "content": "An sang",
+              "content": "Ăn sáng",
               "type": "text"
             },
             {
               "id": "s3",
-              "content": "Den truong",
+              "content": "Đến trường",
               "type": "text"
             }
           ],
           "rule": {
             "type": "fixed"
           },
-          "hint": "Nghi xem viec nao den truoc."
+          "hint": "Nghĩ xem việc nào đến trước."
         }
       },
       "hints": [
         {
-          "text": "Nghi xem viec nao den truoc."
+          "text": "Nghĩ xem việc nào đến trước."
         }
       ],
       "metadata": {
@@ -1813,6 +1857,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Put the day in order.",
+          "learningObjective": "daily routine sequencing",
           "mode": "reorder",
           "correctOrder": [
             {
@@ -1842,39 +1887,40 @@
           "hint": "Think about what comes first."
         },
         "vi": {
-          "prompt": "Sap xep mot ngay theo thu tu.",
+          "prompt": "Sắp xếp một ngày theo thứ tự.",
+          "learningObjective": "sắp xếp trình tự sinh hoạt hằng ngày",
           "mode": "reorder",
           "correctOrder": [
             {
               "id": "s0",
-              "content": "Thuc day",
+              "content": "Thức dậy",
               "type": "text"
             },
             {
               "id": "s1",
-              "content": "Danh rang",
+              "content": "Đánh răng",
               "type": "text"
             },
             {
               "id": "s2",
-              "content": "An sang",
+              "content": "Ăn sáng",
               "type": "text"
             },
             {
               "id": "s3",
-              "content": "Den truong",
+              "content": "Đến trường",
               "type": "text"
             }
           ],
           "rule": {
             "type": "fixed"
           },
-          "hint": "Nghi xem viec nao den truoc."
+          "hint": "Nghĩ xem việc nào đến trước."
         }
       },
       "hints": [
         {
-          "text": "Nghi xem viec nao den truoc."
+          "text": "Nghĩ xem việc nào đến trước."
         }
       ],
       "metadata": {
@@ -1904,6 +1950,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Put the day in order.",
+          "learningObjective": "daily routine sequencing",
           "mode": "reorder",
           "correctOrder": [
             {
@@ -1933,39 +1980,40 @@
           "hint": "Think about what comes first."
         },
         "vi": {
-          "prompt": "Sap xep mot ngay theo thu tu.",
+          "prompt": "Sắp xếp một ngày theo thứ tự.",
+          "learningObjective": "sắp xếp trình tự sinh hoạt hằng ngày",
           "mode": "reorder",
           "correctOrder": [
             {
               "id": "s0",
-              "content": "Thuc day",
+              "content": "Thức dậy",
               "type": "text"
             },
             {
               "id": "s1",
-              "content": "Danh rang",
+              "content": "Đánh răng",
               "type": "text"
             },
             {
               "id": "s2",
-              "content": "An sang",
+              "content": "Ăn sáng",
               "type": "text"
             },
             {
               "id": "s3",
-              "content": "Den truong",
+              "content": "Đến trường",
               "type": "text"
             }
           ],
           "rule": {
             "type": "fixed"
           },
-          "hint": "Nghi xem viec nao den truoc."
+          "hint": "Nghĩ xem việc nào đến trước."
         }
       },
       "hints": [
         {
-          "text": "Nghi xem viec nao den truoc."
+          "text": "Nghĩ xem việc nào đến trước."
         }
       ],
       "metadata": {
@@ -1995,6 +2043,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Put the day in order.",
+          "learningObjective": "daily routine sequencing",
           "mode": "reorder",
           "correctOrder": [
             {
@@ -2024,39 +2073,40 @@
           "hint": "Think about what comes first."
         },
         "vi": {
-          "prompt": "Sap xep mot ngay theo thu tu.",
+          "prompt": "Sắp xếp một ngày theo thứ tự.",
+          "learningObjective": "sắp xếp trình tự sinh hoạt hằng ngày",
           "mode": "reorder",
           "correctOrder": [
             {
               "id": "s0",
-              "content": "Thuc day",
+              "content": "Thức dậy",
               "type": "text"
             },
             {
               "id": "s1",
-              "content": "Danh rang",
+              "content": "Đánh răng",
               "type": "text"
             },
             {
               "id": "s2",
-              "content": "An sang",
+              "content": "Ăn sáng",
               "type": "text"
             },
             {
               "id": "s3",
-              "content": "Den truong",
+              "content": "Đến trường",
               "type": "text"
             }
           ],
           "rule": {
             "type": "fixed"
           },
-          "hint": "Nghi xem viec nao den truoc."
+          "hint": "Nghĩ xem việc nào đến trước."
         }
       },
       "hints": [
         {
-          "text": "Nghi xem viec nao den truoc."
+          "text": "Nghĩ xem việc nào đến trước."
         }
       ],
       "metadata": {
@@ -2086,6 +2136,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Put the day in order.",
+          "learningObjective": "daily routine sequencing",
           "mode": "reorder",
           "correctOrder": [
             {
@@ -2115,39 +2166,40 @@
           "hint": "Think about what comes first."
         },
         "vi": {
-          "prompt": "Sap xep mot ngay theo thu tu.",
+          "prompt": "Sắp xếp một ngày theo thứ tự.",
+          "learningObjective": "sắp xếp trình tự sinh hoạt hằng ngày",
           "mode": "reorder",
           "correctOrder": [
             {
               "id": "s0",
-              "content": "Thuc day",
+              "content": "Thức dậy",
               "type": "text"
             },
             {
               "id": "s1",
-              "content": "Danh rang",
+              "content": "Đánh răng",
               "type": "text"
             },
             {
               "id": "s2",
-              "content": "An sang",
+              "content": "Ăn sáng",
               "type": "text"
             },
             {
               "id": "s3",
-              "content": "Den truong",
+              "content": "Đến trường",
               "type": "text"
             }
           ],
           "rule": {
             "type": "fixed"
           },
-          "hint": "Nghi xem viec nao den truoc."
+          "hint": "Nghĩ xem việc nào đến trước."
         }
       },
       "hints": [
         {
-          "text": "Nghi xem viec nao den truoc."
+          "text": "Nghĩ xem việc nào đến trước."
         }
       ],
       "metadata": {
@@ -2177,6 +2229,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Put the day in order.",
+          "learningObjective": "daily routine sequencing",
           "mode": "reorder",
           "correctOrder": [
             {
@@ -2206,39 +2259,40 @@
           "hint": "Think about what comes first."
         },
         "vi": {
-          "prompt": "Sap xep mot ngay theo thu tu.",
+          "prompt": "Sắp xếp một ngày theo thứ tự.",
+          "learningObjective": "sắp xếp trình tự sinh hoạt hằng ngày",
           "mode": "reorder",
           "correctOrder": [
             {
               "id": "s0",
-              "content": "Thuc day",
+              "content": "Thức dậy",
               "type": "text"
             },
             {
               "id": "s1",
-              "content": "Danh rang",
+              "content": "Đánh răng",
               "type": "text"
             },
             {
               "id": "s2",
-              "content": "An sang",
+              "content": "Ăn sáng",
               "type": "text"
             },
             {
               "id": "s3",
-              "content": "Den truong",
+              "content": "Đến trường",
               "type": "text"
             }
           ],
           "rule": {
             "type": "fixed"
           },
-          "hint": "Nghi xem viec nao den truoc."
+          "hint": "Nghĩ xem việc nào đến trước."
         }
       },
       "hints": [
         {
-          "text": "Nghi xem viec nao den truoc."
+          "text": "Nghĩ xem việc nào đến trước."
         }
       ],
       "metadata": {
@@ -2268,6 +2322,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Put the day in order.",
+          "learningObjective": "daily routine sequencing",
           "mode": "reorder",
           "correctOrder": [
             {
@@ -2297,39 +2352,40 @@
           "hint": "Think about what comes first."
         },
         "vi": {
-          "prompt": "Sap xep mot ngay theo thu tu.",
+          "prompt": "Sắp xếp một ngày theo thứ tự.",
+          "learningObjective": "sắp xếp trình tự sinh hoạt hằng ngày",
           "mode": "reorder",
           "correctOrder": [
             {
               "id": "s0",
-              "content": "Thuc day",
+              "content": "Thức dậy",
               "type": "text"
             },
             {
               "id": "s1",
-              "content": "Danh rang",
+              "content": "Đánh răng",
               "type": "text"
             },
             {
               "id": "s2",
-              "content": "An sang",
+              "content": "Ăn sáng",
               "type": "text"
             },
             {
               "id": "s3",
-              "content": "Den truong",
+              "content": "Đến trường",
               "type": "text"
             }
           ],
           "rule": {
             "type": "fixed"
           },
-          "hint": "Nghi xem viec nao den truoc."
+          "hint": "Nghĩ xem việc nào đến trước."
         }
       },
       "hints": [
         {
-          "text": "Nghi xem viec nao den truoc."
+          "text": "Nghĩ xem việc nào đến trước."
         }
       ],
       "metadata": {
@@ -2359,6 +2415,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Put the day in order.",
+          "learningObjective": "daily routine sequencing",
           "mode": "reorder",
           "correctOrder": [
             {
@@ -2388,39 +2445,40 @@
           "hint": "Think about what comes first."
         },
         "vi": {
-          "prompt": "Sap xep mot ngay theo thu tu.",
+          "prompt": "Sắp xếp một ngày theo thứ tự.",
+          "learningObjective": "sắp xếp trình tự sinh hoạt hằng ngày",
           "mode": "reorder",
           "correctOrder": [
             {
               "id": "s0",
-              "content": "Thuc day",
+              "content": "Thức dậy",
               "type": "text"
             },
             {
               "id": "s1",
-              "content": "Danh rang",
+              "content": "Đánh răng",
               "type": "text"
             },
             {
               "id": "s2",
-              "content": "An sang",
+              "content": "Ăn sáng",
               "type": "text"
             },
             {
               "id": "s3",
-              "content": "Den truong",
+              "content": "Đến trường",
               "type": "text"
             }
           ],
           "rule": {
             "type": "fixed"
           },
-          "hint": "Nghi xem viec nao den truoc."
+          "hint": "Nghĩ xem việc nào đến trước."
         }
       },
       "hints": [
         {
-          "text": "Nghi xem viec nao den truoc."
+          "text": "Nghĩ xem việc nào đến trước."
         }
       ],
       "metadata": {
@@ -2450,6 +2508,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Put the day in order.",
+          "learningObjective": "daily routine sequencing",
           "mode": "reorder",
           "correctOrder": [
             {
@@ -2479,39 +2538,40 @@
           "hint": "Think about what comes first."
         },
         "vi": {
-          "prompt": "Sap xep mot ngay theo thu tu.",
+          "prompt": "Sắp xếp một ngày theo thứ tự.",
+          "learningObjective": "sắp xếp trình tự sinh hoạt hằng ngày",
           "mode": "reorder",
           "correctOrder": [
             {
               "id": "s0",
-              "content": "Thuc day",
+              "content": "Thức dậy",
               "type": "text"
             },
             {
               "id": "s1",
-              "content": "Danh rang",
+              "content": "Đánh răng",
               "type": "text"
             },
             {
               "id": "s2",
-              "content": "An sang",
+              "content": "Ăn sáng",
               "type": "text"
             },
             {
               "id": "s3",
-              "content": "Den truong",
+              "content": "Đến trường",
               "type": "text"
             }
           ],
           "rule": {
             "type": "fixed"
           },
-          "hint": "Nghi xem viec nao den truoc."
+          "hint": "Nghĩ xem việc nào đến trước."
         }
       },
       "hints": [
         {
-          "text": "Nghi xem viec nao den truoc."
+          "text": "Nghĩ xem việc nào đến trước."
         }
       ],
       "metadata": {
@@ -2541,6 +2601,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Put the day in order.",
+          "learningObjective": "daily routine sequencing",
           "mode": "reorder",
           "correctOrder": [
             {
@@ -2570,39 +2631,40 @@
           "hint": "Think about what comes first."
         },
         "vi": {
-          "prompt": "Sap xep mot ngay theo thu tu.",
+          "prompt": "Sắp xếp một ngày theo thứ tự.",
+          "learningObjective": "sắp xếp trình tự sinh hoạt hằng ngày",
           "mode": "reorder",
           "correctOrder": [
             {
               "id": "s0",
-              "content": "Thuc day",
+              "content": "Thức dậy",
               "type": "text"
             },
             {
               "id": "s1",
-              "content": "Danh rang",
+              "content": "Đánh răng",
               "type": "text"
             },
             {
               "id": "s2",
-              "content": "An sang",
+              "content": "Ăn sáng",
               "type": "text"
             },
             {
               "id": "s3",
-              "content": "Den truong",
+              "content": "Đến trường",
               "type": "text"
             }
           ],
           "rule": {
             "type": "fixed"
           },
-          "hint": "Nghi xem viec nao den truoc."
+          "hint": "Nghĩ xem việc nào đến trước."
         }
       },
       "hints": [
         {
-          "text": "Nghi xem viec nao den truoc."
+          "text": "Nghĩ xem việc nào đến trước."
         }
       ],
       "metadata": {
@@ -2632,6 +2694,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Put the day in order.",
+          "learningObjective": "daily routine sequencing",
           "mode": "reorder",
           "correctOrder": [
             {
@@ -2661,39 +2724,40 @@
           "hint": "Think about what comes first."
         },
         "vi": {
-          "prompt": "Sap xep mot ngay theo thu tu.",
+          "prompt": "Sắp xếp một ngày theo thứ tự.",
+          "learningObjective": "sắp xếp trình tự sinh hoạt hằng ngày",
           "mode": "reorder",
           "correctOrder": [
             {
               "id": "s0",
-              "content": "Thuc day",
+              "content": "Thức dậy",
               "type": "text"
             },
             {
               "id": "s1",
-              "content": "Danh rang",
+              "content": "Đánh răng",
               "type": "text"
             },
             {
               "id": "s2",
-              "content": "An sang",
+              "content": "Ăn sáng",
               "type": "text"
             },
             {
               "id": "s3",
-              "content": "Den truong",
+              "content": "Đến trường",
               "type": "text"
             }
           ],
           "rule": {
             "type": "fixed"
           },
-          "hint": "Nghi xem viec nao den truoc."
+          "hint": "Nghĩ xem việc nào đến trước."
         }
       },
       "hints": [
         {
-          "text": "Nghi xem viec nao den truoc."
+          "text": "Nghĩ xem việc nào đến trước."
         }
       ],
       "metadata": {
@@ -2723,6 +2787,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Put the day in order.",
+          "learningObjective": "daily routine sequencing",
           "mode": "reorder",
           "correctOrder": [
             {
@@ -2752,39 +2817,40 @@
           "hint": "Think about what comes first."
         },
         "vi": {
-          "prompt": "Sap xep mot ngay theo thu tu.",
+          "prompt": "Sắp xếp một ngày theo thứ tự.",
+          "learningObjective": "sắp xếp trình tự sinh hoạt hằng ngày",
           "mode": "reorder",
           "correctOrder": [
             {
               "id": "s0",
-              "content": "Thuc day",
+              "content": "Thức dậy",
               "type": "text"
             },
             {
               "id": "s1",
-              "content": "Danh rang",
+              "content": "Đánh răng",
               "type": "text"
             },
             {
               "id": "s2",
-              "content": "An sang",
+              "content": "Ăn sáng",
               "type": "text"
             },
             {
               "id": "s3",
-              "content": "Den truong",
+              "content": "Đến trường",
               "type": "text"
             }
           ],
           "rule": {
             "type": "fixed"
           },
-          "hint": "Nghi xem viec nao den truoc."
+          "hint": "Nghĩ xem việc nào đến trước."
         }
       },
       "hints": [
         {
-          "text": "Nghi xem viec nao den truoc."
+          "text": "Nghĩ xem việc nào đến trước."
         }
       ],
       "metadata": {
@@ -2814,6 +2880,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Put the day in order.",
+          "learningObjective": "daily routine sequencing",
           "mode": "reorder",
           "correctOrder": [
             {
@@ -2843,39 +2910,40 @@
           "hint": "Think about what comes first."
         },
         "vi": {
-          "prompt": "Sap xep mot ngay theo thu tu.",
+          "prompt": "Sắp xếp một ngày theo thứ tự.",
+          "learningObjective": "sắp xếp trình tự sinh hoạt hằng ngày",
           "mode": "reorder",
           "correctOrder": [
             {
               "id": "s0",
-              "content": "Thuc day",
+              "content": "Thức dậy",
               "type": "text"
             },
             {
               "id": "s1",
-              "content": "Danh rang",
+              "content": "Đánh răng",
               "type": "text"
             },
             {
               "id": "s2",
-              "content": "An sang",
+              "content": "Ăn sáng",
               "type": "text"
             },
             {
               "id": "s3",
-              "content": "Den truong",
+              "content": "Đến trường",
               "type": "text"
             }
           ],
           "rule": {
             "type": "fixed"
           },
-          "hint": "Nghi xem viec nao den truoc."
+          "hint": "Nghĩ xem việc nào đến trước."
         }
       },
       "hints": [
         {
-          "text": "Nghi xem viec nao den truoc."
+          "text": "Nghĩ xem việc nào đến trước."
         }
       ],
       "metadata": {
@@ -2905,6 +2973,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Put the day in order.",
+          "learningObjective": "daily routine sequencing",
           "mode": "reorder",
           "correctOrder": [
             {
@@ -2934,39 +3003,40 @@
           "hint": "Think about what comes first."
         },
         "vi": {
-          "prompt": "Sap xep mot ngay theo thu tu.",
+          "prompt": "Sắp xếp một ngày theo thứ tự.",
+          "learningObjective": "sắp xếp trình tự sinh hoạt hằng ngày",
           "mode": "reorder",
           "correctOrder": [
             {
               "id": "s0",
-              "content": "Thuc day",
+              "content": "Thức dậy",
               "type": "text"
             },
             {
               "id": "s1",
-              "content": "Danh rang",
+              "content": "Đánh răng",
               "type": "text"
             },
             {
               "id": "s2",
-              "content": "An sang",
+              "content": "Ăn sáng",
               "type": "text"
             },
             {
               "id": "s3",
-              "content": "Den truong",
+              "content": "Đến trường",
               "type": "text"
             }
           ],
           "rule": {
             "type": "fixed"
           },
-          "hint": "Nghi xem viec nao den truoc."
+          "hint": "Nghĩ xem việc nào đến trước."
         }
       },
       "hints": [
         {
-          "text": "Nghi xem viec nao den truoc."
+          "text": "Nghĩ xem việc nào đến trước."
         }
       ],
       "metadata": {
@@ -2996,6 +3066,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Put the day in order.",
+          "learningObjective": "daily routine sequencing",
           "mode": "reorder",
           "correctOrder": [
             {
@@ -3025,39 +3096,40 @@
           "hint": "Think about what comes first."
         },
         "vi": {
-          "prompt": "Sap xep mot ngay theo thu tu.",
+          "prompt": "Sắp xếp một ngày theo thứ tự.",
+          "learningObjective": "sắp xếp trình tự sinh hoạt hằng ngày",
           "mode": "reorder",
           "correctOrder": [
             {
               "id": "s0",
-              "content": "Thuc day",
+              "content": "Thức dậy",
               "type": "text"
             },
             {
               "id": "s1",
-              "content": "Danh rang",
+              "content": "Đánh răng",
               "type": "text"
             },
             {
               "id": "s2",
-              "content": "An sang",
+              "content": "Ăn sáng",
               "type": "text"
             },
             {
               "id": "s3",
-              "content": "Den truong",
+              "content": "Đến trường",
               "type": "text"
             }
           ],
           "rule": {
             "type": "fixed"
           },
-          "hint": "Nghi xem viec nao den truoc."
+          "hint": "Nghĩ xem việc nào đến trước."
         }
       },
       "hints": [
         {
-          "text": "Nghi xem viec nao den truoc."
+          "text": "Nghĩ xem việc nào đến trước."
         }
       ],
       "metadata": {
@@ -3087,6 +3159,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Put the day in order.",
+          "learningObjective": "daily routine sequencing",
           "mode": "reorder",
           "correctOrder": [
             {
@@ -3116,39 +3189,40 @@
           "hint": "Think about what comes first."
         },
         "vi": {
-          "prompt": "Sap xep mot ngay theo thu tu.",
+          "prompt": "Sắp xếp một ngày theo thứ tự.",
+          "learningObjective": "sắp xếp trình tự sinh hoạt hằng ngày",
           "mode": "reorder",
           "correctOrder": [
             {
               "id": "s0",
-              "content": "Thuc day",
+              "content": "Thức dậy",
               "type": "text"
             },
             {
               "id": "s1",
-              "content": "Danh rang",
+              "content": "Đánh răng",
               "type": "text"
             },
             {
               "id": "s2",
-              "content": "An sang",
+              "content": "Ăn sáng",
               "type": "text"
             },
             {
               "id": "s3",
-              "content": "Den truong",
+              "content": "Đến trường",
               "type": "text"
             }
           ],
           "rule": {
             "type": "fixed"
           },
-          "hint": "Nghi xem viec nao den truoc."
+          "hint": "Nghĩ xem việc nào đến trước."
         }
       },
       "hints": [
         {
-          "text": "Nghi xem viec nao den truoc."
+          "text": "Nghĩ xem việc nào đến trước."
         }
       ],
       "metadata": {
@@ -3178,6 +3252,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Put the day in order.",
+          "learningObjective": "daily routine sequencing",
           "mode": "reorder",
           "correctOrder": [
             {
@@ -3207,39 +3282,40 @@
           "hint": "Think about what comes first."
         },
         "vi": {
-          "prompt": "Sap xep mot ngay theo thu tu.",
+          "prompt": "Sắp xếp một ngày theo thứ tự.",
+          "learningObjective": "sắp xếp trình tự sinh hoạt hằng ngày",
           "mode": "reorder",
           "correctOrder": [
             {
               "id": "s0",
-              "content": "Thuc day",
+              "content": "Thức dậy",
               "type": "text"
             },
             {
               "id": "s1",
-              "content": "Danh rang",
+              "content": "Đánh răng",
               "type": "text"
             },
             {
               "id": "s2",
-              "content": "An sang",
+              "content": "Ăn sáng",
               "type": "text"
             },
             {
               "id": "s3",
-              "content": "Den truong",
+              "content": "Đến trường",
               "type": "text"
             }
           ],
           "rule": {
             "type": "fixed"
           },
-          "hint": "Nghi xem viec nao den truoc."
+          "hint": "Nghĩ xem việc nào đến trước."
         }
       },
       "hints": [
         {
-          "text": "Nghi xem viec nao den truoc."
+          "text": "Nghĩ xem việc nào đến trước."
         }
       ],
       "metadata": {
@@ -3269,6 +3345,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Put the day in order.",
+          "learningObjective": "daily routine sequencing",
           "mode": "reorder",
           "correctOrder": [
             {
@@ -3298,39 +3375,40 @@
           "hint": "Think about what comes first."
         },
         "vi": {
-          "prompt": "Sap xep mot ngay theo thu tu.",
+          "prompt": "Sắp xếp một ngày theo thứ tự.",
+          "learningObjective": "sắp xếp trình tự sinh hoạt hằng ngày",
           "mode": "reorder",
           "correctOrder": [
             {
               "id": "s0",
-              "content": "Thuc day",
+              "content": "Thức dậy",
               "type": "text"
             },
             {
               "id": "s1",
-              "content": "Danh rang",
+              "content": "Đánh răng",
               "type": "text"
             },
             {
               "id": "s2",
-              "content": "An sang",
+              "content": "Ăn sáng",
               "type": "text"
             },
             {
               "id": "s3",
-              "content": "Den truong",
+              "content": "Đến trường",
               "type": "text"
             }
           ],
           "rule": {
             "type": "fixed"
           },
-          "hint": "Nghi xem viec nao den truoc."
+          "hint": "Nghĩ xem việc nào đến trước."
         }
       },
       "hints": [
         {
-          "text": "Nghi xem viec nao den truoc."
+          "text": "Nghĩ xem việc nào đến trước."
         }
       ],
       "metadata": {
@@ -3360,6 +3438,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Put the day in order.",
+          "learningObjective": "daily routine sequencing",
           "mode": "reorder",
           "correctOrder": [
             {
@@ -3389,39 +3468,40 @@
           "hint": "Think about what comes first."
         },
         "vi": {
-          "prompt": "Sap xep mot ngay theo thu tu.",
+          "prompt": "Sắp xếp một ngày theo thứ tự.",
+          "learningObjective": "sắp xếp trình tự sinh hoạt hằng ngày",
           "mode": "reorder",
           "correctOrder": [
             {
               "id": "s0",
-              "content": "Thuc day",
+              "content": "Thức dậy",
               "type": "text"
             },
             {
               "id": "s1",
-              "content": "Danh rang",
+              "content": "Đánh răng",
               "type": "text"
             },
             {
               "id": "s2",
-              "content": "An sang",
+              "content": "Ăn sáng",
               "type": "text"
             },
             {
               "id": "s3",
-              "content": "Den truong",
+              "content": "Đến trường",
               "type": "text"
             }
           ],
           "rule": {
             "type": "fixed"
           },
-          "hint": "Nghi xem viec nao den truoc."
+          "hint": "Nghĩ xem việc nào đến trước."
         }
       },
       "hints": [
         {
-          "text": "Nghi xem viec nao den truoc."
+          "text": "Nghĩ xem việc nào đến trước."
         }
       ],
       "metadata": {
@@ -3451,6 +3531,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Put the day in order.",
+          "learningObjective": "daily routine sequencing",
           "mode": "reorder",
           "correctOrder": [
             {
@@ -3485,44 +3566,45 @@
           "hint": "Think about what comes first."
         },
         "vi": {
-          "prompt": "Sap xep mot ngay theo thu tu.",
+          "prompt": "Sắp xếp một ngày theo thứ tự.",
+          "learningObjective": "sắp xếp trình tự sinh hoạt hằng ngày",
           "mode": "reorder",
           "correctOrder": [
             {
               "id": "s0",
-              "content": "Thuc day",
+              "content": "Thức dậy",
               "type": "text"
             },
             {
               "id": "s1",
-              "content": "Danh rang",
+              "content": "Đánh răng",
               "type": "text"
             },
             {
               "id": "s2",
-              "content": "An sang",
+              "content": "Ăn sáng",
               "type": "text"
             },
             {
               "id": "s3",
-              "content": "Den truong",
+              "content": "Đến trường",
               "type": "text"
             },
             {
               "id": "s4",
-              "content": "Di ngu",
+              "content": "Đi ngủ",
               "type": "text"
             }
           ],
           "rule": {
             "type": "fixed"
           },
-          "hint": "Nghi xem viec nao den truoc."
+          "hint": "Nghĩ xem việc nào đến trước."
         }
       },
       "hints": [
         {
-          "text": "Nghi xem viec nao den truoc."
+          "text": "Nghĩ xem việc nào đến trước."
         }
       ],
       "metadata": {
@@ -3552,6 +3634,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Put the day in order.",
+          "learningObjective": "daily routine sequencing",
           "mode": "reorder",
           "correctOrder": [
             {
@@ -3586,44 +3669,45 @@
           "hint": "Think about what comes first."
         },
         "vi": {
-          "prompt": "Sap xep mot ngay theo thu tu.",
+          "prompt": "Sắp xếp một ngày theo thứ tự.",
+          "learningObjective": "sắp xếp trình tự sinh hoạt hằng ngày",
           "mode": "reorder",
           "correctOrder": [
             {
               "id": "s0",
-              "content": "Thuc day",
+              "content": "Thức dậy",
               "type": "text"
             },
             {
               "id": "s1",
-              "content": "Danh rang",
+              "content": "Đánh răng",
               "type": "text"
             },
             {
               "id": "s2",
-              "content": "An sang",
+              "content": "Ăn sáng",
               "type": "text"
             },
             {
               "id": "s3",
-              "content": "Den truong",
+              "content": "Đến trường",
               "type": "text"
             },
             {
               "id": "s4",
-              "content": "Di ngu",
+              "content": "Đi ngủ",
               "type": "text"
             }
           ],
           "rule": {
             "type": "fixed"
           },
-          "hint": "Nghi xem viec nao den truoc."
+          "hint": "Nghĩ xem việc nào đến trước."
         }
       },
       "hints": [
         {
-          "text": "Nghi xem viec nao den truoc."
+          "text": "Nghĩ xem việc nào đến trước."
         }
       ],
       "metadata": {
@@ -3653,6 +3737,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Put the day in order.",
+          "learningObjective": "daily routine sequencing",
           "mode": "reorder",
           "correctOrder": [
             {
@@ -3687,44 +3772,45 @@
           "hint": "Think about what comes first."
         },
         "vi": {
-          "prompt": "Sap xep mot ngay theo thu tu.",
+          "prompt": "Sắp xếp một ngày theo thứ tự.",
+          "learningObjective": "sắp xếp trình tự sinh hoạt hằng ngày",
           "mode": "reorder",
           "correctOrder": [
             {
               "id": "s0",
-              "content": "Thuc day",
+              "content": "Thức dậy",
               "type": "text"
             },
             {
               "id": "s1",
-              "content": "Danh rang",
+              "content": "Đánh răng",
               "type": "text"
             },
             {
               "id": "s2",
-              "content": "An sang",
+              "content": "Ăn sáng",
               "type": "text"
             },
             {
               "id": "s3",
-              "content": "Den truong",
+              "content": "Đến trường",
               "type": "text"
             },
             {
               "id": "s4",
-              "content": "Di ngu",
+              "content": "Đi ngủ",
               "type": "text"
             }
           ],
           "rule": {
             "type": "fixed"
           },
-          "hint": "Nghi xem viec nao den truoc."
+          "hint": "Nghĩ xem việc nào đến trước."
         }
       },
       "hints": [
         {
-          "text": "Nghi xem viec nao den truoc."
+          "text": "Nghĩ xem việc nào đến trước."
         }
       ],
       "metadata": {
@@ -3754,6 +3840,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Put the day in order.",
+          "learningObjective": "daily routine sequencing",
           "mode": "reorder",
           "correctOrder": [
             {
@@ -3788,44 +3875,45 @@
           "hint": "Think about what comes first."
         },
         "vi": {
-          "prompt": "Sap xep mot ngay theo thu tu.",
+          "prompt": "Sắp xếp một ngày theo thứ tự.",
+          "learningObjective": "sắp xếp trình tự sinh hoạt hằng ngày",
           "mode": "reorder",
           "correctOrder": [
             {
               "id": "s0",
-              "content": "Thuc day",
+              "content": "Thức dậy",
               "type": "text"
             },
             {
               "id": "s1",
-              "content": "Danh rang",
+              "content": "Đánh răng",
               "type": "text"
             },
             {
               "id": "s2",
-              "content": "An sang",
+              "content": "Ăn sáng",
               "type": "text"
             },
             {
               "id": "s3",
-              "content": "Den truong",
+              "content": "Đến trường",
               "type": "text"
             },
             {
               "id": "s4",
-              "content": "Di ngu",
+              "content": "Đi ngủ",
               "type": "text"
             }
           ],
           "rule": {
             "type": "fixed"
           },
-          "hint": "Nghi xem viec nao den truoc."
+          "hint": "Nghĩ xem việc nào đến trước."
         }
       },
       "hints": [
         {
-          "text": "Nghi xem viec nao den truoc."
+          "text": "Nghĩ xem việc nào đến trước."
         }
       ],
       "metadata": {
@@ -3855,6 +3943,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Put the day in order.",
+          "learningObjective": "daily routine sequencing",
           "mode": "reorder",
           "correctOrder": [
             {
@@ -3889,44 +3978,45 @@
           "hint": "Think about what comes first."
         },
         "vi": {
-          "prompt": "Sap xep mot ngay theo thu tu.",
+          "prompt": "Sắp xếp một ngày theo thứ tự.",
+          "learningObjective": "sắp xếp trình tự sinh hoạt hằng ngày",
           "mode": "reorder",
           "correctOrder": [
             {
               "id": "s0",
-              "content": "Thuc day",
+              "content": "Thức dậy",
               "type": "text"
             },
             {
               "id": "s1",
-              "content": "Danh rang",
+              "content": "Đánh răng",
               "type": "text"
             },
             {
               "id": "s2",
-              "content": "An sang",
+              "content": "Ăn sáng",
               "type": "text"
             },
             {
               "id": "s3",
-              "content": "Den truong",
+              "content": "Đến trường",
               "type": "text"
             },
             {
               "id": "s4",
-              "content": "Di ngu",
+              "content": "Đi ngủ",
               "type": "text"
             }
           ],
           "rule": {
             "type": "fixed"
           },
-          "hint": "Nghi xem viec nao den truoc."
+          "hint": "Nghĩ xem việc nào đến trước."
         }
       },
       "hints": [
         {
-          "text": "Nghi xem viec nao den truoc."
+          "text": "Nghĩ xem việc nào đến trước."
         }
       ],
       "metadata": {
@@ -3956,6 +4046,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Put the day in order.",
+          "learningObjective": "daily routine sequencing",
           "mode": "reorder",
           "correctOrder": [
             {
@@ -3990,44 +4081,45 @@
           "hint": "Think about what comes first."
         },
         "vi": {
-          "prompt": "Sap xep mot ngay theo thu tu.",
+          "prompt": "Sắp xếp một ngày theo thứ tự.",
+          "learningObjective": "sắp xếp trình tự sinh hoạt hằng ngày",
           "mode": "reorder",
           "correctOrder": [
             {
               "id": "s0",
-              "content": "Thuc day",
+              "content": "Thức dậy",
               "type": "text"
             },
             {
               "id": "s1",
-              "content": "Danh rang",
+              "content": "Đánh răng",
               "type": "text"
             },
             {
               "id": "s2",
-              "content": "An sang",
+              "content": "Ăn sáng",
               "type": "text"
             },
             {
               "id": "s3",
-              "content": "Den truong",
+              "content": "Đến trường",
               "type": "text"
             },
             {
               "id": "s4",
-              "content": "Di ngu",
+              "content": "Đi ngủ",
               "type": "text"
             }
           ],
           "rule": {
             "type": "fixed"
           },
-          "hint": "Nghi xem viec nao den truoc."
+          "hint": "Nghĩ xem việc nào đến trước."
         }
       },
       "hints": [
         {
-          "text": "Nghi xem viec nao den truoc."
+          "text": "Nghĩ xem việc nào đến trước."
         }
       ],
       "metadata": {
@@ -4057,6 +4149,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Put the day in order.",
+          "learningObjective": "daily routine sequencing",
           "mode": "reorder",
           "correctOrder": [
             {
@@ -4091,44 +4184,45 @@
           "hint": "Think about what comes first."
         },
         "vi": {
-          "prompt": "Sap xep mot ngay theo thu tu.",
+          "prompt": "Sắp xếp một ngày theo thứ tự.",
+          "learningObjective": "sắp xếp trình tự sinh hoạt hằng ngày",
           "mode": "reorder",
           "correctOrder": [
             {
               "id": "s0",
-              "content": "Thuc day",
+              "content": "Thức dậy",
               "type": "text"
             },
             {
               "id": "s1",
-              "content": "Danh rang",
+              "content": "Đánh răng",
               "type": "text"
             },
             {
               "id": "s2",
-              "content": "An sang",
+              "content": "Ăn sáng",
               "type": "text"
             },
             {
               "id": "s3",
-              "content": "Den truong",
+              "content": "Đến trường",
               "type": "text"
             },
             {
               "id": "s4",
-              "content": "Di ngu",
+              "content": "Đi ngủ",
               "type": "text"
             }
           ],
           "rule": {
             "type": "fixed"
           },
-          "hint": "Nghi xem viec nao den truoc."
+          "hint": "Nghĩ xem việc nào đến trước."
         }
       },
       "hints": [
         {
-          "text": "Nghi xem viec nao den truoc."
+          "text": "Nghĩ xem việc nào đến trước."
         }
       ],
       "metadata": {
@@ -4158,6 +4252,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Put the day in order.",
+          "learningObjective": "daily routine sequencing",
           "mode": "reorder",
           "correctOrder": [
             {
@@ -4192,44 +4287,45 @@
           "hint": "Think about what comes first."
         },
         "vi": {
-          "prompt": "Sap xep mot ngay theo thu tu.",
+          "prompt": "Sắp xếp một ngày theo thứ tự.",
+          "learningObjective": "sắp xếp trình tự sinh hoạt hằng ngày",
           "mode": "reorder",
           "correctOrder": [
             {
               "id": "s0",
-              "content": "Thuc day",
+              "content": "Thức dậy",
               "type": "text"
             },
             {
               "id": "s1",
-              "content": "Danh rang",
+              "content": "Đánh răng",
               "type": "text"
             },
             {
               "id": "s2",
-              "content": "An sang",
+              "content": "Ăn sáng",
               "type": "text"
             },
             {
               "id": "s3",
-              "content": "Den truong",
+              "content": "Đến trường",
               "type": "text"
             },
             {
               "id": "s4",
-              "content": "Di ngu",
+              "content": "Đi ngủ",
               "type": "text"
             }
           ],
           "rule": {
             "type": "fixed"
           },
-          "hint": "Nghi xem viec nao den truoc."
+          "hint": "Nghĩ xem việc nào đến trước."
         }
       },
       "hints": [
         {
-          "text": "Nghi xem viec nao den truoc."
+          "text": "Nghĩ xem việc nào đến trước."
         }
       ],
       "metadata": {
@@ -4259,6 +4355,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Put the day in order.",
+          "learningObjective": "daily routine sequencing",
           "mode": "reorder",
           "correctOrder": [
             {
@@ -4293,44 +4390,45 @@
           "hint": "Think about what comes first."
         },
         "vi": {
-          "prompt": "Sap xep mot ngay theo thu tu.",
+          "prompt": "Sắp xếp một ngày theo thứ tự.",
+          "learningObjective": "sắp xếp trình tự sinh hoạt hằng ngày",
           "mode": "reorder",
           "correctOrder": [
             {
               "id": "s0",
-              "content": "Thuc day",
+              "content": "Thức dậy",
               "type": "text"
             },
             {
               "id": "s1",
-              "content": "Danh rang",
+              "content": "Đánh răng",
               "type": "text"
             },
             {
               "id": "s2",
-              "content": "An sang",
+              "content": "Ăn sáng",
               "type": "text"
             },
             {
               "id": "s3",
-              "content": "Den truong",
+              "content": "Đến trường",
               "type": "text"
             },
             {
               "id": "s4",
-              "content": "Di ngu",
+              "content": "Đi ngủ",
               "type": "text"
             }
           ],
           "rule": {
             "type": "fixed"
           },
-          "hint": "Nghi xem viec nao den truoc."
+          "hint": "Nghĩ xem việc nào đến trước."
         }
       },
       "hints": [
         {
-          "text": "Nghi xem viec nao den truoc."
+          "text": "Nghĩ xem việc nào đến trước."
         }
       ],
       "metadata": {
@@ -4360,6 +4458,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Put the day in order.",
+          "learningObjective": "daily routine sequencing",
           "mode": "reorder",
           "correctOrder": [
             {
@@ -4394,44 +4493,45 @@
           "hint": "Think about what comes first."
         },
         "vi": {
-          "prompt": "Sap xep mot ngay theo thu tu.",
+          "prompt": "Sắp xếp một ngày theo thứ tự.",
+          "learningObjective": "sắp xếp trình tự sinh hoạt hằng ngày",
           "mode": "reorder",
           "correctOrder": [
             {
               "id": "s0",
-              "content": "Thuc day",
+              "content": "Thức dậy",
               "type": "text"
             },
             {
               "id": "s1",
-              "content": "Danh rang",
+              "content": "Đánh răng",
               "type": "text"
             },
             {
               "id": "s2",
-              "content": "An sang",
+              "content": "Ăn sáng",
               "type": "text"
             },
             {
               "id": "s3",
-              "content": "Den truong",
+              "content": "Đến trường",
               "type": "text"
             },
             {
               "id": "s4",
-              "content": "Di ngu",
+              "content": "Đi ngủ",
               "type": "text"
             }
           ],
           "rule": {
             "type": "fixed"
           },
-          "hint": "Nghi xem viec nao den truoc."
+          "hint": "Nghĩ xem việc nào đến trước."
         }
       },
       "hints": [
         {
-          "text": "Nghi xem viec nao den truoc."
+          "text": "Nghĩ xem việc nào đến trước."
         }
       ],
       "metadata": {
@@ -4461,6 +4561,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Put the day in order.",
+          "learningObjective": "daily routine sequencing",
           "mode": "reorder",
           "correctOrder": [
             {
@@ -4495,44 +4596,45 @@
           "hint": "Think about what comes first."
         },
         "vi": {
-          "prompt": "Sap xep mot ngay theo thu tu.",
+          "prompt": "Sắp xếp một ngày theo thứ tự.",
+          "learningObjective": "sắp xếp trình tự sinh hoạt hằng ngày",
           "mode": "reorder",
           "correctOrder": [
             {
               "id": "s0",
-              "content": "Thuc day",
+              "content": "Thức dậy",
               "type": "text"
             },
             {
               "id": "s1",
-              "content": "Danh rang",
+              "content": "Đánh răng",
               "type": "text"
             },
             {
               "id": "s2",
-              "content": "An sang",
+              "content": "Ăn sáng",
               "type": "text"
             },
             {
               "id": "s3",
-              "content": "Den truong",
+              "content": "Đến trường",
               "type": "text"
             },
             {
               "id": "s4",
-              "content": "Di ngu",
+              "content": "Đi ngủ",
               "type": "text"
             }
           ],
           "rule": {
             "type": "fixed"
           },
-          "hint": "Nghi xem viec nao den truoc."
+          "hint": "Nghĩ xem việc nào đến trước."
         }
       },
       "hints": [
         {
-          "text": "Nghi xem viec nao den truoc."
+          "text": "Nghĩ xem việc nào đến trước."
         }
       ],
       "metadata": {
@@ -4562,6 +4664,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Put the day in order.",
+          "learningObjective": "daily routine sequencing",
           "mode": "reorder",
           "correctOrder": [
             {
@@ -4596,44 +4699,45 @@
           "hint": "Think about what comes first."
         },
         "vi": {
-          "prompt": "Sap xep mot ngay theo thu tu.",
+          "prompt": "Sắp xếp một ngày theo thứ tự.",
+          "learningObjective": "sắp xếp trình tự sinh hoạt hằng ngày",
           "mode": "reorder",
           "correctOrder": [
             {
               "id": "s0",
-              "content": "Thuc day",
+              "content": "Thức dậy",
               "type": "text"
             },
             {
               "id": "s1",
-              "content": "Danh rang",
+              "content": "Đánh răng",
               "type": "text"
             },
             {
               "id": "s2",
-              "content": "An sang",
+              "content": "Ăn sáng",
               "type": "text"
             },
             {
               "id": "s3",
-              "content": "Den truong",
+              "content": "Đến trường",
               "type": "text"
             },
             {
               "id": "s4",
-              "content": "Di ngu",
+              "content": "Đi ngủ",
               "type": "text"
             }
           ],
           "rule": {
             "type": "fixed"
           },
-          "hint": "Nghi xem viec nao den truoc."
+          "hint": "Nghĩ xem việc nào đến trước."
         }
       },
       "hints": [
         {
-          "text": "Nghi xem viec nao den truoc."
+          "text": "Nghĩ xem việc nào đến trước."
         }
       ],
       "metadata": {
@@ -4663,6 +4767,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Put the day in order.",
+          "learningObjective": "daily routine sequencing",
           "mode": "reorder",
           "correctOrder": [
             {
@@ -4697,44 +4802,45 @@
           "hint": "Think about what comes first."
         },
         "vi": {
-          "prompt": "Sap xep mot ngay theo thu tu.",
+          "prompt": "Sắp xếp một ngày theo thứ tự.",
+          "learningObjective": "sắp xếp trình tự sinh hoạt hằng ngày",
           "mode": "reorder",
           "correctOrder": [
             {
               "id": "s0",
-              "content": "Thuc day",
+              "content": "Thức dậy",
               "type": "text"
             },
             {
               "id": "s1",
-              "content": "Danh rang",
+              "content": "Đánh răng",
               "type": "text"
             },
             {
               "id": "s2",
-              "content": "An sang",
+              "content": "Ăn sáng",
               "type": "text"
             },
             {
               "id": "s3",
-              "content": "Den truong",
+              "content": "Đến trường",
               "type": "text"
             },
             {
               "id": "s4",
-              "content": "Di ngu",
+              "content": "Đi ngủ",
               "type": "text"
             }
           ],
           "rule": {
             "type": "fixed"
           },
-          "hint": "Nghi xem viec nao den truoc."
+          "hint": "Nghĩ xem việc nào đến trước."
         }
       },
       "hints": [
         {
-          "text": "Nghi xem viec nao den truoc."
+          "text": "Nghĩ xem việc nào đến trước."
         }
       ],
       "metadata": {
@@ -4764,6 +4870,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Put the day in order.",
+          "learningObjective": "daily routine sequencing",
           "mode": "reorder",
           "correctOrder": [
             {
@@ -4798,44 +4905,45 @@
           "hint": "Think about what comes first."
         },
         "vi": {
-          "prompt": "Sap xep mot ngay theo thu tu.",
+          "prompt": "Sắp xếp một ngày theo thứ tự.",
+          "learningObjective": "sắp xếp trình tự sinh hoạt hằng ngày",
           "mode": "reorder",
           "correctOrder": [
             {
               "id": "s0",
-              "content": "Thuc day",
+              "content": "Thức dậy",
               "type": "text"
             },
             {
               "id": "s1",
-              "content": "Danh rang",
+              "content": "Đánh răng",
               "type": "text"
             },
             {
               "id": "s2",
-              "content": "An sang",
+              "content": "Ăn sáng",
               "type": "text"
             },
             {
               "id": "s3",
-              "content": "Den truong",
+              "content": "Đến trường",
               "type": "text"
             },
             {
               "id": "s4",
-              "content": "Di ngu",
+              "content": "Đi ngủ",
               "type": "text"
             }
           ],
           "rule": {
             "type": "fixed"
           },
-          "hint": "Nghi xem viec nao den truoc."
+          "hint": "Nghĩ xem việc nào đến trước."
         }
       },
       "hints": [
         {
-          "text": "Nghi xem viec nao den truoc."
+          "text": "Nghĩ xem việc nào đến trước."
         }
       ],
       "metadata": {
@@ -4865,6 +4973,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Put the day in order.",
+          "learningObjective": "daily routine sequencing",
           "mode": "reorder",
           "correctOrder": [
             {
@@ -4899,44 +5008,45 @@
           "hint": "Think about what comes first."
         },
         "vi": {
-          "prompt": "Sap xep mot ngay theo thu tu.",
+          "prompt": "Sắp xếp một ngày theo thứ tự.",
+          "learningObjective": "sắp xếp trình tự sinh hoạt hằng ngày",
           "mode": "reorder",
           "correctOrder": [
             {
               "id": "s0",
-              "content": "Thuc day",
+              "content": "Thức dậy",
               "type": "text"
             },
             {
               "id": "s1",
-              "content": "Danh rang",
+              "content": "Đánh răng",
               "type": "text"
             },
             {
               "id": "s2",
-              "content": "An sang",
+              "content": "Ăn sáng",
               "type": "text"
             },
             {
               "id": "s3",
-              "content": "Den truong",
+              "content": "Đến trường",
               "type": "text"
             },
             {
               "id": "s4",
-              "content": "Di ngu",
+              "content": "Đi ngủ",
               "type": "text"
             }
           ],
           "rule": {
             "type": "fixed"
           },
-          "hint": "Nghi xem viec nao den truoc."
+          "hint": "Nghĩ xem việc nào đến trước."
         }
       },
       "hints": [
         {
-          "text": "Nghi xem viec nao den truoc."
+          "text": "Nghĩ xem việc nào đến trước."
         }
       ],
       "metadata": {
@@ -4966,6 +5076,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Put the day in order.",
+          "learningObjective": "daily routine sequencing",
           "mode": "reorder",
           "correctOrder": [
             {
@@ -5000,44 +5111,45 @@
           "hint": "Think about what comes first."
         },
         "vi": {
-          "prompt": "Sap xep mot ngay theo thu tu.",
+          "prompt": "Sắp xếp một ngày theo thứ tự.",
+          "learningObjective": "sắp xếp trình tự sinh hoạt hằng ngày",
           "mode": "reorder",
           "correctOrder": [
             {
               "id": "s0",
-              "content": "Thuc day",
+              "content": "Thức dậy",
               "type": "text"
             },
             {
               "id": "s1",
-              "content": "Danh rang",
+              "content": "Đánh răng",
               "type": "text"
             },
             {
               "id": "s2",
-              "content": "An sang",
+              "content": "Ăn sáng",
               "type": "text"
             },
             {
               "id": "s3",
-              "content": "Den truong",
+              "content": "Đến trường",
               "type": "text"
             },
             {
               "id": "s4",
-              "content": "Di ngu",
+              "content": "Đi ngủ",
               "type": "text"
             }
           ],
           "rule": {
             "type": "fixed"
           },
-          "hint": "Nghi xem viec nao den truoc."
+          "hint": "Nghĩ xem việc nào đến trước."
         }
       },
       "hints": [
         {
-          "text": "Nghi xem viec nao den truoc."
+          "text": "Nghĩ xem việc nào đến trước."
         }
       ],
       "metadata": {
@@ -5067,6 +5179,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Put the day in order.",
+          "learningObjective": "daily routine sequencing",
           "mode": "reorder",
           "correctOrder": [
             {
@@ -5101,44 +5214,45 @@
           "hint": "Think about what comes first."
         },
         "vi": {
-          "prompt": "Sap xep mot ngay theo thu tu.",
+          "prompt": "Sắp xếp một ngày theo thứ tự.",
+          "learningObjective": "sắp xếp trình tự sinh hoạt hằng ngày",
           "mode": "reorder",
           "correctOrder": [
             {
               "id": "s0",
-              "content": "Thuc day",
+              "content": "Thức dậy",
               "type": "text"
             },
             {
               "id": "s1",
-              "content": "Danh rang",
+              "content": "Đánh răng",
               "type": "text"
             },
             {
               "id": "s2",
-              "content": "An sang",
+              "content": "Ăn sáng",
               "type": "text"
             },
             {
               "id": "s3",
-              "content": "Den truong",
+              "content": "Đến trường",
               "type": "text"
             },
             {
               "id": "s4",
-              "content": "Di ngu",
+              "content": "Đi ngủ",
               "type": "text"
             }
           ],
           "rule": {
             "type": "fixed"
           },
-          "hint": "Nghi xem viec nao den truoc."
+          "hint": "Nghĩ xem việc nào đến trước."
         }
       },
       "hints": [
         {
-          "text": "Nghi xem viec nao den truoc."
+          "text": "Nghĩ xem việc nào đến trước."
         }
       ],
       "metadata": {
@@ -5168,6 +5282,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Put the day in order.",
+          "learningObjective": "daily routine sequencing",
           "mode": "reorder",
           "correctOrder": [
             {
@@ -5202,44 +5317,45 @@
           "hint": "Think about what comes first."
         },
         "vi": {
-          "prompt": "Sap xep mot ngay theo thu tu.",
+          "prompt": "Sắp xếp một ngày theo thứ tự.",
+          "learningObjective": "sắp xếp trình tự sinh hoạt hằng ngày",
           "mode": "reorder",
           "correctOrder": [
             {
               "id": "s0",
-              "content": "Thuc day",
+              "content": "Thức dậy",
               "type": "text"
             },
             {
               "id": "s1",
-              "content": "Danh rang",
+              "content": "Đánh răng",
               "type": "text"
             },
             {
               "id": "s2",
-              "content": "An sang",
+              "content": "Ăn sáng",
               "type": "text"
             },
             {
               "id": "s3",
-              "content": "Den truong",
+              "content": "Đến trường",
               "type": "text"
             },
             {
               "id": "s4",
-              "content": "Di ngu",
+              "content": "Đi ngủ",
               "type": "text"
             }
           ],
           "rule": {
             "type": "fixed"
           },
-          "hint": "Nghi xem viec nao den truoc."
+          "hint": "Nghĩ xem việc nào đến trước."
         }
       },
       "hints": [
         {
-          "text": "Nghi xem viec nao den truoc."
+          "text": "Nghĩ xem việc nào đến trước."
         }
       ],
       "metadata": {
@@ -5269,6 +5385,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Put the day in order.",
+          "learningObjective": "daily routine sequencing",
           "mode": "reorder",
           "correctOrder": [
             {
@@ -5303,44 +5420,45 @@
           "hint": "Think about what comes first."
         },
         "vi": {
-          "prompt": "Sap xep mot ngay theo thu tu.",
+          "prompt": "Sắp xếp một ngày theo thứ tự.",
+          "learningObjective": "sắp xếp trình tự sinh hoạt hằng ngày",
           "mode": "reorder",
           "correctOrder": [
             {
               "id": "s0",
-              "content": "Thuc day",
+              "content": "Thức dậy",
               "type": "text"
             },
             {
               "id": "s1",
-              "content": "Danh rang",
+              "content": "Đánh răng",
               "type": "text"
             },
             {
               "id": "s2",
-              "content": "An sang",
+              "content": "Ăn sáng",
               "type": "text"
             },
             {
               "id": "s3",
-              "content": "Den truong",
+              "content": "Đến trường",
               "type": "text"
             },
             {
               "id": "s4",
-              "content": "Di ngu",
+              "content": "Đi ngủ",
               "type": "text"
             }
           ],
           "rule": {
             "type": "fixed"
           },
-          "hint": "Nghi xem viec nao den truoc."
+          "hint": "Nghĩ xem việc nào đến trước."
         }
       },
       "hints": [
         {
-          "text": "Nghi xem viec nao den truoc."
+          "text": "Nghĩ xem việc nào đến trước."
         }
       ],
       "metadata": {
@@ -5370,6 +5488,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Put the day in order.",
+          "learningObjective": "daily routine sequencing",
           "mode": "reorder",
           "correctOrder": [
             {
@@ -5404,44 +5523,45 @@
           "hint": "Think about what comes first."
         },
         "vi": {
-          "prompt": "Sap xep mot ngay theo thu tu.",
+          "prompt": "Sắp xếp một ngày theo thứ tự.",
+          "learningObjective": "sắp xếp trình tự sinh hoạt hằng ngày",
           "mode": "reorder",
           "correctOrder": [
             {
               "id": "s0",
-              "content": "Thuc day",
+              "content": "Thức dậy",
               "type": "text"
             },
             {
               "id": "s1",
-              "content": "Danh rang",
+              "content": "Đánh răng",
               "type": "text"
             },
             {
               "id": "s2",
-              "content": "An sang",
+              "content": "Ăn sáng",
               "type": "text"
             },
             {
               "id": "s3",
-              "content": "Den truong",
+              "content": "Đến trường",
               "type": "text"
             },
             {
               "id": "s4",
-              "content": "Di ngu",
+              "content": "Đi ngủ",
               "type": "text"
             }
           ],
           "rule": {
             "type": "fixed"
           },
-          "hint": "Nghi xem viec nao den truoc."
+          "hint": "Nghĩ xem việc nào đến trước."
         }
       },
       "hints": [
         {
-          "text": "Nghi xem viec nao den truoc."
+          "text": "Nghĩ xem việc nào đến trước."
         }
       ],
       "metadata": {

@@ -11,6 +11,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Build the story from first to last.",
+          "learningObjective": "story sequencing",
           "mode": "reorder",
           "correctOrder": [
             {
@@ -35,34 +36,35 @@
           "hint": "Think about what comes first."
         },
         "vi": {
-          "prompt": "Xay cau chuyen tu dau den cuoi.",
+          "prompt": "Xây câu chuyện từ đầu đến cuối.",
+          "learningObjective": "sắp xếp trình tự câu chuyện",
           "mode": "reorder",
           "correctOrder": [
             {
               "id": "s0",
-              "content": "Tim hat",
+              "content": "Tìm hạt",
               "type": "text"
             },
             {
               "id": "s1",
-              "content": "Gieo hat",
+              "content": "Gieo hạt",
               "type": "text"
             },
             {
               "id": "s2",
-              "content": "Tuoi nuoc",
+              "content": "Tưới nước",
               "type": "text"
             }
           ],
           "rule": {
             "type": "fixed"
           },
-          "hint": "Nghi xem viec nao den truoc."
+          "hint": "Nghĩ xem việc nào đến trước."
         }
       },
       "hints": [
         {
-          "text": "Nghi xem viec nao den truoc."
+          "text": "Nghĩ xem việc nào đến trước."
         }
       ],
       "metadata": {
@@ -92,6 +94,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Build the story from first to last.",
+          "learningObjective": "story sequencing",
           "mode": "reorder",
           "correctOrder": [
             {
@@ -116,34 +119,35 @@
           "hint": "Think about what comes first."
         },
         "vi": {
-          "prompt": "Xay cau chuyen tu dau den cuoi.",
+          "prompt": "Xây câu chuyện từ đầu đến cuối.",
+          "learningObjective": "sắp xếp trình tự câu chuyện",
           "mode": "reorder",
           "correctOrder": [
             {
               "id": "s0",
-              "content": "Tim hat",
+              "content": "Tìm hạt",
               "type": "text"
             },
             {
               "id": "s1",
-              "content": "Gieo hat",
+              "content": "Gieo hạt",
               "type": "text"
             },
             {
               "id": "s2",
-              "content": "Tuoi nuoc",
+              "content": "Tưới nước",
               "type": "text"
             }
           ],
           "rule": {
             "type": "fixed"
           },
-          "hint": "Nghi xem viec nao den truoc."
+          "hint": "Nghĩ xem việc nào đến trước."
         }
       },
       "hints": [
         {
-          "text": "Nghi xem viec nao den truoc."
+          "text": "Nghĩ xem việc nào đến trước."
         }
       ],
       "metadata": {
@@ -173,6 +177,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Build the story from first to last.",
+          "learningObjective": "story sequencing",
           "mode": "reorder",
           "correctOrder": [
             {
@@ -197,34 +202,35 @@
           "hint": "Think about what comes first."
         },
         "vi": {
-          "prompt": "Xay cau chuyen tu dau den cuoi.",
+          "prompt": "Xây câu chuyện từ đầu đến cuối.",
+          "learningObjective": "sắp xếp trình tự câu chuyện",
           "mode": "reorder",
           "correctOrder": [
             {
               "id": "s0",
-              "content": "Tim hat",
+              "content": "Tìm hạt",
               "type": "text"
             },
             {
               "id": "s1",
-              "content": "Gieo hat",
+              "content": "Gieo hạt",
               "type": "text"
             },
             {
               "id": "s2",
-              "content": "Tuoi nuoc",
+              "content": "Tưới nước",
               "type": "text"
             }
           ],
           "rule": {
             "type": "fixed"
           },
-          "hint": "Nghi xem viec nao den truoc."
+          "hint": "Nghĩ xem việc nào đến trước."
         }
       },
       "hints": [
         {
-          "text": "Nghi xem viec nao den truoc."
+          "text": "Nghĩ xem việc nào đến trước."
         }
       ],
       "metadata": {
@@ -254,6 +260,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Build the story from first to last.",
+          "learningObjective": "story sequencing",
           "mode": "reorder",
           "correctOrder": [
             {
@@ -278,34 +285,35 @@
           "hint": "Think about what comes first."
         },
         "vi": {
-          "prompt": "Xay cau chuyen tu dau den cuoi.",
+          "prompt": "Xây câu chuyện từ đầu đến cuối.",
+          "learningObjective": "sắp xếp trình tự câu chuyện",
           "mode": "reorder",
           "correctOrder": [
             {
               "id": "s0",
-              "content": "Tim hat",
+              "content": "Tìm hạt",
               "type": "text"
             },
             {
               "id": "s1",
-              "content": "Gieo hat",
+              "content": "Gieo hạt",
               "type": "text"
             },
             {
               "id": "s2",
-              "content": "Tuoi nuoc",
+              "content": "Tưới nước",
               "type": "text"
             }
           ],
           "rule": {
             "type": "fixed"
           },
-          "hint": "Nghi xem viec nao den truoc."
+          "hint": "Nghĩ xem việc nào đến trước."
         }
       },
       "hints": [
         {
-          "text": "Nghi xem viec nao den truoc."
+          "text": "Nghĩ xem việc nào đến trước."
         }
       ],
       "metadata": {
@@ -335,6 +343,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Build the story from first to last.",
+          "learningObjective": "story sequencing",
           "mode": "reorder",
           "correctOrder": [
             {
@@ -359,34 +368,35 @@
           "hint": "Think about what comes first."
         },
         "vi": {
-          "prompt": "Xay cau chuyen tu dau den cuoi.",
+          "prompt": "Xây câu chuyện từ đầu đến cuối.",
+          "learningObjective": "sắp xếp trình tự câu chuyện",
           "mode": "reorder",
           "correctOrder": [
             {
               "id": "s0",
-              "content": "Tim hat",
+              "content": "Tìm hạt",
               "type": "text"
             },
             {
               "id": "s1",
-              "content": "Gieo hat",
+              "content": "Gieo hạt",
               "type": "text"
             },
             {
               "id": "s2",
-              "content": "Tuoi nuoc",
+              "content": "Tưới nước",
               "type": "text"
             }
           ],
           "rule": {
             "type": "fixed"
           },
-          "hint": "Nghi xem viec nao den truoc."
+          "hint": "Nghĩ xem việc nào đến trước."
         }
       },
       "hints": [
         {
-          "text": "Nghi xem viec nao den truoc."
+          "text": "Nghĩ xem việc nào đến trước."
         }
       ],
       "metadata": {
@@ -416,6 +426,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Build the story from first to last.",
+          "learningObjective": "story sequencing",
           "mode": "reorder",
           "correctOrder": [
             {
@@ -440,34 +451,35 @@
           "hint": "Think about what comes first."
         },
         "vi": {
-          "prompt": "Xay cau chuyen tu dau den cuoi.",
+          "prompt": "Xây câu chuyện từ đầu đến cuối.",
+          "learningObjective": "sắp xếp trình tự câu chuyện",
           "mode": "reorder",
           "correctOrder": [
             {
               "id": "s0",
-              "content": "Tim hat",
+              "content": "Tìm hạt",
               "type": "text"
             },
             {
               "id": "s1",
-              "content": "Gieo hat",
+              "content": "Gieo hạt",
               "type": "text"
             },
             {
               "id": "s2",
-              "content": "Tuoi nuoc",
+              "content": "Tưới nước",
               "type": "text"
             }
           ],
           "rule": {
             "type": "fixed"
           },
-          "hint": "Nghi xem viec nao den truoc."
+          "hint": "Nghĩ xem việc nào đến trước."
         }
       },
       "hints": [
         {
-          "text": "Nghi xem viec nao den truoc."
+          "text": "Nghĩ xem việc nào đến trước."
         }
       ],
       "metadata": {
@@ -497,6 +509,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Build the story from first to last.",
+          "learningObjective": "story sequencing",
           "mode": "reorder",
           "correctOrder": [
             {
@@ -521,34 +534,35 @@
           "hint": "Think about what comes first."
         },
         "vi": {
-          "prompt": "Xay cau chuyen tu dau den cuoi.",
+          "prompt": "Xây câu chuyện từ đầu đến cuối.",
+          "learningObjective": "sắp xếp trình tự câu chuyện",
           "mode": "reorder",
           "correctOrder": [
             {
               "id": "s0",
-              "content": "Tim hat",
+              "content": "Tìm hạt",
               "type": "text"
             },
             {
               "id": "s1",
-              "content": "Gieo hat",
+              "content": "Gieo hạt",
               "type": "text"
             },
             {
               "id": "s2",
-              "content": "Tuoi nuoc",
+              "content": "Tưới nước",
               "type": "text"
             }
           ],
           "rule": {
             "type": "fixed"
           },
-          "hint": "Nghi xem viec nao den truoc."
+          "hint": "Nghĩ xem việc nào đến trước."
         }
       },
       "hints": [
         {
-          "text": "Nghi xem viec nao den truoc."
+          "text": "Nghĩ xem việc nào đến trước."
         }
       ],
       "metadata": {
@@ -578,6 +592,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Build the story from first to last.",
+          "learningObjective": "story sequencing",
           "mode": "reorder",
           "correctOrder": [
             {
@@ -602,34 +617,35 @@
           "hint": "Think about what comes first."
         },
         "vi": {
-          "prompt": "Xay cau chuyen tu dau den cuoi.",
+          "prompt": "Xây câu chuyện từ đầu đến cuối.",
+          "learningObjective": "sắp xếp trình tự câu chuyện",
           "mode": "reorder",
           "correctOrder": [
             {
               "id": "s0",
-              "content": "Tim hat",
+              "content": "Tìm hạt",
               "type": "text"
             },
             {
               "id": "s1",
-              "content": "Gieo hat",
+              "content": "Gieo hạt",
               "type": "text"
             },
             {
               "id": "s2",
-              "content": "Tuoi nuoc",
+              "content": "Tưới nước",
               "type": "text"
             }
           ],
           "rule": {
             "type": "fixed"
           },
-          "hint": "Nghi xem viec nao den truoc."
+          "hint": "Nghĩ xem việc nào đến trước."
         }
       },
       "hints": [
         {
-          "text": "Nghi xem viec nao den truoc."
+          "text": "Nghĩ xem việc nào đến trước."
         }
       ],
       "metadata": {
@@ -659,6 +675,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Build the story from first to last.",
+          "learningObjective": "story sequencing",
           "mode": "reorder",
           "correctOrder": [
             {
@@ -683,34 +700,35 @@
           "hint": "Think about what comes first."
         },
         "vi": {
-          "prompt": "Xay cau chuyen tu dau den cuoi.",
+          "prompt": "Xây câu chuyện từ đầu đến cuối.",
+          "learningObjective": "sắp xếp trình tự câu chuyện",
           "mode": "reorder",
           "correctOrder": [
             {
               "id": "s0",
-              "content": "Tim hat",
+              "content": "Tìm hạt",
               "type": "text"
             },
             {
               "id": "s1",
-              "content": "Gieo hat",
+              "content": "Gieo hạt",
               "type": "text"
             },
             {
               "id": "s2",
-              "content": "Tuoi nuoc",
+              "content": "Tưới nước",
               "type": "text"
             }
           ],
           "rule": {
             "type": "fixed"
           },
-          "hint": "Nghi xem viec nao den truoc."
+          "hint": "Nghĩ xem việc nào đến trước."
         }
       },
       "hints": [
         {
-          "text": "Nghi xem viec nao den truoc."
+          "text": "Nghĩ xem việc nào đến trước."
         }
       ],
       "metadata": {
@@ -740,6 +758,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Build the story from first to last.",
+          "learningObjective": "story sequencing",
           "mode": "reorder",
           "correctOrder": [
             {
@@ -764,34 +783,35 @@
           "hint": "Think about what comes first."
         },
         "vi": {
-          "prompt": "Xay cau chuyen tu dau den cuoi.",
+          "prompt": "Xây câu chuyện từ đầu đến cuối.",
+          "learningObjective": "sắp xếp trình tự câu chuyện",
           "mode": "reorder",
           "correctOrder": [
             {
               "id": "s0",
-              "content": "Tim hat",
+              "content": "Tìm hạt",
               "type": "text"
             },
             {
               "id": "s1",
-              "content": "Gieo hat",
+              "content": "Gieo hạt",
               "type": "text"
             },
             {
               "id": "s2",
-              "content": "Tuoi nuoc",
+              "content": "Tưới nước",
               "type": "text"
             }
           ],
           "rule": {
             "type": "fixed"
           },
-          "hint": "Nghi xem viec nao den truoc."
+          "hint": "Nghĩ xem việc nào đến trước."
         }
       },
       "hints": [
         {
-          "text": "Nghi xem viec nao den truoc."
+          "text": "Nghĩ xem việc nào đến trước."
         }
       ],
       "metadata": {
@@ -821,6 +841,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Build the story from first to last.",
+          "learningObjective": "story sequencing",
           "mode": "reorder",
           "correctOrder": [
             {
@@ -845,34 +866,35 @@
           "hint": "Think about what comes first."
         },
         "vi": {
-          "prompt": "Xay cau chuyen tu dau den cuoi.",
+          "prompt": "Xây câu chuyện từ đầu đến cuối.",
+          "learningObjective": "sắp xếp trình tự câu chuyện",
           "mode": "reorder",
           "correctOrder": [
             {
               "id": "s0",
-              "content": "Tim hat",
+              "content": "Tìm hạt",
               "type": "text"
             },
             {
               "id": "s1",
-              "content": "Gieo hat",
+              "content": "Gieo hạt",
               "type": "text"
             },
             {
               "id": "s2",
-              "content": "Tuoi nuoc",
+              "content": "Tưới nước",
               "type": "text"
             }
           ],
           "rule": {
             "type": "fixed"
           },
-          "hint": "Nghi xem viec nao den truoc."
+          "hint": "Nghĩ xem việc nào đến trước."
         }
       },
       "hints": [
         {
-          "text": "Nghi xem viec nao den truoc."
+          "text": "Nghĩ xem việc nào đến trước."
         }
       ],
       "metadata": {
@@ -902,6 +924,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Build the story from first to last.",
+          "learningObjective": "story sequencing",
           "mode": "reorder",
           "correctOrder": [
             {
@@ -926,34 +949,35 @@
           "hint": "Think about what comes first."
         },
         "vi": {
-          "prompt": "Xay cau chuyen tu dau den cuoi.",
+          "prompt": "Xây câu chuyện từ đầu đến cuối.",
+          "learningObjective": "sắp xếp trình tự câu chuyện",
           "mode": "reorder",
           "correctOrder": [
             {
               "id": "s0",
-              "content": "Tim hat",
+              "content": "Tìm hạt",
               "type": "text"
             },
             {
               "id": "s1",
-              "content": "Gieo hat",
+              "content": "Gieo hạt",
               "type": "text"
             },
             {
               "id": "s2",
-              "content": "Tuoi nuoc",
+              "content": "Tưới nước",
               "type": "text"
             }
           ],
           "rule": {
             "type": "fixed"
           },
-          "hint": "Nghi xem viec nao den truoc."
+          "hint": "Nghĩ xem việc nào đến trước."
         }
       },
       "hints": [
         {
-          "text": "Nghi xem viec nao den truoc."
+          "text": "Nghĩ xem việc nào đến trước."
         }
       ],
       "metadata": {
@@ -983,6 +1007,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Build the story from first to last.",
+          "learningObjective": "story sequencing",
           "mode": "reorder",
           "correctOrder": [
             {
@@ -1007,34 +1032,35 @@
           "hint": "Think about what comes first."
         },
         "vi": {
-          "prompt": "Xay cau chuyen tu dau den cuoi.",
+          "prompt": "Xây câu chuyện từ đầu đến cuối.",
+          "learningObjective": "sắp xếp trình tự câu chuyện",
           "mode": "reorder",
           "correctOrder": [
             {
               "id": "s0",
-              "content": "Tim hat",
+              "content": "Tìm hạt",
               "type": "text"
             },
             {
               "id": "s1",
-              "content": "Gieo hat",
+              "content": "Gieo hạt",
               "type": "text"
             },
             {
               "id": "s2",
-              "content": "Tuoi nuoc",
+              "content": "Tưới nước",
               "type": "text"
             }
           ],
           "rule": {
             "type": "fixed"
           },
-          "hint": "Nghi xem viec nao den truoc."
+          "hint": "Nghĩ xem việc nào đến trước."
         }
       },
       "hints": [
         {
-          "text": "Nghi xem viec nao den truoc."
+          "text": "Nghĩ xem việc nào đến trước."
         }
       ],
       "metadata": {
@@ -1064,6 +1090,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Build the story from first to last.",
+          "learningObjective": "story sequencing",
           "mode": "reorder",
           "correctOrder": [
             {
@@ -1088,34 +1115,35 @@
           "hint": "Think about what comes first."
         },
         "vi": {
-          "prompt": "Xay cau chuyen tu dau den cuoi.",
+          "prompt": "Xây câu chuyện từ đầu đến cuối.",
+          "learningObjective": "sắp xếp trình tự câu chuyện",
           "mode": "reorder",
           "correctOrder": [
             {
               "id": "s0",
-              "content": "Tim hat",
+              "content": "Tìm hạt",
               "type": "text"
             },
             {
               "id": "s1",
-              "content": "Gieo hat",
+              "content": "Gieo hạt",
               "type": "text"
             },
             {
               "id": "s2",
-              "content": "Tuoi nuoc",
+              "content": "Tưới nước",
               "type": "text"
             }
           ],
           "rule": {
             "type": "fixed"
           },
-          "hint": "Nghi xem viec nao den truoc."
+          "hint": "Nghĩ xem việc nào đến trước."
         }
       },
       "hints": [
         {
-          "text": "Nghi xem viec nao den truoc."
+          "text": "Nghĩ xem việc nào đến trước."
         }
       ],
       "metadata": {
@@ -1145,6 +1173,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Build the story from first to last.",
+          "learningObjective": "story sequencing",
           "mode": "reorder",
           "correctOrder": [
             {
@@ -1169,34 +1198,35 @@
           "hint": "Think about what comes first."
         },
         "vi": {
-          "prompt": "Xay cau chuyen tu dau den cuoi.",
+          "prompt": "Xây câu chuyện từ đầu đến cuối.",
+          "learningObjective": "sắp xếp trình tự câu chuyện",
           "mode": "reorder",
           "correctOrder": [
             {
               "id": "s0",
-              "content": "Tim hat",
+              "content": "Tìm hạt",
               "type": "text"
             },
             {
               "id": "s1",
-              "content": "Gieo hat",
+              "content": "Gieo hạt",
               "type": "text"
             },
             {
               "id": "s2",
-              "content": "Tuoi nuoc",
+              "content": "Tưới nước",
               "type": "text"
             }
           ],
           "rule": {
             "type": "fixed"
           },
-          "hint": "Nghi xem viec nao den truoc."
+          "hint": "Nghĩ xem việc nào đến trước."
         }
       },
       "hints": [
         {
-          "text": "Nghi xem viec nao den truoc."
+          "text": "Nghĩ xem việc nào đến trước."
         }
       ],
       "metadata": {
@@ -1226,6 +1256,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Build the story from first to last.",
+          "learningObjective": "story sequencing",
           "mode": "reorder",
           "correctOrder": [
             {
@@ -1250,34 +1281,35 @@
           "hint": "Think about what comes first."
         },
         "vi": {
-          "prompt": "Xay cau chuyen tu dau den cuoi.",
+          "prompt": "Xây câu chuyện từ đầu đến cuối.",
+          "learningObjective": "sắp xếp trình tự câu chuyện",
           "mode": "reorder",
           "correctOrder": [
             {
               "id": "s0",
-              "content": "Tim hat",
+              "content": "Tìm hạt",
               "type": "text"
             },
             {
               "id": "s1",
-              "content": "Gieo hat",
+              "content": "Gieo hạt",
               "type": "text"
             },
             {
               "id": "s2",
-              "content": "Tuoi nuoc",
+              "content": "Tưới nước",
               "type": "text"
             }
           ],
           "rule": {
             "type": "fixed"
           },
-          "hint": "Nghi xem viec nao den truoc."
+          "hint": "Nghĩ xem việc nào đến trước."
         }
       },
       "hints": [
         {
-          "text": "Nghi xem viec nao den truoc."
+          "text": "Nghĩ xem việc nào đến trước."
         }
       ],
       "metadata": {
@@ -1307,6 +1339,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Build the story from first to last.",
+          "learningObjective": "story sequencing",
           "mode": "reorder",
           "correctOrder": [
             {
@@ -1331,34 +1364,35 @@
           "hint": "Think about what comes first."
         },
         "vi": {
-          "prompt": "Xay cau chuyen tu dau den cuoi.",
+          "prompt": "Xây câu chuyện từ đầu đến cuối.",
+          "learningObjective": "sắp xếp trình tự câu chuyện",
           "mode": "reorder",
           "correctOrder": [
             {
               "id": "s0",
-              "content": "Tim hat",
+              "content": "Tìm hạt",
               "type": "text"
             },
             {
               "id": "s1",
-              "content": "Gieo hat",
+              "content": "Gieo hạt",
               "type": "text"
             },
             {
               "id": "s2",
-              "content": "Tuoi nuoc",
+              "content": "Tưới nước",
               "type": "text"
             }
           ],
           "rule": {
             "type": "fixed"
           },
-          "hint": "Nghi xem viec nao den truoc."
+          "hint": "Nghĩ xem việc nào đến trước."
         }
       },
       "hints": [
         {
-          "text": "Nghi xem viec nao den truoc."
+          "text": "Nghĩ xem việc nào đến trước."
         }
       ],
       "metadata": {
@@ -1388,6 +1422,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Build the story from first to last.",
+          "learningObjective": "story sequencing",
           "mode": "reorder",
           "correctOrder": [
             {
@@ -1412,34 +1447,35 @@
           "hint": "Think about what comes first."
         },
         "vi": {
-          "prompt": "Xay cau chuyen tu dau den cuoi.",
+          "prompt": "Xây câu chuyện từ đầu đến cuối.",
+          "learningObjective": "sắp xếp trình tự câu chuyện",
           "mode": "reorder",
           "correctOrder": [
             {
               "id": "s0",
-              "content": "Tim hat",
+              "content": "Tìm hạt",
               "type": "text"
             },
             {
               "id": "s1",
-              "content": "Gieo hat",
+              "content": "Gieo hạt",
               "type": "text"
             },
             {
               "id": "s2",
-              "content": "Tuoi nuoc",
+              "content": "Tưới nước",
               "type": "text"
             }
           ],
           "rule": {
             "type": "fixed"
           },
-          "hint": "Nghi xem viec nao den truoc."
+          "hint": "Nghĩ xem việc nào đến trước."
         }
       },
       "hints": [
         {
-          "text": "Nghi xem viec nao den truoc."
+          "text": "Nghĩ xem việc nào đến trước."
         }
       ],
       "metadata": {
@@ -1469,6 +1505,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Build the story from first to last.",
+          "learningObjective": "story sequencing",
           "mode": "reorder",
           "correctOrder": [
             {
@@ -1493,34 +1530,35 @@
           "hint": "Think about what comes first."
         },
         "vi": {
-          "prompt": "Xay cau chuyen tu dau den cuoi.",
+          "prompt": "Xây câu chuyện từ đầu đến cuối.",
+          "learningObjective": "sắp xếp trình tự câu chuyện",
           "mode": "reorder",
           "correctOrder": [
             {
               "id": "s0",
-              "content": "Tim hat",
+              "content": "Tìm hạt",
               "type": "text"
             },
             {
               "id": "s1",
-              "content": "Gieo hat",
+              "content": "Gieo hạt",
               "type": "text"
             },
             {
               "id": "s2",
-              "content": "Tuoi nuoc",
+              "content": "Tưới nước",
               "type": "text"
             }
           ],
           "rule": {
             "type": "fixed"
           },
-          "hint": "Nghi xem viec nao den truoc."
+          "hint": "Nghĩ xem việc nào đến trước."
         }
       },
       "hints": [
         {
-          "text": "Nghi xem viec nao den truoc."
+          "text": "Nghĩ xem việc nào đến trước."
         }
       ],
       "metadata": {
@@ -1550,6 +1588,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Build the story from first to last.",
+          "learningObjective": "story sequencing",
           "mode": "reorder",
           "correctOrder": [
             {
@@ -1574,34 +1613,35 @@
           "hint": "Think about what comes first."
         },
         "vi": {
-          "prompt": "Xay cau chuyen tu dau den cuoi.",
+          "prompt": "Xây câu chuyện từ đầu đến cuối.",
+          "learningObjective": "sắp xếp trình tự câu chuyện",
           "mode": "reorder",
           "correctOrder": [
             {
               "id": "s0",
-              "content": "Tim hat",
+              "content": "Tìm hạt",
               "type": "text"
             },
             {
               "id": "s1",
-              "content": "Gieo hat",
+              "content": "Gieo hạt",
               "type": "text"
             },
             {
               "id": "s2",
-              "content": "Tuoi nuoc",
+              "content": "Tưới nước",
               "type": "text"
             }
           ],
           "rule": {
             "type": "fixed"
           },
-          "hint": "Nghi xem viec nao den truoc."
+          "hint": "Nghĩ xem việc nào đến trước."
         }
       },
       "hints": [
         {
-          "text": "Nghi xem viec nao den truoc."
+          "text": "Nghĩ xem việc nào đến trước."
         }
       ],
       "metadata": {
@@ -1631,6 +1671,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Build the story from first to last.",
+          "learningObjective": "story sequencing",
           "mode": "reorder",
           "correctOrder": [
             {
@@ -1655,34 +1696,35 @@
           "hint": "Think about what comes first."
         },
         "vi": {
-          "prompt": "Xay cau chuyen tu dau den cuoi.",
+          "prompt": "Xây câu chuyện từ đầu đến cuối.",
+          "learningObjective": "sắp xếp trình tự câu chuyện",
           "mode": "reorder",
           "correctOrder": [
             {
               "id": "s0",
-              "content": "Tim hat",
+              "content": "Tìm hạt",
               "type": "text"
             },
             {
               "id": "s1",
-              "content": "Gieo hat",
+              "content": "Gieo hạt",
               "type": "text"
             },
             {
               "id": "s2",
-              "content": "Tuoi nuoc",
+              "content": "Tưới nước",
               "type": "text"
             }
           ],
           "rule": {
             "type": "fixed"
           },
-          "hint": "Nghi xem viec nao den truoc."
+          "hint": "Nghĩ xem việc nào đến trước."
         }
       },
       "hints": [
         {
-          "text": "Nghi xem viec nao den truoc."
+          "text": "Nghĩ xem việc nào đến trước."
         }
       ],
       "metadata": {
@@ -1712,6 +1754,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Build the story from first to last.",
+          "learningObjective": "story sequencing",
           "mode": "reorder",
           "correctOrder": [
             {
@@ -1736,34 +1779,35 @@
           "hint": "Think about what comes first."
         },
         "vi": {
-          "prompt": "Xay cau chuyen tu dau den cuoi.",
+          "prompt": "Xây câu chuyện từ đầu đến cuối.",
+          "learningObjective": "sắp xếp trình tự câu chuyện",
           "mode": "reorder",
           "correctOrder": [
             {
               "id": "s0",
-              "content": "Tim hat",
+              "content": "Tìm hạt",
               "type": "text"
             },
             {
               "id": "s1",
-              "content": "Gieo hat",
+              "content": "Gieo hạt",
               "type": "text"
             },
             {
               "id": "s2",
-              "content": "Tuoi nuoc",
+              "content": "Tưới nước",
               "type": "text"
             }
           ],
           "rule": {
             "type": "fixed"
           },
-          "hint": "Nghi xem viec nao den truoc."
+          "hint": "Nghĩ xem việc nào đến trước."
         }
       },
       "hints": [
         {
-          "text": "Nghi xem viec nao den truoc."
+          "text": "Nghĩ xem việc nào đến trước."
         }
       ],
       "metadata": {
@@ -1793,6 +1837,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Build the story from first to last.",
+          "learningObjective": "story sequencing",
           "mode": "reorder",
           "correctOrder": [
             {
@@ -1817,34 +1862,35 @@
           "hint": "Think about what comes first."
         },
         "vi": {
-          "prompt": "Xay cau chuyen tu dau den cuoi.",
+          "prompt": "Xây câu chuyện từ đầu đến cuối.",
+          "learningObjective": "sắp xếp trình tự câu chuyện",
           "mode": "reorder",
           "correctOrder": [
             {
               "id": "s0",
-              "content": "Tim hat",
+              "content": "Tìm hạt",
               "type": "text"
             },
             {
               "id": "s1",
-              "content": "Gieo hat",
+              "content": "Gieo hạt",
               "type": "text"
             },
             {
               "id": "s2",
-              "content": "Tuoi nuoc",
+              "content": "Tưới nước",
               "type": "text"
             }
           ],
           "rule": {
             "type": "fixed"
           },
-          "hint": "Nghi xem viec nao den truoc."
+          "hint": "Nghĩ xem việc nào đến trước."
         }
       },
       "hints": [
         {
-          "text": "Nghi xem viec nao den truoc."
+          "text": "Nghĩ xem việc nào đến trước."
         }
       ],
       "metadata": {
@@ -1874,6 +1920,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Build the story from first to last.",
+          "learningObjective": "story sequencing",
           "mode": "reorder",
           "correctOrder": [
             {
@@ -1898,34 +1945,35 @@
           "hint": "Think about what comes first."
         },
         "vi": {
-          "prompt": "Xay cau chuyen tu dau den cuoi.",
+          "prompt": "Xây câu chuyện từ đầu đến cuối.",
+          "learningObjective": "sắp xếp trình tự câu chuyện",
           "mode": "reorder",
           "correctOrder": [
             {
               "id": "s0",
-              "content": "Tim hat",
+              "content": "Tìm hạt",
               "type": "text"
             },
             {
               "id": "s1",
-              "content": "Gieo hat",
+              "content": "Gieo hạt",
               "type": "text"
             },
             {
               "id": "s2",
-              "content": "Tuoi nuoc",
+              "content": "Tưới nước",
               "type": "text"
             }
           ],
           "rule": {
             "type": "fixed"
           },
-          "hint": "Nghi xem viec nao den truoc."
+          "hint": "Nghĩ xem việc nào đến trước."
         }
       },
       "hints": [
         {
-          "text": "Nghi xem viec nao den truoc."
+          "text": "Nghĩ xem việc nào đến trước."
         }
       ],
       "metadata": {
@@ -1955,6 +2003,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Build the story from first to last.",
+          "learningObjective": "story sequencing",
           "mode": "reorder",
           "correctOrder": [
             {
@@ -1979,34 +2028,35 @@
           "hint": "Think about what comes first."
         },
         "vi": {
-          "prompt": "Xay cau chuyen tu dau den cuoi.",
+          "prompt": "Xây câu chuyện từ đầu đến cuối.",
+          "learningObjective": "sắp xếp trình tự câu chuyện",
           "mode": "reorder",
           "correctOrder": [
             {
               "id": "s0",
-              "content": "Tim hat",
+              "content": "Tìm hạt",
               "type": "text"
             },
             {
               "id": "s1",
-              "content": "Gieo hat",
+              "content": "Gieo hạt",
               "type": "text"
             },
             {
               "id": "s2",
-              "content": "Tuoi nuoc",
+              "content": "Tưới nước",
               "type": "text"
             }
           ],
           "rule": {
             "type": "fixed"
           },
-          "hint": "Nghi xem viec nao den truoc."
+          "hint": "Nghĩ xem việc nào đến trước."
         }
       },
       "hints": [
         {
-          "text": "Nghi xem viec nao den truoc."
+          "text": "Nghĩ xem việc nào đến trước."
         }
       ],
       "metadata": {
@@ -2036,6 +2086,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Build the story from first to last.",
+          "learningObjective": "story sequencing",
           "mode": "reorder",
           "correctOrder": [
             {
@@ -2065,39 +2116,40 @@
           "hint": "Think about what comes first."
         },
         "vi": {
-          "prompt": "Xay cau chuyen tu dau den cuoi.",
+          "prompt": "Xây câu chuyện từ đầu đến cuối.",
+          "learningObjective": "sắp xếp trình tự câu chuyện",
           "mode": "reorder",
           "correctOrder": [
             {
               "id": "s0",
-              "content": "Tim hat",
+              "content": "Tìm hạt",
               "type": "text"
             },
             {
               "id": "s1",
-              "content": "Gieo hat",
+              "content": "Gieo hạt",
               "type": "text"
             },
             {
               "id": "s2",
-              "content": "Tuoi nuoc",
+              "content": "Tưới nước",
               "type": "text"
             },
             {
               "id": "s3",
-              "content": "Thay mam",
+              "content": "Thấy mầm",
               "type": "text"
             }
           ],
           "rule": {
             "type": "fixed"
           },
-          "hint": "Nghi xem viec nao den truoc."
+          "hint": "Nghĩ xem việc nào đến trước."
         }
       },
       "hints": [
         {
-          "text": "Nghi xem viec nao den truoc."
+          "text": "Nghĩ xem việc nào đến trước."
         }
       ],
       "metadata": {
@@ -2127,6 +2179,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Build the story from first to last.",
+          "learningObjective": "story sequencing",
           "mode": "reorder",
           "correctOrder": [
             {
@@ -2156,39 +2209,40 @@
           "hint": "Think about what comes first."
         },
         "vi": {
-          "prompt": "Xay cau chuyen tu dau den cuoi.",
+          "prompt": "Xây câu chuyện từ đầu đến cuối.",
+          "learningObjective": "sắp xếp trình tự câu chuyện",
           "mode": "reorder",
           "correctOrder": [
             {
               "id": "s0",
-              "content": "Tim hat",
+              "content": "Tìm hạt",
               "type": "text"
             },
             {
               "id": "s1",
-              "content": "Gieo hat",
+              "content": "Gieo hạt",
               "type": "text"
             },
             {
               "id": "s2",
-              "content": "Tuoi nuoc",
+              "content": "Tưới nước",
               "type": "text"
             },
             {
               "id": "s3",
-              "content": "Thay mam",
+              "content": "Thấy mầm",
               "type": "text"
             }
           ],
           "rule": {
             "type": "fixed"
           },
-          "hint": "Nghi xem viec nao den truoc."
+          "hint": "Nghĩ xem việc nào đến trước."
         }
       },
       "hints": [
         {
-          "text": "Nghi xem viec nao den truoc."
+          "text": "Nghĩ xem việc nào đến trước."
         }
       ],
       "metadata": {
@@ -2218,6 +2272,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Build the story from first to last.",
+          "learningObjective": "story sequencing",
           "mode": "reorder",
           "correctOrder": [
             {
@@ -2247,39 +2302,40 @@
           "hint": "Think about what comes first."
         },
         "vi": {
-          "prompt": "Xay cau chuyen tu dau den cuoi.",
+          "prompt": "Xây câu chuyện từ đầu đến cuối.",
+          "learningObjective": "sắp xếp trình tự câu chuyện",
           "mode": "reorder",
           "correctOrder": [
             {
               "id": "s0",
-              "content": "Tim hat",
+              "content": "Tìm hạt",
               "type": "text"
             },
             {
               "id": "s1",
-              "content": "Gieo hat",
+              "content": "Gieo hạt",
               "type": "text"
             },
             {
               "id": "s2",
-              "content": "Tuoi nuoc",
+              "content": "Tưới nước",
               "type": "text"
             },
             {
               "id": "s3",
-              "content": "Thay mam",
+              "content": "Thấy mầm",
               "type": "text"
             }
           ],
           "rule": {
             "type": "fixed"
           },
-          "hint": "Nghi xem viec nao den truoc."
+          "hint": "Nghĩ xem việc nào đến trước."
         }
       },
       "hints": [
         {
-          "text": "Nghi xem viec nao den truoc."
+          "text": "Nghĩ xem việc nào đến trước."
         }
       ],
       "metadata": {
@@ -2309,6 +2365,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Build the story from first to last.",
+          "learningObjective": "story sequencing",
           "mode": "reorder",
           "correctOrder": [
             {
@@ -2338,39 +2395,40 @@
           "hint": "Think about what comes first."
         },
         "vi": {
-          "prompt": "Xay cau chuyen tu dau den cuoi.",
+          "prompt": "Xây câu chuyện từ đầu đến cuối.",
+          "learningObjective": "sắp xếp trình tự câu chuyện",
           "mode": "reorder",
           "correctOrder": [
             {
               "id": "s0",
-              "content": "Tim hat",
+              "content": "Tìm hạt",
               "type": "text"
             },
             {
               "id": "s1",
-              "content": "Gieo hat",
+              "content": "Gieo hạt",
               "type": "text"
             },
             {
               "id": "s2",
-              "content": "Tuoi nuoc",
+              "content": "Tưới nước",
               "type": "text"
             },
             {
               "id": "s3",
-              "content": "Thay mam",
+              "content": "Thấy mầm",
               "type": "text"
             }
           ],
           "rule": {
             "type": "fixed"
           },
-          "hint": "Nghi xem viec nao den truoc."
+          "hint": "Nghĩ xem việc nào đến trước."
         }
       },
       "hints": [
         {
-          "text": "Nghi xem viec nao den truoc."
+          "text": "Nghĩ xem việc nào đến trước."
         }
       ],
       "metadata": {
@@ -2400,6 +2458,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Build the story from first to last.",
+          "learningObjective": "story sequencing",
           "mode": "reorder",
           "correctOrder": [
             {
@@ -2429,39 +2488,40 @@
           "hint": "Think about what comes first."
         },
         "vi": {
-          "prompt": "Xay cau chuyen tu dau den cuoi.",
+          "prompt": "Xây câu chuyện từ đầu đến cuối.",
+          "learningObjective": "sắp xếp trình tự câu chuyện",
           "mode": "reorder",
           "correctOrder": [
             {
               "id": "s0",
-              "content": "Tim hat",
+              "content": "Tìm hạt",
               "type": "text"
             },
             {
               "id": "s1",
-              "content": "Gieo hat",
+              "content": "Gieo hạt",
               "type": "text"
             },
             {
               "id": "s2",
-              "content": "Tuoi nuoc",
+              "content": "Tưới nước",
               "type": "text"
             },
             {
               "id": "s3",
-              "content": "Thay mam",
+              "content": "Thấy mầm",
               "type": "text"
             }
           ],
           "rule": {
             "type": "fixed"
           },
-          "hint": "Nghi xem viec nao den truoc."
+          "hint": "Nghĩ xem việc nào đến trước."
         }
       },
       "hints": [
         {
-          "text": "Nghi xem viec nao den truoc."
+          "text": "Nghĩ xem việc nào đến trước."
         }
       ],
       "metadata": {
@@ -2491,6 +2551,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Build the story from first to last.",
+          "learningObjective": "story sequencing",
           "mode": "reorder",
           "correctOrder": [
             {
@@ -2520,39 +2581,40 @@
           "hint": "Think about what comes first."
         },
         "vi": {
-          "prompt": "Xay cau chuyen tu dau den cuoi.",
+          "prompt": "Xây câu chuyện từ đầu đến cuối.",
+          "learningObjective": "sắp xếp trình tự câu chuyện",
           "mode": "reorder",
           "correctOrder": [
             {
               "id": "s0",
-              "content": "Tim hat",
+              "content": "Tìm hạt",
               "type": "text"
             },
             {
               "id": "s1",
-              "content": "Gieo hat",
+              "content": "Gieo hạt",
               "type": "text"
             },
             {
               "id": "s2",
-              "content": "Tuoi nuoc",
+              "content": "Tưới nước",
               "type": "text"
             },
             {
               "id": "s3",
-              "content": "Thay mam",
+              "content": "Thấy mầm",
               "type": "text"
             }
           ],
           "rule": {
             "type": "fixed"
           },
-          "hint": "Nghi xem viec nao den truoc."
+          "hint": "Nghĩ xem việc nào đến trước."
         }
       },
       "hints": [
         {
-          "text": "Nghi xem viec nao den truoc."
+          "text": "Nghĩ xem việc nào đến trước."
         }
       ],
       "metadata": {
@@ -2582,6 +2644,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Build the story from first to last.",
+          "learningObjective": "story sequencing",
           "mode": "reorder",
           "correctOrder": [
             {
@@ -2611,39 +2674,40 @@
           "hint": "Think about what comes first."
         },
         "vi": {
-          "prompt": "Xay cau chuyen tu dau den cuoi.",
+          "prompt": "Xây câu chuyện từ đầu đến cuối.",
+          "learningObjective": "sắp xếp trình tự câu chuyện",
           "mode": "reorder",
           "correctOrder": [
             {
               "id": "s0",
-              "content": "Tim hat",
+              "content": "Tìm hạt",
               "type": "text"
             },
             {
               "id": "s1",
-              "content": "Gieo hat",
+              "content": "Gieo hạt",
               "type": "text"
             },
             {
               "id": "s2",
-              "content": "Tuoi nuoc",
+              "content": "Tưới nước",
               "type": "text"
             },
             {
               "id": "s3",
-              "content": "Thay mam",
+              "content": "Thấy mầm",
               "type": "text"
             }
           ],
           "rule": {
             "type": "fixed"
           },
-          "hint": "Nghi xem viec nao den truoc."
+          "hint": "Nghĩ xem việc nào đến trước."
         }
       },
       "hints": [
         {
-          "text": "Nghi xem viec nao den truoc."
+          "text": "Nghĩ xem việc nào đến trước."
         }
       ],
       "metadata": {
@@ -2673,6 +2737,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Build the story from first to last.",
+          "learningObjective": "story sequencing",
           "mode": "reorder",
           "correctOrder": [
             {
@@ -2702,39 +2767,40 @@
           "hint": "Think about what comes first."
         },
         "vi": {
-          "prompt": "Xay cau chuyen tu dau den cuoi.",
+          "prompt": "Xây câu chuyện từ đầu đến cuối.",
+          "learningObjective": "sắp xếp trình tự câu chuyện",
           "mode": "reorder",
           "correctOrder": [
             {
               "id": "s0",
-              "content": "Tim hat",
+              "content": "Tìm hạt",
               "type": "text"
             },
             {
               "id": "s1",
-              "content": "Gieo hat",
+              "content": "Gieo hạt",
               "type": "text"
             },
             {
               "id": "s2",
-              "content": "Tuoi nuoc",
+              "content": "Tưới nước",
               "type": "text"
             },
             {
               "id": "s3",
-              "content": "Thay mam",
+              "content": "Thấy mầm",
               "type": "text"
             }
           ],
           "rule": {
             "type": "fixed"
           },
-          "hint": "Nghi xem viec nao den truoc."
+          "hint": "Nghĩ xem việc nào đến trước."
         }
       },
       "hints": [
         {
-          "text": "Nghi xem viec nao den truoc."
+          "text": "Nghĩ xem việc nào đến trước."
         }
       ],
       "metadata": {
@@ -2764,6 +2830,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Build the story from first to last.",
+          "learningObjective": "story sequencing",
           "mode": "reorder",
           "correctOrder": [
             {
@@ -2793,39 +2860,40 @@
           "hint": "Think about what comes first."
         },
         "vi": {
-          "prompt": "Xay cau chuyen tu dau den cuoi.",
+          "prompt": "Xây câu chuyện từ đầu đến cuối.",
+          "learningObjective": "sắp xếp trình tự câu chuyện",
           "mode": "reorder",
           "correctOrder": [
             {
               "id": "s0",
-              "content": "Tim hat",
+              "content": "Tìm hạt",
               "type": "text"
             },
             {
               "id": "s1",
-              "content": "Gieo hat",
+              "content": "Gieo hạt",
               "type": "text"
             },
             {
               "id": "s2",
-              "content": "Tuoi nuoc",
+              "content": "Tưới nước",
               "type": "text"
             },
             {
               "id": "s3",
-              "content": "Thay mam",
+              "content": "Thấy mầm",
               "type": "text"
             }
           ],
           "rule": {
             "type": "fixed"
           },
-          "hint": "Nghi xem viec nao den truoc."
+          "hint": "Nghĩ xem việc nào đến trước."
         }
       },
       "hints": [
         {
-          "text": "Nghi xem viec nao den truoc."
+          "text": "Nghĩ xem việc nào đến trước."
         }
       ],
       "metadata": {
@@ -2855,6 +2923,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Build the story from first to last.",
+          "learningObjective": "story sequencing",
           "mode": "reorder",
           "correctOrder": [
             {
@@ -2884,39 +2953,40 @@
           "hint": "Think about what comes first."
         },
         "vi": {
-          "prompt": "Xay cau chuyen tu dau den cuoi.",
+          "prompt": "Xây câu chuyện từ đầu đến cuối.",
+          "learningObjective": "sắp xếp trình tự câu chuyện",
           "mode": "reorder",
           "correctOrder": [
             {
               "id": "s0",
-              "content": "Tim hat",
+              "content": "Tìm hạt",
               "type": "text"
             },
             {
               "id": "s1",
-              "content": "Gieo hat",
+              "content": "Gieo hạt",
               "type": "text"
             },
             {
               "id": "s2",
-              "content": "Tuoi nuoc",
+              "content": "Tưới nước",
               "type": "text"
             },
             {
               "id": "s3",
-              "content": "Thay mam",
+              "content": "Thấy mầm",
               "type": "text"
             }
           ],
           "rule": {
             "type": "fixed"
           },
-          "hint": "Nghi xem viec nao den truoc."
+          "hint": "Nghĩ xem việc nào đến trước."
         }
       },
       "hints": [
         {
-          "text": "Nghi xem viec nao den truoc."
+          "text": "Nghĩ xem việc nào đến trước."
         }
       ],
       "metadata": {
@@ -2946,6 +3016,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Build the story from first to last.",
+          "learningObjective": "story sequencing",
           "mode": "reorder",
           "correctOrder": [
             {
@@ -2975,39 +3046,40 @@
           "hint": "Think about what comes first."
         },
         "vi": {
-          "prompt": "Xay cau chuyen tu dau den cuoi.",
+          "prompt": "Xây câu chuyện từ đầu đến cuối.",
+          "learningObjective": "sắp xếp trình tự câu chuyện",
           "mode": "reorder",
           "correctOrder": [
             {
               "id": "s0",
-              "content": "Tim hat",
+              "content": "Tìm hạt",
               "type": "text"
             },
             {
               "id": "s1",
-              "content": "Gieo hat",
+              "content": "Gieo hạt",
               "type": "text"
             },
             {
               "id": "s2",
-              "content": "Tuoi nuoc",
+              "content": "Tưới nước",
               "type": "text"
             },
             {
               "id": "s3",
-              "content": "Thay mam",
+              "content": "Thấy mầm",
               "type": "text"
             }
           ],
           "rule": {
             "type": "fixed"
           },
-          "hint": "Nghi xem viec nao den truoc."
+          "hint": "Nghĩ xem việc nào đến trước."
         }
       },
       "hints": [
         {
-          "text": "Nghi xem viec nao den truoc."
+          "text": "Nghĩ xem việc nào đến trước."
         }
       ],
       "metadata": {
@@ -3037,6 +3109,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Build the story from first to last.",
+          "learningObjective": "story sequencing",
           "mode": "reorder",
           "correctOrder": [
             {
@@ -3066,39 +3139,40 @@
           "hint": "Think about what comes first."
         },
         "vi": {
-          "prompt": "Xay cau chuyen tu dau den cuoi.",
+          "prompt": "Xây câu chuyện từ đầu đến cuối.",
+          "learningObjective": "sắp xếp trình tự câu chuyện",
           "mode": "reorder",
           "correctOrder": [
             {
               "id": "s0",
-              "content": "Tim hat",
+              "content": "Tìm hạt",
               "type": "text"
             },
             {
               "id": "s1",
-              "content": "Gieo hat",
+              "content": "Gieo hạt",
               "type": "text"
             },
             {
               "id": "s2",
-              "content": "Tuoi nuoc",
+              "content": "Tưới nước",
               "type": "text"
             },
             {
               "id": "s3",
-              "content": "Thay mam",
+              "content": "Thấy mầm",
               "type": "text"
             }
           ],
           "rule": {
             "type": "fixed"
           },
-          "hint": "Nghi xem viec nao den truoc."
+          "hint": "Nghĩ xem việc nào đến trước."
         }
       },
       "hints": [
         {
-          "text": "Nghi xem viec nao den truoc."
+          "text": "Nghĩ xem việc nào đến trước."
         }
       ],
       "metadata": {
@@ -3128,6 +3202,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Build the story from first to last.",
+          "learningObjective": "story sequencing",
           "mode": "reorder",
           "correctOrder": [
             {
@@ -3157,39 +3232,40 @@
           "hint": "Think about what comes first."
         },
         "vi": {
-          "prompt": "Xay cau chuyen tu dau den cuoi.",
+          "prompt": "Xây câu chuyện từ đầu đến cuối.",
+          "learningObjective": "sắp xếp trình tự câu chuyện",
           "mode": "reorder",
           "correctOrder": [
             {
               "id": "s0",
-              "content": "Tim hat",
+              "content": "Tìm hạt",
               "type": "text"
             },
             {
               "id": "s1",
-              "content": "Gieo hat",
+              "content": "Gieo hạt",
               "type": "text"
             },
             {
               "id": "s2",
-              "content": "Tuoi nuoc",
+              "content": "Tưới nước",
               "type": "text"
             },
             {
               "id": "s3",
-              "content": "Thay mam",
+              "content": "Thấy mầm",
               "type": "text"
             }
           ],
           "rule": {
             "type": "fixed"
           },
-          "hint": "Nghi xem viec nao den truoc."
+          "hint": "Nghĩ xem việc nào đến trước."
         }
       },
       "hints": [
         {
-          "text": "Nghi xem viec nao den truoc."
+          "text": "Nghĩ xem việc nào đến trước."
         }
       ],
       "metadata": {
@@ -3219,6 +3295,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Build the story from first to last.",
+          "learningObjective": "story sequencing",
           "mode": "reorder",
           "correctOrder": [
             {
@@ -3248,39 +3325,40 @@
           "hint": "Think about what comes first."
         },
         "vi": {
-          "prompt": "Xay cau chuyen tu dau den cuoi.",
+          "prompt": "Xây câu chuyện từ đầu đến cuối.",
+          "learningObjective": "sắp xếp trình tự câu chuyện",
           "mode": "reorder",
           "correctOrder": [
             {
               "id": "s0",
-              "content": "Tim hat",
+              "content": "Tìm hạt",
               "type": "text"
             },
             {
               "id": "s1",
-              "content": "Gieo hat",
+              "content": "Gieo hạt",
               "type": "text"
             },
             {
               "id": "s2",
-              "content": "Tuoi nuoc",
+              "content": "Tưới nước",
               "type": "text"
             },
             {
               "id": "s3",
-              "content": "Thay mam",
+              "content": "Thấy mầm",
               "type": "text"
             }
           ],
           "rule": {
             "type": "fixed"
           },
-          "hint": "Nghi xem viec nao den truoc."
+          "hint": "Nghĩ xem việc nào đến trước."
         }
       },
       "hints": [
         {
-          "text": "Nghi xem viec nao den truoc."
+          "text": "Nghĩ xem việc nào đến trước."
         }
       ],
       "metadata": {
@@ -3310,6 +3388,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Build the story from first to last.",
+          "learningObjective": "story sequencing",
           "mode": "reorder",
           "correctOrder": [
             {
@@ -3339,39 +3418,40 @@
           "hint": "Think about what comes first."
         },
         "vi": {
-          "prompt": "Xay cau chuyen tu dau den cuoi.",
+          "prompt": "Xây câu chuyện từ đầu đến cuối.",
+          "learningObjective": "sắp xếp trình tự câu chuyện",
           "mode": "reorder",
           "correctOrder": [
             {
               "id": "s0",
-              "content": "Tim hat",
+              "content": "Tìm hạt",
               "type": "text"
             },
             {
               "id": "s1",
-              "content": "Gieo hat",
+              "content": "Gieo hạt",
               "type": "text"
             },
             {
               "id": "s2",
-              "content": "Tuoi nuoc",
+              "content": "Tưới nước",
               "type": "text"
             },
             {
               "id": "s3",
-              "content": "Thay mam",
+              "content": "Thấy mầm",
               "type": "text"
             }
           ],
           "rule": {
             "type": "fixed"
           },
-          "hint": "Nghi xem viec nao den truoc."
+          "hint": "Nghĩ xem việc nào đến trước."
         }
       },
       "hints": [
         {
-          "text": "Nghi xem viec nao den truoc."
+          "text": "Nghĩ xem việc nào đến trước."
         }
       ],
       "metadata": {
@@ -3401,6 +3481,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Build the story from first to last.",
+          "learningObjective": "story sequencing",
           "mode": "reorder",
           "correctOrder": [
             {
@@ -3430,39 +3511,40 @@
           "hint": "Think about what comes first."
         },
         "vi": {
-          "prompt": "Xay cau chuyen tu dau den cuoi.",
+          "prompt": "Xây câu chuyện từ đầu đến cuối.",
+          "learningObjective": "sắp xếp trình tự câu chuyện",
           "mode": "reorder",
           "correctOrder": [
             {
               "id": "s0",
-              "content": "Tim hat",
+              "content": "Tìm hạt",
               "type": "text"
             },
             {
               "id": "s1",
-              "content": "Gieo hat",
+              "content": "Gieo hạt",
               "type": "text"
             },
             {
               "id": "s2",
-              "content": "Tuoi nuoc",
+              "content": "Tưới nước",
               "type": "text"
             },
             {
               "id": "s3",
-              "content": "Thay mam",
+              "content": "Thấy mầm",
               "type": "text"
             }
           ],
           "rule": {
             "type": "fixed"
           },
-          "hint": "Nghi xem viec nao den truoc."
+          "hint": "Nghĩ xem việc nào đến trước."
         }
       },
       "hints": [
         {
-          "text": "Nghi xem viec nao den truoc."
+          "text": "Nghĩ xem việc nào đến trước."
         }
       ],
       "metadata": {
@@ -3492,6 +3574,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Build the story from first to last.",
+          "learningObjective": "story sequencing",
           "mode": "reorder",
           "correctOrder": [
             {
@@ -3521,39 +3604,40 @@
           "hint": "Think about what comes first."
         },
         "vi": {
-          "prompt": "Xay cau chuyen tu dau den cuoi.",
+          "prompt": "Xây câu chuyện từ đầu đến cuối.",
+          "learningObjective": "sắp xếp trình tự câu chuyện",
           "mode": "reorder",
           "correctOrder": [
             {
               "id": "s0",
-              "content": "Tim hat",
+              "content": "Tìm hạt",
               "type": "text"
             },
             {
               "id": "s1",
-              "content": "Gieo hat",
+              "content": "Gieo hạt",
               "type": "text"
             },
             {
               "id": "s2",
-              "content": "Tuoi nuoc",
+              "content": "Tưới nước",
               "type": "text"
             },
             {
               "id": "s3",
-              "content": "Thay mam",
+              "content": "Thấy mầm",
               "type": "text"
             }
           ],
           "rule": {
             "type": "fixed"
           },
-          "hint": "Nghi xem viec nao den truoc."
+          "hint": "Nghĩ xem việc nào đến trước."
         }
       },
       "hints": [
         {
-          "text": "Nghi xem viec nao den truoc."
+          "text": "Nghĩ xem việc nào đến trước."
         }
       ],
       "metadata": {
@@ -3583,6 +3667,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Build the story from first to last.",
+          "learningObjective": "story sequencing",
           "mode": "reorder",
           "correctOrder": [
             {
@@ -3612,39 +3697,40 @@
           "hint": "Think about what comes first."
         },
         "vi": {
-          "prompt": "Xay cau chuyen tu dau den cuoi.",
+          "prompt": "Xây câu chuyện từ đầu đến cuối.",
+          "learningObjective": "sắp xếp trình tự câu chuyện",
           "mode": "reorder",
           "correctOrder": [
             {
               "id": "s0",
-              "content": "Tim hat",
+              "content": "Tìm hạt",
               "type": "text"
             },
             {
               "id": "s1",
-              "content": "Gieo hat",
+              "content": "Gieo hạt",
               "type": "text"
             },
             {
               "id": "s2",
-              "content": "Tuoi nuoc",
+              "content": "Tưới nước",
               "type": "text"
             },
             {
               "id": "s3",
-              "content": "Thay mam",
+              "content": "Thấy mầm",
               "type": "text"
             }
           ],
           "rule": {
             "type": "fixed"
           },
-          "hint": "Nghi xem viec nao den truoc."
+          "hint": "Nghĩ xem việc nào đến trước."
         }
       },
       "hints": [
         {
-          "text": "Nghi xem viec nao den truoc."
+          "text": "Nghĩ xem việc nào đến trước."
         }
       ],
       "metadata": {
@@ -3674,6 +3760,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Build the story from first to last.",
+          "learningObjective": "story sequencing",
           "mode": "reorder",
           "correctOrder": [
             {
@@ -3703,39 +3790,40 @@
           "hint": "Think about what comes first."
         },
         "vi": {
-          "prompt": "Xay cau chuyen tu dau den cuoi.",
+          "prompt": "Xây câu chuyện từ đầu đến cuối.",
+          "learningObjective": "sắp xếp trình tự câu chuyện",
           "mode": "reorder",
           "correctOrder": [
             {
               "id": "s0",
-              "content": "Tim hat",
+              "content": "Tìm hạt",
               "type": "text"
             },
             {
               "id": "s1",
-              "content": "Gieo hat",
+              "content": "Gieo hạt",
               "type": "text"
             },
             {
               "id": "s2",
-              "content": "Tuoi nuoc",
+              "content": "Tưới nước",
               "type": "text"
             },
             {
               "id": "s3",
-              "content": "Thay mam",
+              "content": "Thấy mầm",
               "type": "text"
             }
           ],
           "rule": {
             "type": "fixed"
           },
-          "hint": "Nghi xem viec nao den truoc."
+          "hint": "Nghĩ xem việc nào đến trước."
         }
       },
       "hints": [
         {
-          "text": "Nghi xem viec nao den truoc."
+          "text": "Nghĩ xem việc nào đến trước."
         }
       ],
       "metadata": {
@@ -3765,6 +3853,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Build the story from first to last.",
+          "learningObjective": "story sequencing",
           "mode": "reorder",
           "correctOrder": [
             {
@@ -3794,39 +3883,40 @@
           "hint": "Think about what comes first."
         },
         "vi": {
-          "prompt": "Xay cau chuyen tu dau den cuoi.",
+          "prompt": "Xây câu chuyện từ đầu đến cuối.",
+          "learningObjective": "sắp xếp trình tự câu chuyện",
           "mode": "reorder",
           "correctOrder": [
             {
               "id": "s0",
-              "content": "Tim hat",
+              "content": "Tìm hạt",
               "type": "text"
             },
             {
               "id": "s1",
-              "content": "Gieo hat",
+              "content": "Gieo hạt",
               "type": "text"
             },
             {
               "id": "s2",
-              "content": "Tuoi nuoc",
+              "content": "Tưới nước",
               "type": "text"
             },
             {
               "id": "s3",
-              "content": "Thay mam",
+              "content": "Thấy mầm",
               "type": "text"
             }
           ],
           "rule": {
             "type": "fixed"
           },
-          "hint": "Nghi xem viec nao den truoc."
+          "hint": "Nghĩ xem việc nào đến trước."
         }
       },
       "hints": [
         {
-          "text": "Nghi xem viec nao den truoc."
+          "text": "Nghĩ xem việc nào đến trước."
         }
       ],
       "metadata": {
@@ -3856,6 +3946,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Build the story from first to last.",
+          "learningObjective": "story sequencing",
           "mode": "reorder",
           "correctOrder": [
             {
@@ -3885,39 +3976,40 @@
           "hint": "Think about what comes first."
         },
         "vi": {
-          "prompt": "Xay cau chuyen tu dau den cuoi.",
+          "prompt": "Xây câu chuyện từ đầu đến cuối.",
+          "learningObjective": "sắp xếp trình tự câu chuyện",
           "mode": "reorder",
           "correctOrder": [
             {
               "id": "s0",
-              "content": "Tim hat",
+              "content": "Tìm hạt",
               "type": "text"
             },
             {
               "id": "s1",
-              "content": "Gieo hat",
+              "content": "Gieo hạt",
               "type": "text"
             },
             {
               "id": "s2",
-              "content": "Tuoi nuoc",
+              "content": "Tưới nước",
               "type": "text"
             },
             {
               "id": "s3",
-              "content": "Thay mam",
+              "content": "Thấy mầm",
               "type": "text"
             }
           ],
           "rule": {
             "type": "fixed"
           },
-          "hint": "Nghi xem viec nao den truoc."
+          "hint": "Nghĩ xem việc nào đến trước."
         }
       },
       "hints": [
         {
-          "text": "Nghi xem viec nao den truoc."
+          "text": "Nghĩ xem việc nào đến trước."
         }
       ],
       "metadata": {
@@ -3947,6 +4039,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Build the story from first to last.",
+          "learningObjective": "story sequencing",
           "mode": "reorder",
           "correctOrder": [
             {
@@ -3976,39 +4069,40 @@
           "hint": "Think about what comes first."
         },
         "vi": {
-          "prompt": "Xay cau chuyen tu dau den cuoi.",
+          "prompt": "Xây câu chuyện từ đầu đến cuối.",
+          "learningObjective": "sắp xếp trình tự câu chuyện",
           "mode": "reorder",
           "correctOrder": [
             {
               "id": "s0",
-              "content": "Tim hat",
+              "content": "Tìm hạt",
               "type": "text"
             },
             {
               "id": "s1",
-              "content": "Gieo hat",
+              "content": "Gieo hạt",
               "type": "text"
             },
             {
               "id": "s2",
-              "content": "Tuoi nuoc",
+              "content": "Tưới nước",
               "type": "text"
             },
             {
               "id": "s3",
-              "content": "Thay mam",
+              "content": "Thấy mầm",
               "type": "text"
             }
           ],
           "rule": {
             "type": "fixed"
           },
-          "hint": "Nghi xem viec nao den truoc."
+          "hint": "Nghĩ xem việc nào đến trước."
         }
       },
       "hints": [
         {
-          "text": "Nghi xem viec nao den truoc."
+          "text": "Nghĩ xem việc nào đến trước."
         }
       ],
       "metadata": {
@@ -4038,6 +4132,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Build the story from first to last.",
+          "learningObjective": "story sequencing",
           "mode": "reorder",
           "correctOrder": [
             {
@@ -4067,39 +4162,40 @@
           "hint": "Think about what comes first."
         },
         "vi": {
-          "prompt": "Xay cau chuyen tu dau den cuoi.",
+          "prompt": "Xây câu chuyện từ đầu đến cuối.",
+          "learningObjective": "sắp xếp trình tự câu chuyện",
           "mode": "reorder",
           "correctOrder": [
             {
               "id": "s0",
-              "content": "Tim hat",
+              "content": "Tìm hạt",
               "type": "text"
             },
             {
               "id": "s1",
-              "content": "Gieo hat",
+              "content": "Gieo hạt",
               "type": "text"
             },
             {
               "id": "s2",
-              "content": "Tuoi nuoc",
+              "content": "Tưới nước",
               "type": "text"
             },
             {
               "id": "s3",
-              "content": "Thay mam",
+              "content": "Thấy mầm",
               "type": "text"
             }
           ],
           "rule": {
             "type": "fixed"
           },
-          "hint": "Nghi xem viec nao den truoc."
+          "hint": "Nghĩ xem việc nào đến trước."
         }
       },
       "hints": [
         {
-          "text": "Nghi xem viec nao den truoc."
+          "text": "Nghĩ xem việc nào đến trước."
         }
       ],
       "metadata": {
@@ -4129,6 +4225,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Build the story from first to last.",
+          "learningObjective": "story sequencing",
           "mode": "reorder",
           "correctOrder": [
             {
@@ -4158,39 +4255,40 @@
           "hint": "Think about what comes first."
         },
         "vi": {
-          "prompt": "Xay cau chuyen tu dau den cuoi.",
+          "prompt": "Xây câu chuyện từ đầu đến cuối.",
+          "learningObjective": "sắp xếp trình tự câu chuyện",
           "mode": "reorder",
           "correctOrder": [
             {
               "id": "s0",
-              "content": "Tim hat",
+              "content": "Tìm hạt",
               "type": "text"
             },
             {
               "id": "s1",
-              "content": "Gieo hat",
+              "content": "Gieo hạt",
               "type": "text"
             },
             {
               "id": "s2",
-              "content": "Tuoi nuoc",
+              "content": "Tưới nước",
               "type": "text"
             },
             {
               "id": "s3",
-              "content": "Thay mam",
+              "content": "Thấy mầm",
               "type": "text"
             }
           ],
           "rule": {
             "type": "fixed"
           },
-          "hint": "Nghi xem viec nao den truoc."
+          "hint": "Nghĩ xem việc nào đến trước."
         }
       },
       "hints": [
         {
-          "text": "Nghi xem viec nao den truoc."
+          "text": "Nghĩ xem việc nào đến trước."
         }
       ],
       "metadata": {
@@ -4220,6 +4318,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Build the story from first to last.",
+          "learningObjective": "story sequencing",
           "mode": "reorder",
           "correctOrder": [
             {
@@ -4249,39 +4348,40 @@
           "hint": "Think about what comes first."
         },
         "vi": {
-          "prompt": "Xay cau chuyen tu dau den cuoi.",
+          "prompt": "Xây câu chuyện từ đầu đến cuối.",
+          "learningObjective": "sắp xếp trình tự câu chuyện",
           "mode": "reorder",
           "correctOrder": [
             {
               "id": "s0",
-              "content": "Tim hat",
+              "content": "Tìm hạt",
               "type": "text"
             },
             {
               "id": "s1",
-              "content": "Gieo hat",
+              "content": "Gieo hạt",
               "type": "text"
             },
             {
               "id": "s2",
-              "content": "Tuoi nuoc",
+              "content": "Tưới nước",
               "type": "text"
             },
             {
               "id": "s3",
-              "content": "Thay mam",
+              "content": "Thấy mầm",
               "type": "text"
             }
           ],
           "rule": {
             "type": "fixed"
           },
-          "hint": "Nghi xem viec nao den truoc."
+          "hint": "Nghĩ xem việc nào đến trước."
         }
       },
       "hints": [
         {
-          "text": "Nghi xem viec nao den truoc."
+          "text": "Nghĩ xem việc nào đến trước."
         }
       ],
       "metadata": {
@@ -4311,6 +4411,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Build the story from first to last.",
+          "learningObjective": "story sequencing",
           "mode": "reorder",
           "correctOrder": [
             {
@@ -4345,44 +4446,45 @@
           "hint": "Think about what comes first."
         },
         "vi": {
-          "prompt": "Xay cau chuyen tu dau den cuoi.",
+          "prompt": "Xây câu chuyện từ đầu đến cuối.",
+          "learningObjective": "sắp xếp trình tự câu chuyện",
           "mode": "reorder",
           "correctOrder": [
             {
               "id": "s0",
-              "content": "Tim hat",
+              "content": "Tìm hạt",
               "type": "text"
             },
             {
               "id": "s1",
-              "content": "Gieo hat",
+              "content": "Gieo hạt",
               "type": "text"
             },
             {
               "id": "s2",
-              "content": "Tuoi nuoc",
+              "content": "Tưới nước",
               "type": "text"
             },
             {
               "id": "s3",
-              "content": "Thay mam",
+              "content": "Thấy mầm",
               "type": "text"
             },
             {
               "id": "s4",
-              "content": "Tang hoa",
+              "content": "Tặng hoa",
               "type": "text"
             }
           ],
           "rule": {
             "type": "fixed"
           },
-          "hint": "Nghi xem viec nao den truoc."
+          "hint": "Nghĩ xem việc nào đến trước."
         }
       },
       "hints": [
         {
-          "text": "Nghi xem viec nao den truoc."
+          "text": "Nghĩ xem việc nào đến trước."
         }
       ],
       "metadata": {
@@ -4412,6 +4514,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Build the story from first to last.",
+          "learningObjective": "story sequencing",
           "mode": "reorder",
           "correctOrder": [
             {
@@ -4446,44 +4549,45 @@
           "hint": "Think about what comes first."
         },
         "vi": {
-          "prompt": "Xay cau chuyen tu dau den cuoi.",
+          "prompt": "Xây câu chuyện từ đầu đến cuối.",
+          "learningObjective": "sắp xếp trình tự câu chuyện",
           "mode": "reorder",
           "correctOrder": [
             {
               "id": "s0",
-              "content": "Tim hat",
+              "content": "Tìm hạt",
               "type": "text"
             },
             {
               "id": "s1",
-              "content": "Gieo hat",
+              "content": "Gieo hạt",
               "type": "text"
             },
             {
               "id": "s2",
-              "content": "Tuoi nuoc",
+              "content": "Tưới nước",
               "type": "text"
             },
             {
               "id": "s3",
-              "content": "Thay mam",
+              "content": "Thấy mầm",
               "type": "text"
             },
             {
               "id": "s4",
-              "content": "Tang hoa",
+              "content": "Tặng hoa",
               "type": "text"
             }
           ],
           "rule": {
             "type": "fixed"
           },
-          "hint": "Nghi xem viec nao den truoc."
+          "hint": "Nghĩ xem việc nào đến trước."
         }
       },
       "hints": [
         {
-          "text": "Nghi xem viec nao den truoc."
+          "text": "Nghĩ xem việc nào đến trước."
         }
       ],
       "metadata": {
@@ -4513,6 +4617,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Build the story from first to last.",
+          "learningObjective": "story sequencing",
           "mode": "reorder",
           "correctOrder": [
             {
@@ -4547,44 +4652,45 @@
           "hint": "Think about what comes first."
         },
         "vi": {
-          "prompt": "Xay cau chuyen tu dau den cuoi.",
+          "prompt": "Xây câu chuyện từ đầu đến cuối.",
+          "learningObjective": "sắp xếp trình tự câu chuyện",
           "mode": "reorder",
           "correctOrder": [
             {
               "id": "s0",
-              "content": "Tim hat",
+              "content": "Tìm hạt",
               "type": "text"
             },
             {
               "id": "s1",
-              "content": "Gieo hat",
+              "content": "Gieo hạt",
               "type": "text"
             },
             {
               "id": "s2",
-              "content": "Tuoi nuoc",
+              "content": "Tưới nước",
               "type": "text"
             },
             {
               "id": "s3",
-              "content": "Thay mam",
+              "content": "Thấy mầm",
               "type": "text"
             },
             {
               "id": "s4",
-              "content": "Tang hoa",
+              "content": "Tặng hoa",
               "type": "text"
             }
           ],
           "rule": {
             "type": "fixed"
           },
-          "hint": "Nghi xem viec nao den truoc."
+          "hint": "Nghĩ xem việc nào đến trước."
         }
       },
       "hints": [
         {
-          "text": "Nghi xem viec nao den truoc."
+          "text": "Nghĩ xem việc nào đến trước."
         }
       ],
       "metadata": {
@@ -4614,6 +4720,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Build the story from first to last.",
+          "learningObjective": "story sequencing",
           "mode": "reorder",
           "correctOrder": [
             {
@@ -4648,44 +4755,45 @@
           "hint": "Think about what comes first."
         },
         "vi": {
-          "prompt": "Xay cau chuyen tu dau den cuoi.",
+          "prompt": "Xây câu chuyện từ đầu đến cuối.",
+          "learningObjective": "sắp xếp trình tự câu chuyện",
           "mode": "reorder",
           "correctOrder": [
             {
               "id": "s0",
-              "content": "Tim hat",
+              "content": "Tìm hạt",
               "type": "text"
             },
             {
               "id": "s1",
-              "content": "Gieo hat",
+              "content": "Gieo hạt",
               "type": "text"
             },
             {
               "id": "s2",
-              "content": "Tuoi nuoc",
+              "content": "Tưới nước",
               "type": "text"
             },
             {
               "id": "s3",
-              "content": "Thay mam",
+              "content": "Thấy mầm",
               "type": "text"
             },
             {
               "id": "s4",
-              "content": "Tang hoa",
+              "content": "Tặng hoa",
               "type": "text"
             }
           ],
           "rule": {
             "type": "fixed"
           },
-          "hint": "Nghi xem viec nao den truoc."
+          "hint": "Nghĩ xem việc nào đến trước."
         }
       },
       "hints": [
         {
-          "text": "Nghi xem viec nao den truoc."
+          "text": "Nghĩ xem việc nào đến trước."
         }
       ],
       "metadata": {
@@ -4715,6 +4823,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Build the story from first to last.",
+          "learningObjective": "story sequencing",
           "mode": "reorder",
           "correctOrder": [
             {
@@ -4749,44 +4858,45 @@
           "hint": "Think about what comes first."
         },
         "vi": {
-          "prompt": "Xay cau chuyen tu dau den cuoi.",
+          "prompt": "Xây câu chuyện từ đầu đến cuối.",
+          "learningObjective": "sắp xếp trình tự câu chuyện",
           "mode": "reorder",
           "correctOrder": [
             {
               "id": "s0",
-              "content": "Tim hat",
+              "content": "Tìm hạt",
               "type": "text"
             },
             {
               "id": "s1",
-              "content": "Gieo hat",
+              "content": "Gieo hạt",
               "type": "text"
             },
             {
               "id": "s2",
-              "content": "Tuoi nuoc",
+              "content": "Tưới nước",
               "type": "text"
             },
             {
               "id": "s3",
-              "content": "Thay mam",
+              "content": "Thấy mầm",
               "type": "text"
             },
             {
               "id": "s4",
-              "content": "Tang hoa",
+              "content": "Tặng hoa",
               "type": "text"
             }
           ],
           "rule": {
             "type": "fixed"
           },
-          "hint": "Nghi xem viec nao den truoc."
+          "hint": "Nghĩ xem việc nào đến trước."
         }
       },
       "hints": [
         {
-          "text": "Nghi xem viec nao den truoc."
+          "text": "Nghĩ xem việc nào đến trước."
         }
       ],
       "metadata": {
@@ -4816,6 +4926,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Build the story from first to last.",
+          "learningObjective": "story sequencing",
           "mode": "reorder",
           "correctOrder": [
             {
@@ -4850,44 +4961,45 @@
           "hint": "Think about what comes first."
         },
         "vi": {
-          "prompt": "Xay cau chuyen tu dau den cuoi.",
+          "prompt": "Xây câu chuyện từ đầu đến cuối.",
+          "learningObjective": "sắp xếp trình tự câu chuyện",
           "mode": "reorder",
           "correctOrder": [
             {
               "id": "s0",
-              "content": "Tim hat",
+              "content": "Tìm hạt",
               "type": "text"
             },
             {
               "id": "s1",
-              "content": "Gieo hat",
+              "content": "Gieo hạt",
               "type": "text"
             },
             {
               "id": "s2",
-              "content": "Tuoi nuoc",
+              "content": "Tưới nước",
               "type": "text"
             },
             {
               "id": "s3",
-              "content": "Thay mam",
+              "content": "Thấy mầm",
               "type": "text"
             },
             {
               "id": "s4",
-              "content": "Tang hoa",
+              "content": "Tặng hoa",
               "type": "text"
             }
           ],
           "rule": {
             "type": "fixed"
           },
-          "hint": "Nghi xem viec nao den truoc."
+          "hint": "Nghĩ xem việc nào đến trước."
         }
       },
       "hints": [
         {
-          "text": "Nghi xem viec nao den truoc."
+          "text": "Nghĩ xem việc nào đến trước."
         }
       ],
       "metadata": {
@@ -4917,6 +5029,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Build the story from first to last.",
+          "learningObjective": "story sequencing",
           "mode": "reorder",
           "correctOrder": [
             {
@@ -4951,44 +5064,45 @@
           "hint": "Think about what comes first."
         },
         "vi": {
-          "prompt": "Xay cau chuyen tu dau den cuoi.",
+          "prompt": "Xây câu chuyện từ đầu đến cuối.",
+          "learningObjective": "sắp xếp trình tự câu chuyện",
           "mode": "reorder",
           "correctOrder": [
             {
               "id": "s0",
-              "content": "Tim hat",
+              "content": "Tìm hạt",
               "type": "text"
             },
             {
               "id": "s1",
-              "content": "Gieo hat",
+              "content": "Gieo hạt",
               "type": "text"
             },
             {
               "id": "s2",
-              "content": "Tuoi nuoc",
+              "content": "Tưới nước",
               "type": "text"
             },
             {
               "id": "s3",
-              "content": "Thay mam",
+              "content": "Thấy mầm",
               "type": "text"
             },
             {
               "id": "s4",
-              "content": "Tang hoa",
+              "content": "Tặng hoa",
               "type": "text"
             }
           ],
           "rule": {
             "type": "fixed"
           },
-          "hint": "Nghi xem viec nao den truoc."
+          "hint": "Nghĩ xem việc nào đến trước."
         }
       },
       "hints": [
         {
-          "text": "Nghi xem viec nao den truoc."
+          "text": "Nghĩ xem việc nào đến trước."
         }
       ],
       "metadata": {
@@ -5018,6 +5132,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Build the story from first to last.",
+          "learningObjective": "story sequencing",
           "mode": "reorder",
           "correctOrder": [
             {
@@ -5052,44 +5167,45 @@
           "hint": "Think about what comes first."
         },
         "vi": {
-          "prompt": "Xay cau chuyen tu dau den cuoi.",
+          "prompt": "Xây câu chuyện từ đầu đến cuối.",
+          "learningObjective": "sắp xếp trình tự câu chuyện",
           "mode": "reorder",
           "correctOrder": [
             {
               "id": "s0",
-              "content": "Tim hat",
+              "content": "Tìm hạt",
               "type": "text"
             },
             {
               "id": "s1",
-              "content": "Gieo hat",
+              "content": "Gieo hạt",
               "type": "text"
             },
             {
               "id": "s2",
-              "content": "Tuoi nuoc",
+              "content": "Tưới nước",
               "type": "text"
             },
             {
               "id": "s3",
-              "content": "Thay mam",
+              "content": "Thấy mầm",
               "type": "text"
             },
             {
               "id": "s4",
-              "content": "Tang hoa",
+              "content": "Tặng hoa",
               "type": "text"
             }
           ],
           "rule": {
             "type": "fixed"
           },
-          "hint": "Nghi xem viec nao den truoc."
+          "hint": "Nghĩ xem việc nào đến trước."
         }
       },
       "hints": [
         {
-          "text": "Nghi xem viec nao den truoc."
+          "text": "Nghĩ xem việc nào đến trước."
         }
       ],
       "metadata": {
@@ -5119,6 +5235,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Build the story from first to last.",
+          "learningObjective": "story sequencing",
           "mode": "reorder",
           "correctOrder": [
             {
@@ -5153,44 +5270,45 @@
           "hint": "Think about what comes first."
         },
         "vi": {
-          "prompt": "Xay cau chuyen tu dau den cuoi.",
+          "prompt": "Xây câu chuyện từ đầu đến cuối.",
+          "learningObjective": "sắp xếp trình tự câu chuyện",
           "mode": "reorder",
           "correctOrder": [
             {
               "id": "s0",
-              "content": "Tim hat",
+              "content": "Tìm hạt",
               "type": "text"
             },
             {
               "id": "s1",
-              "content": "Gieo hat",
+              "content": "Gieo hạt",
               "type": "text"
             },
             {
               "id": "s2",
-              "content": "Tuoi nuoc",
+              "content": "Tưới nước",
               "type": "text"
             },
             {
               "id": "s3",
-              "content": "Thay mam",
+              "content": "Thấy mầm",
               "type": "text"
             },
             {
               "id": "s4",
-              "content": "Tang hoa",
+              "content": "Tặng hoa",
               "type": "text"
             }
           ],
           "rule": {
             "type": "fixed"
           },
-          "hint": "Nghi xem viec nao den truoc."
+          "hint": "Nghĩ xem việc nào đến trước."
         }
       },
       "hints": [
         {
-          "text": "Nghi xem viec nao den truoc."
+          "text": "Nghĩ xem việc nào đến trước."
         }
       ],
       "metadata": {
@@ -5220,6 +5338,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Build the story from first to last.",
+          "learningObjective": "story sequencing",
           "mode": "reorder",
           "correctOrder": [
             {
@@ -5254,44 +5373,45 @@
           "hint": "Think about what comes first."
         },
         "vi": {
-          "prompt": "Xay cau chuyen tu dau den cuoi.",
+          "prompt": "Xây câu chuyện từ đầu đến cuối.",
+          "learningObjective": "sắp xếp trình tự câu chuyện",
           "mode": "reorder",
           "correctOrder": [
             {
               "id": "s0",
-              "content": "Tim hat",
+              "content": "Tìm hạt",
               "type": "text"
             },
             {
               "id": "s1",
-              "content": "Gieo hat",
+              "content": "Gieo hạt",
               "type": "text"
             },
             {
               "id": "s2",
-              "content": "Tuoi nuoc",
+              "content": "Tưới nước",
               "type": "text"
             },
             {
               "id": "s3",
-              "content": "Thay mam",
+              "content": "Thấy mầm",
               "type": "text"
             },
             {
               "id": "s4",
-              "content": "Tang hoa",
+              "content": "Tặng hoa",
               "type": "text"
             }
           ],
           "rule": {
             "type": "fixed"
           },
-          "hint": "Nghi xem viec nao den truoc."
+          "hint": "Nghĩ xem việc nào đến trước."
         }
       },
       "hints": [
         {
-          "text": "Nghi xem viec nao den truoc."
+          "text": "Nghĩ xem việc nào đến trước."
         }
       ],
       "metadata": {
@@ -5321,6 +5441,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Build the story from first to last.",
+          "learningObjective": "story sequencing",
           "mode": "reorder",
           "correctOrder": [
             {
@@ -5355,44 +5476,45 @@
           "hint": "Think about what comes first."
         },
         "vi": {
-          "prompt": "Xay cau chuyen tu dau den cuoi.",
+          "prompt": "Xây câu chuyện từ đầu đến cuối.",
+          "learningObjective": "sắp xếp trình tự câu chuyện",
           "mode": "reorder",
           "correctOrder": [
             {
               "id": "s0",
-              "content": "Tim hat",
+              "content": "Tìm hạt",
               "type": "text"
             },
             {
               "id": "s1",
-              "content": "Gieo hat",
+              "content": "Gieo hạt",
               "type": "text"
             },
             {
               "id": "s2",
-              "content": "Tuoi nuoc",
+              "content": "Tưới nước",
               "type": "text"
             },
             {
               "id": "s3",
-              "content": "Thay mam",
+              "content": "Thấy mầm",
               "type": "text"
             },
             {
               "id": "s4",
-              "content": "Tang hoa",
+              "content": "Tặng hoa",
               "type": "text"
             }
           ],
           "rule": {
             "type": "fixed"
           },
-          "hint": "Nghi xem viec nao den truoc."
+          "hint": "Nghĩ xem việc nào đến trước."
         }
       },
       "hints": [
         {
-          "text": "Nghi xem viec nao den truoc."
+          "text": "Nghĩ xem việc nào đến trước."
         }
       ],
       "metadata": {
@@ -5422,6 +5544,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Build the story from first to last.",
+          "learningObjective": "story sequencing",
           "mode": "reorder",
           "correctOrder": [
             {
@@ -5456,44 +5579,45 @@
           "hint": "Think about what comes first."
         },
         "vi": {
-          "prompt": "Xay cau chuyen tu dau den cuoi.",
+          "prompt": "Xây câu chuyện từ đầu đến cuối.",
+          "learningObjective": "sắp xếp trình tự câu chuyện",
           "mode": "reorder",
           "correctOrder": [
             {
               "id": "s0",
-              "content": "Tim hat",
+              "content": "Tìm hạt",
               "type": "text"
             },
             {
               "id": "s1",
-              "content": "Gieo hat",
+              "content": "Gieo hạt",
               "type": "text"
             },
             {
               "id": "s2",
-              "content": "Tuoi nuoc",
+              "content": "Tưới nước",
               "type": "text"
             },
             {
               "id": "s3",
-              "content": "Thay mam",
+              "content": "Thấy mầm",
               "type": "text"
             },
             {
               "id": "s4",
-              "content": "Tang hoa",
+              "content": "Tặng hoa",
               "type": "text"
             }
           ],
           "rule": {
             "type": "fixed"
           },
-          "hint": "Nghi xem viec nao den truoc."
+          "hint": "Nghĩ xem việc nào đến trước."
         }
       },
       "hints": [
         {
-          "text": "Nghi xem viec nao den truoc."
+          "text": "Nghĩ xem việc nào đến trước."
         }
       ],
       "metadata": {
@@ -5523,6 +5647,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Build the story from first to last.",
+          "learningObjective": "story sequencing",
           "mode": "reorder",
           "correctOrder": [
             {
@@ -5557,44 +5682,45 @@
           "hint": "Think about what comes first."
         },
         "vi": {
-          "prompt": "Xay cau chuyen tu dau den cuoi.",
+          "prompt": "Xây câu chuyện từ đầu đến cuối.",
+          "learningObjective": "sắp xếp trình tự câu chuyện",
           "mode": "reorder",
           "correctOrder": [
             {
               "id": "s0",
-              "content": "Tim hat",
+              "content": "Tìm hạt",
               "type": "text"
             },
             {
               "id": "s1",
-              "content": "Gieo hat",
+              "content": "Gieo hạt",
               "type": "text"
             },
             {
               "id": "s2",
-              "content": "Tuoi nuoc",
+              "content": "Tưới nước",
               "type": "text"
             },
             {
               "id": "s3",
-              "content": "Thay mam",
+              "content": "Thấy mầm",
               "type": "text"
             },
             {
               "id": "s4",
-              "content": "Tang hoa",
+              "content": "Tặng hoa",
               "type": "text"
             }
           ],
           "rule": {
             "type": "fixed"
           },
-          "hint": "Nghi xem viec nao den truoc."
+          "hint": "Nghĩ xem việc nào đến trước."
         }
       },
       "hints": [
         {
-          "text": "Nghi xem viec nao den truoc."
+          "text": "Nghĩ xem việc nào đến trước."
         }
       ],
       "metadata": {
@@ -5624,6 +5750,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Build the story from first to last.",
+          "learningObjective": "story sequencing",
           "mode": "reorder",
           "correctOrder": [
             {
@@ -5658,44 +5785,45 @@
           "hint": "Think about what comes first."
         },
         "vi": {
-          "prompt": "Xay cau chuyen tu dau den cuoi.",
+          "prompt": "Xây câu chuyện từ đầu đến cuối.",
+          "learningObjective": "sắp xếp trình tự câu chuyện",
           "mode": "reorder",
           "correctOrder": [
             {
               "id": "s0",
-              "content": "Tim hat",
+              "content": "Tìm hạt",
               "type": "text"
             },
             {
               "id": "s1",
-              "content": "Gieo hat",
+              "content": "Gieo hạt",
               "type": "text"
             },
             {
               "id": "s2",
-              "content": "Tuoi nuoc",
+              "content": "Tưới nước",
               "type": "text"
             },
             {
               "id": "s3",
-              "content": "Thay mam",
+              "content": "Thấy mầm",
               "type": "text"
             },
             {
               "id": "s4",
-              "content": "Tang hoa",
+              "content": "Tặng hoa",
               "type": "text"
             }
           ],
           "rule": {
             "type": "fixed"
           },
-          "hint": "Nghi xem viec nao den truoc."
+          "hint": "Nghĩ xem việc nào đến trước."
         }
       },
       "hints": [
         {
-          "text": "Nghi xem viec nao den truoc."
+          "text": "Nghĩ xem việc nào đến trước."
         }
       ],
       "metadata": {
@@ -5725,6 +5853,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Build the story from first to last.",
+          "learningObjective": "story sequencing",
           "mode": "reorder",
           "correctOrder": [
             {
@@ -5759,44 +5888,45 @@
           "hint": "Think about what comes first."
         },
         "vi": {
-          "prompt": "Xay cau chuyen tu dau den cuoi.",
+          "prompt": "Xây câu chuyện từ đầu đến cuối.",
+          "learningObjective": "sắp xếp trình tự câu chuyện",
           "mode": "reorder",
           "correctOrder": [
             {
               "id": "s0",
-              "content": "Tim hat",
+              "content": "Tìm hạt",
               "type": "text"
             },
             {
               "id": "s1",
-              "content": "Gieo hat",
+              "content": "Gieo hạt",
               "type": "text"
             },
             {
               "id": "s2",
-              "content": "Tuoi nuoc",
+              "content": "Tưới nước",
               "type": "text"
             },
             {
               "id": "s3",
-              "content": "Thay mam",
+              "content": "Thấy mầm",
               "type": "text"
             },
             {
               "id": "s4",
-              "content": "Tang hoa",
+              "content": "Tặng hoa",
               "type": "text"
             }
           ],
           "rule": {
             "type": "fixed"
           },
-          "hint": "Nghi xem viec nao den truoc."
+          "hint": "Nghĩ xem việc nào đến trước."
         }
       },
       "hints": [
         {
-          "text": "Nghi xem viec nao den truoc."
+          "text": "Nghĩ xem việc nào đến trước."
         }
       ],
       "metadata": {
@@ -5826,6 +5956,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Build the story from first to last.",
+          "learningObjective": "story sequencing",
           "mode": "reorder",
           "correctOrder": [
             {
@@ -5860,44 +5991,45 @@
           "hint": "Think about what comes first."
         },
         "vi": {
-          "prompt": "Xay cau chuyen tu dau den cuoi.",
+          "prompt": "Xây câu chuyện từ đầu đến cuối.",
+          "learningObjective": "sắp xếp trình tự câu chuyện",
           "mode": "reorder",
           "correctOrder": [
             {
               "id": "s0",
-              "content": "Tim hat",
+              "content": "Tìm hạt",
               "type": "text"
             },
             {
               "id": "s1",
-              "content": "Gieo hat",
+              "content": "Gieo hạt",
               "type": "text"
             },
             {
               "id": "s2",
-              "content": "Tuoi nuoc",
+              "content": "Tưới nước",
               "type": "text"
             },
             {
               "id": "s3",
-              "content": "Thay mam",
+              "content": "Thấy mầm",
               "type": "text"
             },
             {
               "id": "s4",
-              "content": "Tang hoa",
+              "content": "Tặng hoa",
               "type": "text"
             }
           ],
           "rule": {
             "type": "fixed"
           },
-          "hint": "Nghi xem viec nao den truoc."
+          "hint": "Nghĩ xem việc nào đến trước."
         }
       },
       "hints": [
         {
-          "text": "Nghi xem viec nao den truoc."
+          "text": "Nghĩ xem việc nào đến trước."
         }
       ],
       "metadata": {
@@ -5927,6 +6059,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Build the story from first to last.",
+          "learningObjective": "story sequencing",
           "mode": "reorder",
           "correctOrder": [
             {
@@ -5961,44 +6094,45 @@
           "hint": "Think about what comes first."
         },
         "vi": {
-          "prompt": "Xay cau chuyen tu dau den cuoi.",
+          "prompt": "Xây câu chuyện từ đầu đến cuối.",
+          "learningObjective": "sắp xếp trình tự câu chuyện",
           "mode": "reorder",
           "correctOrder": [
             {
               "id": "s0",
-              "content": "Tim hat",
+              "content": "Tìm hạt",
               "type": "text"
             },
             {
               "id": "s1",
-              "content": "Gieo hat",
+              "content": "Gieo hạt",
               "type": "text"
             },
             {
               "id": "s2",
-              "content": "Tuoi nuoc",
+              "content": "Tưới nước",
               "type": "text"
             },
             {
               "id": "s3",
-              "content": "Thay mam",
+              "content": "Thấy mầm",
               "type": "text"
             },
             {
               "id": "s4",
-              "content": "Tang hoa",
+              "content": "Tặng hoa",
               "type": "text"
             }
           ],
           "rule": {
             "type": "fixed"
           },
-          "hint": "Nghi xem viec nao den truoc."
+          "hint": "Nghĩ xem việc nào đến trước."
         }
       },
       "hints": [
         {
-          "text": "Nghi xem viec nao den truoc."
+          "text": "Nghĩ xem việc nào đến trước."
         }
       ],
       "metadata": {
@@ -6028,6 +6162,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Build the story from first to last.",
+          "learningObjective": "story sequencing",
           "mode": "reorder",
           "correctOrder": [
             {
@@ -6062,44 +6197,45 @@
           "hint": "Think about what comes first."
         },
         "vi": {
-          "prompt": "Xay cau chuyen tu dau den cuoi.",
+          "prompt": "Xây câu chuyện từ đầu đến cuối.",
+          "learningObjective": "sắp xếp trình tự câu chuyện",
           "mode": "reorder",
           "correctOrder": [
             {
               "id": "s0",
-              "content": "Tim hat",
+              "content": "Tìm hạt",
               "type": "text"
             },
             {
               "id": "s1",
-              "content": "Gieo hat",
+              "content": "Gieo hạt",
               "type": "text"
             },
             {
               "id": "s2",
-              "content": "Tuoi nuoc",
+              "content": "Tưới nước",
               "type": "text"
             },
             {
               "id": "s3",
-              "content": "Thay mam",
+              "content": "Thấy mầm",
               "type": "text"
             },
             {
               "id": "s4",
-              "content": "Tang hoa",
+              "content": "Tặng hoa",
               "type": "text"
             }
           ],
           "rule": {
             "type": "fixed"
           },
-          "hint": "Nghi xem viec nao den truoc."
+          "hint": "Nghĩ xem việc nào đến trước."
         }
       },
       "hints": [
         {
-          "text": "Nghi xem viec nao den truoc."
+          "text": "Nghĩ xem việc nào đến trước."
         }
       ],
       "metadata": {
@@ -6129,6 +6265,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Build the story from first to last.",
+          "learningObjective": "story sequencing",
           "mode": "reorder",
           "correctOrder": [
             {
@@ -6163,44 +6300,45 @@
           "hint": "Think about what comes first."
         },
         "vi": {
-          "prompt": "Xay cau chuyen tu dau den cuoi.",
+          "prompt": "Xây câu chuyện từ đầu đến cuối.",
+          "learningObjective": "sắp xếp trình tự câu chuyện",
           "mode": "reorder",
           "correctOrder": [
             {
               "id": "s0",
-              "content": "Tim hat",
+              "content": "Tìm hạt",
               "type": "text"
             },
             {
               "id": "s1",
-              "content": "Gieo hat",
+              "content": "Gieo hạt",
               "type": "text"
             },
             {
               "id": "s2",
-              "content": "Tuoi nuoc",
+              "content": "Tưới nước",
               "type": "text"
             },
             {
               "id": "s3",
-              "content": "Thay mam",
+              "content": "Thấy mầm",
               "type": "text"
             },
             {
               "id": "s4",
-              "content": "Tang hoa",
+              "content": "Tặng hoa",
               "type": "text"
             }
           ],
           "rule": {
             "type": "fixed"
           },
-          "hint": "Nghi xem viec nao den truoc."
+          "hint": "Nghĩ xem việc nào đến trước."
         }
       },
       "hints": [
         {
-          "text": "Nghi xem viec nao den truoc."
+          "text": "Nghĩ xem việc nào đến trước."
         }
       ],
       "metadata": {
@@ -6230,6 +6368,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Build the story from first to last.",
+          "learningObjective": "story sequencing",
           "mode": "reorder",
           "correctOrder": [
             {
@@ -6264,44 +6403,45 @@
           "hint": "Think about what comes first."
         },
         "vi": {
-          "prompt": "Xay cau chuyen tu dau den cuoi.",
+          "prompt": "Xây câu chuyện từ đầu đến cuối.",
+          "learningObjective": "sắp xếp trình tự câu chuyện",
           "mode": "reorder",
           "correctOrder": [
             {
               "id": "s0",
-              "content": "Tim hat",
+              "content": "Tìm hạt",
               "type": "text"
             },
             {
               "id": "s1",
-              "content": "Gieo hat",
+              "content": "Gieo hạt",
               "type": "text"
             },
             {
               "id": "s2",
-              "content": "Tuoi nuoc",
+              "content": "Tưới nước",
               "type": "text"
             },
             {
               "id": "s3",
-              "content": "Thay mam",
+              "content": "Thấy mầm",
               "type": "text"
             },
             {
               "id": "s4",
-              "content": "Tang hoa",
+              "content": "Tặng hoa",
               "type": "text"
             }
           ],
           "rule": {
             "type": "fixed"
           },
-          "hint": "Nghi xem viec nao den truoc."
+          "hint": "Nghĩ xem việc nào đến trước."
         }
       },
       "hints": [
         {
-          "text": "Nghi xem viec nao den truoc."
+          "text": "Nghĩ xem việc nào đến trước."
         }
       ],
       "metadata": {
@@ -6331,6 +6471,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Build the story from first to last.",
+          "learningObjective": "story sequencing",
           "mode": "reorder",
           "correctOrder": [
             {
@@ -6365,44 +6506,45 @@
           "hint": "Think about what comes first."
         },
         "vi": {
-          "prompt": "Xay cau chuyen tu dau den cuoi.",
+          "prompt": "Xây câu chuyện từ đầu đến cuối.",
+          "learningObjective": "sắp xếp trình tự câu chuyện",
           "mode": "reorder",
           "correctOrder": [
             {
               "id": "s0",
-              "content": "Tim hat",
+              "content": "Tìm hạt",
               "type": "text"
             },
             {
               "id": "s1",
-              "content": "Gieo hat",
+              "content": "Gieo hạt",
               "type": "text"
             },
             {
               "id": "s2",
-              "content": "Tuoi nuoc",
+              "content": "Tưới nước",
               "type": "text"
             },
             {
               "id": "s3",
-              "content": "Thay mam",
+              "content": "Thấy mầm",
               "type": "text"
             },
             {
               "id": "s4",
-              "content": "Tang hoa",
+              "content": "Tặng hoa",
               "type": "text"
             }
           ],
           "rule": {
             "type": "fixed"
           },
-          "hint": "Nghi xem viec nao den truoc."
+          "hint": "Nghĩ xem việc nào đến trước."
         }
       },
       "hints": [
         {
-          "text": "Nghi xem viec nao den truoc."
+          "text": "Nghĩ xem việc nào đến trước."
         }
       ],
       "metadata": {
@@ -6432,6 +6574,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Build the story from first to last.",
+          "learningObjective": "story sequencing",
           "mode": "reorder",
           "correctOrder": [
             {
@@ -6466,44 +6609,45 @@
           "hint": "Think about what comes first."
         },
         "vi": {
-          "prompt": "Xay cau chuyen tu dau den cuoi.",
+          "prompt": "Xây câu chuyện từ đầu đến cuối.",
+          "learningObjective": "sắp xếp trình tự câu chuyện",
           "mode": "reorder",
           "correctOrder": [
             {
               "id": "s0",
-              "content": "Tim hat",
+              "content": "Tìm hạt",
               "type": "text"
             },
             {
               "id": "s1",
-              "content": "Gieo hat",
+              "content": "Gieo hạt",
               "type": "text"
             },
             {
               "id": "s2",
-              "content": "Tuoi nuoc",
+              "content": "Tưới nước",
               "type": "text"
             },
             {
               "id": "s3",
-              "content": "Thay mam",
+              "content": "Thấy mầm",
               "type": "text"
             },
             {
               "id": "s4",
-              "content": "Tang hoa",
+              "content": "Tặng hoa",
               "type": "text"
             }
           ],
           "rule": {
             "type": "fixed"
           },
-          "hint": "Nghi xem viec nao den truoc."
+          "hint": "Nghĩ xem việc nào đến trước."
         }
       },
       "hints": [
         {
-          "text": "Nghi xem viec nao den truoc."
+          "text": "Nghĩ xem việc nào đến trước."
         }
       ],
       "metadata": {
@@ -6533,6 +6677,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Build the story from first to last.",
+          "learningObjective": "story sequencing",
           "mode": "reorder",
           "correctOrder": [
             {
@@ -6567,44 +6712,45 @@
           "hint": "Think about what comes first."
         },
         "vi": {
-          "prompt": "Xay cau chuyen tu dau den cuoi.",
+          "prompt": "Xây câu chuyện từ đầu đến cuối.",
+          "learningObjective": "sắp xếp trình tự câu chuyện",
           "mode": "reorder",
           "correctOrder": [
             {
               "id": "s0",
-              "content": "Tim hat",
+              "content": "Tìm hạt",
               "type": "text"
             },
             {
               "id": "s1",
-              "content": "Gieo hat",
+              "content": "Gieo hạt",
               "type": "text"
             },
             {
               "id": "s2",
-              "content": "Tuoi nuoc",
+              "content": "Tưới nước",
               "type": "text"
             },
             {
               "id": "s3",
-              "content": "Thay mam",
+              "content": "Thấy mầm",
               "type": "text"
             },
             {
               "id": "s4",
-              "content": "Tang hoa",
+              "content": "Tặng hoa",
               "type": "text"
             }
           ],
           "rule": {
             "type": "fixed"
           },
-          "hint": "Nghi xem viec nao den truoc."
+          "hint": "Nghĩ xem việc nào đến trước."
         }
       },
       "hints": [
         {
-          "text": "Nghi xem viec nao den truoc."
+          "text": "Nghĩ xem việc nào đến trước."
         }
       ],
       "metadata": {
@@ -6634,6 +6780,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Build the story from first to last.",
+          "learningObjective": "story sequencing",
           "mode": "reorder",
           "correctOrder": [
             {
@@ -6668,44 +6815,45 @@
           "hint": "Think about what comes first."
         },
         "vi": {
-          "prompt": "Xay cau chuyen tu dau den cuoi.",
+          "prompt": "Xây câu chuyện từ đầu đến cuối.",
+          "learningObjective": "sắp xếp trình tự câu chuyện",
           "mode": "reorder",
           "correctOrder": [
             {
               "id": "s0",
-              "content": "Tim hat",
+              "content": "Tìm hạt",
               "type": "text"
             },
             {
               "id": "s1",
-              "content": "Gieo hat",
+              "content": "Gieo hạt",
               "type": "text"
             },
             {
               "id": "s2",
-              "content": "Tuoi nuoc",
+              "content": "Tưới nước",
               "type": "text"
             },
             {
               "id": "s3",
-              "content": "Thay mam",
+              "content": "Thấy mầm",
               "type": "text"
             },
             {
               "id": "s4",
-              "content": "Tang hoa",
+              "content": "Tặng hoa",
               "type": "text"
             }
           ],
           "rule": {
             "type": "fixed"
           },
-          "hint": "Nghi xem viec nao den truoc."
+          "hint": "Nghĩ xem việc nào đến trước."
         }
       },
       "hints": [
         {
-          "text": "Nghi xem viec nao den truoc."
+          "text": "Nghĩ xem việc nào đến trước."
         }
       ],
       "metadata": {
@@ -6735,6 +6883,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Build the story from first to last.",
+          "learningObjective": "story sequencing",
           "mode": "reorder",
           "correctOrder": [
             {
@@ -6769,44 +6918,45 @@
           "hint": "Think about what comes first."
         },
         "vi": {
-          "prompt": "Xay cau chuyen tu dau den cuoi.",
+          "prompt": "Xây câu chuyện từ đầu đến cuối.",
+          "learningObjective": "sắp xếp trình tự câu chuyện",
           "mode": "reorder",
           "correctOrder": [
             {
               "id": "s0",
-              "content": "Tim hat",
+              "content": "Tìm hạt",
               "type": "text"
             },
             {
               "id": "s1",
-              "content": "Gieo hat",
+              "content": "Gieo hạt",
               "type": "text"
             },
             {
               "id": "s2",
-              "content": "Tuoi nuoc",
+              "content": "Tưới nước",
               "type": "text"
             },
             {
               "id": "s3",
-              "content": "Thay mam",
+              "content": "Thấy mầm",
               "type": "text"
             },
             {
               "id": "s4",
-              "content": "Tang hoa",
+              "content": "Tặng hoa",
               "type": "text"
             }
           ],
           "rule": {
             "type": "fixed"
           },
-          "hint": "Nghi xem viec nao den truoc."
+          "hint": "Nghĩ xem việc nào đến trước."
         }
       },
       "hints": [
         {
-          "text": "Nghi xem viec nao den truoc."
+          "text": "Nghĩ xem việc nào đến trước."
         }
       ],
       "metadata": {

@@ -11,6 +11,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Arrange the train numbers.",
+          "learningObjective": "number sequencing",
           "mode": "reorder",
           "correctOrder": [
             {
@@ -35,7 +36,8 @@
           "hint": "Think about what comes first."
         },
         "vi": {
-          "prompt": "Sap xep cac so tren tau.",
+          "prompt": "Sắp xếp các số trên tàu.",
+          "learningObjective": "sắp xếp trình tự số",
           "mode": "reorder",
           "correctOrder": [
             {
@@ -57,12 +59,12 @@
           "rule": {
             "type": "fixed"
           },
-          "hint": "Nghi xem viec nao den truoc."
+          "hint": "Nghĩ xem việc nào đến trước."
         }
       },
       "hints": [
         {
-          "text": "Nghi xem viec nao den truoc."
+          "text": "Nghĩ xem việc nào đến trước."
         }
       ],
       "metadata": {
@@ -92,6 +94,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Arrange the train numbers.",
+          "learningObjective": "number sequencing",
           "mode": "reorder",
           "correctOrder": [
             {
@@ -116,7 +119,8 @@
           "hint": "Think about what comes first."
         },
         "vi": {
-          "prompt": "Sap xep cac so tren tau.",
+          "prompt": "Sắp xếp các số trên tàu.",
+          "learningObjective": "sắp xếp trình tự số",
           "mode": "reorder",
           "correctOrder": [
             {
@@ -138,12 +142,12 @@
           "rule": {
             "type": "fixed"
           },
-          "hint": "Nghi xem viec nao den truoc."
+          "hint": "Nghĩ xem việc nào đến trước."
         }
       },
       "hints": [
         {
-          "text": "Nghi xem viec nao den truoc."
+          "text": "Nghĩ xem việc nào đến trước."
         }
       ],
       "metadata": {
@@ -173,6 +177,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Arrange the train numbers.",
+          "learningObjective": "number sequencing",
           "mode": "reorder",
           "correctOrder": [
             {
@@ -197,7 +202,8 @@
           "hint": "Think about what comes first."
         },
         "vi": {
-          "prompt": "Sap xep cac so tren tau.",
+          "prompt": "Sắp xếp các số trên tàu.",
+          "learningObjective": "sắp xếp trình tự số",
           "mode": "reorder",
           "correctOrder": [
             {
@@ -219,12 +225,12 @@
           "rule": {
             "type": "fixed"
           },
-          "hint": "Nghi xem viec nao den truoc."
+          "hint": "Nghĩ xem việc nào đến trước."
         }
       },
       "hints": [
         {
-          "text": "Nghi xem viec nao den truoc."
+          "text": "Nghĩ xem việc nào đến trước."
         }
       ],
       "metadata": {
@@ -254,6 +260,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Arrange the train numbers.",
+          "learningObjective": "number sequencing",
           "mode": "reorder",
           "correctOrder": [
             {
@@ -278,7 +285,8 @@
           "hint": "Think about what comes first."
         },
         "vi": {
-          "prompt": "Sap xep cac so tren tau.",
+          "prompt": "Sắp xếp các số trên tàu.",
+          "learningObjective": "sắp xếp trình tự số",
           "mode": "reorder",
           "correctOrder": [
             {
@@ -300,12 +308,12 @@
           "rule": {
             "type": "fixed"
           },
-          "hint": "Nghi xem viec nao den truoc."
+          "hint": "Nghĩ xem việc nào đến trước."
         }
       },
       "hints": [
         {
-          "text": "Nghi xem viec nao den truoc."
+          "text": "Nghĩ xem việc nào đến trước."
         }
       ],
       "metadata": {
@@ -335,6 +343,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Arrange the train numbers.",
+          "learningObjective": "number sequencing",
           "mode": "reorder",
           "correctOrder": [
             {
@@ -359,7 +368,8 @@
           "hint": "Think about what comes first."
         },
         "vi": {
-          "prompt": "Sap xep cac so tren tau.",
+          "prompt": "Sắp xếp các số trên tàu.",
+          "learningObjective": "sắp xếp trình tự số",
           "mode": "reorder",
           "correctOrder": [
             {
@@ -381,12 +391,12 @@
           "rule": {
             "type": "fixed"
           },
-          "hint": "Nghi xem viec nao den truoc."
+          "hint": "Nghĩ xem việc nào đến trước."
         }
       },
       "hints": [
         {
-          "text": "Nghi xem viec nao den truoc."
+          "text": "Nghĩ xem việc nào đến trước."
         }
       ],
       "metadata": {
@@ -416,6 +426,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Arrange the train numbers.",
+          "learningObjective": "number sequencing",
           "mode": "reorder",
           "correctOrder": [
             {
@@ -440,7 +451,8 @@
           "hint": "Think about what comes first."
         },
         "vi": {
-          "prompt": "Sap xep cac so tren tau.",
+          "prompt": "Sắp xếp các số trên tàu.",
+          "learningObjective": "sắp xếp trình tự số",
           "mode": "reorder",
           "correctOrder": [
             {
@@ -462,12 +474,12 @@
           "rule": {
             "type": "fixed"
           },
-          "hint": "Nghi xem viec nao den truoc."
+          "hint": "Nghĩ xem việc nào đến trước."
         }
       },
       "hints": [
         {
-          "text": "Nghi xem viec nao den truoc."
+          "text": "Nghĩ xem việc nào đến trước."
         }
       ],
       "metadata": {
@@ -497,6 +509,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Arrange the train numbers.",
+          "learningObjective": "number sequencing",
           "mode": "reorder",
           "correctOrder": [
             {
@@ -521,7 +534,8 @@
           "hint": "Think about what comes first."
         },
         "vi": {
-          "prompt": "Sap xep cac so tren tau.",
+          "prompt": "Sắp xếp các số trên tàu.",
+          "learningObjective": "sắp xếp trình tự số",
           "mode": "reorder",
           "correctOrder": [
             {
@@ -543,12 +557,12 @@
           "rule": {
             "type": "fixed"
           },
-          "hint": "Nghi xem viec nao den truoc."
+          "hint": "Nghĩ xem việc nào đến trước."
         }
       },
       "hints": [
         {
-          "text": "Nghi xem viec nao den truoc."
+          "text": "Nghĩ xem việc nào đến trước."
         }
       ],
       "metadata": {
@@ -578,6 +592,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Arrange the train numbers.",
+          "learningObjective": "number sequencing",
           "mode": "reorder",
           "correctOrder": [
             {
@@ -602,7 +617,8 @@
           "hint": "Think about what comes first."
         },
         "vi": {
-          "prompt": "Sap xep cac so tren tau.",
+          "prompt": "Sắp xếp các số trên tàu.",
+          "learningObjective": "sắp xếp trình tự số",
           "mode": "reorder",
           "correctOrder": [
             {
@@ -624,12 +640,12 @@
           "rule": {
             "type": "fixed"
           },
-          "hint": "Nghi xem viec nao den truoc."
+          "hint": "Nghĩ xem việc nào đến trước."
         }
       },
       "hints": [
         {
-          "text": "Nghi xem viec nao den truoc."
+          "text": "Nghĩ xem việc nào đến trước."
         }
       ],
       "metadata": {
@@ -659,6 +675,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Arrange the train numbers.",
+          "learningObjective": "number sequencing",
           "mode": "reorder",
           "correctOrder": [
             {
@@ -683,7 +700,8 @@
           "hint": "Think about what comes first."
         },
         "vi": {
-          "prompt": "Sap xep cac so tren tau.",
+          "prompt": "Sắp xếp các số trên tàu.",
+          "learningObjective": "sắp xếp trình tự số",
           "mode": "reorder",
           "correctOrder": [
             {
@@ -705,12 +723,12 @@
           "rule": {
             "type": "fixed"
           },
-          "hint": "Nghi xem viec nao den truoc."
+          "hint": "Nghĩ xem việc nào đến trước."
         }
       },
       "hints": [
         {
-          "text": "Nghi xem viec nao den truoc."
+          "text": "Nghĩ xem việc nào đến trước."
         }
       ],
       "metadata": {
@@ -740,6 +758,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Arrange the train numbers.",
+          "learningObjective": "number sequencing",
           "mode": "reorder",
           "correctOrder": [
             {
@@ -764,7 +783,8 @@
           "hint": "Think about what comes first."
         },
         "vi": {
-          "prompt": "Sap xep cac so tren tau.",
+          "prompt": "Sắp xếp các số trên tàu.",
+          "learningObjective": "sắp xếp trình tự số",
           "mode": "reorder",
           "correctOrder": [
             {
@@ -786,12 +806,12 @@
           "rule": {
             "type": "fixed"
           },
-          "hint": "Nghi xem viec nao den truoc."
+          "hint": "Nghĩ xem việc nào đến trước."
         }
       },
       "hints": [
         {
-          "text": "Nghi xem viec nao den truoc."
+          "text": "Nghĩ xem việc nào đến trước."
         }
       ],
       "metadata": {
@@ -821,6 +841,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Arrange the train numbers.",
+          "learningObjective": "number sequencing",
           "mode": "reorder",
           "correctOrder": [
             {
@@ -845,7 +866,8 @@
           "hint": "Think about what comes first."
         },
         "vi": {
-          "prompt": "Sap xep cac so tren tau.",
+          "prompt": "Sắp xếp các số trên tàu.",
+          "learningObjective": "sắp xếp trình tự số",
           "mode": "reorder",
           "correctOrder": [
             {
@@ -867,12 +889,12 @@
           "rule": {
             "type": "fixed"
           },
-          "hint": "Nghi xem viec nao den truoc."
+          "hint": "Nghĩ xem việc nào đến trước."
         }
       },
       "hints": [
         {
-          "text": "Nghi xem viec nao den truoc."
+          "text": "Nghĩ xem việc nào đến trước."
         }
       ],
       "metadata": {
@@ -902,6 +924,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Arrange the train numbers.",
+          "learningObjective": "number sequencing",
           "mode": "reorder",
           "correctOrder": [
             {
@@ -926,7 +949,8 @@
           "hint": "Think about what comes first."
         },
         "vi": {
-          "prompt": "Sap xep cac so tren tau.",
+          "prompt": "Sắp xếp các số trên tàu.",
+          "learningObjective": "sắp xếp trình tự số",
           "mode": "reorder",
           "correctOrder": [
             {
@@ -948,12 +972,12 @@
           "rule": {
             "type": "fixed"
           },
-          "hint": "Nghi xem viec nao den truoc."
+          "hint": "Nghĩ xem việc nào đến trước."
         }
       },
       "hints": [
         {
-          "text": "Nghi xem viec nao den truoc."
+          "text": "Nghĩ xem việc nào đến trước."
         }
       ],
       "metadata": {
@@ -983,6 +1007,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Arrange the train numbers.",
+          "learningObjective": "number sequencing",
           "mode": "reorder",
           "correctOrder": [
             {
@@ -1007,7 +1032,8 @@
           "hint": "Think about what comes first."
         },
         "vi": {
-          "prompt": "Sap xep cac so tren tau.",
+          "prompt": "Sắp xếp các số trên tàu.",
+          "learningObjective": "sắp xếp trình tự số",
           "mode": "reorder",
           "correctOrder": [
             {
@@ -1029,12 +1055,12 @@
           "rule": {
             "type": "fixed"
           },
-          "hint": "Nghi xem viec nao den truoc."
+          "hint": "Nghĩ xem việc nào đến trước."
         }
       },
       "hints": [
         {
-          "text": "Nghi xem viec nao den truoc."
+          "text": "Nghĩ xem việc nào đến trước."
         }
       ],
       "metadata": {
@@ -1064,6 +1090,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Arrange the train numbers.",
+          "learningObjective": "number sequencing",
           "mode": "reorder",
           "correctOrder": [
             {
@@ -1088,7 +1115,8 @@
           "hint": "Think about what comes first."
         },
         "vi": {
-          "prompt": "Sap xep cac so tren tau.",
+          "prompt": "Sắp xếp các số trên tàu.",
+          "learningObjective": "sắp xếp trình tự số",
           "mode": "reorder",
           "correctOrder": [
             {
@@ -1110,12 +1138,12 @@
           "rule": {
             "type": "fixed"
           },
-          "hint": "Nghi xem viec nao den truoc."
+          "hint": "Nghĩ xem việc nào đến trước."
         }
       },
       "hints": [
         {
-          "text": "Nghi xem viec nao den truoc."
+          "text": "Nghĩ xem việc nào đến trước."
         }
       ],
       "metadata": {
@@ -1145,6 +1173,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Arrange the train numbers.",
+          "learningObjective": "number sequencing",
           "mode": "reorder",
           "correctOrder": [
             {
@@ -1169,7 +1198,8 @@
           "hint": "Think about what comes first."
         },
         "vi": {
-          "prompt": "Sap xep cac so tren tau.",
+          "prompt": "Sắp xếp các số trên tàu.",
+          "learningObjective": "sắp xếp trình tự số",
           "mode": "reorder",
           "correctOrder": [
             {
@@ -1191,12 +1221,12 @@
           "rule": {
             "type": "fixed"
           },
-          "hint": "Nghi xem viec nao den truoc."
+          "hint": "Nghĩ xem việc nào đến trước."
         }
       },
       "hints": [
         {
-          "text": "Nghi xem viec nao den truoc."
+          "text": "Nghĩ xem việc nào đến trước."
         }
       ],
       "metadata": {
@@ -1226,6 +1256,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Arrange the train numbers.",
+          "learningObjective": "number sequencing",
           "mode": "reorder",
           "correctOrder": [
             {
@@ -1250,7 +1281,8 @@
           "hint": "Think about what comes first."
         },
         "vi": {
-          "prompt": "Sap xep cac so tren tau.",
+          "prompt": "Sắp xếp các số trên tàu.",
+          "learningObjective": "sắp xếp trình tự số",
           "mode": "reorder",
           "correctOrder": [
             {
@@ -1272,12 +1304,12 @@
           "rule": {
             "type": "fixed"
           },
-          "hint": "Nghi xem viec nao den truoc."
+          "hint": "Nghĩ xem việc nào đến trước."
         }
       },
       "hints": [
         {
-          "text": "Nghi xem viec nao den truoc."
+          "text": "Nghĩ xem việc nào đến trước."
         }
       ],
       "metadata": {
@@ -1307,6 +1339,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Arrange the train numbers.",
+          "learningObjective": "number sequencing",
           "mode": "reorder",
           "correctOrder": [
             {
@@ -1331,7 +1364,8 @@
           "hint": "Think about what comes first."
         },
         "vi": {
-          "prompt": "Sap xep cac so tren tau.",
+          "prompt": "Sắp xếp các số trên tàu.",
+          "learningObjective": "sắp xếp trình tự số",
           "mode": "reorder",
           "correctOrder": [
             {
@@ -1353,12 +1387,12 @@
           "rule": {
             "type": "fixed"
           },
-          "hint": "Nghi xem viec nao den truoc."
+          "hint": "Nghĩ xem việc nào đến trước."
         }
       },
       "hints": [
         {
-          "text": "Nghi xem viec nao den truoc."
+          "text": "Nghĩ xem việc nào đến trước."
         }
       ],
       "metadata": {
@@ -1388,6 +1422,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Arrange the train numbers.",
+          "learningObjective": "number sequencing",
           "mode": "reorder",
           "correctOrder": [
             {
@@ -1412,7 +1447,8 @@
           "hint": "Think about what comes first."
         },
         "vi": {
-          "prompt": "Sap xep cac so tren tau.",
+          "prompt": "Sắp xếp các số trên tàu.",
+          "learningObjective": "sắp xếp trình tự số",
           "mode": "reorder",
           "correctOrder": [
             {
@@ -1434,12 +1470,12 @@
           "rule": {
             "type": "fixed"
           },
-          "hint": "Nghi xem viec nao den truoc."
+          "hint": "Nghĩ xem việc nào đến trước."
         }
       },
       "hints": [
         {
-          "text": "Nghi xem viec nao den truoc."
+          "text": "Nghĩ xem việc nào đến trước."
         }
       ],
       "metadata": {
@@ -1469,6 +1505,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Arrange the train numbers.",
+          "learningObjective": "number sequencing",
           "mode": "reorder",
           "correctOrder": [
             {
@@ -1493,7 +1530,8 @@
           "hint": "Think about what comes first."
         },
         "vi": {
-          "prompt": "Sap xep cac so tren tau.",
+          "prompt": "Sắp xếp các số trên tàu.",
+          "learningObjective": "sắp xếp trình tự số",
           "mode": "reorder",
           "correctOrder": [
             {
@@ -1515,12 +1553,12 @@
           "rule": {
             "type": "fixed"
           },
-          "hint": "Nghi xem viec nao den truoc."
+          "hint": "Nghĩ xem việc nào đến trước."
         }
       },
       "hints": [
         {
-          "text": "Nghi xem viec nao den truoc."
+          "text": "Nghĩ xem việc nào đến trước."
         }
       ],
       "metadata": {
@@ -1550,6 +1588,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Arrange the train numbers.",
+          "learningObjective": "number sequencing",
           "mode": "reorder",
           "correctOrder": [
             {
@@ -1574,7 +1613,8 @@
           "hint": "Think about what comes first."
         },
         "vi": {
-          "prompt": "Sap xep cac so tren tau.",
+          "prompt": "Sắp xếp các số trên tàu.",
+          "learningObjective": "sắp xếp trình tự số",
           "mode": "reorder",
           "correctOrder": [
             {
@@ -1596,12 +1636,12 @@
           "rule": {
             "type": "fixed"
           },
-          "hint": "Nghi xem viec nao den truoc."
+          "hint": "Nghĩ xem việc nào đến trước."
         }
       },
       "hints": [
         {
-          "text": "Nghi xem viec nao den truoc."
+          "text": "Nghĩ xem việc nào đến trước."
         }
       ],
       "metadata": {
@@ -1631,6 +1671,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Arrange the train numbers.",
+          "learningObjective": "number sequencing",
           "mode": "reorder",
           "correctOrder": [
             {
@@ -1655,7 +1696,8 @@
           "hint": "Think about what comes first."
         },
         "vi": {
-          "prompt": "Sap xep cac so tren tau.",
+          "prompt": "Sắp xếp các số trên tàu.",
+          "learningObjective": "sắp xếp trình tự số",
           "mode": "reorder",
           "correctOrder": [
             {
@@ -1677,12 +1719,12 @@
           "rule": {
             "type": "fixed"
           },
-          "hint": "Nghi xem viec nao den truoc."
+          "hint": "Nghĩ xem việc nào đến trước."
         }
       },
       "hints": [
         {
-          "text": "Nghi xem viec nao den truoc."
+          "text": "Nghĩ xem việc nào đến trước."
         }
       ],
       "metadata": {
@@ -1712,6 +1754,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Arrange the train numbers.",
+          "learningObjective": "number sequencing",
           "mode": "reorder",
           "correctOrder": [
             {
@@ -1736,7 +1779,8 @@
           "hint": "Think about what comes first."
         },
         "vi": {
-          "prompt": "Sap xep cac so tren tau.",
+          "prompt": "Sắp xếp các số trên tàu.",
+          "learningObjective": "sắp xếp trình tự số",
           "mode": "reorder",
           "correctOrder": [
             {
@@ -1758,12 +1802,12 @@
           "rule": {
             "type": "fixed"
           },
-          "hint": "Nghi xem viec nao den truoc."
+          "hint": "Nghĩ xem việc nào đến trước."
         }
       },
       "hints": [
         {
-          "text": "Nghi xem viec nao den truoc."
+          "text": "Nghĩ xem việc nào đến trước."
         }
       ],
       "metadata": {
@@ -1793,6 +1837,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Arrange the train numbers.",
+          "learningObjective": "number sequencing",
           "mode": "reorder",
           "correctOrder": [
             {
@@ -1817,7 +1862,8 @@
           "hint": "Think about what comes first."
         },
         "vi": {
-          "prompt": "Sap xep cac so tren tau.",
+          "prompt": "Sắp xếp các số trên tàu.",
+          "learningObjective": "sắp xếp trình tự số",
           "mode": "reorder",
           "correctOrder": [
             {
@@ -1839,12 +1885,12 @@
           "rule": {
             "type": "fixed"
           },
-          "hint": "Nghi xem viec nao den truoc."
+          "hint": "Nghĩ xem việc nào đến trước."
         }
       },
       "hints": [
         {
-          "text": "Nghi xem viec nao den truoc."
+          "text": "Nghĩ xem việc nào đến trước."
         }
       ],
       "metadata": {
@@ -1874,6 +1920,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Arrange the train numbers.",
+          "learningObjective": "number sequencing",
           "mode": "reorder",
           "correctOrder": [
             {
@@ -1898,7 +1945,8 @@
           "hint": "Think about what comes first."
         },
         "vi": {
-          "prompt": "Sap xep cac so tren tau.",
+          "prompt": "Sắp xếp các số trên tàu.",
+          "learningObjective": "sắp xếp trình tự số",
           "mode": "reorder",
           "correctOrder": [
             {
@@ -1920,12 +1968,12 @@
           "rule": {
             "type": "fixed"
           },
-          "hint": "Nghi xem viec nao den truoc."
+          "hint": "Nghĩ xem việc nào đến trước."
         }
       },
       "hints": [
         {
-          "text": "Nghi xem viec nao den truoc."
+          "text": "Nghĩ xem việc nào đến trước."
         }
       ],
       "metadata": {
@@ -1955,6 +2003,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Arrange the train numbers.",
+          "learningObjective": "number sequencing",
           "mode": "reorder",
           "correctOrder": [
             {
@@ -1979,7 +2028,8 @@
           "hint": "Think about what comes first."
         },
         "vi": {
-          "prompt": "Sap xep cac so tren tau.",
+          "prompt": "Sắp xếp các số trên tàu.",
+          "learningObjective": "sắp xếp trình tự số",
           "mode": "reorder",
           "correctOrder": [
             {
@@ -2001,12 +2051,12 @@
           "rule": {
             "type": "fixed"
           },
-          "hint": "Nghi xem viec nao den truoc."
+          "hint": "Nghĩ xem việc nào đến trước."
         }
       },
       "hints": [
         {
-          "text": "Nghi xem viec nao den truoc."
+          "text": "Nghĩ xem việc nào đến trước."
         }
       ],
       "metadata": {
@@ -2036,6 +2086,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Arrange the train numbers.",
+          "learningObjective": "number sequencing",
           "mode": "reorder",
           "correctOrder": [
             {
@@ -2065,7 +2116,8 @@
           "hint": "Think about what comes first."
         },
         "vi": {
-          "prompt": "Sap xep cac so tren tau.",
+          "prompt": "Sắp xếp các số trên tàu.",
+          "learningObjective": "sắp xếp trình tự số",
           "mode": "reorder",
           "correctOrder": [
             {
@@ -2092,12 +2144,12 @@
           "rule": {
             "type": "fixed"
           },
-          "hint": "Nghi xem viec nao den truoc."
+          "hint": "Nghĩ xem việc nào đến trước."
         }
       },
       "hints": [
         {
-          "text": "Nghi xem viec nao den truoc."
+          "text": "Nghĩ xem việc nào đến trước."
         }
       ],
       "metadata": {
@@ -2127,6 +2179,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Arrange the train numbers.",
+          "learningObjective": "number sequencing",
           "mode": "reorder",
           "correctOrder": [
             {
@@ -2156,7 +2209,8 @@
           "hint": "Think about what comes first."
         },
         "vi": {
-          "prompt": "Sap xep cac so tren tau.",
+          "prompt": "Sắp xếp các số trên tàu.",
+          "learningObjective": "sắp xếp trình tự số",
           "mode": "reorder",
           "correctOrder": [
             {
@@ -2183,12 +2237,12 @@
           "rule": {
             "type": "fixed"
           },
-          "hint": "Nghi xem viec nao den truoc."
+          "hint": "Nghĩ xem việc nào đến trước."
         }
       },
       "hints": [
         {
-          "text": "Nghi xem viec nao den truoc."
+          "text": "Nghĩ xem việc nào đến trước."
         }
       ],
       "metadata": {
@@ -2218,6 +2272,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Arrange the train numbers.",
+          "learningObjective": "number sequencing",
           "mode": "reorder",
           "correctOrder": [
             {
@@ -2247,7 +2302,8 @@
           "hint": "Think about what comes first."
         },
         "vi": {
-          "prompt": "Sap xep cac so tren tau.",
+          "prompt": "Sắp xếp các số trên tàu.",
+          "learningObjective": "sắp xếp trình tự số",
           "mode": "reorder",
           "correctOrder": [
             {
@@ -2274,12 +2330,12 @@
           "rule": {
             "type": "fixed"
           },
-          "hint": "Nghi xem viec nao den truoc."
+          "hint": "Nghĩ xem việc nào đến trước."
         }
       },
       "hints": [
         {
-          "text": "Nghi xem viec nao den truoc."
+          "text": "Nghĩ xem việc nào đến trước."
         }
       ],
       "metadata": {
@@ -2309,6 +2365,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Arrange the train numbers.",
+          "learningObjective": "number sequencing",
           "mode": "reorder",
           "correctOrder": [
             {
@@ -2338,7 +2395,8 @@
           "hint": "Think about what comes first."
         },
         "vi": {
-          "prompt": "Sap xep cac so tren tau.",
+          "prompt": "Sắp xếp các số trên tàu.",
+          "learningObjective": "sắp xếp trình tự số",
           "mode": "reorder",
           "correctOrder": [
             {
@@ -2365,12 +2423,12 @@
           "rule": {
             "type": "fixed"
           },
-          "hint": "Nghi xem viec nao den truoc."
+          "hint": "Nghĩ xem việc nào đến trước."
         }
       },
       "hints": [
         {
-          "text": "Nghi xem viec nao den truoc."
+          "text": "Nghĩ xem việc nào đến trước."
         }
       ],
       "metadata": {
@@ -2400,6 +2458,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Arrange the train numbers.",
+          "learningObjective": "number sequencing",
           "mode": "reorder",
           "correctOrder": [
             {
@@ -2429,7 +2488,8 @@
           "hint": "Think about what comes first."
         },
         "vi": {
-          "prompt": "Sap xep cac so tren tau.",
+          "prompt": "Sắp xếp các số trên tàu.",
+          "learningObjective": "sắp xếp trình tự số",
           "mode": "reorder",
           "correctOrder": [
             {
@@ -2456,12 +2516,12 @@
           "rule": {
             "type": "fixed"
           },
-          "hint": "Nghi xem viec nao den truoc."
+          "hint": "Nghĩ xem việc nào đến trước."
         }
       },
       "hints": [
         {
-          "text": "Nghi xem viec nao den truoc."
+          "text": "Nghĩ xem việc nào đến trước."
         }
       ],
       "metadata": {
@@ -2491,6 +2551,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Arrange the train numbers.",
+          "learningObjective": "number sequencing",
           "mode": "reorder",
           "correctOrder": [
             {
@@ -2520,7 +2581,8 @@
           "hint": "Think about what comes first."
         },
         "vi": {
-          "prompt": "Sap xep cac so tren tau.",
+          "prompt": "Sắp xếp các số trên tàu.",
+          "learningObjective": "sắp xếp trình tự số",
           "mode": "reorder",
           "correctOrder": [
             {
@@ -2547,12 +2609,12 @@
           "rule": {
             "type": "fixed"
           },
-          "hint": "Nghi xem viec nao den truoc."
+          "hint": "Nghĩ xem việc nào đến trước."
         }
       },
       "hints": [
         {
-          "text": "Nghi xem viec nao den truoc."
+          "text": "Nghĩ xem việc nào đến trước."
         }
       ],
       "metadata": {
@@ -2582,6 +2644,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Arrange the train numbers.",
+          "learningObjective": "number sequencing",
           "mode": "reorder",
           "correctOrder": [
             {
@@ -2611,7 +2674,8 @@
           "hint": "Think about what comes first."
         },
         "vi": {
-          "prompt": "Sap xep cac so tren tau.",
+          "prompt": "Sắp xếp các số trên tàu.",
+          "learningObjective": "sắp xếp trình tự số",
           "mode": "reorder",
           "correctOrder": [
             {
@@ -2638,12 +2702,12 @@
           "rule": {
             "type": "fixed"
           },
-          "hint": "Nghi xem viec nao den truoc."
+          "hint": "Nghĩ xem việc nào đến trước."
         }
       },
       "hints": [
         {
-          "text": "Nghi xem viec nao den truoc."
+          "text": "Nghĩ xem việc nào đến trước."
         }
       ],
       "metadata": {
@@ -2673,6 +2737,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Arrange the train numbers.",
+          "learningObjective": "number sequencing",
           "mode": "reorder",
           "correctOrder": [
             {
@@ -2702,7 +2767,8 @@
           "hint": "Think about what comes first."
         },
         "vi": {
-          "prompt": "Sap xep cac so tren tau.",
+          "prompt": "Sắp xếp các số trên tàu.",
+          "learningObjective": "sắp xếp trình tự số",
           "mode": "reorder",
           "correctOrder": [
             {
@@ -2729,12 +2795,12 @@
           "rule": {
             "type": "fixed"
           },
-          "hint": "Nghi xem viec nao den truoc."
+          "hint": "Nghĩ xem việc nào đến trước."
         }
       },
       "hints": [
         {
-          "text": "Nghi xem viec nao den truoc."
+          "text": "Nghĩ xem việc nào đến trước."
         }
       ],
       "metadata": {
@@ -2764,6 +2830,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Arrange the train numbers.",
+          "learningObjective": "number sequencing",
           "mode": "reorder",
           "correctOrder": [
             {
@@ -2793,7 +2860,8 @@
           "hint": "Think about what comes first."
         },
         "vi": {
-          "prompt": "Sap xep cac so tren tau.",
+          "prompt": "Sắp xếp các số trên tàu.",
+          "learningObjective": "sắp xếp trình tự số",
           "mode": "reorder",
           "correctOrder": [
             {
@@ -2820,12 +2888,12 @@
           "rule": {
             "type": "fixed"
           },
-          "hint": "Nghi xem viec nao den truoc."
+          "hint": "Nghĩ xem việc nào đến trước."
         }
       },
       "hints": [
         {
-          "text": "Nghi xem viec nao den truoc."
+          "text": "Nghĩ xem việc nào đến trước."
         }
       ],
       "metadata": {
@@ -2855,6 +2923,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Arrange the train numbers.",
+          "learningObjective": "number sequencing",
           "mode": "reorder",
           "correctOrder": [
             {
@@ -2884,7 +2953,8 @@
           "hint": "Think about what comes first."
         },
         "vi": {
-          "prompt": "Sap xep cac so tren tau.",
+          "prompt": "Sắp xếp các số trên tàu.",
+          "learningObjective": "sắp xếp trình tự số",
           "mode": "reorder",
           "correctOrder": [
             {
@@ -2911,12 +2981,12 @@
           "rule": {
             "type": "fixed"
           },
-          "hint": "Nghi xem viec nao den truoc."
+          "hint": "Nghĩ xem việc nào đến trước."
         }
       },
       "hints": [
         {
-          "text": "Nghi xem viec nao den truoc."
+          "text": "Nghĩ xem việc nào đến trước."
         }
       ],
       "metadata": {
@@ -2946,6 +3016,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Arrange the train numbers.",
+          "learningObjective": "number sequencing",
           "mode": "reorder",
           "correctOrder": [
             {
@@ -2975,7 +3046,8 @@
           "hint": "Think about what comes first."
         },
         "vi": {
-          "prompt": "Sap xep cac so tren tau.",
+          "prompt": "Sắp xếp các số trên tàu.",
+          "learningObjective": "sắp xếp trình tự số",
           "mode": "reorder",
           "correctOrder": [
             {
@@ -3002,12 +3074,12 @@
           "rule": {
             "type": "fixed"
           },
-          "hint": "Nghi xem viec nao den truoc."
+          "hint": "Nghĩ xem việc nào đến trước."
         }
       },
       "hints": [
         {
-          "text": "Nghi xem viec nao den truoc."
+          "text": "Nghĩ xem việc nào đến trước."
         }
       ],
       "metadata": {
@@ -3037,6 +3109,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Arrange the train numbers.",
+          "learningObjective": "number sequencing",
           "mode": "reorder",
           "correctOrder": [
             {
@@ -3066,7 +3139,8 @@
           "hint": "Think about what comes first."
         },
         "vi": {
-          "prompt": "Sap xep cac so tren tau.",
+          "prompt": "Sắp xếp các số trên tàu.",
+          "learningObjective": "sắp xếp trình tự số",
           "mode": "reorder",
           "correctOrder": [
             {
@@ -3093,12 +3167,12 @@
           "rule": {
             "type": "fixed"
           },
-          "hint": "Nghi xem viec nao den truoc."
+          "hint": "Nghĩ xem việc nào đến trước."
         }
       },
       "hints": [
         {
-          "text": "Nghi xem viec nao den truoc."
+          "text": "Nghĩ xem việc nào đến trước."
         }
       ],
       "metadata": {
@@ -3128,6 +3202,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Arrange the train numbers.",
+          "learningObjective": "number sequencing",
           "mode": "reorder",
           "correctOrder": [
             {
@@ -3157,7 +3232,8 @@
           "hint": "Think about what comes first."
         },
         "vi": {
-          "prompt": "Sap xep cac so tren tau.",
+          "prompt": "Sắp xếp các số trên tàu.",
+          "learningObjective": "sắp xếp trình tự số",
           "mode": "reorder",
           "correctOrder": [
             {
@@ -3184,12 +3260,12 @@
           "rule": {
             "type": "fixed"
           },
-          "hint": "Nghi xem viec nao den truoc."
+          "hint": "Nghĩ xem việc nào đến trước."
         }
       },
       "hints": [
         {
-          "text": "Nghi xem viec nao den truoc."
+          "text": "Nghĩ xem việc nào đến trước."
         }
       ],
       "metadata": {
@@ -3219,6 +3295,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Arrange the train numbers.",
+          "learningObjective": "number sequencing",
           "mode": "reorder",
           "correctOrder": [
             {
@@ -3248,7 +3325,8 @@
           "hint": "Think about what comes first."
         },
         "vi": {
-          "prompt": "Sap xep cac so tren tau.",
+          "prompt": "Sắp xếp các số trên tàu.",
+          "learningObjective": "sắp xếp trình tự số",
           "mode": "reorder",
           "correctOrder": [
             {
@@ -3275,12 +3353,12 @@
           "rule": {
             "type": "fixed"
           },
-          "hint": "Nghi xem viec nao den truoc."
+          "hint": "Nghĩ xem việc nào đến trước."
         }
       },
       "hints": [
         {
-          "text": "Nghi xem viec nao den truoc."
+          "text": "Nghĩ xem việc nào đến trước."
         }
       ],
       "metadata": {
@@ -3310,6 +3388,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Arrange the train numbers.",
+          "learningObjective": "number sequencing",
           "mode": "reorder",
           "correctOrder": [
             {
@@ -3339,7 +3418,8 @@
           "hint": "Think about what comes first."
         },
         "vi": {
-          "prompt": "Sap xep cac so tren tau.",
+          "prompt": "Sắp xếp các số trên tàu.",
+          "learningObjective": "sắp xếp trình tự số",
           "mode": "reorder",
           "correctOrder": [
             {
@@ -3366,12 +3446,12 @@
           "rule": {
             "type": "fixed"
           },
-          "hint": "Nghi xem viec nao den truoc."
+          "hint": "Nghĩ xem việc nào đến trước."
         }
       },
       "hints": [
         {
-          "text": "Nghi xem viec nao den truoc."
+          "text": "Nghĩ xem việc nào đến trước."
         }
       ],
       "metadata": {
@@ -3401,6 +3481,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Arrange the train numbers.",
+          "learningObjective": "number sequencing",
           "mode": "reorder",
           "correctOrder": [
             {
@@ -3430,7 +3511,8 @@
           "hint": "Think about what comes first."
         },
         "vi": {
-          "prompt": "Sap xep cac so tren tau.",
+          "prompt": "Sắp xếp các số trên tàu.",
+          "learningObjective": "sắp xếp trình tự số",
           "mode": "reorder",
           "correctOrder": [
             {
@@ -3457,12 +3539,12 @@
           "rule": {
             "type": "fixed"
           },
-          "hint": "Nghi xem viec nao den truoc."
+          "hint": "Nghĩ xem việc nào đến trước."
         }
       },
       "hints": [
         {
-          "text": "Nghi xem viec nao den truoc."
+          "text": "Nghĩ xem việc nào đến trước."
         }
       ],
       "metadata": {
@@ -3492,6 +3574,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Arrange the train numbers.",
+          "learningObjective": "number sequencing",
           "mode": "reorder",
           "correctOrder": [
             {
@@ -3521,7 +3604,8 @@
           "hint": "Think about what comes first."
         },
         "vi": {
-          "prompt": "Sap xep cac so tren tau.",
+          "prompt": "Sắp xếp các số trên tàu.",
+          "learningObjective": "sắp xếp trình tự số",
           "mode": "reorder",
           "correctOrder": [
             {
@@ -3548,12 +3632,12 @@
           "rule": {
             "type": "fixed"
           },
-          "hint": "Nghi xem viec nao den truoc."
+          "hint": "Nghĩ xem việc nào đến trước."
         }
       },
       "hints": [
         {
-          "text": "Nghi xem viec nao den truoc."
+          "text": "Nghĩ xem việc nào đến trước."
         }
       ],
       "metadata": {
@@ -3583,6 +3667,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Arrange the train numbers.",
+          "learningObjective": "number sequencing",
           "mode": "reorder",
           "correctOrder": [
             {
@@ -3612,7 +3697,8 @@
           "hint": "Think about what comes first."
         },
         "vi": {
-          "prompt": "Sap xep cac so tren tau.",
+          "prompt": "Sắp xếp các số trên tàu.",
+          "learningObjective": "sắp xếp trình tự số",
           "mode": "reorder",
           "correctOrder": [
             {
@@ -3639,12 +3725,12 @@
           "rule": {
             "type": "fixed"
           },
-          "hint": "Nghi xem viec nao den truoc."
+          "hint": "Nghĩ xem việc nào đến trước."
         }
       },
       "hints": [
         {
-          "text": "Nghi xem viec nao den truoc."
+          "text": "Nghĩ xem việc nào đến trước."
         }
       ],
       "metadata": {
@@ -3674,6 +3760,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Arrange the train numbers.",
+          "learningObjective": "number sequencing",
           "mode": "reorder",
           "correctOrder": [
             {
@@ -3703,7 +3790,8 @@
           "hint": "Think about what comes first."
         },
         "vi": {
-          "prompt": "Sap xep cac so tren tau.",
+          "prompt": "Sắp xếp các số trên tàu.",
+          "learningObjective": "sắp xếp trình tự số",
           "mode": "reorder",
           "correctOrder": [
             {
@@ -3730,12 +3818,12 @@
           "rule": {
             "type": "fixed"
           },
-          "hint": "Nghi xem viec nao den truoc."
+          "hint": "Nghĩ xem việc nào đến trước."
         }
       },
       "hints": [
         {
-          "text": "Nghi xem viec nao den truoc."
+          "text": "Nghĩ xem việc nào đến trước."
         }
       ],
       "metadata": {
@@ -3765,6 +3853,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Arrange the train numbers.",
+          "learningObjective": "number sequencing",
           "mode": "reorder",
           "correctOrder": [
             {
@@ -3794,7 +3883,8 @@
           "hint": "Think about what comes first."
         },
         "vi": {
-          "prompt": "Sap xep cac so tren tau.",
+          "prompt": "Sắp xếp các số trên tàu.",
+          "learningObjective": "sắp xếp trình tự số",
           "mode": "reorder",
           "correctOrder": [
             {
@@ -3821,12 +3911,12 @@
           "rule": {
             "type": "fixed"
           },
-          "hint": "Nghi xem viec nao den truoc."
+          "hint": "Nghĩ xem việc nào đến trước."
         }
       },
       "hints": [
         {
-          "text": "Nghi xem viec nao den truoc."
+          "text": "Nghĩ xem việc nào đến trước."
         }
       ],
       "metadata": {
@@ -3856,6 +3946,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Arrange the train numbers.",
+          "learningObjective": "number sequencing",
           "mode": "reorder",
           "correctOrder": [
             {
@@ -3885,7 +3976,8 @@
           "hint": "Think about what comes first."
         },
         "vi": {
-          "prompt": "Sap xep cac so tren tau.",
+          "prompt": "Sắp xếp các số trên tàu.",
+          "learningObjective": "sắp xếp trình tự số",
           "mode": "reorder",
           "correctOrder": [
             {
@@ -3912,12 +4004,12 @@
           "rule": {
             "type": "fixed"
           },
-          "hint": "Nghi xem viec nao den truoc."
+          "hint": "Nghĩ xem việc nào đến trước."
         }
       },
       "hints": [
         {
-          "text": "Nghi xem viec nao den truoc."
+          "text": "Nghĩ xem việc nào đến trước."
         }
       ],
       "metadata": {
@@ -3947,6 +4039,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Arrange the train numbers.",
+          "learningObjective": "number sequencing",
           "mode": "reorder",
           "correctOrder": [
             {
@@ -3976,7 +4069,8 @@
           "hint": "Think about what comes first."
         },
         "vi": {
-          "prompt": "Sap xep cac so tren tau.",
+          "prompt": "Sắp xếp các số trên tàu.",
+          "learningObjective": "sắp xếp trình tự số",
           "mode": "reorder",
           "correctOrder": [
             {
@@ -4003,12 +4097,12 @@
           "rule": {
             "type": "fixed"
           },
-          "hint": "Nghi xem viec nao den truoc."
+          "hint": "Nghĩ xem việc nào đến trước."
         }
       },
       "hints": [
         {
-          "text": "Nghi xem viec nao den truoc."
+          "text": "Nghĩ xem việc nào đến trước."
         }
       ],
       "metadata": {
@@ -4038,6 +4132,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Arrange the train numbers.",
+          "learningObjective": "number sequencing",
           "mode": "reorder",
           "correctOrder": [
             {
@@ -4067,7 +4162,8 @@
           "hint": "Think about what comes first."
         },
         "vi": {
-          "prompt": "Sap xep cac so tren tau.",
+          "prompt": "Sắp xếp các số trên tàu.",
+          "learningObjective": "sắp xếp trình tự số",
           "mode": "reorder",
           "correctOrder": [
             {
@@ -4094,12 +4190,12 @@
           "rule": {
             "type": "fixed"
           },
-          "hint": "Nghi xem viec nao den truoc."
+          "hint": "Nghĩ xem việc nào đến trước."
         }
       },
       "hints": [
         {
-          "text": "Nghi xem viec nao den truoc."
+          "text": "Nghĩ xem việc nào đến trước."
         }
       ],
       "metadata": {
@@ -4129,6 +4225,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Arrange the train numbers.",
+          "learningObjective": "number sequencing",
           "mode": "reorder",
           "correctOrder": [
             {
@@ -4158,7 +4255,8 @@
           "hint": "Think about what comes first."
         },
         "vi": {
-          "prompt": "Sap xep cac so tren tau.",
+          "prompt": "Sắp xếp các số trên tàu.",
+          "learningObjective": "sắp xếp trình tự số",
           "mode": "reorder",
           "correctOrder": [
             {
@@ -4185,12 +4283,12 @@
           "rule": {
             "type": "fixed"
           },
-          "hint": "Nghi xem viec nao den truoc."
+          "hint": "Nghĩ xem việc nào đến trước."
         }
       },
       "hints": [
         {
-          "text": "Nghi xem viec nao den truoc."
+          "text": "Nghĩ xem việc nào đến trước."
         }
       ],
       "metadata": {
@@ -4220,6 +4318,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Arrange the train numbers.",
+          "learningObjective": "number sequencing",
           "mode": "reorder",
           "correctOrder": [
             {
@@ -4249,7 +4348,8 @@
           "hint": "Think about what comes first."
         },
         "vi": {
-          "prompt": "Sap xep cac so tren tau.",
+          "prompt": "Sắp xếp các số trên tàu.",
+          "learningObjective": "sắp xếp trình tự số",
           "mode": "reorder",
           "correctOrder": [
             {
@@ -4276,12 +4376,12 @@
           "rule": {
             "type": "fixed"
           },
-          "hint": "Nghi xem viec nao den truoc."
+          "hint": "Nghĩ xem việc nào đến trước."
         }
       },
       "hints": [
         {
-          "text": "Nghi xem viec nao den truoc."
+          "text": "Nghĩ xem việc nào đến trước."
         }
       ],
       "metadata": {
@@ -4311,6 +4411,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Arrange the train numbers.",
+          "learningObjective": "number sequencing",
           "mode": "reorder",
           "correctOrder": [
             {
@@ -4345,7 +4446,8 @@
           "hint": "Think about what comes first."
         },
         "vi": {
-          "prompt": "Sap xep cac so tren tau.",
+          "prompt": "Sắp xếp các số trên tàu.",
+          "learningObjective": "sắp xếp trình tự số",
           "mode": "reorder",
           "correctOrder": [
             {
@@ -4377,12 +4479,12 @@
           "rule": {
             "type": "fixed"
           },
-          "hint": "Nghi xem viec nao den truoc."
+          "hint": "Nghĩ xem việc nào đến trước."
         }
       },
       "hints": [
         {
-          "text": "Nghi xem viec nao den truoc."
+          "text": "Nghĩ xem việc nào đến trước."
         }
       ],
       "metadata": {
@@ -4412,6 +4514,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Arrange the train numbers.",
+          "learningObjective": "number sequencing",
           "mode": "reorder",
           "correctOrder": [
             {
@@ -4446,7 +4549,8 @@
           "hint": "Think about what comes first."
         },
         "vi": {
-          "prompt": "Sap xep cac so tren tau.",
+          "prompt": "Sắp xếp các số trên tàu.",
+          "learningObjective": "sắp xếp trình tự số",
           "mode": "reorder",
           "correctOrder": [
             {
@@ -4478,12 +4582,12 @@
           "rule": {
             "type": "fixed"
           },
-          "hint": "Nghi xem viec nao den truoc."
+          "hint": "Nghĩ xem việc nào đến trước."
         }
       },
       "hints": [
         {
-          "text": "Nghi xem viec nao den truoc."
+          "text": "Nghĩ xem việc nào đến trước."
         }
       ],
       "metadata": {
@@ -4513,6 +4617,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Arrange the train numbers.",
+          "learningObjective": "number sequencing",
           "mode": "reorder",
           "correctOrder": [
             {
@@ -4547,7 +4652,8 @@
           "hint": "Think about what comes first."
         },
         "vi": {
-          "prompt": "Sap xep cac so tren tau.",
+          "prompt": "Sắp xếp các số trên tàu.",
+          "learningObjective": "sắp xếp trình tự số",
           "mode": "reorder",
           "correctOrder": [
             {
@@ -4579,12 +4685,12 @@
           "rule": {
             "type": "fixed"
           },
-          "hint": "Nghi xem viec nao den truoc."
+          "hint": "Nghĩ xem việc nào đến trước."
         }
       },
       "hints": [
         {
-          "text": "Nghi xem viec nao den truoc."
+          "text": "Nghĩ xem việc nào đến trước."
         }
       ],
       "metadata": {
@@ -4614,6 +4720,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Arrange the train numbers.",
+          "learningObjective": "number sequencing",
           "mode": "reorder",
           "correctOrder": [
             {
@@ -4648,7 +4755,8 @@
           "hint": "Think about what comes first."
         },
         "vi": {
-          "prompt": "Sap xep cac so tren tau.",
+          "prompt": "Sắp xếp các số trên tàu.",
+          "learningObjective": "sắp xếp trình tự số",
           "mode": "reorder",
           "correctOrder": [
             {
@@ -4680,12 +4788,12 @@
           "rule": {
             "type": "fixed"
           },
-          "hint": "Nghi xem viec nao den truoc."
+          "hint": "Nghĩ xem việc nào đến trước."
         }
       },
       "hints": [
         {
-          "text": "Nghi xem viec nao den truoc."
+          "text": "Nghĩ xem việc nào đến trước."
         }
       ],
       "metadata": {
@@ -4715,6 +4823,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Arrange the train numbers.",
+          "learningObjective": "number sequencing",
           "mode": "reorder",
           "correctOrder": [
             {
@@ -4749,7 +4858,8 @@
           "hint": "Think about what comes first."
         },
         "vi": {
-          "prompt": "Sap xep cac so tren tau.",
+          "prompt": "Sắp xếp các số trên tàu.",
+          "learningObjective": "sắp xếp trình tự số",
           "mode": "reorder",
           "correctOrder": [
             {
@@ -4781,12 +4891,12 @@
           "rule": {
             "type": "fixed"
           },
-          "hint": "Nghi xem viec nao den truoc."
+          "hint": "Nghĩ xem việc nào đến trước."
         }
       },
       "hints": [
         {
-          "text": "Nghi xem viec nao den truoc."
+          "text": "Nghĩ xem việc nào đến trước."
         }
       ],
       "metadata": {
@@ -4816,6 +4926,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Arrange the train numbers.",
+          "learningObjective": "number sequencing",
           "mode": "reorder",
           "correctOrder": [
             {
@@ -4850,7 +4961,8 @@
           "hint": "Think about what comes first."
         },
         "vi": {
-          "prompt": "Sap xep cac so tren tau.",
+          "prompt": "Sắp xếp các số trên tàu.",
+          "learningObjective": "sắp xếp trình tự số",
           "mode": "reorder",
           "correctOrder": [
             {
@@ -4882,12 +4994,12 @@
           "rule": {
             "type": "fixed"
           },
-          "hint": "Nghi xem viec nao den truoc."
+          "hint": "Nghĩ xem việc nào đến trước."
         }
       },
       "hints": [
         {
-          "text": "Nghi xem viec nao den truoc."
+          "text": "Nghĩ xem việc nào đến trước."
         }
       ],
       "metadata": {
@@ -4917,6 +5029,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Arrange the train numbers.",
+          "learningObjective": "number sequencing",
           "mode": "reorder",
           "correctOrder": [
             {
@@ -4951,7 +5064,8 @@
           "hint": "Think about what comes first."
         },
         "vi": {
-          "prompt": "Sap xep cac so tren tau.",
+          "prompt": "Sắp xếp các số trên tàu.",
+          "learningObjective": "sắp xếp trình tự số",
           "mode": "reorder",
           "correctOrder": [
             {
@@ -4983,12 +5097,12 @@
           "rule": {
             "type": "fixed"
           },
-          "hint": "Nghi xem viec nao den truoc."
+          "hint": "Nghĩ xem việc nào đến trước."
         }
       },
       "hints": [
         {
-          "text": "Nghi xem viec nao den truoc."
+          "text": "Nghĩ xem việc nào đến trước."
         }
       ],
       "metadata": {
@@ -5018,6 +5132,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Arrange the train numbers.",
+          "learningObjective": "number sequencing",
           "mode": "reorder",
           "correctOrder": [
             {
@@ -5052,7 +5167,8 @@
           "hint": "Think about what comes first."
         },
         "vi": {
-          "prompt": "Sap xep cac so tren tau.",
+          "prompt": "Sắp xếp các số trên tàu.",
+          "learningObjective": "sắp xếp trình tự số",
           "mode": "reorder",
           "correctOrder": [
             {
@@ -5084,12 +5200,12 @@
           "rule": {
             "type": "fixed"
           },
-          "hint": "Nghi xem viec nao den truoc."
+          "hint": "Nghĩ xem việc nào đến trước."
         }
       },
       "hints": [
         {
-          "text": "Nghi xem viec nao den truoc."
+          "text": "Nghĩ xem việc nào đến trước."
         }
       ],
       "metadata": {
@@ -5119,6 +5235,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Arrange the train numbers.",
+          "learningObjective": "number sequencing",
           "mode": "reorder",
           "correctOrder": [
             {
@@ -5153,7 +5270,8 @@
           "hint": "Think about what comes first."
         },
         "vi": {
-          "prompt": "Sap xep cac so tren tau.",
+          "prompt": "Sắp xếp các số trên tàu.",
+          "learningObjective": "sắp xếp trình tự số",
           "mode": "reorder",
           "correctOrder": [
             {
@@ -5185,12 +5303,12 @@
           "rule": {
             "type": "fixed"
           },
-          "hint": "Nghi xem viec nao den truoc."
+          "hint": "Nghĩ xem việc nào đến trước."
         }
       },
       "hints": [
         {
-          "text": "Nghi xem viec nao den truoc."
+          "text": "Nghĩ xem việc nào đến trước."
         }
       ],
       "metadata": {
@@ -5220,6 +5338,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Arrange the train numbers.",
+          "learningObjective": "number sequencing",
           "mode": "reorder",
           "correctOrder": [
             {
@@ -5254,7 +5373,8 @@
           "hint": "Think about what comes first."
         },
         "vi": {
-          "prompt": "Sap xep cac so tren tau.",
+          "prompt": "Sắp xếp các số trên tàu.",
+          "learningObjective": "sắp xếp trình tự số",
           "mode": "reorder",
           "correctOrder": [
             {
@@ -5286,12 +5406,12 @@
           "rule": {
             "type": "fixed"
           },
-          "hint": "Nghi xem viec nao den truoc."
+          "hint": "Nghĩ xem việc nào đến trước."
         }
       },
       "hints": [
         {
-          "text": "Nghi xem viec nao den truoc."
+          "text": "Nghĩ xem việc nào đến trước."
         }
       ],
       "metadata": {
@@ -5321,6 +5441,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Arrange the train numbers.",
+          "learningObjective": "number sequencing",
           "mode": "reorder",
           "correctOrder": [
             {
@@ -5355,7 +5476,8 @@
           "hint": "Think about what comes first."
         },
         "vi": {
-          "prompt": "Sap xep cac so tren tau.",
+          "prompt": "Sắp xếp các số trên tàu.",
+          "learningObjective": "sắp xếp trình tự số",
           "mode": "reorder",
           "correctOrder": [
             {
@@ -5387,12 +5509,12 @@
           "rule": {
             "type": "fixed"
           },
-          "hint": "Nghi xem viec nao den truoc."
+          "hint": "Nghĩ xem việc nào đến trước."
         }
       },
       "hints": [
         {
-          "text": "Nghi xem viec nao den truoc."
+          "text": "Nghĩ xem việc nào đến trước."
         }
       ],
       "metadata": {
@@ -5422,6 +5544,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Arrange the train numbers.",
+          "learningObjective": "number sequencing",
           "mode": "reorder",
           "correctOrder": [
             {
@@ -5456,7 +5579,8 @@
           "hint": "Think about what comes first."
         },
         "vi": {
-          "prompt": "Sap xep cac so tren tau.",
+          "prompt": "Sắp xếp các số trên tàu.",
+          "learningObjective": "sắp xếp trình tự số",
           "mode": "reorder",
           "correctOrder": [
             {
@@ -5488,12 +5612,12 @@
           "rule": {
             "type": "fixed"
           },
-          "hint": "Nghi xem viec nao den truoc."
+          "hint": "Nghĩ xem việc nào đến trước."
         }
       },
       "hints": [
         {
-          "text": "Nghi xem viec nao den truoc."
+          "text": "Nghĩ xem việc nào đến trước."
         }
       ],
       "metadata": {
@@ -5523,6 +5647,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Arrange the train numbers.",
+          "learningObjective": "number sequencing",
           "mode": "reorder",
           "correctOrder": [
             {
@@ -5557,7 +5682,8 @@
           "hint": "Think about what comes first."
         },
         "vi": {
-          "prompt": "Sap xep cac so tren tau.",
+          "prompt": "Sắp xếp các số trên tàu.",
+          "learningObjective": "sắp xếp trình tự số",
           "mode": "reorder",
           "correctOrder": [
             {
@@ -5589,12 +5715,12 @@
           "rule": {
             "type": "fixed"
           },
-          "hint": "Nghi xem viec nao den truoc."
+          "hint": "Nghĩ xem việc nào đến trước."
         }
       },
       "hints": [
         {
-          "text": "Nghi xem viec nao den truoc."
+          "text": "Nghĩ xem việc nào đến trước."
         }
       ],
       "metadata": {
@@ -5624,6 +5750,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Arrange the train numbers.",
+          "learningObjective": "number sequencing",
           "mode": "reorder",
           "correctOrder": [
             {
@@ -5658,7 +5785,8 @@
           "hint": "Think about what comes first."
         },
         "vi": {
-          "prompt": "Sap xep cac so tren tau.",
+          "prompt": "Sắp xếp các số trên tàu.",
+          "learningObjective": "sắp xếp trình tự số",
           "mode": "reorder",
           "correctOrder": [
             {
@@ -5690,12 +5818,12 @@
           "rule": {
             "type": "fixed"
           },
-          "hint": "Nghi xem viec nao den truoc."
+          "hint": "Nghĩ xem việc nào đến trước."
         }
       },
       "hints": [
         {
-          "text": "Nghi xem viec nao den truoc."
+          "text": "Nghĩ xem việc nào đến trước."
         }
       ],
       "metadata": {
@@ -5725,6 +5853,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Arrange the train numbers.",
+          "learningObjective": "number sequencing",
           "mode": "reorder",
           "correctOrder": [
             {
@@ -5759,7 +5888,8 @@
           "hint": "Think about what comes first."
         },
         "vi": {
-          "prompt": "Sap xep cac so tren tau.",
+          "prompt": "Sắp xếp các số trên tàu.",
+          "learningObjective": "sắp xếp trình tự số",
           "mode": "reorder",
           "correctOrder": [
             {
@@ -5791,12 +5921,12 @@
           "rule": {
             "type": "fixed"
           },
-          "hint": "Nghi xem viec nao den truoc."
+          "hint": "Nghĩ xem việc nào đến trước."
         }
       },
       "hints": [
         {
-          "text": "Nghi xem viec nao den truoc."
+          "text": "Nghĩ xem việc nào đến trước."
         }
       ],
       "metadata": {
@@ -5826,6 +5956,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Arrange the train numbers.",
+          "learningObjective": "number sequencing",
           "mode": "reorder",
           "correctOrder": [
             {
@@ -5860,7 +5991,8 @@
           "hint": "Think about what comes first."
         },
         "vi": {
-          "prompt": "Sap xep cac so tren tau.",
+          "prompt": "Sắp xếp các số trên tàu.",
+          "learningObjective": "sắp xếp trình tự số",
           "mode": "reorder",
           "correctOrder": [
             {
@@ -5892,12 +6024,12 @@
           "rule": {
             "type": "fixed"
           },
-          "hint": "Nghi xem viec nao den truoc."
+          "hint": "Nghĩ xem việc nào đến trước."
         }
       },
       "hints": [
         {
-          "text": "Nghi xem viec nao den truoc."
+          "text": "Nghĩ xem việc nào đến trước."
         }
       ],
       "metadata": {
@@ -5927,6 +6059,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Arrange the train numbers.",
+          "learningObjective": "number sequencing",
           "mode": "reorder",
           "correctOrder": [
             {
@@ -5961,7 +6094,8 @@
           "hint": "Think about what comes first."
         },
         "vi": {
-          "prompt": "Sap xep cac so tren tau.",
+          "prompt": "Sắp xếp các số trên tàu.",
+          "learningObjective": "sắp xếp trình tự số",
           "mode": "reorder",
           "correctOrder": [
             {
@@ -5993,12 +6127,12 @@
           "rule": {
             "type": "fixed"
           },
-          "hint": "Nghi xem viec nao den truoc."
+          "hint": "Nghĩ xem việc nào đến trước."
         }
       },
       "hints": [
         {
-          "text": "Nghi xem viec nao den truoc."
+          "text": "Nghĩ xem việc nào đến trước."
         }
       ],
       "metadata": {
@@ -6028,6 +6162,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Arrange the train numbers.",
+          "learningObjective": "number sequencing",
           "mode": "reorder",
           "correctOrder": [
             {
@@ -6062,7 +6197,8 @@
           "hint": "Think about what comes first."
         },
         "vi": {
-          "prompt": "Sap xep cac so tren tau.",
+          "prompt": "Sắp xếp các số trên tàu.",
+          "learningObjective": "sắp xếp trình tự số",
           "mode": "reorder",
           "correctOrder": [
             {
@@ -6094,12 +6230,12 @@
           "rule": {
             "type": "fixed"
           },
-          "hint": "Nghi xem viec nao den truoc."
+          "hint": "Nghĩ xem việc nào đến trước."
         }
       },
       "hints": [
         {
-          "text": "Nghi xem viec nao den truoc."
+          "text": "Nghĩ xem việc nào đến trước."
         }
       ],
       "metadata": {
@@ -6129,6 +6265,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Arrange the train numbers.",
+          "learningObjective": "number sequencing",
           "mode": "reorder",
           "correctOrder": [
             {
@@ -6163,7 +6300,8 @@
           "hint": "Think about what comes first."
         },
         "vi": {
-          "prompt": "Sap xep cac so tren tau.",
+          "prompt": "Sắp xếp các số trên tàu.",
+          "learningObjective": "sắp xếp trình tự số",
           "mode": "reorder",
           "correctOrder": [
             {
@@ -6195,12 +6333,12 @@
           "rule": {
             "type": "fixed"
           },
-          "hint": "Nghi xem viec nao den truoc."
+          "hint": "Nghĩ xem việc nào đến trước."
         }
       },
       "hints": [
         {
-          "text": "Nghi xem viec nao den truoc."
+          "text": "Nghĩ xem việc nào đến trước."
         }
       ],
       "metadata": {
@@ -6230,6 +6368,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Arrange the train numbers.",
+          "learningObjective": "number sequencing",
           "mode": "reorder",
           "correctOrder": [
             {
@@ -6264,7 +6403,8 @@
           "hint": "Think about what comes first."
         },
         "vi": {
-          "prompt": "Sap xep cac so tren tau.",
+          "prompt": "Sắp xếp các số trên tàu.",
+          "learningObjective": "sắp xếp trình tự số",
           "mode": "reorder",
           "correctOrder": [
             {
@@ -6296,12 +6436,12 @@
           "rule": {
             "type": "fixed"
           },
-          "hint": "Nghi xem viec nao den truoc."
+          "hint": "Nghĩ xem việc nào đến trước."
         }
       },
       "hints": [
         {
-          "text": "Nghi xem viec nao den truoc."
+          "text": "Nghĩ xem việc nào đến trước."
         }
       ],
       "metadata": {
@@ -6331,6 +6471,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Arrange the train numbers.",
+          "learningObjective": "number sequencing",
           "mode": "reorder",
           "correctOrder": [
             {
@@ -6365,7 +6506,8 @@
           "hint": "Think about what comes first."
         },
         "vi": {
-          "prompt": "Sap xep cac so tren tau.",
+          "prompt": "Sắp xếp các số trên tàu.",
+          "learningObjective": "sắp xếp trình tự số",
           "mode": "reorder",
           "correctOrder": [
             {
@@ -6397,12 +6539,12 @@
           "rule": {
             "type": "fixed"
           },
-          "hint": "Nghi xem viec nao den truoc."
+          "hint": "Nghĩ xem việc nào đến trước."
         }
       },
       "hints": [
         {
-          "text": "Nghi xem viec nao den truoc."
+          "text": "Nghĩ xem việc nào đến trước."
         }
       ],
       "metadata": {
@@ -6432,6 +6574,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Arrange the train numbers.",
+          "learningObjective": "number sequencing",
           "mode": "reorder",
           "correctOrder": [
             {
@@ -6466,7 +6609,8 @@
           "hint": "Think about what comes first."
         },
         "vi": {
-          "prompt": "Sap xep cac so tren tau.",
+          "prompt": "Sắp xếp các số trên tàu.",
+          "learningObjective": "sắp xếp trình tự số",
           "mode": "reorder",
           "correctOrder": [
             {
@@ -6498,12 +6642,12 @@
           "rule": {
             "type": "fixed"
           },
-          "hint": "Nghi xem viec nao den truoc."
+          "hint": "Nghĩ xem việc nào đến trước."
         }
       },
       "hints": [
         {
-          "text": "Nghi xem viec nao den truoc."
+          "text": "Nghĩ xem việc nào đến trước."
         }
       ],
       "metadata": {
@@ -6533,6 +6677,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Arrange the train numbers.",
+          "learningObjective": "number sequencing",
           "mode": "reorder",
           "correctOrder": [
             {
@@ -6567,7 +6712,8 @@
           "hint": "Think about what comes first."
         },
         "vi": {
-          "prompt": "Sap xep cac so tren tau.",
+          "prompt": "Sắp xếp các số trên tàu.",
+          "learningObjective": "sắp xếp trình tự số",
           "mode": "reorder",
           "correctOrder": [
             {
@@ -6599,12 +6745,12 @@
           "rule": {
             "type": "fixed"
           },
-          "hint": "Nghi xem viec nao den truoc."
+          "hint": "Nghĩ xem việc nào đến trước."
         }
       },
       "hints": [
         {
-          "text": "Nghi xem viec nao den truoc."
+          "text": "Nghĩ xem việc nào đến trước."
         }
       ],
       "metadata": {
@@ -6634,6 +6780,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Arrange the train numbers.",
+          "learningObjective": "number sequencing",
           "mode": "reorder",
           "correctOrder": [
             {
@@ -6668,7 +6815,8 @@
           "hint": "Think about what comes first."
         },
         "vi": {
-          "prompt": "Sap xep cac so tren tau.",
+          "prompt": "Sắp xếp các số trên tàu.",
+          "learningObjective": "sắp xếp trình tự số",
           "mode": "reorder",
           "correctOrder": [
             {
@@ -6700,12 +6848,12 @@
           "rule": {
             "type": "fixed"
           },
-          "hint": "Nghi xem viec nao den truoc."
+          "hint": "Nghĩ xem việc nào đến trước."
         }
       },
       "hints": [
         {
-          "text": "Nghi xem viec nao den truoc."
+          "text": "Nghĩ xem việc nào đến trước."
         }
       ],
       "metadata": {
@@ -6735,6 +6883,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Arrange the train numbers.",
+          "learningObjective": "number sequencing",
           "mode": "reorder",
           "correctOrder": [
             {
@@ -6769,7 +6918,8 @@
           "hint": "Think about what comes first."
         },
         "vi": {
-          "prompt": "Sap xep cac so tren tau.",
+          "prompt": "Sắp xếp các số trên tàu.",
+          "learningObjective": "sắp xếp trình tự số",
           "mode": "reorder",
           "correctOrder": [
             {
@@ -6801,12 +6951,12 @@
           "rule": {
             "type": "fixed"
           },
-          "hint": "Nghi xem viec nao den truoc."
+          "hint": "Nghĩ xem việc nào đến trước."
         }
       },
       "hints": [
         {
-          "text": "Nghi xem viec nao den truoc."
+          "text": "Nghĩ xem việc nào đến trước."
         }
       ],
       "metadata": {

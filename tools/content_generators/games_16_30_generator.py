@@ -14,6 +14,69 @@ REVIEW_PATH = (
     ROOT / "docs" / "content-review" / "milestone-3-games-16-30-review-checklist.csv"
 )
 
+LOCALIZED_OBJECTIVES: dict[str, dict[str, str]] = {
+    "advanced category classification": {
+        "en": "advanced category classification",
+        "vi": "phân loại nhóm nâng cao",
+    },
+    "color classification": {
+        "en": "color classification",
+        "vi": "phân loại màu sắc",
+    },
+    "daily routine sequencing": {
+        "en": "daily routine sequencing",
+        "vi": "sắp xếp trình tự sinh hoạt hằng ngày",
+    },
+    "emotion recognition": {
+        "en": "emotion recognition",
+        "vi": "nhận biết cảm xúc",
+    },
+    "letter placement into words": {
+        "en": "letter placement into words",
+        "vi": "đặt chữ cái vào từ",
+    },
+    "life-science association": {
+        "en": "life-science association",
+        "vi": "ghép cặp khoa học sự sống",
+    },
+    "memory sequence replay": {
+        "en": "memory sequence replay",
+        "vi": "ghi nhớ và lặp lại trình tự",
+    },
+    "number sequencing": {
+        "en": "number sequencing",
+        "vi": "sắp xếp trình tự số",
+    },
+    "nutrition classification": {
+        "en": "nutrition classification",
+        "vi": "phân loại dinh dưỡng",
+    },
+    "odd-one-out reasoning": {
+        "en": "odd-one-out reasoning",
+        "vi": "suy luận vật khác nhóm",
+    },
+    "opposite word matching": {
+        "en": "opposite word matching",
+        "vi": "ghép từ trái nghĩa",
+    },
+    "part-whole reasoning": {
+        "en": "part-whole reasoning",
+        "vi": "suy luận bộ phận và toàn thể",
+    },
+    "story sequencing": {
+        "en": "story sequencing",
+        "vi": "sắp xếp trình tự câu chuyện",
+    },
+    "visual observation and matching": {
+        "en": "visual observation and matching",
+        "vi": "quan sát hình ảnh và ghép cặp",
+    },
+    "weather cause and effect": {
+        "en": "weather cause and effect",
+        "vi": "nguyên nhân và kết quả thời tiết",
+    },
+}
+
 
 GAME_SPECS: dict[str, tuple[str, int, str, list[str], str, str]] = {
     "picture_detective": (
@@ -22,7 +85,7 @@ GAME_SPECS: dict[str, tuple[str, int, str, list[str], str, str]] = {
         "matching",
         ["science.observation", "logic.matching"],
         "Picture Detective",
-        "Tham tu hinh anh",
+        "Thám tử hình ảnh",
     ),
     "color_builder": (
         "cb",
@@ -30,7 +93,7 @@ GAME_SPECS: dict[str, tuple[str, int, str, list[str], str, str]] = {
         "placement",
         ["creative.color_recognition", "logic.spatial_reasoning"],
         "Color Builder",
-        "Xay mau sac",
+        "Xây màu sắc",
     ),
     "animal_homes": (
         "ah",
@@ -38,7 +101,7 @@ GAME_SPECS: dict[str, tuple[str, int, str, list[str], str, str]] = {
         "matching",
         ["science.observation", "logic.matching"],
         "Animal Homes",
-        "Nha cua dong vat",
+        "Nhà của động vật",
     ),
     "daily_routine": (
         "dr",
@@ -46,7 +109,7 @@ GAME_SPECS: dict[str, tuple[str, int, str, list[str], str, str]] = {
         "sequence",
         ["logic.pattern.basic", "science.cause_effect"],
         "Daily Routine",
-        "Sinh hoat hang ngay",
+        "Sinh hoạt hằng ngày",
     ),
     "healthy_foods": (
         "hf",
@@ -54,7 +117,7 @@ GAME_SPECS: dict[str, tuple[str, int, str, list[str], str, str]] = {
         "multi_select",
         ["science.observation", "logic.classification"],
         "Healthy Foods",
-        "Thuc pham lanh manh",
+        "Thực phẩm lành mạnh",
     ),
     "letter_hunt": (
         "lh",
@@ -62,7 +125,7 @@ GAME_SPECS: dict[str, tuple[str, int, str, list[str], str, str]] = {
         "placement",
         ["letters.recognition.lowercase", "letters.spelling"],
         "Letter Hunt",
-        "San tim chu cai",
+        "Săn tìm chữ cái",
     ),
     "number_train": (
         "nt",
@@ -70,7 +133,7 @@ GAME_SPECS: dict[str, tuple[str, int, str, list[str], str, str]] = {
         "sequence",
         ["math.number_recognition.1_20", "math.counting"],
         "Number Train",
-        "Doan tau so",
+        "Đoàn tàu số",
     ),
     "emotion_match": (
         "em",
@@ -78,7 +141,7 @@ GAME_SPECS: dict[str, tuple[str, int, str, list[str], str, str]] = {
         "matching",
         ["science.observation", "logic.matching"],
         "Emotion Match",
-        "Ghep cam xuc",
+        "Ghép cảm xúc",
     ),
     "puzzle_parts": (
         "pp2",
@@ -86,7 +149,7 @@ GAME_SPECS: dict[str, tuple[str, int, str, list[str], str, str]] = {
         "placement",
         ["creative.shape_construction", "logic.spatial_reasoning"],
         "Puzzle Parts",
-        "Manh ghep do vat",
+        "Mảnh ghép đồ vật",
     ),
     "odd_one_out": (
         "ooo",
@@ -94,7 +157,7 @@ GAME_SPECS: dict[str, tuple[str, int, str, list[str], str, str]] = {
         "multi_select",
         ["logic.odd_one_out", "logic.classification"],
         "Odd One Out",
-        "Tim vat khac nhom",
+        "Tìm vật khác nhóm",
     ),
     "opposites": (
         "op",
@@ -102,7 +165,7 @@ GAME_SPECS: dict[str, tuple[str, int, str, list[str], str, str]] = {
         "matching",
         ["letters.synonyms_antonyms", "logic.matching"],
         "Opposites",
-        "Cap tu trai nghia",
+        "Cặp từ trái nghĩa",
     ),
     "weather_today": (
         "wt",
@@ -110,7 +173,7 @@ GAME_SPECS: dict[str, tuple[str, int, str, list[str], str, str]] = {
         "matching",
         ["science.cause_effect", "logic.matching"],
         "Weather Today",
-        "Thoi tiet hom nay",
+        "Thời tiết hôm nay",
     ),
     "memory_journey": (
         "mj",
@@ -118,7 +181,7 @@ GAME_SPECS: dict[str, tuple[str, int, str, list[str], str, str]] = {
         "sequence",
         ["logic.memory", "logic.pattern.basic"],
         "Memory Journey",
-        "Hanh trinh ghi nho",
+        "Hành trình ghi nhớ",
     ),
     "category_expert": (
         "ce",
@@ -126,7 +189,7 @@ GAME_SPECS: dict[str, tuple[str, int, str, list[str], str, str]] = {
         "multi_select",
         ["logic.classification", "letters.vocabulary"],
         "Category Expert",
-        "Chuyen gia phan loai",
+        "Chuyên gia phân loại",
     ),
     "build_the_story": (
         "bts",
@@ -134,7 +197,7 @@ GAME_SPECS: dict[str, tuple[str, int, str, list[str], str, str]] = {
         "sequence",
         ["letters.storytelling", "creative.storytelling"],
         "Build the Story",
-        "Xay cau chuyen",
+        "Xây câu chuyện",
     ),
 }
 
@@ -212,34 +275,34 @@ def match_pair(
 def matching_level(game_id: str, index: int) -> dict[str, Any]:
     banks = {
         "picture_detective": [
-            ("spoon", "spoon outline", "thia", "net thia"),
-            ("shoe", "shoe shadow", "giay", "bong giay"),
-            ("leaf", "leaf photo", "la cay", "anh la cay"),
-            ("cup", "cup outline", "coc", "net coc"),
+            ("spoon", "spoon outline", "thìa", "nét thìa"),
+            ("shoe", "shoe shadow", "giày", "bóng giày"),
+            ("leaf", "leaf photo", "lá cây", "ảnh lá cây"),
+            ("cup", "cup outline", "cốc", "nét cốc"),
         ],
         "animal_homes": [
-            ("bird", "nest", "chim", "to chim"),
-            ("fish", "pond", "ca", "ao"),
-            ("bee", "hive", "ong", "to ong"),
-            ("rabbit", "burrow", "tho", "hang tho"),
+            ("bird", "nest", "chim", "tổ chim"),
+            ("fish", "pond", "cá", "ao"),
+            ("bee", "hive", "ong", "tổ ong"),
+            ("rabbit", "burrow", "thỏ", "hang thỏ"),
         ],
         "emotion_match": [
-            ("happy face", "smile", "mat vui", "nu cuoi"),
-            ("sad face", "tear", "mat buon", "nuoc mat"),
-            ("angry face", "frown", "mat gian", "nhan mat"),
-            ("surprised face", "wide eyes", "ngac nhien", "mat tron"),
+            ("happy face", "smile", "mặt vui", "nụ cười"),
+            ("sad face", "tear", "mặt buồn", "nước mắt"),
+            ("angry face", "frown", "mặt giận", "nhăn mặt"),
+            ("surprised face", "wide eyes", "ngạc nhiên", "mắt tròn"),
         ],
         "opposites": [
-            ("hot", "cold", "nong", "lanh"),
-            ("big", "small", "to", "nho"),
-            ("fast", "slow", "nhanh", "cham"),
-            ("day", "night", "ngay", "dem"),
+            ("hot", "cold", "nóng", "lạnh"),
+            ("big", "small", "to", "nhỏ"),
+            ("fast", "slow", "nhanh", "chậm"),
+            ("day", "night", "ngày", "đêm"),
         ],
         "weather_today": [
-            ("rain", "umbrella", "mua", "o"),
-            ("snow", "coat", "tuyet", "ao am"),
-            ("sunny", "hat", "nang", "mu"),
-            ("windy", "kite", "gio", "dieu"),
+            ("rain", "umbrella", "mưa", "ô"),
+            ("snow", "coat", "tuyết", "áo ấm"),
+            ("sunny", "hat", "nắng", "mũ"),
+            ("windy", "kite", "gió", "diều"),
         ],
     }
     rows = banks[game_id]
@@ -251,26 +314,26 @@ def matching_level(game_id: str, index: int) -> dict[str, Any]:
         match_pair(i, left, right) for i, (_, _, left, right) in enumerate(rotated[:4])
     ]
     prompts = {
-        "picture_detective": (
-            "Match each object to its clue.",
-            "Ghep moi vat voi dau hieu cua no.",
-        ),
-        "animal_homes": (
-            "Match each animal to its home.",
-            "Ghep moi con vat voi nha cua no.",
-        ),
-        "emotion_match": (
-            "Match each feeling to the clue.",
-            "Ghep moi cam xuc voi dau hieu.",
-        ),
-        "opposites": (
-            "Match each word to its opposite.",
-            "Ghep moi tu voi tu trai nghia.",
-        ),
-        "weather_today": (
-            "Match the weather to what helps.",
-            "Ghep thoi tiet voi vat phu hop.",
-        ),
+            "picture_detective": (
+                "Match each object to its clue.",
+                "Ghép mỗi vật với dấu hiệu của nó.",
+            ),
+            "animal_homes": (
+                "Match each animal to its home.",
+                "Ghép mỗi con vật với nhà của nó.",
+            ),
+            "emotion_match": (
+                "Match each feeling to the clue.",
+                "Ghép mỗi cảm xúc với dấu hiệu.",
+            ),
+            "opposites": (
+                "Match each word to its opposite.",
+                "Ghép mỗi từ với từ trái nghĩa.",
+            ),
+            "weather_today": (
+                "Match the weather to what helps.",
+                "Ghép thời tiết với vật phù hợp.",
+            ),
     }
     objective = {
         "picture_detective": "visual observation and matching",
@@ -280,6 +343,7 @@ def matching_level(game_id: str, index: int) -> dict[str, Any]:
         "weather_today": "weather cause and effect",
     }[game_id]
     en_prompt, vi_prompt = prompts[game_id]
+    objective_text = LOCALIZED_OBJECTIVES[objective]
     return level_base(
         game_id,
         index,
@@ -287,13 +351,15 @@ def matching_level(game_id: str, index: int) -> dict[str, Any]:
         {
             "en": {
                 "prompt": en_prompt,
+                "learningObjective": objective_text["en"],
                 "pairs": pairs_en,
                 "hint": "Start with the pair you know best.",
             },
             "vi": {
                 "prompt": vi_prompt,
+                "learningObjective": objective_text["vi"],
                 "pairs": pairs_vi,
-                "hint": "Bat dau voi cap con biet ro nhat.",
+                "hint": "Bắt đầu với cặp con biết rõ nhất.",
             },
         },
         [f"asset-{game_id}-{index % 8}"],
@@ -303,38 +369,38 @@ def matching_level(game_id: str, index: int) -> dict[str, Any]:
 def placement_level(game_id: str, index: int) -> dict[str, Any]:
     banks = {
         "color_builder": (
-            ("warm colors", "cool colors", "mau nong", "mau mat"),
+            ("warm colors", "cool colors", "màu nóng", "màu mát"),
             [
-                ("red", "left", "do"),
-                ("yellow", "left", "vang"),
+                ("red", "left", "đỏ"),
+                ("yellow", "left", "vàng"),
                 ("orange", "left", "cam"),
-                ("blue", "right", "xanh duong"),
-                ("green", "right", "xanh la"),
-                ("purple", "right", "tim"),
+                ("blue", "right", "xanh dương"),
+                ("green", "right", "xanh lá"),
+                ("purple", "right", "tím"),
             ],
             "color classification",
         ),
         "letter_hunt": (
-            ("c-a-t", "d-o-g", "m-e-o", "c-h-o"),
+            ("c-a-t", "d-o-g", "m-è-o", "c-h-ó"),
             [
                 ("c", "left", "m"),
-                ("a", "left", "e"),
+                ("a", "left", "è"),
                 ("t", "left", "o"),
                 ("d", "right", "c"),
                 ("o", "right", "h"),
-                ("g", "right", "o"),
+                ("g", "right", "ó"),
             ],
             "letter placement into words",
         ),
         "puzzle_parts": (
-            ("bicycle", "house", "xe dap", "ngoi nha"),
+            ("bicycle", "house", "xe đạp", "ngôi nhà"),
             [
-                ("wheel", "left", "banh xe"),
-                ("seat", "left", "yen xe"),
-                ("handlebar", "left", "tay lai"),
-                ("roof", "right", "mai nha"),
-                ("door", "right", "cua"),
-                ("window", "right", "cua so"),
+                ("wheel", "left", "bánh xe"),
+                ("seat", "left", "yên xe"),
+                ("handlebar", "left", "tay lái"),
+                ("roof", "right", "mái nhà"),
+                ("door", "right", "cửa"),
+                ("window", "right", "cửa sổ"),
             ],
             "part-whole reasoning",
         ),
@@ -389,6 +455,7 @@ def placement_level(game_id: str, index: int) -> dict[str, Any]:
         "configuration": {"tapAccessibilityMode": True, "shuffleItems": True},
         "rule": {"matchStrategy": "explicitIds"},
     }
+    objective_text = LOCALIZED_OBJECTIVES[objective]
     return level_base(
         game_id,
         index,
@@ -396,17 +463,19 @@ def placement_level(game_id: str, index: int) -> dict[str, Any]:
         {
             "en": {
                 "prompt": f"Place each card into {left_en} or {right_en}.",
+                "learningObjective": objective_text["en"],
                 "items": items_en,
                 "targets": targets(items_en, left_en, right_en),
                 **shared,
                 "hint": "Tap a card, then tap its target.",
             },
             "vi": {
-                "prompt": f"Dat moi the vao {left_vi} hoac {right_vi}.",
+                "prompt": f"Đặt mỗi thẻ vào {left_vi} hoặc {right_vi}.",
+                "learningObjective": objective_text["vi"],
                 "items": items_vi,
                 "targets": targets(items_vi, left_vi, right_vi),
                 **shared,
-                "hint": "Cham vao the, roi cham vao dich den.",
+                "hint": "Chạm vào thẻ, rồi chạm vào đích đến.",
             },
         },
         [f"asset-{game_id}-{index % 8}"],
@@ -417,34 +486,41 @@ def sequence_level(game_id: str, index: int) -> dict[str, Any]:
     banks = {
         "daily_routine": (
             ["Wake up", "Brush teeth", "Eat breakfast", "Go to school", "Bedtime"],
-            ["Thuc day", "Danh rang", "An sang", "Den truong", "Di ngu"],
+            ["Thức dậy", "Đánh răng", "Ăn sáng", "Đến trường", "Đi ngủ"],
             "daily routine sequencing",
             "Put the day in order.",
-            "Sap xep mot ngay theo thu tu.",
+            "Sắp xếp một ngày theo thứ tự.",
         ),
         "number_train": (
             [str(index + n) for n in range(5)],
             [str(index + n) for n in range(5)],
             "number sequencing",
             "Arrange the train numbers.",
-            "Sap xep cac so tren tau.",
+            "Sắp xếp các số trên tàu.",
         ),
         "memory_journey": (
             ["Pack bag", "Ride bus", "Visit museum", "Draw picture", "Return home"],
-            ["Xep cap", "Len xe buyt", "Tham bao tang", "Ve tranh", "Ve nha"],
+            [
+                "Xếp cặp sách",
+                "Lên xe buýt",
+                "Thăm bảo tàng",
+                "Vẽ tranh",
+                "Về nhà",
+            ],
             "memory sequence replay",
             "Replay the journey in order.",
-            "Lap lai hanh trinh theo thu tu.",
+            "Lặp lại hành trình theo thứ tự.",
         ),
         "build_the_story": (
             ["Find seed", "Plant seed", "Water seed", "Watch sprout", "Share flower"],
-            ["Tim hat", "Gieo hat", "Tuoi nuoc", "Thay mam", "Tang hoa"],
+            ["Tìm hạt", "Gieo hạt", "Tưới nước", "Thấy mầm", "Tặng hoa"],
             "story sequencing",
             "Build the story from first to last.",
-            "Xay cau chuyen tu dau den cuoi.",
+            "Xây câu chuyện từ đầu đến cuối.",
         ),
     }
     en_steps, vi_steps, objective, en_prompt, vi_prompt = banks[game_id]
+    objective_text = LOCALIZED_OBJECTIVES[objective]
     difficulty, _ = tier_for(index, GAME_SPECS[game_id][1])
     count = 3 if difficulty == 1 else 4 if difficulty == 3 else 5
 
@@ -461,6 +537,7 @@ def sequence_level(game_id: str, index: int) -> dict[str, Any]:
         {
             "en": {
                 "prompt": en_prompt,
+                "learningObjective": objective_text["en"],
                 "mode": "reorder",
                 "correctOrder": order(en_steps),
                 "rule": {"type": "fixed"},
@@ -468,10 +545,11 @@ def sequence_level(game_id: str, index: int) -> dict[str, Any]:
             },
             "vi": {
                 "prompt": vi_prompt,
+                "learningObjective": objective_text["vi"],
                 "mode": "reorder",
                 "correctOrder": order(vi_steps),
                 "rule": {"type": "fixed"},
-                "hint": "Nghi xem viec nao den truoc.",
+                "hint": "Nghĩ xem việc nào đến trước.",
             },
         },
         [f"asset-{game_id}-{index % 8}"],
@@ -482,45 +560,46 @@ def multi_select_level(game_id: str, index: int) -> dict[str, Any]:
     banks = {
         "healthy_foods": (
             "Select every healthy food.",
-            "Chon tat ca mon an lanh manh.",
+            "Chọn tất cả món ăn lành mạnh.",
             [
-                ("apple", True, "tao"),
-                ("carrot", True, "ca rot"),
-                ("water", True, "nuoc"),
-                ("candy", False, "keo"),
-                ("soda", False, "nuoc ngot"),
-                ("chips", False, "khoai chien"),
+                ("apple", True, "táo"),
+                ("carrot", True, "cà rốt"),
+                ("water", True, "nước"),
+                ("candy", False, "kẹo"),
+                ("soda", False, "nước ngọt"),
+                ("chips", False, "khoai chiên"),
             ],
             "nutrition classification",
         ),
         "odd_one_out": (
             "Select every item that does not belong.",
-            "Chon tat ca vat khong cung nhom.",
+            "Chọn tất cả vật không cùng nhóm.",
             [
-                ("cat", False, "meo"),
-                ("dog", False, "cho"),
+                ("cat", False, "mèo"),
+                ("dog", False, "chó"),
                 ("bird", False, "chim"),
-                ("chair", True, "ghe"),
-                ("spoon", True, "thia"),
-                ("shoe", True, "giay"),
+                ("chair", True, "ghế"),
+                ("spoon", True, "thìa"),
+                ("shoe", True, "giày"),
             ],
             "odd-one-out reasoning",
         ),
         "category_expert": (
             "Select every school supply.",
-            "Chon tat ca do dung hoc tap.",
+            "Chọn tất cả đồ dùng học tập.",
             [
-                ("pencil", True, "but chi"),
-                ("book", True, "sach"),
-                ("ruler", True, "thuoc"),
-                ("banana", False, "chuoi"),
-                ("shoe", False, "giay"),
-                ("cup", False, "coc"),
+                ("pencil", True, "bút chì"),
+                ("book", True, "sách"),
+                ("ruler", True, "thước"),
+                ("banana", False, "chuối"),
+                ("shoe", False, "giày"),
+                ("cup", False, "cốc"),
             ],
             "advanced category classification",
         ),
     }
     prompt_en, prompt_vi, rows, objective = banks[game_id]
+    objective_text = LOCALIZED_OBJECTIVES[objective]
     correct_count = len([row for row in rows if row[1]])
     cfg = {
         "submissionMode": "explicitSubmit",
@@ -537,6 +616,7 @@ def multi_select_level(game_id: str, index: int) -> dict[str, Any]:
         {
             "en": {
                 "prompt": prompt_en,
+                "learningObjective": objective_text["en"],
                 "options": [
                     item(f"o{i}", en, correct)
                     for i, (en, correct, _) in enumerate(rows)
@@ -546,12 +626,13 @@ def multi_select_level(game_id: str, index: int) -> dict[str, Any]:
             },
             "vi": {
                 "prompt": prompt_vi,
+                "learningObjective": objective_text["vi"],
                 "options": [
                     item(f"o{i}", vi, correct)
                     for i, (_, correct, vi) in enumerate(rows)
                 ],
                 "configuration": cfg,
-                "hint": f"Co {correct_count} lua chon dung.",
+                "hint": f"Có {correct_count} lựa chọn đúng.",
             },
         },
         [f"asset-{game_id}-{index % 8}"],
@@ -615,7 +696,9 @@ def write_review_checklist(levels_by_game: dict[str, list[dict[str, Any]]]) -> N
                             "level_id": level["id"],
                             "locale": locale,
                             "tier": level["metadata"]["ageGroup"],
-                            "learning_objective": level["learningObjective"],
+                            "learning_objective": level["localizedContent"][
+                                locale
+                            ]["learningObjective"],
                             "correctness_review": "",
                             "language_review": "",
                             "age_review": "",

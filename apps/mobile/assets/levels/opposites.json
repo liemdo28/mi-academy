@@ -11,6 +11,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Match each word to its opposite.",
+          "learningObjective": "opposite word matching",
           "pairs": [
             {
               "left": {
@@ -72,7 +73,8 @@
           "hint": "Start with the pair you know best."
         },
         "vi": {
-          "prompt": "Ghep moi tu voi tu trai nghia.",
+          "prompt": "Ghép mỗi từ với từ trái nghĩa.",
+          "learningObjective": "ghép từ trái nghĩa",
           "pairs": [
             {
               "left": {
@@ -83,9 +85,9 @@
               },
               "right": {
                 "id": "r0",
-                "content": "nho",
+                "content": "nhỏ",
                 "type": "text",
-                "semanticLabel": "nho"
+                "semanticLabel": "nhỏ"
               }
             },
             {
@@ -97,46 +99,46 @@
               },
               "right": {
                 "id": "r1",
-                "content": "cham",
+                "content": "chậm",
                 "type": "text",
-                "semanticLabel": "cham"
+                "semanticLabel": "chậm"
               }
             },
             {
               "left": {
                 "id": "l2",
-                "content": "ngay",
+                "content": "ngày",
                 "type": "text",
-                "semanticLabel": "ngay"
+                "semanticLabel": "ngày"
               },
               "right": {
                 "id": "r2",
-                "content": "dem",
+                "content": "đêm",
                 "type": "text",
-                "semanticLabel": "dem"
+                "semanticLabel": "đêm"
               }
             },
             {
               "left": {
                 "id": "l3",
-                "content": "nong",
+                "content": "nóng",
                 "type": "text",
-                "semanticLabel": "nong"
+                "semanticLabel": "nóng"
               },
               "right": {
                 "id": "r3",
-                "content": "lanh",
+                "content": "lạnh",
                 "type": "text",
-                "semanticLabel": "lanh"
+                "semanticLabel": "lạnh"
               }
             }
           ],
-          "hint": "Bat dau voi cap con biet ro nhat."
+          "hint": "Bắt đầu với cặp con biết rõ nhất."
         }
       },
       "hints": [
         {
-          "text": "Bat dau voi cap con biet ro nhat."
+          "text": "Bắt đầu với cặp con biết rõ nhất."
         }
       ],
       "metadata": {
@@ -166,6 +168,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Match each word to its opposite.",
+          "learningObjective": "opposite word matching",
           "pairs": [
             {
               "left": {
@@ -227,7 +230,8 @@
           "hint": "Start with the pair you know best."
         },
         "vi": {
-          "prompt": "Ghep moi tu voi tu trai nghia.",
+          "prompt": "Ghép mỗi từ với từ trái nghĩa.",
+          "learningObjective": "ghép từ trái nghĩa",
           "pairs": [
             {
               "left": {
@@ -238,37 +242,37 @@
               },
               "right": {
                 "id": "r0",
-                "content": "cham",
+                "content": "chậm",
                 "type": "text",
-                "semanticLabel": "cham"
+                "semanticLabel": "chậm"
               }
             },
             {
               "left": {
                 "id": "l1",
-                "content": "ngay",
+                "content": "ngày",
                 "type": "text",
-                "semanticLabel": "ngay"
+                "semanticLabel": "ngày"
               },
               "right": {
                 "id": "r1",
-                "content": "dem",
+                "content": "đêm",
                 "type": "text",
-                "semanticLabel": "dem"
+                "semanticLabel": "đêm"
               }
             },
             {
               "left": {
                 "id": "l2",
-                "content": "nong",
+                "content": "nóng",
                 "type": "text",
-                "semanticLabel": "nong"
+                "semanticLabel": "nóng"
               },
               "right": {
                 "id": "r2",
-                "content": "lanh",
+                "content": "lạnh",
                 "type": "text",
-                "semanticLabel": "lanh"
+                "semanticLabel": "lạnh"
               }
             },
             {
@@ -280,18 +284,18 @@
               },
               "right": {
                 "id": "r3",
-                "content": "nho",
+                "content": "nhỏ",
                 "type": "text",
-                "semanticLabel": "nho"
+                "semanticLabel": "nhỏ"
               }
             }
           ],
-          "hint": "Bat dau voi cap con biet ro nhat."
+          "hint": "Bắt đầu với cặp con biết rõ nhất."
         }
       },
       "hints": [
         {
-          "text": "Bat dau voi cap con biet ro nhat."
+          "text": "Bắt đầu với cặp con biết rõ nhất."
         }
       ],
       "metadata": {
@@ -321,6 +325,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Match each word to its opposite.",
+          "learningObjective": "opposite word matching",
           "pairs": [
             {
               "left": {
@@ -382,34 +387,35 @@
           "hint": "Start with the pair you know best."
         },
         "vi": {
-          "prompt": "Ghep moi tu voi tu trai nghia.",
+          "prompt": "Ghép mỗi từ với từ trái nghĩa.",
+          "learningObjective": "ghép từ trái nghĩa",
           "pairs": [
             {
               "left": {
                 "id": "l0",
-                "content": "ngay",
+                "content": "ngày",
                 "type": "text",
-                "semanticLabel": "ngay"
+                "semanticLabel": "ngày"
               },
               "right": {
                 "id": "r0",
-                "content": "dem",
+                "content": "đêm",
                 "type": "text",
-                "semanticLabel": "dem"
+                "semanticLabel": "đêm"
               }
             },
             {
               "left": {
                 "id": "l1",
-                "content": "nong",
+                "content": "nóng",
                 "type": "text",
-                "semanticLabel": "nong"
+                "semanticLabel": "nóng"
               },
               "right": {
                 "id": "r1",
-                "content": "lanh",
+                "content": "lạnh",
                 "type": "text",
-                "semanticLabel": "lanh"
+                "semanticLabel": "lạnh"
               }
             },
             {
@@ -421,9 +427,9 @@
               },
               "right": {
                 "id": "r2",
-                "content": "nho",
+                "content": "nhỏ",
                 "type": "text",
-                "semanticLabel": "nho"
+                "semanticLabel": "nhỏ"
               }
             },
             {
@@ -435,18 +441,18 @@
               },
               "right": {
                 "id": "r3",
-                "content": "cham",
+                "content": "chậm",
                 "type": "text",
-                "semanticLabel": "cham"
+                "semanticLabel": "chậm"
               }
             }
           ],
-          "hint": "Bat dau voi cap con biet ro nhat."
+          "hint": "Bắt đầu với cặp con biết rõ nhất."
         }
       },
       "hints": [
         {
-          "text": "Bat dau voi cap con biet ro nhat."
+          "text": "Bắt đầu với cặp con biết rõ nhất."
         }
       ],
       "metadata": {
@@ -476,6 +482,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Match each word to its opposite.",
+          "learningObjective": "opposite word matching",
           "pairs": [
             {
               "left": {
@@ -537,20 +544,21 @@
           "hint": "Start with the pair you know best."
         },
         "vi": {
-          "prompt": "Ghep moi tu voi tu trai nghia.",
+          "prompt": "Ghép mỗi từ với từ trái nghĩa.",
+          "learningObjective": "ghép từ trái nghĩa",
           "pairs": [
             {
               "left": {
                 "id": "l0",
-                "content": "nong",
+                "content": "nóng",
                 "type": "text",
-                "semanticLabel": "nong"
+                "semanticLabel": "nóng"
               },
               "right": {
                 "id": "r0",
-                "content": "lanh",
+                "content": "lạnh",
                 "type": "text",
-                "semanticLabel": "lanh"
+                "semanticLabel": "lạnh"
               }
             },
             {
@@ -562,9 +570,9 @@
               },
               "right": {
                 "id": "r1",
-                "content": "nho",
+                "content": "nhỏ",
                 "type": "text",
-                "semanticLabel": "nho"
+                "semanticLabel": "nhỏ"
               }
             },
             {
@@ -576,32 +584,32 @@
               },
               "right": {
                 "id": "r2",
-                "content": "cham",
+                "content": "chậm",
                 "type": "text",
-                "semanticLabel": "cham"
+                "semanticLabel": "chậm"
               }
             },
             {
               "left": {
                 "id": "l3",
-                "content": "ngay",
+                "content": "ngày",
                 "type": "text",
-                "semanticLabel": "ngay"
+                "semanticLabel": "ngày"
               },
               "right": {
                 "id": "r3",
-                "content": "dem",
+                "content": "đêm",
                 "type": "text",
-                "semanticLabel": "dem"
+                "semanticLabel": "đêm"
               }
             }
           ],
-          "hint": "Bat dau voi cap con biet ro nhat."
+          "hint": "Bắt đầu với cặp con biết rõ nhất."
         }
       },
       "hints": [
         {
-          "text": "Bat dau voi cap con biet ro nhat."
+          "text": "Bắt đầu với cặp con biết rõ nhất."
         }
       ],
       "metadata": {
@@ -631,6 +639,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Match each word to its opposite.",
+          "learningObjective": "opposite word matching",
           "pairs": [
             {
               "left": {
@@ -692,7 +701,8 @@
           "hint": "Start with the pair you know best."
         },
         "vi": {
-          "prompt": "Ghep moi tu voi tu trai nghia.",
+          "prompt": "Ghép mỗi từ với từ trái nghĩa.",
+          "learningObjective": "ghép từ trái nghĩa",
           "pairs": [
             {
               "left": {
@@ -703,9 +713,9 @@
               },
               "right": {
                 "id": "r0",
-                "content": "nho",
+                "content": "nhỏ",
                 "type": "text",
-                "semanticLabel": "nho"
+                "semanticLabel": "nhỏ"
               }
             },
             {
@@ -717,46 +727,46 @@
               },
               "right": {
                 "id": "r1",
-                "content": "cham",
+                "content": "chậm",
                 "type": "text",
-                "semanticLabel": "cham"
+                "semanticLabel": "chậm"
               }
             },
             {
               "left": {
                 "id": "l2",
-                "content": "ngay",
+                "content": "ngày",
                 "type": "text",
-                "semanticLabel": "ngay"
+                "semanticLabel": "ngày"
               },
               "right": {
                 "id": "r2",
-                "content": "dem",
+                "content": "đêm",
                 "type": "text",
-                "semanticLabel": "dem"
+                "semanticLabel": "đêm"
               }
             },
             {
               "left": {
                 "id": "l3",
-                "content": "nong",
+                "content": "nóng",
                 "type": "text",
-                "semanticLabel": "nong"
+                "semanticLabel": "nóng"
               },
               "right": {
                 "id": "r3",
-                "content": "lanh",
+                "content": "lạnh",
                 "type": "text",
-                "semanticLabel": "lanh"
+                "semanticLabel": "lạnh"
               }
             }
           ],
-          "hint": "Bat dau voi cap con biet ro nhat."
+          "hint": "Bắt đầu với cặp con biết rõ nhất."
         }
       },
       "hints": [
         {
-          "text": "Bat dau voi cap con biet ro nhat."
+          "text": "Bắt đầu với cặp con biết rõ nhất."
         }
       ],
       "metadata": {
@@ -786,6 +796,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Match each word to its opposite.",
+          "learningObjective": "opposite word matching",
           "pairs": [
             {
               "left": {
@@ -847,7 +858,8 @@
           "hint": "Start with the pair you know best."
         },
         "vi": {
-          "prompt": "Ghep moi tu voi tu trai nghia.",
+          "prompt": "Ghép mỗi từ với từ trái nghĩa.",
+          "learningObjective": "ghép từ trái nghĩa",
           "pairs": [
             {
               "left": {
@@ -858,37 +870,37 @@
               },
               "right": {
                 "id": "r0",
-                "content": "cham",
+                "content": "chậm",
                 "type": "text",
-                "semanticLabel": "cham"
+                "semanticLabel": "chậm"
               }
             },
             {
               "left": {
                 "id": "l1",
-                "content": "ngay",
+                "content": "ngày",
                 "type": "text",
-                "semanticLabel": "ngay"
+                "semanticLabel": "ngày"
               },
               "right": {
                 "id": "r1",
-                "content": "dem",
+                "content": "đêm",
                 "type": "text",
-                "semanticLabel": "dem"
+                "semanticLabel": "đêm"
               }
             },
             {
               "left": {
                 "id": "l2",
-                "content": "nong",
+                "content": "nóng",
                 "type": "text",
-                "semanticLabel": "nong"
+                "semanticLabel": "nóng"
               },
               "right": {
                 "id": "r2",
-                "content": "lanh",
+                "content": "lạnh",
                 "type": "text",
-                "semanticLabel": "lanh"
+                "semanticLabel": "lạnh"
               }
             },
             {
@@ -900,18 +912,18 @@
               },
               "right": {
                 "id": "r3",
-                "content": "nho",
+                "content": "nhỏ",
                 "type": "text",
-                "semanticLabel": "nho"
+                "semanticLabel": "nhỏ"
               }
             }
           ],
-          "hint": "Bat dau voi cap con biet ro nhat."
+          "hint": "Bắt đầu với cặp con biết rõ nhất."
         }
       },
       "hints": [
         {
-          "text": "Bat dau voi cap con biet ro nhat."
+          "text": "Bắt đầu với cặp con biết rõ nhất."
         }
       ],
       "metadata": {
@@ -941,6 +953,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Match each word to its opposite.",
+          "learningObjective": "opposite word matching",
           "pairs": [
             {
               "left": {
@@ -1002,34 +1015,35 @@
           "hint": "Start with the pair you know best."
         },
         "vi": {
-          "prompt": "Ghep moi tu voi tu trai nghia.",
+          "prompt": "Ghép mỗi từ với từ trái nghĩa.",
+          "learningObjective": "ghép từ trái nghĩa",
           "pairs": [
             {
               "left": {
                 "id": "l0",
-                "content": "ngay",
+                "content": "ngày",
                 "type": "text",
-                "semanticLabel": "ngay"
+                "semanticLabel": "ngày"
               },
               "right": {
                 "id": "r0",
-                "content": "dem",
+                "content": "đêm",
                 "type": "text",
-                "semanticLabel": "dem"
+                "semanticLabel": "đêm"
               }
             },
             {
               "left": {
                 "id": "l1",
-                "content": "nong",
+                "content": "nóng",
                 "type": "text",
-                "semanticLabel": "nong"
+                "semanticLabel": "nóng"
               },
               "right": {
                 "id": "r1",
-                "content": "lanh",
+                "content": "lạnh",
                 "type": "text",
-                "semanticLabel": "lanh"
+                "semanticLabel": "lạnh"
               }
             },
             {
@@ -1041,9 +1055,9 @@
               },
               "right": {
                 "id": "r2",
-                "content": "nho",
+                "content": "nhỏ",
                 "type": "text",
-                "semanticLabel": "nho"
+                "semanticLabel": "nhỏ"
               }
             },
             {
@@ -1055,18 +1069,18 @@
               },
               "right": {
                 "id": "r3",
-                "content": "cham",
+                "content": "chậm",
                 "type": "text",
-                "semanticLabel": "cham"
+                "semanticLabel": "chậm"
               }
             }
           ],
-          "hint": "Bat dau voi cap con biet ro nhat."
+          "hint": "Bắt đầu với cặp con biết rõ nhất."
         }
       },
       "hints": [
         {
-          "text": "Bat dau voi cap con biet ro nhat."
+          "text": "Bắt đầu với cặp con biết rõ nhất."
         }
       ],
       "metadata": {
@@ -1096,6 +1110,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Match each word to its opposite.",
+          "learningObjective": "opposite word matching",
           "pairs": [
             {
               "left": {
@@ -1157,20 +1172,21 @@
           "hint": "Start with the pair you know best."
         },
         "vi": {
-          "prompt": "Ghep moi tu voi tu trai nghia.",
+          "prompt": "Ghép mỗi từ với từ trái nghĩa.",
+          "learningObjective": "ghép từ trái nghĩa",
           "pairs": [
             {
               "left": {
                 "id": "l0",
-                "content": "nong",
+                "content": "nóng",
                 "type": "text",
-                "semanticLabel": "nong"
+                "semanticLabel": "nóng"
               },
               "right": {
                 "id": "r0",
-                "content": "lanh",
+                "content": "lạnh",
                 "type": "text",
-                "semanticLabel": "lanh"
+                "semanticLabel": "lạnh"
               }
             },
             {
@@ -1182,9 +1198,9 @@
               },
               "right": {
                 "id": "r1",
-                "content": "nho",
+                "content": "nhỏ",
                 "type": "text",
-                "semanticLabel": "nho"
+                "semanticLabel": "nhỏ"
               }
             },
             {
@@ -1196,32 +1212,32 @@
               },
               "right": {
                 "id": "r2",
-                "content": "cham",
+                "content": "chậm",
                 "type": "text",
-                "semanticLabel": "cham"
+                "semanticLabel": "chậm"
               }
             },
             {
               "left": {
                 "id": "l3",
-                "content": "ngay",
+                "content": "ngày",
                 "type": "text",
-                "semanticLabel": "ngay"
+                "semanticLabel": "ngày"
               },
               "right": {
                 "id": "r3",
-                "content": "dem",
+                "content": "đêm",
                 "type": "text",
-                "semanticLabel": "dem"
+                "semanticLabel": "đêm"
               }
             }
           ],
-          "hint": "Bat dau voi cap con biet ro nhat."
+          "hint": "Bắt đầu với cặp con biết rõ nhất."
         }
       },
       "hints": [
         {
-          "text": "Bat dau voi cap con biet ro nhat."
+          "text": "Bắt đầu với cặp con biết rõ nhất."
         }
       ],
       "metadata": {
@@ -1251,6 +1267,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Match each word to its opposite.",
+          "learningObjective": "opposite word matching",
           "pairs": [
             {
               "left": {
@@ -1312,7 +1329,8 @@
           "hint": "Start with the pair you know best."
         },
         "vi": {
-          "prompt": "Ghep moi tu voi tu trai nghia.",
+          "prompt": "Ghép mỗi từ với từ trái nghĩa.",
+          "learningObjective": "ghép từ trái nghĩa",
           "pairs": [
             {
               "left": {
@@ -1323,9 +1341,9 @@
               },
               "right": {
                 "id": "r0",
-                "content": "nho",
+                "content": "nhỏ",
                 "type": "text",
-                "semanticLabel": "nho"
+                "semanticLabel": "nhỏ"
               }
             },
             {
@@ -1337,46 +1355,46 @@
               },
               "right": {
                 "id": "r1",
-                "content": "cham",
+                "content": "chậm",
                 "type": "text",
-                "semanticLabel": "cham"
+                "semanticLabel": "chậm"
               }
             },
             {
               "left": {
                 "id": "l2",
-                "content": "ngay",
+                "content": "ngày",
                 "type": "text",
-                "semanticLabel": "ngay"
+                "semanticLabel": "ngày"
               },
               "right": {
                 "id": "r2",
-                "content": "dem",
+                "content": "đêm",
                 "type": "text",
-                "semanticLabel": "dem"
+                "semanticLabel": "đêm"
               }
             },
             {
               "left": {
                 "id": "l3",
-                "content": "nong",
+                "content": "nóng",
                 "type": "text",
-                "semanticLabel": "nong"
+                "semanticLabel": "nóng"
               },
               "right": {
                 "id": "r3",
-                "content": "lanh",
+                "content": "lạnh",
                 "type": "text",
-                "semanticLabel": "lanh"
+                "semanticLabel": "lạnh"
               }
             }
           ],
-          "hint": "Bat dau voi cap con biet ro nhat."
+          "hint": "Bắt đầu với cặp con biết rõ nhất."
         }
       },
       "hints": [
         {
-          "text": "Bat dau voi cap con biet ro nhat."
+          "text": "Bắt đầu với cặp con biết rõ nhất."
         }
       ],
       "metadata": {
@@ -1406,6 +1424,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Match each word to its opposite.",
+          "learningObjective": "opposite word matching",
           "pairs": [
             {
               "left": {
@@ -1467,7 +1486,8 @@
           "hint": "Start with the pair you know best."
         },
         "vi": {
-          "prompt": "Ghep moi tu voi tu trai nghia.",
+          "prompt": "Ghép mỗi từ với từ trái nghĩa.",
+          "learningObjective": "ghép từ trái nghĩa",
           "pairs": [
             {
               "left": {
@@ -1478,37 +1498,37 @@
               },
               "right": {
                 "id": "r0",
-                "content": "cham",
+                "content": "chậm",
                 "type": "text",
-                "semanticLabel": "cham"
+                "semanticLabel": "chậm"
               }
             },
             {
               "left": {
                 "id": "l1",
-                "content": "ngay",
+                "content": "ngày",
                 "type": "text",
-                "semanticLabel": "ngay"
+                "semanticLabel": "ngày"
               },
               "right": {
                 "id": "r1",
-                "content": "dem",
+                "content": "đêm",
                 "type": "text",
-                "semanticLabel": "dem"
+                "semanticLabel": "đêm"
               }
             },
             {
               "left": {
                 "id": "l2",
-                "content": "nong",
+                "content": "nóng",
                 "type": "text",
-                "semanticLabel": "nong"
+                "semanticLabel": "nóng"
               },
               "right": {
                 "id": "r2",
-                "content": "lanh",
+                "content": "lạnh",
                 "type": "text",
-                "semanticLabel": "lanh"
+                "semanticLabel": "lạnh"
               }
             },
             {
@@ -1520,18 +1540,18 @@
               },
               "right": {
                 "id": "r3",
-                "content": "nho",
+                "content": "nhỏ",
                 "type": "text",
-                "semanticLabel": "nho"
+                "semanticLabel": "nhỏ"
               }
             }
           ],
-          "hint": "Bat dau voi cap con biet ro nhat."
+          "hint": "Bắt đầu với cặp con biết rõ nhất."
         }
       },
       "hints": [
         {
-          "text": "Bat dau voi cap con biet ro nhat."
+          "text": "Bắt đầu với cặp con biết rõ nhất."
         }
       ],
       "metadata": {
@@ -1561,6 +1581,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Match each word to its opposite.",
+          "learningObjective": "opposite word matching",
           "pairs": [
             {
               "left": {
@@ -1622,34 +1643,35 @@
           "hint": "Start with the pair you know best."
         },
         "vi": {
-          "prompt": "Ghep moi tu voi tu trai nghia.",
+          "prompt": "Ghép mỗi từ với từ trái nghĩa.",
+          "learningObjective": "ghép từ trái nghĩa",
           "pairs": [
             {
               "left": {
                 "id": "l0",
-                "content": "ngay",
+                "content": "ngày",
                 "type": "text",
-                "semanticLabel": "ngay"
+                "semanticLabel": "ngày"
               },
               "right": {
                 "id": "r0",
-                "content": "dem",
+                "content": "đêm",
                 "type": "text",
-                "semanticLabel": "dem"
+                "semanticLabel": "đêm"
               }
             },
             {
               "left": {
                 "id": "l1",
-                "content": "nong",
+                "content": "nóng",
                 "type": "text",
-                "semanticLabel": "nong"
+                "semanticLabel": "nóng"
               },
               "right": {
                 "id": "r1",
-                "content": "lanh",
+                "content": "lạnh",
                 "type": "text",
-                "semanticLabel": "lanh"
+                "semanticLabel": "lạnh"
               }
             },
             {
@@ -1661,9 +1683,9 @@
               },
               "right": {
                 "id": "r2",
-                "content": "nho",
+                "content": "nhỏ",
                 "type": "text",
-                "semanticLabel": "nho"
+                "semanticLabel": "nhỏ"
               }
             },
             {
@@ -1675,18 +1697,18 @@
               },
               "right": {
                 "id": "r3",
-                "content": "cham",
+                "content": "chậm",
                 "type": "text",
-                "semanticLabel": "cham"
+                "semanticLabel": "chậm"
               }
             }
           ],
-          "hint": "Bat dau voi cap con biet ro nhat."
+          "hint": "Bắt đầu với cặp con biết rõ nhất."
         }
       },
       "hints": [
         {
-          "text": "Bat dau voi cap con biet ro nhat."
+          "text": "Bắt đầu với cặp con biết rõ nhất."
         }
       ],
       "metadata": {
@@ -1716,6 +1738,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Match each word to its opposite.",
+          "learningObjective": "opposite word matching",
           "pairs": [
             {
               "left": {
@@ -1777,20 +1800,21 @@
           "hint": "Start with the pair you know best."
         },
         "vi": {
-          "prompt": "Ghep moi tu voi tu trai nghia.",
+          "prompt": "Ghép mỗi từ với từ trái nghĩa.",
+          "learningObjective": "ghép từ trái nghĩa",
           "pairs": [
             {
               "left": {
                 "id": "l0",
-                "content": "nong",
+                "content": "nóng",
                 "type": "text",
-                "semanticLabel": "nong"
+                "semanticLabel": "nóng"
               },
               "right": {
                 "id": "r0",
-                "content": "lanh",
+                "content": "lạnh",
                 "type": "text",
-                "semanticLabel": "lanh"
+                "semanticLabel": "lạnh"
               }
             },
             {
@@ -1802,9 +1826,9 @@
               },
               "right": {
                 "id": "r1",
-                "content": "nho",
+                "content": "nhỏ",
                 "type": "text",
-                "semanticLabel": "nho"
+                "semanticLabel": "nhỏ"
               }
             },
             {
@@ -1816,32 +1840,32 @@
               },
               "right": {
                 "id": "r2",
-                "content": "cham",
+                "content": "chậm",
                 "type": "text",
-                "semanticLabel": "cham"
+                "semanticLabel": "chậm"
               }
             },
             {
               "left": {
                 "id": "l3",
-                "content": "ngay",
+                "content": "ngày",
                 "type": "text",
-                "semanticLabel": "ngay"
+                "semanticLabel": "ngày"
               },
               "right": {
                 "id": "r3",
-                "content": "dem",
+                "content": "đêm",
                 "type": "text",
-                "semanticLabel": "dem"
+                "semanticLabel": "đêm"
               }
             }
           ],
-          "hint": "Bat dau voi cap con biet ro nhat."
+          "hint": "Bắt đầu với cặp con biết rõ nhất."
         }
       },
       "hints": [
         {
-          "text": "Bat dau voi cap con biet ro nhat."
+          "text": "Bắt đầu với cặp con biết rõ nhất."
         }
       ],
       "metadata": {
@@ -1871,6 +1895,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Match each word to its opposite.",
+          "learningObjective": "opposite word matching",
           "pairs": [
             {
               "left": {
@@ -1932,7 +1957,8 @@
           "hint": "Start with the pair you know best."
         },
         "vi": {
-          "prompt": "Ghep moi tu voi tu trai nghia.",
+          "prompt": "Ghép mỗi từ với từ trái nghĩa.",
+          "learningObjective": "ghép từ trái nghĩa",
           "pairs": [
             {
               "left": {
@@ -1943,9 +1969,9 @@
               },
               "right": {
                 "id": "r0",
-                "content": "nho",
+                "content": "nhỏ",
                 "type": "text",
-                "semanticLabel": "nho"
+                "semanticLabel": "nhỏ"
               }
             },
             {
@@ -1957,46 +1983,46 @@
               },
               "right": {
                 "id": "r1",
-                "content": "cham",
+                "content": "chậm",
                 "type": "text",
-                "semanticLabel": "cham"
+                "semanticLabel": "chậm"
               }
             },
             {
               "left": {
                 "id": "l2",
-                "content": "ngay",
+                "content": "ngày",
                 "type": "text",
-                "semanticLabel": "ngay"
+                "semanticLabel": "ngày"
               },
               "right": {
                 "id": "r2",
-                "content": "dem",
+                "content": "đêm",
                 "type": "text",
-                "semanticLabel": "dem"
+                "semanticLabel": "đêm"
               }
             },
             {
               "left": {
                 "id": "l3",
-                "content": "nong",
+                "content": "nóng",
                 "type": "text",
-                "semanticLabel": "nong"
+                "semanticLabel": "nóng"
               },
               "right": {
                 "id": "r3",
-                "content": "lanh",
+                "content": "lạnh",
                 "type": "text",
-                "semanticLabel": "lanh"
+                "semanticLabel": "lạnh"
               }
             }
           ],
-          "hint": "Bat dau voi cap con biet ro nhat."
+          "hint": "Bắt đầu với cặp con biết rõ nhất."
         }
       },
       "hints": [
         {
-          "text": "Bat dau voi cap con biet ro nhat."
+          "text": "Bắt đầu với cặp con biết rõ nhất."
         }
       ],
       "metadata": {
@@ -2026,6 +2052,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Match each word to its opposite.",
+          "learningObjective": "opposite word matching",
           "pairs": [
             {
               "left": {
@@ -2087,7 +2114,8 @@
           "hint": "Start with the pair you know best."
         },
         "vi": {
-          "prompt": "Ghep moi tu voi tu trai nghia.",
+          "prompt": "Ghép mỗi từ với từ trái nghĩa.",
+          "learningObjective": "ghép từ trái nghĩa",
           "pairs": [
             {
               "left": {
@@ -2098,37 +2126,37 @@
               },
               "right": {
                 "id": "r0",
-                "content": "cham",
+                "content": "chậm",
                 "type": "text",
-                "semanticLabel": "cham"
+                "semanticLabel": "chậm"
               }
             },
             {
               "left": {
                 "id": "l1",
-                "content": "ngay",
+                "content": "ngày",
                 "type": "text",
-                "semanticLabel": "ngay"
+                "semanticLabel": "ngày"
               },
               "right": {
                 "id": "r1",
-                "content": "dem",
+                "content": "đêm",
                 "type": "text",
-                "semanticLabel": "dem"
+                "semanticLabel": "đêm"
               }
             },
             {
               "left": {
                 "id": "l2",
-                "content": "nong",
+                "content": "nóng",
                 "type": "text",
-                "semanticLabel": "nong"
+                "semanticLabel": "nóng"
               },
               "right": {
                 "id": "r2",
-                "content": "lanh",
+                "content": "lạnh",
                 "type": "text",
-                "semanticLabel": "lanh"
+                "semanticLabel": "lạnh"
               }
             },
             {
@@ -2140,18 +2168,18 @@
               },
               "right": {
                 "id": "r3",
-                "content": "nho",
+                "content": "nhỏ",
                 "type": "text",
-                "semanticLabel": "nho"
+                "semanticLabel": "nhỏ"
               }
             }
           ],
-          "hint": "Bat dau voi cap con biet ro nhat."
+          "hint": "Bắt đầu với cặp con biết rõ nhất."
         }
       },
       "hints": [
         {
-          "text": "Bat dau voi cap con biet ro nhat."
+          "text": "Bắt đầu với cặp con biết rõ nhất."
         }
       ],
       "metadata": {
@@ -2181,6 +2209,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Match each word to its opposite.",
+          "learningObjective": "opposite word matching",
           "pairs": [
             {
               "left": {
@@ -2242,34 +2271,35 @@
           "hint": "Start with the pair you know best."
         },
         "vi": {
-          "prompt": "Ghep moi tu voi tu trai nghia.",
+          "prompt": "Ghép mỗi từ với từ trái nghĩa.",
+          "learningObjective": "ghép từ trái nghĩa",
           "pairs": [
             {
               "left": {
                 "id": "l0",
-                "content": "ngay",
+                "content": "ngày",
                 "type": "text",
-                "semanticLabel": "ngay"
+                "semanticLabel": "ngày"
               },
               "right": {
                 "id": "r0",
-                "content": "dem",
+                "content": "đêm",
                 "type": "text",
-                "semanticLabel": "dem"
+                "semanticLabel": "đêm"
               }
             },
             {
               "left": {
                 "id": "l1",
-                "content": "nong",
+                "content": "nóng",
                 "type": "text",
-                "semanticLabel": "nong"
+                "semanticLabel": "nóng"
               },
               "right": {
                 "id": "r1",
-                "content": "lanh",
+                "content": "lạnh",
                 "type": "text",
-                "semanticLabel": "lanh"
+                "semanticLabel": "lạnh"
               }
             },
             {
@@ -2281,9 +2311,9 @@
               },
               "right": {
                 "id": "r2",
-                "content": "nho",
+                "content": "nhỏ",
                 "type": "text",
-                "semanticLabel": "nho"
+                "semanticLabel": "nhỏ"
               }
             },
             {
@@ -2295,18 +2325,18 @@
               },
               "right": {
                 "id": "r3",
-                "content": "cham",
+                "content": "chậm",
                 "type": "text",
-                "semanticLabel": "cham"
+                "semanticLabel": "chậm"
               }
             }
           ],
-          "hint": "Bat dau voi cap con biet ro nhat."
+          "hint": "Bắt đầu với cặp con biết rõ nhất."
         }
       },
       "hints": [
         {
-          "text": "Bat dau voi cap con biet ro nhat."
+          "text": "Bắt đầu với cặp con biết rõ nhất."
         }
       ],
       "metadata": {
@@ -2336,6 +2366,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Match each word to its opposite.",
+          "learningObjective": "opposite word matching",
           "pairs": [
             {
               "left": {
@@ -2397,20 +2428,21 @@
           "hint": "Start with the pair you know best."
         },
         "vi": {
-          "prompt": "Ghep moi tu voi tu trai nghia.",
+          "prompt": "Ghép mỗi từ với từ trái nghĩa.",
+          "learningObjective": "ghép từ trái nghĩa",
           "pairs": [
             {
               "left": {
                 "id": "l0",
-                "content": "nong",
+                "content": "nóng",
                 "type": "text",
-                "semanticLabel": "nong"
+                "semanticLabel": "nóng"
               },
               "right": {
                 "id": "r0",
-                "content": "lanh",
+                "content": "lạnh",
                 "type": "text",
-                "semanticLabel": "lanh"
+                "semanticLabel": "lạnh"
               }
             },
             {
@@ -2422,9 +2454,9 @@
               },
               "right": {
                 "id": "r1",
-                "content": "nho",
+                "content": "nhỏ",
                 "type": "text",
-                "semanticLabel": "nho"
+                "semanticLabel": "nhỏ"
               }
             },
             {
@@ -2436,32 +2468,32 @@
               },
               "right": {
                 "id": "r2",
-                "content": "cham",
+                "content": "chậm",
                 "type": "text",
-                "semanticLabel": "cham"
+                "semanticLabel": "chậm"
               }
             },
             {
               "left": {
                 "id": "l3",
-                "content": "ngay",
+                "content": "ngày",
                 "type": "text",
-                "semanticLabel": "ngay"
+                "semanticLabel": "ngày"
               },
               "right": {
                 "id": "r3",
-                "content": "dem",
+                "content": "đêm",
                 "type": "text",
-                "semanticLabel": "dem"
+                "semanticLabel": "đêm"
               }
             }
           ],
-          "hint": "Bat dau voi cap con biet ro nhat."
+          "hint": "Bắt đầu với cặp con biết rõ nhất."
         }
       },
       "hints": [
         {
-          "text": "Bat dau voi cap con biet ro nhat."
+          "text": "Bắt đầu với cặp con biết rõ nhất."
         }
       ],
       "metadata": {
@@ -2491,6 +2523,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Match each word to its opposite.",
+          "learningObjective": "opposite word matching",
           "pairs": [
             {
               "left": {
@@ -2552,7 +2585,8 @@
           "hint": "Start with the pair you know best."
         },
         "vi": {
-          "prompt": "Ghep moi tu voi tu trai nghia.",
+          "prompt": "Ghép mỗi từ với từ trái nghĩa.",
+          "learningObjective": "ghép từ trái nghĩa",
           "pairs": [
             {
               "left": {
@@ -2563,9 +2597,9 @@
               },
               "right": {
                 "id": "r0",
-                "content": "nho",
+                "content": "nhỏ",
                 "type": "text",
-                "semanticLabel": "nho"
+                "semanticLabel": "nhỏ"
               }
             },
             {
@@ -2577,46 +2611,46 @@
               },
               "right": {
                 "id": "r1",
-                "content": "cham",
+                "content": "chậm",
                 "type": "text",
-                "semanticLabel": "cham"
+                "semanticLabel": "chậm"
               }
             },
             {
               "left": {
                 "id": "l2",
-                "content": "ngay",
+                "content": "ngày",
                 "type": "text",
-                "semanticLabel": "ngay"
+                "semanticLabel": "ngày"
               },
               "right": {
                 "id": "r2",
-                "content": "dem",
+                "content": "đêm",
                 "type": "text",
-                "semanticLabel": "dem"
+                "semanticLabel": "đêm"
               }
             },
             {
               "left": {
                 "id": "l3",
-                "content": "nong",
+                "content": "nóng",
                 "type": "text",
-                "semanticLabel": "nong"
+                "semanticLabel": "nóng"
               },
               "right": {
                 "id": "r3",
-                "content": "lanh",
+                "content": "lạnh",
                 "type": "text",
-                "semanticLabel": "lanh"
+                "semanticLabel": "lạnh"
               }
             }
           ],
-          "hint": "Bat dau voi cap con biet ro nhat."
+          "hint": "Bắt đầu với cặp con biết rõ nhất."
         }
       },
       "hints": [
         {
-          "text": "Bat dau voi cap con biet ro nhat."
+          "text": "Bắt đầu với cặp con biết rõ nhất."
         }
       ],
       "metadata": {
@@ -2646,6 +2680,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Match each word to its opposite.",
+          "learningObjective": "opposite word matching",
           "pairs": [
             {
               "left": {
@@ -2707,7 +2742,8 @@
           "hint": "Start with the pair you know best."
         },
         "vi": {
-          "prompt": "Ghep moi tu voi tu trai nghia.",
+          "prompt": "Ghép mỗi từ với từ trái nghĩa.",
+          "learningObjective": "ghép từ trái nghĩa",
           "pairs": [
             {
               "left": {
@@ -2718,37 +2754,37 @@
               },
               "right": {
                 "id": "r0",
-                "content": "cham",
+                "content": "chậm",
                 "type": "text",
-                "semanticLabel": "cham"
+                "semanticLabel": "chậm"
               }
             },
             {
               "left": {
                 "id": "l1",
-                "content": "ngay",
+                "content": "ngày",
                 "type": "text",
-                "semanticLabel": "ngay"
+                "semanticLabel": "ngày"
               },
               "right": {
                 "id": "r1",
-                "content": "dem",
+                "content": "đêm",
                 "type": "text",
-                "semanticLabel": "dem"
+                "semanticLabel": "đêm"
               }
             },
             {
               "left": {
                 "id": "l2",
-                "content": "nong",
+                "content": "nóng",
                 "type": "text",
-                "semanticLabel": "nong"
+                "semanticLabel": "nóng"
               },
               "right": {
                 "id": "r2",
-                "content": "lanh",
+                "content": "lạnh",
                 "type": "text",
-                "semanticLabel": "lanh"
+                "semanticLabel": "lạnh"
               }
             },
             {
@@ -2760,18 +2796,18 @@
               },
               "right": {
                 "id": "r3",
-                "content": "nho",
+                "content": "nhỏ",
                 "type": "text",
-                "semanticLabel": "nho"
+                "semanticLabel": "nhỏ"
               }
             }
           ],
-          "hint": "Bat dau voi cap con biet ro nhat."
+          "hint": "Bắt đầu với cặp con biết rõ nhất."
         }
       },
       "hints": [
         {
-          "text": "Bat dau voi cap con biet ro nhat."
+          "text": "Bắt đầu với cặp con biết rõ nhất."
         }
       ],
       "metadata": {
@@ -2801,6 +2837,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Match each word to its opposite.",
+          "learningObjective": "opposite word matching",
           "pairs": [
             {
               "left": {
@@ -2862,34 +2899,35 @@
           "hint": "Start with the pair you know best."
         },
         "vi": {
-          "prompt": "Ghep moi tu voi tu trai nghia.",
+          "prompt": "Ghép mỗi từ với từ trái nghĩa.",
+          "learningObjective": "ghép từ trái nghĩa",
           "pairs": [
             {
               "left": {
                 "id": "l0",
-                "content": "ngay",
+                "content": "ngày",
                 "type": "text",
-                "semanticLabel": "ngay"
+                "semanticLabel": "ngày"
               },
               "right": {
                 "id": "r0",
-                "content": "dem",
+                "content": "đêm",
                 "type": "text",
-                "semanticLabel": "dem"
+                "semanticLabel": "đêm"
               }
             },
             {
               "left": {
                 "id": "l1",
-                "content": "nong",
+                "content": "nóng",
                 "type": "text",
-                "semanticLabel": "nong"
+                "semanticLabel": "nóng"
               },
               "right": {
                 "id": "r1",
-                "content": "lanh",
+                "content": "lạnh",
                 "type": "text",
-                "semanticLabel": "lanh"
+                "semanticLabel": "lạnh"
               }
             },
             {
@@ -2901,9 +2939,9 @@
               },
               "right": {
                 "id": "r2",
-                "content": "nho",
+                "content": "nhỏ",
                 "type": "text",
-                "semanticLabel": "nho"
+                "semanticLabel": "nhỏ"
               }
             },
             {
@@ -2915,18 +2953,18 @@
               },
               "right": {
                 "id": "r3",
-                "content": "cham",
+                "content": "chậm",
                 "type": "text",
-                "semanticLabel": "cham"
+                "semanticLabel": "chậm"
               }
             }
           ],
-          "hint": "Bat dau voi cap con biet ro nhat."
+          "hint": "Bắt đầu với cặp con biết rõ nhất."
         }
       },
       "hints": [
         {
-          "text": "Bat dau voi cap con biet ro nhat."
+          "text": "Bắt đầu với cặp con biết rõ nhất."
         }
       ],
       "metadata": {
@@ -2956,6 +2994,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Match each word to its opposite.",
+          "learningObjective": "opposite word matching",
           "pairs": [
             {
               "left": {
@@ -3017,20 +3056,21 @@
           "hint": "Start with the pair you know best."
         },
         "vi": {
-          "prompt": "Ghep moi tu voi tu trai nghia.",
+          "prompt": "Ghép mỗi từ với từ trái nghĩa.",
+          "learningObjective": "ghép từ trái nghĩa",
           "pairs": [
             {
               "left": {
                 "id": "l0",
-                "content": "nong",
+                "content": "nóng",
                 "type": "text",
-                "semanticLabel": "nong"
+                "semanticLabel": "nóng"
               },
               "right": {
                 "id": "r0",
-                "content": "lanh",
+                "content": "lạnh",
                 "type": "text",
-                "semanticLabel": "lanh"
+                "semanticLabel": "lạnh"
               }
             },
             {
@@ -3042,9 +3082,9 @@
               },
               "right": {
                 "id": "r1",
-                "content": "nho",
+                "content": "nhỏ",
                 "type": "text",
-                "semanticLabel": "nho"
+                "semanticLabel": "nhỏ"
               }
             },
             {
@@ -3056,32 +3096,32 @@
               },
               "right": {
                 "id": "r2",
-                "content": "cham",
+                "content": "chậm",
                 "type": "text",
-                "semanticLabel": "cham"
+                "semanticLabel": "chậm"
               }
             },
             {
               "left": {
                 "id": "l3",
-                "content": "ngay",
+                "content": "ngày",
                 "type": "text",
-                "semanticLabel": "ngay"
+                "semanticLabel": "ngày"
               },
               "right": {
                 "id": "r3",
-                "content": "dem",
+                "content": "đêm",
                 "type": "text",
-                "semanticLabel": "dem"
+                "semanticLabel": "đêm"
               }
             }
           ],
-          "hint": "Bat dau voi cap con biet ro nhat."
+          "hint": "Bắt đầu với cặp con biết rõ nhất."
         }
       },
       "hints": [
         {
-          "text": "Bat dau voi cap con biet ro nhat."
+          "text": "Bắt đầu với cặp con biết rõ nhất."
         }
       ],
       "metadata": {
@@ -3111,6 +3151,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Match each word to its opposite.",
+          "learningObjective": "opposite word matching",
           "pairs": [
             {
               "left": {
@@ -3172,7 +3213,8 @@
           "hint": "Start with the pair you know best."
         },
         "vi": {
-          "prompt": "Ghep moi tu voi tu trai nghia.",
+          "prompt": "Ghép mỗi từ với từ trái nghĩa.",
+          "learningObjective": "ghép từ trái nghĩa",
           "pairs": [
             {
               "left": {
@@ -3183,9 +3225,9 @@
               },
               "right": {
                 "id": "r0",
-                "content": "nho",
+                "content": "nhỏ",
                 "type": "text",
-                "semanticLabel": "nho"
+                "semanticLabel": "nhỏ"
               }
             },
             {
@@ -3197,46 +3239,46 @@
               },
               "right": {
                 "id": "r1",
-                "content": "cham",
+                "content": "chậm",
                 "type": "text",
-                "semanticLabel": "cham"
+                "semanticLabel": "chậm"
               }
             },
             {
               "left": {
                 "id": "l2",
-                "content": "ngay",
+                "content": "ngày",
                 "type": "text",
-                "semanticLabel": "ngay"
+                "semanticLabel": "ngày"
               },
               "right": {
                 "id": "r2",
-                "content": "dem",
+                "content": "đêm",
                 "type": "text",
-                "semanticLabel": "dem"
+                "semanticLabel": "đêm"
               }
             },
             {
               "left": {
                 "id": "l3",
-                "content": "nong",
+                "content": "nóng",
                 "type": "text",
-                "semanticLabel": "nong"
+                "semanticLabel": "nóng"
               },
               "right": {
                 "id": "r3",
-                "content": "lanh",
+                "content": "lạnh",
                 "type": "text",
-                "semanticLabel": "lanh"
+                "semanticLabel": "lạnh"
               }
             }
           ],
-          "hint": "Bat dau voi cap con biet ro nhat."
+          "hint": "Bắt đầu với cặp con biết rõ nhất."
         }
       },
       "hints": [
         {
-          "text": "Bat dau voi cap con biet ro nhat."
+          "text": "Bắt đầu với cặp con biết rõ nhất."
         }
       ],
       "metadata": {
@@ -3266,6 +3308,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Match each word to its opposite.",
+          "learningObjective": "opposite word matching",
           "pairs": [
             {
               "left": {
@@ -3327,7 +3370,8 @@
           "hint": "Start with the pair you know best."
         },
         "vi": {
-          "prompt": "Ghep moi tu voi tu trai nghia.",
+          "prompt": "Ghép mỗi từ với từ trái nghĩa.",
+          "learningObjective": "ghép từ trái nghĩa",
           "pairs": [
             {
               "left": {
@@ -3338,37 +3382,37 @@
               },
               "right": {
                 "id": "r0",
-                "content": "cham",
+                "content": "chậm",
                 "type": "text",
-                "semanticLabel": "cham"
+                "semanticLabel": "chậm"
               }
             },
             {
               "left": {
                 "id": "l1",
-                "content": "ngay",
+                "content": "ngày",
                 "type": "text",
-                "semanticLabel": "ngay"
+                "semanticLabel": "ngày"
               },
               "right": {
                 "id": "r1",
-                "content": "dem",
+                "content": "đêm",
                 "type": "text",
-                "semanticLabel": "dem"
+                "semanticLabel": "đêm"
               }
             },
             {
               "left": {
                 "id": "l2",
-                "content": "nong",
+                "content": "nóng",
                 "type": "text",
-                "semanticLabel": "nong"
+                "semanticLabel": "nóng"
               },
               "right": {
                 "id": "r2",
-                "content": "lanh",
+                "content": "lạnh",
                 "type": "text",
-                "semanticLabel": "lanh"
+                "semanticLabel": "lạnh"
               }
             },
             {
@@ -3380,18 +3424,18 @@
               },
               "right": {
                 "id": "r3",
-                "content": "nho",
+                "content": "nhỏ",
                 "type": "text",
-                "semanticLabel": "nho"
+                "semanticLabel": "nhỏ"
               }
             }
           ],
-          "hint": "Bat dau voi cap con biet ro nhat."
+          "hint": "Bắt đầu với cặp con biết rõ nhất."
         }
       },
       "hints": [
         {
-          "text": "Bat dau voi cap con biet ro nhat."
+          "text": "Bắt đầu với cặp con biết rõ nhất."
         }
       ],
       "metadata": {
@@ -3421,6 +3465,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Match each word to its opposite.",
+          "learningObjective": "opposite word matching",
           "pairs": [
             {
               "left": {
@@ -3482,34 +3527,35 @@
           "hint": "Start with the pair you know best."
         },
         "vi": {
-          "prompt": "Ghep moi tu voi tu trai nghia.",
+          "prompt": "Ghép mỗi từ với từ trái nghĩa.",
+          "learningObjective": "ghép từ trái nghĩa",
           "pairs": [
             {
               "left": {
                 "id": "l0",
-                "content": "ngay",
+                "content": "ngày",
                 "type": "text",
-                "semanticLabel": "ngay"
+                "semanticLabel": "ngày"
               },
               "right": {
                 "id": "r0",
-                "content": "dem",
+                "content": "đêm",
                 "type": "text",
-                "semanticLabel": "dem"
+                "semanticLabel": "đêm"
               }
             },
             {
               "left": {
                 "id": "l1",
-                "content": "nong",
+                "content": "nóng",
                 "type": "text",
-                "semanticLabel": "nong"
+                "semanticLabel": "nóng"
               },
               "right": {
                 "id": "r1",
-                "content": "lanh",
+                "content": "lạnh",
                 "type": "text",
-                "semanticLabel": "lanh"
+                "semanticLabel": "lạnh"
               }
             },
             {
@@ -3521,9 +3567,9 @@
               },
               "right": {
                 "id": "r2",
-                "content": "nho",
+                "content": "nhỏ",
                 "type": "text",
-                "semanticLabel": "nho"
+                "semanticLabel": "nhỏ"
               }
             },
             {
@@ -3535,18 +3581,18 @@
               },
               "right": {
                 "id": "r3",
-                "content": "cham",
+                "content": "chậm",
                 "type": "text",
-                "semanticLabel": "cham"
+                "semanticLabel": "chậm"
               }
             }
           ],
-          "hint": "Bat dau voi cap con biet ro nhat."
+          "hint": "Bắt đầu với cặp con biết rõ nhất."
         }
       },
       "hints": [
         {
-          "text": "Bat dau voi cap con biet ro nhat."
+          "text": "Bắt đầu với cặp con biết rõ nhất."
         }
       ],
       "metadata": {
@@ -3576,6 +3622,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Match each word to its opposite.",
+          "learningObjective": "opposite word matching",
           "pairs": [
             {
               "left": {
@@ -3637,20 +3684,21 @@
           "hint": "Start with the pair you know best."
         },
         "vi": {
-          "prompt": "Ghep moi tu voi tu trai nghia.",
+          "prompt": "Ghép mỗi từ với từ trái nghĩa.",
+          "learningObjective": "ghép từ trái nghĩa",
           "pairs": [
             {
               "left": {
                 "id": "l0",
-                "content": "nong",
+                "content": "nóng",
                 "type": "text",
-                "semanticLabel": "nong"
+                "semanticLabel": "nóng"
               },
               "right": {
                 "id": "r0",
-                "content": "lanh",
+                "content": "lạnh",
                 "type": "text",
-                "semanticLabel": "lanh"
+                "semanticLabel": "lạnh"
               }
             },
             {
@@ -3662,9 +3710,9 @@
               },
               "right": {
                 "id": "r1",
-                "content": "nho",
+                "content": "nhỏ",
                 "type": "text",
-                "semanticLabel": "nho"
+                "semanticLabel": "nhỏ"
               }
             },
             {
@@ -3676,32 +3724,32 @@
               },
               "right": {
                 "id": "r2",
-                "content": "cham",
+                "content": "chậm",
                 "type": "text",
-                "semanticLabel": "cham"
+                "semanticLabel": "chậm"
               }
             },
             {
               "left": {
                 "id": "l3",
-                "content": "ngay",
+                "content": "ngày",
                 "type": "text",
-                "semanticLabel": "ngay"
+                "semanticLabel": "ngày"
               },
               "right": {
                 "id": "r3",
-                "content": "dem",
+                "content": "đêm",
                 "type": "text",
-                "semanticLabel": "dem"
+                "semanticLabel": "đêm"
               }
             }
           ],
-          "hint": "Bat dau voi cap con biet ro nhat."
+          "hint": "Bắt đầu với cặp con biết rõ nhất."
         }
       },
       "hints": [
         {
-          "text": "Bat dau voi cap con biet ro nhat."
+          "text": "Bắt đầu với cặp con biết rõ nhất."
         }
       ],
       "metadata": {
@@ -3731,6 +3779,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Match each word to its opposite.",
+          "learningObjective": "opposite word matching",
           "pairs": [
             {
               "left": {
@@ -3792,7 +3841,8 @@
           "hint": "Start with the pair you know best."
         },
         "vi": {
-          "prompt": "Ghep moi tu voi tu trai nghia.",
+          "prompt": "Ghép mỗi từ với từ trái nghĩa.",
+          "learningObjective": "ghép từ trái nghĩa",
           "pairs": [
             {
               "left": {
@@ -3803,9 +3853,9 @@
               },
               "right": {
                 "id": "r0",
-                "content": "nho",
+                "content": "nhỏ",
                 "type": "text",
-                "semanticLabel": "nho"
+                "semanticLabel": "nhỏ"
               }
             },
             {
@@ -3817,46 +3867,46 @@
               },
               "right": {
                 "id": "r1",
-                "content": "cham",
+                "content": "chậm",
                 "type": "text",
-                "semanticLabel": "cham"
+                "semanticLabel": "chậm"
               }
             },
             {
               "left": {
                 "id": "l2",
-                "content": "ngay",
+                "content": "ngày",
                 "type": "text",
-                "semanticLabel": "ngay"
+                "semanticLabel": "ngày"
               },
               "right": {
                 "id": "r2",
-                "content": "dem",
+                "content": "đêm",
                 "type": "text",
-                "semanticLabel": "dem"
+                "semanticLabel": "đêm"
               }
             },
             {
               "left": {
                 "id": "l3",
-                "content": "nong",
+                "content": "nóng",
                 "type": "text",
-                "semanticLabel": "nong"
+                "semanticLabel": "nóng"
               },
               "right": {
                 "id": "r3",
-                "content": "lanh",
+                "content": "lạnh",
                 "type": "text",
-                "semanticLabel": "lanh"
+                "semanticLabel": "lạnh"
               }
             }
           ],
-          "hint": "Bat dau voi cap con biet ro nhat."
+          "hint": "Bắt đầu với cặp con biết rõ nhất."
         }
       },
       "hints": [
         {
-          "text": "Bat dau voi cap con biet ro nhat."
+          "text": "Bắt đầu với cặp con biết rõ nhất."
         }
       ],
       "metadata": {
@@ -3886,6 +3936,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Match each word to its opposite.",
+          "learningObjective": "opposite word matching",
           "pairs": [
             {
               "left": {
@@ -3947,7 +3998,8 @@
           "hint": "Start with the pair you know best."
         },
         "vi": {
-          "prompt": "Ghep moi tu voi tu trai nghia.",
+          "prompt": "Ghép mỗi từ với từ trái nghĩa.",
+          "learningObjective": "ghép từ trái nghĩa",
           "pairs": [
             {
               "left": {
@@ -3958,37 +4010,37 @@
               },
               "right": {
                 "id": "r0",
-                "content": "cham",
+                "content": "chậm",
                 "type": "text",
-                "semanticLabel": "cham"
+                "semanticLabel": "chậm"
               }
             },
             {
               "left": {
                 "id": "l1",
-                "content": "ngay",
+                "content": "ngày",
                 "type": "text",
-                "semanticLabel": "ngay"
+                "semanticLabel": "ngày"
               },
               "right": {
                 "id": "r1",
-                "content": "dem",
+                "content": "đêm",
                 "type": "text",
-                "semanticLabel": "dem"
+                "semanticLabel": "đêm"
               }
             },
             {
               "left": {
                 "id": "l2",
-                "content": "nong",
+                "content": "nóng",
                 "type": "text",
-                "semanticLabel": "nong"
+                "semanticLabel": "nóng"
               },
               "right": {
                 "id": "r2",
-                "content": "lanh",
+                "content": "lạnh",
                 "type": "text",
-                "semanticLabel": "lanh"
+                "semanticLabel": "lạnh"
               }
             },
             {
@@ -4000,18 +4052,18 @@
               },
               "right": {
                 "id": "r3",
-                "content": "nho",
+                "content": "nhỏ",
                 "type": "text",
-                "semanticLabel": "nho"
+                "semanticLabel": "nhỏ"
               }
             }
           ],
-          "hint": "Bat dau voi cap con biet ro nhat."
+          "hint": "Bắt đầu với cặp con biết rõ nhất."
         }
       },
       "hints": [
         {
-          "text": "Bat dau voi cap con biet ro nhat."
+          "text": "Bắt đầu với cặp con biết rõ nhất."
         }
       ],
       "metadata": {
@@ -4041,6 +4093,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Match each word to its opposite.",
+          "learningObjective": "opposite word matching",
           "pairs": [
             {
               "left": {
@@ -4102,34 +4155,35 @@
           "hint": "Start with the pair you know best."
         },
         "vi": {
-          "prompt": "Ghep moi tu voi tu trai nghia.",
+          "prompt": "Ghép mỗi từ với từ trái nghĩa.",
+          "learningObjective": "ghép từ trái nghĩa",
           "pairs": [
             {
               "left": {
                 "id": "l0",
-                "content": "ngay",
+                "content": "ngày",
                 "type": "text",
-                "semanticLabel": "ngay"
+                "semanticLabel": "ngày"
               },
               "right": {
                 "id": "r0",
-                "content": "dem",
+                "content": "đêm",
                 "type": "text",
-                "semanticLabel": "dem"
+                "semanticLabel": "đêm"
               }
             },
             {
               "left": {
                 "id": "l1",
-                "content": "nong",
+                "content": "nóng",
                 "type": "text",
-                "semanticLabel": "nong"
+                "semanticLabel": "nóng"
               },
               "right": {
                 "id": "r1",
-                "content": "lanh",
+                "content": "lạnh",
                 "type": "text",
-                "semanticLabel": "lanh"
+                "semanticLabel": "lạnh"
               }
             },
             {
@@ -4141,9 +4195,9 @@
               },
               "right": {
                 "id": "r2",
-                "content": "nho",
+                "content": "nhỏ",
                 "type": "text",
-                "semanticLabel": "nho"
+                "semanticLabel": "nhỏ"
               }
             },
             {
@@ -4155,18 +4209,18 @@
               },
               "right": {
                 "id": "r3",
-                "content": "cham",
+                "content": "chậm",
                 "type": "text",
-                "semanticLabel": "cham"
+                "semanticLabel": "chậm"
               }
             }
           ],
-          "hint": "Bat dau voi cap con biet ro nhat."
+          "hint": "Bắt đầu với cặp con biết rõ nhất."
         }
       },
       "hints": [
         {
-          "text": "Bat dau voi cap con biet ro nhat."
+          "text": "Bắt đầu với cặp con biết rõ nhất."
         }
       ],
       "metadata": {
@@ -4196,6 +4250,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Match each word to its opposite.",
+          "learningObjective": "opposite word matching",
           "pairs": [
             {
               "left": {
@@ -4257,20 +4312,21 @@
           "hint": "Start with the pair you know best."
         },
         "vi": {
-          "prompt": "Ghep moi tu voi tu trai nghia.",
+          "prompt": "Ghép mỗi từ với từ trái nghĩa.",
+          "learningObjective": "ghép từ trái nghĩa",
           "pairs": [
             {
               "left": {
                 "id": "l0",
-                "content": "nong",
+                "content": "nóng",
                 "type": "text",
-                "semanticLabel": "nong"
+                "semanticLabel": "nóng"
               },
               "right": {
                 "id": "r0",
-                "content": "lanh",
+                "content": "lạnh",
                 "type": "text",
-                "semanticLabel": "lanh"
+                "semanticLabel": "lạnh"
               }
             },
             {
@@ -4282,9 +4338,9 @@
               },
               "right": {
                 "id": "r1",
-                "content": "nho",
+                "content": "nhỏ",
                 "type": "text",
-                "semanticLabel": "nho"
+                "semanticLabel": "nhỏ"
               }
             },
             {
@@ -4296,32 +4352,32 @@
               },
               "right": {
                 "id": "r2",
-                "content": "cham",
+                "content": "chậm",
                 "type": "text",
-                "semanticLabel": "cham"
+                "semanticLabel": "chậm"
               }
             },
             {
               "left": {
                 "id": "l3",
-                "content": "ngay",
+                "content": "ngày",
                 "type": "text",
-                "semanticLabel": "ngay"
+                "semanticLabel": "ngày"
               },
               "right": {
                 "id": "r3",
-                "content": "dem",
+                "content": "đêm",
                 "type": "text",
-                "semanticLabel": "dem"
+                "semanticLabel": "đêm"
               }
             }
           ],
-          "hint": "Bat dau voi cap con biet ro nhat."
+          "hint": "Bắt đầu với cặp con biết rõ nhất."
         }
       },
       "hints": [
         {
-          "text": "Bat dau voi cap con biet ro nhat."
+          "text": "Bắt đầu với cặp con biết rõ nhất."
         }
       ],
       "metadata": {
@@ -4351,6 +4407,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Match each word to its opposite.",
+          "learningObjective": "opposite word matching",
           "pairs": [
             {
               "left": {
@@ -4412,7 +4469,8 @@
           "hint": "Start with the pair you know best."
         },
         "vi": {
-          "prompt": "Ghep moi tu voi tu trai nghia.",
+          "prompt": "Ghép mỗi từ với từ trái nghĩa.",
+          "learningObjective": "ghép từ trái nghĩa",
           "pairs": [
             {
               "left": {
@@ -4423,9 +4481,9 @@
               },
               "right": {
                 "id": "r0",
-                "content": "nho",
+                "content": "nhỏ",
                 "type": "text",
-                "semanticLabel": "nho"
+                "semanticLabel": "nhỏ"
               }
             },
             {
@@ -4437,46 +4495,46 @@
               },
               "right": {
                 "id": "r1",
-                "content": "cham",
+                "content": "chậm",
                 "type": "text",
-                "semanticLabel": "cham"
+                "semanticLabel": "chậm"
               }
             },
             {
               "left": {
                 "id": "l2",
-                "content": "ngay",
+                "content": "ngày",
                 "type": "text",
-                "semanticLabel": "ngay"
+                "semanticLabel": "ngày"
               },
               "right": {
                 "id": "r2",
-                "content": "dem",
+                "content": "đêm",
                 "type": "text",
-                "semanticLabel": "dem"
+                "semanticLabel": "đêm"
               }
             },
             {
               "left": {
                 "id": "l3",
-                "content": "nong",
+                "content": "nóng",
                 "type": "text",
-                "semanticLabel": "nong"
+                "semanticLabel": "nóng"
               },
               "right": {
                 "id": "r3",
-                "content": "lanh",
+                "content": "lạnh",
                 "type": "text",
-                "semanticLabel": "lanh"
+                "semanticLabel": "lạnh"
               }
             }
           ],
-          "hint": "Bat dau voi cap con biet ro nhat."
+          "hint": "Bắt đầu với cặp con biết rõ nhất."
         }
       },
       "hints": [
         {
-          "text": "Bat dau voi cap con biet ro nhat."
+          "text": "Bắt đầu với cặp con biết rõ nhất."
         }
       ],
       "metadata": {
@@ -4506,6 +4564,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Match each word to its opposite.",
+          "learningObjective": "opposite word matching",
           "pairs": [
             {
               "left": {
@@ -4567,7 +4626,8 @@
           "hint": "Start with the pair you know best."
         },
         "vi": {
-          "prompt": "Ghep moi tu voi tu trai nghia.",
+          "prompt": "Ghép mỗi từ với từ trái nghĩa.",
+          "learningObjective": "ghép từ trái nghĩa",
           "pairs": [
             {
               "left": {
@@ -4578,37 +4638,37 @@
               },
               "right": {
                 "id": "r0",
-                "content": "cham",
+                "content": "chậm",
                 "type": "text",
-                "semanticLabel": "cham"
+                "semanticLabel": "chậm"
               }
             },
             {
               "left": {
                 "id": "l1",
-                "content": "ngay",
+                "content": "ngày",
                 "type": "text",
-                "semanticLabel": "ngay"
+                "semanticLabel": "ngày"
               },
               "right": {
                 "id": "r1",
-                "content": "dem",
+                "content": "đêm",
                 "type": "text",
-                "semanticLabel": "dem"
+                "semanticLabel": "đêm"
               }
             },
             {
               "left": {
                 "id": "l2",
-                "content": "nong",
+                "content": "nóng",
                 "type": "text",
-                "semanticLabel": "nong"
+                "semanticLabel": "nóng"
               },
               "right": {
                 "id": "r2",
-                "content": "lanh",
+                "content": "lạnh",
                 "type": "text",
-                "semanticLabel": "lanh"
+                "semanticLabel": "lạnh"
               }
             },
             {
@@ -4620,18 +4680,18 @@
               },
               "right": {
                 "id": "r3",
-                "content": "nho",
+                "content": "nhỏ",
                 "type": "text",
-                "semanticLabel": "nho"
+                "semanticLabel": "nhỏ"
               }
             }
           ],
-          "hint": "Bat dau voi cap con biet ro nhat."
+          "hint": "Bắt đầu với cặp con biết rõ nhất."
         }
       },
       "hints": [
         {
-          "text": "Bat dau voi cap con biet ro nhat."
+          "text": "Bắt đầu với cặp con biết rõ nhất."
         }
       ],
       "metadata": {
@@ -4661,6 +4721,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Match each word to its opposite.",
+          "learningObjective": "opposite word matching",
           "pairs": [
             {
               "left": {
@@ -4722,34 +4783,35 @@
           "hint": "Start with the pair you know best."
         },
         "vi": {
-          "prompt": "Ghep moi tu voi tu trai nghia.",
+          "prompt": "Ghép mỗi từ với từ trái nghĩa.",
+          "learningObjective": "ghép từ trái nghĩa",
           "pairs": [
             {
               "left": {
                 "id": "l0",
-                "content": "ngay",
+                "content": "ngày",
                 "type": "text",
-                "semanticLabel": "ngay"
+                "semanticLabel": "ngày"
               },
               "right": {
                 "id": "r0",
-                "content": "dem",
+                "content": "đêm",
                 "type": "text",
-                "semanticLabel": "dem"
+                "semanticLabel": "đêm"
               }
             },
             {
               "left": {
                 "id": "l1",
-                "content": "nong",
+                "content": "nóng",
                 "type": "text",
-                "semanticLabel": "nong"
+                "semanticLabel": "nóng"
               },
               "right": {
                 "id": "r1",
-                "content": "lanh",
+                "content": "lạnh",
                 "type": "text",
-                "semanticLabel": "lanh"
+                "semanticLabel": "lạnh"
               }
             },
             {
@@ -4761,9 +4823,9 @@
               },
               "right": {
                 "id": "r2",
-                "content": "nho",
+                "content": "nhỏ",
                 "type": "text",
-                "semanticLabel": "nho"
+                "semanticLabel": "nhỏ"
               }
             },
             {
@@ -4775,18 +4837,18 @@
               },
               "right": {
                 "id": "r3",
-                "content": "cham",
+                "content": "chậm",
                 "type": "text",
-                "semanticLabel": "cham"
+                "semanticLabel": "chậm"
               }
             }
           ],
-          "hint": "Bat dau voi cap con biet ro nhat."
+          "hint": "Bắt đầu với cặp con biết rõ nhất."
         }
       },
       "hints": [
         {
-          "text": "Bat dau voi cap con biet ro nhat."
+          "text": "Bắt đầu với cặp con biết rõ nhất."
         }
       ],
       "metadata": {
@@ -4816,6 +4878,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Match each word to its opposite.",
+          "learningObjective": "opposite word matching",
           "pairs": [
             {
               "left": {
@@ -4877,20 +4940,21 @@
           "hint": "Start with the pair you know best."
         },
         "vi": {
-          "prompt": "Ghep moi tu voi tu trai nghia.",
+          "prompt": "Ghép mỗi từ với từ trái nghĩa.",
+          "learningObjective": "ghép từ trái nghĩa",
           "pairs": [
             {
               "left": {
                 "id": "l0",
-                "content": "nong",
+                "content": "nóng",
                 "type": "text",
-                "semanticLabel": "nong"
+                "semanticLabel": "nóng"
               },
               "right": {
                 "id": "r0",
-                "content": "lanh",
+                "content": "lạnh",
                 "type": "text",
-                "semanticLabel": "lanh"
+                "semanticLabel": "lạnh"
               }
             },
             {
@@ -4902,9 +4966,9 @@
               },
               "right": {
                 "id": "r1",
-                "content": "nho",
+                "content": "nhỏ",
                 "type": "text",
-                "semanticLabel": "nho"
+                "semanticLabel": "nhỏ"
               }
             },
             {
@@ -4916,32 +4980,32 @@
               },
               "right": {
                 "id": "r2",
-                "content": "cham",
+                "content": "chậm",
                 "type": "text",
-                "semanticLabel": "cham"
+                "semanticLabel": "chậm"
               }
             },
             {
               "left": {
                 "id": "l3",
-                "content": "ngay",
+                "content": "ngày",
                 "type": "text",
-                "semanticLabel": "ngay"
+                "semanticLabel": "ngày"
               },
               "right": {
                 "id": "r3",
-                "content": "dem",
+                "content": "đêm",
                 "type": "text",
-                "semanticLabel": "dem"
+                "semanticLabel": "đêm"
               }
             }
           ],
-          "hint": "Bat dau voi cap con biet ro nhat."
+          "hint": "Bắt đầu với cặp con biết rõ nhất."
         }
       },
       "hints": [
         {
-          "text": "Bat dau voi cap con biet ro nhat."
+          "text": "Bắt đầu với cặp con biết rõ nhất."
         }
       ],
       "metadata": {
@@ -4971,6 +5035,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Match each word to its opposite.",
+          "learningObjective": "opposite word matching",
           "pairs": [
             {
               "left": {
@@ -5032,7 +5097,8 @@
           "hint": "Start with the pair you know best."
         },
         "vi": {
-          "prompt": "Ghep moi tu voi tu trai nghia.",
+          "prompt": "Ghép mỗi từ với từ trái nghĩa.",
+          "learningObjective": "ghép từ trái nghĩa",
           "pairs": [
             {
               "left": {
@@ -5043,9 +5109,9 @@
               },
               "right": {
                 "id": "r0",
-                "content": "nho",
+                "content": "nhỏ",
                 "type": "text",
-                "semanticLabel": "nho"
+                "semanticLabel": "nhỏ"
               }
             },
             {
@@ -5057,46 +5123,46 @@
               },
               "right": {
                 "id": "r1",
-                "content": "cham",
+                "content": "chậm",
                 "type": "text",
-                "semanticLabel": "cham"
+                "semanticLabel": "chậm"
               }
             },
             {
               "left": {
                 "id": "l2",
-                "content": "ngay",
+                "content": "ngày",
                 "type": "text",
-                "semanticLabel": "ngay"
+                "semanticLabel": "ngày"
               },
               "right": {
                 "id": "r2",
-                "content": "dem",
+                "content": "đêm",
                 "type": "text",
-                "semanticLabel": "dem"
+                "semanticLabel": "đêm"
               }
             },
             {
               "left": {
                 "id": "l3",
-                "content": "nong",
+                "content": "nóng",
                 "type": "text",
-                "semanticLabel": "nong"
+                "semanticLabel": "nóng"
               },
               "right": {
                 "id": "r3",
-                "content": "lanh",
+                "content": "lạnh",
                 "type": "text",
-                "semanticLabel": "lanh"
+                "semanticLabel": "lạnh"
               }
             }
           ],
-          "hint": "Bat dau voi cap con biet ro nhat."
+          "hint": "Bắt đầu với cặp con biết rõ nhất."
         }
       },
       "hints": [
         {
-          "text": "Bat dau voi cap con biet ro nhat."
+          "text": "Bắt đầu với cặp con biết rõ nhất."
         }
       ],
       "metadata": {
@@ -5126,6 +5192,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Match each word to its opposite.",
+          "learningObjective": "opposite word matching",
           "pairs": [
             {
               "left": {
@@ -5187,7 +5254,8 @@
           "hint": "Start with the pair you know best."
         },
         "vi": {
-          "prompt": "Ghep moi tu voi tu trai nghia.",
+          "prompt": "Ghép mỗi từ với từ trái nghĩa.",
+          "learningObjective": "ghép từ trái nghĩa",
           "pairs": [
             {
               "left": {
@@ -5198,37 +5266,37 @@
               },
               "right": {
                 "id": "r0",
-                "content": "cham",
+                "content": "chậm",
                 "type": "text",
-                "semanticLabel": "cham"
+                "semanticLabel": "chậm"
               }
             },
             {
               "left": {
                 "id": "l1",
-                "content": "ngay",
+                "content": "ngày",
                 "type": "text",
-                "semanticLabel": "ngay"
+                "semanticLabel": "ngày"
               },
               "right": {
                 "id": "r1",
-                "content": "dem",
+                "content": "đêm",
                 "type": "text",
-                "semanticLabel": "dem"
+                "semanticLabel": "đêm"
               }
             },
             {
               "left": {
                 "id": "l2",
-                "content": "nong",
+                "content": "nóng",
                 "type": "text",
-                "semanticLabel": "nong"
+                "semanticLabel": "nóng"
               },
               "right": {
                 "id": "r2",
-                "content": "lanh",
+                "content": "lạnh",
                 "type": "text",
-                "semanticLabel": "lanh"
+                "semanticLabel": "lạnh"
               }
             },
             {
@@ -5240,18 +5308,18 @@
               },
               "right": {
                 "id": "r3",
-                "content": "nho",
+                "content": "nhỏ",
                 "type": "text",
-                "semanticLabel": "nho"
+                "semanticLabel": "nhỏ"
               }
             }
           ],
-          "hint": "Bat dau voi cap con biet ro nhat."
+          "hint": "Bắt đầu với cặp con biết rõ nhất."
         }
       },
       "hints": [
         {
-          "text": "Bat dau voi cap con biet ro nhat."
+          "text": "Bắt đầu với cặp con biết rõ nhất."
         }
       ],
       "metadata": {
@@ -5281,6 +5349,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Match each word to its opposite.",
+          "learningObjective": "opposite word matching",
           "pairs": [
             {
               "left": {
@@ -5342,34 +5411,35 @@
           "hint": "Start with the pair you know best."
         },
         "vi": {
-          "prompt": "Ghep moi tu voi tu trai nghia.",
+          "prompt": "Ghép mỗi từ với từ trái nghĩa.",
+          "learningObjective": "ghép từ trái nghĩa",
           "pairs": [
             {
               "left": {
                 "id": "l0",
-                "content": "ngay",
+                "content": "ngày",
                 "type": "text",
-                "semanticLabel": "ngay"
+                "semanticLabel": "ngày"
               },
               "right": {
                 "id": "r0",
-                "content": "dem",
+                "content": "đêm",
                 "type": "text",
-                "semanticLabel": "dem"
+                "semanticLabel": "đêm"
               }
             },
             {
               "left": {
                 "id": "l1",
-                "content": "nong",
+                "content": "nóng",
                 "type": "text",
-                "semanticLabel": "nong"
+                "semanticLabel": "nóng"
               },
               "right": {
                 "id": "r1",
-                "content": "lanh",
+                "content": "lạnh",
                 "type": "text",
-                "semanticLabel": "lanh"
+                "semanticLabel": "lạnh"
               }
             },
             {
@@ -5381,9 +5451,9 @@
               },
               "right": {
                 "id": "r2",
-                "content": "nho",
+                "content": "nhỏ",
                 "type": "text",
-                "semanticLabel": "nho"
+                "semanticLabel": "nhỏ"
               }
             },
             {
@@ -5395,18 +5465,18 @@
               },
               "right": {
                 "id": "r3",
-                "content": "cham",
+                "content": "chậm",
                 "type": "text",
-                "semanticLabel": "cham"
+                "semanticLabel": "chậm"
               }
             }
           ],
-          "hint": "Bat dau voi cap con biet ro nhat."
+          "hint": "Bắt đầu với cặp con biết rõ nhất."
         }
       },
       "hints": [
         {
-          "text": "Bat dau voi cap con biet ro nhat."
+          "text": "Bắt đầu với cặp con biết rõ nhất."
         }
       ],
       "metadata": {
@@ -5436,6 +5506,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Match each word to its opposite.",
+          "learningObjective": "opposite word matching",
           "pairs": [
             {
               "left": {
@@ -5497,20 +5568,21 @@
           "hint": "Start with the pair you know best."
         },
         "vi": {
-          "prompt": "Ghep moi tu voi tu trai nghia.",
+          "prompt": "Ghép mỗi từ với từ trái nghĩa.",
+          "learningObjective": "ghép từ trái nghĩa",
           "pairs": [
             {
               "left": {
                 "id": "l0",
-                "content": "nong",
+                "content": "nóng",
                 "type": "text",
-                "semanticLabel": "nong"
+                "semanticLabel": "nóng"
               },
               "right": {
                 "id": "r0",
-                "content": "lanh",
+                "content": "lạnh",
                 "type": "text",
-                "semanticLabel": "lanh"
+                "semanticLabel": "lạnh"
               }
             },
             {
@@ -5522,9 +5594,9 @@
               },
               "right": {
                 "id": "r1",
-                "content": "nho",
+                "content": "nhỏ",
                 "type": "text",
-                "semanticLabel": "nho"
+                "semanticLabel": "nhỏ"
               }
             },
             {
@@ -5536,32 +5608,32 @@
               },
               "right": {
                 "id": "r2",
-                "content": "cham",
+                "content": "chậm",
                 "type": "text",
-                "semanticLabel": "cham"
+                "semanticLabel": "chậm"
               }
             },
             {
               "left": {
                 "id": "l3",
-                "content": "ngay",
+                "content": "ngày",
                 "type": "text",
-                "semanticLabel": "ngay"
+                "semanticLabel": "ngày"
               },
               "right": {
                 "id": "r3",
-                "content": "dem",
+                "content": "đêm",
                 "type": "text",
-                "semanticLabel": "dem"
+                "semanticLabel": "đêm"
               }
             }
           ],
-          "hint": "Bat dau voi cap con biet ro nhat."
+          "hint": "Bắt đầu với cặp con biết rõ nhất."
         }
       },
       "hints": [
         {
-          "text": "Bat dau voi cap con biet ro nhat."
+          "text": "Bắt đầu với cặp con biết rõ nhất."
         }
       ],
       "metadata": {
@@ -5591,6 +5663,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Match each word to its opposite.",
+          "learningObjective": "opposite word matching",
           "pairs": [
             {
               "left": {
@@ -5652,7 +5725,8 @@
           "hint": "Start with the pair you know best."
         },
         "vi": {
-          "prompt": "Ghep moi tu voi tu trai nghia.",
+          "prompt": "Ghép mỗi từ với từ trái nghĩa.",
+          "learningObjective": "ghép từ trái nghĩa",
           "pairs": [
             {
               "left": {
@@ -5663,9 +5737,9 @@
               },
               "right": {
                 "id": "r0",
-                "content": "nho",
+                "content": "nhỏ",
                 "type": "text",
-                "semanticLabel": "nho"
+                "semanticLabel": "nhỏ"
               }
             },
             {
@@ -5677,46 +5751,46 @@
               },
               "right": {
                 "id": "r1",
-                "content": "cham",
+                "content": "chậm",
                 "type": "text",
-                "semanticLabel": "cham"
+                "semanticLabel": "chậm"
               }
             },
             {
               "left": {
                 "id": "l2",
-                "content": "ngay",
+                "content": "ngày",
                 "type": "text",
-                "semanticLabel": "ngay"
+                "semanticLabel": "ngày"
               },
               "right": {
                 "id": "r2",
-                "content": "dem",
+                "content": "đêm",
                 "type": "text",
-                "semanticLabel": "dem"
+                "semanticLabel": "đêm"
               }
             },
             {
               "left": {
                 "id": "l3",
-                "content": "nong",
+                "content": "nóng",
                 "type": "text",
-                "semanticLabel": "nong"
+                "semanticLabel": "nóng"
               },
               "right": {
                 "id": "r3",
-                "content": "lanh",
+                "content": "lạnh",
                 "type": "text",
-                "semanticLabel": "lanh"
+                "semanticLabel": "lạnh"
               }
             }
           ],
-          "hint": "Bat dau voi cap con biet ro nhat."
+          "hint": "Bắt đầu với cặp con biết rõ nhất."
         }
       },
       "hints": [
         {
-          "text": "Bat dau voi cap con biet ro nhat."
+          "text": "Bắt đầu với cặp con biết rõ nhất."
         }
       ],
       "metadata": {
@@ -5746,6 +5820,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Match each word to its opposite.",
+          "learningObjective": "opposite word matching",
           "pairs": [
             {
               "left": {
@@ -5807,7 +5882,8 @@
           "hint": "Start with the pair you know best."
         },
         "vi": {
-          "prompt": "Ghep moi tu voi tu trai nghia.",
+          "prompt": "Ghép mỗi từ với từ trái nghĩa.",
+          "learningObjective": "ghép từ trái nghĩa",
           "pairs": [
             {
               "left": {
@@ -5818,37 +5894,37 @@
               },
               "right": {
                 "id": "r0",
-                "content": "cham",
+                "content": "chậm",
                 "type": "text",
-                "semanticLabel": "cham"
+                "semanticLabel": "chậm"
               }
             },
             {
               "left": {
                 "id": "l1",
-                "content": "ngay",
+                "content": "ngày",
                 "type": "text",
-                "semanticLabel": "ngay"
+                "semanticLabel": "ngày"
               },
               "right": {
                 "id": "r1",
-                "content": "dem",
+                "content": "đêm",
                 "type": "text",
-                "semanticLabel": "dem"
+                "semanticLabel": "đêm"
               }
             },
             {
               "left": {
                 "id": "l2",
-                "content": "nong",
+                "content": "nóng",
                 "type": "text",
-                "semanticLabel": "nong"
+                "semanticLabel": "nóng"
               },
               "right": {
                 "id": "r2",
-                "content": "lanh",
+                "content": "lạnh",
                 "type": "text",
-                "semanticLabel": "lanh"
+                "semanticLabel": "lạnh"
               }
             },
             {
@@ -5860,18 +5936,18 @@
               },
               "right": {
                 "id": "r3",
-                "content": "nho",
+                "content": "nhỏ",
                 "type": "text",
-                "semanticLabel": "nho"
+                "semanticLabel": "nhỏ"
               }
             }
           ],
-          "hint": "Bat dau voi cap con biet ro nhat."
+          "hint": "Bắt đầu với cặp con biết rõ nhất."
         }
       },
       "hints": [
         {
-          "text": "Bat dau voi cap con biet ro nhat."
+          "text": "Bắt đầu với cặp con biết rõ nhất."
         }
       ],
       "metadata": {
@@ -5901,6 +5977,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Match each word to its opposite.",
+          "learningObjective": "opposite word matching",
           "pairs": [
             {
               "left": {
@@ -5962,34 +6039,35 @@
           "hint": "Start with the pair you know best."
         },
         "vi": {
-          "prompt": "Ghep moi tu voi tu trai nghia.",
+          "prompt": "Ghép mỗi từ với từ trái nghĩa.",
+          "learningObjective": "ghép từ trái nghĩa",
           "pairs": [
             {
               "left": {
                 "id": "l0",
-                "content": "ngay",
+                "content": "ngày",
                 "type": "text",
-                "semanticLabel": "ngay"
+                "semanticLabel": "ngày"
               },
               "right": {
                 "id": "r0",
-                "content": "dem",
+                "content": "đêm",
                 "type": "text",
-                "semanticLabel": "dem"
+                "semanticLabel": "đêm"
               }
             },
             {
               "left": {
                 "id": "l1",
-                "content": "nong",
+                "content": "nóng",
                 "type": "text",
-                "semanticLabel": "nong"
+                "semanticLabel": "nóng"
               },
               "right": {
                 "id": "r1",
-                "content": "lanh",
+                "content": "lạnh",
                 "type": "text",
-                "semanticLabel": "lanh"
+                "semanticLabel": "lạnh"
               }
             },
             {
@@ -6001,9 +6079,9 @@
               },
               "right": {
                 "id": "r2",
-                "content": "nho",
+                "content": "nhỏ",
                 "type": "text",
-                "semanticLabel": "nho"
+                "semanticLabel": "nhỏ"
               }
             },
             {
@@ -6015,18 +6093,18 @@
               },
               "right": {
                 "id": "r3",
-                "content": "cham",
+                "content": "chậm",
                 "type": "text",
-                "semanticLabel": "cham"
+                "semanticLabel": "chậm"
               }
             }
           ],
-          "hint": "Bat dau voi cap con biet ro nhat."
+          "hint": "Bắt đầu với cặp con biết rõ nhất."
         }
       },
       "hints": [
         {
-          "text": "Bat dau voi cap con biet ro nhat."
+          "text": "Bắt đầu với cặp con biết rõ nhất."
         }
       ],
       "metadata": {
@@ -6056,6 +6134,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Match each word to its opposite.",
+          "learningObjective": "opposite word matching",
           "pairs": [
             {
               "left": {
@@ -6117,20 +6196,21 @@
           "hint": "Start with the pair you know best."
         },
         "vi": {
-          "prompt": "Ghep moi tu voi tu trai nghia.",
+          "prompt": "Ghép mỗi từ với từ trái nghĩa.",
+          "learningObjective": "ghép từ trái nghĩa",
           "pairs": [
             {
               "left": {
                 "id": "l0",
-                "content": "nong",
+                "content": "nóng",
                 "type": "text",
-                "semanticLabel": "nong"
+                "semanticLabel": "nóng"
               },
               "right": {
                 "id": "r0",
-                "content": "lanh",
+                "content": "lạnh",
                 "type": "text",
-                "semanticLabel": "lanh"
+                "semanticLabel": "lạnh"
               }
             },
             {
@@ -6142,9 +6222,9 @@
               },
               "right": {
                 "id": "r1",
-                "content": "nho",
+                "content": "nhỏ",
                 "type": "text",
-                "semanticLabel": "nho"
+                "semanticLabel": "nhỏ"
               }
             },
             {
@@ -6156,32 +6236,32 @@
               },
               "right": {
                 "id": "r2",
-                "content": "cham",
+                "content": "chậm",
                 "type": "text",
-                "semanticLabel": "cham"
+                "semanticLabel": "chậm"
               }
             },
             {
               "left": {
                 "id": "l3",
-                "content": "ngay",
+                "content": "ngày",
                 "type": "text",
-                "semanticLabel": "ngay"
+                "semanticLabel": "ngày"
               },
               "right": {
                 "id": "r3",
-                "content": "dem",
+                "content": "đêm",
                 "type": "text",
-                "semanticLabel": "dem"
+                "semanticLabel": "đêm"
               }
             }
           ],
-          "hint": "Bat dau voi cap con biet ro nhat."
+          "hint": "Bắt đầu với cặp con biết rõ nhất."
         }
       },
       "hints": [
         {
-          "text": "Bat dau voi cap con biet ro nhat."
+          "text": "Bắt đầu với cặp con biết rõ nhất."
         }
       ],
       "metadata": {
@@ -6211,6 +6291,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Match each word to its opposite.",
+          "learningObjective": "opposite word matching",
           "pairs": [
             {
               "left": {
@@ -6272,7 +6353,8 @@
           "hint": "Start with the pair you know best."
         },
         "vi": {
-          "prompt": "Ghep moi tu voi tu trai nghia.",
+          "prompt": "Ghép mỗi từ với từ trái nghĩa.",
+          "learningObjective": "ghép từ trái nghĩa",
           "pairs": [
             {
               "left": {
@@ -6283,9 +6365,9 @@
               },
               "right": {
                 "id": "r0",
-                "content": "nho",
+                "content": "nhỏ",
                 "type": "text",
-                "semanticLabel": "nho"
+                "semanticLabel": "nhỏ"
               }
             },
             {
@@ -6297,46 +6379,46 @@
               },
               "right": {
                 "id": "r1",
-                "content": "cham",
+                "content": "chậm",
                 "type": "text",
-                "semanticLabel": "cham"
+                "semanticLabel": "chậm"
               }
             },
             {
               "left": {
                 "id": "l2",
-                "content": "ngay",
+                "content": "ngày",
                 "type": "text",
-                "semanticLabel": "ngay"
+                "semanticLabel": "ngày"
               },
               "right": {
                 "id": "r2",
-                "content": "dem",
+                "content": "đêm",
                 "type": "text",
-                "semanticLabel": "dem"
+                "semanticLabel": "đêm"
               }
             },
             {
               "left": {
                 "id": "l3",
-                "content": "nong",
+                "content": "nóng",
                 "type": "text",
-                "semanticLabel": "nong"
+                "semanticLabel": "nóng"
               },
               "right": {
                 "id": "r3",
-                "content": "lanh",
+                "content": "lạnh",
                 "type": "text",
-                "semanticLabel": "lanh"
+                "semanticLabel": "lạnh"
               }
             }
           ],
-          "hint": "Bat dau voi cap con biet ro nhat."
+          "hint": "Bắt đầu với cặp con biết rõ nhất."
         }
       },
       "hints": [
         {
-          "text": "Bat dau voi cap con biet ro nhat."
+          "text": "Bắt đầu với cặp con biết rõ nhất."
         }
       ],
       "metadata": {
@@ -6366,6 +6448,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Match each word to its opposite.",
+          "learningObjective": "opposite word matching",
           "pairs": [
             {
               "left": {
@@ -6427,7 +6510,8 @@
           "hint": "Start with the pair you know best."
         },
         "vi": {
-          "prompt": "Ghep moi tu voi tu trai nghia.",
+          "prompt": "Ghép mỗi từ với từ trái nghĩa.",
+          "learningObjective": "ghép từ trái nghĩa",
           "pairs": [
             {
               "left": {
@@ -6438,37 +6522,37 @@
               },
               "right": {
                 "id": "r0",
-                "content": "cham",
+                "content": "chậm",
                 "type": "text",
-                "semanticLabel": "cham"
+                "semanticLabel": "chậm"
               }
             },
             {
               "left": {
                 "id": "l1",
-                "content": "ngay",
+                "content": "ngày",
                 "type": "text",
-                "semanticLabel": "ngay"
+                "semanticLabel": "ngày"
               },
               "right": {
                 "id": "r1",
-                "content": "dem",
+                "content": "đêm",
                 "type": "text",
-                "semanticLabel": "dem"
+                "semanticLabel": "đêm"
               }
             },
             {
               "left": {
                 "id": "l2",
-                "content": "nong",
+                "content": "nóng",
                 "type": "text",
-                "semanticLabel": "nong"
+                "semanticLabel": "nóng"
               },
               "right": {
                 "id": "r2",
-                "content": "lanh",
+                "content": "lạnh",
                 "type": "text",
-                "semanticLabel": "lanh"
+                "semanticLabel": "lạnh"
               }
             },
             {
@@ -6480,18 +6564,18 @@
               },
               "right": {
                 "id": "r3",
-                "content": "nho",
+                "content": "nhỏ",
                 "type": "text",
-                "semanticLabel": "nho"
+                "semanticLabel": "nhỏ"
               }
             }
           ],
-          "hint": "Bat dau voi cap con biet ro nhat."
+          "hint": "Bắt đầu với cặp con biết rõ nhất."
         }
       },
       "hints": [
         {
-          "text": "Bat dau voi cap con biet ro nhat."
+          "text": "Bắt đầu với cặp con biết rõ nhất."
         }
       ],
       "metadata": {
@@ -6521,6 +6605,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Match each word to its opposite.",
+          "learningObjective": "opposite word matching",
           "pairs": [
             {
               "left": {
@@ -6582,34 +6667,35 @@
           "hint": "Start with the pair you know best."
         },
         "vi": {
-          "prompt": "Ghep moi tu voi tu trai nghia.",
+          "prompt": "Ghép mỗi từ với từ trái nghĩa.",
+          "learningObjective": "ghép từ trái nghĩa",
           "pairs": [
             {
               "left": {
                 "id": "l0",
-                "content": "ngay",
+                "content": "ngày",
                 "type": "text",
-                "semanticLabel": "ngay"
+                "semanticLabel": "ngày"
               },
               "right": {
                 "id": "r0",
-                "content": "dem",
+                "content": "đêm",
                 "type": "text",
-                "semanticLabel": "dem"
+                "semanticLabel": "đêm"
               }
             },
             {
               "left": {
                 "id": "l1",
-                "content": "nong",
+                "content": "nóng",
                 "type": "text",
-                "semanticLabel": "nong"
+                "semanticLabel": "nóng"
               },
               "right": {
                 "id": "r1",
-                "content": "lanh",
+                "content": "lạnh",
                 "type": "text",
-                "semanticLabel": "lanh"
+                "semanticLabel": "lạnh"
               }
             },
             {
@@ -6621,9 +6707,9 @@
               },
               "right": {
                 "id": "r2",
-                "content": "nho",
+                "content": "nhỏ",
                 "type": "text",
-                "semanticLabel": "nho"
+                "semanticLabel": "nhỏ"
               }
             },
             {
@@ -6635,18 +6721,18 @@
               },
               "right": {
                 "id": "r3",
-                "content": "cham",
+                "content": "chậm",
                 "type": "text",
-                "semanticLabel": "cham"
+                "semanticLabel": "chậm"
               }
             }
           ],
-          "hint": "Bat dau voi cap con biet ro nhat."
+          "hint": "Bắt đầu với cặp con biết rõ nhất."
         }
       },
       "hints": [
         {
-          "text": "Bat dau voi cap con biet ro nhat."
+          "text": "Bắt đầu với cặp con biết rõ nhất."
         }
       ],
       "metadata": {
@@ -6676,6 +6762,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Match each word to its opposite.",
+          "learningObjective": "opposite word matching",
           "pairs": [
             {
               "left": {
@@ -6737,20 +6824,21 @@
           "hint": "Start with the pair you know best."
         },
         "vi": {
-          "prompt": "Ghep moi tu voi tu trai nghia.",
+          "prompt": "Ghép mỗi từ với từ trái nghĩa.",
+          "learningObjective": "ghép từ trái nghĩa",
           "pairs": [
             {
               "left": {
                 "id": "l0",
-                "content": "nong",
+                "content": "nóng",
                 "type": "text",
-                "semanticLabel": "nong"
+                "semanticLabel": "nóng"
               },
               "right": {
                 "id": "r0",
-                "content": "lanh",
+                "content": "lạnh",
                 "type": "text",
-                "semanticLabel": "lanh"
+                "semanticLabel": "lạnh"
               }
             },
             {
@@ -6762,9 +6850,9 @@
               },
               "right": {
                 "id": "r1",
-                "content": "nho",
+                "content": "nhỏ",
                 "type": "text",
-                "semanticLabel": "nho"
+                "semanticLabel": "nhỏ"
               }
             },
             {
@@ -6776,32 +6864,32 @@
               },
               "right": {
                 "id": "r2",
-                "content": "cham",
+                "content": "chậm",
                 "type": "text",
-                "semanticLabel": "cham"
+                "semanticLabel": "chậm"
               }
             },
             {
               "left": {
                 "id": "l3",
-                "content": "ngay",
+                "content": "ngày",
                 "type": "text",
-                "semanticLabel": "ngay"
+                "semanticLabel": "ngày"
               },
               "right": {
                 "id": "r3",
-                "content": "dem",
+                "content": "đêm",
                 "type": "text",
-                "semanticLabel": "dem"
+                "semanticLabel": "đêm"
               }
             }
           ],
-          "hint": "Bat dau voi cap con biet ro nhat."
+          "hint": "Bắt đầu với cặp con biết rõ nhất."
         }
       },
       "hints": [
         {
-          "text": "Bat dau voi cap con biet ro nhat."
+          "text": "Bắt đầu với cặp con biết rõ nhất."
         }
       ],
       "metadata": {
@@ -6831,6 +6919,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Match each word to its opposite.",
+          "learningObjective": "opposite word matching",
           "pairs": [
             {
               "left": {
@@ -6892,7 +6981,8 @@
           "hint": "Start with the pair you know best."
         },
         "vi": {
-          "prompt": "Ghep moi tu voi tu trai nghia.",
+          "prompt": "Ghép mỗi từ với từ trái nghĩa.",
+          "learningObjective": "ghép từ trái nghĩa",
           "pairs": [
             {
               "left": {
@@ -6903,9 +6993,9 @@
               },
               "right": {
                 "id": "r0",
-                "content": "nho",
+                "content": "nhỏ",
                 "type": "text",
-                "semanticLabel": "nho"
+                "semanticLabel": "nhỏ"
               }
             },
             {
@@ -6917,46 +7007,46 @@
               },
               "right": {
                 "id": "r1",
-                "content": "cham",
+                "content": "chậm",
                 "type": "text",
-                "semanticLabel": "cham"
+                "semanticLabel": "chậm"
               }
             },
             {
               "left": {
                 "id": "l2",
-                "content": "ngay",
+                "content": "ngày",
                 "type": "text",
-                "semanticLabel": "ngay"
+                "semanticLabel": "ngày"
               },
               "right": {
                 "id": "r2",
-                "content": "dem",
+                "content": "đêm",
                 "type": "text",
-                "semanticLabel": "dem"
+                "semanticLabel": "đêm"
               }
             },
             {
               "left": {
                 "id": "l3",
-                "content": "nong",
+                "content": "nóng",
                 "type": "text",
-                "semanticLabel": "nong"
+                "semanticLabel": "nóng"
               },
               "right": {
                 "id": "r3",
-                "content": "lanh",
+                "content": "lạnh",
                 "type": "text",
-                "semanticLabel": "lanh"
+                "semanticLabel": "lạnh"
               }
             }
           ],
-          "hint": "Bat dau voi cap con biet ro nhat."
+          "hint": "Bắt đầu với cặp con biết rõ nhất."
         }
       },
       "hints": [
         {
-          "text": "Bat dau voi cap con biet ro nhat."
+          "text": "Bắt đầu với cặp con biết rõ nhất."
         }
       ],
       "metadata": {
@@ -6986,6 +7076,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Match each word to its opposite.",
+          "learningObjective": "opposite word matching",
           "pairs": [
             {
               "left": {
@@ -7047,7 +7138,8 @@
           "hint": "Start with the pair you know best."
         },
         "vi": {
-          "prompt": "Ghep moi tu voi tu trai nghia.",
+          "prompt": "Ghép mỗi từ với từ trái nghĩa.",
+          "learningObjective": "ghép từ trái nghĩa",
           "pairs": [
             {
               "left": {
@@ -7058,37 +7150,37 @@
               },
               "right": {
                 "id": "r0",
-                "content": "cham",
+                "content": "chậm",
                 "type": "text",
-                "semanticLabel": "cham"
+                "semanticLabel": "chậm"
               }
             },
             {
               "left": {
                 "id": "l1",
-                "content": "ngay",
+                "content": "ngày",
                 "type": "text",
-                "semanticLabel": "ngay"
+                "semanticLabel": "ngày"
               },
               "right": {
                 "id": "r1",
-                "content": "dem",
+                "content": "đêm",
                 "type": "text",
-                "semanticLabel": "dem"
+                "semanticLabel": "đêm"
               }
             },
             {
               "left": {
                 "id": "l2",
-                "content": "nong",
+                "content": "nóng",
                 "type": "text",
-                "semanticLabel": "nong"
+                "semanticLabel": "nóng"
               },
               "right": {
                 "id": "r2",
-                "content": "lanh",
+                "content": "lạnh",
                 "type": "text",
-                "semanticLabel": "lanh"
+                "semanticLabel": "lạnh"
               }
             },
             {
@@ -7100,18 +7192,18 @@
               },
               "right": {
                 "id": "r3",
-                "content": "nho",
+                "content": "nhỏ",
                 "type": "text",
-                "semanticLabel": "nho"
+                "semanticLabel": "nhỏ"
               }
             }
           ],
-          "hint": "Bat dau voi cap con biet ro nhat."
+          "hint": "Bắt đầu với cặp con biết rõ nhất."
         }
       },
       "hints": [
         {
-          "text": "Bat dau voi cap con biet ro nhat."
+          "text": "Bắt đầu với cặp con biết rõ nhất."
         }
       ],
       "metadata": {
@@ -7141,6 +7233,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Match each word to its opposite.",
+          "learningObjective": "opposite word matching",
           "pairs": [
             {
               "left": {
@@ -7202,34 +7295,35 @@
           "hint": "Start with the pair you know best."
         },
         "vi": {
-          "prompt": "Ghep moi tu voi tu trai nghia.",
+          "prompt": "Ghép mỗi từ với từ trái nghĩa.",
+          "learningObjective": "ghép từ trái nghĩa",
           "pairs": [
             {
               "left": {
                 "id": "l0",
-                "content": "ngay",
+                "content": "ngày",
                 "type": "text",
-                "semanticLabel": "ngay"
+                "semanticLabel": "ngày"
               },
               "right": {
                 "id": "r0",
-                "content": "dem",
+                "content": "đêm",
                 "type": "text",
-                "semanticLabel": "dem"
+                "semanticLabel": "đêm"
               }
             },
             {
               "left": {
                 "id": "l1",
-                "content": "nong",
+                "content": "nóng",
                 "type": "text",
-                "semanticLabel": "nong"
+                "semanticLabel": "nóng"
               },
               "right": {
                 "id": "r1",
-                "content": "lanh",
+                "content": "lạnh",
                 "type": "text",
-                "semanticLabel": "lanh"
+                "semanticLabel": "lạnh"
               }
             },
             {
@@ -7241,9 +7335,9 @@
               },
               "right": {
                 "id": "r2",
-                "content": "nho",
+                "content": "nhỏ",
                 "type": "text",
-                "semanticLabel": "nho"
+                "semanticLabel": "nhỏ"
               }
             },
             {
@@ -7255,18 +7349,18 @@
               },
               "right": {
                 "id": "r3",
-                "content": "cham",
+                "content": "chậm",
                 "type": "text",
-                "semanticLabel": "cham"
+                "semanticLabel": "chậm"
               }
             }
           ],
-          "hint": "Bat dau voi cap con biet ro nhat."
+          "hint": "Bắt đầu với cặp con biết rõ nhất."
         }
       },
       "hints": [
         {
-          "text": "Bat dau voi cap con biet ro nhat."
+          "text": "Bắt đầu với cặp con biết rõ nhất."
         }
       ],
       "metadata": {
@@ -7296,6 +7390,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Match each word to its opposite.",
+          "learningObjective": "opposite word matching",
           "pairs": [
             {
               "left": {
@@ -7357,20 +7452,21 @@
           "hint": "Start with the pair you know best."
         },
         "vi": {
-          "prompt": "Ghep moi tu voi tu trai nghia.",
+          "prompt": "Ghép mỗi từ với từ trái nghĩa.",
+          "learningObjective": "ghép từ trái nghĩa",
           "pairs": [
             {
               "left": {
                 "id": "l0",
-                "content": "nong",
+                "content": "nóng",
                 "type": "text",
-                "semanticLabel": "nong"
+                "semanticLabel": "nóng"
               },
               "right": {
                 "id": "r0",
-                "content": "lanh",
+                "content": "lạnh",
                 "type": "text",
-                "semanticLabel": "lanh"
+                "semanticLabel": "lạnh"
               }
             },
             {
@@ -7382,9 +7478,9 @@
               },
               "right": {
                 "id": "r1",
-                "content": "nho",
+                "content": "nhỏ",
                 "type": "text",
-                "semanticLabel": "nho"
+                "semanticLabel": "nhỏ"
               }
             },
             {
@@ -7396,32 +7492,32 @@
               },
               "right": {
                 "id": "r2",
-                "content": "cham",
+                "content": "chậm",
                 "type": "text",
-                "semanticLabel": "cham"
+                "semanticLabel": "chậm"
               }
             },
             {
               "left": {
                 "id": "l3",
-                "content": "ngay",
+                "content": "ngày",
                 "type": "text",
-                "semanticLabel": "ngay"
+                "semanticLabel": "ngày"
               },
               "right": {
                 "id": "r3",
-                "content": "dem",
+                "content": "đêm",
                 "type": "text",
-                "semanticLabel": "dem"
+                "semanticLabel": "đêm"
               }
             }
           ],
-          "hint": "Bat dau voi cap con biet ro nhat."
+          "hint": "Bắt đầu với cặp con biết rõ nhất."
         }
       },
       "hints": [
         {
-          "text": "Bat dau voi cap con biet ro nhat."
+          "text": "Bắt đầu với cặp con biết rõ nhất."
         }
       ],
       "metadata": {
@@ -7451,6 +7547,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Match each word to its opposite.",
+          "learningObjective": "opposite word matching",
           "pairs": [
             {
               "left": {
@@ -7512,7 +7609,8 @@
           "hint": "Start with the pair you know best."
         },
         "vi": {
-          "prompt": "Ghep moi tu voi tu trai nghia.",
+          "prompt": "Ghép mỗi từ với từ trái nghĩa.",
+          "learningObjective": "ghép từ trái nghĩa",
           "pairs": [
             {
               "left": {
@@ -7523,9 +7621,9 @@
               },
               "right": {
                 "id": "r0",
-                "content": "nho",
+                "content": "nhỏ",
                 "type": "text",
-                "semanticLabel": "nho"
+                "semanticLabel": "nhỏ"
               }
             },
             {
@@ -7537,46 +7635,46 @@
               },
               "right": {
                 "id": "r1",
-                "content": "cham",
+                "content": "chậm",
                 "type": "text",
-                "semanticLabel": "cham"
+                "semanticLabel": "chậm"
               }
             },
             {
               "left": {
                 "id": "l2",
-                "content": "ngay",
+                "content": "ngày",
                 "type": "text",
-                "semanticLabel": "ngay"
+                "semanticLabel": "ngày"
               },
               "right": {
                 "id": "r2",
-                "content": "dem",
+                "content": "đêm",
                 "type": "text",
-                "semanticLabel": "dem"
+                "semanticLabel": "đêm"
               }
             },
             {
               "left": {
                 "id": "l3",
-                "content": "nong",
+                "content": "nóng",
                 "type": "text",
-                "semanticLabel": "nong"
+                "semanticLabel": "nóng"
               },
               "right": {
                 "id": "r3",
-                "content": "lanh",
+                "content": "lạnh",
                 "type": "text",
-                "semanticLabel": "lanh"
+                "semanticLabel": "lạnh"
               }
             }
           ],
-          "hint": "Bat dau voi cap con biet ro nhat."
+          "hint": "Bắt đầu với cặp con biết rõ nhất."
         }
       },
       "hints": [
         {
-          "text": "Bat dau voi cap con biet ro nhat."
+          "text": "Bắt đầu với cặp con biết rõ nhất."
         }
       ],
       "metadata": {
@@ -7606,6 +7704,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Match each word to its opposite.",
+          "learningObjective": "opposite word matching",
           "pairs": [
             {
               "left": {
@@ -7667,7 +7766,8 @@
           "hint": "Start with the pair you know best."
         },
         "vi": {
-          "prompt": "Ghep moi tu voi tu trai nghia.",
+          "prompt": "Ghép mỗi từ với từ trái nghĩa.",
+          "learningObjective": "ghép từ trái nghĩa",
           "pairs": [
             {
               "left": {
@@ -7678,37 +7778,37 @@
               },
               "right": {
                 "id": "r0",
-                "content": "cham",
+                "content": "chậm",
                 "type": "text",
-                "semanticLabel": "cham"
+                "semanticLabel": "chậm"
               }
             },
             {
               "left": {
                 "id": "l1",
-                "content": "ngay",
+                "content": "ngày",
                 "type": "text",
-                "semanticLabel": "ngay"
+                "semanticLabel": "ngày"
               },
               "right": {
                 "id": "r1",
-                "content": "dem",
+                "content": "đêm",
                 "type": "text",
-                "semanticLabel": "dem"
+                "semanticLabel": "đêm"
               }
             },
             {
               "left": {
                 "id": "l2",
-                "content": "nong",
+                "content": "nóng",
                 "type": "text",
-                "semanticLabel": "nong"
+                "semanticLabel": "nóng"
               },
               "right": {
                 "id": "r2",
-                "content": "lanh",
+                "content": "lạnh",
                 "type": "text",
-                "semanticLabel": "lanh"
+                "semanticLabel": "lạnh"
               }
             },
             {
@@ -7720,18 +7820,18 @@
               },
               "right": {
                 "id": "r3",
-                "content": "nho",
+                "content": "nhỏ",
                 "type": "text",
-                "semanticLabel": "nho"
+                "semanticLabel": "nhỏ"
               }
             }
           ],
-          "hint": "Bat dau voi cap con biet ro nhat."
+          "hint": "Bắt đầu với cặp con biết rõ nhất."
         }
       },
       "hints": [
         {
-          "text": "Bat dau voi cap con biet ro nhat."
+          "text": "Bắt đầu với cặp con biết rõ nhất."
         }
       ],
       "metadata": {
@@ -7761,6 +7861,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Match each word to its opposite.",
+          "learningObjective": "opposite word matching",
           "pairs": [
             {
               "left": {
@@ -7822,34 +7923,35 @@
           "hint": "Start with the pair you know best."
         },
         "vi": {
-          "prompt": "Ghep moi tu voi tu trai nghia.",
+          "prompt": "Ghép mỗi từ với từ trái nghĩa.",
+          "learningObjective": "ghép từ trái nghĩa",
           "pairs": [
             {
               "left": {
                 "id": "l0",
-                "content": "ngay",
+                "content": "ngày",
                 "type": "text",
-                "semanticLabel": "ngay"
+                "semanticLabel": "ngày"
               },
               "right": {
                 "id": "r0",
-                "content": "dem",
+                "content": "đêm",
                 "type": "text",
-                "semanticLabel": "dem"
+                "semanticLabel": "đêm"
               }
             },
             {
               "left": {
                 "id": "l1",
-                "content": "nong",
+                "content": "nóng",
                 "type": "text",
-                "semanticLabel": "nong"
+                "semanticLabel": "nóng"
               },
               "right": {
                 "id": "r1",
-                "content": "lanh",
+                "content": "lạnh",
                 "type": "text",
-                "semanticLabel": "lanh"
+                "semanticLabel": "lạnh"
               }
             },
             {
@@ -7861,9 +7963,9 @@
               },
               "right": {
                 "id": "r2",
-                "content": "nho",
+                "content": "nhỏ",
                 "type": "text",
-                "semanticLabel": "nho"
+                "semanticLabel": "nhỏ"
               }
             },
             {
@@ -7875,18 +7977,18 @@
               },
               "right": {
                 "id": "r3",
-                "content": "cham",
+                "content": "chậm",
                 "type": "text",
-                "semanticLabel": "cham"
+                "semanticLabel": "chậm"
               }
             }
           ],
-          "hint": "Bat dau voi cap con biet ro nhat."
+          "hint": "Bắt đầu với cặp con biết rõ nhất."
         }
       },
       "hints": [
         {
-          "text": "Bat dau voi cap con biet ro nhat."
+          "text": "Bắt đầu với cặp con biết rõ nhất."
         }
       ],
       "metadata": {
@@ -7916,6 +8018,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Match each word to its opposite.",
+          "learningObjective": "opposite word matching",
           "pairs": [
             {
               "left": {
@@ -7977,20 +8080,21 @@
           "hint": "Start with the pair you know best."
         },
         "vi": {
-          "prompt": "Ghep moi tu voi tu trai nghia.",
+          "prompt": "Ghép mỗi từ với từ trái nghĩa.",
+          "learningObjective": "ghép từ trái nghĩa",
           "pairs": [
             {
               "left": {
                 "id": "l0",
-                "content": "nong",
+                "content": "nóng",
                 "type": "text",
-                "semanticLabel": "nong"
+                "semanticLabel": "nóng"
               },
               "right": {
                 "id": "r0",
-                "content": "lanh",
+                "content": "lạnh",
                 "type": "text",
-                "semanticLabel": "lanh"
+                "semanticLabel": "lạnh"
               }
             },
             {
@@ -8002,9 +8106,9 @@
               },
               "right": {
                 "id": "r1",
-                "content": "nho",
+                "content": "nhỏ",
                 "type": "text",
-                "semanticLabel": "nho"
+                "semanticLabel": "nhỏ"
               }
             },
             {
@@ -8016,32 +8120,32 @@
               },
               "right": {
                 "id": "r2",
-                "content": "cham",
+                "content": "chậm",
                 "type": "text",
-                "semanticLabel": "cham"
+                "semanticLabel": "chậm"
               }
             },
             {
               "left": {
                 "id": "l3",
-                "content": "ngay",
+                "content": "ngày",
                 "type": "text",
-                "semanticLabel": "ngay"
+                "semanticLabel": "ngày"
               },
               "right": {
                 "id": "r3",
-                "content": "dem",
+                "content": "đêm",
                 "type": "text",
-                "semanticLabel": "dem"
+                "semanticLabel": "đêm"
               }
             }
           ],
-          "hint": "Bat dau voi cap con biet ro nhat."
+          "hint": "Bắt đầu với cặp con biết rõ nhất."
         }
       },
       "hints": [
         {
-          "text": "Bat dau voi cap con biet ro nhat."
+          "text": "Bắt đầu với cặp con biết rõ nhất."
         }
       ],
       "metadata": {
@@ -8071,6 +8175,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Match each word to its opposite.",
+          "learningObjective": "opposite word matching",
           "pairs": [
             {
               "left": {
@@ -8132,7 +8237,8 @@
           "hint": "Start with the pair you know best."
         },
         "vi": {
-          "prompt": "Ghep moi tu voi tu trai nghia.",
+          "prompt": "Ghép mỗi từ với từ trái nghĩa.",
+          "learningObjective": "ghép từ trái nghĩa",
           "pairs": [
             {
               "left": {
@@ -8143,9 +8249,9 @@
               },
               "right": {
                 "id": "r0",
-                "content": "nho",
+                "content": "nhỏ",
                 "type": "text",
-                "semanticLabel": "nho"
+                "semanticLabel": "nhỏ"
               }
             },
             {
@@ -8157,46 +8263,46 @@
               },
               "right": {
                 "id": "r1",
-                "content": "cham",
+                "content": "chậm",
                 "type": "text",
-                "semanticLabel": "cham"
+                "semanticLabel": "chậm"
               }
             },
             {
               "left": {
                 "id": "l2",
-                "content": "ngay",
+                "content": "ngày",
                 "type": "text",
-                "semanticLabel": "ngay"
+                "semanticLabel": "ngày"
               },
               "right": {
                 "id": "r2",
-                "content": "dem",
+                "content": "đêm",
                 "type": "text",
-                "semanticLabel": "dem"
+                "semanticLabel": "đêm"
               }
             },
             {
               "left": {
                 "id": "l3",
-                "content": "nong",
+                "content": "nóng",
                 "type": "text",
-                "semanticLabel": "nong"
+                "semanticLabel": "nóng"
               },
               "right": {
                 "id": "r3",
-                "content": "lanh",
+                "content": "lạnh",
                 "type": "text",
-                "semanticLabel": "lanh"
+                "semanticLabel": "lạnh"
               }
             }
           ],
-          "hint": "Bat dau voi cap con biet ro nhat."
+          "hint": "Bắt đầu với cặp con biết rõ nhất."
         }
       },
       "hints": [
         {
-          "text": "Bat dau voi cap con biet ro nhat."
+          "text": "Bắt đầu với cặp con biết rõ nhất."
         }
       ],
       "metadata": {
@@ -8226,6 +8332,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Match each word to its opposite.",
+          "learningObjective": "opposite word matching",
           "pairs": [
             {
               "left": {
@@ -8287,7 +8394,8 @@
           "hint": "Start with the pair you know best."
         },
         "vi": {
-          "prompt": "Ghep moi tu voi tu trai nghia.",
+          "prompt": "Ghép mỗi từ với từ trái nghĩa.",
+          "learningObjective": "ghép từ trái nghĩa",
           "pairs": [
             {
               "left": {
@@ -8298,37 +8406,37 @@
               },
               "right": {
                 "id": "r0",
-                "content": "cham",
+                "content": "chậm",
                 "type": "text",
-                "semanticLabel": "cham"
+                "semanticLabel": "chậm"
               }
             },
             {
               "left": {
                 "id": "l1",
-                "content": "ngay",
+                "content": "ngày",
                 "type": "text",
-                "semanticLabel": "ngay"
+                "semanticLabel": "ngày"
               },
               "right": {
                 "id": "r1",
-                "content": "dem",
+                "content": "đêm",
                 "type": "text",
-                "semanticLabel": "dem"
+                "semanticLabel": "đêm"
               }
             },
             {
               "left": {
                 "id": "l2",
-                "content": "nong",
+                "content": "nóng",
                 "type": "text",
-                "semanticLabel": "nong"
+                "semanticLabel": "nóng"
               },
               "right": {
                 "id": "r2",
-                "content": "lanh",
+                "content": "lạnh",
                 "type": "text",
-                "semanticLabel": "lanh"
+                "semanticLabel": "lạnh"
               }
             },
             {
@@ -8340,18 +8448,18 @@
               },
               "right": {
                 "id": "r3",
-                "content": "nho",
+                "content": "nhỏ",
                 "type": "text",
-                "semanticLabel": "nho"
+                "semanticLabel": "nhỏ"
               }
             }
           ],
-          "hint": "Bat dau voi cap con biet ro nhat."
+          "hint": "Bắt đầu với cặp con biết rõ nhất."
         }
       },
       "hints": [
         {
-          "text": "Bat dau voi cap con biet ro nhat."
+          "text": "Bắt đầu với cặp con biết rõ nhất."
         }
       ],
       "metadata": {
@@ -8381,6 +8489,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Match each word to its opposite.",
+          "learningObjective": "opposite word matching",
           "pairs": [
             {
               "left": {
@@ -8442,34 +8551,35 @@
           "hint": "Start with the pair you know best."
         },
         "vi": {
-          "prompt": "Ghep moi tu voi tu trai nghia.",
+          "prompt": "Ghép mỗi từ với từ trái nghĩa.",
+          "learningObjective": "ghép từ trái nghĩa",
           "pairs": [
             {
               "left": {
                 "id": "l0",
-                "content": "ngay",
+                "content": "ngày",
                 "type": "text",
-                "semanticLabel": "ngay"
+                "semanticLabel": "ngày"
               },
               "right": {
                 "id": "r0",
-                "content": "dem",
+                "content": "đêm",
                 "type": "text",
-                "semanticLabel": "dem"
+                "semanticLabel": "đêm"
               }
             },
             {
               "left": {
                 "id": "l1",
-                "content": "nong",
+                "content": "nóng",
                 "type": "text",
-                "semanticLabel": "nong"
+                "semanticLabel": "nóng"
               },
               "right": {
                 "id": "r1",
-                "content": "lanh",
+                "content": "lạnh",
                 "type": "text",
-                "semanticLabel": "lanh"
+                "semanticLabel": "lạnh"
               }
             },
             {
@@ -8481,9 +8591,9 @@
               },
               "right": {
                 "id": "r2",
-                "content": "nho",
+                "content": "nhỏ",
                 "type": "text",
-                "semanticLabel": "nho"
+                "semanticLabel": "nhỏ"
               }
             },
             {
@@ -8495,18 +8605,18 @@
               },
               "right": {
                 "id": "r3",
-                "content": "cham",
+                "content": "chậm",
                 "type": "text",
-                "semanticLabel": "cham"
+                "semanticLabel": "chậm"
               }
             }
           ],
-          "hint": "Bat dau voi cap con biet ro nhat."
+          "hint": "Bắt đầu với cặp con biết rõ nhất."
         }
       },
       "hints": [
         {
-          "text": "Bat dau voi cap con biet ro nhat."
+          "text": "Bắt đầu với cặp con biết rõ nhất."
         }
       ],
       "metadata": {
@@ -8536,6 +8646,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Match each word to its opposite.",
+          "learningObjective": "opposite word matching",
           "pairs": [
             {
               "left": {
@@ -8597,20 +8708,21 @@
           "hint": "Start with the pair you know best."
         },
         "vi": {
-          "prompt": "Ghep moi tu voi tu trai nghia.",
+          "prompt": "Ghép mỗi từ với từ trái nghĩa.",
+          "learningObjective": "ghép từ trái nghĩa",
           "pairs": [
             {
               "left": {
                 "id": "l0",
-                "content": "nong",
+                "content": "nóng",
                 "type": "text",
-                "semanticLabel": "nong"
+                "semanticLabel": "nóng"
               },
               "right": {
                 "id": "r0",
-                "content": "lanh",
+                "content": "lạnh",
                 "type": "text",
-                "semanticLabel": "lanh"
+                "semanticLabel": "lạnh"
               }
             },
             {
@@ -8622,9 +8734,9 @@
               },
               "right": {
                 "id": "r1",
-                "content": "nho",
+                "content": "nhỏ",
                 "type": "text",
-                "semanticLabel": "nho"
+                "semanticLabel": "nhỏ"
               }
             },
             {
@@ -8636,32 +8748,32 @@
               },
               "right": {
                 "id": "r2",
-                "content": "cham",
+                "content": "chậm",
                 "type": "text",
-                "semanticLabel": "cham"
+                "semanticLabel": "chậm"
               }
             },
             {
               "left": {
                 "id": "l3",
-                "content": "ngay",
+                "content": "ngày",
                 "type": "text",
-                "semanticLabel": "ngay"
+                "semanticLabel": "ngày"
               },
               "right": {
                 "id": "r3",
-                "content": "dem",
+                "content": "đêm",
                 "type": "text",
-                "semanticLabel": "dem"
+                "semanticLabel": "đêm"
               }
             }
           ],
-          "hint": "Bat dau voi cap con biet ro nhat."
+          "hint": "Bắt đầu với cặp con biết rõ nhất."
         }
       },
       "hints": [
         {
-          "text": "Bat dau voi cap con biet ro nhat."
+          "text": "Bắt đầu với cặp con biết rõ nhất."
         }
       ],
       "metadata": {
@@ -8691,6 +8803,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Match each word to its opposite.",
+          "learningObjective": "opposite word matching",
           "pairs": [
             {
               "left": {
@@ -8752,7 +8865,8 @@
           "hint": "Start with the pair you know best."
         },
         "vi": {
-          "prompt": "Ghep moi tu voi tu trai nghia.",
+          "prompt": "Ghép mỗi từ với từ trái nghĩa.",
+          "learningObjective": "ghép từ trái nghĩa",
           "pairs": [
             {
               "left": {
@@ -8763,9 +8877,9 @@
               },
               "right": {
                 "id": "r0",
-                "content": "nho",
+                "content": "nhỏ",
                 "type": "text",
-                "semanticLabel": "nho"
+                "semanticLabel": "nhỏ"
               }
             },
             {
@@ -8777,46 +8891,46 @@
               },
               "right": {
                 "id": "r1",
-                "content": "cham",
+                "content": "chậm",
                 "type": "text",
-                "semanticLabel": "cham"
+                "semanticLabel": "chậm"
               }
             },
             {
               "left": {
                 "id": "l2",
-                "content": "ngay",
+                "content": "ngày",
                 "type": "text",
-                "semanticLabel": "ngay"
+                "semanticLabel": "ngày"
               },
               "right": {
                 "id": "r2",
-                "content": "dem",
+                "content": "đêm",
                 "type": "text",
-                "semanticLabel": "dem"
+                "semanticLabel": "đêm"
               }
             },
             {
               "left": {
                 "id": "l3",
-                "content": "nong",
+                "content": "nóng",
                 "type": "text",
-                "semanticLabel": "nong"
+                "semanticLabel": "nóng"
               },
               "right": {
                 "id": "r3",
-                "content": "lanh",
+                "content": "lạnh",
                 "type": "text",
-                "semanticLabel": "lanh"
+                "semanticLabel": "lạnh"
               }
             }
           ],
-          "hint": "Bat dau voi cap con biet ro nhat."
+          "hint": "Bắt đầu với cặp con biết rõ nhất."
         }
       },
       "hints": [
         {
-          "text": "Bat dau voi cap con biet ro nhat."
+          "text": "Bắt đầu với cặp con biết rõ nhất."
         }
       ],
       "metadata": {
@@ -8846,6 +8960,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Match each word to its opposite.",
+          "learningObjective": "opposite word matching",
           "pairs": [
             {
               "left": {
@@ -8907,7 +9022,8 @@
           "hint": "Start with the pair you know best."
         },
         "vi": {
-          "prompt": "Ghep moi tu voi tu trai nghia.",
+          "prompt": "Ghép mỗi từ với từ trái nghĩa.",
+          "learningObjective": "ghép từ trái nghĩa",
           "pairs": [
             {
               "left": {
@@ -8918,37 +9034,37 @@
               },
               "right": {
                 "id": "r0",
-                "content": "cham",
+                "content": "chậm",
                 "type": "text",
-                "semanticLabel": "cham"
+                "semanticLabel": "chậm"
               }
             },
             {
               "left": {
                 "id": "l1",
-                "content": "ngay",
+                "content": "ngày",
                 "type": "text",
-                "semanticLabel": "ngay"
+                "semanticLabel": "ngày"
               },
               "right": {
                 "id": "r1",
-                "content": "dem",
+                "content": "đêm",
                 "type": "text",
-                "semanticLabel": "dem"
+                "semanticLabel": "đêm"
               }
             },
             {
               "left": {
                 "id": "l2",
-                "content": "nong",
+                "content": "nóng",
                 "type": "text",
-                "semanticLabel": "nong"
+                "semanticLabel": "nóng"
               },
               "right": {
                 "id": "r2",
-                "content": "lanh",
+                "content": "lạnh",
                 "type": "text",
-                "semanticLabel": "lanh"
+                "semanticLabel": "lạnh"
               }
             },
             {
@@ -8960,18 +9076,18 @@
               },
               "right": {
                 "id": "r3",
-                "content": "nho",
+                "content": "nhỏ",
                 "type": "text",
-                "semanticLabel": "nho"
+                "semanticLabel": "nhỏ"
               }
             }
           ],
-          "hint": "Bat dau voi cap con biet ro nhat."
+          "hint": "Bắt đầu với cặp con biết rõ nhất."
         }
       },
       "hints": [
         {
-          "text": "Bat dau voi cap con biet ro nhat."
+          "text": "Bắt đầu với cặp con biết rõ nhất."
         }
       ],
       "metadata": {
@@ -9001,6 +9117,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Match each word to its opposite.",
+          "learningObjective": "opposite word matching",
           "pairs": [
             {
               "left": {
@@ -9062,34 +9179,35 @@
           "hint": "Start with the pair you know best."
         },
         "vi": {
-          "prompt": "Ghep moi tu voi tu trai nghia.",
+          "prompt": "Ghép mỗi từ với từ trái nghĩa.",
+          "learningObjective": "ghép từ trái nghĩa",
           "pairs": [
             {
               "left": {
                 "id": "l0",
-                "content": "ngay",
+                "content": "ngày",
                 "type": "text",
-                "semanticLabel": "ngay"
+                "semanticLabel": "ngày"
               },
               "right": {
                 "id": "r0",
-                "content": "dem",
+                "content": "đêm",
                 "type": "text",
-                "semanticLabel": "dem"
+                "semanticLabel": "đêm"
               }
             },
             {
               "left": {
                 "id": "l1",
-                "content": "nong",
+                "content": "nóng",
                 "type": "text",
-                "semanticLabel": "nong"
+                "semanticLabel": "nóng"
               },
               "right": {
                 "id": "r1",
-                "content": "lanh",
+                "content": "lạnh",
                 "type": "text",
-                "semanticLabel": "lanh"
+                "semanticLabel": "lạnh"
               }
             },
             {
@@ -9101,9 +9219,9 @@
               },
               "right": {
                 "id": "r2",
-                "content": "nho",
+                "content": "nhỏ",
                 "type": "text",
-                "semanticLabel": "nho"
+                "semanticLabel": "nhỏ"
               }
             },
             {
@@ -9115,18 +9233,18 @@
               },
               "right": {
                 "id": "r3",
-                "content": "cham",
+                "content": "chậm",
                 "type": "text",
-                "semanticLabel": "cham"
+                "semanticLabel": "chậm"
               }
             }
           ],
-          "hint": "Bat dau voi cap con biet ro nhat."
+          "hint": "Bắt đầu với cặp con biết rõ nhất."
         }
       },
       "hints": [
         {
-          "text": "Bat dau voi cap con biet ro nhat."
+          "text": "Bắt đầu với cặp con biết rõ nhất."
         }
       ],
       "metadata": {
@@ -9156,6 +9274,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Match each word to its opposite.",
+          "learningObjective": "opposite word matching",
           "pairs": [
             {
               "left": {
@@ -9217,20 +9336,21 @@
           "hint": "Start with the pair you know best."
         },
         "vi": {
-          "prompt": "Ghep moi tu voi tu trai nghia.",
+          "prompt": "Ghép mỗi từ với từ trái nghĩa.",
+          "learningObjective": "ghép từ trái nghĩa",
           "pairs": [
             {
               "left": {
                 "id": "l0",
-                "content": "nong",
+                "content": "nóng",
                 "type": "text",
-                "semanticLabel": "nong"
+                "semanticLabel": "nóng"
               },
               "right": {
                 "id": "r0",
-                "content": "lanh",
+                "content": "lạnh",
                 "type": "text",
-                "semanticLabel": "lanh"
+                "semanticLabel": "lạnh"
               }
             },
             {
@@ -9242,9 +9362,9 @@
               },
               "right": {
                 "id": "r1",
-                "content": "nho",
+                "content": "nhỏ",
                 "type": "text",
-                "semanticLabel": "nho"
+                "semanticLabel": "nhỏ"
               }
             },
             {
@@ -9256,32 +9376,32 @@
               },
               "right": {
                 "id": "r2",
-                "content": "cham",
+                "content": "chậm",
                 "type": "text",
-                "semanticLabel": "cham"
+                "semanticLabel": "chậm"
               }
             },
             {
               "left": {
                 "id": "l3",
-                "content": "ngay",
+                "content": "ngày",
                 "type": "text",
-                "semanticLabel": "ngay"
+                "semanticLabel": "ngày"
               },
               "right": {
                 "id": "r3",
-                "content": "dem",
+                "content": "đêm",
                 "type": "text",
-                "semanticLabel": "dem"
+                "semanticLabel": "đêm"
               }
             }
           ],
-          "hint": "Bat dau voi cap con biet ro nhat."
+          "hint": "Bắt đầu với cặp con biết rõ nhất."
         }
       },
       "hints": [
         {
-          "text": "Bat dau voi cap con biet ro nhat."
+          "text": "Bắt đầu với cặp con biết rõ nhất."
         }
       ],
       "metadata": {

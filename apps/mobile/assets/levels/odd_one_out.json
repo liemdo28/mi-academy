@@ -11,6 +11,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Select every item that does not belong.",
+          "learningObjective": "odd-one-out reasoning",
           "options": [
             {
               "id": "o0",
@@ -66,20 +67,21 @@
           "hint": "There are 3 correct choices."
         },
         "vi": {
-          "prompt": "Chon tat ca vat khong cung nhom.",
+          "prompt": "Chọn tất cả vật không cùng nhóm.",
+          "learningObjective": "suy luận vật khác nhóm",
           "options": [
             {
               "id": "o0",
-              "label": "meo",
-              "text": "meo",
-              "semanticLabel": "meo",
+              "label": "mèo",
+              "text": "mèo",
+              "semanticLabel": "mèo",
               "isCorrect": false
             },
             {
               "id": "o1",
-              "label": "cho",
-              "text": "cho",
-              "semanticLabel": "cho",
+              "label": "chó",
+              "text": "chó",
+              "semanticLabel": "chó",
               "isCorrect": false
             },
             {
@@ -91,23 +93,23 @@
             },
             {
               "id": "o3",
-              "label": "ghe",
-              "text": "ghe",
-              "semanticLabel": "ghe",
+              "label": "ghế",
+              "text": "ghế",
+              "semanticLabel": "ghế",
               "isCorrect": true
             },
             {
               "id": "o4",
-              "label": "thia",
-              "text": "thia",
-              "semanticLabel": "thia",
+              "label": "thìa",
+              "text": "thìa",
+              "semanticLabel": "thìa",
               "isCorrect": true
             },
             {
               "id": "o5",
-              "label": "giay",
-              "text": "giay",
-              "semanticLabel": "giay",
+              "label": "giày",
+              "text": "giày",
+              "semanticLabel": "giày",
               "isCorrect": true
             }
           ],
@@ -119,12 +121,12 @@
             "shuffleSeed": 30001,
             "maxAttempts": 3
           },
-          "hint": "Co 3 lua chon dung."
+          "hint": "Có 3 lựa chọn đúng."
         }
       },
       "hints": [
         {
-          "text": "Co 3 lua chon dung."
+          "text": "Có 3 lựa chọn đúng."
         }
       ],
       "metadata": {
@@ -154,6 +156,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Select every item that does not belong.",
+          "learningObjective": "odd-one-out reasoning",
           "options": [
             {
               "id": "o0",
@@ -209,20 +212,21 @@
           "hint": "There are 3 correct choices."
         },
         "vi": {
-          "prompt": "Chon tat ca vat khong cung nhom.",
+          "prompt": "Chọn tất cả vật không cùng nhóm.",
+          "learningObjective": "suy luận vật khác nhóm",
           "options": [
             {
               "id": "o0",
-              "label": "meo",
-              "text": "meo",
-              "semanticLabel": "meo",
+              "label": "mèo",
+              "text": "mèo",
+              "semanticLabel": "mèo",
               "isCorrect": false
             },
             {
               "id": "o1",
-              "label": "cho",
-              "text": "cho",
-              "semanticLabel": "cho",
+              "label": "chó",
+              "text": "chó",
+              "semanticLabel": "chó",
               "isCorrect": false
             },
             {
@@ -234,23 +238,23 @@
             },
             {
               "id": "o3",
-              "label": "ghe",
-              "text": "ghe",
-              "semanticLabel": "ghe",
+              "label": "ghế",
+              "text": "ghế",
+              "semanticLabel": "ghế",
               "isCorrect": true
             },
             {
               "id": "o4",
-              "label": "thia",
-              "text": "thia",
-              "semanticLabel": "thia",
+              "label": "thìa",
+              "text": "thìa",
+              "semanticLabel": "thìa",
               "isCorrect": true
             },
             {
               "id": "o5",
-              "label": "giay",
-              "text": "giay",
-              "semanticLabel": "giay",
+              "label": "giày",
+              "text": "giày",
+              "semanticLabel": "giày",
               "isCorrect": true
             }
           ],
@@ -262,12 +266,12 @@
             "shuffleSeed": 30002,
             "maxAttempts": 3
           },
-          "hint": "Co 3 lua chon dung."
+          "hint": "Có 3 lựa chọn đúng."
         }
       },
       "hints": [
         {
-          "text": "Co 3 lua chon dung."
+          "text": "Có 3 lựa chọn đúng."
         }
       ],
       "metadata": {
@@ -297,6 +301,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Select every item that does not belong.",
+          "learningObjective": "odd-one-out reasoning",
           "options": [
             {
               "id": "o0",
@@ -352,20 +357,21 @@
           "hint": "There are 3 correct choices."
         },
         "vi": {
-          "prompt": "Chon tat ca vat khong cung nhom.",
+          "prompt": "Chọn tất cả vật không cùng nhóm.",
+          "learningObjective": "suy luận vật khác nhóm",
           "options": [
             {
               "id": "o0",
-              "label": "meo",
-              "text": "meo",
-              "semanticLabel": "meo",
+              "label": "mèo",
+              "text": "mèo",
+              "semanticLabel": "mèo",
               "isCorrect": false
             },
             {
               "id": "o1",
-              "label": "cho",
-              "text": "cho",
-              "semanticLabel": "cho",
+              "label": "chó",
+              "text": "chó",
+              "semanticLabel": "chó",
               "isCorrect": false
             },
             {
@@ -377,23 +383,23 @@
             },
             {
               "id": "o3",
-              "label": "ghe",
-              "text": "ghe",
-              "semanticLabel": "ghe",
+              "label": "ghế",
+              "text": "ghế",
+              "semanticLabel": "ghế",
               "isCorrect": true
             },
             {
               "id": "o4",
-              "label": "thia",
-              "text": "thia",
-              "semanticLabel": "thia",
+              "label": "thìa",
+              "text": "thìa",
+              "semanticLabel": "thìa",
               "isCorrect": true
             },
             {
               "id": "o5",
-              "label": "giay",
-              "text": "giay",
-              "semanticLabel": "giay",
+              "label": "giày",
+              "text": "giày",
+              "semanticLabel": "giày",
               "isCorrect": true
             }
           ],
@@ -405,12 +411,12 @@
             "shuffleSeed": 30003,
             "maxAttempts": 3
           },
-          "hint": "Co 3 lua chon dung."
+          "hint": "Có 3 lựa chọn đúng."
         }
       },
       "hints": [
         {
-          "text": "Co 3 lua chon dung."
+          "text": "Có 3 lựa chọn đúng."
         }
       ],
       "metadata": {
@@ -440,6 +446,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Select every item that does not belong.",
+          "learningObjective": "odd-one-out reasoning",
           "options": [
             {
               "id": "o0",
@@ -495,20 +502,21 @@
           "hint": "There are 3 correct choices."
         },
         "vi": {
-          "prompt": "Chon tat ca vat khong cung nhom.",
+          "prompt": "Chọn tất cả vật không cùng nhóm.",
+          "learningObjective": "suy luận vật khác nhóm",
           "options": [
             {
               "id": "o0",
-              "label": "meo",
-              "text": "meo",
-              "semanticLabel": "meo",
+              "label": "mèo",
+              "text": "mèo",
+              "semanticLabel": "mèo",
               "isCorrect": false
             },
             {
               "id": "o1",
-              "label": "cho",
-              "text": "cho",
-              "semanticLabel": "cho",
+              "label": "chó",
+              "text": "chó",
+              "semanticLabel": "chó",
               "isCorrect": false
             },
             {
@@ -520,23 +528,23 @@
             },
             {
               "id": "o3",
-              "label": "ghe",
-              "text": "ghe",
-              "semanticLabel": "ghe",
+              "label": "ghế",
+              "text": "ghế",
+              "semanticLabel": "ghế",
               "isCorrect": true
             },
             {
               "id": "o4",
-              "label": "thia",
-              "text": "thia",
-              "semanticLabel": "thia",
+              "label": "thìa",
+              "text": "thìa",
+              "semanticLabel": "thìa",
               "isCorrect": true
             },
             {
               "id": "o5",
-              "label": "giay",
-              "text": "giay",
-              "semanticLabel": "giay",
+              "label": "giày",
+              "text": "giày",
+              "semanticLabel": "giày",
               "isCorrect": true
             }
           ],
@@ -548,12 +556,12 @@
             "shuffleSeed": 30004,
             "maxAttempts": 3
           },
-          "hint": "Co 3 lua chon dung."
+          "hint": "Có 3 lựa chọn đúng."
         }
       },
       "hints": [
         {
-          "text": "Co 3 lua chon dung."
+          "text": "Có 3 lựa chọn đúng."
         }
       ],
       "metadata": {
@@ -583,6 +591,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Select every item that does not belong.",
+          "learningObjective": "odd-one-out reasoning",
           "options": [
             {
               "id": "o0",
@@ -638,20 +647,21 @@
           "hint": "There are 3 correct choices."
         },
         "vi": {
-          "prompt": "Chon tat ca vat khong cung nhom.",
+          "prompt": "Chọn tất cả vật không cùng nhóm.",
+          "learningObjective": "suy luận vật khác nhóm",
           "options": [
             {
               "id": "o0",
-              "label": "meo",
-              "text": "meo",
-              "semanticLabel": "meo",
+              "label": "mèo",
+              "text": "mèo",
+              "semanticLabel": "mèo",
               "isCorrect": false
             },
             {
               "id": "o1",
-              "label": "cho",
-              "text": "cho",
-              "semanticLabel": "cho",
+              "label": "chó",
+              "text": "chó",
+              "semanticLabel": "chó",
               "isCorrect": false
             },
             {
@@ -663,23 +673,23 @@
             },
             {
               "id": "o3",
-              "label": "ghe",
-              "text": "ghe",
-              "semanticLabel": "ghe",
+              "label": "ghế",
+              "text": "ghế",
+              "semanticLabel": "ghế",
               "isCorrect": true
             },
             {
               "id": "o4",
-              "label": "thia",
-              "text": "thia",
-              "semanticLabel": "thia",
+              "label": "thìa",
+              "text": "thìa",
+              "semanticLabel": "thìa",
               "isCorrect": true
             },
             {
               "id": "o5",
-              "label": "giay",
-              "text": "giay",
-              "semanticLabel": "giay",
+              "label": "giày",
+              "text": "giày",
+              "semanticLabel": "giày",
               "isCorrect": true
             }
           ],
@@ -691,12 +701,12 @@
             "shuffleSeed": 30005,
             "maxAttempts": 3
           },
-          "hint": "Co 3 lua chon dung."
+          "hint": "Có 3 lựa chọn đúng."
         }
       },
       "hints": [
         {
-          "text": "Co 3 lua chon dung."
+          "text": "Có 3 lựa chọn đúng."
         }
       ],
       "metadata": {
@@ -726,6 +736,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Select every item that does not belong.",
+          "learningObjective": "odd-one-out reasoning",
           "options": [
             {
               "id": "o0",
@@ -781,20 +792,21 @@
           "hint": "There are 3 correct choices."
         },
         "vi": {
-          "prompt": "Chon tat ca vat khong cung nhom.",
+          "prompt": "Chọn tất cả vật không cùng nhóm.",
+          "learningObjective": "suy luận vật khác nhóm",
           "options": [
             {
               "id": "o0",
-              "label": "meo",
-              "text": "meo",
-              "semanticLabel": "meo",
+              "label": "mèo",
+              "text": "mèo",
+              "semanticLabel": "mèo",
               "isCorrect": false
             },
             {
               "id": "o1",
-              "label": "cho",
-              "text": "cho",
-              "semanticLabel": "cho",
+              "label": "chó",
+              "text": "chó",
+              "semanticLabel": "chó",
               "isCorrect": false
             },
             {
@@ -806,23 +818,23 @@
             },
             {
               "id": "o3",
-              "label": "ghe",
-              "text": "ghe",
-              "semanticLabel": "ghe",
+              "label": "ghế",
+              "text": "ghế",
+              "semanticLabel": "ghế",
               "isCorrect": true
             },
             {
               "id": "o4",
-              "label": "thia",
-              "text": "thia",
-              "semanticLabel": "thia",
+              "label": "thìa",
+              "text": "thìa",
+              "semanticLabel": "thìa",
               "isCorrect": true
             },
             {
               "id": "o5",
-              "label": "giay",
-              "text": "giay",
-              "semanticLabel": "giay",
+              "label": "giày",
+              "text": "giày",
+              "semanticLabel": "giày",
               "isCorrect": true
             }
           ],
@@ -834,12 +846,12 @@
             "shuffleSeed": 30006,
             "maxAttempts": 3
           },
-          "hint": "Co 3 lua chon dung."
+          "hint": "Có 3 lựa chọn đúng."
         }
       },
       "hints": [
         {
-          "text": "Co 3 lua chon dung."
+          "text": "Có 3 lựa chọn đúng."
         }
       ],
       "metadata": {
@@ -869,6 +881,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Select every item that does not belong.",
+          "learningObjective": "odd-one-out reasoning",
           "options": [
             {
               "id": "o0",
@@ -924,20 +937,21 @@
           "hint": "There are 3 correct choices."
         },
         "vi": {
-          "prompt": "Chon tat ca vat khong cung nhom.",
+          "prompt": "Chọn tất cả vật không cùng nhóm.",
+          "learningObjective": "suy luận vật khác nhóm",
           "options": [
             {
               "id": "o0",
-              "label": "meo",
-              "text": "meo",
-              "semanticLabel": "meo",
+              "label": "mèo",
+              "text": "mèo",
+              "semanticLabel": "mèo",
               "isCorrect": false
             },
             {
               "id": "o1",
-              "label": "cho",
-              "text": "cho",
-              "semanticLabel": "cho",
+              "label": "chó",
+              "text": "chó",
+              "semanticLabel": "chó",
               "isCorrect": false
             },
             {
@@ -949,23 +963,23 @@
             },
             {
               "id": "o3",
-              "label": "ghe",
-              "text": "ghe",
-              "semanticLabel": "ghe",
+              "label": "ghế",
+              "text": "ghế",
+              "semanticLabel": "ghế",
               "isCorrect": true
             },
             {
               "id": "o4",
-              "label": "thia",
-              "text": "thia",
-              "semanticLabel": "thia",
+              "label": "thìa",
+              "text": "thìa",
+              "semanticLabel": "thìa",
               "isCorrect": true
             },
             {
               "id": "o5",
-              "label": "giay",
-              "text": "giay",
-              "semanticLabel": "giay",
+              "label": "giày",
+              "text": "giày",
+              "semanticLabel": "giày",
               "isCorrect": true
             }
           ],
@@ -977,12 +991,12 @@
             "shuffleSeed": 30007,
             "maxAttempts": 3
           },
-          "hint": "Co 3 lua chon dung."
+          "hint": "Có 3 lựa chọn đúng."
         }
       },
       "hints": [
         {
-          "text": "Co 3 lua chon dung."
+          "text": "Có 3 lựa chọn đúng."
         }
       ],
       "metadata": {
@@ -1012,6 +1026,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Select every item that does not belong.",
+          "learningObjective": "odd-one-out reasoning",
           "options": [
             {
               "id": "o0",
@@ -1067,20 +1082,21 @@
           "hint": "There are 3 correct choices."
         },
         "vi": {
-          "prompt": "Chon tat ca vat khong cung nhom.",
+          "prompt": "Chọn tất cả vật không cùng nhóm.",
+          "learningObjective": "suy luận vật khác nhóm",
           "options": [
             {
               "id": "o0",
-              "label": "meo",
-              "text": "meo",
-              "semanticLabel": "meo",
+              "label": "mèo",
+              "text": "mèo",
+              "semanticLabel": "mèo",
               "isCorrect": false
             },
             {
               "id": "o1",
-              "label": "cho",
-              "text": "cho",
-              "semanticLabel": "cho",
+              "label": "chó",
+              "text": "chó",
+              "semanticLabel": "chó",
               "isCorrect": false
             },
             {
@@ -1092,23 +1108,23 @@
             },
             {
               "id": "o3",
-              "label": "ghe",
-              "text": "ghe",
-              "semanticLabel": "ghe",
+              "label": "ghế",
+              "text": "ghế",
+              "semanticLabel": "ghế",
               "isCorrect": true
             },
             {
               "id": "o4",
-              "label": "thia",
-              "text": "thia",
-              "semanticLabel": "thia",
+              "label": "thìa",
+              "text": "thìa",
+              "semanticLabel": "thìa",
               "isCorrect": true
             },
             {
               "id": "o5",
-              "label": "giay",
-              "text": "giay",
-              "semanticLabel": "giay",
+              "label": "giày",
+              "text": "giày",
+              "semanticLabel": "giày",
               "isCorrect": true
             }
           ],
@@ -1120,12 +1136,12 @@
             "shuffleSeed": 30008,
             "maxAttempts": 3
           },
-          "hint": "Co 3 lua chon dung."
+          "hint": "Có 3 lựa chọn đúng."
         }
       },
       "hints": [
         {
-          "text": "Co 3 lua chon dung."
+          "text": "Có 3 lựa chọn đúng."
         }
       ],
       "metadata": {
@@ -1155,6 +1171,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Select every item that does not belong.",
+          "learningObjective": "odd-one-out reasoning",
           "options": [
             {
               "id": "o0",
@@ -1210,20 +1227,21 @@
           "hint": "There are 3 correct choices."
         },
         "vi": {
-          "prompt": "Chon tat ca vat khong cung nhom.",
+          "prompt": "Chọn tất cả vật không cùng nhóm.",
+          "learningObjective": "suy luận vật khác nhóm",
           "options": [
             {
               "id": "o0",
-              "label": "meo",
-              "text": "meo",
-              "semanticLabel": "meo",
+              "label": "mèo",
+              "text": "mèo",
+              "semanticLabel": "mèo",
               "isCorrect": false
             },
             {
               "id": "o1",
-              "label": "cho",
-              "text": "cho",
-              "semanticLabel": "cho",
+              "label": "chó",
+              "text": "chó",
+              "semanticLabel": "chó",
               "isCorrect": false
             },
             {
@@ -1235,23 +1253,23 @@
             },
             {
               "id": "o3",
-              "label": "ghe",
-              "text": "ghe",
-              "semanticLabel": "ghe",
+              "label": "ghế",
+              "text": "ghế",
+              "semanticLabel": "ghế",
               "isCorrect": true
             },
             {
               "id": "o4",
-              "label": "thia",
-              "text": "thia",
-              "semanticLabel": "thia",
+              "label": "thìa",
+              "text": "thìa",
+              "semanticLabel": "thìa",
               "isCorrect": true
             },
             {
               "id": "o5",
-              "label": "giay",
-              "text": "giay",
-              "semanticLabel": "giay",
+              "label": "giày",
+              "text": "giày",
+              "semanticLabel": "giày",
               "isCorrect": true
             }
           ],
@@ -1263,12 +1281,12 @@
             "shuffleSeed": 30009,
             "maxAttempts": 3
           },
-          "hint": "Co 3 lua chon dung."
+          "hint": "Có 3 lựa chọn đúng."
         }
       },
       "hints": [
         {
-          "text": "Co 3 lua chon dung."
+          "text": "Có 3 lựa chọn đúng."
         }
       ],
       "metadata": {
@@ -1298,6 +1316,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Select every item that does not belong.",
+          "learningObjective": "odd-one-out reasoning",
           "options": [
             {
               "id": "o0",
@@ -1353,20 +1372,21 @@
           "hint": "There are 3 correct choices."
         },
         "vi": {
-          "prompt": "Chon tat ca vat khong cung nhom.",
+          "prompt": "Chọn tất cả vật không cùng nhóm.",
+          "learningObjective": "suy luận vật khác nhóm",
           "options": [
             {
               "id": "o0",
-              "label": "meo",
-              "text": "meo",
-              "semanticLabel": "meo",
+              "label": "mèo",
+              "text": "mèo",
+              "semanticLabel": "mèo",
               "isCorrect": false
             },
             {
               "id": "o1",
-              "label": "cho",
-              "text": "cho",
-              "semanticLabel": "cho",
+              "label": "chó",
+              "text": "chó",
+              "semanticLabel": "chó",
               "isCorrect": false
             },
             {
@@ -1378,23 +1398,23 @@
             },
             {
               "id": "o3",
-              "label": "ghe",
-              "text": "ghe",
-              "semanticLabel": "ghe",
+              "label": "ghế",
+              "text": "ghế",
+              "semanticLabel": "ghế",
               "isCorrect": true
             },
             {
               "id": "o4",
-              "label": "thia",
-              "text": "thia",
-              "semanticLabel": "thia",
+              "label": "thìa",
+              "text": "thìa",
+              "semanticLabel": "thìa",
               "isCorrect": true
             },
             {
               "id": "o5",
-              "label": "giay",
-              "text": "giay",
-              "semanticLabel": "giay",
+              "label": "giày",
+              "text": "giày",
+              "semanticLabel": "giày",
               "isCorrect": true
             }
           ],
@@ -1406,12 +1426,12 @@
             "shuffleSeed": 30010,
             "maxAttempts": 3
           },
-          "hint": "Co 3 lua chon dung."
+          "hint": "Có 3 lựa chọn đúng."
         }
       },
       "hints": [
         {
-          "text": "Co 3 lua chon dung."
+          "text": "Có 3 lựa chọn đúng."
         }
       ],
       "metadata": {
@@ -1441,6 +1461,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Select every item that does not belong.",
+          "learningObjective": "odd-one-out reasoning",
           "options": [
             {
               "id": "o0",
@@ -1496,20 +1517,21 @@
           "hint": "There are 3 correct choices."
         },
         "vi": {
-          "prompt": "Chon tat ca vat khong cung nhom.",
+          "prompt": "Chọn tất cả vật không cùng nhóm.",
+          "learningObjective": "suy luận vật khác nhóm",
           "options": [
             {
               "id": "o0",
-              "label": "meo",
-              "text": "meo",
-              "semanticLabel": "meo",
+              "label": "mèo",
+              "text": "mèo",
+              "semanticLabel": "mèo",
               "isCorrect": false
             },
             {
               "id": "o1",
-              "label": "cho",
-              "text": "cho",
-              "semanticLabel": "cho",
+              "label": "chó",
+              "text": "chó",
+              "semanticLabel": "chó",
               "isCorrect": false
             },
             {
@@ -1521,23 +1543,23 @@
             },
             {
               "id": "o3",
-              "label": "ghe",
-              "text": "ghe",
-              "semanticLabel": "ghe",
+              "label": "ghế",
+              "text": "ghế",
+              "semanticLabel": "ghế",
               "isCorrect": true
             },
             {
               "id": "o4",
-              "label": "thia",
-              "text": "thia",
-              "semanticLabel": "thia",
+              "label": "thìa",
+              "text": "thìa",
+              "semanticLabel": "thìa",
               "isCorrect": true
             },
             {
               "id": "o5",
-              "label": "giay",
-              "text": "giay",
-              "semanticLabel": "giay",
+              "label": "giày",
+              "text": "giày",
+              "semanticLabel": "giày",
               "isCorrect": true
             }
           ],
@@ -1549,12 +1571,12 @@
             "shuffleSeed": 30011,
             "maxAttempts": 3
           },
-          "hint": "Co 3 lua chon dung."
+          "hint": "Có 3 lựa chọn đúng."
         }
       },
       "hints": [
         {
-          "text": "Co 3 lua chon dung."
+          "text": "Có 3 lựa chọn đúng."
         }
       ],
       "metadata": {
@@ -1584,6 +1606,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Select every item that does not belong.",
+          "learningObjective": "odd-one-out reasoning",
           "options": [
             {
               "id": "o0",
@@ -1639,20 +1662,21 @@
           "hint": "There are 3 correct choices."
         },
         "vi": {
-          "prompt": "Chon tat ca vat khong cung nhom.",
+          "prompt": "Chọn tất cả vật không cùng nhóm.",
+          "learningObjective": "suy luận vật khác nhóm",
           "options": [
             {
               "id": "o0",
-              "label": "meo",
-              "text": "meo",
-              "semanticLabel": "meo",
+              "label": "mèo",
+              "text": "mèo",
+              "semanticLabel": "mèo",
               "isCorrect": false
             },
             {
               "id": "o1",
-              "label": "cho",
-              "text": "cho",
-              "semanticLabel": "cho",
+              "label": "chó",
+              "text": "chó",
+              "semanticLabel": "chó",
               "isCorrect": false
             },
             {
@@ -1664,23 +1688,23 @@
             },
             {
               "id": "o3",
-              "label": "ghe",
-              "text": "ghe",
-              "semanticLabel": "ghe",
+              "label": "ghế",
+              "text": "ghế",
+              "semanticLabel": "ghế",
               "isCorrect": true
             },
             {
               "id": "o4",
-              "label": "thia",
-              "text": "thia",
-              "semanticLabel": "thia",
+              "label": "thìa",
+              "text": "thìa",
+              "semanticLabel": "thìa",
               "isCorrect": true
             },
             {
               "id": "o5",
-              "label": "giay",
-              "text": "giay",
-              "semanticLabel": "giay",
+              "label": "giày",
+              "text": "giày",
+              "semanticLabel": "giày",
               "isCorrect": true
             }
           ],
@@ -1692,12 +1716,12 @@
             "shuffleSeed": 30012,
             "maxAttempts": 3
           },
-          "hint": "Co 3 lua chon dung."
+          "hint": "Có 3 lựa chọn đúng."
         }
       },
       "hints": [
         {
-          "text": "Co 3 lua chon dung."
+          "text": "Có 3 lựa chọn đúng."
         }
       ],
       "metadata": {
@@ -1727,6 +1751,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Select every item that does not belong.",
+          "learningObjective": "odd-one-out reasoning",
           "options": [
             {
               "id": "o0",
@@ -1782,20 +1807,21 @@
           "hint": "There are 3 correct choices."
         },
         "vi": {
-          "prompt": "Chon tat ca vat khong cung nhom.",
+          "prompt": "Chọn tất cả vật không cùng nhóm.",
+          "learningObjective": "suy luận vật khác nhóm",
           "options": [
             {
               "id": "o0",
-              "label": "meo",
-              "text": "meo",
-              "semanticLabel": "meo",
+              "label": "mèo",
+              "text": "mèo",
+              "semanticLabel": "mèo",
               "isCorrect": false
             },
             {
               "id": "o1",
-              "label": "cho",
-              "text": "cho",
-              "semanticLabel": "cho",
+              "label": "chó",
+              "text": "chó",
+              "semanticLabel": "chó",
               "isCorrect": false
             },
             {
@@ -1807,23 +1833,23 @@
             },
             {
               "id": "o3",
-              "label": "ghe",
-              "text": "ghe",
-              "semanticLabel": "ghe",
+              "label": "ghế",
+              "text": "ghế",
+              "semanticLabel": "ghế",
               "isCorrect": true
             },
             {
               "id": "o4",
-              "label": "thia",
-              "text": "thia",
-              "semanticLabel": "thia",
+              "label": "thìa",
+              "text": "thìa",
+              "semanticLabel": "thìa",
               "isCorrect": true
             },
             {
               "id": "o5",
-              "label": "giay",
-              "text": "giay",
-              "semanticLabel": "giay",
+              "label": "giày",
+              "text": "giày",
+              "semanticLabel": "giày",
               "isCorrect": true
             }
           ],
@@ -1835,12 +1861,12 @@
             "shuffleSeed": 30013,
             "maxAttempts": 3
           },
-          "hint": "Co 3 lua chon dung."
+          "hint": "Có 3 lựa chọn đúng."
         }
       },
       "hints": [
         {
-          "text": "Co 3 lua chon dung."
+          "text": "Có 3 lựa chọn đúng."
         }
       ],
       "metadata": {
@@ -1870,6 +1896,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Select every item that does not belong.",
+          "learningObjective": "odd-one-out reasoning",
           "options": [
             {
               "id": "o0",
@@ -1925,20 +1952,21 @@
           "hint": "There are 3 correct choices."
         },
         "vi": {
-          "prompt": "Chon tat ca vat khong cung nhom.",
+          "prompt": "Chọn tất cả vật không cùng nhóm.",
+          "learningObjective": "suy luận vật khác nhóm",
           "options": [
             {
               "id": "o0",
-              "label": "meo",
-              "text": "meo",
-              "semanticLabel": "meo",
+              "label": "mèo",
+              "text": "mèo",
+              "semanticLabel": "mèo",
               "isCorrect": false
             },
             {
               "id": "o1",
-              "label": "cho",
-              "text": "cho",
-              "semanticLabel": "cho",
+              "label": "chó",
+              "text": "chó",
+              "semanticLabel": "chó",
               "isCorrect": false
             },
             {
@@ -1950,23 +1978,23 @@
             },
             {
               "id": "o3",
-              "label": "ghe",
-              "text": "ghe",
-              "semanticLabel": "ghe",
+              "label": "ghế",
+              "text": "ghế",
+              "semanticLabel": "ghế",
               "isCorrect": true
             },
             {
               "id": "o4",
-              "label": "thia",
-              "text": "thia",
-              "semanticLabel": "thia",
+              "label": "thìa",
+              "text": "thìa",
+              "semanticLabel": "thìa",
               "isCorrect": true
             },
             {
               "id": "o5",
-              "label": "giay",
-              "text": "giay",
-              "semanticLabel": "giay",
+              "label": "giày",
+              "text": "giày",
+              "semanticLabel": "giày",
               "isCorrect": true
             }
           ],
@@ -1978,12 +2006,12 @@
             "shuffleSeed": 30014,
             "maxAttempts": 3
           },
-          "hint": "Co 3 lua chon dung."
+          "hint": "Có 3 lựa chọn đúng."
         }
       },
       "hints": [
         {
-          "text": "Co 3 lua chon dung."
+          "text": "Có 3 lựa chọn đúng."
         }
       ],
       "metadata": {
@@ -2013,6 +2041,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Select every item that does not belong.",
+          "learningObjective": "odd-one-out reasoning",
           "options": [
             {
               "id": "o0",
@@ -2068,20 +2097,21 @@
           "hint": "There are 3 correct choices."
         },
         "vi": {
-          "prompt": "Chon tat ca vat khong cung nhom.",
+          "prompt": "Chọn tất cả vật không cùng nhóm.",
+          "learningObjective": "suy luận vật khác nhóm",
           "options": [
             {
               "id": "o0",
-              "label": "meo",
-              "text": "meo",
-              "semanticLabel": "meo",
+              "label": "mèo",
+              "text": "mèo",
+              "semanticLabel": "mèo",
               "isCorrect": false
             },
             {
               "id": "o1",
-              "label": "cho",
-              "text": "cho",
-              "semanticLabel": "cho",
+              "label": "chó",
+              "text": "chó",
+              "semanticLabel": "chó",
               "isCorrect": false
             },
             {
@@ -2093,23 +2123,23 @@
             },
             {
               "id": "o3",
-              "label": "ghe",
-              "text": "ghe",
-              "semanticLabel": "ghe",
+              "label": "ghế",
+              "text": "ghế",
+              "semanticLabel": "ghế",
               "isCorrect": true
             },
             {
               "id": "o4",
-              "label": "thia",
-              "text": "thia",
-              "semanticLabel": "thia",
+              "label": "thìa",
+              "text": "thìa",
+              "semanticLabel": "thìa",
               "isCorrect": true
             },
             {
               "id": "o5",
-              "label": "giay",
-              "text": "giay",
-              "semanticLabel": "giay",
+              "label": "giày",
+              "text": "giày",
+              "semanticLabel": "giày",
               "isCorrect": true
             }
           ],
@@ -2121,12 +2151,12 @@
             "shuffleSeed": 30015,
             "maxAttempts": 3
           },
-          "hint": "Co 3 lua chon dung."
+          "hint": "Có 3 lựa chọn đúng."
         }
       },
       "hints": [
         {
-          "text": "Co 3 lua chon dung."
+          "text": "Có 3 lựa chọn đúng."
         }
       ],
       "metadata": {
@@ -2156,6 +2186,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Select every item that does not belong.",
+          "learningObjective": "odd-one-out reasoning",
           "options": [
             {
               "id": "o0",
@@ -2211,20 +2242,21 @@
           "hint": "There are 3 correct choices."
         },
         "vi": {
-          "prompt": "Chon tat ca vat khong cung nhom.",
+          "prompt": "Chọn tất cả vật không cùng nhóm.",
+          "learningObjective": "suy luận vật khác nhóm",
           "options": [
             {
               "id": "o0",
-              "label": "meo",
-              "text": "meo",
-              "semanticLabel": "meo",
+              "label": "mèo",
+              "text": "mèo",
+              "semanticLabel": "mèo",
               "isCorrect": false
             },
             {
               "id": "o1",
-              "label": "cho",
-              "text": "cho",
-              "semanticLabel": "cho",
+              "label": "chó",
+              "text": "chó",
+              "semanticLabel": "chó",
               "isCorrect": false
             },
             {
@@ -2236,23 +2268,23 @@
             },
             {
               "id": "o3",
-              "label": "ghe",
-              "text": "ghe",
-              "semanticLabel": "ghe",
+              "label": "ghế",
+              "text": "ghế",
+              "semanticLabel": "ghế",
               "isCorrect": true
             },
             {
               "id": "o4",
-              "label": "thia",
-              "text": "thia",
-              "semanticLabel": "thia",
+              "label": "thìa",
+              "text": "thìa",
+              "semanticLabel": "thìa",
               "isCorrect": true
             },
             {
               "id": "o5",
-              "label": "giay",
-              "text": "giay",
-              "semanticLabel": "giay",
+              "label": "giày",
+              "text": "giày",
+              "semanticLabel": "giày",
               "isCorrect": true
             }
           ],
@@ -2264,12 +2296,12 @@
             "shuffleSeed": 30016,
             "maxAttempts": 3
           },
-          "hint": "Co 3 lua chon dung."
+          "hint": "Có 3 lựa chọn đúng."
         }
       },
       "hints": [
         {
-          "text": "Co 3 lua chon dung."
+          "text": "Có 3 lựa chọn đúng."
         }
       ],
       "metadata": {
@@ -2299,6 +2331,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Select every item that does not belong.",
+          "learningObjective": "odd-one-out reasoning",
           "options": [
             {
               "id": "o0",
@@ -2354,20 +2387,21 @@
           "hint": "There are 3 correct choices."
         },
         "vi": {
-          "prompt": "Chon tat ca vat khong cung nhom.",
+          "prompt": "Chọn tất cả vật không cùng nhóm.",
+          "learningObjective": "suy luận vật khác nhóm",
           "options": [
             {
               "id": "o0",
-              "label": "meo",
-              "text": "meo",
-              "semanticLabel": "meo",
+              "label": "mèo",
+              "text": "mèo",
+              "semanticLabel": "mèo",
               "isCorrect": false
             },
             {
               "id": "o1",
-              "label": "cho",
-              "text": "cho",
-              "semanticLabel": "cho",
+              "label": "chó",
+              "text": "chó",
+              "semanticLabel": "chó",
               "isCorrect": false
             },
             {
@@ -2379,23 +2413,23 @@
             },
             {
               "id": "o3",
-              "label": "ghe",
-              "text": "ghe",
-              "semanticLabel": "ghe",
+              "label": "ghế",
+              "text": "ghế",
+              "semanticLabel": "ghế",
               "isCorrect": true
             },
             {
               "id": "o4",
-              "label": "thia",
-              "text": "thia",
-              "semanticLabel": "thia",
+              "label": "thìa",
+              "text": "thìa",
+              "semanticLabel": "thìa",
               "isCorrect": true
             },
             {
               "id": "o5",
-              "label": "giay",
-              "text": "giay",
-              "semanticLabel": "giay",
+              "label": "giày",
+              "text": "giày",
+              "semanticLabel": "giày",
               "isCorrect": true
             }
           ],
@@ -2407,12 +2441,12 @@
             "shuffleSeed": 30017,
             "maxAttempts": 3
           },
-          "hint": "Co 3 lua chon dung."
+          "hint": "Có 3 lựa chọn đúng."
         }
       },
       "hints": [
         {
-          "text": "Co 3 lua chon dung."
+          "text": "Có 3 lựa chọn đúng."
         }
       ],
       "metadata": {
@@ -2442,6 +2476,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Select every item that does not belong.",
+          "learningObjective": "odd-one-out reasoning",
           "options": [
             {
               "id": "o0",
@@ -2497,20 +2532,21 @@
           "hint": "There are 3 correct choices."
         },
         "vi": {
-          "prompt": "Chon tat ca vat khong cung nhom.",
+          "prompt": "Chọn tất cả vật không cùng nhóm.",
+          "learningObjective": "suy luận vật khác nhóm",
           "options": [
             {
               "id": "o0",
-              "label": "meo",
-              "text": "meo",
-              "semanticLabel": "meo",
+              "label": "mèo",
+              "text": "mèo",
+              "semanticLabel": "mèo",
               "isCorrect": false
             },
             {
               "id": "o1",
-              "label": "cho",
-              "text": "cho",
-              "semanticLabel": "cho",
+              "label": "chó",
+              "text": "chó",
+              "semanticLabel": "chó",
               "isCorrect": false
             },
             {
@@ -2522,23 +2558,23 @@
             },
             {
               "id": "o3",
-              "label": "ghe",
-              "text": "ghe",
-              "semanticLabel": "ghe",
+              "label": "ghế",
+              "text": "ghế",
+              "semanticLabel": "ghế",
               "isCorrect": true
             },
             {
               "id": "o4",
-              "label": "thia",
-              "text": "thia",
-              "semanticLabel": "thia",
+              "label": "thìa",
+              "text": "thìa",
+              "semanticLabel": "thìa",
               "isCorrect": true
             },
             {
               "id": "o5",
-              "label": "giay",
-              "text": "giay",
-              "semanticLabel": "giay",
+              "label": "giày",
+              "text": "giày",
+              "semanticLabel": "giày",
               "isCorrect": true
             }
           ],
@@ -2550,12 +2586,12 @@
             "shuffleSeed": 30018,
             "maxAttempts": 3
           },
-          "hint": "Co 3 lua chon dung."
+          "hint": "Có 3 lựa chọn đúng."
         }
       },
       "hints": [
         {
-          "text": "Co 3 lua chon dung."
+          "text": "Có 3 lựa chọn đúng."
         }
       ],
       "metadata": {
@@ -2585,6 +2621,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Select every item that does not belong.",
+          "learningObjective": "odd-one-out reasoning",
           "options": [
             {
               "id": "o0",
@@ -2640,20 +2677,21 @@
           "hint": "There are 3 correct choices."
         },
         "vi": {
-          "prompt": "Chon tat ca vat khong cung nhom.",
+          "prompt": "Chọn tất cả vật không cùng nhóm.",
+          "learningObjective": "suy luận vật khác nhóm",
           "options": [
             {
               "id": "o0",
-              "label": "meo",
-              "text": "meo",
-              "semanticLabel": "meo",
+              "label": "mèo",
+              "text": "mèo",
+              "semanticLabel": "mèo",
               "isCorrect": false
             },
             {
               "id": "o1",
-              "label": "cho",
-              "text": "cho",
-              "semanticLabel": "cho",
+              "label": "chó",
+              "text": "chó",
+              "semanticLabel": "chó",
               "isCorrect": false
             },
             {
@@ -2665,23 +2703,23 @@
             },
             {
               "id": "o3",
-              "label": "ghe",
-              "text": "ghe",
-              "semanticLabel": "ghe",
+              "label": "ghế",
+              "text": "ghế",
+              "semanticLabel": "ghế",
               "isCorrect": true
             },
             {
               "id": "o4",
-              "label": "thia",
-              "text": "thia",
-              "semanticLabel": "thia",
+              "label": "thìa",
+              "text": "thìa",
+              "semanticLabel": "thìa",
               "isCorrect": true
             },
             {
               "id": "o5",
-              "label": "giay",
-              "text": "giay",
-              "semanticLabel": "giay",
+              "label": "giày",
+              "text": "giày",
+              "semanticLabel": "giày",
               "isCorrect": true
             }
           ],
@@ -2693,12 +2731,12 @@
             "shuffleSeed": 30019,
             "maxAttempts": 3
           },
-          "hint": "Co 3 lua chon dung."
+          "hint": "Có 3 lựa chọn đúng."
         }
       },
       "hints": [
         {
-          "text": "Co 3 lua chon dung."
+          "text": "Có 3 lựa chọn đúng."
         }
       ],
       "metadata": {
@@ -2728,6 +2766,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Select every item that does not belong.",
+          "learningObjective": "odd-one-out reasoning",
           "options": [
             {
               "id": "o0",
@@ -2783,20 +2822,21 @@
           "hint": "There are 3 correct choices."
         },
         "vi": {
-          "prompt": "Chon tat ca vat khong cung nhom.",
+          "prompt": "Chọn tất cả vật không cùng nhóm.",
+          "learningObjective": "suy luận vật khác nhóm",
           "options": [
             {
               "id": "o0",
-              "label": "meo",
-              "text": "meo",
-              "semanticLabel": "meo",
+              "label": "mèo",
+              "text": "mèo",
+              "semanticLabel": "mèo",
               "isCorrect": false
             },
             {
               "id": "o1",
-              "label": "cho",
-              "text": "cho",
-              "semanticLabel": "cho",
+              "label": "chó",
+              "text": "chó",
+              "semanticLabel": "chó",
               "isCorrect": false
             },
             {
@@ -2808,23 +2848,23 @@
             },
             {
               "id": "o3",
-              "label": "ghe",
-              "text": "ghe",
-              "semanticLabel": "ghe",
+              "label": "ghế",
+              "text": "ghế",
+              "semanticLabel": "ghế",
               "isCorrect": true
             },
             {
               "id": "o4",
-              "label": "thia",
-              "text": "thia",
-              "semanticLabel": "thia",
+              "label": "thìa",
+              "text": "thìa",
+              "semanticLabel": "thìa",
               "isCorrect": true
             },
             {
               "id": "o5",
-              "label": "giay",
-              "text": "giay",
-              "semanticLabel": "giay",
+              "label": "giày",
+              "text": "giày",
+              "semanticLabel": "giày",
               "isCorrect": true
             }
           ],
@@ -2836,12 +2876,12 @@
             "shuffleSeed": 30020,
             "maxAttempts": 3
           },
-          "hint": "Co 3 lua chon dung."
+          "hint": "Có 3 lựa chọn đúng."
         }
       },
       "hints": [
         {
-          "text": "Co 3 lua chon dung."
+          "text": "Có 3 lựa chọn đúng."
         }
       ],
       "metadata": {
@@ -2871,6 +2911,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Select every item that does not belong.",
+          "learningObjective": "odd-one-out reasoning",
           "options": [
             {
               "id": "o0",
@@ -2926,20 +2967,21 @@
           "hint": "There are 3 correct choices."
         },
         "vi": {
-          "prompt": "Chon tat ca vat khong cung nhom.",
+          "prompt": "Chọn tất cả vật không cùng nhóm.",
+          "learningObjective": "suy luận vật khác nhóm",
           "options": [
             {
               "id": "o0",
-              "label": "meo",
-              "text": "meo",
-              "semanticLabel": "meo",
+              "label": "mèo",
+              "text": "mèo",
+              "semanticLabel": "mèo",
               "isCorrect": false
             },
             {
               "id": "o1",
-              "label": "cho",
-              "text": "cho",
-              "semanticLabel": "cho",
+              "label": "chó",
+              "text": "chó",
+              "semanticLabel": "chó",
               "isCorrect": false
             },
             {
@@ -2951,23 +2993,23 @@
             },
             {
               "id": "o3",
-              "label": "ghe",
-              "text": "ghe",
-              "semanticLabel": "ghe",
+              "label": "ghế",
+              "text": "ghế",
+              "semanticLabel": "ghế",
               "isCorrect": true
             },
             {
               "id": "o4",
-              "label": "thia",
-              "text": "thia",
-              "semanticLabel": "thia",
+              "label": "thìa",
+              "text": "thìa",
+              "semanticLabel": "thìa",
               "isCorrect": true
             },
             {
               "id": "o5",
-              "label": "giay",
-              "text": "giay",
-              "semanticLabel": "giay",
+              "label": "giày",
+              "text": "giày",
+              "semanticLabel": "giày",
               "isCorrect": true
             }
           ],
@@ -2979,12 +3021,12 @@
             "shuffleSeed": 30021,
             "maxAttempts": 3
           },
-          "hint": "Co 3 lua chon dung."
+          "hint": "Có 3 lựa chọn đúng."
         }
       },
       "hints": [
         {
-          "text": "Co 3 lua chon dung."
+          "text": "Có 3 lựa chọn đúng."
         }
       ],
       "metadata": {
@@ -3014,6 +3056,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Select every item that does not belong.",
+          "learningObjective": "odd-one-out reasoning",
           "options": [
             {
               "id": "o0",
@@ -3069,20 +3112,21 @@
           "hint": "There are 3 correct choices."
         },
         "vi": {
-          "prompt": "Chon tat ca vat khong cung nhom.",
+          "prompt": "Chọn tất cả vật không cùng nhóm.",
+          "learningObjective": "suy luận vật khác nhóm",
           "options": [
             {
               "id": "o0",
-              "label": "meo",
-              "text": "meo",
-              "semanticLabel": "meo",
+              "label": "mèo",
+              "text": "mèo",
+              "semanticLabel": "mèo",
               "isCorrect": false
             },
             {
               "id": "o1",
-              "label": "cho",
-              "text": "cho",
-              "semanticLabel": "cho",
+              "label": "chó",
+              "text": "chó",
+              "semanticLabel": "chó",
               "isCorrect": false
             },
             {
@@ -3094,23 +3138,23 @@
             },
             {
               "id": "o3",
-              "label": "ghe",
-              "text": "ghe",
-              "semanticLabel": "ghe",
+              "label": "ghế",
+              "text": "ghế",
+              "semanticLabel": "ghế",
               "isCorrect": true
             },
             {
               "id": "o4",
-              "label": "thia",
-              "text": "thia",
-              "semanticLabel": "thia",
+              "label": "thìa",
+              "text": "thìa",
+              "semanticLabel": "thìa",
               "isCorrect": true
             },
             {
               "id": "o5",
-              "label": "giay",
-              "text": "giay",
-              "semanticLabel": "giay",
+              "label": "giày",
+              "text": "giày",
+              "semanticLabel": "giày",
               "isCorrect": true
             }
           ],
@@ -3122,12 +3166,12 @@
             "shuffleSeed": 30022,
             "maxAttempts": 3
           },
-          "hint": "Co 3 lua chon dung."
+          "hint": "Có 3 lựa chọn đúng."
         }
       },
       "hints": [
         {
-          "text": "Co 3 lua chon dung."
+          "text": "Có 3 lựa chọn đúng."
         }
       ],
       "metadata": {
@@ -3157,6 +3201,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Select every item that does not belong.",
+          "learningObjective": "odd-one-out reasoning",
           "options": [
             {
               "id": "o0",
@@ -3212,20 +3257,21 @@
           "hint": "There are 3 correct choices."
         },
         "vi": {
-          "prompt": "Chon tat ca vat khong cung nhom.",
+          "prompt": "Chọn tất cả vật không cùng nhóm.",
+          "learningObjective": "suy luận vật khác nhóm",
           "options": [
             {
               "id": "o0",
-              "label": "meo",
-              "text": "meo",
-              "semanticLabel": "meo",
+              "label": "mèo",
+              "text": "mèo",
+              "semanticLabel": "mèo",
               "isCorrect": false
             },
             {
               "id": "o1",
-              "label": "cho",
-              "text": "cho",
-              "semanticLabel": "cho",
+              "label": "chó",
+              "text": "chó",
+              "semanticLabel": "chó",
               "isCorrect": false
             },
             {
@@ -3237,23 +3283,23 @@
             },
             {
               "id": "o3",
-              "label": "ghe",
-              "text": "ghe",
-              "semanticLabel": "ghe",
+              "label": "ghế",
+              "text": "ghế",
+              "semanticLabel": "ghế",
               "isCorrect": true
             },
             {
               "id": "o4",
-              "label": "thia",
-              "text": "thia",
-              "semanticLabel": "thia",
+              "label": "thìa",
+              "text": "thìa",
+              "semanticLabel": "thìa",
               "isCorrect": true
             },
             {
               "id": "o5",
-              "label": "giay",
-              "text": "giay",
-              "semanticLabel": "giay",
+              "label": "giày",
+              "text": "giày",
+              "semanticLabel": "giày",
               "isCorrect": true
             }
           ],
@@ -3265,12 +3311,12 @@
             "shuffleSeed": 30023,
             "maxAttempts": 3
           },
-          "hint": "Co 3 lua chon dung."
+          "hint": "Có 3 lựa chọn đúng."
         }
       },
       "hints": [
         {
-          "text": "Co 3 lua chon dung."
+          "text": "Có 3 lựa chọn đúng."
         }
       ],
       "metadata": {
@@ -3300,6 +3346,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Select every item that does not belong.",
+          "learningObjective": "odd-one-out reasoning",
           "options": [
             {
               "id": "o0",
@@ -3355,20 +3402,21 @@
           "hint": "There are 3 correct choices."
         },
         "vi": {
-          "prompt": "Chon tat ca vat khong cung nhom.",
+          "prompt": "Chọn tất cả vật không cùng nhóm.",
+          "learningObjective": "suy luận vật khác nhóm",
           "options": [
             {
               "id": "o0",
-              "label": "meo",
-              "text": "meo",
-              "semanticLabel": "meo",
+              "label": "mèo",
+              "text": "mèo",
+              "semanticLabel": "mèo",
               "isCorrect": false
             },
             {
               "id": "o1",
-              "label": "cho",
-              "text": "cho",
-              "semanticLabel": "cho",
+              "label": "chó",
+              "text": "chó",
+              "semanticLabel": "chó",
               "isCorrect": false
             },
             {
@@ -3380,23 +3428,23 @@
             },
             {
               "id": "o3",
-              "label": "ghe",
-              "text": "ghe",
-              "semanticLabel": "ghe",
+              "label": "ghế",
+              "text": "ghế",
+              "semanticLabel": "ghế",
               "isCorrect": true
             },
             {
               "id": "o4",
-              "label": "thia",
-              "text": "thia",
-              "semanticLabel": "thia",
+              "label": "thìa",
+              "text": "thìa",
+              "semanticLabel": "thìa",
               "isCorrect": true
             },
             {
               "id": "o5",
-              "label": "giay",
-              "text": "giay",
-              "semanticLabel": "giay",
+              "label": "giày",
+              "text": "giày",
+              "semanticLabel": "giày",
               "isCorrect": true
             }
           ],
@@ -3408,12 +3456,12 @@
             "shuffleSeed": 30024,
             "maxAttempts": 3
           },
-          "hint": "Co 3 lua chon dung."
+          "hint": "Có 3 lựa chọn đúng."
         }
       },
       "hints": [
         {
-          "text": "Co 3 lua chon dung."
+          "text": "Có 3 lựa chọn đúng."
         }
       ],
       "metadata": {
@@ -3443,6 +3491,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Select every item that does not belong.",
+          "learningObjective": "odd-one-out reasoning",
           "options": [
             {
               "id": "o0",
@@ -3498,20 +3547,21 @@
           "hint": "There are 3 correct choices."
         },
         "vi": {
-          "prompt": "Chon tat ca vat khong cung nhom.",
+          "prompt": "Chọn tất cả vật không cùng nhóm.",
+          "learningObjective": "suy luận vật khác nhóm",
           "options": [
             {
               "id": "o0",
-              "label": "meo",
-              "text": "meo",
-              "semanticLabel": "meo",
+              "label": "mèo",
+              "text": "mèo",
+              "semanticLabel": "mèo",
               "isCorrect": false
             },
             {
               "id": "o1",
-              "label": "cho",
-              "text": "cho",
-              "semanticLabel": "cho",
+              "label": "chó",
+              "text": "chó",
+              "semanticLabel": "chó",
               "isCorrect": false
             },
             {
@@ -3523,23 +3573,23 @@
             },
             {
               "id": "o3",
-              "label": "ghe",
-              "text": "ghe",
-              "semanticLabel": "ghe",
+              "label": "ghế",
+              "text": "ghế",
+              "semanticLabel": "ghế",
               "isCorrect": true
             },
             {
               "id": "o4",
-              "label": "thia",
-              "text": "thia",
-              "semanticLabel": "thia",
+              "label": "thìa",
+              "text": "thìa",
+              "semanticLabel": "thìa",
               "isCorrect": true
             },
             {
               "id": "o5",
-              "label": "giay",
-              "text": "giay",
-              "semanticLabel": "giay",
+              "label": "giày",
+              "text": "giày",
+              "semanticLabel": "giày",
               "isCorrect": true
             }
           ],
@@ -3551,12 +3601,12 @@
             "shuffleSeed": 30025,
             "maxAttempts": 3
           },
-          "hint": "Co 3 lua chon dung."
+          "hint": "Có 3 lựa chọn đúng."
         }
       },
       "hints": [
         {
-          "text": "Co 3 lua chon dung."
+          "text": "Có 3 lựa chọn đúng."
         }
       ],
       "metadata": {
@@ -3586,6 +3636,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Select every item that does not belong.",
+          "learningObjective": "odd-one-out reasoning",
           "options": [
             {
               "id": "o0",
@@ -3641,20 +3692,21 @@
           "hint": "There are 3 correct choices."
         },
         "vi": {
-          "prompt": "Chon tat ca vat khong cung nhom.",
+          "prompt": "Chọn tất cả vật không cùng nhóm.",
+          "learningObjective": "suy luận vật khác nhóm",
           "options": [
             {
               "id": "o0",
-              "label": "meo",
-              "text": "meo",
-              "semanticLabel": "meo",
+              "label": "mèo",
+              "text": "mèo",
+              "semanticLabel": "mèo",
               "isCorrect": false
             },
             {
               "id": "o1",
-              "label": "cho",
-              "text": "cho",
-              "semanticLabel": "cho",
+              "label": "chó",
+              "text": "chó",
+              "semanticLabel": "chó",
               "isCorrect": false
             },
             {
@@ -3666,23 +3718,23 @@
             },
             {
               "id": "o3",
-              "label": "ghe",
-              "text": "ghe",
-              "semanticLabel": "ghe",
+              "label": "ghế",
+              "text": "ghế",
+              "semanticLabel": "ghế",
               "isCorrect": true
             },
             {
               "id": "o4",
-              "label": "thia",
-              "text": "thia",
-              "semanticLabel": "thia",
+              "label": "thìa",
+              "text": "thìa",
+              "semanticLabel": "thìa",
               "isCorrect": true
             },
             {
               "id": "o5",
-              "label": "giay",
-              "text": "giay",
-              "semanticLabel": "giay",
+              "label": "giày",
+              "text": "giày",
+              "semanticLabel": "giày",
               "isCorrect": true
             }
           ],
@@ -3694,12 +3746,12 @@
             "shuffleSeed": 30026,
             "maxAttempts": 3
           },
-          "hint": "Co 3 lua chon dung."
+          "hint": "Có 3 lựa chọn đúng."
         }
       },
       "hints": [
         {
-          "text": "Co 3 lua chon dung."
+          "text": "Có 3 lựa chọn đúng."
         }
       ],
       "metadata": {
@@ -3729,6 +3781,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Select every item that does not belong.",
+          "learningObjective": "odd-one-out reasoning",
           "options": [
             {
               "id": "o0",
@@ -3784,20 +3837,21 @@
           "hint": "There are 3 correct choices."
         },
         "vi": {
-          "prompt": "Chon tat ca vat khong cung nhom.",
+          "prompt": "Chọn tất cả vật không cùng nhóm.",
+          "learningObjective": "suy luận vật khác nhóm",
           "options": [
             {
               "id": "o0",
-              "label": "meo",
-              "text": "meo",
-              "semanticLabel": "meo",
+              "label": "mèo",
+              "text": "mèo",
+              "semanticLabel": "mèo",
               "isCorrect": false
             },
             {
               "id": "o1",
-              "label": "cho",
-              "text": "cho",
-              "semanticLabel": "cho",
+              "label": "chó",
+              "text": "chó",
+              "semanticLabel": "chó",
               "isCorrect": false
             },
             {
@@ -3809,23 +3863,23 @@
             },
             {
               "id": "o3",
-              "label": "ghe",
-              "text": "ghe",
-              "semanticLabel": "ghe",
+              "label": "ghế",
+              "text": "ghế",
+              "semanticLabel": "ghế",
               "isCorrect": true
             },
             {
               "id": "o4",
-              "label": "thia",
-              "text": "thia",
-              "semanticLabel": "thia",
+              "label": "thìa",
+              "text": "thìa",
+              "semanticLabel": "thìa",
               "isCorrect": true
             },
             {
               "id": "o5",
-              "label": "giay",
-              "text": "giay",
-              "semanticLabel": "giay",
+              "label": "giày",
+              "text": "giày",
+              "semanticLabel": "giày",
               "isCorrect": true
             }
           ],
@@ -3837,12 +3891,12 @@
             "shuffleSeed": 30027,
             "maxAttempts": 3
           },
-          "hint": "Co 3 lua chon dung."
+          "hint": "Có 3 lựa chọn đúng."
         }
       },
       "hints": [
         {
-          "text": "Co 3 lua chon dung."
+          "text": "Có 3 lựa chọn đúng."
         }
       ],
       "metadata": {
@@ -3872,6 +3926,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Select every item that does not belong.",
+          "learningObjective": "odd-one-out reasoning",
           "options": [
             {
               "id": "o0",
@@ -3927,20 +3982,21 @@
           "hint": "There are 3 correct choices."
         },
         "vi": {
-          "prompt": "Chon tat ca vat khong cung nhom.",
+          "prompt": "Chọn tất cả vật không cùng nhóm.",
+          "learningObjective": "suy luận vật khác nhóm",
           "options": [
             {
               "id": "o0",
-              "label": "meo",
-              "text": "meo",
-              "semanticLabel": "meo",
+              "label": "mèo",
+              "text": "mèo",
+              "semanticLabel": "mèo",
               "isCorrect": false
             },
             {
               "id": "o1",
-              "label": "cho",
-              "text": "cho",
-              "semanticLabel": "cho",
+              "label": "chó",
+              "text": "chó",
+              "semanticLabel": "chó",
               "isCorrect": false
             },
             {
@@ -3952,23 +4008,23 @@
             },
             {
               "id": "o3",
-              "label": "ghe",
-              "text": "ghe",
-              "semanticLabel": "ghe",
+              "label": "ghế",
+              "text": "ghế",
+              "semanticLabel": "ghế",
               "isCorrect": true
             },
             {
               "id": "o4",
-              "label": "thia",
-              "text": "thia",
-              "semanticLabel": "thia",
+              "label": "thìa",
+              "text": "thìa",
+              "semanticLabel": "thìa",
               "isCorrect": true
             },
             {
               "id": "o5",
-              "label": "giay",
-              "text": "giay",
-              "semanticLabel": "giay",
+              "label": "giày",
+              "text": "giày",
+              "semanticLabel": "giày",
               "isCorrect": true
             }
           ],
@@ -3980,12 +4036,12 @@
             "shuffleSeed": 30028,
             "maxAttempts": 3
           },
-          "hint": "Co 3 lua chon dung."
+          "hint": "Có 3 lựa chọn đúng."
         }
       },
       "hints": [
         {
-          "text": "Co 3 lua chon dung."
+          "text": "Có 3 lựa chọn đúng."
         }
       ],
       "metadata": {
@@ -4015,6 +4071,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Select every item that does not belong.",
+          "learningObjective": "odd-one-out reasoning",
           "options": [
             {
               "id": "o0",
@@ -4070,20 +4127,21 @@
           "hint": "There are 3 correct choices."
         },
         "vi": {
-          "prompt": "Chon tat ca vat khong cung nhom.",
+          "prompt": "Chọn tất cả vật không cùng nhóm.",
+          "learningObjective": "suy luận vật khác nhóm",
           "options": [
             {
               "id": "o0",
-              "label": "meo",
-              "text": "meo",
-              "semanticLabel": "meo",
+              "label": "mèo",
+              "text": "mèo",
+              "semanticLabel": "mèo",
               "isCorrect": false
             },
             {
               "id": "o1",
-              "label": "cho",
-              "text": "cho",
-              "semanticLabel": "cho",
+              "label": "chó",
+              "text": "chó",
+              "semanticLabel": "chó",
               "isCorrect": false
             },
             {
@@ -4095,23 +4153,23 @@
             },
             {
               "id": "o3",
-              "label": "ghe",
-              "text": "ghe",
-              "semanticLabel": "ghe",
+              "label": "ghế",
+              "text": "ghế",
+              "semanticLabel": "ghế",
               "isCorrect": true
             },
             {
               "id": "o4",
-              "label": "thia",
-              "text": "thia",
-              "semanticLabel": "thia",
+              "label": "thìa",
+              "text": "thìa",
+              "semanticLabel": "thìa",
               "isCorrect": true
             },
             {
               "id": "o5",
-              "label": "giay",
-              "text": "giay",
-              "semanticLabel": "giay",
+              "label": "giày",
+              "text": "giày",
+              "semanticLabel": "giày",
               "isCorrect": true
             }
           ],
@@ -4123,12 +4181,12 @@
             "shuffleSeed": 30029,
             "maxAttempts": 3
           },
-          "hint": "Co 3 lua chon dung."
+          "hint": "Có 3 lựa chọn đúng."
         }
       },
       "hints": [
         {
-          "text": "Co 3 lua chon dung."
+          "text": "Có 3 lựa chọn đúng."
         }
       ],
       "metadata": {
@@ -4158,6 +4216,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Select every item that does not belong.",
+          "learningObjective": "odd-one-out reasoning",
           "options": [
             {
               "id": "o0",
@@ -4213,20 +4272,21 @@
           "hint": "There are 3 correct choices."
         },
         "vi": {
-          "prompt": "Chon tat ca vat khong cung nhom.",
+          "prompt": "Chọn tất cả vật không cùng nhóm.",
+          "learningObjective": "suy luận vật khác nhóm",
           "options": [
             {
               "id": "o0",
-              "label": "meo",
-              "text": "meo",
-              "semanticLabel": "meo",
+              "label": "mèo",
+              "text": "mèo",
+              "semanticLabel": "mèo",
               "isCorrect": false
             },
             {
               "id": "o1",
-              "label": "cho",
-              "text": "cho",
-              "semanticLabel": "cho",
+              "label": "chó",
+              "text": "chó",
+              "semanticLabel": "chó",
               "isCorrect": false
             },
             {
@@ -4238,23 +4298,23 @@
             },
             {
               "id": "o3",
-              "label": "ghe",
-              "text": "ghe",
-              "semanticLabel": "ghe",
+              "label": "ghế",
+              "text": "ghế",
+              "semanticLabel": "ghế",
               "isCorrect": true
             },
             {
               "id": "o4",
-              "label": "thia",
-              "text": "thia",
-              "semanticLabel": "thia",
+              "label": "thìa",
+              "text": "thìa",
+              "semanticLabel": "thìa",
               "isCorrect": true
             },
             {
               "id": "o5",
-              "label": "giay",
-              "text": "giay",
-              "semanticLabel": "giay",
+              "label": "giày",
+              "text": "giày",
+              "semanticLabel": "giày",
               "isCorrect": true
             }
           ],
@@ -4266,12 +4326,12 @@
             "shuffleSeed": 30030,
             "maxAttempts": 3
           },
-          "hint": "Co 3 lua chon dung."
+          "hint": "Có 3 lựa chọn đúng."
         }
       },
       "hints": [
         {
-          "text": "Co 3 lua chon dung."
+          "text": "Có 3 lựa chọn đúng."
         }
       ],
       "metadata": {
@@ -4301,6 +4361,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Select every item that does not belong.",
+          "learningObjective": "odd-one-out reasoning",
           "options": [
             {
               "id": "o0",
@@ -4356,20 +4417,21 @@
           "hint": "There are 3 correct choices."
         },
         "vi": {
-          "prompt": "Chon tat ca vat khong cung nhom.",
+          "prompt": "Chọn tất cả vật không cùng nhóm.",
+          "learningObjective": "suy luận vật khác nhóm",
           "options": [
             {
               "id": "o0",
-              "label": "meo",
-              "text": "meo",
-              "semanticLabel": "meo",
+              "label": "mèo",
+              "text": "mèo",
+              "semanticLabel": "mèo",
               "isCorrect": false
             },
             {
               "id": "o1",
-              "label": "cho",
-              "text": "cho",
-              "semanticLabel": "cho",
+              "label": "chó",
+              "text": "chó",
+              "semanticLabel": "chó",
               "isCorrect": false
             },
             {
@@ -4381,23 +4443,23 @@
             },
             {
               "id": "o3",
-              "label": "ghe",
-              "text": "ghe",
-              "semanticLabel": "ghe",
+              "label": "ghế",
+              "text": "ghế",
+              "semanticLabel": "ghế",
               "isCorrect": true
             },
             {
               "id": "o4",
-              "label": "thia",
-              "text": "thia",
-              "semanticLabel": "thia",
+              "label": "thìa",
+              "text": "thìa",
+              "semanticLabel": "thìa",
               "isCorrect": true
             },
             {
               "id": "o5",
-              "label": "giay",
-              "text": "giay",
-              "semanticLabel": "giay",
+              "label": "giày",
+              "text": "giày",
+              "semanticLabel": "giày",
               "isCorrect": true
             }
           ],
@@ -4409,12 +4471,12 @@
             "shuffleSeed": 30031,
             "maxAttempts": 3
           },
-          "hint": "Co 3 lua chon dung."
+          "hint": "Có 3 lựa chọn đúng."
         }
       },
       "hints": [
         {
-          "text": "Co 3 lua chon dung."
+          "text": "Có 3 lựa chọn đúng."
         }
       ],
       "metadata": {
@@ -4444,6 +4506,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Select every item that does not belong.",
+          "learningObjective": "odd-one-out reasoning",
           "options": [
             {
               "id": "o0",
@@ -4499,20 +4562,21 @@
           "hint": "There are 3 correct choices."
         },
         "vi": {
-          "prompt": "Chon tat ca vat khong cung nhom.",
+          "prompt": "Chọn tất cả vật không cùng nhóm.",
+          "learningObjective": "suy luận vật khác nhóm",
           "options": [
             {
               "id": "o0",
-              "label": "meo",
-              "text": "meo",
-              "semanticLabel": "meo",
+              "label": "mèo",
+              "text": "mèo",
+              "semanticLabel": "mèo",
               "isCorrect": false
             },
             {
               "id": "o1",
-              "label": "cho",
-              "text": "cho",
-              "semanticLabel": "cho",
+              "label": "chó",
+              "text": "chó",
+              "semanticLabel": "chó",
               "isCorrect": false
             },
             {
@@ -4524,23 +4588,23 @@
             },
             {
               "id": "o3",
-              "label": "ghe",
-              "text": "ghe",
-              "semanticLabel": "ghe",
+              "label": "ghế",
+              "text": "ghế",
+              "semanticLabel": "ghế",
               "isCorrect": true
             },
             {
               "id": "o4",
-              "label": "thia",
-              "text": "thia",
-              "semanticLabel": "thia",
+              "label": "thìa",
+              "text": "thìa",
+              "semanticLabel": "thìa",
               "isCorrect": true
             },
             {
               "id": "o5",
-              "label": "giay",
-              "text": "giay",
-              "semanticLabel": "giay",
+              "label": "giày",
+              "text": "giày",
+              "semanticLabel": "giày",
               "isCorrect": true
             }
           ],
@@ -4552,12 +4616,12 @@
             "shuffleSeed": 30032,
             "maxAttempts": 3
           },
-          "hint": "Co 3 lua chon dung."
+          "hint": "Có 3 lựa chọn đúng."
         }
       },
       "hints": [
         {
-          "text": "Co 3 lua chon dung."
+          "text": "Có 3 lựa chọn đúng."
         }
       ],
       "metadata": {
@@ -4587,6 +4651,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Select every item that does not belong.",
+          "learningObjective": "odd-one-out reasoning",
           "options": [
             {
               "id": "o0",
@@ -4642,20 +4707,21 @@
           "hint": "There are 3 correct choices."
         },
         "vi": {
-          "prompt": "Chon tat ca vat khong cung nhom.",
+          "prompt": "Chọn tất cả vật không cùng nhóm.",
+          "learningObjective": "suy luận vật khác nhóm",
           "options": [
             {
               "id": "o0",
-              "label": "meo",
-              "text": "meo",
-              "semanticLabel": "meo",
+              "label": "mèo",
+              "text": "mèo",
+              "semanticLabel": "mèo",
               "isCorrect": false
             },
             {
               "id": "o1",
-              "label": "cho",
-              "text": "cho",
-              "semanticLabel": "cho",
+              "label": "chó",
+              "text": "chó",
+              "semanticLabel": "chó",
               "isCorrect": false
             },
             {
@@ -4667,23 +4733,23 @@
             },
             {
               "id": "o3",
-              "label": "ghe",
-              "text": "ghe",
-              "semanticLabel": "ghe",
+              "label": "ghế",
+              "text": "ghế",
+              "semanticLabel": "ghế",
               "isCorrect": true
             },
             {
               "id": "o4",
-              "label": "thia",
-              "text": "thia",
-              "semanticLabel": "thia",
+              "label": "thìa",
+              "text": "thìa",
+              "semanticLabel": "thìa",
               "isCorrect": true
             },
             {
               "id": "o5",
-              "label": "giay",
-              "text": "giay",
-              "semanticLabel": "giay",
+              "label": "giày",
+              "text": "giày",
+              "semanticLabel": "giày",
               "isCorrect": true
             }
           ],
@@ -4695,12 +4761,12 @@
             "shuffleSeed": 30033,
             "maxAttempts": 3
           },
-          "hint": "Co 3 lua chon dung."
+          "hint": "Có 3 lựa chọn đúng."
         }
       },
       "hints": [
         {
-          "text": "Co 3 lua chon dung."
+          "text": "Có 3 lựa chọn đúng."
         }
       ],
       "metadata": {
@@ -4730,6 +4796,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Select every item that does not belong.",
+          "learningObjective": "odd-one-out reasoning",
           "options": [
             {
               "id": "o0",
@@ -4785,20 +4852,21 @@
           "hint": "There are 3 correct choices."
         },
         "vi": {
-          "prompt": "Chon tat ca vat khong cung nhom.",
+          "prompt": "Chọn tất cả vật không cùng nhóm.",
+          "learningObjective": "suy luận vật khác nhóm",
           "options": [
             {
               "id": "o0",
-              "label": "meo",
-              "text": "meo",
-              "semanticLabel": "meo",
+              "label": "mèo",
+              "text": "mèo",
+              "semanticLabel": "mèo",
               "isCorrect": false
             },
             {
               "id": "o1",
-              "label": "cho",
-              "text": "cho",
-              "semanticLabel": "cho",
+              "label": "chó",
+              "text": "chó",
+              "semanticLabel": "chó",
               "isCorrect": false
             },
             {
@@ -4810,23 +4878,23 @@
             },
             {
               "id": "o3",
-              "label": "ghe",
-              "text": "ghe",
-              "semanticLabel": "ghe",
+              "label": "ghế",
+              "text": "ghế",
+              "semanticLabel": "ghế",
               "isCorrect": true
             },
             {
               "id": "o4",
-              "label": "thia",
-              "text": "thia",
-              "semanticLabel": "thia",
+              "label": "thìa",
+              "text": "thìa",
+              "semanticLabel": "thìa",
               "isCorrect": true
             },
             {
               "id": "o5",
-              "label": "giay",
-              "text": "giay",
-              "semanticLabel": "giay",
+              "label": "giày",
+              "text": "giày",
+              "semanticLabel": "giày",
               "isCorrect": true
             }
           ],
@@ -4838,12 +4906,12 @@
             "shuffleSeed": 30034,
             "maxAttempts": 3
           },
-          "hint": "Co 3 lua chon dung."
+          "hint": "Có 3 lựa chọn đúng."
         }
       },
       "hints": [
         {
-          "text": "Co 3 lua chon dung."
+          "text": "Có 3 lựa chọn đúng."
         }
       ],
       "metadata": {
@@ -4873,6 +4941,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Select every item that does not belong.",
+          "learningObjective": "odd-one-out reasoning",
           "options": [
             {
               "id": "o0",
@@ -4928,20 +4997,21 @@
           "hint": "There are 3 correct choices."
         },
         "vi": {
-          "prompt": "Chon tat ca vat khong cung nhom.",
+          "prompt": "Chọn tất cả vật không cùng nhóm.",
+          "learningObjective": "suy luận vật khác nhóm",
           "options": [
             {
               "id": "o0",
-              "label": "meo",
-              "text": "meo",
-              "semanticLabel": "meo",
+              "label": "mèo",
+              "text": "mèo",
+              "semanticLabel": "mèo",
               "isCorrect": false
             },
             {
               "id": "o1",
-              "label": "cho",
-              "text": "cho",
-              "semanticLabel": "cho",
+              "label": "chó",
+              "text": "chó",
+              "semanticLabel": "chó",
               "isCorrect": false
             },
             {
@@ -4953,23 +5023,23 @@
             },
             {
               "id": "o3",
-              "label": "ghe",
-              "text": "ghe",
-              "semanticLabel": "ghe",
+              "label": "ghế",
+              "text": "ghế",
+              "semanticLabel": "ghế",
               "isCorrect": true
             },
             {
               "id": "o4",
-              "label": "thia",
-              "text": "thia",
-              "semanticLabel": "thia",
+              "label": "thìa",
+              "text": "thìa",
+              "semanticLabel": "thìa",
               "isCorrect": true
             },
             {
               "id": "o5",
-              "label": "giay",
-              "text": "giay",
-              "semanticLabel": "giay",
+              "label": "giày",
+              "text": "giày",
+              "semanticLabel": "giày",
               "isCorrect": true
             }
           ],
@@ -4981,12 +5051,12 @@
             "shuffleSeed": 30035,
             "maxAttempts": 3
           },
-          "hint": "Co 3 lua chon dung."
+          "hint": "Có 3 lựa chọn đúng."
         }
       },
       "hints": [
         {
-          "text": "Co 3 lua chon dung."
+          "text": "Có 3 lựa chọn đúng."
         }
       ],
       "metadata": {
@@ -5016,6 +5086,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Select every item that does not belong.",
+          "learningObjective": "odd-one-out reasoning",
           "options": [
             {
               "id": "o0",
@@ -5071,20 +5142,21 @@
           "hint": "There are 3 correct choices."
         },
         "vi": {
-          "prompt": "Chon tat ca vat khong cung nhom.",
+          "prompt": "Chọn tất cả vật không cùng nhóm.",
+          "learningObjective": "suy luận vật khác nhóm",
           "options": [
             {
               "id": "o0",
-              "label": "meo",
-              "text": "meo",
-              "semanticLabel": "meo",
+              "label": "mèo",
+              "text": "mèo",
+              "semanticLabel": "mèo",
               "isCorrect": false
             },
             {
               "id": "o1",
-              "label": "cho",
-              "text": "cho",
-              "semanticLabel": "cho",
+              "label": "chó",
+              "text": "chó",
+              "semanticLabel": "chó",
               "isCorrect": false
             },
             {
@@ -5096,23 +5168,23 @@
             },
             {
               "id": "o3",
-              "label": "ghe",
-              "text": "ghe",
-              "semanticLabel": "ghe",
+              "label": "ghế",
+              "text": "ghế",
+              "semanticLabel": "ghế",
               "isCorrect": true
             },
             {
               "id": "o4",
-              "label": "thia",
-              "text": "thia",
-              "semanticLabel": "thia",
+              "label": "thìa",
+              "text": "thìa",
+              "semanticLabel": "thìa",
               "isCorrect": true
             },
             {
               "id": "o5",
-              "label": "giay",
-              "text": "giay",
-              "semanticLabel": "giay",
+              "label": "giày",
+              "text": "giày",
+              "semanticLabel": "giày",
               "isCorrect": true
             }
           ],
@@ -5124,12 +5196,12 @@
             "shuffleSeed": 30036,
             "maxAttempts": 3
           },
-          "hint": "Co 3 lua chon dung."
+          "hint": "Có 3 lựa chọn đúng."
         }
       },
       "hints": [
         {
-          "text": "Co 3 lua chon dung."
+          "text": "Có 3 lựa chọn đúng."
         }
       ],
       "metadata": {
@@ -5159,6 +5231,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Select every item that does not belong.",
+          "learningObjective": "odd-one-out reasoning",
           "options": [
             {
               "id": "o0",
@@ -5214,20 +5287,21 @@
           "hint": "There are 3 correct choices."
         },
         "vi": {
-          "prompt": "Chon tat ca vat khong cung nhom.",
+          "prompt": "Chọn tất cả vật không cùng nhóm.",
+          "learningObjective": "suy luận vật khác nhóm",
           "options": [
             {
               "id": "o0",
-              "label": "meo",
-              "text": "meo",
-              "semanticLabel": "meo",
+              "label": "mèo",
+              "text": "mèo",
+              "semanticLabel": "mèo",
               "isCorrect": false
             },
             {
               "id": "o1",
-              "label": "cho",
-              "text": "cho",
-              "semanticLabel": "cho",
+              "label": "chó",
+              "text": "chó",
+              "semanticLabel": "chó",
               "isCorrect": false
             },
             {
@@ -5239,23 +5313,23 @@
             },
             {
               "id": "o3",
-              "label": "ghe",
-              "text": "ghe",
-              "semanticLabel": "ghe",
+              "label": "ghế",
+              "text": "ghế",
+              "semanticLabel": "ghế",
               "isCorrect": true
             },
             {
               "id": "o4",
-              "label": "thia",
-              "text": "thia",
-              "semanticLabel": "thia",
+              "label": "thìa",
+              "text": "thìa",
+              "semanticLabel": "thìa",
               "isCorrect": true
             },
             {
               "id": "o5",
-              "label": "giay",
-              "text": "giay",
-              "semanticLabel": "giay",
+              "label": "giày",
+              "text": "giày",
+              "semanticLabel": "giày",
               "isCorrect": true
             }
           ],
@@ -5267,12 +5341,12 @@
             "shuffleSeed": 30037,
             "maxAttempts": 3
           },
-          "hint": "Co 3 lua chon dung."
+          "hint": "Có 3 lựa chọn đúng."
         }
       },
       "hints": [
         {
-          "text": "Co 3 lua chon dung."
+          "text": "Có 3 lựa chọn đúng."
         }
       ],
       "metadata": {
@@ -5302,6 +5376,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Select every item that does not belong.",
+          "learningObjective": "odd-one-out reasoning",
           "options": [
             {
               "id": "o0",
@@ -5357,20 +5432,21 @@
           "hint": "There are 3 correct choices."
         },
         "vi": {
-          "prompt": "Chon tat ca vat khong cung nhom.",
+          "prompt": "Chọn tất cả vật không cùng nhóm.",
+          "learningObjective": "suy luận vật khác nhóm",
           "options": [
             {
               "id": "o0",
-              "label": "meo",
-              "text": "meo",
-              "semanticLabel": "meo",
+              "label": "mèo",
+              "text": "mèo",
+              "semanticLabel": "mèo",
               "isCorrect": false
             },
             {
               "id": "o1",
-              "label": "cho",
-              "text": "cho",
-              "semanticLabel": "cho",
+              "label": "chó",
+              "text": "chó",
+              "semanticLabel": "chó",
               "isCorrect": false
             },
             {
@@ -5382,23 +5458,23 @@
             },
             {
               "id": "o3",
-              "label": "ghe",
-              "text": "ghe",
-              "semanticLabel": "ghe",
+              "label": "ghế",
+              "text": "ghế",
+              "semanticLabel": "ghế",
               "isCorrect": true
             },
             {
               "id": "o4",
-              "label": "thia",
-              "text": "thia",
-              "semanticLabel": "thia",
+              "label": "thìa",
+              "text": "thìa",
+              "semanticLabel": "thìa",
               "isCorrect": true
             },
             {
               "id": "o5",
-              "label": "giay",
-              "text": "giay",
-              "semanticLabel": "giay",
+              "label": "giày",
+              "text": "giày",
+              "semanticLabel": "giày",
               "isCorrect": true
             }
           ],
@@ -5410,12 +5486,12 @@
             "shuffleSeed": 30038,
             "maxAttempts": 3
           },
-          "hint": "Co 3 lua chon dung."
+          "hint": "Có 3 lựa chọn đúng."
         }
       },
       "hints": [
         {
-          "text": "Co 3 lua chon dung."
+          "text": "Có 3 lựa chọn đúng."
         }
       ],
       "metadata": {
@@ -5445,6 +5521,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Select every item that does not belong.",
+          "learningObjective": "odd-one-out reasoning",
           "options": [
             {
               "id": "o0",
@@ -5500,20 +5577,21 @@
           "hint": "There are 3 correct choices."
         },
         "vi": {
-          "prompt": "Chon tat ca vat khong cung nhom.",
+          "prompt": "Chọn tất cả vật không cùng nhóm.",
+          "learningObjective": "suy luận vật khác nhóm",
           "options": [
             {
               "id": "o0",
-              "label": "meo",
-              "text": "meo",
-              "semanticLabel": "meo",
+              "label": "mèo",
+              "text": "mèo",
+              "semanticLabel": "mèo",
               "isCorrect": false
             },
             {
               "id": "o1",
-              "label": "cho",
-              "text": "cho",
-              "semanticLabel": "cho",
+              "label": "chó",
+              "text": "chó",
+              "semanticLabel": "chó",
               "isCorrect": false
             },
             {
@@ -5525,23 +5603,23 @@
             },
             {
               "id": "o3",
-              "label": "ghe",
-              "text": "ghe",
-              "semanticLabel": "ghe",
+              "label": "ghế",
+              "text": "ghế",
+              "semanticLabel": "ghế",
               "isCorrect": true
             },
             {
               "id": "o4",
-              "label": "thia",
-              "text": "thia",
-              "semanticLabel": "thia",
+              "label": "thìa",
+              "text": "thìa",
+              "semanticLabel": "thìa",
               "isCorrect": true
             },
             {
               "id": "o5",
-              "label": "giay",
-              "text": "giay",
-              "semanticLabel": "giay",
+              "label": "giày",
+              "text": "giày",
+              "semanticLabel": "giày",
               "isCorrect": true
             }
           ],
@@ -5553,12 +5631,12 @@
             "shuffleSeed": 30039,
             "maxAttempts": 3
           },
-          "hint": "Co 3 lua chon dung."
+          "hint": "Có 3 lựa chọn đúng."
         }
       },
       "hints": [
         {
-          "text": "Co 3 lua chon dung."
+          "text": "Có 3 lựa chọn đúng."
         }
       ],
       "metadata": {
@@ -5588,6 +5666,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Select every item that does not belong.",
+          "learningObjective": "odd-one-out reasoning",
           "options": [
             {
               "id": "o0",
@@ -5643,20 +5722,21 @@
           "hint": "There are 3 correct choices."
         },
         "vi": {
-          "prompt": "Chon tat ca vat khong cung nhom.",
+          "prompt": "Chọn tất cả vật không cùng nhóm.",
+          "learningObjective": "suy luận vật khác nhóm",
           "options": [
             {
               "id": "o0",
-              "label": "meo",
-              "text": "meo",
-              "semanticLabel": "meo",
+              "label": "mèo",
+              "text": "mèo",
+              "semanticLabel": "mèo",
               "isCorrect": false
             },
             {
               "id": "o1",
-              "label": "cho",
-              "text": "cho",
-              "semanticLabel": "cho",
+              "label": "chó",
+              "text": "chó",
+              "semanticLabel": "chó",
               "isCorrect": false
             },
             {
@@ -5668,23 +5748,23 @@
             },
             {
               "id": "o3",
-              "label": "ghe",
-              "text": "ghe",
-              "semanticLabel": "ghe",
+              "label": "ghế",
+              "text": "ghế",
+              "semanticLabel": "ghế",
               "isCorrect": true
             },
             {
               "id": "o4",
-              "label": "thia",
-              "text": "thia",
-              "semanticLabel": "thia",
+              "label": "thìa",
+              "text": "thìa",
+              "semanticLabel": "thìa",
               "isCorrect": true
             },
             {
               "id": "o5",
-              "label": "giay",
-              "text": "giay",
-              "semanticLabel": "giay",
+              "label": "giày",
+              "text": "giày",
+              "semanticLabel": "giày",
               "isCorrect": true
             }
           ],
@@ -5696,12 +5776,12 @@
             "shuffleSeed": 30040,
             "maxAttempts": 3
           },
-          "hint": "Co 3 lua chon dung."
+          "hint": "Có 3 lựa chọn đúng."
         }
       },
       "hints": [
         {
-          "text": "Co 3 lua chon dung."
+          "text": "Có 3 lựa chọn đúng."
         }
       ],
       "metadata": {
@@ -5731,6 +5811,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Select every item that does not belong.",
+          "learningObjective": "odd-one-out reasoning",
           "options": [
             {
               "id": "o0",
@@ -5786,20 +5867,21 @@
           "hint": "There are 3 correct choices."
         },
         "vi": {
-          "prompt": "Chon tat ca vat khong cung nhom.",
+          "prompt": "Chọn tất cả vật không cùng nhóm.",
+          "learningObjective": "suy luận vật khác nhóm",
           "options": [
             {
               "id": "o0",
-              "label": "meo",
-              "text": "meo",
-              "semanticLabel": "meo",
+              "label": "mèo",
+              "text": "mèo",
+              "semanticLabel": "mèo",
               "isCorrect": false
             },
             {
               "id": "o1",
-              "label": "cho",
-              "text": "cho",
-              "semanticLabel": "cho",
+              "label": "chó",
+              "text": "chó",
+              "semanticLabel": "chó",
               "isCorrect": false
             },
             {
@@ -5811,23 +5893,23 @@
             },
             {
               "id": "o3",
-              "label": "ghe",
-              "text": "ghe",
-              "semanticLabel": "ghe",
+              "label": "ghế",
+              "text": "ghế",
+              "semanticLabel": "ghế",
               "isCorrect": true
             },
             {
               "id": "o4",
-              "label": "thia",
-              "text": "thia",
-              "semanticLabel": "thia",
+              "label": "thìa",
+              "text": "thìa",
+              "semanticLabel": "thìa",
               "isCorrect": true
             },
             {
               "id": "o5",
-              "label": "giay",
-              "text": "giay",
-              "semanticLabel": "giay",
+              "label": "giày",
+              "text": "giày",
+              "semanticLabel": "giày",
               "isCorrect": true
             }
           ],
@@ -5839,12 +5921,12 @@
             "shuffleSeed": 30041,
             "maxAttempts": 3
           },
-          "hint": "Co 3 lua chon dung."
+          "hint": "Có 3 lựa chọn đúng."
         }
       },
       "hints": [
         {
-          "text": "Co 3 lua chon dung."
+          "text": "Có 3 lựa chọn đúng."
         }
       ],
       "metadata": {
@@ -5874,6 +5956,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Select every item that does not belong.",
+          "learningObjective": "odd-one-out reasoning",
           "options": [
             {
               "id": "o0",
@@ -5929,20 +6012,21 @@
           "hint": "There are 3 correct choices."
         },
         "vi": {
-          "prompt": "Chon tat ca vat khong cung nhom.",
+          "prompt": "Chọn tất cả vật không cùng nhóm.",
+          "learningObjective": "suy luận vật khác nhóm",
           "options": [
             {
               "id": "o0",
-              "label": "meo",
-              "text": "meo",
-              "semanticLabel": "meo",
+              "label": "mèo",
+              "text": "mèo",
+              "semanticLabel": "mèo",
               "isCorrect": false
             },
             {
               "id": "o1",
-              "label": "cho",
-              "text": "cho",
-              "semanticLabel": "cho",
+              "label": "chó",
+              "text": "chó",
+              "semanticLabel": "chó",
               "isCorrect": false
             },
             {
@@ -5954,23 +6038,23 @@
             },
             {
               "id": "o3",
-              "label": "ghe",
-              "text": "ghe",
-              "semanticLabel": "ghe",
+              "label": "ghế",
+              "text": "ghế",
+              "semanticLabel": "ghế",
               "isCorrect": true
             },
             {
               "id": "o4",
-              "label": "thia",
-              "text": "thia",
-              "semanticLabel": "thia",
+              "label": "thìa",
+              "text": "thìa",
+              "semanticLabel": "thìa",
               "isCorrect": true
             },
             {
               "id": "o5",
-              "label": "giay",
-              "text": "giay",
-              "semanticLabel": "giay",
+              "label": "giày",
+              "text": "giày",
+              "semanticLabel": "giày",
               "isCorrect": true
             }
           ],
@@ -5982,12 +6066,12 @@
             "shuffleSeed": 30042,
             "maxAttempts": 3
           },
-          "hint": "Co 3 lua chon dung."
+          "hint": "Có 3 lựa chọn đúng."
         }
       },
       "hints": [
         {
-          "text": "Co 3 lua chon dung."
+          "text": "Có 3 lựa chọn đúng."
         }
       ],
       "metadata": {
@@ -6017,6 +6101,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Select every item that does not belong.",
+          "learningObjective": "odd-one-out reasoning",
           "options": [
             {
               "id": "o0",
@@ -6072,20 +6157,21 @@
           "hint": "There are 3 correct choices."
         },
         "vi": {
-          "prompt": "Chon tat ca vat khong cung nhom.",
+          "prompt": "Chọn tất cả vật không cùng nhóm.",
+          "learningObjective": "suy luận vật khác nhóm",
           "options": [
             {
               "id": "o0",
-              "label": "meo",
-              "text": "meo",
-              "semanticLabel": "meo",
+              "label": "mèo",
+              "text": "mèo",
+              "semanticLabel": "mèo",
               "isCorrect": false
             },
             {
               "id": "o1",
-              "label": "cho",
-              "text": "cho",
-              "semanticLabel": "cho",
+              "label": "chó",
+              "text": "chó",
+              "semanticLabel": "chó",
               "isCorrect": false
             },
             {
@@ -6097,23 +6183,23 @@
             },
             {
               "id": "o3",
-              "label": "ghe",
-              "text": "ghe",
-              "semanticLabel": "ghe",
+              "label": "ghế",
+              "text": "ghế",
+              "semanticLabel": "ghế",
               "isCorrect": true
             },
             {
               "id": "o4",
-              "label": "thia",
-              "text": "thia",
-              "semanticLabel": "thia",
+              "label": "thìa",
+              "text": "thìa",
+              "semanticLabel": "thìa",
               "isCorrect": true
             },
             {
               "id": "o5",
-              "label": "giay",
-              "text": "giay",
-              "semanticLabel": "giay",
+              "label": "giày",
+              "text": "giày",
+              "semanticLabel": "giày",
               "isCorrect": true
             }
           ],
@@ -6125,12 +6211,12 @@
             "shuffleSeed": 30043,
             "maxAttempts": 3
           },
-          "hint": "Co 3 lua chon dung."
+          "hint": "Có 3 lựa chọn đúng."
         }
       },
       "hints": [
         {
-          "text": "Co 3 lua chon dung."
+          "text": "Có 3 lựa chọn đúng."
         }
       ],
       "metadata": {
@@ -6160,6 +6246,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Select every item that does not belong.",
+          "learningObjective": "odd-one-out reasoning",
           "options": [
             {
               "id": "o0",
@@ -6215,20 +6302,21 @@
           "hint": "There are 3 correct choices."
         },
         "vi": {
-          "prompt": "Chon tat ca vat khong cung nhom.",
+          "prompt": "Chọn tất cả vật không cùng nhóm.",
+          "learningObjective": "suy luận vật khác nhóm",
           "options": [
             {
               "id": "o0",
-              "label": "meo",
-              "text": "meo",
-              "semanticLabel": "meo",
+              "label": "mèo",
+              "text": "mèo",
+              "semanticLabel": "mèo",
               "isCorrect": false
             },
             {
               "id": "o1",
-              "label": "cho",
-              "text": "cho",
-              "semanticLabel": "cho",
+              "label": "chó",
+              "text": "chó",
+              "semanticLabel": "chó",
               "isCorrect": false
             },
             {
@@ -6240,23 +6328,23 @@
             },
             {
               "id": "o3",
-              "label": "ghe",
-              "text": "ghe",
-              "semanticLabel": "ghe",
+              "label": "ghế",
+              "text": "ghế",
+              "semanticLabel": "ghế",
               "isCorrect": true
             },
             {
               "id": "o4",
-              "label": "thia",
-              "text": "thia",
-              "semanticLabel": "thia",
+              "label": "thìa",
+              "text": "thìa",
+              "semanticLabel": "thìa",
               "isCorrect": true
             },
             {
               "id": "o5",
-              "label": "giay",
-              "text": "giay",
-              "semanticLabel": "giay",
+              "label": "giày",
+              "text": "giày",
+              "semanticLabel": "giày",
               "isCorrect": true
             }
           ],
@@ -6268,12 +6356,12 @@
             "shuffleSeed": 30044,
             "maxAttempts": 3
           },
-          "hint": "Co 3 lua chon dung."
+          "hint": "Có 3 lựa chọn đúng."
         }
       },
       "hints": [
         {
-          "text": "Co 3 lua chon dung."
+          "text": "Có 3 lựa chọn đúng."
         }
       ],
       "metadata": {
@@ -6303,6 +6391,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Select every item that does not belong.",
+          "learningObjective": "odd-one-out reasoning",
           "options": [
             {
               "id": "o0",
@@ -6358,20 +6447,21 @@
           "hint": "There are 3 correct choices."
         },
         "vi": {
-          "prompt": "Chon tat ca vat khong cung nhom.",
+          "prompt": "Chọn tất cả vật không cùng nhóm.",
+          "learningObjective": "suy luận vật khác nhóm",
           "options": [
             {
               "id": "o0",
-              "label": "meo",
-              "text": "meo",
-              "semanticLabel": "meo",
+              "label": "mèo",
+              "text": "mèo",
+              "semanticLabel": "mèo",
               "isCorrect": false
             },
             {
               "id": "o1",
-              "label": "cho",
-              "text": "cho",
-              "semanticLabel": "cho",
+              "label": "chó",
+              "text": "chó",
+              "semanticLabel": "chó",
               "isCorrect": false
             },
             {
@@ -6383,23 +6473,23 @@
             },
             {
               "id": "o3",
-              "label": "ghe",
-              "text": "ghe",
-              "semanticLabel": "ghe",
+              "label": "ghế",
+              "text": "ghế",
+              "semanticLabel": "ghế",
               "isCorrect": true
             },
             {
               "id": "o4",
-              "label": "thia",
-              "text": "thia",
-              "semanticLabel": "thia",
+              "label": "thìa",
+              "text": "thìa",
+              "semanticLabel": "thìa",
               "isCorrect": true
             },
             {
               "id": "o5",
-              "label": "giay",
-              "text": "giay",
-              "semanticLabel": "giay",
+              "label": "giày",
+              "text": "giày",
+              "semanticLabel": "giày",
               "isCorrect": true
             }
           ],
@@ -6411,12 +6501,12 @@
             "shuffleSeed": 30045,
             "maxAttempts": 3
           },
-          "hint": "Co 3 lua chon dung."
+          "hint": "Có 3 lựa chọn đúng."
         }
       },
       "hints": [
         {
-          "text": "Co 3 lua chon dung."
+          "text": "Có 3 lựa chọn đúng."
         }
       ],
       "metadata": {
@@ -6446,6 +6536,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Select every item that does not belong.",
+          "learningObjective": "odd-one-out reasoning",
           "options": [
             {
               "id": "o0",
@@ -6501,20 +6592,21 @@
           "hint": "There are 3 correct choices."
         },
         "vi": {
-          "prompt": "Chon tat ca vat khong cung nhom.",
+          "prompt": "Chọn tất cả vật không cùng nhóm.",
+          "learningObjective": "suy luận vật khác nhóm",
           "options": [
             {
               "id": "o0",
-              "label": "meo",
-              "text": "meo",
-              "semanticLabel": "meo",
+              "label": "mèo",
+              "text": "mèo",
+              "semanticLabel": "mèo",
               "isCorrect": false
             },
             {
               "id": "o1",
-              "label": "cho",
-              "text": "cho",
-              "semanticLabel": "cho",
+              "label": "chó",
+              "text": "chó",
+              "semanticLabel": "chó",
               "isCorrect": false
             },
             {
@@ -6526,23 +6618,23 @@
             },
             {
               "id": "o3",
-              "label": "ghe",
-              "text": "ghe",
-              "semanticLabel": "ghe",
+              "label": "ghế",
+              "text": "ghế",
+              "semanticLabel": "ghế",
               "isCorrect": true
             },
             {
               "id": "o4",
-              "label": "thia",
-              "text": "thia",
-              "semanticLabel": "thia",
+              "label": "thìa",
+              "text": "thìa",
+              "semanticLabel": "thìa",
               "isCorrect": true
             },
             {
               "id": "o5",
-              "label": "giay",
-              "text": "giay",
-              "semanticLabel": "giay",
+              "label": "giày",
+              "text": "giày",
+              "semanticLabel": "giày",
               "isCorrect": true
             }
           ],
@@ -6554,12 +6646,12 @@
             "shuffleSeed": 30046,
             "maxAttempts": 3
           },
-          "hint": "Co 3 lua chon dung."
+          "hint": "Có 3 lựa chọn đúng."
         }
       },
       "hints": [
         {
-          "text": "Co 3 lua chon dung."
+          "text": "Có 3 lựa chọn đúng."
         }
       ],
       "metadata": {
@@ -6589,6 +6681,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Select every item that does not belong.",
+          "learningObjective": "odd-one-out reasoning",
           "options": [
             {
               "id": "o0",
@@ -6644,20 +6737,21 @@
           "hint": "There are 3 correct choices."
         },
         "vi": {
-          "prompt": "Chon tat ca vat khong cung nhom.",
+          "prompt": "Chọn tất cả vật không cùng nhóm.",
+          "learningObjective": "suy luận vật khác nhóm",
           "options": [
             {
               "id": "o0",
-              "label": "meo",
-              "text": "meo",
-              "semanticLabel": "meo",
+              "label": "mèo",
+              "text": "mèo",
+              "semanticLabel": "mèo",
               "isCorrect": false
             },
             {
               "id": "o1",
-              "label": "cho",
-              "text": "cho",
-              "semanticLabel": "cho",
+              "label": "chó",
+              "text": "chó",
+              "semanticLabel": "chó",
               "isCorrect": false
             },
             {
@@ -6669,23 +6763,23 @@
             },
             {
               "id": "o3",
-              "label": "ghe",
-              "text": "ghe",
-              "semanticLabel": "ghe",
+              "label": "ghế",
+              "text": "ghế",
+              "semanticLabel": "ghế",
               "isCorrect": true
             },
             {
               "id": "o4",
-              "label": "thia",
-              "text": "thia",
-              "semanticLabel": "thia",
+              "label": "thìa",
+              "text": "thìa",
+              "semanticLabel": "thìa",
               "isCorrect": true
             },
             {
               "id": "o5",
-              "label": "giay",
-              "text": "giay",
-              "semanticLabel": "giay",
+              "label": "giày",
+              "text": "giày",
+              "semanticLabel": "giày",
               "isCorrect": true
             }
           ],
@@ -6697,12 +6791,12 @@
             "shuffleSeed": 30047,
             "maxAttempts": 3
           },
-          "hint": "Co 3 lua chon dung."
+          "hint": "Có 3 lựa chọn đúng."
         }
       },
       "hints": [
         {
-          "text": "Co 3 lua chon dung."
+          "text": "Có 3 lựa chọn đúng."
         }
       ],
       "metadata": {
@@ -6732,6 +6826,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Select every item that does not belong.",
+          "learningObjective": "odd-one-out reasoning",
           "options": [
             {
               "id": "o0",
@@ -6787,20 +6882,21 @@
           "hint": "There are 3 correct choices."
         },
         "vi": {
-          "prompt": "Chon tat ca vat khong cung nhom.",
+          "prompt": "Chọn tất cả vật không cùng nhóm.",
+          "learningObjective": "suy luận vật khác nhóm",
           "options": [
             {
               "id": "o0",
-              "label": "meo",
-              "text": "meo",
-              "semanticLabel": "meo",
+              "label": "mèo",
+              "text": "mèo",
+              "semanticLabel": "mèo",
               "isCorrect": false
             },
             {
               "id": "o1",
-              "label": "cho",
-              "text": "cho",
-              "semanticLabel": "cho",
+              "label": "chó",
+              "text": "chó",
+              "semanticLabel": "chó",
               "isCorrect": false
             },
             {
@@ -6812,23 +6908,23 @@
             },
             {
               "id": "o3",
-              "label": "ghe",
-              "text": "ghe",
-              "semanticLabel": "ghe",
+              "label": "ghế",
+              "text": "ghế",
+              "semanticLabel": "ghế",
               "isCorrect": true
             },
             {
               "id": "o4",
-              "label": "thia",
-              "text": "thia",
-              "semanticLabel": "thia",
+              "label": "thìa",
+              "text": "thìa",
+              "semanticLabel": "thìa",
               "isCorrect": true
             },
             {
               "id": "o5",
-              "label": "giay",
-              "text": "giay",
-              "semanticLabel": "giay",
+              "label": "giày",
+              "text": "giày",
+              "semanticLabel": "giày",
               "isCorrect": true
             }
           ],
@@ -6840,12 +6936,12 @@
             "shuffleSeed": 30048,
             "maxAttempts": 3
           },
-          "hint": "Co 3 lua chon dung."
+          "hint": "Có 3 lựa chọn đúng."
         }
       },
       "hints": [
         {
-          "text": "Co 3 lua chon dung."
+          "text": "Có 3 lựa chọn đúng."
         }
       ],
       "metadata": {
@@ -6875,6 +6971,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Select every item that does not belong.",
+          "learningObjective": "odd-one-out reasoning",
           "options": [
             {
               "id": "o0",
@@ -6930,20 +7027,21 @@
           "hint": "There are 3 correct choices."
         },
         "vi": {
-          "prompt": "Chon tat ca vat khong cung nhom.",
+          "prompt": "Chọn tất cả vật không cùng nhóm.",
+          "learningObjective": "suy luận vật khác nhóm",
           "options": [
             {
               "id": "o0",
-              "label": "meo",
-              "text": "meo",
-              "semanticLabel": "meo",
+              "label": "mèo",
+              "text": "mèo",
+              "semanticLabel": "mèo",
               "isCorrect": false
             },
             {
               "id": "o1",
-              "label": "cho",
-              "text": "cho",
-              "semanticLabel": "cho",
+              "label": "chó",
+              "text": "chó",
+              "semanticLabel": "chó",
               "isCorrect": false
             },
             {
@@ -6955,23 +7053,23 @@
             },
             {
               "id": "o3",
-              "label": "ghe",
-              "text": "ghe",
-              "semanticLabel": "ghe",
+              "label": "ghế",
+              "text": "ghế",
+              "semanticLabel": "ghế",
               "isCorrect": true
             },
             {
               "id": "o4",
-              "label": "thia",
-              "text": "thia",
-              "semanticLabel": "thia",
+              "label": "thìa",
+              "text": "thìa",
+              "semanticLabel": "thìa",
               "isCorrect": true
             },
             {
               "id": "o5",
-              "label": "giay",
-              "text": "giay",
-              "semanticLabel": "giay",
+              "label": "giày",
+              "text": "giày",
+              "semanticLabel": "giày",
               "isCorrect": true
             }
           ],
@@ -6983,12 +7081,12 @@
             "shuffleSeed": 30049,
             "maxAttempts": 3
           },
-          "hint": "Co 3 lua chon dung."
+          "hint": "Có 3 lựa chọn đúng."
         }
       },
       "hints": [
         {
-          "text": "Co 3 lua chon dung."
+          "text": "Có 3 lựa chọn đúng."
         }
       ],
       "metadata": {
@@ -7018,6 +7116,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Select every item that does not belong.",
+          "learningObjective": "odd-one-out reasoning",
           "options": [
             {
               "id": "o0",
@@ -7073,20 +7172,21 @@
           "hint": "There are 3 correct choices."
         },
         "vi": {
-          "prompt": "Chon tat ca vat khong cung nhom.",
+          "prompt": "Chọn tất cả vật không cùng nhóm.",
+          "learningObjective": "suy luận vật khác nhóm",
           "options": [
             {
               "id": "o0",
-              "label": "meo",
-              "text": "meo",
-              "semanticLabel": "meo",
+              "label": "mèo",
+              "text": "mèo",
+              "semanticLabel": "mèo",
               "isCorrect": false
             },
             {
               "id": "o1",
-              "label": "cho",
-              "text": "cho",
-              "semanticLabel": "cho",
+              "label": "chó",
+              "text": "chó",
+              "semanticLabel": "chó",
               "isCorrect": false
             },
             {
@@ -7098,23 +7198,23 @@
             },
             {
               "id": "o3",
-              "label": "ghe",
-              "text": "ghe",
-              "semanticLabel": "ghe",
+              "label": "ghế",
+              "text": "ghế",
+              "semanticLabel": "ghế",
               "isCorrect": true
             },
             {
               "id": "o4",
-              "label": "thia",
-              "text": "thia",
-              "semanticLabel": "thia",
+              "label": "thìa",
+              "text": "thìa",
+              "semanticLabel": "thìa",
               "isCorrect": true
             },
             {
               "id": "o5",
-              "label": "giay",
-              "text": "giay",
-              "semanticLabel": "giay",
+              "label": "giày",
+              "text": "giày",
+              "semanticLabel": "giày",
               "isCorrect": true
             }
           ],
@@ -7126,12 +7226,12 @@
             "shuffleSeed": 30050,
             "maxAttempts": 3
           },
-          "hint": "Co 3 lua chon dung."
+          "hint": "Có 3 lựa chọn đúng."
         }
       },
       "hints": [
         {
-          "text": "Co 3 lua chon dung."
+          "text": "Có 3 lựa chọn đúng."
         }
       ],
       "metadata": {
@@ -7161,6 +7261,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Select every item that does not belong.",
+          "learningObjective": "odd-one-out reasoning",
           "options": [
             {
               "id": "o0",
@@ -7216,20 +7317,21 @@
           "hint": "There are 3 correct choices."
         },
         "vi": {
-          "prompt": "Chon tat ca vat khong cung nhom.",
+          "prompt": "Chọn tất cả vật không cùng nhóm.",
+          "learningObjective": "suy luận vật khác nhóm",
           "options": [
             {
               "id": "o0",
-              "label": "meo",
-              "text": "meo",
-              "semanticLabel": "meo",
+              "label": "mèo",
+              "text": "mèo",
+              "semanticLabel": "mèo",
               "isCorrect": false
             },
             {
               "id": "o1",
-              "label": "cho",
-              "text": "cho",
-              "semanticLabel": "cho",
+              "label": "chó",
+              "text": "chó",
+              "semanticLabel": "chó",
               "isCorrect": false
             },
             {
@@ -7241,23 +7343,23 @@
             },
             {
               "id": "o3",
-              "label": "ghe",
-              "text": "ghe",
-              "semanticLabel": "ghe",
+              "label": "ghế",
+              "text": "ghế",
+              "semanticLabel": "ghế",
               "isCorrect": true
             },
             {
               "id": "o4",
-              "label": "thia",
-              "text": "thia",
-              "semanticLabel": "thia",
+              "label": "thìa",
+              "text": "thìa",
+              "semanticLabel": "thìa",
               "isCorrect": true
             },
             {
               "id": "o5",
-              "label": "giay",
-              "text": "giay",
-              "semanticLabel": "giay",
+              "label": "giày",
+              "text": "giày",
+              "semanticLabel": "giày",
               "isCorrect": true
             }
           ],
@@ -7269,12 +7371,12 @@
             "shuffleSeed": 30051,
             "maxAttempts": 3
           },
-          "hint": "Co 3 lua chon dung."
+          "hint": "Có 3 lựa chọn đúng."
         }
       },
       "hints": [
         {
-          "text": "Co 3 lua chon dung."
+          "text": "Có 3 lựa chọn đúng."
         }
       ],
       "metadata": {
@@ -7304,6 +7406,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Select every item that does not belong.",
+          "learningObjective": "odd-one-out reasoning",
           "options": [
             {
               "id": "o0",
@@ -7359,20 +7462,21 @@
           "hint": "There are 3 correct choices."
         },
         "vi": {
-          "prompt": "Chon tat ca vat khong cung nhom.",
+          "prompt": "Chọn tất cả vật không cùng nhóm.",
+          "learningObjective": "suy luận vật khác nhóm",
           "options": [
             {
               "id": "o0",
-              "label": "meo",
-              "text": "meo",
-              "semanticLabel": "meo",
+              "label": "mèo",
+              "text": "mèo",
+              "semanticLabel": "mèo",
               "isCorrect": false
             },
             {
               "id": "o1",
-              "label": "cho",
-              "text": "cho",
-              "semanticLabel": "cho",
+              "label": "chó",
+              "text": "chó",
+              "semanticLabel": "chó",
               "isCorrect": false
             },
             {
@@ -7384,23 +7488,23 @@
             },
             {
               "id": "o3",
-              "label": "ghe",
-              "text": "ghe",
-              "semanticLabel": "ghe",
+              "label": "ghế",
+              "text": "ghế",
+              "semanticLabel": "ghế",
               "isCorrect": true
             },
             {
               "id": "o4",
-              "label": "thia",
-              "text": "thia",
-              "semanticLabel": "thia",
+              "label": "thìa",
+              "text": "thìa",
+              "semanticLabel": "thìa",
               "isCorrect": true
             },
             {
               "id": "o5",
-              "label": "giay",
-              "text": "giay",
-              "semanticLabel": "giay",
+              "label": "giày",
+              "text": "giày",
+              "semanticLabel": "giày",
               "isCorrect": true
             }
           ],
@@ -7412,12 +7516,12 @@
             "shuffleSeed": 30052,
             "maxAttempts": 3
           },
-          "hint": "Co 3 lua chon dung."
+          "hint": "Có 3 lựa chọn đúng."
         }
       },
       "hints": [
         {
-          "text": "Co 3 lua chon dung."
+          "text": "Có 3 lựa chọn đúng."
         }
       ],
       "metadata": {
@@ -7447,6 +7551,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Select every item that does not belong.",
+          "learningObjective": "odd-one-out reasoning",
           "options": [
             {
               "id": "o0",
@@ -7502,20 +7607,21 @@
           "hint": "There are 3 correct choices."
         },
         "vi": {
-          "prompt": "Chon tat ca vat khong cung nhom.",
+          "prompt": "Chọn tất cả vật không cùng nhóm.",
+          "learningObjective": "suy luận vật khác nhóm",
           "options": [
             {
               "id": "o0",
-              "label": "meo",
-              "text": "meo",
-              "semanticLabel": "meo",
+              "label": "mèo",
+              "text": "mèo",
+              "semanticLabel": "mèo",
               "isCorrect": false
             },
             {
               "id": "o1",
-              "label": "cho",
-              "text": "cho",
-              "semanticLabel": "cho",
+              "label": "chó",
+              "text": "chó",
+              "semanticLabel": "chó",
               "isCorrect": false
             },
             {
@@ -7527,23 +7633,23 @@
             },
             {
               "id": "o3",
-              "label": "ghe",
-              "text": "ghe",
-              "semanticLabel": "ghe",
+              "label": "ghế",
+              "text": "ghế",
+              "semanticLabel": "ghế",
               "isCorrect": true
             },
             {
               "id": "o4",
-              "label": "thia",
-              "text": "thia",
-              "semanticLabel": "thia",
+              "label": "thìa",
+              "text": "thìa",
+              "semanticLabel": "thìa",
               "isCorrect": true
             },
             {
               "id": "o5",
-              "label": "giay",
-              "text": "giay",
-              "semanticLabel": "giay",
+              "label": "giày",
+              "text": "giày",
+              "semanticLabel": "giày",
               "isCorrect": true
             }
           ],
@@ -7555,12 +7661,12 @@
             "shuffleSeed": 30053,
             "maxAttempts": 3
           },
-          "hint": "Co 3 lua chon dung."
+          "hint": "Có 3 lựa chọn đúng."
         }
       },
       "hints": [
         {
-          "text": "Co 3 lua chon dung."
+          "text": "Có 3 lựa chọn đúng."
         }
       ],
       "metadata": {
@@ -7590,6 +7696,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Select every item that does not belong.",
+          "learningObjective": "odd-one-out reasoning",
           "options": [
             {
               "id": "o0",
@@ -7645,20 +7752,21 @@
           "hint": "There are 3 correct choices."
         },
         "vi": {
-          "prompt": "Chon tat ca vat khong cung nhom.",
+          "prompt": "Chọn tất cả vật không cùng nhóm.",
+          "learningObjective": "suy luận vật khác nhóm",
           "options": [
             {
               "id": "o0",
-              "label": "meo",
-              "text": "meo",
-              "semanticLabel": "meo",
+              "label": "mèo",
+              "text": "mèo",
+              "semanticLabel": "mèo",
               "isCorrect": false
             },
             {
               "id": "o1",
-              "label": "cho",
-              "text": "cho",
-              "semanticLabel": "cho",
+              "label": "chó",
+              "text": "chó",
+              "semanticLabel": "chó",
               "isCorrect": false
             },
             {
@@ -7670,23 +7778,23 @@
             },
             {
               "id": "o3",
-              "label": "ghe",
-              "text": "ghe",
-              "semanticLabel": "ghe",
+              "label": "ghế",
+              "text": "ghế",
+              "semanticLabel": "ghế",
               "isCorrect": true
             },
             {
               "id": "o4",
-              "label": "thia",
-              "text": "thia",
-              "semanticLabel": "thia",
+              "label": "thìa",
+              "text": "thìa",
+              "semanticLabel": "thìa",
               "isCorrect": true
             },
             {
               "id": "o5",
-              "label": "giay",
-              "text": "giay",
-              "semanticLabel": "giay",
+              "label": "giày",
+              "text": "giày",
+              "semanticLabel": "giày",
               "isCorrect": true
             }
           ],
@@ -7698,12 +7806,12 @@
             "shuffleSeed": 30054,
             "maxAttempts": 3
           },
-          "hint": "Co 3 lua chon dung."
+          "hint": "Có 3 lựa chọn đúng."
         }
       },
       "hints": [
         {
-          "text": "Co 3 lua chon dung."
+          "text": "Có 3 lựa chọn đúng."
         }
       ],
       "metadata": {
@@ -7733,6 +7841,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Select every item that does not belong.",
+          "learningObjective": "odd-one-out reasoning",
           "options": [
             {
               "id": "o0",
@@ -7788,20 +7897,21 @@
           "hint": "There are 3 correct choices."
         },
         "vi": {
-          "prompt": "Chon tat ca vat khong cung nhom.",
+          "prompt": "Chọn tất cả vật không cùng nhóm.",
+          "learningObjective": "suy luận vật khác nhóm",
           "options": [
             {
               "id": "o0",
-              "label": "meo",
-              "text": "meo",
-              "semanticLabel": "meo",
+              "label": "mèo",
+              "text": "mèo",
+              "semanticLabel": "mèo",
               "isCorrect": false
             },
             {
               "id": "o1",
-              "label": "cho",
-              "text": "cho",
-              "semanticLabel": "cho",
+              "label": "chó",
+              "text": "chó",
+              "semanticLabel": "chó",
               "isCorrect": false
             },
             {
@@ -7813,23 +7923,23 @@
             },
             {
               "id": "o3",
-              "label": "ghe",
-              "text": "ghe",
-              "semanticLabel": "ghe",
+              "label": "ghế",
+              "text": "ghế",
+              "semanticLabel": "ghế",
               "isCorrect": true
             },
             {
               "id": "o4",
-              "label": "thia",
-              "text": "thia",
-              "semanticLabel": "thia",
+              "label": "thìa",
+              "text": "thìa",
+              "semanticLabel": "thìa",
               "isCorrect": true
             },
             {
               "id": "o5",
-              "label": "giay",
-              "text": "giay",
-              "semanticLabel": "giay",
+              "label": "giày",
+              "text": "giày",
+              "semanticLabel": "giày",
               "isCorrect": true
             }
           ],
@@ -7841,12 +7951,12 @@
             "shuffleSeed": 30055,
             "maxAttempts": 3
           },
-          "hint": "Co 3 lua chon dung."
+          "hint": "Có 3 lựa chọn đúng."
         }
       },
       "hints": [
         {
-          "text": "Co 3 lua chon dung."
+          "text": "Có 3 lựa chọn đúng."
         }
       ],
       "metadata": {
@@ -7876,6 +7986,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Select every item that does not belong.",
+          "learningObjective": "odd-one-out reasoning",
           "options": [
             {
               "id": "o0",
@@ -7931,20 +8042,21 @@
           "hint": "There are 3 correct choices."
         },
         "vi": {
-          "prompt": "Chon tat ca vat khong cung nhom.",
+          "prompt": "Chọn tất cả vật không cùng nhóm.",
+          "learningObjective": "suy luận vật khác nhóm",
           "options": [
             {
               "id": "o0",
-              "label": "meo",
-              "text": "meo",
-              "semanticLabel": "meo",
+              "label": "mèo",
+              "text": "mèo",
+              "semanticLabel": "mèo",
               "isCorrect": false
             },
             {
               "id": "o1",
-              "label": "cho",
-              "text": "cho",
-              "semanticLabel": "cho",
+              "label": "chó",
+              "text": "chó",
+              "semanticLabel": "chó",
               "isCorrect": false
             },
             {
@@ -7956,23 +8068,23 @@
             },
             {
               "id": "o3",
-              "label": "ghe",
-              "text": "ghe",
-              "semanticLabel": "ghe",
+              "label": "ghế",
+              "text": "ghế",
+              "semanticLabel": "ghế",
               "isCorrect": true
             },
             {
               "id": "o4",
-              "label": "thia",
-              "text": "thia",
-              "semanticLabel": "thia",
+              "label": "thìa",
+              "text": "thìa",
+              "semanticLabel": "thìa",
               "isCorrect": true
             },
             {
               "id": "o5",
-              "label": "giay",
-              "text": "giay",
-              "semanticLabel": "giay",
+              "label": "giày",
+              "text": "giày",
+              "semanticLabel": "giày",
               "isCorrect": true
             }
           ],
@@ -7984,12 +8096,12 @@
             "shuffleSeed": 30056,
             "maxAttempts": 3
           },
-          "hint": "Co 3 lua chon dung."
+          "hint": "Có 3 lựa chọn đúng."
         }
       },
       "hints": [
         {
-          "text": "Co 3 lua chon dung."
+          "text": "Có 3 lựa chọn đúng."
         }
       ],
       "metadata": {
@@ -8019,6 +8131,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Select every item that does not belong.",
+          "learningObjective": "odd-one-out reasoning",
           "options": [
             {
               "id": "o0",
@@ -8074,20 +8187,21 @@
           "hint": "There are 3 correct choices."
         },
         "vi": {
-          "prompt": "Chon tat ca vat khong cung nhom.",
+          "prompt": "Chọn tất cả vật không cùng nhóm.",
+          "learningObjective": "suy luận vật khác nhóm",
           "options": [
             {
               "id": "o0",
-              "label": "meo",
-              "text": "meo",
-              "semanticLabel": "meo",
+              "label": "mèo",
+              "text": "mèo",
+              "semanticLabel": "mèo",
               "isCorrect": false
             },
             {
               "id": "o1",
-              "label": "cho",
-              "text": "cho",
-              "semanticLabel": "cho",
+              "label": "chó",
+              "text": "chó",
+              "semanticLabel": "chó",
               "isCorrect": false
             },
             {
@@ -8099,23 +8213,23 @@
             },
             {
               "id": "o3",
-              "label": "ghe",
-              "text": "ghe",
-              "semanticLabel": "ghe",
+              "label": "ghế",
+              "text": "ghế",
+              "semanticLabel": "ghế",
               "isCorrect": true
             },
             {
               "id": "o4",
-              "label": "thia",
-              "text": "thia",
-              "semanticLabel": "thia",
+              "label": "thìa",
+              "text": "thìa",
+              "semanticLabel": "thìa",
               "isCorrect": true
             },
             {
               "id": "o5",
-              "label": "giay",
-              "text": "giay",
-              "semanticLabel": "giay",
+              "label": "giày",
+              "text": "giày",
+              "semanticLabel": "giày",
               "isCorrect": true
             }
           ],
@@ -8127,12 +8241,12 @@
             "shuffleSeed": 30057,
             "maxAttempts": 3
           },
-          "hint": "Co 3 lua chon dung."
+          "hint": "Có 3 lựa chọn đúng."
         }
       },
       "hints": [
         {
-          "text": "Co 3 lua chon dung."
+          "text": "Có 3 lựa chọn đúng."
         }
       ],
       "metadata": {
@@ -8162,6 +8276,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Select every item that does not belong.",
+          "learningObjective": "odd-one-out reasoning",
           "options": [
             {
               "id": "o0",
@@ -8217,20 +8332,21 @@
           "hint": "There are 3 correct choices."
         },
         "vi": {
-          "prompt": "Chon tat ca vat khong cung nhom.",
+          "prompt": "Chọn tất cả vật không cùng nhóm.",
+          "learningObjective": "suy luận vật khác nhóm",
           "options": [
             {
               "id": "o0",
-              "label": "meo",
-              "text": "meo",
-              "semanticLabel": "meo",
+              "label": "mèo",
+              "text": "mèo",
+              "semanticLabel": "mèo",
               "isCorrect": false
             },
             {
               "id": "o1",
-              "label": "cho",
-              "text": "cho",
-              "semanticLabel": "cho",
+              "label": "chó",
+              "text": "chó",
+              "semanticLabel": "chó",
               "isCorrect": false
             },
             {
@@ -8242,23 +8358,23 @@
             },
             {
               "id": "o3",
-              "label": "ghe",
-              "text": "ghe",
-              "semanticLabel": "ghe",
+              "label": "ghế",
+              "text": "ghế",
+              "semanticLabel": "ghế",
               "isCorrect": true
             },
             {
               "id": "o4",
-              "label": "thia",
-              "text": "thia",
-              "semanticLabel": "thia",
+              "label": "thìa",
+              "text": "thìa",
+              "semanticLabel": "thìa",
               "isCorrect": true
             },
             {
               "id": "o5",
-              "label": "giay",
-              "text": "giay",
-              "semanticLabel": "giay",
+              "label": "giày",
+              "text": "giày",
+              "semanticLabel": "giày",
               "isCorrect": true
             }
           ],
@@ -8270,12 +8386,12 @@
             "shuffleSeed": 30058,
             "maxAttempts": 3
           },
-          "hint": "Co 3 lua chon dung."
+          "hint": "Có 3 lựa chọn đúng."
         }
       },
       "hints": [
         {
-          "text": "Co 3 lua chon dung."
+          "text": "Có 3 lựa chọn đúng."
         }
       ],
       "metadata": {
@@ -8305,6 +8421,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Select every item that does not belong.",
+          "learningObjective": "odd-one-out reasoning",
           "options": [
             {
               "id": "o0",
@@ -8360,20 +8477,21 @@
           "hint": "There are 3 correct choices."
         },
         "vi": {
-          "prompt": "Chon tat ca vat khong cung nhom.",
+          "prompt": "Chọn tất cả vật không cùng nhóm.",
+          "learningObjective": "suy luận vật khác nhóm",
           "options": [
             {
               "id": "o0",
-              "label": "meo",
-              "text": "meo",
-              "semanticLabel": "meo",
+              "label": "mèo",
+              "text": "mèo",
+              "semanticLabel": "mèo",
               "isCorrect": false
             },
             {
               "id": "o1",
-              "label": "cho",
-              "text": "cho",
-              "semanticLabel": "cho",
+              "label": "chó",
+              "text": "chó",
+              "semanticLabel": "chó",
               "isCorrect": false
             },
             {
@@ -8385,23 +8503,23 @@
             },
             {
               "id": "o3",
-              "label": "ghe",
-              "text": "ghe",
-              "semanticLabel": "ghe",
+              "label": "ghế",
+              "text": "ghế",
+              "semanticLabel": "ghế",
               "isCorrect": true
             },
             {
               "id": "o4",
-              "label": "thia",
-              "text": "thia",
-              "semanticLabel": "thia",
+              "label": "thìa",
+              "text": "thìa",
+              "semanticLabel": "thìa",
               "isCorrect": true
             },
             {
               "id": "o5",
-              "label": "giay",
-              "text": "giay",
-              "semanticLabel": "giay",
+              "label": "giày",
+              "text": "giày",
+              "semanticLabel": "giày",
               "isCorrect": true
             }
           ],
@@ -8413,12 +8531,12 @@
             "shuffleSeed": 30059,
             "maxAttempts": 3
           },
-          "hint": "Co 3 lua chon dung."
+          "hint": "Có 3 lựa chọn đúng."
         }
       },
       "hints": [
         {
-          "text": "Co 3 lua chon dung."
+          "text": "Có 3 lựa chọn đúng."
         }
       ],
       "metadata": {
@@ -8448,6 +8566,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Select every item that does not belong.",
+          "learningObjective": "odd-one-out reasoning",
           "options": [
             {
               "id": "o0",
@@ -8503,20 +8622,21 @@
           "hint": "There are 3 correct choices."
         },
         "vi": {
-          "prompt": "Chon tat ca vat khong cung nhom.",
+          "prompt": "Chọn tất cả vật không cùng nhóm.",
+          "learningObjective": "suy luận vật khác nhóm",
           "options": [
             {
               "id": "o0",
-              "label": "meo",
-              "text": "meo",
-              "semanticLabel": "meo",
+              "label": "mèo",
+              "text": "mèo",
+              "semanticLabel": "mèo",
               "isCorrect": false
             },
             {
               "id": "o1",
-              "label": "cho",
-              "text": "cho",
-              "semanticLabel": "cho",
+              "label": "chó",
+              "text": "chó",
+              "semanticLabel": "chó",
               "isCorrect": false
             },
             {
@@ -8528,23 +8648,23 @@
             },
             {
               "id": "o3",
-              "label": "ghe",
-              "text": "ghe",
-              "semanticLabel": "ghe",
+              "label": "ghế",
+              "text": "ghế",
+              "semanticLabel": "ghế",
               "isCorrect": true
             },
             {
               "id": "o4",
-              "label": "thia",
-              "text": "thia",
-              "semanticLabel": "thia",
+              "label": "thìa",
+              "text": "thìa",
+              "semanticLabel": "thìa",
               "isCorrect": true
             },
             {
               "id": "o5",
-              "label": "giay",
-              "text": "giay",
-              "semanticLabel": "giay",
+              "label": "giày",
+              "text": "giày",
+              "semanticLabel": "giày",
               "isCorrect": true
             }
           ],
@@ -8556,12 +8676,12 @@
             "shuffleSeed": 30060,
             "maxAttempts": 3
           },
-          "hint": "Co 3 lua chon dung."
+          "hint": "Có 3 lựa chọn đúng."
         }
       },
       "hints": [
         {
-          "text": "Co 3 lua chon dung."
+          "text": "Có 3 lựa chọn đúng."
         }
       ],
       "metadata": {
@@ -8591,6 +8711,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Select every item that does not belong.",
+          "learningObjective": "odd-one-out reasoning",
           "options": [
             {
               "id": "o0",
@@ -8646,20 +8767,21 @@
           "hint": "There are 3 correct choices."
         },
         "vi": {
-          "prompt": "Chon tat ca vat khong cung nhom.",
+          "prompt": "Chọn tất cả vật không cùng nhóm.",
+          "learningObjective": "suy luận vật khác nhóm",
           "options": [
             {
               "id": "o0",
-              "label": "meo",
-              "text": "meo",
-              "semanticLabel": "meo",
+              "label": "mèo",
+              "text": "mèo",
+              "semanticLabel": "mèo",
               "isCorrect": false
             },
             {
               "id": "o1",
-              "label": "cho",
-              "text": "cho",
-              "semanticLabel": "cho",
+              "label": "chó",
+              "text": "chó",
+              "semanticLabel": "chó",
               "isCorrect": false
             },
             {
@@ -8671,23 +8793,23 @@
             },
             {
               "id": "o3",
-              "label": "ghe",
-              "text": "ghe",
-              "semanticLabel": "ghe",
+              "label": "ghế",
+              "text": "ghế",
+              "semanticLabel": "ghế",
               "isCorrect": true
             },
             {
               "id": "o4",
-              "label": "thia",
-              "text": "thia",
-              "semanticLabel": "thia",
+              "label": "thìa",
+              "text": "thìa",
+              "semanticLabel": "thìa",
               "isCorrect": true
             },
             {
               "id": "o5",
-              "label": "giay",
-              "text": "giay",
-              "semanticLabel": "giay",
+              "label": "giày",
+              "text": "giày",
+              "semanticLabel": "giày",
               "isCorrect": true
             }
           ],
@@ -8699,12 +8821,12 @@
             "shuffleSeed": 30061,
             "maxAttempts": 3
           },
-          "hint": "Co 3 lua chon dung."
+          "hint": "Có 3 lựa chọn đúng."
         }
       },
       "hints": [
         {
-          "text": "Co 3 lua chon dung."
+          "text": "Có 3 lựa chọn đúng."
         }
       ],
       "metadata": {
@@ -8734,6 +8856,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Select every item that does not belong.",
+          "learningObjective": "odd-one-out reasoning",
           "options": [
             {
               "id": "o0",
@@ -8789,20 +8912,21 @@
           "hint": "There are 3 correct choices."
         },
         "vi": {
-          "prompt": "Chon tat ca vat khong cung nhom.",
+          "prompt": "Chọn tất cả vật không cùng nhóm.",
+          "learningObjective": "suy luận vật khác nhóm",
           "options": [
             {
               "id": "o0",
-              "label": "meo",
-              "text": "meo",
-              "semanticLabel": "meo",
+              "label": "mèo",
+              "text": "mèo",
+              "semanticLabel": "mèo",
               "isCorrect": false
             },
             {
               "id": "o1",
-              "label": "cho",
-              "text": "cho",
-              "semanticLabel": "cho",
+              "label": "chó",
+              "text": "chó",
+              "semanticLabel": "chó",
               "isCorrect": false
             },
             {
@@ -8814,23 +8938,23 @@
             },
             {
               "id": "o3",
-              "label": "ghe",
-              "text": "ghe",
-              "semanticLabel": "ghe",
+              "label": "ghế",
+              "text": "ghế",
+              "semanticLabel": "ghế",
               "isCorrect": true
             },
             {
               "id": "o4",
-              "label": "thia",
-              "text": "thia",
-              "semanticLabel": "thia",
+              "label": "thìa",
+              "text": "thìa",
+              "semanticLabel": "thìa",
               "isCorrect": true
             },
             {
               "id": "o5",
-              "label": "giay",
-              "text": "giay",
-              "semanticLabel": "giay",
+              "label": "giày",
+              "text": "giày",
+              "semanticLabel": "giày",
               "isCorrect": true
             }
           ],
@@ -8842,12 +8966,12 @@
             "shuffleSeed": 30062,
             "maxAttempts": 3
           },
-          "hint": "Co 3 lua chon dung."
+          "hint": "Có 3 lựa chọn đúng."
         }
       },
       "hints": [
         {
-          "text": "Co 3 lua chon dung."
+          "text": "Có 3 lựa chọn đúng."
         }
       ],
       "metadata": {
@@ -8877,6 +9001,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Select every item that does not belong.",
+          "learningObjective": "odd-one-out reasoning",
           "options": [
             {
               "id": "o0",
@@ -8932,20 +9057,21 @@
           "hint": "There are 3 correct choices."
         },
         "vi": {
-          "prompt": "Chon tat ca vat khong cung nhom.",
+          "prompt": "Chọn tất cả vật không cùng nhóm.",
+          "learningObjective": "suy luận vật khác nhóm",
           "options": [
             {
               "id": "o0",
-              "label": "meo",
-              "text": "meo",
-              "semanticLabel": "meo",
+              "label": "mèo",
+              "text": "mèo",
+              "semanticLabel": "mèo",
               "isCorrect": false
             },
             {
               "id": "o1",
-              "label": "cho",
-              "text": "cho",
-              "semanticLabel": "cho",
+              "label": "chó",
+              "text": "chó",
+              "semanticLabel": "chó",
               "isCorrect": false
             },
             {
@@ -8957,23 +9083,23 @@
             },
             {
               "id": "o3",
-              "label": "ghe",
-              "text": "ghe",
-              "semanticLabel": "ghe",
+              "label": "ghế",
+              "text": "ghế",
+              "semanticLabel": "ghế",
               "isCorrect": true
             },
             {
               "id": "o4",
-              "label": "thia",
-              "text": "thia",
-              "semanticLabel": "thia",
+              "label": "thìa",
+              "text": "thìa",
+              "semanticLabel": "thìa",
               "isCorrect": true
             },
             {
               "id": "o5",
-              "label": "giay",
-              "text": "giay",
-              "semanticLabel": "giay",
+              "label": "giày",
+              "text": "giày",
+              "semanticLabel": "giày",
               "isCorrect": true
             }
           ],
@@ -8985,12 +9111,12 @@
             "shuffleSeed": 30063,
             "maxAttempts": 3
           },
-          "hint": "Co 3 lua chon dung."
+          "hint": "Có 3 lựa chọn đúng."
         }
       },
       "hints": [
         {
-          "text": "Co 3 lua chon dung."
+          "text": "Có 3 lựa chọn đúng."
         }
       ],
       "metadata": {
@@ -9020,6 +9146,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Select every item that does not belong.",
+          "learningObjective": "odd-one-out reasoning",
           "options": [
             {
               "id": "o0",
@@ -9075,20 +9202,21 @@
           "hint": "There are 3 correct choices."
         },
         "vi": {
-          "prompt": "Chon tat ca vat khong cung nhom.",
+          "prompt": "Chọn tất cả vật không cùng nhóm.",
+          "learningObjective": "suy luận vật khác nhóm",
           "options": [
             {
               "id": "o0",
-              "label": "meo",
-              "text": "meo",
-              "semanticLabel": "meo",
+              "label": "mèo",
+              "text": "mèo",
+              "semanticLabel": "mèo",
               "isCorrect": false
             },
             {
               "id": "o1",
-              "label": "cho",
-              "text": "cho",
-              "semanticLabel": "cho",
+              "label": "chó",
+              "text": "chó",
+              "semanticLabel": "chó",
               "isCorrect": false
             },
             {
@@ -9100,23 +9228,23 @@
             },
             {
               "id": "o3",
-              "label": "ghe",
-              "text": "ghe",
-              "semanticLabel": "ghe",
+              "label": "ghế",
+              "text": "ghế",
+              "semanticLabel": "ghế",
               "isCorrect": true
             },
             {
               "id": "o4",
-              "label": "thia",
-              "text": "thia",
-              "semanticLabel": "thia",
+              "label": "thìa",
+              "text": "thìa",
+              "semanticLabel": "thìa",
               "isCorrect": true
             },
             {
               "id": "o5",
-              "label": "giay",
-              "text": "giay",
-              "semanticLabel": "giay",
+              "label": "giày",
+              "text": "giày",
+              "semanticLabel": "giày",
               "isCorrect": true
             }
           ],
@@ -9128,12 +9256,12 @@
             "shuffleSeed": 30064,
             "maxAttempts": 3
           },
-          "hint": "Co 3 lua chon dung."
+          "hint": "Có 3 lựa chọn đúng."
         }
       },
       "hints": [
         {
-          "text": "Co 3 lua chon dung."
+          "text": "Có 3 lựa chọn đúng."
         }
       ],
       "metadata": {
@@ -9163,6 +9291,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Select every item that does not belong.",
+          "learningObjective": "odd-one-out reasoning",
           "options": [
             {
               "id": "o0",
@@ -9218,20 +9347,21 @@
           "hint": "There are 3 correct choices."
         },
         "vi": {
-          "prompt": "Chon tat ca vat khong cung nhom.",
+          "prompt": "Chọn tất cả vật không cùng nhóm.",
+          "learningObjective": "suy luận vật khác nhóm",
           "options": [
             {
               "id": "o0",
-              "label": "meo",
-              "text": "meo",
-              "semanticLabel": "meo",
+              "label": "mèo",
+              "text": "mèo",
+              "semanticLabel": "mèo",
               "isCorrect": false
             },
             {
               "id": "o1",
-              "label": "cho",
-              "text": "cho",
-              "semanticLabel": "cho",
+              "label": "chó",
+              "text": "chó",
+              "semanticLabel": "chó",
               "isCorrect": false
             },
             {
@@ -9243,23 +9373,23 @@
             },
             {
               "id": "o3",
-              "label": "ghe",
-              "text": "ghe",
-              "semanticLabel": "ghe",
+              "label": "ghế",
+              "text": "ghế",
+              "semanticLabel": "ghế",
               "isCorrect": true
             },
             {
               "id": "o4",
-              "label": "thia",
-              "text": "thia",
-              "semanticLabel": "thia",
+              "label": "thìa",
+              "text": "thìa",
+              "semanticLabel": "thìa",
               "isCorrect": true
             },
             {
               "id": "o5",
-              "label": "giay",
-              "text": "giay",
-              "semanticLabel": "giay",
+              "label": "giày",
+              "text": "giày",
+              "semanticLabel": "giày",
               "isCorrect": true
             }
           ],
@@ -9271,12 +9401,12 @@
             "shuffleSeed": 30065,
             "maxAttempts": 3
           },
-          "hint": "Co 3 lua chon dung."
+          "hint": "Có 3 lựa chọn đúng."
         }
       },
       "hints": [
         {
-          "text": "Co 3 lua chon dung."
+          "text": "Có 3 lựa chọn đúng."
         }
       ],
       "metadata": {
@@ -9306,6 +9436,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Select every item that does not belong.",
+          "learningObjective": "odd-one-out reasoning",
           "options": [
             {
               "id": "o0",
@@ -9361,20 +9492,21 @@
           "hint": "There are 3 correct choices."
         },
         "vi": {
-          "prompt": "Chon tat ca vat khong cung nhom.",
+          "prompt": "Chọn tất cả vật không cùng nhóm.",
+          "learningObjective": "suy luận vật khác nhóm",
           "options": [
             {
               "id": "o0",
-              "label": "meo",
-              "text": "meo",
-              "semanticLabel": "meo",
+              "label": "mèo",
+              "text": "mèo",
+              "semanticLabel": "mèo",
               "isCorrect": false
             },
             {
               "id": "o1",
-              "label": "cho",
-              "text": "cho",
-              "semanticLabel": "cho",
+              "label": "chó",
+              "text": "chó",
+              "semanticLabel": "chó",
               "isCorrect": false
             },
             {
@@ -9386,23 +9518,23 @@
             },
             {
               "id": "o3",
-              "label": "ghe",
-              "text": "ghe",
-              "semanticLabel": "ghe",
+              "label": "ghế",
+              "text": "ghế",
+              "semanticLabel": "ghế",
               "isCorrect": true
             },
             {
               "id": "o4",
-              "label": "thia",
-              "text": "thia",
-              "semanticLabel": "thia",
+              "label": "thìa",
+              "text": "thìa",
+              "semanticLabel": "thìa",
               "isCorrect": true
             },
             {
               "id": "o5",
-              "label": "giay",
-              "text": "giay",
-              "semanticLabel": "giay",
+              "label": "giày",
+              "text": "giày",
+              "semanticLabel": "giày",
               "isCorrect": true
             }
           ],
@@ -9414,12 +9546,12 @@
             "shuffleSeed": 30066,
             "maxAttempts": 3
           },
-          "hint": "Co 3 lua chon dung."
+          "hint": "Có 3 lựa chọn đúng."
         }
       },
       "hints": [
         {
-          "text": "Co 3 lua chon dung."
+          "text": "Có 3 lựa chọn đúng."
         }
       ],
       "metadata": {
@@ -9449,6 +9581,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Select every item that does not belong.",
+          "learningObjective": "odd-one-out reasoning",
           "options": [
             {
               "id": "o0",
@@ -9504,20 +9637,21 @@
           "hint": "There are 3 correct choices."
         },
         "vi": {
-          "prompt": "Chon tat ca vat khong cung nhom.",
+          "prompt": "Chọn tất cả vật không cùng nhóm.",
+          "learningObjective": "suy luận vật khác nhóm",
           "options": [
             {
               "id": "o0",
-              "label": "meo",
-              "text": "meo",
-              "semanticLabel": "meo",
+              "label": "mèo",
+              "text": "mèo",
+              "semanticLabel": "mèo",
               "isCorrect": false
             },
             {
               "id": "o1",
-              "label": "cho",
-              "text": "cho",
-              "semanticLabel": "cho",
+              "label": "chó",
+              "text": "chó",
+              "semanticLabel": "chó",
               "isCorrect": false
             },
             {
@@ -9529,23 +9663,23 @@
             },
             {
               "id": "o3",
-              "label": "ghe",
-              "text": "ghe",
-              "semanticLabel": "ghe",
+              "label": "ghế",
+              "text": "ghế",
+              "semanticLabel": "ghế",
               "isCorrect": true
             },
             {
               "id": "o4",
-              "label": "thia",
-              "text": "thia",
-              "semanticLabel": "thia",
+              "label": "thìa",
+              "text": "thìa",
+              "semanticLabel": "thìa",
               "isCorrect": true
             },
             {
               "id": "o5",
-              "label": "giay",
-              "text": "giay",
-              "semanticLabel": "giay",
+              "label": "giày",
+              "text": "giày",
+              "semanticLabel": "giày",
               "isCorrect": true
             }
           ],
@@ -9557,12 +9691,12 @@
             "shuffleSeed": 30067,
             "maxAttempts": 3
           },
-          "hint": "Co 3 lua chon dung."
+          "hint": "Có 3 lựa chọn đúng."
         }
       },
       "hints": [
         {
-          "text": "Co 3 lua chon dung."
+          "text": "Có 3 lựa chọn đúng."
         }
       ],
       "metadata": {
@@ -9592,6 +9726,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Select every item that does not belong.",
+          "learningObjective": "odd-one-out reasoning",
           "options": [
             {
               "id": "o0",
@@ -9647,20 +9782,21 @@
           "hint": "There are 3 correct choices."
         },
         "vi": {
-          "prompt": "Chon tat ca vat khong cung nhom.",
+          "prompt": "Chọn tất cả vật không cùng nhóm.",
+          "learningObjective": "suy luận vật khác nhóm",
           "options": [
             {
               "id": "o0",
-              "label": "meo",
-              "text": "meo",
-              "semanticLabel": "meo",
+              "label": "mèo",
+              "text": "mèo",
+              "semanticLabel": "mèo",
               "isCorrect": false
             },
             {
               "id": "o1",
-              "label": "cho",
-              "text": "cho",
-              "semanticLabel": "cho",
+              "label": "chó",
+              "text": "chó",
+              "semanticLabel": "chó",
               "isCorrect": false
             },
             {
@@ -9672,23 +9808,23 @@
             },
             {
               "id": "o3",
-              "label": "ghe",
-              "text": "ghe",
-              "semanticLabel": "ghe",
+              "label": "ghế",
+              "text": "ghế",
+              "semanticLabel": "ghế",
               "isCorrect": true
             },
             {
               "id": "o4",
-              "label": "thia",
-              "text": "thia",
-              "semanticLabel": "thia",
+              "label": "thìa",
+              "text": "thìa",
+              "semanticLabel": "thìa",
               "isCorrect": true
             },
             {
               "id": "o5",
-              "label": "giay",
-              "text": "giay",
-              "semanticLabel": "giay",
+              "label": "giày",
+              "text": "giày",
+              "semanticLabel": "giày",
               "isCorrect": true
             }
           ],
@@ -9700,12 +9836,12 @@
             "shuffleSeed": 30068,
             "maxAttempts": 3
           },
-          "hint": "Co 3 lua chon dung."
+          "hint": "Có 3 lựa chọn đúng."
         }
       },
       "hints": [
         {
-          "text": "Co 3 lua chon dung."
+          "text": "Có 3 lựa chọn đúng."
         }
       ],
       "metadata": {
@@ -9735,6 +9871,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Select every item that does not belong.",
+          "learningObjective": "odd-one-out reasoning",
           "options": [
             {
               "id": "o0",
@@ -9790,20 +9927,21 @@
           "hint": "There are 3 correct choices."
         },
         "vi": {
-          "prompt": "Chon tat ca vat khong cung nhom.",
+          "prompt": "Chọn tất cả vật không cùng nhóm.",
+          "learningObjective": "suy luận vật khác nhóm",
           "options": [
             {
               "id": "o0",
-              "label": "meo",
-              "text": "meo",
-              "semanticLabel": "meo",
+              "label": "mèo",
+              "text": "mèo",
+              "semanticLabel": "mèo",
               "isCorrect": false
             },
             {
               "id": "o1",
-              "label": "cho",
-              "text": "cho",
-              "semanticLabel": "cho",
+              "label": "chó",
+              "text": "chó",
+              "semanticLabel": "chó",
               "isCorrect": false
             },
             {
@@ -9815,23 +9953,23 @@
             },
             {
               "id": "o3",
-              "label": "ghe",
-              "text": "ghe",
-              "semanticLabel": "ghe",
+              "label": "ghế",
+              "text": "ghế",
+              "semanticLabel": "ghế",
               "isCorrect": true
             },
             {
               "id": "o4",
-              "label": "thia",
-              "text": "thia",
-              "semanticLabel": "thia",
+              "label": "thìa",
+              "text": "thìa",
+              "semanticLabel": "thìa",
               "isCorrect": true
             },
             {
               "id": "o5",
-              "label": "giay",
-              "text": "giay",
-              "semanticLabel": "giay",
+              "label": "giày",
+              "text": "giày",
+              "semanticLabel": "giày",
               "isCorrect": true
             }
           ],
@@ -9843,12 +9981,12 @@
             "shuffleSeed": 30069,
             "maxAttempts": 3
           },
-          "hint": "Co 3 lua chon dung."
+          "hint": "Có 3 lựa chọn đúng."
         }
       },
       "hints": [
         {
-          "text": "Co 3 lua chon dung."
+          "text": "Có 3 lựa chọn đúng."
         }
       ],
       "metadata": {
@@ -9878,6 +10016,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Select every item that does not belong.",
+          "learningObjective": "odd-one-out reasoning",
           "options": [
             {
               "id": "o0",
@@ -9933,20 +10072,21 @@
           "hint": "There are 3 correct choices."
         },
         "vi": {
-          "prompt": "Chon tat ca vat khong cung nhom.",
+          "prompt": "Chọn tất cả vật không cùng nhóm.",
+          "learningObjective": "suy luận vật khác nhóm",
           "options": [
             {
               "id": "o0",
-              "label": "meo",
-              "text": "meo",
-              "semanticLabel": "meo",
+              "label": "mèo",
+              "text": "mèo",
+              "semanticLabel": "mèo",
               "isCorrect": false
             },
             {
               "id": "o1",
-              "label": "cho",
-              "text": "cho",
-              "semanticLabel": "cho",
+              "label": "chó",
+              "text": "chó",
+              "semanticLabel": "chó",
               "isCorrect": false
             },
             {
@@ -9958,23 +10098,23 @@
             },
             {
               "id": "o3",
-              "label": "ghe",
-              "text": "ghe",
-              "semanticLabel": "ghe",
+              "label": "ghế",
+              "text": "ghế",
+              "semanticLabel": "ghế",
               "isCorrect": true
             },
             {
               "id": "o4",
-              "label": "thia",
-              "text": "thia",
-              "semanticLabel": "thia",
+              "label": "thìa",
+              "text": "thìa",
+              "semanticLabel": "thìa",
               "isCorrect": true
             },
             {
               "id": "o5",
-              "label": "giay",
-              "text": "giay",
-              "semanticLabel": "giay",
+              "label": "giày",
+              "text": "giày",
+              "semanticLabel": "giày",
               "isCorrect": true
             }
           ],
@@ -9986,12 +10126,12 @@
             "shuffleSeed": 30070,
             "maxAttempts": 3
           },
-          "hint": "Co 3 lua chon dung."
+          "hint": "Có 3 lựa chọn đúng."
         }
       },
       "hints": [
         {
-          "text": "Co 3 lua chon dung."
+          "text": "Có 3 lựa chọn đúng."
         }
       ],
       "metadata": {
@@ -10021,6 +10161,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Select every item that does not belong.",
+          "learningObjective": "odd-one-out reasoning",
           "options": [
             {
               "id": "o0",
@@ -10076,20 +10217,21 @@
           "hint": "There are 3 correct choices."
         },
         "vi": {
-          "prompt": "Chon tat ca vat khong cung nhom.",
+          "prompt": "Chọn tất cả vật không cùng nhóm.",
+          "learningObjective": "suy luận vật khác nhóm",
           "options": [
             {
               "id": "o0",
-              "label": "meo",
-              "text": "meo",
-              "semanticLabel": "meo",
+              "label": "mèo",
+              "text": "mèo",
+              "semanticLabel": "mèo",
               "isCorrect": false
             },
             {
               "id": "o1",
-              "label": "cho",
-              "text": "cho",
-              "semanticLabel": "cho",
+              "label": "chó",
+              "text": "chó",
+              "semanticLabel": "chó",
               "isCorrect": false
             },
             {
@@ -10101,23 +10243,23 @@
             },
             {
               "id": "o3",
-              "label": "ghe",
-              "text": "ghe",
-              "semanticLabel": "ghe",
+              "label": "ghế",
+              "text": "ghế",
+              "semanticLabel": "ghế",
               "isCorrect": true
             },
             {
               "id": "o4",
-              "label": "thia",
-              "text": "thia",
-              "semanticLabel": "thia",
+              "label": "thìa",
+              "text": "thìa",
+              "semanticLabel": "thìa",
               "isCorrect": true
             },
             {
               "id": "o5",
-              "label": "giay",
-              "text": "giay",
-              "semanticLabel": "giay",
+              "label": "giày",
+              "text": "giày",
+              "semanticLabel": "giày",
               "isCorrect": true
             }
           ],
@@ -10129,12 +10271,12 @@
             "shuffleSeed": 30071,
             "maxAttempts": 3
           },
-          "hint": "Co 3 lua chon dung."
+          "hint": "Có 3 lựa chọn đúng."
         }
       },
       "hints": [
         {
-          "text": "Co 3 lua chon dung."
+          "text": "Có 3 lựa chọn đúng."
         }
       ],
       "metadata": {
@@ -10164,6 +10306,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Select every item that does not belong.",
+          "learningObjective": "odd-one-out reasoning",
           "options": [
             {
               "id": "o0",
@@ -10219,20 +10362,21 @@
           "hint": "There are 3 correct choices."
         },
         "vi": {
-          "prompt": "Chon tat ca vat khong cung nhom.",
+          "prompt": "Chọn tất cả vật không cùng nhóm.",
+          "learningObjective": "suy luận vật khác nhóm",
           "options": [
             {
               "id": "o0",
-              "label": "meo",
-              "text": "meo",
-              "semanticLabel": "meo",
+              "label": "mèo",
+              "text": "mèo",
+              "semanticLabel": "mèo",
               "isCorrect": false
             },
             {
               "id": "o1",
-              "label": "cho",
-              "text": "cho",
-              "semanticLabel": "cho",
+              "label": "chó",
+              "text": "chó",
+              "semanticLabel": "chó",
               "isCorrect": false
             },
             {
@@ -10244,23 +10388,23 @@
             },
             {
               "id": "o3",
-              "label": "ghe",
-              "text": "ghe",
-              "semanticLabel": "ghe",
+              "label": "ghế",
+              "text": "ghế",
+              "semanticLabel": "ghế",
               "isCorrect": true
             },
             {
               "id": "o4",
-              "label": "thia",
-              "text": "thia",
-              "semanticLabel": "thia",
+              "label": "thìa",
+              "text": "thìa",
+              "semanticLabel": "thìa",
               "isCorrect": true
             },
             {
               "id": "o5",
-              "label": "giay",
-              "text": "giay",
-              "semanticLabel": "giay",
+              "label": "giày",
+              "text": "giày",
+              "semanticLabel": "giày",
               "isCorrect": true
             }
           ],
@@ -10272,12 +10416,12 @@
             "shuffleSeed": 30072,
             "maxAttempts": 3
           },
-          "hint": "Co 3 lua chon dung."
+          "hint": "Có 3 lựa chọn đúng."
         }
       },
       "hints": [
         {
-          "text": "Co 3 lua chon dung."
+          "text": "Có 3 lựa chọn đúng."
         }
       ],
       "metadata": {
@@ -10307,6 +10451,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Select every item that does not belong.",
+          "learningObjective": "odd-one-out reasoning",
           "options": [
             {
               "id": "o0",
@@ -10362,20 +10507,21 @@
           "hint": "There are 3 correct choices."
         },
         "vi": {
-          "prompt": "Chon tat ca vat khong cung nhom.",
+          "prompt": "Chọn tất cả vật không cùng nhóm.",
+          "learningObjective": "suy luận vật khác nhóm",
           "options": [
             {
               "id": "o0",
-              "label": "meo",
-              "text": "meo",
-              "semanticLabel": "meo",
+              "label": "mèo",
+              "text": "mèo",
+              "semanticLabel": "mèo",
               "isCorrect": false
             },
             {
               "id": "o1",
-              "label": "cho",
-              "text": "cho",
-              "semanticLabel": "cho",
+              "label": "chó",
+              "text": "chó",
+              "semanticLabel": "chó",
               "isCorrect": false
             },
             {
@@ -10387,23 +10533,23 @@
             },
             {
               "id": "o3",
-              "label": "ghe",
-              "text": "ghe",
-              "semanticLabel": "ghe",
+              "label": "ghế",
+              "text": "ghế",
+              "semanticLabel": "ghế",
               "isCorrect": true
             },
             {
               "id": "o4",
-              "label": "thia",
-              "text": "thia",
-              "semanticLabel": "thia",
+              "label": "thìa",
+              "text": "thìa",
+              "semanticLabel": "thìa",
               "isCorrect": true
             },
             {
               "id": "o5",
-              "label": "giay",
-              "text": "giay",
-              "semanticLabel": "giay",
+              "label": "giày",
+              "text": "giày",
+              "semanticLabel": "giày",
               "isCorrect": true
             }
           ],
@@ -10415,12 +10561,12 @@
             "shuffleSeed": 30073,
             "maxAttempts": 3
           },
-          "hint": "Co 3 lua chon dung."
+          "hint": "Có 3 lựa chọn đúng."
         }
       },
       "hints": [
         {
-          "text": "Co 3 lua chon dung."
+          "text": "Có 3 lựa chọn đúng."
         }
       ],
       "metadata": {
@@ -10450,6 +10596,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Select every item that does not belong.",
+          "learningObjective": "odd-one-out reasoning",
           "options": [
             {
               "id": "o0",
@@ -10505,20 +10652,21 @@
           "hint": "There are 3 correct choices."
         },
         "vi": {
-          "prompt": "Chon tat ca vat khong cung nhom.",
+          "prompt": "Chọn tất cả vật không cùng nhóm.",
+          "learningObjective": "suy luận vật khác nhóm",
           "options": [
             {
               "id": "o0",
-              "label": "meo",
-              "text": "meo",
-              "semanticLabel": "meo",
+              "label": "mèo",
+              "text": "mèo",
+              "semanticLabel": "mèo",
               "isCorrect": false
             },
             {
               "id": "o1",
-              "label": "cho",
-              "text": "cho",
-              "semanticLabel": "cho",
+              "label": "chó",
+              "text": "chó",
+              "semanticLabel": "chó",
               "isCorrect": false
             },
             {
@@ -10530,23 +10678,23 @@
             },
             {
               "id": "o3",
-              "label": "ghe",
-              "text": "ghe",
-              "semanticLabel": "ghe",
+              "label": "ghế",
+              "text": "ghế",
+              "semanticLabel": "ghế",
               "isCorrect": true
             },
             {
               "id": "o4",
-              "label": "thia",
-              "text": "thia",
-              "semanticLabel": "thia",
+              "label": "thìa",
+              "text": "thìa",
+              "semanticLabel": "thìa",
               "isCorrect": true
             },
             {
               "id": "o5",
-              "label": "giay",
-              "text": "giay",
-              "semanticLabel": "giay",
+              "label": "giày",
+              "text": "giày",
+              "semanticLabel": "giày",
               "isCorrect": true
             }
           ],
@@ -10558,12 +10706,12 @@
             "shuffleSeed": 30074,
             "maxAttempts": 3
           },
-          "hint": "Co 3 lua chon dung."
+          "hint": "Có 3 lựa chọn đúng."
         }
       },
       "hints": [
         {
-          "text": "Co 3 lua chon dung."
+          "text": "Có 3 lựa chọn đúng."
         }
       ],
       "metadata": {
@@ -10593,6 +10741,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Select every item that does not belong.",
+          "learningObjective": "odd-one-out reasoning",
           "options": [
             {
               "id": "o0",
@@ -10648,20 +10797,21 @@
           "hint": "There are 3 correct choices."
         },
         "vi": {
-          "prompt": "Chon tat ca vat khong cung nhom.",
+          "prompt": "Chọn tất cả vật không cùng nhóm.",
+          "learningObjective": "suy luận vật khác nhóm",
           "options": [
             {
               "id": "o0",
-              "label": "meo",
-              "text": "meo",
-              "semanticLabel": "meo",
+              "label": "mèo",
+              "text": "mèo",
+              "semanticLabel": "mèo",
               "isCorrect": false
             },
             {
               "id": "o1",
-              "label": "cho",
-              "text": "cho",
-              "semanticLabel": "cho",
+              "label": "chó",
+              "text": "chó",
+              "semanticLabel": "chó",
               "isCorrect": false
             },
             {
@@ -10673,23 +10823,23 @@
             },
             {
               "id": "o3",
-              "label": "ghe",
-              "text": "ghe",
-              "semanticLabel": "ghe",
+              "label": "ghế",
+              "text": "ghế",
+              "semanticLabel": "ghế",
               "isCorrect": true
             },
             {
               "id": "o4",
-              "label": "thia",
-              "text": "thia",
-              "semanticLabel": "thia",
+              "label": "thìa",
+              "text": "thìa",
+              "semanticLabel": "thìa",
               "isCorrect": true
             },
             {
               "id": "o5",
-              "label": "giay",
-              "text": "giay",
-              "semanticLabel": "giay",
+              "label": "giày",
+              "text": "giày",
+              "semanticLabel": "giày",
               "isCorrect": true
             }
           ],
@@ -10701,12 +10851,12 @@
             "shuffleSeed": 30075,
             "maxAttempts": 3
           },
-          "hint": "Co 3 lua chon dung."
+          "hint": "Có 3 lựa chọn đúng."
         }
       },
       "hints": [
         {
-          "text": "Co 3 lua chon dung."
+          "text": "Có 3 lựa chọn đúng."
         }
       ],
       "metadata": {

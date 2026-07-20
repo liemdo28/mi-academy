@@ -11,6 +11,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Match each feeling to the clue.",
+          "learningObjective": "emotion recognition",
           "pairs": [
             {
               "left": {
@@ -72,71 +73,72 @@
           "hint": "Start with the pair you know best."
         },
         "vi": {
-          "prompt": "Ghep moi cam xuc voi dau hieu.",
+          "prompt": "Ghép mỗi cảm xúc với dấu hiệu.",
+          "learningObjective": "nhận biết cảm xúc",
           "pairs": [
             {
               "left": {
                 "id": "l0",
-                "content": "mat buon",
+                "content": "mặt buồn",
                 "type": "text",
-                "semanticLabel": "mat buon"
+                "semanticLabel": "mặt buồn"
               },
               "right": {
                 "id": "r0",
-                "content": "nuoc mat",
+                "content": "nước mắt",
                 "type": "text",
-                "semanticLabel": "nuoc mat"
+                "semanticLabel": "nước mắt"
               }
             },
             {
               "left": {
                 "id": "l1",
-                "content": "mat gian",
+                "content": "mặt giận",
                 "type": "text",
-                "semanticLabel": "mat gian"
+                "semanticLabel": "mặt giận"
               },
               "right": {
                 "id": "r1",
-                "content": "nhan mat",
+                "content": "nhăn mặt",
                 "type": "text",
-                "semanticLabel": "nhan mat"
+                "semanticLabel": "nhăn mặt"
               }
             },
             {
               "left": {
                 "id": "l2",
-                "content": "ngac nhien",
+                "content": "ngạc nhiên",
                 "type": "text",
-                "semanticLabel": "ngac nhien"
+                "semanticLabel": "ngạc nhiên"
               },
               "right": {
                 "id": "r2",
-                "content": "mat tron",
+                "content": "mắt tròn",
                 "type": "text",
-                "semanticLabel": "mat tron"
+                "semanticLabel": "mắt tròn"
               }
             },
             {
               "left": {
                 "id": "l3",
-                "content": "mat vui",
+                "content": "mặt vui",
                 "type": "text",
-                "semanticLabel": "mat vui"
+                "semanticLabel": "mặt vui"
               },
               "right": {
                 "id": "r3",
-                "content": "nu cuoi",
+                "content": "nụ cười",
                 "type": "text",
-                "semanticLabel": "nu cuoi"
+                "semanticLabel": "nụ cười"
               }
             }
           ],
-          "hint": "Bat dau voi cap con biet ro nhat."
+          "hint": "Bắt đầu với cặp con biết rõ nhất."
         }
       },
       "hints": [
         {
-          "text": "Bat dau voi cap con biet ro nhat."
+          "text": "Bắt đầu với cặp con biết rõ nhất."
         }
       ],
       "metadata": {
@@ -166,6 +168,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Match each feeling to the clue.",
+          "learningObjective": "emotion recognition",
           "pairs": [
             {
               "left": {
@@ -227,71 +230,72 @@
           "hint": "Start with the pair you know best."
         },
         "vi": {
-          "prompt": "Ghep moi cam xuc voi dau hieu.",
+          "prompt": "Ghép mỗi cảm xúc với dấu hiệu.",
+          "learningObjective": "nhận biết cảm xúc",
           "pairs": [
             {
               "left": {
                 "id": "l0",
-                "content": "mat gian",
+                "content": "mặt giận",
                 "type": "text",
-                "semanticLabel": "mat gian"
+                "semanticLabel": "mặt giận"
               },
               "right": {
                 "id": "r0",
-                "content": "nhan mat",
+                "content": "nhăn mặt",
                 "type": "text",
-                "semanticLabel": "nhan mat"
+                "semanticLabel": "nhăn mặt"
               }
             },
             {
               "left": {
                 "id": "l1",
-                "content": "ngac nhien",
+                "content": "ngạc nhiên",
                 "type": "text",
-                "semanticLabel": "ngac nhien"
+                "semanticLabel": "ngạc nhiên"
               },
               "right": {
                 "id": "r1",
-                "content": "mat tron",
+                "content": "mắt tròn",
                 "type": "text",
-                "semanticLabel": "mat tron"
+                "semanticLabel": "mắt tròn"
               }
             },
             {
               "left": {
                 "id": "l2",
-                "content": "mat vui",
+                "content": "mặt vui",
                 "type": "text",
-                "semanticLabel": "mat vui"
+                "semanticLabel": "mặt vui"
               },
               "right": {
                 "id": "r2",
-                "content": "nu cuoi",
+                "content": "nụ cười",
                 "type": "text",
-                "semanticLabel": "nu cuoi"
+                "semanticLabel": "nụ cười"
               }
             },
             {
               "left": {
                 "id": "l3",
-                "content": "mat buon",
+                "content": "mặt buồn",
                 "type": "text",
-                "semanticLabel": "mat buon"
+                "semanticLabel": "mặt buồn"
               },
               "right": {
                 "id": "r3",
-                "content": "nuoc mat",
+                "content": "nước mắt",
                 "type": "text",
-                "semanticLabel": "nuoc mat"
+                "semanticLabel": "nước mắt"
               }
             }
           ],
-          "hint": "Bat dau voi cap con biet ro nhat."
+          "hint": "Bắt đầu với cặp con biết rõ nhất."
         }
       },
       "hints": [
         {
-          "text": "Bat dau voi cap con biet ro nhat."
+          "text": "Bắt đầu với cặp con biết rõ nhất."
         }
       ],
       "metadata": {
@@ -321,6 +325,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Match each feeling to the clue.",
+          "learningObjective": "emotion recognition",
           "pairs": [
             {
               "left": {
@@ -382,71 +387,72 @@
           "hint": "Start with the pair you know best."
         },
         "vi": {
-          "prompt": "Ghep moi cam xuc voi dau hieu.",
+          "prompt": "Ghép mỗi cảm xúc với dấu hiệu.",
+          "learningObjective": "nhận biết cảm xúc",
           "pairs": [
             {
               "left": {
                 "id": "l0",
-                "content": "ngac nhien",
+                "content": "ngạc nhiên",
                 "type": "text",
-                "semanticLabel": "ngac nhien"
+                "semanticLabel": "ngạc nhiên"
               },
               "right": {
                 "id": "r0",
-                "content": "mat tron",
+                "content": "mắt tròn",
                 "type": "text",
-                "semanticLabel": "mat tron"
+                "semanticLabel": "mắt tròn"
               }
             },
             {
               "left": {
                 "id": "l1",
-                "content": "mat vui",
+                "content": "mặt vui",
                 "type": "text",
-                "semanticLabel": "mat vui"
+                "semanticLabel": "mặt vui"
               },
               "right": {
                 "id": "r1",
-                "content": "nu cuoi",
+                "content": "nụ cười",
                 "type": "text",
-                "semanticLabel": "nu cuoi"
+                "semanticLabel": "nụ cười"
               }
             },
             {
               "left": {
                 "id": "l2",
-                "content": "mat buon",
+                "content": "mặt buồn",
                 "type": "text",
-                "semanticLabel": "mat buon"
+                "semanticLabel": "mặt buồn"
               },
               "right": {
                 "id": "r2",
-                "content": "nuoc mat",
+                "content": "nước mắt",
                 "type": "text",
-                "semanticLabel": "nuoc mat"
+                "semanticLabel": "nước mắt"
               }
             },
             {
               "left": {
                 "id": "l3",
-                "content": "mat gian",
+                "content": "mặt giận",
                 "type": "text",
-                "semanticLabel": "mat gian"
+                "semanticLabel": "mặt giận"
               },
               "right": {
                 "id": "r3",
-                "content": "nhan mat",
+                "content": "nhăn mặt",
                 "type": "text",
-                "semanticLabel": "nhan mat"
+                "semanticLabel": "nhăn mặt"
               }
             }
           ],
-          "hint": "Bat dau voi cap con biet ro nhat."
+          "hint": "Bắt đầu với cặp con biết rõ nhất."
         }
       },
       "hints": [
         {
-          "text": "Bat dau voi cap con biet ro nhat."
+          "text": "Bắt đầu với cặp con biết rõ nhất."
         }
       ],
       "metadata": {
@@ -476,6 +482,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Match each feeling to the clue.",
+          "learningObjective": "emotion recognition",
           "pairs": [
             {
               "left": {
@@ -537,71 +544,72 @@
           "hint": "Start with the pair you know best."
         },
         "vi": {
-          "prompt": "Ghep moi cam xuc voi dau hieu.",
+          "prompt": "Ghép mỗi cảm xúc với dấu hiệu.",
+          "learningObjective": "nhận biết cảm xúc",
           "pairs": [
             {
               "left": {
                 "id": "l0",
-                "content": "mat vui",
+                "content": "mặt vui",
                 "type": "text",
-                "semanticLabel": "mat vui"
+                "semanticLabel": "mặt vui"
               },
               "right": {
                 "id": "r0",
-                "content": "nu cuoi",
+                "content": "nụ cười",
                 "type": "text",
-                "semanticLabel": "nu cuoi"
+                "semanticLabel": "nụ cười"
               }
             },
             {
               "left": {
                 "id": "l1",
-                "content": "mat buon",
+                "content": "mặt buồn",
                 "type": "text",
-                "semanticLabel": "mat buon"
+                "semanticLabel": "mặt buồn"
               },
               "right": {
                 "id": "r1",
-                "content": "nuoc mat",
+                "content": "nước mắt",
                 "type": "text",
-                "semanticLabel": "nuoc mat"
+                "semanticLabel": "nước mắt"
               }
             },
             {
               "left": {
                 "id": "l2",
-                "content": "mat gian",
+                "content": "mặt giận",
                 "type": "text",
-                "semanticLabel": "mat gian"
+                "semanticLabel": "mặt giận"
               },
               "right": {
                 "id": "r2",
-                "content": "nhan mat",
+                "content": "nhăn mặt",
                 "type": "text",
-                "semanticLabel": "nhan mat"
+                "semanticLabel": "nhăn mặt"
               }
             },
             {
               "left": {
                 "id": "l3",
-                "content": "ngac nhien",
+                "content": "ngạc nhiên",
                 "type": "text",
-                "semanticLabel": "ngac nhien"
+                "semanticLabel": "ngạc nhiên"
               },
               "right": {
                 "id": "r3",
-                "content": "mat tron",
+                "content": "mắt tròn",
                 "type": "text",
-                "semanticLabel": "mat tron"
+                "semanticLabel": "mắt tròn"
               }
             }
           ],
-          "hint": "Bat dau voi cap con biet ro nhat."
+          "hint": "Bắt đầu với cặp con biết rõ nhất."
         }
       },
       "hints": [
         {
-          "text": "Bat dau voi cap con biet ro nhat."
+          "text": "Bắt đầu với cặp con biết rõ nhất."
         }
       ],
       "metadata": {
@@ -631,6 +639,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Match each feeling to the clue.",
+          "learningObjective": "emotion recognition",
           "pairs": [
             {
               "left": {
@@ -692,71 +701,72 @@
           "hint": "Start with the pair you know best."
         },
         "vi": {
-          "prompt": "Ghep moi cam xuc voi dau hieu.",
+          "prompt": "Ghép mỗi cảm xúc với dấu hiệu.",
+          "learningObjective": "nhận biết cảm xúc",
           "pairs": [
             {
               "left": {
                 "id": "l0",
-                "content": "mat buon",
+                "content": "mặt buồn",
                 "type": "text",
-                "semanticLabel": "mat buon"
+                "semanticLabel": "mặt buồn"
               },
               "right": {
                 "id": "r0",
-                "content": "nuoc mat",
+                "content": "nước mắt",
                 "type": "text",
-                "semanticLabel": "nuoc mat"
+                "semanticLabel": "nước mắt"
               }
             },
             {
               "left": {
                 "id": "l1",
-                "content": "mat gian",
+                "content": "mặt giận",
                 "type": "text",
-                "semanticLabel": "mat gian"
+                "semanticLabel": "mặt giận"
               },
               "right": {
                 "id": "r1",
-                "content": "nhan mat",
+                "content": "nhăn mặt",
                 "type": "text",
-                "semanticLabel": "nhan mat"
+                "semanticLabel": "nhăn mặt"
               }
             },
             {
               "left": {
                 "id": "l2",
-                "content": "ngac nhien",
+                "content": "ngạc nhiên",
                 "type": "text",
-                "semanticLabel": "ngac nhien"
+                "semanticLabel": "ngạc nhiên"
               },
               "right": {
                 "id": "r2",
-                "content": "mat tron",
+                "content": "mắt tròn",
                 "type": "text",
-                "semanticLabel": "mat tron"
+                "semanticLabel": "mắt tròn"
               }
             },
             {
               "left": {
                 "id": "l3",
-                "content": "mat vui",
+                "content": "mặt vui",
                 "type": "text",
-                "semanticLabel": "mat vui"
+                "semanticLabel": "mặt vui"
               },
               "right": {
                 "id": "r3",
-                "content": "nu cuoi",
+                "content": "nụ cười",
                 "type": "text",
-                "semanticLabel": "nu cuoi"
+                "semanticLabel": "nụ cười"
               }
             }
           ],
-          "hint": "Bat dau voi cap con biet ro nhat."
+          "hint": "Bắt đầu với cặp con biết rõ nhất."
         }
       },
       "hints": [
         {
-          "text": "Bat dau voi cap con biet ro nhat."
+          "text": "Bắt đầu với cặp con biết rõ nhất."
         }
       ],
       "metadata": {
@@ -786,6 +796,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Match each feeling to the clue.",
+          "learningObjective": "emotion recognition",
           "pairs": [
             {
               "left": {
@@ -847,71 +858,72 @@
           "hint": "Start with the pair you know best."
         },
         "vi": {
-          "prompt": "Ghep moi cam xuc voi dau hieu.",
+          "prompt": "Ghép mỗi cảm xúc với dấu hiệu.",
+          "learningObjective": "nhận biết cảm xúc",
           "pairs": [
             {
               "left": {
                 "id": "l0",
-                "content": "mat gian",
+                "content": "mặt giận",
                 "type": "text",
-                "semanticLabel": "mat gian"
+                "semanticLabel": "mặt giận"
               },
               "right": {
                 "id": "r0",
-                "content": "nhan mat",
+                "content": "nhăn mặt",
                 "type": "text",
-                "semanticLabel": "nhan mat"
+                "semanticLabel": "nhăn mặt"
               }
             },
             {
               "left": {
                 "id": "l1",
-                "content": "ngac nhien",
+                "content": "ngạc nhiên",
                 "type": "text",
-                "semanticLabel": "ngac nhien"
+                "semanticLabel": "ngạc nhiên"
               },
               "right": {
                 "id": "r1",
-                "content": "mat tron",
+                "content": "mắt tròn",
                 "type": "text",
-                "semanticLabel": "mat tron"
+                "semanticLabel": "mắt tròn"
               }
             },
             {
               "left": {
                 "id": "l2",
-                "content": "mat vui",
+                "content": "mặt vui",
                 "type": "text",
-                "semanticLabel": "mat vui"
+                "semanticLabel": "mặt vui"
               },
               "right": {
                 "id": "r2",
-                "content": "nu cuoi",
+                "content": "nụ cười",
                 "type": "text",
-                "semanticLabel": "nu cuoi"
+                "semanticLabel": "nụ cười"
               }
             },
             {
               "left": {
                 "id": "l3",
-                "content": "mat buon",
+                "content": "mặt buồn",
                 "type": "text",
-                "semanticLabel": "mat buon"
+                "semanticLabel": "mặt buồn"
               },
               "right": {
                 "id": "r3",
-                "content": "nuoc mat",
+                "content": "nước mắt",
                 "type": "text",
-                "semanticLabel": "nuoc mat"
+                "semanticLabel": "nước mắt"
               }
             }
           ],
-          "hint": "Bat dau voi cap con biet ro nhat."
+          "hint": "Bắt đầu với cặp con biết rõ nhất."
         }
       },
       "hints": [
         {
-          "text": "Bat dau voi cap con biet ro nhat."
+          "text": "Bắt đầu với cặp con biết rõ nhất."
         }
       ],
       "metadata": {
@@ -941,6 +953,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Match each feeling to the clue.",
+          "learningObjective": "emotion recognition",
           "pairs": [
             {
               "left": {
@@ -1002,71 +1015,72 @@
           "hint": "Start with the pair you know best."
         },
         "vi": {
-          "prompt": "Ghep moi cam xuc voi dau hieu.",
+          "prompt": "Ghép mỗi cảm xúc với dấu hiệu.",
+          "learningObjective": "nhận biết cảm xúc",
           "pairs": [
             {
               "left": {
                 "id": "l0",
-                "content": "ngac nhien",
+                "content": "ngạc nhiên",
                 "type": "text",
-                "semanticLabel": "ngac nhien"
+                "semanticLabel": "ngạc nhiên"
               },
               "right": {
                 "id": "r0",
-                "content": "mat tron",
+                "content": "mắt tròn",
                 "type": "text",
-                "semanticLabel": "mat tron"
+                "semanticLabel": "mắt tròn"
               }
             },
             {
               "left": {
                 "id": "l1",
-                "content": "mat vui",
+                "content": "mặt vui",
                 "type": "text",
-                "semanticLabel": "mat vui"
+                "semanticLabel": "mặt vui"
               },
               "right": {
                 "id": "r1",
-                "content": "nu cuoi",
+                "content": "nụ cười",
                 "type": "text",
-                "semanticLabel": "nu cuoi"
+                "semanticLabel": "nụ cười"
               }
             },
             {
               "left": {
                 "id": "l2",
-                "content": "mat buon",
+                "content": "mặt buồn",
                 "type": "text",
-                "semanticLabel": "mat buon"
+                "semanticLabel": "mặt buồn"
               },
               "right": {
                 "id": "r2",
-                "content": "nuoc mat",
+                "content": "nước mắt",
                 "type": "text",
-                "semanticLabel": "nuoc mat"
+                "semanticLabel": "nước mắt"
               }
             },
             {
               "left": {
                 "id": "l3",
-                "content": "mat gian",
+                "content": "mặt giận",
                 "type": "text",
-                "semanticLabel": "mat gian"
+                "semanticLabel": "mặt giận"
               },
               "right": {
                 "id": "r3",
-                "content": "nhan mat",
+                "content": "nhăn mặt",
                 "type": "text",
-                "semanticLabel": "nhan mat"
+                "semanticLabel": "nhăn mặt"
               }
             }
           ],
-          "hint": "Bat dau voi cap con biet ro nhat."
+          "hint": "Bắt đầu với cặp con biết rõ nhất."
         }
       },
       "hints": [
         {
-          "text": "Bat dau voi cap con biet ro nhat."
+          "text": "Bắt đầu với cặp con biết rõ nhất."
         }
       ],
       "metadata": {
@@ -1096,6 +1110,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Match each feeling to the clue.",
+          "learningObjective": "emotion recognition",
           "pairs": [
             {
               "left": {
@@ -1157,71 +1172,72 @@
           "hint": "Start with the pair you know best."
         },
         "vi": {
-          "prompt": "Ghep moi cam xuc voi dau hieu.",
+          "prompt": "Ghép mỗi cảm xúc với dấu hiệu.",
+          "learningObjective": "nhận biết cảm xúc",
           "pairs": [
             {
               "left": {
                 "id": "l0",
-                "content": "mat vui",
+                "content": "mặt vui",
                 "type": "text",
-                "semanticLabel": "mat vui"
+                "semanticLabel": "mặt vui"
               },
               "right": {
                 "id": "r0",
-                "content": "nu cuoi",
+                "content": "nụ cười",
                 "type": "text",
-                "semanticLabel": "nu cuoi"
+                "semanticLabel": "nụ cười"
               }
             },
             {
               "left": {
                 "id": "l1",
-                "content": "mat buon",
+                "content": "mặt buồn",
                 "type": "text",
-                "semanticLabel": "mat buon"
+                "semanticLabel": "mặt buồn"
               },
               "right": {
                 "id": "r1",
-                "content": "nuoc mat",
+                "content": "nước mắt",
                 "type": "text",
-                "semanticLabel": "nuoc mat"
+                "semanticLabel": "nước mắt"
               }
             },
             {
               "left": {
                 "id": "l2",
-                "content": "mat gian",
+                "content": "mặt giận",
                 "type": "text",
-                "semanticLabel": "mat gian"
+                "semanticLabel": "mặt giận"
               },
               "right": {
                 "id": "r2",
-                "content": "nhan mat",
+                "content": "nhăn mặt",
                 "type": "text",
-                "semanticLabel": "nhan mat"
+                "semanticLabel": "nhăn mặt"
               }
             },
             {
               "left": {
                 "id": "l3",
-                "content": "ngac nhien",
+                "content": "ngạc nhiên",
                 "type": "text",
-                "semanticLabel": "ngac nhien"
+                "semanticLabel": "ngạc nhiên"
               },
               "right": {
                 "id": "r3",
-                "content": "mat tron",
+                "content": "mắt tròn",
                 "type": "text",
-                "semanticLabel": "mat tron"
+                "semanticLabel": "mắt tròn"
               }
             }
           ],
-          "hint": "Bat dau voi cap con biet ro nhat."
+          "hint": "Bắt đầu với cặp con biết rõ nhất."
         }
       },
       "hints": [
         {
-          "text": "Bat dau voi cap con biet ro nhat."
+          "text": "Bắt đầu với cặp con biết rõ nhất."
         }
       ],
       "metadata": {
@@ -1251,6 +1267,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Match each feeling to the clue.",
+          "learningObjective": "emotion recognition",
           "pairs": [
             {
               "left": {
@@ -1312,71 +1329,72 @@
           "hint": "Start with the pair you know best."
         },
         "vi": {
-          "prompt": "Ghep moi cam xuc voi dau hieu.",
+          "prompt": "Ghép mỗi cảm xúc với dấu hiệu.",
+          "learningObjective": "nhận biết cảm xúc",
           "pairs": [
             {
               "left": {
                 "id": "l0",
-                "content": "mat buon",
+                "content": "mặt buồn",
                 "type": "text",
-                "semanticLabel": "mat buon"
+                "semanticLabel": "mặt buồn"
               },
               "right": {
                 "id": "r0",
-                "content": "nuoc mat",
+                "content": "nước mắt",
                 "type": "text",
-                "semanticLabel": "nuoc mat"
+                "semanticLabel": "nước mắt"
               }
             },
             {
               "left": {
                 "id": "l1",
-                "content": "mat gian",
+                "content": "mặt giận",
                 "type": "text",
-                "semanticLabel": "mat gian"
+                "semanticLabel": "mặt giận"
               },
               "right": {
                 "id": "r1",
-                "content": "nhan mat",
+                "content": "nhăn mặt",
                 "type": "text",
-                "semanticLabel": "nhan mat"
+                "semanticLabel": "nhăn mặt"
               }
             },
             {
               "left": {
                 "id": "l2",
-                "content": "ngac nhien",
+                "content": "ngạc nhiên",
                 "type": "text",
-                "semanticLabel": "ngac nhien"
+                "semanticLabel": "ngạc nhiên"
               },
               "right": {
                 "id": "r2",
-                "content": "mat tron",
+                "content": "mắt tròn",
                 "type": "text",
-                "semanticLabel": "mat tron"
+                "semanticLabel": "mắt tròn"
               }
             },
             {
               "left": {
                 "id": "l3",
-                "content": "mat vui",
+                "content": "mặt vui",
                 "type": "text",
-                "semanticLabel": "mat vui"
+                "semanticLabel": "mặt vui"
               },
               "right": {
                 "id": "r3",
-                "content": "nu cuoi",
+                "content": "nụ cười",
                 "type": "text",
-                "semanticLabel": "nu cuoi"
+                "semanticLabel": "nụ cười"
               }
             }
           ],
-          "hint": "Bat dau voi cap con biet ro nhat."
+          "hint": "Bắt đầu với cặp con biết rõ nhất."
         }
       },
       "hints": [
         {
-          "text": "Bat dau voi cap con biet ro nhat."
+          "text": "Bắt đầu với cặp con biết rõ nhất."
         }
       ],
       "metadata": {
@@ -1406,6 +1424,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Match each feeling to the clue.",
+          "learningObjective": "emotion recognition",
           "pairs": [
             {
               "left": {
@@ -1467,71 +1486,72 @@
           "hint": "Start with the pair you know best."
         },
         "vi": {
-          "prompt": "Ghep moi cam xuc voi dau hieu.",
+          "prompt": "Ghép mỗi cảm xúc với dấu hiệu.",
+          "learningObjective": "nhận biết cảm xúc",
           "pairs": [
             {
               "left": {
                 "id": "l0",
-                "content": "mat gian",
+                "content": "mặt giận",
                 "type": "text",
-                "semanticLabel": "mat gian"
+                "semanticLabel": "mặt giận"
               },
               "right": {
                 "id": "r0",
-                "content": "nhan mat",
+                "content": "nhăn mặt",
                 "type": "text",
-                "semanticLabel": "nhan mat"
+                "semanticLabel": "nhăn mặt"
               }
             },
             {
               "left": {
                 "id": "l1",
-                "content": "ngac nhien",
+                "content": "ngạc nhiên",
                 "type": "text",
-                "semanticLabel": "ngac nhien"
+                "semanticLabel": "ngạc nhiên"
               },
               "right": {
                 "id": "r1",
-                "content": "mat tron",
+                "content": "mắt tròn",
                 "type": "text",
-                "semanticLabel": "mat tron"
+                "semanticLabel": "mắt tròn"
               }
             },
             {
               "left": {
                 "id": "l2",
-                "content": "mat vui",
+                "content": "mặt vui",
                 "type": "text",
-                "semanticLabel": "mat vui"
+                "semanticLabel": "mặt vui"
               },
               "right": {
                 "id": "r2",
-                "content": "nu cuoi",
+                "content": "nụ cười",
                 "type": "text",
-                "semanticLabel": "nu cuoi"
+                "semanticLabel": "nụ cười"
               }
             },
             {
               "left": {
                 "id": "l3",
-                "content": "mat buon",
+                "content": "mặt buồn",
                 "type": "text",
-                "semanticLabel": "mat buon"
+                "semanticLabel": "mặt buồn"
               },
               "right": {
                 "id": "r3",
-                "content": "nuoc mat",
+                "content": "nước mắt",
                 "type": "text",
-                "semanticLabel": "nuoc mat"
+                "semanticLabel": "nước mắt"
               }
             }
           ],
-          "hint": "Bat dau voi cap con biet ro nhat."
+          "hint": "Bắt đầu với cặp con biết rõ nhất."
         }
       },
       "hints": [
         {
-          "text": "Bat dau voi cap con biet ro nhat."
+          "text": "Bắt đầu với cặp con biết rõ nhất."
         }
       ],
       "metadata": {
@@ -1561,6 +1581,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Match each feeling to the clue.",
+          "learningObjective": "emotion recognition",
           "pairs": [
             {
               "left": {
@@ -1622,71 +1643,72 @@
           "hint": "Start with the pair you know best."
         },
         "vi": {
-          "prompt": "Ghep moi cam xuc voi dau hieu.",
+          "prompt": "Ghép mỗi cảm xúc với dấu hiệu.",
+          "learningObjective": "nhận biết cảm xúc",
           "pairs": [
             {
               "left": {
                 "id": "l0",
-                "content": "ngac nhien",
+                "content": "ngạc nhiên",
                 "type": "text",
-                "semanticLabel": "ngac nhien"
+                "semanticLabel": "ngạc nhiên"
               },
               "right": {
                 "id": "r0",
-                "content": "mat tron",
+                "content": "mắt tròn",
                 "type": "text",
-                "semanticLabel": "mat tron"
+                "semanticLabel": "mắt tròn"
               }
             },
             {
               "left": {
                 "id": "l1",
-                "content": "mat vui",
+                "content": "mặt vui",
                 "type": "text",
-                "semanticLabel": "mat vui"
+                "semanticLabel": "mặt vui"
               },
               "right": {
                 "id": "r1",
-                "content": "nu cuoi",
+                "content": "nụ cười",
                 "type": "text",
-                "semanticLabel": "nu cuoi"
+                "semanticLabel": "nụ cười"
               }
             },
             {
               "left": {
                 "id": "l2",
-                "content": "mat buon",
+                "content": "mặt buồn",
                 "type": "text",
-                "semanticLabel": "mat buon"
+                "semanticLabel": "mặt buồn"
               },
               "right": {
                 "id": "r2",
-                "content": "nuoc mat",
+                "content": "nước mắt",
                 "type": "text",
-                "semanticLabel": "nuoc mat"
+                "semanticLabel": "nước mắt"
               }
             },
             {
               "left": {
                 "id": "l3",
-                "content": "mat gian",
+                "content": "mặt giận",
                 "type": "text",
-                "semanticLabel": "mat gian"
+                "semanticLabel": "mặt giận"
               },
               "right": {
                 "id": "r3",
-                "content": "nhan mat",
+                "content": "nhăn mặt",
                 "type": "text",
-                "semanticLabel": "nhan mat"
+                "semanticLabel": "nhăn mặt"
               }
             }
           ],
-          "hint": "Bat dau voi cap con biet ro nhat."
+          "hint": "Bắt đầu với cặp con biết rõ nhất."
         }
       },
       "hints": [
         {
-          "text": "Bat dau voi cap con biet ro nhat."
+          "text": "Bắt đầu với cặp con biết rõ nhất."
         }
       ],
       "metadata": {
@@ -1716,6 +1738,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Match each feeling to the clue.",
+          "learningObjective": "emotion recognition",
           "pairs": [
             {
               "left": {
@@ -1777,71 +1800,72 @@
           "hint": "Start with the pair you know best."
         },
         "vi": {
-          "prompt": "Ghep moi cam xuc voi dau hieu.",
+          "prompt": "Ghép mỗi cảm xúc với dấu hiệu.",
+          "learningObjective": "nhận biết cảm xúc",
           "pairs": [
             {
               "left": {
                 "id": "l0",
-                "content": "mat vui",
+                "content": "mặt vui",
                 "type": "text",
-                "semanticLabel": "mat vui"
+                "semanticLabel": "mặt vui"
               },
               "right": {
                 "id": "r0",
-                "content": "nu cuoi",
+                "content": "nụ cười",
                 "type": "text",
-                "semanticLabel": "nu cuoi"
+                "semanticLabel": "nụ cười"
               }
             },
             {
               "left": {
                 "id": "l1",
-                "content": "mat buon",
+                "content": "mặt buồn",
                 "type": "text",
-                "semanticLabel": "mat buon"
+                "semanticLabel": "mặt buồn"
               },
               "right": {
                 "id": "r1",
-                "content": "nuoc mat",
+                "content": "nước mắt",
                 "type": "text",
-                "semanticLabel": "nuoc mat"
+                "semanticLabel": "nước mắt"
               }
             },
             {
               "left": {
                 "id": "l2",
-                "content": "mat gian",
+                "content": "mặt giận",
                 "type": "text",
-                "semanticLabel": "mat gian"
+                "semanticLabel": "mặt giận"
               },
               "right": {
                 "id": "r2",
-                "content": "nhan mat",
+                "content": "nhăn mặt",
                 "type": "text",
-                "semanticLabel": "nhan mat"
+                "semanticLabel": "nhăn mặt"
               }
             },
             {
               "left": {
                 "id": "l3",
-                "content": "ngac nhien",
+                "content": "ngạc nhiên",
                 "type": "text",
-                "semanticLabel": "ngac nhien"
+                "semanticLabel": "ngạc nhiên"
               },
               "right": {
                 "id": "r3",
-                "content": "mat tron",
+                "content": "mắt tròn",
                 "type": "text",
-                "semanticLabel": "mat tron"
+                "semanticLabel": "mắt tròn"
               }
             }
           ],
-          "hint": "Bat dau voi cap con biet ro nhat."
+          "hint": "Bắt đầu với cặp con biết rõ nhất."
         }
       },
       "hints": [
         {
-          "text": "Bat dau voi cap con biet ro nhat."
+          "text": "Bắt đầu với cặp con biết rõ nhất."
         }
       ],
       "metadata": {
@@ -1871,6 +1895,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Match each feeling to the clue.",
+          "learningObjective": "emotion recognition",
           "pairs": [
             {
               "left": {
@@ -1932,71 +1957,72 @@
           "hint": "Start with the pair you know best."
         },
         "vi": {
-          "prompt": "Ghep moi cam xuc voi dau hieu.",
+          "prompt": "Ghép mỗi cảm xúc với dấu hiệu.",
+          "learningObjective": "nhận biết cảm xúc",
           "pairs": [
             {
               "left": {
                 "id": "l0",
-                "content": "mat buon",
+                "content": "mặt buồn",
                 "type": "text",
-                "semanticLabel": "mat buon"
+                "semanticLabel": "mặt buồn"
               },
               "right": {
                 "id": "r0",
-                "content": "nuoc mat",
+                "content": "nước mắt",
                 "type": "text",
-                "semanticLabel": "nuoc mat"
+                "semanticLabel": "nước mắt"
               }
             },
             {
               "left": {
                 "id": "l1",
-                "content": "mat gian",
+                "content": "mặt giận",
                 "type": "text",
-                "semanticLabel": "mat gian"
+                "semanticLabel": "mặt giận"
               },
               "right": {
                 "id": "r1",
-                "content": "nhan mat",
+                "content": "nhăn mặt",
                 "type": "text",
-                "semanticLabel": "nhan mat"
+                "semanticLabel": "nhăn mặt"
               }
             },
             {
               "left": {
                 "id": "l2",
-                "content": "ngac nhien",
+                "content": "ngạc nhiên",
                 "type": "text",
-                "semanticLabel": "ngac nhien"
+                "semanticLabel": "ngạc nhiên"
               },
               "right": {
                 "id": "r2",
-                "content": "mat tron",
+                "content": "mắt tròn",
                 "type": "text",
-                "semanticLabel": "mat tron"
+                "semanticLabel": "mắt tròn"
               }
             },
             {
               "left": {
                 "id": "l3",
-                "content": "mat vui",
+                "content": "mặt vui",
                 "type": "text",
-                "semanticLabel": "mat vui"
+                "semanticLabel": "mặt vui"
               },
               "right": {
                 "id": "r3",
-                "content": "nu cuoi",
+                "content": "nụ cười",
                 "type": "text",
-                "semanticLabel": "nu cuoi"
+                "semanticLabel": "nụ cười"
               }
             }
           ],
-          "hint": "Bat dau voi cap con biet ro nhat."
+          "hint": "Bắt đầu với cặp con biết rõ nhất."
         }
       },
       "hints": [
         {
-          "text": "Bat dau voi cap con biet ro nhat."
+          "text": "Bắt đầu với cặp con biết rõ nhất."
         }
       ],
       "metadata": {
@@ -2026,6 +2052,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Match each feeling to the clue.",
+          "learningObjective": "emotion recognition",
           "pairs": [
             {
               "left": {
@@ -2087,71 +2114,72 @@
           "hint": "Start with the pair you know best."
         },
         "vi": {
-          "prompt": "Ghep moi cam xuc voi dau hieu.",
+          "prompt": "Ghép mỗi cảm xúc với dấu hiệu.",
+          "learningObjective": "nhận biết cảm xúc",
           "pairs": [
             {
               "left": {
                 "id": "l0",
-                "content": "mat gian",
+                "content": "mặt giận",
                 "type": "text",
-                "semanticLabel": "mat gian"
+                "semanticLabel": "mặt giận"
               },
               "right": {
                 "id": "r0",
-                "content": "nhan mat",
+                "content": "nhăn mặt",
                 "type": "text",
-                "semanticLabel": "nhan mat"
+                "semanticLabel": "nhăn mặt"
               }
             },
             {
               "left": {
                 "id": "l1",
-                "content": "ngac nhien",
+                "content": "ngạc nhiên",
                 "type": "text",
-                "semanticLabel": "ngac nhien"
+                "semanticLabel": "ngạc nhiên"
               },
               "right": {
                 "id": "r1",
-                "content": "mat tron",
+                "content": "mắt tròn",
                 "type": "text",
-                "semanticLabel": "mat tron"
+                "semanticLabel": "mắt tròn"
               }
             },
             {
               "left": {
                 "id": "l2",
-                "content": "mat vui",
+                "content": "mặt vui",
                 "type": "text",
-                "semanticLabel": "mat vui"
+                "semanticLabel": "mặt vui"
               },
               "right": {
                 "id": "r2",
-                "content": "nu cuoi",
+                "content": "nụ cười",
                 "type": "text",
-                "semanticLabel": "nu cuoi"
+                "semanticLabel": "nụ cười"
               }
             },
             {
               "left": {
                 "id": "l3",
-                "content": "mat buon",
+                "content": "mặt buồn",
                 "type": "text",
-                "semanticLabel": "mat buon"
+                "semanticLabel": "mặt buồn"
               },
               "right": {
                 "id": "r3",
-                "content": "nuoc mat",
+                "content": "nước mắt",
                 "type": "text",
-                "semanticLabel": "nuoc mat"
+                "semanticLabel": "nước mắt"
               }
             }
           ],
-          "hint": "Bat dau voi cap con biet ro nhat."
+          "hint": "Bắt đầu với cặp con biết rõ nhất."
         }
       },
       "hints": [
         {
-          "text": "Bat dau voi cap con biet ro nhat."
+          "text": "Bắt đầu với cặp con biết rõ nhất."
         }
       ],
       "metadata": {
@@ -2181,6 +2209,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Match each feeling to the clue.",
+          "learningObjective": "emotion recognition",
           "pairs": [
             {
               "left": {
@@ -2242,71 +2271,72 @@
           "hint": "Start with the pair you know best."
         },
         "vi": {
-          "prompt": "Ghep moi cam xuc voi dau hieu.",
+          "prompt": "Ghép mỗi cảm xúc với dấu hiệu.",
+          "learningObjective": "nhận biết cảm xúc",
           "pairs": [
             {
               "left": {
                 "id": "l0",
-                "content": "ngac nhien",
+                "content": "ngạc nhiên",
                 "type": "text",
-                "semanticLabel": "ngac nhien"
+                "semanticLabel": "ngạc nhiên"
               },
               "right": {
                 "id": "r0",
-                "content": "mat tron",
+                "content": "mắt tròn",
                 "type": "text",
-                "semanticLabel": "mat tron"
+                "semanticLabel": "mắt tròn"
               }
             },
             {
               "left": {
                 "id": "l1",
-                "content": "mat vui",
+                "content": "mặt vui",
                 "type": "text",
-                "semanticLabel": "mat vui"
+                "semanticLabel": "mặt vui"
               },
               "right": {
                 "id": "r1",
-                "content": "nu cuoi",
+                "content": "nụ cười",
                 "type": "text",
-                "semanticLabel": "nu cuoi"
+                "semanticLabel": "nụ cười"
               }
             },
             {
               "left": {
                 "id": "l2",
-                "content": "mat buon",
+                "content": "mặt buồn",
                 "type": "text",
-                "semanticLabel": "mat buon"
+                "semanticLabel": "mặt buồn"
               },
               "right": {
                 "id": "r2",
-                "content": "nuoc mat",
+                "content": "nước mắt",
                 "type": "text",
-                "semanticLabel": "nuoc mat"
+                "semanticLabel": "nước mắt"
               }
             },
             {
               "left": {
                 "id": "l3",
-                "content": "mat gian",
+                "content": "mặt giận",
                 "type": "text",
-                "semanticLabel": "mat gian"
+                "semanticLabel": "mặt giận"
               },
               "right": {
                 "id": "r3",
-                "content": "nhan mat",
+                "content": "nhăn mặt",
                 "type": "text",
-                "semanticLabel": "nhan mat"
+                "semanticLabel": "nhăn mặt"
               }
             }
           ],
-          "hint": "Bat dau voi cap con biet ro nhat."
+          "hint": "Bắt đầu với cặp con biết rõ nhất."
         }
       },
       "hints": [
         {
-          "text": "Bat dau voi cap con biet ro nhat."
+          "text": "Bắt đầu với cặp con biết rõ nhất."
         }
       ],
       "metadata": {
@@ -2336,6 +2366,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Match each feeling to the clue.",
+          "learningObjective": "emotion recognition",
           "pairs": [
             {
               "left": {
@@ -2397,71 +2428,72 @@
           "hint": "Start with the pair you know best."
         },
         "vi": {
-          "prompt": "Ghep moi cam xuc voi dau hieu.",
+          "prompt": "Ghép mỗi cảm xúc với dấu hiệu.",
+          "learningObjective": "nhận biết cảm xúc",
           "pairs": [
             {
               "left": {
                 "id": "l0",
-                "content": "mat vui",
+                "content": "mặt vui",
                 "type": "text",
-                "semanticLabel": "mat vui"
+                "semanticLabel": "mặt vui"
               },
               "right": {
                 "id": "r0",
-                "content": "nu cuoi",
+                "content": "nụ cười",
                 "type": "text",
-                "semanticLabel": "nu cuoi"
+                "semanticLabel": "nụ cười"
               }
             },
             {
               "left": {
                 "id": "l1",
-                "content": "mat buon",
+                "content": "mặt buồn",
                 "type": "text",
-                "semanticLabel": "mat buon"
+                "semanticLabel": "mặt buồn"
               },
               "right": {
                 "id": "r1",
-                "content": "nuoc mat",
+                "content": "nước mắt",
                 "type": "text",
-                "semanticLabel": "nuoc mat"
+                "semanticLabel": "nước mắt"
               }
             },
             {
               "left": {
                 "id": "l2",
-                "content": "mat gian",
+                "content": "mặt giận",
                 "type": "text",
-                "semanticLabel": "mat gian"
+                "semanticLabel": "mặt giận"
               },
               "right": {
                 "id": "r2",
-                "content": "nhan mat",
+                "content": "nhăn mặt",
                 "type": "text",
-                "semanticLabel": "nhan mat"
+                "semanticLabel": "nhăn mặt"
               }
             },
             {
               "left": {
                 "id": "l3",
-                "content": "ngac nhien",
+                "content": "ngạc nhiên",
                 "type": "text",
-                "semanticLabel": "ngac nhien"
+                "semanticLabel": "ngạc nhiên"
               },
               "right": {
                 "id": "r3",
-                "content": "mat tron",
+                "content": "mắt tròn",
                 "type": "text",
-                "semanticLabel": "mat tron"
+                "semanticLabel": "mắt tròn"
               }
             }
           ],
-          "hint": "Bat dau voi cap con biet ro nhat."
+          "hint": "Bắt đầu với cặp con biết rõ nhất."
         }
       },
       "hints": [
         {
-          "text": "Bat dau voi cap con biet ro nhat."
+          "text": "Bắt đầu với cặp con biết rõ nhất."
         }
       ],
       "metadata": {
@@ -2491,6 +2523,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Match each feeling to the clue.",
+          "learningObjective": "emotion recognition",
           "pairs": [
             {
               "left": {
@@ -2552,71 +2585,72 @@
           "hint": "Start with the pair you know best."
         },
         "vi": {
-          "prompt": "Ghep moi cam xuc voi dau hieu.",
+          "prompt": "Ghép mỗi cảm xúc với dấu hiệu.",
+          "learningObjective": "nhận biết cảm xúc",
           "pairs": [
             {
               "left": {
                 "id": "l0",
-                "content": "mat buon",
+                "content": "mặt buồn",
                 "type": "text",
-                "semanticLabel": "mat buon"
+                "semanticLabel": "mặt buồn"
               },
               "right": {
                 "id": "r0",
-                "content": "nuoc mat",
+                "content": "nước mắt",
                 "type": "text",
-                "semanticLabel": "nuoc mat"
+                "semanticLabel": "nước mắt"
               }
             },
             {
               "left": {
                 "id": "l1",
-                "content": "mat gian",
+                "content": "mặt giận",
                 "type": "text",
-                "semanticLabel": "mat gian"
+                "semanticLabel": "mặt giận"
               },
               "right": {
                 "id": "r1",
-                "content": "nhan mat",
+                "content": "nhăn mặt",
                 "type": "text",
-                "semanticLabel": "nhan mat"
+                "semanticLabel": "nhăn mặt"
               }
             },
             {
               "left": {
                 "id": "l2",
-                "content": "ngac nhien",
+                "content": "ngạc nhiên",
                 "type": "text",
-                "semanticLabel": "ngac nhien"
+                "semanticLabel": "ngạc nhiên"
               },
               "right": {
                 "id": "r2",
-                "content": "mat tron",
+                "content": "mắt tròn",
                 "type": "text",
-                "semanticLabel": "mat tron"
+                "semanticLabel": "mắt tròn"
               }
             },
             {
               "left": {
                 "id": "l3",
-                "content": "mat vui",
+                "content": "mặt vui",
                 "type": "text",
-                "semanticLabel": "mat vui"
+                "semanticLabel": "mặt vui"
               },
               "right": {
                 "id": "r3",
-                "content": "nu cuoi",
+                "content": "nụ cười",
                 "type": "text",
-                "semanticLabel": "nu cuoi"
+                "semanticLabel": "nụ cười"
               }
             }
           ],
-          "hint": "Bat dau voi cap con biet ro nhat."
+          "hint": "Bắt đầu với cặp con biết rõ nhất."
         }
       },
       "hints": [
         {
-          "text": "Bat dau voi cap con biet ro nhat."
+          "text": "Bắt đầu với cặp con biết rõ nhất."
         }
       ],
       "metadata": {
@@ -2646,6 +2680,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Match each feeling to the clue.",
+          "learningObjective": "emotion recognition",
           "pairs": [
             {
               "left": {
@@ -2707,71 +2742,72 @@
           "hint": "Start with the pair you know best."
         },
         "vi": {
-          "prompt": "Ghep moi cam xuc voi dau hieu.",
+          "prompt": "Ghép mỗi cảm xúc với dấu hiệu.",
+          "learningObjective": "nhận biết cảm xúc",
           "pairs": [
             {
               "left": {
                 "id": "l0",
-                "content": "mat gian",
+                "content": "mặt giận",
                 "type": "text",
-                "semanticLabel": "mat gian"
+                "semanticLabel": "mặt giận"
               },
               "right": {
                 "id": "r0",
-                "content": "nhan mat",
+                "content": "nhăn mặt",
                 "type": "text",
-                "semanticLabel": "nhan mat"
+                "semanticLabel": "nhăn mặt"
               }
             },
             {
               "left": {
                 "id": "l1",
-                "content": "ngac nhien",
+                "content": "ngạc nhiên",
                 "type": "text",
-                "semanticLabel": "ngac nhien"
+                "semanticLabel": "ngạc nhiên"
               },
               "right": {
                 "id": "r1",
-                "content": "mat tron",
+                "content": "mắt tròn",
                 "type": "text",
-                "semanticLabel": "mat tron"
+                "semanticLabel": "mắt tròn"
               }
             },
             {
               "left": {
                 "id": "l2",
-                "content": "mat vui",
+                "content": "mặt vui",
                 "type": "text",
-                "semanticLabel": "mat vui"
+                "semanticLabel": "mặt vui"
               },
               "right": {
                 "id": "r2",
-                "content": "nu cuoi",
+                "content": "nụ cười",
                 "type": "text",
-                "semanticLabel": "nu cuoi"
+                "semanticLabel": "nụ cười"
               }
             },
             {
               "left": {
                 "id": "l3",
-                "content": "mat buon",
+                "content": "mặt buồn",
                 "type": "text",
-                "semanticLabel": "mat buon"
+                "semanticLabel": "mặt buồn"
               },
               "right": {
                 "id": "r3",
-                "content": "nuoc mat",
+                "content": "nước mắt",
                 "type": "text",
-                "semanticLabel": "nuoc mat"
+                "semanticLabel": "nước mắt"
               }
             }
           ],
-          "hint": "Bat dau voi cap con biet ro nhat."
+          "hint": "Bắt đầu với cặp con biết rõ nhất."
         }
       },
       "hints": [
         {
-          "text": "Bat dau voi cap con biet ro nhat."
+          "text": "Bắt đầu với cặp con biết rõ nhất."
         }
       ],
       "metadata": {
@@ -2801,6 +2837,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Match each feeling to the clue.",
+          "learningObjective": "emotion recognition",
           "pairs": [
             {
               "left": {
@@ -2862,71 +2899,72 @@
           "hint": "Start with the pair you know best."
         },
         "vi": {
-          "prompt": "Ghep moi cam xuc voi dau hieu.",
+          "prompt": "Ghép mỗi cảm xúc với dấu hiệu.",
+          "learningObjective": "nhận biết cảm xúc",
           "pairs": [
             {
               "left": {
                 "id": "l0",
-                "content": "ngac nhien",
+                "content": "ngạc nhiên",
                 "type": "text",
-                "semanticLabel": "ngac nhien"
+                "semanticLabel": "ngạc nhiên"
               },
               "right": {
                 "id": "r0",
-                "content": "mat tron",
+                "content": "mắt tròn",
                 "type": "text",
-                "semanticLabel": "mat tron"
+                "semanticLabel": "mắt tròn"
               }
             },
             {
               "left": {
                 "id": "l1",
-                "content": "mat vui",
+                "content": "mặt vui",
                 "type": "text",
-                "semanticLabel": "mat vui"
+                "semanticLabel": "mặt vui"
               },
               "right": {
                 "id": "r1",
-                "content": "nu cuoi",
+                "content": "nụ cười",
                 "type": "text",
-                "semanticLabel": "nu cuoi"
+                "semanticLabel": "nụ cười"
               }
             },
             {
               "left": {
                 "id": "l2",
-                "content": "mat buon",
+                "content": "mặt buồn",
                 "type": "text",
-                "semanticLabel": "mat buon"
+                "semanticLabel": "mặt buồn"
               },
               "right": {
                 "id": "r2",
-                "content": "nuoc mat",
+                "content": "nước mắt",
                 "type": "text",
-                "semanticLabel": "nuoc mat"
+                "semanticLabel": "nước mắt"
               }
             },
             {
               "left": {
                 "id": "l3",
-                "content": "mat gian",
+                "content": "mặt giận",
                 "type": "text",
-                "semanticLabel": "mat gian"
+                "semanticLabel": "mặt giận"
               },
               "right": {
                 "id": "r3",
-                "content": "nhan mat",
+                "content": "nhăn mặt",
                 "type": "text",
-                "semanticLabel": "nhan mat"
+                "semanticLabel": "nhăn mặt"
               }
             }
           ],
-          "hint": "Bat dau voi cap con biet ro nhat."
+          "hint": "Bắt đầu với cặp con biết rõ nhất."
         }
       },
       "hints": [
         {
-          "text": "Bat dau voi cap con biet ro nhat."
+          "text": "Bắt đầu với cặp con biết rõ nhất."
         }
       ],
       "metadata": {
@@ -2956,6 +2994,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Match each feeling to the clue.",
+          "learningObjective": "emotion recognition",
           "pairs": [
             {
               "left": {
@@ -3017,71 +3056,72 @@
           "hint": "Start with the pair you know best."
         },
         "vi": {
-          "prompt": "Ghep moi cam xuc voi dau hieu.",
+          "prompt": "Ghép mỗi cảm xúc với dấu hiệu.",
+          "learningObjective": "nhận biết cảm xúc",
           "pairs": [
             {
               "left": {
                 "id": "l0",
-                "content": "mat vui",
+                "content": "mặt vui",
                 "type": "text",
-                "semanticLabel": "mat vui"
+                "semanticLabel": "mặt vui"
               },
               "right": {
                 "id": "r0",
-                "content": "nu cuoi",
+                "content": "nụ cười",
                 "type": "text",
-                "semanticLabel": "nu cuoi"
+                "semanticLabel": "nụ cười"
               }
             },
             {
               "left": {
                 "id": "l1",
-                "content": "mat buon",
+                "content": "mặt buồn",
                 "type": "text",
-                "semanticLabel": "mat buon"
+                "semanticLabel": "mặt buồn"
               },
               "right": {
                 "id": "r1",
-                "content": "nuoc mat",
+                "content": "nước mắt",
                 "type": "text",
-                "semanticLabel": "nuoc mat"
+                "semanticLabel": "nước mắt"
               }
             },
             {
               "left": {
                 "id": "l2",
-                "content": "mat gian",
+                "content": "mặt giận",
                 "type": "text",
-                "semanticLabel": "mat gian"
+                "semanticLabel": "mặt giận"
               },
               "right": {
                 "id": "r2",
-                "content": "nhan mat",
+                "content": "nhăn mặt",
                 "type": "text",
-                "semanticLabel": "nhan mat"
+                "semanticLabel": "nhăn mặt"
               }
             },
             {
               "left": {
                 "id": "l3",
-                "content": "ngac nhien",
+                "content": "ngạc nhiên",
                 "type": "text",
-                "semanticLabel": "ngac nhien"
+                "semanticLabel": "ngạc nhiên"
               },
               "right": {
                 "id": "r3",
-                "content": "mat tron",
+                "content": "mắt tròn",
                 "type": "text",
-                "semanticLabel": "mat tron"
+                "semanticLabel": "mắt tròn"
               }
             }
           ],
-          "hint": "Bat dau voi cap con biet ro nhat."
+          "hint": "Bắt đầu với cặp con biết rõ nhất."
         }
       },
       "hints": [
         {
-          "text": "Bat dau voi cap con biet ro nhat."
+          "text": "Bắt đầu với cặp con biết rõ nhất."
         }
       ],
       "metadata": {
@@ -3111,6 +3151,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Match each feeling to the clue.",
+          "learningObjective": "emotion recognition",
           "pairs": [
             {
               "left": {
@@ -3172,71 +3213,72 @@
           "hint": "Start with the pair you know best."
         },
         "vi": {
-          "prompt": "Ghep moi cam xuc voi dau hieu.",
+          "prompt": "Ghép mỗi cảm xúc với dấu hiệu.",
+          "learningObjective": "nhận biết cảm xúc",
           "pairs": [
             {
               "left": {
                 "id": "l0",
-                "content": "mat buon",
+                "content": "mặt buồn",
                 "type": "text",
-                "semanticLabel": "mat buon"
+                "semanticLabel": "mặt buồn"
               },
               "right": {
                 "id": "r0",
-                "content": "nuoc mat",
+                "content": "nước mắt",
                 "type": "text",
-                "semanticLabel": "nuoc mat"
+                "semanticLabel": "nước mắt"
               }
             },
             {
               "left": {
                 "id": "l1",
-                "content": "mat gian",
+                "content": "mặt giận",
                 "type": "text",
-                "semanticLabel": "mat gian"
+                "semanticLabel": "mặt giận"
               },
               "right": {
                 "id": "r1",
-                "content": "nhan mat",
+                "content": "nhăn mặt",
                 "type": "text",
-                "semanticLabel": "nhan mat"
+                "semanticLabel": "nhăn mặt"
               }
             },
             {
               "left": {
                 "id": "l2",
-                "content": "ngac nhien",
+                "content": "ngạc nhiên",
                 "type": "text",
-                "semanticLabel": "ngac nhien"
+                "semanticLabel": "ngạc nhiên"
               },
               "right": {
                 "id": "r2",
-                "content": "mat tron",
+                "content": "mắt tròn",
                 "type": "text",
-                "semanticLabel": "mat tron"
+                "semanticLabel": "mắt tròn"
               }
             },
             {
               "left": {
                 "id": "l3",
-                "content": "mat vui",
+                "content": "mặt vui",
                 "type": "text",
-                "semanticLabel": "mat vui"
+                "semanticLabel": "mặt vui"
               },
               "right": {
                 "id": "r3",
-                "content": "nu cuoi",
+                "content": "nụ cười",
                 "type": "text",
-                "semanticLabel": "nu cuoi"
+                "semanticLabel": "nụ cười"
               }
             }
           ],
-          "hint": "Bat dau voi cap con biet ro nhat."
+          "hint": "Bắt đầu với cặp con biết rõ nhất."
         }
       },
       "hints": [
         {
-          "text": "Bat dau voi cap con biet ro nhat."
+          "text": "Bắt đầu với cặp con biết rõ nhất."
         }
       ],
       "metadata": {
@@ -3266,6 +3308,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Match each feeling to the clue.",
+          "learningObjective": "emotion recognition",
           "pairs": [
             {
               "left": {
@@ -3327,71 +3370,72 @@
           "hint": "Start with the pair you know best."
         },
         "vi": {
-          "prompt": "Ghep moi cam xuc voi dau hieu.",
+          "prompt": "Ghép mỗi cảm xúc với dấu hiệu.",
+          "learningObjective": "nhận biết cảm xúc",
           "pairs": [
             {
               "left": {
                 "id": "l0",
-                "content": "mat gian",
+                "content": "mặt giận",
                 "type": "text",
-                "semanticLabel": "mat gian"
+                "semanticLabel": "mặt giận"
               },
               "right": {
                 "id": "r0",
-                "content": "nhan mat",
+                "content": "nhăn mặt",
                 "type": "text",
-                "semanticLabel": "nhan mat"
+                "semanticLabel": "nhăn mặt"
               }
             },
             {
               "left": {
                 "id": "l1",
-                "content": "ngac nhien",
+                "content": "ngạc nhiên",
                 "type": "text",
-                "semanticLabel": "ngac nhien"
+                "semanticLabel": "ngạc nhiên"
               },
               "right": {
                 "id": "r1",
-                "content": "mat tron",
+                "content": "mắt tròn",
                 "type": "text",
-                "semanticLabel": "mat tron"
+                "semanticLabel": "mắt tròn"
               }
             },
             {
               "left": {
                 "id": "l2",
-                "content": "mat vui",
+                "content": "mặt vui",
                 "type": "text",
-                "semanticLabel": "mat vui"
+                "semanticLabel": "mặt vui"
               },
               "right": {
                 "id": "r2",
-                "content": "nu cuoi",
+                "content": "nụ cười",
                 "type": "text",
-                "semanticLabel": "nu cuoi"
+                "semanticLabel": "nụ cười"
               }
             },
             {
               "left": {
                 "id": "l3",
-                "content": "mat buon",
+                "content": "mặt buồn",
                 "type": "text",
-                "semanticLabel": "mat buon"
+                "semanticLabel": "mặt buồn"
               },
               "right": {
                 "id": "r3",
-                "content": "nuoc mat",
+                "content": "nước mắt",
                 "type": "text",
-                "semanticLabel": "nuoc mat"
+                "semanticLabel": "nước mắt"
               }
             }
           ],
-          "hint": "Bat dau voi cap con biet ro nhat."
+          "hint": "Bắt đầu với cặp con biết rõ nhất."
         }
       },
       "hints": [
         {
-          "text": "Bat dau voi cap con biet ro nhat."
+          "text": "Bắt đầu với cặp con biết rõ nhất."
         }
       ],
       "metadata": {
@@ -3421,6 +3465,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Match each feeling to the clue.",
+          "learningObjective": "emotion recognition",
           "pairs": [
             {
               "left": {
@@ -3482,71 +3527,72 @@
           "hint": "Start with the pair you know best."
         },
         "vi": {
-          "prompt": "Ghep moi cam xuc voi dau hieu.",
+          "prompt": "Ghép mỗi cảm xúc với dấu hiệu.",
+          "learningObjective": "nhận biết cảm xúc",
           "pairs": [
             {
               "left": {
                 "id": "l0",
-                "content": "ngac nhien",
+                "content": "ngạc nhiên",
                 "type": "text",
-                "semanticLabel": "ngac nhien"
+                "semanticLabel": "ngạc nhiên"
               },
               "right": {
                 "id": "r0",
-                "content": "mat tron",
+                "content": "mắt tròn",
                 "type": "text",
-                "semanticLabel": "mat tron"
+                "semanticLabel": "mắt tròn"
               }
             },
             {
               "left": {
                 "id": "l1",
-                "content": "mat vui",
+                "content": "mặt vui",
                 "type": "text",
-                "semanticLabel": "mat vui"
+                "semanticLabel": "mặt vui"
               },
               "right": {
                 "id": "r1",
-                "content": "nu cuoi",
+                "content": "nụ cười",
                 "type": "text",
-                "semanticLabel": "nu cuoi"
+                "semanticLabel": "nụ cười"
               }
             },
             {
               "left": {
                 "id": "l2",
-                "content": "mat buon",
+                "content": "mặt buồn",
                 "type": "text",
-                "semanticLabel": "mat buon"
+                "semanticLabel": "mặt buồn"
               },
               "right": {
                 "id": "r2",
-                "content": "nuoc mat",
+                "content": "nước mắt",
                 "type": "text",
-                "semanticLabel": "nuoc mat"
+                "semanticLabel": "nước mắt"
               }
             },
             {
               "left": {
                 "id": "l3",
-                "content": "mat gian",
+                "content": "mặt giận",
                 "type": "text",
-                "semanticLabel": "mat gian"
+                "semanticLabel": "mặt giận"
               },
               "right": {
                 "id": "r3",
-                "content": "nhan mat",
+                "content": "nhăn mặt",
                 "type": "text",
-                "semanticLabel": "nhan mat"
+                "semanticLabel": "nhăn mặt"
               }
             }
           ],
-          "hint": "Bat dau voi cap con biet ro nhat."
+          "hint": "Bắt đầu với cặp con biết rõ nhất."
         }
       },
       "hints": [
         {
-          "text": "Bat dau voi cap con biet ro nhat."
+          "text": "Bắt đầu với cặp con biết rõ nhất."
         }
       ],
       "metadata": {
@@ -3576,6 +3622,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Match each feeling to the clue.",
+          "learningObjective": "emotion recognition",
           "pairs": [
             {
               "left": {
@@ -3637,71 +3684,72 @@
           "hint": "Start with the pair you know best."
         },
         "vi": {
-          "prompt": "Ghep moi cam xuc voi dau hieu.",
+          "prompt": "Ghép mỗi cảm xúc với dấu hiệu.",
+          "learningObjective": "nhận biết cảm xúc",
           "pairs": [
             {
               "left": {
                 "id": "l0",
-                "content": "mat vui",
+                "content": "mặt vui",
                 "type": "text",
-                "semanticLabel": "mat vui"
+                "semanticLabel": "mặt vui"
               },
               "right": {
                 "id": "r0",
-                "content": "nu cuoi",
+                "content": "nụ cười",
                 "type": "text",
-                "semanticLabel": "nu cuoi"
+                "semanticLabel": "nụ cười"
               }
             },
             {
               "left": {
                 "id": "l1",
-                "content": "mat buon",
+                "content": "mặt buồn",
                 "type": "text",
-                "semanticLabel": "mat buon"
+                "semanticLabel": "mặt buồn"
               },
               "right": {
                 "id": "r1",
-                "content": "nuoc mat",
+                "content": "nước mắt",
                 "type": "text",
-                "semanticLabel": "nuoc mat"
+                "semanticLabel": "nước mắt"
               }
             },
             {
               "left": {
                 "id": "l2",
-                "content": "mat gian",
+                "content": "mặt giận",
                 "type": "text",
-                "semanticLabel": "mat gian"
+                "semanticLabel": "mặt giận"
               },
               "right": {
                 "id": "r2",
-                "content": "nhan mat",
+                "content": "nhăn mặt",
                 "type": "text",
-                "semanticLabel": "nhan mat"
+                "semanticLabel": "nhăn mặt"
               }
             },
             {
               "left": {
                 "id": "l3",
-                "content": "ngac nhien",
+                "content": "ngạc nhiên",
                 "type": "text",
-                "semanticLabel": "ngac nhien"
+                "semanticLabel": "ngạc nhiên"
               },
               "right": {
                 "id": "r3",
-                "content": "mat tron",
+                "content": "mắt tròn",
                 "type": "text",
-                "semanticLabel": "mat tron"
+                "semanticLabel": "mắt tròn"
               }
             }
           ],
-          "hint": "Bat dau voi cap con biet ro nhat."
+          "hint": "Bắt đầu với cặp con biết rõ nhất."
         }
       },
       "hints": [
         {
-          "text": "Bat dau voi cap con biet ro nhat."
+          "text": "Bắt đầu với cặp con biết rõ nhất."
         }
       ],
       "metadata": {
@@ -3731,6 +3779,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Match each feeling to the clue.",
+          "learningObjective": "emotion recognition",
           "pairs": [
             {
               "left": {
@@ -3792,71 +3841,72 @@
           "hint": "Start with the pair you know best."
         },
         "vi": {
-          "prompt": "Ghep moi cam xuc voi dau hieu.",
+          "prompt": "Ghép mỗi cảm xúc với dấu hiệu.",
+          "learningObjective": "nhận biết cảm xúc",
           "pairs": [
             {
               "left": {
                 "id": "l0",
-                "content": "mat buon",
+                "content": "mặt buồn",
                 "type": "text",
-                "semanticLabel": "mat buon"
+                "semanticLabel": "mặt buồn"
               },
               "right": {
                 "id": "r0",
-                "content": "nuoc mat",
+                "content": "nước mắt",
                 "type": "text",
-                "semanticLabel": "nuoc mat"
+                "semanticLabel": "nước mắt"
               }
             },
             {
               "left": {
                 "id": "l1",
-                "content": "mat gian",
+                "content": "mặt giận",
                 "type": "text",
-                "semanticLabel": "mat gian"
+                "semanticLabel": "mặt giận"
               },
               "right": {
                 "id": "r1",
-                "content": "nhan mat",
+                "content": "nhăn mặt",
                 "type": "text",
-                "semanticLabel": "nhan mat"
+                "semanticLabel": "nhăn mặt"
               }
             },
             {
               "left": {
                 "id": "l2",
-                "content": "ngac nhien",
+                "content": "ngạc nhiên",
                 "type": "text",
-                "semanticLabel": "ngac nhien"
+                "semanticLabel": "ngạc nhiên"
               },
               "right": {
                 "id": "r2",
-                "content": "mat tron",
+                "content": "mắt tròn",
                 "type": "text",
-                "semanticLabel": "mat tron"
+                "semanticLabel": "mắt tròn"
               }
             },
             {
               "left": {
                 "id": "l3",
-                "content": "mat vui",
+                "content": "mặt vui",
                 "type": "text",
-                "semanticLabel": "mat vui"
+                "semanticLabel": "mặt vui"
               },
               "right": {
                 "id": "r3",
-                "content": "nu cuoi",
+                "content": "nụ cười",
                 "type": "text",
-                "semanticLabel": "nu cuoi"
+                "semanticLabel": "nụ cười"
               }
             }
           ],
-          "hint": "Bat dau voi cap con biet ro nhat."
+          "hint": "Bắt đầu với cặp con biết rõ nhất."
         }
       },
       "hints": [
         {
-          "text": "Bat dau voi cap con biet ro nhat."
+          "text": "Bắt đầu với cặp con biết rõ nhất."
         }
       ],
       "metadata": {
@@ -3886,6 +3936,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Match each feeling to the clue.",
+          "learningObjective": "emotion recognition",
           "pairs": [
             {
               "left": {
@@ -3947,71 +3998,72 @@
           "hint": "Start with the pair you know best."
         },
         "vi": {
-          "prompt": "Ghep moi cam xuc voi dau hieu.",
+          "prompt": "Ghép mỗi cảm xúc với dấu hiệu.",
+          "learningObjective": "nhận biết cảm xúc",
           "pairs": [
             {
               "left": {
                 "id": "l0",
-                "content": "mat gian",
+                "content": "mặt giận",
                 "type": "text",
-                "semanticLabel": "mat gian"
+                "semanticLabel": "mặt giận"
               },
               "right": {
                 "id": "r0",
-                "content": "nhan mat",
+                "content": "nhăn mặt",
                 "type": "text",
-                "semanticLabel": "nhan mat"
+                "semanticLabel": "nhăn mặt"
               }
             },
             {
               "left": {
                 "id": "l1",
-                "content": "ngac nhien",
+                "content": "ngạc nhiên",
                 "type": "text",
-                "semanticLabel": "ngac nhien"
+                "semanticLabel": "ngạc nhiên"
               },
               "right": {
                 "id": "r1",
-                "content": "mat tron",
+                "content": "mắt tròn",
                 "type": "text",
-                "semanticLabel": "mat tron"
+                "semanticLabel": "mắt tròn"
               }
             },
             {
               "left": {
                 "id": "l2",
-                "content": "mat vui",
+                "content": "mặt vui",
                 "type": "text",
-                "semanticLabel": "mat vui"
+                "semanticLabel": "mặt vui"
               },
               "right": {
                 "id": "r2",
-                "content": "nu cuoi",
+                "content": "nụ cười",
                 "type": "text",
-                "semanticLabel": "nu cuoi"
+                "semanticLabel": "nụ cười"
               }
             },
             {
               "left": {
                 "id": "l3",
-                "content": "mat buon",
+                "content": "mặt buồn",
                 "type": "text",
-                "semanticLabel": "mat buon"
+                "semanticLabel": "mặt buồn"
               },
               "right": {
                 "id": "r3",
-                "content": "nuoc mat",
+                "content": "nước mắt",
                 "type": "text",
-                "semanticLabel": "nuoc mat"
+                "semanticLabel": "nước mắt"
               }
             }
           ],
-          "hint": "Bat dau voi cap con biet ro nhat."
+          "hint": "Bắt đầu với cặp con biết rõ nhất."
         }
       },
       "hints": [
         {
-          "text": "Bat dau voi cap con biet ro nhat."
+          "text": "Bắt đầu với cặp con biết rõ nhất."
         }
       ],
       "metadata": {
@@ -4041,6 +4093,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Match each feeling to the clue.",
+          "learningObjective": "emotion recognition",
           "pairs": [
             {
               "left": {
@@ -4102,71 +4155,72 @@
           "hint": "Start with the pair you know best."
         },
         "vi": {
-          "prompt": "Ghep moi cam xuc voi dau hieu.",
+          "prompt": "Ghép mỗi cảm xúc với dấu hiệu.",
+          "learningObjective": "nhận biết cảm xúc",
           "pairs": [
             {
               "left": {
                 "id": "l0",
-                "content": "ngac nhien",
+                "content": "ngạc nhiên",
                 "type": "text",
-                "semanticLabel": "ngac nhien"
+                "semanticLabel": "ngạc nhiên"
               },
               "right": {
                 "id": "r0",
-                "content": "mat tron",
+                "content": "mắt tròn",
                 "type": "text",
-                "semanticLabel": "mat tron"
+                "semanticLabel": "mắt tròn"
               }
             },
             {
               "left": {
                 "id": "l1",
-                "content": "mat vui",
+                "content": "mặt vui",
                 "type": "text",
-                "semanticLabel": "mat vui"
+                "semanticLabel": "mặt vui"
               },
               "right": {
                 "id": "r1",
-                "content": "nu cuoi",
+                "content": "nụ cười",
                 "type": "text",
-                "semanticLabel": "nu cuoi"
+                "semanticLabel": "nụ cười"
               }
             },
             {
               "left": {
                 "id": "l2",
-                "content": "mat buon",
+                "content": "mặt buồn",
                 "type": "text",
-                "semanticLabel": "mat buon"
+                "semanticLabel": "mặt buồn"
               },
               "right": {
                 "id": "r2",
-                "content": "nuoc mat",
+                "content": "nước mắt",
                 "type": "text",
-                "semanticLabel": "nuoc mat"
+                "semanticLabel": "nước mắt"
               }
             },
             {
               "left": {
                 "id": "l3",
-                "content": "mat gian",
+                "content": "mặt giận",
                 "type": "text",
-                "semanticLabel": "mat gian"
+                "semanticLabel": "mặt giận"
               },
               "right": {
                 "id": "r3",
-                "content": "nhan mat",
+                "content": "nhăn mặt",
                 "type": "text",
-                "semanticLabel": "nhan mat"
+                "semanticLabel": "nhăn mặt"
               }
             }
           ],
-          "hint": "Bat dau voi cap con biet ro nhat."
+          "hint": "Bắt đầu với cặp con biết rõ nhất."
         }
       },
       "hints": [
         {
-          "text": "Bat dau voi cap con biet ro nhat."
+          "text": "Bắt đầu với cặp con biết rõ nhất."
         }
       ],
       "metadata": {
@@ -4196,6 +4250,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Match each feeling to the clue.",
+          "learningObjective": "emotion recognition",
           "pairs": [
             {
               "left": {
@@ -4257,71 +4312,72 @@
           "hint": "Start with the pair you know best."
         },
         "vi": {
-          "prompt": "Ghep moi cam xuc voi dau hieu.",
+          "prompt": "Ghép mỗi cảm xúc với dấu hiệu.",
+          "learningObjective": "nhận biết cảm xúc",
           "pairs": [
             {
               "left": {
                 "id": "l0",
-                "content": "mat vui",
+                "content": "mặt vui",
                 "type": "text",
-                "semanticLabel": "mat vui"
+                "semanticLabel": "mặt vui"
               },
               "right": {
                 "id": "r0",
-                "content": "nu cuoi",
+                "content": "nụ cười",
                 "type": "text",
-                "semanticLabel": "nu cuoi"
+                "semanticLabel": "nụ cười"
               }
             },
             {
               "left": {
                 "id": "l1",
-                "content": "mat buon",
+                "content": "mặt buồn",
                 "type": "text",
-                "semanticLabel": "mat buon"
+                "semanticLabel": "mặt buồn"
               },
               "right": {
                 "id": "r1",
-                "content": "nuoc mat",
+                "content": "nước mắt",
                 "type": "text",
-                "semanticLabel": "nuoc mat"
+                "semanticLabel": "nước mắt"
               }
             },
             {
               "left": {
                 "id": "l2",
-                "content": "mat gian",
+                "content": "mặt giận",
                 "type": "text",
-                "semanticLabel": "mat gian"
+                "semanticLabel": "mặt giận"
               },
               "right": {
                 "id": "r2",
-                "content": "nhan mat",
+                "content": "nhăn mặt",
                 "type": "text",
-                "semanticLabel": "nhan mat"
+                "semanticLabel": "nhăn mặt"
               }
             },
             {
               "left": {
                 "id": "l3",
-                "content": "ngac nhien",
+                "content": "ngạc nhiên",
                 "type": "text",
-                "semanticLabel": "ngac nhien"
+                "semanticLabel": "ngạc nhiên"
               },
               "right": {
                 "id": "r3",
-                "content": "mat tron",
+                "content": "mắt tròn",
                 "type": "text",
-                "semanticLabel": "mat tron"
+                "semanticLabel": "mắt tròn"
               }
             }
           ],
-          "hint": "Bat dau voi cap con biet ro nhat."
+          "hint": "Bắt đầu với cặp con biết rõ nhất."
         }
       },
       "hints": [
         {
-          "text": "Bat dau voi cap con biet ro nhat."
+          "text": "Bắt đầu với cặp con biết rõ nhất."
         }
       ],
       "metadata": {
@@ -4351,6 +4407,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Match each feeling to the clue.",
+          "learningObjective": "emotion recognition",
           "pairs": [
             {
               "left": {
@@ -4412,71 +4469,72 @@
           "hint": "Start with the pair you know best."
         },
         "vi": {
-          "prompt": "Ghep moi cam xuc voi dau hieu.",
+          "prompt": "Ghép mỗi cảm xúc với dấu hiệu.",
+          "learningObjective": "nhận biết cảm xúc",
           "pairs": [
             {
               "left": {
                 "id": "l0",
-                "content": "mat buon",
+                "content": "mặt buồn",
                 "type": "text",
-                "semanticLabel": "mat buon"
+                "semanticLabel": "mặt buồn"
               },
               "right": {
                 "id": "r0",
-                "content": "nuoc mat",
+                "content": "nước mắt",
                 "type": "text",
-                "semanticLabel": "nuoc mat"
+                "semanticLabel": "nước mắt"
               }
             },
             {
               "left": {
                 "id": "l1",
-                "content": "mat gian",
+                "content": "mặt giận",
                 "type": "text",
-                "semanticLabel": "mat gian"
+                "semanticLabel": "mặt giận"
               },
               "right": {
                 "id": "r1",
-                "content": "nhan mat",
+                "content": "nhăn mặt",
                 "type": "text",
-                "semanticLabel": "nhan mat"
+                "semanticLabel": "nhăn mặt"
               }
             },
             {
               "left": {
                 "id": "l2",
-                "content": "ngac nhien",
+                "content": "ngạc nhiên",
                 "type": "text",
-                "semanticLabel": "ngac nhien"
+                "semanticLabel": "ngạc nhiên"
               },
               "right": {
                 "id": "r2",
-                "content": "mat tron",
+                "content": "mắt tròn",
                 "type": "text",
-                "semanticLabel": "mat tron"
+                "semanticLabel": "mắt tròn"
               }
             },
             {
               "left": {
                 "id": "l3",
-                "content": "mat vui",
+                "content": "mặt vui",
                 "type": "text",
-                "semanticLabel": "mat vui"
+                "semanticLabel": "mặt vui"
               },
               "right": {
                 "id": "r3",
-                "content": "nu cuoi",
+                "content": "nụ cười",
                 "type": "text",
-                "semanticLabel": "nu cuoi"
+                "semanticLabel": "nụ cười"
               }
             }
           ],
-          "hint": "Bat dau voi cap con biet ro nhat."
+          "hint": "Bắt đầu với cặp con biết rõ nhất."
         }
       },
       "hints": [
         {
-          "text": "Bat dau voi cap con biet ro nhat."
+          "text": "Bắt đầu với cặp con biết rõ nhất."
         }
       ],
       "metadata": {
@@ -4506,6 +4564,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Match each feeling to the clue.",
+          "learningObjective": "emotion recognition",
           "pairs": [
             {
               "left": {
@@ -4567,71 +4626,72 @@
           "hint": "Start with the pair you know best."
         },
         "vi": {
-          "prompt": "Ghep moi cam xuc voi dau hieu.",
+          "prompt": "Ghép mỗi cảm xúc với dấu hiệu.",
+          "learningObjective": "nhận biết cảm xúc",
           "pairs": [
             {
               "left": {
                 "id": "l0",
-                "content": "mat gian",
+                "content": "mặt giận",
                 "type": "text",
-                "semanticLabel": "mat gian"
+                "semanticLabel": "mặt giận"
               },
               "right": {
                 "id": "r0",
-                "content": "nhan mat",
+                "content": "nhăn mặt",
                 "type": "text",
-                "semanticLabel": "nhan mat"
+                "semanticLabel": "nhăn mặt"
               }
             },
             {
               "left": {
                 "id": "l1",
-                "content": "ngac nhien",
+                "content": "ngạc nhiên",
                 "type": "text",
-                "semanticLabel": "ngac nhien"
+                "semanticLabel": "ngạc nhiên"
               },
               "right": {
                 "id": "r1",
-                "content": "mat tron",
+                "content": "mắt tròn",
                 "type": "text",
-                "semanticLabel": "mat tron"
+                "semanticLabel": "mắt tròn"
               }
             },
             {
               "left": {
                 "id": "l2",
-                "content": "mat vui",
+                "content": "mặt vui",
                 "type": "text",
-                "semanticLabel": "mat vui"
+                "semanticLabel": "mặt vui"
               },
               "right": {
                 "id": "r2",
-                "content": "nu cuoi",
+                "content": "nụ cười",
                 "type": "text",
-                "semanticLabel": "nu cuoi"
+                "semanticLabel": "nụ cười"
               }
             },
             {
               "left": {
                 "id": "l3",
-                "content": "mat buon",
+                "content": "mặt buồn",
                 "type": "text",
-                "semanticLabel": "mat buon"
+                "semanticLabel": "mặt buồn"
               },
               "right": {
                 "id": "r3",
-                "content": "nuoc mat",
+                "content": "nước mắt",
                 "type": "text",
-                "semanticLabel": "nuoc mat"
+                "semanticLabel": "nước mắt"
               }
             }
           ],
-          "hint": "Bat dau voi cap con biet ro nhat."
+          "hint": "Bắt đầu với cặp con biết rõ nhất."
         }
       },
       "hints": [
         {
-          "text": "Bat dau voi cap con biet ro nhat."
+          "text": "Bắt đầu với cặp con biết rõ nhất."
         }
       ],
       "metadata": {
@@ -4661,6 +4721,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Match each feeling to the clue.",
+          "learningObjective": "emotion recognition",
           "pairs": [
             {
               "left": {
@@ -4722,71 +4783,72 @@
           "hint": "Start with the pair you know best."
         },
         "vi": {
-          "prompt": "Ghep moi cam xuc voi dau hieu.",
+          "prompt": "Ghép mỗi cảm xúc với dấu hiệu.",
+          "learningObjective": "nhận biết cảm xúc",
           "pairs": [
             {
               "left": {
                 "id": "l0",
-                "content": "ngac nhien",
+                "content": "ngạc nhiên",
                 "type": "text",
-                "semanticLabel": "ngac nhien"
+                "semanticLabel": "ngạc nhiên"
               },
               "right": {
                 "id": "r0",
-                "content": "mat tron",
+                "content": "mắt tròn",
                 "type": "text",
-                "semanticLabel": "mat tron"
+                "semanticLabel": "mắt tròn"
               }
             },
             {
               "left": {
                 "id": "l1",
-                "content": "mat vui",
+                "content": "mặt vui",
                 "type": "text",
-                "semanticLabel": "mat vui"
+                "semanticLabel": "mặt vui"
               },
               "right": {
                 "id": "r1",
-                "content": "nu cuoi",
+                "content": "nụ cười",
                 "type": "text",
-                "semanticLabel": "nu cuoi"
+                "semanticLabel": "nụ cười"
               }
             },
             {
               "left": {
                 "id": "l2",
-                "content": "mat buon",
+                "content": "mặt buồn",
                 "type": "text",
-                "semanticLabel": "mat buon"
+                "semanticLabel": "mặt buồn"
               },
               "right": {
                 "id": "r2",
-                "content": "nuoc mat",
+                "content": "nước mắt",
                 "type": "text",
-                "semanticLabel": "nuoc mat"
+                "semanticLabel": "nước mắt"
               }
             },
             {
               "left": {
                 "id": "l3",
-                "content": "mat gian",
+                "content": "mặt giận",
                 "type": "text",
-                "semanticLabel": "mat gian"
+                "semanticLabel": "mặt giận"
               },
               "right": {
                 "id": "r3",
-                "content": "nhan mat",
+                "content": "nhăn mặt",
                 "type": "text",
-                "semanticLabel": "nhan mat"
+                "semanticLabel": "nhăn mặt"
               }
             }
           ],
-          "hint": "Bat dau voi cap con biet ro nhat."
+          "hint": "Bắt đầu với cặp con biết rõ nhất."
         }
       },
       "hints": [
         {
-          "text": "Bat dau voi cap con biet ro nhat."
+          "text": "Bắt đầu với cặp con biết rõ nhất."
         }
       ],
       "metadata": {
@@ -4816,6 +4878,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Match each feeling to the clue.",
+          "learningObjective": "emotion recognition",
           "pairs": [
             {
               "left": {
@@ -4877,71 +4940,72 @@
           "hint": "Start with the pair you know best."
         },
         "vi": {
-          "prompt": "Ghep moi cam xuc voi dau hieu.",
+          "prompt": "Ghép mỗi cảm xúc với dấu hiệu.",
+          "learningObjective": "nhận biết cảm xúc",
           "pairs": [
             {
               "left": {
                 "id": "l0",
-                "content": "mat vui",
+                "content": "mặt vui",
                 "type": "text",
-                "semanticLabel": "mat vui"
+                "semanticLabel": "mặt vui"
               },
               "right": {
                 "id": "r0",
-                "content": "nu cuoi",
+                "content": "nụ cười",
                 "type": "text",
-                "semanticLabel": "nu cuoi"
+                "semanticLabel": "nụ cười"
               }
             },
             {
               "left": {
                 "id": "l1",
-                "content": "mat buon",
+                "content": "mặt buồn",
                 "type": "text",
-                "semanticLabel": "mat buon"
+                "semanticLabel": "mặt buồn"
               },
               "right": {
                 "id": "r1",
-                "content": "nuoc mat",
+                "content": "nước mắt",
                 "type": "text",
-                "semanticLabel": "nuoc mat"
+                "semanticLabel": "nước mắt"
               }
             },
             {
               "left": {
                 "id": "l2",
-                "content": "mat gian",
+                "content": "mặt giận",
                 "type": "text",
-                "semanticLabel": "mat gian"
+                "semanticLabel": "mặt giận"
               },
               "right": {
                 "id": "r2",
-                "content": "nhan mat",
+                "content": "nhăn mặt",
                 "type": "text",
-                "semanticLabel": "nhan mat"
+                "semanticLabel": "nhăn mặt"
               }
             },
             {
               "left": {
                 "id": "l3",
-                "content": "ngac nhien",
+                "content": "ngạc nhiên",
                 "type": "text",
-                "semanticLabel": "ngac nhien"
+                "semanticLabel": "ngạc nhiên"
               },
               "right": {
                 "id": "r3",
-                "content": "mat tron",
+                "content": "mắt tròn",
                 "type": "text",
-                "semanticLabel": "mat tron"
+                "semanticLabel": "mắt tròn"
               }
             }
           ],
-          "hint": "Bat dau voi cap con biet ro nhat."
+          "hint": "Bắt đầu với cặp con biết rõ nhất."
         }
       },
       "hints": [
         {
-          "text": "Bat dau voi cap con biet ro nhat."
+          "text": "Bắt đầu với cặp con biết rõ nhất."
         }
       ],
       "metadata": {
@@ -4971,6 +5035,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Match each feeling to the clue.",
+          "learningObjective": "emotion recognition",
           "pairs": [
             {
               "left": {
@@ -5032,71 +5097,72 @@
           "hint": "Start with the pair you know best."
         },
         "vi": {
-          "prompt": "Ghep moi cam xuc voi dau hieu.",
+          "prompt": "Ghép mỗi cảm xúc với dấu hiệu.",
+          "learningObjective": "nhận biết cảm xúc",
           "pairs": [
             {
               "left": {
                 "id": "l0",
-                "content": "mat buon",
+                "content": "mặt buồn",
                 "type": "text",
-                "semanticLabel": "mat buon"
+                "semanticLabel": "mặt buồn"
               },
               "right": {
                 "id": "r0",
-                "content": "nuoc mat",
+                "content": "nước mắt",
                 "type": "text",
-                "semanticLabel": "nuoc mat"
+                "semanticLabel": "nước mắt"
               }
             },
             {
               "left": {
                 "id": "l1",
-                "content": "mat gian",
+                "content": "mặt giận",
                 "type": "text",
-                "semanticLabel": "mat gian"
+                "semanticLabel": "mặt giận"
               },
               "right": {
                 "id": "r1",
-                "content": "nhan mat",
+                "content": "nhăn mặt",
                 "type": "text",
-                "semanticLabel": "nhan mat"
+                "semanticLabel": "nhăn mặt"
               }
             },
             {
               "left": {
                 "id": "l2",
-                "content": "ngac nhien",
+                "content": "ngạc nhiên",
                 "type": "text",
-                "semanticLabel": "ngac nhien"
+                "semanticLabel": "ngạc nhiên"
               },
               "right": {
                 "id": "r2",
-                "content": "mat tron",
+                "content": "mắt tròn",
                 "type": "text",
-                "semanticLabel": "mat tron"
+                "semanticLabel": "mắt tròn"
               }
             },
             {
               "left": {
                 "id": "l3",
-                "content": "mat vui",
+                "content": "mặt vui",
                 "type": "text",
-                "semanticLabel": "mat vui"
+                "semanticLabel": "mặt vui"
               },
               "right": {
                 "id": "r3",
-                "content": "nu cuoi",
+                "content": "nụ cười",
                 "type": "text",
-                "semanticLabel": "nu cuoi"
+                "semanticLabel": "nụ cười"
               }
             }
           ],
-          "hint": "Bat dau voi cap con biet ro nhat."
+          "hint": "Bắt đầu với cặp con biết rõ nhất."
         }
       },
       "hints": [
         {
-          "text": "Bat dau voi cap con biet ro nhat."
+          "text": "Bắt đầu với cặp con biết rõ nhất."
         }
       ],
       "metadata": {
@@ -5126,6 +5192,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Match each feeling to the clue.",
+          "learningObjective": "emotion recognition",
           "pairs": [
             {
               "left": {
@@ -5187,71 +5254,72 @@
           "hint": "Start with the pair you know best."
         },
         "vi": {
-          "prompt": "Ghep moi cam xuc voi dau hieu.",
+          "prompt": "Ghép mỗi cảm xúc với dấu hiệu.",
+          "learningObjective": "nhận biết cảm xúc",
           "pairs": [
             {
               "left": {
                 "id": "l0",
-                "content": "mat gian",
+                "content": "mặt giận",
                 "type": "text",
-                "semanticLabel": "mat gian"
+                "semanticLabel": "mặt giận"
               },
               "right": {
                 "id": "r0",
-                "content": "nhan mat",
+                "content": "nhăn mặt",
                 "type": "text",
-                "semanticLabel": "nhan mat"
+                "semanticLabel": "nhăn mặt"
               }
             },
             {
               "left": {
                 "id": "l1",
-                "content": "ngac nhien",
+                "content": "ngạc nhiên",
                 "type": "text",
-                "semanticLabel": "ngac nhien"
+                "semanticLabel": "ngạc nhiên"
               },
               "right": {
                 "id": "r1",
-                "content": "mat tron",
+                "content": "mắt tròn",
                 "type": "text",
-                "semanticLabel": "mat tron"
+                "semanticLabel": "mắt tròn"
               }
             },
             {
               "left": {
                 "id": "l2",
-                "content": "mat vui",
+                "content": "mặt vui",
                 "type": "text",
-                "semanticLabel": "mat vui"
+                "semanticLabel": "mặt vui"
               },
               "right": {
                 "id": "r2",
-                "content": "nu cuoi",
+                "content": "nụ cười",
                 "type": "text",
-                "semanticLabel": "nu cuoi"
+                "semanticLabel": "nụ cười"
               }
             },
             {
               "left": {
                 "id": "l3",
-                "content": "mat buon",
+                "content": "mặt buồn",
                 "type": "text",
-                "semanticLabel": "mat buon"
+                "semanticLabel": "mặt buồn"
               },
               "right": {
                 "id": "r3",
-                "content": "nuoc mat",
+                "content": "nước mắt",
                 "type": "text",
-                "semanticLabel": "nuoc mat"
+                "semanticLabel": "nước mắt"
               }
             }
           ],
-          "hint": "Bat dau voi cap con biet ro nhat."
+          "hint": "Bắt đầu với cặp con biết rõ nhất."
         }
       },
       "hints": [
         {
-          "text": "Bat dau voi cap con biet ro nhat."
+          "text": "Bắt đầu với cặp con biết rõ nhất."
         }
       ],
       "metadata": {
@@ -5281,6 +5349,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Match each feeling to the clue.",
+          "learningObjective": "emotion recognition",
           "pairs": [
             {
               "left": {
@@ -5342,71 +5411,72 @@
           "hint": "Start with the pair you know best."
         },
         "vi": {
-          "prompt": "Ghep moi cam xuc voi dau hieu.",
+          "prompt": "Ghép mỗi cảm xúc với dấu hiệu.",
+          "learningObjective": "nhận biết cảm xúc",
           "pairs": [
             {
               "left": {
                 "id": "l0",
-                "content": "ngac nhien",
+                "content": "ngạc nhiên",
                 "type": "text",
-                "semanticLabel": "ngac nhien"
+                "semanticLabel": "ngạc nhiên"
               },
               "right": {
                 "id": "r0",
-                "content": "mat tron",
+                "content": "mắt tròn",
                 "type": "text",
-                "semanticLabel": "mat tron"
+                "semanticLabel": "mắt tròn"
               }
             },
             {
               "left": {
                 "id": "l1",
-                "content": "mat vui",
+                "content": "mặt vui",
                 "type": "text",
-                "semanticLabel": "mat vui"
+                "semanticLabel": "mặt vui"
               },
               "right": {
                 "id": "r1",
-                "content": "nu cuoi",
+                "content": "nụ cười",
                 "type": "text",
-                "semanticLabel": "nu cuoi"
+                "semanticLabel": "nụ cười"
               }
             },
             {
               "left": {
                 "id": "l2",
-                "content": "mat buon",
+                "content": "mặt buồn",
                 "type": "text",
-                "semanticLabel": "mat buon"
+                "semanticLabel": "mặt buồn"
               },
               "right": {
                 "id": "r2",
-                "content": "nuoc mat",
+                "content": "nước mắt",
                 "type": "text",
-                "semanticLabel": "nuoc mat"
+                "semanticLabel": "nước mắt"
               }
             },
             {
               "left": {
                 "id": "l3",
-                "content": "mat gian",
+                "content": "mặt giận",
                 "type": "text",
-                "semanticLabel": "mat gian"
+                "semanticLabel": "mặt giận"
               },
               "right": {
                 "id": "r3",
-                "content": "nhan mat",
+                "content": "nhăn mặt",
                 "type": "text",
-                "semanticLabel": "nhan mat"
+                "semanticLabel": "nhăn mặt"
               }
             }
           ],
-          "hint": "Bat dau voi cap con biet ro nhat."
+          "hint": "Bắt đầu với cặp con biết rõ nhất."
         }
       },
       "hints": [
         {
-          "text": "Bat dau voi cap con biet ro nhat."
+          "text": "Bắt đầu với cặp con biết rõ nhất."
         }
       ],
       "metadata": {
@@ -5436,6 +5506,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Match each feeling to the clue.",
+          "learningObjective": "emotion recognition",
           "pairs": [
             {
               "left": {
@@ -5497,71 +5568,72 @@
           "hint": "Start with the pair you know best."
         },
         "vi": {
-          "prompt": "Ghep moi cam xuc voi dau hieu.",
+          "prompt": "Ghép mỗi cảm xúc với dấu hiệu.",
+          "learningObjective": "nhận biết cảm xúc",
           "pairs": [
             {
               "left": {
                 "id": "l0",
-                "content": "mat vui",
+                "content": "mặt vui",
                 "type": "text",
-                "semanticLabel": "mat vui"
+                "semanticLabel": "mặt vui"
               },
               "right": {
                 "id": "r0",
-                "content": "nu cuoi",
+                "content": "nụ cười",
                 "type": "text",
-                "semanticLabel": "nu cuoi"
+                "semanticLabel": "nụ cười"
               }
             },
             {
               "left": {
                 "id": "l1",
-                "content": "mat buon",
+                "content": "mặt buồn",
                 "type": "text",
-                "semanticLabel": "mat buon"
+                "semanticLabel": "mặt buồn"
               },
               "right": {
                 "id": "r1",
-                "content": "nuoc mat",
+                "content": "nước mắt",
                 "type": "text",
-                "semanticLabel": "nuoc mat"
+                "semanticLabel": "nước mắt"
               }
             },
             {
               "left": {
                 "id": "l2",
-                "content": "mat gian",
+                "content": "mặt giận",
                 "type": "text",
-                "semanticLabel": "mat gian"
+                "semanticLabel": "mặt giận"
               },
               "right": {
                 "id": "r2",
-                "content": "nhan mat",
+                "content": "nhăn mặt",
                 "type": "text",
-                "semanticLabel": "nhan mat"
+                "semanticLabel": "nhăn mặt"
               }
             },
             {
               "left": {
                 "id": "l3",
-                "content": "ngac nhien",
+                "content": "ngạc nhiên",
                 "type": "text",
-                "semanticLabel": "ngac nhien"
+                "semanticLabel": "ngạc nhiên"
               },
               "right": {
                 "id": "r3",
-                "content": "mat tron",
+                "content": "mắt tròn",
                 "type": "text",
-                "semanticLabel": "mat tron"
+                "semanticLabel": "mắt tròn"
               }
             }
           ],
-          "hint": "Bat dau voi cap con biet ro nhat."
+          "hint": "Bắt đầu với cặp con biết rõ nhất."
         }
       },
       "hints": [
         {
-          "text": "Bat dau voi cap con biet ro nhat."
+          "text": "Bắt đầu với cặp con biết rõ nhất."
         }
       ],
       "metadata": {
@@ -5591,6 +5663,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Match each feeling to the clue.",
+          "learningObjective": "emotion recognition",
           "pairs": [
             {
               "left": {
@@ -5652,71 +5725,72 @@
           "hint": "Start with the pair you know best."
         },
         "vi": {
-          "prompt": "Ghep moi cam xuc voi dau hieu.",
+          "prompt": "Ghép mỗi cảm xúc với dấu hiệu.",
+          "learningObjective": "nhận biết cảm xúc",
           "pairs": [
             {
               "left": {
                 "id": "l0",
-                "content": "mat buon",
+                "content": "mặt buồn",
                 "type": "text",
-                "semanticLabel": "mat buon"
+                "semanticLabel": "mặt buồn"
               },
               "right": {
                 "id": "r0",
-                "content": "nuoc mat",
+                "content": "nước mắt",
                 "type": "text",
-                "semanticLabel": "nuoc mat"
+                "semanticLabel": "nước mắt"
               }
             },
             {
               "left": {
                 "id": "l1",
-                "content": "mat gian",
+                "content": "mặt giận",
                 "type": "text",
-                "semanticLabel": "mat gian"
+                "semanticLabel": "mặt giận"
               },
               "right": {
                 "id": "r1",
-                "content": "nhan mat",
+                "content": "nhăn mặt",
                 "type": "text",
-                "semanticLabel": "nhan mat"
+                "semanticLabel": "nhăn mặt"
               }
             },
             {
               "left": {
                 "id": "l2",
-                "content": "ngac nhien",
+                "content": "ngạc nhiên",
                 "type": "text",
-                "semanticLabel": "ngac nhien"
+                "semanticLabel": "ngạc nhiên"
               },
               "right": {
                 "id": "r2",
-                "content": "mat tron",
+                "content": "mắt tròn",
                 "type": "text",
-                "semanticLabel": "mat tron"
+                "semanticLabel": "mắt tròn"
               }
             },
             {
               "left": {
                 "id": "l3",
-                "content": "mat vui",
+                "content": "mặt vui",
                 "type": "text",
-                "semanticLabel": "mat vui"
+                "semanticLabel": "mặt vui"
               },
               "right": {
                 "id": "r3",
-                "content": "nu cuoi",
+                "content": "nụ cười",
                 "type": "text",
-                "semanticLabel": "nu cuoi"
+                "semanticLabel": "nụ cười"
               }
             }
           ],
-          "hint": "Bat dau voi cap con biet ro nhat."
+          "hint": "Bắt đầu với cặp con biết rõ nhất."
         }
       },
       "hints": [
         {
-          "text": "Bat dau voi cap con biet ro nhat."
+          "text": "Bắt đầu với cặp con biết rõ nhất."
         }
       ],
       "metadata": {
@@ -5746,6 +5820,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Match each feeling to the clue.",
+          "learningObjective": "emotion recognition",
           "pairs": [
             {
               "left": {
@@ -5807,71 +5882,72 @@
           "hint": "Start with the pair you know best."
         },
         "vi": {
-          "prompt": "Ghep moi cam xuc voi dau hieu.",
+          "prompt": "Ghép mỗi cảm xúc với dấu hiệu.",
+          "learningObjective": "nhận biết cảm xúc",
           "pairs": [
             {
               "left": {
                 "id": "l0",
-                "content": "mat gian",
+                "content": "mặt giận",
                 "type": "text",
-                "semanticLabel": "mat gian"
+                "semanticLabel": "mặt giận"
               },
               "right": {
                 "id": "r0",
-                "content": "nhan mat",
+                "content": "nhăn mặt",
                 "type": "text",
-                "semanticLabel": "nhan mat"
+                "semanticLabel": "nhăn mặt"
               }
             },
             {
               "left": {
                 "id": "l1",
-                "content": "ngac nhien",
+                "content": "ngạc nhiên",
                 "type": "text",
-                "semanticLabel": "ngac nhien"
+                "semanticLabel": "ngạc nhiên"
               },
               "right": {
                 "id": "r1",
-                "content": "mat tron",
+                "content": "mắt tròn",
                 "type": "text",
-                "semanticLabel": "mat tron"
+                "semanticLabel": "mắt tròn"
               }
             },
             {
               "left": {
                 "id": "l2",
-                "content": "mat vui",
+                "content": "mặt vui",
                 "type": "text",
-                "semanticLabel": "mat vui"
+                "semanticLabel": "mặt vui"
               },
               "right": {
                 "id": "r2",
-                "content": "nu cuoi",
+                "content": "nụ cười",
                 "type": "text",
-                "semanticLabel": "nu cuoi"
+                "semanticLabel": "nụ cười"
               }
             },
             {
               "left": {
                 "id": "l3",
-                "content": "mat buon",
+                "content": "mặt buồn",
                 "type": "text",
-                "semanticLabel": "mat buon"
+                "semanticLabel": "mặt buồn"
               },
               "right": {
                 "id": "r3",
-                "content": "nuoc mat",
+                "content": "nước mắt",
                 "type": "text",
-                "semanticLabel": "nuoc mat"
+                "semanticLabel": "nước mắt"
               }
             }
           ],
-          "hint": "Bat dau voi cap con biet ro nhat."
+          "hint": "Bắt đầu với cặp con biết rõ nhất."
         }
       },
       "hints": [
         {
-          "text": "Bat dau voi cap con biet ro nhat."
+          "text": "Bắt đầu với cặp con biết rõ nhất."
         }
       ],
       "metadata": {
@@ -5901,6 +5977,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Match each feeling to the clue.",
+          "learningObjective": "emotion recognition",
           "pairs": [
             {
               "left": {
@@ -5962,71 +6039,72 @@
           "hint": "Start with the pair you know best."
         },
         "vi": {
-          "prompt": "Ghep moi cam xuc voi dau hieu.",
+          "prompt": "Ghép mỗi cảm xúc với dấu hiệu.",
+          "learningObjective": "nhận biết cảm xúc",
           "pairs": [
             {
               "left": {
                 "id": "l0",
-                "content": "ngac nhien",
+                "content": "ngạc nhiên",
                 "type": "text",
-                "semanticLabel": "ngac nhien"
+                "semanticLabel": "ngạc nhiên"
               },
               "right": {
                 "id": "r0",
-                "content": "mat tron",
+                "content": "mắt tròn",
                 "type": "text",
-                "semanticLabel": "mat tron"
+                "semanticLabel": "mắt tròn"
               }
             },
             {
               "left": {
                 "id": "l1",
-                "content": "mat vui",
+                "content": "mặt vui",
                 "type": "text",
-                "semanticLabel": "mat vui"
+                "semanticLabel": "mặt vui"
               },
               "right": {
                 "id": "r1",
-                "content": "nu cuoi",
+                "content": "nụ cười",
                 "type": "text",
-                "semanticLabel": "nu cuoi"
+                "semanticLabel": "nụ cười"
               }
             },
             {
               "left": {
                 "id": "l2",
-                "content": "mat buon",
+                "content": "mặt buồn",
                 "type": "text",
-                "semanticLabel": "mat buon"
+                "semanticLabel": "mặt buồn"
               },
               "right": {
                 "id": "r2",
-                "content": "nuoc mat",
+                "content": "nước mắt",
                 "type": "text",
-                "semanticLabel": "nuoc mat"
+                "semanticLabel": "nước mắt"
               }
             },
             {
               "left": {
                 "id": "l3",
-                "content": "mat gian",
+                "content": "mặt giận",
                 "type": "text",
-                "semanticLabel": "mat gian"
+                "semanticLabel": "mặt giận"
               },
               "right": {
                 "id": "r3",
-                "content": "nhan mat",
+                "content": "nhăn mặt",
                 "type": "text",
-                "semanticLabel": "nhan mat"
+                "semanticLabel": "nhăn mặt"
               }
             }
           ],
-          "hint": "Bat dau voi cap con biet ro nhat."
+          "hint": "Bắt đầu với cặp con biết rõ nhất."
         }
       },
       "hints": [
         {
-          "text": "Bat dau voi cap con biet ro nhat."
+          "text": "Bắt đầu với cặp con biết rõ nhất."
         }
       ],
       "metadata": {
@@ -6056,6 +6134,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Match each feeling to the clue.",
+          "learningObjective": "emotion recognition",
           "pairs": [
             {
               "left": {
@@ -6117,71 +6196,72 @@
           "hint": "Start with the pair you know best."
         },
         "vi": {
-          "prompt": "Ghep moi cam xuc voi dau hieu.",
+          "prompt": "Ghép mỗi cảm xúc với dấu hiệu.",
+          "learningObjective": "nhận biết cảm xúc",
           "pairs": [
             {
               "left": {
                 "id": "l0",
-                "content": "mat vui",
+                "content": "mặt vui",
                 "type": "text",
-                "semanticLabel": "mat vui"
+                "semanticLabel": "mặt vui"
               },
               "right": {
                 "id": "r0",
-                "content": "nu cuoi",
+                "content": "nụ cười",
                 "type": "text",
-                "semanticLabel": "nu cuoi"
+                "semanticLabel": "nụ cười"
               }
             },
             {
               "left": {
                 "id": "l1",
-                "content": "mat buon",
+                "content": "mặt buồn",
                 "type": "text",
-                "semanticLabel": "mat buon"
+                "semanticLabel": "mặt buồn"
               },
               "right": {
                 "id": "r1",
-                "content": "nuoc mat",
+                "content": "nước mắt",
                 "type": "text",
-                "semanticLabel": "nuoc mat"
+                "semanticLabel": "nước mắt"
               }
             },
             {
               "left": {
                 "id": "l2",
-                "content": "mat gian",
+                "content": "mặt giận",
                 "type": "text",
-                "semanticLabel": "mat gian"
+                "semanticLabel": "mặt giận"
               },
               "right": {
                 "id": "r2",
-                "content": "nhan mat",
+                "content": "nhăn mặt",
                 "type": "text",
-                "semanticLabel": "nhan mat"
+                "semanticLabel": "nhăn mặt"
               }
             },
             {
               "left": {
                 "id": "l3",
-                "content": "ngac nhien",
+                "content": "ngạc nhiên",
                 "type": "text",
-                "semanticLabel": "ngac nhien"
+                "semanticLabel": "ngạc nhiên"
               },
               "right": {
                 "id": "r3",
-                "content": "mat tron",
+                "content": "mắt tròn",
                 "type": "text",
-                "semanticLabel": "mat tron"
+                "semanticLabel": "mắt tròn"
               }
             }
           ],
-          "hint": "Bat dau voi cap con biet ro nhat."
+          "hint": "Bắt đầu với cặp con biết rõ nhất."
         }
       },
       "hints": [
         {
-          "text": "Bat dau voi cap con biet ro nhat."
+          "text": "Bắt đầu với cặp con biết rõ nhất."
         }
       ],
       "metadata": {
@@ -6211,6 +6291,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Match each feeling to the clue.",
+          "learningObjective": "emotion recognition",
           "pairs": [
             {
               "left": {
@@ -6272,71 +6353,72 @@
           "hint": "Start with the pair you know best."
         },
         "vi": {
-          "prompt": "Ghep moi cam xuc voi dau hieu.",
+          "prompt": "Ghép mỗi cảm xúc với dấu hiệu.",
+          "learningObjective": "nhận biết cảm xúc",
           "pairs": [
             {
               "left": {
                 "id": "l0",
-                "content": "mat buon",
+                "content": "mặt buồn",
                 "type": "text",
-                "semanticLabel": "mat buon"
+                "semanticLabel": "mặt buồn"
               },
               "right": {
                 "id": "r0",
-                "content": "nuoc mat",
+                "content": "nước mắt",
                 "type": "text",
-                "semanticLabel": "nuoc mat"
+                "semanticLabel": "nước mắt"
               }
             },
             {
               "left": {
                 "id": "l1",
-                "content": "mat gian",
+                "content": "mặt giận",
                 "type": "text",
-                "semanticLabel": "mat gian"
+                "semanticLabel": "mặt giận"
               },
               "right": {
                 "id": "r1",
-                "content": "nhan mat",
+                "content": "nhăn mặt",
                 "type": "text",
-                "semanticLabel": "nhan mat"
+                "semanticLabel": "nhăn mặt"
               }
             },
             {
               "left": {
                 "id": "l2",
-                "content": "ngac nhien",
+                "content": "ngạc nhiên",
                 "type": "text",
-                "semanticLabel": "ngac nhien"
+                "semanticLabel": "ngạc nhiên"
               },
               "right": {
                 "id": "r2",
-                "content": "mat tron",
+                "content": "mắt tròn",
                 "type": "text",
-                "semanticLabel": "mat tron"
+                "semanticLabel": "mắt tròn"
               }
             },
             {
               "left": {
                 "id": "l3",
-                "content": "mat vui",
+                "content": "mặt vui",
                 "type": "text",
-                "semanticLabel": "mat vui"
+                "semanticLabel": "mặt vui"
               },
               "right": {
                 "id": "r3",
-                "content": "nu cuoi",
+                "content": "nụ cười",
                 "type": "text",
-                "semanticLabel": "nu cuoi"
+                "semanticLabel": "nụ cười"
               }
             }
           ],
-          "hint": "Bat dau voi cap con biet ro nhat."
+          "hint": "Bắt đầu với cặp con biết rõ nhất."
         }
       },
       "hints": [
         {
-          "text": "Bat dau voi cap con biet ro nhat."
+          "text": "Bắt đầu với cặp con biết rõ nhất."
         }
       ],
       "metadata": {
@@ -6366,6 +6448,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Match each feeling to the clue.",
+          "learningObjective": "emotion recognition",
           "pairs": [
             {
               "left": {
@@ -6427,71 +6510,72 @@
           "hint": "Start with the pair you know best."
         },
         "vi": {
-          "prompt": "Ghep moi cam xuc voi dau hieu.",
+          "prompt": "Ghép mỗi cảm xúc với dấu hiệu.",
+          "learningObjective": "nhận biết cảm xúc",
           "pairs": [
             {
               "left": {
                 "id": "l0",
-                "content": "mat gian",
+                "content": "mặt giận",
                 "type": "text",
-                "semanticLabel": "mat gian"
+                "semanticLabel": "mặt giận"
               },
               "right": {
                 "id": "r0",
-                "content": "nhan mat",
+                "content": "nhăn mặt",
                 "type": "text",
-                "semanticLabel": "nhan mat"
+                "semanticLabel": "nhăn mặt"
               }
             },
             {
               "left": {
                 "id": "l1",
-                "content": "ngac nhien",
+                "content": "ngạc nhiên",
                 "type": "text",
-                "semanticLabel": "ngac nhien"
+                "semanticLabel": "ngạc nhiên"
               },
               "right": {
                 "id": "r1",
-                "content": "mat tron",
+                "content": "mắt tròn",
                 "type": "text",
-                "semanticLabel": "mat tron"
+                "semanticLabel": "mắt tròn"
               }
             },
             {
               "left": {
                 "id": "l2",
-                "content": "mat vui",
+                "content": "mặt vui",
                 "type": "text",
-                "semanticLabel": "mat vui"
+                "semanticLabel": "mặt vui"
               },
               "right": {
                 "id": "r2",
-                "content": "nu cuoi",
+                "content": "nụ cười",
                 "type": "text",
-                "semanticLabel": "nu cuoi"
+                "semanticLabel": "nụ cười"
               }
             },
             {
               "left": {
                 "id": "l3",
-                "content": "mat buon",
+                "content": "mặt buồn",
                 "type": "text",
-                "semanticLabel": "mat buon"
+                "semanticLabel": "mặt buồn"
               },
               "right": {
                 "id": "r3",
-                "content": "nuoc mat",
+                "content": "nước mắt",
                 "type": "text",
-                "semanticLabel": "nuoc mat"
+                "semanticLabel": "nước mắt"
               }
             }
           ],
-          "hint": "Bat dau voi cap con biet ro nhat."
+          "hint": "Bắt đầu với cặp con biết rõ nhất."
         }
       },
       "hints": [
         {
-          "text": "Bat dau voi cap con biet ro nhat."
+          "text": "Bắt đầu với cặp con biết rõ nhất."
         }
       ],
       "metadata": {
@@ -6521,6 +6605,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Match each feeling to the clue.",
+          "learningObjective": "emotion recognition",
           "pairs": [
             {
               "left": {
@@ -6582,71 +6667,72 @@
           "hint": "Start with the pair you know best."
         },
         "vi": {
-          "prompt": "Ghep moi cam xuc voi dau hieu.",
+          "prompt": "Ghép mỗi cảm xúc với dấu hiệu.",
+          "learningObjective": "nhận biết cảm xúc",
           "pairs": [
             {
               "left": {
                 "id": "l0",
-                "content": "ngac nhien",
+                "content": "ngạc nhiên",
                 "type": "text",
-                "semanticLabel": "ngac nhien"
+                "semanticLabel": "ngạc nhiên"
               },
               "right": {
                 "id": "r0",
-                "content": "mat tron",
+                "content": "mắt tròn",
                 "type": "text",
-                "semanticLabel": "mat tron"
+                "semanticLabel": "mắt tròn"
               }
             },
             {
               "left": {
                 "id": "l1",
-                "content": "mat vui",
+                "content": "mặt vui",
                 "type": "text",
-                "semanticLabel": "mat vui"
+                "semanticLabel": "mặt vui"
               },
               "right": {
                 "id": "r1",
-                "content": "nu cuoi",
+                "content": "nụ cười",
                 "type": "text",
-                "semanticLabel": "nu cuoi"
+                "semanticLabel": "nụ cười"
               }
             },
             {
               "left": {
                 "id": "l2",
-                "content": "mat buon",
+                "content": "mặt buồn",
                 "type": "text",
-                "semanticLabel": "mat buon"
+                "semanticLabel": "mặt buồn"
               },
               "right": {
                 "id": "r2",
-                "content": "nuoc mat",
+                "content": "nước mắt",
                 "type": "text",
-                "semanticLabel": "nuoc mat"
+                "semanticLabel": "nước mắt"
               }
             },
             {
               "left": {
                 "id": "l3",
-                "content": "mat gian",
+                "content": "mặt giận",
                 "type": "text",
-                "semanticLabel": "mat gian"
+                "semanticLabel": "mặt giận"
               },
               "right": {
                 "id": "r3",
-                "content": "nhan mat",
+                "content": "nhăn mặt",
                 "type": "text",
-                "semanticLabel": "nhan mat"
+                "semanticLabel": "nhăn mặt"
               }
             }
           ],
-          "hint": "Bat dau voi cap con biet ro nhat."
+          "hint": "Bắt đầu với cặp con biết rõ nhất."
         }
       },
       "hints": [
         {
-          "text": "Bat dau voi cap con biet ro nhat."
+          "text": "Bắt đầu với cặp con biết rõ nhất."
         }
       ],
       "metadata": {
@@ -6676,6 +6762,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Match each feeling to the clue.",
+          "learningObjective": "emotion recognition",
           "pairs": [
             {
               "left": {
@@ -6737,71 +6824,72 @@
           "hint": "Start with the pair you know best."
         },
         "vi": {
-          "prompt": "Ghep moi cam xuc voi dau hieu.",
+          "prompt": "Ghép mỗi cảm xúc với dấu hiệu.",
+          "learningObjective": "nhận biết cảm xúc",
           "pairs": [
             {
               "left": {
                 "id": "l0",
-                "content": "mat vui",
+                "content": "mặt vui",
                 "type": "text",
-                "semanticLabel": "mat vui"
+                "semanticLabel": "mặt vui"
               },
               "right": {
                 "id": "r0",
-                "content": "nu cuoi",
+                "content": "nụ cười",
                 "type": "text",
-                "semanticLabel": "nu cuoi"
+                "semanticLabel": "nụ cười"
               }
             },
             {
               "left": {
                 "id": "l1",
-                "content": "mat buon",
+                "content": "mặt buồn",
                 "type": "text",
-                "semanticLabel": "mat buon"
+                "semanticLabel": "mặt buồn"
               },
               "right": {
                 "id": "r1",
-                "content": "nuoc mat",
+                "content": "nước mắt",
                 "type": "text",
-                "semanticLabel": "nuoc mat"
+                "semanticLabel": "nước mắt"
               }
             },
             {
               "left": {
                 "id": "l2",
-                "content": "mat gian",
+                "content": "mặt giận",
                 "type": "text",
-                "semanticLabel": "mat gian"
+                "semanticLabel": "mặt giận"
               },
               "right": {
                 "id": "r2",
-                "content": "nhan mat",
+                "content": "nhăn mặt",
                 "type": "text",
-                "semanticLabel": "nhan mat"
+                "semanticLabel": "nhăn mặt"
               }
             },
             {
               "left": {
                 "id": "l3",
-                "content": "ngac nhien",
+                "content": "ngạc nhiên",
                 "type": "text",
-                "semanticLabel": "ngac nhien"
+                "semanticLabel": "ngạc nhiên"
               },
               "right": {
                 "id": "r3",
-                "content": "mat tron",
+                "content": "mắt tròn",
                 "type": "text",
-                "semanticLabel": "mat tron"
+                "semanticLabel": "mắt tròn"
               }
             }
           ],
-          "hint": "Bat dau voi cap con biet ro nhat."
+          "hint": "Bắt đầu với cặp con biết rõ nhất."
         }
       },
       "hints": [
         {
-          "text": "Bat dau voi cap con biet ro nhat."
+          "text": "Bắt đầu với cặp con biết rõ nhất."
         }
       ],
       "metadata": {
@@ -6831,6 +6919,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Match each feeling to the clue.",
+          "learningObjective": "emotion recognition",
           "pairs": [
             {
               "left": {
@@ -6892,71 +6981,72 @@
           "hint": "Start with the pair you know best."
         },
         "vi": {
-          "prompt": "Ghep moi cam xuc voi dau hieu.",
+          "prompt": "Ghép mỗi cảm xúc với dấu hiệu.",
+          "learningObjective": "nhận biết cảm xúc",
           "pairs": [
             {
               "left": {
                 "id": "l0",
-                "content": "mat buon",
+                "content": "mặt buồn",
                 "type": "text",
-                "semanticLabel": "mat buon"
+                "semanticLabel": "mặt buồn"
               },
               "right": {
                 "id": "r0",
-                "content": "nuoc mat",
+                "content": "nước mắt",
                 "type": "text",
-                "semanticLabel": "nuoc mat"
+                "semanticLabel": "nước mắt"
               }
             },
             {
               "left": {
                 "id": "l1",
-                "content": "mat gian",
+                "content": "mặt giận",
                 "type": "text",
-                "semanticLabel": "mat gian"
+                "semanticLabel": "mặt giận"
               },
               "right": {
                 "id": "r1",
-                "content": "nhan mat",
+                "content": "nhăn mặt",
                 "type": "text",
-                "semanticLabel": "nhan mat"
+                "semanticLabel": "nhăn mặt"
               }
             },
             {
               "left": {
                 "id": "l2",
-                "content": "ngac nhien",
+                "content": "ngạc nhiên",
                 "type": "text",
-                "semanticLabel": "ngac nhien"
+                "semanticLabel": "ngạc nhiên"
               },
               "right": {
                 "id": "r2",
-                "content": "mat tron",
+                "content": "mắt tròn",
                 "type": "text",
-                "semanticLabel": "mat tron"
+                "semanticLabel": "mắt tròn"
               }
             },
             {
               "left": {
                 "id": "l3",
-                "content": "mat vui",
+                "content": "mặt vui",
                 "type": "text",
-                "semanticLabel": "mat vui"
+                "semanticLabel": "mặt vui"
               },
               "right": {
                 "id": "r3",
-                "content": "nu cuoi",
+                "content": "nụ cười",
                 "type": "text",
-                "semanticLabel": "nu cuoi"
+                "semanticLabel": "nụ cười"
               }
             }
           ],
-          "hint": "Bat dau voi cap con biet ro nhat."
+          "hint": "Bắt đầu với cặp con biết rõ nhất."
         }
       },
       "hints": [
         {
-          "text": "Bat dau voi cap con biet ro nhat."
+          "text": "Bắt đầu với cặp con biết rõ nhất."
         }
       ],
       "metadata": {
@@ -6986,6 +7076,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Match each feeling to the clue.",
+          "learningObjective": "emotion recognition",
           "pairs": [
             {
               "left": {
@@ -7047,71 +7138,72 @@
           "hint": "Start with the pair you know best."
         },
         "vi": {
-          "prompt": "Ghep moi cam xuc voi dau hieu.",
+          "prompt": "Ghép mỗi cảm xúc với dấu hiệu.",
+          "learningObjective": "nhận biết cảm xúc",
           "pairs": [
             {
               "left": {
                 "id": "l0",
-                "content": "mat gian",
+                "content": "mặt giận",
                 "type": "text",
-                "semanticLabel": "mat gian"
+                "semanticLabel": "mặt giận"
               },
               "right": {
                 "id": "r0",
-                "content": "nhan mat",
+                "content": "nhăn mặt",
                 "type": "text",
-                "semanticLabel": "nhan mat"
+                "semanticLabel": "nhăn mặt"
               }
             },
             {
               "left": {
                 "id": "l1",
-                "content": "ngac nhien",
+                "content": "ngạc nhiên",
                 "type": "text",
-                "semanticLabel": "ngac nhien"
+                "semanticLabel": "ngạc nhiên"
               },
               "right": {
                 "id": "r1",
-                "content": "mat tron",
+                "content": "mắt tròn",
                 "type": "text",
-                "semanticLabel": "mat tron"
+                "semanticLabel": "mắt tròn"
               }
             },
             {
               "left": {
                 "id": "l2",
-                "content": "mat vui",
+                "content": "mặt vui",
                 "type": "text",
-                "semanticLabel": "mat vui"
+                "semanticLabel": "mặt vui"
               },
               "right": {
                 "id": "r2",
-                "content": "nu cuoi",
+                "content": "nụ cười",
                 "type": "text",
-                "semanticLabel": "nu cuoi"
+                "semanticLabel": "nụ cười"
               }
             },
             {
               "left": {
                 "id": "l3",
-                "content": "mat buon",
+                "content": "mặt buồn",
                 "type": "text",
-                "semanticLabel": "mat buon"
+                "semanticLabel": "mặt buồn"
               },
               "right": {
                 "id": "r3",
-                "content": "nuoc mat",
+                "content": "nước mắt",
                 "type": "text",
-                "semanticLabel": "nuoc mat"
+                "semanticLabel": "nước mắt"
               }
             }
           ],
-          "hint": "Bat dau voi cap con biet ro nhat."
+          "hint": "Bắt đầu với cặp con biết rõ nhất."
         }
       },
       "hints": [
         {
-          "text": "Bat dau voi cap con biet ro nhat."
+          "text": "Bắt đầu với cặp con biết rõ nhất."
         }
       ],
       "metadata": {
@@ -7141,6 +7233,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Match each feeling to the clue.",
+          "learningObjective": "emotion recognition",
           "pairs": [
             {
               "left": {
@@ -7202,71 +7295,72 @@
           "hint": "Start with the pair you know best."
         },
         "vi": {
-          "prompt": "Ghep moi cam xuc voi dau hieu.",
+          "prompt": "Ghép mỗi cảm xúc với dấu hiệu.",
+          "learningObjective": "nhận biết cảm xúc",
           "pairs": [
             {
               "left": {
                 "id": "l0",
-                "content": "ngac nhien",
+                "content": "ngạc nhiên",
                 "type": "text",
-                "semanticLabel": "ngac nhien"
+                "semanticLabel": "ngạc nhiên"
               },
               "right": {
                 "id": "r0",
-                "content": "mat tron",
+                "content": "mắt tròn",
                 "type": "text",
-                "semanticLabel": "mat tron"
+                "semanticLabel": "mắt tròn"
               }
             },
             {
               "left": {
                 "id": "l1",
-                "content": "mat vui",
+                "content": "mặt vui",
                 "type": "text",
-                "semanticLabel": "mat vui"
+                "semanticLabel": "mặt vui"
               },
               "right": {
                 "id": "r1",
-                "content": "nu cuoi",
+                "content": "nụ cười",
                 "type": "text",
-                "semanticLabel": "nu cuoi"
+                "semanticLabel": "nụ cười"
               }
             },
             {
               "left": {
                 "id": "l2",
-                "content": "mat buon",
+                "content": "mặt buồn",
                 "type": "text",
-                "semanticLabel": "mat buon"
+                "semanticLabel": "mặt buồn"
               },
               "right": {
                 "id": "r2",
-                "content": "nuoc mat",
+                "content": "nước mắt",
                 "type": "text",
-                "semanticLabel": "nuoc mat"
+                "semanticLabel": "nước mắt"
               }
             },
             {
               "left": {
                 "id": "l3",
-                "content": "mat gian",
+                "content": "mặt giận",
                 "type": "text",
-                "semanticLabel": "mat gian"
+                "semanticLabel": "mặt giận"
               },
               "right": {
                 "id": "r3",
-                "content": "nhan mat",
+                "content": "nhăn mặt",
                 "type": "text",
-                "semanticLabel": "nhan mat"
+                "semanticLabel": "nhăn mặt"
               }
             }
           ],
-          "hint": "Bat dau voi cap con biet ro nhat."
+          "hint": "Bắt đầu với cặp con biết rõ nhất."
         }
       },
       "hints": [
         {
-          "text": "Bat dau voi cap con biet ro nhat."
+          "text": "Bắt đầu với cặp con biết rõ nhất."
         }
       ],
       "metadata": {
@@ -7296,6 +7390,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Match each feeling to the clue.",
+          "learningObjective": "emotion recognition",
           "pairs": [
             {
               "left": {
@@ -7357,71 +7452,72 @@
           "hint": "Start with the pair you know best."
         },
         "vi": {
-          "prompt": "Ghep moi cam xuc voi dau hieu.",
+          "prompt": "Ghép mỗi cảm xúc với dấu hiệu.",
+          "learningObjective": "nhận biết cảm xúc",
           "pairs": [
             {
               "left": {
                 "id": "l0",
-                "content": "mat vui",
+                "content": "mặt vui",
                 "type": "text",
-                "semanticLabel": "mat vui"
+                "semanticLabel": "mặt vui"
               },
               "right": {
                 "id": "r0",
-                "content": "nu cuoi",
+                "content": "nụ cười",
                 "type": "text",
-                "semanticLabel": "nu cuoi"
+                "semanticLabel": "nụ cười"
               }
             },
             {
               "left": {
                 "id": "l1",
-                "content": "mat buon",
+                "content": "mặt buồn",
                 "type": "text",
-                "semanticLabel": "mat buon"
+                "semanticLabel": "mặt buồn"
               },
               "right": {
                 "id": "r1",
-                "content": "nuoc mat",
+                "content": "nước mắt",
                 "type": "text",
-                "semanticLabel": "nuoc mat"
+                "semanticLabel": "nước mắt"
               }
             },
             {
               "left": {
                 "id": "l2",
-                "content": "mat gian",
+                "content": "mặt giận",
                 "type": "text",
-                "semanticLabel": "mat gian"
+                "semanticLabel": "mặt giận"
               },
               "right": {
                 "id": "r2",
-                "content": "nhan mat",
+                "content": "nhăn mặt",
                 "type": "text",
-                "semanticLabel": "nhan mat"
+                "semanticLabel": "nhăn mặt"
               }
             },
             {
               "left": {
                 "id": "l3",
-                "content": "ngac nhien",
+                "content": "ngạc nhiên",
                 "type": "text",
-                "semanticLabel": "ngac nhien"
+                "semanticLabel": "ngạc nhiên"
               },
               "right": {
                 "id": "r3",
-                "content": "mat tron",
+                "content": "mắt tròn",
                 "type": "text",
-                "semanticLabel": "mat tron"
+                "semanticLabel": "mắt tròn"
               }
             }
           ],
-          "hint": "Bat dau voi cap con biet ro nhat."
+          "hint": "Bắt đầu với cặp con biết rõ nhất."
         }
       },
       "hints": [
         {
-          "text": "Bat dau voi cap con biet ro nhat."
+          "text": "Bắt đầu với cặp con biết rõ nhất."
         }
       ],
       "metadata": {
@@ -7451,6 +7547,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Match each feeling to the clue.",
+          "learningObjective": "emotion recognition",
           "pairs": [
             {
               "left": {
@@ -7512,71 +7609,72 @@
           "hint": "Start with the pair you know best."
         },
         "vi": {
-          "prompt": "Ghep moi cam xuc voi dau hieu.",
+          "prompt": "Ghép mỗi cảm xúc với dấu hiệu.",
+          "learningObjective": "nhận biết cảm xúc",
           "pairs": [
             {
               "left": {
                 "id": "l0",
-                "content": "mat buon",
+                "content": "mặt buồn",
                 "type": "text",
-                "semanticLabel": "mat buon"
+                "semanticLabel": "mặt buồn"
               },
               "right": {
                 "id": "r0",
-                "content": "nuoc mat",
+                "content": "nước mắt",
                 "type": "text",
-                "semanticLabel": "nuoc mat"
+                "semanticLabel": "nước mắt"
               }
             },
             {
               "left": {
                 "id": "l1",
-                "content": "mat gian",
+                "content": "mặt giận",
                 "type": "text",
-                "semanticLabel": "mat gian"
+                "semanticLabel": "mặt giận"
               },
               "right": {
                 "id": "r1",
-                "content": "nhan mat",
+                "content": "nhăn mặt",
                 "type": "text",
-                "semanticLabel": "nhan mat"
+                "semanticLabel": "nhăn mặt"
               }
             },
             {
               "left": {
                 "id": "l2",
-                "content": "ngac nhien",
+                "content": "ngạc nhiên",
                 "type": "text",
-                "semanticLabel": "ngac nhien"
+                "semanticLabel": "ngạc nhiên"
               },
               "right": {
                 "id": "r2",
-                "content": "mat tron",
+                "content": "mắt tròn",
                 "type": "text",
-                "semanticLabel": "mat tron"
+                "semanticLabel": "mắt tròn"
               }
             },
             {
               "left": {
                 "id": "l3",
-                "content": "mat vui",
+                "content": "mặt vui",
                 "type": "text",
-                "semanticLabel": "mat vui"
+                "semanticLabel": "mặt vui"
               },
               "right": {
                 "id": "r3",
-                "content": "nu cuoi",
+                "content": "nụ cười",
                 "type": "text",
-                "semanticLabel": "nu cuoi"
+                "semanticLabel": "nụ cười"
               }
             }
           ],
-          "hint": "Bat dau voi cap con biet ro nhat."
+          "hint": "Bắt đầu với cặp con biết rõ nhất."
         }
       },
       "hints": [
         {
-          "text": "Bat dau voi cap con biet ro nhat."
+          "text": "Bắt đầu với cặp con biết rõ nhất."
         }
       ],
       "metadata": {
@@ -7606,6 +7704,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Match each feeling to the clue.",
+          "learningObjective": "emotion recognition",
           "pairs": [
             {
               "left": {
@@ -7667,71 +7766,72 @@
           "hint": "Start with the pair you know best."
         },
         "vi": {
-          "prompt": "Ghep moi cam xuc voi dau hieu.",
+          "prompt": "Ghép mỗi cảm xúc với dấu hiệu.",
+          "learningObjective": "nhận biết cảm xúc",
           "pairs": [
             {
               "left": {
                 "id": "l0",
-                "content": "mat gian",
+                "content": "mặt giận",
                 "type": "text",
-                "semanticLabel": "mat gian"
+                "semanticLabel": "mặt giận"
               },
               "right": {
                 "id": "r0",
-                "content": "nhan mat",
+                "content": "nhăn mặt",
                 "type": "text",
-                "semanticLabel": "nhan mat"
+                "semanticLabel": "nhăn mặt"
               }
             },
             {
               "left": {
                 "id": "l1",
-                "content": "ngac nhien",
+                "content": "ngạc nhiên",
                 "type": "text",
-                "semanticLabel": "ngac nhien"
+                "semanticLabel": "ngạc nhiên"
               },
               "right": {
                 "id": "r1",
-                "content": "mat tron",
+                "content": "mắt tròn",
                 "type": "text",
-                "semanticLabel": "mat tron"
+                "semanticLabel": "mắt tròn"
               }
             },
             {
               "left": {
                 "id": "l2",
-                "content": "mat vui",
+                "content": "mặt vui",
                 "type": "text",
-                "semanticLabel": "mat vui"
+                "semanticLabel": "mặt vui"
               },
               "right": {
                 "id": "r2",
-                "content": "nu cuoi",
+                "content": "nụ cười",
                 "type": "text",
-                "semanticLabel": "nu cuoi"
+                "semanticLabel": "nụ cười"
               }
             },
             {
               "left": {
                 "id": "l3",
-                "content": "mat buon",
+                "content": "mặt buồn",
                 "type": "text",
-                "semanticLabel": "mat buon"
+                "semanticLabel": "mặt buồn"
               },
               "right": {
                 "id": "r3",
-                "content": "nuoc mat",
+                "content": "nước mắt",
                 "type": "text",
-                "semanticLabel": "nuoc mat"
+                "semanticLabel": "nước mắt"
               }
             }
           ],
-          "hint": "Bat dau voi cap con biet ro nhat."
+          "hint": "Bắt đầu với cặp con biết rõ nhất."
         }
       },
       "hints": [
         {
-          "text": "Bat dau voi cap con biet ro nhat."
+          "text": "Bắt đầu với cặp con biết rõ nhất."
         }
       ],
       "metadata": {
@@ -7761,6 +7861,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Match each feeling to the clue.",
+          "learningObjective": "emotion recognition",
           "pairs": [
             {
               "left": {
@@ -7822,71 +7923,72 @@
           "hint": "Start with the pair you know best."
         },
         "vi": {
-          "prompt": "Ghep moi cam xuc voi dau hieu.",
+          "prompt": "Ghép mỗi cảm xúc với dấu hiệu.",
+          "learningObjective": "nhận biết cảm xúc",
           "pairs": [
             {
               "left": {
                 "id": "l0",
-                "content": "ngac nhien",
+                "content": "ngạc nhiên",
                 "type": "text",
-                "semanticLabel": "ngac nhien"
+                "semanticLabel": "ngạc nhiên"
               },
               "right": {
                 "id": "r0",
-                "content": "mat tron",
+                "content": "mắt tròn",
                 "type": "text",
-                "semanticLabel": "mat tron"
+                "semanticLabel": "mắt tròn"
               }
             },
             {
               "left": {
                 "id": "l1",
-                "content": "mat vui",
+                "content": "mặt vui",
                 "type": "text",
-                "semanticLabel": "mat vui"
+                "semanticLabel": "mặt vui"
               },
               "right": {
                 "id": "r1",
-                "content": "nu cuoi",
+                "content": "nụ cười",
                 "type": "text",
-                "semanticLabel": "nu cuoi"
+                "semanticLabel": "nụ cười"
               }
             },
             {
               "left": {
                 "id": "l2",
-                "content": "mat buon",
+                "content": "mặt buồn",
                 "type": "text",
-                "semanticLabel": "mat buon"
+                "semanticLabel": "mặt buồn"
               },
               "right": {
                 "id": "r2",
-                "content": "nuoc mat",
+                "content": "nước mắt",
                 "type": "text",
-                "semanticLabel": "nuoc mat"
+                "semanticLabel": "nước mắt"
               }
             },
             {
               "left": {
                 "id": "l3",
-                "content": "mat gian",
+                "content": "mặt giận",
                 "type": "text",
-                "semanticLabel": "mat gian"
+                "semanticLabel": "mặt giận"
               },
               "right": {
                 "id": "r3",
-                "content": "nhan mat",
+                "content": "nhăn mặt",
                 "type": "text",
-                "semanticLabel": "nhan mat"
+                "semanticLabel": "nhăn mặt"
               }
             }
           ],
-          "hint": "Bat dau voi cap con biet ro nhat."
+          "hint": "Bắt đầu với cặp con biết rõ nhất."
         }
       },
       "hints": [
         {
-          "text": "Bat dau voi cap con biet ro nhat."
+          "text": "Bắt đầu với cặp con biết rõ nhất."
         }
       ],
       "metadata": {
@@ -7916,6 +8018,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Match each feeling to the clue.",
+          "learningObjective": "emotion recognition",
           "pairs": [
             {
               "left": {
@@ -7977,71 +8080,72 @@
           "hint": "Start with the pair you know best."
         },
         "vi": {
-          "prompt": "Ghep moi cam xuc voi dau hieu.",
+          "prompt": "Ghép mỗi cảm xúc với dấu hiệu.",
+          "learningObjective": "nhận biết cảm xúc",
           "pairs": [
             {
               "left": {
                 "id": "l0",
-                "content": "mat vui",
+                "content": "mặt vui",
                 "type": "text",
-                "semanticLabel": "mat vui"
+                "semanticLabel": "mặt vui"
               },
               "right": {
                 "id": "r0",
-                "content": "nu cuoi",
+                "content": "nụ cười",
                 "type": "text",
-                "semanticLabel": "nu cuoi"
+                "semanticLabel": "nụ cười"
               }
             },
             {
               "left": {
                 "id": "l1",
-                "content": "mat buon",
+                "content": "mặt buồn",
                 "type": "text",
-                "semanticLabel": "mat buon"
+                "semanticLabel": "mặt buồn"
               },
               "right": {
                 "id": "r1",
-                "content": "nuoc mat",
+                "content": "nước mắt",
                 "type": "text",
-                "semanticLabel": "nuoc mat"
+                "semanticLabel": "nước mắt"
               }
             },
             {
               "left": {
                 "id": "l2",
-                "content": "mat gian",
+                "content": "mặt giận",
                 "type": "text",
-                "semanticLabel": "mat gian"
+                "semanticLabel": "mặt giận"
               },
               "right": {
                 "id": "r2",
-                "content": "nhan mat",
+                "content": "nhăn mặt",
                 "type": "text",
-                "semanticLabel": "nhan mat"
+                "semanticLabel": "nhăn mặt"
               }
             },
             {
               "left": {
                 "id": "l3",
-                "content": "ngac nhien",
+                "content": "ngạc nhiên",
                 "type": "text",
-                "semanticLabel": "ngac nhien"
+                "semanticLabel": "ngạc nhiên"
               },
               "right": {
                 "id": "r3",
-                "content": "mat tron",
+                "content": "mắt tròn",
                 "type": "text",
-                "semanticLabel": "mat tron"
+                "semanticLabel": "mắt tròn"
               }
             }
           ],
-          "hint": "Bat dau voi cap con biet ro nhat."
+          "hint": "Bắt đầu với cặp con biết rõ nhất."
         }
       },
       "hints": [
         {
-          "text": "Bat dau voi cap con biet ro nhat."
+          "text": "Bắt đầu với cặp con biết rõ nhất."
         }
       ],
       "metadata": {
@@ -8071,6 +8175,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Match each feeling to the clue.",
+          "learningObjective": "emotion recognition",
           "pairs": [
             {
               "left": {
@@ -8132,71 +8237,72 @@
           "hint": "Start with the pair you know best."
         },
         "vi": {
-          "prompt": "Ghep moi cam xuc voi dau hieu.",
+          "prompt": "Ghép mỗi cảm xúc với dấu hiệu.",
+          "learningObjective": "nhận biết cảm xúc",
           "pairs": [
             {
               "left": {
                 "id": "l0",
-                "content": "mat buon",
+                "content": "mặt buồn",
                 "type": "text",
-                "semanticLabel": "mat buon"
+                "semanticLabel": "mặt buồn"
               },
               "right": {
                 "id": "r0",
-                "content": "nuoc mat",
+                "content": "nước mắt",
                 "type": "text",
-                "semanticLabel": "nuoc mat"
+                "semanticLabel": "nước mắt"
               }
             },
             {
               "left": {
                 "id": "l1",
-                "content": "mat gian",
+                "content": "mặt giận",
                 "type": "text",
-                "semanticLabel": "mat gian"
+                "semanticLabel": "mặt giận"
               },
               "right": {
                 "id": "r1",
-                "content": "nhan mat",
+                "content": "nhăn mặt",
                 "type": "text",
-                "semanticLabel": "nhan mat"
+                "semanticLabel": "nhăn mặt"
               }
             },
             {
               "left": {
                 "id": "l2",
-                "content": "ngac nhien",
+                "content": "ngạc nhiên",
                 "type": "text",
-                "semanticLabel": "ngac nhien"
+                "semanticLabel": "ngạc nhiên"
               },
               "right": {
                 "id": "r2",
-                "content": "mat tron",
+                "content": "mắt tròn",
                 "type": "text",
-                "semanticLabel": "mat tron"
+                "semanticLabel": "mắt tròn"
               }
             },
             {
               "left": {
                 "id": "l3",
-                "content": "mat vui",
+                "content": "mặt vui",
                 "type": "text",
-                "semanticLabel": "mat vui"
+                "semanticLabel": "mặt vui"
               },
               "right": {
                 "id": "r3",
-                "content": "nu cuoi",
+                "content": "nụ cười",
                 "type": "text",
-                "semanticLabel": "nu cuoi"
+                "semanticLabel": "nụ cười"
               }
             }
           ],
-          "hint": "Bat dau voi cap con biet ro nhat."
+          "hint": "Bắt đầu với cặp con biết rõ nhất."
         }
       },
       "hints": [
         {
-          "text": "Bat dau voi cap con biet ro nhat."
+          "text": "Bắt đầu với cặp con biết rõ nhất."
         }
       ],
       "metadata": {
@@ -8226,6 +8332,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Match each feeling to the clue.",
+          "learningObjective": "emotion recognition",
           "pairs": [
             {
               "left": {
@@ -8287,71 +8394,72 @@
           "hint": "Start with the pair you know best."
         },
         "vi": {
-          "prompt": "Ghep moi cam xuc voi dau hieu.",
+          "prompt": "Ghép mỗi cảm xúc với dấu hiệu.",
+          "learningObjective": "nhận biết cảm xúc",
           "pairs": [
             {
               "left": {
                 "id": "l0",
-                "content": "mat gian",
+                "content": "mặt giận",
                 "type": "text",
-                "semanticLabel": "mat gian"
+                "semanticLabel": "mặt giận"
               },
               "right": {
                 "id": "r0",
-                "content": "nhan mat",
+                "content": "nhăn mặt",
                 "type": "text",
-                "semanticLabel": "nhan mat"
+                "semanticLabel": "nhăn mặt"
               }
             },
             {
               "left": {
                 "id": "l1",
-                "content": "ngac nhien",
+                "content": "ngạc nhiên",
                 "type": "text",
-                "semanticLabel": "ngac nhien"
+                "semanticLabel": "ngạc nhiên"
               },
               "right": {
                 "id": "r1",
-                "content": "mat tron",
+                "content": "mắt tròn",
                 "type": "text",
-                "semanticLabel": "mat tron"
+                "semanticLabel": "mắt tròn"
               }
             },
             {
               "left": {
                 "id": "l2",
-                "content": "mat vui",
+                "content": "mặt vui",
                 "type": "text",
-                "semanticLabel": "mat vui"
+                "semanticLabel": "mặt vui"
               },
               "right": {
                 "id": "r2",
-                "content": "nu cuoi",
+                "content": "nụ cười",
                 "type": "text",
-                "semanticLabel": "nu cuoi"
+                "semanticLabel": "nụ cười"
               }
             },
             {
               "left": {
                 "id": "l3",
-                "content": "mat buon",
+                "content": "mặt buồn",
                 "type": "text",
-                "semanticLabel": "mat buon"
+                "semanticLabel": "mặt buồn"
               },
               "right": {
                 "id": "r3",
-                "content": "nuoc mat",
+                "content": "nước mắt",
                 "type": "text",
-                "semanticLabel": "nuoc mat"
+                "semanticLabel": "nước mắt"
               }
             }
           ],
-          "hint": "Bat dau voi cap con biet ro nhat."
+          "hint": "Bắt đầu với cặp con biết rõ nhất."
         }
       },
       "hints": [
         {
-          "text": "Bat dau voi cap con biet ro nhat."
+          "text": "Bắt đầu với cặp con biết rõ nhất."
         }
       ],
       "metadata": {
@@ -8381,6 +8489,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Match each feeling to the clue.",
+          "learningObjective": "emotion recognition",
           "pairs": [
             {
               "left": {
@@ -8442,71 +8551,72 @@
           "hint": "Start with the pair you know best."
         },
         "vi": {
-          "prompt": "Ghep moi cam xuc voi dau hieu.",
+          "prompt": "Ghép mỗi cảm xúc với dấu hiệu.",
+          "learningObjective": "nhận biết cảm xúc",
           "pairs": [
             {
               "left": {
                 "id": "l0",
-                "content": "ngac nhien",
+                "content": "ngạc nhiên",
                 "type": "text",
-                "semanticLabel": "ngac nhien"
+                "semanticLabel": "ngạc nhiên"
               },
               "right": {
                 "id": "r0",
-                "content": "mat tron",
+                "content": "mắt tròn",
                 "type": "text",
-                "semanticLabel": "mat tron"
+                "semanticLabel": "mắt tròn"
               }
             },
             {
               "left": {
                 "id": "l1",
-                "content": "mat vui",
+                "content": "mặt vui",
                 "type": "text",
-                "semanticLabel": "mat vui"
+                "semanticLabel": "mặt vui"
               },
               "right": {
                 "id": "r1",
-                "content": "nu cuoi",
+                "content": "nụ cười",
                 "type": "text",
-                "semanticLabel": "nu cuoi"
+                "semanticLabel": "nụ cười"
               }
             },
             {
               "left": {
                 "id": "l2",
-                "content": "mat buon",
+                "content": "mặt buồn",
                 "type": "text",
-                "semanticLabel": "mat buon"
+                "semanticLabel": "mặt buồn"
               },
               "right": {
                 "id": "r2",
-                "content": "nuoc mat",
+                "content": "nước mắt",
                 "type": "text",
-                "semanticLabel": "nuoc mat"
+                "semanticLabel": "nước mắt"
               }
             },
             {
               "left": {
                 "id": "l3",
-                "content": "mat gian",
+                "content": "mặt giận",
                 "type": "text",
-                "semanticLabel": "mat gian"
+                "semanticLabel": "mặt giận"
               },
               "right": {
                 "id": "r3",
-                "content": "nhan mat",
+                "content": "nhăn mặt",
                 "type": "text",
-                "semanticLabel": "nhan mat"
+                "semanticLabel": "nhăn mặt"
               }
             }
           ],
-          "hint": "Bat dau voi cap con biet ro nhat."
+          "hint": "Bắt đầu với cặp con biết rõ nhất."
         }
       },
       "hints": [
         {
-          "text": "Bat dau voi cap con biet ro nhat."
+          "text": "Bắt đầu với cặp con biết rõ nhất."
         }
       ],
       "metadata": {
@@ -8536,6 +8646,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Match each feeling to the clue.",
+          "learningObjective": "emotion recognition",
           "pairs": [
             {
               "left": {
@@ -8597,71 +8708,72 @@
           "hint": "Start with the pair you know best."
         },
         "vi": {
-          "prompt": "Ghep moi cam xuc voi dau hieu.",
+          "prompt": "Ghép mỗi cảm xúc với dấu hiệu.",
+          "learningObjective": "nhận biết cảm xúc",
           "pairs": [
             {
               "left": {
                 "id": "l0",
-                "content": "mat vui",
+                "content": "mặt vui",
                 "type": "text",
-                "semanticLabel": "mat vui"
+                "semanticLabel": "mặt vui"
               },
               "right": {
                 "id": "r0",
-                "content": "nu cuoi",
+                "content": "nụ cười",
                 "type": "text",
-                "semanticLabel": "nu cuoi"
+                "semanticLabel": "nụ cười"
               }
             },
             {
               "left": {
                 "id": "l1",
-                "content": "mat buon",
+                "content": "mặt buồn",
                 "type": "text",
-                "semanticLabel": "mat buon"
+                "semanticLabel": "mặt buồn"
               },
               "right": {
                 "id": "r1",
-                "content": "nuoc mat",
+                "content": "nước mắt",
                 "type": "text",
-                "semanticLabel": "nuoc mat"
+                "semanticLabel": "nước mắt"
               }
             },
             {
               "left": {
                 "id": "l2",
-                "content": "mat gian",
+                "content": "mặt giận",
                 "type": "text",
-                "semanticLabel": "mat gian"
+                "semanticLabel": "mặt giận"
               },
               "right": {
                 "id": "r2",
-                "content": "nhan mat",
+                "content": "nhăn mặt",
                 "type": "text",
-                "semanticLabel": "nhan mat"
+                "semanticLabel": "nhăn mặt"
               }
             },
             {
               "left": {
                 "id": "l3",
-                "content": "ngac nhien",
+                "content": "ngạc nhiên",
                 "type": "text",
-                "semanticLabel": "ngac nhien"
+                "semanticLabel": "ngạc nhiên"
               },
               "right": {
                 "id": "r3",
-                "content": "mat tron",
+                "content": "mắt tròn",
                 "type": "text",
-                "semanticLabel": "mat tron"
+                "semanticLabel": "mắt tròn"
               }
             }
           ],
-          "hint": "Bat dau voi cap con biet ro nhat."
+          "hint": "Bắt đầu với cặp con biết rõ nhất."
         }
       },
       "hints": [
         {
-          "text": "Bat dau voi cap con biet ro nhat."
+          "text": "Bắt đầu với cặp con biết rõ nhất."
         }
       ],
       "metadata": {
@@ -8691,6 +8803,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Match each feeling to the clue.",
+          "learningObjective": "emotion recognition",
           "pairs": [
             {
               "left": {
@@ -8752,71 +8865,72 @@
           "hint": "Start with the pair you know best."
         },
         "vi": {
-          "prompt": "Ghep moi cam xuc voi dau hieu.",
+          "prompt": "Ghép mỗi cảm xúc với dấu hiệu.",
+          "learningObjective": "nhận biết cảm xúc",
           "pairs": [
             {
               "left": {
                 "id": "l0",
-                "content": "mat buon",
+                "content": "mặt buồn",
                 "type": "text",
-                "semanticLabel": "mat buon"
+                "semanticLabel": "mặt buồn"
               },
               "right": {
                 "id": "r0",
-                "content": "nuoc mat",
+                "content": "nước mắt",
                 "type": "text",
-                "semanticLabel": "nuoc mat"
+                "semanticLabel": "nước mắt"
               }
             },
             {
               "left": {
                 "id": "l1",
-                "content": "mat gian",
+                "content": "mặt giận",
                 "type": "text",
-                "semanticLabel": "mat gian"
+                "semanticLabel": "mặt giận"
               },
               "right": {
                 "id": "r1",
-                "content": "nhan mat",
+                "content": "nhăn mặt",
                 "type": "text",
-                "semanticLabel": "nhan mat"
+                "semanticLabel": "nhăn mặt"
               }
             },
             {
               "left": {
                 "id": "l2",
-                "content": "ngac nhien",
+                "content": "ngạc nhiên",
                 "type": "text",
-                "semanticLabel": "ngac nhien"
+                "semanticLabel": "ngạc nhiên"
               },
               "right": {
                 "id": "r2",
-                "content": "mat tron",
+                "content": "mắt tròn",
                 "type": "text",
-                "semanticLabel": "mat tron"
+                "semanticLabel": "mắt tròn"
               }
             },
             {
               "left": {
                 "id": "l3",
-                "content": "mat vui",
+                "content": "mặt vui",
                 "type": "text",
-                "semanticLabel": "mat vui"
+                "semanticLabel": "mặt vui"
               },
               "right": {
                 "id": "r3",
-                "content": "nu cuoi",
+                "content": "nụ cười",
                 "type": "text",
-                "semanticLabel": "nu cuoi"
+                "semanticLabel": "nụ cười"
               }
             }
           ],
-          "hint": "Bat dau voi cap con biet ro nhat."
+          "hint": "Bắt đầu với cặp con biết rõ nhất."
         }
       },
       "hints": [
         {
-          "text": "Bat dau voi cap con biet ro nhat."
+          "text": "Bắt đầu với cặp con biết rõ nhất."
         }
       ],
       "metadata": {
@@ -8846,6 +8960,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Match each feeling to the clue.",
+          "learningObjective": "emotion recognition",
           "pairs": [
             {
               "left": {
@@ -8907,71 +9022,72 @@
           "hint": "Start with the pair you know best."
         },
         "vi": {
-          "prompt": "Ghep moi cam xuc voi dau hieu.",
+          "prompt": "Ghép mỗi cảm xúc với dấu hiệu.",
+          "learningObjective": "nhận biết cảm xúc",
           "pairs": [
             {
               "left": {
                 "id": "l0",
-                "content": "mat gian",
+                "content": "mặt giận",
                 "type": "text",
-                "semanticLabel": "mat gian"
+                "semanticLabel": "mặt giận"
               },
               "right": {
                 "id": "r0",
-                "content": "nhan mat",
+                "content": "nhăn mặt",
                 "type": "text",
-                "semanticLabel": "nhan mat"
+                "semanticLabel": "nhăn mặt"
               }
             },
             {
               "left": {
                 "id": "l1",
-                "content": "ngac nhien",
+                "content": "ngạc nhiên",
                 "type": "text",
-                "semanticLabel": "ngac nhien"
+                "semanticLabel": "ngạc nhiên"
               },
               "right": {
                 "id": "r1",
-                "content": "mat tron",
+                "content": "mắt tròn",
                 "type": "text",
-                "semanticLabel": "mat tron"
+                "semanticLabel": "mắt tròn"
               }
             },
             {
               "left": {
                 "id": "l2",
-                "content": "mat vui",
+                "content": "mặt vui",
                 "type": "text",
-                "semanticLabel": "mat vui"
+                "semanticLabel": "mặt vui"
               },
               "right": {
                 "id": "r2",
-                "content": "nu cuoi",
+                "content": "nụ cười",
                 "type": "text",
-                "semanticLabel": "nu cuoi"
+                "semanticLabel": "nụ cười"
               }
             },
             {
               "left": {
                 "id": "l3",
-                "content": "mat buon",
+                "content": "mặt buồn",
                 "type": "text",
-                "semanticLabel": "mat buon"
+                "semanticLabel": "mặt buồn"
               },
               "right": {
                 "id": "r3",
-                "content": "nuoc mat",
+                "content": "nước mắt",
                 "type": "text",
-                "semanticLabel": "nuoc mat"
+                "semanticLabel": "nước mắt"
               }
             }
           ],
-          "hint": "Bat dau voi cap con biet ro nhat."
+          "hint": "Bắt đầu với cặp con biết rõ nhất."
         }
       },
       "hints": [
         {
-          "text": "Bat dau voi cap con biet ro nhat."
+          "text": "Bắt đầu với cặp con biết rõ nhất."
         }
       ],
       "metadata": {
@@ -9001,6 +9117,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Match each feeling to the clue.",
+          "learningObjective": "emotion recognition",
           "pairs": [
             {
               "left": {
@@ -9062,71 +9179,72 @@
           "hint": "Start with the pair you know best."
         },
         "vi": {
-          "prompt": "Ghep moi cam xuc voi dau hieu.",
+          "prompt": "Ghép mỗi cảm xúc với dấu hiệu.",
+          "learningObjective": "nhận biết cảm xúc",
           "pairs": [
             {
               "left": {
                 "id": "l0",
-                "content": "ngac nhien",
+                "content": "ngạc nhiên",
                 "type": "text",
-                "semanticLabel": "ngac nhien"
+                "semanticLabel": "ngạc nhiên"
               },
               "right": {
                 "id": "r0",
-                "content": "mat tron",
+                "content": "mắt tròn",
                 "type": "text",
-                "semanticLabel": "mat tron"
+                "semanticLabel": "mắt tròn"
               }
             },
             {
               "left": {
                 "id": "l1",
-                "content": "mat vui",
+                "content": "mặt vui",
                 "type": "text",
-                "semanticLabel": "mat vui"
+                "semanticLabel": "mặt vui"
               },
               "right": {
                 "id": "r1",
-                "content": "nu cuoi",
+                "content": "nụ cười",
                 "type": "text",
-                "semanticLabel": "nu cuoi"
+                "semanticLabel": "nụ cười"
               }
             },
             {
               "left": {
                 "id": "l2",
-                "content": "mat buon",
+                "content": "mặt buồn",
                 "type": "text",
-                "semanticLabel": "mat buon"
+                "semanticLabel": "mặt buồn"
               },
               "right": {
                 "id": "r2",
-                "content": "nuoc mat",
+                "content": "nước mắt",
                 "type": "text",
-                "semanticLabel": "nuoc mat"
+                "semanticLabel": "nước mắt"
               }
             },
             {
               "left": {
                 "id": "l3",
-                "content": "mat gian",
+                "content": "mặt giận",
                 "type": "text",
-                "semanticLabel": "mat gian"
+                "semanticLabel": "mặt giận"
               },
               "right": {
                 "id": "r3",
-                "content": "nhan mat",
+                "content": "nhăn mặt",
                 "type": "text",
-                "semanticLabel": "nhan mat"
+                "semanticLabel": "nhăn mặt"
               }
             }
           ],
-          "hint": "Bat dau voi cap con biet ro nhat."
+          "hint": "Bắt đầu với cặp con biết rõ nhất."
         }
       },
       "hints": [
         {
-          "text": "Bat dau voi cap con biet ro nhat."
+          "text": "Bắt đầu với cặp con biết rõ nhất."
         }
       ],
       "metadata": {
@@ -9156,6 +9274,7 @@
       "localizedContent": {
         "en": {
           "prompt": "Match each feeling to the clue.",
+          "learningObjective": "emotion recognition",
           "pairs": [
             {
               "left": {
@@ -9217,71 +9336,72 @@
           "hint": "Start with the pair you know best."
         },
         "vi": {
-          "prompt": "Ghep moi cam xuc voi dau hieu.",
+          "prompt": "Ghép mỗi cảm xúc với dấu hiệu.",
+          "learningObjective": "nhận biết cảm xúc",
           "pairs": [
             {
               "left": {
                 "id": "l0",
-                "content": "mat vui",
+                "content": "mặt vui",
                 "type": "text",
-                "semanticLabel": "mat vui"
+                "semanticLabel": "mặt vui"
               },
               "right": {
                 "id": "r0",
-                "content": "nu cuoi",
+                "content": "nụ cười",
                 "type": "text",
-                "semanticLabel": "nu cuoi"
+                "semanticLabel": "nụ cười"
               }
             },
             {
               "left": {
                 "id": "l1",
-                "content": "mat buon",
+                "content": "mặt buồn",
                 "type": "text",
-                "semanticLabel": "mat buon"
+                "semanticLabel": "mặt buồn"
               },
               "right": {
                 "id": "r1",
-                "content": "nuoc mat",
+                "content": "nước mắt",
                 "type": "text",
-                "semanticLabel": "nuoc mat"
+                "semanticLabel": "nước mắt"
               }
             },
             {
               "left": {
                 "id": "l2",
-                "content": "mat gian",
+                "content": "mặt giận",
                 "type": "text",
-                "semanticLabel": "mat gian"
+                "semanticLabel": "mặt giận"
               },
               "right": {
                 "id": "r2",
-                "content": "nhan mat",
+                "content": "nhăn mặt",
                 "type": "text",
-                "semanticLabel": "nhan mat"
+                "semanticLabel": "nhăn mặt"
               }
             },
             {
               "left": {
                 "id": "l3",
-                "content": "ngac nhien",
+                "content": "ngạc nhiên",
                 "type": "text",
-                "semanticLabel": "ngac nhien"
+                "semanticLabel": "ngạc nhiên"
               },
               "right": {
                 "id": "r3",
-                "content": "mat tron",
+                "content": "mắt tròn",
                 "type": "text",
-                "semanticLabel": "mat tron"
+                "semanticLabel": "mắt tròn"
               }
             }
           ],
-          "hint": "Bat dau voi cap con biet ro nhat."
+          "hint": "Bắt đầu với cặp con biết rõ nhất."
         }
       },
       "hints": [
         {
-          "text": "Bat dau voi cap con biet ro nhat."
+          "text": "Bắt đầu với cặp con biết rõ nhất."
         }
       ],
       "metadata": {
