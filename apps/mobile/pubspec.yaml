@@ -90,3 +90,13 @@ flutter:
           weight: 700
         - asset: assets/fonts/nunito/Nunito-VariableFont_wght.ttf
           weight: 800
+    - family: NunitoRounded
+      fonts:
+        - asset: assets/fonts/nunito/Nunito-VariableFont_wght.ttf
+          weight: 400
+        - asset: assets/fonts/nunito/Nunito-VariableFont_wght.ttf
+          weight: 600
+        - asset: assets/fonts/nunito/Nunito-VariableFont_wght.ttf
+          weight: 700
+        - asset: assets/fonts/nunito/Nunito-VariableFont_wght.ttf
+          weight: 800

@@ -10,6 +10,8 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  design_system:
+    path: ../design_system
   equatable: ^2.0.5
 
 dev_dependencies:

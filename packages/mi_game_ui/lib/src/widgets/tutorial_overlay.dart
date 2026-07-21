@@ -1,3 +1,4 @@
+import 'package:design_system/design_system.dart';
 import 'package:flutter/material.dart';
 
 import '../theme/game_theme.dart';
@@ -26,56 +27,67 @@ class TutorialOverlay extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Colors.black87,
+      color: MiColors.scrim,
       child: Center(
-        child: Card(
+        child: Container(
           margin: GameTheme.screenPadding,
-          shape: RoundedRectangleBorder(
+          padding: const EdgeInsets.all(MiTokens.space6),
+          decoration: BoxDecoration(
+            color: MiColors.surface,
             borderRadius: BorderRadius.circular(GameTheme.overlayRadius),
+            boxShadow: MiShadows.raised,
           ),
-          child: Padding(
-            padding: const EdgeInsets.all(24),
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                if (imageHint != null)
-                  Icon(imageHint, size: 80, color: GameTheme.primary),
-                const SizedBox(height: 16),
-                Text(title, style: GameTheme.headingMedium),
-                const SizedBox(height: 12),
-                Text(
-                  message,
-                  style: GameTheme.bodyLarge,
-                  textAlign: TextAlign.center,
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              if (imageHint != null)
+                Container(
+                  width: 96,
+                  height: 96,
+                  decoration: BoxDecoration(
+                    color: MiColors.discoverySoft,
+                    borderRadius: BorderRadius.circular(MiTokens.radiusXl),
+                  ),
+                  child: Icon(imageHint, size: 56, color: GameTheme.secondary),
+                )
+              else
+                const MiMascotReaction(
+                  emotion: MiMascotEmotion.encouraging,
+                  size: MiTokens.mascotReactionMd,
+                  semanticLabel: 'MI hướng dẫn cách chơi',
                 ),
-                if (pageNumber != null && totalPages != null) ...[
-                  const SizedBox(height: 16),
-                  Text(
+              const SizedBox(height: MiTokens.space4),
+              Text(title, style: GameTheme.headingMedium),
+              const SizedBox(height: MiTokens.space3),
+              Text(
+                message,
+                style: GameTheme.bodyLarge,
+                textAlign: TextAlign.center,
+              ),
+              if (pageNumber != null && totalPages != null) ...[
+                const SizedBox(height: MiTokens.space4),
+                Container(
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: MiTokens.space3,
+                    vertical: MiTokens.space1,
+                  ),
+                  decoration: BoxDecoration(
+                    color: MiColors.primarySoft,
+                    borderRadius: BorderRadius.circular(MiTokens.radiusFull),
+                  ),
+                  child: Text(
                     '${pageNumber!}/${totalPages!}',
                     style: GameTheme.bodyMedium,
                   ),
-                ],
-                const SizedBox(height: 24),
-                SizedBox(
-                  width: double.infinity,
-                  child: ElevatedButton(
-                    onPressed: onContinue,
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: GameTheme.primary,
-                      padding: const EdgeInsets.symmetric(vertical: 14),
-                      shape: RoundedRectangleBorder(
-                        borderRadius:
-                            BorderRadius.circular(GameTheme.buttonRadius),
-                      ),
-                    ),
-                    child: Text(
-                      pageNumber != null ? 'Tiếp tục' : 'Bắt đầu',
-                      style: GameTheme.buttonLabel,
-                    ),
-                  ),
                 ),
               ],
-            ),
+              const SizedBox(height: MiTokens.space6),
+              MiPrimaryButton(
+                label: pageNumber != null ? 'Tiếp tục' : 'Bắt đầu',
+                onPressed: onContinue,
+                width: double.infinity,
+              ),
+            ],
           ),
         ),
       ),

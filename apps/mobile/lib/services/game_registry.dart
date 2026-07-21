@@ -1,3 +1,4 @@
+import 'package:design_system/design_system.dart';
 import 'package:flutter/material.dart';
 import 'package:mi_game_core/mi_game_core.dart';
 import 'package:mi_game_ui/mi_game_ui.dart';
@@ -142,7 +143,7 @@ abstract final class GameRegistry {
                 : 'MI cùng con khám phá chữ cái.',
             level: level,
             allLevels: allLevels,
-            heroIcon: Icons.abc_rounded,
+            brandIcon: MiBrandIcon.alphabet,
             primaryColor: GameTheme.primary,
             onExit: onExit,
             onComplete: onComplete,
@@ -184,7 +185,7 @@ abstract final class GameRegistry {
                 : 'MI cùng con tìm chữ còn thiếu.',
             level: level,
             allLevels: allLevels,
-            heroIcon: Icons.edit_note_rounded,
+            brandIcon: MiBrandIcon.writing,
             primaryColor: MiGameColors.secondary,
             onExit: onExit,
             onComplete: onComplete,
@@ -278,7 +279,7 @@ abstract final class GameRegistry {
             worldLabel: 'Xe MI tiến lên khi con chọn đúng.',
             level: level,
             allLevels: allLevels,
-            heroIcon: Icons.directions_car_rounded,
+            brandIcon: MiBrandIcon.numbers,
             primaryColor: GameTheme.warning,
             onExit: onExit,
             onComplete: onComplete,
@@ -313,7 +314,7 @@ abstract final class GameRegistry {
             worldLabel: 'Giỏ hàng MI giúp con luyện tính tiền.',
             level: level,
             allLevels: allLevels,
-            heroIcon: Icons.shopping_cart_rounded,
+            brandIcon: MiBrandIcon.numbers,
             primaryColor: MiGameColors.tertiary,
             onExit: onExit,
             onComplete: onComplete,

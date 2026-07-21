@@ -1,3 +1,4 @@
+import 'package:design_system/design_system.dart';
 import 'package:flutter/material.dart';
 
 import '../theme/game_theme.dart';
@@ -25,8 +26,20 @@ class GameHeader extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+    return Container(
+      margin: const EdgeInsets.symmetric(
+        horizontal: MiTokens.space3,
+        vertical: MiTokens.space2,
+      ),
+      padding: const EdgeInsets.symmetric(
+        horizontal: MiTokens.space2,
+        vertical: MiTokens.space1,
+      ),
+      decoration: BoxDecoration(
+        color: MiColors.surface,
+        borderRadius: BorderRadius.circular(MiTokens.radiusFull),
+        boxShadow: MiShadows.soft,
+      ),
       child: Row(
         children: [
           // Back button
@@ -51,25 +64,41 @@ class GameHeader extends StatelessWidget {
           if (score != null)
             Padding(
               padding: const EdgeInsets.only(right: 8),
-              child: Row(
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  const Icon(Icons.star_rounded, color: GameTheme.warning, size: 24),
-                  const SizedBox(width: 4),
-                  Text(
-                    score.toString(),
-                    style: GameTheme.bodyLarge.copyWith(
-                      fontWeight: FontWeight.bold,
+              child: Container(
+                padding: const EdgeInsets.symmetric(
+                  horizontal: MiTokens.space3,
+                  vertical: MiTokens.space2,
+                ),
+                decoration: BoxDecoration(
+                  color: MiColors.accentSoft,
+                  borderRadius: BorderRadius.circular(MiTokens.radiusFull),
+                ),
+                child: Row(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    const MiBrandIconView(
+                      icon: MiBrandIcon.rewardStar,
+                      color: GameTheme.warning,
+                      size: 24,
+                      decorative: true,
                     ),
-                  ),
-                ],
+                    const SizedBox(width: MiTokens.space1),
+                    Text(
+                      score.toString(),
+                      style: GameTheme.bodyLarge.copyWith(
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ],
+                ),
               ),
             ),
 
           // Audio toggle
           if (onAudioToggle != null)
             _HeaderButton(
-              icon: isMuted ? Icons.volume_off_rounded : Icons.volume_up_rounded,
+              icon:
+                  isMuted ? Icons.volume_off_rounded : Icons.volume_up_rounded,
               onPressed: onAudioToggle!,
               semanticsLabel: isMuted ? 'Bật âm thanh' : 'Tắt âm thanh',
             ),
@@ -106,10 +135,14 @@ class _HeaderButton extends StatelessWidget {
       child: SizedBox(
         width: GameTheme.minTouchTarget,
         height: GameTheme.minTouchTarget,
-        child: IconButton(
-          icon: Icon(icon),
-          onPressed: onPressed,
-          tooltip: semanticsLabel,
+        child: Material(
+          color: MiColors.background,
+          shape: const CircleBorder(),
+          child: IconButton(
+            icon: Icon(icon, color: MiColors.textPrimary),
+            onPressed: onPressed,
+            tooltip: semanticsLabel,
+          ),
         ),
       ),
     );

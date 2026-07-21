@@ -5,6 +5,7 @@
 library design_system;
 
 export 'src/character/mi_character.dart';
+export 'src/assets/mi_brand_assets.dart';
 export 'src/icons/mi_icon.dart';
 export 'src/theme/mi_theme.dart';
 export 'src/widgets/mi_card.dart';
@@ -12,3 +13,4 @@ export 'src/widgets/mi_button.dart';
 export 'src/widgets/mi_loading.dart';
 export 'src/widgets/mi_empty_state.dart';
 export 'src/widgets/mi_error_state.dart';
+export 'src/widgets/mi_brand_components.dart';

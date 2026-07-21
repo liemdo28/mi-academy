@@ -1,3 +1,4 @@
+import 'package:design_system/design_system.dart';
 import 'package:flutter/material.dart';
 
 import '../theme/game_theme.dart';
@@ -21,16 +22,22 @@ class LoadingState extends StatelessWidget {
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
+            const MiMascotReaction(
+              emotion: MiMascotEmotion.encouraging,
+              size: MiTokens.mascotReactionSm,
+              semanticLabel: 'MI đang chuẩn bị trò chơi',
+            ),
+            const SizedBox(height: MiTokens.space4),
             SizedBox(
               width: 64,
-              height: 64,
-              child: CircularProgressIndicator(
-                strokeWidth: 6,
-                backgroundColor: GameTheme.primary.withValues(alpha: 0.2),
+              child: LinearProgressIndicator(
+                minHeight: 8,
+                backgroundColor: MiColors.primarySoft,
                 valueColor: const AlwaysStoppedAnimation(GameTheme.primary),
+                borderRadius: BorderRadius.circular(MiTokens.radiusFull),
               ),
             ),
-            const SizedBox(height: 24),
+            const SizedBox(height: MiTokens.space4),
             Text(
               message,
               style: GameTheme.headingMedium,

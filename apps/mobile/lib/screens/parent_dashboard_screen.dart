@@ -56,7 +56,7 @@ class ParentDashboardScreen extends ConsumerWidget {
                 MiEmptyState(
                   title: 'Chưa có hồ sơ',
                   subtitle: 'Tạo hồ sơ cho con bạn',
-                  emoji: '👶',
+                  brandIcon: MiBrandIcon.profile,
                   action: MiButton(
                     label: 'Tạo hồ sơ',
                     onPressed: () => _showCreateChildDialog(context, ref),
@@ -82,18 +82,29 @@ class ParentDashboardScreen extends ConsumerWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(
-            '📊 Tổng quan hôm nay',
-            style: Theme.of(context).textTheme.titleLarge,
+          Row(
+            children: [
+              const MiBrandIconView(
+                icon: MiBrandIcon.report,
+                size: MiTokens.iconMd,
+                decorative: true,
+              ),
+              const SizedBox(width: MiTokens.space2),
+              Text(
+                'Tổng quan hôm nay',
+                style: Theme.of(context).textTheme.titleLarge,
+              ),
+            ],
           ),
           const SizedBox(height: MiTokens.space4),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
-              _buildStatItem(context, '⭐', '$stars', 'Sao'),
-              _buildStatItem(context, '📚', '$lessons', 'Bài học'),
-              _buildStatItem(context, '🎮', '$games', 'Trò chơi'),
-              _buildStatItem(context, '⏱️', '$minutes', 'Phút'),
+              _buildStatItem(context, MiBrandIcon.rewardStar, '$stars', 'Sao'),
+              _buildStatItem(
+                  context, MiBrandIcon.progress, '$lessons', 'Bài học'),
+              _buildStatItem(context, MiBrandIcon.logic, '$games', 'Trò chơi'),
+              _buildStatItem(context, MiBrandIcon.report, '$minutes', 'Phút'),
             ],
           ),
         ],
@@ -106,15 +117,25 @@ class ParentDashboardScreen extends ConsumerWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(
-            '📊 Tổng quan hôm nay',
-            style: Theme.of(context).textTheme.titleLarge,
+          Row(
+            children: [
+              const MiBrandIconView(
+                icon: MiBrandIcon.report,
+                size: MiTokens.iconMd,
+                decorative: true,
+              ),
+              const SizedBox(width: MiTokens.space2),
+              Text(
+                'Tổng quan hôm nay',
+                style: Theme.of(context).textTheme.titleLarge,
+              ),
+            ],
           ),
           const SizedBox(height: MiTokens.space4),
           const MiEmptyState(
             title: 'Chưa có hoạt động',
             subtitle: 'Con bạn chưa học hôm nay',
-            emoji: '📚',
+            brandIcon: MiBrandIcon.progress,
           ),
         ],
       ),
@@ -123,13 +144,13 @@ class ParentDashboardScreen extends ConsumerWidget {
 
   Widget _buildStatItem(
     BuildContext context,
-    String emoji,
+    MiBrandIcon icon,
     String value,
     String label,
   ) {
     return Column(
       children: [
-        Text(emoji, style: const TextStyle(fontSize: 24)),
+        MiBrandIconView(icon: icon, size: MiTokens.iconMd, decorative: true),
         const SizedBox(height: MiTokens.space1),
         Text(
           value,
@@ -159,7 +180,11 @@ class ParentDashboardScreen extends ConsumerWidget {
               shape: BoxShape.circle,
             ),
             child: const Center(
-              child: Text('🧒', style: TextStyle(fontSize: 24)),
+              child: MiBrandIconView(
+                icon: MiBrandIcon.profile,
+                size: MiTokens.iconMd,
+                decorative: true,
+              ),
             ),
           ),
           const SizedBox(width: MiTokens.space4),

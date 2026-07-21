@@ -19,3 +19,10 @@ flutter:
   assets:
     - assets/icons/
     - assets/characters/mi/
+    - assets/branding/logo/
+    - assets/branding/mascot/
+    - assets/branding/icons/learning/
+    - assets/branding/icons/navigation/
+    - assets/branding/icons/rewards/
+    - assets/branding/icons/profile/
+    - assets/branding/placeholders/

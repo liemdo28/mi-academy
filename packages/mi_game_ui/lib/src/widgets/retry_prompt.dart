@@ -1,3 +1,4 @@
+import 'package:design_system/design_system.dart';
 import 'package:flutter/material.dart';
 
 import '../theme/game_theme.dart';
@@ -17,62 +18,57 @@ class RetryPrompt extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Card(
-      color: GameTheme.warning,
-      shape: RoundedRectangleBorder(
+    return Container(
+      padding: const EdgeInsets.all(MiTokens.space4),
+      decoration: BoxDecoration(
+        color: MiColors.accentSoft,
         borderRadius: BorderRadius.circular(GameTheme.cardRadius),
+        boxShadow: MiShadows.soft,
       ),
-      child: Padding(
-        padding: const EdgeInsets.all(16),
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            Row(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                const Icon(Icons.refresh_rounded, color: Colors.white, size: 28),
-                const SizedBox(width: 12),
-                Flexible(
-                  child: Text(
-                    message,
-                    style: GameTheme.bodyLarge.copyWith(color: Colors.white),
-                  ),
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          Row(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              const MiMascotReaction(
+                emotion: MiMascotEmotion.tryAgain,
+                size: MiTokens.mascotReactionSm,
+                semanticLabel: 'MI rủ con thử lại',
+              ),
+              const SizedBox(width: MiTokens.space3),
+              Flexible(
+                child: Text(
+                  message,
+                  style: GameTheme.bodyLarge,
                 ),
-              ],
-            ),
-            const SizedBox(height: 12),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
+              ),
+            ],
+          ),
+          const SizedBox(height: MiTokens.space3),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              Expanded(
+                child: MiPrimaryButton(
+                  label: 'Thử lại',
+                  icon: const Icon(Icons.replay_rounded),
+                  onPressed: onRetry,
+                ),
+              ),
+              if (onUseHint != null) ...[
+                const SizedBox(width: MiTokens.space2),
                 Expanded(
-                  child: ElevatedButton.icon(
-                    icon: const Icon(Icons.replay_rounded),
-                    label: const Text('Thử lại'),
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: Colors.white,
-                      foregroundColor: GameTheme.textPrimary,
-                    ),
-                    onPressed: onRetry,
+                  child: MiSecondaryButton(
+                    label: 'Gợi ý',
+                    icon: const Icon(Icons.lightbulb_rounded),
+                    onPressed: onUseHint,
                   ),
                 ),
-                if (onUseHint != null) ...[
-                  const SizedBox(width: 8),
-                  Expanded(
-                    child: ElevatedButton.icon(
-                      icon: const Icon(Icons.lightbulb_rounded),
-                      label: const Text('Gợi ý'),
-                      style: ElevatedButton.styleFrom(
-                        backgroundColor: Colors.white,
-                        foregroundColor: GameTheme.textPrimary,
-                      ),
-                      onPressed: onUseHint,
-                    ),
-                  ),
-                ],
               ],
-            ),
-          ],
-        ),
+            ],
+          ),
+        ],
       ),
     );
   }

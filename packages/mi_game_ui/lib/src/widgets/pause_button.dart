@@ -1,3 +1,4 @@
+import 'package:design_system/design_system.dart';
 import 'package:flutter/material.dart';
 
 import '../theme/game_theme.dart';
@@ -16,10 +17,16 @@ class PauseButton extends StatelessWidget {
       child: SizedBox(
         width: GameTheme.minTouchTarget,
         height: GameTheme.minTouchTarget,
-        child: IconButton(
-          icon: const Icon(Icons.pause_rounded),
-          onPressed: onPressed,
-          color: GameTheme.textPrimary,
+        child: Material(
+          color: MiColors.surface,
+          shape: const CircleBorder(),
+          elevation: 2,
+          shadowColor: MiColors.shadow,
+          child: IconButton(
+            icon: const Icon(Icons.pause_rounded),
+            onPressed: onPressed,
+            color: GameTheme.textPrimary,
+          ),
         ),
       ),
     );
@@ -42,42 +49,42 @@ class PauseOverlay extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Colors.black54,
+      color: MiColors.scrim,
       child: Center(
-        child: Card(
+        child: Container(
           margin: GameTheme.screenPadding,
-          shape: RoundedRectangleBorder(
+          padding: const EdgeInsets.all(MiTokens.space6),
+          decoration: BoxDecoration(
+            color: MiColors.surface,
             borderRadius: BorderRadius.circular(GameTheme.overlayRadius),
+            boxShadow: MiShadows.raised,
           ),
-          child: Padding(
-            padding: const EdgeInsets.all(24),
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                Text(
-                  'Tạm dừng',
-                  style: GameTheme.headingLarge,
-                ),
-                const SizedBox(height: 24),
-                _PauseButton(
-                  icon: Icons.play_arrow_rounded,
-                  label: 'Tiếp tục',
-                  onPressed: onResume,
-                ),
-                const SizedBox(height: 12),
-                _PauseButton(
-                  icon: Icons.refresh_rounded,
-                  label: 'Chơi lại',
-                  onPressed: onRestart,
-                ),
-                const SizedBox(height: 12),
-                _PauseButton(
-                  icon: Icons.exit_to_app_rounded,
-                  label: 'Thoát',
-                  onPressed: onExit,
-                ),
-              ],
-            ),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Text(
+                'Tạm dừng',
+                style: GameTheme.headingLarge,
+              ),
+              const SizedBox(height: MiTokens.space6),
+              _PauseButton(
+                icon: Icons.play_arrow_rounded,
+                label: 'Tiếp tục',
+                onPressed: onResume,
+              ),
+              const SizedBox(height: MiTokens.space3),
+              _PauseButton(
+                icon: Icons.refresh_rounded,
+                label: 'Chơi lại',
+                onPressed: onRestart,
+              ),
+              const SizedBox(height: MiTokens.space3),
+              _PauseButton(
+                icon: Icons.exit_to_app_rounded,
+                label: 'Thoát',
+                onPressed: onExit,
+              ),
+            ],
           ),
         ),
       ),
@@ -98,20 +105,11 @@ class _PauseButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
+    return MiPrimaryButton(
+      label: label,
+      icon: Icon(icon),
+      onPressed: onPressed,
       width: double.infinity,
-      child: ElevatedButton.icon(
-        icon: Icon(icon),
-        label: Text(label, style: GameTheme.buttonLabel),
-        style: ElevatedButton.styleFrom(
-          backgroundColor: GameTheme.primary,
-          padding: const EdgeInsets.symmetric(vertical: 16),
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(GameTheme.buttonRadius),
-          ),
-        ),
-        onPressed: onPressed,
-      ),
     );
   }
 }

@@ -1,3 +1,4 @@
+import 'package:design_system/design_system.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mi_game_ui/mi_game_ui.dart';
@@ -125,7 +126,7 @@ void main() {
 
     expect(find.text('Con đã hoàn thành nhiệm vụ!'), findsOneWidget);
     expect(find.text('Điểm: 80'), findsOneWidget);
-    expect(find.byIcon(Icons.star_rounded), findsNWidgets(3));
+    expect(find.byType(MiBrandIconView), findsWidgets);
 
     await tester.tap(find.text('Tiếp tục'));
     await tester.tap(find.text('Chơi lại'));
@@ -291,7 +292,8 @@ void main() {
     );
 
     expect(find.text('Điều khiển MI'), findsOneWidget);
-    expect(find.text('Đặt lệnh theo thứ tự để MI đi tới đích.'), findsOneWidget);
+    expect(
+        find.text('Đặt lệnh theo thứ tự để MI đi tới đích.'), findsOneWidget);
     expect(find.text('1/2'), findsOneWidget);
     expect(find.byIcon(Icons.smart_toy_rounded), findsOneWidget);
 

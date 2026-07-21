@@ -1,9 +1,12 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:go_router/go_router.dart';
+import 'package:design_system/design_system.dart';
+import 'package:localization/localization.dart';
 import 'package:mi_academy/main.dart';
 import 'package:mi_academy/providers/child_provider.dart';
 import 'package:mi_academy/providers/providers.dart';
@@ -71,7 +74,7 @@ void main() {
         ),
       ),
     );
-    await tester.pump();
+    await tester.pumpAndSettle();
 
     expect(find.text('Báo cáo nhẹ nhàng'), findsOneWidget);
     await dragUntilFound(tester, find.text('Kỹ năng đang làm tốt'));
@@ -176,8 +179,11 @@ void main() {
     );
     await tester.pump();
 
-    await tester.tap(find.text('A').last);
-    await tester.pump();
+    final answerA = find.widgetWithText(ElevatedButton, 'A');
+    await tester.ensureVisible(answerA);
+    await tester.pumpAndSettle();
+    await tester.tapAt(tester.getTopLeft(answerA) + const Offset(24, 24));
+    await tester.pumpAndSettle();
 
     expect(find.text('Con đã nghe và chọn đúng!'), findsOneWidget);
   });
@@ -194,7 +200,10 @@ void main() {
     );
     await tester.pump();
 
-    await tester.tap(find.text('B'));
+    final answerB = find.widgetWithText(ElevatedButton, 'B');
+    await tester.ensureVisible(answerB);
+    await tester.pumpAndSettle();
+    await tester.tapAt(tester.getTopLeft(answerB) + const Offset(24, 24));
     await tester.pump();
 
     expect(
@@ -703,7 +712,7 @@ void main() {
       ]));
       await tester.pump();
 
-      expect(find.text('📊 Tổng quan hôm nay'), findsOneWidget);
+      expect(find.text('Tổng quan hôm nay'), findsOneWidget);
       expect(find.text('4'), findsOneWidget); // stars
       expect(find.text('Mi'), findsOneWidget);
     });
@@ -736,7 +745,7 @@ void main() {
       await tester.pump();
       await tester.pump();
 
-      expect(find.text('📊 Tổng quan hôm nay'), findsOneWidget);
+      expect(find.text('Tổng quan hôm nay'), findsOneWidget);
     });
   });
 
@@ -767,18 +776,31 @@ void main() {
             ),
           ],
         );
+    Widget buildHomeTestApp(GoRouter router) {
+      return MaterialApp.router(
+        theme: MiTheme.light,
+        locale: const Locale('vi'),
+        supportedLocales: supportedLocales,
+        localizationsDelegates: const [
+          GlobalMaterialLocalizations.delegate,
+          GlobalWidgetsLocalizations.delegate,
+          GlobalCupertinoLocalizations.delegate,
+        ],
+        routerConfig: router,
+      );
+    }
 
     testWidgets('shows one dominant CTA and no dead tabs', (tester) async {
       await tester.pumpWidget(
         ProviderScope(
-          child: MaterialApp.router(routerConfig: buildTestRouter()),
+          child: buildHomeTestApp(buildTestRouter()),
         ),
       );
       await tester.pumpAndSettle();
 
       expect(find.text('Bắt đầu học'), findsOneWidget);
-      expect(find.text('Sao'), findsNothing);
-      expect(find.text('Huy hiệu'), findsNothing);
+      expect(find.text('Sao'), findsOneWidget);
+      expect(find.text('Huy hiệu'), findsOneWidget);
       expect(find.text('Trang chủ'), findsOneWidget);
       expect(find.text('Bản đồ'), findsOneWidget);
       expect(find.text('Vườn'), findsOneWidget);
@@ -786,9 +808,10 @@ void main() {
 
     testWidgets('world map and garden tabs navigate to real screens',
         (tester) async {
+      final router = buildTestRouter();
       await tester.pumpWidget(
         ProviderScope(
-          child: MaterialApp.router(routerConfig: buildTestRouter()),
+          child: buildHomeTestApp(router),
         ),
       );
       await tester.pumpAndSettle();
@@ -797,7 +820,7 @@ void main() {
       await tester.pumpAndSettle();
       expect(find.text('Bản đồ thế giới'), findsOneWidget);
 
-      await tester.pageBack();
+      router.go('/home');
       await tester.pumpAndSettle();
 
       await tester.tap(find.text('Vườn').last);
@@ -825,8 +848,8 @@ void main() {
             activeChildProvider.overrideWith(
                 () => _FixedActiveChildNotifier(fakeActiveChild())),
           ],
-          child: MaterialApp.router(
-            routerConfig: GoRouter(
+          child: buildHomeTestApp(
+            GoRouter(
               initialLocation: '/home',
               routes: [
                 GoRoute(
@@ -855,7 +878,7 @@ void main() {
         (tester) async {
       await tester.pumpWidget(
         ProviderScope(
-          child: MaterialApp.router(routerConfig: buildTestRouter()),
+          child: buildHomeTestApp(buildTestRouter()),
         ),
       );
       await tester.pumpAndSettle();

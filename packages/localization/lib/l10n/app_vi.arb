@@ -81,5 +81,35 @@
     "placeholders": {
       "count": {"type": "int"}
     }
-  }
+  },
+  "homeGreeting": "Chào {name}!",
+  "homeMascotLabel": "Bạn MI đang vẫy tay chào",
+  "homeParentGateLabel": "Khu vực phụ huynh, giữ 3 giây để mở",
+  "homeStartLearning": "Bắt đầu học",
+  "homeContinueLearning": "Tiếp tục học",
+  "homePlayLearnGrow": "Chơi, học, lớn lên mỗi ngày",
+  "homeProgressTitle": "Tiến độ hôm nay",
+  "homeProgressEmpty": "Sẵn sàng cho bài học đầu tiên",
+  "homeProgressWithCount": "{count} nhiệm vụ trong kế hoạch",
+  "homeStars": "Sao",
+  "homeBadges": "Huy hiệu",
+  "homeDailyMission": "Nhiệm vụ hôm nay",
+  "homeDailyMissionSubtitle": "MI chọn vài hoạt động vừa sức cho con.",
+  "homePlanLoadError": "Không thể tải kế hoạch",
+  "homeEmptyTitle": "Chưa có nhiệm vụ hôm nay",
+  "homeEmptySubtitle": "MI sẽ gợi ý bài học mới sớm thôi!",
+  "homeMinutes": "{count} phút",
+  "homeLessonFallback": "Bài học",
+  "homeGameCategories": "Góc học vui",
+  "homeLettersTitle": "ABC",
+  "homeLettersSubtitle": "Chữ cái",
+  "homeNumbersTitle": "123",
+  "homeNumbersSubtitle": "Số học",
+  "homeLogicTitle": "Logic",
+  "homeLogicSubtitle": "Tư duy",
+  "homeMemoryTitle": "Trí nhớ",
+  "homeMemorySubtitle": "Ghi nhớ",
+  "homeWorld": "Bản đồ",
+  "homeGarden": "Vườn",
+  "homeHome": "Trang chủ"
 }

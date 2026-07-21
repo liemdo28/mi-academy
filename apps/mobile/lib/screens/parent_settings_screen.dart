@@ -216,11 +216,12 @@ class _SettingsState extends ConsumerState<ParentSettingsScreen> {
               child: Column(
                 children: [
                   ListTile(
-                    leading: Icon(
-                      _settings.offlineReady
-                          ? Icons.cloud_done
-                          : Icons.cloud_download,
-                      color: _settings.offlineReady ? MiColors.success : null,
+                    leading: MiBrandIconView(
+                      icon: MiBrandIcon.offline,
+                      color: _settings.offlineReady
+                          ? MiColors.success
+                          : MiColors.discovery,
+                      semanticLabel: 'Nội dung offline',
                     ),
                     title: const Text('Tải nội dung offline'),
                     subtitle: Text(
@@ -233,11 +234,12 @@ class _SettingsState extends ConsumerState<ParentSettingsScreen> {
                   ),
                   const Divider(height: 1),
                   ListTile(
-                    leading: Icon(
-                      _settings.exportReady
-                          ? Icons.task_alt
-                          : Icons.file_download,
-                      color: _settings.exportReady ? MiColors.success : null,
+                    leading: MiBrandIconView(
+                      icon: MiBrandIcon.report,
+                      color: _settings.exportReady
+                          ? MiColors.success
+                          : MiColors.discovery,
+                      semanticLabel: 'Xuất dữ liệu',
                     ),
                     title: const Text('Xuất dữ liệu của bé'),
                     subtitle: Text(

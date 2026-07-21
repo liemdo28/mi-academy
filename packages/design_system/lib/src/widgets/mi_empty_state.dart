@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
+import '../assets/mi_brand_assets.dart';
+import '../widgets/mi_brand_components.dart';
 import '../theme/mi_theme.dart';
 
 /// Empty state — shown when a list has no items.
 class MiEmptyState extends StatelessWidget {
   final String title;
   final String? subtitle;
+  final MiBrandIcon? brandIcon;
   final String? emoji;
   final Widget? action;
 
@@ -12,6 +15,7 @@ class MiEmptyState extends StatelessWidget {
     super.key,
     required this.title,
     this.subtitle,
+    this.brandIcon,
     this.emoji,
     this.action,
   });
@@ -24,10 +28,17 @@ class MiEmptyState extends StatelessWidget {
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-            Text(
-              emoji ?? '🔍',
-              style: const TextStyle(fontSize: MiTokens.icon2xl),
-            ),
+            if (brandIcon != null)
+              MiBrandIconView(
+                icon: brandIcon!,
+                size: MiTokens.icon2xl,
+                semanticLabel: title,
+              )
+            else
+              Text(
+                emoji ?? '',
+                style: const TextStyle(fontSize: MiTokens.icon2xl),
+              ),
             const SizedBox(height: MiTokens.space4),
             Text(
               title,

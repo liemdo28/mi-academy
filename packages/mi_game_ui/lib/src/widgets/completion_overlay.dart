@@ -1,3 +1,4 @@
+import 'package:design_system/design_system.dart';
 import 'package:flutter/material.dart';
 
 import '../theme/game_theme.dart';
@@ -27,104 +28,74 @@ class CompletionOverlay extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Colors.black54,
+      color: MiColors.scrim,
       child: Center(
-        child: Card(
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(GameTheme.overlayRadius),
-          ),
+        child: Container(
           margin: GameTheme.screenPadding,
-          child: Padding(
-            padding: const EdgeInsets.all(24),
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                const Text('🎉', style: TextStyle(fontSize: 64)),
-                const SizedBox(height: 16),
-                Text(
-                  message,
-                  style: GameTheme.headingMedium,
-                  textAlign: TextAlign.center,
-                ),
-                const SizedBox(height: 16),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: List.generate(maxStars, (i) {
-                    final earned = i < starsEarned;
-                    return Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 4),
-                      child: Icon(
-                        Icons.star_rounded,
-                        size: 48,
-                        color: earned ? GameTheme.warning : Colors.grey.shade300,
-                      ),
-                    );
-                  }),
-                ),
-                if (score > 0) ...[
-                  const SizedBox(height: 16),
-                  Text('Điểm: $score', style: GameTheme.bodyLarge),
-                ],
-                const SizedBox(height: 24),
-                _ActionButton(
-                  icon: Icons.arrow_forward_rounded,
-                  label: 'Tiếp tục',
-                  onPressed: onNext,
-                  primary: true,
-                ),
-                const SizedBox(height: 12),
-                _ActionButton(
-                  icon: Icons.refresh_rounded,
-                  label: 'Chơi lại',
-                  onPressed: onReplay,
-                ),
-                const SizedBox(height: 12),
-                _ActionButton(
-                  icon: Icons.home_rounded,
-                  label: 'Trang chính',
-                  onPressed: onExit,
-                ),
+          padding: const EdgeInsets.all(MiTokens.space6),
+          decoration: BoxDecoration(
+            color: MiColors.surface,
+            borderRadius: BorderRadius.circular(GameTheme.overlayRadius),
+            boxShadow: MiShadows.raised,
+          ),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              const MiMascotReaction(
+                emotion: MiMascotEmotion.celebration,
+                size: MiTokens.mascotReactionMd,
+                semanticLabel: 'MI chúc mừng con',
+              ),
+              const SizedBox(height: MiTokens.space4),
+              Text(
+                message,
+                style: GameTheme.headingMedium,
+                textAlign: TextAlign.center,
+              ),
+              const SizedBox(height: MiTokens.space4),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: List.generate(maxStars, (i) {
+                  final earned = i < starsEarned;
+                  return Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 4),
+                    child: MiBrandIconView(
+                      icon: MiBrandIcon.rewardStar,
+                      size: 48,
+                      color: earned ? GameTheme.warning : MiColors.border,
+                      semanticLabel: earned ? 'Sao đã nhận' : 'Sao chưa nhận',
+                    ),
+                  );
+                }),
+              ),
+              if (score > 0) ...[
+                const SizedBox(height: MiTokens.space4),
+                Text('Điểm: $score', style: GameTheme.bodyLarge),
               ],
-            ),
+              const SizedBox(height: MiTokens.space6),
+              MiPrimaryButton(
+                label: 'Tiếp tục',
+                icon: const Icon(Icons.arrow_forward_rounded),
+                onPressed: onNext,
+                width: double.infinity,
+              ),
+              const SizedBox(height: MiTokens.space3),
+              MiSecondaryButton(
+                label: 'Chơi lại',
+                icon: const Icon(Icons.refresh_rounded),
+                onPressed: onReplay,
+                width: double.infinity,
+              ),
+              const SizedBox(height: MiTokens.space3),
+              MiSecondaryButton(
+                label: 'Trang chính',
+                icon: const Icon(Icons.home_rounded),
+                onPressed: onExit,
+                width: double.infinity,
+              ),
+            ],
           ),
         ),
-      ),
-    );
-  }
-}
-
-class _ActionButton extends StatelessWidget {
-  const _ActionButton({
-    required this.icon,
-    required this.label,
-    required this.onPressed,
-    this.primary = false,
-  });
-
-  final IconData icon;
-  final String label;
-  final VoidCallback onPressed;
-  final bool primary;
-
-  @override
-  Widget build(BuildContext context) {
-    return SizedBox(
-      width: double.infinity,
-      child: ElevatedButton.icon(
-        icon: Icon(icon),
-        label: Text(label, style: GameTheme.buttonLabel),
-        style: ElevatedButton.styleFrom(
-          backgroundColor: primary ? GameTheme.primary : Colors.white,
-          foregroundColor: primary ? Colors.white : GameTheme.textPrimary,
-          padding: const EdgeInsets.symmetric(vertical: 14),
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(GameTheme.buttonRadius),
-            side: primary
-                ? BorderSide.none
-                : const BorderSide(color: GameTheme.primary),
-          ),
-        ),
-        onPressed: onPressed,
       ),
     );
   }

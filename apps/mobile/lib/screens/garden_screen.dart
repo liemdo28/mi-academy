@@ -30,7 +30,7 @@ class GardenScreen extends ConsumerWidget {
                 title: 'Vườn của con còn trống',
                 subtitle:
                     'Hoàn thành nhiệm vụ để trồng những bông hoa đầu tiên!',
-                emoji: '🌱',
+                brandIcon: MiBrandIcon.garden,
               );
             }
             return GridView.builder(
@@ -49,8 +49,8 @@ class GardenScreen extends ConsumerWidget {
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      const MiIcon(
-                        MiIconName.badge,
+                      const MiBrandIconView(
+                        icon: MiBrandIcon.achievement,
                         color: MiColors.secondary,
                         size: 40,
                       ),

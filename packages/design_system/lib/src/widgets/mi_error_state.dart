@@ -47,7 +47,8 @@ class MiErrorState extends StatelessWidget {
               const SizedBox(height: MiTokens.space6),
               ElevatedButton.icon(
                 onPressed: onRetry,
-                icon: const MiIcon(MiIconName.replay, color: MiColors.textOnPrimary),
+                icon: const MiIcon(MiIconName.replay,
+                    color: MiColors.textOnPrimary),
                 label: const Text('Thử lại'),
               ),
             ],

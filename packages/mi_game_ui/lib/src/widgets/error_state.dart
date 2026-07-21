@@ -32,70 +32,46 @@ class ErrorState extends StatelessWidget {
       child: Center(
         child: Padding(
           padding: GameTheme.screenPadding,
-          child: Card(
-            shape: RoundedRectangleBorder(
+          child: Container(
+            padding: const EdgeInsets.all(MiTokens.space4),
+            decoration: BoxDecoration(
+              color: MiColors.surface,
               borderRadius: BorderRadius.circular(GameTheme.overlayRadius),
+              boxShadow: MiShadows.raised,
             ),
-            child: Padding(
-              padding: const EdgeInsets.all(24),
-              child: Column(
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  const MiCharacter(
-                    expression: MiExpression.errorRecovery,
-                    size: 64,
-                    semanticLabel: 'MI đang nghĩ cách giúp con',
-                  ),
-                  const SizedBox(height: 16),
-                  Text(title, style: GameTheme.headingMedium),
-                  const SizedBox(height: 8),
-                  Text(
-                    message,
-                    style: GameTheme.bodyMedium,
-                    textAlign: TextAlign.center,
-                  ),
-                  const SizedBox(height: 24),
-                  SizedBox(
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                const MiMascotReaction(
+                  emotion: MiMascotEmotion.thinking,
+                  size: MiTokens.mascotReactionSm,
+                  semanticLabel: 'MI đang nghĩ cách giúp con',
+                ),
+                const SizedBox(height: MiTokens.space4),
+                Text(title, style: GameTheme.headingMedium),
+                const SizedBox(height: MiTokens.space2),
+                Text(
+                  message,
+                  style: GameTheme.bodyMedium,
+                  textAlign: TextAlign.center,
+                ),
+                const SizedBox(height: MiTokens.space4),
+                MiPrimaryButton(
+                  label: retryLabel,
+                  icon: const Icon(Icons.refresh_rounded),
+                  onPressed: onRetry,
+                  width: double.infinity,
+                ),
+                if (onExit != null) ...[
+                  const SizedBox(height: MiTokens.space3),
+                  MiSecondaryButton(
+                    label: exitLabel,
+                    icon: const Icon(Icons.home_rounded),
+                    onPressed: onExit,
                     width: double.infinity,
-                    child: ElevatedButton.icon(
-                      icon: const Icon(Icons.refresh_rounded),
-                      label: Text(retryLabel, style: GameTheme.buttonLabel),
-                      style: ElevatedButton.styleFrom(
-                        backgroundColor: GameTheme.primary,
-                        padding: const EdgeInsets.symmetric(vertical: 14),
-                        shape: RoundedRectangleBorder(
-                          borderRadius:
-                              BorderRadius.circular(GameTheme.buttonRadius),
-                        ),
-                      ),
-                      onPressed: onRetry,
-                    ),
                   ),
-                  if (onExit != null) ...[
-                    const SizedBox(height: 12),
-                    SizedBox(
-                      width: double.infinity,
-                      child: OutlinedButton.icon(
-                        icon: const Icon(Icons.home_rounded),
-                        label: Text(
-                          exitLabel,
-                          style: GameTheme.buttonLabel.copyWith(
-                            color: GameTheme.textSecondary,
-                          ),
-                        ),
-                        style: OutlinedButton.styleFrom(
-                          padding: const EdgeInsets.symmetric(vertical: 14),
-                          shape: RoundedRectangleBorder(
-                            borderRadius:
-                                BorderRadius.circular(GameTheme.buttonRadius),
-                          ),
-                        ),
-                        onPressed: onExit,
-                      ),
-                    ),
-                  ],
                 ],
-              ),
+              ],
             ),
           ),
         ),

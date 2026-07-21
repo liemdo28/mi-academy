@@ -87,8 +87,6 @@ class _ChildSelectorScreenState extends ConsumerState<ChildSelectorScreen> {
                             children: [
                               for (final child in state.children)
                                 _ChildAvatarCard(
-                                  avatarId: child['avatar_id'] as String? ??
-                                      'avatar_01',
                                   nickname: child['nickname'] as String? ?? '',
                                   ageGroup:
                                       child['age_group'] as String? ?? 'junior',
@@ -112,13 +110,11 @@ class _ChildSelectorScreenState extends ConsumerState<ChildSelectorScreen> {
 }
 
 class _ChildAvatarCard extends StatelessWidget {
-  final String avatarId;
   final String nickname;
   final String ageGroup;
   final VoidCallback onTap;
 
   const _ChildAvatarCard({
-    required this.avatarId,
     required this.nickname,
     required this.ageGroup,
     required this.onTap,
@@ -140,9 +136,11 @@ class _ChildAvatarCard extends StatelessWidget {
               shape: BoxShape.circle,
             ),
             child: Center(
-              child: Text(
-                _avatarEmoji(avatarId),
-                style: const TextStyle(fontSize: 36),
+              child: MiBrandIconView(
+                icon: MiBrandIcon.profile,
+                color: _ageGroupColor(ageGroup),
+                size: MiTokens.iconXl,
+                semanticLabel: 'Hồ sơ $nickname',
               ),
             ),
           ),
@@ -185,21 +183,6 @@ class _ChildAvatarCard extends StatelessWidget {
         return '11-12 tuổi';
       default:
         return '';
-    }
-  }
-
-  String _avatarEmoji(String avatarId) {
-    switch (avatarId) {
-      case 'avatar_01':
-        return '🐻';
-      case 'avatar_02':
-        return '🐰';
-      case 'avatar_03':
-        return '🦊';
-      case 'avatar_04':
-        return '🐱';
-      default:
-        return '🧒';
     }
   }
 }

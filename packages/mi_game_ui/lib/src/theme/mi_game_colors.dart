@@ -1,3 +1,4 @@
+import 'package:design_system/design_system.dart';
 import 'package:flutter/material.dart';
 
 /// Centralized color palette for all MI Academy games.
@@ -10,45 +11,45 @@ class MiGameColors {
 
   // --- Brand Colors ---
 
-  /// Primary brand color — purple accent.
-  static const Color primary = Color(0xFF6C63FF);
+  /// Primary brand color — Mi Academy orange.
+  static const Color primary = MiColors.primary;
 
-  /// Secondary brand color — pink/coral accent.
-  static const Color secondary = Color(0xFFFF6584);
+  /// Secondary brand color — discovery blue.
+  static const Color secondary = MiColors.discovery;
 
-  /// Tertiary brand color — teal accent.
-  static const Color tertiary = Color(0xFF00BCD4);
+  /// Tertiary brand color — creative purple.
+  static const Color tertiary = MiColors.creative;
 
   // --- Semantic Colors ---
 
   /// Success / correct answer feedback.
-  static const Color success = Color(0xFF2BB673);
+  static const Color success = MiColors.success;
 
   /// Warning / hint used feedback.
-  static const Color warning = Color(0xFFF5A623);
+  static const Color warning = MiColors.accent;
 
   /// Error / incorrect answer feedback (soft, not scary).
-  static const Color error = Color(0xFFFF7043);
+  static const Color error = MiColors.error;
 
   /// Information / hint available.
-  static const Color info = Color(0xFF42A5F5);
+  static const Color info = MiColors.info;
 
   // --- Neutral Colors ---
 
   /// Main background color.
-  static const Color background = Color(0xFFF7F7FE);
+  static const Color background = MiColors.background;
 
   /// Surface / card background.
-  static const Color surface = Colors.white;
+  static const Color surface = MiColors.surface;
 
   /// Primary text color.
-  static const Color textPrimary = Color(0xFF2D2D5F);
+  static const Color textPrimary = MiColors.textPrimary;
 
   /// Secondary / muted text color.
-  static const Color textSecondary = Color(0xFF6B6B8E);
+  static const Color textSecondary = MiColors.textSecondary;
 
   /// Divider / subtle lines.
-  static const Color divider = Color(0xFFE3E2F2);
+  static const Color divider = MiColors.border;
 
   // --- Card Specific ---
 
@@ -56,18 +57,18 @@ class MiGameColors {
   static const Color cardFace = Colors.white;
 
   /// Card back pattern color.
-  static const Color cardBack = Color(0xFF6C63FF);
+  static const Color cardBack = MiColors.primary;
 
   /// Matched pair glow.
-  static const Color matchedGlow = Color(0xFF2BB673);
+  static const Color matchedGlow = MiColors.success;
 
   // --- Star Rating ---
 
   /// Active / earned star color.
-  static const Color starActive = Color(0xFFFFC94D);
+  static const Color starActive = MiColors.accent;
 
   /// Inactive / unearned star color.
-  static const Color starInactive = Color(0xFFE3E2F2);
+  static const Color starInactive = MiColors.border;
 
   // --- Accessibility ---
 
@@ -75,8 +76,8 @@ class MiGameColors {
   static const Color highContrastOverlay = Color(0xFF000000);
 
   /// Focus ring color for accessibility.
-  static const Color focusRing = Color(0xFF6C63FF);
+  static const Color focusRing = MiColors.discovery;
 
   /// Reduced motion indicator color.
-  static const Color motionIndicator = Color(0xFF42A5F5);
+  static const Color motionIndicator = MiColors.discovery;
 }

@@ -14,12 +14,12 @@ class WorldMapScreen extends StatelessWidget {
   const WorldMapScreen({super.key});
 
   static const _zones = [
-    'Thành phố chữ cái',
-    'Vương quốc toán học',
-    'Đảo tư duy',
-    'Phòng thí nghiệm khoa học',
-    'Nhà sáng tạo',
-    'Vườn thành tích',
+    _WorldZone('Thành phố chữ cái', MiBrandIcon.alphabet),
+    _WorldZone('Vương quốc toán học', MiBrandIcon.numbers),
+    _WorldZone('Đảo tư duy', MiBrandIcon.logic),
+    _WorldZone('Phòng thí nghiệm khoa học', MiBrandIcon.exploration),
+    _WorldZone('Nhà sáng tạo', MiBrandIcon.writing),
+    _WorldZone('Vườn thành tích', MiBrandIcon.garden),
   ];
 
   @override
@@ -56,8 +56,13 @@ class WorldMapScreen extends StatelessWidget {
                   runSpacing: MiTokens.space2,
                   alignment: WrapAlignment.center,
                   children: _zones
-                      .map((z) => Chip(
-                            label: Text(z),
+                      .map((zone) => Chip(
+                            avatar: MiBrandIconView(
+                              icon: zone.icon,
+                              size: MiTokens.iconSm,
+                              decorative: true,
+                            ),
+                            label: Text(zone.label),
                             backgroundColor: MiColors.primarySoft,
                             side: BorderSide.none,
                           ))
@@ -70,4 +75,11 @@ class WorldMapScreen extends StatelessWidget {
       ),
     );
   }
+}
+
+class _WorldZone {
+  const _WorldZone(this.label, this.icon);
+
+  final String label;
+  final MiBrandIcon icon;
 }

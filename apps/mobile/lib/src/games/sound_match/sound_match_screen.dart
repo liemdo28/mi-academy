@@ -176,7 +176,9 @@ class _SoundMatchScreenState extends State<SoundMatchScreen>
             ),
             Expanded(
               child: ListView(
-                padding: GameTheme.screenPadding,
+                padding: GameTheme.screenPadding.add(
+                  const EdgeInsets.only(bottom: 96),
+                ),
                 children: [
                   _SoundPromptCard(
                     prompt: prompt,

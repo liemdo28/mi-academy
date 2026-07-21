@@ -1,3 +1,4 @@
+import 'package:design_system/design_system.dart';
 import 'package:flutter/material.dart';
 
 /// Theme data shared across all MI Academy games.
@@ -8,66 +9,71 @@ class GameTheme {
 
   // --- Color palette ---
 
-  // Values track MiColors in packages/design_system (Soft Violet system,
-  // docs/design/MI_DESIGN_SYSTEM.md). Keep in sync until this package can
-  // depend on design_system directly.
-  static const Color primary = Color(0xFF6C63FF);
-  static const Color secondary = Color(0xFFFF6584);
-  static const Color success = Color(0xFF2BB673);
-  static const Color warning = Color(0xFFF5A623);
-  static const Color background = Color(0xFFF7F7FE);
-  static const Color surface = Colors.white;
-  static const Color onPrimary = Colors.white;
-  static const Color textPrimary = Color(0xFF2D2D5F);
-  static const Color textSecondary = Color(0xFF6B6B8E);
+  // Values track docs/brand/BRAND_GUIDELINES.md via design_system.
+  static const Color primary = MiColors.primary;
+  static const Color secondary = MiColors.discovery;
+  static const Color success = MiColors.success;
+  static const Color warning = MiColors.accent;
+  static const Color background = MiColors.background;
+  static const Color surface = MiColors.surface;
+  static const Color onPrimary = MiColors.textOnPrimary;
+  static const Color textPrimary = MiColors.textPrimary;
+  static const Color textSecondary = MiColors.textSecondary;
 
   // --- Touch target (min 48x48 per accessibility guidelines) ---
 
   static const double minTouchTarget = 48.0;
-  static const double cardRadius = 16.0;
-  static const double buttonRadius = 12.0;
-  static const double overlayRadius = 24.0;
+  static const double cardRadius = MiTokens.radiusLg;
+  static const double buttonRadius = MiTokens.radiusFull;
+  static const double overlayRadius = MiTokens.radiusXl;
 
   // --- Text styles ---
 
   static const TextStyle headingLarge = TextStyle(
     fontSize: 28,
-    fontWeight: FontWeight.bold,
+    fontWeight: FontWeight.w800,
+    fontFamily: 'NunitoRounded',
     color: textPrimary,
   );
 
   static const TextStyle headingMedium = TextStyle(
     fontSize: 22,
-    fontWeight: FontWeight.w600,
+    fontWeight: FontWeight.w800,
+    fontFamily: 'NunitoRounded',
     color: textPrimary,
   );
 
   static const TextStyle bodyLarge = TextStyle(
     fontSize: 18,
+    fontWeight: FontWeight.w600,
+    fontFamily: 'NunitoRounded',
     color: textPrimary,
   );
 
   static const TextStyle bodyMedium = TextStyle(
     fontSize: 16,
+    fontWeight: FontWeight.w600,
+    fontFamily: 'NunitoRounded',
     color: textSecondary,
   );
 
   static const TextStyle buttonLabel = TextStyle(
     fontSize: 18,
-    fontWeight: FontWeight.w600,
+    fontWeight: FontWeight.w800,
+    fontFamily: 'NunitoRounded',
     color: onPrimary,
   );
 
   // --- Padding ---
 
-  static const EdgeInsets screenPadding = EdgeInsets.all(16);
-  static const EdgeInsets cardPadding = EdgeInsets.all(12);
-  static const EdgeInsets buttonPadding =
-      EdgeInsets.symmetric(horizontal: 24, vertical: 14);
+  static const EdgeInsets screenPadding = EdgeInsets.all(MiTokens.space4);
+  static const EdgeInsets cardPadding = EdgeInsets.all(MiTokens.space4);
+  static const EdgeInsets buttonPadding = EdgeInsets.symmetric(
+      horizontal: MiTokens.space6, vertical: MiTokens.space4);
 
   // --- Shadows ---
 
   static const List<BoxShadow> cardShadow = [
-    BoxShadow(color: Color(0x1A000000), blurRadius: 8, offset: Offset(0, 2)),
+    BoxShadow(color: MiColors.shadow, blurRadius: 14, offset: Offset(0, 6)),
   ];
 }

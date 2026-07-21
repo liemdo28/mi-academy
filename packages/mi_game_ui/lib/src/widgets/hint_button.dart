@@ -1,3 +1,4 @@
+import 'package:design_system/design_system.dart';
 import 'package:flutter/material.dart';
 
 import '../theme/game_theme.dart';
@@ -28,10 +29,15 @@ class HintButton extends StatelessWidget {
         child: Stack(
           alignment: Alignment.center,
           children: [
-            IconButton(
-              icon: const Icon(Icons.lightbulb_outline_rounded),
-              onPressed: canHint ? onPressed : null,
-              color: canHint ? GameTheme.warning : GameTheme.textSecondary,
+            Material(
+              color: canHint ? MiColors.accentSoft : MiColors.background,
+              shape: const CircleBorder(),
+              child: IconButton(
+                icon: const Icon(Icons.lightbulb_outline_rounded),
+                onPressed: canHint ? onPressed : null,
+                color:
+                    canHint ? GameTheme.textPrimary : GameTheme.textSecondary,
+              ),
             ),
             Positioned(
               right: 4,
@@ -72,31 +78,31 @@ class HintBubble extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Card(
-      elevation: 4,
-      shape: RoundedRectangleBorder(
+    return Container(
+      padding: const EdgeInsets.all(MiTokens.space4),
+      decoration: BoxDecoration(
+        color: MiColors.accentSoft,
         borderRadius: BorderRadius.circular(GameTheme.cardRadius),
+        boxShadow: MiShadows.soft,
       ),
-      color: GameTheme.warning,
-      child: Padding(
-        padding: const EdgeInsets.all(16),
-        child: Row(
-          children: [
-            const Icon(Icons.lightbulb_rounded, color: Colors.white, size: 28),
-            const SizedBox(width: 12),
-            Expanded(
-              child: Text(
-                hintText,
-                style: GameTheme.bodyLarge.copyWith(color: Colors.white),
-              ),
+      child: Row(
+        children: [
+          const Icon(Icons.lightbulb_rounded,
+              color: GameTheme.textPrimary, size: 28),
+          const SizedBox(width: MiTokens.space3),
+          Expanded(
+            child: Text(
+              hintText,
+              style: GameTheme.bodyLarge,
             ),
-            if (onDismiss != null)
-              IconButton(
-                icon: const Icon(Icons.close_rounded, color: Colors.white),
-                onPressed: onDismiss,
-              ),
-          ],
-        ),
+          ),
+          if (onDismiss != null)
+            IconButton(
+              icon:
+                  const Icon(Icons.close_rounded, color: GameTheme.textPrimary),
+              onPressed: onDismiss,
+            ),
+        ],
       ),
     );
   }

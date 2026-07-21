@@ -1,3 +1,4 @@
+import 'package:design_system/design_system.dart';
 import 'package:flutter/material.dart';
 
 import '../theme/game_theme.dart';
@@ -24,10 +25,10 @@ class ProgressDots extends StatelessWidget {
         return Padding(
           padding: const EdgeInsets.symmetric(horizontal: 4),
           child: Container(
-            width: 12,
+            width: isDone ? 22 : 12,
             height: 12,
             decoration: BoxDecoration(
-              shape: BoxShape.circle,
+              borderRadius: BorderRadius.circular(MiTokens.radiusFull),
               color: isDone ? color : color.withValues(alpha: 0.3),
             ),
           ),

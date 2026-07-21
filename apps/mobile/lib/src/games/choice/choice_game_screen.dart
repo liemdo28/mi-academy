@@ -14,20 +14,24 @@ class ChoiceGameScreen extends StatefulWidget {
     required this.worldLabel,
     required this.level,
     required this.allLevels,
-    required this.heroIcon,
     required this.primaryColor,
+    this.brandIcon,
+    this.heroIcon,
     this.onExit,
     this.onComplete,
     this.initialSnapshot,
     this.onSaveSnapshot,
     this.locale = 'vi',
-  });
+  }) : assert(brandIcon != null || heroIcon != null);
 
   final String title;
   final String worldLabel;
   final MiLevel level;
   final List<MiLevel> allLevels;
-  final IconData heroIcon;
+  final MiBrandIcon? brandIcon;
+
+  @Deprecated('Use brandIcon instead.')
+  final IconData? heroIcon;
   final Color primaryColor;
   final VoidCallback? onExit;
 
@@ -181,7 +185,8 @@ class _ChoiceGameScreenState extends State<ChoiceGameScreen>
                 children: [
                   _RacePanel(
                     worldLabel: widget.worldLabel,
-                    icon: widget.heroIcon,
+                    brandIcon: widget.brandIcon,
+                    legacyIcon: widget.heroIcon,
                     color: widget.primaryColor,
                     progress: _session.progress,
                   ),
@@ -243,13 +248,15 @@ class _ChoiceGameScreenState extends State<ChoiceGameScreen>
 class _RacePanel extends StatelessWidget {
   const _RacePanel({
     required this.worldLabel,
-    required this.icon,
+    required this.brandIcon,
+    required this.legacyIcon,
     required this.color,
     required this.progress,
   });
 
   final String worldLabel;
-  final IconData icon;
+  final MiBrandIcon? brandIcon;
+  final IconData? legacyIcon;
   final Color color;
   final double progress;
 
@@ -266,7 +273,15 @@ class _RacePanel extends StatelessWidget {
           children: [
             Row(
               children: [
-                Icon(icon, color: color, size: 36),
+                if (brandIcon != null)
+                  MiBrandIconView(
+                    icon: brandIcon!,
+                    color: color,
+                    size: 36,
+                    semanticLabel: worldLabel,
+                  )
+                else
+                  Icon(legacyIcon, color: color, size: 36),
                 const SizedBox(width: 12),
                 Expanded(
                   child: Text(worldLabel, style: GameTheme.headingMedium),

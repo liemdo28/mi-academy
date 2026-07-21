@@ -1,3 +1,4 @@
+import 'package:design_system/design_system.dart';
 import 'package:flutter/material.dart';
 
 import '../theme/game_theme.dart';
@@ -23,30 +24,31 @@ class FeedbackBubble extends StatelessWidget {
     final defaultIcon =
         isCorrect ? Icons.check_circle_rounded : Icons.refresh_rounded;
 
-    return Card(
-      color: color,
-      elevation: 4,
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(GameTheme.cardRadius),
+    return Container(
+      padding: const EdgeInsets.symmetric(
+        horizontal: MiTokens.space4,
+        vertical: MiTokens.space3,
       ),
-      child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
-        child: Row(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            Icon(icon ?? defaultIcon, color: Colors.white, size: 28),
-            const SizedBox(width: 12),
-            Flexible(
-              child: Text(
-                message,
-                style: GameTheme.bodyLarge.copyWith(
-                  color: Colors.white,
-                  fontWeight: FontWeight.w600,
-                ),
+      decoration: BoxDecoration(
+        color: color,
+        borderRadius: BorderRadius.circular(GameTheme.cardRadius),
+        boxShadow: MiShadows.soft,
+      ),
+      child: Row(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          Icon(icon ?? defaultIcon, color: Colors.white, size: 28),
+          const SizedBox(width: MiTokens.space3),
+          Flexible(
+            child: Text(
+              message,
+              style: GameTheme.bodyLarge.copyWith(
+                color: Colors.white,
+                fontWeight: FontWeight.w600,
               ),
             ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }

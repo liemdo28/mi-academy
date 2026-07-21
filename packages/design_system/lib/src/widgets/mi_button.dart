@@ -30,11 +30,11 @@ class MiButton extends StatelessWidget {
       child: ElevatedButton(
         onPressed: isLoading ? null : onPressed,
         style: ElevatedButton.styleFrom(
-          backgroundColor: backgroundColor ?? MiTokens.primaryBlue,
-          foregroundColor: foregroundColor ?? MiTokens.textOnPrimary,
-          disabledBackgroundColor: MiTokens.border,
+          backgroundColor: backgroundColor ?? MiColors.primary,
+          foregroundColor: foregroundColor ?? MiColors.textOnPrimary,
+          disabledBackgroundColor: MiColors.border,
           shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(MiTokens.radiusMd),
+            borderRadius: BorderRadius.circular(MiTokens.radiusFull),
           ),
         ),
         child: isLoading
@@ -43,7 +43,7 @@ class MiButton extends StatelessWidget {
                 height: 24,
                 child: CircularProgressIndicator(
                   strokeWidth: 2.5,
-                  valueColor: AlwaysStoppedAnimation(MiTokens.textOnPrimary),
+                  valueColor: AlwaysStoppedAnimation(MiColors.textOnPrimary),
                 ),
               )
             : Row(
@@ -63,6 +63,134 @@ class MiButton extends StatelessWidget {
                   ),
                 ],
               ),
+      ),
+    );
+  }
+}
+
+/// Primary brand button for child-facing actions.
+class MiPrimaryButton extends StatelessWidget {
+  const MiPrimaryButton({
+    super.key,
+    required this.label,
+    this.onPressed,
+    this.icon,
+    this.isLoading = false,
+    this.width,
+  });
+
+  final String label;
+  final VoidCallback? onPressed;
+  final Widget? icon;
+  final bool isLoading;
+  final double? width;
+
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+      width: width,
+      height: MiTokens.touchTargetChildLarge,
+      child: ElevatedButton(
+        onPressed: isLoading ? null : onPressed,
+        style: ElevatedButton.styleFrom(
+          backgroundColor: MiColors.primary,
+          foregroundColor: MiColors.textOnPrimary,
+          disabledBackgroundColor: MiColors.border,
+          elevation: 0,
+          shadowColor: Colors.transparent,
+          padding: const EdgeInsets.symmetric(horizontal: MiTokens.space6),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(MiTokens.radiusFull),
+          ),
+        ),
+        child: AnimatedSwitcher(
+          duration: MiMotion.resolve(context, MiMotion.fast),
+          child: isLoading
+              ? const SizedBox(
+                  key: ValueKey('mi-primary-loading'),
+                  width: 24,
+                  height: 24,
+                  child: CircularProgressIndicator(
+                    strokeWidth: 2.5,
+                    valueColor: AlwaysStoppedAnimation(MiColors.textOnPrimary),
+                  ),
+                )
+              : Row(
+                  key: const ValueKey('mi-primary-content'),
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    if (icon != null) ...[
+                      icon!,
+                      const SizedBox(width: MiTokens.space2),
+                    ],
+                    Flexible(
+                      child: Text(
+                        label,
+                        maxLines: 1,
+                        overflow: TextOverflow.ellipsis,
+                        style: Theme.of(context)
+                            .textTheme
+                            .titleMedium
+                            ?.copyWith(color: MiColors.textOnPrimary),
+                      ),
+                    ),
+                  ],
+                ),
+        ),
+      ),
+    );
+  }
+}
+
+/// Secondary brand button for quiet navigation and support actions.
+class MiSecondaryButton extends StatelessWidget {
+  const MiSecondaryButton({
+    super.key,
+    required this.label,
+    this.onPressed,
+    this.icon,
+    this.width,
+  });
+
+  final String label;
+  final VoidCallback? onPressed;
+  final Widget? icon;
+  final double? width;
+
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+      width: width,
+      height: MiTokens.touchTargetChild,
+      child: OutlinedButton(
+        onPressed: onPressed,
+        style: OutlinedButton.styleFrom(
+          foregroundColor: MiColors.textPrimary,
+          side: const BorderSide(color: MiColors.border, width: 2),
+          backgroundColor: MiColors.surface,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(MiTokens.radiusFull),
+          ),
+        ),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            if (icon != null) ...[
+              icon!,
+              const SizedBox(width: MiTokens.space2),
+            ],
+            Flexible(
+              child: Text(
+                label,
+                maxLines: 1,
+                overflow: TextOverflow.ellipsis,
+                style: Theme.of(context).textTheme.labelLarge,
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
@@ -88,8 +216,8 @@ class MiOutlinedButton extends StatelessWidget {
     return OutlinedButton(
       onPressed: onPressed,
       style: OutlinedButton.styleFrom(
-        foregroundColor: borderColor ?? MiTokens.primaryBlue,
-        side: BorderSide(color: borderColor ?? MiTokens.primaryBlue, width: 2),
+        foregroundColor: borderColor ?? MiColors.primary,
+        side: BorderSide(color: borderColor ?? MiColors.primary, width: 2),
         minimumSize: const Size(0, 48),
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(MiTokens.radiusMd),

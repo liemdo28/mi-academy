@@ -63,12 +63,28 @@ class L10nService extends ChangeNotifier {
   /// Get a translated string by key.
   /// Falls back to English if the key is not found.
   String translate(String key, [Map<String, dynamic>? params]) {
-    final value = _translations[_locale.languageCode]?[key] ?? _translations['en']?[key] ?? key;
-    if (params == null) return value;
-    return _format(value, params);
+    return translateForLocale(_locale, key, params);
   }
 
-  String _format(String template, Map<String, dynamic> params) {
+  /// Get a translated string for a specific locale without owning app state.
+  static String translateForLocale(
+    Locale locale,
+    String key, [
+    Map<String, dynamic>? params,
+  ]) {
+    final language = _translations.containsKey(locale.languageCode)
+        ? locale.languageCode
+        : 'vi';
+    final value =
+        _translations[language]?[key] ?? _translations['vi']?[key] ?? key;
+    if (params == null) return value;
+    return _formatTemplate(value, params);
+  }
+
+  static String _formatTemplate(
+    String template,
+    Map<String, dynamic> params,
+  ) {
     var result = template;
     for (final entry in params.entries) {
       result = result.replaceAll('{${entry.key}}', entry.value.toString());
@@ -79,7 +95,13 @@ class L10nService extends ChangeNotifier {
 
 /// Extension on BuildContext for easy access to L10nService.
 extension L10nExtension on BuildContext {
-  L10nService get l10n => L10nService();
+  String miT(String key, [Map<String, dynamic>? params]) {
+    return L10nService.translateForLocale(
+      Localizations.localeOf(this),
+      key,
+      params,
+    );
+  }
 }
 
 /// Hardcoded translations for bootstrap (Flutter generate will replace this).
@@ -134,6 +156,36 @@ const _translations = {
     'accessibility': 'Hỗ trợ đặc biệt',
     'correct': 'Đúng rồi!',
     'incorrect': 'Chưa đúng, thử lại nhé!',
+    'homeGreeting': 'Chào {name}!',
+    'homeMascotLabel': 'Bạn MI đang vẫy tay chào',
+    'homeParentGateLabel': 'Khu vực phụ huynh, giữ 3 giây để mở',
+    'homeStartLearning': 'Bắt đầu học',
+    'homeContinueLearning': 'Tiếp tục học',
+    'homePlayLearnGrow': 'Chơi, học, lớn lên mỗi ngày',
+    'homeProgressTitle': 'Tiến độ hôm nay',
+    'homeProgressEmpty': 'Sẵn sàng cho bài học đầu tiên',
+    'homeProgressWithCount': '{count} nhiệm vụ trong kế hoạch',
+    'homeStars': 'Sao',
+    'homeBadges': 'Huy hiệu',
+    'homeDailyMission': 'Nhiệm vụ hôm nay',
+    'homeDailyMissionSubtitle': 'MI chọn vài hoạt động vừa sức cho con.',
+    'homePlanLoadError': 'Không thể tải kế hoạch',
+    'homeEmptyTitle': 'Chưa có nhiệm vụ hôm nay',
+    'homeEmptySubtitle': 'MI sẽ gợi ý bài học mới sớm thôi!',
+    'homeMinutes': '{count} phút',
+    'homeLessonFallback': 'Bài học',
+    'homeGameCategories': 'Góc học vui',
+    'homeLettersTitle': 'ABC',
+    'homeLettersSubtitle': 'Chữ cái',
+    'homeNumbersTitle': '123',
+    'homeNumbersSubtitle': 'Số học',
+    'homeLogicTitle': 'Logic',
+    'homeLogicSubtitle': 'Tư duy',
+    'homeMemoryTitle': 'Trí nhớ',
+    'homeMemorySubtitle': 'Ghi nhớ',
+    'homeWorld': 'Bản đồ',
+    'homeGarden': 'Vườn',
+    'homeHome': 'Trang chủ',
   },
   'en': {
     'appName': 'MI Academy',
@@ -185,5 +237,35 @@ const _translations = {
     'accessibility': 'Accessibility',
     'correct': 'Correct!',
     'incorrect': 'Not quite, try again!',
+    'homeGreeting': 'Hi {name}!',
+    'homeMascotLabel': 'MI is waving hello',
+    'homeParentGateLabel': 'Parent area, hold for 3 seconds to open',
+    'homeStartLearning': 'Start learning',
+    'homeContinueLearning': 'Continue learning',
+    'homePlayLearnGrow': 'Play, learn, and grow every day',
+    'homeProgressTitle': "Today's progress",
+    'homeProgressEmpty': 'Ready for the first lesson',
+    'homeProgressWithCount': '{count} missions in the plan',
+    'homeStars': 'Stars',
+    'homeBadges': 'Badges',
+    'homeDailyMission': "Today's missions",
+    'homeDailyMissionSubtitle': 'MI picked a few just-right activities.',
+    'homePlanLoadError': 'Could not load the plan',
+    'homeEmptyTitle': 'No missions yet today',
+    'homeEmptySubtitle': 'MI will suggest a new lesson soon.',
+    'homeMinutes': '{count} min',
+    'homeLessonFallback': 'Lesson',
+    'homeGameCategories': 'Learning corner',
+    'homeLettersTitle': 'ABC',
+    'homeLettersSubtitle': 'Letters',
+    'homeNumbersTitle': '123',
+    'homeNumbersSubtitle': 'Numbers',
+    'homeLogicTitle': 'Logic',
+    'homeLogicSubtitle': 'Thinking',
+    'homeMemoryTitle': 'Memory',
+    'homeMemorySubtitle': 'Remember',
+    'homeWorld': 'World',
+    'homeGarden': 'Garden',
+    'homeHome': 'Home',
   },
 };

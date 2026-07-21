@@ -1,5 +1,6 @@
 import 'dart:ui';
 
+import 'package:design_system/design_system.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:mi_game_core/mi_game_core.dart';
@@ -233,7 +234,7 @@ class _HomeScreenState extends State<HomeScreen> {
         _GameCard(
           title: 'Khám phá chữ cái',
           subtitle: 'Thành phố chữ cái - 95 cấp độ',
-          icon: Icons.abc_rounded,
+          icon: MiBrandIcon.alphabet,
           color: GameTheme.primary,
           levels: _levelsFor('alphabet_explorer'),
           onLaunch: () => _launchGame('alphabet_explorer'),
@@ -242,7 +243,7 @@ class _HomeScreenState extends State<HomeScreen> {
         _GameCard(
           title: 'Tìm chữ còn thiếu',
           subtitle: 'Thành phố chữ cái - 75 cấp độ',
-          icon: Icons.edit_note_rounded,
+          icon: MiBrandIcon.writing,
           color: MiGameColors.secondary,
           levels: _levelsFor('missing_letter'),
           onLaunch: () => _launchGame('missing_letter'),
@@ -251,7 +252,7 @@ class _HomeScreenState extends State<HomeScreen> {
         _GameCard(
           title: 'Ghép chữ tạo từ',
           subtitle: 'Thành phố chữ cái - 10 cấp độ',
-          icon: Icons.abc_rounded,
+          icon: MiBrandIcon.alphabet,
           color: GameTheme.primary,
           levels: _levelsFor('word_builder'),
           onLaunch: () => _launchGame('word_builder'),
@@ -260,7 +261,7 @@ class _HomeScreenState extends State<HomeScreen> {
         _GameCard(
           title: 'Nghe âm tìm chữ',
           subtitle: 'Thành phố chữ cái - 10 cấp độ',
-          icon: Icons.volume_up_rounded,
+          icon: MiBrandIcon.listening,
           color: GameTheme.secondary,
           levels: _levelsFor('sound_match'),
           onLaunch: () => _launchGame('sound_match'),
@@ -269,7 +270,7 @@ class _HomeScreenState extends State<HomeScreen> {
         _GameCard(
           title: 'Đường đua cộng trừ',
           subtitle: 'Vương quốc toán học - 10 cấp độ',
-          icon: Icons.directions_car_rounded,
+          icon: MiBrandIcon.numbers,
           color: GameTheme.warning,
           levels: _levelsFor('math_race'),
           onLaunch: () => _launchGame('math_race'),
@@ -278,7 +279,7 @@ class _HomeScreenState extends State<HomeScreen> {
         _GameCard(
           title: 'Siêu thị toán học',
           subtitle: 'Vương quốc toán học - 10 cấp độ',
-          icon: Icons.shopping_cart_rounded,
+          icon: MiBrandIcon.numbers,
           color: MiGameColors.tertiary,
           levels: _levelsFor('math_supermarket'),
           onLaunch: () => _launchGame('math_supermarket'),
@@ -287,7 +288,7 @@ class _HomeScreenState extends State<HomeScreen> {
         _GameCard(
           title: 'Ghi nhớ vị trí',
           subtitle: 'Đảo tư duy - 10 cấp độ',
-          icon: Icons.style_rounded,
+          icon: MiBrandIcon.memory,
           color: GameTheme.success,
           levels: _levelsFor('memory_cards'),
           onLaunch: () => _launchGame('memory_cards'),
@@ -296,7 +297,7 @@ class _HomeScreenState extends State<HomeScreen> {
         _GameCard(
           title: 'Robot làm theo lệnh',
           subtitle: 'Đảo tư duy - 10 cấp độ',
-          icon: Icons.smart_toy_rounded,
+          icon: MiBrandIcon.logic,
           color: GameTheme.primary,
           levels: _levelsFor('robot_commands'),
           onLaunch: () => _launchGame('robot_commands'),
@@ -319,7 +320,7 @@ class _HomeScreenState extends State<HomeScreen> {
           worldLabel: 'MI cùng con khám phá chữ cái.',
           level: levels.first,
           allLevels: levels,
-          heroIcon: Icons.abc_rounded,
+          brandIcon: MiBrandIcon.alphabet,
           primaryColor: GameTheme.primary,
           onExit: () => Navigator.of(context).pop(),
         );
@@ -329,7 +330,7 @@ class _HomeScreenState extends State<HomeScreen> {
           worldLabel: 'MI cùng con tìm chữ còn thiếu.',
           level: levels.first,
           allLevels: levels,
-          heroIcon: Icons.edit_note_rounded,
+          brandIcon: MiBrandIcon.writing,
           primaryColor: MiGameColors.secondary,
           onExit: () => Navigator.of(context).pop(),
         );
@@ -351,7 +352,7 @@ class _HomeScreenState extends State<HomeScreen> {
           worldLabel: 'Xe MI tiến lên khi con chọn đúng.',
           level: levels.first,
           allLevels: levels,
-          heroIcon: Icons.directions_car_rounded,
+          brandIcon: MiBrandIcon.numbers,
           primaryColor: GameTheme.warning,
           onExit: () => Navigator.of(context).pop(),
         );
@@ -361,7 +362,7 @@ class _HomeScreenState extends State<HomeScreen> {
           worldLabel: 'Giỏ hàng MI giúp con luyện tính tiền.',
           level: levels.first,
           allLevels: levels,
-          heroIcon: Icons.shopping_cart_rounded,
+          brandIcon: MiBrandIcon.numbers,
           primaryColor: MiGameColors.tertiary,
           onExit: () => Navigator.of(context).pop(),
         );
@@ -425,10 +426,11 @@ class _ChildProfileCard extends StatelessWidget {
                     color: GameTheme.primary.withValues(alpha: 0.14),
                     borderRadius: BorderRadius.circular(16),
                   ),
-                  child: const Icon(
-                    Icons.smart_toy_rounded,
+                  child: const MiBrandIconView(
+                    icon: MiBrandIcon.profile,
                     color: GameTheme.primary,
                     size: 34,
+                    semanticLabel: 'Hồ sơ của bé',
                   ),
                 ),
                 const SizedBox(width: 14),
@@ -452,13 +454,16 @@ class _ChildProfileCard extends StatelessWidget {
               spacing: 8,
               runSpacing: 8,
               children: [
-                const _StatusChip(icon: Icons.star_rounded, label: 'Sao MI: 0'),
                 const _StatusChip(
-                  icon: Icons.verified_rounded,
+                  icon: MiBrandIcon.rewardStar,
+                  label: 'Sao MI: 0',
+                ),
+                const _StatusChip(
+                  icon: MiBrandIcon.achievement,
                   label: 'Huy hiệu: sẵn sàng',
                 ),
                 _StatusChip(
-                  icon: Icons.offline_bolt_rounded,
+                  icon: MiBrandIcon.offline,
                   label: '${gameLevelAssets.length} game offline',
                 ),
               ],
@@ -473,13 +478,18 @@ class _ChildProfileCard extends StatelessWidget {
 class _StatusChip extends StatelessWidget {
   const _StatusChip({required this.icon, required this.label});
 
-  final IconData icon;
+  final MiBrandIcon icon;
   final String label;
 
   @override
   Widget build(BuildContext context) {
     return Chip(
-      avatar: Icon(icon, size: 18, color: GameTheme.primary),
+      avatar: MiBrandIconView(
+        icon: icon,
+        size: 18,
+        color: GameTheme.primary,
+        decorative: true,
+      ),
       label: Text(label),
       backgroundColor: Colors.white,
       side: BorderSide(color: GameTheme.primary.withValues(alpha: 0.22)),
@@ -500,8 +510,12 @@ class _ParentAreaCard extends StatelessWidget {
         borderRadius: BorderRadius.circular(GameTheme.cardRadius),
       ),
       child: ListTile(
-        leading:
-            const Icon(Icons.family_restroom_rounded, color: GameTheme.primary),
+        leading: const MiBrandIconView(
+          icon: MiBrandIcon.parent,
+          color: GameTheme.primary,
+          size: 32,
+          semanticLabel: 'Khu vực phụ huynh',
+        ),
         title: const Text('Khu vực phụ huynh', style: GameTheme.headingMedium),
         subtitle: const Text('Báo cáo tiến độ, cài đặt và dữ liệu của bé'),
         trailing: const Icon(Icons.lock_rounded, color: GameTheme.primary),
@@ -553,21 +567,21 @@ class LocalParentAreaScreen extends StatelessWidget {
             const _ParentMetricGrid(),
             const SizedBox(height: 16),
             const _ParentInfoCard(
-              icon: Icons.favorite_rounded,
+              icon: MiBrandIcon.achievement,
               title: 'Kỹ năng đang làm tốt',
               body: 'Nhận biết chữ cái, đếm số và quan sát thẻ nhớ.',
               color: GameTheme.success,
             ),
             const SizedBox(height: 12),
             const _ParentInfoCard(
-              icon: Icons.lightbulb_rounded,
+              icon: MiBrandIcon.progress,
               title: 'Gợi ý luyện thêm',
               body: 'Cùng bé đọc một từ ngắn và đếm đồ vật trong nhà.',
               color: GameTheme.warning,
             ),
             const SizedBox(height: 12),
             const _ParentInfoCard(
-              icon: Icons.offline_bolt_rounded,
+              icon: MiBrandIcon.offline,
               title: 'Offline',
               body: 'Sáu trò chơi MVP có thể mở từ nội dung đã tải trong app.',
               color: GameTheme.primary,
@@ -603,10 +617,12 @@ class _ParentMetricGrid extends StatelessWidget {
       crossAxisSpacing: 12,
       childAspectRatio: 1.55,
       children: const [
-        _MetricTile(label: 'Hôm nay', value: '0 phút', icon: Icons.timer),
-        _MetricTile(label: 'Bài hoàn thành', value: '0', icon: Icons.task_alt),
-        _MetricTile(label: 'Sao MI', value: '0', icon: Icons.star),
-        _MetricTile(label: 'Tuần này', value: 'Mẫu', icon: Icons.bar_chart),
+        _MetricTile(
+            label: 'Hôm nay', value: '0 phút', icon: MiBrandIcon.progress),
+        _MetricTile(
+            label: 'Bài hoàn thành', value: '0', icon: MiBrandIcon.achievement),
+        _MetricTile(label: 'Sao MI', value: '0', icon: MiBrandIcon.rewardStar),
+        _MetricTile(label: 'Tuần này', value: 'Mẫu', icon: MiBrandIcon.report),
       ],
     );
   }
@@ -621,7 +637,7 @@ class _MetricTile extends StatelessWidget {
 
   final String label;
   final String value;
-  final IconData icon;
+  final MiBrandIcon icon;
 
   @override
   Widget build(BuildContext context) {
@@ -633,7 +649,7 @@ class _MetricTile extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Icon(icon, color: GameTheme.primary),
+            MiBrandIconView(icon: icon, color: GameTheme.primary),
             Text(value, style: GameTheme.headingMedium),
             Text(label, style: GameTheme.bodyMedium),
           ],
@@ -651,7 +667,7 @@ class _ParentInfoCard extends StatelessWidget {
     required this.color,
   });
 
-  final IconData icon;
+  final MiBrandIcon icon;
   final String title;
   final String body;
   final Color color;
@@ -664,7 +680,7 @@ class _ParentInfoCard extends StatelessWidget {
         padding: GameTheme.cardPadding,
         child: Row(
           children: [
-            Icon(icon, color: color, size: 32),
+            MiBrandIconView(icon: icon, color: color, size: 32),
             const SizedBox(width: 14),
             Expanded(
               child: Column(
@@ -695,7 +711,7 @@ class _GameCard extends StatelessWidget {
 
   final String title;
   final String subtitle;
-  final IconData icon;
+  final MiBrandIcon icon;
   final Color color;
   final List<MiLevel> levels;
   final VoidCallback onLaunch;
@@ -721,7 +737,13 @@ class _GameCard extends StatelessWidget {
                   color: color.withValues(alpha: 0.15),
                   borderRadius: BorderRadius.circular(12),
                 ),
-                child: Icon(icon, color: color, size: 36),
+                child: MiBrandIconView(
+                  icon: icon,
+                  color: color,
+                  size: 36,
+                  semanticLabel: title,
+                  enabled: levels.isNotEmpty,
+                ),
               ),
               const SizedBox(width: 16),
               Expanded(

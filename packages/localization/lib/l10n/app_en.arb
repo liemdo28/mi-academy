@@ -81,5 +81,35 @@
     "placeholders": {
       "count": {"type": "int"}
     }
-  }
+  },
+  "homeGreeting": "Hi {name}!",
+  "homeMascotLabel": "MI is waving hello",
+  "homeParentGateLabel": "Parent area, hold for 3 seconds to open",
+  "homeStartLearning": "Start learning",
+  "homeContinueLearning": "Continue learning",
+  "homePlayLearnGrow": "Play, learn, and grow every day",
+  "homeProgressTitle": "Today's progress",
+  "homeProgressEmpty": "Ready for the first lesson",
+  "homeProgressWithCount": "{count} missions in the plan",
+  "homeStars": "Stars",
+  "homeBadges": "Badges",
+  "homeDailyMission": "Today's missions",
+  "homeDailyMissionSubtitle": "MI picked a few just-right activities.",
+  "homePlanLoadError": "Could not load the plan",
+  "homeEmptyTitle": "No missions yet today",
+  "homeEmptySubtitle": "MI will suggest a new lesson soon.",
+  "homeMinutes": "{count} min",
+  "homeLessonFallback": "Lesson",
+  "homeGameCategories": "Learning corner",
+  "homeLettersTitle": "ABC",
+  "homeLettersSubtitle": "Letters",
+  "homeNumbersTitle": "123",
+  "homeNumbersSubtitle": "Numbers",
+  "homeLogicTitle": "Logic",
+  "homeLogicSubtitle": "Thinking",
+  "homeMemoryTitle": "Memory",
+  "homeMemorySubtitle": "Remember",
+  "homeWorld": "World",
+  "homeGarden": "Garden",
+  "homeHome": "Home"
 }

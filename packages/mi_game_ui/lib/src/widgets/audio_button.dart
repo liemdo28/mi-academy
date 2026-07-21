@@ -1,3 +1,4 @@
+import 'package:design_system/design_system.dart';
 import 'package:flutter/material.dart';
 
 import '../theme/game_theme.dart';
@@ -23,12 +24,19 @@ class AudioButton extends StatelessWidget {
       child: SizedBox(
         width: GameTheme.minTouchTarget,
         height: GameTheme.minTouchTarget,
-        child: IconButton(
-          icon: Icon(
-            isMuted ? Icons.volume_off_rounded : Icons.volume_up_rounded,
+        child: Material(
+          color: MiColors.surface,
+          shape: const CircleBorder(),
+          elevation: 2,
+          shadowColor: MiColors.shadow,
+          child: IconButton(
+            icon: Icon(
+              isMuted ? Icons.volume_off_rounded : Icons.volume_up_rounded,
+              color: MiColors.textPrimary,
+            ),
+            onPressed: onToggle,
+            tooltip: isMuted ? 'Bật âm thanh' : 'Tắt âm thanh',
           ),
-          onPressed: onToggle,
-          tooltip: isMuted ? 'Bật âm thanh' : 'Tắt âm thanh',
         ),
       ),
     );

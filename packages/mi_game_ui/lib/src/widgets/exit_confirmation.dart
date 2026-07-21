@@ -1,3 +1,4 @@
+import 'package:design_system/design_system.dart';
 import 'package:flutter/material.dart';
 
 import '../theme/game_theme.dart';
@@ -39,62 +40,49 @@ class ExitConfirmation extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Dialog(
+      backgroundColor: MiColors.surface,
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(GameTheme.overlayRadius),
       ),
       child: Padding(
-        padding: const EdgeInsets.all(24),
+        padding: const EdgeInsets.all(MiTokens.space6),
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-            Icon(
-              Icons.exit_to_app_rounded,
-              size: 48,
-              color: GameTheme.textSecondary,
+            Container(
+              width: 72,
+              height: 72,
+              decoration: BoxDecoration(
+                color: MiColors.discoverySoft,
+                borderRadius: BorderRadius.circular(MiTokens.radiusXl),
+              ),
+              child: Icon(
+                Icons.exit_to_app_rounded,
+                size: 40,
+                color: GameTheme.secondary,
+              ),
             ),
-            const SizedBox(height: 16),
+            const SizedBox(height: MiTokens.space4),
             Text(title, style: GameTheme.headingMedium),
-            const SizedBox(height: 8),
+            const SizedBox(height: MiTokens.space2),
             Text(
               subtitle,
               style: GameTheme.bodyMedium,
               textAlign: TextAlign.center,
             ),
-            const SizedBox(height: 24),
-            SizedBox(
+            const SizedBox(height: MiTokens.space6),
+            MiPrimaryButton(
+              label: cancelLabel,
+              icon: const Icon(Icons.play_arrow_rounded),
+              onPressed: onCancel,
               width: double.infinity,
-              child: ElevatedButton.icon(
-                icon: const Icon(Icons.play_arrow_rounded),
-                label: Text(cancelLabel, style: GameTheme.buttonLabel),
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: GameTheme.primary,
-                  padding: const EdgeInsets.symmetric(vertical: 14),
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(GameTheme.buttonRadius),
-                  ),
-                ),
-                onPressed: onCancel,
-              ),
             ),
-            const SizedBox(height: 12),
-            SizedBox(
+            const SizedBox(height: MiTokens.space3),
+            MiSecondaryButton(
+              label: confirmLabel,
+              icon: const Icon(Icons.exit_to_app_rounded),
+              onPressed: onConfirm,
               width: double.infinity,
-              child: OutlinedButton.icon(
-                icon: const Icon(Icons.exit_to_app_rounded),
-                label: Text(
-                  confirmLabel,
-                  style: GameTheme.buttonLabel.copyWith(
-                    color: GameTheme.textSecondary,
-                  ),
-                ),
-                style: OutlinedButton.styleFrom(
-                  padding: const EdgeInsets.symmetric(vertical: 14),
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(GameTheme.buttonRadius),
-                  ),
-                ),
-                onPressed: onConfirm,
-              ),
             ),
           ],
         ),

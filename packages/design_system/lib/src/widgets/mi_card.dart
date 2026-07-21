@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import '../assets/mi_brand_assets.dart';
 import '../theme/mi_theme.dart';
+import 'mi_brand_components.dart';
 
 /// Standard card with MI Academy styling and optional accent color.
 class MiCard extends StatelessWidget {
@@ -52,6 +54,7 @@ class MiCard extends StatelessWidget {
 /// Subject card with icon, title, and progress indicator.
 class MiSubjectCard extends StatelessWidget {
   final String title;
+  final MiBrandIcon? brandIcon;
   final String? icon;
   final double progress; // 0.0 - 1.0
   final Color color;
@@ -60,6 +63,7 @@ class MiSubjectCard extends StatelessWidget {
   const MiSubjectCard({
     super.key,
     required this.title,
+    this.brandIcon,
     this.icon,
     required this.progress,
     required this.color,
@@ -74,10 +78,18 @@ class MiSubjectCard extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(
-            icon ?? '📚',
-            style: const TextStyle(fontSize: MiTokens.iconXl),
-          ),
+          if (brandIcon != null || icon == null)
+            MiBrandIconView(
+              icon: brandIcon ?? MiBrandIcon.progress,
+              color: color,
+              size: MiTokens.iconXl,
+              semanticLabel: title,
+            )
+          else
+            Text(
+              icon!,
+              style: const TextStyle(fontSize: MiTokens.iconXl),
+            ),
           const SizedBox(height: MiTokens.space2),
           Text(
             title,

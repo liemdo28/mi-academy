@@ -1,3 +1,4 @@
+import 'package:design_system/design_system.dart';
 import 'package:flutter/material.dart';
 
 import 'sequence_content.dart';
@@ -416,10 +417,12 @@ class _CompletionView extends StatelessWidget {
               mainAxisSize: MainAxisSize.min,
               children: List.generate(
                 3,
-                (i) => Icon(
-                  i < stars ? Icons.star_rounded : Icons.star_border_rounded,
+                (i) => MiBrandIconView(
+                  icon: MiBrandIcon.rewardStar,
                   color: Colors.amber,
                   size: 40,
+                  enabled: i < stars,
+                  decorative: true,
                 ),
               ),
             ),

@@ -41,3 +41,8 @@ Thumbs.db
 
 # Logs
 *.log
+
+# Local-only tooling artifacts, unrelated to MI Academy source
+/node_modules/
+/outputs/expense_reallocation_final/
+/.codex/hooks.json

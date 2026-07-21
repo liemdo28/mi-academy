@@ -69,8 +69,9 @@ class MiIcon extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final variant =
-        filled && _iconsWithFilledVariant.contains(name) ? 'filled' : 'outlined';
+    final variant = filled && _iconsWithFilledVariant.contains(name)
+        ? 'filled'
+        : 'outlined';
     final path =
         'packages/design_system/assets/icons/icon_${_kebabCase(name.name)}_${variant}_v01.svg';
     return SvgPicture.asset(
