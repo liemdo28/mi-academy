@@ -1,6 +1,6 @@
 # Mi Academy Brand Implementation Status
 
-Last updated: 2026-07-20
+Last updated: 2026-07-23
 
 ## Complete In Current Scope
 
@@ -16,24 +16,26 @@ Last updated: 2026-07-20
 
 ## Placeholder Assets
 
-The current logo, mascot, brand icon, and Android adaptive icon layer visuals are temporary placeholders. The production asset validation gate reports **NOT READY** because final approved designer artwork has not been supplied in the expected folders. Final approved designer artwork is still required for:
+Codex-generated candidate assets are now present for:
 
 - All logo variants.
 - All 12 mascot emotions.
 - Initial learning, reward, navigation, and profile brand icons.
 - Android and iOS app icons.
 
+These assets pass the automated production asset gate. Human/designer approval is still required before treating the visuals as final brand sign-off.
+
 ## App Icon Status
 
-- Android: adaptive icon XML, foreground placeholder, monochrome placeholder, round icon, and legacy launcher fallback are configured. Final foreground/background/monochrome/Play Store exports are still missing, and the production validator flags the placeholder adaptive layers.
-- iOS: full AppIcon app icon set exists; final branded exports are still required.
+- Android: adaptive icon XML, foreground vector, monochrome vector, round icon, and legacy launcher fallback are configured. The adaptive XML files no longer reference placeholder layers.
+- iOS: full AppIcon app icon set exists, and a generated 1024 source master is present for designer review.
 
 ## Production Asset Validation
 
 - Added `tools/validate_brand_assets.dart` as the production readiness gate.
 - Non-strict mode prints a readiness report without failing local workflows.
-- Strict mode fails until all required designer-approved logo, mascot, icon, and app icon source assets are present and no launcher placeholder layers remain.
-- Current status: **NOT READY** due to 37 missing production source assets and Android placeholder launcher layers.
+- Strict mode fails until all required logo, mascot, icon, and app icon source assets are present and no launcher placeholder layers remain.
+- Current status: **READY** for automated asset validation; pending human visual approval.
 
 ## Known Deviations
 

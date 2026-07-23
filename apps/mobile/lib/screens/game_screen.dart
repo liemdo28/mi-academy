@@ -2,7 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import 'package:design_system/design_system.dart';
+import 'package:mastery_core/mastery_core.dart';
+import 'package:mi_game_content/mi_game_content.dart';
 import 'package:mi_game_core/mi_game_core.dart';
+import 'package:mi_game_progress/mi_game_progress.dart';
 import 'package:offline_sync/offline_sync.dart';
 import 'package:uuid/uuid.dart';
 
@@ -10,6 +13,7 @@ import '../providers/providers.dart';
 import '../services/adaptive_learning_service.dart';
 import '../services/game_levels.dart';
 import '../services/game_registry.dart';
+import '../services/level_selector.dart';
 
 /// Production game launcher — the real `/game/:gameId` destination.
 ///
@@ -37,6 +41,11 @@ class GameScreen extends ConsumerStatefulWidget {
 
 class _GameScreenState extends ConsumerState<GameScreen> {
   List<MiLevel>? _levels;
+  // The level to actually serve -- either one being resumed (an existing
+  // snapshot always wins) or [LevelSelector]'s pick. Null only while
+  // [_levels] is also null/empty; [build] falls back to levels.first in
+  // that gap so a mid-load frame never crashes.
+  MiLevel? _selectedLevel;
   String? _error;
   MiGameSnapshot? _initialSnapshot;
   bool _reduceMotion = false;
@@ -63,24 +72,101 @@ class _GameScreenState extends ConsumerState<GameScreen> {
       });
       final levels = await loadGameLevels(context, widget.gameType);
       if (!mounted) return;
-      // Only ever the first level today (see _buildGame) -- resuming a
-      // snapshot for a level the child isn't currently being shown isn't
-      // meaningful yet, since there's no per-level launch selection.
-      final firstLevel = levels.isNotEmpty ? levels.first : null;
-      final snapshot = firstLevel == null
-          ? null
-          : ref.read(snapshotStoreProvider).load(
-                childProfileId: widget.childId,
-                gameId: widget.gameType,
-                levelId: firstLevel.id,
-              );
+
+      if (levels.isEmpty) {
+        setState(() {
+          _levels = levels;
+          _selectedLevel = null;
+          _initialSnapshot = null;
+        });
+        return;
+      }
+
+      // Resuming an in-progress level always wins over fresh selection --
+      // a child mid-level must never be redirected to a different one just
+      // because LevelSelector would otherwise pick something else.
+      final snapshotStore = ref.read(snapshotStoreProvider);
+      MiLevel? resumeLevel;
+      MiGameSnapshot? resumeSnapshot;
+      for (final level in levels) {
+        final snapshot = snapshotStore.load(
+          childProfileId: widget.childId,
+          gameId: widget.gameType,
+          levelId: level.id,
+        );
+        if (snapshot != null) {
+          resumeLevel = level;
+          resumeSnapshot = snapshot;
+          break;
+        }
+      }
+
+      final selectedLevel =
+          resumeLevel ?? await _selectFreshLevel(levels);
+      if (!mounted) return;
       setState(() {
         _levels = levels;
-        _initialSnapshot = snapshot;
+        _selectedLevel = selectedLevel;
+        _initialSnapshot = resumeSnapshot;
       });
     } catch (e) {
       if (!mounted) return;
       setState(() => _error = e.toString());
+    }
+  }
+
+  /// Picks which of [levels] to serve for a fresh (non-resumed) launch --
+  /// replaces the old "always levels.first" behavior. See
+  /// services/level_selector.dart for the actual scoring; this method's
+  /// job is just gathering that selector's inputs from the providers this
+  /// screen already has access to.
+  ///
+  /// Never throws: any failure (missing registry entry, resolver load
+  /// failure) falls back to `levels.first`, same as before this feature
+  /// existed, so a selection problem can never block play entirely.
+  Future<MiLevel> _selectFreshLevel(List<MiLevel> levels) async {
+    final entry = GameRegistry.find(widget.gameType);
+    if (entry == null) return levels.first;
+
+    try {
+      final resolver = await ref.read(activityMappingResolverProvider.future);
+      final masteryStore = ref.read(masteryStateStoreProvider);
+      final progressTracker = ref.read(progressStoreProvider).load(widget.childId);
+
+      // MasteryStateStore is keyed by (child, skillId); collect the
+      // skillIds this game's own levels reference so we only look up
+      // mastery this game could actually need, rather than every skill
+      // the child has ever practiced.
+      final skillIds = <String>{
+        for (final level in levels) ...level.skillTags,
+      };
+      final masteryBySkill = <String, MasteryState>{};
+      for (final skillId in skillIds) {
+        final state = masteryStore.load(widget.childId, skillId);
+        if (state != null) masteryBySkill[skillId] = state;
+      }
+
+      final result = const LevelSelector().select(
+        levels: levels,
+        game: GameDescriptor(
+          gameId: entry.gameId,
+          subjectId: entry.category,
+          ageBands: entry.ageBands,
+        ),
+        resolver: resolver,
+        masteryBySkill: masteryBySkill,
+        recentAttempts: progressTracker?.attempts ?? const [],
+        locale: _locale,
+        // The game's own registered age bands, not yet the specific
+        // child's -- GameScreen has no child-profile age lookup today.
+        // LevelSelector treats a non-matching/unknown age band as
+        // "don't over-filter," so this degrades gracefully rather than
+        // silently excluding levels.
+        ageBand: entry.ageBands.isNotEmpty ? entry.ageBands.first : null,
+      );
+      return result.level;
+    } catch (_) {
+      return levels.first;
     }
   }
 
@@ -112,6 +198,18 @@ class _GameScreenState extends ConsumerState<GameScreen> {
           levelId: result.levelId,
         );
 
+    // Resolved once and threaded through both the local reward/progress
+    // path and the adaptive-shadow path below, so a single completion
+    // never reasons about two different skill identities depending on
+    // which block happens to run.
+    final mapping = await _resolveCanonicalMapping(result);
+
+    // Local-only: progress tracking and reward unlocking need no network,
+    // so this runs unconditionally (including for the 'offline-child' test
+    // sentinel below) -- a child playing without connectivity must earn
+    // rewards exactly as reliably as one online.
+    await _recordProgressAndRewards(result, mapping);
+
     if (widget.childId == 'offline-child') return;
 
     final games = await ref.read(gamesCatalogProvider.future);
@@ -131,13 +229,25 @@ class _GameScreenState extends ConsumerState<GameScreen> {
     final incorrectCount = result.attemptsUsed - correctCount;
     Map<String, dynamic> adaptiveShadow;
     try {
-      adaptiveShadow = const AdaptiveLearningService()
-          .evaluateCompletion(
-            childProfileId: widget.childId,
-            result: result,
-            offlineMode: !await ref.read(connectivityProvider.future),
-          )
-          .toJson();
+      // mastery_core's MasteryState carries evidenceCount/confidence/
+      // attemptHistory that only mean anything if it accumulates across
+      // completions -- load whatever this child already has for this
+      // skill (mastery_state_store.dart) instead of always starting from
+      // a fresh, zero-evidence state.
+      final skillId =
+          AdaptiveLearningService.resolvedSkillId(result, mapping: mapping);
+      final masteryStore = ref.read(masteryStateStoreProvider);
+      final previousMastery = masteryStore.load(widget.childId, skillId);
+
+      final shadow = const AdaptiveLearningService().evaluateCompletion(
+        childProfileId: widget.childId,
+        result: result,
+        offlineMode: !await ref.read(connectivityProvider.future),
+        previousMastery: previousMastery,
+        mapping: mapping,
+      );
+      await masteryStore.save(shadow.mastery);
+      adaptiveShadow = shadow.toJson();
     } catch (_) {
       adaptiveShadow = {
         'shadow_mode': true,
@@ -190,6 +300,120 @@ class _GameScreenState extends ConsumerState<GameScreen> {
     }
   }
 
+  /// Resolves the canonical (gameId, levelId) -> (skillId, subjectId,
+  /// curriculum node, prerequisites) mapping for this completion, against
+  /// the real knowledge graph/curriculum content -- see
+  /// mi_game_content's ActivityMappingResolver. Returns null (never
+  /// throws) when the game isn't registered, the completed level can't be
+  /// found in what's currently loaded, or the mapping fails validation
+  /// (e.g. an unmapped or unknown skill) -- callers fall back to
+  /// [AdaptiveLearningService]'s documented compatibility heuristics in
+  /// that case, never crash on a resolution failure.
+  Future<CanonicalActivityMapping?> _resolveCanonicalMapping(
+    MiCompletionResult result,
+  ) async {
+    final entry = GameRegistry.find(widget.gameType);
+    final levels = _levels;
+    if (entry == null || levels == null) return null;
+
+    MiLevel? level;
+    for (final candidate in levels) {
+      if (candidate.id == result.levelId) {
+        level = candidate;
+        break;
+      }
+    }
+    if (level == null) return null;
+
+    try {
+      final resolver = await ref.read(activityMappingResolverProvider.future);
+      final mappingResult = resolver.resolve(
+        game: GameDescriptor(
+          gameId: entry.gameId,
+          subjectId: entry.category,
+          ageBands: entry.ageBands,
+        ),
+        level: level,
+      );
+      return mappingResult.mapping;
+    } catch (_) {
+      return null;
+    }
+  }
+
+  /// Records this completion into the child's local [ProgressTracker] and
+  /// evaluates the reward catalog against the updated history. Every one
+  /// of the 8 built games (and every future one, since they all launch
+  /// through this same [GameScreen]) gets reward-unlock behavior for free
+  /// — no per-game wiring needed. Newly-unlocked rewards are persisted
+  /// locally (so [GardenScreen] reflects them immediately, offline) and
+  /// best-effort queued for backend notification.
+  ///
+  /// [mapping] is the canonical mapping resolved for this exact level, if
+  /// any (see [_resolveCanonicalMapping]) -- when present, its
+  /// taxonomy-validated skill IDs replace the old
+  /// `result.newSkillsAcquired`/generic-tag fallback.
+  Future<void> _recordProgressAndRewards(
+    MiCompletionResult result,
+    CanonicalActivityMapping? mapping,
+  ) async {
+    final progressStore = ref.read(progressStoreProvider);
+    final tracker = progressStore.load(widget.childId) ??
+        ProgressTracker(childId: widget.childId);
+
+    // onComplete only ever fires when a level is actually solved (failed
+    // attempts retry in place rather than calling back here), so every
+    // call here is a correct completion.
+    tracker.recordCompletion(
+      gameId: widget.gameType,
+      levelId: result.levelId,
+      correct: true,
+      duration: result.duration,
+      hintsUsed: result.hintsUsed,
+      skillIds: mapping != null
+          ? [mapping.primarySkillId, ...mapping.secondarySkillIds]
+          : (result.newSkillsAcquired.isNotEmpty
+              ? result.newSkillsAcquired
+              : ['${widget.gameType}.general']),
+    );
+    await progressStore.save(tracker);
+
+    final rewardStore = ref.read(rewardStoreProvider);
+    final alreadyUnlocked = rewardStore.unlockedIds(widget.childId);
+    RewardCatalog catalog;
+    try {
+      catalog = await ref.read(rewardCatalogProvider.future);
+    } catch (_) {
+      return; // Catalog failed to load -- try again on the next completion.
+    }
+
+    final newlyUnlocked = const RewardEngine().evaluate(
+      catalog: catalog,
+      attempts: tracker.attempts,
+      gameCategories: {
+        for (final entry in GameRegistry.all) entry.gameId: entry.category,
+      },
+      alreadyUnlocked: alreadyUnlocked,
+    );
+
+    for (final rewardId in newlyUnlocked) {
+      await rewardStore.unlock(widget.childId, rewardId);
+      try {
+        await ref.read(syncServiceProvider).enqueue(
+              id: '${widget.childId}_${rewardId}_${result.completedAt.microsecondsSinceEpoch}',
+              childProfileId: widget.childId,
+              type: SyncItemType.rewardUnlock,
+              payload: {
+                'reward_id': rewardId,
+                'unlocked_at': DateTime.now().toUtc().toIso8601String(),
+              },
+            );
+      } catch (_) {
+        // Best-effort — the reward is already unlocked locally regardless.
+      }
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     if (_error != null) {
@@ -228,7 +452,7 @@ class _GameScreenState extends ConsumerState<GameScreen> {
       );
     }
 
-    return _buildGame(levels.first, levels);
+    return _buildGame(_selectedLevel ?? levels.first, levels);
   }
 
   Widget _buildGame(MiLevel level, List<MiLevel> allLevels) {

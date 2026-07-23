@@ -46,13 +46,13 @@ void main() {
       }
     });
 
-    test(
-        'app icon configuration is prepared but production exports are incomplete',
-        () {
+    test('app icon production sources are present and wired', () {
       final requiredConfig = [
         File('android/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml'),
         File(
             'android/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml'),
+        File('android/app/src/main/res/drawable/ic_launcher_foreground.xml'),
+        File('android/app/src/main/res/drawable/ic_launcher_monochrome.xml'),
         File(
           'android/app/src/main/res/drawable/ic_launcher_foreground_placeholder.xml',
         ),
@@ -76,13 +76,17 @@ void main() {
         for (final file in productionSources)
           if (!file.existsSync()) file.path,
       ];
+      final emptyProductionSources = [
+        for (final file in productionSources)
+          if (file.existsSync() && file.lengthSync() == 0) file.path,
+      ];
 
-      expect(
-        missingProductionSources,
-        isNotEmpty,
-        reason:
-            'Final designer app-icon exports are still required before release.',
-      );
+      expect(missingProductionSources, isEmpty);
+      expect(emptyProductionSources, isEmpty);
+
+      for (final file in requiredConfig.take(2)) {
+        expect(file.readAsStringSync(), isNot(contains('_placeholder')));
+      }
     });
   });
 }

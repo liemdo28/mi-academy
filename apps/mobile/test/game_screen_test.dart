@@ -5,20 +5,24 @@ import 'package:mi_academy/providers/providers.dart';
 import 'package:mi_academy/screens/game_screen.dart';
 import 'package:mi_academy/src/games/choice/choice_game_screen.dart';
 import 'package:mi_academy/services/parent_settings_store.dart';
+import 'package:mi_academy/services/progress_store.dart';
+import 'package:mi_academy/services/reward_store.dart';
 import 'package:mi_academy/services/snapshot_store.dart';
 import 'package:mi_game_core/mi_game_core.dart';
 import 'package:mi_game_ui/mi_game_ui.dart';
 
 /// Covers the production `/game/:gameId` launcher: it must render the real
 /// per-game engine (loaded from the bundled level assets), not the old
-/// hardcoded demo. childId is 'offline-child' throughout so the save path
-/// (which needs network) is never exercised — see api_sync_processor_test
-/// and test_api_game_result.py (backend) for that.
+/// hardcoded demo. childId is 'offline-child' throughout so the backend
+/// save path (which needs network) is never exercised — see
+/// api_sync_processor_test and test_api_game_result.py (backend) for that.
+/// Local progress/reward recording *does* run for 'offline-child' (it's
+/// network-free), so its stores are overridden too.
 ///
-/// GameScreen reads snapshotStoreProvider on load; override it with the
-/// in-memory implementation (see snapshot_store.dart) instead of standing
-/// up a real Hive box, which needs `Hive.initFlutter()` (a platform
-/// channel unavailable here).
+/// GameScreen reads snapshotStoreProvider/progressStoreProvider/
+/// rewardStoreProvider on load or completion; override all three with
+/// in-memory implementations instead of standing up real Hive boxes, which
+/// need `Hive.initFlutter()` (a platform channel unavailable here).
 Future<void> _pumpAndSettleLoad(
   WidgetTester tester,
   Widget child, {
@@ -26,6 +30,7 @@ Future<void> _pumpAndSettleLoad(
     language: 'vi',
     localeConfirmed: true,
   ),
+  List<Override> extraOverrides = const [],
 }) async {
   await tester.pumpWidget(
     ProviderScope(
@@ -34,18 +39,23 @@ Future<void> _pumpAndSettleLoad(
           MemoryParentSettingsStore(settings),
         ),
         snapshotStoreProvider.overrideWithValue(InMemorySnapshotStore()),
+        progressStoreProvider.overrideWithValue(InMemoryProgressStore()),
+        rewardStoreProvider.overrideWithValue(InMemoryRewardStore()),
+        ...extraOverrides,
       ],
       child: MaterialApp(home: child),
     ),
   );
-  // Level content loads via an async asset read. Large JSON packs can be
-  // decoded outside the fake async zone, so give real async work a chance
-  // to complete before pumping the resulting frame.
+  // Level content loads via an async asset read, and level loading now
+  // also resolves a fresh level through LevelSelector (which itself loads
+  // the taxonomy/curriculum assets via activityMappingResolverProvider) --
+  // more real async work than before LevelSelector existed, so give it
+  // more time to complete before pumping the resulting frame.
   await tester.runAsync(() async {
-    await Future<void>.delayed(const Duration(milliseconds: 300));
+    await Future<void>.delayed(const Duration(milliseconds: 800));
   });
   await tester.pump();
-  await tester.pump(const Duration(milliseconds: 100));
+  await tester.pump(const Duration(milliseconds: 200));
 }
 
 void main() {
@@ -62,18 +72,9 @@ void main() {
     expect(find.text('Tìm chữ A.'), findsOneWidget);
   });
 
-  testWidgets('renders Missing Letter for gameType missing_letter',
-      (tester) async {
-    await _pumpAndSettleLoad(
-      tester,
-      const GameScreen(
-        childId: 'offline-child',
-        gameType: 'missing_letter',
-      ),
-    );
-
-    expect(find.text('Chọn chữ còn thiếu: M_O'), findsOneWidget);
-  });
+  // Missing Letter, Word Builder, and Memory Cards GameScreen render
+  // checks live in their own files -- see
+  // game_screen_render_missing_letter_test.dart's doc comment for why.
 
   testWidgets('renders localized Missing Letter feedback in English Choice UI',
       (tester) async {
@@ -111,30 +112,6 @@ void main() {
     expect(find.text('You found the missing letter!'), findsOneWidget);
   });
 
-  testWidgets('renders the real Word Builder game for gameType word_builder',
-      (tester) async {
-    await _pumpAndSettleLoad(
-      tester,
-      const GameScreen(childId: 'offline-child', gameType: 'word_builder'),
-    );
-
-    expect(find.text('Ghép chữ thành từ!'), findsOneWidget);
-  });
-
-  testWidgets('renders the real Memory Cards game for gameType memory_cards',
-      (tester) async {
-    await _pumpAndSettleLoad(
-      tester,
-      const GameScreen(childId: 'offline-child', gameType: 'memory_cards'),
-    );
-
-    expect(find.text('Memory Cards'), findsWidgets);
-    // MemoryCardsScreen's tutorial dismiss uses no timer, but flush any
-    // stray animation/frame callbacks before teardown to avoid a pending
-    // timer assertion.
-    await tester.pump(const Duration(seconds: 2));
-  });
-
   testWidgets('shows an error state (with retry) for an unknown game type',
       (tester) async {
     await _pumpAndSettleLoad(
@@ -144,6 +121,7 @@ void main() {
 
     expect(find.text('Không thể tải trò chơi'), findsOneWidget);
   });
+
 }
 
 const _missingLetterFixture = MiLevel(

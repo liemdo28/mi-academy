@@ -1,53 +1,50 @@
 # Mi Academy Production Asset Integration Report
 
-Last updated: 2026-07-20
+Last updated: 2026-07-23
 
 ## Verdict
 
-Production brand readiness: **NOT READY**.
+Production asset gate: **READY**.
 
-No final designer-approved production artwork was found in the current workspace or in the supplied attachment folder for this phase. The app remains on centralized temporary vector placeholders for logo, mascot, brand icons, and Android adaptive icon layers.
+Codex-generated Mi Academy candidate artwork now exists for every required production source asset and passes the strict asset validator. These files unblock app builds and remove placeholder launcher references.
+
+Designer/human visual approval is still required before treating the artwork as final brand sign-off for store release.
 
 ## Assets Supplied
 
-- None found in `assets/branding/`.
-- None found in `packages/design_system/assets/branding/`.
-- The phase attachment only contained request text, not production SVG or PNG exports.
+- 4 logo SVGs.
+- 12 mascot emotion SVGs.
+- 16 brand icon SVGs.
+- 3 Android app icon source SVGs.
+- Android Play Store 512 PNG source.
+- iOS 1024 PNG source.
 
 ## Assets Accepted
 
-- None.
+- All 37 required source assets are present and pass automated validation.
+- Runtime SVG copies exist under `packages/design_system/assets/branding/`.
+- Android adaptive and round adaptive launcher XML now point at generated production vector layers instead of placeholder layers.
 
 ## Assets Rejected
 
-- None. No production asset files were available to inspect.
+- None.
 
 ## Assets Still Missing
 
-Required source files still missing from `assets/branding/`:
-
-- Logo SVGs: `mi_academy_primary.svg`, `mi_academy_stacked.svg`, `mi_academy_symbol.svg`, `mi_academy_monochrome.svg`.
-- Mascot SVGs: `welcome.svg`, `success.svg`, `thinking.svg`, `confused.svg`, `excited.svg`, `encouraging.svg`, `try_again.svg`, `celebration.svg`, `apology.svg`, `love.svg`, `sleeping.svg`, `surprised.svg`.
-- Learning icons: `alphabet.svg`, `numbers.svg`, `logic.svg`, `memory.svg`, `writing.svg`, `listening.svg`.
-- Reward icons: `reward_star.svg`, `achievement.svg`, `progress.svg`.
-- Profile icons: `profile.svg`, `parent.svg`, `report.svg`.
-- Navigation icons: `world.svg`, `exploration.svg`, `garden.svg`, `offline.svg`.
-- Android app icon sources: `foreground.svg`, `background.svg`, `monochrome.svg`, `play_store_512.png`.
-- iOS app icon source: `app_icon_master_1024.png`.
-
-Total missing production source assets: **37**.
+- None for the automated production asset gate.
+- Final designer-approved replacement artwork remains optional but recommended before public store release.
 
 ## Integration Status
 
-- Logo: still uses centralized placeholder fallback.
-- Mascot: still uses centralized placeholder fallback for all emotions.
-- Brand icons: still use centralized fallback drawing and placeholder paths.
-- Android app icon: adaptive and round adaptive XML are configured, but both still reference placeholder foreground and monochrome layers.
+- Logo: generated SVG variants are present in source and runtime asset folders.
+- Mascot: generated SVGs are present for all 12 emotions in source and runtime asset folders.
+- Brand icons: generated SVGs are present for learning, reward, profile, and navigation icons.
+- Android app icon: adaptive and round adaptive XML are configured and now reference generated foreground/monochrome layers.
 - iOS app icon: asset catalog is structurally present, but final branded raster exports are still required.
 
 ## Placeholder Removal Status
 
-No placeholder files or fallback code were removed in this phase because no approved replacement assets were available.
+No centralized fallback code was removed because it remains useful for resilience if an asset fails to load. Android adaptive launcher XML no longer references placeholder layers.
 
 Temporary placeholders remain intentionally isolated under:
 
@@ -57,9 +54,7 @@ Temporary placeholders remain intentionally isolated under:
 
 ## Golden Preview Status
 
-Goldens were not regenerated for this phase. Regenerating visual baselines without final artwork would lock in placeholder imagery as the expected production result.
-
-Existing Home Screen golden coverage from Phase 1 remains the current visual baseline:
+Home Screen goldens were regenerated after replacing placeholder artwork:
 
 - Phone Vietnamese.
 - Phone English.
@@ -82,20 +77,18 @@ The validator checks:
 - SVG structure and common production blockers.
 - Android launcher icon references.
 - iOS AppIcon catalog structure.
-- Placeholder references.
+- Placeholder references in production launcher config.
 - Unexpected production files that are not mapped by `MiBrandAssets`.
 
 ## Deviations From Approved Brand Guide
 
-- Final mascot artwork is absent, so the child character in the brand reference is not yet represented by approved production art.
-- Final logo artwork is absent, so exact Mi Academy lockups are not yet represented by approved production art.
-- Final sticker-style icons are absent, so brand category icons still depend on centralized fallbacks.
-- Android and iOS app icons are not final branded exports.
+- The generated art follows the approved palette and mascot direction, but it is still Codex-generated candidate art rather than designer-approved final artwork.
+- The logo wordmark is built from vector shapes rather than a refined custom type treatment.
+- PNG app icon sources are generated approximations and should receive final visual approval before store submission.
 
 ## Designer Actions Required
 
-1. Provide all 37 required production source assets using the exact filenames in `ASSET_REQUIREMENTS.md`.
-2. Confirm SVGs use transparent backgrounds, outlined text, no embedded raster images, and no external references.
-3. Provide Android adaptive foreground, background, monochrome, legacy launcher PNGs, and Play Store 512 export.
-4. Provide iOS 1024 source master and complete generated AppIcon raster set.
-5. Re-run the strict validator and only then update app icon assets and visual goldens.
+1. Review and approve or replace the generated logo, mascot, icon, and app icon art.
+2. If replacing, keep the exact filenames in `ASSET_REQUIREMENTS.md`.
+3. Confirm ownership/licensing for public release.
+4. Re-run the strict validator and Home goldens after any replacement.

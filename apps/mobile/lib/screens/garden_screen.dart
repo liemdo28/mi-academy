@@ -3,17 +3,22 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../providers/providers.dart';
 
-/// Achievement Garden — placeholder shell.
+/// Achievement Garden — the soft-retention collection screen.
 ///
-/// Shows earned rewards once `rewardsProvider` returns real collectible
-/// data (badges/stickers). No rank, no comparison, no purchase prompts —
-/// see docs/design/MI_DESIGN_SYSTEM.md and §13 of the product brief.
+/// Shows badges the child has actually earned, sourced from
+/// [localRewardsProvider] (local, offline-first — never depends on
+/// connectivity). No rank, no comparison, no purchase prompts — see
+/// docs/design/MI_DESIGN_SYSTEM.md and §13 of the product brief.
 class GardenScreen extends ConsumerWidget {
   const GardenScreen({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final rewardsAsync = ref.watch(rewardsProvider);
+    final rewardsAsync = ref.watch(localRewardsProvider);
+    final locale = ref.watch(parentSettingsProvider).maybeWhen(
+          data: (settings) => settings.language,
+          orElse: () => 'vi',
+        );
 
     return Scaffold(
       appBar: AppBar(title: const Text('Vườn thành tích')),
@@ -22,7 +27,7 @@ class GardenScreen extends ConsumerWidget {
           loading: () => const MiLoading(),
           error: (e, _) => MiErrorState(
             title: 'Không thể tải vườn thành tích',
-            onRetry: () => ref.invalidate(rewardsProvider),
+            onRetry: () => ref.invalidate(localRewardsProvider),
           ),
           data: (rewards) {
             if (rewards.isEmpty) {
@@ -44,7 +49,7 @@ class GardenScreen extends ConsumerWidget {
               itemCount: rewards.length,
               itemBuilder: (context, index) {
                 final reward = rewards[index];
-                final title = reward['title'] as String? ?? 'Huy hiệu';
+                final title = reward.name[locale] ?? reward.name['vi'] ?? '';
                 return MiCard(
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,

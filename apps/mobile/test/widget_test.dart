@@ -16,7 +16,10 @@ import 'package:mi_academy/screens/parent_dashboard_screen.dart';
 import 'package:mi_academy/screens/parent_pin_screen.dart';
 import 'package:mi_academy/screens/parent_settings_screen.dart';
 import 'package:mi_academy/screens/world_map_screen.dart';
+import 'package:mi_academy/services/mastery_state_store.dart';
 import 'package:mi_academy/services/parent_settings_store.dart';
+import 'package:mi_academy/services/progress_store.dart';
+import 'package:mi_academy/services/reward_store.dart';
 import 'package:mi_academy/src/games/choice/choice_game_screen.dart';
 import 'package:mi_academy/src/games/memory_cards/memory_cards_game.dart';
 import 'package:mi_academy/src/games/memory_cards/memory_cards_screen.dart';
@@ -687,6 +690,14 @@ void main() {
       await tester.pump();
 
       expect(find.text('Chưa có hoạt động'), findsOneWidget);
+      // The new Learning Journey section pushes the Children section
+      // below the initial viewport -- ListView only builds what's
+      // in/near the viewport, so this must actually scroll there first.
+      await tester.scrollUntilVisible(
+        find.text('Chưa có hồ sơ'),
+        300,
+        scrollable: find.byType(Scrollable).first,
+      );
       expect(find.text('Chưa có hồ sơ'), findsOneWidget);
     });
 
@@ -714,6 +725,13 @@ void main() {
 
       expect(find.text('Tổng quan hôm nay'), findsOneWidget);
       expect(find.text('4'), findsOneWidget); // stars
+      // The new Learning Journey section pushes the child card below the
+      // initial viewport.
+      await tester.scrollUntilVisible(
+        find.text('Mi'),
+        300,
+        scrollable: find.byType(Scrollable).first,
+      );
       expect(find.text('Mi'), findsOneWidget);
     });
 
@@ -811,20 +829,66 @@ void main() {
       final router = buildTestRouter();
       await tester.pumpWidget(
         ProviderScope(
+          // WorldMapScreen (real, not the old placeholder) and
+          // GardenScreen both read progress/reward/mastery state --
+          // override with in-memory stores rather than real Hive boxes,
+          // which need `Hive.initFlutter()` (a platform channel
+          // unavailable here), same convention as game_screen_test.dart.
+          overrides: [
+            progressStoreProvider.overrideWithValue(InMemoryProgressStore()),
+            rewardStoreProvider.overrideWithValue(InMemoryRewardStore()),
+            masteryStateStoreProvider.overrideWithValue(InMemoryMasteryStateStore()),
+          ],
           child: buildHomeTestApp(router),
         ),
       );
       await tester.pumpAndSettle();
 
       await tester.tap(find.text('Bản đồ').last);
-      await tester.pumpAndSettle();
+      // World Map now resolves its real learning-journey data through a
+      // *chain* of FutureProviders doing genuine asset-bundle reads
+      // (canonical mapping, then every registered game's level content) --
+      // pumpAndSettle alone only advances the fake test clock, and a
+      // single runAsync/pump pair isn't enough for a multi-hop chain to
+      // fully cascade (each hop's real I/O needs its own settle-then-
+      // rebuild turn). Poll rather than sleep a fixed duration, so this
+      // stays robust under the slower timing a full-suite run has versus
+      // running this test alone.
+      for (var i = 0; i < 10; i++) {
+        await tester.runAsync(() async {
+          await Future<void>.delayed(const Duration(milliseconds: 300));
+        });
+        // A bare pump() never advances the fake animation clock (only an
+        // explicit Duration does), so the route's own page-transition
+        // AnimationController would otherwise sit at 0.0 forever no
+        // matter how many times this loop ran.
+        await tester.pump(const Duration(milliseconds: 300));
+        if (find.byType(CircularProgressIndicator).evaluate().isEmpty) break;
+      }
+      // Not pumpAndSettle here: this screen's data load plus the route's
+      // own page-transition animation interact in a way that leaves a
+      // frame perpetually scheduled for pumpAndSettle to wait on, even
+      // once real content is on screen (reproduced and confirmed via
+      // debugDumpApp during investigation -- a few explicit, bounded
+      // pumps are the correct tool once the content we actually care
+      // about asserting on has already rendered).
+      await tester.pump(const Duration(milliseconds: 300));
+      await tester.pump(const Duration(milliseconds: 300));
       expect(find.text('Bản đồ thế giới'), findsOneWidget);
 
       router.go('/home');
-      await tester.pumpAndSettle();
+      await tester.pump(const Duration(milliseconds: 300));
+      await tester.pump(const Duration(milliseconds: 300));
 
       await tester.tap(find.text('Vườn').last);
-      await tester.pumpAndSettle();
+      for (var i = 0; i < 10; i++) {
+        await tester.runAsync(() async {
+          await Future<void>.delayed(const Duration(milliseconds: 300));
+        });
+        await tester.pump(const Duration(milliseconds: 300));
+        if (find.byType(CircularProgressIndicator).evaluate().isEmpty) break;
+      }
+      await tester.pump(const Duration(milliseconds: 300));
       expect(find.text('Vườn thành tích'), findsOneWidget);
     });
 

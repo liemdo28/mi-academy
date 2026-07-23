@@ -1,0 +1,54 @@
+{
+  "version": "1.0.0",
+  "ageGroup": "junior",
+  "label": {"vi": "MI Junior (5–7 tuổi)", "en": "MI Junior (5–7 years)"},
+  "subjects": {
+    "letters": {
+      "skills": [
+        "letters.recognition.uppercase",
+        "letters.recognition.lowercase",
+        "letters.case_matching",
+        "letters.initial_sound",
+        "letters.rhyming",
+        "letters.word_building",
+        "letters.simple_sentences",
+        "letters.listening_comprehension"
+      ],
+      "description": {"vi": "Nhận biết chữ cái, âm đầu, ghép vần, từ đơn giản", "en": "Letter recognition, initial sounds, rhyming, simple words"}
+    },
+    "math": {
+      "skills": [
+        "math.number_recognition.1_20",
+        "math.counting",
+        "math.number_comparison",
+        "math.addition.within_10",
+        "math.addition.within_20",
+        "math.subtraction.within_10",
+        "math.subtraction.within_20",
+        "math.shapes.basic",
+        "math.time.basic",
+        "math.currency.basic"
+      ],
+      "description": {"vi": "Nhận biết số, đếm, cộng trừ trong phạm vi 20, hình dạng, thời gian, tiền tệ", "en": "Number recognition, counting, addition/subtraction within 20, shapes, time, currency"}
+    },
+    "logic": {
+      "skills": [
+        "logic.memory",
+        "logic.matching",
+        "logic.classification",
+        "logic.odd_one_out",
+        "logic.pattern.basic",
+        "logic.navigation",
+        "science.cause_effect",
+        "science.observation"
+      ],
+      "description": {"vi": "Ghi nhớ, ghép cặp, phân loại, tìm khác biệt, chuỗi, điều hướng", "en": "Memory, matching, classification, odd one out, sequences, navigation"}
+    },
+    "creative": {
+      "skills": ["creative.color_recognition", "creative.shape_construction"],
+      "description": {"vi": "Nhận biết màu sắc, xếp hình", "en": "Color recognition, shape construction"}
+    }
+  },
+  "dailyTimeMinutes": {"min": 15, "max": 25},
+  "lessonsPerDay": {"min": 1, "max": 3}
+}

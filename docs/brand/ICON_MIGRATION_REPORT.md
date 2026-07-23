@@ -1,6 +1,6 @@
 # Mi Academy Icon Migration Report
 
-Last updated: 2026-07-20
+Last updated: 2026-07-23
 
 ## Inventory Summary
 
@@ -45,12 +45,14 @@ Remaining direct `Icons.*` usage is intentional in action controls, parent/auth 
 
 `MiBrandIconView` uses centralized fallback drawing and placeholder SVG fallback paths until final designer assets are available. These placeholders are not final production art.
 
-Missing final icon assets:
+Generated candidate icon assets now exist for:
 
 - Learning: alphabet, numbers, logic, memory, writing, listening.
 - Rewards: reward star, achievement, progress.
 - Profile: profile, parent, report.
 - Navigation: world, exploration, garden, offline.
+
+These assets pass automated validation and still require human/designer approval for final brand sign-off.
 
 ## Deprecated APIs
 
@@ -63,23 +65,23 @@ Missing final icon assets:
 Android:
 
 - Adaptive icon XML is configured for standard and round launcher icons.
-- Foreground and monochrome placeholder vector layers exist.
+- Foreground and monochrome generated vector layers exist.
 - Background color is set to Cloud White.
 - Legacy `mipmap-* / ic_launcher.png` fallback files remain.
-- Final foreground/background/monochrome/Play Store 512 exports are still missing.
-- `tools/validate_brand_assets.dart --strict` flags both adaptive icon XML files until placeholder layers are replaced.
+- Generated foreground/background/monochrome/Play Store 512 exports are present.
+- `tools/validate_brand_assets.dart --strict` passes with no placeholder launcher references.
 
 iOS:
 
 - AppIcon asset catalog exists with required slots.
-- Final branded source-master and production exports are still missing.
+- A generated 1024 source master is present.
 - Final App Store icon must be 1024x1024 with no transparency.
 
 ## Production Validation
 
 - Added a production asset validator at `tools/validate_brand_assets.dart`.
-- Current validator status is **NOT READY** because no final production asset files are present in the expected handoff folders.
-- No visual goldens were regenerated in this pass because the final artwork is absent.
+- Current validator status is **READY**.
+- Home visual goldens were regenerated after generated asset integration.
 
 ## Designer Deliverables Still Required
 

@@ -38,6 +38,8 @@ dependencies:
     path: ../../packages/mastery_core
   recommendation_core:
     path: ../../packages/recommendation_core
+  spaced_repetition:
+    path: ../../packages/spaced_repetition
 
   # Networking
   dio: ^5.4.0
@@ -53,7 +55,7 @@ dependencies:
   go_router: ^14.0.0
 
   # Auth & Security
-  flutter_secure_storage: ^9.0.0
+  flutter_secure_storage: ^10.0.0
   local_auth: ^2.2.0
 
   # Utilities
@@ -61,6 +63,7 @@ dependencies:
   uuid: ^4.4.0
   intl: ^0.20.2
   connectivity_plus: ^6.0.0
+  cupertino_icons: ^1.0.8
   flutter_localizations:
     sdk: flutter
 
@@ -79,6 +82,15 @@ flutter:
     - assets/audio/
     - assets/images/
     - assets/levels/
+    - assets/rewards/
+    # Canonical knowledge-graph/curriculum source of truth -- lives at the
+    # repo root (content/), not duplicated into apps/mobile/assets/, so
+    # there is exactly one copy of this data (see
+    # skill_taxonomy_loader.dart).
+    - ../../content/skills/skill_taxonomy.json
+    - ../../content/curriculum/age_5_7.json
+    - ../../content/curriculum/age_8_10.json
+    - ../../content/curriculum/age_11_12.json
   fonts:
     - family: Nunito
       fonts:

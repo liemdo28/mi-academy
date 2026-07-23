@@ -25,6 +25,7 @@ build/
 **/test/failures/
 *.apk
 *.ipa
+dist/
 
 # Database
 *.db

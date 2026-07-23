@@ -1,0 +1,77 @@
+{
+  "schemaVersion": 1,
+  "rewards": [
+    {
+      "id": "first_completion",
+      "name": { "vi": "Sao đầu tiên", "en": "First Star" },
+      "description": {
+        "vi": "Hoàn thành bài học đầu tiên",
+        "en": "Complete your first lesson"
+      },
+      "rule": { "type": "first_completion" }
+    },
+    {
+      "id": "lessons_completed_5",
+      "name": { "vi": "Học trò siêng năng", "en": "Diligent Learner" },
+      "description": {
+        "vi": "Hoàn thành 5 bài học",
+        "en": "Complete 5 lessons"
+      },
+      "rule": { "type": "completion_count", "count": 5 }
+    },
+    {
+      "id": "lessons_completed_10",
+      "name": { "vi": "Bộ não nhạy bén", "en": "Sharp Mind" },
+      "description": {
+        "vi": "Hoàn thành 10 bài học",
+        "en": "Complete 10 lessons"
+      },
+      "rule": { "type": "completion_count", "count": 10 }
+    },
+    {
+      "id": "letters_group_complete",
+      "name": { "vi": "Chuyên gia chữ cái", "en": "Letters Master" },
+      "description": {
+        "vi": "Hoàn thành tất cả trò chơi Chữ và ngôn ngữ",
+        "en": "Complete every Letters & Language game"
+      },
+      "rule": { "type": "category_completed", "category": "letters" }
+    },
+    {
+      "id": "math_group_complete",
+      "name": { "vi": "Phù thủy toán", "en": "Math Wizard" },
+      "description": {
+        "vi": "Hoàn thành tất cả trò chơi Số và toán học",
+        "en": "Complete every Numbers & Math game"
+      },
+      "rule": { "type": "category_completed", "category": "math" }
+    },
+    {
+      "id": "logic_group_complete",
+      "name": { "vi": "Thần đồng tư duy", "en": "Logic Prodigy" },
+      "description": {
+        "vi": "Hoàn thành tất cả trò chơi Logic, trí nhớ và suy luận",
+        "en": "Complete every Logic, Memory & Reasoning game"
+      },
+      "rule": { "type": "category_completed", "category": "logic" }
+    },
+    {
+      "id": "explorer_all_zones",
+      "name": { "vi": "Nhà khám phá", "en": "World Explorer" },
+      "description": {
+        "vi": "Chơi ít nhất một trò chơi ở mỗi vùng đất",
+        "en": "Play at least one game in every zone"
+      },
+      "rule": { "type": "all_categories_explored" }
+    },
+    {
+      "id": "streak_7",
+      "name": { "vi": "Nhà vô địch tuần", "en": "Weekly Champion" },
+      "description": {
+        "vi": "Học liên tục 7 ngày",
+        "en": "Learn for 7 days in a row"
+      },
+      "rule": { "type": "streak_days", "count": 7 }
+    }
+  ]
+}

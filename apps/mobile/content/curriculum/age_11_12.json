@@ -1,0 +1,44 @@
+{
+  "version": "1.0.0",
+  "ageGroup": "master",
+  "label": {"vi": "MI Master (11–12 tuổi)", "en": "MI Master (11–12 years)"},
+  "subjects": {
+    "letters": {
+      "skills": [
+        "letters.advanced_comprehension",
+        "letters.storytelling"
+      ],
+      "description": {"vi": "Đọc hiểu nâng cao, kể chuyện", "en": "Advanced reading comprehension, storytelling"}
+    },
+    "math": {
+      "skills": [
+        "math.fractions.operations",
+        "math.decimals",
+        "math.percentage",
+        "math.geometry",
+        "math.word_problems"
+      ],
+      "description": {"vi": "Phép tính phân số, số thập phân, phần trăm, hình học, toán lời văn", "en": "Fraction operations, decimals, percentages, geometry, word problems"}
+    },
+    "logic": {
+      "skills": [
+        "logic.conditions",
+        "logic.algorithms",
+        "logic.strategy",
+        "logic.resource_optimization",
+        "logic.spatial_reasoning"
+      ],
+      "description": {"vi": "Điều kiện, thuật toán, chiến lược, tối ưu tài nguyên, suy luận không gian", "en": "Conditions, algorithms, strategy, resource optimization, spatial reasoning"}
+    },
+    "science": {
+      "skills": ["science.simulation"],
+      "description": {"vi": "Mô phỏng khoa học", "en": "Science simulation"}
+    },
+    "creative": {
+      "skills": ["creative.storytelling"],
+      "description": {"vi": "Kể chuyện sáng tạo", "en": "Creative storytelling"}
+    }
+  },
+  "dailyTimeMinutes": {"min": 15, "max": 25},
+  "lessonsPerDay": {"min": 1, "max": 3}
+}

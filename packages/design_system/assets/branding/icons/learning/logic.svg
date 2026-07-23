@@ -1,0 +1,7 @@
+<svg width="128" height="128" viewBox="0 0 128 128">
+  <path d="M20 111c21 15 68 15 88 0 16-12 18-78 0-94-19-17-68-17-88 0-18 16-16 82 0 94Z" fill="#FFFFFF"/>
+  <rect x="17" y="17" width="94" height="94" rx="25" fill="#8E6BFF" opacity=".18"/>
+    <path d="M39 41h22c-2-14 18-14 16 0h15v20c14-2 14 18 0 16v20H72c2-14-18-14-16 0H39V78c-14 2-14-18 0-16V41Z" fill="#8E6BFF" stroke="#6547D8" stroke-width="5" stroke-linejoin="round"/>
+
+
+</svg>

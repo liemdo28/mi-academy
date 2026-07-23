@@ -1,0 +1,29 @@
+<svg width="260" height="260" viewBox="0 0 260 260">
+  <path d="M40 216c24 18 151 20 179 0 18-13 18-55 0-81-22-31-52-43-89-43s-68 12-90 43c-18 26-18 68 0 81Z" fill="#FFFFFF"/>
+  <path d="M216.0,24.0 L221.29006727063225,36.71884705062547 L235.02113032590307,37.819660112501055 L224.55950864665638,46.78115294937453 L227.75570504584945,60.180339887498945 L216.0,53.0 L204.24429495415055,60.180339887498945 L207.44049135334362,46.78115294937453 L196.97886967409693,37.819660112501055 L210.70993272936775,36.71884705062547 Z" fill="#FFD23F" stroke="#F6B100" stroke-width="4" stroke-linejoin="round"/>
+
+
+
+
+
+  <g>
+        <path d="M73 134c-29-18-34-43-23-52 12-9 24 11 35 29" fill="none" stroke="#FFD0A6" stroke-width="22" stroke-linecap="round"/>
+    <path d="M180 143c31 2 42 22 34 35-8 13-26-5-42-20" fill="none" stroke="#FFD0A6" stroke-width="22" stroke-linecap="round"/>
+    <path d="M73 142c0-38 24-63 57-63s57 25 57 63v70H73v-70Z" fill="#FF8A00" stroke="#E46F00" stroke-width="5"/>
+    <path d="M108 84h44l-22 36-22-36Z" fill="#4A90E2"/>
+
+
+        <circle cx="88" cy="123" r="15" fill="#FFD0A6" stroke="#F1A174" stroke-width="4"/>
+    <circle cx="188" cy="123" r="15" fill="#FFD0A6" stroke="#F1A174" stroke-width="4"/>
+    <path d="M84 92c8-39 38-59 76-51 31 6 46 31 39 63-5 28-28 58-62 58-35 0-59-29-53-70Z" fill="#FFD0A6" stroke="#F1A174" stroke-width="4"/>
+    <path d="M84 93c-5-29 16-57 49-63 39-8 70 15 71 48-29-15-61-13-97 4 8 8 15 13 24 16-20 3-35 1-47-5Z" fill="#2F1B14"/>
+    <path d="M91 98c-8-15 0-31 13-37 4 18 20 26 43 25-20 13-39 17-56 12Z" fill="#2F1B14"/>
+    <path d="M103 104c11-8 23-8 34-1M151 103c11-7 23-6 33 2" fill="none" stroke="#2F1B14" stroke-width="6" stroke-linecap="round"/>
+    <circle cx="112" cy="120" r="12" fill="#2F1B14"/><circle cx="164" cy="120" r="12" fill="#2F1B14"/><circle cx="116" cy="115" r="4" fill="#fff"/><circle cx="168" cy="115" r="4" fill="#fff"/>
+    <circle cx="102" cy="141" r="7" fill="#FF9C7B" opacity=".65"/>
+    <circle cx="178" cy="141" r="7" fill="#FF9C7B" opacity=".65"/>
+    <path d="M123 147c10 20 38 20 49 0 4-8-2-16-10-13-9 4-20 4-29 0-8-3-14 5-10 13Z" fill="#2F1B14"/><path d="M136 160c8 5 18 5 26 0" stroke="#FF8FA8" stroke-width="5" stroke-linecap="round"/>
+
+  </g>
+
+</svg>

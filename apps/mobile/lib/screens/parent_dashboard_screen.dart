@@ -3,6 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import 'package:design_system/design_system.dart';
 import '../providers/providers.dart';
+import '../services/world_progression_service.dart';
 import '../widgets/add_child_dialog.dart';
 
 /// Parent dashboard — today overview, weekly report, child progress.
@@ -43,6 +44,16 @@ class ParentDashboardScreen extends ConsumerWidget {
                 _buildTodaySummary(context, reports.first)
               else
                 _buildTodaySummaryPlaceholder(context),
+
+              const SizedBox(height: MiTokens.space6),
+
+              // ─── Learning Journey (local-first, real data) ──────────────
+              Text(
+                'Hành trình học tập',
+                style: Theme.of(context).textTheme.headlineMedium,
+              ),
+              const SizedBox(height: MiTokens.space3),
+              _buildLearningInsights(context, ref),
 
               const SizedBox(height: MiTokens.space6),
 
@@ -139,6 +150,138 @@ class ParentDashboardScreen extends ConsumerWidget {
           ),
         ],
       ),
+    );
+  }
+
+  /// Local-first learning summary -- built from mastery/attempt/reward
+  /// data already on-device (see [WorldProgressionService.buildInsights]),
+  /// never the backend shadow-mode `reportsProvider` above. Every number
+  /// here is real: no XP/coins, no fabricated "recent" ordering for
+  /// achievements (the local reward store has no unlock timestamp) -- see
+  /// `LearningInsights`'s own doc comment for exactly what's honest vs.
+  /// deliberately left out.
+  Widget _buildLearningInsights(BuildContext context, WidgetRef ref) {
+    final insightsAsync = ref.watch(learningInsightsProvider);
+    final worldsAsync = ref.watch(worldProgressProvider);
+
+    return insightsAsync.when(
+      loading: () => const MiCard(child: MiLoading(message: 'Đang tải...')),
+      error: (e, _) => MiCard(
+        child: MiErrorState(
+          title: 'Không thể tải hành trình học tập',
+          onRetry: () => ref.invalidate(learningInsightsProvider),
+        ),
+      ),
+      data: (insights) {
+        final worldNames = <String, Map<String, String>>{
+          for (final world in worldsAsync.value ?? const <WorldProgress>[])
+            world.subjectId: world.name,
+        };
+        final minutes = insights.totalTimeSpent.inMinutes;
+
+        return MiCard(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Wrap(
+                alignment: WrapAlignment.spaceAround,
+                runSpacing: MiTokens.space3,
+                children: [
+                  _buildStatItem(context, MiBrandIcon.achievement,
+                      '${insights.masteredSkills.length}', 'Đã thành thạo'),
+                  _buildStatItem(context, MiBrandIcon.progress,
+                      '${insights.skillsNeedingReview.length}', 'Cần ôn tập'),
+                  _buildStatItem(context, MiBrandIcon.rewardStar,
+                      '${insights.streakDays}', 'Ngày liên tiếp'),
+                  _buildStatItem(
+                    context,
+                    MiBrandIcon.report,
+                    '${(insights.overallAccuracy * 100).round()}%',
+                    'Độ chính xác',
+                  ),
+                  _buildStatItem(context, MiBrandIcon.world, '$minutes', 'Phút học'),
+                ],
+              ),
+              if (insights.weakSkills.isNotEmpty) ...[
+                const SizedBox(height: MiTokens.space4),
+                Text(
+                  'Kỹ năng cần luyện thêm',
+                  style: Theme.of(context).textTheme.titleMedium,
+                ),
+                const SizedBox(height: MiTokens.space2),
+                Wrap(
+                  spacing: MiTokens.space2,
+                  runSpacing: MiTokens.space2,
+                  children: [
+                    for (final skill in insights.weakSkills)
+                      Chip(
+                        label: Text(skill.name['vi'] ?? skill.name.values.first),
+                        backgroundColor: MiColors.errorHc.withValues(alpha: 0.1),
+                        side: BorderSide.none,
+                      ),
+                  ],
+                ),
+              ],
+              if (insights.curriculumCompletionBySubject.values.any((v) => v != null)) ...[
+                const SizedBox(height: MiTokens.space4),
+                Text(
+                  'Tiến độ chương trình học',
+                  style: Theme.of(context).textTheme.titleMedium,
+                ),
+                const SizedBox(height: MiTokens.space2),
+                for (final entry in insights.curriculumCompletionBySubject.entries)
+                  if (entry.value != null)
+                    Padding(
+                      padding: const EdgeInsets.only(bottom: MiTokens.space2),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            worldNames[entry.key]?['vi'] ?? entry.key,
+                            style: const TextStyle(fontSize: MiTokens.fontSm),
+                          ),
+                          ClipRRect(
+                            borderRadius: BorderRadius.circular(MiTokens.radiusFull),
+                            child: LinearProgressIndicator(
+                              value: entry.value,
+                              minHeight: 6,
+                              backgroundColor: MiColors.border,
+                              valueColor: const AlwaysStoppedAnimation(MiColors.success),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+              ],
+              if (insights.unlockedRewards.isNotEmpty) ...[
+                const SizedBox(height: MiTokens.space4),
+                Text(
+                  'Huy hiệu đã đạt được',
+                  style: Theme.of(context).textTheme.titleMedium,
+                ),
+                const SizedBox(height: MiTokens.space2),
+                Wrap(
+                  spacing: MiTokens.space2,
+                  runSpacing: MiTokens.space2,
+                  children: [
+                    for (final reward in insights.unlockedRewards)
+                      Chip(
+                        avatar: const MiBrandIconView(
+                          icon: MiBrandIcon.achievement,
+                          size: MiTokens.iconSm,
+                          decorative: true,
+                        ),
+                        label: Text(reward.name['vi'] ?? reward.name.values.first),
+                        backgroundColor: MiColors.primarySoft,
+                        side: BorderSide.none,
+                      ),
+                  ],
+                ),
+              ],
+            ],
+          ),
+        );
+      },
     );
   }
 

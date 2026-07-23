@@ -236,6 +236,10 @@ jobs:
       - name: Analyze mobile app
         run: flutter analyze
 
+      - name: Validate canonical skill mappings
+        working-directory: ${{ github.workspace }}
+        run: dart run tools/validate_skill_mappings.dart --strict
+
       - name: Run mobile widget tests
         run: flutter test
 
