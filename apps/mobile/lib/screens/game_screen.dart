@@ -443,6 +443,7 @@ class _GameScreenState extends ConsumerState<GameScreen> {
           title: _locale == 'en'
               ? 'This game could not be loaded'
               : 'Không thể tải trò chơi',
+          retryLabel: _locale == 'en' ? 'Try again' : 'Thử lại',
           onRetry: () {
             setState(() => _error = null);
             _loadLevels();

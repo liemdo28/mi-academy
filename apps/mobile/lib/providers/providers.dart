@@ -90,25 +90,27 @@ final dailyPlanProvider =
   final child = ref.watch(activeChildProvider);
   if (child.childId == null) return [];
   if (child.childId == offlineChildProfile['id']) {
-    return const [
+    final locale = (await ref.watch(parentSettingsProvider.future)).language;
+    final en = locale == 'en';
+    return [
       {
         'lesson_id': 'offline-missing-letter',
         'game_type': 'missing_letter',
-        'title': 'Tìm chữ còn thiếu',
-        'subject': 'Chữ cái',
+        'title': en ? 'Find the missing letter' : 'Tìm chữ còn thiếu',
+        'subject': en ? 'Letters' : 'Chữ cái',
         'estimated_minutes': 5,
       },
       {
         'lesson_id': 'offline-memory-cards',
         'game_type': 'memory_cards',
-        'title': 'Ghi nhớ vị trí',
-        'subject': 'Trí nhớ',
+        'title': en ? 'Memory Cards' : 'Ghi nhớ vị trí',
+        'subject': en ? 'Memory' : 'Trí nhớ',
         'estimated_minutes': 5,
       },
       {
         'lesson_id': 'offline-robot-commands',
         'game_type': 'robot_commands',
-        'title': 'Robot làm theo lệnh',
+        'title': en ? 'Robot Commands' : 'Robot làm theo lệnh',
         'subject': 'Logic',
         'estimated_minutes': 5,
       },

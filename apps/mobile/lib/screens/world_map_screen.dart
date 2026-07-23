@@ -56,9 +56,13 @@ class _WorldMapScreenState extends ConsumerState<WorldMapScreen> {
         ),
       ),
       body: worldsAsync.when(
-        loading: () => MiLoading(message: locale == 'en' ? 'Loading...' : 'Đang tải...'),
+        loading: () =>
+            MiLoading(message: locale == 'en' ? 'Loading...' : 'Đang tải...'),
         error: (e, _) => MiErrorState(
-          title: locale == 'en' ? "Couldn't load the world map" : 'Không thể tải bản đồ',
+          title: locale == 'en'
+              ? "Couldn't load the world map"
+              : 'Không thể tải bản đồ',
+          retryLabel: locale == 'en' ? 'Try again' : 'Thử lại',
           onRetry: () => ref.invalidate(worldProgressProvider),
         ),
         data: (worlds) {
@@ -68,7 +72,8 @@ class _WorldMapScreenState extends ConsumerState<WorldMapScreen> {
           }
           final world = worlds.firstWhere(
             (w) => w.subjectId == subjectId,
-            orElse: () => WorldProgress(subjectId: subjectId, name: const {}, nodes: const []),
+            orElse: () => WorldProgress(
+                subjectId: subjectId, name: const {}, nodes: const []),
           );
           return _buildNodeList(context, world, locale);
         },
@@ -76,13 +81,15 @@ class _WorldMapScreenState extends ConsumerState<WorldMapScreen> {
     );
   }
 
-  String _worldName(List<WorldProgress>? worlds, String subjectId, String locale) {
+  String _worldName(
+      List<WorldProgress>? worlds, String subjectId, String locale) {
     final world = worlds?.where((w) => w.subjectId == subjectId).firstOrNull;
     if (world == null) return subjectId;
     return world.name[locale] ?? world.name.values.firstOrNull ?? subjectId;
   }
 
-  Widget _buildZoneGrid(BuildContext context, List<WorldProgress> worlds, String locale) {
+  Widget _buildZoneGrid(
+      BuildContext context, List<WorldProgress> worlds, String locale) {
     if (worlds.isEmpty) {
       return MiEmptyState(
         title: locale == 'en' ? 'No worlds yet' : 'Chưa có thế giới nào',
@@ -110,7 +117,8 @@ class _WorldMapScreenState extends ConsumerState<WorldMapScreen> {
     );
   }
 
-  Widget _buildNodeList(BuildContext context, WorldProgress world, String locale) {
+  Widget _buildNodeList(
+      BuildContext context, WorldProgress world, String locale) {
     if (world.nodes.isEmpty) {
       return MiEmptyState(
         title: locale == 'en' ? 'Coming soon' : 'Sắp ra mắt',
@@ -135,7 +143,8 @@ class _WorldMapScreenState extends ConsumerState<WorldMapScreen> {
           locale: locale,
           onTap: taxonomy == null
               ? null
-              : () => _openJourneyPanel(context, node, world.name, taxonomy, locale, childId),
+              : () => _openJourneyPanel(
+                  context, node, world.name, taxonomy, locale, childId),
         );
       },
     );
@@ -162,8 +171,9 @@ class _WorldMapScreenState extends ConsumerState<WorldMapScreen> {
             : () {
                 Navigator.of(sheetContext).pop();
                 context.push(
-                  Uri(path: '/game/${node.game.gameId}', queryParameters: {'childId': childId})
-                      .toString(),
+                  Uri(
+                      path: '/game/${node.game.gameId}',
+                      queryParameters: {'childId': childId}).toString(),
                 );
               },
       ),
@@ -199,7 +209,9 @@ class _ZoneCard extends StatelessWidget {
           MiBrandIconView(icon: icon, size: MiTokens.iconXl, decorative: true),
           const SizedBox(height: MiTokens.space2),
           Text(
-            world.name[locale] ?? world.name.values.firstOrNull ?? world.subjectId,
+            world.name[locale] ??
+                world.name.values.firstOrNull ??
+                world.subjectId,
             textAlign: TextAlign.center,
             style: Theme.of(context).textTheme.titleMedium,
           ),
@@ -217,12 +229,14 @@ class _ZoneCard extends StatelessWidget {
             const SizedBox(height: MiTokens.space1),
             Text(
               '${world.masteredCount}/${world.totalNodes}',
-              style: const TextStyle(color: MiColors.textSecondary, fontSize: MiTokens.fontXs),
+              style: const TextStyle(
+                  color: MiColors.textSecondary, fontSize: MiTokens.fontXs),
             ),
           ] else
             Text(
               locale == 'en' ? 'Coming soon' : 'Sắp ra mắt',
-              style: const TextStyle(color: MiColors.textSecondary, fontSize: MiTokens.fontXs),
+              style: const TextStyle(
+                  color: MiColors.textSecondary, fontSize: MiTokens.fontXs),
             ),
         ],
       ),
@@ -236,7 +250,8 @@ class _ZoneCard extends StatelessWidget {
 /// [JourneyStateBadge]'s icon-per-state table, reused here for
 /// consistency between the map and the detail panel).
 class _JourneyNodeTile extends StatefulWidget {
-  const _JourneyNodeTile({required this.node, required this.locale, required this.onTap});
+  const _JourneyNodeTile(
+      {required this.node, required this.locale, required this.onTap});
 
   final JourneyNode node;
   final String locale;
@@ -246,7 +261,8 @@ class _JourneyNodeTile extends StatefulWidget {
   State<_JourneyNodeTile> createState() => _JourneyNodeTileState();
 }
 
-class _JourneyNodeTileState extends State<_JourneyNodeTile> with SingleTickerProviderStateMixin {
+class _JourneyNodeTileState extends State<_JourneyNodeTile>
+    with SingleTickerProviderStateMixin {
   AnimationController? _pulse;
 
   @override
@@ -327,7 +343,8 @@ class _JourneyNodeTileState extends State<_JourneyNodeTile> with SingleTickerPro
                 ],
               ),
             ),
-            if (isLocked) const Icon(Icons.lock_rounded, color: MiColors.textSecondary),
+            if (isLocked)
+              const Icon(Icons.lock_rounded, color: MiColors.textSecondary),
           ],
         ),
       ),

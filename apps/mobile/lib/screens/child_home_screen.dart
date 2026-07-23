@@ -140,6 +140,7 @@ class _ChildHomeScreenState extends ConsumerState<ChildHomeScreen> {
               ),
               error: (e, _) => MiErrorState(
                 title: copy.planLoadError,
+                retryLabel: copy.tryAgain,
                 onRetry: () => ref.invalidate(dailyPlanProvider),
               ),
               data: (items) {
@@ -610,6 +611,7 @@ class _HomeCopy {
   String get dailyMission => t('homeDailyMission');
   String get dailyMissionSubtitle => t('homeDailyMissionSubtitle');
   String get planLoadError => t('homePlanLoadError');
+  String get tryAgain => t('tryAgain');
   String get emptyTitle => t('homeEmptyTitle');
   String get emptySubtitle => t('homeEmptySubtitle');
   String minutes(Object count) => t('homeMinutes', {'count': count});

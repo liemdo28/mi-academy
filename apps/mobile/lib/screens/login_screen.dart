@@ -28,6 +28,9 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
   @override
   Widget build(BuildContext context) {
     final authState = ref.watch(authProvider);
+    final locale =
+        ref.watch(parentSettingsProvider).valueOrNull?.language ?? 'vi';
+    final copy = _LoginCopy(locale);
 
     return Scaffold(
       body: SafeArea(
@@ -47,7 +50,7 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
                 ),
                 const SizedBox(height: MiTokens.space2),
                 Text(
-                  'Học tập qua trò chơi',
+                  copy.subtitle,
                   style: Theme.of(context).textTheme.bodyLarge,
                   textAlign: TextAlign.center,
                 ),
@@ -55,9 +58,9 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
 
                 // Toggle login/register
                 SegmentedButton<bool>(
-                  segments: const [
-                    ButtonSegment(value: true, label: Text('Đăng nhập')),
-                    ButtonSegment(value: false, label: Text('Đăng ký')),
+                  segments: [
+                    ButtonSegment(value: true, label: Text(copy.login)),
+                    ButtonSegment(value: false, label: Text(copy.register)),
                   ],
                   selected: {_isLogin},
                   onSelectionChanged: (value) {
@@ -69,12 +72,12 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
                 if (!_isLogin)
                   TextFormField(
                     controller: _emailController,
-                    decoration: const InputDecoration(
-                      labelText: 'Tên hiển thị',
-                      prefixIcon: Icon(Icons.person),
+                    decoration: InputDecoration(
+                      labelText: copy.displayName,
+                      prefixIcon: const Icon(Icons.person),
                     ),
                     validator: (v) => v == null || v.trim().isEmpty
-                        ? 'Nhập tên hiển thị'
+                        ? copy.enterDisplayName
                         : null,
                   ),
                 if (!_isLogin) const SizedBox(height: MiTokens.space4),
@@ -87,20 +90,20 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
                   ),
                   keyboardType: TextInputType.emailAddress,
                   validator: (v) => v == null || !v.contains('@')
-                      ? 'Nhập email hợp lệ'
+                      ? copy.enterValidEmail
                       : null,
                 ),
                 const SizedBox(height: MiTokens.space4),
 
                 TextFormField(
                   controller: _passwordController,
-                  decoration: const InputDecoration(
-                    labelText: 'Mật khẩu',
-                    prefixIcon: Icon(Icons.lock),
+                  decoration: InputDecoration(
+                    labelText: copy.password,
+                    prefixIcon: const Icon(Icons.lock),
                   ),
                   obscureText: true,
                   validator: (v) =>
-                      v == null || v.length < 8 ? 'Tối thiểu 8 ký tự' : null,
+                      v == null || v.length < 8 ? copy.minimumPassword : null,
                 ),
                 const SizedBox(height: MiTokens.space6),
 
@@ -122,7 +125,7 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
 
                 // Submit button
                 MiButton(
-                  label: _isLogin ? 'Đăng nhập' : 'Đăng ký',
+                  label: _isLogin ? copy.login : copy.register,
                   isLoading: authState.isLoading,
                   onPressed: _submit,
                 ),
@@ -130,7 +133,7 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
 
                 // Offline mode button
                 MiOutlinedButton(
-                  label: 'Chế độ offline',
+                  label: copy.offlineMode,
                   icon: Icons.offline_bolt,
                   onPressed: () async {
                     await ref
@@ -170,4 +173,25 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
       context.go('/select-child');
     }
   }
+}
+
+class _LoginCopy {
+  const _LoginCopy(this.locale);
+
+  final String locale;
+
+  bool get _en => locale == 'en';
+
+  String get subtitle => _en ? 'Learn through play' : 'Học tập qua trò chơi';
+  String get login => _en ? 'Log in' : 'Đăng nhập';
+  String get register => _en ? 'Register' : 'Đăng ký';
+  String get displayName => _en ? 'Display name' : 'Tên hiển thị';
+  String get enterDisplayName =>
+      _en ? 'Enter a display name' : 'Nhập tên hiển thị';
+  String get enterValidEmail =>
+      _en ? 'Enter a valid email' : 'Nhập email hợp lệ';
+  String get password => _en ? 'Password' : 'Mật khẩu';
+  String get minimumPassword =>
+      _en ? 'At least 8 characters' : 'Tối thiểu 8 ký tự';
+  String get offlineMode => _en ? 'Offline mode' : 'Chế độ offline';
 }

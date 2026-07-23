@@ -84,13 +84,12 @@ flutter:
     - assets/levels/
     - assets/rewards/
     # Canonical knowledge-graph/curriculum source of truth -- lives at the
-    # repo root (content/), not duplicated into apps/mobile/assets/, so
-    # there is exactly one copy of this data (see
-    # skill_taxonomy_loader.dart).
-    - ../../content/skills/skill_taxonomy.json
-    - ../../content/curriculum/age_5_7.json
-    - ../../content/curriculum/age_8_10.json
-    - ../../content/curriculum/age_11_12.json
+    # repo root (content/). Flutter web packages the synced runtime mirror
+    # below so World Map and learning insights work after deploy.
+    - assets/content/skills/skill_taxonomy.json
+    - assets/content/curriculum/age_5_7.json
+    - assets/content/curriculum/age_8_10.json
+    - assets/content/curriculum/age_11_12.json
   fonts:
     - family: Nunito
       fonts:

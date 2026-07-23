@@ -1,0 +1,473 @@
+{
+  "version": "1.0.0",
+  "lastUpdated": "2026-07-17",
+  "subjects": [
+    {
+      "subjectId": "letters",
+      "name": {"vi": "Chữ cái & Ngôn ngữ", "en": "Letters & Language"},
+      "skills": [
+        {
+          "skillId": "letters.recognition.uppercase",
+          "name": {"vi": "Nhận biết chữ hoa", "en": "Uppercase letter recognition"},
+          "ageGroup": "junior", "difficultyMin": 1, "difficultyMax": 2,
+          "prerequisites": [],
+          "evidenceRules": {"minimumAttempts": 4, "minimumAccuracy": 0.75, "maximumHintRatio": 0.5}
+        },
+        {
+          "skillId": "letters.recognition.lowercase",
+          "name": {"vi": "Nhận biết chữ thường", "en": "Lowercase letter recognition"},
+          "ageGroup": "junior", "difficultyMin": 1, "difficultyMax": 2,
+          "prerequisites": ["letters.recognition.uppercase"],
+          "evidenceRules": {"minimumAttempts": 4, "minimumAccuracy": 0.75, "maximumHintRatio": 0.5}
+        },
+        {
+          "skillId": "letters.case_matching",
+          "name": {"vi": "Ghép chữ hoa với chữ thường", "en": "Case matching"},
+          "ageGroup": "junior", "difficultyMin": 2, "difficultyMax": 3,
+          "prerequisites": ["letters.recognition.uppercase", "letters.recognition.lowercase"],
+          "evidenceRules": {"minimumAttempts": 4, "minimumAccuracy": 0.8, "maximumHintRatio": 0.4}
+        },
+        {
+          "skillId": "letters.initial_sound",
+          "name": {"vi": "Nhận biết âm đầu", "en": "Initial sound recognition"},
+          "ageGroup": "junior", "difficultyMin": 2, "difficultyMax": 3,
+          "prerequisites": ["letters.recognition.lowercase"],
+          "evidenceRules": {"minimumAttempts": 6, "minimumAccuracy": 0.7, "maximumHintRatio": 0.5}
+        },
+        {
+          "skillId": "letters.rhyming",
+          "name": {"vi": "Ghép vần", "en": "Rhyming"},
+          "ageGroup": "junior", "difficultyMin": 2, "difficultyMax": 3,
+          "prerequisites": ["letters.initial_sound"],
+          "evidenceRules": {"minimumAttempts": 6, "minimumAccuracy": 0.7, "maximumHintRatio": 0.5}
+        },
+        {
+          "skillId": "letters.word_building",
+          "name": {"vi": "Ghép chữ thành từ", "en": "Word building"},
+          "ageGroup": "junior", "difficultyMin": 2, "difficultyMax": 4,
+          "prerequisites": ["letters.recognition.lowercase", "letters.initial_sound"],
+          "evidenceRules": {"minimumAttempts": 8, "minimumAccuracy": 0.75, "maximumHintRatio": 0.4}
+        },
+        {
+          "skillId": "letters.simple_sentences",
+          "name": {"vi": "Câu ngắn", "en": "Simple sentences"},
+          "ageGroup": "junior", "difficultyMin": 3, "difficultyMax": 4,
+          "prerequisites": ["letters.word_building"],
+          "evidenceRules": {"minimumAttempts": 6, "minimumAccuracy": 0.7, "maximumHintRatio": 0.4}
+        },
+        {
+          "skillId": "letters.listening_comprehension",
+          "name": {"vi": "Nghe hiểu cơ bản", "en": "Basic listening comprehension"},
+          "ageGroup": "junior", "difficultyMin": 2, "difficultyMax": 4,
+          "prerequisites": ["letters.initial_sound"],
+          "evidenceRules": {"minimumAttempts": 6, "minimumAccuracy": 0.7, "maximumHintRatio": 0.5}
+        },
+        {
+          "skillId": "letters.spelling",
+          "name": {"vi": "Chính tả", "en": "Spelling"},
+          "ageGroup": "explorer", "difficultyMin": 2, "difficultyMax": 4,
+          "prerequisites": ["letters.word_building"],
+          "evidenceRules": {"minimumAttempts": 8, "minimumAccuracy": 0.75, "maximumHintRatio": 0.3}
+        },
+        {
+          "skillId": "letters.vocabulary",
+          "name": {"vi": "Từ vựng", "en": "Vocabulary"},
+          "ageGroup": "explorer", "difficultyMin": 2, "difficultyMax": 5,
+          "prerequisites": ["letters.word_building"],
+          "evidenceRules": {"minimumAttempts": 10, "minimumAccuracy": 0.7, "maximumHintRatio": 0.4}
+        },
+        {
+          "skillId": "letters.reading_comprehension",
+          "name": {"vi": "Đọc hiểu", "en": "Reading comprehension"},
+          "ageGroup": "explorer", "difficultyMin": 3, "difficultyMax": 5,
+          "prerequisites": ["letters.simple_sentences", "letters.vocabulary"],
+          "evidenceRules": {"minimumAttempts": 6, "minimumAccuracy": 0.7, "maximumHintRatio": 0.3}
+        },
+        {
+          "skillId": "letters.synonyms_antonyms",
+          "name": {"vi": "Từ đồng nghĩa và trái nghĩa", "en": "Synonyms and antonyms"},
+          "ageGroup": "explorer", "difficultyMin": 3, "difficultyMax": 5,
+          "prerequisites": ["letters.vocabulary"],
+          "evidenceRules": {"minimumAttempts": 8, "minimumAccuracy": 0.7, "maximumHintRatio": 0.3}
+        },
+        {
+          "skillId": "letters.sentence_completion",
+          "name": {"vi": "Hoàn thành câu", "en": "Sentence completion"},
+          "ageGroup": "explorer", "difficultyMin": 3, "difficultyMax": 5,
+          "prerequisites": ["letters.reading_comprehension"],
+          "evidenceRules": {"minimumAttempts": 6, "minimumAccuracy": 0.7, "maximumHintRatio": 0.3}
+        },
+        {
+          "skillId": "letters.advanced_comprehension",
+          "name": {"vi": "Đọc hiểu nâng cao", "en": "Advanced reading comprehension"},
+          "ageGroup": "master", "difficultyMin": 4, "difficultyMax": 5,
+          "prerequisites": ["letters.reading_comprehension"],
+          "evidenceRules": {"minimumAttempts": 6, "minimumAccuracy": 0.7, "maximumHintRatio": 0.2}
+        },
+        {
+          "skillId": "letters.storytelling",
+          "name": {"vi": "Kể chuyện", "en": "Storytelling"},
+          "ageGroup": "master", "difficultyMin": 3, "difficultyMax": 5,
+          "prerequisites": ["letters.sentence_completion"],
+          "evidenceRules": {"minimumAttempts": 4, "minimumAccuracy": 0.6, "maximumHintRatio": 0.3}
+        }
+      ]
+    },
+    {
+      "subjectId": "math",
+      "name": {"vi": "Toán học", "en": "Mathematics"},
+      "skills": [
+        {
+          "skillId": "math.number_recognition.1_20",
+          "name": {"vi": "Nhận biết số 1-20", "en": "Number recognition 1-20"},
+          "ageGroup": "junior", "difficultyMin": 1, "difficultyMax": 2,
+          "prerequisites": [],
+          "evidenceRules": {"minimumAttempts": 4, "minimumAccuracy": 0.8, "maximumHintRatio": 0.5}
+        },
+        {
+          "skillId": "math.counting",
+          "name": {"vi": "Đếm", "en": "Counting"},
+          "ageGroup": "junior", "difficultyMin": 1, "difficultyMax": 3,
+          "prerequisites": ["math.number_recognition.1_20"],
+          "evidenceRules": {"minimumAttempts": 6, "minimumAccuracy": 0.8, "maximumHintRatio": 0.4}
+        },
+        {
+          "skillId": "math.number_comparison",
+          "name": {"vi": "So sánh số", "en": "Number comparison"},
+          "ageGroup": "junior", "difficultyMin": 1, "difficultyMax": 2,
+          "prerequisites": ["math.number_recognition.1_20"],
+          "evidenceRules": {"minimumAttempts": 6, "minimumAccuracy": 0.75, "maximumHintRatio": 0.4}
+        },
+        {
+          "skillId": "math.addition.within_10",
+          "name": {"vi": "Cộng trong phạm vi 10", "en": "Addition within 10"},
+          "ageGroup": "junior", "difficultyMin": 1, "difficultyMax": 2,
+          "prerequisites": ["math.counting"],
+          "evidenceRules": {"minimumAttempts": 8, "minimumAccuracy": 0.8, "maximumHintRatio": 0.4}
+        },
+        {
+          "skillId": "math.addition.within_20",
+          "name": {"vi": "Cộng trong phạm vi 20", "en": "Addition within 20"},
+          "ageGroup": "junior", "difficultyMin": 2, "difficultyMax": 3,
+          "prerequisites": ["math.addition.within_10"],
+          "evidenceRules": {"minimumAttempts": 10, "minimumAccuracy": 0.75, "maximumHintRatio": 0.4}
+        },
+        {
+          "skillId": "math.subtraction.within_10",
+          "name": {"vi": "Trừ trong phạm vi 10", "en": "Subtraction within 10"},
+          "ageGroup": "junior", "difficultyMin": 1, "difficultyMax": 2,
+          "prerequisites": ["math.counting"],
+          "evidenceRules": {"minimumAttempts": 8, "minimumAccuracy": 0.8, "maximumHintRatio": 0.4}
+        },
+        {
+          "skillId": "math.subtraction.within_20",
+          "name": {"vi": "Trừ trong phạm vi 20", "en": "Subtraction within 20"},
+          "ageGroup": "junior", "difficultyMin": 2, "difficultyMax": 3,
+          "prerequisites": ["math.subtraction.within_10"],
+          "evidenceRules": {"minimumAttempts": 10, "minimumAccuracy": 0.75, "maximumHintRatio": 0.4}
+        },
+        {
+          "skillId": "math.shapes.basic",
+          "name": {"vi": "Hình dạng cơ bản", "en": "Basic shapes"},
+          "ageGroup": "junior", "difficultyMin": 1, "difficultyMax": 2,
+          "prerequisites": [],
+          "evidenceRules": {"minimumAttempts": 4, "minimumAccuracy": 0.75, "maximumHintRatio": 0.5}
+        },
+        {
+          "skillId": "math.time.basic",
+          "name": {"vi": "Thời gian cơ bản", "en": "Basic time"},
+          "ageGroup": "junior", "difficultyMin": 2, "difficultyMax": 3,
+          "prerequisites": ["math.number_recognition.1_20"],
+          "evidenceRules": {"minimumAttempts": 6, "minimumAccuracy": 0.7, "maximumHintRatio": 0.4}
+        },
+        {
+          "skillId": "math.currency.basic",
+          "name": {"vi": "Tiền tệ cơ bản", "en": "Basic currency"},
+          "ageGroup": "junior", "difficultyMin": 2, "difficultyMax": 3,
+          "prerequisites": ["math.number_recognition.1_20"],
+          "evidenceRules": {"minimumAttempts": 6, "minimumAccuracy": 0.7, "maximumHintRatio": 0.4}
+        },
+        {
+          "skillId": "math.addition.multi_digit",
+          "name": {"vi": "Cộng số lớn", "en": "Multi-digit addition"},
+          "ageGroup": "explorer", "difficultyMin": 2, "difficultyMax": 4,
+          "prerequisites": ["math.addition.within_20"],
+          "evidenceRules": {"minimumAttempts": 10, "minimumAccuracy": 0.75, "maximumHintRatio": 0.3}
+        },
+        {
+          "skillId": "math.subtraction.multi_digit",
+          "name": {"vi": "Trừ số lớn", "en": "Multi-digit subtraction"},
+          "ageGroup": "explorer", "difficultyMin": 2, "difficultyMax": 4,
+          "prerequisites": ["math.subtraction.within_20"],
+          "evidenceRules": {"minimumAttempts": 10, "minimumAccuracy": 0.75, "maximumHintRatio": 0.3}
+        },
+        {
+          "skillId": "math.multiplication.tables",
+          "name": {"vi": "Bảng nhân", "en": "Multiplication tables"},
+          "ageGroup": "explorer", "difficultyMin": 3, "difficultyMax": 4,
+          "prerequisites": ["math.addition.within_20"],
+          "evidenceRules": {"minimumAttempts": 12, "minimumAccuracy": 0.8, "maximumHintRatio": 0.3}
+        },
+        {
+          "skillId": "math.division.basic",
+          "name": {"vi": "Phép chia cơ bản", "en": "Basic division"},
+          "ageGroup": "explorer", "difficultyMin": 3, "difficultyMax": 4,
+          "prerequisites": ["math.multiplication.tables"],
+          "evidenceRules": {"minimumAttempts": 10, "minimumAccuracy": 0.75, "maximumHintRatio": 0.3}
+        },
+        {
+          "skillId": "math.measurement",
+          "name": {"vi": "Đo lường", "en": "Measurement"},
+          "ageGroup": "explorer", "difficultyMin": 2, "difficultyMax": 4,
+          "prerequisites": ["math.number_comparison"],
+          "evidenceRules": {"minimumAttempts": 6, "minimumAccuracy": 0.7, "maximumHintRatio": 0.4}
+        },
+        {
+          "skillId": "math.fractions.visual",
+          "name": {"vi": "Phân số trực quan", "en": "Visual fractions"},
+          "ageGroup": "explorer", "difficultyMin": 3, "difficultyMax": 4,
+          "prerequisites": ["math.division.basic"],
+          "evidenceRules": {"minimumAttempts": 8, "minimumAccuracy": 0.7, "maximumHintRatio": 0.4}
+        },
+        {
+          "skillId": "math.fractions.operations",
+          "name": {"vi": "Phép tính phân số", "en": "Fraction operations"},
+          "ageGroup": "master", "difficultyMin": 4, "difficultyMax": 5,
+          "prerequisites": ["math.fractions.visual"],
+          "evidenceRules": {"minimumAttempts": 10, "minimumAccuracy": 0.7, "maximumHintRatio": 0.3}
+        },
+        {
+          "skillId": "math.decimals",
+          "name": {"vi": "Số thập phân", "en": "Decimals"},
+          "ageGroup": "master", "difficultyMin": 4, "difficultyMax": 5,
+          "prerequisites": ["math.fractions.visual"],
+          "evidenceRules": {"minimumAttempts": 10, "minimumAccuracy": 0.7, "maximumHintRatio": 0.3}
+        },
+        {
+          "skillId": "math.percentage",
+          "name": {"vi": "Phần trăm", "en": "Percentages"},
+          "ageGroup": "master", "difficultyMin": 4, "difficultyMax": 5,
+          "prerequisites": ["math.fractions.operations", "math.decimals"],
+          "evidenceRules": {"minimumAttempts": 10, "minimumAccuracy": 0.7, "maximumHintRatio": 0.3}
+        },
+        {
+          "skillId": "math.geometry",
+          "name": {"vi": "Hình học", "en": "Geometry"},
+          "ageGroup": "master", "difficultyMin": 3, "difficultyMax": 5,
+          "prerequisites": ["math.shapes.basic"],
+          "evidenceRules": {"minimumAttempts": 8, "minimumAccuracy": 0.7, "maximumHintRatio": 0.3}
+        },
+        {
+          "skillId": "math.word_problems",
+          "name": {"vi": "Toán có lời văn", "en": "Word problems"},
+          "ageGroup": "master", "difficultyMin": 3, "difficultyMax": 5,
+          "prerequisites": ["math.addition.multi_digit", "math.subtraction.multi_digit"],
+          "evidenceRules": {"minimumAttempts": 8, "minimumAccuracy": 0.65, "maximumHintRatio": 0.3}
+        }
+      ]
+    },
+    {
+      "subjectId": "logic",
+      "name": {"vi": "Tư duy & Logic", "en": "Thinking & Logic"},
+      "skills": [
+        {
+          "skillId": "logic.memory",
+          "name": {"vi": "Ghi nhớ", "en": "Memory"},
+          "ageGroup": "junior", "difficultyMin": 1, "difficultyMax": 3,
+          "prerequisites": [],
+"evidenceRules": {"minimumAttempts": 4, "minimumAccuracy": 0.7, "maximumHintRatio": 0.5}
+        },
+        {
+          "skillId": "logic.matching",
+          "name": {"vi": "Ghép cặp", "en": "Matching"},
+          "ageGroup": "junior", "difficultyMin": 1, "difficultyMax": 3,
+          "prerequisites": [],
+          "evidenceRules": {"minimumAttempts": 4, "minimumAccuracy": 0.75, "maximumHintRatio": 0.5}
+        },
+        {
+          "skillId": "logic.classification",
+          "name": {"vi": "Phân loại", "en": "Classification"},
+          "ageGroup": "junior", "difficultyMin": 2, "difficultyMax": 3,
+          "prerequisites": [],
+          "evidenceRules": {"minimumAttempts": 4, "minimumAccuracy": 0.7, "maximumHintRatio": 0.5}
+        },
+        {
+          "skillId": "logic.odd_one_out",
+          "name": {"vi": "Tìm điểm khác biệt", "en": "Odd one out"},
+          "ageGroup": "junior", "difficultyMin": 2, "difficultyMax": 4,
+          "prerequisites": ["logic.classification"],
+          "evidenceRules": {"minimumAttempts": 6, "minimumAccuracy": 0.7, "maximumHintRatio": 0.4}
+        },
+        {
+          "skillId": "logic.pattern.basic",
+          "name": {"vi": "Chuỗi đơn giản", "en": "Basic sequence"},
+          "ageGroup": "junior", "difficultyMin": 1, "difficultyMax": 3,
+          "prerequisites": [],
+          "evidenceRules": {"minimumAttempts": 6, "minimumAccuracy": 0.7, "maximumHintRatio": 0.4}
+        },
+        {
+          "skillId": "logic.navigation",
+          "name": {"vi": "Điều hướng cơ bản", "en": "Basic navigation"},
+          "ageGroup": "junior", "difficultyMin": 2, "difficultyMax": 3,
+          "prerequisites": ["logic.pattern.basic"],
+          "evidenceRules": {"minimumAttempts": 6, "minimumAccuracy": 0.7, "maximumHintRatio": 0.4}
+        },
+        {
+          "skillId": "logic.pattern.recognition",
+          "name": {"vi": "Quy luật", "en": "Pattern recognition"},
+          "ageGroup": "explorer", "difficultyMin": 3, "difficultyMax": 5,
+          "prerequisites": ["logic.pattern.basic"],
+          "evidenceRules": {"minimumAttempts": 8, "minimumAccuracy": 0.7, "maximumHintRatio": 0.3}
+        },
+        {
+          "skillId": "logic.maze",
+          "name": {"vi": "Mê cung", "en": "Maze"},
+          "ageGroup": "explorer", "difficultyMin": 2, "difficultyMax": 5,
+          "prerequisites": ["logic.navigation"],
+          "evidenceRules": {"minimumAttempts": 6, "minimumAccuracy": 0.65, "maximumHintRatio": 0.3}
+        },
+        {
+          "skillId": "logic.sequence.programming",
+          "name": {"vi": "Lập trình theo chuỗi", "en": "Programming sequences"},
+          "ageGroup": "explorer", "difficultyMin": 3, "difficultyMax": 5,
+          "prerequisites": ["logic.pattern.recognition"],
+          "evidenceRules": {"minimumAttempts": 6, "minimumAccuracy": 0.65, "maximumHintRatio": 0.3}
+        },
+        {
+          "skillId": "logic.loops",
+          "name": {"vi": "Vòng lặp", "en": "Loops"},
+          "ageGroup": "explorer", "difficultyMin": 3, "difficultyMax": 5,
+          "prerequisites": ["logic.sequence.programming"],
+          "evidenceRules": {"minimumAttempts": 6, "minimumAccuracy": 0.7, "maximumHintRatio": 0.3}
+        },
+        {
+          "skillId": "logic.conditions",
+          "name": {"vi": "Điều kiện", "en": "Conditions"},
+          "ageGroup": "master", "difficultyMin": 4, "difficultyMax": 5,
+          "prerequisites": ["logic.loops"],
+          "evidenceRules": {"minimumAttempts": 6, "minimumAccuracy": 0.7, "maximumHintRatio": 0.3}
+        },
+        {
+          "skillId": "logic.algorithms",
+          "name": {"vi": "Thuật toán", "en": "Algorithms"},
+          "ageGroup": "master", "difficultyMin": 4, "difficultyMax": 5,
+          "prerequisites": ["logic.conditions"],
+          "evidenceRules": {"minimumAttempts": 6, "minimumAccuracy": 0.65, "maximumHintRatio": 0.3}
+        },
+        {
+          "skillId": "logic.strategy",
+          "name": {"vi": "Chiến lược", "en": "Strategy"},
+          "ageGroup": "master", "difficultyMin": 4, "difficultyMax": 5,
+          "prerequisites": ["logic.algorithms"],
+          "evidenceRules": {"minimumAttempts": 6, "minimumAccuracy": 0.65, "maximumHintRatio": 0.3}
+        },
+        {
+          "skillId": "logic.resource_optimization",
+          "name": {"vi": "Tối ưu tài nguyên", "en": "Resource optimization"},
+          "ageGroup": "master", "difficultyMin": 4, "difficultyMax": 5,
+          "prerequisites": ["logic.strategy"],
+          "evidenceRules": {"minimumAttempts": 6, "minimumAccuracy": 0.6, "maximumHintRatio": 0.3}
+        },
+        {
+          "skillId": "logic.spatial_reasoning",
+          "name": {"vi": "Suy luận không gian", "en": "Spatial reasoning"},
+          "ageGroup": "master", "difficultyMin": 3, "difficultyMax": 5,
+          "prerequisites": ["logic.maze"],
+          "evidenceRules": {"minimumAttempts": 6, "minimumAccuracy": 0.7, "maximumHintRatio": 0.3}
+        }
+      ]
+    },
+    {
+      "subjectId": "science",
+      "name": {"vi": "Khoa học & Đời sống", "en": "Science & Life"},
+      "skills": [
+        {
+          "skillId": "science.symbol_recognition",
+          "name": {"vi": "Nhận biết biểu tượng khoa học", "en": "Science symbol recognition"},
+          "ageGroup": "explorer", "difficultyMin": 2, "difficultyMax": 4,
+          "prerequisites": ["logic.matching"],
+          "evidenceRules": {"minimumAttempts": 6, "minimumAccuracy": 0.7, "maximumHintRatio": 0.4}
+        },
+        {
+          "skillId": "science.cause_effect",
+          "name": {"vi": "Nguyên nhân – Kết quả", "en": "Cause and effect"},
+          "ageGroup": "junior", "difficultyMin": 1, "difficultyMax": 3,
+          "prerequisites": [],
+          "evidenceRules": {"minimumAttempts": 6, "minimumAccuracy": 0.7, "maximumHintRatio": 0.4}
+        },
+        {
+          "skillId": "science.observation",
+          "name": {"vi": "Quan sát", "en": "Observation"},
+          "ageGroup": "junior", "difficultyMin": 1, "difficultyMax": 3,
+          "prerequisites": [],
+          "evidenceRules": {"minimumAttempts": 4, "minimumAccuracy": 0.7, "maximumHintRatio": 0.5}
+        },
+        {
+          "skillId": "science.traffic",
+          "name": {"vi": "An toàn giao thông", "en": "Traffic safety"},
+          "ageGroup": "junior", "difficultyMin": 2, "difficultyMax": 4,
+          "prerequisites": ["logic.matching"],
+          "evidenceRules": {"minimumAttempts": 6, "minimumAccuracy": 0.75, "maximumHintRatio": 0.4}
+        },
+        {
+          "skillId": "science.environment",
+          "name": {"vi": "Bảo vệ môi trường", "en": "Environmental care"},
+          "ageGroup": "explorer", "difficultyMin": 3, "difficultyMax": 5,
+          "prerequisites": ["science.cause_effect"],
+          "evidenceRules": {"minimumAttempts": 6, "minimumAccuracy": 0.7, "maximumHintRatio": 0.4}
+        },
+        {
+          "skillId": "science.simulation",
+          "name": {"vi": "Mô phỏng khoa học", "en": "Science simulation"},
+          "ageGroup": "master", "difficultyMin": 4, "difficultyMax": 5,
+          "prerequisites": ["science.cause_effect"],
+          "evidenceRules": {"minimumAttempts": 4, "minimumAccuracy": 0.6, "maximumHintRatio": 0.4}
+        }
+      ]
+    },
+    {
+      "subjectId": "creative",
+      "name": {"vi": "Sáng tạo & Nghệ thuật", "en": "Creativity & Arts"},
+      "skills": [
+        {
+          "skillId": "creative.color_recognition",
+          "name": {"vi": "Nhận biết màu sắc", "en": "Color recognition"},
+          "ageGroup": "junior", "difficultyMin": 1, "difficultyMax": 2,
+          "prerequisites": [],
+          "evidenceRules": {"minimumAttempts": 4, "minimumAccuracy": 0.8, "maximumHintRatio": 0.5}
+        },
+        {
+          "skillId": "creative.shape_construction",
+          "name": {"vi": "Xếp hình", "en": "Shape construction"},
+          "ageGroup": "junior", "difficultyMin": 2, "difficultyMax": 4,
+          "prerequisites": ["math.shapes.basic"],
+          "evidenceRules": {"minimumAttempts": 6, "minimumAccuracy": 0.7, "maximumHintRatio": 0.4}
+        },
+        {
+          "skillId": "creative.tangram",
+          "name": {"vi": "Tangram", "en": "Tangram"},
+          "ageGroup": "explorer", "difficultyMin": 3, "difficultyMax": 5,
+          "prerequisites": ["creative.shape_construction", "logic.spatial_reasoning"],
+          "evidenceRules": {"minimumAttempts": 6, "minimumAccuracy": 0.65, "maximumHintRatio": 0.3}
+        },
+        {
+          "skillId": "creative.bridge_building",
+          "name": {"vi": "Xây cầu", "en": "Bridge building"},
+          "ageGroup": "explorer", "difficultyMin": 3, "difficultyMax": 5,
+          "prerequisites": ["creative.shape_construction"],
+          "evidenceRules": {"minimumAttempts": 4, "minimumAccuracy": 0.6, "maximumHintRatio": 0.3}
+        },
+        {
+          "skillId": "creative.storytelling",
+          "name": {"vi": "Kể chuyện sáng tạo", "en": "Creative storytelling"},
+          "ageGroup": "master", "difficultyMin": 3, "difficultyMax": 5,
+          "prerequisites": ["letters.storytelling"],
+          "evidenceRules": {"minimumAttempts": 4, "minimumAccuracy": 0.6, "maximumHintRatio": 0.3}
+        }
+      ]
+    }
+  ],
+  "masteryThreshold": 0.8,
+  "reviewIntervalDays": 3,
+  "spacedRecallDays": 2
+}

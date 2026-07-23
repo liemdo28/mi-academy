@@ -7,12 +7,14 @@ import '../theme/mi_theme.dart';
 class MiErrorState extends StatelessWidget {
   final String title;
   final String? message;
+  final String retryLabel;
   final VoidCallback? onRetry;
 
   const MiErrorState({
     super.key,
     required this.title,
     this.message,
+    this.retryLabel = 'Thử lại',
     this.onRetry,
   });
 
@@ -49,7 +51,7 @@ class MiErrorState extends StatelessWidget {
                 onPressed: onRetry,
                 icon: const MiIcon(MiIconName.replay,
                     color: MiColors.textOnPrimary),
-                label: const Text('Thử lại'),
+                label: Text(retryLabel),
               ),
             ],
           ],

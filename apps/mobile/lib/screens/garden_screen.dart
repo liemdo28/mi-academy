@@ -21,20 +21,28 @@ class GardenScreen extends ConsumerWidget {
         );
 
     return Scaffold(
-      appBar: AppBar(title: const Text('Vườn thành tích')),
+      appBar: AppBar(
+        title: Text(locale == 'en' ? 'Achievement Garden' : 'Vườn thành tích'),
+      ),
       body: SafeArea(
         child: rewardsAsync.when(
           loading: () => const MiLoading(),
           error: (e, _) => MiErrorState(
-            title: 'Không thể tải vườn thành tích',
+            title: locale == 'en'
+                ? "Couldn't load the achievement garden"
+                : 'Không thể tải vườn thành tích',
+            retryLabel: locale == 'en' ? 'Try again' : 'Thử lại',
             onRetry: () => ref.invalidate(localRewardsProvider),
           ),
           data: (rewards) {
             if (rewards.isEmpty) {
-              return const MiEmptyState(
-                title: 'Vườn của con còn trống',
-                subtitle:
-                    'Hoàn thành nhiệm vụ để trồng những bông hoa đầu tiên!',
+              return MiEmptyState(
+                title: locale == 'en'
+                    ? 'Your garden is still empty'
+                    : 'Vườn của con còn trống',
+                subtitle: locale == 'en'
+                    ? 'Finish missions to grow the first flowers!'
+                    : 'Hoàn thành nhiệm vụ để trồng những bông hoa đầu tiên!',
                 brandIcon: MiBrandIcon.garden,
               );
             }

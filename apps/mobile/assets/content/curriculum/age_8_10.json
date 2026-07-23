@@ -1,0 +1,47 @@
+{
+  "version": "1.0.0",
+  "ageGroup": "explorer",
+  "label": {"vi": "MI Explorer (8–10 tuổi)", "en": "MI Explorer (8–10 years)"},
+  "subjects": {
+    "letters": {
+      "skills": [
+        "letters.spelling",
+        "letters.vocabulary",
+        "letters.reading_comprehension",
+        "letters.synonyms_antonyms",
+        "letters.sentence_completion"
+      ],
+      "description": {"vi": "Chính tả, từ vựng, đọc hiểu, từ đồng/trái nghĩa, hoàn thành câu", "en": "Spelling, vocabulary, reading comprehension, synonyms/antonyms, sentence completion"}
+    },
+    "math": {
+      "skills": [
+        "math.addition.multi_digit",
+        "math.subtraction.multi_digit",
+        "math.multiplication.tables",
+        "math.division.basic",
+        "math.measurement",
+        "math.fractions.visual"
+      ],
+      "description": {"vi": "Cộng trừ số lớn, bảng nhân, phép chia, đo lường, phân số trực quan", "en": "Multi-digit add/subtract, multiplication tables, division, measurement, visual fractions"}
+    },
+    "logic": {
+      "skills": [
+        "logic.pattern.recognition",
+        "logic.maze",
+        "logic.sequence.programming",
+        "logic.loops"
+      ],
+      "description": {"vi": "Quy luật, mê cung, lập trình chuỗi, vòng lặp", "en": "Patterns, maze, programming sequences, loops"}
+    },
+    "science": {
+      "skills": ["science.symbol_recognition", "science.traffic", "science.environment"],
+      "description": {"vi": "Biểu tượng khoa học, giao thông, môi trường", "en": "Science symbols, traffic, environment"}
+    },
+    "creative": {
+      "skills": ["creative.tangram", "creative.bridge_building"],
+      "description": {"vi": "Tangram, xây cầu", "en": "Tangram, bridge building"}
+    }
+  },
+  "dailyTimeMinutes": {"min": 15, "max": 25},
+  "lessonsPerDay": {"min": 1, "max": 3}
+}
