@@ -4,6 +4,7 @@ import 'package:mi_game_core/mi_game_core.dart';
 import 'package:mi_game_ui/mi_game_ui.dart';
 
 import '../level_skill_ids.dart';
+import '../game_locale_text.dart';
 import '../snapshot_lifecycle_mixin.dart';
 import 'word_builder_session.dart';
 
@@ -127,6 +128,8 @@ class _WordBuilderScreenState extends State<WordBuilderScreen>
   }
 
   void _showCompletion() {
+    final text = GameLocaleText(widget.locale);
+    final completion = text.completion;
     _completed = true;
     _stopwatch.stop();
     widget.onComplete?.call(MiCompletionResult(
@@ -149,8 +152,15 @@ class _WordBuilderScreenState extends State<WordBuilderScreen>
       builder: (_) => CompletionOverlay(
         starsEarned: _session.stars,
         maxStars: 3,
-        message: 'Con đã ghép đúng từ!',
+        message: text.wordBuilderComplete,
         score: _session.score,
+        scoreLabel: completion.scoreLabel,
+        nextLabel: completion.nextLabel,
+        replayLabel: completion.replayLabel,
+        exitLabel: completion.exitLabel,
+        mascotSemanticLabel: completion.mascotSemanticLabel,
+        earnedStarSemanticLabel: completion.earnedStarSemanticLabel,
+        unearnedStarSemanticLabel: completion.unearnedStarSemanticLabel,
         onNext: _goNext,
         onReplay: () {
           Navigator.of(context).pop();
@@ -177,6 +187,7 @@ class _WordBuilderScreenState extends State<WordBuilderScreen>
 
   @override
   Widget build(BuildContext context) {
+    final text = GameLocaleText(widget.locale);
     final prompt = _content['prompt'] as String? ?? 'Ghép chữ thành từ!';
     final targetWord = _content['targetWord'] as String? ?? '';
 
@@ -186,7 +197,7 @@ class _WordBuilderScreenState extends State<WordBuilderScreen>
         child: Column(
           children: [
             GameHeader(
-              title: 'Ghép chữ tạo từ',
+              title: text.wordBuilderTitle,
               score: _level.levelNumber,
               onExit: widget.onExit,
             ),
@@ -198,16 +209,22 @@ class _WordBuilderScreenState extends State<WordBuilderScreen>
               child: ListView(
                 padding: GameTheme.screenPadding,
                 children: [
-                  _MiPromptCard(prompt: prompt, targetWord: targetWord),
+                  _MiPromptCard(
+                    prompt: prompt,
+                    targetWord: targetWord,
+                    text: text,
+                  ),
                   const SizedBox(height: 20),
                   _AnswerSlots(
                     placed: _session.placed,
                     onRemove: _removeLetter,
+                    text: text,
                   ),
                   const SizedBox(height: 24),
                   _LetterBank(
                     letters: _session.bank,
                     onPick: _placeLetter,
+                    text: text,
                   ),
                   const SizedBox(height: 20),
                   if (_session.feedback != null)
@@ -228,13 +245,15 @@ class _WordBuilderScreenState extends State<WordBuilderScreen>
                     hintsRemaining: _level.hints.length - _session.hintsUsed < 0
                         ? 0
                         : _level.hints.length - _session.hintsUsed,
+                    availableSemanticLabel: text.hintAvailable,
+                    emptySemanticLabel: text.hintEmpty,
                   ),
                   const SizedBox(width: 12),
                   Expanded(
                     child: ElevatedButton.icon(
                       onPressed: _checkAnswer,
                       icon: const Icon(Icons.check_rounded),
-                      label: const Text('Kiểm tra'),
+                      label: Text(text.wordBuilderCheck),
                       style: ElevatedButton.styleFrom(
                         backgroundColor: GameTheme.primary,
                         foregroundColor: Colors.white,
@@ -254,10 +273,15 @@ class _WordBuilderScreenState extends State<WordBuilderScreen>
 }
 
 class _MiPromptCard extends StatelessWidget {
-  const _MiPromptCard({required this.prompt, required this.targetWord});
+  const _MiPromptCard({
+    required this.prompt,
+    required this.targetWord,
+    required this.text,
+  });
 
   final String prompt;
   final String targetWord;
+  final GameLocaleText text;
 
   @override
   Widget build(BuildContext context) {
@@ -278,7 +302,7 @@ class _MiPromptCard extends StatelessWidget {
             Text(prompt, style: GameTheme.headingMedium),
             const SizedBox(height: 8),
             Text(
-              '${targetWord.length} ký tự',
+              text.wordBuilderLength(targetWord.length),
               style: GameTheme.bodyMedium,
             ),
           ],
@@ -289,10 +313,15 @@ class _MiPromptCard extends StatelessWidget {
 }
 
 class _AnswerSlots extends StatelessWidget {
-  const _AnswerSlots({required this.placed, required this.onRemove});
+  const _AnswerSlots({
+    required this.placed,
+    required this.onRemove,
+    required this.text,
+  });
 
   final List<String?> placed;
   final void Function(int slotIndex) onRemove;
+  final GameLocaleText text;
 
   @override
   Widget build(BuildContext context) {
@@ -307,10 +336,10 @@ class _AnswerSlots extends StatelessWidget {
           height: 58,
           child: Semantics(
             label: letter == null
-                ? 'Ô trống ${index + 1}'
+                ? text.emptySlot(index)
                 : letter == ' '
-                    ? 'Khoảng trắng, chạm để bỏ ra'
-                    : 'Chữ $letter, chạm để bỏ ra',
+                    ? text.spaceSlot
+                    : text.filledLetter(letter),
             button: letter != null,
             child: OutlinedButton(
               onPressed: letter == null ? null : () => onRemove(index),
@@ -334,10 +363,15 @@ class _AnswerSlots extends StatelessWidget {
 }
 
 class _LetterBank extends StatelessWidget {
-  const _LetterBank({required this.letters, required this.onPick});
+  const _LetterBank({
+    required this.letters,
+    required this.onPick,
+    required this.text,
+  });
 
   final List<String> letters;
   final void Function(int index) onPick;
+  final GameLocaleText text;
 
   @override
   Widget build(BuildContext context) {
@@ -351,7 +385,7 @@ class _LetterBank extends StatelessWidget {
           width: 56,
           height: 56,
           child: Semantics(
-            label: letter == ' ' ? 'Khoảng trắng' : 'Chữ $letter',
+            label: letter == ' ' ? text.bankSpace : text.bankLetter(letter),
             button: true,
             child: ElevatedButton(
               onPressed: () => onPick(index),

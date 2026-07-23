@@ -2,6 +2,8 @@ import 'dart:math';
 
 import 'package:mi_game_core/mi_game_core.dart';
 
+import '../game_locale_text.dart';
+
 class SoundMatchSession {
   SoundMatchSession({
     required MiLevel level,
@@ -28,6 +30,7 @@ class SoundMatchSession {
   String? get feedback => _feedback;
 
   Map<String, dynamic> get content => _level.contentForLocale(locale);
+  GameLocaleText get _text => GameLocaleText(locale);
 
   String get correctAnswer => content['correctAnswer'] as String;
 
@@ -46,7 +49,7 @@ class SoundMatchSession {
 
   void playPrompt() {
     _showTranscript = true;
-    _feedback = 'MI đang đọc âm thanh mẫu.';
+    _feedback = _text.soundMatchPlaying;
   }
 
   bool choose(String option) {
@@ -56,7 +59,7 @@ class SoundMatchSession {
       return true;
     }
 
-    _feedback = 'Chưa khớp rồi, con nghe lại và thử đáp án khác nhé!';
+    _feedback = _text.soundMatchRetry;
     _showTranscript = true;
     return false;
   }
@@ -65,7 +68,8 @@ class SoundMatchSession {
     final hints = _level.hints;
     if (hints.isEmpty) return;
 
-    final hint = hints[min(_hintsUsed, hints.length - 1)]['text'] as String;
+    final hintIndex = min(_hintsUsed, hints.length - 1);
+    final hint = _text.hintFrom(hints[hintIndex], hintIndex);
     _hintsUsed = min(_hintsUsed + 1, hints.length);
     _feedback = hint;
     _showTranscript = true;

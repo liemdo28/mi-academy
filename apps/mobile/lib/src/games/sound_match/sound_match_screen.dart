@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:mi_game_core/mi_game_core.dart';
 import 'package:mi_game_ui/mi_game_ui.dart';
 
+import '../game_locale_text.dart';
 import '../level_skill_ids.dart';
 import '../snapshot_lifecycle_mixin.dart';
 import 'sound_match_session.dart';
@@ -106,6 +107,8 @@ class _SoundMatchScreenState extends State<SoundMatchScreen>
   }
 
   void _showCompletion() {
+    final text = GameLocaleText(widget.locale);
+    final completion = text.completion;
     _completed = true;
     _stopwatch.stop();
     widget.onComplete?.call(MiCompletionResult(
@@ -128,8 +131,15 @@ class _SoundMatchScreenState extends State<SoundMatchScreen>
       builder: (_) => CompletionOverlay(
         starsEarned: _session.stars,
         maxStars: 3,
-        message: 'Con đã nghe và chọn đúng!',
+        message: text.soundMatchComplete,
         score: _session.score,
+        scoreLabel: completion.scoreLabel,
+        nextLabel: completion.nextLabel,
+        replayLabel: completion.replayLabel,
+        exitLabel: completion.exitLabel,
+        mascotSemanticLabel: completion.mascotSemanticLabel,
+        earnedStarSemanticLabel: completion.earnedStarSemanticLabel,
+        unearnedStarSemanticLabel: completion.unearnedStarSemanticLabel,
         onNext: _goNext,
         onReplay: () {
           Navigator.of(context).pop();
@@ -156,7 +166,8 @@ class _SoundMatchScreenState extends State<SoundMatchScreen>
 
   @override
   Widget build(BuildContext context) {
-    final prompt = _content['prompt'] as String? ?? 'Nghe và chọn đáp án đúng!';
+    final text = GameLocaleText(widget.locale);
+    final prompt = _content['prompt'] as String? ?? text.soundMatchPrompt;
     final transcript = _content['audioTranscript'] as String? ?? '';
     final audioKey = _content['audioKey'] as String? ?? '';
 
@@ -166,7 +177,7 @@ class _SoundMatchScreenState extends State<SoundMatchScreen>
         child: Column(
           children: [
             GameHeader(
-              title: 'Nghe âm tìm chữ',
+              title: text.soundMatchTitle,
               score: _level.levelNumber,
               onExit: widget.onExit,
             ),
@@ -186,6 +197,7 @@ class _SoundMatchScreenState extends State<SoundMatchScreen>
                     transcript: transcript,
                     showTranscript: _session.showTranscript,
                     onPlay: _playPrompt,
+                    text: text,
                   ),
                   const SizedBox(height: 24),
                   ..._session.options.map(
@@ -217,13 +229,15 @@ class _SoundMatchScreenState extends State<SoundMatchScreen>
                     hintsRemaining: _level.hints.length - _session.hintsUsed < 0
                         ? 0
                         : _level.hints.length - _session.hintsUsed,
+                    availableSemanticLabel: text.hintAvailable,
+                    emptySemanticLabel: text.hintEmpty,
                   ),
                   const SizedBox(width: 12),
                   Expanded(
                     child: OutlinedButton.icon(
                       onPressed: _playPrompt,
                       icon: const Icon(Icons.volume_up_rounded),
-                      label: const Text('Nghe lại'),
+                      label: Text(text.soundMatchReplay),
                       style: OutlinedButton.styleFrom(
                         foregroundColor: GameTheme.primary,
                         padding: GameTheme.buttonPadding,
@@ -248,6 +262,7 @@ class _SoundPromptCard extends StatelessWidget {
     required this.transcript,
     required this.showTranscript,
     required this.onPlay,
+    required this.text,
   });
 
   final String prompt;
@@ -255,6 +270,7 @@ class _SoundPromptCard extends StatelessWidget {
   final String transcript;
   final bool showTranscript;
   final VoidCallback onPlay;
+  final GameLocaleText text;
 
   @override
   Widget build(BuildContext context) {
@@ -283,7 +299,7 @@ class _SoundPromptCard extends StatelessWidget {
             ),
             const SizedBox(height: 12),
             Text(
-              'Âm thanh: $audioKey',
+              '${text.soundMatchAudioPrefix}: $audioKey',
               style: GameTheme.bodyMedium,
               textAlign: TextAlign.center,
             ),

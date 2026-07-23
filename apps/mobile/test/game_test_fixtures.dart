@@ -12,6 +12,12 @@ const wordBuilderLevel = MiLevel(
       'letters': ['m', 'è', 'o'],
       'distractors': ['a'],
     },
+    'en': {
+      'prompt': 'Build the word!',
+      'targetWord': 'cat',
+      'letters': ['c', 'a', 't'],
+      'distractors': ['o'],
+    },
   },
   hints: [
     {'text': 'Chữ đầu tiên là M'},
@@ -31,6 +37,13 @@ const soundMatchLevel = MiLevel(
       'audioKey': 'letter_a',
       'audioTranscript': 'A',
     },
+    'en': {
+      'prompt': 'Listen and choose the letter!',
+      'correctAnswer': 'A',
+      'options': ['A', 'B', 'C'],
+      'audioKey': 'letter_a',
+      'audioTranscript': 'A',
+    },
   },
   hints: [
     {'text': 'Nghe lại âm thanh'},
@@ -44,6 +57,13 @@ const mathRaceLevel = MiLevel(
   difficulty: 1,
   localizedContent: {
     'vi': {
+      'prompt': '2 + 3 = ?',
+      'options': [
+        {'id': 'a', 'text': '4', 'correct': false},
+        {'id': 'b', 'text': '5', 'correct': true},
+      ],
+    },
+    'en': {
       'prompt': '2 + 3 = ?',
       'options': [
         {'id': 'a', 'text': '4', 'correct': false},
@@ -83,6 +103,15 @@ const memoryCardsLevel = MiLevel(
   localizedContent: {
     'vi': {
       'prompt': 'Tìm cặp giống nhau!',
+      'cards': [
+        {'id': 'a1', 'pairId': 'a', 'content': 'A', 'type': 'text'},
+        {'id': 'a2', 'pairId': 'a', 'content': 'A', 'type': 'text'},
+        {'id': 'b1', 'pairId': 'b', 'content': 'B', 'type': 'text'},
+        {'id': 'b2', 'pairId': 'b', 'content': 'B', 'type': 'text'},
+      ],
+    },
+    'en': {
+      'prompt': 'Find the matching pairs!',
       'cards': [
         {'id': 'a1', 'pairId': 'a', 'content': 'A', 'type': 'text'},
         {'id': 'a2', 'pairId': 'a', 'content': 'A', 'type': 'text'},

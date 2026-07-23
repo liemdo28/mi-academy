@@ -10,17 +10,21 @@ class HintButton extends StatelessWidget {
     required this.onPressed,
     required this.hintsAvailable,
     required this.hintsRemaining,
+    this.availableSemanticLabel = 'Xin gợi ý',
+    this.emptySemanticLabel = 'Đã hết gợi ý',
   });
 
   final VoidCallback onPressed;
   final int hintsAvailable;
   final int hintsRemaining;
+  final String availableSemanticLabel;
+  final String emptySemanticLabel;
 
   @override
   Widget build(BuildContext context) {
     final canHint = hintsRemaining > 0;
     return Semantics(
-      label: canHint ? 'Xin gợi ý' : 'Đã hết gợi ý',
+      label: canHint ? availableSemanticLabel : emptySemanticLabel,
       button: true,
       enabled: canHint,
       child: SizedBox(

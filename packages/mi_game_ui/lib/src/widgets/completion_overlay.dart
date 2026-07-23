@@ -14,6 +14,13 @@ class CompletionOverlay extends StatelessWidget {
     required this.onReplay,
     required this.onExit,
     this.score = 0,
+    this.scoreLabel = 'Điểm',
+    this.nextLabel = 'Tiếp tục',
+    this.replayLabel = 'Chơi lại',
+    this.exitLabel = 'Trang chính',
+    this.mascotSemanticLabel = 'MI chúc mừng con',
+    this.earnedStarSemanticLabel = 'Sao đã nhận',
+    this.unearnedStarSemanticLabel = 'Sao chưa nhận',
   });
 
   /// 0..maxStars — never shows "lose" messaging.
@@ -24,6 +31,13 @@ class CompletionOverlay extends StatelessWidget {
   final VoidCallback onNext;
   final VoidCallback onReplay;
   final VoidCallback onExit;
+  final String scoreLabel;
+  final String nextLabel;
+  final String replayLabel;
+  final String exitLabel;
+  final String mascotSemanticLabel;
+  final String earnedStarSemanticLabel;
+  final String unearnedStarSemanticLabel;
 
   @override
   Widget build(BuildContext context) {
@@ -41,10 +55,10 @@ class CompletionOverlay extends StatelessWidget {
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
-              const MiMascotReaction(
+              MiMascotReaction(
                 emotion: MiMascotEmotion.celebration,
                 size: MiTokens.mascotReactionMd,
-                semanticLabel: 'MI chúc mừng con',
+                semanticLabel: mascotSemanticLabel,
               ),
               const SizedBox(height: MiTokens.space4),
               Text(
@@ -63,32 +77,34 @@ class CompletionOverlay extends StatelessWidget {
                       icon: MiBrandIcon.rewardStar,
                       size: 48,
                       color: earned ? GameTheme.warning : MiColors.border,
-                      semanticLabel: earned ? 'Sao đã nhận' : 'Sao chưa nhận',
+                      semanticLabel: earned
+                          ? earnedStarSemanticLabel
+                          : unearnedStarSemanticLabel,
                     ),
                   );
                 }),
               ),
               if (score > 0) ...[
                 const SizedBox(height: MiTokens.space4),
-                Text('Điểm: $score', style: GameTheme.bodyLarge),
+                Text('$scoreLabel: $score', style: GameTheme.bodyLarge),
               ],
               const SizedBox(height: MiTokens.space6),
               MiPrimaryButton(
-                label: 'Tiếp tục',
+                label: nextLabel,
                 icon: const Icon(Icons.arrow_forward_rounded),
                 onPressed: onNext,
                 width: double.infinity,
               ),
               const SizedBox(height: MiTokens.space3),
               MiSecondaryButton(
-                label: 'Chơi lại',
+                label: replayLabel,
                 icon: const Icon(Icons.refresh_rounded),
                 onPressed: onReplay,
                 width: double.infinity,
               ),
               const SizedBox(height: MiTokens.space3),
               MiSecondaryButton(
-                label: 'Trang chính',
+                label: exitLabel,
                 icon: const Icon(Icons.home_rounded),
                 onPressed: onExit,
                 width: double.infinity,

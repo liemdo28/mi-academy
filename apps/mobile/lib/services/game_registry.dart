@@ -4,6 +4,7 @@ import 'package:mi_game_core/mi_game_core.dart';
 import 'package:mi_game_ui/mi_game_ui.dart';
 
 import '../src/games/choice/choice_game_screen.dart';
+import '../src/games/game_locale_text.dart';
 import '../src/games/memory_cards/memory_cards_game.dart';
 import '../src/games/memory_cards/memory_cards_screen.dart';
 import '../src/games/robot_commands/robot_commands_screen.dart';
@@ -275,8 +276,10 @@ abstract final class GameRegistry {
             required locale,
           }) =>
               ChoiceGameScreen(
-            title: 'Đường đua cộng trừ',
-            worldLabel: 'Xe MI tiến lên khi con chọn đúng.',
+            title: locale == 'en' ? 'Math Race' : 'Đường đua cộng trừ',
+            worldLabel: locale == 'en'
+                ? 'MI moves forward when you choose correctly.'
+                : 'Xe MI tiến lên khi con chọn đúng.',
             level: level,
             allLevels: allLevels,
             brandIcon: MiBrandIcon.numbers,
@@ -310,8 +313,10 @@ abstract final class GameRegistry {
             required locale,
           }) =>
               ChoiceGameScreen(
-            title: 'Siêu thị toán học',
-            worldLabel: 'Giỏ hàng MI giúp con luyện tính tiền.',
+            title: locale == 'en' ? 'Math Supermarket' : 'Siêu thị toán học',
+            worldLabel: locale == 'en'
+                ? 'MI’s basket helps you practice money math.'
+                : 'Giỏ hàng MI giúp con luyện tính tiền.',
             level: level,
             allLevels: allLevels,
             brandIcon: MiBrandIcon.numbers,
@@ -437,6 +442,8 @@ class _MemoryCardsRegistryHostState extends State<_MemoryCardsRegistryHost> {
   }
 
   void _onGameComplete(MiCompletionResult result) {
+    final text = GameLocaleText(widget.locale);
+    final completion = text.completion;
     widget.onComplete(result);
     final stars = result.metadata['stars'] as int? ?? 1;
     showDialog(
@@ -445,8 +452,15 @@ class _MemoryCardsRegistryHostState extends State<_MemoryCardsRegistryHost> {
       builder: (_) => CompletionOverlay(
         starsEarned: stars,
         maxStars: 3,
-        message: 'Chúc mừng!',
+        message: text.memoryCongrats,
         score: result.score,
+        scoreLabel: completion.scoreLabel,
+        nextLabel: completion.nextLabel,
+        replayLabel: completion.replayLabel,
+        exitLabel: completion.exitLabel,
+        mascotSemanticLabel: completion.mascotSemanticLabel,
+        earnedStarSemanticLabel: completion.earnedStarSemanticLabel,
+        unearnedStarSemanticLabel: completion.unearnedStarSemanticLabel,
         onNext: () {
           Navigator.of(context).pop();
           final nextIndex =

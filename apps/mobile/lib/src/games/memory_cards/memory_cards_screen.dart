@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:mi_game_core/mi_game_core.dart';
 import 'package:mi_game_ui/mi_game_ui.dart';
 
+import '../game_locale_text.dart';
 import 'memory_cards_game.dart';
 
 /// Memory Cards game screen — implements the complete vertical slice.
@@ -161,8 +162,13 @@ class _MemoryCardsScreenState extends State<MemoryCardsScreen>
 
   Future<void> _requestHint() async {
     final hint = await widget.game.requestHint();
+    final text = GameLocaleText(widget.locale);
+    final hintIndex = hint.hintNumber - 1;
+    final levelHint = hintIndex >= 0 && hintIndex < widget.level.hints.length
+        ? widget.level.hints[hintIndex]
+        : const <String, dynamic>{};
     setState(() {
-      _currentHint = hint.content;
+      _currentHint = text.hintFrom(levelHint, hintIndex);
       _showHint = true;
     });
   }
@@ -174,16 +180,9 @@ class _MemoryCardsScreenState extends State<MemoryCardsScreen>
   @override
   Widget build(BuildContext context) {
     final game = widget.game;
+    final text = GameLocaleText(widget.locale);
     final content = widget.level.contentForLocale(widget.locale);
-    final prompt = content['prompt'] as String? ?? 'Tìm cặp giống nhau!';
-    final title = widget.locale == 'en' ? 'Memory Cards' : 'Ghi nhớ vị trí';
-    final tutorialMessage = widget.locale == 'en'
-        ? 'Tap a card to flip it.\n'
-            'Find two cards with the same picture.\n'
-            'Match every pair to win!'
-        : 'Chạm vào thẻ để lật lên.\n'
-            'Tìm hai thẻ có hình giống nhau.\n'
-            'Ghép tất cả cặp để thắng!';
+    final prompt = content['prompt'] as String? ?? text.memoryPrompt;
 
     return Scaffold(
       backgroundColor: GameTheme.background,
@@ -194,7 +193,7 @@ class _MemoryCardsScreenState extends State<MemoryCardsScreen>
               children: [
                 // Header
                 GameHeader(
-                  title: title,
+                  title: text.memoryTitle,
                   score: game.matchedPairs,
                   onPause: () => setState(() => _isPaused = true),
                   onExit: widget.onExit,
@@ -230,6 +229,7 @@ class _MemoryCardsScreenState extends State<MemoryCardsScreen>
                       onTap: _onCardTap,
                       isProcessing: game.isProcessing,
                       reduceMotion: widget.reduceMotion,
+                      text: text,
                     ),
                   ),
                 ),
@@ -241,6 +241,8 @@ class _MemoryCardsScreenState extends State<MemoryCardsScreen>
                     onPressed: _requestHint,
                     hintsAvailable: widget.level.hints.length,
                     hintsRemaining: widget.level.hints.length,
+                    availableSemanticLabel: text.hintAvailable,
+                    emptySemanticLabel: text.hintEmpty,
                   ),
                 ),
               ],
@@ -255,7 +257,9 @@ class _MemoryCardsScreenState extends State<MemoryCardsScreen>
                 child: Center(
                   child: FeedbackBubble(
                     isCorrect: _feedbackMessage!.contains('đúng') ||
-                        _feedbackMessage!.contains('Hoàn thành'),
+                        _feedbackMessage!.contains('Hoàn thành') ||
+                        _feedbackMessage == text.memoryMatched ||
+                        _feedbackMessage == text.memoryDone,
                     message: _feedbackMessage!,
                   ),
                 ),
@@ -282,17 +286,24 @@ class _MemoryCardsScreenState extends State<MemoryCardsScreen>
                   await _initGame();
                 },
                 onExit: widget.onExit ?? () {},
+                title: text.pauseTitle,
+                resumeLabel: text.pauseResume,
+                restartLabel: text.pauseRestart,
+                exitLabel: text.pauseExit,
               ),
 
             // Tutorial overlay
             if (_showTutorial)
               TutorialOverlay(
-                title: title,
-                message: tutorialMessage,
+                title: text.memoryTitle,
+                message: text.memoryTutorial,
                 onContinue: () => setState(() => _showTutorial = false),
                 imageHint: Icons.style_rounded,
                 pageNumber: 1,
                 totalPages: 1,
+                continueLabel: text.tutorialContinue,
+                startLabel: text.tutorialStart,
+                mascotSemanticLabel: text.tutorialMascot,
               ),
           ],
         ),
@@ -308,6 +319,7 @@ class _CardGrid extends StatelessWidget {
     required this.cols,
     required this.onTap,
     required this.isProcessing,
+    required this.text,
     this.reduceMotion = false,
   });
 
@@ -315,6 +327,7 @@ class _CardGrid extends StatelessWidget {
   final int cols;
   final void Function(int) onTap;
   final bool isProcessing;
+  final GameLocaleText text;
   final bool reduceMotion;
 
   @override
@@ -335,6 +348,7 @@ class _CardGrid extends StatelessWidget {
               height: cardHeight,
               onTap: isProcessing ? null : () => onTap(i),
               reduceMotion: reduceMotion,
+              text: text,
             );
           }),
         );
@@ -350,6 +364,7 @@ class _MemoryCardWidget extends StatelessWidget {
     required this.index,
     required this.width,
     required this.height,
+    required this.text,
     this.onTap,
     this.reduceMotion = false,
   });
@@ -358,6 +373,7 @@ class _MemoryCardWidget extends StatelessWidget {
   final int index;
   final double width;
   final double height;
+  final GameLocaleText text;
   final VoidCallback? onTap;
   final bool reduceMotion;
 
@@ -380,7 +396,9 @@ class _MemoryCardWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Semantics(
-      label: _isFaceUp ? 'Thẻ ${card.content}' : 'Thẻ úp, vị trí ${index + 1}',
+      label: _isFaceUp
+          ? text.memoryFaceUp(card.content)
+          : text.memoryFaceDown(index),
       button: true,
       child: GestureDetector(
         onTap: onTap,

@@ -2,6 +2,8 @@ import 'dart:math';
 
 import 'package:mi_game_core/mi_game_core.dart';
 
+import '../game_locale_text.dart';
+
 class WordBuilderSession {
   WordBuilderSession({
     required MiLevel level,
@@ -28,6 +30,7 @@ class WordBuilderSession {
   String? get feedback => _feedback;
 
   Map<String, dynamic> get content => _level.contentForLocale(locale);
+  GameLocaleText get _text => GameLocaleText(locale);
 
   String get targetWord => content['targetWord'] as String? ?? '';
 
@@ -62,7 +65,7 @@ class WordBuilderSession {
 
   bool checkAnswer() {
     if (_placed.any((letter) => letter == null)) {
-      _feedback = 'Mình còn ô trống, thử ghép thêm nhé!';
+      _feedback = _text.wordBuilderEmpty;
       return false;
     }
 
@@ -72,7 +75,7 @@ class WordBuilderSession {
       return true;
     }
 
-    _feedback = 'Gần đúng rồi, mình đổi lại vài chữ nhé!';
+    _feedback = _text.wordBuilderRetry;
     return false;
   }
 
@@ -80,7 +83,8 @@ class WordBuilderSession {
     final hints = _level.hints;
     if (hints.isEmpty) return;
 
-    final hint = hints[min(_hintsUsed, hints.length - 1)]['text'] as String;
+    final hintIndex = min(_hintsUsed, hints.length - 1);
+    final hint = _text.hintFrom(hints[hintIndex], hintIndex);
     _hintsUsed = min(_hintsUsed + 1, hints.length);
     _feedback = hint;
   }

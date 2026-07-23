@@ -350,13 +350,13 @@
           "cards": [
             {
               "id": "c1",
-              "content": "⭐",
+              "content": "Ngôi sao",
               "pairId": "p1",
               "type": "image"
             },
             {
               "id": "c2",
-              "content": "⭐",
+              "content": "Ngôi sao",
               "pairId": "p1",
               "type": "image"
             },
@@ -427,13 +427,13 @@
           "cards": [
             {
               "id": "c1",
-              "content": "⭐",
+              "content": "Star",
               "pairId": "p1",
               "type": "image"
             },
             {
               "id": "c2",
-              "content": "⭐",
+              "content": "Star",
               "pairId": "p1",
               "type": "image"
             },

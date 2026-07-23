@@ -4,6 +4,8 @@ import 'dart:math';
 import 'package:equatable/equatable.dart';
 import 'package:mi_game_core/mi_game_core.dart';
 
+import '../game_locale_text.dart';
+
 /// Card state during gameplay.
 enum CardState {
   /// Card is face-down, waiting to be tapped.
@@ -194,6 +196,7 @@ class MemoryCardsGame extends BaseGame {
       final firstCard = _cards[_firstFlippedIndex!];
 
       if (firstCard.pairId == card.pairId && firstCard.id != card.id) {
+        final text = GameLocaleText(context?.language ?? 'vi');
         // Match!
         _cards[_firstFlippedIndex!] =
             firstCard.copyWith(state: CardState.matched);
@@ -208,7 +211,7 @@ class MemoryCardsGame extends BaseGame {
 
         return MiActionResult(
           correct: true,
-          feedback: completed ? 'Hoàn thành!' : 'Ghép đúng!',
+          feedback: completed ? text.memoryDone : text.memoryMatched,
           audioRef: 'match_correct',
           isLevelComplete: completed,
           metadata: {
@@ -222,8 +225,9 @@ class MemoryCardsGame extends BaseGame {
         // Mismatch — show briefly then flip back
         _cards[index] = _cards[index].copyWith(state: CardState.mismatched);
 
+        final text = GameLocaleText(context?.language ?? 'vi');
         final feedback = MiActionResult.incorrect(
-          feedback: 'Không khớp, thử lại nhé!',
+          feedback: text.memoryRetry,
           metadata: {'cards': _cards.map((c) => c.toJson()).toList()},
         );
 

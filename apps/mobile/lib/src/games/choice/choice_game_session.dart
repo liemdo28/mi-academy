@@ -2,6 +2,8 @@ import 'dart:math';
 
 import 'package:mi_game_core/mi_game_core.dart';
 
+import '../game_locale_text.dart';
+
 class ChoiceGameSession {
   ChoiceGameSession({
     required MiLevel level,
@@ -30,6 +32,7 @@ class ChoiceGameSession {
   bool? get lastCorrect => _lastCorrect;
 
   Map<String, dynamic> get content => _level.contentForLocale(locale);
+  GameLocaleText get _text => GameLocaleText(locale);
 
   int get score => max(10, 100 - (_attempts - 1) * 10 - _hintsUsed * 5);
 
@@ -69,7 +72,8 @@ class ChoiceGameSession {
     final hints = _level.hints;
     if (hints.isEmpty) return;
 
-    final hint = hints[min(_hintsUsed, hints.length - 1)]['text'] as String;
+    final hintIndex = min(_hintsUsed, hints.length - 1);
+    final hint = _text.hintFrom(hints[hintIndex], hintIndex);
     _hintsUsed = min(_hintsUsed + 1, hints.length);
     _feedback = hint;
     _lastCorrect = null;

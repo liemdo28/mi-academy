@@ -40,11 +40,19 @@ class PauseOverlay extends StatelessWidget {
     required this.onResume,
     required this.onRestart,
     required this.onExit,
+    this.title = 'Tạm dừng',
+    this.resumeLabel = 'Tiếp tục',
+    this.restartLabel = 'Chơi lại',
+    this.exitLabel = 'Thoát',
   });
 
   final VoidCallback onResume;
   final VoidCallback onRestart;
   final VoidCallback onExit;
+  final String title;
+  final String resumeLabel;
+  final String restartLabel;
+  final String exitLabel;
 
   @override
   Widget build(BuildContext context) {
@@ -63,25 +71,25 @@ class PauseOverlay extends StatelessWidget {
             mainAxisSize: MainAxisSize.min,
             children: [
               Text(
-                'Tạm dừng',
+                title,
                 style: GameTheme.headingLarge,
               ),
               const SizedBox(height: MiTokens.space6),
               _PauseButton(
                 icon: Icons.play_arrow_rounded,
-                label: 'Tiếp tục',
+                label: resumeLabel,
                 onPressed: onResume,
               ),
               const SizedBox(height: MiTokens.space3),
               _PauseButton(
                 icon: Icons.refresh_rounded,
-                label: 'Chơi lại',
+                label: restartLabel,
                 onPressed: onRestart,
               ),
               const SizedBox(height: MiTokens.space3),
               _PauseButton(
                 icon: Icons.exit_to_app_rounded,
-                label: 'Thoát',
+                label: exitLabel,
                 onPressed: onExit,
               ),
             ],

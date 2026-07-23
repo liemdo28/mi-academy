@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:mi_game_core/mi_game_core.dart';
 import 'package:mi_game_ui/mi_game_ui.dart';
 
+import '../game_locale_text.dart';
 import '../level_skill_ids.dart';
 import '../snapshot_lifecycle_mixin.dart';
 import 'choice_game_session.dart';
@@ -112,6 +113,8 @@ class _ChoiceGameScreenState extends State<ChoiceGameScreen>
   }
 
   void _showCompletion() {
+    final text = GameLocaleText(widget.locale);
+    final completion = text.completion;
     _completed = true;
     _stopwatch.stop();
     widget.onComplete?.call(MiCompletionResult(
@@ -136,6 +139,13 @@ class _ChoiceGameScreenState extends State<ChoiceGameScreen>
         maxStars: 3,
         message: _completionMessage(),
         score: _session.score,
+        scoreLabel: completion.scoreLabel,
+        nextLabel: completion.nextLabel,
+        replayLabel: completion.replayLabel,
+        exitLabel: completion.exitLabel,
+        mascotSemanticLabel: completion.mascotSemanticLabel,
+        earnedStarSemanticLabel: completion.earnedStarSemanticLabel,
+        unearnedStarSemanticLabel: completion.unearnedStarSemanticLabel,
         onNext: _goNext,
         onReplay: () {
           Navigator.of(context).pop();
@@ -162,6 +172,7 @@ class _ChoiceGameScreenState extends State<ChoiceGameScreen>
 
   @override
   Widget build(BuildContext context) {
+    final text = GameLocaleText(widget.locale);
     final prompt = _content['prompt'] as String? ?? '';
 
     return Scaffold(
@@ -225,6 +236,8 @@ class _ChoiceGameScreenState extends State<ChoiceGameScreen>
                 hintsRemaining: _level.hints.length - _session.hintsUsed < 0
                     ? 0
                     : _level.hints.length - _session.hintsUsed,
+                availableSemanticLabel: text.hintAvailable,
+                emptySemanticLabel: text.hintEmpty,
               ),
             ),
           ],

@@ -3,6 +3,8 @@ import 'dart:math';
 import 'package:mi_blocks/mi_blocks.dart';
 import 'package:mi_game_core/mi_game_core.dart';
 
+import '../game_locale_text.dart';
+
 class RobotCommandsSession {
   RobotCommandsSession({
     required MiLevel level,
@@ -36,6 +38,7 @@ class RobotCommandsSession {
   String? get feedback => _feedback;
 
   Map<String, dynamic> get content => _level.contentForLocale(locale);
+  GameLocaleText get _text => GameLocaleText(locale);
 
   int get score => max(10, 100 - (_attempts - 1) * 10 - _hintsUsed * 5);
 
@@ -108,8 +111,8 @@ class RobotCommandsSession {
     _feedback = steps.isNotEmpty && steps.last.hasError
         ? steps.last.error
         : reachedGoal && collectedAll
-            ? 'Robot MI đã hoàn thành nhiệm vụ!'
-            : 'Robot MI chưa tới đủ mục tiêu, mình thử đổi lệnh nhé!';
+            ? _text.robotDone
+            : _text.robotRetry;
 
     return reachedGoal && collectedAll;
   }
@@ -118,7 +121,8 @@ class RobotCommandsSession {
     final hints = _level.hints;
     if (hints.isEmpty) return;
 
-    final hint = hints[min(_hintsUsed, hints.length - 1)]['text'] as String;
+    final hintIndex = min(_hintsUsed, hints.length - 1);
+    final hint = _text.hintFrom(hints[hintIndex], hintIndex);
     _hintsUsed = min(_hintsUsed + 1, hints.length);
     _feedback = hint;
   }

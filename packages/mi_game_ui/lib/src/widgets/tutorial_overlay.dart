@@ -15,6 +15,9 @@ class TutorialOverlay extends StatelessWidget {
     this.imageHint,
     this.pageNumber,
     this.totalPages,
+    this.continueLabel = 'Tiếp tục',
+    this.startLabel = 'Bắt đầu',
+    this.mascotSemanticLabel = 'MI hướng dẫn cách chơi',
   });
 
   final String title;
@@ -23,6 +26,9 @@ class TutorialOverlay extends StatelessWidget {
   final IconData? imageHint;
   final int? pageNumber;
   final int? totalPages;
+  final String continueLabel;
+  final String startLabel;
+  final String mascotSemanticLabel;
 
   @override
   Widget build(BuildContext context) {
@@ -51,10 +57,10 @@ class TutorialOverlay extends StatelessWidget {
                   child: Icon(imageHint, size: 56, color: GameTheme.secondary),
                 )
               else
-                const MiMascotReaction(
+                MiMascotReaction(
                   emotion: MiMascotEmotion.encouraging,
                   size: MiTokens.mascotReactionMd,
-                  semanticLabel: 'MI hướng dẫn cách chơi',
+                  semanticLabel: mascotSemanticLabel,
                 ),
               const SizedBox(height: MiTokens.space4),
               Text(title, style: GameTheme.headingMedium),
@@ -83,7 +89,7 @@ class TutorialOverlay extends StatelessWidget {
               ],
               const SizedBox(height: MiTokens.space6),
               MiPrimaryButton(
-                label: pageNumber != null ? 'Tiếp tục' : 'Bắt đầu',
+                label: pageNumber != null ? continueLabel : startLabel,
                 onPressed: onContinue,
                 width: double.infinity,
               ),
