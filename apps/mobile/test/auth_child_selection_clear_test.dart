@@ -53,4 +53,41 @@ void main() {
 
     expect(container.read(activeChildProvider).childId, isNull);
   });
+
+  test('offline mode selects a bundled local child without backend access',
+      () async {
+    final container = ProviderContainer(overrides: [
+      apiServiceProvider.overrideWithValue(
+        ApiService(
+            baseUrl: 'http://test.local', tokenStore: InMemoryTokenStore()),
+      ),
+    ]);
+    addTearDown(container.dispose);
+
+    await container.read(activeChildProvider.notifier).selectOfflineChild();
+
+    final state = container.read(activeChildProvider);
+    expect(state.childId, 'offline-child');
+    expect(state.error, isNull);
+    expect(state.children, hasLength(1));
+    expect(state.child?['nickname'], 'Mi Explorer');
+  });
+
+  test('offline child gets a local daily plan without backend access',
+      () async {
+    final container = ProviderContainer(overrides: [
+      apiServiceProvider.overrideWithValue(
+        ApiService(
+            baseUrl: 'http://test.local', tokenStore: InMemoryTokenStore()),
+      ),
+    ]);
+    addTearDown(container.dispose);
+
+    await container.read(activeChildProvider.notifier).selectOfflineChild();
+    final plan = await container.read(dailyPlanProvider.future);
+
+    expect(plan, isNotEmpty);
+    expect(plan.first['game_type'], 'missing_letter');
+    expect(plan.first['lesson_id'], 'offline-missing-letter');
+  });
 }

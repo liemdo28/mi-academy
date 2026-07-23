@@ -2,6 +2,13 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../services/api_service.dart';
 import 'providers.dart';
 
+const offlineChildProfile = <String, dynamic>{
+  'id': 'offline-child',
+  'nickname': 'Mi Explorer',
+  'age_group': 'junior',
+  'offline': true,
+};
+
 /// Active child state.
 class ActiveChildState {
   final String? childId;
@@ -59,6 +66,17 @@ class ActiveChildNotifier extends Notifier<ActiveChildState> {
     } catch (e) {
       state = state.copyWith(isLoading: false, error: e.toString());
     }
+  }
+
+  /// Selects the bundled child profile used by family/offline testing.
+  Future<void> selectOfflineChild() async {
+    state = state.copyWith(
+      childId: offlineChildProfile['id'] as String,
+      child: offlineChildProfile,
+      children: const [offlineChildProfile],
+      isLoading: false,
+      error: null,
+    );
   }
 
   /// Select a child profile.

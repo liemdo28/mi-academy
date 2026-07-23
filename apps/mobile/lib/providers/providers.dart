@@ -89,6 +89,31 @@ final dailyPlanProvider =
   final api = ref.read(apiServiceProvider);
   final child = ref.watch(activeChildProvider);
   if (child.childId == null) return [];
+  if (child.childId == offlineChildProfile['id']) {
+    return const [
+      {
+        'lesson_id': 'offline-missing-letter',
+        'game_type': 'missing_letter',
+        'title': 'Tìm chữ còn thiếu',
+        'subject': 'Chữ cái',
+        'estimated_minutes': 5,
+      },
+      {
+        'lesson_id': 'offline-memory-cards',
+        'game_type': 'memory_cards',
+        'title': 'Ghi nhớ vị trí',
+        'subject': 'Trí nhớ',
+        'estimated_minutes': 5,
+      },
+      {
+        'lesson_id': 'offline-robot-commands',
+        'game_type': 'robot_commands',
+        'title': 'Robot làm theo lệnh',
+        'subject': 'Logic',
+        'estimated_minutes': 5,
+      },
+    ];
+  }
   final result = await api.getDailyPlan(child.childId!);
   return result.cast<Map<String, dynamic>>();
 });
@@ -149,11 +174,13 @@ final rewardCatalogProvider = FutureProvider<RewardCatalog>((ref) {
 /// Rewards the active child has actually earned, resolved against the
 /// local catalog -- fully offline, no backend dependency. [GardenScreen]
 /// reads this instead of hitting the network.
-final localRewardsProvider = FutureProvider<List<RewardDefinition>>((ref) async {
+final localRewardsProvider =
+    FutureProvider<List<RewardDefinition>>((ref) async {
   final child = ref.watch(activeChildProvider);
   if (child.childId == null) return [];
   final catalog = await ref.watch(rewardCatalogProvider.future);
-  final unlockedIds = ref.watch(rewardStoreProvider).unlockedIds(child.childId!);
+  final unlockedIds =
+      ref.watch(rewardStoreProvider).unlockedIds(child.childId!);
   return catalog.rewards.where((r) => unlockedIds.contains(r.id)).toList();
 });
 
