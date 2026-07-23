@@ -1,5 +1,8 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:mi_blocks/mi_blocks.dart';
+import 'package:mi_game_audio/mi_game_audio.dart';
 import 'package:mi_game_core/mi_game_core.dart';
 import 'package:mi_game_ui/mi_game_ui.dart';
 
@@ -45,6 +48,7 @@ class _RobotCommandsScreenState extends State<RobotCommandsScreen>
     with WidgetsBindingObserver, SnapshotLifecycleMixin<RobotCommandsScreen> {
   late RobotCommandsSession _session;
   late Stopwatch _stopwatch;
+  late final MiAudioService _audio = MiAudioService();
   bool _completed = false;
 
   @override
@@ -66,6 +70,7 @@ class _RobotCommandsScreenState extends State<RobotCommandsScreen>
   @override
   void dispose() {
     disposeSnapshotLifecycle();
+    unawaited(_audio.dispose());
     _stopwatch.stop();
     super.dispose();
   }
@@ -118,6 +123,7 @@ class _RobotCommandsScreenState extends State<RobotCommandsScreen>
 
   void _runProgram() {
     final complete = _session.runProgram();
+    unawaited(_playEffect(complete ? 'correct' : 'try_again'));
     setState(() {});
     if (complete) {
       _showCompletion();
@@ -128,6 +134,15 @@ class _RobotCommandsScreenState extends State<RobotCommandsScreen>
     setState(() {
       _session.showHint();
     });
+    unawaited(_playEffect('try_again'));
+  }
+
+  Future<void> _playEffect(String assetKey) async {
+    try {
+      await _audio.playEffect('audio/$assetKey.wav');
+    } catch (_) {
+      // Audio feedback should never interrupt gameplay.
+    }
   }
 
   void _showCompletion() {

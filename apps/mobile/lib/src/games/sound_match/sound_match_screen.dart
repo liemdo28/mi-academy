@@ -1,4 +1,7 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
+import 'package:mi_game_audio/mi_game_audio.dart';
 import 'package:mi_game_core/mi_game_core.dart';
 import 'package:mi_game_ui/mi_game_ui.dart';
 
@@ -44,6 +47,7 @@ class _SoundMatchScreenState extends State<SoundMatchScreen>
     with WidgetsBindingObserver, SnapshotLifecycleMixin<SoundMatchScreen> {
   late SoundMatchSession _session;
   late Stopwatch _stopwatch;
+  late final MiAudioService _audio = MiAudioService();
   bool _completed = false;
 
   @override
@@ -65,6 +69,7 @@ class _SoundMatchScreenState extends State<SoundMatchScreen>
   @override
   void dispose() {
     disposeSnapshotLifecycle();
+    unawaited(_audio.dispose());
     _stopwatch.stop();
     super.dispose();
   }
@@ -89,10 +94,13 @@ class _SoundMatchScreenState extends State<SoundMatchScreen>
     setState(() {
       _session.playPrompt();
     });
+    final audioKey = _content['audioKey'] as String? ?? '';
+    unawaited(_playVoice(audioKey));
   }
 
   void _choose(String option) {
     final correct = _session.choose(option);
+    unawaited(_playEffect(correct ? 'correct' : 'try_again'));
     if (correct) {
       _showCompletion();
     } else {
@@ -104,6 +112,24 @@ class _SoundMatchScreenState extends State<SoundMatchScreen>
     setState(() {
       _session.showHint();
     });
+    unawaited(_playEffect('try_again'));
+  }
+
+  Future<void> _playVoice(String audioKey) async {
+    if (audioKey.isEmpty) return;
+    try {
+      await _audio.playVoice('audio/$audioKey.wav');
+    } catch (_) {
+      // Audio can be unavailable in tests or blocked by the browser.
+    }
+  }
+
+  Future<void> _playEffect(String assetKey) async {
+    try {
+      await _audio.playEffect('audio/$assetKey.wav');
+    } catch (_) {
+      // Audio feedback should never interrupt gameplay.
+    }
   }
 
   void _showCompletion() {

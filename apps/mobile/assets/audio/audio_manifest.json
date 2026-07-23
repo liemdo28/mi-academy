@@ -1,7 +1,7 @@
 {
   "schemaVersion": "1.0.0",
-  "generatedFor": "MI Academy Release 0.2 placeholder audio gate",
-  "note": "Silent placeholder WAV files. Replace with reviewed child-safe voice and effect recordings before production release.",
+  "generatedFor": "MI Academy Release 0.2 family-test audio set",
+  "note": "Generated child-safe family-test audio: procedural SFX plus adult system TTS voice prompts. Replace with studio-reviewed brand audio before production release.",
   "assets": [
     {
       "assetKey": "card_flip",
@@ -9,12 +9,14 @@
       "language": "none",
       "locale": "none",
       "transcript": "",
-      "speaker": "placeholder",
-      "speed": 1.0,
-      "normalizedVolume": 1.0,
-      "recordingDate": "2026-07-17T00:00:00Z",
-      "reviewStatus": "pending",
-      "placeholder": true
+      "speaker": "procedural",
+      "speed": 1,
+      "normalizedVolume": 0.82,
+      "recordingDate": "2026-07-23T00:00:00Z",
+      "reviewStatus": "family_test_ready",
+      "placeholder": false,
+      "source": "procedural_sfx",
+      "fileSizeBytes": 14158
     },
     {
       "assetKey": "correct",
@@ -22,12 +24,14 @@
       "language": "none",
       "locale": "none",
       "transcript": "",
-      "speaker": "placeholder",
-      "speed": 1.0,
-      "normalizedVolume": 1.0,
-      "recordingDate": "2026-07-17T00:00:00Z",
-      "reviewStatus": "pending",
-      "placeholder": true
+      "speaker": "procedural",
+      "speed": 1,
+      "normalizedVolume": 0.82,
+      "recordingDate": "2026-07-23T00:00:00Z",
+      "reviewStatus": "family_test_ready",
+      "placeholder": false,
+      "source": "procedural_sfx",
+      "fileSizeBytes": 30914
     },
     {
       "assetKey": "letter_a",
@@ -35,12 +39,14 @@
       "language": "vi",
       "locale": "vi",
       "transcript": "A",
-      "speaker": "placeholder",
-      "speed": 1.0,
-      "normalizedVolume": 1.0,
-      "recordingDate": "2026-07-17T00:00:00Z",
-      "reviewStatus": "pending",
-      "placeholder": true
+      "speaker": "Microsoft An adult TTS",
+      "speed": 0.95,
+      "normalizedVolume": 0.92,
+      "recordingDate": "2026-07-23T00:00:00Z",
+      "reviewStatus": "family_test_ready",
+      "placeholder": false,
+      "source": "windows_system_speech_tts",
+      "fileSizeBytes": 54800
     },
     {
       "assetKey": "letter_b",
@@ -48,12 +54,14 @@
       "language": "vi",
       "locale": "vi",
       "transcript": "B",
-      "speaker": "placeholder",
-      "speed": 1.0,
-      "normalizedVolume": 1.0,
-      "recordingDate": "2026-07-17T00:00:00Z",
-      "reviewStatus": "pending",
-      "placeholder": true
+      "speaker": "Microsoft An adult TTS",
+      "speed": 0.95,
+      "normalizedVolume": 0.92,
+      "recordingDate": "2026-07-23T00:00:00Z",
+      "reviewStatus": "family_test_ready",
+      "placeholder": false,
+      "source": "windows_system_speech_tts",
+      "fileSizeBytes": 58704
     },
     {
       "assetKey": "letter_m",
@@ -61,12 +69,14 @@
       "language": "vi",
       "locale": "vi",
       "transcript": "M",
-      "speaker": "placeholder",
-      "speed": 1.0,
-      "normalizedVolume": 1.0,
-      "recordingDate": "2026-07-17T00:00:00Z",
-      "reviewStatus": "pending",
-      "placeholder": true
+      "speaker": "Microsoft An adult TTS",
+      "speed": 0.95,
+      "normalizedVolume": 0.92,
+      "recordingDate": "2026-07-23T00:00:00Z",
+      "reviewStatus": "family_test_ready",
+      "placeholder": false,
+      "source": "windows_system_speech_tts",
+      "fileSizeBytes": 64916
     },
     {
       "assetKey": "match_correct",
@@ -74,12 +84,14 @@
       "language": "none",
       "locale": "none",
       "transcript": "",
-      "speaker": "placeholder",
-      "speed": 1.0,
-      "normalizedVolume": 1.0,
-      "recordingDate": "2026-07-17T00:00:00Z",
-      "reviewStatus": "pending",
-      "placeholder": true
+      "speaker": "procedural",
+      "speed": 1,
+      "normalizedVolume": 0.82,
+      "recordingDate": "2026-07-23T00:00:00Z",
+      "reviewStatus": "family_test_ready",
+      "placeholder": false,
+      "source": "procedural_sfx",
+      "fileSizeBytes": 45028
     },
     {
       "assetKey": "rhyme_at",
@@ -87,12 +99,14 @@
       "language": "vi",
       "locale": "vi",
       "transcript": "mát",
-      "speaker": "placeholder",
-      "speed": 1.0,
-      "normalizedVolume": 1.0,
-      "recordingDate": "2026-07-17T00:00:00Z",
-      "reviewStatus": "pending",
-      "placeholder": true
+      "speaker": "Microsoft An adult TTS",
+      "speed": 0.95,
+      "normalizedVolume": 0.92,
+      "recordingDate": "2026-07-23T00:00:00Z",
+      "reviewStatus": "family_test_ready",
+      "placeholder": false,
+      "source": "windows_system_speech_tts",
+      "fileSizeBytes": 52012
     },
     {
       "assetKey": "rhyme_cat",
@@ -100,12 +114,14 @@
       "language": "en",
       "locale": "en",
       "transcript": "hat",
-      "speaker": "placeholder",
-      "speed": 1.0,
-      "normalizedVolume": 1.0,
-      "recordingDate": "2026-07-17T00:00:00Z",
-      "reviewStatus": "pending",
-      "placeholder": true
+      "speaker": "Microsoft Zira adult TTS",
+      "speed": 0.95,
+      "normalizedVolume": 0.92,
+      "recordingDate": "2026-07-23T00:00:00Z",
+      "reviewStatus": "family_test_ready",
+      "placeholder": false,
+      "source": "windows_system_speech_tts",
+      "fileSizeBytes": 58892
     },
     {
       "assetKey": "sentence_ball",
@@ -113,12 +129,14 @@
       "language": "vi",
       "locale": "vi",
       "transcript": "Con đang chơi quả bóng",
-      "speaker": "placeholder",
-      "speed": 1.0,
-      "normalizedVolume": 1.0,
-      "recordingDate": "2026-07-17T00:00:00Z",
-      "reviewStatus": "pending",
-      "placeholder": true
+      "speaker": "Microsoft An adult TTS",
+      "speed": 0.95,
+      "normalizedVolume": 0.92,
+      "recordingDate": "2026-07-23T00:00:00Z",
+      "reviewStatus": "family_test_ready",
+      "placeholder": false,
+      "source": "windows_system_speech_tts",
+      "fileSizeBytes": 92692
     },
     {
       "assetKey": "sentence_math",
@@ -126,12 +144,14 @@
       "language": "vi",
       "locale": "vi",
       "transcript": "Một con gà có hai chân. Con chó có bốn chân. Tổng cộng mấy chân?",
-      "speaker": "placeholder",
-      "speed": 1.0,
-      "normalizedVolume": 1.0,
-      "recordingDate": "2026-07-17T00:00:00Z",
-      "reviewStatus": "pending",
-      "placeholder": true
+      "speaker": "Microsoft An adult TTS",
+      "speed": 0.95,
+      "normalizedVolume": 0.92,
+      "recordingDate": "2026-07-23T00:00:00Z",
+      "reviewStatus": "family_test_ready",
+      "placeholder": false,
+      "source": "windows_system_speech_tts",
+      "fileSizeBytes": 251982
     },
     {
       "assetKey": "try_again",
@@ -139,12 +159,14 @@
       "language": "none",
       "locale": "none",
       "transcript": "",
-      "speaker": "placeholder",
-      "speed": 1.0,
-      "normalizedVolume": 1.0,
-      "recordingDate": "2026-07-17T00:00:00Z",
-      "reviewStatus": "pending",
-      "placeholder": true
+      "speaker": "procedural",
+      "speed": 1,
+      "normalizedVolume": 0.82,
+      "recordingDate": "2026-07-23T00:00:00Z",
+      "reviewStatus": "family_test_ready",
+      "placeholder": false,
+      "source": "procedural_sfx",
+      "fileSizeBytes": 30032
     },
     {
       "assetKey": "word_bo",
@@ -152,12 +174,14 @@
       "language": "vi",
       "locale": "vi",
       "transcript": "bố",
-      "speaker": "placeholder",
-      "speed": 1.0,
-      "normalizedVolume": 1.0,
-      "recordingDate": "2026-07-17T00:00:00Z",
-      "reviewStatus": "pending",
-      "placeholder": true
+      "speaker": "Microsoft An adult TTS",
+      "speed": 0.95,
+      "normalizedVolume": 0.92,
+      "recordingDate": "2026-07-23T00:00:00Z",
+      "reviewStatus": "family_test_ready",
+      "placeholder": false,
+      "source": "windows_system_speech_tts",
+      "fileSizeBytes": 58752
     },
     {
       "assetKey": "word_cat",
@@ -165,12 +189,14 @@
       "language": "en",
       "locale": "en",
       "transcript": "cat",
-      "speaker": "placeholder",
-      "speed": 1.0,
-      "normalizedVolume": 1.0,
-      "recordingDate": "2026-07-17T00:00:00Z",
-      "reviewStatus": "pending",
-      "placeholder": true
+      "speaker": "Microsoft Zira adult TTS",
+      "speed": 0.95,
+      "normalizedVolume": 0.92,
+      "recordingDate": "2026-07-23T00:00:00Z",
+      "reviewStatus": "family_test_ready",
+      "placeholder": false,
+      "source": "windows_system_speech_tts",
+      "fileSizeBytes": 59552
     },
     {
       "assetKey": "word_con_meo",
@@ -178,12 +204,14 @@
       "language": "vi",
       "locale": "vi",
       "transcript": "con mèo",
-      "speaker": "placeholder",
-      "speed": 1.0,
-      "normalizedVolume": 1.0,
-      "recordingDate": "2026-07-17T00:00:00Z",
-      "reviewStatus": "pending",
-      "placeholder": true
+      "speaker": "Microsoft An adult TTS",
+      "speed": 0.95,
+      "normalizedVolume": 0.92,
+      "recordingDate": "2026-07-23T00:00:00Z",
+      "reviewStatus": "family_test_ready",
+      "placeholder": false,
+      "source": "windows_system_speech_tts",
+      "fileSizeBytes": 64790
     },
     {
       "assetKey": "word_dad",
@@ -191,12 +219,14 @@
       "language": "en",
       "locale": "en",
       "transcript": "dad",
-      "speaker": "placeholder",
-      "speed": 1.0,
-      "normalizedVolume": 1.0,
-      "recordingDate": "2026-07-17T00:00:00Z",
-      "reviewStatus": "pending",
-      "placeholder": true
+      "speaker": "Microsoft Zira adult TTS",
+      "speed": 0.95,
+      "normalizedVolume": 0.92,
+      "recordingDate": "2026-07-23T00:00:00Z",
+      "reviewStatus": "family_test_ready",
+      "placeholder": false,
+      "source": "windows_system_speech_tts",
+      "fileSizeBytes": 60658
     },
     {
       "assetKey": "word_library",
@@ -204,12 +234,14 @@
       "language": "en",
       "locale": "en",
       "transcript": "library",
-      "speaker": "placeholder",
-      "speed": 1.0,
-      "normalizedVolume": 1.0,
-      "recordingDate": "2026-07-17T00:00:00Z",
-      "reviewStatus": "pending",
-      "placeholder": true
+      "speaker": "Microsoft Zira adult TTS",
+      "speed": 0.95,
+      "normalizedVolume": 0.92,
+      "recordingDate": "2026-07-23T00:00:00Z",
+      "reviewStatus": "family_test_ready",
+      "placeholder": false,
+      "source": "windows_system_speech_tts",
+      "fileSizeBytes": 73664
     },
     {
       "assetKey": "word_meo",
@@ -217,12 +249,14 @@
       "language": "vi",
       "locale": "vi",
       "transcript": "con mèo",
-      "speaker": "placeholder",
-      "speed": 1.0,
-      "normalizedVolume": 1.0,
-      "recordingDate": "2026-07-17T00:00:00Z",
-      "reviewStatus": "pending",
-      "placeholder": true
+      "speaker": "Microsoft An adult TTS",
+      "speed": 0.95,
+      "normalizedVolume": 0.92,
+      "recordingDate": "2026-07-23T00:00:00Z",
+      "reviewStatus": "family_test_ready",
+      "placeholder": false,
+      "source": "windows_system_speech_tts",
+      "fileSizeBytes": 64790
     },
     {
       "assetKey": "word_truong",
@@ -230,12 +264,14 @@
       "language": "vi",
       "locale": "vi",
       "transcript": "cái trường",
-      "speaker": "placeholder",
-      "speed": 1.0,
-      "normalizedVolume": 1.0,
-      "recordingDate": "2026-07-17T00:00:00Z",
-      "reviewStatus": "pending",
-      "placeholder": true
+      "speaker": "Microsoft An adult TTS",
+      "speed": 0.95,
+      "normalizedVolume": 0.92,
+      "recordingDate": "2026-07-23T00:00:00Z",
+      "reviewStatus": "family_test_ready",
+      "placeholder": false,
+      "source": "windows_system_speech_tts",
+      "fileSizeBytes": 69352
     }
   ]
 }

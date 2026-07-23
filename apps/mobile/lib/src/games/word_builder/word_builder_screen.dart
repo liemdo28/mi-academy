@@ -1,5 +1,8 @@
+import 'dart:async';
+
 import 'package:design_system/design_system.dart';
 import 'package:flutter/material.dart';
+import 'package:mi_game_audio/mi_game_audio.dart';
 import 'package:mi_game_core/mi_game_core.dart';
 import 'package:mi_game_ui/mi_game_ui.dart';
 
@@ -53,6 +56,7 @@ class _WordBuilderScreenState extends State<WordBuilderScreen>
     with WidgetsBindingObserver, SnapshotLifecycleMixin<WordBuilderScreen> {
   late WordBuilderSession _session;
   late Stopwatch _stopwatch;
+  late final MiAudioService _audio = MiAudioService();
   bool _completed = false;
 
   @override
@@ -74,6 +78,7 @@ class _WordBuilderScreenState extends State<WordBuilderScreen>
   @override
   void dispose() {
     disposeSnapshotLifecycle();
+    unawaited(_audio.dispose());
     _stopwatch.stop();
     super.dispose();
   }
@@ -114,6 +119,7 @@ class _WordBuilderScreenState extends State<WordBuilderScreen>
 
   void _checkAnswer() {
     final correct = _session.checkAnswer();
+    unawaited(_playEffect(correct ? 'correct' : 'try_again'));
     if (correct) {
       _showCompletion();
     } else {
@@ -125,6 +131,15 @@ class _WordBuilderScreenState extends State<WordBuilderScreen>
     setState(() {
       _session.showHint();
     });
+    unawaited(_playEffect('try_again'));
+  }
+
+  Future<void> _playEffect(String assetKey) async {
+    try {
+      await _audio.playEffect('audio/$assetKey.wav');
+    } catch (_) {
+      // Audio feedback should never interrupt gameplay.
+    }
   }
 
   void _showCompletion() {

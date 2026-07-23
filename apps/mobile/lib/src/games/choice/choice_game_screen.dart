@@ -1,5 +1,8 @@
+import 'dart:async';
+
 import 'package:design_system/design_system.dart';
 import 'package:flutter/material.dart';
+import 'package:mi_game_audio/mi_game_audio.dart';
 import 'package:mi_game_core/mi_game_core.dart';
 import 'package:mi_game_ui/mi_game_ui.dart';
 
@@ -57,6 +60,7 @@ class _ChoiceGameScreenState extends State<ChoiceGameScreen>
     with WidgetsBindingObserver, SnapshotLifecycleMixin<ChoiceGameScreen> {
   late ChoiceGameSession _session;
   late Stopwatch _stopwatch;
+  late final MiAudioService _audio = MiAudioService();
   bool _completed = false;
 
   @override
@@ -78,6 +82,7 @@ class _ChoiceGameScreenState extends State<ChoiceGameScreen>
   @override
   void dispose() {
     disposeSnapshotLifecycle();
+    unawaited(_audio.dispose());
     _stopwatch.stop();
     super.dispose();
   }
@@ -100,6 +105,7 @@ class _ChoiceGameScreenState extends State<ChoiceGameScreen>
 
   void _choose(ChoiceGameOption option) {
     final correct = _session.choose(option);
+    unawaited(_playEffect(correct ? 'correct' : 'try_again'));
     setState(() {});
     if (correct) {
       _showCompletion();
@@ -110,6 +116,15 @@ class _ChoiceGameScreenState extends State<ChoiceGameScreen>
     setState(() {
       _session.showHint();
     });
+    unawaited(_playEffect('try_again'));
+  }
+
+  Future<void> _playEffect(String assetKey) async {
+    try {
+      await _audio.playEffect('audio/$assetKey.wav');
+    } catch (_) {
+      // Audio feedback should never interrupt gameplay.
+    }
   }
 
   void _showCompletion() {

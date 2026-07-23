@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:mi_game_audio/mi_game_audio.dart';
 import 'package:mi_game_core/mi_game_core.dart';
 import 'package:mi_game_ui/mi_game_ui.dart';
 
@@ -61,6 +62,7 @@ class _MemoryCardsScreenState extends State<MemoryCardsScreen>
   String _currentHint = '';
   bool _showTutorial = true;
   Timer? _feedbackTimer;
+  late final MiAudioService _audio = MiAudioService();
   bool _completed = false;
 
   @override
@@ -100,8 +102,8 @@ class _MemoryCardsScreenState extends State<MemoryCardsScreen>
           saveSnapshot: _noopSave,
           loadSnapshot: _noopLoad,
           logEvent: _noopLog,
-          playAudio: _noopAudio,
-          stopAudio: _noopStop,
+          playAudio: _playGameAudio,
+          stopAudio: _stopGameAudio,
         ),
       ),
     );
@@ -117,8 +119,23 @@ class _MemoryCardsScreenState extends State<MemoryCardsScreen>
   Future<void> _noopSave(String k, Map<String, dynamic> d) async {}
   Future<Map<String, dynamic>?> _noopLoad(String k) async => null;
   Future<void> _noopLog(String e, Map<String, dynamic> d) async {}
-  Future<void> _noopAudio(String r, {double? volume}) async {}
-  Future<void> _noopStop() async {}
+  Future<void> _playGameAudio(String audioRef, {double? volume}) async {
+    final assetPath = _audioPathFor(audioRef);
+    if (assetPath == null) return;
+    try {
+      await _audio.playEffect(assetPath);
+    } catch (_) {
+      // Audio feedback should never interrupt gameplay.
+    }
+  }
+
+  Future<void> _stopGameAudio() async {
+    try {
+      await _audio.stopAll();
+    } catch (_) {
+      // Audio feedback should never interrupt gameplay.
+    }
+  }
 
   void _showFeedbackMessage(String msg) {
     setState(() {
@@ -136,6 +153,7 @@ class _MemoryCardsScreenState extends State<MemoryCardsScreen>
     _saveSnapshotNow();
     WidgetsBinding.instance.removeObserver(this);
     _feedbackTimer?.cancel();
+    unawaited(_audio.dispose());
     widget.game.dispose();
     super.dispose();
   }
@@ -146,6 +164,10 @@ class _MemoryCardsScreenState extends State<MemoryCardsScreen>
     final result = await widget.game.handleAction(
       MiGameAction(type: 'tap', targetId: index.toString()),
     );
+    final audioRef = result.audioRef;
+    if (audioRef != null) {
+      unawaited(_playGameAudio(audioRef));
+    }
 
     if (mounted) setState(() {});
 
@@ -171,6 +193,16 @@ class _MemoryCardsScreenState extends State<MemoryCardsScreen>
       _currentHint = text.hintFrom(levelHint, hintIndex);
       _showHint = true;
     });
+    unawaited(_playGameAudio('try_again'));
+  }
+
+  String? _audioPathFor(String audioRef) {
+    if (audioRef.isEmpty) return null;
+    if (audioRef.startsWith('assets/audio/')) {
+      return audioRef.replaceFirst('assets/', '');
+    }
+    if (audioRef.startsWith('audio/')) return audioRef;
+    return 'audio/$audioRef.wav';
   }
 
   void _dismissHint() {
