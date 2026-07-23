@@ -102,25 +102,25 @@
           "cards": [
             {
               "id": "c1",
-              "content": "🍎",
+              "content": "Táo",
               "pairId": "p1",
               "type": "image"
             },
             {
               "id": "c2",
-              "content": "🍎",
+              "content": "Táo",
               "pairId": "p1",
               "type": "image"
             },
             {
               "id": "c3",
-              "content": "🍌",
+              "content": "Chuối",
               "pairId": "p2",
               "type": "image"
             },
             {
               "id": "c4",
-              "content": "🍌",
+              "content": "Chuối",
               "pairId": "p2",
               "type": "image"
             },
@@ -143,25 +143,25 @@
           "cards": [
             {
               "id": "c1",
-              "content": "🍎",
+              "content": "Táo",
               "pairId": "p1",
               "type": "image"
             },
             {
               "id": "c2",
-              "content": "🍎",
+              "content": "Táo",
               "pairId": "p1",
               "type": "image"
             },
             {
               "id": "c3",
-              "content": "🍌",
+              "content": "Chuối",
               "pairId": "p2",
               "type": "image"
             },
             {
               "id": "c4",
-              "content": "🍌",
+              "content": "Chuối",
               "pairId": "p2",
               "type": "image"
             },
@@ -674,7 +674,7 @@
             },
             {
               "id": "c2",
-              "content": "🍎",
+              "content": "Táo",
               "pairId": "p1",
               "type": "image"
             },
@@ -686,7 +686,7 @@
             },
             {
               "id": "c4",
-              "content": "🍎🍎",
+              "content": "2 quả táo",
               "pairId": "p2",
               "type": "image"
             },
@@ -698,7 +698,7 @@
             },
             {
               "id": "c6",
-              "content": "🍎🍎🍎",
+              "content": "3 quả táo",
               "pairId": "p3",
               "type": "image"
             },
@@ -710,7 +710,7 @@
             },
             {
               "id": "c8",
-              "content": "🍎🍎🍎🍎",
+              "content": "4 quả táo",
               "pairId": "p4",
               "type": "image"
             }
@@ -727,7 +727,7 @@
             },
             {
               "id": "c2",
-              "content": "🍎",
+              "content": "Táo",
               "pairId": "p1",
               "type": "image"
             },
@@ -739,7 +739,7 @@
             },
             {
               "id": "c4",
-              "content": "🍎🍎",
+              "content": "2 quả táo",
               "pairId": "p2",
               "type": "image"
             },
@@ -751,7 +751,7 @@
             },
             {
               "id": "c6",
-              "content": "🍎🍎🍎",
+              "content": "3 quả táo",
               "pairId": "p3",
               "type": "image"
             },
@@ -763,7 +763,7 @@
             },
             {
               "id": "c8",
-              "content": "🍎🍎🍎🍎",
+              "content": "4 quả táo",
               "pairId": "p4",
               "type": "image"
             }

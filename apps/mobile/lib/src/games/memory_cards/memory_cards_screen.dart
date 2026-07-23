@@ -176,6 +176,14 @@ class _MemoryCardsScreenState extends State<MemoryCardsScreen>
     final game = widget.game;
     final content = widget.level.contentForLocale(widget.locale);
     final prompt = content['prompt'] as String? ?? 'Tìm cặp giống nhau!';
+    final title = widget.locale == 'en' ? 'Memory Cards' : 'Ghi nhớ vị trí';
+    final tutorialMessage = widget.locale == 'en'
+        ? 'Tap a card to flip it.\n'
+            'Find two cards with the same picture.\n'
+            'Match every pair to win!'
+        : 'Chạm vào thẻ để lật lên.\n'
+            'Tìm hai thẻ có hình giống nhau.\n'
+            'Ghép tất cả cặp để thắng!';
 
     return Scaffold(
       backgroundColor: GameTheme.background,
@@ -186,7 +194,7 @@ class _MemoryCardsScreenState extends State<MemoryCardsScreen>
               children: [
                 // Header
                 GameHeader(
-                  title: 'Memory Cards',
+                  title: title,
                   score: game.matchedPairs,
                   onPause: () => setState(() => _isPaused = true),
                   onExit: widget.onExit,
@@ -279,10 +287,8 @@ class _MemoryCardsScreenState extends State<MemoryCardsScreen>
             // Tutorial overlay
             if (_showTutorial)
               TutorialOverlay(
-                title: 'Memory Cards',
-                message: 'Chạm vào thẻ để lật lên.\n'
-                    'Tìm hai thẻ có hình giống nhau.\n'
-                    'Ghép tất cả cặp để thắng!',
+                title: title,
+                message: tutorialMessage,
                 onContinue: () => setState(() => _showTutorial = false),
                 imageHint: Icons.style_rounded,
                 pageNumber: 1,

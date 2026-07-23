@@ -62,6 +62,24 @@ class _GameScreenState extends ConsumerState<GameScreen> {
     WidgetsBinding.instance.addPostFrameCallback((_) => _loadLevels());
   }
 
+  @override
+  void didUpdateWidget(covariant GameScreen oldWidget) {
+    super.didUpdateWidget(oldWidget);
+    if (oldWidget.gameType != widget.gameType ||
+        oldWidget.childId != widget.childId ||
+        oldWidget.lessonId != widget.lessonId) {
+      setState(() {
+        _levels = null;
+        _selectedLevel = null;
+        _error = null;
+        _initialSnapshot = null;
+      });
+      WidgetsBinding.instance.addPostFrameCallback((_) {
+        if (mounted) _loadLevels();
+      });
+    }
+  }
+
   Future<void> _loadLevels() async {
     try {
       final settings = await ref.read(parentSettingsStoreProvider).load();
@@ -101,8 +119,7 @@ class _GameScreenState extends ConsumerState<GameScreen> {
         }
       }
 
-      final selectedLevel =
-          resumeLevel ?? await _selectFreshLevel(levels);
+      final selectedLevel = resumeLevel ?? await _selectFreshLevel(levels);
       if (!mounted) return;
       setState(() {
         _levels = levels;
@@ -131,7 +148,8 @@ class _GameScreenState extends ConsumerState<GameScreen> {
     try {
       final resolver = await ref.read(activityMappingResolverProvider.future);
       final masteryStore = ref.read(masteryStateStoreProvider);
-      final progressTracker = ref.read(progressStoreProvider).load(widget.childId);
+      final progressTracker =
+          ref.read(progressStoreProvider).load(widget.childId);
 
       // MasteryStateStore is keyed by (child, skillId); collect the
       // skillIds this game's own levels reference so we only look up
@@ -400,14 +418,14 @@ class _GameScreenState extends ConsumerState<GameScreen> {
       await rewardStore.unlock(widget.childId, rewardId);
       try {
         await ref.read(syncServiceProvider).enqueue(
-              id: '${widget.childId}_${rewardId}_${result.completedAt.microsecondsSinceEpoch}',
-              childProfileId: widget.childId,
-              type: SyncItemType.rewardUnlock,
-              payload: {
-                'reward_id': rewardId,
-                'unlocked_at': DateTime.now().toUtc().toIso8601String(),
-              },
-            );
+          id: '${widget.childId}_${rewardId}_${result.completedAt.microsecondsSinceEpoch}',
+          childProfileId: widget.childId,
+          type: SyncItemType.rewardUnlock,
+          payload: {
+            'reward_id': rewardId,
+            'unlocked_at': DateTime.now().toUtc().toIso8601String(),
+          },
+        );
       } catch (_) {
         // Best-effort — the reward is already unlocked locally regardless.
       }

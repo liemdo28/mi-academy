@@ -37,7 +37,7 @@ void main() {
     await tester.pump();
     await tester.pump(const Duration(milliseconds: 200));
 
-    expect(find.text('Memory Cards'), findsWidgets);
+    expect(find.text('Ghi nhớ vị trí'), findsWidgets);
     // MemoryCardsScreen's tutorial dismiss uses no timer, but flush any
     // stray animation/frame callbacks before teardown to avoid a pending
     // timer assertion.

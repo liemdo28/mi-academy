@@ -366,7 +366,7 @@ void main() {
     );
     await tester.pump(const Duration(milliseconds: 100));
 
-    expect(find.text('Memory Cards'), findsWidgets);
+    expect(find.text('Ghi nhớ vị trí'), findsWidgets);
     expect(find.text('Tiếp tục'), findsOneWidget);
 
     await tester.tap(find.text('Tiếp tục'));
@@ -837,7 +837,8 @@ void main() {
           overrides: [
             progressStoreProvider.overrideWithValue(InMemoryProgressStore()),
             rewardStoreProvider.overrideWithValue(InMemoryRewardStore()),
-            masteryStateStoreProvider.overrideWithValue(InMemoryMasteryStateStore()),
+            masteryStateStoreProvider
+                .overrideWithValue(InMemoryMasteryStateStore()),
           ],
           child: buildHomeTestApp(router),
         ),
