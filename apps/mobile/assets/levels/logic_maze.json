@@ -1,1 +1,3363 @@
-{"gameId":"logic_maze","schemaVersion":"1.0.0","levels":[{"id":"logic-maze-lv001","gameId":"logic_maze","levelNumber":1,"difficulty":1,"learningObjective":"Logic Maze tier 1","localizedContent":{"vi":{"prompt":"MI cần đi 3 bước tới sao. Chọn lệnh đúng.","options":[{"id":"a","text":"4 bước","correct":false},{"id":"b","text":"3 bước","correct":true},{"id":"c","text":"2 bước","correct":false}]},"en":{"prompt":"MI needs 3 steps to the star. Choose the command.","options":[{"id":"a","text":"4 steps","correct":false},{"id":"b","text":"3 steps","correct":true},{"id":"c","text":"2 steps","correct":false}]}},"hints":[{"text":"Cấp 1: đọc kỹ câu hỏi và loại đáp án sai."},{"text":"Tier 1: read carefully and remove the wrong choices."}],"metadata":{"ageGroup":"explorer","skillIds":["logic.maze","logic.navigation"],"contentKind":"choice_progression","progressionTier":1,"reviewState":"technically_validated"},"assetRefs":[],"contentVersion":1,"estimatedSeconds":55,"publicationState":"published"},{"id":"logic-maze-lv002","gameId":"logic_maze","levelNumber":2,"difficulty":1,"learningObjective":"Logic Maze tier 1","localizedContent":{"vi":{"prompt":"MI cần đi 2 bước tới sao. Chọn lệnh đúng.","options":[{"id":"a","text":"1 bước","correct":false},{"id":"b","text":"3 bước","correct":false},{"id":"c","text":"2 bước","correct":true}]},"en":{"prompt":"MI needs 2 steps to the star. Choose the command.","options":[{"id":"a","text":"1 steps","correct":false},{"id":"b","text":"3 steps","correct":false},{"id":"c","text":"2 steps","correct":true}]}},"hints":[{"text":"Cấp 1: đọc kỹ câu hỏi và loại đáp án sai."},{"text":"Tier 1: read carefully and remove the wrong choices."}],"metadata":{"ageGroup":"explorer","skillIds":["logic.maze","logic.navigation"],"contentKind":"choice_progression","progressionTier":1,"reviewState":"technically_validated"},"assetRefs":[],"contentVersion":1,"estimatedSeconds":55,"publicationState":"published"},{"id":"logic-maze-lv003","gameId":"logic_maze","levelNumber":3,"difficulty":1,"learningObjective":"Logic Maze tier 1","localizedContent":{"vi":{"prompt":"MI cần đi 3 bước tới sao. Chọn lệnh đúng.","options":[{"id":"a","text":"3 bước","correct":true},{"id":"b","text":"4 bước","correct":false},{"id":"c","text":"2 bước","correct":false}]},"en":{"prompt":"MI needs 3 steps to the star. Choose the command.","options":[{"id":"a","text":"3 steps","correct":true},{"id":"b","text":"4 steps","correct":false},{"id":"c","text":"2 steps","correct":false}]}},"hints":[{"text":"Cấp 1: đọc kỹ câu hỏi và loại đáp án sai."},{"text":"Tier 1: read carefully and remove the wrong choices."}],"metadata":{"ageGroup":"explorer","skillIds":["logic.maze","logic.navigation"],"contentKind":"choice_progression","progressionTier":1,"reviewState":"technically_validated"},"assetRefs":[],"contentVersion":1,"estimatedSeconds":55,"publicationState":"published"},{"id":"logic-maze-lv004","gameId":"logic_maze","levelNumber":4,"difficulty":1,"learningObjective":"Logic Maze tier 1","localizedContent":{"vi":{"prompt":"MI cần đi 2 bước tới sao. Chọn lệnh đúng.","options":[{"id":"a","text":"3 bước","correct":false},{"id":"b","text":"2 bước","correct":true},{"id":"c","text":"1 bước","correct":false}]},"en":{"prompt":"MI needs 2 steps to the star. Choose the command.","options":[{"id":"a","text":"3 steps","correct":false},{"id":"b","text":"2 steps","correct":true},{"id":"c","text":"1 steps","correct":false}]}},"hints":[{"text":"Cấp 1: đọc kỹ câu hỏi và loại đáp án sai."},{"text":"Tier 1: read carefully and remove the wrong choices."}],"metadata":{"ageGroup":"explorer","skillIds":["logic.maze","logic.navigation"],"contentKind":"choice_progression","progressionTier":1,"reviewState":"technically_validated"},"assetRefs":[],"contentVersion":1,"estimatedSeconds":55,"publicationState":"published"},{"id":"logic-maze-lv005","gameId":"logic_maze","levelNumber":5,"difficulty":1,"learningObjective":"Logic Maze tier 1","localizedContent":{"vi":{"prompt":"MI cần đi 3 bước tới sao. Chọn lệnh đúng.","options":[{"id":"a","text":"2 bước","correct":false},{"id":"b","text":"4 bước","correct":false},{"id":"c","text":"3 bước","correct":true}]},"en":{"prompt":"MI needs 3 steps to the star. Choose the command.","options":[{"id":"a","text":"2 steps","correct":false},{"id":"b","text":"4 steps","correct":false},{"id":"c","text":"3 steps","correct":true}]}},"hints":[{"text":"Cấp 1: đọc kỹ câu hỏi và loại đáp án sai."},{"text":"Tier 1: read carefully and remove the wrong choices."}],"metadata":{"ageGroup":"explorer","skillIds":["logic.maze","logic.navigation"],"contentKind":"choice_progression","progressionTier":1,"reviewState":"technically_validated"},"assetRefs":[],"contentVersion":1,"estimatedSeconds":55,"publicationState":"published"},{"id":"logic-maze-lv006","gameId":"logic_maze","levelNumber":6,"difficulty":1,"learningObjective":"Logic Maze tier 1","localizedContent":{"vi":{"prompt":"MI cần đi 2 bước tới sao. Chọn lệnh đúng.","options":[{"id":"a","text":"2 bước","correct":true},{"id":"b","text":"3 bước","correct":false},{"id":"c","text":"1 bước","correct":false}]},"en":{"prompt":"MI needs 2 steps to the star. Choose the command.","options":[{"id":"a","text":"2 steps","correct":true},{"id":"b","text":"3 steps","correct":false},{"id":"c","text":"1 steps","correct":false}]}},"hints":[{"text":"Cấp 1: đọc kỹ câu hỏi và loại đáp án sai."},{"text":"Tier 1: read carefully and remove the wrong choices."}],"metadata":{"ageGroup":"explorer","skillIds":["logic.maze","logic.navigation"],"contentKind":"choice_progression","progressionTier":1,"reviewState":"technically_validated"},"assetRefs":[],"contentVersion":1,"estimatedSeconds":55,"publicationState":"published"},{"id":"logic-maze-lv007","gameId":"logic_maze","levelNumber":7,"difficulty":2,"learningObjective":"Logic Maze tier 2","localizedContent":{"vi":{"prompt":"MI cần đi 4 bước tới sao. Chọn lệnh đúng.","options":[{"id":"a","text":"5 bước","correct":false},{"id":"b","text":"4 bước","correct":true},{"id":"c","text":"3 bước","correct":false}]},"en":{"prompt":"MI needs 4 steps to the star. Choose the command.","options":[{"id":"a","text":"5 steps","correct":false},{"id":"b","text":"4 steps","correct":true},{"id":"c","text":"3 steps","correct":false}]}},"hints":[{"text":"Cấp 2: đọc kỹ câu hỏi và loại đáp án sai."},{"text":"Tier 2: read carefully and remove the wrong choices."}],"metadata":{"ageGroup":"explorer","skillIds":["logic.maze","logic.navigation"],"contentKind":"choice_progression","progressionTier":2,"reviewState":"technically_validated"},"assetRefs":[],"contentVersion":1,"estimatedSeconds":65,"publicationState":"published"},{"id":"logic-maze-lv008","gameId":"logic_maze","levelNumber":8,"difficulty":2,"learningObjective":"Logic Maze tier 2","localizedContent":{"vi":{"prompt":"MI cần đi 3 bước tới sao. Chọn lệnh đúng.","options":[{"id":"a","text":"2 bước","correct":false},{"id":"b","text":"4 bước","correct":false},{"id":"c","text":"3 bước","correct":true}]},"en":{"prompt":"MI needs 3 steps to the star. Choose the command.","options":[{"id":"a","text":"2 steps","correct":false},{"id":"b","text":"4 steps","correct":false},{"id":"c","text":"3 steps","correct":true}]}},"hints":[{"text":"Cấp 2: đọc kỹ câu hỏi và loại đáp án sai."},{"text":"Tier 2: read carefully and remove the wrong choices."}],"metadata":{"ageGroup":"explorer","skillIds":["logic.maze","logic.navigation"],"contentKind":"choice_progression","progressionTier":2,"reviewState":"technically_validated"},"assetRefs":[],"contentVersion":1,"estimatedSeconds":65,"publicationState":"published"},{"id":"logic-maze-lv009","gameId":"logic_maze","levelNumber":9,"difficulty":2,"learningObjective":"Logic Maze tier 2","localizedContent":{"vi":{"prompt":"MI cần đi 4 bước tới sao. Chọn lệnh đúng.","options":[{"id":"a","text":"4 bước","correct":true},{"id":"b","text":"5 bước","correct":false},{"id":"c","text":"3 bước","correct":false}]},"en":{"prompt":"MI needs 4 steps to the star. Choose the command.","options":[{"id":"a","text":"4 steps","correct":true},{"id":"b","text":"5 steps","correct":false},{"id":"c","text":"3 steps","correct":false}]}},"hints":[{"text":"Cấp 2: đọc kỹ câu hỏi và loại đáp án sai."},{"text":"Tier 2: read carefully and remove the wrong choices."}],"metadata":{"ageGroup":"explorer","skillIds":["logic.maze","logic.navigation"],"contentKind":"choice_progression","progressionTier":2,"reviewState":"technically_validated"},"assetRefs":[],"contentVersion":1,"estimatedSeconds":65,"publicationState":"published"},{"id":"logic-maze-lv010","gameId":"logic_maze","levelNumber":10,"difficulty":2,"learningObjective":"Logic Maze tier 2","localizedContent":{"vi":{"prompt":"MI cần đi 3 bước tới sao. Chọn lệnh đúng.","options":[{"id":"a","text":"4 bước","correct":false},{"id":"b","text":"3 bước","correct":true},{"id":"c","text":"2 bước","correct":false}]},"en":{"prompt":"MI needs 3 steps to the star. Choose the command.","options":[{"id":"a","text":"4 steps","correct":false},{"id":"b","text":"3 steps","correct":true},{"id":"c","text":"2 steps","correct":false}]}},"hints":[{"text":"Cấp 2: đọc kỹ câu hỏi và loại đáp án sai."},{"text":"Tier 2: read carefully and remove the wrong choices."}],"metadata":{"ageGroup":"explorer","skillIds":["logic.maze","logic.navigation"],"contentKind":"choice_progression","progressionTier":2,"reviewState":"technically_validated"},"assetRefs":[],"contentVersion":1,"estimatedSeconds":65,"publicationState":"published"},{"id":"logic-maze-lv011","gameId":"logic_maze","levelNumber":11,"difficulty":2,"learningObjective":"Logic Maze tier 2","localizedContent":{"vi":{"prompt":"MI cần đi 4 bước tới sao. Chọn lệnh đúng.","options":[{"id":"a","text":"3 bước","correct":false},{"id":"b","text":"5 bước","correct":false},{"id":"c","text":"4 bước","correct":true}]},"en":{"prompt":"MI needs 4 steps to the star. Choose the command.","options":[{"id":"a","text":"3 steps","correct":false},{"id":"b","text":"5 steps","correct":false},{"id":"c","text":"4 steps","correct":true}]}},"hints":[{"text":"Cấp 2: đọc kỹ câu hỏi và loại đáp án sai."},{"text":"Tier 2: read carefully and remove the wrong choices."}],"metadata":{"ageGroup":"explorer","skillIds":["logic.maze","logic.navigation"],"contentKind":"choice_progression","progressionTier":2,"reviewState":"technically_validated"},"assetRefs":[],"contentVersion":1,"estimatedSeconds":65,"publicationState":"published"},{"id":"logic-maze-lv012","gameId":"logic_maze","levelNumber":12,"difficulty":2,"learningObjective":"Logic Maze tier 2","localizedContent":{"vi":{"prompt":"MI cần đi 3 bước tới sao. Chọn lệnh đúng.","options":[{"id":"a","text":"3 bước","correct":true},{"id":"b","text":"4 bước","correct":false},{"id":"c","text":"2 bước","correct":false}]},"en":{"prompt":"MI needs 3 steps to the star. Choose the command.","options":[{"id":"a","text":"3 steps","correct":true},{"id":"b","text":"4 steps","correct":false},{"id":"c","text":"2 steps","correct":false}]}},"hints":[{"text":"Cấp 2: đọc kỹ câu hỏi và loại đáp án sai."},{"text":"Tier 2: read carefully and remove the wrong choices."}],"metadata":{"ageGroup":"explorer","skillIds":["logic.maze","logic.navigation"],"contentKind":"choice_progression","progressionTier":2,"reviewState":"technically_validated"},"assetRefs":[],"contentVersion":1,"estimatedSeconds":65,"publicationState":"published"},{"id":"logic-maze-lv013","gameId":"logic_maze","levelNumber":13,"difficulty":3,"learningObjective":"Logic Maze tier 3","localizedContent":{"vi":{"prompt":"MI cần đi 5 bước tới sao. Chọn lệnh đúng.","options":[{"id":"a","text":"6 bước","correct":false},{"id":"b","text":"5 bước","correct":true},{"id":"c","text":"4 bước","correct":false}]},"en":{"prompt":"MI needs 5 steps to the star. Choose the command.","options":[{"id":"a","text":"6 steps","correct":false},{"id":"b","text":"5 steps","correct":true},{"id":"c","text":"4 steps","correct":false}]}},"hints":[{"text":"Cấp 3: đọc kỹ câu hỏi và loại đáp án sai."},{"text":"Tier 3: read carefully and remove the wrong choices."}],"metadata":{"ageGroup":"explorer","skillIds":["logic.maze","logic.navigation"],"contentKind":"choice_progression","progressionTier":3,"reviewState":"technically_validated"},"assetRefs":[],"contentVersion":1,"estimatedSeconds":75,"publicationState":"published"},{"id":"logic-maze-lv014","gameId":"logic_maze","levelNumber":14,"difficulty":3,"learningObjective":"Logic Maze tier 3","localizedContent":{"vi":{"prompt":"MI cần đi 4 bước tới sao. Chọn lệnh đúng.","options":[{"id":"a","text":"3 bước","correct":false},{"id":"b","text":"5 bước","correct":false},{"id":"c","text":"4 bước","correct":true}]},"en":{"prompt":"MI needs 4 steps to the star. Choose the command.","options":[{"id":"a","text":"3 steps","correct":false},{"id":"b","text":"5 steps","correct":false},{"id":"c","text":"4 steps","correct":true}]}},"hints":[{"text":"Cấp 3: đọc kỹ câu hỏi và loại đáp án sai."},{"text":"Tier 3: read carefully and remove the wrong choices."}],"metadata":{"ageGroup":"explorer","skillIds":["logic.maze","logic.navigation"],"contentKind":"choice_progression","progressionTier":3,"reviewState":"technically_validated"},"assetRefs":[],"contentVersion":1,"estimatedSeconds":75,"publicationState":"published"},{"id":"logic-maze-lv015","gameId":"logic_maze","levelNumber":15,"difficulty":3,"learningObjective":"Logic Maze tier 3","localizedContent":{"vi":{"prompt":"MI cần đi 5 bước tới sao. Chọn lệnh đúng.","options":[{"id":"a","text":"5 bước","correct":true},{"id":"b","text":"6 bước","correct":false},{"id":"c","text":"4 bước","correct":false}]},"en":{"prompt":"MI needs 5 steps to the star. Choose the command.","options":[{"id":"a","text":"5 steps","correct":true},{"id":"b","text":"6 steps","correct":false},{"id":"c","text":"4 steps","correct":false}]}},"hints":[{"text":"Cấp 3: đọc kỹ câu hỏi và loại đáp án sai."},{"text":"Tier 3: read carefully and remove the wrong choices."}],"metadata":{"ageGroup":"explorer","skillIds":["logic.maze","logic.navigation"],"contentKind":"choice_progression","progressionTier":3,"reviewState":"technically_validated"},"assetRefs":[],"contentVersion":1,"estimatedSeconds":75,"publicationState":"published"},{"id":"logic-maze-lv016","gameId":"logic_maze","levelNumber":16,"difficulty":3,"learningObjective":"Logic Maze tier 3","localizedContent":{"vi":{"prompt":"MI cần đi 4 bước tới sao. Chọn lệnh đúng.","options":[{"id":"a","text":"5 bước","correct":false},{"id":"b","text":"4 bước","correct":true},{"id":"c","text":"3 bước","correct":false}]},"en":{"prompt":"MI needs 4 steps to the star. Choose the command.","options":[{"id":"a","text":"5 steps","correct":false},{"id":"b","text":"4 steps","correct":true},{"id":"c","text":"3 steps","correct":false}]}},"hints":[{"text":"Cấp 3: đọc kỹ câu hỏi và loại đáp án sai."},{"text":"Tier 3: read carefully and remove the wrong choices."}],"metadata":{"ageGroup":"explorer","skillIds":["logic.maze","logic.navigation"],"contentKind":"choice_progression","progressionTier":3,"reviewState":"technically_validated"},"assetRefs":[],"contentVersion":1,"estimatedSeconds":75,"publicationState":"published"},{"id":"logic-maze-lv017","gameId":"logic_maze","levelNumber":17,"difficulty":3,"learningObjective":"Logic Maze tier 3","localizedContent":{"vi":{"prompt":"MI cần đi 5 bước tới sao. Chọn lệnh đúng.","options":[{"id":"a","text":"4 bước","correct":false},{"id":"b","text":"6 bước","correct":false},{"id":"c","text":"5 bước","correct":true}]},"en":{"prompt":"MI needs 5 steps to the star. Choose the command.","options":[{"id":"a","text":"4 steps","correct":false},{"id":"b","text":"6 steps","correct":false},{"id":"c","text":"5 steps","correct":true}]}},"hints":[{"text":"Cấp 3: đọc kỹ câu hỏi và loại đáp án sai."},{"text":"Tier 3: read carefully and remove the wrong choices."}],"metadata":{"ageGroup":"explorer","skillIds":["logic.maze","logic.navigation"],"contentKind":"choice_progression","progressionTier":3,"reviewState":"technically_validated"},"assetRefs":[],"contentVersion":1,"estimatedSeconds":75,"publicationState":"published"},{"id":"logic-maze-lv018","gameId":"logic_maze","levelNumber":18,"difficulty":3,"learningObjective":"Logic Maze tier 3","localizedContent":{"vi":{"prompt":"MI cần đi 4 bước tới sao. Chọn lệnh đúng.","options":[{"id":"a","text":"4 bước","correct":true},{"id":"b","text":"5 bước","correct":false},{"id":"c","text":"3 bước","correct":false}]},"en":{"prompt":"MI needs 4 steps to the star. Choose the command.","options":[{"id":"a","text":"4 steps","correct":true},{"id":"b","text":"5 steps","correct":false},{"id":"c","text":"3 steps","correct":false}]}},"hints":[{"text":"Cấp 3: đọc kỹ câu hỏi và loại đáp án sai."},{"text":"Tier 3: read carefully and remove the wrong choices."}],"metadata":{"ageGroup":"explorer","skillIds":["logic.maze","logic.navigation"],"contentKind":"choice_progression","progressionTier":3,"reviewState":"technically_validated"},"assetRefs":[],"contentVersion":1,"estimatedSeconds":75,"publicationState":"published"},{"id":"logic-maze-lv019","gameId":"logic_maze","levelNumber":19,"difficulty":4,"learningObjective":"Logic Maze tier 4","localizedContent":{"vi":{"prompt":"MI cần đi 6 bước tới sao. Chọn lệnh đúng.","options":[{"id":"a","text":"7 bước","correct":false},{"id":"b","text":"6 bước","correct":true},{"id":"c","text":"5 bước","correct":false}]},"en":{"prompt":"MI needs 6 steps to the star. Choose the command.","options":[{"id":"a","text":"7 steps","correct":false},{"id":"b","text":"6 steps","correct":true},{"id":"c","text":"5 steps","correct":false}]}},"hints":[{"text":"Cấp 4: đọc kỹ câu hỏi và loại đáp án sai."},{"text":"Tier 4: read carefully and remove the wrong choices."}],"metadata":{"ageGroup":"explorer","skillIds":["logic.maze","logic.navigation"],"contentKind":"choice_progression","progressionTier":4,"reviewState":"technically_validated"},"assetRefs":[],"contentVersion":1,"estimatedSeconds":85,"publicationState":"published"},{"id":"logic-maze-lv020","gameId":"logic_maze","levelNumber":20,"difficulty":4,"learningObjective":"Logic Maze tier 4","localizedContent":{"vi":{"prompt":"MI cần đi 5 bước tới sao. Chọn lệnh đúng.","options":[{"id":"a","text":"4 bước","correct":false},{"id":"b","text":"6 bước","correct":false},{"id":"c","text":"5 bước","correct":true}]},"en":{"prompt":"MI needs 5 steps to the star. Choose the command.","options":[{"id":"a","text":"4 steps","correct":false},{"id":"b","text":"6 steps","correct":false},{"id":"c","text":"5 steps","correct":true}]}},"hints":[{"text":"Cấp 4: đọc kỹ câu hỏi và loại đáp án sai."},{"text":"Tier 4: read carefully and remove the wrong choices."}],"metadata":{"ageGroup":"explorer","skillIds":["logic.maze","logic.navigation"],"contentKind":"choice_progression","progressionTier":4,"reviewState":"technically_validated"},"assetRefs":[],"contentVersion":1,"estimatedSeconds":85,"publicationState":"published"},{"id":"logic-maze-lv021","gameId":"logic_maze","levelNumber":21,"difficulty":4,"learningObjective":"Logic Maze tier 4","localizedContent":{"vi":{"prompt":"MI cần đi 6 bước tới sao. Chọn lệnh đúng.","options":[{"id":"a","text":"6 bước","correct":true},{"id":"b","text":"7 bước","correct":false},{"id":"c","text":"5 bước","correct":false}]},"en":{"prompt":"MI needs 6 steps to the star. Choose the command.","options":[{"id":"a","text":"6 steps","correct":true},{"id":"b","text":"7 steps","correct":false},{"id":"c","text":"5 steps","correct":false}]}},"hints":[{"text":"Cấp 4: đọc kỹ câu hỏi và loại đáp án sai."},{"text":"Tier 4: read carefully and remove the wrong choices."}],"metadata":{"ageGroup":"explorer","skillIds":["logic.maze","logic.navigation"],"contentKind":"choice_progression","progressionTier":4,"reviewState":"technically_validated"},"assetRefs":[],"contentVersion":1,"estimatedSeconds":85,"publicationState":"published"},{"id":"logic-maze-lv022","gameId":"logic_maze","levelNumber":22,"difficulty":4,"learningObjective":"Logic Maze tier 4","localizedContent":{"vi":{"prompt":"MI cần đi 5 bước tới sao. Chọn lệnh đúng.","options":[{"id":"a","text":"6 bước","correct":false},{"id":"b","text":"5 bước","correct":true},{"id":"c","text":"4 bước","correct":false}]},"en":{"prompt":"MI needs 5 steps to the star. Choose the command.","options":[{"id":"a","text":"6 steps","correct":false},{"id":"b","text":"5 steps","correct":true},{"id":"c","text":"4 steps","correct":false}]}},"hints":[{"text":"Cấp 4: đọc kỹ câu hỏi và loại đáp án sai."},{"text":"Tier 4: read carefully and remove the wrong choices."}],"metadata":{"ageGroup":"explorer","skillIds":["logic.maze","logic.navigation"],"contentKind":"choice_progression","progressionTier":4,"reviewState":"technically_validated"},"assetRefs":[],"contentVersion":1,"estimatedSeconds":85,"publicationState":"published"},{"id":"logic-maze-lv023","gameId":"logic_maze","levelNumber":23,"difficulty":4,"learningObjective":"Logic Maze tier 4","localizedContent":{"vi":{"prompt":"MI cần đi 6 bước tới sao. Chọn lệnh đúng.","options":[{"id":"a","text":"5 bước","correct":false},{"id":"b","text":"7 bước","correct":false},{"id":"c","text":"6 bước","correct":true}]},"en":{"prompt":"MI needs 6 steps to the star. Choose the command.","options":[{"id":"a","text":"5 steps","correct":false},{"id":"b","text":"7 steps","correct":false},{"id":"c","text":"6 steps","correct":true}]}},"hints":[{"text":"Cấp 4: đọc kỹ câu hỏi và loại đáp án sai."},{"text":"Tier 4: read carefully and remove the wrong choices."}],"metadata":{"ageGroup":"explorer","skillIds":["logic.maze","logic.navigation"],"contentKind":"choice_progression","progressionTier":4,"reviewState":"technically_validated"},"assetRefs":[],"contentVersion":1,"estimatedSeconds":85,"publicationState":"published"},{"id":"logic-maze-lv024","gameId":"logic_maze","levelNumber":24,"difficulty":4,"learningObjective":"Logic Maze tier 4","localizedContent":{"vi":{"prompt":"MI cần đi 5 bước tới sao. Chọn lệnh đúng.","options":[{"id":"a","text":"5 bước","correct":true},{"id":"b","text":"6 bước","correct":false},{"id":"c","text":"4 bước","correct":false}]},"en":{"prompt":"MI needs 5 steps to the star. Choose the command.","options":[{"id":"a","text":"5 steps","correct":true},{"id":"b","text":"6 steps","correct":false},{"id":"c","text":"4 steps","correct":false}]}},"hints":[{"text":"Cấp 4: đọc kỹ câu hỏi và loại đáp án sai."},{"text":"Tier 4: read carefully and remove the wrong choices."}],"metadata":{"ageGroup":"explorer","skillIds":["logic.maze","logic.navigation"],"contentKind":"choice_progression","progressionTier":4,"reviewState":"technically_validated"},"assetRefs":[],"contentVersion":1,"estimatedSeconds":85,"publicationState":"published"},{"id":"logic-maze-lv025","gameId":"logic_maze","levelNumber":25,"difficulty":5,"learningObjective":"Logic Maze tier 5","localizedContent":{"vi":{"prompt":"MI cần đi 7 bước tới sao. Chọn lệnh đúng.","options":[{"id":"a","text":"8 bước","correct":false},{"id":"b","text":"7 bước","correct":true},{"id":"c","text":"6 bước","correct":false}]},"en":{"prompt":"MI needs 7 steps to the star. Choose the command.","options":[{"id":"a","text":"8 steps","correct":false},{"id":"b","text":"7 steps","correct":true},{"id":"c","text":"6 steps","correct":false}]}},"hints":[{"text":"Cấp 5: đọc kỹ câu hỏi và loại đáp án sai."},{"text":"Tier 5: read carefully and remove the wrong choices."}],"metadata":{"ageGroup":"explorer","skillIds":["logic.maze","logic.navigation"],"contentKind":"choice_progression","progressionTier":5,"reviewState":"technically_validated"},"assetRefs":[],"contentVersion":1,"estimatedSeconds":95,"publicationState":"published"},{"id":"logic-maze-lv026","gameId":"logic_maze","levelNumber":26,"difficulty":5,"learningObjective":"Logic Maze tier 5","localizedContent":{"vi":{"prompt":"MI cần đi 6 bước tới sao. Chọn lệnh đúng.","options":[{"id":"a","text":"5 bước","correct":false},{"id":"b","text":"7 bước","correct":false},{"id":"c","text":"6 bước","correct":true}]},"en":{"prompt":"MI needs 6 steps to the star. Choose the command.","options":[{"id":"a","text":"5 steps","correct":false},{"id":"b","text":"7 steps","correct":false},{"id":"c","text":"6 steps","correct":true}]}},"hints":[{"text":"Cấp 5: đọc kỹ câu hỏi và loại đáp án sai."},{"text":"Tier 5: read carefully and remove the wrong choices."}],"metadata":{"ageGroup":"explorer","skillIds":["logic.maze","logic.navigation"],"contentKind":"choice_progression","progressionTier":5,"reviewState":"technically_validated"},"assetRefs":[],"contentVersion":1,"estimatedSeconds":95,"publicationState":"published"},{"id":"logic-maze-lv027","gameId":"logic_maze","levelNumber":27,"difficulty":5,"learningObjective":"Logic Maze tier 5","localizedContent":{"vi":{"prompt":"MI cần đi 7 bước tới sao. Chọn lệnh đúng.","options":[{"id":"a","text":"7 bước","correct":true},{"id":"b","text":"8 bước","correct":false},{"id":"c","text":"6 bước","correct":false}]},"en":{"prompt":"MI needs 7 steps to the star. Choose the command.","options":[{"id":"a","text":"7 steps","correct":true},{"id":"b","text":"8 steps","correct":false},{"id":"c","text":"6 steps","correct":false}]}},"hints":[{"text":"Cấp 5: đọc kỹ câu hỏi và loại đáp án sai."},{"text":"Tier 5: read carefully and remove the wrong choices."}],"metadata":{"ageGroup":"explorer","skillIds":["logic.maze","logic.navigation"],"contentKind":"choice_progression","progressionTier":5,"reviewState":"technically_validated"},"assetRefs":[],"contentVersion":1,"estimatedSeconds":95,"publicationState":"published"},{"id":"logic-maze-lv028","gameId":"logic_maze","levelNumber":28,"difficulty":5,"learningObjective":"Logic Maze tier 5","localizedContent":{"vi":{"prompt":"MI cần đi 6 bước tới sao. Chọn lệnh đúng.","options":[{"id":"a","text":"7 bước","correct":false},{"id":"b","text":"6 bước","correct":true},{"id":"c","text":"5 bước","correct":false}]},"en":{"prompt":"MI needs 6 steps to the star. Choose the command.","options":[{"id":"a","text":"7 steps","correct":false},{"id":"b","text":"6 steps","correct":true},{"id":"c","text":"5 steps","correct":false}]}},"hints":[{"text":"Cấp 5: đọc kỹ câu hỏi và loại đáp án sai."},{"text":"Tier 5: read carefully and remove the wrong choices."}],"metadata":{"ageGroup":"explorer","skillIds":["logic.maze","logic.navigation"],"contentKind":"choice_progression","progressionTier":5,"reviewState":"technically_validated"},"assetRefs":[],"contentVersion":1,"estimatedSeconds":95,"publicationState":"published"},{"id":"logic-maze-lv029","gameId":"logic_maze","levelNumber":29,"difficulty":5,"learningObjective":"Logic Maze tier 5","localizedContent":{"vi":{"prompt":"MI cần đi 7 bước tới sao. Chọn lệnh đúng.","options":[{"id":"a","text":"6 bước","correct":false},{"id":"b","text":"8 bước","correct":false},{"id":"c","text":"7 bước","correct":true}]},"en":{"prompt":"MI needs 7 steps to the star. Choose the command.","options":[{"id":"a","text":"6 steps","correct":false},{"id":"b","text":"8 steps","correct":false},{"id":"c","text":"7 steps","correct":true}]}},"hints":[{"text":"Cấp 5: đọc kỹ câu hỏi và loại đáp án sai."},{"text":"Tier 5: read carefully and remove the wrong choices."}],"metadata":{"ageGroup":"explorer","skillIds":["logic.maze","logic.navigation"],"contentKind":"choice_progression","progressionTier":5,"reviewState":"technically_validated"},"assetRefs":[],"contentVersion":1,"estimatedSeconds":95,"publicationState":"published"},{"id":"logic-maze-lv030","gameId":"logic_maze","levelNumber":30,"difficulty":5,"learningObjective":"Logic Maze tier 5","localizedContent":{"vi":{"prompt":"MI cần đi 6 bước tới sao. Chọn lệnh đúng.","options":[{"id":"a","text":"6 bước","correct":true},{"id":"b","text":"7 bước","correct":false},{"id":"c","text":"5 bước","correct":false}]},"en":{"prompt":"MI needs 6 steps to the star. Choose the command.","options":[{"id":"a","text":"6 steps","correct":true},{"id":"b","text":"7 steps","correct":false},{"id":"c","text":"5 steps","correct":false}]}},"hints":[{"text":"Cấp 5: đọc kỹ câu hỏi và loại đáp án sai."},{"text":"Tier 5: read carefully and remove the wrong choices."}],"metadata":{"ageGroup":"explorer","skillIds":["logic.maze","logic.navigation"],"contentKind":"choice_progression","progressionTier":5,"reviewState":"technically_validated"},"assetRefs":[],"contentVersion":1,"estimatedSeconds":95,"publicationState":"published"}]}
+{
+  "gameId": "logic_maze",
+  "schemaVersion": "1.0.0",
+  "levels": [
+    {
+      "id": "logic-maze-lv001",
+      "gameId": "logic_maze",
+      "levelNumber": 1,
+      "difficulty": 1,
+      "learningObjective": "Logic Maze tier 1",
+      "localizedContent": {
+        "vi": {
+          "prompt": "MI cần đi 3 bước tới sao. Chọn lệnh đúng.",
+          "options": [
+            {
+              "id": "a",
+              "text": "4 bước",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "3 bước",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "text": "2 bước",
+              "correct": false
+            }
+          ],
+          "deepData": {
+            "steps": [
+              "Tìm MI",
+              "Tránh ô chặn",
+              "Tới ngôi sao"
+            ],
+            "pathSummary": "6 bước an toàn"
+          }
+        },
+        "en": {
+          "prompt": "MI needs 3 steps to the star. Choose the command.",
+          "options": [
+            {
+              "id": "a",
+              "text": "4 steps",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "3 steps",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "text": "2 steps",
+              "correct": false
+            }
+          ],
+          "deepData": {
+            "steps": [
+              "Find MI",
+              "Avoid blocks",
+              "Reach the star"
+            ],
+            "pathSummary": "6 safe moves"
+          }
+        }
+      },
+      "hints": [
+        {
+          "text": "Cấp 1: đọc kỹ câu hỏi và loại đáp án sai."
+        },
+        {
+          "text": "Tier 1: read carefully and remove the wrong choices."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "explorer",
+        "skillIds": [
+          "logic.maze",
+          "logic.navigation"
+        ],
+        "contentKind": "choice_progression",
+        "progressionTier": 1,
+        "reviewState": "technically_validated",
+        "deepData": {
+          "scene": "maze",
+          "gridSize": 4,
+          "startIndex": 12,
+          "goalIndex": 3,
+          "path": [
+            12,
+            13,
+            9,
+            10,
+            6,
+            7,
+            3
+          ],
+          "obstacles": [
+            4
+          ],
+          "commands": [
+            "forward",
+            "turn-right",
+            "forward"
+          ]
+        }
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 55,
+      "publicationState": "published"
+    },
+    {
+      "id": "logic-maze-lv002",
+      "gameId": "logic_maze",
+      "levelNumber": 2,
+      "difficulty": 1,
+      "learningObjective": "Logic Maze tier 1",
+      "localizedContent": {
+        "vi": {
+          "prompt": "MI cần đi 2 bước tới sao. Chọn lệnh đúng.",
+          "options": [
+            {
+              "id": "a",
+              "text": "1 bước",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "3 bước",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "2 bước",
+              "correct": true
+            }
+          ],
+          "deepData": {
+            "steps": [
+              "Tìm MI",
+              "Tránh ô chặn",
+              "Tới ngôi sao"
+            ],
+            "pathSummary": "6 bước an toàn"
+          }
+        },
+        "en": {
+          "prompt": "MI needs 2 steps to the star. Choose the command.",
+          "options": [
+            {
+              "id": "a",
+              "text": "1 steps",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "3 steps",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "2 steps",
+              "correct": true
+            }
+          ],
+          "deepData": {
+            "steps": [
+              "Find MI",
+              "Avoid blocks",
+              "Reach the star"
+            ],
+            "pathSummary": "6 safe moves"
+          }
+        }
+      },
+      "hints": [
+        {
+          "text": "Cấp 1: đọc kỹ câu hỏi và loại đáp án sai."
+        },
+        {
+          "text": "Tier 1: read carefully and remove the wrong choices."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "explorer",
+        "skillIds": [
+          "logic.maze",
+          "logic.navigation"
+        ],
+        "contentKind": "choice_progression",
+        "progressionTier": 1,
+        "reviewState": "technically_validated",
+        "deepData": {
+          "scene": "maze",
+          "gridSize": 4,
+          "startIndex": 12,
+          "goalIndex": 3,
+          "path": [
+            12,
+            8,
+            9,
+            5,
+            6,
+            2,
+            3
+          ],
+          "obstacles": [
+            13
+          ],
+          "commands": [
+            "forward",
+            "turn-right",
+            "forward"
+          ]
+        }
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 55,
+      "publicationState": "published"
+    },
+    {
+      "id": "logic-maze-lv003",
+      "gameId": "logic_maze",
+      "levelNumber": 3,
+      "difficulty": 1,
+      "learningObjective": "Logic Maze tier 1",
+      "localizedContent": {
+        "vi": {
+          "prompt": "MI cần đi 3 bước tới sao. Chọn lệnh đúng.",
+          "options": [
+            {
+              "id": "a",
+              "text": "3 bước",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "text": "4 bước",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "2 bước",
+              "correct": false
+            }
+          ],
+          "deepData": {
+            "steps": [
+              "Tìm MI",
+              "Tránh ô chặn",
+              "Tới ngôi sao"
+            ],
+            "pathSummary": "6 bước an toàn"
+          }
+        },
+        "en": {
+          "prompt": "MI needs 3 steps to the star. Choose the command.",
+          "options": [
+            {
+              "id": "a",
+              "text": "3 steps",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "text": "4 steps",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "2 steps",
+              "correct": false
+            }
+          ],
+          "deepData": {
+            "steps": [
+              "Find MI",
+              "Avoid blocks",
+              "Reach the star"
+            ],
+            "pathSummary": "6 safe moves"
+          }
+        }
+      },
+      "hints": [
+        {
+          "text": "Cấp 1: đọc kỹ câu hỏi và loại đáp án sai."
+        },
+        {
+          "text": "Tier 1: read carefully and remove the wrong choices."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "explorer",
+        "skillIds": [
+          "logic.maze",
+          "logic.navigation"
+        ],
+        "contentKind": "choice_progression",
+        "progressionTier": 1,
+        "reviewState": "technically_validated",
+        "deepData": {
+          "scene": "maze",
+          "gridSize": 4,
+          "startIndex": 12,
+          "goalIndex": 3,
+          "path": [
+            12,
+            13,
+            9,
+            10,
+            6,
+            7,
+            3
+          ],
+          "obstacles": [
+            2
+          ],
+          "commands": [
+            "forward",
+            "turn-right",
+            "forward"
+          ]
+        }
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 55,
+      "publicationState": "published"
+    },
+    {
+      "id": "logic-maze-lv004",
+      "gameId": "logic_maze",
+      "levelNumber": 4,
+      "difficulty": 1,
+      "learningObjective": "Logic Maze tier 1",
+      "localizedContent": {
+        "vi": {
+          "prompt": "MI cần đi 2 bước tới sao. Chọn lệnh đúng.",
+          "options": [
+            {
+              "id": "a",
+              "text": "3 bước",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "2 bước",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "text": "1 bước",
+              "correct": false
+            }
+          ],
+          "deepData": {
+            "steps": [
+              "Tìm MI",
+              "Tránh ô chặn",
+              "Tới ngôi sao"
+            ],
+            "pathSummary": "6 bước an toàn"
+          }
+        },
+        "en": {
+          "prompt": "MI needs 2 steps to the star. Choose the command.",
+          "options": [
+            {
+              "id": "a",
+              "text": "3 steps",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "2 steps",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "text": "1 steps",
+              "correct": false
+            }
+          ],
+          "deepData": {
+            "steps": [
+              "Find MI",
+              "Avoid blocks",
+              "Reach the star"
+            ],
+            "pathSummary": "6 safe moves"
+          }
+        }
+      },
+      "hints": [
+        {
+          "text": "Cấp 1: đọc kỹ câu hỏi và loại đáp án sai."
+        },
+        {
+          "text": "Tier 1: read carefully and remove the wrong choices."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "explorer",
+        "skillIds": [
+          "logic.maze",
+          "logic.navigation"
+        ],
+        "contentKind": "choice_progression",
+        "progressionTier": 1,
+        "reviewState": "technically_validated",
+        "deepData": {
+          "scene": "maze",
+          "gridSize": 4,
+          "startIndex": 12,
+          "goalIndex": 3,
+          "path": [
+            12,
+            8,
+            9,
+            5,
+            6,
+            2,
+            3
+          ],
+          "obstacles": [
+            1
+          ],
+          "commands": [
+            "forward",
+            "turn-right",
+            "forward"
+          ]
+        }
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 55,
+      "publicationState": "published"
+    },
+    {
+      "id": "logic-maze-lv005",
+      "gameId": "logic_maze",
+      "levelNumber": 5,
+      "difficulty": 1,
+      "learningObjective": "Logic Maze tier 1",
+      "localizedContent": {
+        "vi": {
+          "prompt": "MI cần đi 3 bước tới sao. Chọn lệnh đúng.",
+          "options": [
+            {
+              "id": "a",
+              "text": "2 bước",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "4 bước",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "3 bước",
+              "correct": true
+            }
+          ],
+          "deepData": {
+            "steps": [
+              "Tìm MI",
+              "Tránh ô chặn",
+              "Tới ngôi sao"
+            ],
+            "pathSummary": "6 bước an toàn"
+          }
+        },
+        "en": {
+          "prompt": "MI needs 3 steps to the star. Choose the command.",
+          "options": [
+            {
+              "id": "a",
+              "text": "2 steps",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "4 steps",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "3 steps",
+              "correct": true
+            }
+          ],
+          "deepData": {
+            "steps": [
+              "Find MI",
+              "Avoid blocks",
+              "Reach the star"
+            ],
+            "pathSummary": "6 safe moves"
+          }
+        }
+      },
+      "hints": [
+        {
+          "text": "Cấp 1: đọc kỹ câu hỏi và loại đáp án sai."
+        },
+        {
+          "text": "Tier 1: read carefully and remove the wrong choices."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "explorer",
+        "skillIds": [
+          "logic.maze",
+          "logic.navigation"
+        ],
+        "contentKind": "choice_progression",
+        "progressionTier": 1,
+        "reviewState": "technically_validated",
+        "deepData": {
+          "scene": "maze",
+          "gridSize": 4,
+          "startIndex": 12,
+          "goalIndex": 3,
+          "path": [
+            12,
+            13,
+            9,
+            10,
+            6,
+            7,
+            3
+          ],
+          "obstacles": [
+            0
+          ],
+          "commands": [
+            "forward",
+            "turn-right",
+            "forward"
+          ]
+        }
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 55,
+      "publicationState": "published"
+    },
+    {
+      "id": "logic-maze-lv006",
+      "gameId": "logic_maze",
+      "levelNumber": 6,
+      "difficulty": 1,
+      "learningObjective": "Logic Maze tier 1",
+      "localizedContent": {
+        "vi": {
+          "prompt": "MI cần đi 2 bước tới sao. Chọn lệnh đúng.",
+          "options": [
+            {
+              "id": "a",
+              "text": "2 bước",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "text": "3 bước",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "1 bước",
+              "correct": false
+            }
+          ],
+          "deepData": {
+            "steps": [
+              "Tìm MI",
+              "Tránh ô chặn",
+              "Tới ngôi sao"
+            ],
+            "pathSummary": "6 bước an toàn"
+          }
+        },
+        "en": {
+          "prompt": "MI needs 2 steps to the star. Choose the command.",
+          "options": [
+            {
+              "id": "a",
+              "text": "2 steps",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "text": "3 steps",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "1 steps",
+              "correct": false
+            }
+          ],
+          "deepData": {
+            "steps": [
+              "Find MI",
+              "Avoid blocks",
+              "Reach the star"
+            ],
+            "pathSummary": "6 safe moves"
+          }
+        }
+      },
+      "hints": [
+        {
+          "text": "Cấp 1: đọc kỹ câu hỏi và loại đáp án sai."
+        },
+        {
+          "text": "Tier 1: read carefully and remove the wrong choices."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "explorer",
+        "skillIds": [
+          "logic.maze",
+          "logic.navigation"
+        ],
+        "contentKind": "choice_progression",
+        "progressionTier": 1,
+        "reviewState": "technically_validated",
+        "deepData": {
+          "scene": "maze",
+          "gridSize": 4,
+          "startIndex": 12,
+          "goalIndex": 3,
+          "path": [
+            12,
+            8,
+            9,
+            5,
+            6,
+            2,
+            3
+          ],
+          "obstacles": [
+            4
+          ],
+          "commands": [
+            "forward",
+            "turn-right",
+            "forward"
+          ]
+        }
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 55,
+      "publicationState": "published"
+    },
+    {
+      "id": "logic-maze-lv007",
+      "gameId": "logic_maze",
+      "levelNumber": 7,
+      "difficulty": 2,
+      "learningObjective": "Logic Maze tier 2",
+      "localizedContent": {
+        "vi": {
+          "prompt": "MI cần đi 4 bước tới sao. Chọn lệnh đúng.",
+          "options": [
+            {
+              "id": "a",
+              "text": "5 bước",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "4 bước",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "text": "3 bước",
+              "correct": false
+            }
+          ],
+          "deepData": {
+            "steps": [
+              "Tìm MI",
+              "Tránh ô chặn",
+              "Tới ngôi sao"
+            ],
+            "pathSummary": "6 bước an toàn"
+          }
+        },
+        "en": {
+          "prompt": "MI needs 4 steps to the star. Choose the command.",
+          "options": [
+            {
+              "id": "a",
+              "text": "5 steps",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "4 steps",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "text": "3 steps",
+              "correct": false
+            }
+          ],
+          "deepData": {
+            "steps": [
+              "Find MI",
+              "Avoid blocks",
+              "Reach the star"
+            ],
+            "pathSummary": "6 safe moves"
+          }
+        }
+      },
+      "hints": [
+        {
+          "text": "Cấp 2: đọc kỹ câu hỏi và loại đáp án sai."
+        },
+        {
+          "text": "Tier 2: read carefully and remove the wrong choices."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "explorer",
+        "skillIds": [
+          "logic.maze",
+          "logic.navigation"
+        ],
+        "contentKind": "choice_progression",
+        "progressionTier": 2,
+        "reviewState": "technically_validated",
+        "deepData": {
+          "scene": "maze",
+          "gridSize": 4,
+          "startIndex": 12,
+          "goalIndex": 3,
+          "path": [
+            12,
+            13,
+            9,
+            10,
+            6,
+            7,
+            3
+          ],
+          "obstacles": [
+            8
+          ],
+          "commands": [
+            "forward",
+            "turn-right",
+            "forward"
+          ]
+        }
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 65,
+      "publicationState": "published"
+    },
+    {
+      "id": "logic-maze-lv008",
+      "gameId": "logic_maze",
+      "levelNumber": 8,
+      "difficulty": 2,
+      "learningObjective": "Logic Maze tier 2",
+      "localizedContent": {
+        "vi": {
+          "prompt": "MI cần đi 3 bước tới sao. Chọn lệnh đúng.",
+          "options": [
+            {
+              "id": "a",
+              "text": "2 bước",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "4 bước",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "3 bước",
+              "correct": true
+            }
+          ],
+          "deepData": {
+            "steps": [
+              "Tìm MI",
+              "Tránh ô chặn",
+              "Tới ngôi sao"
+            ],
+            "pathSummary": "6 bước an toàn"
+          }
+        },
+        "en": {
+          "prompt": "MI needs 3 steps to the star. Choose the command.",
+          "options": [
+            {
+              "id": "a",
+              "text": "2 steps",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "4 steps",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "3 steps",
+              "correct": true
+            }
+          ],
+          "deepData": {
+            "steps": [
+              "Find MI",
+              "Avoid blocks",
+              "Reach the star"
+            ],
+            "pathSummary": "6 safe moves"
+          }
+        }
+      },
+      "hints": [
+        {
+          "text": "Cấp 2: đọc kỹ câu hỏi và loại đáp án sai."
+        },
+        {
+          "text": "Tier 2: read carefully and remove the wrong choices."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "explorer",
+        "skillIds": [
+          "logic.maze",
+          "logic.navigation"
+        ],
+        "contentKind": "choice_progression",
+        "progressionTier": 2,
+        "reviewState": "technically_validated",
+        "deepData": {
+          "scene": "maze",
+          "gridSize": 4,
+          "startIndex": 12,
+          "goalIndex": 3,
+          "path": [
+            12,
+            8,
+            9,
+            5,
+            6,
+            2,
+            3
+          ],
+          "obstacles": [
+            7
+          ],
+          "commands": [
+            "forward",
+            "turn-right",
+            "forward"
+          ]
+        }
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 65,
+      "publicationState": "published"
+    },
+    {
+      "id": "logic-maze-lv009",
+      "gameId": "logic_maze",
+      "levelNumber": 9,
+      "difficulty": 2,
+      "learningObjective": "Logic Maze tier 2",
+      "localizedContent": {
+        "vi": {
+          "prompt": "MI cần đi 4 bước tới sao. Chọn lệnh đúng.",
+          "options": [
+            {
+              "id": "a",
+              "text": "4 bước",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "text": "5 bước",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "3 bước",
+              "correct": false
+            }
+          ],
+          "deepData": {
+            "steps": [
+              "Tìm MI",
+              "Tránh ô chặn",
+              "Tới ngôi sao"
+            ],
+            "pathSummary": "6 bước an toàn"
+          }
+        },
+        "en": {
+          "prompt": "MI needs 4 steps to the star. Choose the command.",
+          "options": [
+            {
+              "id": "a",
+              "text": "4 steps",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "text": "5 steps",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "3 steps",
+              "correct": false
+            }
+          ],
+          "deepData": {
+            "steps": [
+              "Find MI",
+              "Avoid blocks",
+              "Reach the star"
+            ],
+            "pathSummary": "6 safe moves"
+          }
+        }
+      },
+      "hints": [
+        {
+          "text": "Cấp 2: đọc kỹ câu hỏi và loại đáp án sai."
+        },
+        {
+          "text": "Tier 2: read carefully and remove the wrong choices."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "explorer",
+        "skillIds": [
+          "logic.maze",
+          "logic.navigation"
+        ],
+        "contentKind": "choice_progression",
+        "progressionTier": 2,
+        "reviewState": "technically_validated",
+        "deepData": {
+          "scene": "maze",
+          "gridSize": 4,
+          "startIndex": 12,
+          "goalIndex": 3,
+          "path": [
+            12,
+            13,
+            9,
+            10,
+            6,
+            7,
+            3
+          ],
+          "obstacles": [
+            1,
+            11
+          ],
+          "commands": [
+            "forward",
+            "turn-right",
+            "forward"
+          ]
+        }
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 65,
+      "publicationState": "published"
+    },
+    {
+      "id": "logic-maze-lv010",
+      "gameId": "logic_maze",
+      "levelNumber": 10,
+      "difficulty": 2,
+      "learningObjective": "Logic Maze tier 2",
+      "localizedContent": {
+        "vi": {
+          "prompt": "MI cần đi 3 bước tới sao. Chọn lệnh đúng.",
+          "options": [
+            {
+              "id": "a",
+              "text": "4 bước",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "3 bước",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "text": "2 bước",
+              "correct": false
+            }
+          ],
+          "deepData": {
+            "steps": [
+              "Tìm MI",
+              "Tránh ô chặn",
+              "Tới ngôi sao"
+            ],
+            "pathSummary": "6 bước an toàn"
+          }
+        },
+        "en": {
+          "prompt": "MI needs 3 steps to the star. Choose the command.",
+          "options": [
+            {
+              "id": "a",
+              "text": "4 steps",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "3 steps",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "text": "2 steps",
+              "correct": false
+            }
+          ],
+          "deepData": {
+            "steps": [
+              "Find MI",
+              "Avoid blocks",
+              "Reach the star"
+            ],
+            "pathSummary": "6 safe moves"
+          }
+        }
+      },
+      "hints": [
+        {
+          "text": "Cấp 2: đọc kỹ câu hỏi và loại đáp án sai."
+        },
+        {
+          "text": "Tier 2: read carefully and remove the wrong choices."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "explorer",
+        "skillIds": [
+          "logic.maze",
+          "logic.navigation"
+        ],
+        "contentKind": "choice_progression",
+        "progressionTier": 2,
+        "reviewState": "technically_validated",
+        "deepData": {
+          "scene": "maze",
+          "gridSize": 4,
+          "startIndex": 12,
+          "goalIndex": 3,
+          "path": [
+            12,
+            8,
+            9,
+            5,
+            6,
+            2,
+            3
+          ],
+          "obstacles": [
+            0,
+            10
+          ],
+          "commands": [
+            "forward",
+            "turn-right",
+            "forward"
+          ]
+        }
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 65,
+      "publicationState": "published"
+    },
+    {
+      "id": "logic-maze-lv011",
+      "gameId": "logic_maze",
+      "levelNumber": 11,
+      "difficulty": 2,
+      "learningObjective": "Logic Maze tier 2",
+      "localizedContent": {
+        "vi": {
+          "prompt": "MI cần đi 4 bước tới sao. Chọn lệnh đúng.",
+          "options": [
+            {
+              "id": "a",
+              "text": "3 bước",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "5 bước",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "4 bước",
+              "correct": true
+            }
+          ],
+          "deepData": {
+            "steps": [
+              "Tìm MI",
+              "Tránh ô chặn",
+              "Tới ngôi sao"
+            ],
+            "pathSummary": "6 bước an toàn"
+          }
+        },
+        "en": {
+          "prompt": "MI needs 4 steps to the star. Choose the command.",
+          "options": [
+            {
+              "id": "a",
+              "text": "3 steps",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "5 steps",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "4 steps",
+              "correct": true
+            }
+          ],
+          "deepData": {
+            "steps": [
+              "Find MI",
+              "Avoid blocks",
+              "Reach the star"
+            ],
+            "pathSummary": "6 safe moves"
+          }
+        }
+      },
+      "hints": [
+        {
+          "text": "Cấp 2: đọc kỹ câu hỏi và loại đáp án sai."
+        },
+        {
+          "text": "Tier 2: read carefully and remove the wrong choices."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "explorer",
+        "skillIds": [
+          "logic.maze",
+          "logic.navigation"
+        ],
+        "contentKind": "choice_progression",
+        "progressionTier": 2,
+        "reviewState": "technically_validated",
+        "deepData": {
+          "scene": "maze",
+          "gridSize": 4,
+          "startIndex": 12,
+          "goalIndex": 3,
+          "path": [
+            12,
+            13,
+            9,
+            10,
+            6,
+            7,
+            3
+          ],
+          "obstacles": [
+            4,
+            14
+          ],
+          "commands": [
+            "forward",
+            "turn-right",
+            "forward"
+          ]
+        }
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 65,
+      "publicationState": "published"
+    },
+    {
+      "id": "logic-maze-lv012",
+      "gameId": "logic_maze",
+      "levelNumber": 12,
+      "difficulty": 2,
+      "learningObjective": "Logic Maze tier 2",
+      "localizedContent": {
+        "vi": {
+          "prompt": "MI cần đi 3 bước tới sao. Chọn lệnh đúng.",
+          "options": [
+            {
+              "id": "a",
+              "text": "3 bước",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "text": "4 bước",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "2 bước",
+              "correct": false
+            }
+          ],
+          "deepData": {
+            "steps": [
+              "Tìm MI",
+              "Tránh ô chặn",
+              "Tới ngôi sao"
+            ],
+            "pathSummary": "6 bước an toàn"
+          }
+        },
+        "en": {
+          "prompt": "MI needs 3 steps to the star. Choose the command.",
+          "options": [
+            {
+              "id": "a",
+              "text": "3 steps",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "text": "4 steps",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "2 steps",
+              "correct": false
+            }
+          ],
+          "deepData": {
+            "steps": [
+              "Find MI",
+              "Avoid blocks",
+              "Reach the star"
+            ],
+            "pathSummary": "6 safe moves"
+          }
+        }
+      },
+      "hints": [
+        {
+          "text": "Cấp 2: đọc kỹ câu hỏi và loại đáp án sai."
+        },
+        {
+          "text": "Tier 2: read carefully and remove the wrong choices."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "explorer",
+        "skillIds": [
+          "logic.maze",
+          "logic.navigation"
+        ],
+        "contentKind": "choice_progression",
+        "progressionTier": 2,
+        "reviewState": "technically_validated",
+        "deepData": {
+          "scene": "maze",
+          "gridSize": 4,
+          "startIndex": 12,
+          "goalIndex": 3,
+          "path": [
+            12,
+            8,
+            9,
+            5,
+            6,
+            2,
+            3
+          ],
+          "obstacles": [
+            13
+          ],
+          "commands": [
+            "forward",
+            "turn-right",
+            "forward"
+          ]
+        }
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 65,
+      "publicationState": "published"
+    },
+    {
+      "id": "logic-maze-lv013",
+      "gameId": "logic_maze",
+      "levelNumber": 13,
+      "difficulty": 3,
+      "learningObjective": "Logic Maze tier 3",
+      "localizedContent": {
+        "vi": {
+          "prompt": "MI cần đi 5 bước tới sao. Chọn lệnh đúng.",
+          "options": [
+            {
+              "id": "a",
+              "text": "6 bước",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "5 bước",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "text": "4 bước",
+              "correct": false
+            }
+          ],
+          "deepData": {
+            "steps": [
+              "Tìm MI",
+              "Tránh ô chặn",
+              "Tới ngôi sao"
+            ],
+            "pathSummary": "6 bước an toàn"
+          }
+        },
+        "en": {
+          "prompt": "MI needs 5 steps to the star. Choose the command.",
+          "options": [
+            {
+              "id": "a",
+              "text": "6 steps",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "5 steps",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "text": "4 steps",
+              "correct": false
+            }
+          ],
+          "deepData": {
+            "steps": [
+              "Find MI",
+              "Avoid blocks",
+              "Reach the star"
+            ],
+            "pathSummary": "6 safe moves"
+          }
+        }
+      },
+      "hints": [
+        {
+          "text": "Cấp 3: đọc kỹ câu hỏi và loại đáp án sai."
+        },
+        {
+          "text": "Tier 3: read carefully and remove the wrong choices."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "explorer",
+        "skillIds": [
+          "logic.maze",
+          "logic.navigation"
+        ],
+        "contentKind": "choice_progression",
+        "progressionTier": 3,
+        "reviewState": "technically_validated",
+        "deepData": {
+          "scene": "maze",
+          "gridSize": 4,
+          "startIndex": 12,
+          "goalIndex": 3,
+          "path": [
+            12,
+            13,
+            9,
+            10,
+            6,
+            7,
+            3
+          ],
+          "obstacles": [
+            2
+          ],
+          "commands": [
+            "forward",
+            "turn-right",
+            "forward"
+          ]
+        }
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 75,
+      "publicationState": "published"
+    },
+    {
+      "id": "logic-maze-lv014",
+      "gameId": "logic_maze",
+      "levelNumber": 14,
+      "difficulty": 3,
+      "learningObjective": "Logic Maze tier 3",
+      "localizedContent": {
+        "vi": {
+          "prompt": "MI cần đi 4 bước tới sao. Chọn lệnh đúng.",
+          "options": [
+            {
+              "id": "a",
+              "text": "3 bước",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "5 bước",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "4 bước",
+              "correct": true
+            }
+          ],
+          "deepData": {
+            "steps": [
+              "Tìm MI",
+              "Tránh ô chặn",
+              "Tới ngôi sao"
+            ],
+            "pathSummary": "6 bước an toàn"
+          }
+        },
+        "en": {
+          "prompt": "MI needs 4 steps to the star. Choose the command.",
+          "options": [
+            {
+              "id": "a",
+              "text": "3 steps",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "5 steps",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "4 steps",
+              "correct": true
+            }
+          ],
+          "deepData": {
+            "steps": [
+              "Find MI",
+              "Avoid blocks",
+              "Reach the star"
+            ],
+            "pathSummary": "6 safe moves"
+          }
+        }
+      },
+      "hints": [
+        {
+          "text": "Cấp 3: đọc kỹ câu hỏi và loại đáp án sai."
+        },
+        {
+          "text": "Tier 3: read carefully and remove the wrong choices."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "explorer",
+        "skillIds": [
+          "logic.maze",
+          "logic.navigation"
+        ],
+        "contentKind": "choice_progression",
+        "progressionTier": 3,
+        "reviewState": "technically_validated",
+        "deepData": {
+          "scene": "maze",
+          "gridSize": 4,
+          "startIndex": 12,
+          "goalIndex": 3,
+          "path": [
+            12,
+            8,
+            9,
+            5,
+            6,
+            2,
+            3
+          ],
+          "obstacles": [
+            1,
+            11
+          ],
+          "commands": [
+            "forward",
+            "turn-right",
+            "forward"
+          ]
+        }
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 75,
+      "publicationState": "published"
+    },
+    {
+      "id": "logic-maze-lv015",
+      "gameId": "logic_maze",
+      "levelNumber": 15,
+      "difficulty": 3,
+      "learningObjective": "Logic Maze tier 3",
+      "localizedContent": {
+        "vi": {
+          "prompt": "MI cần đi 5 bước tới sao. Chọn lệnh đúng.",
+          "options": [
+            {
+              "id": "a",
+              "text": "5 bước",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "text": "6 bước",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "4 bước",
+              "correct": false
+            }
+          ],
+          "deepData": {
+            "steps": [
+              "Tìm MI",
+              "Tránh ô chặn",
+              "Tới ngôi sao"
+            ],
+            "pathSummary": "6 bước an toàn"
+          }
+        },
+        "en": {
+          "prompt": "MI needs 5 steps to the star. Choose the command.",
+          "options": [
+            {
+              "id": "a",
+              "text": "5 steps",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "text": "6 steps",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "4 steps",
+              "correct": false
+            }
+          ],
+          "deepData": {
+            "steps": [
+              "Find MI",
+              "Avoid blocks",
+              "Reach the star"
+            ],
+            "pathSummary": "6 safe moves"
+          }
+        }
+      },
+      "hints": [
+        {
+          "text": "Cấp 3: đọc kỹ câu hỏi và loại đáp án sai."
+        },
+        {
+          "text": "Tier 3: read carefully and remove the wrong choices."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "explorer",
+        "skillIds": [
+          "logic.maze",
+          "logic.navigation"
+        ],
+        "contentKind": "choice_progression",
+        "progressionTier": 3,
+        "reviewState": "technically_validated",
+        "deepData": {
+          "scene": "maze",
+          "gridSize": 4,
+          "startIndex": 12,
+          "goalIndex": 3,
+          "path": [
+            12,
+            13,
+            9,
+            10,
+            6,
+            7,
+            3
+          ],
+          "obstacles": [
+            0,
+            5,
+            15
+          ],
+          "commands": [
+            "forward",
+            "turn-right",
+            "forward"
+          ]
+        }
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 75,
+      "publicationState": "published"
+    },
+    {
+      "id": "logic-maze-lv016",
+      "gameId": "logic_maze",
+      "levelNumber": 16,
+      "difficulty": 3,
+      "learningObjective": "Logic Maze tier 3",
+      "localizedContent": {
+        "vi": {
+          "prompt": "MI cần đi 4 bước tới sao. Chọn lệnh đúng.",
+          "options": [
+            {
+              "id": "a",
+              "text": "5 bước",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "4 bước",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "text": "3 bước",
+              "correct": false
+            }
+          ],
+          "deepData": {
+            "steps": [
+              "Tìm MI",
+              "Tránh ô chặn",
+              "Tới ngôi sao"
+            ],
+            "pathSummary": "6 bước an toàn"
+          }
+        },
+        "en": {
+          "prompt": "MI needs 4 steps to the star. Choose the command.",
+          "options": [
+            {
+              "id": "a",
+              "text": "5 steps",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "4 steps",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "text": "3 steps",
+              "correct": false
+            }
+          ],
+          "deepData": {
+            "steps": [
+              "Find MI",
+              "Avoid blocks",
+              "Reach the star"
+            ],
+            "pathSummary": "6 safe moves"
+          }
+        }
+      },
+      "hints": [
+        {
+          "text": "Cấp 3: đọc kỹ câu hỏi và loại đáp án sai."
+        },
+        {
+          "text": "Tier 3: read carefully and remove the wrong choices."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "explorer",
+        "skillIds": [
+          "logic.maze",
+          "logic.navigation"
+        ],
+        "contentKind": "choice_progression",
+        "progressionTier": 3,
+        "reviewState": "technically_validated",
+        "deepData": {
+          "scene": "maze",
+          "gridSize": 4,
+          "startIndex": 12,
+          "goalIndex": 3,
+          "path": [
+            12,
+            8,
+            9,
+            5,
+            6,
+            2,
+            3
+          ],
+          "obstacles": [
+            4,
+            14
+          ],
+          "commands": [
+            "forward",
+            "turn-right",
+            "forward"
+          ]
+        }
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 75,
+      "publicationState": "published"
+    },
+    {
+      "id": "logic-maze-lv017",
+      "gameId": "logic_maze",
+      "levelNumber": 17,
+      "difficulty": 3,
+      "learningObjective": "Logic Maze tier 3",
+      "localizedContent": {
+        "vi": {
+          "prompt": "MI cần đi 5 bước tới sao. Chọn lệnh đúng.",
+          "options": [
+            {
+              "id": "a",
+              "text": "4 bước",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "6 bước",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "5 bước",
+              "correct": true
+            }
+          ],
+          "deepData": {
+            "steps": [
+              "Tìm MI",
+              "Tránh ô chặn",
+              "Tới ngôi sao"
+            ],
+            "pathSummary": "6 bước an toàn"
+          }
+        },
+        "en": {
+          "prompt": "MI needs 5 steps to the star. Choose the command.",
+          "options": [
+            {
+              "id": "a",
+              "text": "4 steps",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "6 steps",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "5 steps",
+              "correct": true
+            }
+          ],
+          "deepData": {
+            "steps": [
+              "Find MI",
+              "Avoid blocks",
+              "Reach the star"
+            ],
+            "pathSummary": "6 safe moves"
+          }
+        }
+      },
+      "hints": [
+        {
+          "text": "Cấp 3: đọc kỹ câu hỏi và loại đáp án sai."
+        },
+        {
+          "text": "Tier 3: read carefully and remove the wrong choices."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "explorer",
+        "skillIds": [
+          "logic.maze",
+          "logic.navigation"
+        ],
+        "contentKind": "choice_progression",
+        "progressionTier": 3,
+        "reviewState": "technically_validated",
+        "deepData": {
+          "scene": "maze",
+          "gridSize": 4,
+          "startIndex": 12,
+          "goalIndex": 3,
+          "path": [
+            12,
+            13,
+            9,
+            10,
+            6,
+            7,
+            3
+          ],
+          "obstacles": [
+            8
+          ],
+          "commands": [
+            "forward",
+            "turn-right",
+            "forward"
+          ]
+        }
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 75,
+      "publicationState": "published"
+    },
+    {
+      "id": "logic-maze-lv018",
+      "gameId": "logic_maze",
+      "levelNumber": 18,
+      "difficulty": 3,
+      "learningObjective": "Logic Maze tier 3",
+      "localizedContent": {
+        "vi": {
+          "prompt": "MI cần đi 4 bước tới sao. Chọn lệnh đúng.",
+          "options": [
+            {
+              "id": "a",
+              "text": "4 bước",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "text": "5 bước",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "3 bước",
+              "correct": false
+            }
+          ],
+          "deepData": {
+            "steps": [
+              "Tìm MI",
+              "Tránh ô chặn",
+              "Tới ngôi sao"
+            ],
+            "pathSummary": "6 bước an toàn"
+          }
+        },
+        "en": {
+          "prompt": "MI needs 4 steps to the star. Choose the command.",
+          "options": [
+            {
+              "id": "a",
+              "text": "4 steps",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "text": "5 steps",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "3 steps",
+              "correct": false
+            }
+          ],
+          "deepData": {
+            "steps": [
+              "Find MI",
+              "Avoid blocks",
+              "Reach the star"
+            ],
+            "pathSummary": "6 safe moves"
+          }
+        }
+      },
+      "hints": [
+        {
+          "text": "Cấp 3: đọc kỹ câu hỏi và loại đáp án sai."
+        },
+        {
+          "text": "Tier 3: read carefully and remove the wrong choices."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "explorer",
+        "skillIds": [
+          "logic.maze",
+          "logic.navigation"
+        ],
+        "contentKind": "choice_progression",
+        "progressionTier": 3,
+        "reviewState": "technically_validated",
+        "deepData": {
+          "scene": "maze",
+          "gridSize": 4,
+          "startIndex": 12,
+          "goalIndex": 3,
+          "path": [
+            12,
+            8,
+            9,
+            5,
+            6,
+            2,
+            3
+          ],
+          "obstacles": [
+            7
+          ],
+          "commands": [
+            "forward",
+            "turn-right",
+            "forward"
+          ]
+        }
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 75,
+      "publicationState": "published"
+    },
+    {
+      "id": "logic-maze-lv019",
+      "gameId": "logic_maze",
+      "levelNumber": 19,
+      "difficulty": 4,
+      "learningObjective": "Logic Maze tier 4",
+      "localizedContent": {
+        "vi": {
+          "prompt": "MI cần đi 6 bước tới sao. Chọn lệnh đúng.",
+          "options": [
+            {
+              "id": "a",
+              "text": "7 bước",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "6 bước",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "text": "5 bước",
+              "correct": false
+            }
+          ],
+          "deepData": {
+            "steps": [
+              "Tìm MI",
+              "Tránh ô chặn",
+              "Tới ngôi sao"
+            ],
+            "pathSummary": "8 bước an toàn"
+          }
+        },
+        "en": {
+          "prompt": "MI needs 6 steps to the star. Choose the command.",
+          "options": [
+            {
+              "id": "a",
+              "text": "7 steps",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "6 steps",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "text": "5 steps",
+              "correct": false
+            }
+          ],
+          "deepData": {
+            "steps": [
+              "Find MI",
+              "Avoid blocks",
+              "Reach the star"
+            ],
+            "pathSummary": "8 safe moves"
+          }
+        }
+      },
+      "hints": [
+        {
+          "text": "Cấp 4: đọc kỹ câu hỏi và loại đáp án sai."
+        },
+        {
+          "text": "Tier 4: read carefully and remove the wrong choices."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "explorer",
+        "skillIds": [
+          "logic.maze",
+          "logic.navigation"
+        ],
+        "contentKind": "choice_progression",
+        "progressionTier": 4,
+        "reviewState": "technically_validated",
+        "deepData": {
+          "scene": "maze",
+          "gridSize": 5,
+          "startIndex": 20,
+          "goalIndex": 4,
+          "path": [
+            20,
+            21,
+            16,
+            17,
+            12,
+            13,
+            8,
+            9,
+            4
+          ],
+          "obstacles": [
+            1,
+            6,
+            11
+          ],
+          "commands": [
+            "forward",
+            "turn-right",
+            "forward"
+          ]
+        }
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 85,
+      "publicationState": "published"
+    },
+    {
+      "id": "logic-maze-lv020",
+      "gameId": "logic_maze",
+      "levelNumber": 20,
+      "difficulty": 4,
+      "learningObjective": "Logic Maze tier 4",
+      "localizedContent": {
+        "vi": {
+          "prompt": "MI cần đi 5 bước tới sao. Chọn lệnh đúng.",
+          "options": [
+            {
+              "id": "a",
+              "text": "4 bước",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "6 bước",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "5 bước",
+              "correct": true
+            }
+          ],
+          "deepData": {
+            "steps": [
+              "Tìm MI",
+              "Tránh ô chặn",
+              "Tới ngôi sao"
+            ],
+            "pathSummary": "8 bước an toàn"
+          }
+        },
+        "en": {
+          "prompt": "MI needs 5 steps to the star. Choose the command.",
+          "options": [
+            {
+              "id": "a",
+              "text": "4 steps",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "6 steps",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "5 steps",
+              "correct": true
+            }
+          ],
+          "deepData": {
+            "steps": [
+              "Find MI",
+              "Avoid blocks",
+              "Reach the star"
+            ],
+            "pathSummary": "8 safe moves"
+          }
+        }
+      },
+      "hints": [
+        {
+          "text": "Cấp 4: đọc kỹ câu hỏi và loại đáp án sai."
+        },
+        {
+          "text": "Tier 4: read carefully and remove the wrong choices."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "explorer",
+        "skillIds": [
+          "logic.maze",
+          "logic.navigation"
+        ],
+        "contentKind": "choice_progression",
+        "progressionTier": 4,
+        "reviewState": "technically_validated",
+        "deepData": {
+          "scene": "maze",
+          "gridSize": 5,
+          "startIndex": 20,
+          "goalIndex": 4,
+          "path": [
+            20,
+            15,
+            16,
+            11,
+            12,
+            7,
+            8,
+            3,
+            4
+          ],
+          "obstacles": [
+            0,
+            5,
+            10
+          ],
+          "commands": [
+            "forward",
+            "turn-right",
+            "forward"
+          ]
+        }
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 85,
+      "publicationState": "published"
+    },
+    {
+      "id": "logic-maze-lv021",
+      "gameId": "logic_maze",
+      "levelNumber": 21,
+      "difficulty": 4,
+      "learningObjective": "Logic Maze tier 4",
+      "localizedContent": {
+        "vi": {
+          "prompt": "MI cần đi 6 bước tới sao. Chọn lệnh đúng.",
+          "options": [
+            {
+              "id": "a",
+              "text": "6 bước",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "text": "7 bước",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "5 bước",
+              "correct": false
+            }
+          ],
+          "deepData": {
+            "steps": [
+              "Tìm MI",
+              "Tránh ô chặn",
+              "Tới ngôi sao"
+            ],
+            "pathSummary": "8 bước an toàn"
+          }
+        },
+        "en": {
+          "prompt": "MI needs 6 steps to the star. Choose the command.",
+          "options": [
+            {
+              "id": "a",
+              "text": "6 steps",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "text": "7 steps",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "5 steps",
+              "correct": false
+            }
+          ],
+          "deepData": {
+            "steps": [
+              "Find MI",
+              "Avoid blocks",
+              "Reach the star"
+            ],
+            "pathSummary": "8 safe moves"
+          }
+        }
+      },
+      "hints": [
+        {
+          "text": "Cấp 4: đọc kỹ câu hỏi và loại đáp án sai."
+        },
+        {
+          "text": "Tier 4: read carefully and remove the wrong choices."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "explorer",
+        "skillIds": [
+          "logic.maze",
+          "logic.navigation"
+        ],
+        "contentKind": "choice_progression",
+        "progressionTier": 4,
+        "reviewState": "technically_validated",
+        "deepData": {
+          "scene": "maze",
+          "gridSize": 5,
+          "startIndex": 20,
+          "goalIndex": 4,
+          "path": [
+            20,
+            21,
+            16,
+            17,
+            12,
+            13,
+            8,
+            9,
+            4
+          ],
+          "obstacles": [
+            14,
+            19,
+            24
+          ],
+          "commands": [
+            "forward",
+            "turn-right",
+            "forward"
+          ]
+        }
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 85,
+      "publicationState": "published"
+    },
+    {
+      "id": "logic-maze-lv022",
+      "gameId": "logic_maze",
+      "levelNumber": 22,
+      "difficulty": 4,
+      "learningObjective": "Logic Maze tier 4",
+      "localizedContent": {
+        "vi": {
+          "prompt": "MI cần đi 5 bước tới sao. Chọn lệnh đúng.",
+          "options": [
+            {
+              "id": "a",
+              "text": "6 bước",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "5 bước",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "text": "4 bước",
+              "correct": false
+            }
+          ],
+          "deepData": {
+            "steps": [
+              "Tìm MI",
+              "Tránh ô chặn",
+              "Tới ngôi sao"
+            ],
+            "pathSummary": "8 bước an toàn"
+          }
+        },
+        "en": {
+          "prompt": "MI needs 5 steps to the star. Choose the command.",
+          "options": [
+            {
+              "id": "a",
+              "text": "6 steps",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "5 steps",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "text": "4 steps",
+              "correct": false
+            }
+          ],
+          "deepData": {
+            "steps": [
+              "Find MI",
+              "Avoid blocks",
+              "Reach the star"
+            ],
+            "pathSummary": "8 safe moves"
+          }
+        }
+      },
+      "hints": [
+        {
+          "text": "Cấp 4: đọc kỹ câu hỏi và loại đáp án sai."
+        },
+        {
+          "text": "Tier 4: read carefully and remove the wrong choices."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "explorer",
+        "skillIds": [
+          "logic.maze",
+          "logic.navigation"
+        ],
+        "contentKind": "choice_progression",
+        "progressionTier": 4,
+        "reviewState": "technically_validated",
+        "deepData": {
+          "scene": "maze",
+          "gridSize": 5,
+          "startIndex": 20,
+          "goalIndex": 4,
+          "path": [
+            20,
+            15,
+            16,
+            11,
+            12,
+            7,
+            8,
+            3,
+            4
+          ],
+          "obstacles": [
+            13,
+            18,
+            23
+          ],
+          "commands": [
+            "forward",
+            "turn-right",
+            "forward"
+          ]
+        }
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 85,
+      "publicationState": "published"
+    },
+    {
+      "id": "logic-maze-lv023",
+      "gameId": "logic_maze",
+      "levelNumber": 23,
+      "difficulty": 4,
+      "learningObjective": "Logic Maze tier 4",
+      "localizedContent": {
+        "vi": {
+          "prompt": "MI cần đi 6 bước tới sao. Chọn lệnh đúng.",
+          "options": [
+            {
+              "id": "a",
+              "text": "5 bước",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "7 bước",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "6 bước",
+              "correct": true
+            }
+          ],
+          "deepData": {
+            "steps": [
+              "Tìm MI",
+              "Tránh ô chặn",
+              "Tới ngôi sao"
+            ],
+            "pathSummary": "8 bước an toàn"
+          }
+        },
+        "en": {
+          "prompt": "MI needs 6 steps to the star. Choose the command.",
+          "options": [
+            {
+              "id": "a",
+              "text": "5 steps",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "7 steps",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "6 steps",
+              "correct": true
+            }
+          ],
+          "deepData": {
+            "steps": [
+              "Find MI",
+              "Avoid blocks",
+              "Reach the star"
+            ],
+            "pathSummary": "8 safe moves"
+          }
+        }
+      },
+      "hints": [
+        {
+          "text": "Cấp 4: đọc kỹ câu hỏi và loại đáp án sai."
+        },
+        {
+          "text": "Tier 4: read carefully and remove the wrong choices."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "explorer",
+        "skillIds": [
+          "logic.maze",
+          "logic.navigation"
+        ],
+        "contentKind": "choice_progression",
+        "progressionTier": 4,
+        "reviewState": "technically_validated",
+        "deepData": {
+          "scene": "maze",
+          "gridSize": 5,
+          "startIndex": 20,
+          "goalIndex": 4,
+          "path": [
+            20,
+            21,
+            16,
+            17,
+            12,
+            13,
+            8,
+            9,
+            4
+          ],
+          "obstacles": [
+            2,
+            7,
+            22
+          ],
+          "commands": [
+            "forward",
+            "turn-right",
+            "forward"
+          ]
+        }
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 85,
+      "publicationState": "published"
+    },
+    {
+      "id": "logic-maze-lv024",
+      "gameId": "logic_maze",
+      "levelNumber": 24,
+      "difficulty": 4,
+      "learningObjective": "Logic Maze tier 4",
+      "localizedContent": {
+        "vi": {
+          "prompt": "MI cần đi 5 bước tới sao. Chọn lệnh đúng.",
+          "options": [
+            {
+              "id": "a",
+              "text": "5 bước",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "text": "6 bước",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "4 bước",
+              "correct": false
+            }
+          ],
+          "deepData": {
+            "steps": [
+              "Tìm MI",
+              "Tránh ô chặn",
+              "Tới ngôi sao"
+            ],
+            "pathSummary": "8 bước an toàn"
+          }
+        },
+        "en": {
+          "prompt": "MI needs 5 steps to the star. Choose the command.",
+          "options": [
+            {
+              "id": "a",
+              "text": "5 steps",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "text": "6 steps",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "4 steps",
+              "correct": false
+            }
+          ],
+          "deepData": {
+            "steps": [
+              "Find MI",
+              "Avoid blocks",
+              "Reach the star"
+            ],
+            "pathSummary": "8 safe moves"
+          }
+        }
+      },
+      "hints": [
+        {
+          "text": "Cấp 4: đọc kỹ câu hỏi và loại đáp án sai."
+        },
+        {
+          "text": "Tier 4: read carefully and remove the wrong choices."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "explorer",
+        "skillIds": [
+          "logic.maze",
+          "logic.navigation"
+        ],
+        "contentKind": "choice_progression",
+        "progressionTier": 4,
+        "reviewState": "technically_validated",
+        "deepData": {
+          "scene": "maze",
+          "gridSize": 5,
+          "startIndex": 20,
+          "goalIndex": 4,
+          "path": [
+            20,
+            15,
+            16,
+            11,
+            12,
+            7,
+            8,
+            3,
+            4
+          ],
+          "obstacles": [
+            1,
+            6,
+            21
+          ],
+          "commands": [
+            "forward",
+            "turn-right",
+            "forward"
+          ]
+        }
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 85,
+      "publicationState": "published"
+    },
+    {
+      "id": "logic-maze-lv025",
+      "gameId": "logic_maze",
+      "levelNumber": 25,
+      "difficulty": 5,
+      "learningObjective": "Logic Maze tier 5",
+      "localizedContent": {
+        "vi": {
+          "prompt": "MI cần đi 7 bước tới sao. Chọn lệnh đúng.",
+          "options": [
+            {
+              "id": "a",
+              "text": "8 bước",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "7 bước",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "text": "6 bước",
+              "correct": false
+            }
+          ],
+          "deepData": {
+            "steps": [
+              "Tìm MI",
+              "Tránh ô chặn",
+              "Tới ngôi sao"
+            ],
+            "pathSummary": "8 bước an toàn"
+          }
+        },
+        "en": {
+          "prompt": "MI needs 7 steps to the star. Choose the command.",
+          "options": [
+            {
+              "id": "a",
+              "text": "8 steps",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "7 steps",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "text": "6 steps",
+              "correct": false
+            }
+          ],
+          "deepData": {
+            "steps": [
+              "Find MI",
+              "Avoid blocks",
+              "Reach the star"
+            ],
+            "pathSummary": "8 safe moves"
+          }
+        }
+      },
+      "hints": [
+        {
+          "text": "Cấp 5: đọc kỹ câu hỏi và loại đáp án sai."
+        },
+        {
+          "text": "Tier 5: read carefully and remove the wrong choices."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "explorer",
+        "skillIds": [
+          "logic.maze",
+          "logic.navigation"
+        ],
+        "contentKind": "choice_progression",
+        "progressionTier": 5,
+        "reviewState": "technically_validated",
+        "deepData": {
+          "scene": "maze",
+          "gridSize": 5,
+          "startIndex": 20,
+          "goalIndex": 4,
+          "path": [
+            20,
+            21,
+            16,
+            17,
+            12,
+            13,
+            8,
+            9,
+            4
+          ],
+          "obstacles": [
+            0,
+            5,
+            10,
+            15
+          ],
+          "commands": [
+            "forward",
+            "turn-right",
+            "forward"
+          ]
+        }
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 95,
+      "publicationState": "published"
+    },
+    {
+      "id": "logic-maze-lv026",
+      "gameId": "logic_maze",
+      "levelNumber": 26,
+      "difficulty": 5,
+      "learningObjective": "Logic Maze tier 5",
+      "localizedContent": {
+        "vi": {
+          "prompt": "MI cần đi 6 bước tới sao. Chọn lệnh đúng.",
+          "options": [
+            {
+              "id": "a",
+              "text": "5 bước",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "7 bước",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "6 bước",
+              "correct": true
+            }
+          ],
+          "deepData": {
+            "steps": [
+              "Tìm MI",
+              "Tránh ô chặn",
+              "Tới ngôi sao"
+            ],
+            "pathSummary": "8 bước an toàn"
+          }
+        },
+        "en": {
+          "prompt": "MI needs 6 steps to the star. Choose the command.",
+          "options": [
+            {
+              "id": "a",
+              "text": "5 steps",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "7 steps",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "6 steps",
+              "correct": true
+            }
+          ],
+          "deepData": {
+            "steps": [
+              "Find MI",
+              "Avoid blocks",
+              "Reach the star"
+            ],
+            "pathSummary": "8 safe moves"
+          }
+        }
+      },
+      "hints": [
+        {
+          "text": "Cấp 5: đọc kỹ câu hỏi và loại đáp án sai."
+        },
+        {
+          "text": "Tier 5: read carefully and remove the wrong choices."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "explorer",
+        "skillIds": [
+          "logic.maze",
+          "logic.navigation"
+        ],
+        "contentKind": "choice_progression",
+        "progressionTier": 5,
+        "reviewState": "technically_validated",
+        "deepData": {
+          "scene": "maze",
+          "gridSize": 5,
+          "startIndex": 20,
+          "goalIndex": 4,
+          "path": [
+            20,
+            15,
+            16,
+            11,
+            12,
+            7,
+            8,
+            3,
+            4
+          ],
+          "obstacles": [
+            9,
+            14,
+            19,
+            24
+          ],
+          "commands": [
+            "forward",
+            "turn-right",
+            "forward"
+          ]
+        }
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 95,
+      "publicationState": "published"
+    },
+    {
+      "id": "logic-maze-lv027",
+      "gameId": "logic_maze",
+      "levelNumber": 27,
+      "difficulty": 5,
+      "learningObjective": "Logic Maze tier 5",
+      "localizedContent": {
+        "vi": {
+          "prompt": "MI cần đi 7 bước tới sao. Chọn lệnh đúng.",
+          "options": [
+            {
+              "id": "a",
+              "text": "7 bước",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "text": "8 bước",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "6 bước",
+              "correct": false
+            }
+          ],
+          "deepData": {
+            "steps": [
+              "Tìm MI",
+              "Tránh ô chặn",
+              "Tới ngôi sao"
+            ],
+            "pathSummary": "8 bước an toàn"
+          }
+        },
+        "en": {
+          "prompt": "MI needs 7 steps to the star. Choose the command.",
+          "options": [
+            {
+              "id": "a",
+              "text": "7 steps",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "text": "8 steps",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "6 steps",
+              "correct": false
+            }
+          ],
+          "deepData": {
+            "steps": [
+              "Find MI",
+              "Avoid blocks",
+              "Reach the star"
+            ],
+            "pathSummary": "8 safe moves"
+          }
+        }
+      },
+      "hints": [
+        {
+          "text": "Cấp 5: đọc kỹ câu hỏi và loại đáp án sai."
+        },
+        {
+          "text": "Tier 5: read carefully and remove the wrong choices."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "explorer",
+        "skillIds": [
+          "logic.maze",
+          "logic.navigation"
+        ],
+        "contentKind": "choice_progression",
+        "progressionTier": 5,
+        "reviewState": "technically_validated",
+        "deepData": {
+          "scene": "maze",
+          "gridSize": 5,
+          "startIndex": 20,
+          "goalIndex": 4,
+          "path": [
+            20,
+            21,
+            16,
+            17,
+            12,
+            13,
+            8,
+            9,
+            4
+          ],
+          "obstacles": [
+            3,
+            18,
+            23
+          ],
+          "commands": [
+            "forward",
+            "turn-right",
+            "forward"
+          ]
+        }
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 95,
+      "publicationState": "published"
+    },
+    {
+      "id": "logic-maze-lv028",
+      "gameId": "logic_maze",
+      "levelNumber": 28,
+      "difficulty": 5,
+      "learningObjective": "Logic Maze tier 5",
+      "localizedContent": {
+        "vi": {
+          "prompt": "MI cần đi 6 bước tới sao. Chọn lệnh đúng.",
+          "options": [
+            {
+              "id": "a",
+              "text": "7 bước",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "6 bước",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "text": "5 bước",
+              "correct": false
+            }
+          ],
+          "deepData": {
+            "steps": [
+              "Tìm MI",
+              "Tránh ô chặn",
+              "Tới ngôi sao"
+            ],
+            "pathSummary": "8 bước an toàn"
+          }
+        },
+        "en": {
+          "prompt": "MI needs 6 steps to the star. Choose the command.",
+          "options": [
+            {
+              "id": "a",
+              "text": "7 steps",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "6 steps",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "text": "5 steps",
+              "correct": false
+            }
+          ],
+          "deepData": {
+            "steps": [
+              "Find MI",
+              "Avoid blocks",
+              "Reach the star"
+            ],
+            "pathSummary": "8 safe moves"
+          }
+        }
+      },
+      "hints": [
+        {
+          "text": "Cấp 5: đọc kỹ câu hỏi và loại đáp án sai."
+        },
+        {
+          "text": "Tier 5: read carefully and remove the wrong choices."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "explorer",
+        "skillIds": [
+          "logic.maze",
+          "logic.navigation"
+        ],
+        "contentKind": "choice_progression",
+        "progressionTier": 5,
+        "reviewState": "technically_validated",
+        "deepData": {
+          "scene": "maze",
+          "gridSize": 5,
+          "startIndex": 20,
+          "goalIndex": 4,
+          "path": [
+            20,
+            15,
+            16,
+            11,
+            12,
+            7,
+            8,
+            3,
+            4
+          ],
+          "obstacles": [
+            2,
+            17,
+            22
+          ],
+          "commands": [
+            "forward",
+            "turn-right",
+            "forward"
+          ]
+        }
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 95,
+      "publicationState": "published"
+    },
+    {
+      "id": "logic-maze-lv029",
+      "gameId": "logic_maze",
+      "levelNumber": 29,
+      "difficulty": 5,
+      "learningObjective": "Logic Maze tier 5",
+      "localizedContent": {
+        "vi": {
+          "prompt": "MI cần đi 7 bước tới sao. Chọn lệnh đúng.",
+          "options": [
+            {
+              "id": "a",
+              "text": "6 bước",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "8 bước",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "7 bước",
+              "correct": true
+            }
+          ],
+          "deepData": {
+            "steps": [
+              "Tìm MI",
+              "Tránh ô chặn",
+              "Tới ngôi sao"
+            ],
+            "pathSummary": "8 bước an toàn"
+          }
+        },
+        "en": {
+          "prompt": "MI needs 7 steps to the star. Choose the command.",
+          "options": [
+            {
+              "id": "a",
+              "text": "6 steps",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "8 steps",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "7 steps",
+              "correct": true
+            }
+          ],
+          "deepData": {
+            "steps": [
+              "Find MI",
+              "Avoid blocks",
+              "Reach the star"
+            ],
+            "pathSummary": "8 safe moves"
+          }
+        }
+      },
+      "hints": [
+        {
+          "text": "Cấp 5: đọc kỹ câu hỏi và loại đáp án sai."
+        },
+        {
+          "text": "Tier 5: read carefully and remove the wrong choices."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "explorer",
+        "skillIds": [
+          "logic.maze",
+          "logic.navigation"
+        ],
+        "contentKind": "choice_progression",
+        "progressionTier": 5,
+        "reviewState": "technically_validated",
+        "deepData": {
+          "scene": "maze",
+          "gridSize": 5,
+          "startIndex": 20,
+          "goalIndex": 4,
+          "path": [
+            20,
+            21,
+            16,
+            17,
+            12,
+            13,
+            8,
+            9,
+            4
+          ],
+          "obstacles": [
+            1,
+            6,
+            11
+          ],
+          "commands": [
+            "forward",
+            "turn-right",
+            "forward"
+          ]
+        }
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 95,
+      "publicationState": "published"
+    },
+    {
+      "id": "logic-maze-lv030",
+      "gameId": "logic_maze",
+      "levelNumber": 30,
+      "difficulty": 5,
+      "learningObjective": "Logic Maze tier 5",
+      "localizedContent": {
+        "vi": {
+          "prompt": "MI cần đi 6 bước tới sao. Chọn lệnh đúng.",
+          "options": [
+            {
+              "id": "a",
+              "text": "6 bước",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "text": "7 bước",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "5 bước",
+              "correct": false
+            }
+          ],
+          "deepData": {
+            "steps": [
+              "Tìm MI",
+              "Tránh ô chặn",
+              "Tới ngôi sao"
+            ],
+            "pathSummary": "8 bước an toàn"
+          }
+        },
+        "en": {
+          "prompt": "MI needs 6 steps to the star. Choose the command.",
+          "options": [
+            {
+              "id": "a",
+              "text": "6 steps",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "text": "7 steps",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "5 steps",
+              "correct": false
+            }
+          ],
+          "deepData": {
+            "steps": [
+              "Find MI",
+              "Avoid blocks",
+              "Reach the star"
+            ],
+            "pathSummary": "8 safe moves"
+          }
+        }
+      },
+      "hints": [
+        {
+          "text": "Cấp 5: đọc kỹ câu hỏi và loại đáp án sai."
+        },
+        {
+          "text": "Tier 5: read carefully and remove the wrong choices."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "explorer",
+        "skillIds": [
+          "logic.maze",
+          "logic.navigation"
+        ],
+        "contentKind": "choice_progression",
+        "progressionTier": 5,
+        "reviewState": "technically_validated",
+        "deepData": {
+          "scene": "maze",
+          "gridSize": 5,
+          "startIndex": 20,
+          "goalIndex": 4,
+          "path": [
+            20,
+            15,
+            16,
+            11,
+            12,
+            7,
+            8,
+            3,
+            4
+          ],
+          "obstacles": [
+            0,
+            5,
+            10
+          ],
+          "commands": [
+            "forward",
+            "turn-right",
+            "forward"
+          ]
+        }
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 95,
+      "publicationState": "published"
+    }
+  ]
+}

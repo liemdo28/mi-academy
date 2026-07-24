@@ -182,6 +182,7 @@ class _DeepLogicGameScreenState extends State<DeepLogicGameScreen>
   Widget build(BuildContext context) {
     final text = GameLocaleText(widget.locale);
     final prompt = _content['prompt'] as String? ?? '';
+    final deepData = _DeepLevelData.from(level: _level, content: _content);
 
     return Scaffold(
       backgroundColor: GameTheme.background,
@@ -210,6 +211,7 @@ class _DeepLogicGameScreenState extends State<DeepLogicGameScreen>
                     levelNumber: _level.levelNumber,
                     difficulty: _level.difficulty,
                     options: _session.options,
+                    deepData: deepData,
                   ),
                   const SizedBox(height: 16),
                   _PromptCard(
@@ -283,6 +285,7 @@ class _DeepScenePanel extends StatelessWidget {
     required this.levelNumber,
     required this.difficulty,
     required this.options,
+    required this.deepData,
   });
 
   final DeepLogicScene scene;
@@ -292,6 +295,7 @@ class _DeepScenePanel extends StatelessWidget {
   final int levelNumber;
   final int difficulty;
   final List<ChoiceGameOption> options;
+  final _DeepLevelData deepData;
 
   @override
   Widget build(BuildContext context) {
@@ -334,29 +338,38 @@ class _DeepScenePanel extends StatelessWidget {
                   color: color,
                   levelNumber: levelNumber,
                   difficulty: difficulty,
+                  deepData: deepData,
                 ),
               DeepLogicScene.sudoku => _SudokuBoard(
                   color: color,
                   options: options,
                   levelNumber: levelNumber,
                   locale: locale,
+                  deepData: deepData,
                 ),
               DeepLogicScene.detective => _DetectiveBoard(
                   color: color,
                   locale: locale,
                   levelNumber: levelNumber,
+                  deepData: deepData,
                 ),
               DeepLogicScene.creative => _CreativeBoard(
                   color: color,
                   locale: locale,
                   options: options,
+                  deepData: deepData,
                 ),
               DeepLogicScene.reading => _ReadingBoard(
                   color: color,
                   locale: locale,
                   levelNumber: levelNumber,
+                  deepData: deepData,
                 ),
             },
+            if (deepData.sceneNotes.isNotEmpty) ...[
+              const SizedBox(height: 12),
+              _SceneNotes(notes: deepData.sceneNotes, color: color),
+            ],
           ],
         ),
       ),
@@ -392,30 +405,23 @@ class _MazeBoard extends StatelessWidget {
     required this.color,
     required this.levelNumber,
     required this.difficulty,
+    required this.deepData,
   });
 
   final Color color;
   final int levelNumber;
   final int difficulty;
+  final _DeepLevelData deepData;
 
   @override
   Widget build(BuildContext context) {
-    final size = difficulty >= 4 ? 5 : 4;
-    final pathLength = (levelNumber % 4) + difficulty + 1;
-    final path = <int>{};
-    var row = size - 1;
-    var col = 0;
-    path.add(row * size + col);
-    for (var step = 0;
-        step < pathLength && (row > 0 || col < size - 1);
-        step++) {
-      if ((step + levelNumber).isEven && col < size - 1) {
-        col++;
-      } else if (row > 0) {
-        row--;
-      }
-      path.add(row * size + col);
-    }
+    final size = deepData.gridSize ?? (difficulty >= 4 ? 5 : 4);
+    final start = deepData.startIndex ?? (size - 1) * size;
+    final goal = deepData.goalIndex ?? size - 1;
+    final path = deepData.pathIndexes.isNotEmpty
+        ? deepData.pathIndexes.toSet()
+        : _fallbackMazePath(size, levelNumber, difficulty);
+    final obstacles = deepData.obstacleIndexes.toSet();
 
     return AspectRatio(
       aspectRatio: 1,
@@ -428,13 +434,17 @@ class _MazeBoard extends StatelessWidget {
           crossAxisSpacing: 8,
         ),
         itemBuilder: (context, index) {
-          final isStart = index == (size - 1) * size;
-          final isGoal = index == size - 1;
+          final isStart = index == start;
+          final isGoal = index == goal;
           final isPath = path.contains(index);
+          final isObstacle = obstacles.contains(index);
           return DecoratedBox(
             decoration: BoxDecoration(
-              color:
-                  isPath ? color.withValues(alpha: 0.16) : MiColors.background,
+              color: isObstacle
+                  ? MiColors.navy.withValues(alpha: 0.08)
+                  : isPath
+                      ? color.withValues(alpha: 0.16)
+                      : MiColors.background,
               borderRadius: BorderRadius.circular(10),
               border: Border.all(
                 color: isGoal || isStart ? color : color.withValues(alpha: 0.2),
@@ -461,6 +471,25 @@ class _MazeBoard extends StatelessWidget {
       ),
     );
   }
+
+  Set<int> _fallbackMazePath(int size, int levelNumber, int difficulty) {
+    final pathLength = (levelNumber % 4) + difficulty + 1;
+    final path = <int>{};
+    var row = size - 1;
+    var col = 0;
+    path.add(row * size + col);
+    for (var step = 0;
+        step < pathLength && (row > 0 || col < size - 1);
+        step++) {
+      if ((step + levelNumber).isEven && col < size - 1) {
+        col++;
+      } else if (row > 0) {
+        row--;
+      }
+      path.add(row * size + col);
+    }
+    return path;
+  }
 }
 
 class _SudokuBoard extends StatelessWidget {
@@ -469,30 +498,39 @@ class _SudokuBoard extends StatelessWidget {
     required this.options,
     required this.levelNumber,
     required this.locale,
+    required this.deepData,
   });
 
   final Color color;
   final List<ChoiceGameOption> options;
   final int levelNumber;
   final String locale;
+  final _DeepLevelData deepData;
 
   @override
   Widget build(BuildContext context) {
-    final symbols = ['A', 'B', 'C', 'D'];
-    final blank = levelNumber % 16;
+    final symbols = deepData.symbols.isNotEmpty
+        ? deepData.symbols
+        : const ['A', 'B', 'C', 'D'];
+    final size = deepData.gridSize ?? 4;
+    final blank = deepData.blankIndex ?? levelNumber % (size * size);
     return Column(
       children: [
         AspectRatio(
           aspectRatio: 1,
           child: GridView.builder(
             physics: const NeverScrollableScrollPhysics(),
-            itemCount: 16,
-            gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-              crossAxisCount: 4,
+            itemCount: size * size,
+            gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+              crossAxisCount: size,
             ),
             itemBuilder: (context, index) {
               final isBlank = index == blank;
-              final value = isBlank ? '?' : symbols[(index + levelNumber) % 4];
+              final authoredValue = deepData.givens[index];
+              final value = isBlank
+                  ? '?'
+                  : authoredValue ??
+                      symbols[(index + levelNumber) % symbols.length];
               return DecoratedBox(
                 decoration: BoxDecoration(
                   color: isBlank ? color.withValues(alpha: 0.14) : Colors.white,
@@ -527,18 +565,22 @@ class _DetectiveBoard extends StatelessWidget {
     required this.color,
     required this.locale,
     required this.levelNumber,
+    required this.deepData,
   });
 
   final Color color;
   final String locale;
   final int levelNumber;
+  final _DeepLevelData deepData;
 
   @override
   Widget build(BuildContext context) {
     final labels = locale == 'en'
         ? ['Clue 1', 'Clue 2', 'Conclusion']
         : ['Manh mối 1', 'Manh mối 2', 'Kết luận'];
-    final values = ['A before B', 'B before C', 'Who is first?'];
+    final values = deepData.clues.isNotEmpty
+        ? deepData.clues
+        : ['A before B', 'B before C', 'Who is first?'];
     return Column(
       children: [
         for (var i = 0; i < labels.length; i++)
@@ -571,20 +613,27 @@ class _CreativeBoard extends StatelessWidget {
     required this.color,
     required this.locale,
     required this.options,
+    required this.deepData,
   });
 
   final Color color;
   final String locale;
   final List<ChoiceGameOption> options;
+  final _DeepLevelData deepData;
 
   @override
   Widget build(BuildContext context) {
-    final labels = locale == 'en'
-        ? ['Setting', 'Feeling', 'Detail']
-        : ['Bối cảnh', 'Cảm xúc', 'Chi tiết'];
+    final labels = deepData.storyLabels.isNotEmpty
+        ? deepData.storyLabels
+        : locale == 'en'
+            ? ['Setting', 'Feeling', 'Detail']
+            : ['Bối cảnh', 'Cảm xúc', 'Chi tiết'];
+    final cards = deepData.storyCards.isNotEmpty
+        ? deepData.storyCards
+        : options.map((option) => option.text).toList(growable: false);
     return Row(
       children: [
-        for (var i = 0; i < labels.length; i++)
+        for (var i = 0; i < labels.take(3).length; i++)
           Expanded(
             child: Padding(
               padding: EdgeInsets.only(right: i == labels.length - 1 ? 0 : 8),
@@ -616,7 +665,7 @@ class _CreativeBoard extends StatelessWidget {
                     ),
                     const SizedBox(height: 6),
                     Text(
-                      options.isEmpty ? '' : options[i % options.length].text,
+                      cards.isEmpty ? '' : cards[i % cards.length],
                       style: GameTheme.bodyMedium.copyWith(fontSize: 13),
                       textAlign: TextAlign.center,
                       maxLines: 3,
@@ -637,19 +686,39 @@ class _ReadingBoard extends StatelessWidget {
     required this.color,
     required this.locale,
     required this.levelNumber,
+    required this.deepData,
   });
 
   final Color color;
   final String locale;
   final int levelNumber;
+  final _DeepLevelData deepData;
 
   @override
   Widget build(BuildContext context) {
-    final steps = locale == 'en'
-        ? ['Read', 'Find the fact', 'Choose']
-        : ['Đọc', 'Tìm chi tiết', 'Chọn đáp án'];
+    final steps = deepData.readingSteps.isNotEmpty
+        ? deepData.readingSteps
+        : locale == 'en'
+            ? ['Read', 'Find the fact', 'Choose']
+            : ['Đọc', 'Tìm chi tiết', 'Chọn đáp án'];
     return Column(
       children: [
+        if (deepData.passage != null) ...[
+          Container(
+            width: double.infinity,
+            padding: const EdgeInsets.all(14),
+            decoration: BoxDecoration(
+              color: color.withValues(alpha: 0.1),
+              borderRadius: BorderRadius.circular(14),
+            ),
+            child: Text(
+              deepData.passage!,
+              style: GameTheme.bodyMedium.copyWith(color: MiColors.navy),
+              textAlign: TextAlign.center,
+            ),
+          ),
+          const SizedBox(height: 12),
+        ],
         for (var i = 0; i < steps.length; i++)
           Padding(
             padding: const EdgeInsets.only(bottom: 8),
@@ -677,6 +746,106 @@ class _ReadingBoard extends StatelessWidget {
               )
               .toList(growable: false),
         ),
+      ],
+    );
+  }
+}
+
+class _DeepLevelData {
+  const _DeepLevelData({
+    required this.localized,
+    required this.structural,
+  });
+
+  factory _DeepLevelData.from({
+    required MiLevel level,
+    required Map<String, dynamic> content,
+  }) {
+    return _DeepLevelData(
+      localized: _asMap(content['deepData']),
+      structural: _asMap(level.metadata['deepData']),
+    );
+  }
+
+  final Map<String, dynamic> localized;
+  final Map<String, dynamic> structural;
+
+  int? get gridSize => _asInt(structural['gridSize']);
+  int? get startIndex => _asInt(structural['startIndex']);
+  int? get goalIndex => _asInt(structural['goalIndex']);
+  int? get blankIndex => _asInt(structural['blankIndex']);
+  List<int> get pathIndexes => _asIntList(structural['path']);
+  List<int> get obstacleIndexes => _asIntList(structural['obstacles']);
+  List<String> get symbols => _asStringList(structural['symbols']);
+  Map<int, String> get givens => _asIntStringMap(structural['givens']);
+  List<String> get clues => _asStringList(localized['clues']);
+  List<String> get storyLabels => _asStringList(localized['storyLabels']);
+  List<String> get storyCards => _asStringList(localized['storyCards']);
+  List<String> get readingSteps => _asStringList(localized['steps']);
+  String? get passage => localized['passage'] as String?;
+  List<String> get sceneNotes => [
+        if (localized['pathSummary'] case final String pathSummary) pathSummary,
+        ...readingSteps,
+      ];
+
+  static Map<String, dynamic> _asMap(Object? value) {
+    if (value is Map) return Map<String, dynamic>.from(value);
+    return const {};
+  }
+
+  static int? _asInt(Object? value) => value is num ? value.toInt() : null;
+
+  static List<int> _asIntList(Object? value) {
+    if (value is! List) return const [];
+    return value.whereType<num>().map((item) => item.toInt()).toList();
+  }
+
+  static List<String> _asStringList(Object? value) {
+    if (value is! List) return const [];
+    return value.map((item) => item.toString()).toList(growable: false);
+  }
+
+  static Map<int, String> _asIntStringMap(Object? value) {
+    if (value is! Map) return const {};
+    final result = <int, String>{};
+    for (final entry in value.entries) {
+      final parsedKey = int.tryParse(entry.key.toString());
+      if (parsedKey != null) result[parsedKey] = entry.value.toString();
+    }
+    return result;
+  }
+}
+
+class _SceneNotes extends StatelessWidget {
+  const _SceneNotes({
+    required this.notes,
+    required this.color,
+  });
+
+  final List<String> notes;
+  final Color color;
+
+  @override
+  Widget build(BuildContext context) {
+    return Wrap(
+      spacing: 8,
+      runSpacing: 8,
+      children: [
+        for (final note in notes)
+          Container(
+            padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
+            decoration: BoxDecoration(
+              color: color.withValues(alpha: 0.1),
+              borderRadius: BorderRadius.circular(999),
+            ),
+            child: Text(
+              note,
+              style: GameTheme.bodyMedium.copyWith(
+                color: MiColors.navy,
+                fontSize: 13,
+              ),
+            ),
+          ),
       ],
     );
   }

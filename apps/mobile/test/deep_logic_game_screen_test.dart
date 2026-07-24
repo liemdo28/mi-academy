@@ -26,6 +26,7 @@ void main() {
 
       expect(find.text(fixture.title), findsOneWidget);
       expect(find.text(fixture.sceneLabel), findsOneWidget);
+      expect(find.textContaining(fixture.authoredText), findsOneWidget);
       await tester.dragUntilVisible(
         find.text(fixture.prompt),
         find.byType(ListView),
@@ -83,6 +84,7 @@ const _fixtures = [
     title: 'Logic Maze',
     worldLabel: 'MI plans a path through the maze.',
     sceneLabel: 'Path planner',
+    authoredText: '4 safe moves',
     scene: DeepLogicScene.maze,
     color: Color(0xFF8E6BFF),
     level: _mazeLevel,
@@ -91,6 +93,7 @@ const _fixtures = [
     title: 'Kids Sudoku',
     worldLabel: 'MI solves small grids with clues.',
     sceneLabel: 'Mini grid',
+    authoredText: 'Check the row',
     scene: DeepLogicScene.sudoku,
     color: Color(0xFF8E6BFF),
     level: _sudokuLevel,
@@ -99,6 +102,7 @@ const _fixtures = [
     title: 'Reasoning Detective',
     worldLabel: 'MI follows clues step by step.',
     sceneLabel: 'Clue board',
+    authoredText: 'A stands before B.',
     scene: DeepLogicScene.detective,
     color: Color(0xFF8E6BFF),
     level: _detectiveLevel,
@@ -107,6 +111,7 @@ const _fixtures = [
     title: 'Free Creativity',
     worldLabel: 'MI helps turn ideas into a story.',
     sceneLabel: 'Story lab',
+    authoredText: 'A small classroom',
     scene: DeepLogicScene.creative,
     color: Color(0xFFFF8A00),
     level: _creativeLevel,
@@ -115,6 +120,7 @@ const _fixtures = [
     title: 'Story Comprehension',
     worldLabel: 'MI reads short stories with you.',
     sceneLabel: 'Story lens',
+    authoredText: 'Story note: read carefully.',
     scene: DeepLogicScene.reading,
     color: Color(0xFF4A90E2),
     level: _readingLevel,
@@ -126,6 +132,7 @@ class _Fixture {
     required this.title,
     required this.worldLabel,
     required this.sceneLabel,
+    required this.authoredText,
     required this.scene,
     required this.color,
     required this.level,
@@ -134,6 +141,7 @@ class _Fixture {
   final String title;
   final String worldLabel;
   final String sceneLabel;
+  final String authoredText;
   final DeepLogicScene scene;
   final Color color;
   final MiLevel level;
@@ -154,6 +162,10 @@ const _mazeLevel = MiLevel(
         {'id': 'b', 'text': 'Correct answer', 'correct': true},
         {'id': 'c', 'text': 'Try later', 'correct': false},
       ],
+      'deepData': {
+        'pathSummary': '4 safe moves',
+        'steps': ['Find MI', 'Avoid blocks', 'Reach the star'],
+      },
     },
   },
   hints: [
@@ -161,6 +173,14 @@ const _mazeLevel = MiLevel(
   ],
   metadata: {
     'skillIds': ['logic.maze'],
+    'deepData': {
+      'scene': 'maze',
+      'gridSize': 4,
+      'startIndex': 12,
+      'goalIndex': 3,
+      'path': [12, 8, 4, 0, 1, 2, 3],
+      'obstacles': [5, 10],
+    },
   },
 );
 
@@ -177,6 +197,9 @@ const _sudokuLevel = MiLevel(
         {'id': 'b', 'text': 'Correct answer', 'correct': true},
         {'id': 'c', 'text': 'C', 'correct': false},
       ],
+      'deepData': {
+        'steps': ['Check the row', 'Check the column', 'Try B'],
+      },
     },
   },
   hints: [
@@ -184,6 +207,22 @@ const _sudokuLevel = MiLevel(
   ],
   metadata: {
     'skillIds': ['logic.conditions'],
+    'deepData': {
+      'scene': 'sudoku',
+      'gridSize': 3,
+      'symbols': ['A', 'B', 'C'],
+      'blankIndex': 4,
+      'givens': {
+        '0': 'A',
+        '1': 'B',
+        '2': 'C',
+        '3': 'B',
+        '5': 'A',
+        '6': 'C',
+        '7': 'A',
+        '8': 'B',
+      },
+    },
   },
 );
 
@@ -200,6 +239,13 @@ const _detectiveLevel = MiLevel(
         {'id': 'b', 'text': 'Correct answer', 'correct': true},
         {'id': 'c', 'text': 'C', 'correct': false},
       ],
+      'deepData': {
+        'clues': [
+          'A stands before B.',
+          'B stands before C.',
+          'The first person has no one before them.',
+        ],
+      },
     },
   },
   hints: [
@@ -207,6 +253,7 @@ const _detectiveLevel = MiLevel(
   ],
   metadata: {
     'skillIds': ['logic.strategy'],
+    'deepData': {'scene': 'detective'},
   },
 );
 
@@ -223,6 +270,10 @@ const _creativeLevel = MiLevel(
         {'id': 'b', 'text': 'Correct answer', 'correct': true},
         {'id': 'c', 'text': 'dark sky', 'correct': false},
       ],
+      'deepData': {
+        'storyLabels': ['Setting', 'Feeling', 'Detail'],
+        'storyCards': ['A small classroom', 'Correct answer', 'A kind choice'],
+      },
     },
   },
   hints: [
@@ -230,6 +281,7 @@ const _creativeLevel = MiLevel(
   ],
   metadata: {
     'skillIds': ['creative.storytelling'],
+    'deepData': {'scene': 'creative'},
   },
 );
 
@@ -246,6 +298,10 @@ const _readingLevel = MiLevel(
         {'id': 'b', 'text': 'Correct answer', 'correct': true},
         {'id': 'c', 'text': '5', 'correct': false},
       ],
+      'deepData': {
+        'passage': 'Story note: read carefully.',
+        'steps': ['Read the note', 'Find the number', 'Choose the match'],
+      },
     },
   },
   hints: [
@@ -253,5 +309,6 @@ const _readingLevel = MiLevel(
   ],
   metadata: {
     'skillIds': ['letters.reading_comprehension'],
+    'deepData': {'scene': 'reading'},
   },
 );

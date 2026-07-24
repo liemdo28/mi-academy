@@ -31,6 +31,14 @@ const _expansionGameIds = {
   'free_creativity',
 };
 
+const _deepGameIds = {
+  'story_comprehension': 'reading',
+  'logic_maze': 'maze',
+  'kids_sudoku': 'sudoku',
+  'reasoning_detective': 'detective',
+  'free_creativity': 'creative',
+};
+
 void main() {
   test('all 30 registered games have bundled level assets', () {
     final registeredIds = GameRegistry.all.map((entry) => entry.gameId).toSet();
@@ -106,6 +114,60 @@ void main() {
       );
       expect(parsed, hasLength(30), reason: gameId);
       expect(parsed.first.skillTags, isNotEmpty, reason: gameId);
+    }
+  });
+
+  test('deep game packs carry structured scene data for every level', () {
+    for (final entry in _deepGameIds.entries) {
+      final gameId = entry.key;
+      final scene = entry.value;
+      final raw = File(gameLevelAssets[gameId]!).readAsStringSync();
+      final data = jsonDecode(raw) as Map<String, dynamic>;
+      final levels = (data['levels'] as List)
+          .map((level) => Map<String, dynamic>.from(level as Map))
+          .toList();
+
+      expect(levels, hasLength(30), reason: gameId);
+      for (final level in levels) {
+        final metadata = level['metadata'] as Map<String, dynamic>;
+        final deepData = metadata['deepData'] as Map<String, dynamic>;
+        expect(deepData['scene'], scene, reason: '${level['id']}');
+
+        final localized = level['localizedContent'] as Map<String, dynamic>;
+        for (final locale in const ['vi', 'en']) {
+          final content = localized[locale] as Map<String, dynamic>;
+          expect(content['deepData'], isA<Map<String, dynamic>>(),
+              reason: '${level['id']}:$locale');
+        }
+
+        switch (gameId) {
+          case 'logic_maze':
+            expect(deepData['gridSize'], inInclusiveRange(4, 5));
+            expect(deepData['path'], isA<List>());
+            expect(deepData['path'], hasLength(greaterThanOrEqualTo(2)));
+            break;
+          case 'kids_sudoku':
+            expect(deepData['symbols'], isA<List>());
+            expect(deepData['givens'], isA<Map<String, dynamic>>());
+            expect(deepData['blankIndex'], isA<int>());
+            break;
+          case 'reasoning_detective':
+            final vi = localized['vi'] as Map<String, dynamic>;
+            final viDeep = vi['deepData'] as Map<String, dynamic>;
+            expect(viDeep['clues'], hasLength(greaterThanOrEqualTo(3)));
+            break;
+          case 'free_creativity':
+            final en = localized['en'] as Map<String, dynamic>;
+            final enDeep = en['deepData'] as Map<String, dynamic>;
+            expect(enDeep['storyCards'], hasLength(3));
+            break;
+          case 'story_comprehension':
+            final en = localized['en'] as Map<String, dynamic>;
+            final enDeep = en['deepData'] as Map<String, dynamic>;
+            expect(enDeep['passage'], isNotEmpty);
+            break;
+        }
+      }
     }
   });
 }
