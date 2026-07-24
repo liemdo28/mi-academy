@@ -10,7 +10,7 @@
       "learningObjective": "Reasoning Detective tier 1",
       "localizedContent": {
         "vi": {
-          "prompt": "Nếu A đứng trước B và B đứng trước C, ai đứng đầu?",
+          "prompt": "Đọc các manh mối và chọn đáp án đúng: A đứng trước B. C đứng sau B. Người đầu tiên không có ai đứng trước.",
           "options": [
             {
               "id": "a",
@@ -19,25 +19,25 @@
             },
             {
               "id": "b",
-              "text": "A",
-              "correct": true
+              "text": "C",
+              "correct": false
             },
             {
               "id": "c",
-              "text": "C",
-              "correct": false
+              "text": "A",
+              "correct": true
             }
           ],
           "deepData": {
             "clues": [
               "A đứng trước B.",
-              "B đứng trước C.",
+              "C đứng sau B.",
               "Người đầu tiên không có ai đứng trước."
             ]
           }
         },
         "en": {
-          "prompt": "If A is before B and B is before C, who is first?",
+          "prompt": "Read the clues and choose the correct answer: A stands before B. C stands after B. The first person has no one before them.",
           "options": [
             {
               "id": "a",
@@ -46,19 +46,19 @@
             },
             {
               "id": "b",
-              "text": "A",
-              "correct": true
+              "text": "C",
+              "correct": false
             },
             {
               "id": "c",
-              "text": "C",
-              "correct": false
+              "text": "A",
+              "correct": true
             }
           ],
           "deepData": {
             "clues": [
               "A stands before B.",
-              "B stands before C.",
+              "C stands after B.",
               "The first person has no one before them."
             ]
           }
@@ -83,7 +83,8 @@
         "reviewState": "technically_validated",
         "deepData": {
           "scene": "detective",
-          "clueCount": 3
+          "clueCount": 3,
+          "answer": "A"
         }
       },
       "assetRefs": [],
@@ -99,7 +100,7 @@
       "learningObjective": "Reasoning Detective tier 1",
       "localizedContent": {
         "vi": {
-          "prompt": "Nếu A đứng trước B và B đứng trước C, ai đứng đầu?",
+          "prompt": "Đọc các manh mối và chọn đáp án đúng: B cầm thẻ xanh. A không cầm thẻ xanh. C cầm thẻ còn lại.",
           "options": [
             {
               "id": "a",
@@ -109,24 +110,24 @@
             {
               "id": "b",
               "text": "B",
-              "correct": false
+              "correct": true
             },
             {
               "id": "c",
               "text": "A",
-              "correct": true
+              "correct": false
             }
           ],
           "deepData": {
             "clues": [
-              "A đứng trước B.",
-              "B đứng trước C.",
-              "Người đầu tiên không có ai đứng trước."
+              "B cầm thẻ xanh.",
+              "A không cầm thẻ xanh.",
+              "C cầm thẻ còn lại."
             ]
           }
         },
         "en": {
-          "prompt": "If A is before B and B is before C, who is first?",
+          "prompt": "Read the clues and choose the correct answer: B holds the green card. A does not hold the green card. C holds the remaining card.",
           "options": [
             {
               "id": "a",
@@ -136,19 +137,19 @@
             {
               "id": "b",
               "text": "B",
-              "correct": false
+              "correct": true
             },
             {
               "id": "c",
               "text": "A",
-              "correct": true
+              "correct": false
             }
           ],
           "deepData": {
             "clues": [
-              "A stands before B.",
-              "B stands before C.",
-              "The first person has no one before them."
+              "B holds the green card.",
+              "A does not hold the green card.",
+              "C holds the remaining card."
             ]
           }
         }
@@ -172,7 +173,8 @@
         "reviewState": "technically_validated",
         "deepData": {
           "scene": "detective",
-          "clueCount": 3
+          "clueCount": 3,
+          "answer": "B"
         }
       },
       "assetRefs": [],
@@ -188,7 +190,7 @@
       "learningObjective": "Reasoning Detective tier 1",
       "localizedContent": {
         "vi": {
-          "prompt": "Nếu A đứng trước B và B đứng trước C, ai đứng đầu?",
+          "prompt": "Đọc các manh mối và chọn đáp án đúng: C về đích sau A. B về đích sau C. Người thắng về trước tất cả.",
           "options": [
             {
               "id": "a",
@@ -208,14 +210,14 @@
           ],
           "deepData": {
             "clues": [
-              "A đứng trước B.",
-              "B đứng trước C.",
-              "Người đầu tiên không có ai đứng trước."
+              "C về đích sau A.",
+              "B về đích sau C.",
+              "Người thắng về trước tất cả."
             ]
           }
         },
         "en": {
-          "prompt": "If A is before B and B is before C, who is first?",
+          "prompt": "Read the clues and choose the correct answer: C finishes after A. B finishes after C. The winner finishes before everyone.",
           "options": [
             {
               "id": "a",
@@ -235,9 +237,9 @@
           ],
           "deepData": {
             "clues": [
-              "A stands before B.",
-              "B stands before C.",
-              "The first person has no one before them."
+              "C finishes after A.",
+              "B finishes after C.",
+              "The winner finishes before everyone."
             ]
           }
         }
@@ -261,7 +263,8 @@
         "reviewState": "technically_validated",
         "deepData": {
           "scene": "detective",
-          "clueCount": 3
+          "clueCount": 3,
+          "answer": "A"
         }
       },
       "assetRefs": [],
@@ -277,7 +280,7 @@
       "learningObjective": "Reasoning Detective tier 1",
       "localizedContent": {
         "vi": {
-          "prompt": "Nếu A đứng trước B và B đứng trước C, ai đứng đầu?",
+          "prompt": "Đọc các manh mối và chọn đáp án đúng: A chọn hình tròn. B không chọn hình vuông. C chọn hình còn lại.",
           "options": [
             {
               "id": "a",
@@ -286,25 +289,25 @@
             },
             {
               "id": "b",
-              "text": "A",
-              "correct": true
+              "text": "C",
+              "correct": false
             },
             {
               "id": "c",
-              "text": "C",
-              "correct": false
+              "text": "A",
+              "correct": true
             }
           ],
           "deepData": {
             "clues": [
-              "A đứng trước B.",
-              "B đứng trước C.",
-              "Người đầu tiên không có ai đứng trước."
+              "A chọn hình tròn.",
+              "B không chọn hình vuông.",
+              "C chọn hình còn lại."
             ]
           }
         },
         "en": {
-          "prompt": "If A is before B and B is before C, who is first?",
+          "prompt": "Read the clues and choose the correct answer: A chooses the circle. B does not choose the square. C chooses the remaining shape.",
           "options": [
             {
               "id": "a",
@@ -313,20 +316,20 @@
             },
             {
               "id": "b",
-              "text": "A",
-              "correct": true
+              "text": "C",
+              "correct": false
             },
             {
               "id": "c",
-              "text": "C",
-              "correct": false
+              "text": "A",
+              "correct": true
             }
           ],
           "deepData": {
             "clues": [
-              "A stands before B.",
-              "B stands before C.",
-              "The first person has no one before them."
+              "A chooses the circle.",
+              "B does not choose the square.",
+              "C chooses the remaining shape."
             ]
           }
         }
@@ -350,7 +353,8 @@
         "reviewState": "technically_validated",
         "deepData": {
           "scene": "detective",
-          "clueCount": 3
+          "clueCount": 3,
+          "answer": "A"
         }
       },
       "assetRefs": [],
@@ -366,7 +370,7 @@
       "learningObjective": "Reasoning Detective tier 1",
       "localizedContent": {
         "vi": {
-          "prompt": "Nếu A đứng trước B và B đứng trước C, ai đứng đầu?",
+          "prompt": "Đọc các manh mối và chọn đáp án đúng: B cao hơn A. C thấp hơn A. Người cao nhất đứng đầu hàng.",
           "options": [
             {
               "id": "a",
@@ -376,24 +380,24 @@
             {
               "id": "b",
               "text": "B",
-              "correct": false
+              "correct": true
             },
             {
               "id": "c",
               "text": "A",
-              "correct": true
+              "correct": false
             }
           ],
           "deepData": {
             "clues": [
-              "A đứng trước B.",
-              "B đứng trước C.",
-              "Người đầu tiên không có ai đứng trước."
+              "B cao hơn A.",
+              "C thấp hơn A.",
+              "Người cao nhất đứng đầu hàng."
             ]
           }
         },
         "en": {
-          "prompt": "If A is before B and B is before C, who is first?",
+          "prompt": "Read the clues and choose the correct answer: B is taller than A. C is shorter than A. The tallest child stands first.",
           "options": [
             {
               "id": "a",
@@ -403,19 +407,19 @@
             {
               "id": "b",
               "text": "B",
-              "correct": false
+              "correct": true
             },
             {
               "id": "c",
               "text": "A",
-              "correct": true
+              "correct": false
             }
           ],
           "deepData": {
             "clues": [
-              "A stands before B.",
-              "B stands before C.",
-              "The first person has no one before them."
+              "B is taller than A.",
+              "C is shorter than A.",
+              "The tallest child stands first."
             ]
           }
         }
@@ -439,7 +443,8 @@
         "reviewState": "technically_validated",
         "deepData": {
           "scene": "detective",
-          "clueCount": 3
+          "clueCount": 3,
+          "answer": "B"
         }
       },
       "assetRefs": [],
@@ -455,56 +460,56 @@
       "learningObjective": "Reasoning Detective tier 1",
       "localizedContent": {
         "vi": {
-          "prompt": "Nếu A đứng trước B và B đứng trước C, ai đứng đầu?",
+          "prompt": "Đọc các manh mối và chọn đáp án đúng: C đọc xong trước B. A đọc xong sau B. Người đọc xong trước nhất được chọn.",
           "options": [
             {
               "id": "a",
-              "text": "A",
+              "text": "C",
               "correct": true
             },
             {
               "id": "b",
-              "text": "B",
+              "text": "A",
               "correct": false
             },
             {
               "id": "c",
-              "text": "C",
+              "text": "B",
               "correct": false
             }
           ],
           "deepData": {
             "clues": [
-              "A đứng trước B.",
-              "B đứng trước C.",
-              "Người đầu tiên không có ai đứng trước."
+              "C đọc xong trước B.",
+              "A đọc xong sau B.",
+              "Người đọc xong trước nhất được chọn."
             ]
           }
         },
         "en": {
-          "prompt": "If A is before B and B is before C, who is first?",
+          "prompt": "Read the clues and choose the correct answer: C finishes reading before B. A finishes after B. Choose the first reader to finish.",
           "options": [
             {
               "id": "a",
-              "text": "A",
+              "text": "C",
               "correct": true
             },
             {
               "id": "b",
-              "text": "B",
+              "text": "A",
               "correct": false
             },
             {
               "id": "c",
-              "text": "C",
+              "text": "B",
               "correct": false
             }
           ],
           "deepData": {
             "clues": [
-              "A stands before B.",
-              "B stands before C.",
-              "The first person has no one before them."
+              "C finishes reading before B.",
+              "A finishes after B.",
+              "Choose the first reader to finish."
             ]
           }
         }
@@ -528,7 +533,8 @@
         "reviewState": "technically_validated",
         "deepData": {
           "scene": "detective",
-          "clueCount": 3
+          "clueCount": 3,
+          "answer": "C"
         }
       },
       "assetRefs": [],
@@ -544,56 +550,56 @@
       "learningObjective": "Reasoning Detective tier 2",
       "localizedContent": {
         "vi": {
-          "prompt": "Nếu A đứng trước B và B đứng trước C, ai đứng đầu?",
+          "prompt": "Đọc các manh mối và chọn đáp án đúng: A có 2 sao. B có nhiều hơn A 1 sao. C có ít hơn A 1 sao.",
           "options": [
             {
               "id": "a",
-              "text": "B",
+              "text": "A",
               "correct": false
             },
             {
               "id": "b",
-              "text": "A",
-              "correct": true
+              "text": "C",
+              "correct": false
             },
             {
               "id": "c",
-              "text": "C",
-              "correct": false
+              "text": "B",
+              "correct": true
             }
           ],
           "deepData": {
             "clues": [
-              "A đứng trước B.",
-              "B đứng trước C.",
-              "Người đầu tiên không có ai đứng trước."
+              "A có 2 sao.",
+              "B có nhiều hơn A 1 sao.",
+              "C có ít hơn A 1 sao."
             ]
           }
         },
         "en": {
-          "prompt": "If A is before B and B is before C, who is first?",
+          "prompt": "Read the clues and choose the correct answer: A has 2 stars. B has 1 more star than A. C has 1 fewer star than A.",
           "options": [
             {
               "id": "a",
-              "text": "B",
+              "text": "A",
               "correct": false
             },
             {
               "id": "b",
-              "text": "A",
-              "correct": true
+              "text": "C",
+              "correct": false
             },
             {
               "id": "c",
-              "text": "C",
-              "correct": false
+              "text": "B",
+              "correct": true
             }
           ],
           "deepData": {
             "clues": [
-              "A stands before B.",
-              "B stands before C.",
-              "The first person has no one before them."
+              "A has 2 stars.",
+              "B has 1 more star than A.",
+              "C has 1 fewer star than A."
             ]
           }
         }
@@ -617,7 +623,8 @@
         "reviewState": "technically_validated",
         "deepData": {
           "scene": "detective",
-          "clueCount": 3
+          "clueCount": 3,
+          "answer": "B"
         }
       },
       "assetRefs": [],
@@ -633,56 +640,56 @@
       "learningObjective": "Reasoning Detective tier 2",
       "localizedContent": {
         "vi": {
-          "prompt": "Nếu A đứng trước B và B đứng trước C, ai đứng đầu?",
+          "prompt": "Đọc các manh mối và chọn đáp án đúng: B đứng giữa A và C. A đứng bên trái B. Ai đứng bên phải B?",
           "options": [
             {
               "id": "a",
-              "text": "C",
-              "correct": false
-            },
-            {
-              "id": "b",
               "text": "B",
               "correct": false
             },
             {
+              "id": "b",
+              "text": "C",
+              "correct": true
+            },
+            {
               "id": "c",
               "text": "A",
-              "correct": true
+              "correct": false
             }
           ],
           "deepData": {
             "clues": [
-              "A đứng trước B.",
-              "B đứng trước C.",
-              "Người đầu tiên không có ai đứng trước."
+              "B đứng giữa A và C.",
+              "A đứng bên trái B.",
+              "Ai đứng bên phải B?"
             ]
           }
         },
         "en": {
-          "prompt": "If A is before B and B is before C, who is first?",
+          "prompt": "Read the clues and choose the correct answer: B stands between A and C. A stands to the left of B. Who stands to the right of B?",
           "options": [
             {
               "id": "a",
-              "text": "C",
-              "correct": false
-            },
-            {
-              "id": "b",
               "text": "B",
               "correct": false
             },
             {
+              "id": "b",
+              "text": "C",
+              "correct": true
+            },
+            {
               "id": "c",
               "text": "A",
-              "correct": true
+              "correct": false
             }
           ],
           "deepData": {
             "clues": [
-              "A stands before B.",
-              "B stands before C.",
-              "The first person has no one before them."
+              "B stands between A and C.",
+              "A stands to the left of B.",
+              "Who stands to the right of B?"
             ]
           }
         }
@@ -706,7 +713,8 @@
         "reviewState": "technically_validated",
         "deepData": {
           "scene": "detective",
-          "clueCount": 3
+          "clueCount": 3,
+          "answer": "C"
         }
       },
       "assetRefs": [],
@@ -722,7 +730,7 @@
       "learningObjective": "Reasoning Detective tier 2",
       "localizedContent": {
         "vi": {
-          "prompt": "Nếu A đứng trước B và B đứng trước C, ai đứng đầu?",
+          "prompt": "Đọc các manh mối và chọn đáp án đúng: C không phải màu đỏ. A là màu đỏ. B là màu còn lại.",
           "options": [
             {
               "id": "a",
@@ -742,14 +750,14 @@
           ],
           "deepData": {
             "clues": [
-              "A đứng trước B.",
-              "B đứng trước C.",
-              "Người đầu tiên không có ai đứng trước."
+              "C không phải màu đỏ.",
+              "A là màu đỏ.",
+              "B là màu còn lại."
             ]
           }
         },
         "en": {
-          "prompt": "If A is before B and B is before C, who is first?",
+          "prompt": "Read the clues and choose the correct answer: C is not red. A is red. B is the remaining color.",
           "options": [
             {
               "id": "a",
@@ -769,9 +777,9 @@
           ],
           "deepData": {
             "clues": [
-              "A stands before B.",
-              "B stands before C.",
-              "The first person has no one before them."
+              "C is not red.",
+              "A is red.",
+              "B is the remaining color."
             ]
           }
         }
@@ -795,7 +803,8 @@
         "reviewState": "technically_validated",
         "deepData": {
           "scene": "detective",
-          "clueCount": 3
+          "clueCount": 3,
+          "answer": "A"
         }
       },
       "assetRefs": [],
@@ -811,56 +820,56 @@
       "learningObjective": "Reasoning Detective tier 2",
       "localizedContent": {
         "vi": {
-          "prompt": "Nếu A đứng trước B và B đứng trước C, ai đứng đầu?",
+          "prompt": "Đọc các manh mối và chọn đáp án đúng: A đi 1 bước. B đi 3 bước. C đi 2 bước.",
           "options": [
             {
               "id": "a",
-              "text": "B",
+              "text": "A",
               "correct": false
             },
             {
               "id": "b",
-              "text": "A",
-              "correct": true
+              "text": "C",
+              "correct": false
             },
             {
               "id": "c",
-              "text": "C",
-              "correct": false
+              "text": "B",
+              "correct": true
             }
           ],
           "deepData": {
             "clues": [
-              "A đứng trước B.",
-              "B đứng trước C.",
-              "Người đầu tiên không có ai đứng trước."
+              "A đi 1 bước.",
+              "B đi 3 bước.",
+              "C đi 2 bước."
             ]
           }
         },
         "en": {
-          "prompt": "If A is before B and B is before C, who is first?",
+          "prompt": "Read the clues and choose the correct answer: A moves 1 step. B moves 3 steps. C moves 2 steps.",
           "options": [
             {
               "id": "a",
-              "text": "B",
+              "text": "A",
               "correct": false
             },
             {
               "id": "b",
-              "text": "A",
-              "correct": true
+              "text": "C",
+              "correct": false
             },
             {
               "id": "c",
-              "text": "C",
-              "correct": false
+              "text": "B",
+              "correct": true
             }
           ],
           "deepData": {
             "clues": [
-              "A stands before B.",
-              "B stands before C.",
-              "The first person has no one before them."
+              "A moves 1 step.",
+              "B moves 3 steps.",
+              "C moves 2 steps."
             ]
           }
         }
@@ -884,7 +893,8 @@
         "reviewState": "technically_validated",
         "deepData": {
           "scene": "detective",
-          "clueCount": 3
+          "clueCount": 3,
+          "answer": "B"
         }
       },
       "assetRefs": [],
@@ -900,7 +910,7 @@
       "learningObjective": "Reasoning Detective tier 2",
       "localizedContent": {
         "vi": {
-          "prompt": "Nếu A đứng trước B và B đứng trước C, ai đứng đầu?",
+          "prompt": "Đọc các manh mối và chọn đáp án đúng: A đứng trước B. C đứng sau B. Người đầu tiên không có ai đứng trước.",
           "options": [
             {
               "id": "a",
@@ -909,25 +919,25 @@
             },
             {
               "id": "b",
-              "text": "B",
-              "correct": false
+              "text": "A",
+              "correct": true
             },
             {
               "id": "c",
-              "text": "A",
-              "correct": true
+              "text": "B",
+              "correct": false
             }
           ],
           "deepData": {
             "clues": [
               "A đứng trước B.",
-              "B đứng trước C.",
+              "C đứng sau B.",
               "Người đầu tiên không có ai đứng trước."
             ]
           }
         },
         "en": {
-          "prompt": "If A is before B and B is before C, who is first?",
+          "prompt": "Read the clues and choose the correct answer: A stands before B. C stands after B. The first person has no one before them.",
           "options": [
             {
               "id": "a",
@@ -936,19 +946,19 @@
             },
             {
               "id": "b",
-              "text": "B",
-              "correct": false
+              "text": "A",
+              "correct": true
             },
             {
               "id": "c",
-              "text": "A",
-              "correct": true
+              "text": "B",
+              "correct": false
             }
           ],
           "deepData": {
             "clues": [
               "A stands before B.",
-              "B stands before C.",
+              "C stands after B.",
               "The first person has no one before them."
             ]
           }
@@ -973,7 +983,8 @@
         "reviewState": "technically_validated",
         "deepData": {
           "scene": "detective",
-          "clueCount": 3
+          "clueCount": 3,
+          "answer": "A"
         }
       },
       "assetRefs": [],
@@ -989,16 +1000,16 @@
       "learningObjective": "Reasoning Detective tier 2",
       "localizedContent": {
         "vi": {
-          "prompt": "Nếu A đứng trước B và B đứng trước C, ai đứng đầu?",
+          "prompt": "Đọc các manh mối và chọn đáp án đúng: B cầm thẻ xanh. A không cầm thẻ xanh. C cầm thẻ còn lại.",
           "options": [
             {
               "id": "a",
-              "text": "A",
+              "text": "B",
               "correct": true
             },
             {
               "id": "b",
-              "text": "B",
+              "text": "A",
               "correct": false
             },
             {
@@ -1009,23 +1020,23 @@
           ],
           "deepData": {
             "clues": [
-              "A đứng trước B.",
-              "B đứng trước C.",
-              "Người đầu tiên không có ai đứng trước."
+              "B cầm thẻ xanh.",
+              "A không cầm thẻ xanh.",
+              "C cầm thẻ còn lại."
             ]
           }
         },
         "en": {
-          "prompt": "If A is before B and B is before C, who is first?",
+          "prompt": "Read the clues and choose the correct answer: B holds the green card. A does not hold the green card. C holds the remaining card.",
           "options": [
             {
               "id": "a",
-              "text": "A",
+              "text": "B",
               "correct": true
             },
             {
               "id": "b",
-              "text": "B",
+              "text": "A",
               "correct": false
             },
             {
@@ -1036,9 +1047,9 @@
           ],
           "deepData": {
             "clues": [
-              "A stands before B.",
-              "B stands before C.",
-              "The first person has no one before them."
+              "B holds the green card.",
+              "A does not hold the green card.",
+              "C holds the remaining card."
             ]
           }
         }
@@ -1062,7 +1073,8 @@
         "reviewState": "technically_validated",
         "deepData": {
           "scene": "detective",
-          "clueCount": 3
+          "clueCount": 3,
+          "answer": "B"
         }
       },
       "assetRefs": [],
@@ -1078,7 +1090,7 @@
       "learningObjective": "Reasoning Detective tier 3",
       "localizedContent": {
         "vi": {
-          "prompt": "Nếu A đứng trước B và B đứng trước C, ai đứng đầu?",
+          "prompt": "Đọc các manh mối và chọn đáp án đúng: C về đích sau A. B về đích sau C. Người thắng về trước tất cả.",
           "options": [
             {
               "id": "a",
@@ -1087,25 +1099,25 @@
             },
             {
               "id": "b",
-              "text": "A",
-              "correct": true
+              "text": "C",
+              "correct": false
             },
             {
               "id": "c",
-              "text": "C",
-              "correct": false
+              "text": "A",
+              "correct": true
             }
           ],
           "deepData": {
             "clues": [
-              "A đứng trước B.",
-              "B đứng trước C.",
-              "Người đầu tiên không có ai đứng trước."
+              "C về đích sau A.",
+              "B về đích sau C.",
+              "Người thắng về trước tất cả."
             ]
           }
         },
         "en": {
-          "prompt": "If A is before B and B is before C, who is first?",
+          "prompt": "Read the clues and choose the correct answer: C finishes after A. B finishes after C. The winner finishes before everyone.",
           "options": [
             {
               "id": "a",
@@ -1114,20 +1126,20 @@
             },
             {
               "id": "b",
-              "text": "A",
-              "correct": true
+              "text": "C",
+              "correct": false
             },
             {
               "id": "c",
-              "text": "C",
-              "correct": false
+              "text": "A",
+              "correct": true
             }
           ],
           "deepData": {
             "clues": [
-              "A stands before B.",
-              "B stands before C.",
-              "The first person has no one before them."
+              "C finishes after A.",
+              "B finishes after C.",
+              "The winner finishes before everyone."
             ]
           }
         }
@@ -1151,7 +1163,8 @@
         "reviewState": "technically_validated",
         "deepData": {
           "scene": "detective",
-          "clueCount": 3
+          "clueCount": 3,
+          "answer": "A"
         }
       },
       "assetRefs": [],
@@ -1167,7 +1180,7 @@
       "learningObjective": "Reasoning Detective tier 3",
       "localizedContent": {
         "vi": {
-          "prompt": "Nếu A đứng trước B và B đứng trước C, ai đứng đầu?",
+          "prompt": "Đọc các manh mối và chọn đáp án đúng: A chọn hình tròn. B không chọn hình vuông. C chọn hình còn lại.",
           "options": [
             {
               "id": "a",
@@ -1176,25 +1189,25 @@
             },
             {
               "id": "b",
-              "text": "B",
-              "correct": false
+              "text": "A",
+              "correct": true
             },
             {
               "id": "c",
-              "text": "A",
-              "correct": true
+              "text": "B",
+              "correct": false
             }
           ],
           "deepData": {
             "clues": [
-              "A đứng trước B.",
-              "B đứng trước C.",
-              "Người đầu tiên không có ai đứng trước."
+              "A chọn hình tròn.",
+              "B không chọn hình vuông.",
+              "C chọn hình còn lại."
             ]
           }
         },
         "en": {
-          "prompt": "If A is before B and B is before C, who is first?",
+          "prompt": "Read the clues and choose the correct answer: A chooses the circle. B does not choose the square. C chooses the remaining shape.",
           "options": [
             {
               "id": "a",
@@ -1203,20 +1216,20 @@
             },
             {
               "id": "b",
-              "text": "B",
-              "correct": false
+              "text": "A",
+              "correct": true
             },
             {
               "id": "c",
-              "text": "A",
-              "correct": true
+              "text": "B",
+              "correct": false
             }
           ],
           "deepData": {
             "clues": [
-              "A stands before B.",
-              "B stands before C.",
-              "The first person has no one before them."
+              "A chooses the circle.",
+              "B does not choose the square.",
+              "C chooses the remaining shape."
             ]
           }
         }
@@ -1240,7 +1253,8 @@
         "reviewState": "technically_validated",
         "deepData": {
           "scene": "detective",
-          "clueCount": 3
+          "clueCount": 3,
+          "answer": "A"
         }
       },
       "assetRefs": [],
@@ -1256,16 +1270,16 @@
       "learningObjective": "Reasoning Detective tier 3",
       "localizedContent": {
         "vi": {
-          "prompt": "Nếu A đứng trước B và B đứng trước C, ai đứng đầu?",
+          "prompt": "Đọc các manh mối và chọn đáp án đúng: B cao hơn A. C thấp hơn A. Người cao nhất đứng đầu hàng.",
           "options": [
             {
               "id": "a",
-              "text": "A",
+              "text": "B",
               "correct": true
             },
             {
               "id": "b",
-              "text": "B",
+              "text": "A",
               "correct": false
             },
             {
@@ -1276,23 +1290,23 @@
           ],
           "deepData": {
             "clues": [
-              "A đứng trước B.",
-              "B đứng trước C.",
-              "Người đầu tiên không có ai đứng trước."
+              "B cao hơn A.",
+              "C thấp hơn A.",
+              "Người cao nhất đứng đầu hàng."
             ]
           }
         },
         "en": {
-          "prompt": "If A is before B and B is before C, who is first?",
+          "prompt": "Read the clues and choose the correct answer: B is taller than A. C is shorter than A. The tallest child stands first.",
           "options": [
             {
               "id": "a",
-              "text": "A",
+              "text": "B",
               "correct": true
             },
             {
               "id": "b",
-              "text": "B",
+              "text": "A",
               "correct": false
             },
             {
@@ -1303,9 +1317,9 @@
           ],
           "deepData": {
             "clues": [
-              "A stands before B.",
-              "B stands before C.",
-              "The first person has no one before them."
+              "B is taller than A.",
+              "C is shorter than A.",
+              "The tallest child stands first."
             ]
           }
         }
@@ -1329,7 +1343,8 @@
         "reviewState": "technically_validated",
         "deepData": {
           "scene": "detective",
-          "clueCount": 3
+          "clueCount": 3,
+          "answer": "B"
         }
       },
       "assetRefs": [],
@@ -1345,56 +1360,56 @@
       "learningObjective": "Reasoning Detective tier 3",
       "localizedContent": {
         "vi": {
-          "prompt": "Nếu A đứng trước B và B đứng trước C, ai đứng đầu?",
+          "prompt": "Đọc các manh mối và chọn đáp án đúng: C đọc xong trước B. A đọc xong sau B. Người đọc xong trước nhất được chọn.",
           "options": [
             {
               "id": "a",
-              "text": "B",
+              "text": "A",
               "correct": false
             },
             {
               "id": "b",
-              "text": "A",
-              "correct": true
+              "text": "B",
+              "correct": false
             },
             {
               "id": "c",
               "text": "C",
-              "correct": false
+              "correct": true
             }
           ],
           "deepData": {
             "clues": [
-              "A đứng trước B.",
-              "B đứng trước C.",
-              "Người đầu tiên không có ai đứng trước."
+              "C đọc xong trước B.",
+              "A đọc xong sau B.",
+              "Người đọc xong trước nhất được chọn."
             ]
           }
         },
         "en": {
-          "prompt": "If A is before B and B is before C, who is first?",
+          "prompt": "Read the clues and choose the correct answer: C finishes reading before B. A finishes after B. Choose the first reader to finish.",
           "options": [
             {
               "id": "a",
-              "text": "B",
+              "text": "A",
               "correct": false
             },
             {
               "id": "b",
-              "text": "A",
-              "correct": true
+              "text": "B",
+              "correct": false
             },
             {
               "id": "c",
               "text": "C",
-              "correct": false
+              "correct": true
             }
           ],
           "deepData": {
             "clues": [
-              "A stands before B.",
-              "B stands before C.",
-              "The first person has no one before them."
+              "C finishes reading before B.",
+              "A finishes after B.",
+              "Choose the first reader to finish."
             ]
           }
         }
@@ -1418,7 +1433,8 @@
         "reviewState": "technically_validated",
         "deepData": {
           "scene": "detective",
-          "clueCount": 3
+          "clueCount": 3,
+          "answer": "C"
         }
       },
       "assetRefs": [],
@@ -1434,7 +1450,7 @@
       "learningObjective": "Reasoning Detective tier 3",
       "localizedContent": {
         "vi": {
-          "prompt": "Nếu A đứng trước B và B đứng trước C, ai đứng đầu?",
+          "prompt": "Đọc các manh mối và chọn đáp án đúng: A có 2 sao. B có nhiều hơn A 1 sao. C có ít hơn A 1 sao.",
           "options": [
             {
               "id": "a",
@@ -1444,24 +1460,24 @@
             {
               "id": "b",
               "text": "B",
-              "correct": false
+              "correct": true
             },
             {
               "id": "c",
               "text": "A",
-              "correct": true
+              "correct": false
             }
           ],
           "deepData": {
             "clues": [
-              "A đứng trước B.",
-              "B đứng trước C.",
-              "Người đầu tiên không có ai đứng trước."
+              "A có 2 sao.",
+              "B có nhiều hơn A 1 sao.",
+              "C có ít hơn A 1 sao."
             ]
           }
         },
         "en": {
-          "prompt": "If A is before B and B is before C, who is first?",
+          "prompt": "Read the clues and choose the correct answer: A has 2 stars. B has 1 more star than A. C has 1 fewer star than A.",
           "options": [
             {
               "id": "a",
@@ -1471,19 +1487,19 @@
             {
               "id": "b",
               "text": "B",
-              "correct": false
+              "correct": true
             },
             {
               "id": "c",
               "text": "A",
-              "correct": true
+              "correct": false
             }
           ],
           "deepData": {
             "clues": [
-              "A stands before B.",
-              "B stands before C.",
-              "The first person has no one before them."
+              "A has 2 stars.",
+              "B has 1 more star than A.",
+              "C has 1 fewer star than A."
             ]
           }
         }
@@ -1507,7 +1523,8 @@
         "reviewState": "technically_validated",
         "deepData": {
           "scene": "detective",
-          "clueCount": 3
+          "clueCount": 3,
+          "answer": "B"
         }
       },
       "assetRefs": [],
@@ -1523,56 +1540,56 @@
       "learningObjective": "Reasoning Detective tier 3",
       "localizedContent": {
         "vi": {
-          "prompt": "Nếu A đứng trước B và B đứng trước C, ai đứng đầu?",
+          "prompt": "Đọc các manh mối và chọn đáp án đúng: B đứng giữa A và C. A đứng bên trái B. Ai đứng bên phải B?",
           "options": [
             {
               "id": "a",
-              "text": "A",
+              "text": "C",
               "correct": true
             },
             {
               "id": "b",
-              "text": "B",
+              "text": "A",
               "correct": false
             },
             {
               "id": "c",
-              "text": "C",
+              "text": "B",
               "correct": false
             }
           ],
           "deepData": {
             "clues": [
-              "A đứng trước B.",
-              "B đứng trước C.",
-              "Người đầu tiên không có ai đứng trước."
+              "B đứng giữa A và C.",
+              "A đứng bên trái B.",
+              "Ai đứng bên phải B?"
             ]
           }
         },
         "en": {
-          "prompt": "If A is before B and B is before C, who is first?",
+          "prompt": "Read the clues and choose the correct answer: B stands between A and C. A stands to the left of B. Who stands to the right of B?",
           "options": [
             {
               "id": "a",
-              "text": "A",
+              "text": "C",
               "correct": true
             },
             {
               "id": "b",
-              "text": "B",
+              "text": "A",
               "correct": false
             },
             {
               "id": "c",
-              "text": "C",
+              "text": "B",
               "correct": false
             }
           ],
           "deepData": {
             "clues": [
-              "A stands before B.",
-              "B stands before C.",
-              "The first person has no one before them."
+              "B stands between A and C.",
+              "A stands to the left of B.",
+              "Who stands to the right of B?"
             ]
           }
         }
@@ -1596,7 +1613,8 @@
         "reviewState": "technically_validated",
         "deepData": {
           "scene": "detective",
-          "clueCount": 3
+          "clueCount": 3,
+          "answer": "C"
         }
       },
       "assetRefs": [],
@@ -1612,7 +1630,7 @@
       "learningObjective": "Reasoning Detective tier 4",
       "localizedContent": {
         "vi": {
-          "prompt": "Nếu A đứng trước B và B đứng trước C, ai đứng đầu?",
+          "prompt": "Đọc các manh mối và chọn đáp án đúng: C không phải màu đỏ. A là màu đỏ. B là màu còn lại.",
           "options": [
             {
               "id": "a",
@@ -1621,26 +1639,25 @@
             },
             {
               "id": "b",
-              "text": "A",
-              "correct": true
+              "text": "C",
+              "correct": false
             },
             {
               "id": "c",
-              "text": "C",
-              "correct": false
+              "text": "A",
+              "correct": true
             }
           ],
           "deepData": {
             "clues": [
-              "A đứng trước B.",
-              "B đứng trước C.",
-              "Người đầu tiên không có ai đứng trước.",
-              "Suy luận theo thứ tự từ trái sang phải."
+              "C không phải màu đỏ.",
+              "A là màu đỏ.",
+              "B là màu còn lại."
             ]
           }
         },
         "en": {
-          "prompt": "If A is before B and B is before C, who is first?",
+          "prompt": "Read the clues and choose the correct answer: C is not red. A is red. B is the remaining color.",
           "options": [
             {
               "id": "a",
@@ -1649,21 +1666,20 @@
             },
             {
               "id": "b",
-              "text": "A",
-              "correct": true
+              "text": "C",
+              "correct": false
             },
             {
               "id": "c",
-              "text": "C",
-              "correct": false
+              "text": "A",
+              "correct": true
             }
           ],
           "deepData": {
             "clues": [
-              "A stands before B.",
-              "B stands before C.",
-              "The first person has no one before them.",
-              "Follow the order from left to right."
+              "C is not red.",
+              "A is red.",
+              "B is the remaining color."
             ]
           }
         }
@@ -1687,7 +1703,8 @@
         "reviewState": "technically_validated",
         "deepData": {
           "scene": "detective",
-          "clueCount": 4
+          "clueCount": 3,
+          "answer": "A"
         }
       },
       "assetRefs": [],
@@ -1703,7 +1720,7 @@
       "learningObjective": "Reasoning Detective tier 4",
       "localizedContent": {
         "vi": {
-          "prompt": "Nếu A đứng trước B và B đứng trước C, ai đứng đầu?",
+          "prompt": "Đọc các manh mối và chọn đáp án đúng: A đi 1 bước. B đi 3 bước. C đi 2 bước. Ai đi xa nhất?",
           "options": [
             {
               "id": "a",
@@ -1713,25 +1730,25 @@
             {
               "id": "b",
               "text": "B",
-              "correct": false
+              "correct": true
             },
             {
               "id": "c",
               "text": "A",
-              "correct": true
+              "correct": false
             }
           ],
           "deepData": {
             "clues": [
-              "A đứng trước B.",
-              "B đứng trước C.",
-              "Người đầu tiên không có ai đứng trước.",
-              "Suy luận theo thứ tự từ trái sang phải."
+              "A đi 1 bước.",
+              "B đi 3 bước.",
+              "C đi 2 bước.",
+              "Ai đi xa nhất?"
             ]
           }
         },
         "en": {
-          "prompt": "If A is before B and B is before C, who is first?",
+          "prompt": "Read the clues and choose the correct answer: A moves 1 step. B moves 3 steps. C moves 2 steps. Who moves the farthest?",
           "options": [
             {
               "id": "a",
@@ -1741,20 +1758,20 @@
             {
               "id": "b",
               "text": "B",
-              "correct": false
+              "correct": true
             },
             {
               "id": "c",
               "text": "A",
-              "correct": true
+              "correct": false
             }
           ],
           "deepData": {
             "clues": [
-              "A stands before B.",
-              "B stands before C.",
-              "The first person has no one before them.",
-              "Follow the order from left to right."
+              "A moves 1 step.",
+              "B moves 3 steps.",
+              "C moves 2 steps.",
+              "Who moves the farthest?"
             ]
           }
         }
@@ -1778,7 +1795,8 @@
         "reviewState": "technically_validated",
         "deepData": {
           "scene": "detective",
-          "clueCount": 4
+          "clueCount": 4,
+          "answer": "B"
         }
       },
       "assetRefs": [],
@@ -1794,7 +1812,7 @@
       "learningObjective": "Reasoning Detective tier 4",
       "localizedContent": {
         "vi": {
-          "prompt": "Nếu A đứng trước B và B đứng trước C, ai đứng đầu?",
+          "prompt": "Đọc các manh mối và chọn đáp án đúng: A đứng trước B. C đứng sau B. Người đầu tiên không có ai đứng trước.",
           "options": [
             {
               "id": "a",
@@ -1815,14 +1833,13 @@
           "deepData": {
             "clues": [
               "A đứng trước B.",
-              "B đứng trước C.",
-              "Người đầu tiên không có ai đứng trước.",
-              "Suy luận theo thứ tự từ trái sang phải."
+              "C đứng sau B.",
+              "Người đầu tiên không có ai đứng trước."
             ]
           }
         },
         "en": {
-          "prompt": "If A is before B and B is before C, who is first?",
+          "prompt": "Read the clues and choose the correct answer: A stands before B. C stands after B. The first person has no one before them.",
           "options": [
             {
               "id": "a",
@@ -1843,9 +1860,8 @@
           "deepData": {
             "clues": [
               "A stands before B.",
-              "B stands before C.",
-              "The first person has no one before them.",
-              "Follow the order from left to right."
+              "C stands after B.",
+              "The first person has no one before them."
             ]
           }
         }
@@ -1869,7 +1885,8 @@
         "reviewState": "technically_validated",
         "deepData": {
           "scene": "detective",
-          "clueCount": 4
+          "clueCount": 3,
+          "answer": "A"
         }
       },
       "assetRefs": [],
@@ -1885,58 +1902,56 @@
       "learningObjective": "Reasoning Detective tier 4",
       "localizedContent": {
         "vi": {
-          "prompt": "Nếu A đứng trước B và B đứng trước C, ai đứng đầu?",
+          "prompt": "Đọc các manh mối và chọn đáp án đúng: B cầm thẻ xanh. A không cầm thẻ xanh. C cầm thẻ còn lại.",
           "options": [
             {
               "id": "a",
-              "text": "B",
+              "text": "A",
               "correct": false
             },
             {
               "id": "b",
-              "text": "A",
-              "correct": true
+              "text": "C",
+              "correct": false
             },
             {
               "id": "c",
-              "text": "C",
-              "correct": false
+              "text": "B",
+              "correct": true
             }
           ],
           "deepData": {
             "clues": [
-              "A đứng trước B.",
-              "B đứng trước C.",
-              "Người đầu tiên không có ai đứng trước.",
-              "Suy luận theo thứ tự từ trái sang phải."
+              "B cầm thẻ xanh.",
+              "A không cầm thẻ xanh.",
+              "C cầm thẻ còn lại."
             ]
           }
         },
         "en": {
-          "prompt": "If A is before B and B is before C, who is first?",
+          "prompt": "Read the clues and choose the correct answer: B holds the green card. A does not hold the green card. C holds the remaining card.",
           "options": [
             {
               "id": "a",
-              "text": "B",
+              "text": "A",
               "correct": false
             },
             {
               "id": "b",
-              "text": "A",
-              "correct": true
+              "text": "C",
+              "correct": false
             },
             {
               "id": "c",
-              "text": "C",
-              "correct": false
+              "text": "B",
+              "correct": true
             }
           ],
           "deepData": {
             "clues": [
-              "A stands before B.",
-              "B stands before C.",
-              "The first person has no one before them.",
-              "Follow the order from left to right."
+              "B holds the green card.",
+              "A does not hold the green card.",
+              "C holds the remaining card."
             ]
           }
         }
@@ -1960,7 +1975,8 @@
         "reviewState": "technically_validated",
         "deepData": {
           "scene": "detective",
-          "clueCount": 4
+          "clueCount": 3,
+          "answer": "B"
         }
       },
       "assetRefs": [],
@@ -1976,7 +1992,7 @@
       "learningObjective": "Reasoning Detective tier 4",
       "localizedContent": {
         "vi": {
-          "prompt": "Nếu A đứng trước B và B đứng trước C, ai đứng đầu?",
+          "prompt": "Đọc các manh mối và chọn đáp án đúng: C về đích sau A. B về đích sau C. Người thắng về trước tất cả.",
           "options": [
             {
               "id": "a",
@@ -1985,26 +2001,25 @@
             },
             {
               "id": "b",
-              "text": "B",
-              "correct": false
+              "text": "A",
+              "correct": true
             },
             {
               "id": "c",
-              "text": "A",
-              "correct": true
+              "text": "B",
+              "correct": false
             }
           ],
           "deepData": {
             "clues": [
-              "A đứng trước B.",
-              "B đứng trước C.",
-              "Người đầu tiên không có ai đứng trước.",
-              "Suy luận theo thứ tự từ trái sang phải."
+              "C về đích sau A.",
+              "B về đích sau C.",
+              "Người thắng về trước tất cả."
             ]
           }
         },
         "en": {
-          "prompt": "If A is before B and B is before C, who is first?",
+          "prompt": "Read the clues and choose the correct answer: C finishes after A. B finishes after C. The winner finishes before everyone.",
           "options": [
             {
               "id": "a",
@@ -2013,21 +2028,20 @@
             },
             {
               "id": "b",
-              "text": "B",
-              "correct": false
+              "text": "A",
+              "correct": true
             },
             {
               "id": "c",
-              "text": "A",
-              "correct": true
+              "text": "B",
+              "correct": false
             }
           ],
           "deepData": {
             "clues": [
-              "A stands before B.",
-              "B stands before C.",
-              "The first person has no one before them.",
-              "Follow the order from left to right."
+              "C finishes after A.",
+              "B finishes after C.",
+              "The winner finishes before everyone."
             ]
           }
         }
@@ -2051,7 +2065,8 @@
         "reviewState": "technically_validated",
         "deepData": {
           "scene": "detective",
-          "clueCount": 4
+          "clueCount": 3,
+          "answer": "A"
         }
       },
       "assetRefs": [],
@@ -2067,7 +2082,7 @@
       "learningObjective": "Reasoning Detective tier 4",
       "localizedContent": {
         "vi": {
-          "prompt": "Nếu A đứng trước B và B đứng trước C, ai đứng đầu?",
+          "prompt": "Đọc các manh mối và chọn đáp án đúng: A chọn hình tròn. B không chọn hình vuông. C chọn hình còn lại.",
           "options": [
             {
               "id": "a",
@@ -2087,15 +2102,14 @@
           ],
           "deepData": {
             "clues": [
-              "A đứng trước B.",
-              "B đứng trước C.",
-              "Người đầu tiên không có ai đứng trước.",
-              "Suy luận theo thứ tự từ trái sang phải."
+              "A chọn hình tròn.",
+              "B không chọn hình vuông.",
+              "C chọn hình còn lại."
             ]
           }
         },
         "en": {
-          "prompt": "If A is before B and B is before C, who is first?",
+          "prompt": "Read the clues and choose the correct answer: A chooses the circle. B does not choose the square. C chooses the remaining shape.",
           "options": [
             {
               "id": "a",
@@ -2115,10 +2129,9 @@
           ],
           "deepData": {
             "clues": [
-              "A stands before B.",
-              "B stands before C.",
-              "The first person has no one before them.",
-              "Follow the order from left to right."
+              "A chooses the circle.",
+              "B does not choose the square.",
+              "C chooses the remaining shape."
             ]
           }
         }
@@ -2142,7 +2155,8 @@
         "reviewState": "technically_validated",
         "deepData": {
           "scene": "detective",
-          "clueCount": 4
+          "clueCount": 3,
+          "answer": "A"
         }
       },
       "assetRefs": [],
@@ -2158,58 +2172,56 @@
       "learningObjective": "Reasoning Detective tier 5",
       "localizedContent": {
         "vi": {
-          "prompt": "Nếu A đứng trước B và B đứng trước C, ai đứng đầu?",
+          "prompt": "Đọc các manh mối và chọn đáp án đúng: B cao hơn A. C thấp hơn A. Người cao nhất đứng đầu hàng.",
           "options": [
             {
               "id": "a",
-              "text": "B",
+              "text": "A",
               "correct": false
             },
             {
               "id": "b",
-              "text": "A",
-              "correct": true
+              "text": "C",
+              "correct": false
             },
             {
               "id": "c",
-              "text": "C",
-              "correct": false
+              "text": "B",
+              "correct": true
             }
           ],
           "deepData": {
             "clues": [
-              "A đứng trước B.",
-              "B đứng trước C.",
-              "Người đầu tiên không có ai đứng trước.",
-              "Suy luận theo thứ tự từ trái sang phải."
+              "B cao hơn A.",
+              "C thấp hơn A.",
+              "Người cao nhất đứng đầu hàng."
             ]
           }
         },
         "en": {
-          "prompt": "If A is before B and B is before C, who is first?",
+          "prompt": "Read the clues and choose the correct answer: B is taller than A. C is shorter than A. The tallest child stands first.",
           "options": [
             {
               "id": "a",
-              "text": "B",
+              "text": "A",
               "correct": false
             },
             {
               "id": "b",
-              "text": "A",
-              "correct": true
+              "text": "C",
+              "correct": false
             },
             {
               "id": "c",
-              "text": "C",
-              "correct": false
+              "text": "B",
+              "correct": true
             }
           ],
           "deepData": {
             "clues": [
-              "A stands before B.",
-              "B stands before C.",
-              "The first person has no one before them.",
-              "Follow the order from left to right."
+              "B is taller than A.",
+              "C is shorter than A.",
+              "The tallest child stands first."
             ]
           }
         }
@@ -2233,7 +2245,8 @@
         "reviewState": "technically_validated",
         "deepData": {
           "scene": "detective",
-          "clueCount": 4
+          "clueCount": 3,
+          "answer": "B"
         }
       },
       "assetRefs": [],
@@ -2249,58 +2262,56 @@
       "learningObjective": "Reasoning Detective tier 5",
       "localizedContent": {
         "vi": {
-          "prompt": "Nếu A đứng trước B và B đứng trước C, ai đứng đầu?",
+          "prompt": "Đọc các manh mối và chọn đáp án đúng: C đọc xong trước B. A đọc xong sau B. Người đọc xong trước nhất được chọn.",
           "options": [
             {
               "id": "a",
-              "text": "C",
-              "correct": false
-            },
-            {
-              "id": "b",
               "text": "B",
               "correct": false
             },
             {
+              "id": "b",
+              "text": "C",
+              "correct": true
+            },
+            {
               "id": "c",
               "text": "A",
-              "correct": true
+              "correct": false
             }
           ],
           "deepData": {
             "clues": [
-              "A đứng trước B.",
-              "B đứng trước C.",
-              "Người đầu tiên không có ai đứng trước.",
-              "Suy luận theo thứ tự từ trái sang phải."
+              "C đọc xong trước B.",
+              "A đọc xong sau B.",
+              "Người đọc xong trước nhất được chọn."
             ]
           }
         },
         "en": {
-          "prompt": "If A is before B and B is before C, who is first?",
+          "prompt": "Read the clues and choose the correct answer: C finishes reading before B. A finishes after B. Choose the first reader to finish.",
           "options": [
             {
               "id": "a",
-              "text": "C",
-              "correct": false
-            },
-            {
-              "id": "b",
               "text": "B",
               "correct": false
             },
             {
+              "id": "b",
+              "text": "C",
+              "correct": true
+            },
+            {
               "id": "c",
               "text": "A",
-              "correct": true
+              "correct": false
             }
           ],
           "deepData": {
             "clues": [
-              "A stands before B.",
-              "B stands before C.",
-              "The first person has no one before them.",
-              "Follow the order from left to right."
+              "C finishes reading before B.",
+              "A finishes after B.",
+              "Choose the first reader to finish."
             ]
           }
         }
@@ -2324,7 +2335,8 @@
         "reviewState": "technically_validated",
         "deepData": {
           "scene": "detective",
-          "clueCount": 4
+          "clueCount": 3,
+          "answer": "C"
         }
       },
       "assetRefs": [],
@@ -2340,16 +2352,16 @@
       "learningObjective": "Reasoning Detective tier 5",
       "localizedContent": {
         "vi": {
-          "prompt": "Nếu A đứng trước B và B đứng trước C, ai đứng đầu?",
+          "prompt": "Đọc các manh mối và chọn đáp án đúng: A có 2 sao. B có nhiều hơn A 1 sao. C có ít hơn A 1 sao.",
           "options": [
             {
               "id": "a",
-              "text": "A",
+              "text": "B",
               "correct": true
             },
             {
               "id": "b",
-              "text": "B",
+              "text": "A",
               "correct": false
             },
             {
@@ -2360,24 +2372,23 @@
           ],
           "deepData": {
             "clues": [
-              "A đứng trước B.",
-              "B đứng trước C.",
-              "Người đầu tiên không có ai đứng trước.",
-              "Suy luận theo thứ tự từ trái sang phải."
+              "A có 2 sao.",
+              "B có nhiều hơn A 1 sao.",
+              "C có ít hơn A 1 sao."
             ]
           }
         },
         "en": {
-          "prompt": "If A is before B and B is before C, who is first?",
+          "prompt": "Read the clues and choose the correct answer: A has 2 stars. B has 1 more star than A. C has 1 fewer star than A.",
           "options": [
             {
               "id": "a",
-              "text": "A",
+              "text": "B",
               "correct": true
             },
             {
               "id": "b",
-              "text": "B",
+              "text": "A",
               "correct": false
             },
             {
@@ -2388,10 +2399,9 @@
           ],
           "deepData": {
             "clues": [
-              "A stands before B.",
-              "B stands before C.",
-              "The first person has no one before them.",
-              "Follow the order from left to right."
+              "A has 2 stars.",
+              "B has 1 more star than A.",
+              "C has 1 fewer star than A."
             ]
           }
         }
@@ -2415,7 +2425,8 @@
         "reviewState": "technically_validated",
         "deepData": {
           "scene": "detective",
-          "clueCount": 4
+          "clueCount": 3,
+          "answer": "B"
         }
       },
       "assetRefs": [],
@@ -2431,58 +2442,56 @@
       "learningObjective": "Reasoning Detective tier 5",
       "localizedContent": {
         "vi": {
-          "prompt": "Nếu A đứng trước B và B đứng trước C, ai đứng đầu?",
+          "prompt": "Đọc các manh mối và chọn đáp án đúng: B đứng giữa A và C. A đứng bên trái B. Ai đứng bên phải B?",
           "options": [
             {
               "id": "a",
-              "text": "B",
+              "text": "A",
               "correct": false
             },
             {
               "id": "b",
-              "text": "A",
-              "correct": true
+              "text": "B",
+              "correct": false
             },
             {
               "id": "c",
               "text": "C",
-              "correct": false
+              "correct": true
             }
           ],
           "deepData": {
             "clues": [
-              "A đứng trước B.",
-              "B đứng trước C.",
-              "Người đầu tiên không có ai đứng trước.",
-              "Suy luận theo thứ tự từ trái sang phải."
+              "B đứng giữa A và C.",
+              "A đứng bên trái B.",
+              "Ai đứng bên phải B?"
             ]
           }
         },
         "en": {
-          "prompt": "If A is before B and B is before C, who is first?",
+          "prompt": "Read the clues and choose the correct answer: B stands between A and C. A stands to the left of B. Who stands to the right of B?",
           "options": [
             {
               "id": "a",
-              "text": "B",
+              "text": "A",
               "correct": false
             },
             {
               "id": "b",
-              "text": "A",
-              "correct": true
+              "text": "B",
+              "correct": false
             },
             {
               "id": "c",
               "text": "C",
-              "correct": false
+              "correct": true
             }
           ],
           "deepData": {
             "clues": [
-              "A stands before B.",
-              "B stands before C.",
-              "The first person has no one before them.",
-              "Follow the order from left to right."
+              "B stands between A and C.",
+              "A stands to the left of B.",
+              "Who stands to the right of B?"
             ]
           }
         }
@@ -2506,7 +2515,8 @@
         "reviewState": "technically_validated",
         "deepData": {
           "scene": "detective",
-          "clueCount": 4
+          "clueCount": 3,
+          "answer": "C"
         }
       },
       "assetRefs": [],
@@ -2522,7 +2532,7 @@
       "learningObjective": "Reasoning Detective tier 5",
       "localizedContent": {
         "vi": {
-          "prompt": "Nếu A đứng trước B và B đứng trước C, ai đứng đầu?",
+          "prompt": "Đọc các manh mối và chọn đáp án đúng: C không phải màu đỏ. A là màu đỏ. B là màu còn lại.",
           "options": [
             {
               "id": "a",
@@ -2531,26 +2541,25 @@
             },
             {
               "id": "b",
-              "text": "B",
-              "correct": false
+              "text": "A",
+              "correct": true
             },
             {
               "id": "c",
-              "text": "A",
-              "correct": true
+              "text": "B",
+              "correct": false
             }
           ],
           "deepData": {
             "clues": [
-              "A đứng trước B.",
-              "B đứng trước C.",
-              "Người đầu tiên không có ai đứng trước.",
-              "Suy luận theo thứ tự từ trái sang phải."
+              "C không phải màu đỏ.",
+              "A là màu đỏ.",
+              "B là màu còn lại."
             ]
           }
         },
         "en": {
-          "prompt": "If A is before B and B is before C, who is first?",
+          "prompt": "Read the clues and choose the correct answer: C is not red. A is red. B is the remaining color.",
           "options": [
             {
               "id": "a",
@@ -2559,21 +2568,20 @@
             },
             {
               "id": "b",
-              "text": "B",
-              "correct": false
+              "text": "A",
+              "correct": true
             },
             {
               "id": "c",
-              "text": "A",
-              "correct": true
+              "text": "B",
+              "correct": false
             }
           ],
           "deepData": {
             "clues": [
-              "A stands before B.",
-              "B stands before C.",
-              "The first person has no one before them.",
-              "Follow the order from left to right."
+              "C is not red.",
+              "A is red.",
+              "B is the remaining color."
             ]
           }
         }
@@ -2597,7 +2605,8 @@
         "reviewState": "technically_validated",
         "deepData": {
           "scene": "detective",
-          "clueCount": 4
+          "clueCount": 3,
+          "answer": "A"
         }
       },
       "assetRefs": [],
@@ -2613,16 +2622,16 @@
       "learningObjective": "Reasoning Detective tier 5",
       "localizedContent": {
         "vi": {
-          "prompt": "Nếu A đứng trước B và B đứng trước C, ai đứng đầu?",
+          "prompt": "Đọc các manh mối và chọn đáp án đúng: A đi 1 bước. B đi 3 bước. C đi 2 bước. Ai đi xa nhất?",
           "options": [
             {
               "id": "a",
-              "text": "A",
+              "text": "B",
               "correct": true
             },
             {
               "id": "b",
-              "text": "B",
+              "text": "A",
               "correct": false
             },
             {
@@ -2633,24 +2642,24 @@
           ],
           "deepData": {
             "clues": [
-              "A đứng trước B.",
-              "B đứng trước C.",
-              "Người đầu tiên không có ai đứng trước.",
-              "Suy luận theo thứ tự từ trái sang phải."
+              "A đi 1 bước.",
+              "B đi 3 bước.",
+              "C đi 2 bước.",
+              "Ai đi xa nhất?"
             ]
           }
         },
         "en": {
-          "prompt": "If A is before B and B is before C, who is first?",
+          "prompt": "Read the clues and choose the correct answer: A moves 1 step. B moves 3 steps. C moves 2 steps. Who moves the farthest?",
           "options": [
             {
               "id": "a",
-              "text": "A",
+              "text": "B",
               "correct": true
             },
             {
               "id": "b",
-              "text": "B",
+              "text": "A",
               "correct": false
             },
             {
@@ -2661,10 +2670,10 @@
           ],
           "deepData": {
             "clues": [
-              "A stands before B.",
-              "B stands before C.",
-              "The first person has no one before them.",
-              "Follow the order from left to right."
+              "A moves 1 step.",
+              "B moves 3 steps.",
+              "C moves 2 steps.",
+              "Who moves the farthest?"
             ]
           }
         }
@@ -2688,7 +2697,8 @@
         "reviewState": "technically_validated",
         "deepData": {
           "scene": "detective",
-          "clueCount": 4
+          "clueCount": 4,
+          "answer": "B"
         }
       },
       "assetRefs": [],

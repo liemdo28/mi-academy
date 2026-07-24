@@ -10,58 +10,58 @@
       "learningObjective": "Story Comprehension tier 1",
       "localizedContent": {
         "vi": {
-          "prompt": "Lan đọc 3 trang rồi nghỉ. Lan đã đọc mấy trang?",
+          "prompt": "Lan ở góc đọc sách và đếm được 5 trang sách. Lan đếm được bao nhiêu trang sách?",
           "options": [
             {
               "id": "a",
-              "text": "2",
+              "text": "4",
               "correct": false
             },
             {
               "id": "b",
-              "text": "3",
-              "correct": true
+              "text": "6",
+              "correct": false
             },
             {
               "id": "c",
-              "text": "4",
-              "correct": false
+              "text": "5",
+              "correct": true
             }
           ],
           "deepData": {
-            "passage": "Ghi chú truyện: đọc câu chuyện, nhớ số 3, rồi chọn đáp án khớp.",
+            "passage": "Lan ghé góc đọc sách. Lan cẩn thận đếm 5 trang sách rồi chia sẻ đáp án với MI.",
             "steps": [
-              "Đọc ghi chú",
-              "Tìm con số",
-              "Chọn đáp án khớp"
+              "Đọc đoạn ngắn",
+              "Tìm vật được đếm",
+              "Chọn con số"
             ]
           }
         },
         "en": {
-          "prompt": "Lan reads 3 pages, then rests. How many pages did Lan read?",
+          "prompt": "Lan is in the reading corner and counts 5 pages. How many pages did Lan count?",
           "options": [
             {
               "id": "a",
-              "text": "2",
+              "text": "4",
               "correct": false
             },
             {
               "id": "b",
-              "text": "3",
-              "correct": true
+              "text": "6",
+              "correct": false
             },
             {
               "id": "c",
-              "text": "4",
-              "correct": false
+              "text": "5",
+              "correct": true
             }
           ],
           "deepData": {
-            "passage": "Story note: read the sentence, keep the number 3 in mind, then choose the matching answer.",
+            "passage": "Lan visited the reading corner. Lan carefully counted 5 pages before sharing the answer with MI.",
             "steps": [
-              "Read the note",
-              "Find the number",
-              "Choose the match"
+              "Read the passage",
+              "Find the counted item",
+              "Choose the number"
             ]
           }
         }
@@ -84,7 +84,8 @@
         "reviewState": "technically_validated",
         "deepData": {
           "scene": "reading",
-          "passageKind": "fact_lookup"
+          "passageKind": "fact_lookup",
+          "answer": 5
         }
       },
       "assetRefs": [],
@@ -100,58 +101,58 @@
       "learningObjective": "Story Comprehension tier 1",
       "localizedContent": {
         "vi": {
-          "prompt": "Lan đọc 3 trang rồi nghỉ. Lan đã đọc mấy trang?",
+          "prompt": "Minh ở lớp học và đếm được 6 bút chì. Minh đếm được bao nhiêu bút chì?",
           "options": [
             {
               "id": "a",
-              "text": "4",
+              "text": "7",
               "correct": false
             },
             {
               "id": "b",
-              "text": "2",
-              "correct": false
+              "text": "6",
+              "correct": true
             },
             {
               "id": "c",
-              "text": "3",
-              "correct": true
+              "text": "5",
+              "correct": false
             }
           ],
           "deepData": {
-            "passage": "Ghi chú truyện: đọc câu chuyện, nhớ số 3, rồi chọn đáp án khớp.",
+            "passage": "Minh ghé lớp học. Minh cẩn thận đếm 6 bút chì rồi chia sẻ đáp án với MI.",
             "steps": [
-              "Đọc ghi chú",
-              "Tìm con số",
-              "Chọn đáp án khớp"
+              "Đọc đoạn ngắn",
+              "Tìm vật được đếm",
+              "Chọn con số"
             ]
           }
         },
         "en": {
-          "prompt": "Lan reads 3 pages, then rests. How many pages did Lan read?",
+          "prompt": "Minh is in the classroom and counts 6 pencils. How many pencils did Minh count?",
           "options": [
             {
               "id": "a",
-              "text": "4",
+              "text": "7",
               "correct": false
             },
             {
               "id": "b",
-              "text": "2",
-              "correct": false
+              "text": "6",
+              "correct": true
             },
             {
               "id": "c",
-              "text": "3",
-              "correct": true
+              "text": "5",
+              "correct": false
             }
           ],
           "deepData": {
-            "passage": "Story note: read the sentence, keep the number 3 in mind, then choose the matching answer.",
+            "passage": "Minh visited the classroom. Minh carefully counted 6 pencils before sharing the answer with MI.",
             "steps": [
-              "Read the note",
-              "Find the number",
-              "Choose the match"
+              "Read the passage",
+              "Find the counted item",
+              "Choose the number"
             ]
           }
         }
@@ -174,7 +175,8 @@
         "reviewState": "technically_validated",
         "deepData": {
           "scene": "reading",
-          "passageKind": "fact_lookup"
+          "passageKind": "fact_lookup",
+          "answer": 6
         }
       },
       "assetRefs": [],
@@ -190,58 +192,58 @@
       "learningObjective": "Story Comprehension tier 1",
       "localizedContent": {
         "vi": {
-          "prompt": "Lan đọc 3 trang rồi nghỉ. Lan đã đọc mấy trang?",
+          "prompt": "An ở bàn học và đếm được 7 khối gỗ. An đếm được bao nhiêu khối gỗ?",
           "options": [
             {
               "id": "a",
-              "text": "3",
+              "text": "7",
               "correct": true
             },
             {
               "id": "b",
-              "text": "2",
+              "text": "6",
               "correct": false
             },
             {
               "id": "c",
-              "text": "4",
+              "text": "8",
               "correct": false
             }
           ],
           "deepData": {
-            "passage": "Ghi chú truyện: đọc câu chuyện, nhớ số 3, rồi chọn đáp án khớp.",
+            "passage": "An ghé bàn học. An cẩn thận đếm 7 khối gỗ rồi chia sẻ đáp án với MI.",
             "steps": [
-              "Đọc ghi chú",
-              "Tìm con số",
-              "Chọn đáp án khớp"
+              "Đọc đoạn ngắn",
+              "Tìm vật được đếm",
+              "Chọn con số"
             ]
           }
         },
         "en": {
-          "prompt": "Lan reads 3 pages, then rests. How many pages did Lan read?",
+          "prompt": "An is in the study table and counts 7 blocks. How many blocks did An count?",
           "options": [
             {
               "id": "a",
-              "text": "3",
+              "text": "7",
               "correct": true
             },
             {
               "id": "b",
-              "text": "2",
+              "text": "6",
               "correct": false
             },
             {
               "id": "c",
-              "text": "4",
+              "text": "8",
               "correct": false
             }
           ],
           "deepData": {
-            "passage": "Story note: read the sentence, keep the number 3 in mind, then choose the matching answer.",
+            "passage": "An visited the study table. An carefully counted 7 blocks before sharing the answer with MI.",
             "steps": [
-              "Read the note",
-              "Find the number",
-              "Choose the match"
+              "Read the passage",
+              "Find the counted item",
+              "Choose the number"
             ]
           }
         }
@@ -264,7 +266,8 @@
         "reviewState": "technically_validated",
         "deepData": {
           "scene": "reading",
-          "passageKind": "fact_lookup"
+          "passageKind": "fact_lookup",
+          "answer": 7
         }
       },
       "assetRefs": [],
@@ -280,58 +283,58 @@
       "learningObjective": "Story Comprehension tier 1",
       "localizedContent": {
         "vi": {
-          "prompt": "Lan đọc 3 trang rồi nghỉ. Lan đã đọc mấy trang?",
+          "prompt": "Mai ở góc thủ công và đếm được 8 bông hoa giấy. Mai đếm được bao nhiêu bông hoa giấy?",
           "options": [
             {
               "id": "a",
-              "text": "2",
+              "text": "7",
               "correct": false
             },
             {
               "id": "b",
-              "text": "3",
-              "correct": true
+              "text": "9",
+              "correct": false
             },
             {
               "id": "c",
-              "text": "4",
-              "correct": false
+              "text": "8",
+              "correct": true
             }
           ],
           "deepData": {
-            "passage": "Ghi chú truyện: đọc câu chuyện, nhớ số 3, rồi chọn đáp án khớp.",
+            "passage": "Mai ghé góc thủ công. Mai cẩn thận đếm 8 bông hoa giấy rồi chia sẻ đáp án với MI.",
             "steps": [
-              "Đọc ghi chú",
-              "Tìm con số",
-              "Chọn đáp án khớp"
+              "Đọc đoạn ngắn",
+              "Tìm vật được đếm",
+              "Chọn con số"
             ]
           }
         },
         "en": {
-          "prompt": "Lan reads 3 pages, then rests. How many pages did Lan read?",
+          "prompt": "Mai is in the craft corner and counts 8 paper flowers. How many paper flowers did Mai count?",
           "options": [
             {
               "id": "a",
-              "text": "2",
+              "text": "7",
               "correct": false
             },
             {
               "id": "b",
-              "text": "3",
-              "correct": true
+              "text": "9",
+              "correct": false
             },
             {
               "id": "c",
-              "text": "4",
-              "correct": false
+              "text": "8",
+              "correct": true
             }
           ],
           "deepData": {
-            "passage": "Story note: read the sentence, keep the number 3 in mind, then choose the matching answer.",
+            "passage": "Mai visited the craft corner. Mai carefully counted 8 paper flowers before sharing the answer with MI.",
             "steps": [
-              "Read the note",
-              "Find the number",
-              "Choose the match"
+              "Read the passage",
+              "Find the counted item",
+              "Choose the number"
             ]
           }
         }
@@ -354,7 +357,8 @@
         "reviewState": "technically_validated",
         "deepData": {
           "scene": "reading",
-          "passageKind": "fact_lookup"
+          "passageKind": "fact_lookup",
+          "answer": 8
         }
       },
       "assetRefs": [],
@@ -370,7 +374,7 @@
       "learningObjective": "Story Comprehension tier 1",
       "localizedContent": {
         "vi": {
-          "prompt": "Lan đọc 3 trang rồi nghỉ. Lan đã đọc mấy trang?",
+          "prompt": "Bình ở thư viện nhỏ và đếm được 3 thẻ chữ. Bình đếm được bao nhiêu thẻ chữ?",
           "options": [
             {
               "id": "a",
@@ -379,26 +383,26 @@
             },
             {
               "id": "b",
-              "text": "2",
-              "correct": false
+              "text": "3",
+              "correct": true
             },
             {
               "id": "c",
-              "text": "3",
-              "correct": true
+              "text": "2",
+              "correct": false
             }
           ],
           "deepData": {
-            "passage": "Ghi chú truyện: đọc câu chuyện, nhớ số 3, rồi chọn đáp án khớp.",
+            "passage": "Bình ghé thư viện nhỏ. Bình cẩn thận đếm 3 thẻ chữ rồi chia sẻ đáp án với MI.",
             "steps": [
-              "Đọc ghi chú",
-              "Tìm con số",
-              "Chọn đáp án khớp"
+              "Đọc đoạn ngắn",
+              "Tìm vật được đếm",
+              "Chọn con số"
             ]
           }
         },
         "en": {
-          "prompt": "Lan reads 3 pages, then rests. How many pages did Lan read?",
+          "prompt": "Binh is in the mini library and counts 3 letter cards. How many letter cards did Binh count?",
           "options": [
             {
               "id": "a",
@@ -407,21 +411,21 @@
             },
             {
               "id": "b",
-              "text": "2",
-              "correct": false
+              "text": "3",
+              "correct": true
             },
             {
               "id": "c",
-              "text": "3",
-              "correct": true
+              "text": "2",
+              "correct": false
             }
           ],
           "deepData": {
-            "passage": "Story note: read the sentence, keep the number 3 in mind, then choose the matching answer.",
+            "passage": "Binh visited the mini library. Binh carefully counted 3 letter cards before sharing the answer with MI.",
             "steps": [
-              "Read the note",
-              "Find the number",
-              "Choose the match"
+              "Read the passage",
+              "Find the counted item",
+              "Choose the number"
             ]
           }
         }
@@ -444,7 +448,8 @@
         "reviewState": "technically_validated",
         "deepData": {
           "scene": "reading",
-          "passageKind": "fact_lookup"
+          "passageKind": "fact_lookup",
+          "answer": 3
         }
       },
       "assetRefs": [],
@@ -460,58 +465,58 @@
       "learningObjective": "Story Comprehension tier 1",
       "localizedContent": {
         "vi": {
-          "prompt": "Lan đọc 3 trang rồi nghỉ. Lan đã đọc mấy trang?",
+          "prompt": "Hà ở bảng tiến bộ và đếm được 4 ngôi sao thưởng. Hà đếm được bao nhiêu ngôi sao thưởng?",
           "options": [
             {
               "id": "a",
-              "text": "3",
+              "text": "4",
               "correct": true
             },
             {
               "id": "b",
-              "text": "2",
+              "text": "3",
               "correct": false
             },
             {
               "id": "c",
-              "text": "4",
+              "text": "5",
               "correct": false
             }
           ],
           "deepData": {
-            "passage": "Ghi chú truyện: đọc câu chuyện, nhớ số 3, rồi chọn đáp án khớp.",
+            "passage": "Hà ghé bảng tiến bộ. Hà cẩn thận đếm 4 ngôi sao thưởng rồi chia sẻ đáp án với MI.",
             "steps": [
-              "Đọc ghi chú",
-              "Tìm con số",
-              "Chọn đáp án khớp"
+              "Đọc đoạn ngắn",
+              "Tìm vật được đếm",
+              "Chọn con số"
             ]
           }
         },
         "en": {
-          "prompt": "Lan reads 3 pages, then rests. How many pages did Lan read?",
+          "prompt": "Ha is in the progress board and counts 4 reward stars. How many reward stars did Ha count?",
           "options": [
             {
               "id": "a",
-              "text": "3",
+              "text": "4",
               "correct": true
             },
             {
               "id": "b",
-              "text": "2",
+              "text": "3",
               "correct": false
             },
             {
               "id": "c",
-              "text": "4",
+              "text": "5",
               "correct": false
             }
           ],
           "deepData": {
-            "passage": "Story note: read the sentence, keep the number 3 in mind, then choose the matching answer.",
+            "passage": "Ha visited the progress board. Ha carefully counted 4 reward stars before sharing the answer with MI.",
             "steps": [
-              "Read the note",
-              "Find the number",
-              "Choose the match"
+              "Read the passage",
+              "Find the counted item",
+              "Choose the number"
             ]
           }
         }
@@ -534,7 +539,8 @@
         "reviewState": "technically_validated",
         "deepData": {
           "scene": "reading",
-          "passageKind": "fact_lookup"
+          "passageKind": "fact_lookup",
+          "answer": 4
         }
       },
       "assetRefs": [],
@@ -550,58 +556,58 @@
       "learningObjective": "Story Comprehension tier 2",
       "localizedContent": {
         "vi": {
-          "prompt": "Lan đọc 4 trang rồi nghỉ. Lan đã đọc mấy trang?",
+          "prompt": "Nam ở hộp đồ chơi và đếm được 6 viên bi xanh. Nam đếm được bao nhiêu viên bi xanh?",
           "options": [
             {
               "id": "a",
-              "text": "3",
+              "text": "5",
               "correct": false
             },
             {
               "id": "b",
-              "text": "4",
-              "correct": true
+              "text": "7",
+              "correct": false
             },
             {
               "id": "c",
-              "text": "5",
-              "correct": false
+              "text": "6",
+              "correct": true
             }
           ],
           "deepData": {
-            "passage": "Ghi chú truyện: đọc câu chuyện, nhớ số 4, rồi chọn đáp án khớp.",
+            "passage": "Nam ghé hộp đồ chơi. Nam cẩn thận đếm 6 viên bi xanh rồi chia sẻ đáp án với MI.",
             "steps": [
-              "Đọc ghi chú",
-              "Tìm con số",
-              "Chọn đáp án khớp"
+              "Đọc đoạn ngắn",
+              "Tìm vật được đếm",
+              "Chọn con số"
             ]
           }
         },
         "en": {
-          "prompt": "Lan reads 4 pages, then rests. How many pages did Lan read?",
+          "prompt": "Nam is in the toy box and counts 6 blue marbles. How many blue marbles did Nam count?",
           "options": [
             {
               "id": "a",
-              "text": "3",
+              "text": "5",
               "correct": false
             },
             {
               "id": "b",
-              "text": "4",
-              "correct": true
+              "text": "7",
+              "correct": false
             },
             {
               "id": "c",
-              "text": "5",
-              "correct": false
+              "text": "6",
+              "correct": true
             }
           ],
           "deepData": {
-            "passage": "Story note: read the sentence, keep the number 4 in mind, then choose the matching answer.",
+            "passage": "Nam visited the toy box. Nam carefully counted 6 blue marbles before sharing the answer with MI.",
             "steps": [
-              "Read the note",
-              "Find the number",
-              "Choose the match"
+              "Read the passage",
+              "Find the counted item",
+              "Choose the number"
             ]
           }
         }
@@ -624,7 +630,8 @@
         "reviewState": "technically_validated",
         "deepData": {
           "scene": "reading",
-          "passageKind": "fact_lookup"
+          "passageKind": "fact_lookup",
+          "answer": 6
         }
       },
       "assetRefs": [],
@@ -640,58 +647,58 @@
       "learningObjective": "Story Comprehension tier 2",
       "localizedContent": {
         "vi": {
-          "prompt": "Lan đọc 4 trang rồi nghỉ. Lan đã đọc mấy trang?",
+          "prompt": "Linh ở thảm chơi và đếm được 7 mảnh ghép. Linh đếm được bao nhiêu mảnh ghép?",
           "options": [
             {
               "id": "a",
-              "text": "5",
+              "text": "8",
               "correct": false
             },
             {
               "id": "b",
-              "text": "3",
-              "correct": false
+              "text": "7",
+              "correct": true
             },
             {
               "id": "c",
-              "text": "4",
-              "correct": true
+              "text": "6",
+              "correct": false
             }
           ],
           "deepData": {
-            "passage": "Ghi chú truyện: đọc câu chuyện, nhớ số 4, rồi chọn đáp án khớp.",
+            "passage": "Linh ghé thảm chơi. Linh cẩn thận đếm 7 mảnh ghép rồi chia sẻ đáp án với MI.",
             "steps": [
-              "Đọc ghi chú",
-              "Tìm con số",
-              "Chọn đáp án khớp"
+              "Đọc đoạn ngắn",
+              "Tìm vật được đếm",
+              "Chọn con số"
             ]
           }
         },
         "en": {
-          "prompt": "Lan reads 4 pages, then rests. How many pages did Lan read?",
+          "prompt": "Linh is in the play mat and counts 7 puzzle pieces. How many puzzle pieces did Linh count?",
           "options": [
             {
               "id": "a",
-              "text": "5",
+              "text": "8",
               "correct": false
             },
             {
               "id": "b",
-              "text": "3",
-              "correct": false
+              "text": "7",
+              "correct": true
             },
             {
               "id": "c",
-              "text": "4",
-              "correct": true
+              "text": "6",
+              "correct": false
             }
           ],
           "deepData": {
-            "passage": "Story note: read the sentence, keep the number 4 in mind, then choose the matching answer.",
+            "passage": "Linh visited the play mat. Linh carefully counted 7 puzzle pieces before sharing the answer with MI.",
             "steps": [
-              "Read the note",
-              "Find the number",
-              "Choose the match"
+              "Read the passage",
+              "Find the counted item",
+              "Choose the number"
             ]
           }
         }
@@ -714,7 +721,8 @@
         "reviewState": "technically_validated",
         "deepData": {
           "scene": "reading",
-          "passageKind": "fact_lookup"
+          "passageKind": "fact_lookup",
+          "answer": 7
         }
       },
       "assetRefs": [],
@@ -730,58 +738,58 @@
       "learningObjective": "Story Comprehension tier 2",
       "localizedContent": {
         "vi": {
-          "prompt": "Lan đọc 4 trang rồi nghỉ. Lan đã đọc mấy trang?",
+          "prompt": "Phúc ở vườn nhỏ và đếm được 8 lá cây. Phúc đếm được bao nhiêu lá cây?",
           "options": [
             {
               "id": "a",
-              "text": "4",
+              "text": "8",
               "correct": true
             },
             {
               "id": "b",
-              "text": "3",
+              "text": "7",
               "correct": false
             },
             {
               "id": "c",
-              "text": "5",
+              "text": "9",
               "correct": false
             }
           ],
           "deepData": {
-            "passage": "Ghi chú truyện: đọc câu chuyện, nhớ số 4, rồi chọn đáp án khớp.",
+            "passage": "Phúc ghé vườn nhỏ. Phúc cẩn thận đếm 8 lá cây rồi chia sẻ đáp án với MI.",
             "steps": [
-              "Đọc ghi chú",
-              "Tìm con số",
-              "Chọn đáp án khớp"
+              "Đọc đoạn ngắn",
+              "Tìm vật được đếm",
+              "Chọn con số"
             ]
           }
         },
         "en": {
-          "prompt": "Lan reads 4 pages, then rests. How many pages did Lan read?",
+          "prompt": "Phuc is in the small garden and counts 8 leaves. How many leaves did Phuc count?",
           "options": [
             {
               "id": "a",
-              "text": "4",
+              "text": "8",
               "correct": true
             },
             {
               "id": "b",
-              "text": "3",
+              "text": "7",
               "correct": false
             },
             {
               "id": "c",
-              "text": "5",
+              "text": "9",
               "correct": false
             }
           ],
           "deepData": {
-            "passage": "Story note: read the sentence, keep the number 4 in mind, then choose the matching answer.",
+            "passage": "Phuc visited the small garden. Phuc carefully counted 8 leaves before sharing the answer with MI.",
             "steps": [
-              "Read the note",
-              "Find the number",
-              "Choose the match"
+              "Read the passage",
+              "Find the counted item",
+              "Choose the number"
             ]
           }
         }
@@ -804,7 +812,8 @@
         "reviewState": "technically_validated",
         "deepData": {
           "scene": "reading",
-          "passageKind": "fact_lookup"
+          "passageKind": "fact_lookup",
+          "answer": 8
         }
       },
       "assetRefs": [],
@@ -820,58 +829,58 @@
       "learningObjective": "Story Comprehension tier 2",
       "localizedContent": {
         "vi": {
-          "prompt": "Lan đọc 4 trang rồi nghỉ. Lan đã đọc mấy trang?",
+          "prompt": "Vy ở sổ sáng tạo và đếm được 3 nhãn dán. Vy đếm được bao nhiêu nhãn dán?",
           "options": [
             {
               "id": "a",
-              "text": "3",
+              "text": "2",
               "correct": false
             },
             {
               "id": "b",
               "text": "4",
-              "correct": true
+              "correct": false
             },
             {
               "id": "c",
-              "text": "5",
-              "correct": false
+              "text": "3",
+              "correct": true
             }
           ],
           "deepData": {
-            "passage": "Ghi chú truyện: đọc câu chuyện, nhớ số 4, rồi chọn đáp án khớp.",
+            "passage": "Vy ghé sổ sáng tạo. Vy cẩn thận đếm 3 nhãn dán rồi chia sẻ đáp án với MI.",
             "steps": [
-              "Đọc ghi chú",
-              "Tìm con số",
-              "Chọn đáp án khớp"
+              "Đọc đoạn ngắn",
+              "Tìm vật được đếm",
+              "Chọn con số"
             ]
           }
         },
         "en": {
-          "prompt": "Lan reads 4 pages, then rests. How many pages did Lan read?",
+          "prompt": "Vy is in the creative notebook and counts 3 stickers. How many stickers did Vy count?",
           "options": [
             {
               "id": "a",
-              "text": "3",
+              "text": "2",
               "correct": false
             },
             {
               "id": "b",
               "text": "4",
-              "correct": true
+              "correct": false
             },
             {
               "id": "c",
-              "text": "5",
-              "correct": false
+              "text": "3",
+              "correct": true
             }
           ],
           "deepData": {
-            "passage": "Story note: read the sentence, keep the number 4 in mind, then choose the matching answer.",
+            "passage": "Vy visited the creative notebook. Vy carefully counted 3 stickers before sharing the answer with MI.",
             "steps": [
-              "Read the note",
-              "Find the number",
-              "Choose the match"
+              "Read the passage",
+              "Find the counted item",
+              "Choose the number"
             ]
           }
         }
@@ -894,7 +903,8 @@
         "reviewState": "technically_validated",
         "deepData": {
           "scene": "reading",
-          "passageKind": "fact_lookup"
+          "passageKind": "fact_lookup",
+          "answer": 3
         }
       },
       "assetRefs": [],
@@ -910,7 +920,7 @@
       "learningObjective": "Story Comprehension tier 2",
       "localizedContent": {
         "vi": {
-          "prompt": "Lan đọc 4 trang rồi nghỉ. Lan đã đọc mấy trang?",
+          "prompt": "Lan ở góc đọc sách và đếm được 4 trang sách. Lan đếm được bao nhiêu trang sách?",
           "options": [
             {
               "id": "a",
@@ -919,26 +929,26 @@
             },
             {
               "id": "b",
-              "text": "3",
-              "correct": false
+              "text": "4",
+              "correct": true
             },
             {
               "id": "c",
-              "text": "4",
-              "correct": true
+              "text": "3",
+              "correct": false
             }
           ],
           "deepData": {
-            "passage": "Ghi chú truyện: đọc câu chuyện, nhớ số 4, rồi chọn đáp án khớp.",
+            "passage": "Lan ghé góc đọc sách. Lan cẩn thận đếm 4 trang sách rồi chia sẻ đáp án với MI.",
             "steps": [
-              "Đọc ghi chú",
-              "Tìm con số",
-              "Chọn đáp án khớp"
+              "Đọc đoạn ngắn",
+              "Tìm vật được đếm",
+              "Chọn con số"
             ]
           }
         },
         "en": {
-          "prompt": "Lan reads 4 pages, then rests. How many pages did Lan read?",
+          "prompt": "Lan is in the reading corner and counts 4 pages. How many pages did Lan count?",
           "options": [
             {
               "id": "a",
@@ -947,21 +957,21 @@
             },
             {
               "id": "b",
-              "text": "3",
-              "correct": false
+              "text": "4",
+              "correct": true
             },
             {
               "id": "c",
-              "text": "4",
-              "correct": true
+              "text": "3",
+              "correct": false
             }
           ],
           "deepData": {
-            "passage": "Story note: read the sentence, keep the number 4 in mind, then choose the matching answer.",
+            "passage": "Lan visited the reading corner. Lan carefully counted 4 pages before sharing the answer with MI.",
             "steps": [
-              "Read the note",
-              "Find the number",
-              "Choose the match"
+              "Read the passage",
+              "Find the counted item",
+              "Choose the number"
             ]
           }
         }
@@ -984,7 +994,8 @@
         "reviewState": "technically_validated",
         "deepData": {
           "scene": "reading",
-          "passageKind": "fact_lookup"
+          "passageKind": "fact_lookup",
+          "answer": 4
         }
       },
       "assetRefs": [],
@@ -1000,58 +1011,58 @@
       "learningObjective": "Story Comprehension tier 2",
       "localizedContent": {
         "vi": {
-          "prompt": "Lan đọc 4 trang rồi nghỉ. Lan đã đọc mấy trang?",
+          "prompt": "Minh ở lớp học và đếm được 5 bút chì. Minh đếm được bao nhiêu bút chì?",
           "options": [
             {
               "id": "a",
-              "text": "4",
+              "text": "5",
               "correct": true
             },
             {
               "id": "b",
-              "text": "3",
+              "text": "4",
               "correct": false
             },
             {
               "id": "c",
-              "text": "5",
+              "text": "6",
               "correct": false
             }
           ],
           "deepData": {
-            "passage": "Ghi chú truyện: đọc câu chuyện, nhớ số 4, rồi chọn đáp án khớp.",
+            "passage": "Minh ghé lớp học. Minh cẩn thận đếm 5 bút chì rồi chia sẻ đáp án với MI.",
             "steps": [
-              "Đọc ghi chú",
-              "Tìm con số",
-              "Chọn đáp án khớp"
+              "Đọc đoạn ngắn",
+              "Tìm vật được đếm",
+              "Chọn con số"
             ]
           }
         },
         "en": {
-          "prompt": "Lan reads 4 pages, then rests. How many pages did Lan read?",
+          "prompt": "Minh is in the classroom and counts 5 pencils. How many pencils did Minh count?",
           "options": [
             {
               "id": "a",
-              "text": "4",
+              "text": "5",
               "correct": true
             },
             {
               "id": "b",
-              "text": "3",
+              "text": "4",
               "correct": false
             },
             {
               "id": "c",
-              "text": "5",
+              "text": "6",
               "correct": false
             }
           ],
           "deepData": {
-            "passage": "Story note: read the sentence, keep the number 4 in mind, then choose the matching answer.",
+            "passage": "Minh visited the classroom. Minh carefully counted 5 pencils before sharing the answer with MI.",
             "steps": [
-              "Read the note",
-              "Find the number",
-              "Choose the match"
+              "Read the passage",
+              "Find the counted item",
+              "Choose the number"
             ]
           }
         }
@@ -1074,7 +1085,8 @@
         "reviewState": "technically_validated",
         "deepData": {
           "scene": "reading",
-          "passageKind": "fact_lookup"
+          "passageKind": "fact_lookup",
+          "answer": 5
         }
       },
       "assetRefs": [],
@@ -1090,58 +1102,58 @@
       "learningObjective": "Story Comprehension tier 3",
       "localizedContent": {
         "vi": {
-          "prompt": "Lan đọc 5 trang rồi nghỉ. Lan đã đọc mấy trang?",
+          "prompt": "An ở bàn học và đếm được 7 khối gỗ. An đếm được bao nhiêu khối gỗ?",
           "options": [
             {
               "id": "a",
-              "text": "4",
+              "text": "6",
               "correct": false
             },
             {
               "id": "b",
-              "text": "5",
-              "correct": true
+              "text": "8",
+              "correct": false
             },
             {
               "id": "c",
-              "text": "6",
-              "correct": false
+              "text": "7",
+              "correct": true
             }
           ],
           "deepData": {
-            "passage": "Ghi chú truyện: đọc câu chuyện, nhớ số 5, rồi chọn đáp án khớp.",
+            "passage": "An ghé bàn học. An cẩn thận đếm 7 khối gỗ rồi chia sẻ đáp án với MI.",
             "steps": [
-              "Đọc ghi chú",
-              "Tìm con số",
-              "Chọn đáp án khớp"
+              "Đọc đoạn ngắn",
+              "Tìm vật được đếm",
+              "Chọn con số"
             ]
           }
         },
         "en": {
-          "prompt": "Lan reads 5 pages, then rests. How many pages did Lan read?",
+          "prompt": "An is in the study table and counts 7 blocks. How many blocks did An count?",
           "options": [
             {
               "id": "a",
-              "text": "4",
+              "text": "6",
               "correct": false
             },
             {
               "id": "b",
-              "text": "5",
-              "correct": true
+              "text": "8",
+              "correct": false
             },
             {
               "id": "c",
-              "text": "6",
-              "correct": false
+              "text": "7",
+              "correct": true
             }
           ],
           "deepData": {
-            "passage": "Story note: read the sentence, keep the number 5 in mind, then choose the matching answer.",
+            "passage": "An visited the study table. An carefully counted 7 blocks before sharing the answer with MI.",
             "steps": [
-              "Read the note",
-              "Find the number",
-              "Choose the match"
+              "Read the passage",
+              "Find the counted item",
+              "Choose the number"
             ]
           }
         }
@@ -1164,7 +1176,8 @@
         "reviewState": "technically_validated",
         "deepData": {
           "scene": "reading",
-          "passageKind": "fact_lookup"
+          "passageKind": "fact_lookup",
+          "answer": 7
         }
       },
       "assetRefs": [],
@@ -1180,58 +1193,58 @@
       "learningObjective": "Story Comprehension tier 3",
       "localizedContent": {
         "vi": {
-          "prompt": "Lan đọc 5 trang rồi nghỉ. Lan đã đọc mấy trang?",
+          "prompt": "Mai ở góc thủ công và đếm được 8 bông hoa giấy. Mai đếm được bao nhiêu bông hoa giấy?",
           "options": [
             {
               "id": "a",
-              "text": "6",
+              "text": "9",
               "correct": false
             },
             {
               "id": "b",
-              "text": "4",
-              "correct": false
+              "text": "8",
+              "correct": true
             },
             {
               "id": "c",
-              "text": "5",
-              "correct": true
+              "text": "7",
+              "correct": false
             }
           ],
           "deepData": {
-            "passage": "Ghi chú truyện: đọc câu chuyện, nhớ số 5, rồi chọn đáp án khớp.",
+            "passage": "Mai ghé góc thủ công. Mai cẩn thận đếm 8 bông hoa giấy rồi chia sẻ đáp án với MI.",
             "steps": [
-              "Đọc ghi chú",
-              "Tìm con số",
-              "Chọn đáp án khớp"
+              "Đọc đoạn ngắn",
+              "Tìm vật được đếm",
+              "Chọn con số"
             ]
           }
         },
         "en": {
-          "prompt": "Lan reads 5 pages, then rests. How many pages did Lan read?",
+          "prompt": "Mai is in the craft corner and counts 8 paper flowers. How many paper flowers did Mai count?",
           "options": [
             {
               "id": "a",
-              "text": "6",
+              "text": "9",
               "correct": false
             },
             {
               "id": "b",
-              "text": "4",
-              "correct": false
+              "text": "8",
+              "correct": true
             },
             {
               "id": "c",
-              "text": "5",
-              "correct": true
+              "text": "7",
+              "correct": false
             }
           ],
           "deepData": {
-            "passage": "Story note: read the sentence, keep the number 5 in mind, then choose the matching answer.",
+            "passage": "Mai visited the craft corner. Mai carefully counted 8 paper flowers before sharing the answer with MI.",
             "steps": [
-              "Read the note",
-              "Find the number",
-              "Choose the match"
+              "Read the passage",
+              "Find the counted item",
+              "Choose the number"
             ]
           }
         }
@@ -1254,7 +1267,8 @@
         "reviewState": "technically_validated",
         "deepData": {
           "scene": "reading",
-          "passageKind": "fact_lookup"
+          "passageKind": "fact_lookup",
+          "answer": 8
         }
       },
       "assetRefs": [],
@@ -1270,58 +1284,58 @@
       "learningObjective": "Story Comprehension tier 3",
       "localizedContent": {
         "vi": {
-          "prompt": "Lan đọc 5 trang rồi nghỉ. Lan đã đọc mấy trang?",
+          "prompt": "Bình ở thư viện nhỏ và đếm được 3 thẻ chữ. Bình đếm được bao nhiêu thẻ chữ?",
           "options": [
             {
               "id": "a",
-              "text": "5",
+              "text": "3",
               "correct": true
             },
             {
               "id": "b",
-              "text": "4",
+              "text": "2",
               "correct": false
             },
             {
               "id": "c",
-              "text": "6",
+              "text": "4",
               "correct": false
             }
           ],
           "deepData": {
-            "passage": "Ghi chú truyện: đọc câu chuyện, nhớ số 5, rồi chọn đáp án khớp.",
+            "passage": "Bình ghé thư viện nhỏ. Bình cẩn thận đếm 3 thẻ chữ rồi chia sẻ đáp án với MI.",
             "steps": [
-              "Đọc ghi chú",
-              "Tìm con số",
-              "Chọn đáp án khớp"
+              "Đọc đoạn ngắn",
+              "Tìm vật được đếm",
+              "Chọn con số"
             ]
           }
         },
         "en": {
-          "prompt": "Lan reads 5 pages, then rests. How many pages did Lan read?",
+          "prompt": "Binh is in the mini library and counts 3 letter cards. How many letter cards did Binh count?",
           "options": [
             {
               "id": "a",
-              "text": "5",
+              "text": "3",
               "correct": true
             },
             {
               "id": "b",
-              "text": "4",
+              "text": "2",
               "correct": false
             },
             {
               "id": "c",
-              "text": "6",
+              "text": "4",
               "correct": false
             }
           ],
           "deepData": {
-            "passage": "Story note: read the sentence, keep the number 5 in mind, then choose the matching answer.",
+            "passage": "Binh visited the mini library. Binh carefully counted 3 letter cards before sharing the answer with MI.",
             "steps": [
-              "Read the note",
-              "Find the number",
-              "Choose the match"
+              "Read the passage",
+              "Find the counted item",
+              "Choose the number"
             ]
           }
         }
@@ -1344,7 +1358,8 @@
         "reviewState": "technically_validated",
         "deepData": {
           "scene": "reading",
-          "passageKind": "fact_lookup"
+          "passageKind": "fact_lookup",
+          "answer": 3
         }
       },
       "assetRefs": [],
@@ -1360,58 +1375,58 @@
       "learningObjective": "Story Comprehension tier 3",
       "localizedContent": {
         "vi": {
-          "prompt": "Lan đọc 5 trang rồi nghỉ. Lan đã đọc mấy trang?",
+          "prompt": "Hà ở bảng tiến bộ và đếm được 4 ngôi sao thưởng. Hà đếm được bao nhiêu ngôi sao thưởng?",
           "options": [
             {
               "id": "a",
-              "text": "4",
+              "text": "3",
               "correct": false
             },
             {
               "id": "b",
               "text": "5",
-              "correct": true
+              "correct": false
             },
             {
               "id": "c",
-              "text": "6",
-              "correct": false
+              "text": "4",
+              "correct": true
             }
           ],
           "deepData": {
-            "passage": "Ghi chú truyện: đọc câu chuyện, nhớ số 5, rồi chọn đáp án khớp.",
+            "passage": "Hà ghé bảng tiến bộ. Hà cẩn thận đếm 4 ngôi sao thưởng rồi chia sẻ đáp án với MI.",
             "steps": [
-              "Đọc ghi chú",
-              "Tìm con số",
-              "Chọn đáp án khớp"
+              "Đọc đoạn ngắn",
+              "Tìm vật được đếm",
+              "Chọn con số"
             ]
           }
         },
         "en": {
-          "prompt": "Lan reads 5 pages, then rests. How many pages did Lan read?",
+          "prompt": "Ha is in the progress board and counts 4 reward stars. How many reward stars did Ha count?",
           "options": [
             {
               "id": "a",
-              "text": "4",
+              "text": "3",
               "correct": false
             },
             {
               "id": "b",
               "text": "5",
-              "correct": true
+              "correct": false
             },
             {
               "id": "c",
-              "text": "6",
-              "correct": false
+              "text": "4",
+              "correct": true
             }
           ],
           "deepData": {
-            "passage": "Story note: read the sentence, keep the number 5 in mind, then choose the matching answer.",
+            "passage": "Ha visited the progress board. Ha carefully counted 4 reward stars before sharing the answer with MI.",
             "steps": [
-              "Read the note",
-              "Find the number",
-              "Choose the match"
+              "Read the passage",
+              "Find the counted item",
+              "Choose the number"
             ]
           }
         }
@@ -1434,7 +1449,8 @@
         "reviewState": "technically_validated",
         "deepData": {
           "scene": "reading",
-          "passageKind": "fact_lookup"
+          "passageKind": "fact_lookup",
+          "answer": 4
         }
       },
       "assetRefs": [],
@@ -1450,7 +1466,7 @@
       "learningObjective": "Story Comprehension tier 3",
       "localizedContent": {
         "vi": {
-          "prompt": "Lan đọc 5 trang rồi nghỉ. Lan đã đọc mấy trang?",
+          "prompt": "Nam ở hộp đồ chơi và đếm được 5 viên bi xanh. Nam đếm được bao nhiêu viên bi xanh?",
           "options": [
             {
               "id": "a",
@@ -1459,26 +1475,26 @@
             },
             {
               "id": "b",
-              "text": "4",
-              "correct": false
+              "text": "5",
+              "correct": true
             },
             {
               "id": "c",
-              "text": "5",
-              "correct": true
+              "text": "4",
+              "correct": false
             }
           ],
           "deepData": {
-            "passage": "Ghi chú truyện: đọc câu chuyện, nhớ số 5, rồi chọn đáp án khớp.",
+            "passage": "Nam ghé hộp đồ chơi. Nam cẩn thận đếm 5 viên bi xanh rồi chia sẻ đáp án với MI.",
             "steps": [
-              "Đọc ghi chú",
-              "Tìm con số",
-              "Chọn đáp án khớp"
+              "Đọc đoạn ngắn",
+              "Tìm vật được đếm",
+              "Chọn con số"
             ]
           }
         },
         "en": {
-          "prompt": "Lan reads 5 pages, then rests. How many pages did Lan read?",
+          "prompt": "Nam is in the toy box and counts 5 blue marbles. How many blue marbles did Nam count?",
           "options": [
             {
               "id": "a",
@@ -1487,21 +1503,21 @@
             },
             {
               "id": "b",
-              "text": "4",
-              "correct": false
+              "text": "5",
+              "correct": true
             },
             {
               "id": "c",
-              "text": "5",
-              "correct": true
+              "text": "4",
+              "correct": false
             }
           ],
           "deepData": {
-            "passage": "Story note: read the sentence, keep the number 5 in mind, then choose the matching answer.",
+            "passage": "Nam visited the toy box. Nam carefully counted 5 blue marbles before sharing the answer with MI.",
             "steps": [
-              "Read the note",
-              "Find the number",
-              "Choose the match"
+              "Read the passage",
+              "Find the counted item",
+              "Choose the number"
             ]
           }
         }
@@ -1524,7 +1540,8 @@
         "reviewState": "technically_validated",
         "deepData": {
           "scene": "reading",
-          "passageKind": "fact_lookup"
+          "passageKind": "fact_lookup",
+          "answer": 5
         }
       },
       "assetRefs": [],
@@ -1540,58 +1557,58 @@
       "learningObjective": "Story Comprehension tier 3",
       "localizedContent": {
         "vi": {
-          "prompt": "Lan đọc 5 trang rồi nghỉ. Lan đã đọc mấy trang?",
+          "prompt": "Linh ở thảm chơi và đếm được 6 mảnh ghép. Linh đếm được bao nhiêu mảnh ghép?",
           "options": [
             {
               "id": "a",
-              "text": "5",
+              "text": "6",
               "correct": true
             },
             {
               "id": "b",
-              "text": "4",
+              "text": "5",
               "correct": false
             },
             {
               "id": "c",
-              "text": "6",
+              "text": "7",
               "correct": false
             }
           ],
           "deepData": {
-            "passage": "Ghi chú truyện: đọc câu chuyện, nhớ số 5, rồi chọn đáp án khớp.",
+            "passage": "Linh ghé thảm chơi. Linh cẩn thận đếm 6 mảnh ghép rồi chia sẻ đáp án với MI.",
             "steps": [
-              "Đọc ghi chú",
-              "Tìm con số",
-              "Chọn đáp án khớp"
+              "Đọc đoạn ngắn",
+              "Tìm vật được đếm",
+              "Chọn con số"
             ]
           }
         },
         "en": {
-          "prompt": "Lan reads 5 pages, then rests. How many pages did Lan read?",
+          "prompt": "Linh is in the play mat and counts 6 puzzle pieces. How many puzzle pieces did Linh count?",
           "options": [
             {
               "id": "a",
-              "text": "5",
+              "text": "6",
               "correct": true
             },
             {
               "id": "b",
-              "text": "4",
+              "text": "5",
               "correct": false
             },
             {
               "id": "c",
-              "text": "6",
+              "text": "7",
               "correct": false
             }
           ],
           "deepData": {
-            "passage": "Story note: read the sentence, keep the number 5 in mind, then choose the matching answer.",
+            "passage": "Linh visited the play mat. Linh carefully counted 6 puzzle pieces before sharing the answer with MI.",
             "steps": [
-              "Read the note",
-              "Find the number",
-              "Choose the match"
+              "Read the passage",
+              "Find the counted item",
+              "Choose the number"
             ]
           }
         }
@@ -1614,7 +1631,8 @@
         "reviewState": "technically_validated",
         "deepData": {
           "scene": "reading",
-          "passageKind": "fact_lookup"
+          "passageKind": "fact_lookup",
+          "answer": 6
         }
       },
       "assetRefs": [],
@@ -1630,58 +1648,58 @@
       "learningObjective": "Story Comprehension tier 4",
       "localizedContent": {
         "vi": {
-          "prompt": "Lan đọc 6 trang rồi nghỉ. Lan đã đọc mấy trang?",
+          "prompt": "Phúc ở vườn nhỏ và đếm được 8 lá cây. Phúc đếm được bao nhiêu lá cây?",
           "options": [
             {
               "id": "a",
-              "text": "5",
+              "text": "7",
               "correct": false
             },
             {
               "id": "b",
-              "text": "6",
-              "correct": true
+              "text": "9",
+              "correct": false
             },
             {
               "id": "c",
-              "text": "7",
-              "correct": false
+              "text": "8",
+              "correct": true
             }
           ],
           "deepData": {
-            "passage": "Ghi chú truyện: đọc câu chuyện, nhớ số 6, rồi chọn đáp án khớp.",
+            "passage": "Phúc ghé vườn nhỏ. Phúc cẩn thận đếm 8 lá cây rồi chia sẻ đáp án với MI.",
             "steps": [
-              "Đọc ghi chú",
-              "Tìm con số",
-              "Chọn đáp án khớp"
+              "Đọc đoạn ngắn",
+              "Tìm vật được đếm",
+              "Chọn con số"
             ]
           }
         },
         "en": {
-          "prompt": "Lan reads 6 pages, then rests. How many pages did Lan read?",
+          "prompt": "Phuc is in the small garden and counts 8 leaves. How many leaves did Phuc count?",
           "options": [
             {
               "id": "a",
-              "text": "5",
+              "text": "7",
               "correct": false
             },
             {
               "id": "b",
-              "text": "6",
-              "correct": true
+              "text": "9",
+              "correct": false
             },
             {
               "id": "c",
-              "text": "7",
-              "correct": false
+              "text": "8",
+              "correct": true
             }
           ],
           "deepData": {
-            "passage": "Story note: read the sentence, keep the number 6 in mind, then choose the matching answer.",
+            "passage": "Phuc visited the small garden. Phuc carefully counted 8 leaves before sharing the answer with MI.",
             "steps": [
-              "Read the note",
-              "Find the number",
-              "Choose the match"
+              "Read the passage",
+              "Find the counted item",
+              "Choose the number"
             ]
           }
         }
@@ -1704,7 +1722,8 @@
         "reviewState": "technically_validated",
         "deepData": {
           "scene": "reading",
-          "passageKind": "fact_lookup"
+          "passageKind": "fact_lookup",
+          "answer": 8
         }
       },
       "assetRefs": [],
@@ -1720,58 +1739,58 @@
       "learningObjective": "Story Comprehension tier 4",
       "localizedContent": {
         "vi": {
-          "prompt": "Lan đọc 6 trang rồi nghỉ. Lan đã đọc mấy trang?",
+          "prompt": "Vy ở sổ sáng tạo và đếm được 3 nhãn dán. Vy đếm được bao nhiêu nhãn dán?",
           "options": [
             {
               "id": "a",
-              "text": "7",
+              "text": "4",
               "correct": false
             },
             {
               "id": "b",
-              "text": "5",
-              "correct": false
+              "text": "3",
+              "correct": true
             },
             {
               "id": "c",
-              "text": "6",
-              "correct": true
+              "text": "2",
+              "correct": false
             }
           ],
           "deepData": {
-            "passage": "Ghi chú truyện: đọc câu chuyện, nhớ số 6, rồi chọn đáp án khớp.",
+            "passage": "Vy ghé sổ sáng tạo. Vy cẩn thận đếm 3 nhãn dán rồi chia sẻ đáp án với MI.",
             "steps": [
-              "Đọc ghi chú",
-              "Tìm con số",
-              "Chọn đáp án khớp"
+              "Đọc đoạn ngắn",
+              "Tìm vật được đếm",
+              "Chọn con số"
             ]
           }
         },
         "en": {
-          "prompt": "Lan reads 6 pages, then rests. How many pages did Lan read?",
+          "prompt": "Vy is in the creative notebook and counts 3 stickers. How many stickers did Vy count?",
           "options": [
             {
               "id": "a",
-              "text": "7",
+              "text": "4",
               "correct": false
             },
             {
               "id": "b",
-              "text": "5",
-              "correct": false
+              "text": "3",
+              "correct": true
             },
             {
               "id": "c",
-              "text": "6",
-              "correct": true
+              "text": "2",
+              "correct": false
             }
           ],
           "deepData": {
-            "passage": "Story note: read the sentence, keep the number 6 in mind, then choose the matching answer.",
+            "passage": "Vy visited the creative notebook. Vy carefully counted 3 stickers before sharing the answer with MI.",
             "steps": [
-              "Read the note",
-              "Find the number",
-              "Choose the match"
+              "Read the passage",
+              "Find the counted item",
+              "Choose the number"
             ]
           }
         }
@@ -1794,7 +1813,8 @@
         "reviewState": "technically_validated",
         "deepData": {
           "scene": "reading",
-          "passageKind": "fact_lookup"
+          "passageKind": "fact_lookup",
+          "answer": 3
         }
       },
       "assetRefs": [],
@@ -1810,58 +1830,58 @@
       "learningObjective": "Story Comprehension tier 4",
       "localizedContent": {
         "vi": {
-          "prompt": "Lan đọc 6 trang rồi nghỉ. Lan đã đọc mấy trang?",
+          "prompt": "Lan ở góc đọc sách và đếm được 4 trang sách. Lan đếm được bao nhiêu trang sách?",
           "options": [
             {
               "id": "a",
-              "text": "6",
+              "text": "4",
               "correct": true
             },
             {
               "id": "b",
-              "text": "5",
+              "text": "3",
               "correct": false
             },
             {
               "id": "c",
-              "text": "7",
+              "text": "5",
               "correct": false
             }
           ],
           "deepData": {
-            "passage": "Ghi chú truyện: đọc câu chuyện, nhớ số 6, rồi chọn đáp án khớp.",
+            "passage": "Lan ghé góc đọc sách. Lan cẩn thận đếm 4 trang sách rồi chia sẻ đáp án với MI.",
             "steps": [
-              "Đọc ghi chú",
-              "Tìm con số",
-              "Chọn đáp án khớp"
+              "Đọc đoạn ngắn",
+              "Tìm vật được đếm",
+              "Chọn con số"
             ]
           }
         },
         "en": {
-          "prompt": "Lan reads 6 pages, then rests. How many pages did Lan read?",
+          "prompt": "Lan is in the reading corner and counts 4 pages. How many pages did Lan count?",
           "options": [
             {
               "id": "a",
-              "text": "6",
+              "text": "4",
               "correct": true
             },
             {
               "id": "b",
-              "text": "5",
+              "text": "3",
               "correct": false
             },
             {
               "id": "c",
-              "text": "7",
+              "text": "5",
               "correct": false
             }
           ],
           "deepData": {
-            "passage": "Story note: read the sentence, keep the number 6 in mind, then choose the matching answer.",
+            "passage": "Lan visited the reading corner. Lan carefully counted 4 pages before sharing the answer with MI.",
             "steps": [
-              "Read the note",
-              "Find the number",
-              "Choose the match"
+              "Read the passage",
+              "Find the counted item",
+              "Choose the number"
             ]
           }
         }
@@ -1884,7 +1904,8 @@
         "reviewState": "technically_validated",
         "deepData": {
           "scene": "reading",
-          "passageKind": "fact_lookup"
+          "passageKind": "fact_lookup",
+          "answer": 4
         }
       },
       "assetRefs": [],
@@ -1900,58 +1921,58 @@
       "learningObjective": "Story Comprehension tier 4",
       "localizedContent": {
         "vi": {
-          "prompt": "Lan đọc 6 trang rồi nghỉ. Lan đã đọc mấy trang?",
+          "prompt": "Minh ở lớp học và đếm được 5 bút chì. Minh đếm được bao nhiêu bút chì?",
           "options": [
             {
               "id": "a",
-              "text": "5",
+              "text": "4",
               "correct": false
             },
             {
               "id": "b",
               "text": "6",
-              "correct": true
+              "correct": false
             },
             {
               "id": "c",
-              "text": "7",
-              "correct": false
+              "text": "5",
+              "correct": true
             }
           ],
           "deepData": {
-            "passage": "Ghi chú truyện: đọc câu chuyện, nhớ số 6, rồi chọn đáp án khớp.",
+            "passage": "Minh ghé lớp học. Minh cẩn thận đếm 5 bút chì rồi chia sẻ đáp án với MI.",
             "steps": [
-              "Đọc ghi chú",
-              "Tìm con số",
-              "Chọn đáp án khớp"
+              "Đọc đoạn ngắn",
+              "Tìm vật được đếm",
+              "Chọn con số"
             ]
           }
         },
         "en": {
-          "prompt": "Lan reads 6 pages, then rests. How many pages did Lan read?",
+          "prompt": "Minh is in the classroom and counts 5 pencils. How many pencils did Minh count?",
           "options": [
             {
               "id": "a",
-              "text": "5",
+              "text": "4",
               "correct": false
             },
             {
               "id": "b",
               "text": "6",
-              "correct": true
+              "correct": false
             },
             {
               "id": "c",
-              "text": "7",
-              "correct": false
+              "text": "5",
+              "correct": true
             }
           ],
           "deepData": {
-            "passage": "Story note: read the sentence, keep the number 6 in mind, then choose the matching answer.",
+            "passage": "Minh visited the classroom. Minh carefully counted 5 pencils before sharing the answer with MI.",
             "steps": [
-              "Read the note",
-              "Find the number",
-              "Choose the match"
+              "Read the passage",
+              "Find the counted item",
+              "Choose the number"
             ]
           }
         }
@@ -1974,7 +1995,8 @@
         "reviewState": "technically_validated",
         "deepData": {
           "scene": "reading",
-          "passageKind": "fact_lookup"
+          "passageKind": "fact_lookup",
+          "answer": 5
         }
       },
       "assetRefs": [],
@@ -1990,7 +2012,7 @@
       "learningObjective": "Story Comprehension tier 4",
       "localizedContent": {
         "vi": {
-          "prompt": "Lan đọc 6 trang rồi nghỉ. Lan đã đọc mấy trang?",
+          "prompt": "An ở bàn học và đếm được 6 khối gỗ. An đếm được bao nhiêu khối gỗ?",
           "options": [
             {
               "id": "a",
@@ -1999,26 +2021,26 @@
             },
             {
               "id": "b",
-              "text": "5",
-              "correct": false
+              "text": "6",
+              "correct": true
             },
             {
               "id": "c",
-              "text": "6",
-              "correct": true
+              "text": "5",
+              "correct": false
             }
           ],
           "deepData": {
-            "passage": "Ghi chú truyện: đọc câu chuyện, nhớ số 6, rồi chọn đáp án khớp.",
+            "passage": "An ghé bàn học. An cẩn thận đếm 6 khối gỗ rồi chia sẻ đáp án với MI.",
             "steps": [
-              "Đọc ghi chú",
-              "Tìm con số",
-              "Chọn đáp án khớp"
+              "Đọc đoạn ngắn",
+              "Tìm vật được đếm",
+              "Chọn con số"
             ]
           }
         },
         "en": {
-          "prompt": "Lan reads 6 pages, then rests. How many pages did Lan read?",
+          "prompt": "An is in the study table and counts 6 blocks. How many blocks did An count?",
           "options": [
             {
               "id": "a",
@@ -2027,21 +2049,21 @@
             },
             {
               "id": "b",
-              "text": "5",
-              "correct": false
+              "text": "6",
+              "correct": true
             },
             {
               "id": "c",
-              "text": "6",
-              "correct": true
+              "text": "5",
+              "correct": false
             }
           ],
           "deepData": {
-            "passage": "Story note: read the sentence, keep the number 6 in mind, then choose the matching answer.",
+            "passage": "An visited the study table. An carefully counted 6 blocks before sharing the answer with MI.",
             "steps": [
-              "Read the note",
-              "Find the number",
-              "Choose the match"
+              "Read the passage",
+              "Find the counted item",
+              "Choose the number"
             ]
           }
         }
@@ -2064,7 +2086,8 @@
         "reviewState": "technically_validated",
         "deepData": {
           "scene": "reading",
-          "passageKind": "fact_lookup"
+          "passageKind": "fact_lookup",
+          "answer": 6
         }
       },
       "assetRefs": [],
@@ -2080,58 +2103,58 @@
       "learningObjective": "Story Comprehension tier 4",
       "localizedContent": {
         "vi": {
-          "prompt": "Lan đọc 6 trang rồi nghỉ. Lan đã đọc mấy trang?",
+          "prompt": "Mai ở góc thủ công và đếm được 7 bông hoa giấy. Mai đếm được bao nhiêu bông hoa giấy?",
           "options": [
             {
               "id": "a",
-              "text": "6",
+              "text": "7",
               "correct": true
             },
             {
               "id": "b",
-              "text": "5",
+              "text": "6",
               "correct": false
             },
             {
               "id": "c",
-              "text": "7",
+              "text": "8",
               "correct": false
             }
           ],
           "deepData": {
-            "passage": "Ghi chú truyện: đọc câu chuyện, nhớ số 6, rồi chọn đáp án khớp.",
+            "passage": "Mai ghé góc thủ công. Mai cẩn thận đếm 7 bông hoa giấy rồi chia sẻ đáp án với MI.",
             "steps": [
-              "Đọc ghi chú",
-              "Tìm con số",
-              "Chọn đáp án khớp"
+              "Đọc đoạn ngắn",
+              "Tìm vật được đếm",
+              "Chọn con số"
             ]
           }
         },
         "en": {
-          "prompt": "Lan reads 6 pages, then rests. How many pages did Lan read?",
+          "prompt": "Mai is in the craft corner and counts 7 paper flowers. How many paper flowers did Mai count?",
           "options": [
             {
               "id": "a",
-              "text": "6",
+              "text": "7",
               "correct": true
             },
             {
               "id": "b",
-              "text": "5",
+              "text": "6",
               "correct": false
             },
             {
               "id": "c",
-              "text": "7",
+              "text": "8",
               "correct": false
             }
           ],
           "deepData": {
-            "passage": "Story note: read the sentence, keep the number 6 in mind, then choose the matching answer.",
+            "passage": "Mai visited the craft corner. Mai carefully counted 7 paper flowers before sharing the answer with MI.",
             "steps": [
-              "Read the note",
-              "Find the number",
-              "Choose the match"
+              "Read the passage",
+              "Find the counted item",
+              "Choose the number"
             ]
           }
         }
@@ -2154,7 +2177,8 @@
         "reviewState": "technically_validated",
         "deepData": {
           "scene": "reading",
-          "passageKind": "fact_lookup"
+          "passageKind": "fact_lookup",
+          "answer": 7
         }
       },
       "assetRefs": [],
@@ -2170,58 +2194,58 @@
       "learningObjective": "Story Comprehension tier 5",
       "localizedContent": {
         "vi": {
-          "prompt": "Lan đọc 7 trang rồi nghỉ. Lan đã đọc mấy trang?",
+          "prompt": "Bình ở thư viện nhỏ và đếm được 3 thẻ chữ. Bình đếm được bao nhiêu thẻ chữ?",
           "options": [
             {
               "id": "a",
-              "text": "6",
+              "text": "2",
               "correct": false
             },
             {
               "id": "b",
-              "text": "7",
-              "correct": true
+              "text": "4",
+              "correct": false
             },
             {
               "id": "c",
-              "text": "8",
-              "correct": false
+              "text": "3",
+              "correct": true
             }
           ],
           "deepData": {
-            "passage": "Ghi chú truyện: đọc câu chuyện, nhớ số 7, rồi chọn đáp án khớp.",
+            "passage": "Bình ghé thư viện nhỏ. Bình cẩn thận đếm 3 thẻ chữ rồi chia sẻ đáp án với MI.",
             "steps": [
-              "Đọc ghi chú",
-              "Tìm con số",
-              "Chọn đáp án khớp"
+              "Đọc đoạn ngắn",
+              "Tìm vật được đếm",
+              "Chọn con số"
             ]
           }
         },
         "en": {
-          "prompt": "Lan reads 7 pages, then rests. How many pages did Lan read?",
+          "prompt": "Binh is in the mini library and counts 3 letter cards. How many letter cards did Binh count?",
           "options": [
             {
               "id": "a",
-              "text": "6",
+              "text": "2",
               "correct": false
             },
             {
               "id": "b",
-              "text": "7",
-              "correct": true
+              "text": "4",
+              "correct": false
             },
             {
               "id": "c",
-              "text": "8",
-              "correct": false
+              "text": "3",
+              "correct": true
             }
           ],
           "deepData": {
-            "passage": "Story note: read the sentence, keep the number 7 in mind, then choose the matching answer.",
+            "passage": "Binh visited the mini library. Binh carefully counted 3 letter cards before sharing the answer with MI.",
             "steps": [
-              "Read the note",
-              "Find the number",
-              "Choose the match"
+              "Read the passage",
+              "Find the counted item",
+              "Choose the number"
             ]
           }
         }
@@ -2244,7 +2268,8 @@
         "reviewState": "technically_validated",
         "deepData": {
           "scene": "reading",
-          "passageKind": "fact_lookup"
+          "passageKind": "fact_lookup",
+          "answer": 3
         }
       },
       "assetRefs": [],
@@ -2260,58 +2285,58 @@
       "learningObjective": "Story Comprehension tier 5",
       "localizedContent": {
         "vi": {
-          "prompt": "Lan đọc 7 trang rồi nghỉ. Lan đã đọc mấy trang?",
+          "prompt": "Hà ở bảng tiến bộ và đếm được 4 ngôi sao thưởng. Hà đếm được bao nhiêu ngôi sao thưởng?",
           "options": [
             {
               "id": "a",
-              "text": "8",
+              "text": "5",
               "correct": false
             },
             {
               "id": "b",
-              "text": "6",
-              "correct": false
+              "text": "4",
+              "correct": true
             },
             {
               "id": "c",
-              "text": "7",
-              "correct": true
+              "text": "3",
+              "correct": false
             }
           ],
           "deepData": {
-            "passage": "Ghi chú truyện: đọc câu chuyện, nhớ số 7, rồi chọn đáp án khớp.",
+            "passage": "Hà ghé bảng tiến bộ. Hà cẩn thận đếm 4 ngôi sao thưởng rồi chia sẻ đáp án với MI.",
             "steps": [
-              "Đọc ghi chú",
-              "Tìm con số",
-              "Chọn đáp án khớp"
+              "Đọc đoạn ngắn",
+              "Tìm vật được đếm",
+              "Chọn con số"
             ]
           }
         },
         "en": {
-          "prompt": "Lan reads 7 pages, then rests. How many pages did Lan read?",
+          "prompt": "Ha is in the progress board and counts 4 reward stars. How many reward stars did Ha count?",
           "options": [
             {
               "id": "a",
-              "text": "8",
+              "text": "5",
               "correct": false
             },
             {
               "id": "b",
-              "text": "6",
-              "correct": false
+              "text": "4",
+              "correct": true
             },
             {
               "id": "c",
-              "text": "7",
-              "correct": true
+              "text": "3",
+              "correct": false
             }
           ],
           "deepData": {
-            "passage": "Story note: read the sentence, keep the number 7 in mind, then choose the matching answer.",
+            "passage": "Ha visited the progress board. Ha carefully counted 4 reward stars before sharing the answer with MI.",
             "steps": [
-              "Read the note",
-              "Find the number",
-              "Choose the match"
+              "Read the passage",
+              "Find the counted item",
+              "Choose the number"
             ]
           }
         }
@@ -2334,7 +2359,8 @@
         "reviewState": "technically_validated",
         "deepData": {
           "scene": "reading",
-          "passageKind": "fact_lookup"
+          "passageKind": "fact_lookup",
+          "answer": 4
         }
       },
       "assetRefs": [],
@@ -2350,58 +2376,58 @@
       "learningObjective": "Story Comprehension tier 5",
       "localizedContent": {
         "vi": {
-          "prompt": "Lan đọc 7 trang rồi nghỉ. Lan đã đọc mấy trang?",
+          "prompt": "Nam ở hộp đồ chơi và đếm được 5 viên bi xanh. Nam đếm được bao nhiêu viên bi xanh?",
           "options": [
             {
               "id": "a",
-              "text": "7",
+              "text": "5",
               "correct": true
             },
             {
               "id": "b",
-              "text": "6",
+              "text": "4",
               "correct": false
             },
             {
               "id": "c",
-              "text": "8",
+              "text": "6",
               "correct": false
             }
           ],
           "deepData": {
-            "passage": "Ghi chú truyện: đọc câu chuyện, nhớ số 7, rồi chọn đáp án khớp.",
+            "passage": "Nam ghé hộp đồ chơi. Nam cẩn thận đếm 5 viên bi xanh rồi chia sẻ đáp án với MI.",
             "steps": [
-              "Đọc ghi chú",
-              "Tìm con số",
-              "Chọn đáp án khớp"
+              "Đọc đoạn ngắn",
+              "Tìm vật được đếm",
+              "Chọn con số"
             ]
           }
         },
         "en": {
-          "prompt": "Lan reads 7 pages, then rests. How many pages did Lan read?",
+          "prompt": "Nam is in the toy box and counts 5 blue marbles. How many blue marbles did Nam count?",
           "options": [
             {
               "id": "a",
-              "text": "7",
+              "text": "5",
               "correct": true
             },
             {
               "id": "b",
-              "text": "6",
+              "text": "4",
               "correct": false
             },
             {
               "id": "c",
-              "text": "8",
+              "text": "6",
               "correct": false
             }
           ],
           "deepData": {
-            "passage": "Story note: read the sentence, keep the number 7 in mind, then choose the matching answer.",
+            "passage": "Nam visited the toy box. Nam carefully counted 5 blue marbles before sharing the answer with MI.",
             "steps": [
-              "Read the note",
-              "Find the number",
-              "Choose the match"
+              "Read the passage",
+              "Find the counted item",
+              "Choose the number"
             ]
           }
         }
@@ -2424,7 +2450,8 @@
         "reviewState": "technically_validated",
         "deepData": {
           "scene": "reading",
-          "passageKind": "fact_lookup"
+          "passageKind": "fact_lookup",
+          "answer": 5
         }
       },
       "assetRefs": [],
@@ -2440,58 +2467,58 @@
       "learningObjective": "Story Comprehension tier 5",
       "localizedContent": {
         "vi": {
-          "prompt": "Lan đọc 7 trang rồi nghỉ. Lan đã đọc mấy trang?",
+          "prompt": "Linh ở thảm chơi và đếm được 6 mảnh ghép. Linh đếm được bao nhiêu mảnh ghép?",
           "options": [
             {
               "id": "a",
-              "text": "6",
+              "text": "5",
               "correct": false
             },
             {
               "id": "b",
               "text": "7",
-              "correct": true
+              "correct": false
             },
             {
               "id": "c",
-              "text": "8",
-              "correct": false
+              "text": "6",
+              "correct": true
             }
           ],
           "deepData": {
-            "passage": "Ghi chú truyện: đọc câu chuyện, nhớ số 7, rồi chọn đáp án khớp.",
+            "passage": "Linh ghé thảm chơi. Linh cẩn thận đếm 6 mảnh ghép rồi chia sẻ đáp án với MI.",
             "steps": [
-              "Đọc ghi chú",
-              "Tìm con số",
-              "Chọn đáp án khớp"
+              "Đọc đoạn ngắn",
+              "Tìm vật được đếm",
+              "Chọn con số"
             ]
           }
         },
         "en": {
-          "prompt": "Lan reads 7 pages, then rests. How many pages did Lan read?",
+          "prompt": "Linh is in the play mat and counts 6 puzzle pieces. How many puzzle pieces did Linh count?",
           "options": [
             {
               "id": "a",
-              "text": "6",
+              "text": "5",
               "correct": false
             },
             {
               "id": "b",
               "text": "7",
-              "correct": true
+              "correct": false
             },
             {
               "id": "c",
-              "text": "8",
-              "correct": false
+              "text": "6",
+              "correct": true
             }
           ],
           "deepData": {
-            "passage": "Story note: read the sentence, keep the number 7 in mind, then choose the matching answer.",
+            "passage": "Linh visited the play mat. Linh carefully counted 6 puzzle pieces before sharing the answer with MI.",
             "steps": [
-              "Read the note",
-              "Find the number",
-              "Choose the match"
+              "Read the passage",
+              "Find the counted item",
+              "Choose the number"
             ]
           }
         }
@@ -2514,7 +2541,8 @@
         "reviewState": "technically_validated",
         "deepData": {
           "scene": "reading",
-          "passageKind": "fact_lookup"
+          "passageKind": "fact_lookup",
+          "answer": 6
         }
       },
       "assetRefs": [],
@@ -2530,7 +2558,7 @@
       "learningObjective": "Story Comprehension tier 5",
       "localizedContent": {
         "vi": {
-          "prompt": "Lan đọc 7 trang rồi nghỉ. Lan đã đọc mấy trang?",
+          "prompt": "Phúc ở vườn nhỏ và đếm được 7 lá cây. Phúc đếm được bao nhiêu lá cây?",
           "options": [
             {
               "id": "a",
@@ -2539,26 +2567,26 @@
             },
             {
               "id": "b",
-              "text": "6",
-              "correct": false
+              "text": "7",
+              "correct": true
             },
             {
               "id": "c",
-              "text": "7",
-              "correct": true
+              "text": "6",
+              "correct": false
             }
           ],
           "deepData": {
-            "passage": "Ghi chú truyện: đọc câu chuyện, nhớ số 7, rồi chọn đáp án khớp.",
+            "passage": "Phúc ghé vườn nhỏ. Phúc cẩn thận đếm 7 lá cây rồi chia sẻ đáp án với MI.",
             "steps": [
-              "Đọc ghi chú",
-              "Tìm con số",
-              "Chọn đáp án khớp"
+              "Đọc đoạn ngắn",
+              "Tìm vật được đếm",
+              "Chọn con số"
             ]
           }
         },
         "en": {
-          "prompt": "Lan reads 7 pages, then rests. How many pages did Lan read?",
+          "prompt": "Phuc is in the small garden and counts 7 leaves. How many leaves did Phuc count?",
           "options": [
             {
               "id": "a",
@@ -2567,21 +2595,21 @@
             },
             {
               "id": "b",
-              "text": "6",
-              "correct": false
+              "text": "7",
+              "correct": true
             },
             {
               "id": "c",
-              "text": "7",
-              "correct": true
+              "text": "6",
+              "correct": false
             }
           ],
           "deepData": {
-            "passage": "Story note: read the sentence, keep the number 7 in mind, then choose the matching answer.",
+            "passage": "Phuc visited the small garden. Phuc carefully counted 7 leaves before sharing the answer with MI.",
             "steps": [
-              "Read the note",
-              "Find the number",
-              "Choose the match"
+              "Read the passage",
+              "Find the counted item",
+              "Choose the number"
             ]
           }
         }
@@ -2604,7 +2632,8 @@
         "reviewState": "technically_validated",
         "deepData": {
           "scene": "reading",
-          "passageKind": "fact_lookup"
+          "passageKind": "fact_lookup",
+          "answer": 7
         }
       },
       "assetRefs": [],
@@ -2620,58 +2649,58 @@
       "learningObjective": "Story Comprehension tier 5",
       "localizedContent": {
         "vi": {
-          "prompt": "Lan đọc 7 trang rồi nghỉ. Lan đã đọc mấy trang?",
+          "prompt": "Vy ở sổ sáng tạo và đếm được 8 nhãn dán. Vy đếm được bao nhiêu nhãn dán?",
           "options": [
             {
               "id": "a",
-              "text": "7",
+              "text": "8",
               "correct": true
             },
             {
               "id": "b",
-              "text": "6",
+              "text": "7",
               "correct": false
             },
             {
               "id": "c",
-              "text": "8",
+              "text": "9",
               "correct": false
             }
           ],
           "deepData": {
-            "passage": "Ghi chú truyện: đọc câu chuyện, nhớ số 7, rồi chọn đáp án khớp.",
+            "passage": "Vy ghé sổ sáng tạo. Vy cẩn thận đếm 8 nhãn dán rồi chia sẻ đáp án với MI.",
             "steps": [
-              "Đọc ghi chú",
-              "Tìm con số",
-              "Chọn đáp án khớp"
+              "Đọc đoạn ngắn",
+              "Tìm vật được đếm",
+              "Chọn con số"
             ]
           }
         },
         "en": {
-          "prompt": "Lan reads 7 pages, then rests. How many pages did Lan read?",
+          "prompt": "Vy is in the creative notebook and counts 8 stickers. How many stickers did Vy count?",
           "options": [
             {
               "id": "a",
-              "text": "7",
+              "text": "8",
               "correct": true
             },
             {
               "id": "b",
-              "text": "6",
+              "text": "7",
               "correct": false
             },
             {
               "id": "c",
-              "text": "8",
+              "text": "9",
               "correct": false
             }
           ],
           "deepData": {
-            "passage": "Story note: read the sentence, keep the number 7 in mind, then choose the matching answer.",
+            "passage": "Vy visited the creative notebook. Vy carefully counted 8 stickers before sharing the answer with MI.",
             "steps": [
-              "Read the note",
-              "Find the number",
-              "Choose the match"
+              "Read the passage",
+              "Find the counted item",
+              "Choose the number"
             ]
           }
         }
@@ -2694,7 +2723,8 @@
         "reviewState": "technically_validated",
         "deepData": {
           "scene": "reading",
-          "passageKind": "fact_lookup"
+          "passageKind": "fact_lookup",
+          "answer": 8
         }
       },
       "assetRefs": [],

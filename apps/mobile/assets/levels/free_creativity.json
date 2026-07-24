@@ -14,18 +14,18 @@
           "options": [
             {
               "id": "a",
-              "text": "trời tối đen",
+              "text": "Một cánh cửa nhỏ",
               "correct": false
             },
             {
               "id": "b",
-              "text": "nhân vật mỉm cười",
-              "correct": true
+              "text": "tiếng gõ nhẹ",
+              "correct": false
             },
             {
               "id": "c",
-              "text": "cửa khóa",
-              "correct": false
+              "text": "một câu hỏi mới",
+              "correct": true
             }
           ],
           "deepData": {
@@ -35,9 +35,9 @@
               "Chi tiết"
             ],
             "storyCards": [
-              "Một lớp học nhỏ",
-              "nhân vật mỉm cười",
-              "Một lựa chọn tốt bụng"
+              "Một cánh cửa nhỏ",
+              "tiếng gõ nhẹ",
+              "một câu hỏi mới"
             ]
           }
         },
@@ -46,18 +46,18 @@
           "options": [
             {
               "id": "a",
-              "text": "the sky is dark",
+              "text": "A tiny door",
               "correct": false
             },
             {
               "id": "b",
-              "text": "the character smiles",
-              "correct": true
+              "text": "a gentle knock",
+              "correct": false
             },
             {
               "id": "c",
-              "text": "the door is locked",
-              "correct": false
+              "text": "a new question",
+              "correct": true
             }
           ],
           "deepData": {
@@ -67,9 +67,9 @@
               "Detail"
             ],
             "storyCards": [
-              "A small classroom",
-              "the character smiles",
-              "A helpful choice"
+              "A tiny door",
+              "a gentle knock",
+              "a new question"
             ]
           }
         }
@@ -93,7 +93,8 @@
         "reviewState": "technically_validated",
         "deepData": {
           "scene": "creative",
-          "cardCount": 3
+          "cardCount": 3,
+          "targetFeeling": "curious"
         }
       },
       "assetRefs": [],
@@ -109,22 +110,22 @@
       "learningObjective": "Free Creativity tier 1",
       "localizedContent": {
         "vi": {
-          "prompt": "Chọn chi tiết giúp câu chuyện có cảm xúc tò mò.",
+          "prompt": "Chọn chi tiết giúp câu chuyện có cảm xúc vui.",
           "options": [
             {
               "id": "a",
-              "text": "cửa khóa",
+              "text": "một lời cảm ơn",
               "correct": false
             },
             {
               "id": "b",
-              "text": "trời tối đen",
-              "correct": false
+              "text": "bạn mới mỉm cười",
+              "correct": true
             },
             {
               "id": "c",
-              "text": "nhân vật mỉm cười",
-              "correct": true
+              "text": "sân chơi sáng nắng",
+              "correct": false
             }
           ],
           "deepData": {
@@ -134,29 +135,29 @@
               "Chi tiết"
             ],
             "storyCards": [
-              "Một lớp học nhỏ",
-              "nhân vật mỉm cười",
-              "Một lựa chọn tốt bụng"
+              "sân chơi sáng nắng",
+              "bạn mới mỉm cười",
+              "một lời cảm ơn"
             ]
           }
         },
         "en": {
-          "prompt": "Choose the detail that makes the story feel curious.",
+          "prompt": "Choose the detail that makes the story feel happy.",
           "options": [
             {
               "id": "a",
-              "text": "the door is locked",
+              "text": "a thank-you note",
               "correct": false
             },
             {
               "id": "b",
-              "text": "the sky is dark",
-              "correct": false
+              "text": "a new friend smiles",
+              "correct": true
             },
             {
               "id": "c",
-              "text": "the character smiles",
-              "correct": true
+              "text": "a sunny playground",
+              "correct": false
             }
           ],
           "deepData": {
@@ -166,9 +167,9 @@
               "Detail"
             ],
             "storyCards": [
-              "A small classroom",
-              "the character smiles",
-              "A helpful choice"
+              "a sunny playground",
+              "a new friend smiles",
+              "a thank-you note"
             ]
           }
         }
@@ -192,7 +193,8 @@
         "reviewState": "technically_validated",
         "deepData": {
           "scene": "creative",
-          "cardCount": 3
+          "cardCount": 3,
+          "targetFeeling": "happy"
         }
       },
       "assetRefs": [],
@@ -208,21 +210,21 @@
       "learningObjective": "Free Creativity tier 1",
       "localizedContent": {
         "vi": {
-          "prompt": "Chọn chi tiết giúp câu chuyện có cảm xúc tò mò.",
+          "prompt": "Chọn chi tiết giúp câu chuyện có cảm xúc can đảm.",
           "options": [
             {
               "id": "a",
-              "text": "nhân vật mỉm cười",
+              "text": "bước đầu tiên",
               "correct": true
             },
             {
               "id": "b",
-              "text": "trời tối đen",
+              "text": "cây cầu nhỏ",
               "correct": false
             },
             {
               "id": "c",
-              "text": "cửa khóa",
+              "text": "MI hít thở sâu",
               "correct": false
             }
           ],
@@ -233,28 +235,28 @@
               "Chi tiết"
             ],
             "storyCards": [
-              "Một lớp học nhỏ",
-              "nhân vật mỉm cười",
-              "Một lựa chọn tốt bụng"
+              "cây cầu nhỏ",
+              "MI hít thở sâu",
+              "bước đầu tiên"
             ]
           }
         },
         "en": {
-          "prompt": "Choose the detail that makes the story feel curious.",
+          "prompt": "Choose the detail that makes the story feel brave.",
           "options": [
             {
               "id": "a",
-              "text": "the character smiles",
+              "text": "the first step",
               "correct": true
             },
             {
               "id": "b",
-              "text": "the sky is dark",
+              "text": "a small bridge",
               "correct": false
             },
             {
               "id": "c",
-              "text": "the door is locked",
+              "text": "MI takes a deep breath",
               "correct": false
             }
           ],
@@ -265,9 +267,9 @@
               "Detail"
             ],
             "storyCards": [
-              "A small classroom",
-              "the character smiles",
-              "A helpful choice"
+              "a small bridge",
+              "MI takes a deep breath",
+              "the first step"
             ]
           }
         }
@@ -291,7 +293,8 @@
         "reviewState": "technically_validated",
         "deepData": {
           "scene": "creative",
-          "cardCount": 3
+          "cardCount": 3,
+          "targetFeeling": "brave"
         }
       },
       "assetRefs": [],
@@ -307,22 +310,22 @@
       "learningObjective": "Free Creativity tier 1",
       "localizedContent": {
         "vi": {
-          "prompt": "Chọn chi tiết giúp câu chuyện có cảm xúc tò mò.",
+          "prompt": "Chọn chi tiết giúp câu chuyện có cảm xúc tốt bụng.",
           "options": [
             {
               "id": "a",
-              "text": "trời tối đen",
+              "text": "hộp bút rơi",
               "correct": false
             },
             {
               "id": "b",
-              "text": "nhân vật mỉm cười",
-              "correct": true
+              "text": "lời chia sẻ",
+              "correct": false
             },
             {
               "id": "c",
-              "text": "cửa khóa",
-              "correct": false
+              "text": "một bàn tay giúp đỡ",
+              "correct": true
             }
           ],
           "deepData": {
@@ -332,29 +335,29 @@
               "Chi tiết"
             ],
             "storyCards": [
-              "Một lớp học nhỏ",
-              "nhân vật mỉm cười",
-              "Một lựa chọn tốt bụng"
+              "hộp bút rơi",
+              "một bàn tay giúp đỡ",
+              "lời chia sẻ"
             ]
           }
         },
         "en": {
-          "prompt": "Choose the detail that makes the story feel curious.",
+          "prompt": "Choose the detail that makes the story feel kind.",
           "options": [
             {
               "id": "a",
-              "text": "the sky is dark",
+              "text": "a fallen pencil box",
               "correct": false
             },
             {
               "id": "b",
-              "text": "the character smiles",
-              "correct": true
+              "text": "a shared word",
+              "correct": false
             },
             {
               "id": "c",
-              "text": "the door is locked",
-              "correct": false
+              "text": "a helping hand",
+              "correct": true
             }
           ],
           "deepData": {
@@ -364,9 +367,9 @@
               "Detail"
             ],
             "storyCards": [
-              "A small classroom",
-              "the character smiles",
-              "A helpful choice"
+              "a fallen pencil box",
+              "a helping hand",
+              "a shared word"
             ]
           }
         }
@@ -390,7 +393,8 @@
         "reviewState": "technically_validated",
         "deepData": {
           "scene": "creative",
-          "cardCount": 3
+          "cardCount": 3,
+          "targetFeeling": "kind"
         }
       },
       "assetRefs": [],
@@ -406,22 +410,22 @@
       "learningObjective": "Free Creativity tier 1",
       "localizedContent": {
         "vi": {
-          "prompt": "Chọn chi tiết giúp câu chuyện có cảm xúc tò mò.",
+          "prompt": "Chọn chi tiết giúp câu chuyện có cảm xúc bất ngờ.",
           "options": [
             {
               "id": "a",
-              "text": "cửa khóa",
+              "text": "ánh sáng vàng",
               "correct": false
             },
             {
               "id": "b",
-              "text": "trời tối đen",
-              "correct": false
+              "text": "một món quà nhỏ",
+              "correct": true
             },
             {
               "id": "c",
-              "text": "nhân vật mỉm cười",
-              "correct": true
+              "text": "chiếc hộp kín",
+              "correct": false
             }
           ],
           "deepData": {
@@ -431,29 +435,29 @@
               "Chi tiết"
             ],
             "storyCards": [
-              "Một lớp học nhỏ",
-              "nhân vật mỉm cười",
-              "Một lựa chọn tốt bụng"
+              "chiếc hộp kín",
+              "ánh sáng vàng",
+              "một món quà nhỏ"
             ]
           }
         },
         "en": {
-          "prompt": "Choose the detail that makes the story feel curious.",
+          "prompt": "Choose the detail that makes the story feel surprised.",
           "options": [
             {
               "id": "a",
-              "text": "the door is locked",
+              "text": "golden light",
               "correct": false
             },
             {
               "id": "b",
-              "text": "the sky is dark",
-              "correct": false
+              "text": "a small gift",
+              "correct": true
             },
             {
               "id": "c",
-              "text": "the character smiles",
-              "correct": true
+              "text": "a closed box",
+              "correct": false
             }
           ],
           "deepData": {
@@ -463,9 +467,9 @@
               "Detail"
             ],
             "storyCards": [
-              "A small classroom",
-              "the character smiles",
-              "A helpful choice"
+              "a closed box",
+              "golden light",
+              "a small gift"
             ]
           }
         }
@@ -489,7 +493,8 @@
         "reviewState": "technically_validated",
         "deepData": {
           "scene": "creative",
-          "cardCount": 3
+          "cardCount": 3,
+          "targetFeeling": "surprised"
         }
       },
       "assetRefs": [],
@@ -505,21 +510,21 @@
       "learningObjective": "Free Creativity tier 1",
       "localizedContent": {
         "vi": {
-          "prompt": "Chọn chi tiết giúp câu chuyện có cảm xúc tò mò.",
+          "prompt": "Chọn chi tiết giúp câu chuyện có cảm xúc bình tĩnh.",
           "options": [
             {
               "id": "a",
-              "text": "nhân vật mỉm cười",
+              "text": "ba hơi thở chậm",
               "correct": true
             },
             {
               "id": "b",
-              "text": "trời tối đen",
+              "text": "góc đọc yên tĩnh",
               "correct": false
             },
             {
               "id": "c",
-              "text": "cửa khóa",
+              "text": "một trang sách mới",
               "correct": false
             }
           ],
@@ -530,28 +535,28 @@
               "Chi tiết"
             ],
             "storyCards": [
-              "Một lớp học nhỏ",
-              "nhân vật mỉm cười",
-              "Một lựa chọn tốt bụng"
+              "góc đọc yên tĩnh",
+              "ba hơi thở chậm",
+              "một trang sách mới"
             ]
           }
         },
         "en": {
-          "prompt": "Choose the detail that makes the story feel curious.",
+          "prompt": "Choose the detail that makes the story feel calm.",
           "options": [
             {
               "id": "a",
-              "text": "the character smiles",
+              "text": "three slow breaths",
               "correct": true
             },
             {
               "id": "b",
-              "text": "the sky is dark",
+              "text": "a quiet reading nook",
               "correct": false
             },
             {
               "id": "c",
-              "text": "the door is locked",
+              "text": "a new page",
               "correct": false
             }
           ],
@@ -562,9 +567,9 @@
               "Detail"
             ],
             "storyCards": [
-              "A small classroom",
-              "the character smiles",
-              "A helpful choice"
+              "a quiet reading nook",
+              "three slow breaths",
+              "a new page"
             ]
           }
         }
@@ -588,7 +593,8 @@
         "reviewState": "technically_validated",
         "deepData": {
           "scene": "creative",
-          "cardCount": 3
+          "cardCount": 3,
+          "targetFeeling": "calm"
         }
       },
       "assetRefs": [],
@@ -604,22 +610,22 @@
       "learningObjective": "Free Creativity tier 2",
       "localizedContent": {
         "vi": {
-          "prompt": "Chọn chi tiết giúp câu chuyện có cảm xúc vui.",
+          "prompt": "Chọn chi tiết giúp câu chuyện có cảm xúc kiên trì.",
           "options": [
             {
               "id": "a",
-              "text": "trời tối đen",
+              "text": "bài toán khó",
               "correct": false
             },
             {
               "id": "b",
-              "text": "nhân vật mỉm cười",
-              "correct": true
+              "text": "dấu kiểm xanh",
+              "correct": false
             },
             {
               "id": "c",
-              "text": "cửa khóa",
-              "correct": false
+              "text": "thử lại từng bước",
+              "correct": true
             }
           ],
           "deepData": {
@@ -629,29 +635,29 @@
               "Chi tiết"
             ],
             "storyCards": [
-              "Một lớp học nhỏ",
-              "nhân vật mỉm cười",
-              "Một lựa chọn tốt bụng"
+              "bài toán khó",
+              "thử lại từng bước",
+              "dấu kiểm xanh"
             ]
           }
         },
         "en": {
-          "prompt": "Choose the detail that makes the story feel happy.",
+          "prompt": "Choose the detail that makes the story feel persistent.",
           "options": [
             {
               "id": "a",
-              "text": "the sky is dark",
+              "text": "a hard problem",
               "correct": false
             },
             {
               "id": "b",
-              "text": "the character smiles",
-              "correct": true
+              "text": "a green check",
+              "correct": false
             },
             {
               "id": "c",
-              "text": "the door is locked",
-              "correct": false
+              "text": "trying step by step",
+              "correct": true
             }
           ],
           "deepData": {
@@ -661,9 +667,9 @@
               "Detail"
             ],
             "storyCards": [
-              "A small classroom",
-              "the character smiles",
-              "A helpful choice"
+              "a hard problem",
+              "trying step by step",
+              "a green check"
             ]
           }
         }
@@ -687,7 +693,8 @@
         "reviewState": "technically_validated",
         "deepData": {
           "scene": "creative",
-          "cardCount": 3
+          "cardCount": 3,
+          "targetFeeling": "persistent"
         }
       },
       "assetRefs": [],
@@ -703,22 +710,22 @@
       "learningObjective": "Free Creativity tier 2",
       "localizedContent": {
         "vi": {
-          "prompt": "Chọn chi tiết giúp câu chuyện có cảm xúc vui.",
+          "prompt": "Chọn chi tiết giúp câu chuyện có cảm xúc hào hứng.",
           "options": [
             {
               "id": "a",
-              "text": "cửa khóa",
+              "text": "vạch xuất phát",
               "correct": false
             },
             {
               "id": "b",
-              "text": "trời tối đen",
-              "correct": false
+              "text": "tiếng reo cổ vũ",
+              "correct": true
             },
             {
               "id": "c",
-              "text": "nhân vật mỉm cười",
-              "correct": true
+              "text": "bản đồ kho báu",
+              "correct": false
             }
           ],
           "deepData": {
@@ -728,29 +735,29 @@
               "Chi tiết"
             ],
             "storyCards": [
-              "Một lớp học nhỏ",
-              "nhân vật mỉm cười",
-              "Một lựa chọn tốt bụng"
+              "bản đồ kho báu",
+              "vạch xuất phát",
+              "tiếng reo cổ vũ"
             ]
           }
         },
         "en": {
-          "prompt": "Choose the detail that makes the story feel happy.",
+          "prompt": "Choose the detail that makes the story feel excited.",
           "options": [
             {
               "id": "a",
-              "text": "the door is locked",
+              "text": "the starting line",
               "correct": false
             },
             {
               "id": "b",
-              "text": "the sky is dark",
-              "correct": false
+              "text": "cheering voices",
+              "correct": true
             },
             {
               "id": "c",
-              "text": "the character smiles",
-              "correct": true
+              "text": "a treasure map",
+              "correct": false
             }
           ],
           "deepData": {
@@ -760,9 +767,9 @@
               "Detail"
             ],
             "storyCards": [
-              "A small classroom",
-              "the character smiles",
-              "A helpful choice"
+              "a treasure map",
+              "the starting line",
+              "cheering voices"
             ]
           }
         }
@@ -786,7 +793,8 @@
         "reviewState": "technically_validated",
         "deepData": {
           "scene": "creative",
-          "cardCount": 3
+          "cardCount": 3,
+          "targetFeeling": "excited"
         }
       },
       "assetRefs": [],
@@ -802,21 +810,21 @@
       "learningObjective": "Free Creativity tier 2",
       "localizedContent": {
         "vi": {
-          "prompt": "Chọn chi tiết giúp câu chuyện có cảm xúc vui.",
+          "prompt": "Chọn chi tiết giúp câu chuyện có cảm xúc quan tâm.",
           "options": [
             {
               "id": "a",
-              "text": "nhân vật mỉm cười",
+              "text": "một lời hỏi han",
               "correct": true
             },
             {
               "id": "b",
-              "text": "trời tối đen",
+              "text": "bạn buồn",
               "correct": false
             },
             {
               "id": "c",
-              "text": "cửa khóa",
+              "text": "chiếc ghế trống",
               "correct": false
             }
           ],
@@ -827,28 +835,28 @@
               "Chi tiết"
             ],
             "storyCards": [
-              "Một lớp học nhỏ",
-              "nhân vật mỉm cười",
-              "Một lựa chọn tốt bụng"
+              "bạn buồn",
+              "một lời hỏi han",
+              "chiếc ghế trống"
             ]
           }
         },
         "en": {
-          "prompt": "Choose the detail that makes the story feel happy.",
+          "prompt": "Choose the detail that makes the story feel caring.",
           "options": [
             {
               "id": "a",
-              "text": "the character smiles",
+              "text": "a caring question",
               "correct": true
             },
             {
               "id": "b",
-              "text": "the sky is dark",
+              "text": "a sad friend",
               "correct": false
             },
             {
               "id": "c",
-              "text": "the door is locked",
+              "text": "an empty chair",
               "correct": false
             }
           ],
@@ -859,9 +867,9 @@
               "Detail"
             ],
             "storyCards": [
-              "A small classroom",
-              "the character smiles",
-              "A helpful choice"
+              "a sad friend",
+              "a caring question",
+              "an empty chair"
             ]
           }
         }
@@ -885,7 +893,8 @@
         "reviewState": "technically_validated",
         "deepData": {
           "scene": "creative",
-          "cardCount": 3
+          "cardCount": 3,
+          "targetFeeling": "caring"
         }
       },
       "assetRefs": [],
@@ -901,22 +910,22 @@
       "learningObjective": "Free Creativity tier 2",
       "localizedContent": {
         "vi": {
-          "prompt": "Chọn chi tiết giúp câu chuyện có cảm xúc vui.",
+          "prompt": "Chọn chi tiết giúp câu chuyện có cảm xúc sáng tạo.",
           "options": [
             {
               "id": "a",
-              "text": "trời tối đen",
+              "text": "mảnh giấy trắng",
               "correct": false
             },
             {
               "id": "b",
-              "text": "nhân vật mỉm cười",
-              "correct": true
+              "text": "ba màu sáp",
+              "correct": false
             },
             {
               "id": "c",
-              "text": "cửa khóa",
-              "correct": false
+              "text": "một ý tưởng lạ",
+              "correct": true
             }
           ],
           "deepData": {
@@ -926,29 +935,29 @@
               "Chi tiết"
             ],
             "storyCards": [
-              "Một lớp học nhỏ",
-              "nhân vật mỉm cười",
-              "Một lựa chọn tốt bụng"
+              "mảnh giấy trắng",
+              "ba màu sáp",
+              "một ý tưởng lạ"
             ]
           }
         },
         "en": {
-          "prompt": "Choose the detail that makes the story feel happy.",
+          "prompt": "Choose the detail that makes the story feel creative.",
           "options": [
             {
               "id": "a",
-              "text": "the sky is dark",
+              "text": "a blank page",
               "correct": false
             },
             {
               "id": "b",
-              "text": "the character smiles",
-              "correct": true
+              "text": "three crayons",
+              "correct": false
             },
             {
               "id": "c",
-              "text": "the door is locked",
-              "correct": false
+              "text": "a surprising idea",
+              "correct": true
             }
           ],
           "deepData": {
@@ -958,9 +967,9 @@
               "Detail"
             ],
             "storyCards": [
-              "A small classroom",
-              "the character smiles",
-              "A helpful choice"
+              "a blank page",
+              "three crayons",
+              "a surprising idea"
             ]
           }
         }
@@ -984,7 +993,8 @@
         "reviewState": "technically_validated",
         "deepData": {
           "scene": "creative",
-          "cardCount": 3
+          "cardCount": 3,
+          "targetFeeling": "creative"
         }
       },
       "assetRefs": [],
@@ -1000,22 +1010,22 @@
       "learningObjective": "Free Creativity tier 2",
       "localizedContent": {
         "vi": {
-          "prompt": "Chọn chi tiết giúp câu chuyện có cảm xúc vui.",
+          "prompt": "Chọn chi tiết giúp câu chuyện có cảm xúc tò mò.",
           "options": [
             {
               "id": "a",
-              "text": "cửa khóa",
+              "text": "tiếng gõ nhẹ",
               "correct": false
             },
             {
               "id": "b",
-              "text": "trời tối đen",
-              "correct": false
+              "text": "một câu hỏi mới",
+              "correct": true
             },
             {
               "id": "c",
-              "text": "nhân vật mỉm cười",
-              "correct": true
+              "text": "Một cánh cửa nhỏ",
+              "correct": false
             }
           ],
           "deepData": {
@@ -1025,29 +1035,29 @@
               "Chi tiết"
             ],
             "storyCards": [
-              "Một lớp học nhỏ",
-              "nhân vật mỉm cười",
-              "Một lựa chọn tốt bụng"
+              "Một cánh cửa nhỏ",
+              "tiếng gõ nhẹ",
+              "một câu hỏi mới"
             ]
           }
         },
         "en": {
-          "prompt": "Choose the detail that makes the story feel happy.",
+          "prompt": "Choose the detail that makes the story feel curious.",
           "options": [
             {
               "id": "a",
-              "text": "the door is locked",
+              "text": "a gentle knock",
               "correct": false
             },
             {
               "id": "b",
-              "text": "the sky is dark",
-              "correct": false
+              "text": "a new question",
+              "correct": true
             },
             {
               "id": "c",
-              "text": "the character smiles",
-              "correct": true
+              "text": "A tiny door",
+              "correct": false
             }
           ],
           "deepData": {
@@ -1057,9 +1067,9 @@
               "Detail"
             ],
             "storyCards": [
-              "A small classroom",
-              "the character smiles",
-              "A helpful choice"
+              "A tiny door",
+              "a gentle knock",
+              "a new question"
             ]
           }
         }
@@ -1083,7 +1093,8 @@
         "reviewState": "technically_validated",
         "deepData": {
           "scene": "creative",
-          "cardCount": 3
+          "cardCount": 3,
+          "targetFeeling": "curious"
         }
       },
       "assetRefs": [],
@@ -1103,17 +1114,17 @@
           "options": [
             {
               "id": "a",
-              "text": "nhân vật mỉm cười",
+              "text": "bạn mới mỉm cười",
               "correct": true
             },
             {
               "id": "b",
-              "text": "trời tối đen",
+              "text": "sân chơi sáng nắng",
               "correct": false
             },
             {
               "id": "c",
-              "text": "cửa khóa",
+              "text": "một lời cảm ơn",
               "correct": false
             }
           ],
@@ -1124,9 +1135,9 @@
               "Chi tiết"
             ],
             "storyCards": [
-              "Một lớp học nhỏ",
-              "nhân vật mỉm cười",
-              "Một lựa chọn tốt bụng"
+              "sân chơi sáng nắng",
+              "bạn mới mỉm cười",
+              "một lời cảm ơn"
             ]
           }
         },
@@ -1135,17 +1146,17 @@
           "options": [
             {
               "id": "a",
-              "text": "the character smiles",
+              "text": "a new friend smiles",
               "correct": true
             },
             {
               "id": "b",
-              "text": "the sky is dark",
+              "text": "a sunny playground",
               "correct": false
             },
             {
               "id": "c",
-              "text": "the door is locked",
+              "text": "a thank-you note",
               "correct": false
             }
           ],
@@ -1156,9 +1167,9 @@
               "Detail"
             ],
             "storyCards": [
-              "A small classroom",
-              "the character smiles",
-              "A helpful choice"
+              "a sunny playground",
+              "a new friend smiles",
+              "a thank-you note"
             ]
           }
         }
@@ -1182,7 +1193,8 @@
         "reviewState": "technically_validated",
         "deepData": {
           "scene": "creative",
-          "cardCount": 3
+          "cardCount": 3,
+          "targetFeeling": "happy"
         }
       },
       "assetRefs": [],
@@ -1198,22 +1210,22 @@
       "learningObjective": "Free Creativity tier 3",
       "localizedContent": {
         "vi": {
-          "prompt": "Chọn chi tiết giúp câu chuyện có cảm xúc tò mò.",
+          "prompt": "Chọn chi tiết giúp câu chuyện có cảm xúc can đảm.",
           "options": [
             {
               "id": "a",
-              "text": "trời tối đen",
+              "text": "cây cầu nhỏ",
               "correct": false
             },
             {
               "id": "b",
-              "text": "nhân vật mỉm cười",
-              "correct": true
+              "text": "MI hít thở sâu",
+              "correct": false
             },
             {
               "id": "c",
-              "text": "cửa khóa",
-              "correct": false
+              "text": "bước đầu tiên",
+              "correct": true
             }
           ],
           "deepData": {
@@ -1223,29 +1235,29 @@
               "Chi tiết"
             ],
             "storyCards": [
-              "Một lớp học nhỏ",
-              "nhân vật mỉm cười",
-              "Một lựa chọn tốt bụng"
+              "cây cầu nhỏ",
+              "MI hít thở sâu",
+              "bước đầu tiên"
             ]
           }
         },
         "en": {
-          "prompt": "Choose the detail that makes the story feel curious.",
+          "prompt": "Choose the detail that makes the story feel brave.",
           "options": [
             {
               "id": "a",
-              "text": "the sky is dark",
+              "text": "a small bridge",
               "correct": false
             },
             {
               "id": "b",
-              "text": "the character smiles",
-              "correct": true
+              "text": "MI takes a deep breath",
+              "correct": false
             },
             {
               "id": "c",
-              "text": "the door is locked",
-              "correct": false
+              "text": "the first step",
+              "correct": true
             }
           ],
           "deepData": {
@@ -1255,9 +1267,9 @@
               "Detail"
             ],
             "storyCards": [
-              "A small classroom",
-              "the character smiles",
-              "A helpful choice"
+              "a small bridge",
+              "MI takes a deep breath",
+              "the first step"
             ]
           }
         }
@@ -1281,7 +1293,8 @@
         "reviewState": "technically_validated",
         "deepData": {
           "scene": "creative",
-          "cardCount": 3
+          "cardCount": 3,
+          "targetFeeling": "brave"
         }
       },
       "assetRefs": [],
@@ -1297,22 +1310,22 @@
       "learningObjective": "Free Creativity tier 3",
       "localizedContent": {
         "vi": {
-          "prompt": "Chọn chi tiết giúp câu chuyện có cảm xúc tò mò.",
+          "prompt": "Chọn chi tiết giúp câu chuyện có cảm xúc tốt bụng.",
           "options": [
             {
               "id": "a",
-              "text": "cửa khóa",
+              "text": "lời chia sẻ",
               "correct": false
             },
             {
               "id": "b",
-              "text": "trời tối đen",
-              "correct": false
+              "text": "một bàn tay giúp đỡ",
+              "correct": true
             },
             {
               "id": "c",
-              "text": "nhân vật mỉm cười",
-              "correct": true
+              "text": "hộp bút rơi",
+              "correct": false
             }
           ],
           "deepData": {
@@ -1322,29 +1335,29 @@
               "Chi tiết"
             ],
             "storyCards": [
-              "Một lớp học nhỏ",
-              "nhân vật mỉm cười",
-              "Một lựa chọn tốt bụng"
+              "hộp bút rơi",
+              "một bàn tay giúp đỡ",
+              "lời chia sẻ"
             ]
           }
         },
         "en": {
-          "prompt": "Choose the detail that makes the story feel curious.",
+          "prompt": "Choose the detail that makes the story feel kind.",
           "options": [
             {
               "id": "a",
-              "text": "the door is locked",
+              "text": "a shared word",
               "correct": false
             },
             {
               "id": "b",
-              "text": "the sky is dark",
-              "correct": false
+              "text": "a helping hand",
+              "correct": true
             },
             {
               "id": "c",
-              "text": "the character smiles",
-              "correct": true
+              "text": "a fallen pencil box",
+              "correct": false
             }
           ],
           "deepData": {
@@ -1354,9 +1367,9 @@
               "Detail"
             ],
             "storyCards": [
-              "A small classroom",
-              "the character smiles",
-              "A helpful choice"
+              "a fallen pencil box",
+              "a helping hand",
+              "a shared word"
             ]
           }
         }
@@ -1380,7 +1393,8 @@
         "reviewState": "technically_validated",
         "deepData": {
           "scene": "creative",
-          "cardCount": 3
+          "cardCount": 3,
+          "targetFeeling": "kind"
         }
       },
       "assetRefs": [],
@@ -1396,21 +1410,21 @@
       "learningObjective": "Free Creativity tier 3",
       "localizedContent": {
         "vi": {
-          "prompt": "Chọn chi tiết giúp câu chuyện có cảm xúc tò mò.",
+          "prompt": "Chọn chi tiết giúp câu chuyện có cảm xúc bất ngờ.",
           "options": [
             {
               "id": "a",
-              "text": "nhân vật mỉm cười",
+              "text": "một món quà nhỏ",
               "correct": true
             },
             {
               "id": "b",
-              "text": "trời tối đen",
+              "text": "chiếc hộp kín",
               "correct": false
             },
             {
               "id": "c",
-              "text": "cửa khóa",
+              "text": "ánh sáng vàng",
               "correct": false
             }
           ],
@@ -1421,28 +1435,28 @@
               "Chi tiết"
             ],
             "storyCards": [
-              "Một lớp học nhỏ",
-              "nhân vật mỉm cười",
-              "Một lựa chọn tốt bụng"
+              "chiếc hộp kín",
+              "ánh sáng vàng",
+              "một món quà nhỏ"
             ]
           }
         },
         "en": {
-          "prompt": "Choose the detail that makes the story feel curious.",
+          "prompt": "Choose the detail that makes the story feel surprised.",
           "options": [
             {
               "id": "a",
-              "text": "the character smiles",
+              "text": "a small gift",
               "correct": true
             },
             {
               "id": "b",
-              "text": "the sky is dark",
+              "text": "a closed box",
               "correct": false
             },
             {
               "id": "c",
-              "text": "the door is locked",
+              "text": "golden light",
               "correct": false
             }
           ],
@@ -1453,9 +1467,9 @@
               "Detail"
             ],
             "storyCards": [
-              "A small classroom",
-              "the character smiles",
-              "A helpful choice"
+              "a closed box",
+              "golden light",
+              "a small gift"
             ]
           }
         }
@@ -1479,7 +1493,8 @@
         "reviewState": "technically_validated",
         "deepData": {
           "scene": "creative",
-          "cardCount": 3
+          "cardCount": 3,
+          "targetFeeling": "surprised"
         }
       },
       "assetRefs": [],
@@ -1495,22 +1510,22 @@
       "learningObjective": "Free Creativity tier 3",
       "localizedContent": {
         "vi": {
-          "prompt": "Chọn chi tiết giúp câu chuyện có cảm xúc tò mò.",
+          "prompt": "Chọn chi tiết giúp câu chuyện có cảm xúc bình tĩnh.",
           "options": [
             {
               "id": "a",
-              "text": "trời tối đen",
+              "text": "góc đọc yên tĩnh",
               "correct": false
             },
             {
               "id": "b",
-              "text": "nhân vật mỉm cười",
-              "correct": true
+              "text": "một trang sách mới",
+              "correct": false
             },
             {
               "id": "c",
-              "text": "cửa khóa",
-              "correct": false
+              "text": "ba hơi thở chậm",
+              "correct": true
             }
           ],
           "deepData": {
@@ -1520,29 +1535,29 @@
               "Chi tiết"
             ],
             "storyCards": [
-              "Một lớp học nhỏ",
-              "nhân vật mỉm cười",
-              "Một lựa chọn tốt bụng"
+              "góc đọc yên tĩnh",
+              "ba hơi thở chậm",
+              "một trang sách mới"
             ]
           }
         },
         "en": {
-          "prompt": "Choose the detail that makes the story feel curious.",
+          "prompt": "Choose the detail that makes the story feel calm.",
           "options": [
             {
               "id": "a",
-              "text": "the sky is dark",
+              "text": "a quiet reading nook",
               "correct": false
             },
             {
               "id": "b",
-              "text": "the character smiles",
-              "correct": true
+              "text": "a new page",
+              "correct": false
             },
             {
               "id": "c",
-              "text": "the door is locked",
-              "correct": false
+              "text": "three slow breaths",
+              "correct": true
             }
           ],
           "deepData": {
@@ -1552,9 +1567,9 @@
               "Detail"
             ],
             "storyCards": [
-              "A small classroom",
-              "the character smiles",
-              "A helpful choice"
+              "a quiet reading nook",
+              "three slow breaths",
+              "a new page"
             ]
           }
         }
@@ -1578,7 +1593,8 @@
         "reviewState": "technically_validated",
         "deepData": {
           "scene": "creative",
-          "cardCount": 3
+          "cardCount": 3,
+          "targetFeeling": "calm"
         }
       },
       "assetRefs": [],
@@ -1594,22 +1610,22 @@
       "learningObjective": "Free Creativity tier 3",
       "localizedContent": {
         "vi": {
-          "prompt": "Chọn chi tiết giúp câu chuyện có cảm xúc tò mò.",
+          "prompt": "Chọn chi tiết giúp câu chuyện có cảm xúc kiên trì.",
           "options": [
             {
               "id": "a",
-              "text": "cửa khóa",
+              "text": "dấu kiểm xanh",
               "correct": false
             },
             {
               "id": "b",
-              "text": "trời tối đen",
-              "correct": false
+              "text": "thử lại từng bước",
+              "correct": true
             },
             {
               "id": "c",
-              "text": "nhân vật mỉm cười",
-              "correct": true
+              "text": "bài toán khó",
+              "correct": false
             }
           ],
           "deepData": {
@@ -1619,29 +1635,29 @@
               "Chi tiết"
             ],
             "storyCards": [
-              "Một lớp học nhỏ",
-              "nhân vật mỉm cười",
-              "Một lựa chọn tốt bụng"
+              "bài toán khó",
+              "thử lại từng bước",
+              "dấu kiểm xanh"
             ]
           }
         },
         "en": {
-          "prompt": "Choose the detail that makes the story feel curious.",
+          "prompt": "Choose the detail that makes the story feel persistent.",
           "options": [
             {
               "id": "a",
-              "text": "the door is locked",
+              "text": "a green check",
               "correct": false
             },
             {
               "id": "b",
-              "text": "the sky is dark",
-              "correct": false
+              "text": "trying step by step",
+              "correct": true
             },
             {
               "id": "c",
-              "text": "the character smiles",
-              "correct": true
+              "text": "a hard problem",
+              "correct": false
             }
           ],
           "deepData": {
@@ -1651,9 +1667,9 @@
               "Detail"
             ],
             "storyCards": [
-              "A small classroom",
-              "the character smiles",
-              "A helpful choice"
+              "a hard problem",
+              "trying step by step",
+              "a green check"
             ]
           }
         }
@@ -1677,7 +1693,8 @@
         "reviewState": "technically_validated",
         "deepData": {
           "scene": "creative",
-          "cardCount": 3
+          "cardCount": 3,
+          "targetFeeling": "persistent"
         }
       },
       "assetRefs": [],
@@ -1693,21 +1710,21 @@
       "learningObjective": "Free Creativity tier 3",
       "localizedContent": {
         "vi": {
-          "prompt": "Chọn chi tiết giúp câu chuyện có cảm xúc tò mò.",
+          "prompt": "Chọn chi tiết giúp câu chuyện có cảm xúc hào hứng.",
           "options": [
             {
               "id": "a",
-              "text": "nhân vật mỉm cười",
+              "text": "tiếng reo cổ vũ",
               "correct": true
             },
             {
               "id": "b",
-              "text": "trời tối đen",
+              "text": "bản đồ kho báu",
               "correct": false
             },
             {
               "id": "c",
-              "text": "cửa khóa",
+              "text": "vạch xuất phát",
               "correct": false
             }
           ],
@@ -1718,28 +1735,28 @@
               "Chi tiết"
             ],
             "storyCards": [
-              "Một lớp học nhỏ",
-              "nhân vật mỉm cười",
-              "Một lựa chọn tốt bụng"
+              "bản đồ kho báu",
+              "vạch xuất phát",
+              "tiếng reo cổ vũ"
             ]
           }
         },
         "en": {
-          "prompt": "Choose the detail that makes the story feel curious.",
+          "prompt": "Choose the detail that makes the story feel excited.",
           "options": [
             {
               "id": "a",
-              "text": "the character smiles",
+              "text": "cheering voices",
               "correct": true
             },
             {
               "id": "b",
-              "text": "the sky is dark",
+              "text": "a treasure map",
               "correct": false
             },
             {
               "id": "c",
-              "text": "the door is locked",
+              "text": "the starting line",
               "correct": false
             }
           ],
@@ -1750,9 +1767,9 @@
               "Detail"
             ],
             "storyCards": [
-              "A small classroom",
-              "the character smiles",
-              "A helpful choice"
+              "a treasure map",
+              "the starting line",
+              "cheering voices"
             ]
           }
         }
@@ -1776,7 +1793,8 @@
         "reviewState": "technically_validated",
         "deepData": {
           "scene": "creative",
-          "cardCount": 3
+          "cardCount": 3,
+          "targetFeeling": "excited"
         }
       },
       "assetRefs": [],
@@ -1792,22 +1810,22 @@
       "learningObjective": "Free Creativity tier 4",
       "localizedContent": {
         "vi": {
-          "prompt": "Chọn chi tiết giúp câu chuyện có cảm xúc vui.",
+          "prompt": "Chọn chi tiết giúp câu chuyện có cảm xúc quan tâm.",
           "options": [
             {
               "id": "a",
-              "text": "trời tối đen",
+              "text": "bạn buồn",
               "correct": false
             },
             {
               "id": "b",
-              "text": "nhân vật mỉm cười",
-              "correct": true
+              "text": "chiếc ghế trống",
+              "correct": false
             },
             {
               "id": "c",
-              "text": "cửa khóa",
-              "correct": false
+              "text": "một lời hỏi han",
+              "correct": true
             }
           ],
           "deepData": {
@@ -1817,29 +1835,29 @@
               "Chi tiết"
             ],
             "storyCards": [
-              "Một lớp học nhỏ",
-              "nhân vật mỉm cười",
-              "Một lựa chọn tốt bụng"
+              "bạn buồn",
+              "một lời hỏi han",
+              "chiếc ghế trống"
             ]
           }
         },
         "en": {
-          "prompt": "Choose the detail that makes the story feel happy.",
+          "prompt": "Choose the detail that makes the story feel caring.",
           "options": [
             {
               "id": "a",
-              "text": "the sky is dark",
+              "text": "a sad friend",
               "correct": false
             },
             {
               "id": "b",
-              "text": "the character smiles",
-              "correct": true
+              "text": "an empty chair",
+              "correct": false
             },
             {
               "id": "c",
-              "text": "the door is locked",
-              "correct": false
+              "text": "a caring question",
+              "correct": true
             }
           ],
           "deepData": {
@@ -1849,9 +1867,9 @@
               "Detail"
             ],
             "storyCards": [
-              "A small classroom",
-              "the character smiles",
-              "A helpful choice"
+              "a sad friend",
+              "a caring question",
+              "an empty chair"
             ]
           }
         }
@@ -1875,7 +1893,8 @@
         "reviewState": "technically_validated",
         "deepData": {
           "scene": "creative",
-          "cardCount": 3
+          "cardCount": 3,
+          "targetFeeling": "caring"
         }
       },
       "assetRefs": [],
@@ -1891,22 +1910,22 @@
       "learningObjective": "Free Creativity tier 4",
       "localizedContent": {
         "vi": {
-          "prompt": "Chọn chi tiết giúp câu chuyện có cảm xúc vui.",
+          "prompt": "Chọn chi tiết giúp câu chuyện có cảm xúc sáng tạo.",
           "options": [
             {
               "id": "a",
-              "text": "cửa khóa",
+              "text": "ba màu sáp",
               "correct": false
             },
             {
               "id": "b",
-              "text": "trời tối đen",
-              "correct": false
+              "text": "một ý tưởng lạ",
+              "correct": true
             },
             {
               "id": "c",
-              "text": "nhân vật mỉm cười",
-              "correct": true
+              "text": "mảnh giấy trắng",
+              "correct": false
             }
           ],
           "deepData": {
@@ -1916,29 +1935,29 @@
               "Chi tiết"
             ],
             "storyCards": [
-              "Một lớp học nhỏ",
-              "nhân vật mỉm cười",
-              "Một lựa chọn tốt bụng"
+              "mảnh giấy trắng",
+              "ba màu sáp",
+              "một ý tưởng lạ"
             ]
           }
         },
         "en": {
-          "prompt": "Choose the detail that makes the story feel happy.",
+          "prompt": "Choose the detail that makes the story feel creative.",
           "options": [
             {
               "id": "a",
-              "text": "the door is locked",
+              "text": "three crayons",
               "correct": false
             },
             {
               "id": "b",
-              "text": "the sky is dark",
-              "correct": false
+              "text": "a surprising idea",
+              "correct": true
             },
             {
               "id": "c",
-              "text": "the character smiles",
-              "correct": true
+              "text": "a blank page",
+              "correct": false
             }
           ],
           "deepData": {
@@ -1948,9 +1967,9 @@
               "Detail"
             ],
             "storyCards": [
-              "A small classroom",
-              "the character smiles",
-              "A helpful choice"
+              "a blank page",
+              "three crayons",
+              "a surprising idea"
             ]
           }
         }
@@ -1974,7 +1993,8 @@
         "reviewState": "technically_validated",
         "deepData": {
           "scene": "creative",
-          "cardCount": 3
+          "cardCount": 3,
+          "targetFeeling": "creative"
         }
       },
       "assetRefs": [],
@@ -1990,21 +2010,21 @@
       "learningObjective": "Free Creativity tier 4",
       "localizedContent": {
         "vi": {
-          "prompt": "Chọn chi tiết giúp câu chuyện có cảm xúc vui.",
+          "prompt": "Chọn chi tiết giúp câu chuyện có cảm xúc tò mò.",
           "options": [
             {
               "id": "a",
-              "text": "nhân vật mỉm cười",
+              "text": "một câu hỏi mới",
               "correct": true
             },
             {
               "id": "b",
-              "text": "trời tối đen",
+              "text": "Một cánh cửa nhỏ",
               "correct": false
             },
             {
               "id": "c",
-              "text": "cửa khóa",
+              "text": "tiếng gõ nhẹ",
               "correct": false
             }
           ],
@@ -2015,28 +2035,28 @@
               "Chi tiết"
             ],
             "storyCards": [
-              "Một lớp học nhỏ",
-              "nhân vật mỉm cười",
-              "Một lựa chọn tốt bụng"
+              "Một cánh cửa nhỏ",
+              "tiếng gõ nhẹ",
+              "một câu hỏi mới"
             ]
           }
         },
         "en": {
-          "prompt": "Choose the detail that makes the story feel happy.",
+          "prompt": "Choose the detail that makes the story feel curious.",
           "options": [
             {
               "id": "a",
-              "text": "the character smiles",
+              "text": "a new question",
               "correct": true
             },
             {
               "id": "b",
-              "text": "the sky is dark",
+              "text": "A tiny door",
               "correct": false
             },
             {
               "id": "c",
-              "text": "the door is locked",
+              "text": "a gentle knock",
               "correct": false
             }
           ],
@@ -2047,9 +2067,9 @@
               "Detail"
             ],
             "storyCards": [
-              "A small classroom",
-              "the character smiles",
-              "A helpful choice"
+              "A tiny door",
+              "a gentle knock",
+              "a new question"
             ]
           }
         }
@@ -2073,7 +2093,8 @@
         "reviewState": "technically_validated",
         "deepData": {
           "scene": "creative",
-          "cardCount": 3
+          "cardCount": 3,
+          "targetFeeling": "curious"
         }
       },
       "assetRefs": [],
@@ -2093,18 +2114,18 @@
           "options": [
             {
               "id": "a",
-              "text": "trời tối đen",
+              "text": "sân chơi sáng nắng",
               "correct": false
             },
             {
               "id": "b",
-              "text": "nhân vật mỉm cười",
-              "correct": true
+              "text": "một lời cảm ơn",
+              "correct": false
             },
             {
               "id": "c",
-              "text": "cửa khóa",
-              "correct": false
+              "text": "bạn mới mỉm cười",
+              "correct": true
             }
           ],
           "deepData": {
@@ -2114,9 +2135,9 @@
               "Chi tiết"
             ],
             "storyCards": [
-              "Một lớp học nhỏ",
-              "nhân vật mỉm cười",
-              "Một lựa chọn tốt bụng"
+              "sân chơi sáng nắng",
+              "bạn mới mỉm cười",
+              "một lời cảm ơn"
             ]
           }
         },
@@ -2125,18 +2146,18 @@
           "options": [
             {
               "id": "a",
-              "text": "the sky is dark",
+              "text": "a sunny playground",
               "correct": false
             },
             {
               "id": "b",
-              "text": "the character smiles",
-              "correct": true
+              "text": "a thank-you note",
+              "correct": false
             },
             {
               "id": "c",
-              "text": "the door is locked",
-              "correct": false
+              "text": "a new friend smiles",
+              "correct": true
             }
           ],
           "deepData": {
@@ -2146,9 +2167,9 @@
               "Detail"
             ],
             "storyCards": [
-              "A small classroom",
-              "the character smiles",
-              "A helpful choice"
+              "a sunny playground",
+              "a new friend smiles",
+              "a thank-you note"
             ]
           }
         }
@@ -2172,7 +2193,8 @@
         "reviewState": "technically_validated",
         "deepData": {
           "scene": "creative",
-          "cardCount": 3
+          "cardCount": 3,
+          "targetFeeling": "happy"
         }
       },
       "assetRefs": [],
@@ -2188,22 +2210,22 @@
       "learningObjective": "Free Creativity tier 4",
       "localizedContent": {
         "vi": {
-          "prompt": "Chọn chi tiết giúp câu chuyện có cảm xúc vui.",
+          "prompt": "Chọn chi tiết giúp câu chuyện có cảm xúc can đảm.",
           "options": [
             {
               "id": "a",
-              "text": "cửa khóa",
+              "text": "MI hít thở sâu",
               "correct": false
             },
             {
               "id": "b",
-              "text": "trời tối đen",
-              "correct": false
+              "text": "bước đầu tiên",
+              "correct": true
             },
             {
               "id": "c",
-              "text": "nhân vật mỉm cười",
-              "correct": true
+              "text": "cây cầu nhỏ",
+              "correct": false
             }
           ],
           "deepData": {
@@ -2213,29 +2235,29 @@
               "Chi tiết"
             ],
             "storyCards": [
-              "Một lớp học nhỏ",
-              "nhân vật mỉm cười",
-              "Một lựa chọn tốt bụng"
+              "cây cầu nhỏ",
+              "MI hít thở sâu",
+              "bước đầu tiên"
             ]
           }
         },
         "en": {
-          "prompt": "Choose the detail that makes the story feel happy.",
+          "prompt": "Choose the detail that makes the story feel brave.",
           "options": [
             {
               "id": "a",
-              "text": "the door is locked",
+              "text": "MI takes a deep breath",
               "correct": false
             },
             {
               "id": "b",
-              "text": "the sky is dark",
-              "correct": false
+              "text": "the first step",
+              "correct": true
             },
             {
               "id": "c",
-              "text": "the character smiles",
-              "correct": true
+              "text": "a small bridge",
+              "correct": false
             }
           ],
           "deepData": {
@@ -2245,9 +2267,9 @@
               "Detail"
             ],
             "storyCards": [
-              "A small classroom",
-              "the character smiles",
-              "A helpful choice"
+              "a small bridge",
+              "MI takes a deep breath",
+              "the first step"
             ]
           }
         }
@@ -2271,7 +2293,8 @@
         "reviewState": "technically_validated",
         "deepData": {
           "scene": "creative",
-          "cardCount": 3
+          "cardCount": 3,
+          "targetFeeling": "brave"
         }
       },
       "assetRefs": [],
@@ -2287,21 +2310,21 @@
       "learningObjective": "Free Creativity tier 4",
       "localizedContent": {
         "vi": {
-          "prompt": "Chọn chi tiết giúp câu chuyện có cảm xúc vui.",
+          "prompt": "Chọn chi tiết giúp câu chuyện có cảm xúc tốt bụng.",
           "options": [
             {
               "id": "a",
-              "text": "nhân vật mỉm cười",
+              "text": "một bàn tay giúp đỡ",
               "correct": true
             },
             {
               "id": "b",
-              "text": "trời tối đen",
+              "text": "hộp bút rơi",
               "correct": false
             },
             {
               "id": "c",
-              "text": "cửa khóa",
+              "text": "lời chia sẻ",
               "correct": false
             }
           ],
@@ -2312,28 +2335,28 @@
               "Chi tiết"
             ],
             "storyCards": [
-              "Một lớp học nhỏ",
-              "nhân vật mỉm cười",
-              "Một lựa chọn tốt bụng"
+              "hộp bút rơi",
+              "một bàn tay giúp đỡ",
+              "lời chia sẻ"
             ]
           }
         },
         "en": {
-          "prompt": "Choose the detail that makes the story feel happy.",
+          "prompt": "Choose the detail that makes the story feel kind.",
           "options": [
             {
               "id": "a",
-              "text": "the character smiles",
+              "text": "a helping hand",
               "correct": true
             },
             {
               "id": "b",
-              "text": "the sky is dark",
+              "text": "a fallen pencil box",
               "correct": false
             },
             {
               "id": "c",
-              "text": "the door is locked",
+              "text": "a shared word",
               "correct": false
             }
           ],
@@ -2344,9 +2367,9 @@
               "Detail"
             ],
             "storyCards": [
-              "A small classroom",
-              "the character smiles",
-              "A helpful choice"
+              "a fallen pencil box",
+              "a helping hand",
+              "a shared word"
             ]
           }
         }
@@ -2370,7 +2393,8 @@
         "reviewState": "technically_validated",
         "deepData": {
           "scene": "creative",
-          "cardCount": 3
+          "cardCount": 3,
+          "targetFeeling": "kind"
         }
       },
       "assetRefs": [],
@@ -2386,22 +2410,22 @@
       "learningObjective": "Free Creativity tier 5",
       "localizedContent": {
         "vi": {
-          "prompt": "Chọn chi tiết giúp câu chuyện có cảm xúc tò mò.",
+          "prompt": "Chọn chi tiết giúp câu chuyện có cảm xúc bất ngờ.",
           "options": [
             {
               "id": "a",
-              "text": "trời tối đen",
+              "text": "chiếc hộp kín",
               "correct": false
             },
             {
               "id": "b",
-              "text": "nhân vật mỉm cười",
-              "correct": true
+              "text": "ánh sáng vàng",
+              "correct": false
             },
             {
               "id": "c",
-              "text": "cửa khóa",
-              "correct": false
+              "text": "một món quà nhỏ",
+              "correct": true
             }
           ],
           "deepData": {
@@ -2411,29 +2435,29 @@
               "Chi tiết"
             ],
             "storyCards": [
-              "Một lớp học nhỏ",
-              "nhân vật mỉm cười",
-              "Một lựa chọn tốt bụng"
+              "chiếc hộp kín",
+              "ánh sáng vàng",
+              "một món quà nhỏ"
             ]
           }
         },
         "en": {
-          "prompt": "Choose the detail that makes the story feel curious.",
+          "prompt": "Choose the detail that makes the story feel surprised.",
           "options": [
             {
               "id": "a",
-              "text": "the sky is dark",
+              "text": "a closed box",
               "correct": false
             },
             {
               "id": "b",
-              "text": "the character smiles",
-              "correct": true
+              "text": "golden light",
+              "correct": false
             },
             {
               "id": "c",
-              "text": "the door is locked",
-              "correct": false
+              "text": "a small gift",
+              "correct": true
             }
           ],
           "deepData": {
@@ -2443,9 +2467,9 @@
               "Detail"
             ],
             "storyCards": [
-              "A small classroom",
-              "the character smiles",
-              "A helpful choice"
+              "a closed box",
+              "golden light",
+              "a small gift"
             ]
           }
         }
@@ -2469,7 +2493,8 @@
         "reviewState": "technically_validated",
         "deepData": {
           "scene": "creative",
-          "cardCount": 3
+          "cardCount": 3,
+          "targetFeeling": "surprised"
         }
       },
       "assetRefs": [],
@@ -2485,22 +2510,22 @@
       "learningObjective": "Free Creativity tier 5",
       "localizedContent": {
         "vi": {
-          "prompt": "Chọn chi tiết giúp câu chuyện có cảm xúc tò mò.",
+          "prompt": "Chọn chi tiết giúp câu chuyện có cảm xúc bình tĩnh.",
           "options": [
             {
               "id": "a",
-              "text": "cửa khóa",
+              "text": "một trang sách mới",
               "correct": false
             },
             {
               "id": "b",
-              "text": "trời tối đen",
-              "correct": false
+              "text": "ba hơi thở chậm",
+              "correct": true
             },
             {
               "id": "c",
-              "text": "nhân vật mỉm cười",
-              "correct": true
+              "text": "góc đọc yên tĩnh",
+              "correct": false
             }
           ],
           "deepData": {
@@ -2510,29 +2535,29 @@
               "Chi tiết"
             ],
             "storyCards": [
-              "Một lớp học nhỏ",
-              "nhân vật mỉm cười",
-              "Một lựa chọn tốt bụng"
+              "góc đọc yên tĩnh",
+              "ba hơi thở chậm",
+              "một trang sách mới"
             ]
           }
         },
         "en": {
-          "prompt": "Choose the detail that makes the story feel curious.",
+          "prompt": "Choose the detail that makes the story feel calm.",
           "options": [
             {
               "id": "a",
-              "text": "the door is locked",
+              "text": "a new page",
               "correct": false
             },
             {
               "id": "b",
-              "text": "the sky is dark",
-              "correct": false
+              "text": "three slow breaths",
+              "correct": true
             },
             {
               "id": "c",
-              "text": "the character smiles",
-              "correct": true
+              "text": "a quiet reading nook",
+              "correct": false
             }
           ],
           "deepData": {
@@ -2542,9 +2567,9 @@
               "Detail"
             ],
             "storyCards": [
-              "A small classroom",
-              "the character smiles",
-              "A helpful choice"
+              "a quiet reading nook",
+              "three slow breaths",
+              "a new page"
             ]
           }
         }
@@ -2568,7 +2593,8 @@
         "reviewState": "technically_validated",
         "deepData": {
           "scene": "creative",
-          "cardCount": 3
+          "cardCount": 3,
+          "targetFeeling": "calm"
         }
       },
       "assetRefs": [],
@@ -2584,21 +2610,21 @@
       "learningObjective": "Free Creativity tier 5",
       "localizedContent": {
         "vi": {
-          "prompt": "Chọn chi tiết giúp câu chuyện có cảm xúc tò mò.",
+          "prompt": "Chọn chi tiết giúp câu chuyện có cảm xúc kiên trì.",
           "options": [
             {
               "id": "a",
-              "text": "nhân vật mỉm cười",
+              "text": "thử lại từng bước",
               "correct": true
             },
             {
               "id": "b",
-              "text": "trời tối đen",
+              "text": "bài toán khó",
               "correct": false
             },
             {
               "id": "c",
-              "text": "cửa khóa",
+              "text": "dấu kiểm xanh",
               "correct": false
             }
           ],
@@ -2609,28 +2635,28 @@
               "Chi tiết"
             ],
             "storyCards": [
-              "Một lớp học nhỏ",
-              "nhân vật mỉm cười",
-              "Một lựa chọn tốt bụng"
+              "bài toán khó",
+              "thử lại từng bước",
+              "dấu kiểm xanh"
             ]
           }
         },
         "en": {
-          "prompt": "Choose the detail that makes the story feel curious.",
+          "prompt": "Choose the detail that makes the story feel persistent.",
           "options": [
             {
               "id": "a",
-              "text": "the character smiles",
+              "text": "trying step by step",
               "correct": true
             },
             {
               "id": "b",
-              "text": "the sky is dark",
+              "text": "a hard problem",
               "correct": false
             },
             {
               "id": "c",
-              "text": "the door is locked",
+              "text": "a green check",
               "correct": false
             }
           ],
@@ -2641,9 +2667,9 @@
               "Detail"
             ],
             "storyCards": [
-              "A small classroom",
-              "the character smiles",
-              "A helpful choice"
+              "a hard problem",
+              "trying step by step",
+              "a green check"
             ]
           }
         }
@@ -2667,7 +2693,8 @@
         "reviewState": "technically_validated",
         "deepData": {
           "scene": "creative",
-          "cardCount": 3
+          "cardCount": 3,
+          "targetFeeling": "persistent"
         }
       },
       "assetRefs": [],
@@ -2683,22 +2710,22 @@
       "learningObjective": "Free Creativity tier 5",
       "localizedContent": {
         "vi": {
-          "prompt": "Chọn chi tiết giúp câu chuyện có cảm xúc tò mò.",
+          "prompt": "Chọn chi tiết giúp câu chuyện có cảm xúc hào hứng.",
           "options": [
             {
               "id": "a",
-              "text": "trời tối đen",
+              "text": "bản đồ kho báu",
               "correct": false
             },
             {
               "id": "b",
-              "text": "nhân vật mỉm cười",
-              "correct": true
+              "text": "vạch xuất phát",
+              "correct": false
             },
             {
               "id": "c",
-              "text": "cửa khóa",
-              "correct": false
+              "text": "tiếng reo cổ vũ",
+              "correct": true
             }
           ],
           "deepData": {
@@ -2708,29 +2735,29 @@
               "Chi tiết"
             ],
             "storyCards": [
-              "Một lớp học nhỏ",
-              "nhân vật mỉm cười",
-              "Một lựa chọn tốt bụng"
+              "bản đồ kho báu",
+              "vạch xuất phát",
+              "tiếng reo cổ vũ"
             ]
           }
         },
         "en": {
-          "prompt": "Choose the detail that makes the story feel curious.",
+          "prompt": "Choose the detail that makes the story feel excited.",
           "options": [
             {
               "id": "a",
-              "text": "the sky is dark",
+              "text": "a treasure map",
               "correct": false
             },
             {
               "id": "b",
-              "text": "the character smiles",
-              "correct": true
+              "text": "the starting line",
+              "correct": false
             },
             {
               "id": "c",
-              "text": "the door is locked",
-              "correct": false
+              "text": "cheering voices",
+              "correct": true
             }
           ],
           "deepData": {
@@ -2740,9 +2767,9 @@
               "Detail"
             ],
             "storyCards": [
-              "A small classroom",
-              "the character smiles",
-              "A helpful choice"
+              "a treasure map",
+              "the starting line",
+              "cheering voices"
             ]
           }
         }
@@ -2766,7 +2793,8 @@
         "reviewState": "technically_validated",
         "deepData": {
           "scene": "creative",
-          "cardCount": 3
+          "cardCount": 3,
+          "targetFeeling": "excited"
         }
       },
       "assetRefs": [],
@@ -2782,22 +2810,22 @@
       "learningObjective": "Free Creativity tier 5",
       "localizedContent": {
         "vi": {
-          "prompt": "Chọn chi tiết giúp câu chuyện có cảm xúc tò mò.",
+          "prompt": "Chọn chi tiết giúp câu chuyện có cảm xúc quan tâm.",
           "options": [
             {
               "id": "a",
-              "text": "cửa khóa",
+              "text": "chiếc ghế trống",
               "correct": false
             },
             {
               "id": "b",
-              "text": "trời tối đen",
-              "correct": false
+              "text": "một lời hỏi han",
+              "correct": true
             },
             {
               "id": "c",
-              "text": "nhân vật mỉm cười",
-              "correct": true
+              "text": "bạn buồn",
+              "correct": false
             }
           ],
           "deepData": {
@@ -2807,29 +2835,29 @@
               "Chi tiết"
             ],
             "storyCards": [
-              "Một lớp học nhỏ",
-              "nhân vật mỉm cười",
-              "Một lựa chọn tốt bụng"
+              "bạn buồn",
+              "một lời hỏi han",
+              "chiếc ghế trống"
             ]
           }
         },
         "en": {
-          "prompt": "Choose the detail that makes the story feel curious.",
+          "prompt": "Choose the detail that makes the story feel caring.",
           "options": [
             {
               "id": "a",
-              "text": "the door is locked",
+              "text": "an empty chair",
               "correct": false
             },
             {
               "id": "b",
-              "text": "the sky is dark",
-              "correct": false
+              "text": "a caring question",
+              "correct": true
             },
             {
               "id": "c",
-              "text": "the character smiles",
-              "correct": true
+              "text": "a sad friend",
+              "correct": false
             }
           ],
           "deepData": {
@@ -2839,9 +2867,9 @@
               "Detail"
             ],
             "storyCards": [
-              "A small classroom",
-              "the character smiles",
-              "A helpful choice"
+              "a sad friend",
+              "a caring question",
+              "an empty chair"
             ]
           }
         }
@@ -2865,7 +2893,8 @@
         "reviewState": "technically_validated",
         "deepData": {
           "scene": "creative",
-          "cardCount": 3
+          "cardCount": 3,
+          "targetFeeling": "caring"
         }
       },
       "assetRefs": [],
@@ -2881,21 +2910,21 @@
       "learningObjective": "Free Creativity tier 5",
       "localizedContent": {
         "vi": {
-          "prompt": "Chọn chi tiết giúp câu chuyện có cảm xúc tò mò.",
+          "prompt": "Chọn chi tiết giúp câu chuyện có cảm xúc sáng tạo.",
           "options": [
             {
               "id": "a",
-              "text": "nhân vật mỉm cười",
+              "text": "một ý tưởng lạ",
               "correct": true
             },
             {
               "id": "b",
-              "text": "trời tối đen",
+              "text": "mảnh giấy trắng",
               "correct": false
             },
             {
               "id": "c",
-              "text": "cửa khóa",
+              "text": "ba màu sáp",
               "correct": false
             }
           ],
@@ -2906,28 +2935,28 @@
               "Chi tiết"
             ],
             "storyCards": [
-              "Một lớp học nhỏ",
-              "nhân vật mỉm cười",
-              "Một lựa chọn tốt bụng"
+              "mảnh giấy trắng",
+              "ba màu sáp",
+              "một ý tưởng lạ"
             ]
           }
         },
         "en": {
-          "prompt": "Choose the detail that makes the story feel curious.",
+          "prompt": "Choose the detail that makes the story feel creative.",
           "options": [
             {
               "id": "a",
-              "text": "the character smiles",
+              "text": "a surprising idea",
               "correct": true
             },
             {
               "id": "b",
-              "text": "the sky is dark",
+              "text": "a blank page",
               "correct": false
             },
             {
               "id": "c",
-              "text": "the door is locked",
+              "text": "three crayons",
               "correct": false
             }
           ],
@@ -2938,9 +2967,9 @@
               "Detail"
             ],
             "storyCards": [
-              "A small classroom",
-              "the character smiles",
-              "A helpful choice"
+              "a blank page",
+              "three crayons",
+              "a surprising idea"
             ]
           }
         }
@@ -2964,7 +2993,8 @@
         "reviewState": "technically_validated",
         "deepData": {
           "scene": "creative",
-          "cardCount": 3
+          "cardCount": 3,
+          "targetFeeling": "creative"
         }
       },
       "assetRefs": [],

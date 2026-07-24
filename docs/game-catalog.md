@@ -9,7 +9,8 @@ of the highest-impact packs now render through deeper bespoke play
 surfaces instead of the plain Choice Engine: Story Comprehension, Logic
 Maze, Kids Sudoku, Reasoning Detective, and Free Creativity. Those five
 packs now also carry structured `metadata.deepData` plus localized
-`localizedContent.<locale>.deepData` for their scene data.
+`localizedContent.<locale>.deepData` for their scene data, populated from
+curated content banks instead of generic placeholder scaffolding.
 
 Legend: **Built** = playable, has real content, has tests. **Choice
 expansion** = built on the shared Choice Engine with a dedicated bilingual
@@ -110,11 +111,12 @@ out-of-range positions. Evidence on 2026-07-19: `flutter analyze`,
   (40 levels), Math Supermarket (40 levels), plus Word Builder, Sound
   Match, Memory Cards, and Robot Commands expanded to 30 levels each.
 - Remaining product polish gap: the five deep surfaces now have structured
-  per-level scene data; later content passes can improve pedagogy and variety
-  with hand-authored puzzle sets rather than generated scaffolding.
+  per-level scene data from curated banks; later content passes can improve
+  pedagogy and variety with designer/teacher-reviewed puzzle sets and final
+  visual assets.
 
 ## Honest effort estimate
 
 The remaining work is no longer getting to 30 playable games. The next
-quality jump is replacing generated deep scaffolding with hand-authored
-curriculum puzzle sets and final visual assets.
+quality jump is teacher review, richer bespoke interactions, and final
+visual assets.

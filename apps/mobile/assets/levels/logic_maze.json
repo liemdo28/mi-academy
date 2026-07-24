@@ -10,22 +10,22 @@
       "learningObjective": "Logic Maze tier 1",
       "localizedContent": {
         "vi": {
-          "prompt": "MI cần đi 3 bước tới sao. Chọn lệnh đúng.",
+          "prompt": "MI cần đi theo đường an toàn qua 6 bước để tới sao. Chọn số bước đúng.",
           "options": [
             {
               "id": "a",
-              "text": "4 bước",
+              "text": "7 bước",
               "correct": false
             },
             {
               "id": "b",
-              "text": "3 bước",
-              "correct": true
+              "text": "5 bước",
+              "correct": false
             },
             {
               "id": "c",
-              "text": "2 bước",
-              "correct": false
+              "text": "6 bước",
+              "correct": true
             }
           ],
           "deepData": {
@@ -38,28 +38,28 @@
           }
         },
         "en": {
-          "prompt": "MI needs 3 steps to the star. Choose the command.",
+          "prompt": "MI needs the safe path with 6 moves to reach the star. Choose the correct number of moves.",
           "options": [
             {
               "id": "a",
-              "text": "4 steps",
+              "text": "7 moves",
               "correct": false
             },
             {
               "id": "b",
-              "text": "3 steps",
-              "correct": true
+              "text": "5 moves",
+              "correct": false
             },
             {
               "id": "c",
-              "text": "2 steps",
-              "correct": false
+              "text": "6 moves",
+              "correct": true
             }
           ],
           "deepData": {
             "steps": [
               "Find MI",
-              "Avoid blocks",
+              "Avoid blocked squares",
               "Reach the star"
             ],
             "pathSummary": "6 safe moves"
@@ -90,20 +90,24 @@
           "goalIndex": 3,
           "path": [
             12,
-            13,
-            9,
-            10,
+            8,
+            4,
+            5,
             6,
             7,
             3
           ],
           "obstacles": [
-            4
+            2,
+            11
           ],
           "commands": [
-            "forward",
-            "turn-right",
-            "forward"
+            "up",
+            "up",
+            "right",
+            "right",
+            "right",
+            "up"
           ]
         }
       },
@@ -120,22 +124,22 @@
       "learningObjective": "Logic Maze tier 1",
       "localizedContent": {
         "vi": {
-          "prompt": "MI cần đi 2 bước tới sao. Chọn lệnh đúng.",
+          "prompt": "MI cần đi theo đường an toàn qua 6 bước để tới sao. Chọn số bước đúng.",
           "options": [
             {
               "id": "a",
-              "text": "1 bước",
+              "text": "5 bước",
               "correct": false
             },
             {
               "id": "b",
-              "text": "3 bước",
-              "correct": false
+              "text": "6 bước",
+              "correct": true
             },
             {
               "id": "c",
-              "text": "2 bước",
-              "correct": true
+              "text": "7 bước",
+              "correct": false
             }
           ],
           "deepData": {
@@ -148,28 +152,28 @@
           }
         },
         "en": {
-          "prompt": "MI needs 2 steps to the star. Choose the command.",
+          "prompt": "MI needs the safe path with 6 moves to reach the star. Choose the correct number of moves.",
           "options": [
             {
               "id": "a",
-              "text": "1 steps",
+              "text": "5 moves",
               "correct": false
             },
             {
               "id": "b",
-              "text": "3 steps",
-              "correct": false
+              "text": "6 moves",
+              "correct": true
             },
             {
               "id": "c",
-              "text": "2 steps",
-              "correct": true
+              "text": "7 moves",
+              "correct": false
             }
           ],
           "deepData": {
             "steps": [
               "Find MI",
-              "Avoid blocks",
+              "Avoid blocked squares",
               "Reach the star"
             ],
             "pathSummary": "6 safe moves"
@@ -200,20 +204,24 @@
           "goalIndex": 3,
           "path": [
             12,
-            8,
+            13,
             9,
-            5,
+            10,
             6,
-            2,
+            7,
             3
           ],
           "obstacles": [
-            13
+            1,
+            4
           ],
           "commands": [
-            "forward",
-            "turn-right",
-            "forward"
+            "right",
+            "up",
+            "right",
+            "up",
+            "right",
+            "up"
           ]
         }
       },
@@ -230,21 +238,21 @@
       "learningObjective": "Logic Maze tier 1",
       "localizedContent": {
         "vi": {
-          "prompt": "MI cần đi 3 bước tới sao. Chọn lệnh đúng.",
+          "prompt": "MI cần đi theo đường an toàn qua 6 bước để tới sao. Chọn số bước đúng.",
           "options": [
             {
               "id": "a",
-              "text": "3 bước",
+              "text": "6 bước",
               "correct": true
             },
             {
               "id": "b",
-              "text": "4 bước",
+              "text": "7 bước",
               "correct": false
             },
             {
               "id": "c",
-              "text": "2 bước",
+              "text": "5 bước",
               "correct": false
             }
           ],
@@ -258,28 +266,28 @@
           }
         },
         "en": {
-          "prompt": "MI needs 3 steps to the star. Choose the command.",
+          "prompt": "MI needs the safe path with 6 moves to reach the star. Choose the correct number of moves.",
           "options": [
             {
               "id": "a",
-              "text": "3 steps",
+              "text": "6 moves",
               "correct": true
             },
             {
               "id": "b",
-              "text": "4 steps",
+              "text": "7 moves",
               "correct": false
             },
             {
               "id": "c",
-              "text": "2 steps",
+              "text": "5 moves",
               "correct": false
             }
           ],
           "deepData": {
             "steps": [
               "Find MI",
-              "Avoid blocks",
+              "Avoid blocked squares",
               "Reach the star"
             ],
             "pathSummary": "6 safe moves"
@@ -310,20 +318,24 @@
           "goalIndex": 3,
           "path": [
             12,
-            13,
+            8,
             9,
-            10,
+            5,
             6,
-            7,
+            2,
             3
           ],
           "obstacles": [
-            2
+            0,
+            15
           ],
           "commands": [
-            "forward",
-            "turn-right",
-            "forward"
+            "up",
+            "right",
+            "up",
+            "right",
+            "up",
+            "right"
           ]
         }
       },
@@ -340,22 +352,22 @@
       "learningObjective": "Logic Maze tier 1",
       "localizedContent": {
         "vi": {
-          "prompt": "MI cần đi 2 bước tới sao. Chọn lệnh đúng.",
+          "prompt": "MI cần đi theo đường an toàn qua 6 bước để tới sao. Chọn số bước đúng.",
           "options": [
             {
               "id": "a",
-              "text": "3 bước",
+              "text": "7 bước",
               "correct": false
             },
             {
               "id": "b",
-              "text": "2 bước",
-              "correct": true
+              "text": "5 bước",
+              "correct": false
             },
             {
               "id": "c",
-              "text": "1 bước",
-              "correct": false
+              "text": "6 bước",
+              "correct": true
             }
           ],
           "deepData": {
@@ -368,28 +380,28 @@
           }
         },
         "en": {
-          "prompt": "MI needs 2 steps to the star. Choose the command.",
+          "prompt": "MI needs the safe path with 6 moves to reach the star. Choose the correct number of moves.",
           "options": [
             {
               "id": "a",
-              "text": "3 steps",
+              "text": "7 moves",
               "correct": false
             },
             {
               "id": "b",
-              "text": "2 steps",
-              "correct": true
+              "text": "5 moves",
+              "correct": false
             },
             {
               "id": "c",
-              "text": "1 steps",
-              "correct": false
+              "text": "6 moves",
+              "correct": true
             }
           ],
           "deepData": {
             "steps": [
               "Find MI",
-              "Avoid blocks",
+              "Avoid blocked squares",
               "Reach the star"
             ],
             "pathSummary": "6 safe moves"
@@ -420,20 +432,24 @@
           "goalIndex": 3,
           "path": [
             12,
-            8,
-            9,
-            5,
+            13,
+            14,
+            10,
             6,
-            2,
+            7,
             3
           ],
           "obstacles": [
-            1
+            2,
+            5
           ],
           "commands": [
-            "forward",
-            "turn-right",
-            "forward"
+            "right",
+            "right",
+            "up",
+            "up",
+            "right",
+            "up"
           ]
         }
       },
@@ -450,22 +466,22 @@
       "learningObjective": "Logic Maze tier 1",
       "localizedContent": {
         "vi": {
-          "prompt": "MI cần đi 3 bước tới sao. Chọn lệnh đúng.",
+          "prompt": "MI cần đi theo đường an toàn qua 6 bước để tới sao. Chọn số bước đúng.",
           "options": [
             {
               "id": "a",
-              "text": "2 bước",
+              "text": "5 bước",
               "correct": false
             },
             {
               "id": "b",
-              "text": "4 bước",
-              "correct": false
+              "text": "6 bước",
+              "correct": true
             },
             {
               "id": "c",
-              "text": "3 bước",
-              "correct": true
+              "text": "7 bước",
+              "correct": false
             }
           ],
           "deepData": {
@@ -478,28 +494,28 @@
           }
         },
         "en": {
-          "prompt": "MI needs 3 steps to the star. Choose the command.",
+          "prompt": "MI needs the safe path with 6 moves to reach the star. Choose the correct number of moves.",
           "options": [
             {
               "id": "a",
-              "text": "2 steps",
+              "text": "5 moves",
               "correct": false
             },
             {
               "id": "b",
-              "text": "4 steps",
-              "correct": false
+              "text": "6 moves",
+              "correct": true
             },
             {
               "id": "c",
-              "text": "3 steps",
-              "correct": true
+              "text": "7 moves",
+              "correct": false
             }
           ],
           "deepData": {
             "steps": [
               "Find MI",
-              "Avoid blocks",
+              "Avoid blocked squares",
               "Reach the star"
             ],
             "pathSummary": "6 safe moves"
@@ -530,20 +546,24 @@
           "goalIndex": 3,
           "path": [
             12,
-            13,
-            9,
-            10,
-            6,
-            7,
+            8,
+            4,
+            0,
+            1,
+            2,
             3
           ],
           "obstacles": [
-            0
+            7,
+            10
           ],
           "commands": [
-            "forward",
-            "turn-right",
-            "forward"
+            "up",
+            "up",
+            "up",
+            "right",
+            "right",
+            "right"
           ]
         }
       },
@@ -560,21 +580,21 @@
       "learningObjective": "Logic Maze tier 1",
       "localizedContent": {
         "vi": {
-          "prompt": "MI cần đi 2 bước tới sao. Chọn lệnh đúng.",
+          "prompt": "MI cần đi theo đường an toàn qua 6 bước để tới sao. Chọn số bước đúng.",
           "options": [
             {
               "id": "a",
-              "text": "2 bước",
+              "text": "6 bước",
               "correct": true
             },
             {
               "id": "b",
-              "text": "3 bước",
+              "text": "7 bước",
               "correct": false
             },
             {
               "id": "c",
-              "text": "1 bước",
+              "text": "5 bước",
               "correct": false
             }
           ],
@@ -588,28 +608,28 @@
           }
         },
         "en": {
-          "prompt": "MI needs 2 steps to the star. Choose the command.",
+          "prompt": "MI needs the safe path with 6 moves to reach the star. Choose the correct number of moves.",
           "options": [
             {
               "id": "a",
-              "text": "2 steps",
+              "text": "6 moves",
               "correct": true
             },
             {
               "id": "b",
-              "text": "3 steps",
+              "text": "7 moves",
               "correct": false
             },
             {
               "id": "c",
-              "text": "1 steps",
+              "text": "5 moves",
               "correct": false
             }
           ],
           "deepData": {
             "steps": [
               "Find MI",
-              "Avoid blocks",
+              "Avoid blocked squares",
               "Reach the star"
             ],
             "pathSummary": "6 safe moves"
@@ -641,19 +661,23 @@
           "path": [
             12,
             8,
-            9,
+            4,
             5,
             6,
-            2,
+            7,
             3
           ],
           "obstacles": [
-            4
+            0,
+            9
           ],
           "commands": [
-            "forward",
-            "turn-right",
-            "forward"
+            "up",
+            "up",
+            "right",
+            "right",
+            "right",
+            "up"
           ]
         }
       },
@@ -670,22 +694,22 @@
       "learningObjective": "Logic Maze tier 2",
       "localizedContent": {
         "vi": {
-          "prompt": "MI cần đi 4 bước tới sao. Chọn lệnh đúng.",
+          "prompt": "MI cần đi theo đường an toàn qua 6 bước để tới sao. Chọn số bước đúng.",
           "options": [
             {
               "id": "a",
-              "text": "5 bước",
+              "text": "7 bước",
               "correct": false
             },
             {
               "id": "b",
-              "text": "4 bước",
-              "correct": true
+              "text": "5 bước",
+              "correct": false
             },
             {
               "id": "c",
-              "text": "3 bước",
-              "correct": false
+              "text": "6 bước",
+              "correct": true
             }
           ],
           "deepData": {
@@ -698,28 +722,28 @@
           }
         },
         "en": {
-          "prompt": "MI needs 4 steps to the star. Choose the command.",
+          "prompt": "MI needs the safe path with 6 moves to reach the star. Choose the correct number of moves.",
           "options": [
             {
               "id": "a",
-              "text": "5 steps",
+              "text": "7 moves",
               "correct": false
             },
             {
               "id": "b",
-              "text": "4 steps",
-              "correct": true
+              "text": "5 moves",
+              "correct": false
             },
             {
               "id": "c",
-              "text": "3 steps",
-              "correct": false
+              "text": "6 moves",
+              "correct": true
             }
           ],
           "deepData": {
             "steps": [
               "Find MI",
-              "Avoid blocks",
+              "Avoid blocked squares",
               "Reach the star"
             ],
             "pathSummary": "6 safe moves"
@@ -758,12 +782,17 @@
             3
           ],
           "obstacles": [
+            2,
+            5,
             8
           ],
           "commands": [
-            "forward",
-            "turn-right",
-            "forward"
+            "right",
+            "up",
+            "right",
+            "up",
+            "right",
+            "up"
           ]
         }
       },
@@ -780,22 +809,22 @@
       "learningObjective": "Logic Maze tier 2",
       "localizedContent": {
         "vi": {
-          "prompt": "MI cần đi 3 bước tới sao. Chọn lệnh đúng.",
+          "prompt": "MI cần đi theo đường an toàn qua 6 bước để tới sao. Chọn số bước đúng.",
           "options": [
             {
               "id": "a",
-              "text": "2 bước",
+              "text": "5 bước",
               "correct": false
             },
             {
               "id": "b",
-              "text": "4 bước",
-              "correct": false
+              "text": "6 bước",
+              "correct": true
             },
             {
               "id": "c",
-              "text": "3 bước",
-              "correct": true
+              "text": "7 bước",
+              "correct": false
             }
           ],
           "deepData": {
@@ -808,28 +837,28 @@
           }
         },
         "en": {
-          "prompt": "MI needs 3 steps to the star. Choose the command.",
+          "prompt": "MI needs the safe path with 6 moves to reach the star. Choose the correct number of moves.",
           "options": [
             {
               "id": "a",
-              "text": "2 steps",
+              "text": "5 moves",
               "correct": false
             },
             {
               "id": "b",
-              "text": "4 steps",
-              "correct": false
+              "text": "6 moves",
+              "correct": true
             },
             {
               "id": "c",
-              "text": "3 steps",
-              "correct": true
+              "text": "7 moves",
+              "correct": false
             }
           ],
           "deepData": {
             "steps": [
               "Find MI",
-              "Avoid blocks",
+              "Avoid blocked squares",
               "Reach the star"
             ],
             "pathSummary": "6 safe moves"
@@ -868,12 +897,17 @@
             3
           ],
           "obstacles": [
+            1,
+            4,
             7
           ],
           "commands": [
-            "forward",
-            "turn-right",
-            "forward"
+            "up",
+            "right",
+            "up",
+            "right",
+            "up",
+            "right"
           ]
         }
       },
@@ -890,21 +924,21 @@
       "learningObjective": "Logic Maze tier 2",
       "localizedContent": {
         "vi": {
-          "prompt": "MI cần đi 4 bước tới sao. Chọn lệnh đúng.",
+          "prompt": "MI cần đi theo đường an toàn qua 6 bước để tới sao. Chọn số bước đúng.",
           "options": [
             {
               "id": "a",
-              "text": "4 bước",
+              "text": "6 bước",
               "correct": true
             },
             {
               "id": "b",
-              "text": "5 bước",
+              "text": "7 bước",
               "correct": false
             },
             {
               "id": "c",
-              "text": "3 bước",
+              "text": "5 bước",
               "correct": false
             }
           ],
@@ -918,28 +952,28 @@
           }
         },
         "en": {
-          "prompt": "MI needs 4 steps to the star. Choose the command.",
+          "prompt": "MI needs the safe path with 6 moves to reach the star. Choose the correct number of moves.",
           "options": [
             {
               "id": "a",
-              "text": "4 steps",
+              "text": "6 moves",
               "correct": true
             },
             {
               "id": "b",
-              "text": "5 steps",
+              "text": "7 moves",
               "correct": false
             },
             {
               "id": "c",
-              "text": "3 steps",
+              "text": "5 moves",
               "correct": false
             }
           ],
           "deepData": {
             "steps": [
               "Find MI",
-              "Avoid blocks",
+              "Avoid blocked squares",
               "Reach the star"
             ],
             "pathSummary": "6 safe moves"
@@ -971,20 +1005,24 @@
           "path": [
             12,
             13,
-            9,
+            14,
             10,
             6,
             7,
             3
           ],
           "obstacles": [
-            1,
-            11
+            0,
+            9,
+            15
           ],
           "commands": [
-            "forward",
-            "turn-right",
-            "forward"
+            "right",
+            "right",
+            "up",
+            "up",
+            "right",
+            "up"
           ]
         }
       },
@@ -1001,22 +1039,22 @@
       "learningObjective": "Logic Maze tier 2",
       "localizedContent": {
         "vi": {
-          "prompt": "MI cần đi 3 bước tới sao. Chọn lệnh đúng.",
+          "prompt": "MI cần đi theo đường an toàn qua 6 bước để tới sao. Chọn số bước đúng.",
           "options": [
             {
               "id": "a",
-              "text": "4 bước",
+              "text": "7 bước",
               "correct": false
             },
             {
               "id": "b",
-              "text": "3 bước",
-              "correct": true
+              "text": "5 bước",
+              "correct": false
             },
             {
               "id": "c",
-              "text": "2 bước",
-              "correct": false
+              "text": "6 bước",
+              "correct": true
             }
           ],
           "deepData": {
@@ -1029,28 +1067,28 @@
           }
         },
         "en": {
-          "prompt": "MI needs 3 steps to the star. Choose the command.",
+          "prompt": "MI needs the safe path with 6 moves to reach the star. Choose the correct number of moves.",
           "options": [
             {
               "id": "a",
-              "text": "4 steps",
+              "text": "7 moves",
               "correct": false
             },
             {
               "id": "b",
-              "text": "3 steps",
-              "correct": true
+              "text": "5 moves",
+              "correct": false
             },
             {
               "id": "c",
-              "text": "2 steps",
-              "correct": false
+              "text": "6 moves",
+              "correct": true
             }
           ],
           "deepData": {
             "steps": [
               "Find MI",
-              "Avoid blocks",
+              "Avoid blocked squares",
               "Reach the star"
             ],
             "pathSummary": "6 safe moves"
@@ -1082,20 +1120,24 @@
           "path": [
             12,
             8,
-            9,
-            5,
-            6,
+            4,
+            0,
+            1,
             2,
             3
           ],
           "obstacles": [
-            0,
-            10
+            5,
+            11,
+            14
           ],
           "commands": [
-            "forward",
-            "turn-right",
-            "forward"
+            "up",
+            "up",
+            "up",
+            "right",
+            "right",
+            "right"
           ]
         }
       },
@@ -1112,22 +1154,22 @@
       "learningObjective": "Logic Maze tier 2",
       "localizedContent": {
         "vi": {
-          "prompt": "MI cần đi 4 bước tới sao. Chọn lệnh đúng.",
+          "prompt": "MI cần đi theo đường an toàn qua 6 bước để tới sao. Chọn số bước đúng.",
           "options": [
             {
               "id": "a",
-              "text": "3 bước",
-              "correct": false
-            },
-            {
-              "id": "b",
               "text": "5 bước",
               "correct": false
             },
             {
-              "id": "c",
-              "text": "4 bước",
+              "id": "b",
+              "text": "6 bước",
               "correct": true
+            },
+            {
+              "id": "c",
+              "text": "7 bước",
+              "correct": false
             }
           ],
           "deepData": {
@@ -1140,28 +1182,28 @@
           }
         },
         "en": {
-          "prompt": "MI needs 4 steps to the star. Choose the command.",
+          "prompt": "MI needs the safe path with 6 moves to reach the star. Choose the correct number of moves.",
           "options": [
             {
               "id": "a",
-              "text": "3 steps",
+              "text": "5 moves",
               "correct": false
             },
             {
               "id": "b",
-              "text": "5 steps",
-              "correct": false
+              "text": "6 moves",
+              "correct": true
             },
             {
               "id": "c",
-              "text": "4 steps",
-              "correct": true
+              "text": "7 moves",
+              "correct": false
             }
           ],
           "deepData": {
             "steps": [
               "Find MI",
-              "Avoid blocks",
+              "Avoid blocked squares",
               "Reach the star"
             ],
             "pathSummary": "6 safe moves"
@@ -1192,21 +1234,25 @@
           "goalIndex": 3,
           "path": [
             12,
-            13,
-            9,
-            10,
+            8,
+            4,
+            5,
             6,
             7,
             3
           ],
           "obstacles": [
-            4,
-            14
+            1,
+            10,
+            13
           ],
           "commands": [
-            "forward",
-            "turn-right",
-            "forward"
+            "up",
+            "up",
+            "right",
+            "right",
+            "right",
+            "up"
           ]
         }
       },
@@ -1223,21 +1269,21 @@
       "learningObjective": "Logic Maze tier 2",
       "localizedContent": {
         "vi": {
-          "prompt": "MI cần đi 3 bước tới sao. Chọn lệnh đúng.",
+          "prompt": "MI cần đi theo đường an toàn qua 6 bước để tới sao. Chọn số bước đúng.",
           "options": [
             {
               "id": "a",
-              "text": "3 bước",
+              "text": "6 bước",
               "correct": true
             },
             {
               "id": "b",
-              "text": "4 bước",
+              "text": "7 bước",
               "correct": false
             },
             {
               "id": "c",
-              "text": "2 bước",
+              "text": "5 bước",
               "correct": false
             }
           ],
@@ -1251,28 +1297,28 @@
           }
         },
         "en": {
-          "prompt": "MI needs 3 steps to the star. Choose the command.",
+          "prompt": "MI needs the safe path with 6 moves to reach the star. Choose the correct number of moves.",
           "options": [
             {
               "id": "a",
-              "text": "3 steps",
+              "text": "6 moves",
               "correct": true
             },
             {
               "id": "b",
-              "text": "4 steps",
+              "text": "7 moves",
               "correct": false
             },
             {
               "id": "c",
-              "text": "2 steps",
+              "text": "5 moves",
               "correct": false
             }
           ],
           "deepData": {
             "steps": [
               "Find MI",
-              "Avoid blocks",
+              "Avoid blocked squares",
               "Reach the star"
             ],
             "pathSummary": "6 safe moves"
@@ -1303,20 +1349,24 @@
           "goalIndex": 3,
           "path": [
             12,
-            8,
+            13,
             9,
-            5,
+            10,
             6,
-            2,
+            7,
             3
           ],
           "obstacles": [
-            13
+            0,
+            15
           ],
           "commands": [
-            "forward",
-            "turn-right",
-            "forward"
+            "right",
+            "up",
+            "right",
+            "up",
+            "right",
+            "up"
           ]
         }
       },
@@ -1333,22 +1383,22 @@
       "learningObjective": "Logic Maze tier 3",
       "localizedContent": {
         "vi": {
-          "prompt": "MI cần đi 5 bước tới sao. Chọn lệnh đúng.",
+          "prompt": "MI cần đi theo đường an toàn qua 6 bước để tới sao. Chọn số bước đúng.",
           "options": [
             {
               "id": "a",
-              "text": "6 bước",
+              "text": "7 bước",
               "correct": false
             },
             {
               "id": "b",
               "text": "5 bước",
-              "correct": true
+              "correct": false
             },
             {
               "id": "c",
-              "text": "4 bước",
-              "correct": false
+              "text": "6 bước",
+              "correct": true
             }
           ],
           "deepData": {
@@ -1361,28 +1411,28 @@
           }
         },
         "en": {
-          "prompt": "MI needs 5 steps to the star. Choose the command.",
+          "prompt": "MI needs the safe path with 6 moves to reach the star. Choose the correct number of moves.",
           "options": [
             {
               "id": "a",
-              "text": "6 steps",
+              "text": "7 moves",
               "correct": false
             },
             {
               "id": "b",
-              "text": "5 steps",
-              "correct": true
+              "text": "5 moves",
+              "correct": false
             },
             {
               "id": "c",
-              "text": "4 steps",
-              "correct": false
+              "text": "6 moves",
+              "correct": true
             }
           ],
           "deepData": {
             "steps": [
               "Find MI",
-              "Avoid blocks",
+              "Avoid blocked squares",
               "Reach the star"
             ],
             "pathSummary": "6 safe moves"
@@ -1413,20 +1463,24 @@
           "goalIndex": 3,
           "path": [
             12,
-            13,
+            8,
             9,
-            10,
+            5,
             6,
-            7,
+            2,
             3
           ],
           "obstacles": [
-            2
+            11,
+            14
           ],
           "commands": [
-            "forward",
-            "turn-right",
-            "forward"
+            "up",
+            "right",
+            "up",
+            "right",
+            "up",
+            "right"
           ]
         }
       },
@@ -1443,22 +1497,22 @@
       "learningObjective": "Logic Maze tier 3",
       "localizedContent": {
         "vi": {
-          "prompt": "MI cần đi 4 bước tới sao. Chọn lệnh đúng.",
+          "prompt": "MI cần đi theo đường an toàn qua 6 bước để tới sao. Chọn số bước đúng.",
           "options": [
             {
               "id": "a",
-              "text": "3 bước",
-              "correct": false
-            },
-            {
-              "id": "b",
               "text": "5 bước",
               "correct": false
             },
             {
-              "id": "c",
-              "text": "4 bước",
+              "id": "b",
+              "text": "6 bước",
               "correct": true
+            },
+            {
+              "id": "c",
+              "text": "7 bước",
+              "correct": false
             }
           ],
           "deepData": {
@@ -1471,28 +1525,28 @@
           }
         },
         "en": {
-          "prompt": "MI needs 4 steps to the star. Choose the command.",
+          "prompt": "MI needs the safe path with 6 moves to reach the star. Choose the correct number of moves.",
           "options": [
             {
               "id": "a",
-              "text": "3 steps",
+              "text": "5 moves",
               "correct": false
             },
             {
               "id": "b",
-              "text": "5 steps",
-              "correct": false
+              "text": "6 moves",
+              "correct": true
             },
             {
               "id": "c",
-              "text": "4 steps",
-              "correct": true
+              "text": "7 moves",
+              "correct": false
             }
           ],
           "deepData": {
             "steps": [
               "Find MI",
-              "Avoid blocks",
+              "Avoid blocked squares",
               "Reach the star"
             ],
             "pathSummary": "6 safe moves"
@@ -1523,21 +1577,24 @@
           "goalIndex": 3,
           "path": [
             12,
-            8,
-            9,
-            5,
+            13,
+            14,
+            10,
             6,
-            2,
+            7,
             3
           ],
           "obstacles": [
             1,
-            11
+            4
           ],
           "commands": [
-            "forward",
-            "turn-right",
-            "forward"
+            "right",
+            "right",
+            "up",
+            "up",
+            "right",
+            "up"
           ]
         }
       },
@@ -1554,21 +1611,21 @@
       "learningObjective": "Logic Maze tier 3",
       "localizedContent": {
         "vi": {
-          "prompt": "MI cần đi 5 bước tới sao. Chọn lệnh đúng.",
+          "prompt": "MI cần đi theo đường an toàn qua 6 bước để tới sao. Chọn số bước đúng.",
           "options": [
             {
               "id": "a",
-              "text": "5 bước",
+              "text": "6 bước",
               "correct": true
             },
             {
               "id": "b",
-              "text": "6 bước",
+              "text": "7 bước",
               "correct": false
             },
             {
               "id": "c",
-              "text": "4 bước",
+              "text": "5 bước",
               "correct": false
             }
           ],
@@ -1582,28 +1639,28 @@
           }
         },
         "en": {
-          "prompt": "MI needs 5 steps to the star. Choose the command.",
+          "prompt": "MI needs the safe path with 6 moves to reach the star. Choose the correct number of moves.",
           "options": [
             {
               "id": "a",
-              "text": "5 steps",
+              "text": "6 moves",
               "correct": true
             },
             {
               "id": "b",
-              "text": "6 steps",
+              "text": "7 moves",
               "correct": false
             },
             {
               "id": "c",
-              "text": "4 steps",
+              "text": "5 moves",
               "correct": false
             }
           ],
           "deepData": {
             "steps": [
               "Find MI",
-              "Avoid blocks",
+              "Avoid blocked squares",
               "Reach the star"
             ],
             "pathSummary": "6 safe moves"
@@ -1634,22 +1691,25 @@
           "goalIndex": 3,
           "path": [
             12,
-            13,
-            9,
-            10,
-            6,
-            7,
+            8,
+            4,
+            0,
+            1,
+            2,
             3
           ],
           "obstacles": [
-            0,
-            5,
+            6,
+            9,
             15
           ],
           "commands": [
-            "forward",
-            "turn-right",
-            "forward"
+            "up",
+            "up",
+            "up",
+            "right",
+            "right",
+            "right"
           ]
         }
       },
@@ -1666,22 +1726,22 @@
       "learningObjective": "Logic Maze tier 3",
       "localizedContent": {
         "vi": {
-          "prompt": "MI cần đi 4 bước tới sao. Chọn lệnh đúng.",
+          "prompt": "MI cần đi theo đường an toàn qua 6 bước để tới sao. Chọn số bước đúng.",
           "options": [
             {
               "id": "a",
-              "text": "5 bước",
+              "text": "7 bước",
               "correct": false
             },
             {
               "id": "b",
-              "text": "4 bước",
-              "correct": true
+              "text": "5 bước",
+              "correct": false
             },
             {
               "id": "c",
-              "text": "3 bước",
-              "correct": false
+              "text": "6 bước",
+              "correct": true
             }
           ],
           "deepData": {
@@ -1694,28 +1754,28 @@
           }
         },
         "en": {
-          "prompt": "MI needs 4 steps to the star. Choose the command.",
+          "prompt": "MI needs the safe path with 6 moves to reach the star. Choose the correct number of moves.",
           "options": [
             {
               "id": "a",
-              "text": "5 steps",
+              "text": "7 moves",
               "correct": false
             },
             {
               "id": "b",
-              "text": "4 steps",
-              "correct": true
+              "text": "5 moves",
+              "correct": false
             },
             {
               "id": "c",
-              "text": "3 steps",
-              "correct": false
+              "text": "6 moves",
+              "correct": true
             }
           ],
           "deepData": {
             "steps": [
               "Find MI",
-              "Avoid blocks",
+              "Avoid blocked squares",
               "Reach the star"
             ],
             "pathSummary": "6 safe moves"
@@ -1747,20 +1807,24 @@
           "path": [
             12,
             8,
-            9,
+            4,
             5,
             6,
-            2,
+            7,
             3
           ],
           "obstacles": [
-            4,
+            2,
+            11,
             14
           ],
           "commands": [
-            "forward",
-            "turn-right",
-            "forward"
+            "up",
+            "up",
+            "right",
+            "right",
+            "right",
+            "up"
           ]
         }
       },
@@ -1777,22 +1841,22 @@
       "learningObjective": "Logic Maze tier 3",
       "localizedContent": {
         "vi": {
-          "prompt": "MI cần đi 5 bước tới sao. Chọn lệnh đúng.",
+          "prompt": "MI cần đi theo đường an toàn qua 6 bước để tới sao. Chọn số bước đúng.",
           "options": [
             {
               "id": "a",
-              "text": "4 bước",
+              "text": "5 bước",
               "correct": false
             },
             {
               "id": "b",
               "text": "6 bước",
-              "correct": false
+              "correct": true
             },
             {
               "id": "c",
-              "text": "5 bước",
-              "correct": true
+              "text": "7 bước",
+              "correct": false
             }
           ],
           "deepData": {
@@ -1805,28 +1869,28 @@
           }
         },
         "en": {
-          "prompt": "MI needs 5 steps to the star. Choose the command.",
+          "prompt": "MI needs the safe path with 6 moves to reach the star. Choose the correct number of moves.",
           "options": [
             {
               "id": "a",
-              "text": "4 steps",
+              "text": "5 moves",
               "correct": false
             },
             {
               "id": "b",
-              "text": "6 steps",
-              "correct": false
+              "text": "6 moves",
+              "correct": true
             },
             {
               "id": "c",
-              "text": "5 steps",
-              "correct": true
+              "text": "7 moves",
+              "correct": false
             }
           ],
           "deepData": {
             "steps": [
               "Find MI",
-              "Avoid blocks",
+              "Avoid blocked squares",
               "Reach the star"
             ],
             "pathSummary": "6 safe moves"
@@ -1865,12 +1929,16 @@
             3
           ],
           "obstacles": [
-            8
+            1,
+            4
           ],
           "commands": [
-            "forward",
-            "turn-right",
-            "forward"
+            "right",
+            "up",
+            "right",
+            "up",
+            "right",
+            "up"
           ]
         }
       },
@@ -1887,21 +1955,21 @@
       "learningObjective": "Logic Maze tier 3",
       "localizedContent": {
         "vi": {
-          "prompt": "MI cần đi 4 bước tới sao. Chọn lệnh đúng.",
+          "prompt": "MI cần đi theo đường an toàn qua 6 bước để tới sao. Chọn số bước đúng.",
           "options": [
             {
               "id": "a",
-              "text": "4 bước",
+              "text": "6 bước",
               "correct": true
             },
             {
               "id": "b",
-              "text": "5 bước",
+              "text": "7 bước",
               "correct": false
             },
             {
               "id": "c",
-              "text": "3 bước",
+              "text": "5 bước",
               "correct": false
             }
           ],
@@ -1915,28 +1983,28 @@
           }
         },
         "en": {
-          "prompt": "MI needs 4 steps to the star. Choose the command.",
+          "prompt": "MI needs the safe path with 6 moves to reach the star. Choose the correct number of moves.",
           "options": [
             {
               "id": "a",
-              "text": "4 steps",
+              "text": "6 moves",
               "correct": true
             },
             {
               "id": "b",
-              "text": "5 steps",
+              "text": "7 moves",
               "correct": false
             },
             {
               "id": "c",
-              "text": "3 steps",
+              "text": "5 moves",
               "correct": false
             }
           ],
           "deepData": {
             "steps": [
               "Find MI",
-              "Avoid blocks",
+              "Avoid blocked squares",
               "Reach the star"
             ],
             "pathSummary": "6 safe moves"
@@ -1975,12 +2043,16 @@
             3
           ],
           "obstacles": [
-            7
+            0,
+            15
           ],
           "commands": [
-            "forward",
-            "turn-right",
-            "forward"
+            "up",
+            "right",
+            "up",
+            "right",
+            "up",
+            "right"
           ]
         }
       },
@@ -1997,22 +2069,22 @@
       "learningObjective": "Logic Maze tier 4",
       "localizedContent": {
         "vi": {
-          "prompt": "MI cần đi 6 bước tới sao. Chọn lệnh đúng.",
+          "prompt": "MI cần đi theo đường an toàn qua 8 bước để tới sao. Chọn số bước đúng.",
           "options": [
             {
               "id": "a",
-              "text": "7 bước",
+              "text": "9 bước",
               "correct": false
             },
             {
               "id": "b",
-              "text": "6 bước",
-              "correct": true
+              "text": "7 bước",
+              "correct": false
             },
             {
               "id": "c",
-              "text": "5 bước",
-              "correct": false
+              "text": "8 bước",
+              "correct": true
             }
           ],
           "deepData": {
@@ -2025,28 +2097,28 @@
           }
         },
         "en": {
-          "prompt": "MI needs 6 steps to the star. Choose the command.",
+          "prompt": "MI needs the safe path with 8 moves to reach the star. Choose the correct number of moves.",
           "options": [
             {
               "id": "a",
-              "text": "7 steps",
+              "text": "9 moves",
               "correct": false
             },
             {
               "id": "b",
-              "text": "6 steps",
-              "correct": true
+              "text": "7 moves",
+              "correct": false
             },
             {
               "id": "c",
-              "text": "5 steps",
-              "correct": false
+              "text": "8 moves",
+              "correct": true
             }
           ],
           "deepData": {
             "steps": [
               "Find MI",
-              "Avoid blocks",
+              "Avoid blocked squares",
               "Reach the star"
             ],
             "pathSummary": "8 safe moves"
@@ -2078,23 +2150,28 @@
           "path": [
             20,
             21,
-            16,
+            22,
             17,
             12,
             13,
             8,
-            9,
+            3,
             4
           ],
           "obstacles": [
-            1,
-            6,
-            11
+            2,
+            5,
+            11,
+            14,
+            23
           ],
           "commands": [
-            "forward",
-            "turn-right",
-            "forward"
+            "right",
+            "right",
+            "up",
+            "up",
+            "right",
+            "up"
           ]
         }
       },
@@ -2111,22 +2188,22 @@
       "learningObjective": "Logic Maze tier 4",
       "localizedContent": {
         "vi": {
-          "prompt": "MI cần đi 5 bước tới sao. Chọn lệnh đúng.",
+          "prompt": "MI cần đi theo đường an toàn qua 8 bước để tới sao. Chọn số bước đúng.",
           "options": [
             {
               "id": "a",
-              "text": "4 bước",
+              "text": "7 bước",
               "correct": false
             },
             {
               "id": "b",
-              "text": "6 bước",
-              "correct": false
+              "text": "8 bước",
+              "correct": true
             },
             {
               "id": "c",
-              "text": "5 bước",
-              "correct": true
+              "text": "9 bước",
+              "correct": false
             }
           ],
           "deepData": {
@@ -2139,28 +2216,28 @@
           }
         },
         "en": {
-          "prompt": "MI needs 5 steps to the star. Choose the command.",
+          "prompt": "MI needs the safe path with 8 moves to reach the star. Choose the correct number of moves.",
           "options": [
             {
               "id": "a",
-              "text": "4 steps",
+              "text": "7 moves",
               "correct": false
             },
             {
               "id": "b",
-              "text": "6 steps",
-              "correct": false
+              "text": "8 moves",
+              "correct": true
             },
             {
               "id": "c",
-              "text": "5 steps",
-              "correct": true
+              "text": "9 moves",
+              "correct": false
             }
           ],
           "deepData": {
             "steps": [
               "Find MI",
-              "Avoid blocks",
+              "Avoid blocked squares",
               "Reach the star"
             ],
             "pathSummary": "8 safe moves"
@@ -2192,23 +2269,28 @@
           "path": [
             20,
             15,
-            16,
-            11,
-            12,
+            10,
+            5,
+            6,
             7,
             8,
             3,
             4
           ],
           "obstacles": [
-            0,
-            5,
-            10
+            1,
+            13,
+            16,
+            19,
+            22
           ],
           "commands": [
-            "forward",
-            "turn-right",
-            "forward"
+            "up",
+            "up",
+            "up",
+            "right",
+            "right",
+            "right"
           ]
         }
       },
@@ -2225,21 +2307,21 @@
       "learningObjective": "Logic Maze tier 4",
       "localizedContent": {
         "vi": {
-          "prompt": "MI cần đi 6 bước tới sao. Chọn lệnh đúng.",
+          "prompt": "MI cần đi theo đường an toàn qua 8 bước để tới sao. Chọn số bước đúng.",
           "options": [
             {
               "id": "a",
-              "text": "6 bước",
+              "text": "8 bước",
               "correct": true
             },
             {
               "id": "b",
-              "text": "7 bước",
+              "text": "9 bước",
               "correct": false
             },
             {
               "id": "c",
-              "text": "5 bước",
+              "text": "7 bước",
               "correct": false
             }
           ],
@@ -2253,28 +2335,28 @@
           }
         },
         "en": {
-          "prompt": "MI needs 6 steps to the star. Choose the command.",
+          "prompt": "MI needs the safe path with 8 moves to reach the star. Choose the correct number of moves.",
           "options": [
             {
               "id": "a",
-              "text": "6 steps",
+              "text": "8 moves",
               "correct": true
             },
             {
               "id": "b",
-              "text": "7 steps",
+              "text": "9 moves",
               "correct": false
             },
             {
               "id": "c",
-              "text": "5 steps",
+              "text": "7 moves",
               "correct": false
             }
           ],
           "deepData": {
             "steps": [
               "Find MI",
-              "Avoid blocks",
+              "Avoid blocked squares",
               "Reach the star"
             ],
             "pathSummary": "8 safe moves"
@@ -2305,24 +2387,29 @@
           "goalIndex": 4,
           "path": [
             20,
-            21,
-            16,
-            17,
+            15,
+            10,
+            11,
             12,
             13,
             8,
-            9,
+            3,
             4
           ],
           "obstacles": [
-            14,
-            19,
-            24
+            0,
+            6,
+            9,
+            18,
+            21
           ],
           "commands": [
-            "forward",
-            "turn-right",
-            "forward"
+            "up",
+            "up",
+            "right",
+            "right",
+            "right",
+            "up"
           ]
         }
       },
@@ -2339,22 +2426,22 @@
       "learningObjective": "Logic Maze tier 4",
       "localizedContent": {
         "vi": {
-          "prompt": "MI cần đi 5 bước tới sao. Chọn lệnh đúng.",
+          "prompt": "MI cần đi theo đường an toàn qua 8 bước để tới sao. Chọn số bước đúng.",
           "options": [
             {
               "id": "a",
-              "text": "6 bước",
+              "text": "9 bước",
               "correct": false
             },
             {
               "id": "b",
-              "text": "5 bước",
-              "correct": true
+              "text": "7 bước",
+              "correct": false
             },
             {
               "id": "c",
-              "text": "4 bước",
-              "correct": false
+              "text": "8 bước",
+              "correct": true
             }
           ],
           "deepData": {
@@ -2367,28 +2454,28 @@
           }
         },
         "en": {
-          "prompt": "MI needs 5 steps to the star. Choose the command.",
+          "prompt": "MI needs the safe path with 8 moves to reach the star. Choose the correct number of moves.",
           "options": [
             {
               "id": "a",
-              "text": "6 steps",
+              "text": "9 moves",
               "correct": false
             },
             {
               "id": "b",
-              "text": "5 steps",
-              "correct": true
+              "text": "7 moves",
+              "correct": false
             },
             {
               "id": "c",
-              "text": "4 steps",
-              "correct": false
+              "text": "8 moves",
+              "correct": true
             }
           ],
           "deepData": {
             "steps": [
               "Find MI",
-              "Avoid blocks",
+              "Avoid blocked squares",
               "Reach the star"
             ],
             "pathSummary": "8 safe moves"
@@ -2419,24 +2506,29 @@
           "goalIndex": 4,
           "path": [
             20,
-            15,
+            21,
             16,
-            11,
+            17,
             12,
-            7,
+            13,
             8,
             3,
             4
           ],
           "obstacles": [
-            13,
-            18,
+            2,
+            5,
+            11,
+            14,
             23
           ],
           "commands": [
-            "forward",
-            "turn-right",
-            "forward"
+            "right",
+            "up",
+            "right",
+            "up",
+            "right",
+            "up"
           ]
         }
       },
@@ -2453,22 +2545,22 @@
       "learningObjective": "Logic Maze tier 4",
       "localizedContent": {
         "vi": {
-          "prompt": "MI cần đi 6 bước tới sao. Chọn lệnh đúng.",
+          "prompt": "MI cần đi theo đường an toàn qua 8 bước để tới sao. Chọn số bước đúng.",
           "options": [
             {
               "id": "a",
-              "text": "5 bước",
-              "correct": false
-            },
-            {
-              "id": "b",
               "text": "7 bước",
               "correct": false
             },
             {
-              "id": "c",
-              "text": "6 bước",
+              "id": "b",
+              "text": "8 bước",
               "correct": true
+            },
+            {
+              "id": "c",
+              "text": "9 bước",
+              "correct": false
             }
           ],
           "deepData": {
@@ -2481,28 +2573,28 @@
           }
         },
         "en": {
-          "prompt": "MI needs 6 steps to the star. Choose the command.",
+          "prompt": "MI needs the safe path with 8 moves to reach the star. Choose the correct number of moves.",
           "options": [
             {
               "id": "a",
-              "text": "5 steps",
+              "text": "7 moves",
               "correct": false
             },
             {
               "id": "b",
-              "text": "7 steps",
-              "correct": false
+              "text": "8 moves",
+              "correct": true
             },
             {
               "id": "c",
-              "text": "6 steps",
-              "correct": true
+              "text": "9 moves",
+              "correct": false
             }
           ],
           "deepData": {
             "steps": [
               "Find MI",
-              "Avoid blocks",
+              "Avoid blocked squares",
               "Reach the star"
             ],
             "pathSummary": "8 safe moves"
@@ -2533,24 +2625,29 @@
           "goalIndex": 4,
           "path": [
             20,
-            21,
+            15,
             16,
-            17,
+            11,
             12,
-            13,
+            7,
             8,
-            9,
+            3,
             4
           ],
           "obstacles": [
-            2,
-            7,
+            1,
+            10,
+            13,
+            19,
             22
           ],
           "commands": [
-            "forward",
-            "turn-right",
-            "forward"
+            "up",
+            "right",
+            "up",
+            "right",
+            "up",
+            "right"
           ]
         }
       },
@@ -2567,21 +2664,21 @@
       "learningObjective": "Logic Maze tier 4",
       "localizedContent": {
         "vi": {
-          "prompt": "MI cần đi 5 bước tới sao. Chọn lệnh đúng.",
+          "prompt": "MI cần đi theo đường an toàn qua 8 bước để tới sao. Chọn số bước đúng.",
           "options": [
             {
               "id": "a",
-              "text": "5 bước",
+              "text": "8 bước",
               "correct": true
             },
             {
               "id": "b",
-              "text": "6 bước",
+              "text": "9 bước",
               "correct": false
             },
             {
               "id": "c",
-              "text": "4 bước",
+              "text": "7 bước",
               "correct": false
             }
           ],
@@ -2595,28 +2692,28 @@
           }
         },
         "en": {
-          "prompt": "MI needs 5 steps to the star. Choose the command.",
+          "prompt": "MI needs the safe path with 8 moves to reach the star. Choose the correct number of moves.",
           "options": [
             {
               "id": "a",
-              "text": "5 steps",
+              "text": "8 moves",
               "correct": true
             },
             {
               "id": "b",
-              "text": "6 steps",
+              "text": "9 moves",
               "correct": false
             },
             {
               "id": "c",
-              "text": "4 steps",
+              "text": "7 moves",
               "correct": false
             }
           ],
           "deepData": {
             "steps": [
               "Find MI",
-              "Avoid blocks",
+              "Avoid blocked squares",
               "Reach the star"
             ],
             "pathSummary": "8 safe moves"
@@ -2647,24 +2744,29 @@
           "goalIndex": 4,
           "path": [
             20,
-            15,
-            16,
-            11,
+            21,
+            22,
+            17,
             12,
-            7,
+            13,
             8,
             3,
             4
           ],
           "obstacles": [
-            1,
+            0,
             6,
-            21
+            9,
+            15,
+            18
           ],
           "commands": [
-            "forward",
-            "turn-right",
-            "forward"
+            "right",
+            "right",
+            "up",
+            "up",
+            "right",
+            "up"
           ]
         }
       },
@@ -2681,136 +2783,21 @@
       "learningObjective": "Logic Maze tier 5",
       "localizedContent": {
         "vi": {
-          "prompt": "MI cần đi 7 bước tới sao. Chọn lệnh đúng.",
+          "prompt": "MI cần đi theo đường an toàn qua 8 bước để tới sao. Chọn số bước đúng.",
           "options": [
             {
               "id": "a",
+              "text": "9 bước",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "7 bước",
+              "correct": false
+            },
+            {
+              "id": "c",
               "text": "8 bước",
-              "correct": false
-            },
-            {
-              "id": "b",
-              "text": "7 bước",
-              "correct": true
-            },
-            {
-              "id": "c",
-              "text": "6 bước",
-              "correct": false
-            }
-          ],
-          "deepData": {
-            "steps": [
-              "Tìm MI",
-              "Tránh ô chặn",
-              "Tới ngôi sao"
-            ],
-            "pathSummary": "8 bước an toàn"
-          }
-        },
-        "en": {
-          "prompt": "MI needs 7 steps to the star. Choose the command.",
-          "options": [
-            {
-              "id": "a",
-              "text": "8 steps",
-              "correct": false
-            },
-            {
-              "id": "b",
-              "text": "7 steps",
-              "correct": true
-            },
-            {
-              "id": "c",
-              "text": "6 steps",
-              "correct": false
-            }
-          ],
-          "deepData": {
-            "steps": [
-              "Find MI",
-              "Avoid blocks",
-              "Reach the star"
-            ],
-            "pathSummary": "8 safe moves"
-          }
-        }
-      },
-      "hints": [
-        {
-          "text": "Cấp 5: đọc kỹ câu hỏi và loại đáp án sai."
-        },
-        {
-          "text": "Tier 5: read carefully and remove the wrong choices."
-        }
-      ],
-      "metadata": {
-        "ageGroup": "explorer",
-        "skillIds": [
-          "logic.maze",
-          "logic.navigation"
-        ],
-        "contentKind": "choice_progression",
-        "progressionTier": 5,
-        "reviewState": "technically_validated",
-        "deepData": {
-          "scene": "maze",
-          "gridSize": 5,
-          "startIndex": 20,
-          "goalIndex": 4,
-          "path": [
-            20,
-            21,
-            16,
-            17,
-            12,
-            13,
-            8,
-            9,
-            4
-          ],
-          "obstacles": [
-            0,
-            5,
-            10,
-            15
-          ],
-          "commands": [
-            "forward",
-            "turn-right",
-            "forward"
-          ]
-        }
-      },
-      "assetRefs": [],
-      "contentVersion": 1,
-      "estimatedSeconds": 95,
-      "publicationState": "published"
-    },
-    {
-      "id": "logic-maze-lv026",
-      "gameId": "logic_maze",
-      "levelNumber": 26,
-      "difficulty": 5,
-      "learningObjective": "Logic Maze tier 5",
-      "localizedContent": {
-        "vi": {
-          "prompt": "MI cần đi 6 bước tới sao. Chọn lệnh đúng.",
-          "options": [
-            {
-              "id": "a",
-              "text": "5 bước",
-              "correct": false
-            },
-            {
-              "id": "b",
-              "text": "7 bước",
-              "correct": false
-            },
-            {
-              "id": "c",
-              "text": "6 bước",
               "correct": true
             }
           ],
@@ -2824,28 +2811,28 @@
           }
         },
         "en": {
-          "prompt": "MI needs 6 steps to the star. Choose the command.",
+          "prompt": "MI needs the safe path with 8 moves to reach the star. Choose the correct number of moves.",
           "options": [
             {
               "id": "a",
-              "text": "5 steps",
+              "text": "9 moves",
               "correct": false
             },
             {
               "id": "b",
-              "text": "7 steps",
+              "text": "7 moves",
               "correct": false
             },
             {
               "id": "c",
-              "text": "6 steps",
+              "text": "8 moves",
               "correct": true
             }
           ],
           "deepData": {
             "steps": [
               "Find MI",
-              "Avoid blocks",
+              "Avoid blocked squares",
               "Reach the star"
             ],
             "pathSummary": "8 safe moves"
@@ -2877,24 +2864,147 @@
           "path": [
             20,
             15,
-            16,
-            11,
-            12,
+            10,
+            5,
+            6,
             7,
             8,
             3,
             4
           ],
           "obstacles": [
-            9,
+            2,
+            11,
             14,
-            19,
-            24
+            17,
+            23
           ],
           "commands": [
-            "forward",
-            "turn-right",
-            "forward"
+            "up",
+            "up",
+            "up",
+            "right",
+            "right",
+            "right"
+          ]
+        }
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 95,
+      "publicationState": "published"
+    },
+    {
+      "id": "logic-maze-lv026",
+      "gameId": "logic_maze",
+      "levelNumber": 26,
+      "difficulty": 5,
+      "learningObjective": "Logic Maze tier 5",
+      "localizedContent": {
+        "vi": {
+          "prompt": "MI cần đi theo đường an toàn qua 8 bước để tới sao. Chọn số bước đúng.",
+          "options": [
+            {
+              "id": "a",
+              "text": "7 bước",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "8 bước",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "text": "9 bước",
+              "correct": false
+            }
+          ],
+          "deepData": {
+            "steps": [
+              "Tìm MI",
+              "Tránh ô chặn",
+              "Tới ngôi sao"
+            ],
+            "pathSummary": "8 bước an toàn"
+          }
+        },
+        "en": {
+          "prompt": "MI needs the safe path with 8 moves to reach the star. Choose the correct number of moves.",
+          "options": [
+            {
+              "id": "a",
+              "text": "7 moves",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "8 moves",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "text": "9 moves",
+              "correct": false
+            }
+          ],
+          "deepData": {
+            "steps": [
+              "Find MI",
+              "Avoid blocked squares",
+              "Reach the star"
+            ],
+            "pathSummary": "8 safe moves"
+          }
+        }
+      },
+      "hints": [
+        {
+          "text": "Cấp 5: đọc kỹ câu hỏi và loại đáp án sai."
+        },
+        {
+          "text": "Tier 5: read carefully and remove the wrong choices."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "explorer",
+        "skillIds": [
+          "logic.maze",
+          "logic.navigation"
+        ],
+        "contentKind": "choice_progression",
+        "progressionTier": 5,
+        "reviewState": "technically_validated",
+        "deepData": {
+          "scene": "maze",
+          "gridSize": 5,
+          "startIndex": 20,
+          "goalIndex": 4,
+          "path": [
+            20,
+            15,
+            10,
+            11,
+            12,
+            13,
+            8,
+            3,
+            4
+          ],
+          "obstacles": [
+            1,
+            7,
+            16,
+            19,
+            22
+          ],
+          "commands": [
+            "up",
+            "up",
+            "right",
+            "right",
+            "right",
+            "up"
           ]
         }
       },
@@ -2911,21 +3021,21 @@
       "learningObjective": "Logic Maze tier 5",
       "localizedContent": {
         "vi": {
-          "prompt": "MI cần đi 7 bước tới sao. Chọn lệnh đúng.",
+          "prompt": "MI cần đi theo đường an toàn qua 8 bước để tới sao. Chọn số bước đúng.",
           "options": [
             {
               "id": "a",
-              "text": "7 bước",
+              "text": "8 bước",
               "correct": true
             },
             {
               "id": "b",
-              "text": "8 bước",
+              "text": "9 bước",
               "correct": false
             },
             {
               "id": "c",
-              "text": "6 bước",
+              "text": "7 bước",
               "correct": false
             }
           ],
@@ -2939,28 +3049,28 @@
           }
         },
         "en": {
-          "prompt": "MI needs 7 steps to the star. Choose the command.",
+          "prompt": "MI needs the safe path with 8 moves to reach the star. Choose the correct number of moves.",
           "options": [
             {
               "id": "a",
-              "text": "7 steps",
+              "text": "8 moves",
               "correct": true
             },
             {
               "id": "b",
-              "text": "8 steps",
+              "text": "9 moves",
               "correct": false
             },
             {
               "id": "c",
-              "text": "6 steps",
+              "text": "7 moves",
               "correct": false
             }
           ],
           "deepData": {
             "steps": [
               "Find MI",
-              "Avoid blocks",
+              "Avoid blocked squares",
               "Reach the star"
             ],
             "pathSummary": "8 safe moves"
@@ -2997,18 +3107,24 @@
             12,
             13,
             8,
-            9,
+            3,
             4
           ],
           "obstacles": [
-            3,
+            0,
+            6,
+            9,
+            15,
             18,
-            23
+            24
           ],
           "commands": [
-            "forward",
-            "turn-right",
-            "forward"
+            "right",
+            "up",
+            "right",
+            "up",
+            "right",
+            "up"
           ]
         }
       },
@@ -3025,22 +3141,22 @@
       "learningObjective": "Logic Maze tier 5",
       "localizedContent": {
         "vi": {
-          "prompt": "MI cần đi 6 bước tới sao. Chọn lệnh đúng.",
+          "prompt": "MI cần đi theo đường an toàn qua 8 bước để tới sao. Chọn số bước đúng.",
           "options": [
             {
               "id": "a",
-              "text": "7 bước",
+              "text": "9 bước",
               "correct": false
             },
             {
               "id": "b",
-              "text": "6 bước",
-              "correct": true
+              "text": "7 bước",
+              "correct": false
             },
             {
               "id": "c",
-              "text": "5 bước",
-              "correct": false
+              "text": "8 bước",
+              "correct": true
             }
           ],
           "deepData": {
@@ -3053,28 +3169,28 @@
           }
         },
         "en": {
-          "prompt": "MI needs 6 steps to the star. Choose the command.",
+          "prompt": "MI needs the safe path with 8 moves to reach the star. Choose the correct number of moves.",
           "options": [
             {
               "id": "a",
-              "text": "7 steps",
+              "text": "9 moves",
               "correct": false
             },
             {
               "id": "b",
-              "text": "6 steps",
-              "correct": true
+              "text": "7 moves",
+              "correct": false
             },
             {
               "id": "c",
-              "text": "5 steps",
-              "correct": false
+              "text": "8 moves",
+              "correct": true
             }
           ],
           "deepData": {
             "steps": [
               "Find MI",
-              "Avoid blocks",
+              "Avoid blocked squares",
               "Reach the star"
             ],
             "pathSummary": "8 safe moves"
@@ -3116,13 +3232,18 @@
           ],
           "obstacles": [
             2,
+            5,
+            14,
             17,
-            22
+            23
           ],
           "commands": [
-            "forward",
-            "turn-right",
-            "forward"
+            "up",
+            "right",
+            "up",
+            "right",
+            "up",
+            "right"
           ]
         }
       },
@@ -3139,22 +3260,22 @@
       "learningObjective": "Logic Maze tier 5",
       "localizedContent": {
         "vi": {
-          "prompt": "MI cần đi 7 bước tới sao. Chọn lệnh đúng.",
+          "prompt": "MI cần đi theo đường an toàn qua 8 bước để tới sao. Chọn số bước đúng.",
           "options": [
             {
               "id": "a",
-              "text": "6 bước",
+              "text": "7 bước",
               "correct": false
             },
             {
               "id": "b",
               "text": "8 bước",
-              "correct": false
+              "correct": true
             },
             {
               "id": "c",
-              "text": "7 bước",
-              "correct": true
+              "text": "9 bước",
+              "correct": false
             }
           ],
           "deepData": {
@@ -3167,28 +3288,28 @@
           }
         },
         "en": {
-          "prompt": "MI needs 7 steps to the star. Choose the command.",
+          "prompt": "MI needs the safe path with 8 moves to reach the star. Choose the correct number of moves.",
           "options": [
             {
               "id": "a",
-              "text": "6 steps",
+              "text": "7 moves",
               "correct": false
             },
             {
               "id": "b",
-              "text": "8 steps",
-              "correct": false
+              "text": "8 moves",
+              "correct": true
             },
             {
               "id": "c",
-              "text": "7 steps",
-              "correct": true
+              "text": "9 moves",
+              "correct": false
             }
           ],
           "deepData": {
             "steps": [
               "Find MI",
-              "Avoid blocks",
+              "Avoid blocked squares",
               "Reach the star"
             ],
             "pathSummary": "8 safe moves"
@@ -3220,23 +3341,28 @@
           "path": [
             20,
             21,
-            16,
+            22,
             17,
             12,
             13,
             8,
-            9,
+            3,
             4
           ],
           "obstacles": [
             1,
-            6,
-            11
+            7,
+            10,
+            16,
+            19
           ],
           "commands": [
-            "forward",
-            "turn-right",
-            "forward"
+            "right",
+            "right",
+            "up",
+            "up",
+            "right",
+            "up"
           ]
         }
       },
@@ -3253,21 +3379,21 @@
       "learningObjective": "Logic Maze tier 5",
       "localizedContent": {
         "vi": {
-          "prompt": "MI cần đi 6 bước tới sao. Chọn lệnh đúng.",
+          "prompt": "MI cần đi theo đường an toàn qua 8 bước để tới sao. Chọn số bước đúng.",
           "options": [
             {
               "id": "a",
-              "text": "6 bước",
+              "text": "8 bước",
               "correct": true
             },
             {
               "id": "b",
-              "text": "7 bước",
+              "text": "9 bước",
               "correct": false
             },
             {
               "id": "c",
-              "text": "5 bước",
+              "text": "7 bước",
               "correct": false
             }
           ],
@@ -3281,28 +3407,28 @@
           }
         },
         "en": {
-          "prompt": "MI needs 6 steps to the star. Choose the command.",
+          "prompt": "MI needs the safe path with 8 moves to reach the star. Choose the correct number of moves.",
           "options": [
             {
               "id": "a",
-              "text": "6 steps",
+              "text": "8 moves",
               "correct": true
             },
             {
               "id": "b",
-              "text": "7 steps",
+              "text": "9 moves",
               "correct": false
             },
             {
               "id": "c",
-              "text": "5 steps",
+              "text": "7 moves",
               "correct": false
             }
           ],
           "deepData": {
             "steps": [
               "Find MI",
-              "Avoid blocks",
+              "Avoid blocked squares",
               "Reach the star"
             ],
             "pathSummary": "8 safe moves"
@@ -3334,9 +3460,9 @@
           "path": [
             20,
             15,
-            16,
-            11,
-            12,
+            10,
+            5,
+            6,
             7,
             8,
             3,
@@ -3344,13 +3470,19 @@
           ],
           "obstacles": [
             0,
-            5,
-            10
+            9,
+            12,
+            18,
+            21,
+            24
           ],
           "commands": [
-            "forward",
-            "turn-right",
-            "forward"
+            "up",
+            "up",
+            "up",
+            "right",
+            "right",
+            "right"
           ]
         }
       },
