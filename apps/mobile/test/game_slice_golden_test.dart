@@ -114,8 +114,8 @@ void main() {
     );
 
     expect(find.text('2 + 3 = ?'), findsOneWidget);
-    expect(find.text('4'), findsOneWidget);
-    expect(find.text('5'), findsOneWidget);
+    expect(find.widgetWithText(ElevatedButton, '4'), findsOneWidget);
+    expect(find.widgetWithText(ElevatedButton, '5'), findsOneWidget);
 
     await _expectMatchesGoldenOnLinux(
       tester,
@@ -141,8 +141,8 @@ void main() {
       find.text('Quả táo 2 đồng, quả chuối 3 đồng. Tổng cộng bao nhiêu?'),
       findsOneWidget,
     );
-    expect(find.text('4 đồng'), findsOneWidget);
-    expect(find.text('5 đồng'), findsOneWidget);
+    expect(find.widgetWithText(ElevatedButton, '4 đồng'), findsOneWidget);
+    expect(find.widgetWithText(ElevatedButton, '5 đồng'), findsOneWidget);
 
     await _expectMatchesGoldenOnLinux(
       tester,

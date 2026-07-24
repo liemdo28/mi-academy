@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mi_academy/providers/providers.dart';
 import 'package:mi_academy/screens/game_screen.dart';
@@ -20,8 +21,11 @@ import 'package:mi_academy/services/snapshot_store.dart';
 /// unrelated to this feature; a fresh isolate per file sidesteps it rather
 /// than papering over it.
 void main() {
-  testWidgets(
-      'completing a level unlocks the first_completion reward locally',
+  TestWidgetsFlutterBinding.ensureInitialized();
+
+  setUpAll(_mockAudioplayersChannels);
+
+  testWidgets('completing a level unlocks the first_completion reward locally',
       (tester) async {
     final rewardStore = InMemoryRewardStore();
     final progressStore = InMemoryProgressStore();
@@ -58,8 +62,19 @@ void main() {
     // Level ae-lv001's prompt is "Tìm chữ A." with 'A' the correct choice
     // (see apps/mobile/assets/levels/alphabet_explorer.json) -- Choice
     // Engine calls onComplete synchronously on a correct tap.
-    await tester.tap(find.text('A'));
+    final answerA = find.widgetWithText(ElevatedButton, 'A');
+    await tester.scrollUntilVisible(
+      answerA,
+      220,
+      scrollable: find.byType(Scrollable).first,
+    );
+    await tester.drag(find.byType(Scrollable).first, const Offset(0, -120));
     await tester.pump();
+    await tester.tap(answerA);
+    await tester.pump();
+    await tester.runAsync(() async {
+      await Future<void>.delayed(const Duration(milliseconds: 400));
+    });
     await tester.pump(const Duration(milliseconds: 100));
 
     expect(
@@ -82,4 +97,43 @@ void main() {
       greaterThan(0),
     );
   });
+}
+
+void _mockAudioplayersChannels() {
+  final messenger =
+      TestDefaultBinaryMessengerBinding.instance.defaultBinaryMessenger;
+  const codec = StandardMethodCodec();
+
+  void mockEventChannel(String channel) {
+    messenger.setMockMessageHandler(channel, (ByteData? message) async {
+      final methodCall = codec.decodeMethodCall(message);
+      if (methodCall.method == 'listen' || methodCall.method == 'cancel') {
+        return codec.encodeSuccessEnvelope(null);
+      }
+      return null;
+    });
+  }
+
+  mockEventChannel('xyz.luan/audioplayers.global/events');
+  messenger.setMockMethodCallHandler(
+    const MethodChannel('xyz.luan/audioplayers.global'),
+    (_) async => null,
+  );
+  messenger.setMockMethodCallHandler(
+    const MethodChannel('xyz.luan/audioplayers'),
+    (MethodCall methodCall) async {
+      final args = methodCall.arguments;
+      if (methodCall.method == 'create' && args is Map) {
+        final playerId = args['playerId']?.toString();
+        if (playerId != null) {
+          mockEventChannel('xyz.luan/audioplayers/events/$playerId');
+        }
+      }
+      if (methodCall.method == 'getDuration' ||
+          methodCall.method == 'getCurrentPosition') {
+        return 0;
+      }
+      return null;
+    },
+  );
 }

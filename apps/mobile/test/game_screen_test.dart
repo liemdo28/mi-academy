@@ -100,13 +100,23 @@ void main() {
         findsOneWidget);
     expect(find.text('Choose the missing letter: C_T'), findsOneWidget);
 
-    await tester.ensureVisible(find.text('O'));
-    await tester.tap(find.text('O').first);
+    final answerO = find.widgetWithText(ElevatedButton, 'O');
+    await tester.scrollUntilVisible(
+      answerO,
+      220,
+      scrollable: find.byType(Scrollable).first,
+    );
+    await tester.tapAt(tester.getTopLeft(answerO) + const Offset(24, 24));
     await tester.pump(const Duration(milliseconds: 100));
     expect(find.text('Almost there, try another choice.'), findsOneWidget);
 
-    await tester.ensureVisible(find.text('A'));
-    await tester.tap(find.text('A').first);
+    final answerA = find.widgetWithText(ElevatedButton, 'A');
+    await tester.scrollUntilVisible(
+      answerA,
+      220,
+      scrollable: find.byType(Scrollable).first,
+    );
+    await tester.tapAt(tester.getTopLeft(answerA) + const Offset(24, 24));
     await tester.pump();
     await tester.pump(const Duration(milliseconds: 100));
     expect(find.text('You found the missing letter!'), findsOneWidget);
@@ -121,7 +131,6 @@ void main() {
 
     expect(find.text('Không thể tải trò chơi'), findsOneWidget);
   });
-
 }
 
 const _missingLetterFixture = MiLevel(

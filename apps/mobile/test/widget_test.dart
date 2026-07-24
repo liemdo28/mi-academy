@@ -236,8 +236,31 @@ void main() {
     await tester.pump();
 
     expect(find.text('Đường đua cộng trừ'), findsWidgets);
+    expect(find.byKey(const ValueKey('choice-visual-board-math_race')),
+        findsOneWidget);
     expect(find.text('2 + 3 = ?'), findsOneWidget);
     expect(find.text('5'), findsOneWidget);
+  });
+
+  testWidgets('Clock Time renders a visual clock board', (tester) async {
+    await tester.pumpWidget(
+      const MaterialApp(
+        home: ChoiceGameScreen(
+          title: 'Đồng hồ và thời gian',
+          worldLabel: 'MI cùng con xem đồng hồ.',
+          level: clockTimeLevel,
+          allLevels: [clockTimeLevel],
+          heroIcon: Icons.schedule_rounded,
+          primaryColor: Color(0xFF4CAF50),
+        ),
+      ),
+    );
+    await tester.pump();
+
+    expect(find.byKey(const ValueKey('choice-visual-board-clock_time')),
+        findsOneWidget);
+    expect(find.text('Nhìn đồng hồ'), findsOneWidget);
+    expect(find.byType(CustomPaint), findsWidgets);
   });
 
   testWidgets('Math Race completes a correct answer', (tester) async {
@@ -255,7 +278,14 @@ void main() {
     );
     await tester.pump();
 
-    await tester.tap(find.text('5'));
+    final answer5 = find.widgetWithText(ElevatedButton, '5');
+    await tester.scrollUntilVisible(
+      answer5,
+      220,
+      scrollable: find.byType(Scrollable).first,
+    );
+    await tester.pumpAndSettle();
+    await tester.tapAt(tester.getTopLeft(answer5) + const Offset(24, 24));
     await tester.pump();
 
     expect(find.text('MI thấy con đã hiểu bài!'), findsOneWidget);
@@ -277,7 +307,14 @@ void main() {
     );
     await tester.pump();
 
-    await tester.tap(find.text('4'));
+    final answer4 = find.widgetWithText(ElevatedButton, '4');
+    await tester.scrollUntilVisible(
+      answer4,
+      220,
+      scrollable: find.byType(Scrollable).first,
+    );
+    await tester.pumpAndSettle();
+    await tester.tapAt(tester.getTopLeft(answer4) + const Offset(24, 24));
     await tester.pump();
 
     expect(find.text('Gần đúng rồi, mình thử cách khác nhé!'), findsOneWidget);
@@ -321,7 +358,14 @@ void main() {
     );
     await tester.pump();
 
-    await tester.tap(find.text('5 đồng'));
+    final answer5Dong = find.widgetWithText(ElevatedButton, '5 đồng');
+    await tester.scrollUntilVisible(
+      answer5Dong,
+      220,
+      scrollable: find.byType(Scrollable).first,
+    );
+    await tester.pumpAndSettle();
+    await tester.tapAt(tester.getTopLeft(answer5Dong) + const Offset(24, 24));
     await tester.pump();
 
     expect(find.text('MI thấy con đã hiểu bài!'), findsOneWidget);

@@ -29,12 +29,23 @@ void main() {
 
     await tester.tap(find.byIcon(Icons.lightbulb_outline_rounded));
     await tester.pump();
+    await tester.scrollUntilVisible(
+      find.text('Hint 1: Look closely and try one step at a time.'),
+      220,
+      scrollable: find.byType(Scrollable).first,
+    );
     expect(
       find.text('Hint 1: Look closely and try one step at a time.'),
       findsOneWidget,
     );
 
-    await tester.tap(find.text('5'));
+    final answer5 = find.widgetWithText(ElevatedButton, '5');
+    await tester.scrollUntilVisible(
+      answer5,
+      220,
+      scrollable: find.byType(Scrollable).first,
+    );
+    await tester.tapAt(tester.getTopLeft(answer5) + const Offset(24, 24));
     await tester.pumpAndSettle();
     expect(find.text('Score: 95'), findsOneWidget);
     expect(find.text('Continue'), findsOneWidget);

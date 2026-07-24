@@ -10,6 +10,7 @@ import '../game_locale_text.dart';
 import '../level_skill_ids.dart';
 import '../snapshot_lifecycle_mixin.dart';
 import 'choice_game_session.dart';
+import 'choice_visual_board.dart';
 
 class ChoiceGameScreen extends StatefulWidget {
   const ChoiceGameScreen({
@@ -215,6 +216,14 @@ class _ChoiceGameScreenState extends State<ChoiceGameScreen>
                     legacyIcon: widget.heroIcon,
                     color: widget.primaryColor,
                     progress: _session.progress,
+                  ),
+                  const SizedBox(height: 18),
+                  ChoiceVisualBoard(
+                    level: _level,
+                    content: _content,
+                    options: _session.options,
+                    color: widget.primaryColor,
+                    locale: widget.locale,
                   ),
                   const SizedBox(height: 18),
                   Text(

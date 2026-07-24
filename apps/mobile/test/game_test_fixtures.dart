@@ -95,6 +95,32 @@ const mathSupermarketLevel = MiLevel(
   ],
 );
 
+const clockTimeLevel = MiLevel(
+  id: 'ct-test',
+  gameId: 'clock_time',
+  levelNumber: 1,
+  difficulty: 1,
+  localizedContent: {
+    'vi': {
+      'prompt': 'Kim giờ chỉ 3. Đồng hồ là mấy giờ?',
+      'options': [
+        {'id': 'a', 'text': '3:30', 'correct': false},
+        {'id': 'b', 'text': '3:00', 'correct': true},
+      ],
+    },
+    'en': {
+      'prompt': 'The hour hand points to 3. What time is it?',
+      'options': [
+        {'id': 'a', 'text': '3:30', 'correct': false},
+        {'id': 'b', 'text': '3:00', 'correct': true},
+      ],
+    },
+  },
+  hints: [
+    {'text': 'Nhìn kim giờ'},
+  ],
+);
+
 const memoryCardsLevel = MiLevel(
   id: 'mc-test',
   gameId: 'memory_cards',
