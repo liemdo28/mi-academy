@@ -121,6 +121,110 @@ const clockTimeLevel = MiLevel(
   ],
 );
 
+const objectCountingLevel = MiLevel(
+  id: 'oc-test',
+  gameId: 'object_counting',
+  levelNumber: 1,
+  difficulty: 1,
+  localizedContent: {
+    'vi': {
+      'prompt': 'Có bao nhiêu ngôi sao?',
+      'options': [
+        {'id': 'a', 'text': '4', 'correct': false},
+        {'id': 'b', 'text': '6', 'correct': true},
+      ],
+    },
+    'en': {
+      'prompt': 'How many stars are there?',
+      'options': [
+        {'id': 'a', 'text': '4', 'correct': false},
+        {'id': 'b', 'text': '6', 'correct': true},
+      ],
+    },
+  },
+  hints: [
+    {'text': 'Đếm từng hình'},
+  ],
+);
+
+const visualFractionsLevel = MiLevel(
+  id: 'vf-test',
+  gameId: 'visual_fractions',
+  levelNumber: 1,
+  difficulty: 1,
+  localizedContent: {
+    'vi': {
+      'prompt': 'Phần tô màu là phân số nào?',
+      'options': [
+        {'id': 'a', 'text': '1/4', 'correct': false},
+        {'id': 'b', 'text': '3/4', 'correct': true},
+      ],
+    },
+    'en': {
+      'prompt': 'Which fraction is shaded?',
+      'options': [
+        {'id': 'a', 'text': '1/4', 'correct': false},
+        {'id': 'b', 'text': '3/4', 'correct': true},
+      ],
+    },
+  },
+  hints: [
+    {'text': 'Đếm phần được tô'},
+  ],
+);
+
+const patternFinderLevel = MiLevel(
+  id: 'pf-test',
+  gameId: 'pattern_finder',
+  levelNumber: 1,
+  difficulty: 1,
+  localizedContent: {
+    'vi': {
+      'prompt': 'Dãy số 2, 4, 6, ?',
+      'options': [
+        {'id': 'a', 'text': '7', 'correct': false},
+        {'id': 'b', 'text': '8', 'correct': true},
+      ],
+    },
+    'en': {
+      'prompt': 'Number pattern 2, 4, 6, ?',
+      'options': [
+        {'id': 'a', 'text': '7', 'correct': false},
+        {'id': 'b', 'text': '8', 'correct': true},
+      ],
+    },
+  },
+  hints: [
+    {'text': 'Mỗi bước tăng 2'},
+  ],
+);
+
+const shapeBuilderLevel = MiLevel(
+  id: 'sb-test',
+  gameId: 'shape_builder',
+  levelNumber: 1,
+  difficulty: 1,
+  localizedContent: {
+    'vi': {
+      'prompt': 'Hình nào có ba cạnh?',
+      'options': [
+        {'id': 'a', 'text': 'Hình vuông', 'correct': false},
+        {'id': 'b', 'text': 'Hình tam giác', 'correct': true},
+      ],
+    },
+    'en': {
+      'prompt': 'Which shape has three sides?',
+      'options': [
+        {'id': 'a', 'text': 'Square', 'correct': false},
+        {'id': 'b', 'text': 'Triangle', 'correct': true},
+      ],
+    },
+  },
+  hints: [
+    {'text': 'Đếm các cạnh'},
+  ],
+);
+
 const memoryCardsLevel = MiLevel(
   id: 'mc-test',
   gameId: 'memory_cards',

@@ -263,6 +263,83 @@ void main() {
     expect(find.byType(CustomPaint), findsWidgets);
   });
 
+  testWidgets(
+      'choice visual boards render counting, fractions, patterns, and shapes',
+      (tester) async {
+    await tester.pumpWidget(
+      MaterialApp(
+        home: ChoiceGameScreen(
+          key: UniqueKey(),
+          title: 'Đếm đồ vật',
+          worldLabel: 'MI cùng con đếm từng đồ vật.',
+          level: objectCountingLevel,
+          allLevels: [objectCountingLevel],
+          heroIcon: Icons.filter_6_rounded,
+          primaryColor: Color(0xFF4CAF50),
+        ),
+      ),
+    );
+    await tester.pump();
+    expect(find.byKey(const ValueKey('choice-visual-board-object_counting')),
+        findsOneWidget);
+    expect(find.text('Đã đếm: 6'), findsOneWidget);
+
+    await tester.pumpWidget(
+      MaterialApp(
+        home: ChoiceGameScreen(
+          key: UniqueKey(),
+          title: 'Phân số trực quan',
+          worldLabel: 'MI cùng con nhìn phân số bằng hình.',
+          level: visualFractionsLevel,
+          allLevels: [visualFractionsLevel],
+          heroIcon: Icons.pie_chart_rounded,
+          primaryColor: Color(0xFF4CAF50),
+        ),
+      ),
+    );
+    await tester.pump();
+    expect(find.byKey(const ValueKey('choice-visual-board-visual_fractions')),
+        findsOneWidget);
+    expect(find.text('3 trong 4 phần bằng nhau'), findsOneWidget);
+
+    await tester.pumpWidget(
+      MaterialApp(
+        home: ChoiceGameScreen(
+          key: UniqueKey(),
+          title: 'Tìm quy luật',
+          worldLabel: 'MI cùng con tìm quy luật.',
+          level: patternFinderLevel,
+          allLevels: [patternFinderLevel],
+          heroIcon: Icons.auto_graph_rounded,
+          primaryColor: Color(0xFF8E6BFF),
+        ),
+      ),
+    );
+    await tester.pump();
+    expect(find.byKey(const ValueKey('choice-visual-board-pattern_finder')),
+        findsOneWidget);
+    expect(find.text('Điền vào chỗ trống'), findsOneWidget);
+
+    await tester.pumpWidget(
+      MaterialApp(
+        home: ChoiceGameScreen(
+          key: UniqueKey(),
+          title: 'Hình học lắp ghép',
+          worldLabel: 'MI cùng con nhận biết hình khối.',
+          level: shapeBuilderLevel,
+          allLevels: [shapeBuilderLevel],
+          heroIcon: Icons.category_rounded,
+          primaryColor: Color(0xFF4CAF50),
+        ),
+      ),
+    );
+    await tester.pump();
+    expect(find.byKey(const ValueKey('choice-visual-board-shape_builder')),
+        findsOneWidget);
+    expect(find.text('Chọn hình'), findsOneWidget);
+    expect(find.byType(CustomPaint), findsWidgets);
+  });
+
   testWidgets('Math Race completes a correct answer', (tester) async {
     await tester.pumpWidget(
       const MaterialApp(

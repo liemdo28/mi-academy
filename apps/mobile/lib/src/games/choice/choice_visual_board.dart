@@ -66,10 +66,18 @@ class ChoiceVisualBoard extends StatelessWidget {
   Widget Function(BuildContext)? _builderFor(String gameId) {
     switch (gameId) {
       case 'clock_time':
-        return (_) => _ClockBoard(color: color, hour: _correctHour());
+        return (_) => _ClockBoard(
+              color: color,
+              hour: _correctHour(),
+              locale: locale,
+            );
       case 'object_counting':
       case 'number_quantity_match':
-        return (_) => _CountingBoard(color: color, count: _correctNumber());
+        return (_) => _CountingBoard(
+              color: color,
+              count: _correctNumber(),
+              locale: locale,
+            );
       case 'math_race':
       case 'math_supermarket':
       case 'multiplication_adventure':
@@ -89,13 +97,22 @@ class ChoiceVisualBoard extends StatelessWidget {
               color: color,
               prompt: _prompt,
               answer: _correctText(),
+              locale: locale,
             );
       case 'visual_fractions':
-        return (_) => _FractionBoard(color: color, text: _correctText());
+        return (_) => _FractionBoard(
+              color: color,
+              text: _correctText(),
+              locale: locale,
+            );
       case 'shape_builder':
       case 'odd_one_out':
       case 'shadow_match':
-        return (_) => _ShapeBoard(color: color, answer: _correctText());
+        return (_) => _ShapeBoard(
+              color: color,
+              answer: _correctText(),
+              locale: locale,
+            );
       case 'alphabet_explorer':
       case 'missing_letter':
       case 'picture_word_match':
@@ -168,21 +185,45 @@ class ChoiceVisualBoard extends StatelessWidget {
 }
 
 class _CountingBoard extends StatelessWidget {
-  const _CountingBoard({required this.color, required this.count});
+  const _CountingBoard({
+    required this.color,
+    required this.count,
+    required this.locale,
+  });
 
   final Color color;
   final int count;
+  final String locale;
 
   @override
   Widget build(BuildContext context) {
     final safeCount = count.clamp(1, 20);
-    return Wrap(
-      spacing: MiTokens.space2,
-      runSpacing: MiTokens.space2,
-      alignment: WrapAlignment.center,
+    final rows = (safeCount / 5).ceil();
+    return Column(
       children: [
-        for (var i = 0; i < safeCount; i += 1)
-          _SoftShape(index: i, color: color),
+        for (var row = 0; row < rows; row += 1)
+          Padding(
+            padding: const EdgeInsets.only(bottom: MiTokens.space2),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                for (var col = 0; col < 5; col += 1)
+                  if (row * 5 + col < safeCount)
+                    Padding(
+                      padding: const EdgeInsets.symmetric(
+                        horizontal: MiTokens.space1,
+                      ),
+                      child: _SoftShape(index: row * 5 + col, color: color),
+                    )
+                  else
+                    const SizedBox(width: 50),
+              ],
+            ),
+          ),
+        _MiniLabel(
+          text: locale == 'en' ? 'Counted: $safeCount' : 'Đã đếm: $safeCount',
+          color: color,
+        ),
       ],
     );
   }
@@ -259,11 +300,13 @@ class _SequenceBoard extends StatelessWidget {
     required this.color,
     required this.prompt,
     required this.answer,
+    required this.locale,
   });
 
   final Color color;
   final String prompt;
   final String answer;
+  final String locale;
 
   @override
   Widget build(BuildContext context) {
@@ -274,27 +317,48 @@ class _SequenceBoard extends StatelessWidget {
         .take(5)
         .toList();
     final chips = parts.isEmpty ? ['A', 'B', '?'] : parts;
-    return Wrap(
-      alignment: WrapAlignment.center,
-      spacing: MiTokens.space2,
-      runSpacing: MiTokens.space2,
+    return Column(
       children: [
-        for (final chip in chips)
-          _TokenChip(
-            text: chip == '?' ? answer : chip,
-            color: chip == '?' ? color : MiColors.discovery,
-            outlined: chip != '?',
-          ),
+        Wrap(
+          alignment: WrapAlignment.center,
+          spacing: MiTokens.space2,
+          runSpacing: MiTokens.space2,
+          children: [
+            for (final chip in chips)
+              _TokenChip(
+                text: chip == '?' ? '?' : chip,
+                color: chip == '?' ? color : MiColors.discovery,
+                outlined: chip != '?',
+              ),
+          ],
+        ),
+        const SizedBox(height: MiTokens.space3),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            _MiniLabel(
+              text: locale == 'en' ? 'Best fit' : 'Điền vào chỗ trống',
+              color: color,
+            ),
+            const SizedBox(width: MiTokens.space2),
+            Flexible(child: _AnswerTile(answer: answer, color: color)),
+          ],
+        ),
       ],
     );
   }
 }
 
 class _FractionBoard extends StatelessWidget {
-  const _FractionBoard({required this.color, required this.text});
+  const _FractionBoard({
+    required this.color,
+    required this.text,
+    required this.locale,
+  });
 
   final Color color;
   final String text;
+  final String locale;
 
   @override
   Widget build(BuildContext context) {
@@ -303,40 +367,72 @@ class _FractionBoard extends StatelessWidget {
     final denominator = int.tryParse(match?.group(2) ?? '') ?? 2;
     final parts = denominator.clamp(2, 8);
     final filled = numerator.clamp(1, parts);
-    return Row(
+    return Column(
       children: [
-        for (var i = 0; i < parts; i += 1)
-          Expanded(
-            child: Container(
-              height: 72,
-              margin: const EdgeInsets.symmetric(horizontal: 2),
-              decoration: BoxDecoration(
-                color: i < filled ? color : color.withValues(alpha: 0.12),
-                borderRadius: BorderRadius.circular(MiTokens.radiusMd),
+        Row(
+          children: [
+            for (var i = 0; i < parts; i += 1)
+              Expanded(
+                child: Container(
+                  height: 72,
+                  margin: const EdgeInsets.symmetric(horizontal: 2),
+                  decoration: BoxDecoration(
+                    color: i < filled ? color : color.withValues(alpha: 0.12),
+                    borderRadius: BorderRadius.circular(MiTokens.radiusMd),
+                    border: Border.all(color: color.withValues(alpha: 0.22)),
+                  ),
+                ),
               ),
-            ),
-          ),
+          ],
+        ),
+        const SizedBox(height: MiTokens.space3),
+        _MiniLabel(
+          text: locale == 'en'
+              ? '$filled of $parts equal parts'
+              : '$filled trong $parts phần bằng nhau',
+          color: color,
+        ),
       ],
     );
   }
 }
 
 class _ShapeBoard extends StatelessWidget {
-  const _ShapeBoard({required this.color, required this.answer});
+  const _ShapeBoard({
+    required this.color,
+    required this.answer,
+    required this.locale,
+  });
 
   final Color color;
   final String answer;
+  final String locale;
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+    return Column(
       children: [
-        _SoftShape(index: 0, color: color, size: 62),
-        const _SoftShape(index: 1, color: MiColors.discovery, size: 62),
-        const _SoftShape(index: 2, color: MiColors.accent, size: 62),
-        Flexible(
-          child: _AnswerTile(answer: answer, color: color),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            _ShapeGlyph(shape: _ShapeKind.circle, color: color),
+            const _ShapeGlyph(
+                shape: _ShapeKind.square, color: MiColors.discovery),
+            const _ShapeGlyph(
+                shape: _ShapeKind.triangle, color: MiColors.accent),
+          ],
+        ),
+        const SizedBox(height: MiTokens.space3),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            _MiniLabel(
+              text: locale == 'en' ? 'Match' : 'Chọn hình',
+              color: color,
+            ),
+            const SizedBox(width: MiTokens.space2),
+            Flexible(child: _AnswerTile(answer: answer, color: color)),
+          ],
         ),
       ],
     );
@@ -366,21 +462,33 @@ class _LetterBoard extends StatelessWidget {
 }
 
 class _ClockBoard extends StatelessWidget {
-  const _ClockBoard({required this.color, required this.hour});
+  const _ClockBoard({
+    required this.color,
+    required this.hour,
+    required this.locale,
+  });
 
   final Color color;
   final int hour;
+  final String locale;
 
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: SizedBox(
-        width: 148,
-        height: 148,
-        child: CustomPaint(
-          painter: _ClockPainter(color: color, hour: hour),
+    return Column(
+      children: [
+        SizedBox(
+          width: 148,
+          height: 148,
+          child: CustomPaint(
+            painter: _ClockPainter(color: color, hour: hour),
+          ),
         ),
-      ),
+        const SizedBox(height: MiTokens.space3),
+        _MiniLabel(
+          text: locale == 'en' ? '$hour o’clock' : '$hour giờ đúng',
+          color: color,
+        ),
+      ],
     );
   }
 }
@@ -498,6 +606,101 @@ class _AnswerTile extends StatelessWidget {
   }
 }
 
+class _MiniLabel extends StatelessWidget {
+  const _MiniLabel({required this.text, required this.color});
+
+  final String text;
+  final Color color;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      constraints: const BoxConstraints(minHeight: MiTokens.touchTargetParent),
+      alignment: Alignment.center,
+      padding: const EdgeInsets.symmetric(
+        horizontal: MiTokens.space4,
+        vertical: MiTokens.space2,
+      ),
+      decoration: BoxDecoration(
+        color: color.withValues(alpha: 0.12),
+        borderRadius: BorderRadius.circular(MiTokens.radiusFull),
+        border: Border.all(color: color.withValues(alpha: 0.24)),
+      ),
+      child: Text(
+        text,
+        style: Theme.of(context).textTheme.labelLarge?.copyWith(color: color),
+        textAlign: TextAlign.center,
+      ),
+    );
+  }
+}
+
+enum _ShapeKind { circle, square, triangle }
+
+class _ShapeGlyph extends StatelessWidget {
+  const _ShapeGlyph({
+    required this.shape,
+    required this.color,
+  });
+
+  final _ShapeKind shape;
+  final Color color;
+
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+      width: 72,
+      height: 72,
+      child: CustomPaint(
+        painter: _ShapeGlyphPainter(shape: shape, color: color),
+      ),
+    );
+  }
+}
+
+class _ShapeGlyphPainter extends CustomPainter {
+  const _ShapeGlyphPainter({required this.shape, required this.color});
+
+  final _ShapeKind shape;
+  final Color color;
+
+  @override
+  void paint(Canvas canvas, Size size) {
+    final paint = Paint()..color = color;
+    final outline = Paint()
+      ..color = Colors.white
+      ..style = PaintingStyle.stroke
+      ..strokeWidth = 5
+      ..strokeJoin = StrokeJoin.round;
+    final rect = Offset.zero & size;
+    switch (shape) {
+      case _ShapeKind.circle:
+        canvas.drawCircle(rect.center, size.shortestSide * 0.38, paint);
+        canvas.drawCircle(rect.center, size.shortestSide * 0.38, outline);
+      case _ShapeKind.square:
+        final rrect = RRect.fromRectAndRadius(
+          rect.deflate(10),
+          const Radius.circular(MiTokens.radiusMd),
+        );
+        canvas.drawRRect(rrect, paint);
+        canvas.drawRRect(rrect, outline);
+      case _ShapeKind.triangle:
+        final path = Path()
+          ..moveTo(size.width / 2, 8)
+          ..lineTo(size.width - 8, size.height - 8)
+          ..lineTo(8, size.height - 8)
+          ..close();
+        canvas.drawPath(path, paint);
+        canvas.drawPath(path, outline);
+    }
+  }
+
+  @override
+  bool shouldRepaint(covariant _ShapeGlyphPainter oldDelegate) {
+    return oldDelegate.shape != shape || oldDelegate.color != color;
+  }
+}
+
 class _TokenChip extends StatelessWidget {
   const _TokenChip({
     required this.text,
@@ -534,19 +737,17 @@ class _SoftShape extends StatelessWidget {
   const _SoftShape({
     required this.index,
     required this.color,
-    this.size = 42,
   });
 
   final int index;
   final Color color;
-  final double size;
 
   @override
   Widget build(BuildContext context) {
     final radius = index.isEven ? MiTokens.radiusFull : MiTokens.radiusMd;
     return Container(
-      width: size,
-      height: size,
+      width: 42,
+      height: 42,
       decoration: BoxDecoration(
         color: color.withValues(alpha: index % 3 == 0 ? 1 : 0.75),
         borderRadius: BorderRadius.circular(radius),
