@@ -27,7 +27,8 @@
     "brand_assets_strict": "pass",
     "android_release_signing_config": "pass",
     "local_browser_smoke": "pass: shell routes and 30 game routes",
-    "cloudflare_browser_smoke": "pass: shell routes and 30 game routes"
+    "cloudflare_browser_smoke": "pass: shell routes and 30 game routes",
+    "localization_cleanup_progress": "hardcoded warnings reduced from 379 to 211"
   },
   "open_gates": [
     "manual_child_safety_real_device_signoff",

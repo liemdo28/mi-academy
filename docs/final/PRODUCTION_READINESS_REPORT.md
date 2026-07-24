@@ -55,6 +55,7 @@ Live family-test preview: https://2fa44f54.mi-academy.pages.dev
 
 - Manual child-safety/device QA signoff.
 - Full hardcoded UI-string localization cleanup.
+- First localization cleanup pass reduced hardcoded mobile findings from 379 to 211 while keeping ARB parity green.
 - Human brand ownership/licensing approval.
 - iOS build/signing/device verification on macOS.
 - Store policy submission review if publishing beyond family testing.

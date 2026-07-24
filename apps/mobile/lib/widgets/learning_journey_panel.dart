@@ -1,5 +1,6 @@
 import 'package:design_system/design_system.dart';
 import 'package:flutter/material.dart';
+import 'package:localization/localization.dart';
 import 'package:mi_game_content/mi_game_content.dart';
 
 import '../services/level_selector.dart';
@@ -45,40 +46,15 @@ class LearningJourneyPanel extends StatelessWidget {
     return skill != null ? _name(skill.name) : skillId;
   }
 
-  String _reasonCopy(String code) {
-    const copy = {
-      'NEW_SKILL_EASY_START': {
-        'vi': 'Bài học dễ để con bắt đầu tự tin.',
-        'en': 'An easy start to build confidence.',
-      },
-      'DIFFICULTY_MATCH': {
-        'vi': 'Vừa đúng trình độ hiện tại của con.',
-        'en': 'Matches your current skill level.',
-      },
-      'REVIEW_DUE': {
-        'vi': 'Đã đến lúc ôn lại kỹ năng này.',
-        'en': 'Time to review this skill.',
-      },
-      'PREREQUISITES_MET': {
-        'vi': 'Con đã sẵn sàng học bài này.',
-        'en': "You're ready for this lesson.",
-      },
-      'AVOID_IMMEDIATE_REPEAT': {
-        'vi': 'Một bài mới để đổi không khí.',
-        'en': 'A fresh lesson for variety.',
-      },
-    };
-    return copy[code]?[locale] ?? copy[code]?['en'] ?? '';
-  }
-
   @override
   Widget build(BuildContext context) {
+    final text = LearningJourneyText(locale);
     final skillName = _skillName(node.mapping.primarySkillId);
     final prerequisiteNames =
         node.mapping.prerequisites.map(_skillName).toList();
     final estimatedMinutes = (node.level.estimatedSeconds / 60).ceil();
     final reasonLines = node.reasonCodes
-        .map(_reasonCopy)
+        .map(text.reason)
         .where((line) => line.isNotEmpty)
         .toList();
 
@@ -111,25 +87,23 @@ class LearningJourneyPanel extends StatelessWidget {
             const SizedBox(height: MiTokens.space4),
             _InfoRow(
               icon: Icons.speed_rounded,
-              label: locale == 'en' ? 'Difficulty' : 'Độ khó',
+              label: text.difficulty,
               value: '${node.level.difficulty}',
             ),
             _InfoRow(
               icon: Icons.child_care_rounded,
-              label: locale == 'en' ? 'Age band' : 'Độ tuổi',
+              label: text.ageBand,
               value: node.level.ageBand ?? '-',
             ),
             _InfoRow(
               icon: Icons.timer_outlined,
-              label: locale == 'en' ? 'Estimated time' : 'Thời gian dự kiến',
-              value: locale == 'en'
-                  ? '$estimatedMinutes min'
-                  : '$estimatedMinutes phút',
+              label: text.estimatedTime,
+              value: text.minutes(estimatedMinutes),
             ),
             if (prerequisiteNames.isNotEmpty)
               _InfoRow(
                 icon: Icons.link_rounded,
-                label: locale == 'en' ? 'Builds on' : 'Cần học trước',
+                label: text.buildsOn,
                 value: prerequisiteNames.join(', '),
               ),
             if (reasonLines.isNotEmpty) ...[
@@ -158,9 +132,7 @@ class LearningJourneyPanel extends StatelessWidget {
                 const SizedBox(width: MiTokens.space2),
                 Expanded(
                   child: Text(
-                    locale == 'en'
-                        ? 'Earn stars and journey progress by completing this.'
-                        : 'Hoàn thành để nhận sao và tiến bộ trong hành trình học tập.',
+                    text.rewardPreview,
                     style: const TextStyle(color: MiColors.textSecondary),
                   ),
                 ),
@@ -168,9 +140,7 @@ class LearningJourneyPanel extends StatelessWidget {
             ),
             const SizedBox(height: MiTokens.space4),
             MiPrimaryButton(
-              label: onPlay == null
-                  ? (locale == 'en' ? 'Locked' : 'Đã khoá')
-                  : (locale == 'en' ? 'Play' : 'Chơi ngay'),
+              label: onPlay == null ? text.locked : text.play,
               onPressed: onPlay,
               width: double.infinity,
             ),
@@ -236,19 +206,6 @@ class JourneyStateBadge extends StatelessWidget {
     LevelProgressState.bonus: MiColors.creative,
   };
 
-  static const _labelByState = {
-    LevelProgressState.locked: {'vi': 'Đã khoá', 'en': 'Locked'},
-    LevelProgressState.available: {'vi': 'Có thể học', 'en': 'Available'},
-    LevelProgressState.recommended: {
-      'vi': 'Gợi ý cho con',
-      'en': 'Recommended'
-    },
-    LevelProgressState.mastered: {'vi': 'Đã thành thạo', 'en': 'Mastered'},
-    LevelProgressState.review: {'vi': 'Cần ôn tập', 'en': 'Review'},
-    LevelProgressState.challenge: {'vi': 'Thử thách', 'en': 'Challenge'},
-    LevelProgressState.bonus: {'vi': 'Phần thưởng thêm', 'en': 'Bonus'},
-  };
-
   /// Shared with `_JourneyNodeTile` on the world map, so the map and this
   /// panel never show a different icon/color for the same state.
   static IconData iconFor(LevelProgressState state) => _iconByState[state]!;
@@ -257,7 +214,7 @@ class JourneyStateBadge extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final color = _colorByState[state]!;
-    final label = _labelByState[state]![locale] ?? _labelByState[state]!['en']!;
+    final label = LearningJourneyText(locale).stateLabel(state.name);
     return Semantics(
       label: label,
       child: Container(

@@ -2,6 +2,7 @@ import 'dart:math' as math;
 
 import 'package:design_system/design_system.dart';
 import 'package:flutter/material.dart';
+import 'package:localization/localization.dart';
 import 'package:mi_game_core/mi_game_core.dart';
 
 import 'choice_game_session.dart';
@@ -31,7 +32,7 @@ class ChoiceVisualBoard extends StatelessWidget {
     final builder = _builderFor(level.gameId);
     if (builder == null) return const SizedBox.shrink();
 
-    final title = _titleFor(level.gameId);
+    final title = ChoiceBoardText(locale).titleFor(level.gameId);
     final child = builder(context);
     return Semantics(
       label: title,
@@ -90,7 +91,7 @@ class ChoiceVisualBoard extends StatelessWidget {
               numbers: _numbersFromPrompt().take(4).toList(),
               answer: _correctText(),
               locale: locale,
-              operationLabel: locale == 'en' ? 'Work it out' : 'Tính từng bước',
+              operationLabel: ChoiceBoardText(locale).workItOut,
             );
       case 'multiplication_adventure':
         return (_) => _GroupMathBoard(
@@ -173,49 +174,6 @@ class ChoiceVisualBoard extends StatelessWidget {
     return null;
   }
 
-  String _titleFor(String gameId) {
-    final en = locale == 'en';
-    switch (gameId) {
-      case 'clock_time':
-        return en ? 'Look at the clock' : 'Nhìn đồng hồ';
-      case 'object_counting':
-      case 'number_quantity_match':
-        return en ? 'Count with MI' : 'Cùng MI đếm';
-      case 'greater_less':
-        return en ? 'Compare the numbers' : 'So sánh hai số';
-      case 'multiplication_adventure':
-        return en ? 'Groups of numbers' : 'Nhóm phép nhân';
-      case 'treasure_division':
-        return en ? 'Share equally' : 'Chia đều';
-      case 'fun_measurement':
-        return en ? 'Measure it' : 'Đo lường';
-      case 'number_sequence':
-      case 'pattern_finder':
-        return en ? 'Find the pattern' : 'Tìm quy luật';
-      case 'sentence_order':
-        return en ? 'Build the sentence' : 'Ghép câu đúng';
-      case 'visual_fractions':
-        return en ? 'See equal parts' : 'Nhìn phần bằng nhau';
-      case 'shape_builder':
-        return en ? 'Look at the shapes' : 'Nhìn các hình';
-      case 'odd_one_out':
-        return en ? 'Which one is different?' : 'Tìm cái khác nhóm';
-      case 'shadow_match':
-        return en ? 'Match the shadow' : 'Ghép bóng';
-      case 'alphabet_explorer':
-      case 'missing_letter':
-        return en ? 'Read the clue' : 'Đọc gợi ý';
-      case 'picture_word_match':
-        return en ? 'Match word and meaning' : 'Nối từ với nghĩa';
-      case 'rhyme_picker':
-        return en ? 'Listen for rhyme' : 'Nghe vần giống nhau';
-      case 'speed_spelling':
-        return en ? 'Choose the spelling' : 'Chọn chính tả';
-      default:
-        return en ? 'Puzzle board' : 'Bảng trò chơi';
-    }
-  }
-
   String get _prompt => content['prompt'] as String? ?? '';
 
   String _correctText() {
@@ -283,9 +241,7 @@ class _CountingBoard extends StatelessWidget {
             ),
           ),
         _MiniLabel(
-          text: locale == 'en' ? 'Counted: $safeCount' : 'Đã đếm: $safeCount',
-          color: color,
-        ),
+            text: ChoiceBoardText(locale).counted(safeCount), color: color),
       ],
     );
   }
@@ -384,12 +340,8 @@ class _GroupMathBoard extends StatelessWidget {
           children: [
             _MiniLabel(
               text: multiply
-                  ? (locale == 'en'
-                      ? '$left groups of $right'
-                      : '$left nhóm, mỗi nhóm $right')
-                  : (locale == 'en'
-                      ? 'Share into $right groups'
-                      : 'Chia thành $right nhóm'),
+                  ? ChoiceBoardText(locale).groupsOf(left, right)
+                  : ChoiceBoardText(locale).shareInto(right),
               color: color,
             ),
             const SizedBox(width: MiTokens.space2),
@@ -443,7 +395,7 @@ class _CompareBoard extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             _MiniLabel(
-              text: locale == 'en' ? 'Bigger number' : 'Số lớn hơn',
+              text: ChoiceBoardText(locale).biggerNumber,
               color: color,
             ),
             const SizedBox(width: MiTokens.space2),
@@ -505,7 +457,7 @@ class _MeasurementBoard extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             _MiniLabel(
-              text: locale == 'en' ? 'Measure: $amount' : 'Số đo: $amount',
+              text: ChoiceBoardText(locale).measure(amount),
               color: color,
             ),
             const SizedBox(width: MiTokens.space2),
@@ -559,7 +511,7 @@ class _SequenceBoard extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             _MiniLabel(
-              text: locale == 'en' ? 'Best fit' : 'Điền vào chỗ trống',
+              text: ChoiceBoardText(locale).bestFit,
               color: color,
             ),
             const SizedBox(width: MiTokens.space2),
@@ -609,9 +561,7 @@ class _FractionBoard extends StatelessWidget {
         ),
         const SizedBox(height: MiTokens.space3),
         _MiniLabel(
-          text: locale == 'en'
-              ? '$filled of $parts equal parts'
-              : '$filled trong $parts phần bằng nhau',
+          text: ChoiceBoardText(locale).equalParts(filled, parts),
           color: color,
         ),
       ],
@@ -649,7 +599,7 @@ class _ShapeBoard extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             _MiniLabel(
-              text: locale == 'en' ? 'Match' : 'Chọn hình',
+              text: ChoiceBoardText(locale).matchShape,
               color: color,
             ),
             const SizedBox(width: MiTokens.space2),
@@ -723,8 +673,8 @@ class _WordClueBoard extends StatelessWidget {
             Flexible(
               child: _MiniLabel(
                 text: soundMode
-                    ? (locale == 'en' ? 'Same ending sound' : 'Cùng âm vần')
-                    : (locale == 'en' ? 'Meaning match' : 'Khớp với nghĩa'),
+                    ? ChoiceBoardText(locale).sameEndingSound
+                    : ChoiceBoardText(locale).meaningMatch,
                 color: color,
               ),
             ),
@@ -766,9 +716,7 @@ class _SentenceBoard extends StatelessWidget {
         ),
         const SizedBox(height: MiTokens.space3),
         _MiniLabel(
-          text: locale == 'en'
-              ? 'Read from 1 to ${words.length}'
-              : 'Đọc từ 1 đến ${words.length}',
+          text: ChoiceBoardText(locale).readOrder(words.length),
           color: color,
         ),
       ],
@@ -819,10 +767,8 @@ class _ClassificationBoard extends StatelessWidget {
           children: [
             _MiniLabel(
               text: shadowMode
-                  ? (locale == 'en'
-                      ? 'Find the matching object'
-                      : 'Tìm vật khớp bóng')
-                  : (locale == 'en' ? 'Different item' : 'Khác nhóm'),
+                  ? ChoiceBoardText(locale).matchingObject
+                  : ChoiceBoardText(locale).differentItem,
               color: color,
             ),
             const SizedBox(width: MiTokens.space2),
@@ -858,7 +804,7 @@ class _ClockBoard extends StatelessWidget {
         ),
         const SizedBox(height: MiTokens.space3),
         _MiniLabel(
-          text: locale == 'en' ? '$hour o’clock' : '$hour giờ đúng',
+          text: ChoiceBoardText(locale).clockHour(hour),
           color: color,
         ),
       ],
