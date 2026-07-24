@@ -4,6 +4,7 @@ import 'package:mi_game_core/mi_game_core.dart';
 import 'package:mi_game_ui/mi_game_ui.dart';
 
 import '../src/games/choice/choice_game_screen.dart';
+import '../src/games/deep_logic/deep_logic_game_screen.dart';
 import '../src/games/game_locale_text.dart';
 import '../src/games/memory_cards/memory_cards_game.dart';
 import '../src/games/memory_cards/memory_cards_screen.dart';
@@ -175,6 +176,51 @@ abstract final class GameRegistry {
     );
   }
 
+  static GameRegistryEntry _deepLogicEntry({
+    required String gameId,
+    required Map<String, String> localizedName,
+    required String category,
+    required List<String> ageBands,
+    required List<String> supportedSkills,
+    required String engineType,
+    required DeepLogicScene scene,
+    required Color primaryColor,
+    required String Function(String locale) worldLabel,
+  }) {
+    return GameRegistryEntry(
+      gameId: gameId,
+      localizedName: localizedName,
+      category: category,
+      ageBands: ageBands,
+      supportedSkills: supportedSkills,
+      engineType: engineType,
+      builder: ({
+        required level,
+        required allLevels,
+        required onExit,
+        required onComplete,
+        required childProfileId,
+        initialSnapshot,
+        onSaveSnapshot,
+        reduceMotion = false,
+        required locale,
+      }) =>
+          DeepLogicGameScreen(
+        title: localizedName[locale] ?? localizedName['en'] ?? gameId,
+        worldLabel: worldLabel(locale),
+        level: level,
+        allLevels: allLevels,
+        scene: scene,
+        primaryColor: primaryColor,
+        onExit: onExit,
+        onComplete: onComplete,
+        initialSnapshot: initialSnapshot,
+        onSaveSnapshot: onSaveSnapshot,
+        locale: locale,
+      ),
+    );
+  }
+
   static List<GameRegistryEntry> _buildEntries() => [
         GameRegistryEntry(
           gameId: 'alphabet_explorer',
@@ -315,7 +361,7 @@ abstract final class GameRegistry {
               ? 'MI builds clear sentences with you.'
               : 'MI cùng con ghép câu rõ nghĩa.',
         ),
-        _choiceEntry(
+        _deepLogicEntry(
           gameId: 'story_comprehension',
           localizedName: const {
             'vi': 'Đọc hiểu truyện ngắn',
@@ -324,7 +370,8 @@ abstract final class GameRegistry {
           category: 'letters',
           ageBands: const ['explorer', 'master'],
           supportedSkills: const ['letters.reading_comprehension'],
-          brandIcon: MiBrandIcon.writing,
+          engineType: 'reading_lab',
+          scene: DeepLogicScene.reading,
           primaryColor: MiColors.discovery,
           worldLabel: (locale) => locale == 'en'
               ? 'MI reads short stories with you.'
@@ -647,13 +694,14 @@ abstract final class GameRegistry {
             locale: locale,
           ),
         ),
-        _choiceEntry(
+        _deepLogicEntry(
           gameId: 'logic_maze',
           localizedName: const {'vi': 'Mê cung logic', 'en': 'Logic Maze'},
           category: 'logic',
           ageBands: const ['explorer', 'master'],
           supportedSkills: const ['logic.maze', 'logic.navigation'],
-          brandIcon: MiBrandIcon.exploration,
+          engineType: 'maze_planner',
+          scene: DeepLogicScene.maze,
           primaryColor: MiColors.creative,
           worldLabel: (locale) => locale == 'en'
               ? 'MI plans a path through the maze.'
@@ -671,7 +719,7 @@ abstract final class GameRegistry {
               ? 'MI spots the rule in the pattern.'
               : 'MI cùng con tìm quy luật.',
         ),
-        _choiceEntry(
+        _deepLogicEntry(
           gameId: 'kids_sudoku',
           localizedName: const {'vi': 'Sudoku trẻ em', 'en': 'Kids Sudoku'},
           category: 'logic',
@@ -680,13 +728,14 @@ abstract final class GameRegistry {
             'logic.conditions',
             'logic.spatial_reasoning',
           ],
-          brandIcon: MiBrandIcon.logic,
+          engineType: 'sudoku_grid',
+          scene: DeepLogicScene.sudoku,
           primaryColor: MiColors.creative,
           worldLabel: (locale) => locale == 'en'
               ? 'MI solves small grids with clues.'
               : 'MI cùng con giải ô lưới nhỏ.',
         ),
-        _choiceEntry(
+        _deepLogicEntry(
           gameId: 'reasoning_detective',
           localizedName: const {
             'vi': 'Thám tử suy luận',
@@ -695,7 +744,8 @@ abstract final class GameRegistry {
           category: 'logic',
           ageBands: const ['master'],
           supportedSkills: const ['logic.strategy', 'logic.algorithms'],
-          brandIcon: MiBrandIcon.logic,
+          engineType: 'clue_board',
+          scene: DeepLogicScene.detective,
           primaryColor: MiColors.creative,
           worldLabel: (locale) => locale == 'en'
               ? 'MI follows clues step by step.'
@@ -767,7 +817,7 @@ abstract final class GameRegistry {
               ? 'MI matches each object to its shadow.'
               : 'MI cùng con ghép bóng với vật.',
         ),
-        _choiceEntry(
+        _deepLogicEntry(
           gameId: 'free_creativity',
           localizedName: const {
             'vi': 'Sáng tạo tự do',
@@ -779,7 +829,8 @@ abstract final class GameRegistry {
             'creative.storytelling',
             'letters.storytelling',
           ],
-          brandIcon: MiBrandIcon.writing,
+          engineType: 'story_lab',
+          scene: DeepLogicScene.creative,
           primaryColor: MiColors.primary,
           worldLabel: (locale) => locale == 'en'
               ? 'MI helps turn ideas into a story.'

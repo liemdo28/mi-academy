@@ -102,6 +102,16 @@ void main() {
       );
     });
 
+    test('registers deep games with bespoke engine types', () {
+      expect(
+          GameRegistry.find('story_comprehension')!.engineType, 'reading_lab');
+      expect(GameRegistry.find('logic_maze')!.engineType, 'maze_planner');
+      expect(GameRegistry.find('kids_sudoku')!.engineType, 'sudoku_grid');
+      expect(
+          GameRegistry.find('reasoning_detective')!.engineType, 'clue_board');
+      expect(GameRegistry.find('free_creativity')!.engineType, 'story_lab');
+    });
+
     test('find() returns null for an unknown game ID', () {
       expect(GameRegistry.find('does_not_exist'), isNull);
       expect(GameRegistry.find(''), isNull);
