@@ -225,6 +225,120 @@ const shapeBuilderLevel = MiLevel(
   ],
 );
 
+const multiplicationAdventureLevel = MiLevel(
+  id: 'ma-test',
+  gameId: 'multiplication_adventure',
+  levelNumber: 1,
+  difficulty: 1,
+  localizedContent: {
+    'vi': {
+      'prompt': '2 × 3 = ?',
+      'options': [
+        {'id': 'a', 'text': '8', 'correct': false},
+        {'id': 'b', 'text': '6', 'correct': true},
+      ],
+    },
+  },
+  hints: [
+    {'text': '2 nhóm, mỗi nhóm 3'},
+  ],
+);
+
+const treasureDivisionLevel = MiLevel(
+  id: 'td-test',
+  gameId: 'treasure_division',
+  levelNumber: 1,
+  difficulty: 1,
+  localizedContent: {
+    'vi': {
+      'prompt': 'Chia 6 viên ngọc cho 2 bạn. Mỗi bạn được mấy viên?',
+      'options': [
+        {'id': 'a', 'text': '2', 'correct': false},
+        {'id': 'b', 'text': '3', 'correct': true},
+      ],
+    },
+  },
+  hints: [
+    {'text': 'Chia đều cho 2 bạn'},
+  ],
+);
+
+const funMeasurementLevel = MiLevel(
+  id: 'fm-test',
+  gameId: 'fun_measurement',
+  levelNumber: 1,
+  difficulty: 1,
+  localizedContent: {
+    'vi': {
+      'prompt': 'Sợi dây dài 11 cm. Đơn vị đang dùng là gì?',
+      'options': [
+        {'id': 'a', 'text': 'kg', 'correct': false},
+        {'id': 'b', 'text': 'cm', 'correct': true},
+      ],
+    },
+  },
+  hints: [
+    {'text': 'Dài thường dùng cm'},
+  ],
+);
+
+const sentenceOrderLevel = MiLevel(
+  id: 'so-test',
+  gameId: 'sentence_order',
+  levelNumber: 1,
+  difficulty: 1,
+  localizedContent: {
+    'vi': {
+      'prompt': 'Câu nào đúng thứ tự?',
+      'options': [
+        {'id': 'a', 'text': 'Sách đọc bé.', 'correct': false},
+        {'id': 'b', 'text': 'Bé đọc sách.', 'correct': true},
+      ],
+    },
+  },
+  hints: [
+    {'text': 'Ai làm gì?'},
+  ],
+);
+
+const pictureWordMatchLevel = MiLevel(
+  id: 'pwm-test',
+  gameId: 'picture_word_match',
+  levelNumber: 1,
+  difficulty: 1,
+  localizedContent: {
+    'vi': {
+      'prompt': 'Từ nào khớp với gợi ý: sách?',
+      'options': [
+        {'id': 'a', 'text': 'bóng', 'correct': false},
+        {'id': 'b', 'text': 'sách', 'correct': true},
+      ],
+    },
+  },
+  hints: [
+    {'text': 'Vật dùng để đọc'},
+  ],
+);
+
+const oddOneOutLevel = MiLevel(
+  id: 'ooo-test',
+  gameId: 'odd_one_out',
+  levelNumber: 1,
+  difficulty: 1,
+  localizedContent: {
+    'vi': {
+      'prompt': 'Cái nào khác nhóm: red, blue, spoon?',
+      'options': [
+        {'id': 'a', 'text': 'red', 'correct': false},
+        {'id': 'b', 'text': 'spoon', 'correct': true},
+      ],
+    },
+  },
+  hints: [
+    {'text': 'Hai từ là màu sắc'},
+  ],
+);
+
 const memoryCardsLevel = MiLevel(
   id: 'mc-test',
   gameId: 'memory_cards',

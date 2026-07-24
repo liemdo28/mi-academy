@@ -22,6 +22,10 @@ class ChoiceVisualBoard extends StatelessWidget {
   final Color color;
   final String locale;
 
+  static bool embedsPromptFor(String gameId) {
+    return gameId == 'math_race' || gameId == 'math_supermarket';
+  }
+
   @override
   Widget build(BuildContext context) {
     final builder = _builderFor(level.gameId);
@@ -80,22 +84,55 @@ class ChoiceVisualBoard extends StatelessWidget {
             );
       case 'math_race':
       case 'math_supermarket':
-      case 'multiplication_adventure':
-      case 'treasure_division':
         return (_) => _MathBoard(
               color: color,
+              prompt: _prompt,
               numbers: _numbersFromPrompt().take(4).toList(),
               answer: _correctText(),
+              locale: locale,
+              operationLabel: locale == 'en' ? 'Work it out' : 'Tính từng bước',
+            );
+      case 'multiplication_adventure':
+        return (_) => _GroupMathBoard(
+              color: color,
+              numbers: _numbersFromPrompt().take(2).toList(),
+              answer: _correctText(),
+              locale: locale,
+              operation: 'x',
+            );
+      case 'treasure_division':
+        return (_) => _GroupMathBoard(
+              color: color,
+              numbers: _numbersFromPrompt().take(2).toList(),
+              answer: _correctText(),
+              locale: locale,
+              operation: '/',
+            );
+      case 'fun_measurement':
+        return (_) => _MeasurementBoard(
+              color: color,
+              prompt: _prompt,
+              answer: _correctText(),
+              locale: locale,
             );
       case 'greater_less':
-        return (_) =>
-            _CompareBoard(color: color, numbers: _numbersFromPrompt());
+        return (_) => _CompareBoard(
+              color: color,
+              numbers: _numbersFromPrompt(),
+              answer: _correctText(),
+              locale: locale,
+            );
       case 'number_sequence':
       case 'pattern_finder':
-      case 'sentence_order':
         return (_) => _SequenceBoard(
               color: color,
               prompt: _prompt,
+              answer: _correctText(),
+              locale: locale,
+            );
+      case 'sentence_order':
+        return (_) => _SentenceBoard(
+              color: color,
               answer: _correctText(),
               locale: locale,
             );
@@ -106,19 +143,32 @@ class ChoiceVisualBoard extends StatelessWidget {
               locale: locale,
             );
       case 'shape_builder':
-      case 'odd_one_out':
-      case 'shadow_match':
         return (_) => _ShapeBoard(
               color: color,
               answer: _correctText(),
               locale: locale,
             );
+      case 'odd_one_out':
+      case 'shadow_match':
+        return (_) => _ClassificationBoard(
+              color: color,
+              prompt: _prompt,
+              answer: _correctText(),
+              locale: locale,
+              shadowMode: gameId == 'shadow_match',
+            );
       case 'alphabet_explorer':
       case 'missing_letter':
+        return (_) => _LetterBoard(color: color, answer: _correctText());
       case 'picture_word_match':
       case 'rhyme_picker':
       case 'speed_spelling':
-        return (_) => _LetterBoard(color: color, answer: _correctText());
+        return (_) => _WordClueBoard(
+              color: color,
+              answer: _correctText(),
+              locale: locale,
+              soundMode: gameId == 'rhyme_picker',
+            );
     }
     return null;
   }
@@ -133,22 +183,34 @@ class ChoiceVisualBoard extends StatelessWidget {
         return en ? 'Count with MI' : 'Cùng MI đếm';
       case 'greater_less':
         return en ? 'Compare the numbers' : 'So sánh hai số';
+      case 'multiplication_adventure':
+        return en ? 'Groups of numbers' : 'Nhóm phép nhân';
+      case 'treasure_division':
+        return en ? 'Share equally' : 'Chia đều';
+      case 'fun_measurement':
+        return en ? 'Measure it' : 'Đo lường';
       case 'number_sequence':
       case 'pattern_finder':
-      case 'sentence_order':
         return en ? 'Find the pattern' : 'Tìm quy luật';
+      case 'sentence_order':
+        return en ? 'Build the sentence' : 'Ghép câu đúng';
       case 'visual_fractions':
         return en ? 'See equal parts' : 'Nhìn phần bằng nhau';
       case 'shape_builder':
-      case 'odd_one_out':
-      case 'shadow_match':
         return en ? 'Look at the shapes' : 'Nhìn các hình';
+      case 'odd_one_out':
+        return en ? 'Which one is different?' : 'Tìm cái khác nhóm';
+      case 'shadow_match':
+        return en ? 'Match the shadow' : 'Ghép bóng';
       case 'alphabet_explorer':
       case 'missing_letter':
-      case 'picture_word_match':
-      case 'rhyme_picker':
-      case 'speed_spelling':
         return en ? 'Read the clue' : 'Đọc gợi ý';
+      case 'picture_word_match':
+        return en ? 'Match word and meaning' : 'Nối từ với nghĩa';
+      case 'rhyme_picker':
+        return en ? 'Listen for rhyme' : 'Nghe vần giống nhau';
+      case 'speed_spelling':
+        return en ? 'Choose the spelling' : 'Chọn chính tả';
       default:
         return en ? 'Puzzle board' : 'Bảng trò chơi';
     }
@@ -232,32 +294,107 @@ class _CountingBoard extends StatelessWidget {
 class _MathBoard extends StatelessWidget {
   const _MathBoard({
     required this.color,
+    required this.prompt,
     required this.numbers,
     required this.answer,
+    required this.locale,
+    required this.operationLabel,
+  });
+
+  final Color color;
+  final String prompt;
+  final List<int> numbers;
+  final String answer;
+  final String locale;
+  final String operationLabel;
+
+  @override
+  Widget build(BuildContext context) {
+    final values = numbers.isEmpty ? [1, 2] : numbers;
+    return Column(
+      children: [
+        _MiniLabel(text: prompt, color: color),
+        const SizedBox(height: MiTokens.space3),
+        Row(
+          children: [
+            for (var i = 0; i < values.length; i += 1) ...[
+              Expanded(
+                child: _NumberTile(number: values[i], color: color),
+              ),
+              if (i < values.length - 1)
+                Padding(
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: MiTokens.space1),
+                  child:
+                      Text('+', style: Theme.of(context).textTheme.titleLarge),
+                ),
+            ],
+            const SizedBox(width: MiTokens.space2),
+            Expanded(
+              child: _AnswerTile(answer: answer, color: color),
+            ),
+          ],
+        ),
+        const SizedBox(height: MiTokens.space3),
+        _MiniLabel(text: operationLabel, color: color),
+      ],
+    );
+  }
+}
+
+class _GroupMathBoard extends StatelessWidget {
+  const _GroupMathBoard({
+    required this.color,
+    required this.numbers,
+    required this.answer,
+    required this.locale,
+    required this.operation,
   });
 
   final Color color;
   final List<int> numbers;
   final String answer;
+  final String locale;
+  final String operation;
 
   @override
   Widget build(BuildContext context) {
-    final values = numbers.isEmpty ? [1, 2] : numbers;
-    return Row(
+    final left = numbers.isNotEmpty ? numbers[0].clamp(1, 6) : 2;
+    final right = numbers.length > 1 ? numbers[1].clamp(1, 6) : 3;
+    final multiply = operation == 'x';
+    final groupCount = multiply ? left : right;
+    final itemsPerGroup = multiply ? right : int.tryParse(answer) ?? 2;
+    return Column(
       children: [
-        for (var i = 0; i < values.length; i += 1) ...[
-          Expanded(
-            child: _NumberTile(number: values[i], color: color),
-          ),
-          if (i < values.length - 1)
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: MiTokens.space1),
-              child: Text('+', style: Theme.of(context).textTheme.titleLarge),
+        Wrap(
+          alignment: WrapAlignment.center,
+          spacing: MiTokens.space2,
+          runSpacing: MiTokens.space2,
+          children: [
+            for (var group = 0; group < groupCount; group += 1)
+              _MiniGroup(
+                color: color,
+                count: itemsPerGroup.clamp(1, 6),
+              ),
+          ],
+        ),
+        const SizedBox(height: MiTokens.space3),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            _MiniLabel(
+              text: multiply
+                  ? (locale == 'en'
+                      ? '$left groups of $right'
+                      : '$left nhóm, mỗi nhóm $right')
+                  : (locale == 'en'
+                      ? 'Share into $right groups'
+                      : 'Chia thành $right nhóm'),
+              color: color,
             ),
-        ],
-        const SizedBox(width: MiTokens.space2),
-        Expanded(
-          child: _AnswerTile(answer: answer, color: color),
+            const SizedBox(width: MiTokens.space2),
+            Flexible(child: _AnswerTile(answer: answer, color: color)),
+          ],
         ),
       ],
     );
@@ -265,31 +402,116 @@ class _MathBoard extends StatelessWidget {
 }
 
 class _CompareBoard extends StatelessWidget {
-  const _CompareBoard({required this.color, required this.numbers});
+  const _CompareBoard({
+    required this.color,
+    required this.numbers,
+    required this.answer,
+    required this.locale,
+  });
 
   final Color color;
   final List<int> numbers;
+  final String answer;
+  final String locale;
 
   @override
   Widget build(BuildContext context) {
     final left = numbers.isNotEmpty ? numbers[0] : 3;
     final right = numbers.length > 1 ? numbers[1] : 5;
-    return Row(
+    return Column(
       children: [
-        Expanded(child: _NumberTile(number: left, color: color)),
-        Padding(
+        Row(
+          children: [
+            Expanded(child: _NumberTile(number: left, color: color)),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: MiTokens.space3),
+              child: Icon(
+                left == right
+                    ? Icons.drag_handle_rounded
+                    : left > right
+                        ? Icons.chevron_left_rounded
+                        : Icons.chevron_right_rounded,
+                size: 48,
+                color: color,
+              ),
+            ),
+            Expanded(child: _NumberTile(number: right, color: color)),
+          ],
+        ),
+        const SizedBox(height: MiTokens.space3),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            _MiniLabel(
+              text: locale == 'en' ? 'Bigger number' : 'Số lớn hơn',
+              color: color,
+            ),
+            const SizedBox(width: MiTokens.space2),
+            Flexible(child: _AnswerTile(answer: answer, color: color)),
+          ],
+        ),
+      ],
+    );
+  }
+}
+
+class _MeasurementBoard extends StatelessWidget {
+  const _MeasurementBoard({
+    required this.color,
+    required this.prompt,
+    required this.answer,
+    required this.locale,
+  });
+
+  final Color color;
+  final String prompt;
+  final String answer;
+  final String locale;
+
+  @override
+  Widget build(BuildContext context) {
+    final amount = RegExp(r'\d+').firstMatch(prompt)?.group(0) ?? '10';
+    return Column(
+      children: [
+        Container(
+          height: 58,
           padding: const EdgeInsets.symmetric(horizontal: MiTokens.space3),
-          child: Icon(
-            left == right
-                ? Icons.drag_handle_rounded
-                : left > right
-                    ? Icons.chevron_left_rounded
-                    : Icons.chevron_right_rounded,
-            size: 48,
-            color: color,
+          decoration: BoxDecoration(
+            color: color.withValues(alpha: 0.12),
+            borderRadius: BorderRadius.circular(MiTokens.radiusMd),
+            border: Border.all(color: color.withValues(alpha: 0.28)),
+          ),
+          child: Row(
+            children: [
+              for (var i = 0; i < 8; i += 1)
+                Expanded(
+                  child: Align(
+                    alignment: Alignment.bottomCenter,
+                    child: Container(
+                      width: 3,
+                      height: i.isEven ? 34 : 20,
+                      decoration: BoxDecoration(
+                        color: color,
+                        borderRadius: BorderRadius.circular(999),
+                      ),
+                    ),
+                  ),
+                ),
+            ],
           ),
         ),
-        Expanded(child: _NumberTile(number: right, color: color)),
+        const SizedBox(height: MiTokens.space3),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            _MiniLabel(
+              text: locale == 'en' ? 'Measure: $amount' : 'Số đo: $amount',
+              color: color,
+            ),
+            const SizedBox(width: MiTokens.space2),
+            Flexible(child: _AnswerTile(answer: answer, color: color)),
+          ],
+        ),
       ],
     );
   }
@@ -456,6 +678,157 @@ class _LetterBoard extends StatelessWidget {
       runSpacing: MiTokens.space2,
       children: [
         for (final letter in letters) _TokenChip(text: letter, color: color),
+      ],
+    );
+  }
+}
+
+class _WordClueBoard extends StatelessWidget {
+  const _WordClueBoard({
+    required this.color,
+    required this.answer,
+    required this.locale,
+    required this.soundMode,
+  });
+
+  final Color color;
+  final String answer;
+  final String locale;
+  final bool soundMode;
+
+  @override
+  Widget build(BuildContext context) {
+    final letters = answer.characters.take(8).toList();
+    return Column(
+      children: [
+        Wrap(
+          alignment: WrapAlignment.center,
+          spacing: MiTokens.space2,
+          runSpacing: MiTokens.space2,
+          children: [
+            for (final letter in letters)
+              _TokenChip(text: letter.toUpperCase(), color: color),
+          ],
+        ),
+        const SizedBox(height: MiTokens.space3),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Icon(
+              soundMode ? Icons.graphic_eq_rounded : Icons.image_search_rounded,
+              color: color,
+              size: 36,
+            ),
+            const SizedBox(width: MiTokens.space2),
+            Flexible(
+              child: _MiniLabel(
+                text: soundMode
+                    ? (locale == 'en' ? 'Same ending sound' : 'Cùng âm vần')
+                    : (locale == 'en' ? 'Meaning match' : 'Khớp với nghĩa'),
+                color: color,
+              ),
+            ),
+          ],
+        ),
+      ],
+    );
+  }
+}
+
+class _SentenceBoard extends StatelessWidget {
+  const _SentenceBoard({
+    required this.color,
+    required this.answer,
+    required this.locale,
+  });
+
+  final Color color;
+  final String answer;
+  final String locale;
+
+  @override
+  Widget build(BuildContext context) {
+    final words = answer
+        .replaceAll('.', '')
+        .split(RegExp(r'\s+'))
+        .where((word) => word.isNotEmpty)
+        .toList();
+    return Column(
+      children: [
+        Wrap(
+          alignment: WrapAlignment.center,
+          spacing: MiTokens.space2,
+          runSpacing: MiTokens.space2,
+          children: [
+            for (var i = 0; i < words.length; i += 1)
+              _OrderChip(index: i + 1, text: words[i], color: color),
+          ],
+        ),
+        const SizedBox(height: MiTokens.space3),
+        _MiniLabel(
+          text: locale == 'en'
+              ? 'Read from 1 to ${words.length}'
+              : 'Đọc từ 1 đến ${words.length}',
+          color: color,
+        ),
+      ],
+    );
+  }
+}
+
+class _ClassificationBoard extends StatelessWidget {
+  const _ClassificationBoard({
+    required this.color,
+    required this.prompt,
+    required this.answer,
+    required this.locale,
+    required this.shadowMode,
+  });
+
+  final Color color;
+  final String prompt;
+  final String answer;
+  final String locale;
+  final bool shadowMode;
+
+  @override
+  Widget build(BuildContext context) {
+    final candidates = RegExp(r'[A-Za-zÀ-ỹ]+')
+        .allMatches(prompt)
+        .map((match) => match.group(0)!)
+        .where((word) => word.length > 2)
+        .take(3)
+        .toList();
+    final labels = candidates.isEmpty ? [answer, 'MI', '?'] : candidates;
+    return Column(
+      children: [
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            for (var i = 0; i < labels.length; i += 1)
+              _MysteryTile(
+                text: labels[i],
+                color: i == labels.length - 1 ? color : MiColors.discovery,
+                shadowMode: shadowMode,
+              ),
+          ],
+        ),
+        const SizedBox(height: MiTokens.space3),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            _MiniLabel(
+              text: shadowMode
+                  ? (locale == 'en'
+                      ? 'Find the matching object'
+                      : 'Tìm vật khớp bóng')
+                  : (locale == 'en' ? 'Different item' : 'Khác nhóm'),
+              color: color,
+            ),
+            const SizedBox(width: MiTokens.space2),
+            Flexible(child: _AnswerTile(answer: answer, color: color)),
+          ],
+        ),
       ],
     );
   }
@@ -630,6 +1003,145 @@ class _MiniLabel extends StatelessWidget {
         text,
         style: Theme.of(context).textTheme.labelLarge?.copyWith(color: color),
         textAlign: TextAlign.center,
+      ),
+    );
+  }
+}
+
+class _MiniGroup extends StatelessWidget {
+  const _MiniGroup({
+    required this.color,
+    required this.count,
+  });
+
+  final Color color;
+  final int count;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: 72,
+      constraints: const BoxConstraints(minHeight: 64),
+      padding: const EdgeInsets.all(MiTokens.space2),
+      decoration: BoxDecoration(
+        color: color.withValues(alpha: 0.10),
+        borderRadius: BorderRadius.circular(MiTokens.radiusMd),
+        border: Border.all(color: color.withValues(alpha: 0.24)),
+      ),
+      child: Wrap(
+        alignment: WrapAlignment.center,
+        spacing: 3,
+        runSpacing: 3,
+        children: [
+          for (var i = 0; i < count; i += 1)
+            Container(
+              width: 14,
+              height: 14,
+              decoration: BoxDecoration(
+                color: color,
+                borderRadius: BorderRadius.circular(MiTokens.radiusFull),
+              ),
+            ),
+        ],
+      ),
+    );
+  }
+}
+
+class _OrderChip extends StatelessWidget {
+  const _OrderChip({
+    required this.index,
+    required this.text,
+    required this.color,
+  });
+
+  final int index;
+  final String text;
+  final Color color;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      constraints: const BoxConstraints(minHeight: 56),
+      padding: const EdgeInsets.symmetric(
+        horizontal: MiTokens.space3,
+        vertical: MiTokens.space2,
+      ),
+      decoration: BoxDecoration(
+        color: Colors.white,
+        borderRadius: BorderRadius.circular(MiTokens.radiusMd),
+        border: Border.all(color: color, width: 2),
+      ),
+      child: Row(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          CircleAvatar(
+            radius: 13,
+            backgroundColor: color,
+            child: Text(
+              '$index',
+              style: Theme.of(context).textTheme.labelLarge?.copyWith(
+                    color: Colors.white,
+                    fontSize: 12,
+                  ),
+            ),
+          ),
+          const SizedBox(width: MiTokens.space2),
+          Text(
+            text,
+            style: Theme.of(context).textTheme.titleMedium?.copyWith(
+                  color: MiColors.textPrimary,
+                ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class _MysteryTile extends StatelessWidget {
+  const _MysteryTile({
+    required this.text,
+    required this.color,
+    required this.shadowMode,
+  });
+
+  final String text;
+  final Color color;
+  final bool shadowMode;
+
+  @override
+  Widget build(BuildContext context) {
+    return Flexible(
+      child: Container(
+        constraints: const BoxConstraints(minHeight: 82, minWidth: 72),
+        margin: const EdgeInsets.symmetric(horizontal: MiTokens.space1),
+        padding: const EdgeInsets.all(MiTokens.space2),
+        decoration: BoxDecoration(
+          color: shadowMode ? color.withValues(alpha: 0.18) : Colors.white,
+          borderRadius: BorderRadius.circular(MiTokens.radiusLg),
+          border: Border.all(color: color.withValues(alpha: 0.36), width: 2),
+        ),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Icon(
+              shadowMode ? Icons.blur_on_rounded : Icons.category_rounded,
+              color: shadowMode ? MiColors.navy : color,
+              size: 28,
+            ),
+            const SizedBox(height: MiTokens.space1),
+            FittedBox(
+              fit: BoxFit.scaleDown,
+              child: Text(
+                text,
+                style: Theme.of(context).textTheme.labelLarge?.copyWith(
+                      color: MiColors.textPrimary,
+                    ),
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }

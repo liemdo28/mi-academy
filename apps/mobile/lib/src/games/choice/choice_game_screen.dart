@@ -190,6 +190,8 @@ class _ChoiceGameScreenState extends State<ChoiceGameScreen>
   Widget build(BuildContext context) {
     final text = GameLocaleText(widget.locale);
     final prompt = _content['prompt'] as String? ?? '';
+    final visualBoardEmbedsPrompt =
+        ChoiceVisualBoard.embedsPromptFor(_level.gameId);
 
     return Scaffold(
       backgroundColor: GameTheme.background,
@@ -225,12 +227,14 @@ class _ChoiceGameScreenState extends State<ChoiceGameScreen>
                     color: widget.primaryColor,
                     locale: widget.locale,
                   ),
-                  const SizedBox(height: 18),
-                  Text(
-                    prompt,
-                    style: GameTheme.headingMedium,
-                    textAlign: TextAlign.center,
-                  ),
+                  if (!visualBoardEmbedsPrompt) ...[
+                    const SizedBox(height: 18),
+                    Text(
+                      prompt,
+                      style: GameTheme.headingMedium,
+                      textAlign: TextAlign.center,
+                    ),
+                  ],
                   const SizedBox(height: 18),
                   ..._session.options.map(
                     (option) => Padding(
@@ -242,16 +246,17 @@ class _ChoiceGameScreenState extends State<ChoiceGameScreen>
                       ),
                     ),
                   ),
-                  if (_session.feedback != null) ...[
-                    const SizedBox(height: 8),
-                    FeedbackBubble(
-                      isCorrect: _session.lastCorrect ?? false,
-                      message: _session.feedback!,
-                    ),
-                  ],
                 ],
               ),
             ),
+            if (_session.feedback != null)
+              Padding(
+                padding: const EdgeInsets.fromLTRB(16, 0, 16, 8),
+                child: FeedbackBubble(
+                  isCorrect: _session.lastCorrect ?? false,
+                  message: _session.feedback!,
+                ),
+              ),
             Padding(
               padding: const EdgeInsets.all(16),
               child: HintButton(

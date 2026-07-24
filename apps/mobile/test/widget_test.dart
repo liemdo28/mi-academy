@@ -26,6 +26,8 @@ import 'package:mi_academy/src/games/memory_cards/memory_cards_screen.dart';
 import 'package:mi_academy/src/games/robot_commands/robot_commands_screen.dart';
 import 'package:mi_academy/src/games/sound_match/sound_match_screen.dart';
 import 'package:mi_academy/src/games/word_builder/word_builder_screen.dart';
+import 'package:mi_game_core/mi_game_core.dart';
+import 'package:mi_game_ui/mi_game_ui.dart';
 
 import 'game_test_fixtures.dart';
 
@@ -273,9 +275,9 @@ void main() {
           title: 'Đếm đồ vật',
           worldLabel: 'MI cùng con đếm từng đồ vật.',
           level: objectCountingLevel,
-          allLevels: [objectCountingLevel],
+          allLevels: const [objectCountingLevel],
           heroIcon: Icons.filter_6_rounded,
-          primaryColor: Color(0xFF4CAF50),
+          primaryColor: const Color(0xFF4CAF50),
         ),
       ),
     );
@@ -291,9 +293,9 @@ void main() {
           title: 'Phân số trực quan',
           worldLabel: 'MI cùng con nhìn phân số bằng hình.',
           level: visualFractionsLevel,
-          allLevels: [visualFractionsLevel],
+          allLevels: const [visualFractionsLevel],
           heroIcon: Icons.pie_chart_rounded,
-          primaryColor: Color(0xFF4CAF50),
+          primaryColor: const Color(0xFF4CAF50),
         ),
       ),
     );
@@ -309,9 +311,9 @@ void main() {
           title: 'Tìm quy luật',
           worldLabel: 'MI cùng con tìm quy luật.',
           level: patternFinderLevel,
-          allLevels: [patternFinderLevel],
+          allLevels: const [patternFinderLevel],
           heroIcon: Icons.auto_graph_rounded,
-          primaryColor: Color(0xFF8E6BFF),
+          primaryColor: const Color(0xFF8E6BFF),
         ),
       ),
     );
@@ -327,9 +329,9 @@ void main() {
           title: 'Hình học lắp ghép',
           worldLabel: 'MI cùng con nhận biết hình khối.',
           level: shapeBuilderLevel,
-          allLevels: [shapeBuilderLevel],
+          allLevels: const [shapeBuilderLevel],
           heroIcon: Icons.category_rounded,
-          primaryColor: Color(0xFF4CAF50),
+          primaryColor: const Color(0xFF4CAF50),
         ),
       ),
     );
@@ -338,6 +340,99 @@ void main() {
         findsOneWidget);
     expect(find.text('Chọn hình'), findsOneWidget);
     expect(find.byType(CustomPaint), findsWidgets);
+  });
+
+  testWidgets(
+      'choice visual boards render operations, language, and classification',
+      (tester) async {
+    Future<void> pumpChoice({
+      required MiLevel level,
+      required String title,
+      required String worldLabel,
+      required IconData icon,
+      Color color = const Color(0xFF4CAF50),
+    }) async {
+      await tester.pumpWidget(
+        MaterialApp(
+          home: ChoiceGameScreen(
+            key: UniqueKey(),
+            title: title,
+            worldLabel: worldLabel,
+            level: level,
+            allLevels: [level],
+            heroIcon: icon,
+            primaryColor: color,
+          ),
+        ),
+      );
+      await tester.pump();
+    }
+
+    await pumpChoice(
+      level: multiplicationAdventureLevel,
+      title: 'Bảng nhân phiêu lưu',
+      worldLabel: 'MI cùng con phiêu lưu với bảng nhân.',
+      icon: Icons.close_rounded,
+    );
+    expect(
+      find.byKey(
+          const ValueKey('choice-visual-board-multiplication_adventure')),
+      findsOneWidget,
+    );
+    expect(find.text('2 nhóm, mỗi nhóm 3'), findsOneWidget);
+
+    await pumpChoice(
+      level: treasureDivisionLevel,
+      title: 'Chia đều kho báu',
+      worldLabel: 'MI cùng con chia đều kho báu.',
+      icon: Icons.safety_divider_rounded,
+    );
+    expect(find.byKey(const ValueKey('choice-visual-board-treasure_division')),
+        findsOneWidget);
+    expect(find.text('Chia thành 2 nhóm'), findsOneWidget);
+
+    await pumpChoice(
+      level: funMeasurementLevel,
+      title: 'Đo lường vui nhộn',
+      worldLabel: 'MI cùng con so sánh đơn vị đo.',
+      icon: Icons.straighten_rounded,
+    );
+    expect(find.byKey(const ValueKey('choice-visual-board-fun_measurement')),
+        findsOneWidget);
+    expect(find.text('Số đo: 11'), findsOneWidget);
+
+    await pumpChoice(
+      level: sentenceOrderLevel,
+      title: 'Sắp xếp câu',
+      worldLabel: 'MI cùng con ghép câu rõ nghĩa.',
+      icon: Icons.subject_rounded,
+      color: const Color(0xFF4A90E2),
+    );
+    expect(find.byKey(const ValueKey('choice-visual-board-sentence_order')),
+        findsOneWidget);
+    expect(find.text('Đọc từ 1 đến 3'), findsOneWidget);
+
+    await pumpChoice(
+      level: pictureWordMatchLevel,
+      title: 'Nối từ với hình',
+      worldLabel: 'MI cùng con nối từ với ý nghĩa.',
+      icon: Icons.image_search_rounded,
+      color: const Color(0xFF4A90E2),
+    );
+    expect(find.byKey(const ValueKey('choice-visual-board-picture_word_match')),
+        findsOneWidget);
+    expect(find.text('Khớp với nghĩa'), findsOneWidget);
+
+    await pumpChoice(
+      level: oddOneOutLevel,
+      title: 'Tìm hình khác biệt',
+      worldLabel: 'MI cùng con tìm hình khác nhóm.',
+      icon: Icons.category_rounded,
+      color: const Color(0xFF8E6BFF),
+    );
+    expect(find.byKey(const ValueKey('choice-visual-board-odd_one_out')),
+        findsOneWidget);
+    expect(find.text('Khác nhóm'), findsOneWidget);
   });
 
   testWidgets('Math Race completes a correct answer', (tester) async {
@@ -464,7 +559,7 @@ void main() {
     );
     await tester.pump();
 
-    await tester.tap(find.byIcon(Icons.lightbulb_outline_rounded));
+    await tester.tap(find.byType(HintButton));
     await tester.pump();
 
     expect(
