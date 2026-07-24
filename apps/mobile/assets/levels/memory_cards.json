@@ -14,25 +14,25 @@
           "cards": [
             {
               "id": "c1",
-              "content": "🐱",
+              "content": "Mèo",
               "pairId": "p1",
               "type": "image"
             },
             {
               "id": "c2",
-              "content": "🐱",
+              "content": "Mèo",
               "pairId": "p1",
               "type": "image"
             },
             {
               "id": "c3",
-              "content": "🐶",
+              "content": "Chó",
               "pairId": "p2",
               "type": "image"
             },
             {
               "id": "c4",
-              "content": "🐶",
+              "content": "Chó",
               "pairId": "p2",
               "type": "image"
             }
@@ -43,25 +43,25 @@
           "cards": [
             {
               "id": "c1",
-              "content": "🐱",
+              "content": "Mèo",
               "pairId": "p1",
               "type": "image"
             },
             {
               "id": "c2",
-              "content": "🐱",
+              "content": "Mèo",
               "pairId": "p1",
               "type": "image"
             },
             {
               "id": "c3",
-              "content": "🐶",
+              "content": "Chó",
               "pairId": "p2",
               "type": "image"
             },
             {
               "id": "c4",
-              "content": "🐶",
+              "content": "Chó",
               "pairId": "p2",
               "type": "image"
             }
@@ -126,13 +126,13 @@
             },
             {
               "id": "c5",
-              "content": "🍇",
+              "content": "Nho",
               "pairId": "p3",
               "type": "image"
             },
             {
               "id": "c6",
-              "content": "🍇",
+              "content": "Nho",
               "pairId": "p3",
               "type": "image"
             }
@@ -167,13 +167,13 @@
             },
             {
               "id": "c5",
-              "content": "🍇",
+              "content": "Nho",
               "pairId": "p3",
               "type": "image"
             },
             {
               "id": "c6",
-              "content": "🍇",
+              "content": "Nho",
               "pairId": "p3",
               "type": "image"
             }
@@ -214,13 +214,13 @@
           "cards": [
             {
               "id": "c1",
-              "content": "🌸",
+              "content": "Hoa",
               "pairId": "p1",
               "type": "image"
             },
             {
               "id": "c2",
-              "content": "🌸",
+              "content": "Hoa",
               "pairId": "p1",
               "type": "image"
             },
@@ -267,13 +267,13 @@
           "cards": [
             {
               "id": "c1",
-              "content": "🌸",
+              "content": "Hoa",
               "pairId": "p1",
               "type": "image"
             },
             {
               "id": "c2",
-              "content": "🌸",
+              "content": "Hoa",
               "pairId": "p1",
               "type": "image"
             },
@@ -362,25 +362,25 @@
             },
             {
               "id": "c3",
-              "content": "🌙",
+              "content": "Trăng",
               "pairId": "p2",
               "type": "image"
             },
             {
               "id": "c4",
-              "content": "🌙",
+              "content": "Trăng",
               "pairId": "p2",
               "type": "image"
             },
             {
               "id": "c5",
-              "content": "☀️",
+              "content": "Nắng",
               "pairId": "p3",
               "type": "image"
             },
             {
               "id": "c6",
-              "content": "☀️",
+              "content": "Nắng",
               "pairId": "p3",
               "type": "image"
             },
@@ -439,25 +439,25 @@
             },
             {
               "id": "c3",
-              "content": "🌙",
+              "content": "Trăng",
               "pairId": "p2",
               "type": "image"
             },
             {
               "id": "c4",
-              "content": "🌙",
+              "content": "Trăng",
               "pairId": "p2",
               "type": "image"
             },
             {
               "id": "c5",
-              "content": "☀️",
+              "content": "Nắng",
               "pairId": "p3",
               "type": "image"
             },
             {
               "id": "c6",
-              "content": "☀️",
+              "content": "Nắng",
               "pairId": "p3",
               "type": "image"
             },
@@ -534,7 +534,7 @@
           "cards": [
             {
               "id": "c1",
-              "content": "🐱",
+              "content": "Mèo",
               "pairId": "p1",
               "type": "image"
             },
@@ -546,7 +546,7 @@
             },
             {
               "id": "c3",
-              "content": "🐶",
+              "content": "Chó",
               "pairId": "p2",
               "type": "image"
             },
@@ -587,7 +587,7 @@
           "cards": [
             {
               "id": "c1",
-              "content": "🐱",
+              "content": "Mèo",
               "pairId": "p1",
               "type": "image"
             },
@@ -599,7 +599,7 @@
             },
             {
               "id": "c3",
-              "content": "🐶",
+              "content": "Chó",
               "pairId": "p2",
               "type": "image"
             },
@@ -1323,6 +1323,3630 @@
       "assetRefs": [],
       "contentVersion": 1,
       "estimatedSeconds": 60,
+      "publicationState": "published"
+    },
+    {
+      "id": "mc-gen-011",
+      "gameId": "memory_cards",
+      "levelNumber": 11,
+      "difficulty": 2,
+      "learningObjective": "Remember 4 matching pairs",
+      "localizedContent": {
+        "vi": {
+          "prompt": "Tìm 4 cặp thẻ giống nhau!",
+          "cards": [
+            {
+              "id": "c1",
+              "content": "star",
+              "pairId": "p1",
+              "type": "text"
+            },
+            {
+              "id": "c2",
+              "content": "star",
+              "pairId": "p1",
+              "type": "text"
+            },
+            {
+              "id": "c3",
+              "content": "book",
+              "pairId": "p2",
+              "type": "text"
+            },
+            {
+              "id": "c4",
+              "content": "book",
+              "pairId": "p2",
+              "type": "text"
+            },
+            {
+              "id": "c5",
+              "content": "pen",
+              "pairId": "p3",
+              "type": "text"
+            },
+            {
+              "id": "c6",
+              "content": "pen",
+              "pairId": "p3",
+              "type": "text"
+            },
+            {
+              "id": "c7",
+              "content": "moon",
+              "pairId": "p4",
+              "type": "text"
+            },
+            {
+              "id": "c8",
+              "content": "moon",
+              "pairId": "p4",
+              "type": "text"
+            }
+          ]
+        },
+        "en": {
+          "prompt": "Find 4 matching pairs!",
+          "cards": [
+            {
+              "id": "c1",
+              "content": "star",
+              "pairId": "p1",
+              "type": "text"
+            },
+            {
+              "id": "c2",
+              "content": "star",
+              "pairId": "p1",
+              "type": "text"
+            },
+            {
+              "id": "c3",
+              "content": "book",
+              "pairId": "p2",
+              "type": "text"
+            },
+            {
+              "id": "c4",
+              "content": "book",
+              "pairId": "p2",
+              "type": "text"
+            },
+            {
+              "id": "c5",
+              "content": "pen",
+              "pairId": "p3",
+              "type": "text"
+            },
+            {
+              "id": "c6",
+              "content": "pen",
+              "pairId": "p3",
+              "type": "text"
+            },
+            {
+              "id": "c7",
+              "content": "moon",
+              "pairId": "p4",
+              "type": "text"
+            },
+            {
+              "id": "c8",
+              "content": "moon",
+              "pairId": "p4",
+              "type": "text"
+            }
+          ]
+        }
+      },
+      "hints": [
+        {
+          "text": "Nhớ vị trí của thẻ vừa lật."
+        },
+        {
+          "text": "Remember where each card was."
+        }
+      ],
+      "metadata": {
+        "gridCols": 4,
+        "gridRows": 2,
+        "initialRevealMs": 1300,
+        "ageGroup": "junior",
+        "skillIds": [
+          "logic.memory"
+        ],
+        "progressionTier": 2,
+        "reviewState": "technically_validated"
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 84,
+      "publicationState": "published"
+    },
+    {
+      "id": "mc-gen-012",
+      "gameId": "memory_cards",
+      "levelNumber": 12,
+      "difficulty": 2,
+      "learningObjective": "Remember 4 matching pairs",
+      "localizedContent": {
+        "vi": {
+          "prompt": "Tìm 4 cặp thẻ giống nhau!",
+          "cards": [
+            {
+              "id": "c1",
+              "content": "book",
+              "pairId": "p1",
+              "type": "text"
+            },
+            {
+              "id": "c2",
+              "content": "book",
+              "pairId": "p1",
+              "type": "text"
+            },
+            {
+              "id": "c3",
+              "content": "pen",
+              "pairId": "p2",
+              "type": "text"
+            },
+            {
+              "id": "c4",
+              "content": "pen",
+              "pairId": "p2",
+              "type": "text"
+            },
+            {
+              "id": "c5",
+              "content": "moon",
+              "pairId": "p3",
+              "type": "text"
+            },
+            {
+              "id": "c6",
+              "content": "moon",
+              "pairId": "p3",
+              "type": "text"
+            },
+            {
+              "id": "c7",
+              "content": "sun",
+              "pairId": "p4",
+              "type": "text"
+            },
+            {
+              "id": "c8",
+              "content": "sun",
+              "pairId": "p4",
+              "type": "text"
+            }
+          ]
+        },
+        "en": {
+          "prompt": "Find 4 matching pairs!",
+          "cards": [
+            {
+              "id": "c1",
+              "content": "book",
+              "pairId": "p1",
+              "type": "text"
+            },
+            {
+              "id": "c2",
+              "content": "book",
+              "pairId": "p1",
+              "type": "text"
+            },
+            {
+              "id": "c3",
+              "content": "pen",
+              "pairId": "p2",
+              "type": "text"
+            },
+            {
+              "id": "c4",
+              "content": "pen",
+              "pairId": "p2",
+              "type": "text"
+            },
+            {
+              "id": "c5",
+              "content": "moon",
+              "pairId": "p3",
+              "type": "text"
+            },
+            {
+              "id": "c6",
+              "content": "moon",
+              "pairId": "p3",
+              "type": "text"
+            },
+            {
+              "id": "c7",
+              "content": "sun",
+              "pairId": "p4",
+              "type": "text"
+            },
+            {
+              "id": "c8",
+              "content": "sun",
+              "pairId": "p4",
+              "type": "text"
+            }
+          ]
+        }
+      },
+      "hints": [
+        {
+          "text": "Nhớ vị trí của thẻ vừa lật."
+        },
+        {
+          "text": "Remember where each card was."
+        }
+      ],
+      "metadata": {
+        "gridCols": 4,
+        "gridRows": 2,
+        "initialRevealMs": 1300,
+        "ageGroup": "junior",
+        "skillIds": [
+          "logic.memory"
+        ],
+        "progressionTier": 2,
+        "reviewState": "technically_validated"
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 84,
+      "publicationState": "published"
+    },
+    {
+      "id": "mc-gen-013",
+      "gameId": "memory_cards",
+      "levelNumber": 13,
+      "difficulty": 3,
+      "learningObjective": "Remember 5 matching pairs",
+      "localizedContent": {
+        "vi": {
+          "prompt": "Tìm 5 cặp thẻ giống nhau!",
+          "cards": [
+            {
+              "id": "c1",
+              "content": "pen",
+              "pairId": "p1",
+              "type": "text"
+            },
+            {
+              "id": "c2",
+              "content": "pen",
+              "pairId": "p1",
+              "type": "text"
+            },
+            {
+              "id": "c3",
+              "content": "moon",
+              "pairId": "p2",
+              "type": "text"
+            },
+            {
+              "id": "c4",
+              "content": "moon",
+              "pairId": "p2",
+              "type": "text"
+            },
+            {
+              "id": "c5",
+              "content": "sun",
+              "pairId": "p3",
+              "type": "text"
+            },
+            {
+              "id": "c6",
+              "content": "sun",
+              "pairId": "p3",
+              "type": "text"
+            },
+            {
+              "id": "c7",
+              "content": "red",
+              "pairId": "p4",
+              "type": "text"
+            },
+            {
+              "id": "c8",
+              "content": "red",
+              "pairId": "p4",
+              "type": "text"
+            },
+            {
+              "id": "c9",
+              "content": "blue",
+              "pairId": "p5",
+              "type": "text"
+            },
+            {
+              "id": "c10",
+              "content": "blue",
+              "pairId": "p5",
+              "type": "text"
+            }
+          ]
+        },
+        "en": {
+          "prompt": "Find 5 matching pairs!",
+          "cards": [
+            {
+              "id": "c1",
+              "content": "pen",
+              "pairId": "p1",
+              "type": "text"
+            },
+            {
+              "id": "c2",
+              "content": "pen",
+              "pairId": "p1",
+              "type": "text"
+            },
+            {
+              "id": "c3",
+              "content": "moon",
+              "pairId": "p2",
+              "type": "text"
+            },
+            {
+              "id": "c4",
+              "content": "moon",
+              "pairId": "p2",
+              "type": "text"
+            },
+            {
+              "id": "c5",
+              "content": "sun",
+              "pairId": "p3",
+              "type": "text"
+            },
+            {
+              "id": "c6",
+              "content": "sun",
+              "pairId": "p3",
+              "type": "text"
+            },
+            {
+              "id": "c7",
+              "content": "red",
+              "pairId": "p4",
+              "type": "text"
+            },
+            {
+              "id": "c8",
+              "content": "red",
+              "pairId": "p4",
+              "type": "text"
+            },
+            {
+              "id": "c9",
+              "content": "blue",
+              "pairId": "p5",
+              "type": "text"
+            },
+            {
+              "id": "c10",
+              "content": "blue",
+              "pairId": "p5",
+              "type": "text"
+            }
+          ]
+        }
+      },
+      "hints": [
+        {
+          "text": "Nhớ vị trí của thẻ vừa lật."
+        },
+        {
+          "text": "Remember where each card was."
+        }
+      ],
+      "metadata": {
+        "gridCols": 4,
+        "gridRows": 3,
+        "initialRevealMs": 1150,
+        "ageGroup": "explorer",
+        "skillIds": [
+          "logic.memory"
+        ],
+        "progressionTier": 3,
+        "reviewState": "technically_validated"
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 96,
+      "publicationState": "published"
+    },
+    {
+      "id": "mc-gen-014",
+      "gameId": "memory_cards",
+      "levelNumber": 14,
+      "difficulty": 3,
+      "learningObjective": "Remember 5 matching pairs",
+      "localizedContent": {
+        "vi": {
+          "prompt": "Tìm 5 cặp thẻ giống nhau!",
+          "cards": [
+            {
+              "id": "c1",
+              "content": "moon",
+              "pairId": "p1",
+              "type": "text"
+            },
+            {
+              "id": "c2",
+              "content": "moon",
+              "pairId": "p1",
+              "type": "text"
+            },
+            {
+              "id": "c3",
+              "content": "sun",
+              "pairId": "p2",
+              "type": "text"
+            },
+            {
+              "id": "c4",
+              "content": "sun",
+              "pairId": "p2",
+              "type": "text"
+            },
+            {
+              "id": "c5",
+              "content": "red",
+              "pairId": "p3",
+              "type": "text"
+            },
+            {
+              "id": "c6",
+              "content": "red",
+              "pairId": "p3",
+              "type": "text"
+            },
+            {
+              "id": "c7",
+              "content": "blue",
+              "pairId": "p4",
+              "type": "text"
+            },
+            {
+              "id": "c8",
+              "content": "blue",
+              "pairId": "p4",
+              "type": "text"
+            },
+            {
+              "id": "c9",
+              "content": "green",
+              "pairId": "p5",
+              "type": "text"
+            },
+            {
+              "id": "c10",
+              "content": "green",
+              "pairId": "p5",
+              "type": "text"
+            }
+          ]
+        },
+        "en": {
+          "prompt": "Find 5 matching pairs!",
+          "cards": [
+            {
+              "id": "c1",
+              "content": "moon",
+              "pairId": "p1",
+              "type": "text"
+            },
+            {
+              "id": "c2",
+              "content": "moon",
+              "pairId": "p1",
+              "type": "text"
+            },
+            {
+              "id": "c3",
+              "content": "sun",
+              "pairId": "p2",
+              "type": "text"
+            },
+            {
+              "id": "c4",
+              "content": "sun",
+              "pairId": "p2",
+              "type": "text"
+            },
+            {
+              "id": "c5",
+              "content": "red",
+              "pairId": "p3",
+              "type": "text"
+            },
+            {
+              "id": "c6",
+              "content": "red",
+              "pairId": "p3",
+              "type": "text"
+            },
+            {
+              "id": "c7",
+              "content": "blue",
+              "pairId": "p4",
+              "type": "text"
+            },
+            {
+              "id": "c8",
+              "content": "blue",
+              "pairId": "p4",
+              "type": "text"
+            },
+            {
+              "id": "c9",
+              "content": "green",
+              "pairId": "p5",
+              "type": "text"
+            },
+            {
+              "id": "c10",
+              "content": "green",
+              "pairId": "p5",
+              "type": "text"
+            }
+          ]
+        }
+      },
+      "hints": [
+        {
+          "text": "Nhớ vị trí của thẻ vừa lật."
+        },
+        {
+          "text": "Remember where each card was."
+        }
+      ],
+      "metadata": {
+        "gridCols": 4,
+        "gridRows": 3,
+        "initialRevealMs": 1150,
+        "ageGroup": "explorer",
+        "skillIds": [
+          "logic.memory"
+        ],
+        "progressionTier": 3,
+        "reviewState": "technically_validated"
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 96,
+      "publicationState": "published"
+    },
+    {
+      "id": "mc-gen-015",
+      "gameId": "memory_cards",
+      "levelNumber": 15,
+      "difficulty": 3,
+      "learningObjective": "Remember 5 matching pairs",
+      "localizedContent": {
+        "vi": {
+          "prompt": "Tìm 5 cặp thẻ giống nhau!",
+          "cards": [
+            {
+              "id": "c1",
+              "content": "sun",
+              "pairId": "p1",
+              "type": "text"
+            },
+            {
+              "id": "c2",
+              "content": "sun",
+              "pairId": "p1",
+              "type": "text"
+            },
+            {
+              "id": "c3",
+              "content": "red",
+              "pairId": "p2",
+              "type": "text"
+            },
+            {
+              "id": "c4",
+              "content": "red",
+              "pairId": "p2",
+              "type": "text"
+            },
+            {
+              "id": "c5",
+              "content": "blue",
+              "pairId": "p3",
+              "type": "text"
+            },
+            {
+              "id": "c6",
+              "content": "blue",
+              "pairId": "p3",
+              "type": "text"
+            },
+            {
+              "id": "c7",
+              "content": "green",
+              "pairId": "p4",
+              "type": "text"
+            },
+            {
+              "id": "c8",
+              "content": "green",
+              "pairId": "p4",
+              "type": "text"
+            },
+            {
+              "id": "c9",
+              "content": "star",
+              "pairId": "p5",
+              "type": "text"
+            },
+            {
+              "id": "c10",
+              "content": "star",
+              "pairId": "p5",
+              "type": "text"
+            }
+          ]
+        },
+        "en": {
+          "prompt": "Find 5 matching pairs!",
+          "cards": [
+            {
+              "id": "c1",
+              "content": "sun",
+              "pairId": "p1",
+              "type": "text"
+            },
+            {
+              "id": "c2",
+              "content": "sun",
+              "pairId": "p1",
+              "type": "text"
+            },
+            {
+              "id": "c3",
+              "content": "red",
+              "pairId": "p2",
+              "type": "text"
+            },
+            {
+              "id": "c4",
+              "content": "red",
+              "pairId": "p2",
+              "type": "text"
+            },
+            {
+              "id": "c5",
+              "content": "blue",
+              "pairId": "p3",
+              "type": "text"
+            },
+            {
+              "id": "c6",
+              "content": "blue",
+              "pairId": "p3",
+              "type": "text"
+            },
+            {
+              "id": "c7",
+              "content": "green",
+              "pairId": "p4",
+              "type": "text"
+            },
+            {
+              "id": "c8",
+              "content": "green",
+              "pairId": "p4",
+              "type": "text"
+            },
+            {
+              "id": "c9",
+              "content": "star",
+              "pairId": "p5",
+              "type": "text"
+            },
+            {
+              "id": "c10",
+              "content": "star",
+              "pairId": "p5",
+              "type": "text"
+            }
+          ]
+        }
+      },
+      "hints": [
+        {
+          "text": "Nhớ vị trí của thẻ vừa lật."
+        },
+        {
+          "text": "Remember where each card was."
+        }
+      ],
+      "metadata": {
+        "gridCols": 4,
+        "gridRows": 3,
+        "initialRevealMs": 1150,
+        "ageGroup": "explorer",
+        "skillIds": [
+          "logic.memory"
+        ],
+        "progressionTier": 3,
+        "reviewState": "technically_validated"
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 96,
+      "publicationState": "published"
+    },
+    {
+      "id": "mc-gen-016",
+      "gameId": "memory_cards",
+      "levelNumber": 16,
+      "difficulty": 3,
+      "learningObjective": "Remember 5 matching pairs",
+      "localizedContent": {
+        "vi": {
+          "prompt": "Tìm 5 cặp thẻ giống nhau!",
+          "cards": [
+            {
+              "id": "c1",
+              "content": "red",
+              "pairId": "p1",
+              "type": "text"
+            },
+            {
+              "id": "c2",
+              "content": "red",
+              "pairId": "p1",
+              "type": "text"
+            },
+            {
+              "id": "c3",
+              "content": "blue",
+              "pairId": "p2",
+              "type": "text"
+            },
+            {
+              "id": "c4",
+              "content": "blue",
+              "pairId": "p2",
+              "type": "text"
+            },
+            {
+              "id": "c5",
+              "content": "green",
+              "pairId": "p3",
+              "type": "text"
+            },
+            {
+              "id": "c6",
+              "content": "green",
+              "pairId": "p3",
+              "type": "text"
+            },
+            {
+              "id": "c7",
+              "content": "star",
+              "pairId": "p4",
+              "type": "text"
+            },
+            {
+              "id": "c8",
+              "content": "star",
+              "pairId": "p4",
+              "type": "text"
+            },
+            {
+              "id": "c9",
+              "content": "book",
+              "pairId": "p5",
+              "type": "text"
+            },
+            {
+              "id": "c10",
+              "content": "book",
+              "pairId": "p5",
+              "type": "text"
+            }
+          ]
+        },
+        "en": {
+          "prompt": "Find 5 matching pairs!",
+          "cards": [
+            {
+              "id": "c1",
+              "content": "red",
+              "pairId": "p1",
+              "type": "text"
+            },
+            {
+              "id": "c2",
+              "content": "red",
+              "pairId": "p1",
+              "type": "text"
+            },
+            {
+              "id": "c3",
+              "content": "blue",
+              "pairId": "p2",
+              "type": "text"
+            },
+            {
+              "id": "c4",
+              "content": "blue",
+              "pairId": "p2",
+              "type": "text"
+            },
+            {
+              "id": "c5",
+              "content": "green",
+              "pairId": "p3",
+              "type": "text"
+            },
+            {
+              "id": "c6",
+              "content": "green",
+              "pairId": "p3",
+              "type": "text"
+            },
+            {
+              "id": "c7",
+              "content": "star",
+              "pairId": "p4",
+              "type": "text"
+            },
+            {
+              "id": "c8",
+              "content": "star",
+              "pairId": "p4",
+              "type": "text"
+            },
+            {
+              "id": "c9",
+              "content": "book",
+              "pairId": "p5",
+              "type": "text"
+            },
+            {
+              "id": "c10",
+              "content": "book",
+              "pairId": "p5",
+              "type": "text"
+            }
+          ]
+        }
+      },
+      "hints": [
+        {
+          "text": "Nhớ vị trí của thẻ vừa lật."
+        },
+        {
+          "text": "Remember where each card was."
+        }
+      ],
+      "metadata": {
+        "gridCols": 4,
+        "gridRows": 3,
+        "initialRevealMs": 1150,
+        "ageGroup": "explorer",
+        "skillIds": [
+          "logic.memory"
+        ],
+        "progressionTier": 3,
+        "reviewState": "technically_validated"
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 96,
+      "publicationState": "published"
+    },
+    {
+      "id": "mc-gen-017",
+      "gameId": "memory_cards",
+      "levelNumber": 17,
+      "difficulty": 3,
+      "learningObjective": "Remember 5 matching pairs",
+      "localizedContent": {
+        "vi": {
+          "prompt": "Tìm 5 cặp thẻ giống nhau!",
+          "cards": [
+            {
+              "id": "c1",
+              "content": "blue",
+              "pairId": "p1",
+              "type": "text"
+            },
+            {
+              "id": "c2",
+              "content": "blue",
+              "pairId": "p1",
+              "type": "text"
+            },
+            {
+              "id": "c3",
+              "content": "green",
+              "pairId": "p2",
+              "type": "text"
+            },
+            {
+              "id": "c4",
+              "content": "green",
+              "pairId": "p2",
+              "type": "text"
+            },
+            {
+              "id": "c5",
+              "content": "star",
+              "pairId": "p3",
+              "type": "text"
+            },
+            {
+              "id": "c6",
+              "content": "star",
+              "pairId": "p3",
+              "type": "text"
+            },
+            {
+              "id": "c7",
+              "content": "book",
+              "pairId": "p4",
+              "type": "text"
+            },
+            {
+              "id": "c8",
+              "content": "book",
+              "pairId": "p4",
+              "type": "text"
+            },
+            {
+              "id": "c9",
+              "content": "pen",
+              "pairId": "p5",
+              "type": "text"
+            },
+            {
+              "id": "c10",
+              "content": "pen",
+              "pairId": "p5",
+              "type": "text"
+            }
+          ]
+        },
+        "en": {
+          "prompt": "Find 5 matching pairs!",
+          "cards": [
+            {
+              "id": "c1",
+              "content": "blue",
+              "pairId": "p1",
+              "type": "text"
+            },
+            {
+              "id": "c2",
+              "content": "blue",
+              "pairId": "p1",
+              "type": "text"
+            },
+            {
+              "id": "c3",
+              "content": "green",
+              "pairId": "p2",
+              "type": "text"
+            },
+            {
+              "id": "c4",
+              "content": "green",
+              "pairId": "p2",
+              "type": "text"
+            },
+            {
+              "id": "c5",
+              "content": "star",
+              "pairId": "p3",
+              "type": "text"
+            },
+            {
+              "id": "c6",
+              "content": "star",
+              "pairId": "p3",
+              "type": "text"
+            },
+            {
+              "id": "c7",
+              "content": "book",
+              "pairId": "p4",
+              "type": "text"
+            },
+            {
+              "id": "c8",
+              "content": "book",
+              "pairId": "p4",
+              "type": "text"
+            },
+            {
+              "id": "c9",
+              "content": "pen",
+              "pairId": "p5",
+              "type": "text"
+            },
+            {
+              "id": "c10",
+              "content": "pen",
+              "pairId": "p5",
+              "type": "text"
+            }
+          ]
+        }
+      },
+      "hints": [
+        {
+          "text": "Nhớ vị trí của thẻ vừa lật."
+        },
+        {
+          "text": "Remember where each card was."
+        }
+      ],
+      "metadata": {
+        "gridCols": 4,
+        "gridRows": 3,
+        "initialRevealMs": 1150,
+        "ageGroup": "explorer",
+        "skillIds": [
+          "logic.memory"
+        ],
+        "progressionTier": 3,
+        "reviewState": "technically_validated"
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 96,
+      "publicationState": "published"
+    },
+    {
+      "id": "mc-gen-018",
+      "gameId": "memory_cards",
+      "levelNumber": 18,
+      "difficulty": 3,
+      "learningObjective": "Remember 5 matching pairs",
+      "localizedContent": {
+        "vi": {
+          "prompt": "Tìm 5 cặp thẻ giống nhau!",
+          "cards": [
+            {
+              "id": "c1",
+              "content": "green",
+              "pairId": "p1",
+              "type": "text"
+            },
+            {
+              "id": "c2",
+              "content": "green",
+              "pairId": "p1",
+              "type": "text"
+            },
+            {
+              "id": "c3",
+              "content": "star",
+              "pairId": "p2",
+              "type": "text"
+            },
+            {
+              "id": "c4",
+              "content": "star",
+              "pairId": "p2",
+              "type": "text"
+            },
+            {
+              "id": "c5",
+              "content": "book",
+              "pairId": "p3",
+              "type": "text"
+            },
+            {
+              "id": "c6",
+              "content": "book",
+              "pairId": "p3",
+              "type": "text"
+            },
+            {
+              "id": "c7",
+              "content": "pen",
+              "pairId": "p4",
+              "type": "text"
+            },
+            {
+              "id": "c8",
+              "content": "pen",
+              "pairId": "p4",
+              "type": "text"
+            },
+            {
+              "id": "c9",
+              "content": "moon",
+              "pairId": "p5",
+              "type": "text"
+            },
+            {
+              "id": "c10",
+              "content": "moon",
+              "pairId": "p5",
+              "type": "text"
+            }
+          ]
+        },
+        "en": {
+          "prompt": "Find 5 matching pairs!",
+          "cards": [
+            {
+              "id": "c1",
+              "content": "green",
+              "pairId": "p1",
+              "type": "text"
+            },
+            {
+              "id": "c2",
+              "content": "green",
+              "pairId": "p1",
+              "type": "text"
+            },
+            {
+              "id": "c3",
+              "content": "star",
+              "pairId": "p2",
+              "type": "text"
+            },
+            {
+              "id": "c4",
+              "content": "star",
+              "pairId": "p2",
+              "type": "text"
+            },
+            {
+              "id": "c5",
+              "content": "book",
+              "pairId": "p3",
+              "type": "text"
+            },
+            {
+              "id": "c6",
+              "content": "book",
+              "pairId": "p3",
+              "type": "text"
+            },
+            {
+              "id": "c7",
+              "content": "pen",
+              "pairId": "p4",
+              "type": "text"
+            },
+            {
+              "id": "c8",
+              "content": "pen",
+              "pairId": "p4",
+              "type": "text"
+            },
+            {
+              "id": "c9",
+              "content": "moon",
+              "pairId": "p5",
+              "type": "text"
+            },
+            {
+              "id": "c10",
+              "content": "moon",
+              "pairId": "p5",
+              "type": "text"
+            }
+          ]
+        }
+      },
+      "hints": [
+        {
+          "text": "Nhớ vị trí của thẻ vừa lật."
+        },
+        {
+          "text": "Remember where each card was."
+        }
+      ],
+      "metadata": {
+        "gridCols": 4,
+        "gridRows": 3,
+        "initialRevealMs": 1150,
+        "ageGroup": "explorer",
+        "skillIds": [
+          "logic.memory"
+        ],
+        "progressionTier": 3,
+        "reviewState": "technically_validated"
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 96,
+      "publicationState": "published"
+    },
+    {
+      "id": "mc-gen-019",
+      "gameId": "memory_cards",
+      "levelNumber": 19,
+      "difficulty": 4,
+      "learningObjective": "Remember 6 matching pairs",
+      "localizedContent": {
+        "vi": {
+          "prompt": "Tìm 6 cặp thẻ giống nhau!",
+          "cards": [
+            {
+              "id": "c1",
+              "content": "star",
+              "pairId": "p1",
+              "type": "text"
+            },
+            {
+              "id": "c2",
+              "content": "star",
+              "pairId": "p1",
+              "type": "text"
+            },
+            {
+              "id": "c3",
+              "content": "book",
+              "pairId": "p2",
+              "type": "text"
+            },
+            {
+              "id": "c4",
+              "content": "book",
+              "pairId": "p2",
+              "type": "text"
+            },
+            {
+              "id": "c5",
+              "content": "pen",
+              "pairId": "p3",
+              "type": "text"
+            },
+            {
+              "id": "c6",
+              "content": "pen",
+              "pairId": "p3",
+              "type": "text"
+            },
+            {
+              "id": "c7",
+              "content": "moon",
+              "pairId": "p4",
+              "type": "text"
+            },
+            {
+              "id": "c8",
+              "content": "moon",
+              "pairId": "p4",
+              "type": "text"
+            },
+            {
+              "id": "c9",
+              "content": "sun",
+              "pairId": "p5",
+              "type": "text"
+            },
+            {
+              "id": "c10",
+              "content": "sun",
+              "pairId": "p5",
+              "type": "text"
+            },
+            {
+              "id": "c11",
+              "content": "red",
+              "pairId": "p6",
+              "type": "text"
+            },
+            {
+              "id": "c12",
+              "content": "red",
+              "pairId": "p6",
+              "type": "text"
+            }
+          ]
+        },
+        "en": {
+          "prompt": "Find 6 matching pairs!",
+          "cards": [
+            {
+              "id": "c1",
+              "content": "star",
+              "pairId": "p1",
+              "type": "text"
+            },
+            {
+              "id": "c2",
+              "content": "star",
+              "pairId": "p1",
+              "type": "text"
+            },
+            {
+              "id": "c3",
+              "content": "book",
+              "pairId": "p2",
+              "type": "text"
+            },
+            {
+              "id": "c4",
+              "content": "book",
+              "pairId": "p2",
+              "type": "text"
+            },
+            {
+              "id": "c5",
+              "content": "pen",
+              "pairId": "p3",
+              "type": "text"
+            },
+            {
+              "id": "c6",
+              "content": "pen",
+              "pairId": "p3",
+              "type": "text"
+            },
+            {
+              "id": "c7",
+              "content": "moon",
+              "pairId": "p4",
+              "type": "text"
+            },
+            {
+              "id": "c8",
+              "content": "moon",
+              "pairId": "p4",
+              "type": "text"
+            },
+            {
+              "id": "c9",
+              "content": "sun",
+              "pairId": "p5",
+              "type": "text"
+            },
+            {
+              "id": "c10",
+              "content": "sun",
+              "pairId": "p5",
+              "type": "text"
+            },
+            {
+              "id": "c11",
+              "content": "red",
+              "pairId": "p6",
+              "type": "text"
+            },
+            {
+              "id": "c12",
+              "content": "red",
+              "pairId": "p6",
+              "type": "text"
+            }
+          ]
+        }
+      },
+      "hints": [
+        {
+          "text": "Nhớ vị trí của thẻ vừa lật."
+        },
+        {
+          "text": "Remember where each card was."
+        }
+      ],
+      "metadata": {
+        "gridCols": 4,
+        "gridRows": 3,
+        "initialRevealMs": 1000,
+        "ageGroup": "explorer",
+        "skillIds": [
+          "logic.memory"
+        ],
+        "progressionTier": 4,
+        "reviewState": "technically_validated"
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 108,
+      "publicationState": "published"
+    },
+    {
+      "id": "mc-gen-020",
+      "gameId": "memory_cards",
+      "levelNumber": 20,
+      "difficulty": 4,
+      "learningObjective": "Remember 6 matching pairs",
+      "localizedContent": {
+        "vi": {
+          "prompt": "Tìm 6 cặp thẻ giống nhau!",
+          "cards": [
+            {
+              "id": "c1",
+              "content": "book",
+              "pairId": "p1",
+              "type": "text"
+            },
+            {
+              "id": "c2",
+              "content": "book",
+              "pairId": "p1",
+              "type": "text"
+            },
+            {
+              "id": "c3",
+              "content": "pen",
+              "pairId": "p2",
+              "type": "text"
+            },
+            {
+              "id": "c4",
+              "content": "pen",
+              "pairId": "p2",
+              "type": "text"
+            },
+            {
+              "id": "c5",
+              "content": "moon",
+              "pairId": "p3",
+              "type": "text"
+            },
+            {
+              "id": "c6",
+              "content": "moon",
+              "pairId": "p3",
+              "type": "text"
+            },
+            {
+              "id": "c7",
+              "content": "sun",
+              "pairId": "p4",
+              "type": "text"
+            },
+            {
+              "id": "c8",
+              "content": "sun",
+              "pairId": "p4",
+              "type": "text"
+            },
+            {
+              "id": "c9",
+              "content": "red",
+              "pairId": "p5",
+              "type": "text"
+            },
+            {
+              "id": "c10",
+              "content": "red",
+              "pairId": "p5",
+              "type": "text"
+            },
+            {
+              "id": "c11",
+              "content": "blue",
+              "pairId": "p6",
+              "type": "text"
+            },
+            {
+              "id": "c12",
+              "content": "blue",
+              "pairId": "p6",
+              "type": "text"
+            }
+          ]
+        },
+        "en": {
+          "prompt": "Find 6 matching pairs!",
+          "cards": [
+            {
+              "id": "c1",
+              "content": "book",
+              "pairId": "p1",
+              "type": "text"
+            },
+            {
+              "id": "c2",
+              "content": "book",
+              "pairId": "p1",
+              "type": "text"
+            },
+            {
+              "id": "c3",
+              "content": "pen",
+              "pairId": "p2",
+              "type": "text"
+            },
+            {
+              "id": "c4",
+              "content": "pen",
+              "pairId": "p2",
+              "type": "text"
+            },
+            {
+              "id": "c5",
+              "content": "moon",
+              "pairId": "p3",
+              "type": "text"
+            },
+            {
+              "id": "c6",
+              "content": "moon",
+              "pairId": "p3",
+              "type": "text"
+            },
+            {
+              "id": "c7",
+              "content": "sun",
+              "pairId": "p4",
+              "type": "text"
+            },
+            {
+              "id": "c8",
+              "content": "sun",
+              "pairId": "p4",
+              "type": "text"
+            },
+            {
+              "id": "c9",
+              "content": "red",
+              "pairId": "p5",
+              "type": "text"
+            },
+            {
+              "id": "c10",
+              "content": "red",
+              "pairId": "p5",
+              "type": "text"
+            },
+            {
+              "id": "c11",
+              "content": "blue",
+              "pairId": "p6",
+              "type": "text"
+            },
+            {
+              "id": "c12",
+              "content": "blue",
+              "pairId": "p6",
+              "type": "text"
+            }
+          ]
+        }
+      },
+      "hints": [
+        {
+          "text": "Nhớ vị trí của thẻ vừa lật."
+        },
+        {
+          "text": "Remember where each card was."
+        }
+      ],
+      "metadata": {
+        "gridCols": 4,
+        "gridRows": 3,
+        "initialRevealMs": 1000,
+        "ageGroup": "explorer",
+        "skillIds": [
+          "logic.memory"
+        ],
+        "progressionTier": 4,
+        "reviewState": "technically_validated"
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 108,
+      "publicationState": "published"
+    },
+    {
+      "id": "mc-gen-021",
+      "gameId": "memory_cards",
+      "levelNumber": 21,
+      "difficulty": 4,
+      "learningObjective": "Remember 6 matching pairs",
+      "localizedContent": {
+        "vi": {
+          "prompt": "Tìm 6 cặp thẻ giống nhau!",
+          "cards": [
+            {
+              "id": "c1",
+              "content": "pen",
+              "pairId": "p1",
+              "type": "text"
+            },
+            {
+              "id": "c2",
+              "content": "pen",
+              "pairId": "p1",
+              "type": "text"
+            },
+            {
+              "id": "c3",
+              "content": "moon",
+              "pairId": "p2",
+              "type": "text"
+            },
+            {
+              "id": "c4",
+              "content": "moon",
+              "pairId": "p2",
+              "type": "text"
+            },
+            {
+              "id": "c5",
+              "content": "sun",
+              "pairId": "p3",
+              "type": "text"
+            },
+            {
+              "id": "c6",
+              "content": "sun",
+              "pairId": "p3",
+              "type": "text"
+            },
+            {
+              "id": "c7",
+              "content": "red",
+              "pairId": "p4",
+              "type": "text"
+            },
+            {
+              "id": "c8",
+              "content": "red",
+              "pairId": "p4",
+              "type": "text"
+            },
+            {
+              "id": "c9",
+              "content": "blue",
+              "pairId": "p5",
+              "type": "text"
+            },
+            {
+              "id": "c10",
+              "content": "blue",
+              "pairId": "p5",
+              "type": "text"
+            },
+            {
+              "id": "c11",
+              "content": "green",
+              "pairId": "p6",
+              "type": "text"
+            },
+            {
+              "id": "c12",
+              "content": "green",
+              "pairId": "p6",
+              "type": "text"
+            }
+          ]
+        },
+        "en": {
+          "prompt": "Find 6 matching pairs!",
+          "cards": [
+            {
+              "id": "c1",
+              "content": "pen",
+              "pairId": "p1",
+              "type": "text"
+            },
+            {
+              "id": "c2",
+              "content": "pen",
+              "pairId": "p1",
+              "type": "text"
+            },
+            {
+              "id": "c3",
+              "content": "moon",
+              "pairId": "p2",
+              "type": "text"
+            },
+            {
+              "id": "c4",
+              "content": "moon",
+              "pairId": "p2",
+              "type": "text"
+            },
+            {
+              "id": "c5",
+              "content": "sun",
+              "pairId": "p3",
+              "type": "text"
+            },
+            {
+              "id": "c6",
+              "content": "sun",
+              "pairId": "p3",
+              "type": "text"
+            },
+            {
+              "id": "c7",
+              "content": "red",
+              "pairId": "p4",
+              "type": "text"
+            },
+            {
+              "id": "c8",
+              "content": "red",
+              "pairId": "p4",
+              "type": "text"
+            },
+            {
+              "id": "c9",
+              "content": "blue",
+              "pairId": "p5",
+              "type": "text"
+            },
+            {
+              "id": "c10",
+              "content": "blue",
+              "pairId": "p5",
+              "type": "text"
+            },
+            {
+              "id": "c11",
+              "content": "green",
+              "pairId": "p6",
+              "type": "text"
+            },
+            {
+              "id": "c12",
+              "content": "green",
+              "pairId": "p6",
+              "type": "text"
+            }
+          ]
+        }
+      },
+      "hints": [
+        {
+          "text": "Nhớ vị trí của thẻ vừa lật."
+        },
+        {
+          "text": "Remember where each card was."
+        }
+      ],
+      "metadata": {
+        "gridCols": 4,
+        "gridRows": 3,
+        "initialRevealMs": 1000,
+        "ageGroup": "explorer",
+        "skillIds": [
+          "logic.memory"
+        ],
+        "progressionTier": 4,
+        "reviewState": "technically_validated"
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 108,
+      "publicationState": "published"
+    },
+    {
+      "id": "mc-gen-022",
+      "gameId": "memory_cards",
+      "levelNumber": 22,
+      "difficulty": 4,
+      "learningObjective": "Remember 6 matching pairs",
+      "localizedContent": {
+        "vi": {
+          "prompt": "Tìm 6 cặp thẻ giống nhau!",
+          "cards": [
+            {
+              "id": "c1",
+              "content": "moon",
+              "pairId": "p1",
+              "type": "text"
+            },
+            {
+              "id": "c2",
+              "content": "moon",
+              "pairId": "p1",
+              "type": "text"
+            },
+            {
+              "id": "c3",
+              "content": "sun",
+              "pairId": "p2",
+              "type": "text"
+            },
+            {
+              "id": "c4",
+              "content": "sun",
+              "pairId": "p2",
+              "type": "text"
+            },
+            {
+              "id": "c5",
+              "content": "red",
+              "pairId": "p3",
+              "type": "text"
+            },
+            {
+              "id": "c6",
+              "content": "red",
+              "pairId": "p3",
+              "type": "text"
+            },
+            {
+              "id": "c7",
+              "content": "blue",
+              "pairId": "p4",
+              "type": "text"
+            },
+            {
+              "id": "c8",
+              "content": "blue",
+              "pairId": "p4",
+              "type": "text"
+            },
+            {
+              "id": "c9",
+              "content": "green",
+              "pairId": "p5",
+              "type": "text"
+            },
+            {
+              "id": "c10",
+              "content": "green",
+              "pairId": "p5",
+              "type": "text"
+            },
+            {
+              "id": "c11",
+              "content": "star",
+              "pairId": "p6",
+              "type": "text"
+            },
+            {
+              "id": "c12",
+              "content": "star",
+              "pairId": "p6",
+              "type": "text"
+            }
+          ]
+        },
+        "en": {
+          "prompt": "Find 6 matching pairs!",
+          "cards": [
+            {
+              "id": "c1",
+              "content": "moon",
+              "pairId": "p1",
+              "type": "text"
+            },
+            {
+              "id": "c2",
+              "content": "moon",
+              "pairId": "p1",
+              "type": "text"
+            },
+            {
+              "id": "c3",
+              "content": "sun",
+              "pairId": "p2",
+              "type": "text"
+            },
+            {
+              "id": "c4",
+              "content": "sun",
+              "pairId": "p2",
+              "type": "text"
+            },
+            {
+              "id": "c5",
+              "content": "red",
+              "pairId": "p3",
+              "type": "text"
+            },
+            {
+              "id": "c6",
+              "content": "red",
+              "pairId": "p3",
+              "type": "text"
+            },
+            {
+              "id": "c7",
+              "content": "blue",
+              "pairId": "p4",
+              "type": "text"
+            },
+            {
+              "id": "c8",
+              "content": "blue",
+              "pairId": "p4",
+              "type": "text"
+            },
+            {
+              "id": "c9",
+              "content": "green",
+              "pairId": "p5",
+              "type": "text"
+            },
+            {
+              "id": "c10",
+              "content": "green",
+              "pairId": "p5",
+              "type": "text"
+            },
+            {
+              "id": "c11",
+              "content": "star",
+              "pairId": "p6",
+              "type": "text"
+            },
+            {
+              "id": "c12",
+              "content": "star",
+              "pairId": "p6",
+              "type": "text"
+            }
+          ]
+        }
+      },
+      "hints": [
+        {
+          "text": "Nhớ vị trí của thẻ vừa lật."
+        },
+        {
+          "text": "Remember where each card was."
+        }
+      ],
+      "metadata": {
+        "gridCols": 4,
+        "gridRows": 3,
+        "initialRevealMs": 1000,
+        "ageGroup": "explorer",
+        "skillIds": [
+          "logic.memory"
+        ],
+        "progressionTier": 4,
+        "reviewState": "technically_validated"
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 108,
+      "publicationState": "published"
+    },
+    {
+      "id": "mc-gen-023",
+      "gameId": "memory_cards",
+      "levelNumber": 23,
+      "difficulty": 4,
+      "learningObjective": "Remember 6 matching pairs",
+      "localizedContent": {
+        "vi": {
+          "prompt": "Tìm 6 cặp thẻ giống nhau!",
+          "cards": [
+            {
+              "id": "c1",
+              "content": "sun",
+              "pairId": "p1",
+              "type": "text"
+            },
+            {
+              "id": "c2",
+              "content": "sun",
+              "pairId": "p1",
+              "type": "text"
+            },
+            {
+              "id": "c3",
+              "content": "red",
+              "pairId": "p2",
+              "type": "text"
+            },
+            {
+              "id": "c4",
+              "content": "red",
+              "pairId": "p2",
+              "type": "text"
+            },
+            {
+              "id": "c5",
+              "content": "blue",
+              "pairId": "p3",
+              "type": "text"
+            },
+            {
+              "id": "c6",
+              "content": "blue",
+              "pairId": "p3",
+              "type": "text"
+            },
+            {
+              "id": "c7",
+              "content": "green",
+              "pairId": "p4",
+              "type": "text"
+            },
+            {
+              "id": "c8",
+              "content": "green",
+              "pairId": "p4",
+              "type": "text"
+            },
+            {
+              "id": "c9",
+              "content": "star",
+              "pairId": "p5",
+              "type": "text"
+            },
+            {
+              "id": "c10",
+              "content": "star",
+              "pairId": "p5",
+              "type": "text"
+            },
+            {
+              "id": "c11",
+              "content": "book",
+              "pairId": "p6",
+              "type": "text"
+            },
+            {
+              "id": "c12",
+              "content": "book",
+              "pairId": "p6",
+              "type": "text"
+            }
+          ]
+        },
+        "en": {
+          "prompt": "Find 6 matching pairs!",
+          "cards": [
+            {
+              "id": "c1",
+              "content": "sun",
+              "pairId": "p1",
+              "type": "text"
+            },
+            {
+              "id": "c2",
+              "content": "sun",
+              "pairId": "p1",
+              "type": "text"
+            },
+            {
+              "id": "c3",
+              "content": "red",
+              "pairId": "p2",
+              "type": "text"
+            },
+            {
+              "id": "c4",
+              "content": "red",
+              "pairId": "p2",
+              "type": "text"
+            },
+            {
+              "id": "c5",
+              "content": "blue",
+              "pairId": "p3",
+              "type": "text"
+            },
+            {
+              "id": "c6",
+              "content": "blue",
+              "pairId": "p3",
+              "type": "text"
+            },
+            {
+              "id": "c7",
+              "content": "green",
+              "pairId": "p4",
+              "type": "text"
+            },
+            {
+              "id": "c8",
+              "content": "green",
+              "pairId": "p4",
+              "type": "text"
+            },
+            {
+              "id": "c9",
+              "content": "star",
+              "pairId": "p5",
+              "type": "text"
+            },
+            {
+              "id": "c10",
+              "content": "star",
+              "pairId": "p5",
+              "type": "text"
+            },
+            {
+              "id": "c11",
+              "content": "book",
+              "pairId": "p6",
+              "type": "text"
+            },
+            {
+              "id": "c12",
+              "content": "book",
+              "pairId": "p6",
+              "type": "text"
+            }
+          ]
+        }
+      },
+      "hints": [
+        {
+          "text": "Nhớ vị trí của thẻ vừa lật."
+        },
+        {
+          "text": "Remember where each card was."
+        }
+      ],
+      "metadata": {
+        "gridCols": 4,
+        "gridRows": 3,
+        "initialRevealMs": 1000,
+        "ageGroup": "explorer",
+        "skillIds": [
+          "logic.memory"
+        ],
+        "progressionTier": 4,
+        "reviewState": "technically_validated"
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 108,
+      "publicationState": "published"
+    },
+    {
+      "id": "mc-gen-024",
+      "gameId": "memory_cards",
+      "levelNumber": 24,
+      "difficulty": 4,
+      "learningObjective": "Remember 6 matching pairs",
+      "localizedContent": {
+        "vi": {
+          "prompt": "Tìm 6 cặp thẻ giống nhau!",
+          "cards": [
+            {
+              "id": "c1",
+              "content": "red",
+              "pairId": "p1",
+              "type": "text"
+            },
+            {
+              "id": "c2",
+              "content": "red",
+              "pairId": "p1",
+              "type": "text"
+            },
+            {
+              "id": "c3",
+              "content": "blue",
+              "pairId": "p2",
+              "type": "text"
+            },
+            {
+              "id": "c4",
+              "content": "blue",
+              "pairId": "p2",
+              "type": "text"
+            },
+            {
+              "id": "c5",
+              "content": "green",
+              "pairId": "p3",
+              "type": "text"
+            },
+            {
+              "id": "c6",
+              "content": "green",
+              "pairId": "p3",
+              "type": "text"
+            },
+            {
+              "id": "c7",
+              "content": "star",
+              "pairId": "p4",
+              "type": "text"
+            },
+            {
+              "id": "c8",
+              "content": "star",
+              "pairId": "p4",
+              "type": "text"
+            },
+            {
+              "id": "c9",
+              "content": "book",
+              "pairId": "p5",
+              "type": "text"
+            },
+            {
+              "id": "c10",
+              "content": "book",
+              "pairId": "p5",
+              "type": "text"
+            },
+            {
+              "id": "c11",
+              "content": "pen",
+              "pairId": "p6",
+              "type": "text"
+            },
+            {
+              "id": "c12",
+              "content": "pen",
+              "pairId": "p6",
+              "type": "text"
+            }
+          ]
+        },
+        "en": {
+          "prompt": "Find 6 matching pairs!",
+          "cards": [
+            {
+              "id": "c1",
+              "content": "red",
+              "pairId": "p1",
+              "type": "text"
+            },
+            {
+              "id": "c2",
+              "content": "red",
+              "pairId": "p1",
+              "type": "text"
+            },
+            {
+              "id": "c3",
+              "content": "blue",
+              "pairId": "p2",
+              "type": "text"
+            },
+            {
+              "id": "c4",
+              "content": "blue",
+              "pairId": "p2",
+              "type": "text"
+            },
+            {
+              "id": "c5",
+              "content": "green",
+              "pairId": "p3",
+              "type": "text"
+            },
+            {
+              "id": "c6",
+              "content": "green",
+              "pairId": "p3",
+              "type": "text"
+            },
+            {
+              "id": "c7",
+              "content": "star",
+              "pairId": "p4",
+              "type": "text"
+            },
+            {
+              "id": "c8",
+              "content": "star",
+              "pairId": "p4",
+              "type": "text"
+            },
+            {
+              "id": "c9",
+              "content": "book",
+              "pairId": "p5",
+              "type": "text"
+            },
+            {
+              "id": "c10",
+              "content": "book",
+              "pairId": "p5",
+              "type": "text"
+            },
+            {
+              "id": "c11",
+              "content": "pen",
+              "pairId": "p6",
+              "type": "text"
+            },
+            {
+              "id": "c12",
+              "content": "pen",
+              "pairId": "p6",
+              "type": "text"
+            }
+          ]
+        }
+      },
+      "hints": [
+        {
+          "text": "Nhớ vị trí của thẻ vừa lật."
+        },
+        {
+          "text": "Remember where each card was."
+        }
+      ],
+      "metadata": {
+        "gridCols": 4,
+        "gridRows": 3,
+        "initialRevealMs": 1000,
+        "ageGroup": "explorer",
+        "skillIds": [
+          "logic.memory"
+        ],
+        "progressionTier": 4,
+        "reviewState": "technically_validated"
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 108,
+      "publicationState": "published"
+    },
+    {
+      "id": "mc-gen-025",
+      "gameId": "memory_cards",
+      "levelNumber": 25,
+      "difficulty": 5,
+      "learningObjective": "Remember 7 matching pairs",
+      "localizedContent": {
+        "vi": {
+          "prompt": "Tìm 7 cặp thẻ giống nhau!",
+          "cards": [
+            {
+              "id": "c1",
+              "content": "blue",
+              "pairId": "p1",
+              "type": "text"
+            },
+            {
+              "id": "c2",
+              "content": "blue",
+              "pairId": "p1",
+              "type": "text"
+            },
+            {
+              "id": "c3",
+              "content": "green",
+              "pairId": "p2",
+              "type": "text"
+            },
+            {
+              "id": "c4",
+              "content": "green",
+              "pairId": "p2",
+              "type": "text"
+            },
+            {
+              "id": "c5",
+              "content": "star",
+              "pairId": "p3",
+              "type": "text"
+            },
+            {
+              "id": "c6",
+              "content": "star",
+              "pairId": "p3",
+              "type": "text"
+            },
+            {
+              "id": "c7",
+              "content": "book",
+              "pairId": "p4",
+              "type": "text"
+            },
+            {
+              "id": "c8",
+              "content": "book",
+              "pairId": "p4",
+              "type": "text"
+            },
+            {
+              "id": "c9",
+              "content": "pen",
+              "pairId": "p5",
+              "type": "text"
+            },
+            {
+              "id": "c10",
+              "content": "pen",
+              "pairId": "p5",
+              "type": "text"
+            },
+            {
+              "id": "c11",
+              "content": "moon",
+              "pairId": "p6",
+              "type": "text"
+            },
+            {
+              "id": "c12",
+              "content": "moon",
+              "pairId": "p6",
+              "type": "text"
+            },
+            {
+              "id": "c13",
+              "content": "sun",
+              "pairId": "p7",
+              "type": "text"
+            },
+            {
+              "id": "c14",
+              "content": "sun",
+              "pairId": "p7",
+              "type": "text"
+            }
+          ]
+        },
+        "en": {
+          "prompt": "Find 7 matching pairs!",
+          "cards": [
+            {
+              "id": "c1",
+              "content": "blue",
+              "pairId": "p1",
+              "type": "text"
+            },
+            {
+              "id": "c2",
+              "content": "blue",
+              "pairId": "p1",
+              "type": "text"
+            },
+            {
+              "id": "c3",
+              "content": "green",
+              "pairId": "p2",
+              "type": "text"
+            },
+            {
+              "id": "c4",
+              "content": "green",
+              "pairId": "p2",
+              "type": "text"
+            },
+            {
+              "id": "c5",
+              "content": "star",
+              "pairId": "p3",
+              "type": "text"
+            },
+            {
+              "id": "c6",
+              "content": "star",
+              "pairId": "p3",
+              "type": "text"
+            },
+            {
+              "id": "c7",
+              "content": "book",
+              "pairId": "p4",
+              "type": "text"
+            },
+            {
+              "id": "c8",
+              "content": "book",
+              "pairId": "p4",
+              "type": "text"
+            },
+            {
+              "id": "c9",
+              "content": "pen",
+              "pairId": "p5",
+              "type": "text"
+            },
+            {
+              "id": "c10",
+              "content": "pen",
+              "pairId": "p5",
+              "type": "text"
+            },
+            {
+              "id": "c11",
+              "content": "moon",
+              "pairId": "p6",
+              "type": "text"
+            },
+            {
+              "id": "c12",
+              "content": "moon",
+              "pairId": "p6",
+              "type": "text"
+            },
+            {
+              "id": "c13",
+              "content": "sun",
+              "pairId": "p7",
+              "type": "text"
+            },
+            {
+              "id": "c14",
+              "content": "sun",
+              "pairId": "p7",
+              "type": "text"
+            }
+          ]
+        }
+      },
+      "hints": [
+        {
+          "text": "Nhớ vị trí của thẻ vừa lật."
+        },
+        {
+          "text": "Remember where each card was."
+        }
+      ],
+      "metadata": {
+        "gridCols": 4,
+        "gridRows": 4,
+        "initialRevealMs": 850,
+        "ageGroup": "master",
+        "skillIds": [
+          "logic.memory"
+        ],
+        "progressionTier": 5,
+        "reviewState": "technically_validated"
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 120,
+      "publicationState": "published"
+    },
+    {
+      "id": "mc-gen-026",
+      "gameId": "memory_cards",
+      "levelNumber": 26,
+      "difficulty": 5,
+      "learningObjective": "Remember 7 matching pairs",
+      "localizedContent": {
+        "vi": {
+          "prompt": "Tìm 7 cặp thẻ giống nhau!",
+          "cards": [
+            {
+              "id": "c1",
+              "content": "green",
+              "pairId": "p1",
+              "type": "text"
+            },
+            {
+              "id": "c2",
+              "content": "green",
+              "pairId": "p1",
+              "type": "text"
+            },
+            {
+              "id": "c3",
+              "content": "star",
+              "pairId": "p2",
+              "type": "text"
+            },
+            {
+              "id": "c4",
+              "content": "star",
+              "pairId": "p2",
+              "type": "text"
+            },
+            {
+              "id": "c5",
+              "content": "book",
+              "pairId": "p3",
+              "type": "text"
+            },
+            {
+              "id": "c6",
+              "content": "book",
+              "pairId": "p3",
+              "type": "text"
+            },
+            {
+              "id": "c7",
+              "content": "pen",
+              "pairId": "p4",
+              "type": "text"
+            },
+            {
+              "id": "c8",
+              "content": "pen",
+              "pairId": "p4",
+              "type": "text"
+            },
+            {
+              "id": "c9",
+              "content": "moon",
+              "pairId": "p5",
+              "type": "text"
+            },
+            {
+              "id": "c10",
+              "content": "moon",
+              "pairId": "p5",
+              "type": "text"
+            },
+            {
+              "id": "c11",
+              "content": "sun",
+              "pairId": "p6",
+              "type": "text"
+            },
+            {
+              "id": "c12",
+              "content": "sun",
+              "pairId": "p6",
+              "type": "text"
+            },
+            {
+              "id": "c13",
+              "content": "red",
+              "pairId": "p7",
+              "type": "text"
+            },
+            {
+              "id": "c14",
+              "content": "red",
+              "pairId": "p7",
+              "type": "text"
+            }
+          ]
+        },
+        "en": {
+          "prompt": "Find 7 matching pairs!",
+          "cards": [
+            {
+              "id": "c1",
+              "content": "green",
+              "pairId": "p1",
+              "type": "text"
+            },
+            {
+              "id": "c2",
+              "content": "green",
+              "pairId": "p1",
+              "type": "text"
+            },
+            {
+              "id": "c3",
+              "content": "star",
+              "pairId": "p2",
+              "type": "text"
+            },
+            {
+              "id": "c4",
+              "content": "star",
+              "pairId": "p2",
+              "type": "text"
+            },
+            {
+              "id": "c5",
+              "content": "book",
+              "pairId": "p3",
+              "type": "text"
+            },
+            {
+              "id": "c6",
+              "content": "book",
+              "pairId": "p3",
+              "type": "text"
+            },
+            {
+              "id": "c7",
+              "content": "pen",
+              "pairId": "p4",
+              "type": "text"
+            },
+            {
+              "id": "c8",
+              "content": "pen",
+              "pairId": "p4",
+              "type": "text"
+            },
+            {
+              "id": "c9",
+              "content": "moon",
+              "pairId": "p5",
+              "type": "text"
+            },
+            {
+              "id": "c10",
+              "content": "moon",
+              "pairId": "p5",
+              "type": "text"
+            },
+            {
+              "id": "c11",
+              "content": "sun",
+              "pairId": "p6",
+              "type": "text"
+            },
+            {
+              "id": "c12",
+              "content": "sun",
+              "pairId": "p6",
+              "type": "text"
+            },
+            {
+              "id": "c13",
+              "content": "red",
+              "pairId": "p7",
+              "type": "text"
+            },
+            {
+              "id": "c14",
+              "content": "red",
+              "pairId": "p7",
+              "type": "text"
+            }
+          ]
+        }
+      },
+      "hints": [
+        {
+          "text": "Nhớ vị trí của thẻ vừa lật."
+        },
+        {
+          "text": "Remember where each card was."
+        }
+      ],
+      "metadata": {
+        "gridCols": 4,
+        "gridRows": 4,
+        "initialRevealMs": 850,
+        "ageGroup": "master",
+        "skillIds": [
+          "logic.memory"
+        ],
+        "progressionTier": 5,
+        "reviewState": "technically_validated"
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 120,
+      "publicationState": "published"
+    },
+    {
+      "id": "mc-gen-027",
+      "gameId": "memory_cards",
+      "levelNumber": 27,
+      "difficulty": 5,
+      "learningObjective": "Remember 7 matching pairs",
+      "localizedContent": {
+        "vi": {
+          "prompt": "Tìm 7 cặp thẻ giống nhau!",
+          "cards": [
+            {
+              "id": "c1",
+              "content": "star",
+              "pairId": "p1",
+              "type": "text"
+            },
+            {
+              "id": "c2",
+              "content": "star",
+              "pairId": "p1",
+              "type": "text"
+            },
+            {
+              "id": "c3",
+              "content": "book",
+              "pairId": "p2",
+              "type": "text"
+            },
+            {
+              "id": "c4",
+              "content": "book",
+              "pairId": "p2",
+              "type": "text"
+            },
+            {
+              "id": "c5",
+              "content": "pen",
+              "pairId": "p3",
+              "type": "text"
+            },
+            {
+              "id": "c6",
+              "content": "pen",
+              "pairId": "p3",
+              "type": "text"
+            },
+            {
+              "id": "c7",
+              "content": "moon",
+              "pairId": "p4",
+              "type": "text"
+            },
+            {
+              "id": "c8",
+              "content": "moon",
+              "pairId": "p4",
+              "type": "text"
+            },
+            {
+              "id": "c9",
+              "content": "sun",
+              "pairId": "p5",
+              "type": "text"
+            },
+            {
+              "id": "c10",
+              "content": "sun",
+              "pairId": "p5",
+              "type": "text"
+            },
+            {
+              "id": "c11",
+              "content": "red",
+              "pairId": "p6",
+              "type": "text"
+            },
+            {
+              "id": "c12",
+              "content": "red",
+              "pairId": "p6",
+              "type": "text"
+            },
+            {
+              "id": "c13",
+              "content": "blue",
+              "pairId": "p7",
+              "type": "text"
+            },
+            {
+              "id": "c14",
+              "content": "blue",
+              "pairId": "p7",
+              "type": "text"
+            }
+          ]
+        },
+        "en": {
+          "prompt": "Find 7 matching pairs!",
+          "cards": [
+            {
+              "id": "c1",
+              "content": "star",
+              "pairId": "p1",
+              "type": "text"
+            },
+            {
+              "id": "c2",
+              "content": "star",
+              "pairId": "p1",
+              "type": "text"
+            },
+            {
+              "id": "c3",
+              "content": "book",
+              "pairId": "p2",
+              "type": "text"
+            },
+            {
+              "id": "c4",
+              "content": "book",
+              "pairId": "p2",
+              "type": "text"
+            },
+            {
+              "id": "c5",
+              "content": "pen",
+              "pairId": "p3",
+              "type": "text"
+            },
+            {
+              "id": "c6",
+              "content": "pen",
+              "pairId": "p3",
+              "type": "text"
+            },
+            {
+              "id": "c7",
+              "content": "moon",
+              "pairId": "p4",
+              "type": "text"
+            },
+            {
+              "id": "c8",
+              "content": "moon",
+              "pairId": "p4",
+              "type": "text"
+            },
+            {
+              "id": "c9",
+              "content": "sun",
+              "pairId": "p5",
+              "type": "text"
+            },
+            {
+              "id": "c10",
+              "content": "sun",
+              "pairId": "p5",
+              "type": "text"
+            },
+            {
+              "id": "c11",
+              "content": "red",
+              "pairId": "p6",
+              "type": "text"
+            },
+            {
+              "id": "c12",
+              "content": "red",
+              "pairId": "p6",
+              "type": "text"
+            },
+            {
+              "id": "c13",
+              "content": "blue",
+              "pairId": "p7",
+              "type": "text"
+            },
+            {
+              "id": "c14",
+              "content": "blue",
+              "pairId": "p7",
+              "type": "text"
+            }
+          ]
+        }
+      },
+      "hints": [
+        {
+          "text": "Nhớ vị trí của thẻ vừa lật."
+        },
+        {
+          "text": "Remember where each card was."
+        }
+      ],
+      "metadata": {
+        "gridCols": 4,
+        "gridRows": 4,
+        "initialRevealMs": 850,
+        "ageGroup": "master",
+        "skillIds": [
+          "logic.memory"
+        ],
+        "progressionTier": 5,
+        "reviewState": "technically_validated"
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 120,
+      "publicationState": "published"
+    },
+    {
+      "id": "mc-gen-028",
+      "gameId": "memory_cards",
+      "levelNumber": 28,
+      "difficulty": 5,
+      "learningObjective": "Remember 7 matching pairs",
+      "localizedContent": {
+        "vi": {
+          "prompt": "Tìm 7 cặp thẻ giống nhau!",
+          "cards": [
+            {
+              "id": "c1",
+              "content": "book",
+              "pairId": "p1",
+              "type": "text"
+            },
+            {
+              "id": "c2",
+              "content": "book",
+              "pairId": "p1",
+              "type": "text"
+            },
+            {
+              "id": "c3",
+              "content": "pen",
+              "pairId": "p2",
+              "type": "text"
+            },
+            {
+              "id": "c4",
+              "content": "pen",
+              "pairId": "p2",
+              "type": "text"
+            },
+            {
+              "id": "c5",
+              "content": "moon",
+              "pairId": "p3",
+              "type": "text"
+            },
+            {
+              "id": "c6",
+              "content": "moon",
+              "pairId": "p3",
+              "type": "text"
+            },
+            {
+              "id": "c7",
+              "content": "sun",
+              "pairId": "p4",
+              "type": "text"
+            },
+            {
+              "id": "c8",
+              "content": "sun",
+              "pairId": "p4",
+              "type": "text"
+            },
+            {
+              "id": "c9",
+              "content": "red",
+              "pairId": "p5",
+              "type": "text"
+            },
+            {
+              "id": "c10",
+              "content": "red",
+              "pairId": "p5",
+              "type": "text"
+            },
+            {
+              "id": "c11",
+              "content": "blue",
+              "pairId": "p6",
+              "type": "text"
+            },
+            {
+              "id": "c12",
+              "content": "blue",
+              "pairId": "p6",
+              "type": "text"
+            },
+            {
+              "id": "c13",
+              "content": "green",
+              "pairId": "p7",
+              "type": "text"
+            },
+            {
+              "id": "c14",
+              "content": "green",
+              "pairId": "p7",
+              "type": "text"
+            }
+          ]
+        },
+        "en": {
+          "prompt": "Find 7 matching pairs!",
+          "cards": [
+            {
+              "id": "c1",
+              "content": "book",
+              "pairId": "p1",
+              "type": "text"
+            },
+            {
+              "id": "c2",
+              "content": "book",
+              "pairId": "p1",
+              "type": "text"
+            },
+            {
+              "id": "c3",
+              "content": "pen",
+              "pairId": "p2",
+              "type": "text"
+            },
+            {
+              "id": "c4",
+              "content": "pen",
+              "pairId": "p2",
+              "type": "text"
+            },
+            {
+              "id": "c5",
+              "content": "moon",
+              "pairId": "p3",
+              "type": "text"
+            },
+            {
+              "id": "c6",
+              "content": "moon",
+              "pairId": "p3",
+              "type": "text"
+            },
+            {
+              "id": "c7",
+              "content": "sun",
+              "pairId": "p4",
+              "type": "text"
+            },
+            {
+              "id": "c8",
+              "content": "sun",
+              "pairId": "p4",
+              "type": "text"
+            },
+            {
+              "id": "c9",
+              "content": "red",
+              "pairId": "p5",
+              "type": "text"
+            },
+            {
+              "id": "c10",
+              "content": "red",
+              "pairId": "p5",
+              "type": "text"
+            },
+            {
+              "id": "c11",
+              "content": "blue",
+              "pairId": "p6",
+              "type": "text"
+            },
+            {
+              "id": "c12",
+              "content": "blue",
+              "pairId": "p6",
+              "type": "text"
+            },
+            {
+              "id": "c13",
+              "content": "green",
+              "pairId": "p7",
+              "type": "text"
+            },
+            {
+              "id": "c14",
+              "content": "green",
+              "pairId": "p7",
+              "type": "text"
+            }
+          ]
+        }
+      },
+      "hints": [
+        {
+          "text": "Nhớ vị trí của thẻ vừa lật."
+        },
+        {
+          "text": "Remember where each card was."
+        }
+      ],
+      "metadata": {
+        "gridCols": 4,
+        "gridRows": 4,
+        "initialRevealMs": 850,
+        "ageGroup": "master",
+        "skillIds": [
+          "logic.memory"
+        ],
+        "progressionTier": 5,
+        "reviewState": "technically_validated"
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 120,
+      "publicationState": "published"
+    },
+    {
+      "id": "mc-gen-029",
+      "gameId": "memory_cards",
+      "levelNumber": 29,
+      "difficulty": 5,
+      "learningObjective": "Remember 7 matching pairs",
+      "localizedContent": {
+        "vi": {
+          "prompt": "Tìm 7 cặp thẻ giống nhau!",
+          "cards": [
+            {
+              "id": "c1",
+              "content": "pen",
+              "pairId": "p1",
+              "type": "text"
+            },
+            {
+              "id": "c2",
+              "content": "pen",
+              "pairId": "p1",
+              "type": "text"
+            },
+            {
+              "id": "c3",
+              "content": "moon",
+              "pairId": "p2",
+              "type": "text"
+            },
+            {
+              "id": "c4",
+              "content": "moon",
+              "pairId": "p2",
+              "type": "text"
+            },
+            {
+              "id": "c5",
+              "content": "sun",
+              "pairId": "p3",
+              "type": "text"
+            },
+            {
+              "id": "c6",
+              "content": "sun",
+              "pairId": "p3",
+              "type": "text"
+            },
+            {
+              "id": "c7",
+              "content": "red",
+              "pairId": "p4",
+              "type": "text"
+            },
+            {
+              "id": "c8",
+              "content": "red",
+              "pairId": "p4",
+              "type": "text"
+            },
+            {
+              "id": "c9",
+              "content": "blue",
+              "pairId": "p5",
+              "type": "text"
+            },
+            {
+              "id": "c10",
+              "content": "blue",
+              "pairId": "p5",
+              "type": "text"
+            },
+            {
+              "id": "c11",
+              "content": "green",
+              "pairId": "p6",
+              "type": "text"
+            },
+            {
+              "id": "c12",
+              "content": "green",
+              "pairId": "p6",
+              "type": "text"
+            },
+            {
+              "id": "c13",
+              "content": "star",
+              "pairId": "p7",
+              "type": "text"
+            },
+            {
+              "id": "c14",
+              "content": "star",
+              "pairId": "p7",
+              "type": "text"
+            }
+          ]
+        },
+        "en": {
+          "prompt": "Find 7 matching pairs!",
+          "cards": [
+            {
+              "id": "c1",
+              "content": "pen",
+              "pairId": "p1",
+              "type": "text"
+            },
+            {
+              "id": "c2",
+              "content": "pen",
+              "pairId": "p1",
+              "type": "text"
+            },
+            {
+              "id": "c3",
+              "content": "moon",
+              "pairId": "p2",
+              "type": "text"
+            },
+            {
+              "id": "c4",
+              "content": "moon",
+              "pairId": "p2",
+              "type": "text"
+            },
+            {
+              "id": "c5",
+              "content": "sun",
+              "pairId": "p3",
+              "type": "text"
+            },
+            {
+              "id": "c6",
+              "content": "sun",
+              "pairId": "p3",
+              "type": "text"
+            },
+            {
+              "id": "c7",
+              "content": "red",
+              "pairId": "p4",
+              "type": "text"
+            },
+            {
+              "id": "c8",
+              "content": "red",
+              "pairId": "p4",
+              "type": "text"
+            },
+            {
+              "id": "c9",
+              "content": "blue",
+              "pairId": "p5",
+              "type": "text"
+            },
+            {
+              "id": "c10",
+              "content": "blue",
+              "pairId": "p5",
+              "type": "text"
+            },
+            {
+              "id": "c11",
+              "content": "green",
+              "pairId": "p6",
+              "type": "text"
+            },
+            {
+              "id": "c12",
+              "content": "green",
+              "pairId": "p6",
+              "type": "text"
+            },
+            {
+              "id": "c13",
+              "content": "star",
+              "pairId": "p7",
+              "type": "text"
+            },
+            {
+              "id": "c14",
+              "content": "star",
+              "pairId": "p7",
+              "type": "text"
+            }
+          ]
+        }
+      },
+      "hints": [
+        {
+          "text": "Nhớ vị trí của thẻ vừa lật."
+        },
+        {
+          "text": "Remember where each card was."
+        }
+      ],
+      "metadata": {
+        "gridCols": 4,
+        "gridRows": 4,
+        "initialRevealMs": 850,
+        "ageGroup": "master",
+        "skillIds": [
+          "logic.memory"
+        ],
+        "progressionTier": 5,
+        "reviewState": "technically_validated"
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 120,
+      "publicationState": "published"
+    },
+    {
+      "id": "mc-gen-030",
+      "gameId": "memory_cards",
+      "levelNumber": 30,
+      "difficulty": 5,
+      "learningObjective": "Remember 7 matching pairs",
+      "localizedContent": {
+        "vi": {
+          "prompt": "Tìm 7 cặp thẻ giống nhau!",
+          "cards": [
+            {
+              "id": "c1",
+              "content": "moon",
+              "pairId": "p1",
+              "type": "text"
+            },
+            {
+              "id": "c2",
+              "content": "moon",
+              "pairId": "p1",
+              "type": "text"
+            },
+            {
+              "id": "c3",
+              "content": "sun",
+              "pairId": "p2",
+              "type": "text"
+            },
+            {
+              "id": "c4",
+              "content": "sun",
+              "pairId": "p2",
+              "type": "text"
+            },
+            {
+              "id": "c5",
+              "content": "red",
+              "pairId": "p3",
+              "type": "text"
+            },
+            {
+              "id": "c6",
+              "content": "red",
+              "pairId": "p3",
+              "type": "text"
+            },
+            {
+              "id": "c7",
+              "content": "blue",
+              "pairId": "p4",
+              "type": "text"
+            },
+            {
+              "id": "c8",
+              "content": "blue",
+              "pairId": "p4",
+              "type": "text"
+            },
+            {
+              "id": "c9",
+              "content": "green",
+              "pairId": "p5",
+              "type": "text"
+            },
+            {
+              "id": "c10",
+              "content": "green",
+              "pairId": "p5",
+              "type": "text"
+            },
+            {
+              "id": "c11",
+              "content": "star",
+              "pairId": "p6",
+              "type": "text"
+            },
+            {
+              "id": "c12",
+              "content": "star",
+              "pairId": "p6",
+              "type": "text"
+            },
+            {
+              "id": "c13",
+              "content": "book",
+              "pairId": "p7",
+              "type": "text"
+            },
+            {
+              "id": "c14",
+              "content": "book",
+              "pairId": "p7",
+              "type": "text"
+            }
+          ]
+        },
+        "en": {
+          "prompt": "Find 7 matching pairs!",
+          "cards": [
+            {
+              "id": "c1",
+              "content": "moon",
+              "pairId": "p1",
+              "type": "text"
+            },
+            {
+              "id": "c2",
+              "content": "moon",
+              "pairId": "p1",
+              "type": "text"
+            },
+            {
+              "id": "c3",
+              "content": "sun",
+              "pairId": "p2",
+              "type": "text"
+            },
+            {
+              "id": "c4",
+              "content": "sun",
+              "pairId": "p2",
+              "type": "text"
+            },
+            {
+              "id": "c5",
+              "content": "red",
+              "pairId": "p3",
+              "type": "text"
+            },
+            {
+              "id": "c6",
+              "content": "red",
+              "pairId": "p3",
+              "type": "text"
+            },
+            {
+              "id": "c7",
+              "content": "blue",
+              "pairId": "p4",
+              "type": "text"
+            },
+            {
+              "id": "c8",
+              "content": "blue",
+              "pairId": "p4",
+              "type": "text"
+            },
+            {
+              "id": "c9",
+              "content": "green",
+              "pairId": "p5",
+              "type": "text"
+            },
+            {
+              "id": "c10",
+              "content": "green",
+              "pairId": "p5",
+              "type": "text"
+            },
+            {
+              "id": "c11",
+              "content": "star",
+              "pairId": "p6",
+              "type": "text"
+            },
+            {
+              "id": "c12",
+              "content": "star",
+              "pairId": "p6",
+              "type": "text"
+            },
+            {
+              "id": "c13",
+              "content": "book",
+              "pairId": "p7",
+              "type": "text"
+            },
+            {
+              "id": "c14",
+              "content": "book",
+              "pairId": "p7",
+              "type": "text"
+            }
+          ]
+        }
+      },
+      "hints": [
+        {
+          "text": "Nhớ vị trí của thẻ vừa lật."
+        },
+        {
+          "text": "Remember where each card was."
+        }
+      ],
+      "metadata": {
+        "gridCols": 4,
+        "gridRows": 4,
+        "initialRevealMs": 850,
+        "ageGroup": "master",
+        "skillIds": [
+          "logic.memory"
+        ],
+        "progressionTier": 5,
+        "reviewState": "technically_validated"
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 120,
       "publicationState": "published"
     }
   ]

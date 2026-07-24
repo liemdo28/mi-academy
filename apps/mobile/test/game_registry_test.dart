@@ -20,17 +20,40 @@ void main() {
   group('GameRegistry', () {
     test('registers all built games', () {
       const expectedIds = [
+        'alphabet_explorer',
         'word_builder',
         'sound_match',
-        'math_race',
-        'math_supermarket',
-        'robot_commands',
-        'memory_cards',
-        'alphabet_explorer',
         'missing_letter',
+        'picture_word_match',
+        'rhyme_picker',
+        'speed_spelling',
+        'sentence_order',
+        'story_comprehension',
+        'object_counting',
+        'number_quantity_match',
+        'greater_less',
+        'math_race',
+        'number_sequence',
+        'math_supermarket',
+        'multiplication_adventure',
+        'treasure_division',
+        'clock_time',
+        'fun_measurement',
+        'shape_builder',
+        'visual_fractions',
+        'memory_cards',
+        'odd_one_out',
+        'shadow_match',
+        'robot_commands',
+        'logic_maze',
+        'pattern_finder',
+        'kids_sudoku',
+        'reasoning_detective',
+        'free_creativity',
       ];
       final registeredIds = GameRegistry.all.map((e) => e.gameId).toList();
       expect(registeredIds, expectedIds);
+      expect(registeredIds, hasLength(30));
     });
 
     test('find() returns a real entry for a known game ID', () {

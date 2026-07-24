@@ -79,18 +79,40 @@ typedef GameScreenBuilder = Widget Function({
 });
 
 /// Central registry for all playable games. See docs/game-catalog.md for
-/// the full 30-game target list -- only built games are registered here;
-/// not-yet-built games simply don't have entries yet (not stubbed/faked).
+/// the full 30-game target list. Choice-engine expansion games are content-
+/// backed entries with real level packs, not empty menu placeholders.
 abstract final class GameRegistry {
   static const List<String> _canonicalGameIds = [
+    'alphabet_explorer',
     'word_builder',
     'sound_match',
-    'math_race',
-    'math_supermarket',
-    'robot_commands',
-    'memory_cards',
-    'alphabet_explorer',
     'missing_letter',
+    'picture_word_match',
+    'rhyme_picker',
+    'speed_spelling',
+    'sentence_order',
+    'story_comprehension',
+    'object_counting',
+    'number_quantity_match',
+    'greater_less',
+    'math_race',
+    'number_sequence',
+    'math_supermarket',
+    'multiplication_adventure',
+    'treasure_division',
+    'clock_time',
+    'fun_measurement',
+    'shape_builder',
+    'visual_fractions',
+    'memory_cards',
+    'odd_one_out',
+    'shadow_match',
+    'robot_commands',
+    'logic_maze',
+    'pattern_finder',
+    'kids_sudoku',
+    'reasoning_detective',
+    'free_creativity',
   ];
 
   static final Map<String, GameRegistryEntry> _entries = {
@@ -108,6 +130,50 @@ abstract final class GameRegistry {
   static List<GameRegistryEntry> enabledForAgeBand(String ageBand) => all
       .where((entry) => entry.enabled && entry.ageBands.contains(ageBand))
       .toList(growable: false);
+
+  static GameRegistryEntry _choiceEntry({
+    required String gameId,
+    required Map<String, String> localizedName,
+    required String category,
+    required List<String> ageBands,
+    required List<String> supportedSkills,
+    required MiBrandIcon brandIcon,
+    required Color primaryColor,
+    required String Function(String locale) worldLabel,
+  }) {
+    return GameRegistryEntry(
+      gameId: gameId,
+      localizedName: localizedName,
+      category: category,
+      ageBands: ageBands,
+      supportedSkills: supportedSkills,
+      engineType: 'choice',
+      builder: ({
+        required level,
+        required allLevels,
+        required onExit,
+        required onComplete,
+        required childProfileId,
+        initialSnapshot,
+        onSaveSnapshot,
+        reduceMotion = false,
+        required locale,
+      }) =>
+          ChoiceGameScreen(
+        title: localizedName[locale] ?? localizedName['en'] ?? gameId,
+        worldLabel: worldLabel(locale),
+        level: level,
+        allLevels: allLevels,
+        brandIcon: brandIcon,
+        primaryColor: primaryColor,
+        onExit: onExit,
+        onComplete: onComplete,
+        initialSnapshot: initialSnapshot,
+        onSaveSnapshot: onSaveSnapshot,
+        locale: locale,
+      ),
+    );
+  }
 
   static List<GameRegistryEntry> _buildEntries() => [
         GameRegistryEntry(
@@ -195,6 +261,75 @@ abstract final class GameRegistry {
             locale: locale,
           ),
         ),
+        _choiceEntry(
+          gameId: 'picture_word_match',
+          localizedName: const {
+            'vi': 'Nối từ với hình',
+            'en': 'Picture Word Match',
+          },
+          category: 'letters',
+          ageBands: const ['junior', 'explorer'],
+          supportedSkills: const ['letters.vocabulary'],
+          brandIcon: MiBrandIcon.alphabet,
+          primaryColor: MiColors.discovery,
+          worldLabel: (locale) => locale == 'en'
+              ? 'MI matches words with meaning.'
+              : 'MI cùng con nối từ với ý nghĩa.',
+        ),
+        _choiceEntry(
+          gameId: 'rhyme_picker',
+          localizedName: const {'vi': 'Vần nào đúng?', 'en': 'Rhyme Picker'},
+          category: 'letters',
+          ageBands: const ['junior', 'explorer'],
+          supportedSkills: const ['letters.rhyming'],
+          brandIcon: MiBrandIcon.listening,
+          primaryColor: MiColors.discovery,
+          worldLabel: (locale) => locale == 'en'
+              ? 'MI listens for words that sound alike.'
+              : 'MI cùng con nghe những từ cùng vần.',
+        ),
+        _choiceEntry(
+          gameId: 'speed_spelling',
+          localizedName: const {'vi': 'Chính tả nhanh', 'en': 'Speed Spelling'},
+          category: 'letters',
+          ageBands: const ['explorer', 'master'],
+          supportedSkills: const ['letters.spelling'],
+          brandIcon: MiBrandIcon.writing,
+          primaryColor: MiColors.discovery,
+          worldLabel: (locale) => locale == 'en'
+              ? 'MI helps you spot the correct spelling.'
+              : 'MI giúp con chọn cách viết đúng.',
+        ),
+        _choiceEntry(
+          gameId: 'sentence_order',
+          localizedName: const {'vi': 'Sắp xếp câu', 'en': 'Sentence Order'},
+          category: 'letters',
+          ageBands: const ['explorer', 'master'],
+          supportedSkills: const [
+            'letters.simple_sentences',
+            'letters.sentence_completion',
+          ],
+          brandIcon: MiBrandIcon.writing,
+          primaryColor: MiColors.discovery,
+          worldLabel: (locale) => locale == 'en'
+              ? 'MI builds clear sentences with you.'
+              : 'MI cùng con ghép câu rõ nghĩa.',
+        ),
+        _choiceEntry(
+          gameId: 'story_comprehension',
+          localizedName: const {
+            'vi': 'Đọc hiểu truyện ngắn',
+            'en': 'Story Comprehension',
+          },
+          category: 'letters',
+          ageBands: const ['explorer', 'master'],
+          supportedSkills: const ['letters.reading_comprehension'],
+          brandIcon: MiBrandIcon.writing,
+          primaryColor: MiColors.discovery,
+          worldLabel: (locale) => locale == 'en'
+              ? 'MI reads short stories with you.'
+              : 'MI cùng con đọc hiểu truyện ngắn.',
+        ),
         GameRegistryEntry(
           gameId: 'word_builder',
           localizedName: const {'vi': 'Ghép chữ tạo từ', 'en': 'Word Builder'},
@@ -254,6 +389,48 @@ abstract final class GameRegistry {
             locale: locale,
           ),
         ),
+        _choiceEntry(
+          gameId: 'object_counting',
+          localizedName: const {'vi': 'Đếm đồ vật', 'en': 'Object Counting'},
+          category: 'math',
+          ageBands: const ['junior'],
+          supportedSkills: const ['math.counting'],
+          brandIcon: MiBrandIcon.numbers,
+          primaryColor: MiColors.success,
+          worldLabel: (locale) => locale == 'en'
+              ? 'MI counts objects one by one.'
+              : 'MI cùng con đếm từng đồ vật.',
+        ),
+        _choiceEntry(
+          gameId: 'number_quantity_match',
+          localizedName: const {
+            'vi': 'Ghép số với số lượng',
+            'en': 'Number Quantity Match',
+          },
+          category: 'math',
+          ageBands: const ['junior'],
+          supportedSkills: const ['math.number_recognition.1_20'],
+          brandIcon: MiBrandIcon.numbers,
+          primaryColor: MiColors.success,
+          worldLabel: (locale) => locale == 'en'
+              ? 'MI connects numbers to quantities.'
+              : 'MI cùng con ghép số với số lượng.',
+        ),
+        _choiceEntry(
+          gameId: 'greater_less',
+          localizedName: const {
+            'vi': 'So sánh lớn và bé',
+            'en': 'Greater or Less',
+          },
+          category: 'math',
+          ageBands: const ['junior'],
+          supportedSkills: const ['math.number_comparison'],
+          brandIcon: MiBrandIcon.numbers,
+          primaryColor: MiColors.success,
+          worldLabel: (locale) => locale == 'en'
+              ? 'MI compares numbers with you.'
+              : 'MI cùng con so sánh các số.',
+        ),
         GameRegistryEntry(
           gameId: 'math_race',
           localizedName: const {
@@ -290,6 +467,24 @@ abstract final class GameRegistry {
             onSaveSnapshot: onSaveSnapshot,
             locale: locale,
           ),
+        ),
+        _choiceEntry(
+          gameId: 'number_sequence',
+          localizedName: const {
+            'vi': 'Hoàn thành dãy số',
+            'en': 'Number Sequence',
+          },
+          category: 'math',
+          ageBands: const ['junior', 'explorer'],
+          supportedSkills: const [
+            'math.number_recognition.1_20',
+            'logic.pattern.basic',
+          ],
+          brandIcon: MiBrandIcon.numbers,
+          primaryColor: MiColors.success,
+          worldLabel: (locale) => locale == 'en'
+              ? 'MI finds the next number in the pattern.'
+              : 'MI cùng con tìm số tiếp theo.',
         ),
         GameRegistryEntry(
           gameId: 'math_supermarket',
@@ -328,6 +523,99 @@ abstract final class GameRegistry {
             locale: locale,
           ),
         ),
+        _choiceEntry(
+          gameId: 'multiplication_adventure',
+          localizedName: const {
+            'vi': 'Bảng nhân phiêu lưu',
+            'en': 'Multiplication Adventure',
+          },
+          category: 'math',
+          ageBands: const ['explorer', 'master'],
+          supportedSkills: const ['math.multiplication.tables'],
+          brandIcon: MiBrandIcon.numbers,
+          primaryColor: MiColors.success,
+          worldLabel: (locale) => locale == 'en'
+              ? 'MI practices times tables on an adventure.'
+              : 'MI cùng con phiêu lưu với bảng nhân.',
+        ),
+        _choiceEntry(
+          gameId: 'treasure_division',
+          localizedName: const {
+            'vi': 'Chia đều kho báu',
+            'en': 'Treasure Division',
+          },
+          category: 'math',
+          ageBands: const ['explorer', 'master'],
+          supportedSkills: const ['math.division.basic'],
+          brandIcon: MiBrandIcon.achievement,
+          primaryColor: MiColors.success,
+          worldLabel: (locale) => locale == 'en'
+              ? 'MI shares treasure equally.'
+              : 'MI cùng con chia đều kho báu.',
+        ),
+        _choiceEntry(
+          gameId: 'clock_time',
+          localizedName: const {
+            'vi': 'Đồng hồ và thời gian',
+            'en': 'Clock Time',
+          },
+          category: 'math',
+          ageBands: const ['junior', 'explorer'],
+          supportedSkills: const ['math.time.basic'],
+          brandIcon: MiBrandIcon.progress,
+          primaryColor: MiColors.success,
+          worldLabel: (locale) => locale == 'en'
+              ? 'MI reads clocks with you.'
+              : 'MI cùng con xem đồng hồ.',
+        ),
+        _choiceEntry(
+          gameId: 'fun_measurement',
+          localizedName: const {
+            'vi': 'Đo lường vui nhộn',
+            'en': 'Fun Measurement',
+          },
+          category: 'math',
+          ageBands: const ['explorer', 'master'],
+          supportedSkills: const ['math.measurement'],
+          brandIcon: MiBrandIcon.logic,
+          primaryColor: MiColors.success,
+          worldLabel: (locale) => locale == 'en'
+              ? 'MI compares length, weight, and units.'
+              : 'MI cùng con so sánh đơn vị đo.',
+        ),
+        _choiceEntry(
+          gameId: 'shape_builder',
+          localizedName: const {
+            'vi': 'Hình học lắp ghép',
+            'en': 'Shape Builder',
+          },
+          category: 'math',
+          ageBands: const ['junior', 'explorer', 'master'],
+          supportedSkills: const [
+            'math.shapes.basic',
+            'creative.shape_construction',
+          ],
+          brandIcon: MiBrandIcon.logic,
+          primaryColor: MiColors.success,
+          worldLabel: (locale) => locale == 'en'
+              ? 'MI names and builds shapes.'
+              : 'MI cùng con nhận biết hình khối.',
+        ),
+        _choiceEntry(
+          gameId: 'visual_fractions',
+          localizedName: const {
+            'vi': 'Phân số trực quan',
+            'en': 'Visual Fractions',
+          },
+          category: 'math',
+          ageBands: const ['explorer', 'master'],
+          supportedSkills: const ['math.fractions.visual'],
+          brandIcon: MiBrandIcon.numbers,
+          primaryColor: MiColors.success,
+          worldLabel: (locale) => locale == 'en'
+              ? 'MI sees fractions as equal parts.'
+              : 'MI cùng con nhìn phân số bằng hình.',
+        ),
         GameRegistryEntry(
           gameId: 'robot_commands',
           localizedName: const {
@@ -359,6 +647,60 @@ abstract final class GameRegistry {
             locale: locale,
           ),
         ),
+        _choiceEntry(
+          gameId: 'logic_maze',
+          localizedName: const {'vi': 'Mê cung logic', 'en': 'Logic Maze'},
+          category: 'logic',
+          ageBands: const ['explorer', 'master'],
+          supportedSkills: const ['logic.maze', 'logic.navigation'],
+          brandIcon: MiBrandIcon.exploration,
+          primaryColor: MiColors.creative,
+          worldLabel: (locale) => locale == 'en'
+              ? 'MI plans a path through the maze.'
+              : 'MI cùng con tìm đường qua mê cung.',
+        ),
+        _choiceEntry(
+          gameId: 'pattern_finder',
+          localizedName: const {'vi': 'Tìm quy luật', 'en': 'Pattern Finder'},
+          category: 'logic',
+          ageBands: const ['junior', 'explorer', 'master'],
+          supportedSkills: const ['logic.pattern.recognition'],
+          brandIcon: MiBrandIcon.logic,
+          primaryColor: MiColors.creative,
+          worldLabel: (locale) => locale == 'en'
+              ? 'MI spots the rule in the pattern.'
+              : 'MI cùng con tìm quy luật.',
+        ),
+        _choiceEntry(
+          gameId: 'kids_sudoku',
+          localizedName: const {'vi': 'Sudoku trẻ em', 'en': 'Kids Sudoku'},
+          category: 'logic',
+          ageBands: const ['master'],
+          supportedSkills: const [
+            'logic.conditions',
+            'logic.spatial_reasoning',
+          ],
+          brandIcon: MiBrandIcon.logic,
+          primaryColor: MiColors.creative,
+          worldLabel: (locale) => locale == 'en'
+              ? 'MI solves small grids with clues.'
+              : 'MI cùng con giải ô lưới nhỏ.',
+        ),
+        _choiceEntry(
+          gameId: 'reasoning_detective',
+          localizedName: const {
+            'vi': 'Thám tử suy luận',
+            'en': 'Reasoning Detective',
+          },
+          category: 'logic',
+          ageBands: const ['master'],
+          supportedSkills: const ['logic.strategy', 'logic.algorithms'],
+          brandIcon: MiBrandIcon.logic,
+          primaryColor: MiColors.creative,
+          worldLabel: (locale) => locale == 'en'
+              ? 'MI follows clues step by step.'
+              : 'MI cùng con suy luận từng bước.',
+        ),
         GameRegistryEntry(
           gameId: 'memory_cards',
           localizedName: const {'vi': 'Ghi nhớ vị trí', 'en': 'Memory Cards'},
@@ -388,6 +730,60 @@ abstract final class GameRegistry {
             reduceMotion: reduceMotion,
             locale: locale,
           ),
+        ),
+        _choiceEntry(
+          gameId: 'odd_one_out',
+          localizedName: const {
+            'vi': 'Tìm hình khác biệt',
+            'en': 'Odd One Out',
+          },
+          category: 'logic',
+          ageBands: const ['junior', 'explorer'],
+          supportedSkills: const [
+            'logic.odd_one_out',
+            'logic.classification',
+          ],
+          brandIcon: MiBrandIcon.logic,
+          primaryColor: MiColors.creative,
+          worldLabel: (locale) => locale == 'en'
+              ? 'MI finds the item that does not belong.'
+              : 'MI cùng con tìm hình khác nhóm.',
+        ),
+        _choiceEntry(
+          gameId: 'shadow_match',
+          localizedName: const {
+            'vi': 'Ghép bóng với vật',
+            'en': 'Shadow Match',
+          },
+          category: 'logic',
+          ageBands: const ['junior', 'explorer'],
+          supportedSkills: const [
+            'logic.matching',
+            'logic.spatial_reasoning',
+          ],
+          brandIcon: MiBrandIcon.memory,
+          primaryColor: MiColors.creative,
+          worldLabel: (locale) => locale == 'en'
+              ? 'MI matches each object to its shadow.'
+              : 'MI cùng con ghép bóng với vật.',
+        ),
+        _choiceEntry(
+          gameId: 'free_creativity',
+          localizedName: const {
+            'vi': 'Sáng tạo tự do',
+            'en': 'Free Creativity',
+          },
+          category: 'creative',
+          ageBands: const ['junior', 'explorer', 'master'],
+          supportedSkills: const [
+            'creative.storytelling',
+            'letters.storytelling',
+          ],
+          brandIcon: MiBrandIcon.writing,
+          primaryColor: MiColors.primary,
+          worldLabel: (locale) => locale == 'en'
+              ? 'MI helps turn ideas into a story.'
+              : 'MI cùng con biến ý tưởng thành câu chuyện.',
         ),
       ];
 }

@@ -491,6 +491,1046 @@
       "contentVersion": 1,
       "estimatedSeconds": 60,
       "publicationState": "published"
+    },
+    {
+      "id": "sm-gen-011",
+      "gameId": "sound_match",
+      "levelNumber": 11,
+      "difficulty": 2,
+      "learningObjective": "Listen and identify tier 2 sounds",
+      "localizedContent": {
+        "vi": {
+          "prompt": "Nghe và chọn âm đúng!",
+          "correctAnswer": "B",
+          "options": [
+            "B",
+            "D",
+            "P"
+          ],
+          "audioKey": "letter_b",
+          "audioTranscript": "B"
+        },
+        "en": {
+          "prompt": "Listen and choose the sound!",
+          "correctAnswer": "B",
+          "options": [
+            "B",
+            "D",
+            "P"
+          ],
+          "audioKey": "letter_b",
+          "audioTranscript": "B"
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghe lại rồi so sánh âm đầu."
+        },
+        {
+          "text": "Listen again and compare the first sound."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "junior",
+        "mode": "letter_sound",
+        "skillIds": [
+          "letters.initial_sound"
+        ],
+        "progressionTier": 2,
+        "reviewState": "technically_validated"
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 61,
+      "publicationState": "published"
+    },
+    {
+      "id": "sm-gen-012",
+      "gameId": "sound_match",
+      "levelNumber": 12,
+      "difficulty": 2,
+      "learningObjective": "Listen and identify tier 2 sounds",
+      "localizedContent": {
+        "vi": {
+          "prompt": "Nghe và chọn âm đúng!",
+          "correctAnswer": "M",
+          "options": [
+            "M",
+            "N",
+            "W"
+          ],
+          "audioKey": "letter_m",
+          "audioTranscript": "M"
+        },
+        "en": {
+          "prompt": "Listen and choose the sound!",
+          "correctAnswer": "M",
+          "options": [
+            "M",
+            "N",
+            "W"
+          ],
+          "audioKey": "letter_m",
+          "audioTranscript": "M"
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghe lại rồi so sánh âm đầu."
+        },
+        {
+          "text": "Listen again and compare the first sound."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "junior",
+        "mode": "letter_sound",
+        "skillIds": [
+          "letters.initial_sound"
+        ],
+        "progressionTier": 2,
+        "reviewState": "technically_validated"
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 61,
+      "publicationState": "published"
+    },
+    {
+      "id": "sm-gen-013",
+      "gameId": "sound_match",
+      "levelNumber": 13,
+      "difficulty": 3,
+      "learningObjective": "Listen and identify tier 3 sounds",
+      "localizedContent": {
+        "vi": {
+          "prompt": "Nghe và chọn từ đúng!",
+          "correctAnswer": "cat",
+          "options": [
+            "cat",
+            "cap",
+            "can"
+          ],
+          "audioKey": "word_cat",
+          "audioTranscript": "cat"
+        },
+        "en": {
+          "prompt": "Listen and choose the word!",
+          "correctAnswer": "cat",
+          "options": [
+            "cat",
+            "cap",
+            "can"
+          ],
+          "audioKey": "word_cat",
+          "audioTranscript": "cat"
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghe lại rồi so sánh âm đầu."
+        },
+        {
+          "text": "Listen again and compare the first sound."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "explorer",
+        "mode": "word_sound",
+        "skillIds": [
+          "letters.listening_comprehension"
+        ],
+        "progressionTier": 3,
+        "reviewState": "technically_validated"
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 69,
+      "publicationState": "published"
+    },
+    {
+      "id": "sm-gen-014",
+      "gameId": "sound_match",
+      "levelNumber": 14,
+      "difficulty": 3,
+      "learningObjective": "Listen and identify tier 3 sounds",
+      "localizedContent": {
+        "vi": {
+          "prompt": "Nghe và chọn từ đúng!",
+          "correctAnswer": "library",
+          "options": [
+            "library",
+            "school",
+            "market"
+          ],
+          "audioKey": "word_library",
+          "audioTranscript": "library"
+        },
+        "en": {
+          "prompt": "Listen and choose the word!",
+          "correctAnswer": "library",
+          "options": [
+            "library",
+            "school",
+            "market"
+          ],
+          "audioKey": "word_library",
+          "audioTranscript": "library"
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghe lại rồi so sánh âm đầu."
+        },
+        {
+          "text": "Listen again and compare the first sound."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "explorer",
+        "mode": "word_sound",
+        "skillIds": [
+          "letters.listening_comprehension"
+        ],
+        "progressionTier": 3,
+        "reviewState": "technically_validated"
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 69,
+      "publicationState": "published"
+    },
+    {
+      "id": "sm-gen-015",
+      "gameId": "sound_match",
+      "levelNumber": 15,
+      "difficulty": 3,
+      "learningObjective": "Listen and identify tier 3 sounds",
+      "localizedContent": {
+        "vi": {
+          "prompt": "Nghe và chọn từ đúng!",
+          "correctAnswer": "A",
+          "options": [
+            "A",
+            "E",
+            "O"
+          ],
+          "audioKey": "letter_a",
+          "audioTranscript": "A"
+        },
+        "en": {
+          "prompt": "Listen and choose the word!",
+          "correctAnswer": "A",
+          "options": [
+            "A",
+            "E",
+            "O"
+          ],
+          "audioKey": "letter_a",
+          "audioTranscript": "A"
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghe lại rồi so sánh âm đầu."
+        },
+        {
+          "text": "Listen again and compare the first sound."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "explorer",
+        "mode": "word_sound",
+        "skillIds": [
+          "letters.listening_comprehension"
+        ],
+        "progressionTier": 3,
+        "reviewState": "technically_validated"
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 69,
+      "publicationState": "published"
+    },
+    {
+      "id": "sm-gen-016",
+      "gameId": "sound_match",
+      "levelNumber": 16,
+      "difficulty": 3,
+      "learningObjective": "Listen and identify tier 3 sounds",
+      "localizedContent": {
+        "vi": {
+          "prompt": "Nghe và chọn từ đúng!",
+          "correctAnswer": "B",
+          "options": [
+            "B",
+            "D",
+            "P"
+          ],
+          "audioKey": "letter_b",
+          "audioTranscript": "B"
+        },
+        "en": {
+          "prompt": "Listen and choose the word!",
+          "correctAnswer": "B",
+          "options": [
+            "B",
+            "D",
+            "P"
+          ],
+          "audioKey": "letter_b",
+          "audioTranscript": "B"
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghe lại rồi so sánh âm đầu."
+        },
+        {
+          "text": "Listen again and compare the first sound."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "explorer",
+        "mode": "word_sound",
+        "skillIds": [
+          "letters.listening_comprehension"
+        ],
+        "progressionTier": 3,
+        "reviewState": "technically_validated"
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 69,
+      "publicationState": "published"
+    },
+    {
+      "id": "sm-gen-017",
+      "gameId": "sound_match",
+      "levelNumber": 17,
+      "difficulty": 3,
+      "learningObjective": "Listen and identify tier 3 sounds",
+      "localizedContent": {
+        "vi": {
+          "prompt": "Nghe và chọn từ đúng!",
+          "correctAnswer": "M",
+          "options": [
+            "M",
+            "N",
+            "W"
+          ],
+          "audioKey": "letter_m",
+          "audioTranscript": "M"
+        },
+        "en": {
+          "prompt": "Listen and choose the word!",
+          "correctAnswer": "M",
+          "options": [
+            "M",
+            "N",
+            "W"
+          ],
+          "audioKey": "letter_m",
+          "audioTranscript": "M"
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghe lại rồi so sánh âm đầu."
+        },
+        {
+          "text": "Listen again and compare the first sound."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "explorer",
+        "mode": "word_sound",
+        "skillIds": [
+          "letters.listening_comprehension"
+        ],
+        "progressionTier": 3,
+        "reviewState": "technically_validated"
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 69,
+      "publicationState": "published"
+    },
+    {
+      "id": "sm-gen-018",
+      "gameId": "sound_match",
+      "levelNumber": 18,
+      "difficulty": 3,
+      "learningObjective": "Listen and identify tier 3 sounds",
+      "localizedContent": {
+        "vi": {
+          "prompt": "Nghe và chọn từ đúng!",
+          "correctAnswer": "cat",
+          "options": [
+            "cat",
+            "cap",
+            "can"
+          ],
+          "audioKey": "word_cat",
+          "audioTranscript": "cat"
+        },
+        "en": {
+          "prompt": "Listen and choose the word!",
+          "correctAnswer": "cat",
+          "options": [
+            "cat",
+            "cap",
+            "can"
+          ],
+          "audioKey": "word_cat",
+          "audioTranscript": "cat"
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghe lại rồi so sánh âm đầu."
+        },
+        {
+          "text": "Listen again and compare the first sound."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "explorer",
+        "mode": "word_sound",
+        "skillIds": [
+          "letters.listening_comprehension"
+        ],
+        "progressionTier": 3,
+        "reviewState": "technically_validated"
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 69,
+      "publicationState": "published"
+    },
+    {
+      "id": "sm-gen-019",
+      "gameId": "sound_match",
+      "levelNumber": 19,
+      "difficulty": 4,
+      "learningObjective": "Listen and identify tier 4 sounds",
+      "localizedContent": {
+        "vi": {
+          "prompt": "Nghe và chọn từ đúng!",
+          "correctAnswer": "library",
+          "options": [
+            "library",
+            "school",
+            "market"
+          ],
+          "audioKey": "word_library",
+          "audioTranscript": "library"
+        },
+        "en": {
+          "prompt": "Listen and choose the word!",
+          "correctAnswer": "library",
+          "options": [
+            "library",
+            "school",
+            "market"
+          ],
+          "audioKey": "word_library",
+          "audioTranscript": "library"
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghe lại rồi so sánh âm đầu."
+        },
+        {
+          "text": "Listen again and compare the first sound."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "explorer",
+        "mode": "word_sound",
+        "skillIds": [
+          "letters.listening_comprehension"
+        ],
+        "progressionTier": 4,
+        "reviewState": "technically_validated"
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 77,
+      "publicationState": "published"
+    },
+    {
+      "id": "sm-gen-020",
+      "gameId": "sound_match",
+      "levelNumber": 20,
+      "difficulty": 4,
+      "learningObjective": "Listen and identify tier 4 sounds",
+      "localizedContent": {
+        "vi": {
+          "prompt": "Nghe và chọn từ đúng!",
+          "correctAnswer": "A",
+          "options": [
+            "A",
+            "E",
+            "O"
+          ],
+          "audioKey": "letter_a",
+          "audioTranscript": "A"
+        },
+        "en": {
+          "prompt": "Listen and choose the word!",
+          "correctAnswer": "A",
+          "options": [
+            "A",
+            "E",
+            "O"
+          ],
+          "audioKey": "letter_a",
+          "audioTranscript": "A"
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghe lại rồi so sánh âm đầu."
+        },
+        {
+          "text": "Listen again and compare the first sound."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "explorer",
+        "mode": "word_sound",
+        "skillIds": [
+          "letters.listening_comprehension"
+        ],
+        "progressionTier": 4,
+        "reviewState": "technically_validated"
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 77,
+      "publicationState": "published"
+    },
+    {
+      "id": "sm-gen-021",
+      "gameId": "sound_match",
+      "levelNumber": 21,
+      "difficulty": 4,
+      "learningObjective": "Listen and identify tier 4 sounds",
+      "localizedContent": {
+        "vi": {
+          "prompt": "Nghe và chọn từ đúng!",
+          "correctAnswer": "B",
+          "options": [
+            "B",
+            "D",
+            "P"
+          ],
+          "audioKey": "letter_b",
+          "audioTranscript": "B"
+        },
+        "en": {
+          "prompt": "Listen and choose the word!",
+          "correctAnswer": "B",
+          "options": [
+            "B",
+            "D",
+            "P"
+          ],
+          "audioKey": "letter_b",
+          "audioTranscript": "B"
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghe lại rồi so sánh âm đầu."
+        },
+        {
+          "text": "Listen again and compare the first sound."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "explorer",
+        "mode": "word_sound",
+        "skillIds": [
+          "letters.listening_comprehension"
+        ],
+        "progressionTier": 4,
+        "reviewState": "technically_validated"
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 77,
+      "publicationState": "published"
+    },
+    {
+      "id": "sm-gen-022",
+      "gameId": "sound_match",
+      "levelNumber": 22,
+      "difficulty": 4,
+      "learningObjective": "Listen and identify tier 4 sounds",
+      "localizedContent": {
+        "vi": {
+          "prompt": "Nghe và chọn từ đúng!",
+          "correctAnswer": "M",
+          "options": [
+            "M",
+            "N",
+            "W"
+          ],
+          "audioKey": "letter_m",
+          "audioTranscript": "M"
+        },
+        "en": {
+          "prompt": "Listen and choose the word!",
+          "correctAnswer": "M",
+          "options": [
+            "M",
+            "N",
+            "W"
+          ],
+          "audioKey": "letter_m",
+          "audioTranscript": "M"
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghe lại rồi so sánh âm đầu."
+        },
+        {
+          "text": "Listen again and compare the first sound."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "explorer",
+        "mode": "word_sound",
+        "skillIds": [
+          "letters.listening_comprehension"
+        ],
+        "progressionTier": 4,
+        "reviewState": "technically_validated"
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 77,
+      "publicationState": "published"
+    },
+    {
+      "id": "sm-gen-023",
+      "gameId": "sound_match",
+      "levelNumber": 23,
+      "difficulty": 4,
+      "learningObjective": "Listen and identify tier 4 sounds",
+      "localizedContent": {
+        "vi": {
+          "prompt": "Nghe và chọn từ đúng!",
+          "correctAnswer": "cat",
+          "options": [
+            "cat",
+            "cap",
+            "can"
+          ],
+          "audioKey": "word_cat",
+          "audioTranscript": "cat"
+        },
+        "en": {
+          "prompt": "Listen and choose the word!",
+          "correctAnswer": "cat",
+          "options": [
+            "cat",
+            "cap",
+            "can"
+          ],
+          "audioKey": "word_cat",
+          "audioTranscript": "cat"
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghe lại rồi so sánh âm đầu."
+        },
+        {
+          "text": "Listen again and compare the first sound."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "explorer",
+        "mode": "word_sound",
+        "skillIds": [
+          "letters.listening_comprehension"
+        ],
+        "progressionTier": 4,
+        "reviewState": "technically_validated"
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 77,
+      "publicationState": "published"
+    },
+    {
+      "id": "sm-gen-024",
+      "gameId": "sound_match",
+      "levelNumber": 24,
+      "difficulty": 4,
+      "learningObjective": "Listen and identify tier 4 sounds",
+      "localizedContent": {
+        "vi": {
+          "prompt": "Nghe và chọn từ đúng!",
+          "correctAnswer": "library",
+          "options": [
+            "library",
+            "school",
+            "market"
+          ],
+          "audioKey": "word_library",
+          "audioTranscript": "library"
+        },
+        "en": {
+          "prompt": "Listen and choose the word!",
+          "correctAnswer": "library",
+          "options": [
+            "library",
+            "school",
+            "market"
+          ],
+          "audioKey": "word_library",
+          "audioTranscript": "library"
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghe lại rồi so sánh âm đầu."
+        },
+        {
+          "text": "Listen again and compare the first sound."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "explorer",
+        "mode": "word_sound",
+        "skillIds": [
+          "letters.listening_comprehension"
+        ],
+        "progressionTier": 4,
+        "reviewState": "technically_validated"
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 77,
+      "publicationState": "published"
+    },
+    {
+      "id": "sm-gen-025",
+      "gameId": "sound_match",
+      "levelNumber": 25,
+      "difficulty": 5,
+      "learningObjective": "Listen and identify tier 5 sounds",
+      "localizedContent": {
+        "vi": {
+          "prompt": "Nghe và chọn từ đúng!",
+          "correctAnswer": "A",
+          "options": [
+            "A",
+            "E",
+            "O"
+          ],
+          "audioKey": "letter_a",
+          "audioTranscript": "A"
+        },
+        "en": {
+          "prompt": "Listen and choose the word!",
+          "correctAnswer": "A",
+          "options": [
+            "A",
+            "E",
+            "O"
+          ],
+          "audioKey": "letter_a",
+          "audioTranscript": "A"
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghe lại rồi so sánh âm đầu."
+        },
+        {
+          "text": "Listen again and compare the first sound."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "master",
+        "mode": "word_sound",
+        "skillIds": [
+          "letters.listening_comprehension"
+        ],
+        "progressionTier": 5,
+        "reviewState": "technically_validated"
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 85,
+      "publicationState": "published"
+    },
+    {
+      "id": "sm-gen-026",
+      "gameId": "sound_match",
+      "levelNumber": 26,
+      "difficulty": 5,
+      "learningObjective": "Listen and identify tier 5 sounds",
+      "localizedContent": {
+        "vi": {
+          "prompt": "Nghe và chọn từ đúng!",
+          "correctAnswer": "B",
+          "options": [
+            "B",
+            "D",
+            "P"
+          ],
+          "audioKey": "letter_b",
+          "audioTranscript": "B"
+        },
+        "en": {
+          "prompt": "Listen and choose the word!",
+          "correctAnswer": "B",
+          "options": [
+            "B",
+            "D",
+            "P"
+          ],
+          "audioKey": "letter_b",
+          "audioTranscript": "B"
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghe lại rồi so sánh âm đầu."
+        },
+        {
+          "text": "Listen again and compare the first sound."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "master",
+        "mode": "word_sound",
+        "skillIds": [
+          "letters.listening_comprehension"
+        ],
+        "progressionTier": 5,
+        "reviewState": "technically_validated"
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 85,
+      "publicationState": "published"
+    },
+    {
+      "id": "sm-gen-027",
+      "gameId": "sound_match",
+      "levelNumber": 27,
+      "difficulty": 5,
+      "learningObjective": "Listen and identify tier 5 sounds",
+      "localizedContent": {
+        "vi": {
+          "prompt": "Nghe và chọn từ đúng!",
+          "correctAnswer": "M",
+          "options": [
+            "M",
+            "N",
+            "W"
+          ],
+          "audioKey": "letter_m",
+          "audioTranscript": "M"
+        },
+        "en": {
+          "prompt": "Listen and choose the word!",
+          "correctAnswer": "M",
+          "options": [
+            "M",
+            "N",
+            "W"
+          ],
+          "audioKey": "letter_m",
+          "audioTranscript": "M"
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghe lại rồi so sánh âm đầu."
+        },
+        {
+          "text": "Listen again and compare the first sound."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "master",
+        "mode": "word_sound",
+        "skillIds": [
+          "letters.listening_comprehension"
+        ],
+        "progressionTier": 5,
+        "reviewState": "technically_validated"
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 85,
+      "publicationState": "published"
+    },
+    {
+      "id": "sm-gen-028",
+      "gameId": "sound_match",
+      "levelNumber": 28,
+      "difficulty": 5,
+      "learningObjective": "Listen and identify tier 5 sounds",
+      "localizedContent": {
+        "vi": {
+          "prompt": "Nghe và chọn từ đúng!",
+          "correctAnswer": "cat",
+          "options": [
+            "cat",
+            "cap",
+            "can"
+          ],
+          "audioKey": "word_cat",
+          "audioTranscript": "cat"
+        },
+        "en": {
+          "prompt": "Listen and choose the word!",
+          "correctAnswer": "cat",
+          "options": [
+            "cat",
+            "cap",
+            "can"
+          ],
+          "audioKey": "word_cat",
+          "audioTranscript": "cat"
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghe lại rồi so sánh âm đầu."
+        },
+        {
+          "text": "Listen again and compare the first sound."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "master",
+        "mode": "word_sound",
+        "skillIds": [
+          "letters.listening_comprehension"
+        ],
+        "progressionTier": 5,
+        "reviewState": "technically_validated"
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 85,
+      "publicationState": "published"
+    },
+    {
+      "id": "sm-gen-029",
+      "gameId": "sound_match",
+      "levelNumber": 29,
+      "difficulty": 5,
+      "learningObjective": "Listen and identify tier 5 sounds",
+      "localizedContent": {
+        "vi": {
+          "prompt": "Nghe và chọn từ đúng!",
+          "correctAnswer": "library",
+          "options": [
+            "library",
+            "school",
+            "market"
+          ],
+          "audioKey": "word_library",
+          "audioTranscript": "library"
+        },
+        "en": {
+          "prompt": "Listen and choose the word!",
+          "correctAnswer": "library",
+          "options": [
+            "library",
+            "school",
+            "market"
+          ],
+          "audioKey": "word_library",
+          "audioTranscript": "library"
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghe lại rồi so sánh âm đầu."
+        },
+        {
+          "text": "Listen again and compare the first sound."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "master",
+        "mode": "word_sound",
+        "skillIds": [
+          "letters.listening_comprehension"
+        ],
+        "progressionTier": 5,
+        "reviewState": "technically_validated"
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 85,
+      "publicationState": "published"
+    },
+    {
+      "id": "sm-gen-030",
+      "gameId": "sound_match",
+      "levelNumber": 30,
+      "difficulty": 5,
+      "learningObjective": "Listen and identify tier 5 sounds",
+      "localizedContent": {
+        "vi": {
+          "prompt": "Nghe và chọn từ đúng!",
+          "correctAnswer": "A",
+          "options": [
+            "A",
+            "E",
+            "O"
+          ],
+          "audioKey": "letter_a",
+          "audioTranscript": "A"
+        },
+        "en": {
+          "prompt": "Listen and choose the word!",
+          "correctAnswer": "A",
+          "options": [
+            "A",
+            "E",
+            "O"
+          ],
+          "audioKey": "letter_a",
+          "audioTranscript": "A"
+        }
+      },
+      "hints": [
+        {
+          "text": "Nghe lại rồi so sánh âm đầu."
+        },
+        {
+          "text": "Listen again and compare the first sound."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "master",
+        "mode": "word_sound",
+        "skillIds": [
+          "letters.listening_comprehension"
+        ],
+        "progressionTier": 5,
+        "reviewState": "technically_validated"
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 85,
+      "publicationState": "published"
     }
   ]
 }

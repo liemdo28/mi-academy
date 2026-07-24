@@ -681,6 +681,1440 @@
       "contentVersion": 1,
       "estimatedSeconds": 60,
       "publicationState": "published"
+    },
+    {
+      "id": "rc-gen-011",
+      "gameId": "robot_commands",
+      "levelNumber": 11,
+      "difficulty": 2,
+      "learningObjective": "Longer forward sequence",
+      "localizedContent": {
+        "vi": {
+          "prompt": "Đi 3 bước tới ngôi sao!",
+          "availableCommands": [
+            "MOVE_FORWARD"
+          ],
+          "requiredCommands": [
+            "START",
+            "MOVE_FORWARD",
+            "MOVE_FORWARD",
+            "MOVE_FORWARD"
+          ]
+        },
+        "en": {
+          "prompt": "Move 3 steps to the star!",
+          "availableCommands": [
+            "MOVE_FORWARD"
+          ],
+          "requiredCommands": [
+            "START",
+            "MOVE_FORWARD",
+            "MOVE_FORWARD",
+            "MOVE_FORWARD"
+          ]
+        }
+      },
+      "hints": [
+        {
+          "text": "Đếm số lần dùng lệnh Tiến."
+        },
+        {
+          "text": "Count how many Forward blocks you need."
+        }
+      ],
+      "metadata": {
+        "grid": {
+          "width": 4,
+          "height": 1
+        },
+        "start": {
+          "x": 0,
+          "y": 0,
+          "facing": "east"
+        },
+        "goal": {
+          "x": 3,
+          "y": 0
+        },
+        "ageGroup": "junior",
+        "skillIds": [
+          "logic.navigation"
+        ],
+        "progressionTier": 2,
+        "reviewState": "technically_validated"
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 80,
+      "publicationState": "published"
+    },
+    {
+      "id": "rc-gen-012",
+      "gameId": "robot_commands",
+      "levelNumber": 12,
+      "difficulty": 2,
+      "learningObjective": "Longer forward sequence",
+      "localizedContent": {
+        "vi": {
+          "prompt": "Đi 3 bước tới ngôi sao!",
+          "availableCommands": [
+            "MOVE_FORWARD"
+          ],
+          "requiredCommands": [
+            "START",
+            "MOVE_FORWARD",
+            "MOVE_FORWARD",
+            "MOVE_FORWARD"
+          ]
+        },
+        "en": {
+          "prompt": "Move 3 steps to the star!",
+          "availableCommands": [
+            "MOVE_FORWARD"
+          ],
+          "requiredCommands": [
+            "START",
+            "MOVE_FORWARD",
+            "MOVE_FORWARD",
+            "MOVE_FORWARD"
+          ]
+        }
+      },
+      "hints": [
+        {
+          "text": "Đếm số lần dùng lệnh Tiến."
+        },
+        {
+          "text": "Count how many Forward blocks you need."
+        }
+      ],
+      "metadata": {
+        "grid": {
+          "width": 4,
+          "height": 1
+        },
+        "start": {
+          "x": 0,
+          "y": 0,
+          "facing": "east"
+        },
+        "goal": {
+          "x": 3,
+          "y": 0
+        },
+        "ageGroup": "junior",
+        "skillIds": [
+          "logic.navigation"
+        ],
+        "progressionTier": 2,
+        "reviewState": "technically_validated"
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 80,
+      "publicationState": "published"
+    },
+    {
+      "id": "rc-gen-013",
+      "gameId": "robot_commands",
+      "levelNumber": 13,
+      "difficulty": 3,
+      "learningObjective": "Longer forward sequence",
+      "localizedContent": {
+        "vi": {
+          "prompt": "Đi 4 bước tới ngôi sao!",
+          "availableCommands": [
+            "MOVE_FORWARD"
+          ],
+          "requiredCommands": [
+            "START",
+            "MOVE_FORWARD",
+            "MOVE_FORWARD",
+            "MOVE_FORWARD",
+            "MOVE_FORWARD"
+          ]
+        },
+        "en": {
+          "prompt": "Move 4 steps to the star!",
+          "availableCommands": [
+            "MOVE_FORWARD"
+          ],
+          "requiredCommands": [
+            "START",
+            "MOVE_FORWARD",
+            "MOVE_FORWARD",
+            "MOVE_FORWARD",
+            "MOVE_FORWARD"
+          ]
+        }
+      },
+      "hints": [
+        {
+          "text": "Đếm số lần dùng lệnh Tiến."
+        },
+        {
+          "text": "Count how many Forward blocks you need."
+        }
+      ],
+      "metadata": {
+        "grid": {
+          "width": 5,
+          "height": 1
+        },
+        "start": {
+          "x": 0,
+          "y": 0,
+          "facing": "east"
+        },
+        "goal": {
+          "x": 4,
+          "y": 0
+        },
+        "ageGroup": "explorer",
+        "skillIds": [
+          "logic.navigation"
+        ],
+        "progressionTier": 3,
+        "reviewState": "technically_validated"
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 90,
+      "publicationState": "published"
+    },
+    {
+      "id": "rc-gen-014",
+      "gameId": "robot_commands",
+      "levelNumber": 14,
+      "difficulty": 3,
+      "learningObjective": "Sequence with a turn",
+      "localizedContent": {
+        "vi": {
+          "prompt": "Đi tới, rẽ phải, rồi đi tới đích!",
+          "availableCommands": [
+            "MOVE_FORWARD",
+            "TURN_RIGHT"
+          ],
+          "requiredCommands": [
+            "START",
+            "MOVE_FORWARD",
+            "TURN_RIGHT",
+            "MOVE_FORWARD",
+            "MOVE_FORWARD",
+            "MOVE_FORWARD",
+            "MOVE_FORWARD"
+          ]
+        },
+        "en": {
+          "prompt": "Move, turn right, then reach the goal!",
+          "availableCommands": [
+            "MOVE_FORWARD",
+            "TURN_RIGHT"
+          ],
+          "requiredCommands": [
+            "START",
+            "MOVE_FORWARD",
+            "TURN_RIGHT",
+            "MOVE_FORWARD",
+            "MOVE_FORWARD",
+            "MOVE_FORWARD",
+            "MOVE_FORWARD"
+          ]
+        }
+      },
+      "hints": [
+        {
+          "text": "Cần rẽ đúng hướng trước khi đi tiếp."
+        },
+        {
+          "text": "Turn before the final forward steps."
+        }
+      ],
+      "metadata": {
+        "grid": {
+          "width": 2,
+          "height": 5
+        },
+        "start": {
+          "x": 0,
+          "y": 0,
+          "facing": "east"
+        },
+        "goal": {
+          "x": 1,
+          "y": 4
+        },
+        "ageGroup": "explorer",
+        "skillIds": [
+          "logic.sequence.programming"
+        ],
+        "progressionTier": 3,
+        "reviewState": "technically_validated"
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 90,
+      "publicationState": "published"
+    },
+    {
+      "id": "rc-gen-015",
+      "gameId": "robot_commands",
+      "levelNumber": 15,
+      "difficulty": 3,
+      "learningObjective": "Longer forward sequence",
+      "localizedContent": {
+        "vi": {
+          "prompt": "Đi 4 bước tới ngôi sao!",
+          "availableCommands": [
+            "MOVE_FORWARD"
+          ],
+          "requiredCommands": [
+            "START",
+            "MOVE_FORWARD",
+            "MOVE_FORWARD",
+            "MOVE_FORWARD",
+            "MOVE_FORWARD"
+          ]
+        },
+        "en": {
+          "prompt": "Move 4 steps to the star!",
+          "availableCommands": [
+            "MOVE_FORWARD"
+          ],
+          "requiredCommands": [
+            "START",
+            "MOVE_FORWARD",
+            "MOVE_FORWARD",
+            "MOVE_FORWARD",
+            "MOVE_FORWARD"
+          ]
+        }
+      },
+      "hints": [
+        {
+          "text": "Đếm số lần dùng lệnh Tiến."
+        },
+        {
+          "text": "Count how many Forward blocks you need."
+        }
+      ],
+      "metadata": {
+        "grid": {
+          "width": 5,
+          "height": 1
+        },
+        "start": {
+          "x": 0,
+          "y": 0,
+          "facing": "east"
+        },
+        "goal": {
+          "x": 4,
+          "y": 0
+        },
+        "ageGroup": "explorer",
+        "skillIds": [
+          "logic.navigation"
+        ],
+        "progressionTier": 3,
+        "reviewState": "technically_validated"
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 90,
+      "publicationState": "published"
+    },
+    {
+      "id": "rc-gen-016",
+      "gameId": "robot_commands",
+      "levelNumber": 16,
+      "difficulty": 3,
+      "learningObjective": "Sequence with a turn",
+      "localizedContent": {
+        "vi": {
+          "prompt": "Đi tới, rẽ phải, rồi đi tới đích!",
+          "availableCommands": [
+            "MOVE_FORWARD",
+            "TURN_RIGHT"
+          ],
+          "requiredCommands": [
+            "START",
+            "MOVE_FORWARD",
+            "TURN_RIGHT",
+            "MOVE_FORWARD",
+            "MOVE_FORWARD",
+            "MOVE_FORWARD",
+            "MOVE_FORWARD"
+          ]
+        },
+        "en": {
+          "prompt": "Move, turn right, then reach the goal!",
+          "availableCommands": [
+            "MOVE_FORWARD",
+            "TURN_RIGHT"
+          ],
+          "requiredCommands": [
+            "START",
+            "MOVE_FORWARD",
+            "TURN_RIGHT",
+            "MOVE_FORWARD",
+            "MOVE_FORWARD",
+            "MOVE_FORWARD",
+            "MOVE_FORWARD"
+          ]
+        }
+      },
+      "hints": [
+        {
+          "text": "Cần rẽ đúng hướng trước khi đi tiếp."
+        },
+        {
+          "text": "Turn before the final forward steps."
+        }
+      ],
+      "metadata": {
+        "grid": {
+          "width": 2,
+          "height": 5
+        },
+        "start": {
+          "x": 0,
+          "y": 0,
+          "facing": "east"
+        },
+        "goal": {
+          "x": 1,
+          "y": 4
+        },
+        "ageGroup": "explorer",
+        "skillIds": [
+          "logic.sequence.programming"
+        ],
+        "progressionTier": 3,
+        "reviewState": "technically_validated"
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 90,
+      "publicationState": "published"
+    },
+    {
+      "id": "rc-gen-017",
+      "gameId": "robot_commands",
+      "levelNumber": 17,
+      "difficulty": 3,
+      "learningObjective": "Longer forward sequence",
+      "localizedContent": {
+        "vi": {
+          "prompt": "Đi 4 bước tới ngôi sao!",
+          "availableCommands": [
+            "MOVE_FORWARD"
+          ],
+          "requiredCommands": [
+            "START",
+            "MOVE_FORWARD",
+            "MOVE_FORWARD",
+            "MOVE_FORWARD",
+            "MOVE_FORWARD"
+          ]
+        },
+        "en": {
+          "prompt": "Move 4 steps to the star!",
+          "availableCommands": [
+            "MOVE_FORWARD"
+          ],
+          "requiredCommands": [
+            "START",
+            "MOVE_FORWARD",
+            "MOVE_FORWARD",
+            "MOVE_FORWARD",
+            "MOVE_FORWARD"
+          ]
+        }
+      },
+      "hints": [
+        {
+          "text": "Đếm số lần dùng lệnh Tiến."
+        },
+        {
+          "text": "Count how many Forward blocks you need."
+        }
+      ],
+      "metadata": {
+        "grid": {
+          "width": 5,
+          "height": 1
+        },
+        "start": {
+          "x": 0,
+          "y": 0,
+          "facing": "east"
+        },
+        "goal": {
+          "x": 4,
+          "y": 0
+        },
+        "ageGroup": "explorer",
+        "skillIds": [
+          "logic.navigation"
+        ],
+        "progressionTier": 3,
+        "reviewState": "technically_validated"
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 90,
+      "publicationState": "published"
+    },
+    {
+      "id": "rc-gen-018",
+      "gameId": "robot_commands",
+      "levelNumber": 18,
+      "difficulty": 3,
+      "learningObjective": "Sequence with a turn",
+      "localizedContent": {
+        "vi": {
+          "prompt": "Đi tới, rẽ phải, rồi đi tới đích!",
+          "availableCommands": [
+            "MOVE_FORWARD",
+            "TURN_RIGHT"
+          ],
+          "requiredCommands": [
+            "START",
+            "MOVE_FORWARD",
+            "TURN_RIGHT",
+            "MOVE_FORWARD",
+            "MOVE_FORWARD",
+            "MOVE_FORWARD",
+            "MOVE_FORWARD"
+          ]
+        },
+        "en": {
+          "prompt": "Move, turn right, then reach the goal!",
+          "availableCommands": [
+            "MOVE_FORWARD",
+            "TURN_RIGHT"
+          ],
+          "requiredCommands": [
+            "START",
+            "MOVE_FORWARD",
+            "TURN_RIGHT",
+            "MOVE_FORWARD",
+            "MOVE_FORWARD",
+            "MOVE_FORWARD",
+            "MOVE_FORWARD"
+          ]
+        }
+      },
+      "hints": [
+        {
+          "text": "Cần rẽ đúng hướng trước khi đi tiếp."
+        },
+        {
+          "text": "Turn before the final forward steps."
+        }
+      ],
+      "metadata": {
+        "grid": {
+          "width": 2,
+          "height": 5
+        },
+        "start": {
+          "x": 0,
+          "y": 0,
+          "facing": "east"
+        },
+        "goal": {
+          "x": 1,
+          "y": 4
+        },
+        "ageGroup": "explorer",
+        "skillIds": [
+          "logic.sequence.programming"
+        ],
+        "progressionTier": 3,
+        "reviewState": "technically_validated"
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 90,
+      "publicationState": "published"
+    },
+    {
+      "id": "rc-gen-019",
+      "gameId": "robot_commands",
+      "levelNumber": 19,
+      "difficulty": 4,
+      "learningObjective": "Longer forward sequence",
+      "localizedContent": {
+        "vi": {
+          "prompt": "Đi 5 bước tới ngôi sao!",
+          "availableCommands": [
+            "MOVE_FORWARD"
+          ],
+          "requiredCommands": [
+            "START",
+            "MOVE_FORWARD",
+            "MOVE_FORWARD",
+            "MOVE_FORWARD",
+            "MOVE_FORWARD",
+            "MOVE_FORWARD"
+          ]
+        },
+        "en": {
+          "prompt": "Move 5 steps to the star!",
+          "availableCommands": [
+            "MOVE_FORWARD"
+          ],
+          "requiredCommands": [
+            "START",
+            "MOVE_FORWARD",
+            "MOVE_FORWARD",
+            "MOVE_FORWARD",
+            "MOVE_FORWARD",
+            "MOVE_FORWARD"
+          ]
+        }
+      },
+      "hints": [
+        {
+          "text": "Đếm số lần dùng lệnh Tiến."
+        },
+        {
+          "text": "Count how many Forward blocks you need."
+        }
+      ],
+      "metadata": {
+        "grid": {
+          "width": 6,
+          "height": 1
+        },
+        "start": {
+          "x": 0,
+          "y": 0,
+          "facing": "east"
+        },
+        "goal": {
+          "x": 5,
+          "y": 0
+        },
+        "ageGroup": "explorer",
+        "skillIds": [
+          "logic.navigation"
+        ],
+        "progressionTier": 4,
+        "reviewState": "technically_validated"
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 100,
+      "publicationState": "published"
+    },
+    {
+      "id": "rc-gen-020",
+      "gameId": "robot_commands",
+      "levelNumber": 20,
+      "difficulty": 4,
+      "learningObjective": "Sequence with a turn",
+      "localizedContent": {
+        "vi": {
+          "prompt": "Đi tới, rẽ phải, rồi đi tới đích!",
+          "availableCommands": [
+            "MOVE_FORWARD",
+            "TURN_RIGHT"
+          ],
+          "requiredCommands": [
+            "START",
+            "MOVE_FORWARD",
+            "TURN_RIGHT",
+            "MOVE_FORWARD",
+            "MOVE_FORWARD",
+            "MOVE_FORWARD",
+            "MOVE_FORWARD",
+            "MOVE_FORWARD"
+          ]
+        },
+        "en": {
+          "prompt": "Move, turn right, then reach the goal!",
+          "availableCommands": [
+            "MOVE_FORWARD",
+            "TURN_RIGHT"
+          ],
+          "requiredCommands": [
+            "START",
+            "MOVE_FORWARD",
+            "TURN_RIGHT",
+            "MOVE_FORWARD",
+            "MOVE_FORWARD",
+            "MOVE_FORWARD",
+            "MOVE_FORWARD",
+            "MOVE_FORWARD"
+          ]
+        }
+      },
+      "hints": [
+        {
+          "text": "Cần rẽ đúng hướng trước khi đi tiếp."
+        },
+        {
+          "text": "Turn before the final forward steps."
+        }
+      ],
+      "metadata": {
+        "grid": {
+          "width": 2,
+          "height": 6
+        },
+        "start": {
+          "x": 0,
+          "y": 0,
+          "facing": "east"
+        },
+        "goal": {
+          "x": 1,
+          "y": 5
+        },
+        "ageGroup": "explorer",
+        "skillIds": [
+          "logic.sequence.programming"
+        ],
+        "progressionTier": 4,
+        "reviewState": "technically_validated"
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 100,
+      "publicationState": "published"
+    },
+    {
+      "id": "rc-gen-021",
+      "gameId": "robot_commands",
+      "levelNumber": 21,
+      "difficulty": 4,
+      "learningObjective": "Longer forward sequence",
+      "localizedContent": {
+        "vi": {
+          "prompt": "Đi 5 bước tới ngôi sao!",
+          "availableCommands": [
+            "MOVE_FORWARD"
+          ],
+          "requiredCommands": [
+            "START",
+            "MOVE_FORWARD",
+            "MOVE_FORWARD",
+            "MOVE_FORWARD",
+            "MOVE_FORWARD",
+            "MOVE_FORWARD"
+          ]
+        },
+        "en": {
+          "prompt": "Move 5 steps to the star!",
+          "availableCommands": [
+            "MOVE_FORWARD"
+          ],
+          "requiredCommands": [
+            "START",
+            "MOVE_FORWARD",
+            "MOVE_FORWARD",
+            "MOVE_FORWARD",
+            "MOVE_FORWARD",
+            "MOVE_FORWARD"
+          ]
+        }
+      },
+      "hints": [
+        {
+          "text": "Đếm số lần dùng lệnh Tiến."
+        },
+        {
+          "text": "Count how many Forward blocks you need."
+        }
+      ],
+      "metadata": {
+        "grid": {
+          "width": 6,
+          "height": 1
+        },
+        "start": {
+          "x": 0,
+          "y": 0,
+          "facing": "east"
+        },
+        "goal": {
+          "x": 5,
+          "y": 0
+        },
+        "ageGroup": "explorer",
+        "skillIds": [
+          "logic.navigation"
+        ],
+        "progressionTier": 4,
+        "reviewState": "technically_validated"
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 100,
+      "publicationState": "published"
+    },
+    {
+      "id": "rc-gen-022",
+      "gameId": "robot_commands",
+      "levelNumber": 22,
+      "difficulty": 4,
+      "learningObjective": "Sequence with a turn",
+      "localizedContent": {
+        "vi": {
+          "prompt": "Đi tới, rẽ phải, rồi đi tới đích!",
+          "availableCommands": [
+            "MOVE_FORWARD",
+            "TURN_RIGHT"
+          ],
+          "requiredCommands": [
+            "START",
+            "MOVE_FORWARD",
+            "TURN_RIGHT",
+            "MOVE_FORWARD",
+            "MOVE_FORWARD",
+            "MOVE_FORWARD",
+            "MOVE_FORWARD",
+            "MOVE_FORWARD"
+          ]
+        },
+        "en": {
+          "prompt": "Move, turn right, then reach the goal!",
+          "availableCommands": [
+            "MOVE_FORWARD",
+            "TURN_RIGHT"
+          ],
+          "requiredCommands": [
+            "START",
+            "MOVE_FORWARD",
+            "TURN_RIGHT",
+            "MOVE_FORWARD",
+            "MOVE_FORWARD",
+            "MOVE_FORWARD",
+            "MOVE_FORWARD",
+            "MOVE_FORWARD"
+          ]
+        }
+      },
+      "hints": [
+        {
+          "text": "Cần rẽ đúng hướng trước khi đi tiếp."
+        },
+        {
+          "text": "Turn before the final forward steps."
+        }
+      ],
+      "metadata": {
+        "grid": {
+          "width": 2,
+          "height": 6
+        },
+        "start": {
+          "x": 0,
+          "y": 0,
+          "facing": "east"
+        },
+        "goal": {
+          "x": 1,
+          "y": 5
+        },
+        "ageGroup": "explorer",
+        "skillIds": [
+          "logic.sequence.programming"
+        ],
+        "progressionTier": 4,
+        "reviewState": "technically_validated"
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 100,
+      "publicationState": "published"
+    },
+    {
+      "id": "rc-gen-023",
+      "gameId": "robot_commands",
+      "levelNumber": 23,
+      "difficulty": 4,
+      "learningObjective": "Longer forward sequence",
+      "localizedContent": {
+        "vi": {
+          "prompt": "Đi 5 bước tới ngôi sao!",
+          "availableCommands": [
+            "MOVE_FORWARD"
+          ],
+          "requiredCommands": [
+            "START",
+            "MOVE_FORWARD",
+            "MOVE_FORWARD",
+            "MOVE_FORWARD",
+            "MOVE_FORWARD",
+            "MOVE_FORWARD"
+          ]
+        },
+        "en": {
+          "prompt": "Move 5 steps to the star!",
+          "availableCommands": [
+            "MOVE_FORWARD"
+          ],
+          "requiredCommands": [
+            "START",
+            "MOVE_FORWARD",
+            "MOVE_FORWARD",
+            "MOVE_FORWARD",
+            "MOVE_FORWARD",
+            "MOVE_FORWARD"
+          ]
+        }
+      },
+      "hints": [
+        {
+          "text": "Đếm số lần dùng lệnh Tiến."
+        },
+        {
+          "text": "Count how many Forward blocks you need."
+        }
+      ],
+      "metadata": {
+        "grid": {
+          "width": 6,
+          "height": 1
+        },
+        "start": {
+          "x": 0,
+          "y": 0,
+          "facing": "east"
+        },
+        "goal": {
+          "x": 5,
+          "y": 0
+        },
+        "ageGroup": "explorer",
+        "skillIds": [
+          "logic.navigation"
+        ],
+        "progressionTier": 4,
+        "reviewState": "technically_validated"
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 100,
+      "publicationState": "published"
+    },
+    {
+      "id": "rc-gen-024",
+      "gameId": "robot_commands",
+      "levelNumber": 24,
+      "difficulty": 4,
+      "learningObjective": "Sequence with a turn",
+      "localizedContent": {
+        "vi": {
+          "prompt": "Đi tới, rẽ phải, rồi đi tới đích!",
+          "availableCommands": [
+            "MOVE_FORWARD",
+            "TURN_RIGHT"
+          ],
+          "requiredCommands": [
+            "START",
+            "MOVE_FORWARD",
+            "TURN_RIGHT",
+            "MOVE_FORWARD",
+            "MOVE_FORWARD",
+            "MOVE_FORWARD",
+            "MOVE_FORWARD",
+            "MOVE_FORWARD"
+          ]
+        },
+        "en": {
+          "prompt": "Move, turn right, then reach the goal!",
+          "availableCommands": [
+            "MOVE_FORWARD",
+            "TURN_RIGHT"
+          ],
+          "requiredCommands": [
+            "START",
+            "MOVE_FORWARD",
+            "TURN_RIGHT",
+            "MOVE_FORWARD",
+            "MOVE_FORWARD",
+            "MOVE_FORWARD",
+            "MOVE_FORWARD",
+            "MOVE_FORWARD"
+          ]
+        }
+      },
+      "hints": [
+        {
+          "text": "Cần rẽ đúng hướng trước khi đi tiếp."
+        },
+        {
+          "text": "Turn before the final forward steps."
+        }
+      ],
+      "metadata": {
+        "grid": {
+          "width": 2,
+          "height": 6
+        },
+        "start": {
+          "x": 0,
+          "y": 0,
+          "facing": "east"
+        },
+        "goal": {
+          "x": 1,
+          "y": 5
+        },
+        "ageGroup": "explorer",
+        "skillIds": [
+          "logic.sequence.programming"
+        ],
+        "progressionTier": 4,
+        "reviewState": "technically_validated"
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 100,
+      "publicationState": "published"
+    },
+    {
+      "id": "rc-gen-025",
+      "gameId": "robot_commands",
+      "levelNumber": 25,
+      "difficulty": 5,
+      "learningObjective": "Longer forward sequence",
+      "localizedContent": {
+        "vi": {
+          "prompt": "Đi 5 bước tới ngôi sao!",
+          "availableCommands": [
+            "MOVE_FORWARD"
+          ],
+          "requiredCommands": [
+            "START",
+            "MOVE_FORWARD",
+            "MOVE_FORWARD",
+            "MOVE_FORWARD",
+            "MOVE_FORWARD",
+            "MOVE_FORWARD"
+          ]
+        },
+        "en": {
+          "prompt": "Move 5 steps to the star!",
+          "availableCommands": [
+            "MOVE_FORWARD"
+          ],
+          "requiredCommands": [
+            "START",
+            "MOVE_FORWARD",
+            "MOVE_FORWARD",
+            "MOVE_FORWARD",
+            "MOVE_FORWARD",
+            "MOVE_FORWARD"
+          ]
+        }
+      },
+      "hints": [
+        {
+          "text": "Đếm số lần dùng lệnh Tiến."
+        },
+        {
+          "text": "Count how many Forward blocks you need."
+        }
+      ],
+      "metadata": {
+        "grid": {
+          "width": 6,
+          "height": 1
+        },
+        "start": {
+          "x": 0,
+          "y": 0,
+          "facing": "east"
+        },
+        "goal": {
+          "x": 5,
+          "y": 0
+        },
+        "ageGroup": "master",
+        "skillIds": [
+          "logic.navigation"
+        ],
+        "progressionTier": 5,
+        "reviewState": "technically_validated"
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 110,
+      "publicationState": "published"
+    },
+    {
+      "id": "rc-gen-026",
+      "gameId": "robot_commands",
+      "levelNumber": 26,
+      "difficulty": 5,
+      "learningObjective": "Sequence with a turn",
+      "localizedContent": {
+        "vi": {
+          "prompt": "Đi tới, rẽ phải, rồi đi tới đích!",
+          "availableCommands": [
+            "MOVE_FORWARD",
+            "TURN_RIGHT"
+          ],
+          "requiredCommands": [
+            "START",
+            "MOVE_FORWARD",
+            "TURN_RIGHT",
+            "MOVE_FORWARD",
+            "MOVE_FORWARD",
+            "MOVE_FORWARD",
+            "MOVE_FORWARD",
+            "MOVE_FORWARD"
+          ]
+        },
+        "en": {
+          "prompt": "Move, turn right, then reach the goal!",
+          "availableCommands": [
+            "MOVE_FORWARD",
+            "TURN_RIGHT"
+          ],
+          "requiredCommands": [
+            "START",
+            "MOVE_FORWARD",
+            "TURN_RIGHT",
+            "MOVE_FORWARD",
+            "MOVE_FORWARD",
+            "MOVE_FORWARD",
+            "MOVE_FORWARD",
+            "MOVE_FORWARD"
+          ]
+        }
+      },
+      "hints": [
+        {
+          "text": "Cần rẽ đúng hướng trước khi đi tiếp."
+        },
+        {
+          "text": "Turn before the final forward steps."
+        }
+      ],
+      "metadata": {
+        "grid": {
+          "width": 2,
+          "height": 6
+        },
+        "start": {
+          "x": 0,
+          "y": 0,
+          "facing": "east"
+        },
+        "goal": {
+          "x": 1,
+          "y": 5
+        },
+        "ageGroup": "master",
+        "skillIds": [
+          "logic.sequence.programming"
+        ],
+        "progressionTier": 5,
+        "reviewState": "technically_validated"
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 110,
+      "publicationState": "published"
+    },
+    {
+      "id": "rc-gen-027",
+      "gameId": "robot_commands",
+      "levelNumber": 27,
+      "difficulty": 5,
+      "learningObjective": "Longer forward sequence",
+      "localizedContent": {
+        "vi": {
+          "prompt": "Đi 5 bước tới ngôi sao!",
+          "availableCommands": [
+            "MOVE_FORWARD"
+          ],
+          "requiredCommands": [
+            "START",
+            "MOVE_FORWARD",
+            "MOVE_FORWARD",
+            "MOVE_FORWARD",
+            "MOVE_FORWARD",
+            "MOVE_FORWARD"
+          ]
+        },
+        "en": {
+          "prompt": "Move 5 steps to the star!",
+          "availableCommands": [
+            "MOVE_FORWARD"
+          ],
+          "requiredCommands": [
+            "START",
+            "MOVE_FORWARD",
+            "MOVE_FORWARD",
+            "MOVE_FORWARD",
+            "MOVE_FORWARD",
+            "MOVE_FORWARD"
+          ]
+        }
+      },
+      "hints": [
+        {
+          "text": "Đếm số lần dùng lệnh Tiến."
+        },
+        {
+          "text": "Count how many Forward blocks you need."
+        }
+      ],
+      "metadata": {
+        "grid": {
+          "width": 6,
+          "height": 1
+        },
+        "start": {
+          "x": 0,
+          "y": 0,
+          "facing": "east"
+        },
+        "goal": {
+          "x": 5,
+          "y": 0
+        },
+        "ageGroup": "master",
+        "skillIds": [
+          "logic.navigation"
+        ],
+        "progressionTier": 5,
+        "reviewState": "technically_validated"
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 110,
+      "publicationState": "published"
+    },
+    {
+      "id": "rc-gen-028",
+      "gameId": "robot_commands",
+      "levelNumber": 28,
+      "difficulty": 5,
+      "learningObjective": "Sequence with a turn",
+      "localizedContent": {
+        "vi": {
+          "prompt": "Đi tới, rẽ phải, rồi đi tới đích!",
+          "availableCommands": [
+            "MOVE_FORWARD",
+            "TURN_RIGHT"
+          ],
+          "requiredCommands": [
+            "START",
+            "MOVE_FORWARD",
+            "TURN_RIGHT",
+            "MOVE_FORWARD",
+            "MOVE_FORWARD",
+            "MOVE_FORWARD",
+            "MOVE_FORWARD",
+            "MOVE_FORWARD"
+          ]
+        },
+        "en": {
+          "prompt": "Move, turn right, then reach the goal!",
+          "availableCommands": [
+            "MOVE_FORWARD",
+            "TURN_RIGHT"
+          ],
+          "requiredCommands": [
+            "START",
+            "MOVE_FORWARD",
+            "TURN_RIGHT",
+            "MOVE_FORWARD",
+            "MOVE_FORWARD",
+            "MOVE_FORWARD",
+            "MOVE_FORWARD",
+            "MOVE_FORWARD"
+          ]
+        }
+      },
+      "hints": [
+        {
+          "text": "Cần rẽ đúng hướng trước khi đi tiếp."
+        },
+        {
+          "text": "Turn before the final forward steps."
+        }
+      ],
+      "metadata": {
+        "grid": {
+          "width": 2,
+          "height": 6
+        },
+        "start": {
+          "x": 0,
+          "y": 0,
+          "facing": "east"
+        },
+        "goal": {
+          "x": 1,
+          "y": 5
+        },
+        "ageGroup": "master",
+        "skillIds": [
+          "logic.sequence.programming"
+        ],
+        "progressionTier": 5,
+        "reviewState": "technically_validated"
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 110,
+      "publicationState": "published"
+    },
+    {
+      "id": "rc-gen-029",
+      "gameId": "robot_commands",
+      "levelNumber": 29,
+      "difficulty": 5,
+      "learningObjective": "Longer forward sequence",
+      "localizedContent": {
+        "vi": {
+          "prompt": "Đi 5 bước tới ngôi sao!",
+          "availableCommands": [
+            "MOVE_FORWARD"
+          ],
+          "requiredCommands": [
+            "START",
+            "MOVE_FORWARD",
+            "MOVE_FORWARD",
+            "MOVE_FORWARD",
+            "MOVE_FORWARD",
+            "MOVE_FORWARD"
+          ]
+        },
+        "en": {
+          "prompt": "Move 5 steps to the star!",
+          "availableCommands": [
+            "MOVE_FORWARD"
+          ],
+          "requiredCommands": [
+            "START",
+            "MOVE_FORWARD",
+            "MOVE_FORWARD",
+            "MOVE_FORWARD",
+            "MOVE_FORWARD",
+            "MOVE_FORWARD"
+          ]
+        }
+      },
+      "hints": [
+        {
+          "text": "Đếm số lần dùng lệnh Tiến."
+        },
+        {
+          "text": "Count how many Forward blocks you need."
+        }
+      ],
+      "metadata": {
+        "grid": {
+          "width": 6,
+          "height": 1
+        },
+        "start": {
+          "x": 0,
+          "y": 0,
+          "facing": "east"
+        },
+        "goal": {
+          "x": 5,
+          "y": 0
+        },
+        "ageGroup": "master",
+        "skillIds": [
+          "logic.navigation"
+        ],
+        "progressionTier": 5,
+        "reviewState": "technically_validated"
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 110,
+      "publicationState": "published"
+    },
+    {
+      "id": "rc-gen-030",
+      "gameId": "robot_commands",
+      "levelNumber": 30,
+      "difficulty": 5,
+      "learningObjective": "Sequence with a turn",
+      "localizedContent": {
+        "vi": {
+          "prompt": "Đi tới, rẽ phải, rồi đi tới đích!",
+          "availableCommands": [
+            "MOVE_FORWARD",
+            "TURN_RIGHT"
+          ],
+          "requiredCommands": [
+            "START",
+            "MOVE_FORWARD",
+            "TURN_RIGHT",
+            "MOVE_FORWARD",
+            "MOVE_FORWARD",
+            "MOVE_FORWARD",
+            "MOVE_FORWARD",
+            "MOVE_FORWARD"
+          ]
+        },
+        "en": {
+          "prompt": "Move, turn right, then reach the goal!",
+          "availableCommands": [
+            "MOVE_FORWARD",
+            "TURN_RIGHT"
+          ],
+          "requiredCommands": [
+            "START",
+            "MOVE_FORWARD",
+            "TURN_RIGHT",
+            "MOVE_FORWARD",
+            "MOVE_FORWARD",
+            "MOVE_FORWARD",
+            "MOVE_FORWARD",
+            "MOVE_FORWARD"
+          ]
+        }
+      },
+      "hints": [
+        {
+          "text": "Cần rẽ đúng hướng trước khi đi tiếp."
+        },
+        {
+          "text": "Turn before the final forward steps."
+        }
+      ],
+      "metadata": {
+        "grid": {
+          "width": 2,
+          "height": 6
+        },
+        "start": {
+          "x": 0,
+          "y": 0,
+          "facing": "east"
+        },
+        "goal": {
+          "x": 1,
+          "y": 5
+        },
+        "ageGroup": "master",
+        "skillIds": [
+          "logic.sequence.programming"
+        ],
+        "progressionTier": 5,
+        "reviewState": "technically_validated"
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 110,
+      "publicationState": "published"
     }
   ]
 }

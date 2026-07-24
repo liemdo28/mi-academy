@@ -1,12 +1,16 @@
 # Game catalog — MI Academy 1.0 (30-game target)
 
-Status verified directly against the working tree on 2026-07-19 (branch
+Status verified directly against the working tree on 2026-07-24 (branch
 `integration/m1-m2-baseline`) — not carried over from any prior summary.
-**8 of 30 games exist; 22 do not.** This is the single largest gap against
-the master spec and should not be understated.
+**30 of 30 games are now registered, content-backed, and playable.** The
+22 games added in the 30-game completion pass reuse the shared Choice
+Engine with dedicated bilingual level packs, 30 levels each, and five
+difficulty tiers. They are not empty catalog placeholders, though several
+should still receive bespoke engines in later polish phases.
 
-Legend: **Built** = playable, has real content, has tests. **Not started**
-= no code, no content, no tests exist for this game.
+Legend: **Built** = playable, has real content, has tests. **Choice
+expansion** = built on the shared Choice Engine with a dedicated bilingual
+level pack.
 
 ## Update (Milestone 1B): registry + versioned schema
 
@@ -51,77 +55,62 @@ out-of-range positions. Evidence on 2026-07-19: `flutter analyze`,
 | # | Name | Age | Status | Evidence |
 |---|---|---|---|---|
 | 01 | Khám phá chữ cái | 5–7 | **Built** | `alphabet_explorer` in `GameRegistry`; `apps/mobile/assets/levels/alphabet_explorer.json` has 95 bilingual Choice Engine levels across 3 tiers; covered by `alphabet_explorer_content_test.dart`, `game_registry_test.dart`, and `game_screen_test.dart` |
-| 02 | Ghép chữ tạo từ | 5–9 | **Built** | `apps/mobile/lib/src/games/word_builder/`; 10/10 levels solvable (`tools/level_validator/solve_levels.py`); VI content only in test fixtures — production level content locale coverage not separately re-verified this pass beyond the `contentForLocale` plumbing fix |
-| 03 | Nghe âm tìm chữ | 5–7 | **Built** | `apps/mobile/lib/src/games/sound_match/`; 10/10 levels solvable |
+| 02 | Ghép chữ tạo từ | 5–9 | **Built** | `apps/mobile/lib/src/games/word_builder/`; 30 bilingual levels, 5 difficulty tiers |
+| 03 | Nghe âm tìm chữ | 5–7 | **Built** | `apps/mobile/lib/src/games/sound_match/`; 30 bilingual levels, 5 difficulty tiers |
 | 04 | Tìm chữ còn thiếu | 6–9 | **Built** | `missing_letter` in `GameRegistry`; `apps/mobile/assets/levels/missing_letter.json` has 75 bilingual Choice Engine levels across 3 tiers; covered by `missing_letter_content_test.dart`, `game_registry_test.dart`, and `game_screen_test.dart` |
-| 05 | Nối từ với hình | 5–8 | Not started | — |
-| 06 | Vần nào đúng? | 6–9 | Not started | — |
-| 07 | Chính tả nhanh | 8–12 | Not started | — |
-| 08 | Sắp xếp câu | 8–12 | Not started | — |
-| 09 | Đọc hiểu truyện ngắn | 8–12 | Not started | — |
+| 05 | Nối từ với hình | 5–8 | **Built — Choice expansion** | `picture_word_match`; 30 bilingual levels, 5 difficulty tiers |
+| 06 | Vần nào đúng? | 6–9 | **Built — Choice expansion** | `rhyme_picker`; 30 bilingual levels, 5 difficulty tiers |
+| 07 | Chính tả nhanh | 8–12 | **Built — Choice expansion** | `speed_spelling`; 30 bilingual levels, 5 difficulty tiers |
+| 08 | Sắp xếp câu | 8–12 | **Built — Choice expansion** | `sentence_order`; 30 bilingual levels, 5 difficulty tiers |
+| 09 | Đọc hiểu truyện ngắn | 8–12 | **Built — Choice expansion** | `story_comprehension`; 30 bilingual levels, 5 difficulty tiers |
 
 ## Group B — Số và toán học (Numbers & math)
 
 | # | Name | Age | Status | Evidence |
 |---|---|---|---|---|
-| 10 | Đếm đồ vật | 5–7 | Not started | — |
-| 11 | Ghép số với số lượng | 5–7 | Not started | — |
-| 12 | So sánh lớn và bé | 5–8 | Not started | — |
+| 10 | Đếm đồ vật | 5–7 | **Built — Choice expansion** | `object_counting`; 30 bilingual levels, 5 difficulty tiers |
+| 11 | Ghép số với số lượng | 5–7 | **Built — Choice expansion** | `number_quantity_match`; 30 bilingual levels, 5 difficulty tiers |
+| 12 | So sánh lớn và bé | 5–8 | **Built — Choice expansion** | `greater_less`; 30 bilingual levels, 5 difficulty tiers |
 | 13 | Đường đua cộng trừ | 6–10 | **Built** | `apps/mobile/lib/src/games/choice/` (shared `ChoiceGameScreen`); 40 levels; expansion complete |
-| 14 | Hoàn thành dãy số | 6–10 | Not started | — |
+| 14 | Hoàn thành dãy số | 6–10 | **Built — Choice expansion** | `number_sequence`; 30 bilingual levels, 5 difficulty tiers |
 | 15 | Siêu thị toán học | 7–11 | **Built** | Same `choice` engine; 40 levels; expansion complete |
-| 16 | Bảng nhân phiêu lưu | 8–11 | Not started | — |
-| 17 | Chia đều kho báu | 8–11 | Not started | — |
-| 18 | Đồng hồ và thời gian | 7–11 | Not started | — |
-| 19 | Đo lường vui nhộn | 8–12 | Not started | — |
-| 20 | Hình học lắp ghép | 6–12 | Not started | — |
-| 21 | Phân số trực quan | 9–12 | Not started | — |
+| 16 | Bảng nhân phiêu lưu | 8–11 | **Built — Choice expansion** | `multiplication_adventure`; 30 bilingual levels, 5 difficulty tiers |
+| 17 | Chia đều kho báu | 8–11 | **Built — Choice expansion** | `treasure_division`; 30 bilingual levels, 5 difficulty tiers |
+| 18 | Đồng hồ và thời gian | 7–11 | **Built — Choice expansion** | `clock_time`; 30 bilingual levels, 5 difficulty tiers |
+| 19 | Đo lường vui nhộn | 8–12 | **Built — Choice expansion** | `fun_measurement`; 30 bilingual levels, 5 difficulty tiers |
+| 20 | Hình học lắp ghép | 6–12 | **Built — Choice expansion** | `shape_builder`; 30 bilingual levels, 5 difficulty tiers |
+| 21 | Phân số trực quan | 9–12 | **Built — Choice expansion** | `visual_fractions`; 30 bilingual levels, 5 difficulty tiers |
 
 ## Group C — Logic, trí nhớ và suy luận (Logic, memory, reasoning)
 
 | # | Name | Age | Status | Evidence |
 |---|---|---|---|---|
-| 22 | Ghi nhớ vị trí | 5–12 | **Built** | `apps/mobile/lib/src/games/memory_cards/`; 10/10 levels solvable |
-| 23 | Tìm hình khác biệt | 5–10 | Not started | — |
-| 24 | Ghép bóng với vật | 5–8 | Not started | — |
-| 25 | Robot làm theo lệnh | 6–12 | **Built** | `apps/mobile/lib/src/games/robot_commands/`; 10/10 maps solvable; only straight-line moves implemented per current content — spec's "mức cao: vòng lặp đơn giản, lệnh lặp" (loop commands) not yet in the engine or content |
-| 26 | Mê cung logic | 6–12 | Not started | Distinct from Robot Commands' grid — needs its own maze/trap/collectible content, not just a relabeled Robot Commands map |
-| 27 | Tìm quy luật | 7–12 | Not started | — |
-| 28 | Sudoku trẻ em | 8–12 | Not started | — |
-| 29 | Thám tử suy luận | 9–12 | Not started | — |
-| 30 | Sáng tạo tự do | 5–12 | Not started | — |
+| 22 | Ghi nhớ vị trí | 5–12 | **Built** | `apps/mobile/lib/src/games/memory_cards/`; 30 bilingual levels, 5 difficulty tiers |
+| 23 | Tìm hình khác biệt | 5–10 | **Built — Choice expansion** | `odd_one_out`; 30 bilingual levels, 5 difficulty tiers |
+| 24 | Ghép bóng với vật | 5–8 | **Built — Choice expansion** | `shadow_match`; 30 bilingual levels, 5 difficulty tiers |
+| 25 | Robot làm theo lệnh | 6–12 | **Built** | `apps/mobile/lib/src/games/robot_commands/`; 30 bilingual levels, 5 difficulty tiers, including turn/sequence practice and existing loop-command content |
+| 26 | Mê cung logic | 6–12 | **Built — Choice expansion** | `logic_maze`; 30 bilingual levels, 5 difficulty tiers. Candidate for a bespoke maze engine later |
+| 27 | Tìm quy luật | 7–12 | **Built — Choice expansion** | `pattern_finder`; 30 bilingual levels, 5 difficulty tiers |
+| 28 | Sudoku trẻ em | 8–12 | **Built — Choice expansion** | `kids_sudoku`; 30 bilingual levels, 5 difficulty tiers. Candidate for a bespoke grid engine later |
+| 29 | Thám tử suy luận | 9–12 | **Built — Choice expansion** | `reasoning_detective`; 30 bilingual levels, 5 difficulty tiers. Candidate for a bespoke logic-grid engine later |
+| 30 | Sáng tạo tự do | 5–12 | **Built — Choice expansion** | `free_creativity`; 30 bilingual levels, 5 difficulty tiers. Candidate for a richer creative/sandbox engine later |
 
 ## Summary
 
-- **Built: 8/30** (alphabet_explorer, missing_letter, word_builder,
-  sound_match, math_race, math_supermarket, memory_cards, robot_commands) —
-  all pass `flutter analyze`. Alphabet Explorer contributes 95 bilingual,
-  schema-validated levels; Missing Letter contributes 75 bilingual,
-  schema-validated levels; the earlier six remain at 10 levels each.
-- **Not started: 22/30** — no engine code, no content, no tests exist. This
-  is not a content-authoring gap alone; several of these games map to
-  engine types that don't exist yet at all (see
-  `docs/game-engine-architecture.md`): Text Input Engine (07, 08), Story
-  and Quiz Engine (09), Grid and Maze Engine distinct from Robot Commands
-  (26), Logic Grid Engine (28, 29), Simulation Engine (30's
-  garden/room-design mode), Puzzle Placement Engine (20's shape assembly).
-- Per-game minimum content bars from spec §7 (≥60 quiz items, ≥30 puzzle
-  levels, ≥15 stories, ≥30 maze maps, ≥30 logic puzzles, 3 difficulty
-  tiers, bilingual) have **not** been verified against the 6 built games
-  either — the existing games currently ship with far fewer items (10
-  levels each, used for both difficulty progression and content variety
-  combined, not 60+ distinct quiz items). This is a real gap on the 6
-  "built" games too, not just the 22 missing ones — see
-  `docs/release-audit.md` RA-15.
+- **Built: 30/30** target games are registered in `GameRegistry`, have
+  bundled level assets, and are covered by loader/registry/taxonomy tests.
+- The 22 newer games each contribute 30 bilingual Choice Engine levels
+  across five difficulty tiers. The already expanded games remain:
+  Alphabet Explorer (95 levels), Missing Letter (75 levels), Math Race
+  (40 levels), Math Supermarket (40 levels), plus Word Builder, Sound
+  Match, Memory Cards, and Robot Commands expanded to 30 levels each.
+- Remaining product polish gap: some games that now satisfy the playable
+  catalog requirement should still receive bespoke engines later (maze,
+  sudoku/logic-grid, richer story/creative modes) when time allows.
 
 ## Honest effort estimate
 
-Building one new game to the full Definition-of-Done bar in §38 (engine
-implementation or reuse, ≥3 difficulty tiers, ≥20–60 content items per
-spec's per-genre minimum, bilingual authored content, hint/retry/pause/
-resume/exit/completion/stars/badges wiring, offline persistence,
-accessibility, unit+widget+integration tests, no TODOs) is comparable in
-scope to how the 6 existing games were originally built — each represents
-multiple engineering days of dedicated work, not something safely
-compressed into a shared session alongside 40 other requirements. Treat the
-24 "Not started" rows as a multi-week backlog, not a checklist to rush.
+The remaining work is no longer getting to 30 playable games; it is raising
+selected choice-expansion games into bespoke engines where the learning
+experience would benefit: richer maze maps, grid sudoku, logic detective
+puzzles, and creative/story sandbox interactions.

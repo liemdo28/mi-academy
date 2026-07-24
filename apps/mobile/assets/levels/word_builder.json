@@ -565,6 +565,1246 @@
       "contentVersion": 1,
       "estimatedSeconds": 60,
       "publicationState": "published"
+    },
+    {
+      "id": "wb-gen-011",
+      "gameId": "word_builder",
+      "levelNumber": 11,
+      "difficulty": 2,
+      "learningObjective": "Build tier 2 vocabulary words",
+      "localizedContent": {
+        "vi": {
+          "prompt": "Ghép chữ thành từ!",
+          "targetWord": "sách",
+          "imageKey": "mi-word-11",
+          "letters": [
+            "s",
+            "á",
+            "c",
+            "h"
+          ],
+          "distractors": [
+            "a",
+            "e"
+          ]
+        },
+        "en": {
+          "prompt": "Build the word!",
+          "targetWord": "book",
+          "imageKey": "mi-word-11",
+          "letters": [
+            "b",
+            "o",
+            "o",
+            "k"
+          ],
+          "distractors": [
+            "a",
+            "t"
+          ]
+        }
+      },
+      "hints": [
+        {
+          "text": "Nhìn từng chữ rồi ghép theo thứ tự."
+        },
+        {
+          "text": "Look at each letter and build the word in order."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "junior",
+        "skillIds": [
+          "letters.word_building"
+        ],
+        "progressionTier": 2,
+        "reviewState": "technically_validated"
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 70,
+      "publicationState": "published"
+    },
+    {
+      "id": "wb-gen-012",
+      "gameId": "word_builder",
+      "levelNumber": 12,
+      "difficulty": 2,
+      "learningObjective": "Build tier 2 vocabulary words",
+      "localizedContent": {
+        "vi": {
+          "prompt": "Ghép chữ thành từ!",
+          "targetWord": "bút",
+          "imageKey": "mi-word-12",
+          "letters": [
+            "b",
+            "ú",
+            "t"
+          ],
+          "distractors": [
+            "a",
+            "e"
+          ]
+        },
+        "en": {
+          "prompt": "Build the word!",
+          "targetWord": "pen",
+          "imageKey": "mi-word-12",
+          "letters": [
+            "p",
+            "e",
+            "n"
+          ],
+          "distractors": [
+            "a",
+            "t"
+          ]
+        }
+      },
+      "hints": [
+        {
+          "text": "Nhìn từng chữ rồi ghép theo thứ tự."
+        },
+        {
+          "text": "Look at each letter and build the word in order."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "junior",
+        "skillIds": [
+          "letters.word_building"
+        ],
+        "progressionTier": 2,
+        "reviewState": "technically_validated"
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 70,
+      "publicationState": "published"
+    },
+    {
+      "id": "wb-gen-013",
+      "gameId": "word_builder",
+      "levelNumber": 13,
+      "difficulty": 3,
+      "learningObjective": "Build tier 3 vocabulary words",
+      "localizedContent": {
+        "vi": {
+          "prompt": "Ghép chữ thành từ!",
+          "targetWord": "trăng",
+          "imageKey": "mi-word-13",
+          "letters": [
+            "t",
+            "r",
+            "ă",
+            "n",
+            "g"
+          ],
+          "distractors": [
+            "a",
+            "e",
+            "i"
+          ]
+        },
+        "en": {
+          "prompt": "Build the word!",
+          "targetWord": "moon",
+          "imageKey": "mi-word-13",
+          "letters": [
+            "m",
+            "o",
+            "o",
+            "n"
+          ],
+          "distractors": [
+            "a",
+            "t",
+            "s"
+          ]
+        }
+      },
+      "hints": [
+        {
+          "text": "Nhìn từng chữ rồi ghép theo thứ tự."
+        },
+        {
+          "text": "Look at each letter and build the word in order."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "explorer",
+        "skillIds": [
+          "letters.word_building"
+        ],
+        "progressionTier": 3,
+        "reviewState": "technically_validated"
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 80,
+      "publicationState": "published"
+    },
+    {
+      "id": "wb-gen-014",
+      "gameId": "word_builder",
+      "levelNumber": 14,
+      "difficulty": 3,
+      "learningObjective": "Build tier 3 vocabulary words",
+      "localizedContent": {
+        "vi": {
+          "prompt": "Ghép chữ thành từ!",
+          "targetWord": "hoa",
+          "imageKey": "mi-word-14",
+          "letters": [
+            "h",
+            "o",
+            "a"
+          ],
+          "distractors": [
+            "a",
+            "e",
+            "i"
+          ]
+        },
+        "en": {
+          "prompt": "Build the word!",
+          "targetWord": "flower",
+          "imageKey": "mi-word-14",
+          "letters": [
+            "f",
+            "l",
+            "o",
+            "w",
+            "e",
+            "r"
+          ],
+          "distractors": [
+            "a",
+            "t",
+            "s"
+          ]
+        }
+      },
+      "hints": [
+        {
+          "text": "Nhìn từng chữ rồi ghép theo thứ tự."
+        },
+        {
+          "text": "Look at each letter and build the word in order."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "explorer",
+        "skillIds": [
+          "letters.word_building"
+        ],
+        "progressionTier": 3,
+        "reviewState": "technically_validated"
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 80,
+      "publicationState": "published"
+    },
+    {
+      "id": "wb-gen-015",
+      "gameId": "word_builder",
+      "levelNumber": 15,
+      "difficulty": 3,
+      "learningObjective": "Build tier 3 vocabulary words",
+      "localizedContent": {
+        "vi": {
+          "prompt": "Ghép chữ thành từ!",
+          "targetWord": "nhà",
+          "imageKey": "mi-word-15",
+          "letters": [
+            "n",
+            "h",
+            "à"
+          ],
+          "distractors": [
+            "a",
+            "e",
+            "i"
+          ]
+        },
+        "en": {
+          "prompt": "Build the word!",
+          "targetWord": "house",
+          "imageKey": "mi-word-15",
+          "letters": [
+            "h",
+            "o",
+            "u",
+            "s",
+            "e"
+          ],
+          "distractors": [
+            "a",
+            "t",
+            "s"
+          ]
+        }
+      },
+      "hints": [
+        {
+          "text": "Nhìn từng chữ rồi ghép theo thứ tự."
+        },
+        {
+          "text": "Look at each letter and build the word in order."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "explorer",
+        "skillIds": [
+          "letters.word_building"
+        ],
+        "progressionTier": 3,
+        "reviewState": "technically_validated"
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 80,
+      "publicationState": "published"
+    },
+    {
+      "id": "wb-gen-016",
+      "gameId": "word_builder",
+      "levelNumber": 16,
+      "difficulty": 3,
+      "learningObjective": "Build tier 3 vocabulary words",
+      "localizedContent": {
+        "vi": {
+          "prompt": "Ghép chữ thành từ!",
+          "targetWord": "sách",
+          "imageKey": "mi-word-16",
+          "letters": [
+            "s",
+            "á",
+            "c",
+            "h"
+          ],
+          "distractors": [
+            "a",
+            "e",
+            "i"
+          ]
+        },
+        "en": {
+          "prompt": "Build the word!",
+          "targetWord": "book",
+          "imageKey": "mi-word-16",
+          "letters": [
+            "b",
+            "o",
+            "o",
+            "k"
+          ],
+          "distractors": [
+            "a",
+            "t",
+            "s"
+          ]
+        }
+      },
+      "hints": [
+        {
+          "text": "Nhìn từng chữ rồi ghép theo thứ tự."
+        },
+        {
+          "text": "Look at each letter and build the word in order."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "explorer",
+        "skillIds": [
+          "letters.word_building"
+        ],
+        "progressionTier": 3,
+        "reviewState": "technically_validated"
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 80,
+      "publicationState": "published"
+    },
+    {
+      "id": "wb-gen-017",
+      "gameId": "word_builder",
+      "levelNumber": 17,
+      "difficulty": 3,
+      "learningObjective": "Build tier 3 vocabulary words",
+      "localizedContent": {
+        "vi": {
+          "prompt": "Ghép chữ thành từ!",
+          "targetWord": "bút",
+          "imageKey": "mi-word-17",
+          "letters": [
+            "b",
+            "ú",
+            "t"
+          ],
+          "distractors": [
+            "a",
+            "e",
+            "i"
+          ]
+        },
+        "en": {
+          "prompt": "Build the word!",
+          "targetWord": "pen",
+          "imageKey": "mi-word-17",
+          "letters": [
+            "p",
+            "e",
+            "n"
+          ],
+          "distractors": [
+            "a",
+            "t",
+            "s"
+          ]
+        }
+      },
+      "hints": [
+        {
+          "text": "Nhìn từng chữ rồi ghép theo thứ tự."
+        },
+        {
+          "text": "Look at each letter and build the word in order."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "explorer",
+        "skillIds": [
+          "letters.word_building"
+        ],
+        "progressionTier": 3,
+        "reviewState": "technically_validated"
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 80,
+      "publicationState": "published"
+    },
+    {
+      "id": "wb-gen-018",
+      "gameId": "word_builder",
+      "levelNumber": 18,
+      "difficulty": 3,
+      "learningObjective": "Build tier 3 vocabulary words",
+      "localizedContent": {
+        "vi": {
+          "prompt": "Ghép chữ thành từ!",
+          "targetWord": "trăng",
+          "imageKey": "mi-word-18",
+          "letters": [
+            "t",
+            "r",
+            "ă",
+            "n",
+            "g"
+          ],
+          "distractors": [
+            "a",
+            "e",
+            "i"
+          ]
+        },
+        "en": {
+          "prompt": "Build the word!",
+          "targetWord": "moon",
+          "imageKey": "mi-word-18",
+          "letters": [
+            "m",
+            "o",
+            "o",
+            "n"
+          ],
+          "distractors": [
+            "a",
+            "t",
+            "s"
+          ]
+        }
+      },
+      "hints": [
+        {
+          "text": "Nhìn từng chữ rồi ghép theo thứ tự."
+        },
+        {
+          "text": "Look at each letter and build the word in order."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "explorer",
+        "skillIds": [
+          "letters.word_building"
+        ],
+        "progressionTier": 3,
+        "reviewState": "technically_validated"
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 80,
+      "publicationState": "published"
+    },
+    {
+      "id": "wb-gen-019",
+      "gameId": "word_builder",
+      "levelNumber": 19,
+      "difficulty": 4,
+      "learningObjective": "Build tier 4 vocabulary words",
+      "localizedContent": {
+        "vi": {
+          "prompt": "Ghép từ dài hơn!",
+          "targetWord": "hoa",
+          "imageKey": "mi-word-19",
+          "letters": [
+            "h",
+            "o",
+            "a"
+          ],
+          "distractors": [
+            "a",
+            "e",
+            "i",
+            "o"
+          ]
+        },
+        "en": {
+          "prompt": "Build the longer word!",
+          "targetWord": "flower",
+          "imageKey": "mi-word-19",
+          "letters": [
+            "f",
+            "l",
+            "o",
+            "w",
+            "e",
+            "r"
+          ],
+          "distractors": [
+            "a",
+            "t",
+            "s",
+            "r"
+          ]
+        }
+      },
+      "hints": [
+        {
+          "text": "Nhìn từng chữ rồi ghép theo thứ tự."
+        },
+        {
+          "text": "Look at each letter and build the word in order."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "explorer",
+        "skillIds": [
+          "letters.word_building"
+        ],
+        "progressionTier": 4,
+        "reviewState": "technically_validated"
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 90,
+      "publicationState": "published"
+    },
+    {
+      "id": "wb-gen-020",
+      "gameId": "word_builder",
+      "levelNumber": 20,
+      "difficulty": 4,
+      "learningObjective": "Build tier 4 vocabulary words",
+      "localizedContent": {
+        "vi": {
+          "prompt": "Ghép từ dài hơn!",
+          "targetWord": "nhà",
+          "imageKey": "mi-word-20",
+          "letters": [
+            "n",
+            "h",
+            "à"
+          ],
+          "distractors": [
+            "a",
+            "e",
+            "i",
+            "o"
+          ]
+        },
+        "en": {
+          "prompt": "Build the longer word!",
+          "targetWord": "house",
+          "imageKey": "mi-word-20",
+          "letters": [
+            "h",
+            "o",
+            "u",
+            "s",
+            "e"
+          ],
+          "distractors": [
+            "a",
+            "t",
+            "s",
+            "r"
+          ]
+        }
+      },
+      "hints": [
+        {
+          "text": "Nhìn từng chữ rồi ghép theo thứ tự."
+        },
+        {
+          "text": "Look at each letter and build the word in order."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "explorer",
+        "skillIds": [
+          "letters.word_building"
+        ],
+        "progressionTier": 4,
+        "reviewState": "technically_validated"
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 90,
+      "publicationState": "published"
+    },
+    {
+      "id": "wb-gen-021",
+      "gameId": "word_builder",
+      "levelNumber": 21,
+      "difficulty": 4,
+      "learningObjective": "Build tier 4 vocabulary words",
+      "localizedContent": {
+        "vi": {
+          "prompt": "Ghép từ dài hơn!",
+          "targetWord": "sách",
+          "imageKey": "mi-word-21",
+          "letters": [
+            "s",
+            "á",
+            "c",
+            "h"
+          ],
+          "distractors": [
+            "a",
+            "e",
+            "i",
+            "o"
+          ]
+        },
+        "en": {
+          "prompt": "Build the longer word!",
+          "targetWord": "book",
+          "imageKey": "mi-word-21",
+          "letters": [
+            "b",
+            "o",
+            "o",
+            "k"
+          ],
+          "distractors": [
+            "a",
+            "t",
+            "s",
+            "r"
+          ]
+        }
+      },
+      "hints": [
+        {
+          "text": "Nhìn từng chữ rồi ghép theo thứ tự."
+        },
+        {
+          "text": "Look at each letter and build the word in order."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "explorer",
+        "skillIds": [
+          "letters.word_building"
+        ],
+        "progressionTier": 4,
+        "reviewState": "technically_validated"
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 90,
+      "publicationState": "published"
+    },
+    {
+      "id": "wb-gen-022",
+      "gameId": "word_builder",
+      "levelNumber": 22,
+      "difficulty": 4,
+      "learningObjective": "Build tier 4 vocabulary words",
+      "localizedContent": {
+        "vi": {
+          "prompt": "Ghép từ dài hơn!",
+          "targetWord": "bút",
+          "imageKey": "mi-word-22",
+          "letters": [
+            "b",
+            "ú",
+            "t"
+          ],
+          "distractors": [
+            "a",
+            "e",
+            "i",
+            "o"
+          ]
+        },
+        "en": {
+          "prompt": "Build the longer word!",
+          "targetWord": "pen",
+          "imageKey": "mi-word-22",
+          "letters": [
+            "p",
+            "e",
+            "n"
+          ],
+          "distractors": [
+            "a",
+            "t",
+            "s",
+            "r"
+          ]
+        }
+      },
+      "hints": [
+        {
+          "text": "Nhìn từng chữ rồi ghép theo thứ tự."
+        },
+        {
+          "text": "Look at each letter and build the word in order."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "explorer",
+        "skillIds": [
+          "letters.word_building"
+        ],
+        "progressionTier": 4,
+        "reviewState": "technically_validated"
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 90,
+      "publicationState": "published"
+    },
+    {
+      "id": "wb-gen-023",
+      "gameId": "word_builder",
+      "levelNumber": 23,
+      "difficulty": 4,
+      "learningObjective": "Build tier 4 vocabulary words",
+      "localizedContent": {
+        "vi": {
+          "prompt": "Ghép từ dài hơn!",
+          "targetWord": "trăng",
+          "imageKey": "mi-word-23",
+          "letters": [
+            "t",
+            "r",
+            "ă",
+            "n",
+            "g"
+          ],
+          "distractors": [
+            "a",
+            "e",
+            "i",
+            "o"
+          ]
+        },
+        "en": {
+          "prompt": "Build the longer word!",
+          "targetWord": "moon",
+          "imageKey": "mi-word-23",
+          "letters": [
+            "m",
+            "o",
+            "o",
+            "n"
+          ],
+          "distractors": [
+            "a",
+            "t",
+            "s",
+            "r"
+          ]
+        }
+      },
+      "hints": [
+        {
+          "text": "Nhìn từng chữ rồi ghép theo thứ tự."
+        },
+        {
+          "text": "Look at each letter and build the word in order."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "explorer",
+        "skillIds": [
+          "letters.word_building"
+        ],
+        "progressionTier": 4,
+        "reviewState": "technically_validated"
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 90,
+      "publicationState": "published"
+    },
+    {
+      "id": "wb-gen-024",
+      "gameId": "word_builder",
+      "levelNumber": 24,
+      "difficulty": 4,
+      "learningObjective": "Build tier 4 vocabulary words",
+      "localizedContent": {
+        "vi": {
+          "prompt": "Ghép từ dài hơn!",
+          "targetWord": "hoa",
+          "imageKey": "mi-word-24",
+          "letters": [
+            "h",
+            "o",
+            "a"
+          ],
+          "distractors": [
+            "a",
+            "e",
+            "i",
+            "o"
+          ]
+        },
+        "en": {
+          "prompt": "Build the longer word!",
+          "targetWord": "flower",
+          "imageKey": "mi-word-24",
+          "letters": [
+            "f",
+            "l",
+            "o",
+            "w",
+            "e",
+            "r"
+          ],
+          "distractors": [
+            "a",
+            "t",
+            "s",
+            "r"
+          ]
+        }
+      },
+      "hints": [
+        {
+          "text": "Nhìn từng chữ rồi ghép theo thứ tự."
+        },
+        {
+          "text": "Look at each letter and build the word in order."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "explorer",
+        "skillIds": [
+          "letters.word_building"
+        ],
+        "progressionTier": 4,
+        "reviewState": "technically_validated"
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 90,
+      "publicationState": "published"
+    },
+    {
+      "id": "wb-gen-025",
+      "gameId": "word_builder",
+      "levelNumber": 25,
+      "difficulty": 5,
+      "learningObjective": "Build tier 5 vocabulary words",
+      "localizedContent": {
+        "vi": {
+          "prompt": "Ghép từ dài hơn!",
+          "targetWord": "nhà",
+          "imageKey": "mi-word-25",
+          "letters": [
+            "n",
+            "h",
+            "à"
+          ],
+          "distractors": [
+            "a",
+            "e",
+            "i",
+            "o"
+          ]
+        },
+        "en": {
+          "prompt": "Build the longer word!",
+          "targetWord": "house",
+          "imageKey": "mi-word-25",
+          "letters": [
+            "h",
+            "o",
+            "u",
+            "s",
+            "e"
+          ],
+          "distractors": [
+            "a",
+            "t",
+            "s",
+            "r"
+          ]
+        }
+      },
+      "hints": [
+        {
+          "text": "Nhìn từng chữ rồi ghép theo thứ tự."
+        },
+        {
+          "text": "Look at each letter and build the word in order."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "master",
+        "skillIds": [
+          "letters.word_building"
+        ],
+        "progressionTier": 5,
+        "reviewState": "technically_validated"
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 100,
+      "publicationState": "published"
+    },
+    {
+      "id": "wb-gen-026",
+      "gameId": "word_builder",
+      "levelNumber": 26,
+      "difficulty": 5,
+      "learningObjective": "Build tier 5 vocabulary words",
+      "localizedContent": {
+        "vi": {
+          "prompt": "Ghép từ dài hơn!",
+          "targetWord": "sách",
+          "imageKey": "mi-word-26",
+          "letters": [
+            "s",
+            "á",
+            "c",
+            "h"
+          ],
+          "distractors": [
+            "a",
+            "e",
+            "i",
+            "o"
+          ]
+        },
+        "en": {
+          "prompt": "Build the longer word!",
+          "targetWord": "book",
+          "imageKey": "mi-word-26",
+          "letters": [
+            "b",
+            "o",
+            "o",
+            "k"
+          ],
+          "distractors": [
+            "a",
+            "t",
+            "s",
+            "r"
+          ]
+        }
+      },
+      "hints": [
+        {
+          "text": "Nhìn từng chữ rồi ghép theo thứ tự."
+        },
+        {
+          "text": "Look at each letter and build the word in order."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "master",
+        "skillIds": [
+          "letters.word_building"
+        ],
+        "progressionTier": 5,
+        "reviewState": "technically_validated"
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 100,
+      "publicationState": "published"
+    },
+    {
+      "id": "wb-gen-027",
+      "gameId": "word_builder",
+      "levelNumber": 27,
+      "difficulty": 5,
+      "learningObjective": "Build tier 5 vocabulary words",
+      "localizedContent": {
+        "vi": {
+          "prompt": "Ghép từ dài hơn!",
+          "targetWord": "bút",
+          "imageKey": "mi-word-27",
+          "letters": [
+            "b",
+            "ú",
+            "t"
+          ],
+          "distractors": [
+            "a",
+            "e",
+            "i",
+            "o"
+          ]
+        },
+        "en": {
+          "prompt": "Build the longer word!",
+          "targetWord": "pen",
+          "imageKey": "mi-word-27",
+          "letters": [
+            "p",
+            "e",
+            "n"
+          ],
+          "distractors": [
+            "a",
+            "t",
+            "s",
+            "r"
+          ]
+        }
+      },
+      "hints": [
+        {
+          "text": "Nhìn từng chữ rồi ghép theo thứ tự."
+        },
+        {
+          "text": "Look at each letter and build the word in order."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "master",
+        "skillIds": [
+          "letters.word_building"
+        ],
+        "progressionTier": 5,
+        "reviewState": "technically_validated"
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 100,
+      "publicationState": "published"
+    },
+    {
+      "id": "wb-gen-028",
+      "gameId": "word_builder",
+      "levelNumber": 28,
+      "difficulty": 5,
+      "learningObjective": "Build tier 5 vocabulary words",
+      "localizedContent": {
+        "vi": {
+          "prompt": "Ghép từ dài hơn!",
+          "targetWord": "trăng",
+          "imageKey": "mi-word-28",
+          "letters": [
+            "t",
+            "r",
+            "ă",
+            "n",
+            "g"
+          ],
+          "distractors": [
+            "a",
+            "e",
+            "i",
+            "o"
+          ]
+        },
+        "en": {
+          "prompt": "Build the longer word!",
+          "targetWord": "moon",
+          "imageKey": "mi-word-28",
+          "letters": [
+            "m",
+            "o",
+            "o",
+            "n"
+          ],
+          "distractors": [
+            "a",
+            "t",
+            "s",
+            "r"
+          ]
+        }
+      },
+      "hints": [
+        {
+          "text": "Nhìn từng chữ rồi ghép theo thứ tự."
+        },
+        {
+          "text": "Look at each letter and build the word in order."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "master",
+        "skillIds": [
+          "letters.word_building"
+        ],
+        "progressionTier": 5,
+        "reviewState": "technically_validated"
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 100,
+      "publicationState": "published"
+    },
+    {
+      "id": "wb-gen-029",
+      "gameId": "word_builder",
+      "levelNumber": 29,
+      "difficulty": 5,
+      "learningObjective": "Build tier 5 vocabulary words",
+      "localizedContent": {
+        "vi": {
+          "prompt": "Ghép từ dài hơn!",
+          "targetWord": "hoa",
+          "imageKey": "mi-word-29",
+          "letters": [
+            "h",
+            "o",
+            "a"
+          ],
+          "distractors": [
+            "a",
+            "e",
+            "i",
+            "o"
+          ]
+        },
+        "en": {
+          "prompt": "Build the longer word!",
+          "targetWord": "flower",
+          "imageKey": "mi-word-29",
+          "letters": [
+            "f",
+            "l",
+            "o",
+            "w",
+            "e",
+            "r"
+          ],
+          "distractors": [
+            "a",
+            "t",
+            "s",
+            "r"
+          ]
+        }
+      },
+      "hints": [
+        {
+          "text": "Nhìn từng chữ rồi ghép theo thứ tự."
+        },
+        {
+          "text": "Look at each letter and build the word in order."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "master",
+        "skillIds": [
+          "letters.word_building"
+        ],
+        "progressionTier": 5,
+        "reviewState": "technically_validated"
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 100,
+      "publicationState": "published"
+    },
+    {
+      "id": "wb-gen-030",
+      "gameId": "word_builder",
+      "levelNumber": 30,
+      "difficulty": 5,
+      "learningObjective": "Build tier 5 vocabulary words",
+      "localizedContent": {
+        "vi": {
+          "prompt": "Ghép từ dài hơn!",
+          "targetWord": "nhà",
+          "imageKey": "mi-word-30",
+          "letters": [
+            "n",
+            "h",
+            "à"
+          ],
+          "distractors": [
+            "a",
+            "e",
+            "i",
+            "o"
+          ]
+        },
+        "en": {
+          "prompt": "Build the longer word!",
+          "targetWord": "house",
+          "imageKey": "mi-word-30",
+          "letters": [
+            "h",
+            "o",
+            "u",
+            "s",
+            "e"
+          ],
+          "distractors": [
+            "a",
+            "t",
+            "s",
+            "r"
+          ]
+        }
+      },
+      "hints": [
+        {
+          "text": "Nhìn từng chữ rồi ghép theo thứ tự."
+        },
+        {
+          "text": "Look at each letter and build the word in order."
+        }
+      ],
+      "metadata": {
+        "ageGroup": "master",
+        "skillIds": [
+          "letters.word_building"
+        ],
+        "progressionTier": 5,
+        "reviewState": "technically_validated"
+      },
+      "assetRefs": [],
+      "contentVersion": 1,
+      "estimatedSeconds": 100,
+      "publicationState": "published"
     }
   ]
 }
