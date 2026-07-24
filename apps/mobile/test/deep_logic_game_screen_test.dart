@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mi_academy/src/games/deep_logic/deep_logic_game_screen.dart';
 import 'package:mi_game_core/mi_game_core.dart';
+import 'package:mi_game_ui/mi_game_ui.dart';
 
 void main() {
   for (final fixture in _fixtures) {
@@ -68,7 +69,10 @@ void main() {
       find.byType(ListView),
       const Offset(0, -180),
     );
-    await tester.tap(find.text('Correct answer'));
+    final correctAnswer = find.widgetWithText(ElevatedButton, 'Correct answer');
+    await tester.ensureVisible(correctAnswer);
+    await tester.pumpAndSettle();
+    await tester.tapAt(tester.getTopLeft(correctAnswer) + const Offset(24, 24));
     await tester.pump();
     await tester.pump(const Duration(milliseconds: 100));
 
@@ -76,6 +80,69 @@ void main() {
     expect(completed!.gameId, fixture.level.gameId);
     expect(completed!.metadata['deepLogicScene'], fixture.scene.name);
     expect(completed!.metadata['stars'], 3);
+  });
+
+  testWidgets('deep scenes expose authored mechanics and fixed hints',
+      (tester) async {
+    await tester.pumpWidget(
+      const MaterialApp(
+        home: DeepLogicGameScreen(
+          title: 'Logic Maze',
+          worldLabel: 'MI plans a path through the maze.',
+          level: _mazeLevel,
+          allLevels: [_mazeLevel],
+          scene: DeepLogicScene.maze,
+          primaryColor: Color(0xFF8E6BFF),
+          locale: 'en',
+        ),
+      ),
+    );
+    await tester.pump();
+
+    expect(find.byKey(const ValueKey('deep-command-trail')), findsOneWidget);
+    await tester.tap(find.byType(HintButton));
+    await tester.pump();
+    expect(find.text('Count each square in the path.'), findsOneWidget);
+
+    await tester.pumpWidget(
+      MaterialApp(
+        home: DeepLogicGameScreen(
+          key: UniqueKey(),
+          title: 'Kids Sudoku',
+          worldLabel: 'MI solves small grids with clues.',
+          level: _sudokuLevel,
+          allLevels: const [_sudokuLevel],
+          scene: DeepLogicScene.sudoku,
+          primaryColor: const Color(0xFF8E6BFF),
+          locale: 'en',
+        ),
+      ),
+    );
+    await tester.pump();
+    expect(
+        find.byKey(const ValueKey('deep-sudoku-focus-hint')), findsOneWidget);
+    expect(find.text('Check the highlighted row and column'), findsOneWidget);
+
+    await tester.pumpWidget(
+      MaterialApp(
+        home: DeepLogicGameScreen(
+          key: UniqueKey(),
+          title: 'Free Creativity',
+          worldLabel: 'MI helps turn ideas into a story.',
+          level: _creativeLevel,
+          allLevels: const [_creativeLevel],
+          scene: DeepLogicScene.creative,
+          primaryColor: const Color(0xFFFF8A00),
+          locale: 'en',
+        ),
+      ),
+    );
+    await tester.pump();
+    expect(
+      find.byKey(const ValueKey('deep-creative-feeling-goal')),
+      findsOneWidget,
+    );
+    expect(find.text('Feeling goal: kind'), findsOneWidget);
   });
 }
 
@@ -169,7 +236,9 @@ const _mazeLevel = MiLevel(
     },
   },
   hints: [
-    {'text': 'Count each square in the path.'},
+    {
+      'localizedText': {'en': 'Count each square in the path.'},
+    },
   ],
   metadata: {
     'skillIds': ['logic.maze'],
@@ -180,6 +249,7 @@ const _mazeLevel = MiLevel(
       'goalIndex': 3,
       'path': [12, 8, 4, 0, 1, 2, 3],
       'obstacles': [5, 10],
+      'commands': ['up', 'up', 'right', 'right'],
     },
   },
 );
@@ -281,7 +351,10 @@ const _creativeLevel = MiLevel(
   ],
   metadata: {
     'skillIds': ['creative.storytelling'],
-    'deepData': {'scene': 'creative'},
+    'deepData': {
+      'scene': 'creative',
+      'targetFeeling': 'kind',
+    },
   },
 );
 

@@ -228,16 +228,17 @@ class _DeepLogicGameScreenState extends State<DeepLogicGameScreen>
                         onPressed: () => _choose(option),
                       ),
                     ),
-                  if (_session.feedback != null) ...[
-                    const SizedBox(height: 4),
-                    FeedbackBubble(
-                      isCorrect: _session.lastCorrect ?? false,
-                      message: _session.feedback!,
-                    ),
-                  ],
                 ],
               ),
             ),
+            if (_session.feedback != null)
+              Padding(
+                padding: const EdgeInsets.fromLTRB(16, 0, 16, 8),
+                child: FeedbackBubble(
+                  isCorrect: _session.lastCorrect ?? false,
+                  message: _session.feedback!,
+                ),
+              ),
             Padding(
               padding: const EdgeInsets.all(16),
               child: HintButton(
@@ -423,52 +424,66 @@ class _MazeBoard extends StatelessWidget {
         : _fallbackMazePath(size, levelNumber, difficulty);
     final obstacles = deepData.obstacleIndexes.toSet();
 
-    return AspectRatio(
-      aspectRatio: 1,
-      child: GridView.builder(
-        physics: const NeverScrollableScrollPhysics(),
-        itemCount: size * size,
-        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-          crossAxisCount: size,
-          mainAxisSpacing: 8,
-          crossAxisSpacing: 8,
-        ),
-        itemBuilder: (context, index) {
-          final isStart = index == start;
-          final isGoal = index == goal;
-          final isPath = path.contains(index);
-          final isObstacle = obstacles.contains(index);
-          return DecoratedBox(
-            decoration: BoxDecoration(
-              color: isObstacle
-                  ? MiColors.navy.withValues(alpha: 0.08)
-                  : isPath
-                      ? color.withValues(alpha: 0.16)
-                      : MiColors.background,
-              borderRadius: BorderRadius.circular(10),
-              border: Border.all(
-                color: isGoal || isStart ? color : color.withValues(alpha: 0.2),
-                width: isGoal || isStart ? 2 : 1,
-              ),
+    return Column(
+      children: [
+        AspectRatio(
+          aspectRatio: 1,
+          child: GridView.builder(
+            physics: const NeverScrollableScrollPhysics(),
+            itemCount: size * size,
+            gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+              crossAxisCount: size,
+              mainAxisSpacing: 8,
+              crossAxisSpacing: 8,
             ),
-            child: Center(
-              child: isStart
-                  ? Text(
-                      'MI',
-                      style: GameTheme.buttonLabel.copyWith(color: color),
-                    )
-                  : isGoal
-                      ? const Icon(
-                          Icons.star_rounded,
-                          color: MiColors.accent,
-                        )
+            itemBuilder: (context, index) {
+              final isStart = index == start;
+              final isGoal = index == goal;
+              final isPath = path.contains(index);
+              final isObstacle = obstacles.contains(index);
+              return DecoratedBox(
+                decoration: BoxDecoration(
+                  color: isObstacle
+                      ? MiColors.navy.withValues(alpha: 0.08)
                       : isPath
-                          ? Icon(Icons.arrow_forward_rounded, color: color)
-                          : const SizedBox.shrink(),
-            ),
-          );
-        },
-      ),
+                          ? color.withValues(alpha: 0.16)
+                          : MiColors.background,
+                  borderRadius: BorderRadius.circular(10),
+                  border: Border.all(
+                    color: isGoal || isStart
+                        ? color
+                        : color.withValues(alpha: 0.2),
+                    width: isGoal || isStart ? 2 : 1,
+                  ),
+                ),
+                child: Center(
+                  child: isStart
+                      ? Text(
+                          'MI',
+                          style: GameTheme.buttonLabel.copyWith(color: color),
+                        )
+                      : isGoal
+                          ? const Icon(
+                              Icons.star_rounded,
+                              color: MiColors.accent,
+                            )
+                          : isPath
+                              ? Icon(Icons.arrow_forward_rounded, color: color)
+                              : const SizedBox.shrink(),
+                ),
+              );
+            },
+          ),
+        ),
+        if (deepData.commands.isNotEmpty) ...[
+          const SizedBox(height: 12),
+          _CommandTrail(
+            key: const ValueKey('deep-command-trail'),
+            commands: deepData.commands,
+            color: color,
+          ),
+        ],
+      ],
     );
   }
 
@@ -514,6 +529,8 @@ class _SudokuBoard extends StatelessWidget {
         : const ['A', 'B', 'C', 'D'];
     final size = deepData.gridSize ?? 4;
     final blank = deepData.blankIndex ?? levelNumber % (size * size);
+    final blankRow = blank ~/ size;
+    final blankCol = blank % size;
     return Column(
       children: [
         AspectRatio(
@@ -526,6 +543,8 @@ class _SudokuBoard extends StatelessWidget {
             ),
             itemBuilder: (context, index) {
               final isBlank = index == blank;
+              final isFocused = !isBlank &&
+                  (index ~/ size == blankRow || index % size == blankCol);
               final authoredValue = deepData.givens[index];
               final value = isBlank
                   ? '?'
@@ -533,9 +552,19 @@ class _SudokuBoard extends StatelessWidget {
                       symbols[(index + levelNumber) % symbols.length];
               return DecoratedBox(
                 decoration: BoxDecoration(
-                  color: isBlank ? color.withValues(alpha: 0.14) : Colors.white,
-                  border:
-                      Border.all(color: MiColors.navy.withValues(alpha: 0.2)),
+                  color: isBlank
+                      ? color.withValues(alpha: 0.14)
+                      : isFocused
+                          ? color.withValues(alpha: 0.06)
+                          : Colors.white,
+                  border: Border.all(
+                    color: isBlank
+                        ? color
+                        : isFocused
+                            ? color.withValues(alpha: 0.44)
+                            : MiColors.navy.withValues(alpha: 0.2),
+                    width: isBlank || isFocused ? 2 : 1,
+                  ),
                 ),
                 child: Center(
                   child: Text(
@@ -554,6 +583,14 @@ class _SudokuBoard extends StatelessWidget {
           '${locale == 'en' ? 'Choices' : 'Lựa chọn'}: '
           '${options.map((option) => option.text).join(' / ')}',
           style: GameTheme.bodyMedium.copyWith(fontSize: 13),
+        ),
+        const SizedBox(height: 8),
+        _TinyInstruction(
+          key: const ValueKey('deep-sudoku-focus-hint'),
+          text: locale == 'en'
+              ? 'Check the highlighted row and column'
+              : 'Nhìn hàng và cột đang được tô sáng',
+          color: color,
         ),
       ],
     );
@@ -631,51 +668,67 @@ class _CreativeBoard extends StatelessWidget {
     final cards = deepData.storyCards.isNotEmpty
         ? deepData.storyCards
         : options.map((option) => option.text).toList(growable: false);
-    return Row(
+    return Column(
       children: [
-        for (var i = 0; i < labels.take(3).length; i++)
-          Expanded(
-            child: Padding(
-              padding: EdgeInsets.only(right: i == labels.length - 1 ? 0 : 8),
-              child: Container(
-                constraints: const BoxConstraints(minHeight: 112),
-                padding: const EdgeInsets.all(12),
-                decoration: BoxDecoration(
-                  color: i == 1
-                      ? color.withValues(alpha: 0.14)
-                      : MiColors.background,
-                  borderRadius: BorderRadius.circular(12),
-                  border: Border.all(color: color.withValues(alpha: 0.24)),
-                ),
-                child: Column(
-                  children: [
-                    Icon(
-                      i == 0
-                          ? Icons.landscape_rounded
-                          : i == 1
-                              ? Icons.favorite_rounded
-                              : Icons.edit_rounded,
-                      color: color,
+        if (deepData.targetFeeling != null) ...[
+          _TinyInstruction(
+            key: const ValueKey('deep-creative-feeling-goal'),
+            text: locale == 'en'
+                ? 'Feeling goal: ${deepData.targetFeeling}'
+                : 'Cảm xúc mục tiêu: ${deepData.targetFeeling}',
+            color: color,
+          ),
+          const SizedBox(height: 10),
+        ],
+        Row(
+          children: [
+            for (var i = 0; i < labels.take(3).length; i++)
+              Expanded(
+                child: Padding(
+                  padding:
+                      EdgeInsets.only(right: i == labels.length - 1 ? 0 : 8),
+                  child: Container(
+                    constraints: const BoxConstraints(minHeight: 112),
+                    padding: const EdgeInsets.all(12),
+                    decoration: BoxDecoration(
+                      color: i == 1
+                          ? color.withValues(alpha: 0.14)
+                          : MiColors.background,
+                      borderRadius: BorderRadius.circular(12),
+                      border: Border.all(color: color.withValues(alpha: 0.24)),
                     ),
-                    const SizedBox(height: 8),
-                    Text(
-                      labels[i],
-                      style:
-                          GameTheme.buttonLabel.copyWith(color: MiColors.navy),
+                    child: Column(
+                      children: [
+                        Icon(
+                          i == 0
+                              ? Icons.landscape_rounded
+                              : i == 1
+                                  ? Icons.favorite_rounded
+                                  : Icons.edit_rounded,
+                          color: color,
+                        ),
+                        const SizedBox(height: 8),
+                        Text(
+                          labels[i],
+                          style: GameTheme.buttonLabel.copyWith(
+                            color: MiColors.navy,
+                          ),
+                        ),
+                        const SizedBox(height: 6),
+                        Text(
+                          cards.isEmpty ? '' : cards[i % cards.length],
+                          style: GameTheme.bodyMedium.copyWith(fontSize: 13),
+                          textAlign: TextAlign.center,
+                          maxLines: 3,
+                          overflow: TextOverflow.ellipsis,
+                        ),
+                      ],
                     ),
-                    const SizedBox(height: 6),
-                    Text(
-                      cards.isEmpty ? '' : cards[i % cards.length],
-                      style: GameTheme.bodyMedium.copyWith(fontSize: 13),
-                      textAlign: TextAlign.center,
-                      maxLines: 3,
-                      overflow: TextOverflow.ellipsis,
-                    ),
-                  ],
+                  ),
                 ),
               ),
-            ),
-          ),
+          ],
+        ),
       ],
     );
   }
@@ -751,6 +804,100 @@ class _ReadingBoard extends StatelessWidget {
   }
 }
 
+class _CommandTrail extends StatelessWidget {
+  const _CommandTrail({
+    super.key,
+    required this.commands,
+    required this.color,
+  });
+
+  final List<String> commands;
+  final Color color;
+
+  @override
+  Widget build(BuildContext context) {
+    return Wrap(
+      alignment: WrapAlignment.center,
+      spacing: 8,
+      runSpacing: 8,
+      children: [
+        for (var i = 0; i < commands.length; i += 1)
+          Container(
+            constraints: const BoxConstraints(minHeight: 48, minWidth: 48),
+            padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
+            decoration: BoxDecoration(
+              color: i.isEven ? color : color.withValues(alpha: 0.14),
+              borderRadius: BorderRadius.circular(MiTokens.radiusFull),
+              border: Border.all(color: color.withValues(alpha: 0.24)),
+            ),
+            child: Row(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Icon(
+                  _iconForCommand(commands[i]),
+                  size: 20,
+                  color: i.isEven ? Colors.white : color,
+                ),
+                const SizedBox(width: 6),
+                Text(
+                  '${i + 1}',
+                  style: GameTheme.buttonLabel.copyWith(
+                    color: i.isEven ? Colors.white : color,
+                    fontSize: 14,
+                  ),
+                ),
+              ],
+            ),
+          ),
+      ],
+    );
+  }
+
+  IconData _iconForCommand(String command) {
+    return switch (command.toLowerCase()) {
+      'up' => Icons.arrow_upward_rounded,
+      'down' => Icons.arrow_downward_rounded,
+      'left' => Icons.arrow_back_rounded,
+      'right' => Icons.arrow_forward_rounded,
+      _ => Icons.near_me_rounded,
+    };
+  }
+}
+
+class _TinyInstruction extends StatelessWidget {
+  const _TinyInstruction({
+    super.key,
+    required this.text,
+    required this.color,
+  });
+
+  final String text;
+  final Color color;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      constraints: const BoxConstraints(minHeight: 44),
+      alignment: Alignment.center,
+      padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
+      decoration: BoxDecoration(
+        color: color.withValues(alpha: 0.1),
+        borderRadius: BorderRadius.circular(MiTokens.radiusFull),
+        border: Border.all(color: color.withValues(alpha: 0.22)),
+      ),
+      child: Text(
+        text,
+        style: GameTheme.bodyMedium.copyWith(
+          color: MiColors.navy,
+          fontSize: 13,
+          fontWeight: FontWeight.w700,
+        ),
+        textAlign: TextAlign.center,
+      ),
+    );
+  }
+}
+
 class _DeepLevelData {
   const _DeepLevelData({
     required this.localized,
@@ -776,11 +923,13 @@ class _DeepLevelData {
   int? get blankIndex => _asInt(structural['blankIndex']);
   List<int> get pathIndexes => _asIntList(structural['path']);
   List<int> get obstacleIndexes => _asIntList(structural['obstacles']);
+  List<String> get commands => _asStringList(structural['commands']);
   List<String> get symbols => _asStringList(structural['symbols']);
   Map<int, String> get givens => _asIntStringMap(structural['givens']);
   List<String> get clues => _asStringList(localized['clues']);
   List<String> get storyLabels => _asStringList(localized['storyLabels']);
   List<String> get storyCards => _asStringList(localized['storyCards']);
+  String? get targetFeeling => structural['targetFeeling'] as String?;
   List<String> get readingSteps => _asStringList(localized['steps']);
   String? get passage => localized['passage'] as String?;
   List<String> get sceneNotes => [
