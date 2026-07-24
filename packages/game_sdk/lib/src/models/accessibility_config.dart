@@ -63,10 +63,10 @@ class AccessibilityConfig {
 
   @override
   int get hashCode => Object.hash(
-        highContrast,
-        largeText,
-        reduceMotion,
-        screenReader,
-        fontSize,
-      );
+    highContrast,
+    largeText,
+    reduceMotion,
+    screenReader,
+    fontSize,
+  );
 }

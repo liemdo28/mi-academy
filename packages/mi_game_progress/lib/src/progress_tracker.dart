@@ -43,10 +43,12 @@ class ProgressTracker {
     _attempts.add(record);
 
     for (final skillId in skillIds) {
-      _skills.putIfAbsent(skillId, () => SkillMastery(
-        skillId: skillId,
-        childId: childId,
-      ));
+      _skills.putIfAbsent(
+          skillId,
+          () => SkillMastery(
+                skillId: skillId,
+                childId: childId,
+              ));
       _skills[skillId]!.recordAttempt(
         correct: correct,
         hintsUsed: hintsUsed,

@@ -82,8 +82,7 @@ void main(List<String> args) {
 
   for (final entity in levelsDir.listSync()) {
     if (entity is! File || !entity.path.endsWith('.json')) continue;
-    final fileGameId =
-        entity.uri.pathSegments.last.replaceAll('.json', '');
+    final fileGameId = entity.uri.pathSegments.last.replaceAll('.json', '');
     final json = jsonDecode(entity.readAsStringSync()) as Map<String, dynamic>;
     final levels = json['levels'] as List;
 
@@ -100,9 +99,8 @@ void main(List<String> args) {
       }
 
       final metadata = level['metadata'] as Map<String, dynamic>? ?? const {};
-      final skillIds = (metadata['skillIds'] as List?)
-              ?.map((e) => e.toString())
-              .toList() ??
+      final skillIds =
+          (metadata['skillIds'] as List?)?.map((e) => e.toString()).toList() ??
           const <String>[];
 
       if (skillIds.isEmpty) {
@@ -122,7 +120,8 @@ void main(List<String> args) {
           continue;
         }
         if (!skills.containsKey(skillId)) {
-          final message = '$fileGameId/$levelId: skillId "$skillId" is not '
+          final message =
+              '$fileGameId/$levelId: skillId "$skillId" is not '
               'defined in $_taxonomyPath.';
           if (dev) {
             result.warnings.add('[unknown future skill] $message');
@@ -168,7 +167,9 @@ void main(List<String> args) {
     );
   }
 
-  stdout.writeln('Mode: ${dev ? 'dev (unknown skills are warnings)' : 'production'}');
+  stdout.writeln(
+    'Mode: ${dev ? 'dev (unknown skills are warnings)' : 'production'}',
+  );
   stdout.writeln(result.toReport());
   if (strict && result.fatal.isNotEmpty) {
     exitCode = 1;
@@ -184,8 +185,9 @@ void _validateTaxonomySelfConsistency(
     if (!seen.add(entry.key)) {
       result.fatal.add('Duplicate skillId in taxonomy: ${entry.key}');
     }
-    final prerequisites =
-        (entry.value['prerequisites'] as List).map((e) => e as String);
+    final prerequisites = (entry.value['prerequisites'] as List).map(
+      (e) => e as String,
+    );
     for (final prereq in prerequisites) {
       if (!skills.containsKey(prereq)) {
         result.fatal.add(

@@ -46,8 +46,7 @@ class LearningPath {
   }
 
   /// Completed nodes count.
-  int get completedNodes =>
-      nodes.where((n) => n.status == 'completed').length;
+  int get completedNodes => nodes.where((n) => n.status == 'completed').length;
 
   /// Total estimated duration of remaining nodes in minutes.
   int get remainingDurationMinutes => nodes
@@ -86,7 +85,13 @@ class LearningPathNode {
 
   static const validNodeTypes = ['lesson', 'game', 'assessment', 'review'];
   static const validDifficulties = ['easy', 'medium', 'hard', 'adaptive'];
-  static const validNodeStatuses = ['locked', 'available', 'in_progress', 'completed', 'skipped'];
+  static const validNodeStatuses = [
+    'locked',
+    'available',
+    'in_progress',
+    'completed',
+    'skipped',
+  ];
 
   LearningPathNode({
     required this.nodeId,

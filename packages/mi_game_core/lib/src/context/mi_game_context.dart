@@ -143,8 +143,7 @@ class MiGameServices extends Equatable {
   final Future<Map<String, dynamic>?> Function(String key) loadSnapshot;
 
   /// Log an educational analytics event.
-  final Future<void> Function(String event, Map<String, dynamic> data)
-      logEvent;
+  final Future<void> Function(String event, Map<String, dynamic> data) logEvent;
 
   /// Play an audio asset by reference key.
   final Future<void> Function(String audioRef, {double? volume}) playAudio;

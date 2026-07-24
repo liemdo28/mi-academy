@@ -379,7 +379,7 @@ class _GameScreenState extends ConsumerState<GameScreen> {
     final tracker = progressStore.load(widget.childId) ??
         ProgressTracker(childId: widget.childId);
 
-    // onComplete only ever fires when a level is actually solved (failed
+    // onComplete only ever fires when a level is actually solved (missed
     // attempts retry in place rather than calling back here), so every
     // call here is a correct completion.
     tracker.recordCompletion(
@@ -402,7 +402,7 @@ class _GameScreenState extends ConsumerState<GameScreen> {
     try {
       catalog = await ref.read(rewardCatalogProvider.future);
     } catch (_) {
-      return; // Catalog failed to load -- try again on the next completion.
+      return; // Catalog was unavailable -- try again on the next completion.
     }
 
     final newlyUnlocked = const RewardEngine().evaluate(

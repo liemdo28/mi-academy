@@ -2,7 +2,7 @@
 """Generate per-game child-safety pre-signoff evidence for MI Academy.
 
 This does not replace human release sign-off. It compiles current automated
-evidence for each MVP game and leaves an explicit manual-review status.
+evidence for every bundled game and leaves an explicit manual-review status.
 """
 
 from __future__ import annotations
@@ -27,19 +27,39 @@ from tools import (  # noqa: E402 -- must follow the sys.path.insert above
 
 
 LEVEL_DIR = ROOT / "apps" / "mobile" / "assets" / "levels"
-REPORT_PATH = (
-    ROOT / "docs" / "child-safety" / "MVP_GAME_SAFETY_PRESIGNOFF_2026-07-17.md"
-)
+REPORT_PATH = ROOT / "docs" / "child-safety" / "GAME_SAFETY_PRESIGNOFF.md"
 
 GAME_LABELS = {
     "alphabet_explorer": "Alphabet Explorer",
-    "missing_letter": "Missing Letter",
-    "word_builder": "Word Builder",
-    "sound_match": "Sound Match",
+    "clock_time": "Clock Time",
+    "free_creativity": "Free Creativity",
+    "fun_measurement": "Fun Measurement",
+    "greater_less": "Greater or Less",
+    "kids_sudoku": "Kids Sudoku",
+    "logic_maze": "Logic Maze",
     "math_race": "Math Race",
     "math_supermarket": "Math Supermarket",
     "memory_cards": "Memory Cards",
+    "missing_letter": "Missing Letter",
+    "multiplication_adventure": "Multiplication Adventure",
+    "number_quantity_match": "Number Quantity Match",
+    "number_sequence": "Number Sequence",
+    "object_counting": "Object Counting",
+    "odd_one_out": "Odd One Out",
+    "pattern_finder": "Pattern Finder",
+    "picture_word_match": "Picture Word Match",
+    "reasoning_detective": "Reasoning Detective",
+    "rhyme_picker": "Rhyme Picker",
     "robot_commands": "Robot Commands",
+    "sentence_order": "Sentence Order",
+    "shadow_match": "Shadow Match",
+    "shape_builder": "Shape Builder",
+    "sound_match": "Sound Match",
+    "speed_spelling": "Speed Spelling",
+    "story_comprehension": "Story Comprehension",
+    "treasure_division": "Treasure Division",
+    "visual_fractions": "Visual Fractions",
+    "word_builder": "Word Builder",
 }
 
 CHECK_CATEGORIES = [
@@ -108,7 +128,15 @@ def build_report() -> SignoffReport:
     }
 
     games = [_game_presignoff(path) for path in sorted(LEVEL_DIR.glob("*.json"))]
-    games.sort(key=lambda item: list(GAME_LABELS).index(item.game_id))
+    label_order = list(GAME_LABELS)
+    games.sort(
+        key=lambda item: (
+            label_order.index(item.game_id)
+            if item.game_id in GAME_LABELS
+            else len(label_order),
+            item.game_id,
+        )
+    )
 
     automated_failures = any(
         summary["status"] == "fail" for summary in audit_summary.values()
@@ -131,10 +159,10 @@ def write_markdown(report: SignoffReport, path: Path = REPORT_PATH) -> None:
 
 def render_markdown(report: SignoffReport) -> str:
     lines = [
-        "# MI Academy - MVP Game Safety Pre-Signoff",
+        "# MI Academy - Game Safety Pre-Signoff",
         "",
         f"> **Generated:** {report.generated_on}",
-        "> **Scope:** Automated evidence for the eight currently built MVP games",
+        f"> **Scope:** Automated evidence for {len(report.games)} bundled games",
         "> **Manual release sign-off:** pending",
         "",
         "This report compiles automated child-safety evidence. It does not replace the required human QA sign-off or real-device review.",

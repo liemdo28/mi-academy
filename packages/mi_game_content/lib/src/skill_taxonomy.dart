@@ -52,7 +52,8 @@ class SkillDefinition extends Equatable {
   final List<String> prerequisites;
   final SkillEvidenceRules evidenceRules;
 
-  factory SkillDefinition.fromJson(String subjectId, Map<String, dynamic> json) {
+  factory SkillDefinition.fromJson(
+      String subjectId, Map<String, dynamic> json) {
     return SkillDefinition(
       skillId: json['skillId'] as String,
       subjectId: subjectId,
@@ -60,7 +61,8 @@ class SkillDefinition extends Equatable {
       ageGroup: json['ageGroup'] as String,
       difficultyMin: json['difficultyMin'] as int,
       difficultyMax: json['difficultyMax'] as int,
-      prerequisites: (json['prerequisites'] as List).map((e) => e as String).toList(),
+      prerequisites:
+          (json['prerequisites'] as List).map((e) => e as String).toList(),
       evidenceRules: SkillEvidenceRules.fromJson(
         json['evidenceRules'] as Map<String, dynamic>,
       ),
@@ -97,7 +99,8 @@ class SubjectDefinition extends Equatable {
       subjectId: subjectId,
       name: Map<String, String>.from(json['name'] as Map),
       skills: (json['skills'] as List)
-          .map((e) => SkillDefinition.fromJson(subjectId, e as Map<String, dynamic>))
+          .map((e) =>
+              SkillDefinition.fromJson(subjectId, e as Map<String, dynamic>))
           .toList(),
     );
   }

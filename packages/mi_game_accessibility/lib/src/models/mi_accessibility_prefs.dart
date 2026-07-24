@@ -77,8 +77,10 @@ class MiAccessibilityPrefs extends Equatable {
       reduceMotion: reduceMotion ?? this.reduceMotion,
       screenReader: screenReader ?? this.screenReader,
       fontSize: fontSize ?? this.fontSize,
-      tapAlternativeForDrag: tapAlternativeForDrag ?? this.tapAlternativeForDrag,
-      colorIndependentFeedback: colorIndependentFeedback ?? this.colorIndependentFeedback,
+      tapAlternativeForDrag:
+          tapAlternativeForDrag ?? this.tapAlternativeForDrag,
+      colorIndependentFeedback:
+          colorIndependentFeedback ?? this.colorIndependentFeedback,
       subtitlesEnabled: subtitlesEnabled ?? this.subtitlesEnabled,
       extendedResponseTime: extendedResponseTime ?? this.extendedResponseTime,
     );
@@ -104,7 +106,8 @@ class MiAccessibilityPrefs extends Equatable {
       screenReader: json['screen_reader'] as bool? ?? false,
       fontSize: (json['font_size'] as num?)?.toDouble() ?? 1.0,
       tapAlternativeForDrag: json['tap_alternative_for_drag'] as bool? ?? false,
-      colorIndependentFeedback: json['color_independent_feedback'] as bool? ?? true,
+      colorIndependentFeedback:
+          json['color_independent_feedback'] as bool? ?? true,
       subtitlesEnabled: json['subtitles_enabled'] as bool? ?? false,
       extendedResponseTime: json['extended_response_time'] as bool? ?? false,
     );

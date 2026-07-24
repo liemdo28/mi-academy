@@ -129,7 +129,8 @@ class MasteryWeights extends Equatable {
   final double consistency;
 
   /// Sum of all weights; should equal 1.0.
-  double get total => accuracy + independence + difficulty + retention + consistency;
+  double get total =>
+      accuracy + independence + difficulty + retention + consistency;
 
   @override
   List<Object?> get props =>

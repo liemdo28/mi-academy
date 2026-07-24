@@ -125,7 +125,8 @@ void main() {
       expect(restored, state);
     });
 
-    test('shares the mastery box with HiveProgressStore without key '
+    test(
+        'shares the mastery box with HiveProgressStore without key '
         'collisions', () async {
       final progressStore = HiveProgressStore(masteryBox);
       final masteryStateStore = HiveMasteryStateStore(masteryBox);
@@ -147,8 +148,7 @@ void main() {
 
       expect(progressStore.load('child-1')!.attempts, hasLength(1));
       expect(
-        masteryStateStore.load('child-1', 'math.addition.basic')!
-            .evidenceCount,
+        masteryStateStore.load('child-1', 'math.addition.basic')!.evidenceCount,
         1,
       );
     });
@@ -168,7 +168,8 @@ void main() {
       );
     });
 
-    test('loadAll returns every skill for a child, sees no other child\'s '
+    test(
+        'loadAll returns every skill for a child, sees no other child\'s '
         'data, and is not confused by HiveProgressStore\'s bare-childId key '
         'in the same box', () async {
       final progressStore = HiveProgressStore(masteryBox);

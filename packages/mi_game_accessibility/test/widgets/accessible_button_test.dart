@@ -83,7 +83,8 @@ void main() {
       expect(sizedBox.height, 48.0);
     });
 
-    testWidgets('uses 64dp touch target when largeTarget is true', (tester) async {
+    testWidgets('uses 64dp touch target when largeTarget is true',
+        (tester) async {
       await tester.pumpWidget(
         MaterialApp(
           home: Scaffold(
@@ -130,7 +131,10 @@ void main() {
         find.descendant(
           of: find.byType(MiAccessibleIconButton),
           matching: find.byWidgetPredicate(
-            (widget) => widget is SizedBox && widget.width == 48.0 && widget.height == 48.0,
+            (widget) =>
+                widget is SizedBox &&
+                widget.width == 48.0 &&
+                widget.height == 48.0,
           ),
         ),
         findsAtLeastNWidgets(1),
@@ -155,7 +159,10 @@ void main() {
         find.descendant(
           of: find.byType(MiAccessibleIconButton),
           matching: find.byWidgetPredicate(
-            (widget) => widget is SizedBox && widget.width == 64.0 && widget.height == 64.0,
+            (widget) =>
+                widget is SizedBox &&
+                widget.width == 64.0 &&
+                widget.height == 64.0,
           ),
         ),
         findsAtLeastNWidgets(1),

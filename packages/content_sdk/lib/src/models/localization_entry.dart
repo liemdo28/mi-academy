@@ -40,12 +40,18 @@ class LocalizationEntry {
   }
 
   LocalizationEntry copyWith({
-    String? key, String? language, String? value,
-    String? context, String? pluralForm, Map<String, String>? variants,
+    String? key,
+    String? language,
+    String? value,
+    String? context,
+    String? pluralForm,
+    Map<String, String>? variants,
   }) {
     return LocalizationEntry(
-      key: key ?? this.key, language: language ?? this.language,
-      value: value ?? this.value, context: context ?? this.context,
+      key: key ?? this.key,
+      language: language ?? this.language,
+      value: value ?? this.value,
+      context: context ?? this.context,
       pluralForm: pluralForm ?? this.pluralForm,
       variants: variants ?? this.variants,
     );

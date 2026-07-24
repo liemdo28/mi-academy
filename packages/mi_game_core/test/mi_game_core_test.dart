@@ -211,7 +211,9 @@ void main() {
         gameId: 'memory_cards',
         levelId: 'level-1',
         childProfileId: 'child-1',
-        state: {'cards': [1, 2, 3]},
+        state: {
+          'cards': [1, 2, 3]
+        },
         createdAt: DateTime(2026, 7, 17),
         score: 5,
         itemsCompleted: 3,

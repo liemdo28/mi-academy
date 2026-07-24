@@ -1,41 +1,33 @@
 # MI Academy 1.0 — Release Audit
 
-Date: 2026-07-18 (updated 2026-07-19 for Milestone 2 slices 1-2 against the 30-game/full-CMS/Google-Play
-master spec — see RA-15 through RA-18 below)
+Date: 2026-07-18 (updated 2026-07-24 for the 30-game completion baseline)
 Branch: `integration/m1-m2-baseline`
 Scope: Direct verification against this working tree, its test suite, and
 live CI runs on this branch. Nothing here is carried over from prior
 session summaries without re-verification — every finding below cites the
 exact command run and its actual output.
 
-## Update: 30-game master spec (2026-07-18, same day; Milestone 2 slices updated 2026-07-19)
+## Update: 30-game completion baseline (2026-07-24)
 
-A separate, much larger spec was issued the same day requiring 30 complete
-games (vs. the 6 that exist), a 12-engine architecture, a full admin CMS
-publishing workflow, and a complete Google Play submission package (store
-listing assets, Data Safety/Content Rating/Families Policy declarations,
-signed release keystore). This is genuinely a multi-month, multi-person
-scope. RA-15 through RA-18 below record what was directly verified against
-that spec; see `docs/game-catalog.md`, `docs/game-engine-architecture.md`,
-`docs/skill-taxonomy.md`, and `docs/age-bands.md` for the full detail. The
-findings already recorded below (RA-01–RA-14) still stand and are not
-superseded by this update. Milestone 2 slices 1-2 added
-`alphabet_explorer` and `missing_letter`, bringing the verified count to 8
-of 30 games; the release verdict remains blocked by the remaining 22 games,
-manual review, and device/release gates.
+The current branch now registers and loads 30 of 30 target games with
+bundled bilingual level packs. The game-count blocker recorded in the
+earlier 2026-07-19 audit is closed by later commits, and
+`docs/game-catalog.md` is the current source of truth for the per-game
+matrix. This update does not turn the product into a final store-release
+claim: manual child-safety/content QA, full UI-string localization cleanup,
+real-device testing, and store submission review remain required.
 
 ## Executive summary
 
-The mobile app's eight currently built games, offline persistence, parent
-PIN gate, and backend API are functionally real (not stubbed) and the
+The mobile app's 30 registered games, offline persistence, parent PIN gate,
+brand assets, and backend API are functionally real (not stubbed) and the
 canonical mobile/backend test suites are green where they can run locally:
-`flutter analyze` (0 issues), `flutter test` (108 passed, 6
-explicitly-skipped platform-limited golden tests, 0 failed), and `pytest`
-(177 passed). Matching, Sequence, and Placement shared engines are real
-and tested; Multi-select is still absent. Android release artifacts (APK
-+ AAB) build successfully locally with the documented debug-signing
-fallback; iOS requires macOS tooling not available here and is verified
-via CI's `ios-build` job instead.
+`flutter analyze` (0 issues), `flutter test --reporter compact` (192
+passed, 6 explicitly skipped platform-limited golden tests, 0 failed), and
+`pytest` (177 passed). Android release artifacts (APK + AAB) build
+successfully locally, and release signing configuration is present. iOS
+still requires macOS tooling and a device/Simulator pass outside this
+Windows environment.
 
 Two Critical findings from the previous audit pass (fake dark theme,
 hardcoded Vietnamese game content) are now fixed and verified. This pass
@@ -65,8 +57,8 @@ status on every item the audit was asked to cover.
 | RA-12 | Minor | Backend linting | `ruff check apps/api`/`ruff check .` (unconfigured) reported 34/48 findings across F401, E402, E711/E712, E741, F841, F541, E401, F821. | Whole repo | See RA-19 — fully fixed in Milestone 1. | `python -m ruff check .` → `All checks passed!` | **Fixed (superseded by RA-19)** |
 | RA-13 | Minor | Backend typing | `mypy .` (repo root, unconfigured) fails immediately on an unrelated syntax error in `infrastructure/scripts/seed.py`; `mypy apps/api` fails immediately on a duplicate-module-name error. | n/a (config-level failure) | See RA-19 — fully fixed in Milestone 1. | `python -m mypy .` → `Success: no issues found in 92 source files` | **Fixed (superseded by RA-19)** |
 | RA-14 | Minor | Content safety (informational) | `child_safety_audit.py` and `mobile_platform_privacy_audit.py` each report 2 pre-existing `warn`-severity findings (Dio/connectivity_plus dependencies present, `INTERNET` permission present in debug/profile manifests) — expected, since parent-area sync and login legitimately need network access; not a fail. | `apps/mobile/pubspec.yaml`, `apps/mobile/android/app/src/{debug,profile}/AndroidManifest.xml` | No action needed; these are advisory warns the tooling raises by design so a human confirms network use stays scoped to parent/sync flows, not child-facing gameplay. | `python tools/child_safety_signoff.py --json` → all four sub-checks `"status": "pass"`, `"fail": 0` | **Verified, no action needed** |
-| RA-15 | Blocker | Product scope | 8 of the 30 required games exist after Milestone 2 slices 1-2. 22 have no code, no content, no tests. | `apps/mobile/lib/src/games/`, `apps/mobile/assets/levels/*.json`, `docs/game-catalog.md` | Requires a multi-week, multi-phase build-out per `docs/game-catalog.md` — multiple required engine types (§5.1) still have no implementation precedent at all (see RA-18). Milestone 2 slices added `alphabet_explorer` and `missing_letter`; games 9-15 are still not complete. | `docs/game-catalog.md` full breakdown; `flutter test` → 108 passed / 6 skipped | **Open — largest gap, blocks any "Google Play Ready" claim** |
-| RA-16 | Major | Content minimums | Math Race and Math Supermarket are expanded to 40 levels each. Alphabet Explorer has 95 bilingual levels and Missing Letter has 75 bilingual levels across three tiers. Word Builder, Sound Match, Robot Commands, and Memory Cards still ship 10 levels each and remain pending expansion. | Level/content files under each game's directory | Complete expansion for Word Builder, Sound Match, Robot Commands, and Memory Cards. | `python tools/content_schema_validator.py`; `python tools/content_safety_audit.py --json`; `flutter test` | **Open — partially fixed; Math Race and Math Supermarket complete** |
+| RA-15 | Blocker | Product scope | 30 of the 30 required games are now registered, content-backed, and playable. | `apps/mobile/lib/services/game_registry.dart`, `apps/mobile/assets/levels/*.json`, `docs/game-catalog.md` | Closed for playable inventory. Continue with human QA, localization cleanup, and richer bespoke interaction polish. | `docs/game-catalog.md`; `flutter test --reporter compact` -> 192 passed / 6 skipped; inventory confirms 30 level files and 1030 levels | **Fixed for game-count scope** |
+| RA-16 | Major | Content minimums | All 30 games now have bundled bilingual level packs. Counts: Alphabet Explorer 95, Missing Letter 75, Math Race 40, Math Supermarket 40, and the other 26 games 30 each. | `apps/mobile/assets/levels/*.json` | Closed for automated schema/content minimums. Human educational review remains pending and is tracked separately. | `python tools/content_schema_validator.py --json`; `python tools/content_safety_audit.py --json`; `python -m pytest packages/game_core/tests tests test -q` | **Fixed for automated content minimums** |
 | RA-17 | Major | Admin CMS | Admin app (`apps/admin/`) has basic login + CRUD screens (660 lines total across 8 files) but no publish/unpublish/version/rollback workflow, no JSON-validation-blocks-publish gate, no locale-parity or asset-reference checks — all required by spec §22. | `apps/admin/lib/screens/*.dart` | Requires a dedicated admin-workflow build-out phase (validation-gated publish pipeline, versioning, rollback). Not attempted this pass. | `find apps/admin/lib -name "*.dart" -exec wc -l {} +` → 660 total lines, no publish/version/rollback screens present | **Open** |
 | RA-18 | Major | Engine architecture | Only 4 of the 12 required reusable engine types (§5.1) had any implementation precedent before the engine work (Choice, partial Drag-and-drop, Memory, Grid/Maze-coupled-to-Robot-Commands), and building future games directly against ad hoc per-game code would violate the spec's own "không xây 30 codebase riêng biệt" requirement. | See `docs/game-engine-architecture.md` full mapping and `packages/mi_game_engines/` | Matching, Sequence, and Placement are now real, tested, standalone shared engines exported through the public barrel. Multi-select is still absent, the engines are not yet wired into production games, and remaining required engine types still need implementation. | `packages/mi_game_engines`: `dart format --set-exit-if-changed .`, `flutter analyze`, `flutter test`; repo docs updated for the consolidated status | **Open — Matching/Sequence/Placement are verified; Multi-select and broader engine rollout remain pending** |
 | RA-19 | Major | Backend tooling | `ruff format`, `ruff check`, and `mypy` had zero project configuration and, when run, surfaced real formatting drift, lint findings, and mypy startup failures. Milestone 2 slice 2 later surfaced generator-only formatting and type-inference drift in Math Race / Math Supermarket. | `pyproject.toml`, backend/tooling files, `tools/content_generators/math_race_generator.py`, `tools/content_generators/math_supermarket_generator.py` | Added `[tool.ruff]`/`[tool.mypy]` sections in Milestone 1, fixed the real backend/tooling issues from the original audit, then cleaned the two generator regressions in the Game 8 closure pass without content behavior changes. | `python -m ruff format --check .` → `97 files already formatted`; `python -m ruff check .` → `All checks passed!`; `python -m mypy .` → `Success: no issues found in 102 source files`; `python -m pytest packages/game_core/tests tests test -q` → `177 passed` | **Fixed** |
@@ -90,7 +82,7 @@ status on every item the audit was asked to cover.
 - **Parent PIN route protection** — enforced via `router.dart`'s `redirect` guard on `/parent` and `/parent/settings`; covered by `test/parent_route_guard_test.dart` (2/2 passing, part of the 108-test `flutter test` total). **Verified.**
 - **Local offline startup** — `SplashScreen._resolveStartRoute` degrades to `/login` on any auth-restore error (storage failure, API unavailable), confirmed by existing splash-routing tests plus this pass's addition of the `localeConfirmed` gate ahead of it. **Verified.**
 - **Settings persistence** — `test/widget_test.dart`: "Parent settings persist after reopening the screen" passing; this pass added `localeConfirmed`/language persistence tests in `test/locale_selection_test.dart` (8/8 passing). **Verified.**
-- **Game completion paths** — the eight currently built games have local launcher/content coverage in `flutter test`; the original six still retain the prior completion-path coverage. Games 7-8 use the shared Choice Engine path and are covered by `alphabet_explorer_content_test.dart`, `missing_letter_content_test.dart`, registry tests, and `game_screen_test.dart`. **Verified for built scope, not for missing games 9-15.**
+- **Game completion paths** — 30 games are registered and load through the local content system. Direct deep playthrough coverage is strongest for the original engines and the newer deep-logic surfaces; remaining Choice Engine expansions share the same tested shell/engine path. **Verified for automated local scope; real-device QA remains pending.**
 - **Backend formatting, linting, typing, tests, migrations** — tests pass (177/177); `ruff format --check .`, `ruff check .`, and `mypy .` are clean; migrations validated locally against disposable Postgres through `b4f7c2d9e801 (head)`, and API readiness returned `live=ok; ready=ready`.
 - **Release-build status (APK, AAB, unsigned iOS)** — see command battery below. APK and AAB both built successfully in this environment; iOS requires macOS tooling not present here, verified via CI's `ios-build` job instead.
 

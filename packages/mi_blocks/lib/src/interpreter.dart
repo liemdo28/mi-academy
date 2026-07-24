@@ -8,9 +8,8 @@ enum Direction {
   south,
   west;
 
-  Direction turnLeft() =>
-      Direction.values[(index - 1 + Direction.values.length) %
-          Direction.values.length];
+  Direction turnLeft() => Direction
+      .values[(index - 1 + Direction.values.length) % Direction.values.length];
 
   Direction turnRight() =>
       Direction.values[(index + 1) % Direction.values.length];

@@ -44,7 +44,8 @@ class CurriculumMap {
         nodes.add(CurriculumNode(
           ageGroup: ageGroup,
           subjectId: entry.key,
-          skillIds: (subjectJson['skills'] as List).map((e) => e as String).toList(),
+          skillIds:
+              (subjectJson['skills'] as List).map((e) => e as String).toList(),
           description: subjectJson['description'] != null
               ? Map<String, String>.from(subjectJson['description'] as Map)
               : const {},
@@ -63,7 +64,8 @@ class CurriculumMap {
   /// The curriculum node an (ageGroup, subjectId) pair resolves to, or
   /// null if that age band doesn't cover that subject yet (e.g. 'junior'
   /// has no 'science' node -- science starts at 'explorer').
-  CurriculumNode? nodeFor({required String ageGroup, required String subjectId}) =>
+  CurriculumNode? nodeFor(
+          {required String ageGroup, required String subjectId}) =>
       _byNodeId['$ageGroup.$subjectId'];
 
   /// The curriculum node(s) that list [skillId] -- normally one, but

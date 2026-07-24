@@ -50,23 +50,31 @@ class Curriculum {
     if (id.isEmpty) errors.add('id is required');
     if (title.isEmpty) errors.add('title is required');
     for (var i = 0; i < lessons.length; i++) {
-      errors.addAll(
-        lessons[i].validate().map((e) => 'lessons[$i].$e'),
-      );
+      errors.addAll(lessons[i].validate().map((e) => 'lessons[$i].$e'));
     }
     return errors;
   }
 
   Curriculum copyWith({
-    String? id, String? title, String? ageGroup, String? language,
-    List<String>? subjectIds, List<Lesson>? lessons, String? version,
-    String? status, DateTime? effectiveDate,
+    String? id,
+    String? title,
+    String? ageGroup,
+    String? language,
+    List<String>? subjectIds,
+    List<Lesson>? lessons,
+    String? version,
+    String? status,
+    DateTime? effectiveDate,
   }) {
     return Curriculum(
-      id: id ?? this.id, title: title ?? this.title,
-      ageGroup: ageGroup ?? this.ageGroup, language: language ?? this.language,
-      subjectIds: subjectIds ?? this.subjectIds, lessons: lessons ?? this.lessons,
-      version: version ?? this.version, status: status ?? this.status,
+      id: id ?? this.id,
+      title: title ?? this.title,
+      ageGroup: ageGroup ?? this.ageGroup,
+      language: language ?? this.language,
+      subjectIds: subjectIds ?? this.subjectIds,
+      lessons: lessons ?? this.lessons,
+      version: version ?? this.version,
+      status: status ?? this.status,
       effectiveDate: effectiveDate ?? this.effectiveDate,
     );
   }

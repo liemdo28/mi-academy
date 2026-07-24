@@ -165,8 +165,7 @@ void main() {
     );
   });
 
-  test('all_categories_explored requires at least one game per category',
-      () {
+  test('all_categories_explored requires at least one game per category', () {
     final catalog = RewardCatalog([
       const RewardDefinition(
         id: 'explorer',

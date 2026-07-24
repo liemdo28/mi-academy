@@ -1,0 +1,39 @@
+{
+  "date": "2026-07-24",
+  "branch": "integration/m1-m2-baseline",
+  "verdict": "family-test-ready-not-public-store-final",
+  "live_preview_url": "https://2fa44f54.mi-academy.pages.dev",
+  "inventory": {
+    "registered_games": 30,
+    "level_files": 30,
+    "production_levels": 1030,
+    "brand_required_assets": 37
+  },
+  "validation": {
+    "dart_format": "pass",
+    "ruff_format": "pass",
+    "ruff_check": "pass",
+    "mypy": "pass",
+    "pytest": "pass:177",
+    "flutter_analyze": "pass",
+    "flutter_test": "pass:192,skipped:6",
+    "flutter_build_web": "pass",
+    "flutter_build_apk": "pass",
+    "flutter_build_appbundle": "pass",
+    "content_schema": "pass",
+    "content_safety": "pass",
+    "child_safety": "pass_with_expected_warnings",
+    "platform_privacy": "pass_with_expected_warnings",
+    "brand_assets_strict": "pass",
+    "android_release_signing_config": "pass",
+    "local_browser_smoke": "pass: shell routes and 30 game routes",
+    "cloudflare_browser_smoke": "pass: shell routes and 30 game routes"
+  },
+  "open_gates": [
+    "manual_child_safety_real_device_signoff",
+    "hardcoded_ui_string_localization_cleanup",
+    "designer_brand_ownership_approval",
+    "ios_macos_build_and_device_verification",
+    "public_store_policy_submission_review"
+  ]
+}

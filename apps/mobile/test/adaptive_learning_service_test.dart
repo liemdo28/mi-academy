@@ -54,8 +54,7 @@ void main() {
     expect(shadow.toJson()['shadow_mode'], isTrue);
   });
 
-  test('skillIdFor matches the skill evaluateCompletion actually scores',
-      () {
+  test('skillIdFor matches the skill evaluateCompletion actually scores', () {
     final result = _mathRaceCompletion(DateTime(2026, 7, 17, 9));
     expect(
       AdaptiveLearningService.skillIdFor(result),
@@ -63,8 +62,7 @@ void main() {
     );
   });
 
-  test('resolvedSkillId prefers the canonical mapping over the heuristic',
-      () {
+  test('resolvedSkillId prefers the canonical mapping over the heuristic', () {
     final result = _mathRaceCompletion(DateTime(2026, 7, 17, 9));
 
     expect(
@@ -79,8 +77,7 @@ void main() {
 
   test(
       'when a canonical mapping is passed, evaluateCompletion uses its real '
-      'subjectId/skillIds/ageGroup instead of guessing from the game name',
-      () {
+      'subjectId/skillIds/ageGroup instead of guessing from the game name', () {
     final shadow = const AdaptiveLearningService().evaluateCompletion(
       childProfileId: 'child-1',
       result: _mathRaceCompletion(DateTime(2026, 7, 17, 9)),
@@ -99,8 +96,7 @@ void main() {
 
   test(
       'mastery accumulates across completions when previousMastery is '
-      'passed, instead of resetting to a fresh zero-evidence state',
-      () {
+      'passed, instead of resetting to a fresh zero-evidence state', () {
     const service = AdaptiveLearningService();
 
     final first = service.evaluateCompletion(

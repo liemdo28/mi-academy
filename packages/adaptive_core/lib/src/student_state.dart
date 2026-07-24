@@ -31,9 +31,11 @@ class StudentState extends Equatable {
 
   /// Number of skills at proficient level or above.
   int get proficientSkillCount => masteries.values
-      .where((m) =>
-          m.status == MasteryStatus.proficient ||
-          m.status == MasteryStatus.mastered)
+      .where(
+        (m) =>
+            m.status == MasteryStatus.proficient ||
+            m.status == MasteryStatus.mastered,
+      )
       .length;
 
   /// Average mastery across all practiced skills.
@@ -48,9 +50,10 @@ class StudentState extends Equatable {
 
   /// Skills due for review.
   List<MasteryState> get reviewDueSkills => masteries.values
-      .where((m) =>
-          m.nextReviewAt != null &&
-          m.nextReviewAt!.isBefore(DateTime.now()))
+      .where(
+        (m) =>
+            m.nextReviewAt != null && m.nextReviewAt!.isBefore(DateTime.now()),
+      )
       .toList();
 
   /// Skills that are not yet started.
@@ -93,31 +96,32 @@ class StudentState extends Equatable {
 
   @override
   List<Object?> get props => [
-        childId,
-        masteries,
-        sessionCount,
-        totalTimeMinutes,
-        lastActiveAt,
-        createdAt,
-        modelVersion,
-      ];
+    childId,
+    masteries,
+    sessionCount,
+    totalTimeMinutes,
+    lastActiveAt,
+    createdAt,
+    modelVersion,
+  ];
 
   Map<String, dynamic> toJson() => {
-        'childId': childId,
-        'masteries': {for (var k in masteries.keys) k: masteries[k]!.toJson()},
-        'sessionCount': sessionCount,
-        'totalTimeMinutes': totalTimeMinutes,
-        'lastActiveAt': lastActiveAt?.toIso8601String(),
-        'createdAt': createdAt?.toIso8601String(),
-        'modelVersion': modelVersion,
-      };
+    'childId': childId,
+    'masteries': {for (var k in masteries.keys) k: masteries[k]!.toJson()},
+    'sessionCount': sessionCount,
+    'totalTimeMinutes': totalTimeMinutes,
+    'lastActiveAt': lastActiveAt?.toIso8601String(),
+    'createdAt': createdAt?.toIso8601String(),
+    'modelVersion': modelVersion,
+  };
 
   factory StudentState.fromJson(Map<String, dynamic> json) {
     final masteriesJson = json['masteries'] as Map<String, dynamic>? ?? {};
     return StudentState(
       childId: json['childId'] as String,
-      masteries: masteriesJson.map((k, v) =>
-          MapEntry(k, MasteryState.fromJson(v as Map<String, dynamic>))),
+      masteries: masteriesJson.map(
+        (k, v) => MapEntry(k, MasteryState.fromJson(v as Map<String, dynamic>)),
+      ),
       sessionCount: json['sessionCount'] as int? ?? 0,
       totalTimeMinutes: json['totalTimeMinutes'] as int? ?? 0,
       lastActiveAt: json['lastActiveAt'] != null

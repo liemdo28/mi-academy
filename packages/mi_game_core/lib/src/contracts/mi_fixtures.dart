@@ -107,14 +107,45 @@ abstract class MiFixtures {
     switch (gameId) {
       case 'word_builder':
       case 'sound_match':
-        return ['mèo', 'cá', 'gà', 'bò', 'heo', 'dê', 'ngựa', 'vịt', 'chim', 'sóc'];
+        return [
+          'mèo',
+          'cá',
+          'gà',
+          'bò',
+          'heo',
+          'dê',
+          'ngựa',
+          'vịt',
+          'chim',
+          'sóc'
+        ];
       case 'math_race':
       case 'math_supermarket':
-        return ['1+1', '2+3', '5-2', '4+4', '6-1', '7+2', '8-3', '9-0', '5+5', '10-4'];
+        return [
+          '1+1',
+          '2+3',
+          '5-2',
+          '4+4',
+          '6-1',
+          '7+2',
+          '8-3',
+          '9-0',
+          '5+5',
+          '10-4'
+        ];
       case 'memory_cards':
         return ['🐱', '🐶', '🐰', '🐻', '🐼', '🦁', '🐯', '🐮', '🐷', '🐸'];
       case 'robot_commands':
-        return ['forward', 'back', 'turn_left', 'turn_right', 'jump', 'pick', 'drop', 'repeat'];
+        return [
+          'forward',
+          'back',
+          'turn_left',
+          'turn_right',
+          'jump',
+          'pick',
+          'drop',
+          'repeat'
+        ];
       default:
         return [];
     }
@@ -159,7 +190,8 @@ abstract class MiFixtures {
     String levelId = 'level_1',
     String language = 'vi',
     String ageGroup = 'junior',
-    MiAccessibilityPreferences accessibility = const MiAccessibilityPreferences(),
+    MiAccessibilityPreferences accessibility =
+        const MiAccessibilityPreferences(),
     MiAudioPreferences audioPreferences = const MiAudioPreferences(),
     Map<String, dynamic>? restoredState,
   }) {

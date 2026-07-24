@@ -30,14 +30,19 @@ Widget _buildDashboard({required LearningInsights insights}) {
       ),
       learningInsightsProvider.overrideWith((ref) async => insights),
       worldProgressProvider.overrideWith((ref) async => const [
-            WorldProgress(subjectId: 'math', name: {'vi': 'Toán học', 'en': 'Math'}, nodes: []),
+            WorldProgress(
+                subjectId: 'math',
+                name: {'vi': 'Toán học', 'en': 'Math'},
+                nodes: []),
           ]),
     ],
     child: MaterialApp.router(
       routerConfig: GoRouter(
         initialLocation: '/dashboard',
         routes: [
-          GoRoute(path: '/dashboard', builder: (context, state) => const ParentDashboardScreen()),
+          GoRoute(
+              path: '/dashboard',
+              builder: (context, state) => const ParentDashboardScreen()),
         ],
       ),
     ),
@@ -45,21 +50,34 @@ Widget _buildDashboard({required LearningInsights insights}) {
 }
 
 void main() {
-  testWidgets('shows mastered/review/streak/accuracy stats from real '
+  testWidgets(
+      'shows mastered/review/streak/accuracy stats from real '
       'insights data', (tester) async {
     await tester.pumpWidget(_buildDashboard(
       insights: const LearningInsights(
         masteredSkills: [
-          SkillInsight(skillId: 'math.addition', name: {'vi': 'Phép cộng', 'en': 'Addition'}, masteryScore: 0.9),
+          SkillInsight(
+              skillId: 'math.addition',
+              name: {'vi': 'Phép cộng', 'en': 'Addition'},
+              masteryScore: 0.9),
         ],
         skillsNeedingReview: [
-          SkillInsight(skillId: 'logic.memory', name: {'vi': 'Ghi nhớ', 'en': 'Memory'}, masteryScore: 0.4),
+          SkillInsight(
+              skillId: 'logic.memory',
+              name: {'vi': 'Ghi nhớ', 'en': 'Memory'},
+              masteryScore: 0.4),
         ],
         weakSkills: [
-          SkillInsight(skillId: 'logic.memory', name: {'vi': 'Ghi nhớ', 'en': 'Memory'}, masteryScore: 0.4),
+          SkillInsight(
+              skillId: 'logic.memory',
+              name: {'vi': 'Ghi nhớ', 'en': 'Memory'},
+              masteryScore: 0.4),
         ],
         strongSkills: [
-          SkillInsight(skillId: 'math.addition', name: {'vi': 'Phép cộng', 'en': 'Addition'}, masteryScore: 0.9),
+          SkillInsight(
+              skillId: 'math.addition',
+              name: {'vi': 'Phép cộng', 'en': 'Addition'},
+              masteryScore: 0.9),
         ],
         curriculumCompletionBySubject: {'math': 0.5},
         streakDays: 3,
@@ -72,7 +90,8 @@ void main() {
     await tester.pump();
 
     expect(find.text('Hành trình học tập'), findsOneWidget);
-    expect(find.text('1'), findsWidgets); // mastered count + review count both 1
+    expect(
+        find.text('1'), findsWidgets); // mastered count + review count both 1
     expect(find.text('3'), findsOneWidget); // streak days
     expect(find.text('75%'), findsOneWidget); // accuracy
     expect(find.text('42'), findsOneWidget); // minutes
@@ -80,7 +99,8 @@ void main() {
     expect(find.text('Toán học'), findsOneWidget); // curriculum bar label
   });
 
-  testWidgets('shows an honest empty summary when no mastery evidence '
+  testWidgets(
+      'shows an honest empty summary when no mastery evidence '
       'exists yet -- no fabricated numbers', (tester) async {
     await tester.pumpWidget(_buildDashboard(
       insights: const LearningInsights(

@@ -242,7 +242,9 @@ class _CluesCard extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Icon(
-                      clue.isPositive ? Icons.check_circle_outline : Icons.block,
+                      clue.isPositive
+                          ? Icons.check_circle_outline
+                          : Icons.block,
                       size: 20,
                       color: clue.isPositive ? Colors.green : Colors.red,
                     ),
@@ -406,14 +408,12 @@ class _GridCell extends StatelessWidget {
       padding: const EdgeInsets.all(4),
       child: Semantics(
         button: true,
-        label:
-            '${pairing.valueA} và ${pairing.valueB}: ${_markLabel(mark)}',
+        label: '${pairing.valueA} và ${pairing.valueB}: ${_markLabel(mark)}',
         child: InkWell(
           onTap: () => controller.toggleMark(pairing),
           borderRadius: BorderRadius.circular(8),
           child: AnimatedContainer(
-            duration:
-                controller.reducedMotion ? Duration.zero : _kAnimDuration,
+            duration: controller.reducedMotion ? Duration.zero : _kAnimDuration,
             constraints: const BoxConstraints(minHeight: 48),
             decoration: BoxDecoration(
               color: _markColor(mark),

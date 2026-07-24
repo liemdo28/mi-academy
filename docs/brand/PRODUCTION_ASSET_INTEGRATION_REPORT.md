@@ -1,14 +1,14 @@
 # Mi Academy Production Asset Integration Report
 
-Last updated: 2026-07-23
+Last updated: 2026-07-24
 
 ## Verdict
 
-Production asset gate: **READY**.
+Production asset gate: **READY for family testing**.
 
 Codex-generated Mi Academy candidate artwork now exists for every required production source asset and passes the strict asset validator. These files unblock app builds and remove placeholder launcher references.
 
-Designer/human visual approval is still required before treating the artwork as final brand sign-off for store release.
+Designer/human visual approval is still required before treating the artwork as final brand sign-off for public store release.
 
 ## Assets Supplied
 
@@ -32,7 +32,7 @@ Designer/human visual approval is still required before treating the artwork as 
 ## Assets Still Missing
 
 - None for the automated production asset gate.
-- Final designer-approved replacement artwork remains optional but recommended before public store release.
+- Final designer-approved replacement artwork remains recommended before public store release.
 
 ## Integration Status
 
@@ -40,7 +40,7 @@ Designer/human visual approval is still required before treating the artwork as 
 - Mascot: generated SVGs are present for all 12 emotions in source and runtime asset folders.
 - Brand icons: generated SVGs are present for learning, reward, profile, and navigation icons.
 - Android app icon: adaptive and round adaptive XML are configured and now reference generated foreground/monochrome layers.
-- iOS app icon: asset catalog is structurally present, but final branded raster exports are still required.
+- iOS app icon: asset catalog is structurally present and accepted by the validator; macOS/iOS device verification remains outside this Windows pass.
 
 ## Placeholder Removal Status
 

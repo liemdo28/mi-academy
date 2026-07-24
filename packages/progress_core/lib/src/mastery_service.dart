@@ -63,7 +63,8 @@ class MasteryService {
     return current.copyWith(
       masteryScore: newScore,
       totalAttempts: current.totalAttempts + 1,
-      totalCorrect: wasCorrect ? current.totalCorrect + 1 : current.totalCorrect,
+      totalCorrect:
+          wasCorrect ? current.totalCorrect + 1 : current.totalCorrect,
       correctStreak: wasCorrect ? current.correctStreak + 1 : 0,
       lastPlayedAt: now,
       reviewDueAt: _computeReviewDue(newScore),
@@ -86,13 +87,16 @@ class MasteryService {
   }) {
     final newRewards = <String>[];
 
-    if (lessonsCompleted >= 1 && !existingRewardIds.contains('badge_first_lesson')) {
+    if (lessonsCompleted >= 1 &&
+        !existingRewardIds.contains('badge_first_lesson')) {
       newRewards.add('badge_first_lesson');
     }
-    if (lessonsCompleted >= 5 && !existingRewardIds.contains('badge_diligent')) {
+    if (lessonsCompleted >= 5 &&
+        !existingRewardIds.contains('badge_diligent')) {
       newRewards.add('badge_diligent');
     }
-    if (lessonsCompleted >= 10 && !existingRewardIds.contains('badge_scholar')) {
+    if (lessonsCompleted >= 10 &&
+        !existingRewardIds.contains('badge_scholar')) {
       newRewards.add('badge_scholar');
     }
     if (masteryScore >= 0.8 && !existingRewardIds.contains('badge_master')) {

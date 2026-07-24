@@ -35,7 +35,8 @@ void main() {
     expect(node.skillIds, ['letters.recognition.uppercase']);
   });
 
-  test('returns null for a (age, subject) pair with no node -- e.g. junior '
+  test(
+      'returns null for a (age, subject) pair with no node -- e.g. junior '
       'has no science', () {
     final map = CurriculumMap.fromAgeFiles([
       _ageFileJson(ageGroup: 'junior', subjectSkills: {

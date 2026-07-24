@@ -16,13 +16,15 @@ class SaveRestoreHarness {
 
     final snapshot = game.captureSnapshot();
     expect(snapshot, isNotNull, reason: 'Snapshot must not be null');
-    expect(snapshot!.levelId, isNotEmpty, reason: 'Snapshot must identify level');
+    expect(snapshot!.levelId, isNotEmpty,
+        reason: 'Snapshot must identify level');
 
     await game.pause();
 
     final restored = game.restoreSnapshot(snapshot);
     expect(restored, isTrue, reason: 'Game must accept its own snapshot');
-    expect(game.state, MiGameState.paused, reason: 'Restored game stays paused');
+    expect(game.state, MiGameState.paused,
+        reason: 'Restored game stays paused');
 
     await game.resume();
     expect(game.state, MiGameState.playing, reason: 'Resumes to PLAYING');
@@ -42,6 +44,7 @@ class SaveRestoreHarness {
     );
 
     final result = game.restoreSnapshot(foreignSnapshot);
-    expect(result, isFalse, reason: 'Must reject snapshot from different level');
+    expect(result, isFalse,
+        reason: 'Must reject snapshot from different level');
   }
 }

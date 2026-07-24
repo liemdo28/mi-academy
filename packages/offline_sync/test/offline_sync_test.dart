@@ -250,7 +250,9 @@ void main() {
         throw const _HttpFailure(500);
       },
       isPermanentFailure: (error, _) =>
-          error is _HttpFailure && error.statusCode >= 400 && error.statusCode < 500,
+          error is _HttpFailure &&
+          error.statusCode >= 400 &&
+          error.statusCode < 500,
     );
 
     await service.enqueue(
@@ -306,7 +308,8 @@ void main() {
     expect(result.processed, 2);
     expect(result.succeeded, 0);
     expect(queueBox.get('bad-auth')!.itemStatus, SyncItemStatus.quarantined);
-    expect(queueBox.get('malformed-result')!.itemStatus, SyncItemStatus.quarantined);
+    expect(queueBox.get('malformed-result')!.itemStatus,
+        SyncItemStatus.quarantined);
     expect(service.quarantinedCount, 2);
     expect(service.failedCount, 0);
   });
@@ -400,7 +403,8 @@ void main() {
     expect(service.oldestPending!.id, 'older');
   });
 
-  test('clearForChild/clearForLogout delete only profile-scoped entries (explicit data-deletion use, not routine switch/logout — see docstrings)',
+  test(
+      'clearForChild/clearForLogout delete only profile-scoped entries (explicit data-deletion use, not routine switch/logout — see docstrings)',
       () async {
     final service = SyncService(
       queueBox: queueBox,
@@ -429,7 +433,9 @@ void main() {
     expect(queueBox.isEmpty, isTrue);
   });
 
-  test('exhausting retries quarantines the item instead of leaving it stuck invisible', () async {
+  test(
+      'exhausting retries quarantines the item instead of leaving it stuck invisible',
+      () async {
     final service = SyncService(
       queueBox: queueBox,
       progressBox: progressBox,
@@ -464,7 +470,9 @@ void main() {
     expect(service.failedCount, 0);
   });
 
-  test('failed items back off exponentially instead of retrying every sync() call', () async {
+  test(
+      'failed items back off exponentially instead of retrying every sync() call',
+      () async {
     var attempts = 0;
     final service = SyncService(
       queueBox: queueBox,
@@ -499,7 +507,8 @@ void main() {
     expect(item.readyToRetry, isFalse);
   });
 
-  test('averageRetryCount reflects only items that have failed at least once', () async {
+  test('averageRetryCount reflects only items that have failed at least once',
+      () async {
     final service = SyncService(
       queueBox: queueBox,
       progressBox: progressBox,

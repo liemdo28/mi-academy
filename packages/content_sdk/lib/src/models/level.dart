@@ -30,12 +30,16 @@ class Level {
     this.status = 'draft',
   });
 
-  factory Level.fromJson(Map<String, dynamic> json) =>
-      _$LevelFromJson(json);
+  factory Level.fromJson(Map<String, dynamic> json) => _$LevelFromJson(json);
 
   Map<String, dynamic> toJson() => _$LevelToJson(this);
 
-  static const List<String> validDifficulties = ['easy', 'medium', 'hard', 'adaptive'];
+  static const List<String> validDifficulties = [
+    'easy',
+    'medium',
+    'hard',
+    'adaptive',
+  ];
 
   List<String> validate() {
     final errors = <String>[];
@@ -51,13 +55,22 @@ class Level {
   }
 
   Level copyWith({
-    String? id, String? lessonId, String? gameId, String? title,
-    String? difficulty, int? orderIndex, Map<String, dynamic>? config,
-    List<String>? prerequisiteLevelIds, int? requiredAccuracy, String? status,
+    String? id,
+    String? lessonId,
+    String? gameId,
+    String? title,
+    String? difficulty,
+    int? orderIndex,
+    Map<String, dynamic>? config,
+    List<String>? prerequisiteLevelIds,
+    int? requiredAccuracy,
+    String? status,
   }) {
     return Level(
-      id: id ?? this.id, lessonId: lessonId ?? this.lessonId,
-      gameId: gameId ?? this.gameId, title: title ?? this.title,
+      id: id ?? this.id,
+      lessonId: lessonId ?? this.lessonId,
+      gameId: gameId ?? this.gameId,
+      title: title ?? this.title,
       difficulty: difficulty ?? this.difficulty,
       orderIndex: orderIndex ?? this.orderIndex,
       config: config ?? this.config,

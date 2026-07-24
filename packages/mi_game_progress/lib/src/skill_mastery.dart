@@ -76,8 +76,8 @@ class SkillMastery extends Equatable {
     final difficultyBonus = (difficulty * 0.05).clamp(0.0, 0.2);
     final spacingBonus = needsRecall ? -0.1 : 0.0;
 
-    _mastery =
-        (accuracy - hintPenalty + difficultyBonus + spacingBonus).clamp(0.0, 1.0);
+    _mastery = (accuracy - hintPenalty + difficultyBonus + spacingBonus)
+        .clamp(0.0, 1.0);
   }
 
   Map<String, dynamic> toJson() => {

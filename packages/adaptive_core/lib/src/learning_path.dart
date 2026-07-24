@@ -22,13 +22,13 @@ class LearningPathNode extends Equatable {
 
   @override
   List<Object?> get props => [
-        skillId,
-        displayName,
-        prerequisiteSkillIds,
-        estimatedMinutes,
-        difficulty,
-        subjectCode,
-      ];
+    skillId,
+    displayName,
+    prerequisiteSkillIds,
+    estimatedMinutes,
+    difficulty,
+    subjectCode,
+  ];
 }
 
 /// A generated learning path with ordered nodes.
@@ -50,8 +50,14 @@ class LearningPath extends Equatable {
   final String engineVersion;
 
   @override
-  List<Object?> get props =>
-      [childId, nodes, focusSkillIds, totalEstimatedMinutes, reasonCodes, engineVersion];
+  List<Object?> get props => [
+    childId,
+    nodes,
+    focusSkillIds,
+    totalEstimatedMinutes,
+    reasonCodes,
+    engineVersion,
+  ];
 }
 
 /// Learning path generator.

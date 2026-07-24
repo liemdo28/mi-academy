@@ -12,11 +12,8 @@ class GameClient {
   final http.Client _httpClient;
   final String? authToken;
 
-  GameClient({
-    required this.baseUrl,
-    http.Client? httpClient,
-    this.authToken,
-  }) : _httpClient = httpClient ?? http.Client();
+  GameClient({required this.baseUrl, http.Client? httpClient, this.authToken})
+    : _httpClient = httpClient ?? http.Client();
 
   /// Launch a game session.
   /// POST /api/v2/games/launch

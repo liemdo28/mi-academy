@@ -64,9 +64,10 @@ class HiveMasteryStateStore implements MasteryStateStore {
       final raw = _box.get(key);
       if (raw is! String) continue;
       try {
-        states.add(MasteryState.fromJson(jsonDecode(raw) as Map<String, dynamic>));
+        states.add(
+            MasteryState.fromJson(jsonDecode(raw) as Map<String, dynamic>));
       } catch (_) {
-        // Corrupted entry -- skip rather than fail the whole summary.
+        // Corrupted entry -- skip it and keep the rest of the summary.
       }
     }
     return states;

@@ -43,7 +43,9 @@ class ContentClient {
   /// List lessons for a curriculum.
   /// GET /api/v2/content/curricula/{id}/lessons
   Future<List<Lesson>> listLessons(String curriculumId) async {
-    final response = await _get('/api/v2/content/curricula/$curriculumId/lessons');
+    final response = await _get(
+      '/api/v2/content/curricula/$curriculumId/lessons',
+    );
     final list = jsonDecode(response.body) as List;
     return list.map((e) => Lesson.fromJson(e as Map<String, dynamic>)).toList();
   }
@@ -61,7 +63,9 @@ class ContentClient {
   Future<List<LocalizationEntry>> getLocalizations(String language) async {
     final response = await _get('/api/v2/content/localization/$language');
     final list = jsonDecode(response.body) as List;
-    return list.map((e) => LocalizationEntry.fromJson(e as Map<String, dynamic>)).toList();
+    return list
+        .map((e) => LocalizationEntry.fromJson(e as Map<String, dynamic>))
+        .toList();
   }
 
   /// Search content by query.
@@ -78,14 +82,19 @@ class ContentClient {
     if (ageGroup != null) params['ageGroup'] = ageGroup;
     if (limit != null) params['limit'] = limit.toString();
 
-    final uri = Uri.parse('$baseUrl/api/v2/content/search').replace(queryParameters: params);
+    final uri = Uri.parse(
+      '$baseUrl/api/v2/content/search',
+    ).replace(queryParameters: params);
     final response = await _getUri(uri);
     return jsonDecode(response.body) as Map<String, dynamic>;
   }
 
   Future<http.Response> _get(String path) async {
     final headers = _buildHeaders();
-    final response = await _httpClient.get(Uri.parse('$baseUrl$path'), headers: headers);
+    final response = await _httpClient.get(
+      Uri.parse('$baseUrl$path'),
+      headers: headers,
+    );
     _checkStatus(response);
     return response;
   }

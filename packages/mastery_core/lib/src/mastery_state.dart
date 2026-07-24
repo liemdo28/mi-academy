@@ -181,8 +181,7 @@ class MasteryState extends Equatable {
       independentCorrectCount: json['independentCorrectCount'] as int? ?? 0,
       totalHintsUsed: json['totalHintsUsed'] as int? ?? 0,
       currentDifficulty: json['currentDifficulty'] as int? ?? 1,
-      lastPracticedDifficulty:
-          json['lastPracticedDifficulty'] as int? ?? 1,
+      lastPracticedDifficulty: json['lastPracticedDifficulty'] as int? ?? 1,
       modelVersion: json['modelVersion'] as String? ?? 'mastery-rule-v1',
       attemptHistory: historyList ?? const [],
     );

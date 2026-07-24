@@ -49,7 +49,9 @@ class ContentBundle {
       errors.addAll(lesson.validate().map((e) => 'Lesson ${lesson.id}: $e'));
     }
     for (final question in questions) {
-      errors.addAll(question.validate().map((e) => 'Question ${question.id}: $e'));
+      errors.addAll(
+        question.validate().map((e) => 'Question ${question.id}: $e'),
+      );
     }
     for (final level in levels) {
       errors.addAll(level.validate().map((e) => 'Level ${level.id}: $e'));

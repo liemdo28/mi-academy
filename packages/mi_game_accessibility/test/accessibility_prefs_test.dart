@@ -25,22 +25,36 @@ void main() {
     });
 
     test('screen reader increases minimum touch target', () {
-      expect(const MiAccessibilityPrefs(screenReader: false).minTouchTarget, 48.0);
-      expect(const MiAccessibilityPrefs(screenReader: true).minTouchTarget, 56.0);
+      expect(
+          const MiAccessibilityPrefs(screenReader: false).minTouchTarget, 48.0);
+      expect(
+          const MiAccessibilityPrefs(screenReader: true).minTouchTarget, 56.0);
     });
 
     test('reduced motion removes animation duration', () {
       const normal = Duration(milliseconds: 300);
 
-      expect(const MiAccessibilityPrefs(reduceMotion: false).animationDuration(normal), normal);
-      expect(const MiAccessibilityPrefs(reduceMotion: true).animationDuration(normal), Duration.zero);
+      expect(
+          const MiAccessibilityPrefs(reduceMotion: false)
+              .animationDuration(normal),
+          normal);
+      expect(
+          const MiAccessibilityPrefs(reduceMotion: true)
+              .animationDuration(normal),
+          Duration.zero);
     });
 
     test('extended response time doubles timeout', () {
       const base = Duration(seconds: 10);
 
-      expect(const MiAccessibilityPrefs(extendedResponseTime: false).responseTimeout(base), base);
-      expect(const MiAccessibilityPrefs(extendedResponseTime: true).responseTimeout(base), const Duration(seconds: 20));
+      expect(
+          const MiAccessibilityPrefs(extendedResponseTime: false)
+              .responseTimeout(base),
+          base);
+      expect(
+          const MiAccessibilityPrefs(extendedResponseTime: true)
+              .responseTimeout(base),
+          const Duration(seconds: 20));
     });
 
     test('JSON roundtrip preserves fields', () {

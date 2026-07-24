@@ -42,11 +42,11 @@ class AdaptiveClient {
   }) : _httpClient = httpClient ?? http.Client();
 
   Map<String, String> get _headers => {
-        'Content-Type': 'application/json',
-        'Accept': 'application/json',
-        'X-Contract-Version': contractVersion,
-        if (authToken != null) 'Authorization': 'Bearer $authToken',
-      };
+    'Content-Type': 'application/json',
+    'Accept': 'application/json',
+    'X-Contract-Version': contractVersion,
+    if (authToken != null) 'Authorization': 'Bearer $authToken',
+  };
 
   // --- Difficulty Adjustment ---
 
@@ -57,21 +57,25 @@ class AdaptiveClient {
     required String levelId,
   }) async {
     final response = await _httpClient.get(
-      Uri.parse('$baseUrl/v1/adaptive/difficulty')
-          .replace(queryParameters: {
-            'child_profile_id': childProfileId,
-            'game_id': gameId,
-            'level_id': levelId,
-          }),
+      Uri.parse('$baseUrl/v1/adaptive/difficulty').replace(
+        queryParameters: {
+          'child_profile_id': childProfileId,
+          'game_id': gameId,
+          'level_id': levelId,
+        },
+      ),
       headers: _headers,
     );
 
     if (response.statusCode != 200) {
       throw AdaptiveApiException(
-          response.statusCode, 'Failed to get difficulty: ${response.body}');
+        response.statusCode,
+        'Failed to get difficulty: ${response.body}',
+      );
     }
     return DifficultyAdjustment.fromJson(
-        jsonDecode(response.body) as Map<String, dynamic>);
+      jsonDecode(response.body) as Map<String, dynamic>,
+    );
   }
 
   /// Submit a manual difficulty override (parent/teacher).
@@ -79,7 +83,8 @@ class AdaptiveClient {
     final errors = adjustment.validate();
     if (errors.isNotEmpty) {
       throw AdaptiveContractException(
-          'Invalid adjustment: ${errors.join("; ")}');
+        'Invalid adjustment: ${errors.join("; ")}',
+      );
     }
 
     final response = await _httpClient.post(
@@ -90,7 +95,9 @@ class AdaptiveClient {
 
     if (response.statusCode != 200 && response.statusCode != 201) {
       throw AdaptiveApiException(
-          response.statusCode, 'Override failed: ${response.body}');
+        response.statusCode,
+        'Override failed: ${response.body}',
+      );
     }
   }
 
@@ -102,23 +109,25 @@ class AdaptiveClient {
     int limit = 20,
   }) async {
     final response = await _httpClient.get(
-      Uri.parse('$baseUrl/v1/adaptive/spaced-repetition/due')
-          .replace(queryParameters: {
-            'child_profile_id': childProfileId,
-            'limit': limit.toString(),
-          }),
+      Uri.parse('$baseUrl/v1/adaptive/spaced-repetition/due').replace(
+        queryParameters: {
+          'child_profile_id': childProfileId,
+          'limit': limit.toString(),
+        },
+      ),
       headers: _headers,
     );
 
     if (response.statusCode != 200) {
       throw AdaptiveApiException(
-          response.statusCode, 'Failed to get due reviews: ${response.body}');
+        response.statusCode,
+        'Failed to get due reviews: ${response.body}',
+      );
     }
 
     final list = jsonDecode(response.body) as List;
     return list
-        .map((e) =>
-            SpacedRepetitionItem.fromJson(e as Map<String, dynamic>))
+        .map((e) => SpacedRepetitionItem.fromJson(e as Map<String, dynamic>))
         .toList();
   }
 
@@ -135,10 +144,13 @@ class AdaptiveClient {
 
     if (response.statusCode != 200) {
       throw AdaptiveApiException(
-          response.statusCode, 'Review failed: ${response.body}');
+        response.statusCode,
+        'Review failed: ${response.body}',
+      );
     }
     return SpacedRepetitionItem.fromJson(
-        jsonDecode(response.body) as Map<String, dynamic>);
+      jsonDecode(response.body) as Map<String, dynamic>,
+    );
   }
 
   // --- Learning Path ---
@@ -154,17 +166,21 @@ class AdaptiveClient {
     };
 
     final response = await _httpClient.get(
-      Uri.parse('$baseUrl/v1/adaptive/learning-paths')
-          .replace(queryParameters: queryParams),
+      Uri.parse(
+        '$baseUrl/v1/adaptive/learning-paths',
+      ).replace(queryParameters: queryParams),
       headers: _headers,
     );
 
     if (response.statusCode != 200) {
       throw AdaptiveApiException(
-          response.statusCode, 'Failed to get path: ${response.body}');
+        response.statusCode,
+        'Failed to get path: ${response.body}',
+      );
     }
     return LearningPath.fromJson(
-        jsonDecode(response.body) as Map<String, dynamic>);
+      jsonDecode(response.body) as Map<String, dynamic>,
+    );
   }
 
   /// Generate a new learning path.
@@ -185,10 +201,13 @@ class AdaptiveClient {
 
     if (response.statusCode != 201) {
       throw AdaptiveApiException(
-          response.statusCode, 'Generation failed: ${response.body}');
+        response.statusCode,
+        'Generation failed: ${response.body}',
+      );
     }
     return LearningPath.fromJson(
-        jsonDecode(response.body) as Map<String, dynamic>);
+      jsonDecode(response.body) as Map<String, dynamic>,
+    );
   }
 
   // --- Personalization ---
@@ -198,17 +217,19 @@ class AdaptiveClient {
     required String childProfileId,
   }) async {
     final response = await _httpClient.get(
-      Uri.parse(
-          '$baseUrl/v1/adaptive/personalization/$childProfileId'),
+      Uri.parse('$baseUrl/v1/adaptive/personalization/$childProfileId'),
       headers: _headers,
     );
 
     if (response.statusCode != 200) {
       throw AdaptiveApiException(
-          response.statusCode, 'Failed to get profile: ${response.body}');
+        response.statusCode,
+        'Failed to get profile: ${response.body}',
+      );
     }
     return PersonalizationProfile.fromJson(
-        jsonDecode(response.body) as Map<String, dynamic>);
+      jsonDecode(response.body) as Map<String, dynamic>,
+    );
   }
 
   /// Update personalization profile with new signals.
@@ -217,8 +238,7 @@ class AdaptiveClient {
   ) async {
     final errors = profile.validate();
     if (errors.isNotEmpty) {
-      throw AdaptiveContractException(
-          'Invalid profile: ${errors.join("; ")}');
+      throw AdaptiveContractException('Invalid profile: ${errors.join("; ")}');
     }
 
     final forbiddenViolations = AdaptiveContracts.checkForbiddenFields(
@@ -227,22 +247,27 @@ class AdaptiveClient {
     );
     if (forbiddenViolations.isNotEmpty) {
       throw AdaptiveContractException(
-          'Security: ${forbiddenViolations.join("; ")}');
+        'Security: ${forbiddenViolations.join("; ")}',
+      );
     }
 
     final response = await _httpClient.put(
       Uri.parse(
-          '$baseUrl/v1/adaptive/personalization/${profile.childProfileId}'),
+        '$baseUrl/v1/adaptive/personalization/${profile.childProfileId}',
+      ),
       headers: _headers,
       body: jsonEncode(profile.toJson()),
     );
 
     if (response.statusCode != 200) {
       throw AdaptiveApiException(
-          response.statusCode, 'Update failed: ${response.body}');
+        response.statusCode,
+        'Update failed: ${response.body}',
+      );
     }
     return PersonalizationProfile.fromJson(
-        jsonDecode(response.body) as Map<String, dynamic>);
+      jsonDecode(response.body) as Map<String, dynamic>,
+    );
   }
 
   void dispose() {

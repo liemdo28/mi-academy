@@ -33,7 +33,8 @@ class GameContracts {
       semanticVersion: '1.2.0',
       owner: 'Dev7-Integration',
       compatibility: 'backward',
-      description: 'Request to launch a game session with accessibility and audio config.',
+      description:
+          'Request to launch a game session with accessibility and audio config.',
     ),
     GameContractMeta(
       contractId: 'mi.game.result',

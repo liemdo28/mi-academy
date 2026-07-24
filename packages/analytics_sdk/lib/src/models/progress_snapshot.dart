@@ -50,17 +50,23 @@ class ProgressSnapshot {
   }
 
   ProgressSnapshot copyWith({
-    String? childProfileId, DateTime? measuredAt,
-    Map<String, double>? skillMastery, int? totalLessonsCompleted,
-    int? totalGamesPlayed, double? overallAccuracy, int? currentStreakDays,
-    String? lastActiveGameId, String? lastActiveLessonId,
+    String? childProfileId,
+    DateTime? measuredAt,
+    Map<String, double>? skillMastery,
+    int? totalLessonsCompleted,
+    int? totalGamesPlayed,
+    double? overallAccuracy,
+    int? currentStreakDays,
+    String? lastActiveGameId,
+    String? lastActiveLessonId,
     Map<String, dynamic>? metadata,
   }) {
     return ProgressSnapshot(
       childProfileId: childProfileId ?? this.childProfileId,
       measuredAt: measuredAt ?? this.measuredAt,
       skillMastery: skillMastery ?? this.skillMastery,
-      totalLessonsCompleted: totalLessonsCompleted ?? this.totalLessonsCompleted,
+      totalLessonsCompleted:
+          totalLessonsCompleted ?? this.totalLessonsCompleted,
       totalGamesPlayed: totalGamesPlayed ?? this.totalGamesPlayed,
       overallAccuracy: overallAccuracy ?? this.overallAccuracy,
       currentStreakDays: currentStreakDays ?? this.currentStreakDays,

@@ -92,11 +92,13 @@ class LevelSelector {
     required List<MiLevel> levels,
     required GameDescriptor game,
     required ActivityMappingResolver resolver,
+
     /// This child's persisted mastery, keyed by skillId. Empty for a
     /// brand-new child -- every level then falls back to the
     /// guaranteed-success path (lowest difficulty, no-prerequisite skills
     /// win).
     required Map<String, MasteryState> masteryBySkill,
+
     /// This child's attempt history, any game -- only this [game]'s
     /// entries are used, to avoid repeating the exact level just played.
     required List<AttemptRecord> recentAttempts,
@@ -130,8 +132,9 @@ class LevelSelector {
         .toList();
     if (pool.isEmpty) pool = candidates; // don't over-filter into nothing
 
-    final localePool =
-        pool.where((c) => c.level.localizedContent.containsKey(locale)).toList();
+    final localePool = pool
+        .where((c) => c.level.localizedContent.containsKey(locale))
+        .toList();
     if (localePool.isNotEmpty) pool = localePool;
 
     final mostRecentLevelId = recentAttempts
@@ -141,8 +144,7 @@ class LevelSelector {
         return a;
       }
       return latest;
-    })
-        ?.levelId;
+    })?.levelId;
 
     _Candidate? best;
     var bestScore = double.negativeInfinity;
@@ -244,7 +246,8 @@ class LevelSelector {
     // availability rather than guess a state from nothing, mirroring
     // select()'s own NO_CANONICAL_MAPPING_FALLBACK behavior.
     if (mapping == null) {
-      return LevelProgression(level: level, state: LevelProgressState.available);
+      return LevelProgression(
+          level: level, state: LevelProgressState.available);
     }
 
     final unmetPrerequisites = mapping.prerequisites.where((prereqSkillId) {
@@ -257,7 +260,8 @@ class LevelSelector {
     }
 
     if (level.id == recommendedLevelId) {
-      return LevelProgression(level: level, state: LevelProgressState.recommended);
+      return LevelProgression(
+          level: level, state: LevelProgressState.recommended);
     }
 
     final mastery = masteryBySkill[mapping.primarySkillId];
@@ -277,7 +281,8 @@ class LevelSelector {
 
     final baselineDifficulty = mastery?.currentDifficulty ?? 1;
     if (level.difficulty - baselineDifficulty >= 2) {
-      return LevelProgression(level: level, state: LevelProgressState.challenge);
+      return LevelProgression(
+          level: level, state: LevelProgressState.challenge);
     }
 
     return LevelProgression(level: level, state: LevelProgressState.available);

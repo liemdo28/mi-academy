@@ -19,7 +19,12 @@ class PersonalizationProfile {
   static const String currentSchemaVersion = '1.0.0';
   static const validAgeGroups = ['junior', 'mid', 'senior'];
   static const validDifficulties = ['easy', 'medium', 'hard', 'adaptive'];
-  static const validLearningStyles = ['visual', 'auditory', 'kinesthetic', 'reading'];
+  static const validLearningStyles = [
+    'visual',
+    'auditory',
+    'kinesthetic',
+    'reading',
+  ];
 
   PersonalizationProfile({
     required this.childProfileId,
@@ -79,8 +84,10 @@ class PersonalizationProfile {
     if (subjectScores != null) {
       for (final entry in subjectScores.entries) {
         final existing = newAffinity[entry.key] ?? 0.5;
-        newAffinity[entry.key] = (existing * 0.7 + entry.value * 0.3)
-            .clamp(0.0, 1.0);
+        newAffinity[entry.key] = (existing * 0.7 + entry.value * 0.3).clamp(
+          0.0,
+          1.0,
+        );
       }
     }
 

@@ -21,8 +21,9 @@ class StruggleDetector {
     final signals = <StruggleSignal>[];
 
     // Signal 1: Repeated error
-    final recentWrongSameDifficulty = recentAttempts.where((a) =>
-        !a.correct && a.difficulty == currentAttempt.difficulty).length;
+    final recentWrongSameDifficulty = recentAttempts
+        .where((a) => !a.correct && a.difficulty == currentAttempt.difficulty)
+        .length;
     if (recentWrongSameDifficulty >= 3) {
       signals.add(StruggleSignal(
         signalType: StruggleSignalType.repeatedError,
@@ -110,7 +111,8 @@ class StruggleDetector {
     if (recentAttempts.length >= 3) {
       final recentDurations = <int>[];
       for (var i = 0; i < recentAttempts.length - 1; i++) {
-        final diff = recentAttempts[i].attemptedAt
+        final diff = recentAttempts[i]
+            .attemptedAt
             .difference(recentAttempts[i + 1].attemptedAt)
             .inSeconds
             .abs();

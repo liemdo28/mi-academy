@@ -53,8 +53,8 @@ class AnalyticsEvent {
     DateTime? timestamp,
     this.source,
     this.schemaVersion = currentSchemaVersion,
-  })  : eventId = eventId ?? _uuid.v4(),
-        timestamp = timestamp ?? DateTime.now();
+  }) : eventId = eventId ?? _uuid.v4(),
+       timestamp = timestamp ?? DateTime.now();
 
   factory AnalyticsEvent.fromJson(Map<String, dynamic> json) =>
       _$AnalyticsEventFromJson(json);
@@ -67,7 +67,9 @@ class AnalyticsEvent {
     final errors = <String>[];
     if (eventId.isEmpty) errors.add('eventId must not be empty');
     if (!validEventTypes.contains(eventType)) {
-      errors.add('Invalid eventType: $eventType. Must be one of: ${validEventTypes.join(', ')}');
+      errors.add(
+        'Invalid eventType: $eventType. Must be one of: ${validEventTypes.join(', ')}',
+      );
     }
     if (childProfileId.isEmpty) errors.add('childProfileId must not be empty');
     if (sessionId.isEmpty) errors.add('sessionId must not be empty');
@@ -75,7 +77,14 @@ class AnalyticsEvent {
 
     // Check forbidden fields (PII)
     final allKeys = {...properties.keys, ...(context?.keys ?? {})};
-    const forbidden = {'password', 'token', 'secret', 'ssn', 'credit_card', 'email'};
+    const forbidden = {
+      'password',
+      'token',
+      'secret',
+      'ssn',
+      'credit_card',
+      'email',
+    };
     for (final key in allKeys) {
       if (forbidden.contains(key.toLowerCase())) {
         errors.add('Forbidden field in event properties: $key');

@@ -70,7 +70,8 @@ void main() {
       final tree = CommandTree()
         ..add(const Block(id: 'move', type: BlockType.moveForward));
 
-      expect(tree.validate(), contains('Chương trình phải bắt đầu bằng khối START'));
+      expect(tree.validate(),
+          contains('Chương trình phải bắt đầu bằng khối START'));
     });
 
     test('validates repeat count and required container children', () {

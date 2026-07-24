@@ -55,11 +55,7 @@ class QuestionOption {
   final String text;
   final String? imageUrl;
 
-  const QuestionOption({
-    required this.id,
-    required this.text,
-    this.imageUrl,
-  });
+  const QuestionOption({required this.id, required this.text, this.imageUrl});
 
   factory QuestionOption.fromJson(Map<String, dynamic> json) =>
       _$QuestionOptionFromJson(json);

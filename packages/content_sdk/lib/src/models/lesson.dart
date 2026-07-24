@@ -36,15 +36,23 @@ class Lesson {
     this.updatedAt,
   });
 
-  factory Lesson.fromJson(Map<String, dynamic> json) =>
-      _$LessonFromJson(json);
+  factory Lesson.fromJson(Map<String, dynamic> json) => _$LessonFromJson(json);
 
   Map<String, dynamic> toJson() => _$LessonToJson(this);
 
   static const List<String> validSubjects = [
-    'mathematics', 'language', 'science', 'social_studies', 'arts'
+    'mathematics',
+    'language',
+    'science',
+    'social_studies',
+    'arts',
   ];
-  static const List<String> validStatuses = ['draft', 'review', 'published', 'archived'];
+  static const List<String> validStatuses = [
+    'draft',
+    'review',
+    'published',
+    'archived',
+  ];
 
   List<String> validate() {
     final errors = <String>[];
@@ -61,20 +69,34 @@ class Lesson {
   }
 
   Lesson copyWith({
-    String? id, String? title, String? description, String? subject,
-    String? ageGroup, int? orderIndex, List<String>? skillIds,
-    List<String>? levelIds, Duration? estimatedDuration, String? status,
-    DateTime? publishedAt, DateTime? createdAt, DateTime? updatedAt,
+    String? id,
+    String? title,
+    String? description,
+    String? subject,
+    String? ageGroup,
+    int? orderIndex,
+    List<String>? skillIds,
+    List<String>? levelIds,
+    Duration? estimatedDuration,
+    String? status,
+    DateTime? publishedAt,
+    DateTime? createdAt,
+    DateTime? updatedAt,
   }) {
     return Lesson(
-      id: id ?? this.id, title: title ?? this.title,
+      id: id ?? this.id,
+      title: title ?? this.title,
       description: description ?? this.description,
-      subject: subject ?? this.subject, ageGroup: ageGroup ?? this.ageGroup,
+      subject: subject ?? this.subject,
+      ageGroup: ageGroup ?? this.ageGroup,
       orderIndex: orderIndex ?? this.orderIndex,
-      skillIds: skillIds ?? this.skillIds, levelIds: levelIds ?? this.levelIds,
+      skillIds: skillIds ?? this.skillIds,
+      levelIds: levelIds ?? this.levelIds,
       estimatedDuration: estimatedDuration ?? this.estimatedDuration,
-      status: status ?? this.status, publishedAt: publishedAt ?? this.publishedAt,
-      createdAt: createdAt ?? this.createdAt, updatedAt: updatedAt ?? this.updatedAt,
+      status: status ?? this.status,
+      publishedAt: publishedAt ?? this.publishedAt,
+      createdAt: createdAt ?? this.createdAt,
+      updatedAt: updatedAt ?? this.updatedAt,
     );
   }
 }

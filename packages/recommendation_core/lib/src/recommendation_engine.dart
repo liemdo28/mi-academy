@@ -43,9 +43,11 @@ class RecommendationEngine {
     // Filter content by constraints
     var candidates = availableContent.where((c) {
       if (!c.isPublished) return false;
-      if (c.qualityWarnings.isNotEmpty) return false; // Skip content with warnings
+      if (c.qualityWarnings.isNotEmpty)
+        return false; // Skip content with warnings
       if (offlineMode && !c.offlineDownloaded) return false;
-      if (remainingMinutes > 0 && c.estimatedMinutes > remainingMinutes) return false;
+      if (remainingMinutes > 0 && c.estimatedMinutes > remainingMinutes)
+        return false;
       return true;
     }).toList();
 
@@ -167,7 +169,8 @@ class RecommendationEngine {
     if (content.skillIds.isNotEmpty) {
       final skillMastery = masteries[content.skillIds.first];
       if (skillMastery != null) {
-        final diff = (content.difficulty - skillMastery.currentDifficulty).abs();
+        final diff =
+            (content.difficulty - skillMastery.currentDifficulty).abs();
         if (diff <= 1) {
           score += 0.15; // Good difficulty match
         } else {
@@ -233,7 +236,8 @@ class RecommendationEngine {
         } else if (mastery.masteryScore >= 0.8) {
           reasonCodes.add(ReasonCodes.masteredSkill);
         }
-        if (mastery.nextReviewAt != null && mastery.nextReviewAt!.isBefore(DateTime.now())) {
+        if (mastery.nextReviewAt != null &&
+            mastery.nextReviewAt!.isBefore(DateTime.now())) {
           reasonCodes.add(ReasonCodes.reviewDue);
         }
       } else {
@@ -282,7 +286,8 @@ class RecommendationEngine {
     }
 
     return Recommendation(
-      recommendationId: 'rec-${DateTime.now().millisecondsSinceEpoch}-${content.id.hashCode}',
+      recommendationId:
+          'rec-${DateTime.now().millisecondsSinceEpoch}-${content.id.hashCode}',
       childProfileId: childProfileId,
       type: type,
       targetId: content.id,
@@ -293,7 +298,9 @@ class RecommendationEngine {
       engineVersion: 'recommendation-rule-v1',
       subjectCode: content.subjectCode,
       gameId: content.gameId,
-      levelId: content.levelIndex != null ? '${content.gameId}_${content.levelIndex}' : null,
+      levelId: content.levelIndex != null
+          ? '${content.gameId}_${content.levelIndex}'
+          : null,
       skillId: content.skillIds.isNotEmpty ? content.skillIds.first : null,
       estimatedMinutes: content.estimatedMinutes,
       offlineAvailable: content.offlineDownloaded,
@@ -310,8 +317,8 @@ class RecommendationEngine {
     for (final m in masteries.values) {
       if (mostRecent == null ||
           (m.lastPracticedAt != null &&
-           mostRecent.lastPracticedAt != null &&
-           m.lastPracticedAt!.isAfter(mostRecent.lastPracticedAt!))) {
+              mostRecent.lastPracticedAt != null &&
+              m.lastPracticedAt!.isAfter(mostRecent.lastPracticedAt!))) {
         mostRecent = m;
       }
     }

@@ -43,7 +43,8 @@ class MasteryEngine {
 
     // Accuracy component: fraction correct across all attempts
     final newCorrect = currentState.correctCount + (attempt.correct ? 1 : 0);
-    final newIncorrect = currentState.incorrectCount + (attempt.correct ? 0 : 1);
+    final newIncorrect =
+        currentState.incorrectCount + (attempt.correct ? 0 : 1);
     final totalAttempts = newCorrect + newIncorrect;
     final accuracy = totalAttempts > 0 ? newCorrect / totalAttempts : 0.0;
 
@@ -51,21 +52,22 @@ class MasteryEngine {
     final newIndependentCorrect = currentState.independentCorrectCount +
         (attempt.correct && attempt.hintsUsed == 0 ? 1 : 0);
     final totalCorrect = newCorrect;
-    final independence = totalCorrect > 0
-        ? newIndependentCorrect / totalCorrect
-        : 0.0;
+    final independence =
+        totalCorrect > 0 ? newIndependentCorrect / totalCorrect : 0.0;
 
     // Difficulty bonus: higher difficulty → higher evidence value
     final normalizedDifficulty = (attempt.difficulty - 1) / 4.0; // 0.0 to 1.0
-    final difficultyBonus =
-        normalizedDifficulty * config.difficultyBonusMax * config.weights.difficulty;
+    final difficultyBonus = normalizedDifficulty *
+        config.difficultyBonusMax *
+        config.weights.difficulty;
 
     // Hint penalty: proportional to hint usage
     final newHintsUsed = currentState.totalHintsUsed + attempt.hintsUsed;
     final avgHintsPerAttempt =
         newEvidenceCount > 0 ? newHintsUsed / newEvidenceCount : 0.0;
-    final hintPenalty =
-        avgHintsPerAttempt * config.maxHintPenaltyRatio * config.weights.independence;
+    final hintPenalty = avgHintsPerAttempt *
+        config.maxHintPenaltyRatio *
+        config.weights.independence;
 
     // Retention component: practice spacing
     final daysSinceLast = currentState.lastPracticedAt != null
@@ -87,10 +89,8 @@ class MasteryEngine {
     // Consistency component: based on recent attempt correctness
     double consistencyScore = 0.5; // default neutral
     if (trimmedHistory.length >= 2) {
-      final recentCorrect = trimmedHistory
-          .take(3)
-          .where((a) => a.correct)
-          .length;
+      final recentCorrect =
+          trimmedHistory.take(3).where((a) => a.correct).length;
       consistencyScore = recentCorrect / math.min(3, trimmedHistory.length);
     }
     final consistencyComponent = consistencyScore * config.weights.consistency;
@@ -129,13 +129,17 @@ class MasteryEngine {
 
     // ── Confidence calculation ─────────────────────────────────────────
     // Confidence grows with evidence count and consistency
-    final evidenceConfidence = math.min(newEvidenceCount / config.minEvidenceForConfidence, 1.0);
+    final evidenceConfidence =
+        math.min(newEvidenceCount / config.minEvidenceForConfidence, 1.0);
     double consistencyConfidence = 0.5;
     if (trimmedHistory.length >= 3) {
-      final recentCorrect = trimmedHistory.take(3).where((a) => a.correct).length;
+      final recentCorrect =
+          trimmedHistory.take(3).where((a) => a.correct).length;
       consistencyConfidence = recentCorrect / 3.0;
     }
-    final confidence = ((evidenceConfidence * 0.7) + (consistencyConfidence * 0.3)).clamp(0.0, 1.0);
+    final confidence =
+        ((evidenceConfidence * 0.7) + (consistencyConfidence * 0.3))
+            .clamp(0.0, 1.0);
 
     // ── Status determination ─────────────────────────────────────────
     final newStatus = _computeStatus(
@@ -251,8 +255,10 @@ class MasteryEngine {
   int _computeDifficulty(double score, List<AttemptEvidence> history) {
     if (history.isEmpty) return 1;
     // Look at recent attempts to detect if difficulty should change
-    final recentDifficulties = history.take(5).map((e) => e.difficulty).toList();
-    final avgRecentDifficulty = recentDifficulties.reduce((a, b) => a + b) / recentDifficulties.length;
+    final recentDifficulties =
+        history.take(5).map((e) => e.difficulty).toList();
+    final avgRecentDifficulty =
+        recentDifficulties.reduce((a, b) => a + b) / recentDifficulties.length;
 
     // If mastery is high and recent attempts are consistently correct, suggest higher
     if (score >= 0.75 && recentDifficulties.take(3).every((d) => d >= 3)) {
@@ -266,7 +272,8 @@ class MasteryEngine {
   }
 
   /// Compute next review date based on status and score.
-  DateTime _computeNextReview(MasteryStatus status, double score, DateTime now) {
+  DateTime _computeNextReview(
+      MasteryStatus status, double score, DateTime now) {
     int intervalDays;
     switch (status) {
       case MasteryStatus.notStarted:

@@ -28,13 +28,16 @@ class Skill {
     this.metadata = const {},
   });
 
-  factory Skill.fromJson(Map<String, dynamic> json) =>
-      _$SkillFromJson(json);
+  factory Skill.fromJson(Map<String, dynamic> json) => _$SkillFromJson(json);
 
   Map<String, dynamic> toJson() => _$SkillToJson(this);
 
   static const validCategories = [
-    'math', 'language', 'science', 'logic', 'creativity'
+    'math',
+    'language',
+    'science',
+    'logic',
+    'creativity',
   ];
 
   List<String> validate() {

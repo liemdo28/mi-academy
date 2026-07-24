@@ -69,9 +69,8 @@ class CommandTree {
 
   factory CommandTree.fromJson(List<dynamic> json) {
     return CommandTree(
-      blocks: json
-          .map((b) => Block.fromJson(b as Map<String, dynamic>))
-          .toList(),
+      blocks:
+          json.map((b) => Block.fromJson(b as Map<String, dynamic>)).toList(),
     );
   }
 }

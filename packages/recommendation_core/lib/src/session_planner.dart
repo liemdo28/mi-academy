@@ -150,9 +150,8 @@ class SessionPlanner {
     int remainingMinutes,
   ) {
     if (remainingMinutes <= 0) return [];
-    final reviews = candidates
-        .where((r) => r.reasonCodes.contains('REVIEW_DUE'))
-        .toList();
+    final reviews =
+        candidates.where((r) => r.reasonCodes.contains('REVIEW_DUE')).toList();
     return reviews.take(2).toList();
   }
 
@@ -172,9 +171,8 @@ class SessionPlanner {
         )
         .toList();
     // Rotate subject
-    final rotated = main
-        .where((r) => r.subjectCode != subjectLastPracticed)
-        .toList();
+    final rotated =
+        main.where((r) => r.subjectCode != subjectLastPracticed).toList();
     return rotated.isNotEmpty
         ? rotated.first
         : (main.isNotEmpty ? main.first : null);
@@ -185,9 +183,8 @@ class SessionPlanner {
     int remainingMinutes,
   ) {
     if (remainingMinutes <= 0) return null;
-    final games = candidates
-        .where((r) => r.type == RecommendationType.game)
-        .toList();
+    final games =
+        candidates.where((r) => r.type == RecommendationType.game).toList();
     return games.isNotEmpty ? games.first : null;
   }
 

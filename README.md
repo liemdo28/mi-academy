@@ -4,7 +4,7 @@
 
 MI Academy là ứng dụng học tập kết hợp trò chơi dành cho trẻ 5–12 tuổi, tập trung vào toán, ngôn ngữ, tư duy logic, sáng tạo và kỹ năng sống.
 
-## Current verified status (2026-07-19)
+## Current verified status (2026-07-24)
 
 Do not treat the phased plan below as a completion claim — it is the
 original design roadmap. For what is actually built, tested, and verified
@@ -17,22 +17,23 @@ in the current codebase, see:
   Milestone 1's delivered scope, architecture, test coverage, and honest
   remaining limitations.
 - [docs/game-catalog.md](./docs/game-catalog.md) — real per-game status
-  (8 of 30 target games exist).
+  (30 of 30 target games are registered, content-backed, and playable).
+- [docs/final/PRODUCTION_READINESS_REPORT.md](./docs/final/PRODUCTION_READINESS_REPORT.md) —
+  current production-readiness verdict, command battery, and blockers.
 
-Quick facts, verified directly on branch `integration/m1-m2-baseline`: 8
-playable games with local persistence; Matching, Sequence, and Placement
-shared engines exist and pass their package tests; Multi-select is not
-implemented. Math Race and Math Supermarket are expanded to 40 levels each;
-Word Builder, Sound Match, Robot Commands, and Memory Cards still need
-expansion. `flutter analyze`, `ruff check .`, `ruff format --check .`,
-and `mypy .` are clean; `pytest` 177 passed; `flutter test` 108 passed
-(6 Linux-only golden tests skipped on Windows); content schema,
-malformed-fixture, content-safety, and ARB parity checks pass. Repository-
-wide hardcoded-string cleanup remains pending. Android `applicationId` is
-`com.liemteam.miacademy`; local APK/AAB release builds succeed with the
-documented debug-signing fallback. Milestone 1 is **Conditional** and
-Milestone 2 is **Not Ready** because games 9-15, human educational review,
-and remaining cleanup gates are still open.
+Quick facts, verified directly on branch `integration/m1-m2-baseline`: 30
+playable games with bundled bilingual level content and local persistence;
+all required production brand source assets are present and pass the strict
+asset validator; Home has phone/tablet Vietnamese/English golden previews;
+`flutter analyze`, `ruff check .`, `ruff format --check .`, and `mypy .`
+are clean; backend/tooling pytest is 177 passed; mobile Flutter tests are
+192 passed with 6 platform-limited golden tests skipped on Windows; content
+schema, malformed-fixture, content-safety, child-safety, privacy, and ARB
+parity checks pass. Android release APK and AAB build locally, and signing
+configuration is present. The app is **family-test ready**, not final store
+release ready, until hardcoded app-shell/game-UI strings are fully migrated
+to localization, real-device QA is signed off, and final human brand/content
+review is complete.
 
 ## Tài liệu phát triển
 

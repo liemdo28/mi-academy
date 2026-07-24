@@ -11,7 +11,8 @@ enum BlockType {
   collect;
 
   /// Whether this block can contain child blocks (loop/condition).
-  bool get isContainer => this == BlockType.repeat || this == BlockType.ifPathAhead;
+  bool get isContainer =>
+      this == BlockType.repeat || this == BlockType.ifPathAhead;
 
   /// Serialized command name (matches blueprint uppercase form).
   String get commandName {

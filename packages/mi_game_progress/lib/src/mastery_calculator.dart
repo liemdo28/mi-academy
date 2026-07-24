@@ -19,8 +19,9 @@ class MasteryCalculator {
     final correctCount = attempts.where((a) => a.correct).length;
     final accuracy = correctCount / attempts.length;
     final totalHints = attempts.fold<int>(0, (s, a) => s + a.hintsUsed);
-    final hintPenalty =
-        totalHints > 0 ? (totalHints / (attempts.length + 1)).clamp(0.0, 0.5) : 0.0;
+    final hintPenalty = totalHints > 0
+        ? (totalHints / (attempts.length + 1)).clamp(0.0, 0.5)
+        : 0.0;
     final difficultyBonus = (difficulty * 0.05).clamp(0.0, 0.2);
 
     return (accuracy - hintPenalty + difficultyBonus).clamp(0.0, 1.0);

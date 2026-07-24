@@ -95,8 +95,10 @@ class ContentDraft {
   bool get needsHumanReview => childFacing;
   bool get canReachChild => lifecycleStatus == ContentLifecycleStatus.published;
 
-  static bool isValidTransition(ContentLifecycleStatus from, ContentLifecycleStatus to) {
-    final validTransitions = <ContentLifecycleStatus, List<ContentLifecycleStatus>>{
+  static bool isValidTransition(
+      ContentLifecycleStatus from, ContentLifecycleStatus to) {
+    final validTransitions =
+        <ContentLifecycleStatus, List<ContentLifecycleStatus>>{
       ContentLifecycleStatus.draftGenerated: [
         ContentLifecycleStatus.validationFailed,
         ContentLifecycleStatus.readyForReview,

@@ -71,43 +71,43 @@ class Recommendation extends Equatable {
 
   @override
   List<Object?> get props => [
-    recommendationId,
-    childProfileId,
-    type,
-    targetId,
-    priority,
-    score,
-    confidence,
-    reasonCodes,
-    engineVersion,
-    subjectCode,
-    gameId,
-    levelId,
-    skillId,
-    estimatedMinutes,
-    offlineAvailable,
-    fallbackRecommendationId,
-  ];
+        recommendationId,
+        childProfileId,
+        type,
+        targetId,
+        priority,
+        score,
+        confidence,
+        reasonCodes,
+        engineVersion,
+        subjectCode,
+        gameId,
+        levelId,
+        skillId,
+        estimatedMinutes,
+        offlineAvailable,
+        fallbackRecommendationId,
+      ];
 
   Map<String, dynamic> toJson() => {
-    'recommendationId': recommendationId,
-    'childProfileId': childProfileId,
-    'type': type.name,
-    'targetId': targetId,
-    'priority': priority.value,
-    'score': score,
-    'confidence': confidence,
-    'reasonCodes': reasonCodes,
-    'engineVersion': engineVersion,
-    if (subjectCode != null) 'subjectCode': subjectCode,
-    if (gameId != null) 'gameId': gameId,
-    if (levelId != null) 'levelId': levelId,
-    if (skillId != null) 'skillId': skillId,
-    if (estimatedMinutes != null) 'estimatedMinutes': estimatedMinutes,
-    'offlineAvailable': offlineAvailable,
-    if (fallbackRecommendationId != null)
-      'fallbackRecommendationId': fallbackRecommendationId,
-  };
+        'recommendationId': recommendationId,
+        'childProfileId': childProfileId,
+        'type': type.name,
+        'targetId': targetId,
+        'priority': priority.value,
+        'score': score,
+        'confidence': confidence,
+        'reasonCodes': reasonCodes,
+        'engineVersion': engineVersion,
+        if (subjectCode != null) 'subjectCode': subjectCode,
+        if (gameId != null) 'gameId': gameId,
+        if (levelId != null) 'levelId': levelId,
+        if (skillId != null) 'skillId': skillId,
+        if (estimatedMinutes != null) 'estimatedMinutes': estimatedMinutes,
+        'offlineAvailable': offlineAvailable,
+        if (fallbackRecommendationId != null)
+          'fallbackRecommendationId': fallbackRecommendationId,
+      };
 }
 
 /// Complete recommendation result with engine metadata.
@@ -130,13 +130,13 @@ class RecommendationResult extends Equatable {
 
   @override
   List<Object?> get props => [
-    recommendations,
-    engineVersion,
-    offlineMode,
-    usedFallback,
-    fallbackReason,
-    totalEstimatedMinutes,
-  ];
+        recommendations,
+        engineVersion,
+        offlineMode,
+        usedFallback,
+        fallbackReason,
+        totalEstimatedMinutes,
+      ];
 }
 
 /// Available content item for recommendation.
@@ -173,20 +173,20 @@ class ContentItem extends Equatable {
 
   @override
   List<Object?> get props => [
-    id,
-    type,
-    subjectCode,
-    ageGroup,
-    difficulty,
-    gameId,
-    levelIndex,
-    skillIds,
-    estimatedMinutes,
-    isPublished,
-    offlineDownloaded,
-    qualityWarnings,
-    prerequisiteSkillIds,
-  ];
+        id,
+        type,
+        subjectCode,
+        ageGroup,
+        difficulty,
+        gameId,
+        levelIndex,
+        skillIds,
+        estimatedMinutes,
+        isPublished,
+        offlineDownloaded,
+        qualityWarnings,
+        prerequisiteSkillIds,
+      ];
 }
 
 enum ContentType { lesson, game, level }

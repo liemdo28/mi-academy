@@ -77,7 +77,8 @@ CurriculumMap _curriculum() {
   ]);
 }
 
-MiLevel _level({required String id, required int difficulty, required int levelNumber}) {
+MiLevel _level(
+    {required String id, required int difficulty, required int levelNumber}) {
   return MiLevel(
     id: id,
     gameId: 'math_race',
@@ -88,7 +89,10 @@ MiLevel _level({required String id, required int difficulty, required int levelN
       'en': {'prompt': 'x'},
     },
     hints: const [],
-    metadata: const {'ageGroup': 'junior', 'skillIds': ['math.addition']},
+    metadata: const {
+      'ageGroup': 'junior',
+      'skillIds': ['math.addition']
+    },
   );
 }
 
@@ -117,7 +121,8 @@ Widget _buildTestApp({
         )),
       ),
       activityMappingResolverProvider.overrideWith(
-        (ref) async => ActivityMappingResolver(taxonomy: _taxonomy(), curriculum: _curriculum()),
+        (ref) async => ActivityMappingResolver(
+            taxonomy: _taxonomy(), curriculum: _curriculum()),
       ),
       allGameLevelsProvider.overrideWith((ref) async => {
             'math_race': [
@@ -131,7 +136,8 @@ Widget _buildTestApp({
 }
 
 void main() {
-  testWidgets('renders a zone card per taxonomy subject with real '
+  testWidgets(
+      'renders a zone card per taxonomy subject with real '
       'completion data', (tester) async {
     await tester.pumpWidget(_buildTestApp(masteryBySkill: const {}));
     await tester.pump();
@@ -141,7 +147,8 @@ void main() {
     expect(find.text('0/2'), findsOneWidget); // nothing mastered yet
   });
 
-  testWidgets('drilling into a world shows its nodes with the '
+  testWidgets(
+      'drilling into a world shows its nodes with the '
       'recommended one marked, and tapping a node opens the Learning '
       'Journey panel with real skill/difficulty/prerequisite data',
       (tester) async {
@@ -166,7 +173,8 @@ void main() {
     expect(find.text('Chơi ngay'), findsOneWidget); // playable
   });
 
-  testWidgets('a level whose prerequisite is unmet renders locked and its '
+  testWidgets(
+      'a level whose prerequisite is unmet renders locked and its '
       'panel offers no Play action', (tester) async {
     // math.addition itself has no prerequisites in this fixture, so
     // reuse the coverage test's pattern isn't directly applicable here --
@@ -191,7 +199,8 @@ void main() {
     expect(find.byIcon(Icons.lock_rounded), findsNothing);
   });
 
-  testWidgets('a fully mastered skill shows a non-zero completion '
+  testWidgets(
+      'a fully mastered skill shows a non-zero completion '
       'fraction on its zone card', (tester) async {
     await tester.pumpWidget(_buildTestApp(masteryBySkill: {
       'math.addition': MasteryState(

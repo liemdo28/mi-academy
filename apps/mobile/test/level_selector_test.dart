@@ -90,7 +90,10 @@ MiLevel _level({
           'en': {'prompt': 'x'},
         },
     hints: const [],
-    metadata: {'ageGroup': ageGroup, 'skillIds': [skillId]},
+    metadata: {
+      'ageGroup': ageGroup,
+      'skillIds': [skillId]
+    },
   );
 }
 
@@ -175,8 +178,7 @@ void main() {
     expect(result.reasonCodes, contains('DIFFICULTY_MATCH'));
   });
 
-  test('prefers a level whose skill is due for spaced-repetition review',
-      () {
+  test('prefers a level whose skill is due for spaced-repetition review', () {
     final levels = [
       _level(id: 'lv-counting', difficulty: 2, skillId: 'math.counting'),
       _level(id: 'lv-addition', difficulty: 2, skillId: 'math.addition'),
@@ -230,7 +232,8 @@ void main() {
     expect(result.reasonCodes, contains('PREREQUISITES_MET'));
   });
 
-  test('avoids immediately repeating the level just played when an '
+  test(
+      'avoids immediately repeating the level just played when an '
       'equally-good alternative exists', () {
     final levels = [
       _level(id: 'lv-a', difficulty: 2, skillId: 'math.counting'),
@@ -267,7 +270,8 @@ void main() {
     expect(result.reasonCodes, isNot(contains('AVOID_IMMEDIATE_REPEAT')));
   });
 
-  test('falls back to levels.first when nothing resolves a canonical '
+  test(
+      'falls back to levels.first when nothing resolves a canonical '
       'mapping (e.g. no metadata.skillIds anywhere)', () {
     final levels = [
       const MiLevel(
@@ -382,7 +386,8 @@ void main() {
       expect(recommended.level.id, selected.level.id);
     });
 
-    test('a skill overdue for spaced-repetition review marks its level as '
+    test(
+        'a skill overdue for spaced-repetition review marks its level as '
         'review (on a level other than the one select() recommends for '
         'that same overdue skill)', () {
       final levels = [
@@ -427,7 +432,8 @@ void main() {
       expect(other.state, LevelProgressState.review);
     });
 
-    test('a fully mastered skill at or below its current difficulty marks '
+    test(
+        'a fully mastered skill at or below its current difficulty marks '
         'the level as mastered (on a level other than the recommended '
         'pick)', () {
       final mastery = {
@@ -463,7 +469,8 @@ void main() {
       expect(easyLevel.state, LevelProgressState.mastered);
     });
 
-    test('a level explicitly flagged bonus in content metadata is tagged '
+    test(
+        'a level explicitly flagged bonus in content metadata is tagged '
         'bonus once prerequisites are met and it is not the recommended '
         'pick', () {
       const bonusLevel = MiLevel(
@@ -508,7 +515,8 @@ void main() {
       expect(bonus.state, LevelProgressState.bonus);
     });
 
-    test('a level meaningfully harder than current mastery is tagged '
+    test(
+        'a level meaningfully harder than current mastery is tagged '
         'challenge', () {
       final levels = [
         _level(id: 'lv-current', difficulty: 2, skillId: 'math.addition'),
@@ -544,7 +552,8 @@ void main() {
       expect(stretch.state, LevelProgressState.challenge);
     });
 
-    test('returns an empty list for an empty level list rather than '
+    test(
+        'returns an empty list for an empty level list rather than '
         'throwing', () {
       final result = selector.classifyAll(
         levels: const [],

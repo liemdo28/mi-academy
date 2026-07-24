@@ -53,7 +53,8 @@ class GameResult {
     final errors = <String>[];
     if (attemptId.isEmpty) errors.add('attemptId is required');
     if (childProfileId.isEmpty) errors.add('childProfileId is required');
-    if (masteryEvidence != null && (masteryEvidence! < 0.0 || masteryEvidence! > 1.0)) {
+    if (masteryEvidence != null &&
+        (masteryEvidence! < 0.0 || masteryEvidence! > 1.0)) {
       errors.add('masteryEvidence must be between 0.0 and 1.0');
     }
     if (completedAt.isBefore(startedAt)) {
@@ -69,7 +70,9 @@ class GameResult {
         errors.add('skillEvidence[$i].skillId is required');
       }
       if (se.masteryLevel < 0.0 || se.masteryLevel > 1.0) {
-        errors.add('skillEvidence[$i].masteryLevel must be between 0.0 and 1.0');
+        errors.add(
+          'skillEvidence[$i].masteryLevel must be between 0.0 and 1.0',
+        );
       }
     }
     return errors;

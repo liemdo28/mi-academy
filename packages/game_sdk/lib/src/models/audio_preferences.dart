@@ -72,10 +72,10 @@ class AudioPreferences {
 
   @override
   int get hashCode => Object.hash(
-        musicVolume,
-        sfxVolume,
-        speechEnabled,
-        voiceGender,
-        speechRate,
-      );
+    musicVolume,
+    sfxVolume,
+    speechEnabled,
+    voiceGender,
+    speechRate,
+  );
 }

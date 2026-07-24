@@ -45,7 +45,8 @@ class ContentLoader {
       );
     }
 
-    final rawPublicationState = data['publicationState'] as String? ?? 'published';
+    final rawPublicationState =
+        data['publicationState'] as String? ?? 'published';
     const validStates = {'draft', 'published', 'archived'};
     if (!validStates.contains(rawPublicationState)) {
       throw ContentLoadException(

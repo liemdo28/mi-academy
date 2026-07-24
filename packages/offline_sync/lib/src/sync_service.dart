@@ -98,7 +98,8 @@ class SyncService {
         item.markCompleted();
         succeeded++;
       } catch (e) {
-        if (e is PermanentSyncFailure || (_isPermanentFailure?.call(e, item) ?? false)) {
+        if (e is PermanentSyncFailure ||
+            (_isPermanentFailure?.call(e, item) ?? false)) {
           item.markQuarantined(e.toString());
         } else {
           item.markFailed(e.toString());
@@ -178,10 +179,13 @@ class SyncService {
       throw const PermanentSyncFailure('Malformed sync item: missing id');
     }
     if (item.childProfileId.trim().isEmpty) {
-      throw const PermanentSyncFailure('Malformed sync item: missing childProfileId');
+      throw const PermanentSyncFailure(
+          'Malformed sync item: missing childProfileId');
     }
-    if (item.itemType == SyncItemType.gameResult && item.payload['game_id'] is! String) {
-      throw const PermanentSyncFailure('Malformed game_result sync item: missing game_id');
+    if (item.itemType == SyncItemType.gameResult &&
+        item.payload['game_id'] is! String) {
+      throw const PermanentSyncFailure(
+          'Malformed game_result sync item: missing game_id');
     }
   }
 
@@ -248,10 +252,8 @@ class SyncService {
       .where((i) => i.itemStatus == SyncItemStatus.pending)
       .length;
 
-  int get failedCount => _queueBox.values
-      .cast<SyncQueueItem>()
-      .where((i) => i.shouldRetry)
-      .length;
+  int get failedCount =>
+      _queueBox.values.cast<SyncQueueItem>().where((i) => i.shouldRetry).length;
 
   /// Number of locally stored progress records awaiting or backing sync.
   int get localProgressCount => _progressBox.length;

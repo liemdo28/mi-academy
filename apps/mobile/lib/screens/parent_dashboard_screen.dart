@@ -199,7 +199,8 @@ class ParentDashboardScreen extends ConsumerWidget {
                     '${(insights.overallAccuracy * 100).round()}%',
                     'Độ chính xác',
                   ),
-                  _buildStatItem(context, MiBrandIcon.world, '$minutes', 'Phút học'),
+                  _buildStatItem(
+                      context, MiBrandIcon.world, '$minutes', 'Phút học'),
                 ],
               ),
               if (insights.weakSkills.isNotEmpty) ...[
@@ -215,21 +216,25 @@ class ParentDashboardScreen extends ConsumerWidget {
                   children: [
                     for (final skill in insights.weakSkills)
                       Chip(
-                        label: Text(skill.name['vi'] ?? skill.name.values.first),
-                        backgroundColor: MiColors.errorHc.withValues(alpha: 0.1),
+                        label:
+                            Text(skill.name['vi'] ?? skill.name.values.first),
+                        backgroundColor:
+                            MiColors.errorHc.withValues(alpha: 0.1),
                         side: BorderSide.none,
                       ),
                   ],
                 ),
               ],
-              if (insights.curriculumCompletionBySubject.values.any((v) => v != null)) ...[
+              if (insights.curriculumCompletionBySubject.values
+                  .any((v) => v != null)) ...[
                 const SizedBox(height: MiTokens.space4),
                 Text(
                   'Tiến độ chương trình học',
                   style: Theme.of(context).textTheme.titleMedium,
                 ),
                 const SizedBox(height: MiTokens.space2),
-                for (final entry in insights.curriculumCompletionBySubject.entries)
+                for (final entry
+                    in insights.curriculumCompletionBySubject.entries)
                   if (entry.value != null)
                     Padding(
                       padding: const EdgeInsets.only(bottom: MiTokens.space2),
@@ -241,12 +246,14 @@ class ParentDashboardScreen extends ConsumerWidget {
                             style: const TextStyle(fontSize: MiTokens.fontSm),
                           ),
                           ClipRRect(
-                            borderRadius: BorderRadius.circular(MiTokens.radiusFull),
+                            borderRadius:
+                                BorderRadius.circular(MiTokens.radiusFull),
                             child: LinearProgressIndicator(
                               value: entry.value,
                               minHeight: 6,
                               backgroundColor: MiColors.border,
-                              valueColor: const AlwaysStoppedAnimation(MiColors.success),
+                              valueColor: const AlwaysStoppedAnimation(
+                                  MiColors.success),
                             ),
                           ),
                         ],
@@ -271,7 +278,8 @@ class ParentDashboardScreen extends ConsumerWidget {
                           size: MiTokens.iconSm,
                           decorative: true,
                         ),
-                        label: Text(reward.name['vi'] ?? reward.name.values.first),
+                        label:
+                            Text(reward.name['vi'] ?? reward.name.values.first),
                         backgroundColor: MiColors.primarySoft,
                         side: BorderSide.none,
                       ),

@@ -27,14 +27,14 @@ def _all_real_levels():
 
 def test_every_real_production_level_validates():
     checked = 0
+    checked_files = set()
     for filename, level in _all_real_levels():
         item, errors = validate_content_item(level)
         assert item is not None, f"{filename}:{level.get('id')}: {errors}"
         checked += 1
-    # 4 games x 10 hand-authored levels + Math Race's 40 and Math
-    # Supermarket's 40, plus Milestone 2 Slice 1 Alphabet Explorer's 95
-    # and Slice 2 Missing Letter's 75 production levels.
-    assert checked == 290
+        checked_files.add(filename)
+    assert len(checked_files) == 30
+    assert checked == 1030
 
 
 def test_age_band_and_skill_tags_readable_from_metadata():

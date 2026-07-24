@@ -79,7 +79,8 @@ class BlockRenderer extends StatelessWidget {
               if (block.type == BlockType.repeat) ...[
                 const SizedBox(width: 4),
                 Container(
-                  padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
                   decoration: BoxDecoration(
                     color: style.categoryColor,
                     borderRadius: BorderRadius.circular(10),

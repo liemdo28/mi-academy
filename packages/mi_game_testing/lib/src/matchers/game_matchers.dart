@@ -41,8 +41,7 @@ class _LowMasteryResult extends Matcher<MiGameResult> {
       description.add('a low-mastery result (mastery < 0.5)');
 
   @override
-  bool matches(MiGameResult item, Map matchState) =>
-      item.masteryEvidence < 0.5;
+  bool matches(MiGameResult item, Map matchState) => item.masteryEvidence < 0.5;
 }
 
 class _HighMasteryResult extends Matcher<MiGameResult> {
@@ -96,8 +95,10 @@ class _HasSkillEvidence extends Matcher<MiGameResult> {
 
 /// Shortcut matchers to keep test files readable.
 Matcher<MiGameResult> isGameSuccess() => MiGameResultMatcher.beSuccessful();
-Matcher<MiGameResult> isGameLowMastery() => MiGameResultMatcher.haveLowMastery();
-Matcher<MiGameResult> isGameHighMastery() => MiGameResultMatcher.haveHighMastery();
+Matcher<MiGameResult> isGameLowMastery() =>
+    MiGameResultMatcher.haveLowMastery();
+Matcher<MiGameResult> isGameHighMastery() =>
+    MiGameResultMatcher.haveHighMastery();
 Matcher<MiGameResult> isGameHintHeavy() => MiGameResultMatcher.beHintHeavy();
 Matcher<MiGameResult> hasAccuracy(double threshold) =>
     MiGameResultMatcher.haveAccuracyAtLeast(threshold);

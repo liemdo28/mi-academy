@@ -19,8 +19,7 @@ void main() {
     expect(StreakCalculator.currentStreakDays(const [], now: today), 0);
   });
 
-  test('practiced today extends the streak through consecutive prior days',
-      () {
+  test('practiced today extends the streak through consecutive prior days', () {
     final attempts = [
       _attempt(today),
       _attempt(today.subtract(const Duration(days: 1))),
@@ -29,7 +28,8 @@ void main() {
     expect(StreakCalculator.currentStreakDays(attempts, now: today), 3);
   });
 
-  test('practiced through yesterday but not yet today still counts -- a '
+  test(
+      'practiced through yesterday but not yet today still counts -- a '
       'streak does not reset the instant midnight passes', () {
     final attempts = [
       _attempt(today.subtract(const Duration(days: 1))),
@@ -46,7 +46,8 @@ void main() {
     expect(StreakCalculator.currentStreakDays(attempts, now: today), 0);
   });
 
-  test('a gap further in the past does not truncate the still-active '
+  test(
+      'a gap further in the past does not truncate the still-active '
       'current run', () {
     final attempts = [
       _attempt(today),
@@ -57,7 +58,8 @@ void main() {
     expect(StreakCalculator.currentStreakDays(attempts, now: today), 2);
   });
 
-  test('only counts correct attempts -- an incorrect-only attempt today '
+  test(
+      'only counts correct attempts -- an incorrect-only attempt today '
       'does not itself extend the streak past what correct days already '
       'earned', () {
     final attempts = [
@@ -70,13 +72,13 @@ void main() {
     expect(StreakCalculator.currentStreakDays(attempts, now: today), 1);
   });
 
-  test('an incorrect-only attempt does not fabricate a streak on its own',
-      () {
+  test('an incorrect-only attempt does not fabricate a streak on its own', () {
     final attempts = [_attempt(today, correct: false)];
     expect(StreakCalculator.currentStreakDays(attempts, now: today), 0);
   });
 
-  test('multiple attempts on the same day count as one streak day, not '
+  test(
+      'multiple attempts on the same day count as one streak day, not '
       'multiple', () {
     final attempts = [
       _attempt(today),

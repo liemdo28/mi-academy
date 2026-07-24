@@ -150,6 +150,7 @@ class WorldProgressionService {
   List<WorldProgress> buildWorlds({
     required SkillTaxonomy taxonomy,
     required ActivityMappingResolver resolver,
+
     /// Already-loaded levels per game (e.g. via `loadGameLevels`), keyed
     /// by `GameRegistryEntry.gameId`. A game with no entry here (or an
     /// empty list) simply contributes no nodes -- never a fabricated one.
@@ -259,7 +260,9 @@ class WorldProgressionService {
     return LearningInsights(
       masteredSkills: [for (final m in mastered) _named(m, taxonomy)],
       skillsNeedingReview: [for (final m in due) _named(m, taxonomy)],
-      weakSkills: [for (final m in sortedByMastery.take(3)) _named(m, taxonomy)],
+      weakSkills: [
+        for (final m in sortedByMastery.take(3)) _named(m, taxonomy)
+      ],
       strongSkills: [
         for (final m in sortedByMastery.reversed.take(3)) _named(m, taxonomy),
       ],
@@ -306,7 +309,8 @@ class WorldProgressionService {
     final masteryBySkill = {for (final m in allMastery) m.skillId: m};
     final masteredCount = node.skillIds.where((skillId) {
       final mastery = masteryBySkill[skillId];
-      return mastery != null && mastery.masteryScore >= taxonomy.masteryThreshold;
+      return mastery != null &&
+          mastery.masteryScore >= taxonomy.masteryThreshold;
     }).length;
     return masteredCount / node.skillIds.length;
   }

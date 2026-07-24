@@ -26,8 +26,7 @@ class SimVariable extends Equatable {
     return SimVariable(
       id: json['id'] as String,
       label: json['label'] as String,
-      values:
-          rawValues.map((e) => e.toString()).toList(growable: false),
+      values: rawValues.map((e) => e.toString()).toList(growable: false),
     );
   }
 
@@ -148,9 +147,17 @@ class SimulationContent extends Equatable {
 
   factory SimulationContent.fromJson(Map<String, dynamic> json) {
     final required = [
-      'contentId', 'gameId', 'locale', 'ageBand', 'difficulty',
-      'instruction', 'observeDescription', 'variables', 'outcomes',
-      'predictionChoices', 'explanation',
+      'contentId',
+      'gameId',
+      'locale',
+      'ageBand',
+      'difficulty',
+      'instruction',
+      'observeDescription',
+      'variables',
+      'outcomes',
+      'predictionChoices',
+      'explanation',
     ];
     final missing = <String>[];
     for (final field in required) {
@@ -235,9 +242,19 @@ class SimulationContent extends Equatable {
 
   @override
   List<Object?> get props => [
-        contentId, gameId, locale, ageBand, difficulty, instruction, hint,
-        observeDescription, variables, outcomes, predictionChoices,
-        explanation, estimatedSeconds,
+        contentId,
+        gameId,
+        locale,
+        ageBand,
+        difficulty,
+        instruction,
+        hint,
+        observeDescription,
+        variables,
+        outcomes,
+        predictionChoices,
+        explanation,
+        estimatedSeconds,
       ];
 }
 

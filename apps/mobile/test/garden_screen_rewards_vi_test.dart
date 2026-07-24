@@ -29,8 +29,7 @@ class _FixedActiveChild extends ActiveChildNotifier {
 /// after the first, a test-binding asset-cache timing quirk unrelated to
 /// GardenScreen's actual (correct, individually-verified) behavior.
 void main() {
-  testWidgets(
-      'shows locally-unlocked rewards fully offline (no backend call)',
+  testWidgets('shows locally-unlocked rewards fully offline (no backend call)',
       (tester) async {
     final rewardStore = InMemoryRewardStore();
     await rewardStore.unlock('c1', 'first_completion');

@@ -76,7 +76,10 @@ class GameLifecycle extends ChangeNotifier {
     },
     // Error states can all recover.
     GameState.loadFailed: {GameState.initializing, GameState.recoveryRequired},
-    GameState.assetMissing: {GameState.initializing, GameState.recoveryRequired},
+    GameState.assetMissing: {
+      GameState.initializing,
+      GameState.recoveryRequired
+    },
     GameState.invalidLevel: {GameState.recoveryRequired},
     GameState.saveFailed: {GameState.playing, GameState.recoveryRequired},
     GameState.recoveryRequired: {

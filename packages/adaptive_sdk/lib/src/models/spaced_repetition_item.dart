@@ -23,7 +23,13 @@ class SpacedRepetitionItem {
   final String schemaVersion;
 
   static const String currentSchemaVersion = '1.0.0';
-  static const validStatuses = ['new', 'learning', 'review', 'mastered', 'suspended'];
+  static const validStatuses = [
+    'new',
+    'learning',
+    'review',
+    'mastered',
+    'suspended',
+  ];
   static const defaultEaseFactor = 2.5;
 
   SpacedRepetitionItem({
@@ -39,8 +45,8 @@ class SpacedRepetitionItem {
     this.lastQuality = 0.0,
     this.status = 'new',
     this.schemaVersion = currentSchemaVersion,
-  })  : nextReviewAt = nextReviewAt ?? DateTime.now(),
-        lastReviewAt = lastReviewAt ?? DateTime.now();
+  }) : nextReviewAt = nextReviewAt ?? DateTime.now(),
+       lastReviewAt = lastReviewAt ?? DateTime.now();
 
   factory SpacedRepetitionItem.fromJson(Map<String, dynamic> json) =>
       _$SpacedRepetitionItemFromJson(json);
@@ -50,8 +56,7 @@ class SpacedRepetitionItem {
   bool get isDue => DateTime.now().isAfter(nextReviewAt);
 
   /// Whether this item is overdue by more than 1 day.
-  bool get isOverdue =>
-      DateTime.now().difference(nextReviewAt).inDays > 1;
+  bool get isOverdue => DateTime.now().difference(nextReviewAt).inDays > 1;
 
   /// Days until next review. Negative means overdue.
   int get daysUntilReview => DateTime.now().difference(nextReviewAt).inDays;
@@ -81,7 +86,9 @@ class SpacedRepetitionItem {
         newInterval = (interval * easeFactor).round();
       }
       // Adjust ease factor
-      newEaseFactor = easeFactor + (0.1 - (5 - quality * 5) * (0.08 + (5 - quality * 5) * 0.02));
+      newEaseFactor =
+          easeFactor +
+          (0.1 - (5 - quality * 5) * (0.08 + (5 - quality * 5) * 0.02));
       newEaseFactor = newEaseFactor.clamp(1.3, 3.0);
     } else {
       // Failed recall — reset

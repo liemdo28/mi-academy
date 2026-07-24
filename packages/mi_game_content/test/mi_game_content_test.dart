@@ -10,8 +10,8 @@ void main() {
     });
 
     test('requires a non-empty string id', () {
-      final missing = const ContentValidator().validateLevel(_level()
-        ..remove('id'));
+      final missing =
+          const ContentValidator().validateLevel(_level()..remove('id'));
       final empty = const ContentValidator().validateLevel(_level(id: ''));
       final wrongType = const ContentValidator().validateLevel(_level(id: 42));
 
@@ -24,9 +24,10 @@ void main() {
     });
 
     test('requires positive integer level number', () {
-      final missing = const ContentValidator().validateLevel(_level()
-        ..remove('levelNumber'));
-      final zero = const ContentValidator().validateLevel(_level(levelNumber: 0));
+      final missing = const ContentValidator()
+          .validateLevel(_level()..remove('levelNumber'));
+      final zero =
+          const ContentValidator().validateLevel(_level(levelNumber: 0));
       final text =
           const ContentValidator().validateLevel(_level(levelNumber: 'one'));
 
@@ -42,9 +43,10 @@ void main() {
     });
 
     test('requires difficulty from one to five', () {
-      final missing = const ContentValidator().validateLevel(_level()
-        ..remove('difficulty'));
-      final tooLow = const ContentValidator().validateLevel(_level(difficulty: 0));
+      final missing = const ContentValidator()
+          .validateLevel(_level()..remove('difficulty'));
+      final tooLow =
+          const ContentValidator().validateLevel(_level(difficulty: 0));
       final tooHigh =
           const ContentValidator().validateLevel(_level(difficulty: 6));
       final text =
@@ -60,8 +62,8 @@ void main() {
     });
 
     test('requires Vietnamese localized content map', () {
-      final missing = const ContentValidator().validateLevel(_level()
-        ..remove('localizedContent'));
+      final missing = const ContentValidator()
+          .validateLevel(_level()..remove('localizedContent'));
       final notMap = const ContentValidator()
           .validateLevel(_level(localizedContent: 'hello'));
       final noVi = const ContentValidator().validateLevel(
@@ -93,12 +95,14 @@ void main() {
 
       expect(notList, contains('Field "hints" must be a list'));
       expect(notMap, contains('Hint[0] must be a map'));
-      expect(missingText, contains('Hint[0] must have a non-empty "text" field'));
+      expect(
+          missingText, contains('Hint[0] must have a non-empty "text" field'));
       expect(emptyText, contains('Hint[0] must have a non-empty "text" field'));
     });
   });
 
-  group('ContentValidator schema fields (contentVersion/publicationState/estimatedSeconds)',
+  group(
+      'ContentValidator schema fields (contentVersion/publicationState/estimatedSeconds)',
       () {
     test('accepts a level with all new schema fields present and valid', () {
       final data = _level()
@@ -270,8 +274,7 @@ void main() {
     });
 
     test('ageBand and skillTags default safely when metadata omits them', () {
-      final level =
-          ContentLoader.parseLevel(_level(), gameId: 'word_builder');
+      final level = ContentLoader.parseLevel(_level(), gameId: 'word_builder');
       expect(level.ageBand, isNull);
       expect(level.skillTags, isEmpty);
     });

@@ -43,11 +43,11 @@ class AnalyticsClient {
   }) : _httpClient = httpClient ?? http.Client();
 
   Map<String, String> get _headers => {
-        'Content-Type': 'application/json',
-        'Accept': 'application/json',
-        'X-Contract-Version': contractVersion,
-        if (authToken != null) 'Authorization': 'Bearer $authToken',
-      };
+    'Content-Type': 'application/json',
+    'Accept': 'application/json',
+    'X-Contract-Version': contractVersion,
+    if (authToken != null) 'Authorization': 'Bearer $authToken',
+  };
 
   /// Track a single analytics event.
   Future<void> trackEvent(AnalyticsEvent event) async {
@@ -62,7 +62,8 @@ class AnalyticsClient {
     );
     if (forbiddenViolations.isNotEmpty) {
       throw AnalyticsContractException(
-          'Security violation: ${forbiddenViolations.join("; ")}');
+        'Security violation: ${forbiddenViolations.join("; ")}',
+      );
     }
 
     final response = await _httpClient.post(
@@ -85,7 +86,8 @@ class AnalyticsClient {
       final errors = event.validate();
       if (errors.isNotEmpty) {
         throw AnalyticsContractException(
-            'Invalid event ${event.eventId}: ${errors.join("; ")}');
+          'Invalid event ${event.eventId}: ${errors.join("; ")}',
+        );
       }
     }
 
@@ -104,9 +106,7 @@ class AnalyticsClient {
   }
 
   /// Get session summary for a child.
-  Future<SessionSummary> getSessionSummary({
-    required String sessionId,
-  }) async {
+  Future<SessionSummary> getSessionSummary({required String sessionId}) async {
     final response = await _httpClient.get(
       Uri.parse('$baseUrl/v1/analytics/sessions/$sessionId/summary'),
       headers: _headers,
@@ -120,7 +120,8 @@ class AnalyticsClient {
     }
 
     return SessionSummary.fromJson(
-        jsonDecode(response.body) as Map<String, dynamic>);
+      jsonDecode(response.body) as Map<String, dynamic>,
+    );
   }
 
   /// Get performance report for a child.
@@ -131,12 +132,11 @@ class AnalyticsClient {
   }) async {
     final queryParams = <String, String>{
       'period_type': periodType,
-      if (periodStart != null)
-        'period_start': periodStart.toIso8601String(),
+      if (periodStart != null) 'period_start': periodStart.toIso8601String(),
     };
     final uri = Uri.parse(
-            '$baseUrl/v1/analytics/children/$childProfileId/reports')
-        .replace(queryParameters: queryParams);
+      '$baseUrl/v1/analytics/children/$childProfileId/reports',
+    ).replace(queryParameters: queryParams);
 
     final response = await _httpClient.get(uri, headers: _headers);
 
@@ -148,7 +148,8 @@ class AnalyticsClient {
     }
 
     return PerformanceReport.fromJson(
-        jsonDecode(response.body) as Map<String, dynamic>);
+      jsonDecode(response.body) as Map<String, dynamic>,
+    );
   }
 
   /// Get engagement metrics for a child.
@@ -156,8 +157,7 @@ class AnalyticsClient {
     required String childProfileId,
   }) async {
     final response = await _httpClient.get(
-      Uri.parse(
-          '$baseUrl/v1/analytics/children/$childProfileId/engagement'),
+      Uri.parse('$baseUrl/v1/analytics/children/$childProfileId/engagement'),
       headers: _headers,
     );
 
@@ -169,7 +169,8 @@ class AnalyticsClient {
     }
 
     return EngagementMetrics.fromJson(
-        jsonDecode(response.body) as Map<String, dynamic>);
+      jsonDecode(response.body) as Map<String, dynamic>,
+    );
   }
 
   /// Dispose the underlying HTTP client.

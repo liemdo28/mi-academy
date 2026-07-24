@@ -159,8 +159,7 @@ class MiGameLaunchRequest {
       audioPreferences: MiAudioPreferences.fromJson(
         json['audio_preferences'] as Map<String, dynamic>? ?? {},
       ),
-      levelContent:
-          json['level_content'] as Map<String, dynamic>? ?? {},
+      levelContent: json['level_content'] as Map<String, dynamic>? ?? {},
       restoredState: json['restored_state'] as Map<String, dynamic>?,
     );
   }

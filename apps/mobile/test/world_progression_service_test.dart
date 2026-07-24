@@ -121,7 +121,10 @@ MiLevel _level({
       'en': {'prompt': 'x'},
     },
     hints: const [],
-    metadata: {'ageGroup': ageGroup, 'skillIds': [skillId]},
+    metadata: {
+      'ageGroup': ageGroup,
+      'skillIds': [skillId]
+    },
   );
 }
 
@@ -147,18 +150,24 @@ void main() {
   const service = WorldProgressionService();
 
   setUp(() {
-    resolver = ActivityMappingResolver(taxonomy: _taxonomy(), curriculum: _curriculum());
+    resolver = ActivityMappingResolver(
+        taxonomy: _taxonomy(), curriculum: _curriculum());
   });
 
   group('buildWorlds', () {
-    test('every taxonomy subject gets a world, including one with zero '
+    test(
+        'every taxonomy subject gets a world, including one with zero '
         'registered games', () {
       final worlds = service.buildWorlds(
         taxonomy: _taxonomy(),
         resolver: resolver,
         levelsByGame: {
           'math_race': [
-            _level(id: 'mr-1', gameId: 'math_race', difficulty: 1, skillId: 'math.addition'),
+            _level(
+                id: 'mr-1',
+                gameId: 'math_race',
+                difficulty: 1,
+                skillId: 'math.addition'),
           ],
         },
         masteryBySkill: const {},
@@ -167,7 +176,8 @@ void main() {
         ageBand: 'junior',
       );
 
-      expect(worlds.map((w) => w.subjectId), containsAll(['math', 'logic', 'science']));
+      expect(worlds.map((w) => w.subjectId),
+          containsAll(['math', 'logic', 'science']));
 
       final science = worlds.firstWhere((w) => w.subjectId == 'science');
       expect(science.totalNodes, 0);
@@ -175,15 +185,24 @@ void main() {
       expect(science.name['en'], 'Science');
     });
 
-    test('nodes group under the taxonomy-resolved subjectId, and the '
+    test(
+        'nodes group under the taxonomy-resolved subjectId, and the '
         'recommended node carries real reason codes', () {
       final worlds = service.buildWorlds(
         taxonomy: _taxonomy(),
         resolver: resolver,
         levelsByGame: {
           'math_race': [
-            _level(id: 'mr-easy', gameId: 'math_race', difficulty: 1, skillId: 'math.addition'),
-            _level(id: 'mr-hard', gameId: 'math_race', difficulty: 4, skillId: 'math.addition'),
+            _level(
+                id: 'mr-easy',
+                gameId: 'math_race',
+                difficulty: 1,
+                skillId: 'math.addition'),
+            _level(
+                id: 'mr-hard',
+                gameId: 'math_race',
+                difficulty: 4,
+                skillId: 'math.addition'),
           ],
         },
         masteryBySkill: const {},
@@ -197,7 +216,8 @@ void main() {
 
       final recommended = math.nodesInState(LevelProgressState.recommended);
       expect(recommended, hasLength(1));
-      expect(recommended.single.level.id, 'mr-easy'); // guaranteed-success start
+      expect(
+          recommended.single.level.id, 'mr-easy'); // guaranteed-success start
       expect(recommended.single.reasonCodes, contains('NEW_SKILL_EASY_START'));
 
       // The non-recommended node must not carry stale reason codes.
@@ -212,8 +232,16 @@ void main() {
         resolver: resolver,
         levelsByGame: {
           'math_race': [
-            _level(id: 'mr-1', gameId: 'math_race', difficulty: 1, skillId: 'math.addition'),
-            _level(id: 'mr-2', gameId: 'math_race', difficulty: 2, skillId: 'math.addition'),
+            _level(
+                id: 'mr-1',
+                gameId: 'math_race',
+                difficulty: 1,
+                skillId: 'math.addition'),
+            _level(
+                id: 'mr-2',
+                gameId: 'math_race',
+                difficulty: 2,
+                skillId: 'math.addition'),
           ],
         },
         masteryBySkill: {
@@ -246,10 +274,18 @@ void main() {
         resolver: resolver,
         levelsByGame: {
           'math_race': [
-            _level(id: 'mr-1', gameId: 'math_race', difficulty: 1, skillId: 'math.addition'),
+            _level(
+                id: 'mr-1',
+                gameId: 'math_race',
+                difficulty: 1,
+                skillId: 'math.addition'),
           ],
           'memory_cards': [
-            _level(id: 'mc-1', gameId: 'memory_cards', difficulty: 1, skillId: 'logic.memory'),
+            _level(
+                id: 'mc-1',
+                gameId: 'memory_cards',
+                difficulty: 1,
+                skillId: 'logic.memory'),
           ],
         },
         masteryBySkill: const {},
@@ -262,7 +298,8 @@ void main() {
       expect(worlds.firstWhere((w) => w.subjectId == 'logic').totalNodes, 1);
     });
 
-    test('a game with no levels supplied contributes no nodes, not a '
+    test(
+        'a game with no levels supplied contributes no nodes, not a '
         'crash', () {
       final worlds = service.buildWorlds(
         taxonomy: _taxonomy(),
@@ -279,7 +316,8 @@ void main() {
   });
 
   group('buildInsights', () {
-    test('aggregates mastered/review/weak/strong skills from real mastery '
+    test(
+        'aggregates mastered/review/weak/strong skills from real mastery '
         'data, with taxonomy display names attached', () {
       final insights = service.buildInsights(
         taxonomy: _taxonomy(),
@@ -309,7 +347,8 @@ void main() {
       expect(insights.strongSkills.first.skillId, 'math.addition');
     });
 
-    test('curriculumCompletionBySubject is null when the age band has no '
+    test(
+        'curriculumCompletionBySubject is null when the age band has no '
         'curriculum node for that subject, not a fabricated 0%', () {
       final insights = service.buildInsights(
         taxonomy: _taxonomy(),
@@ -323,13 +362,15 @@ void main() {
       expect(insights.curriculumCompletionBySubject['science'], isNull);
     });
 
-    test('curriculumCompletionBySubject reflects real mastered-skill '
+    test(
+        'curriculumCompletionBySubject reflects real mastered-skill '
         'fraction for a node that does exist', () {
       final insights = service.buildInsights(
         taxonomy: _taxonomy(),
         curriculum: _curriculum(),
         allMastery: [
-          _mastery(skillId: 'math.addition', masteryScore: 0.9, evidenceCount: 5),
+          _mastery(
+              skillId: 'math.addition', masteryScore: 0.9, evidenceCount: 5),
         ],
         attempts: const [],
         unlockedRewards: const [],
@@ -340,7 +381,8 @@ void main() {
       expect(insights.curriculumCompletionBySubject['logic'], 0.0);
     });
 
-    test('overallAccuracy and totalTimeSpent aggregate real attempts, and '
+    test(
+        'overallAccuracy and totalTimeSpent aggregate real attempts, and '
         'default to zero-safe values with no history', () {
       final empty = service.buildInsights(
         taxonomy: _taxonomy(),
@@ -385,7 +427,8 @@ void main() {
       expect(withHistory.streakDays, 1);
     });
 
-    test('unlockedRewards passes through the caller-provided catalog '
+    test(
+        'unlockedRewards passes through the caller-provided catalog '
         'as-is -- no fabricated recency ordering', () {
       const reward = RewardDefinition(
         id: 'first_completion',

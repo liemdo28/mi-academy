@@ -54,30 +54,31 @@ class MiApiConfig {
 
   /// Development configuration for local testing.
   static MiApiConfig development({String? authToken}) => MiApiConfig(
-        baseUrl: 'http://localhost:8000',
-        authToken: authToken,
-        enableLogging: true,
-        timeoutSeconds: 60,
-      );
+    baseUrl: 'http://localhost:8000',
+    authToken: authToken,
+    enableLogging: true,
+    timeoutSeconds: 60,
+  );
 
   /// Staging configuration.
   static MiApiConfig staging({String? authToken}) => MiApiConfig(
-        baseUrl: 'https://staging-api.mi-academy.app',
-        authToken: authToken,
-        enableLogging: true,
-      );
+    baseUrl: 'https://staging-api.mi-academy.app',
+    authToken: authToken,
+    enableLogging: true,
+  );
 
   /// Production configuration.
   static MiApiConfig production({required String authToken}) => MiApiConfig(
-        baseUrl: 'https://api.mi-academy.app',
-        authToken: authToken,
-        enableLogging: false,
-      );
+    baseUrl: 'https://api.mi-academy.app',
+    authToken: authToken,
+    enableLogging: false,
+  );
 
   List<String> validate() {
     final errors = <String>[];
     if (baseUrl.isEmpty) errors.add('baseUrl is required');
-    if (!baseUrl.startsWith('http')) errors.add('baseUrl must start with http(s)');
+    if (!baseUrl.startsWith('http'))
+      errors.add('baseUrl must start with http(s)');
     if (timeoutSeconds <= 0) errors.add('timeoutSeconds must be > 0');
     if (maxRetries < 0) errors.add('maxRetries must be >= 0');
     return errors;

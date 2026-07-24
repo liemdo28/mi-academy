@@ -14,7 +14,8 @@ class EngagementMetrics {
   final int streakCurrent;
   final int streakBest;
   final Map<String, int> featureUsage; // feature -> count
-  final String? engagementTier; // highly_active, active, moderate, at_risk, inactive
+  final String?
+  engagementTier; // highly_active, active, moderate, at_risk, inactive
 
   static const String currentSchemaVersion = '1.0.0';
 

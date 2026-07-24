@@ -230,7 +230,10 @@ class _PhaseIndicator extends StatelessWidget {
                 color: current
                     ? Theme.of(context).colorScheme.primary
                     : active
-                        ? Theme.of(context).colorScheme.primary.withValues(alpha: 0.5)
+                        ? Theme.of(context)
+                            .colorScheme
+                            .primary
+                            .withValues(alpha: 0.5)
                         : Colors.grey.shade300,
                 borderRadius: BorderRadius.circular(3),
               ),

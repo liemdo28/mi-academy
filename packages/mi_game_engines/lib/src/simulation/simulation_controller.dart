@@ -105,11 +105,12 @@ class SimulationController extends ChangeNotifier {
   /// Run the simulation: determine outcome and check prediction.
   SimRunResult runSimulation() {
     if (_phase != SimPhase.test) {
-      return _lastRunResult ?? SimRunResult(
-        outcome: null,
-        state: Map.of(_state),
-        predictionWasCorrect: false,
-      );
+      return _lastRunResult ??
+          SimRunResult(
+            outcome: null,
+            state: Map.of(_state),
+            predictionWasCorrect: false,
+          );
     }
 
     _attempts++;

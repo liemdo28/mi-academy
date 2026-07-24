@@ -59,14 +59,14 @@ class HintRecommendation {
   final DateTime timestamp;
 
   Map<String, dynamic> toJson() => {
-        'level': level.name,
-        'message': message,
-        'reasonCode': reasonCode,
-        'escalatesFrom': escalatesFrom?.name,
-        'confidence': confidence,
-        'modelVersion': modelVersion,
-        'timestamp': timestamp.toIso8601String(),
-      };
+    'level': level.name,
+    'message': message,
+    'reasonCode': reasonCode,
+    'escalatesFrom': escalatesFrom?.name,
+    'confidence': confidence,
+    'modelVersion': modelVersion,
+    'timestamp': timestamp.toIso8601String(),
+  };
 }
 
 /// Configuration for hint behavior thresholds.
@@ -139,7 +139,7 @@ class HintContext {
 /// - Every recommendation carries a reason code for audit.
 class HintRecommender {
   HintRecommender({HintConfig? config})
-      : _config = config ?? const HintConfig();
+    : _config = config ?? const HintConfig();
 
   final HintConfig _config;
 

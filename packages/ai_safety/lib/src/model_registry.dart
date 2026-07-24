@@ -17,8 +17,9 @@ class ModelRegistry {
   ModelEntry? get(String modelId) => _registry[modelId];
 
   /// Get all active models.
-  List<ModelEntry> get activeModels =>
-      _registry.values.where((m) => m.status == ModelStatus.production).toList();
+  List<ModelEntry> get activeModels => _registry.values
+      .where((m) => m.status == ModelStatus.production)
+      .toList();
 
   /// Get all models in a specific status.
   List<ModelEntry> getByStatus(ModelStatus status) =>
@@ -132,59 +133,61 @@ extension ModelStatusExtension on ModelStatus {
 /// Pre-seeded registry entries for MVP.
 class DefaultModelRegistry {
   static List<ModelEntry> get entries => [
-    const ModelEntry(
-      modelId: 'mastery-rule-v1',
-      type: ModelType.deterministicRule,
-      version: '1.0.0',
-      status: ModelStatus.experimental,
-      owner: 'adaptive-team',
-      description: 'Rule-based mastery calculation with weighted evidence components',
-      tags: ['mastery', 'skill', 'offline'],
-    ),
-    const ModelEntry(
-      modelId: 'recommendation-rule-v1',
-      type: ModelType.deterministicRule,
-      version: '1.0.0',
-      status: ModelStatus.experimental,
-      owner: 'adaptive-team',
-      description: 'Deterministic recommendation engine with prerequisite enforcement',
-      tags: ['recommendation', 'prerequisite', 'offline'],
-    ),
-    const ModelEntry(
-      modelId: 'session-planner-v1',
-      type: ModelType.deterministicRule,
-      version: '1.0.0',
-      status: ModelStatus.experimental,
-      owner: 'adaptive-team',
-      description: 'Daily session composition planner',
-      tags: ['session', 'planning'],
-    ),
-    const ModelEntry(
-      modelId: 'spaced-repetition-rule-v1',
-      type: ModelType.deterministicRule,
-      version: '1.0.0',
-      status: ModelStatus.experimental,
-      owner: 'adaptive-team',
-      description: 'Spaced repetition interval scheduler',
-      tags: ['spaced-repetition', 'retention'],
-    ),
-    const ModelEntry(
-      modelId: 'struggle-detection-rule-v1',
-      type: ModelType.deterministicRule,
-      version: '1.0.0',
-      status: ModelStatus.experimental,
-      owner: 'adaptive-team',
-      description: 'Signal-based struggle detection from session evidence',
-      tags: ['struggle', 'detection', 'signals'],
-    ),
-    const ModelEntry(
-      modelId: 'difficulty-rule-v1',
-      type: ModelType.deterministicRule,
-      version: '1.0.0',
-      status: ModelStatus.experimental,
-      owner: 'adaptive-team',
-      description: 'Difficulty adjustment based on mastery and history',
-      tags: ['difficulty', 'adjustment'],
-    ),
-  ];
+        const ModelEntry(
+          modelId: 'mastery-rule-v1',
+          type: ModelType.deterministicRule,
+          version: '1.0.0',
+          status: ModelStatus.experimental,
+          owner: 'adaptive-team',
+          description:
+              'Rule-based mastery calculation with weighted evidence components',
+          tags: ['mastery', 'skill', 'offline'],
+        ),
+        const ModelEntry(
+          modelId: 'recommendation-rule-v1',
+          type: ModelType.deterministicRule,
+          version: '1.0.0',
+          status: ModelStatus.experimental,
+          owner: 'adaptive-team',
+          description:
+              'Deterministic recommendation engine with prerequisite enforcement',
+          tags: ['recommendation', 'prerequisite', 'offline'],
+        ),
+        const ModelEntry(
+          modelId: 'session-planner-v1',
+          type: ModelType.deterministicRule,
+          version: '1.0.0',
+          status: ModelStatus.experimental,
+          owner: 'adaptive-team',
+          description: 'Daily session composition planner',
+          tags: ['session', 'planning'],
+        ),
+        const ModelEntry(
+          modelId: 'spaced-repetition-rule-v1',
+          type: ModelType.deterministicRule,
+          version: '1.0.0',
+          status: ModelStatus.experimental,
+          owner: 'adaptive-team',
+          description: 'Spaced repetition interval scheduler',
+          tags: ['spaced-repetition', 'retention'],
+        ),
+        const ModelEntry(
+          modelId: 'struggle-detection-rule-v1',
+          type: ModelType.deterministicRule,
+          version: '1.0.0',
+          status: ModelStatus.experimental,
+          owner: 'adaptive-team',
+          description: 'Signal-based struggle detection from session evidence',
+          tags: ['struggle', 'detection', 'signals'],
+        ),
+        const ModelEntry(
+          modelId: 'difficulty-rule-v1',
+          type: ModelType.deterministicRule,
+          version: '1.0.0',
+          status: ModelStatus.experimental,
+          owner: 'adaptive-team',
+          description: 'Difficulty adjustment based on mastery and history',
+          tags: ['difficulty', 'adjustment'],
+        ),
+      ];
 }

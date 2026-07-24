@@ -40,7 +40,8 @@ class ContentContracts {
       semanticVersion: '1.0.0',
       owner: 'Dev7-Integration',
       compatibility: 'backward',
-      description: 'A game level within a lesson with difficulty and prerequisites.',
+      description:
+          'A game level within a lesson with difficulty and prerequisites.',
     ),
     ContentContractMeta(
       contractId: 'mi.content.curriculum',

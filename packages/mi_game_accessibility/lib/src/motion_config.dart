@@ -9,8 +9,9 @@ class MotionConfig {
       reducedMotion ? Duration.zero : const Duration(milliseconds: 300);
 
   /// Card mismatch "flip back" delay (time to observe before hiding).
-  Duration get observeDelay =>
-      reducedMotion ? const Duration(milliseconds: 400) : const Duration(seconds: 1);
+  Duration get observeDelay => reducedMotion
+      ? const Duration(milliseconds: 400)
+      : const Duration(seconds: 1);
 
   /// Celebration animation duration.
   Duration get celebration =>

@@ -9,8 +9,9 @@ class ScenarioLoader {
   List<EvaluationScenario> load() {
     final data = json.decode(rawJson) as Map<String, dynamic>;
     final list = data['scenarios'] as List;
-    return list.map((s) =>
-      EvaluationScenario.fromJson(s as Map<String, dynamic>)).toList();
+    return list
+        .map((s) => EvaluationScenario.fromJson(s as Map<String, dynamic>))
+        .toList();
   }
 }
 

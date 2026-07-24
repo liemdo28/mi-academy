@@ -34,7 +34,8 @@ void main() {
     expect(recoveredCorruptedBoxes, isEmpty);
   });
 
-  test('a box with corrupted on-disk bytes still opens successfully (no crash)', () async {
+  test('a box with corrupted on-disk bytes still opens successfully (no crash)',
+      () async {
     // Hive's own crash-recovery already silently tolerates corrupted bytes
     // in an existing box file for this Hive version -- confirmed directly
     // while writing this test: Hive logs "Recovering corrupted box." and
@@ -46,7 +47,8 @@ void main() {
     // this wrapper's catch-and-recreate is what ultimately saves it.
     const boxName = 'corrupted_box';
     final boxFile = File('${tempDir.path}/$boxName.hive');
-    await boxFile.writeAsBytes([0x1, 0x9F, 0x00, 0x2A, 0xFF, 0x10, 0x00, 0x00, 0x00]);
+    await boxFile
+        .writeAsBytes([0x1, 0x9F, 0x00, 0x2A, 0xFF, 0x10, 0x00, 0x00, 0x00]);
 
     final box = await openHelperBox(boxName);
 

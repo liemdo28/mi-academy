@@ -122,8 +122,7 @@ void main() {
     expect(result.errors.single.code, 'NO_SKILL_MAPPING');
   });
 
-  test('a skillId not in the taxonomy fails fatally with UNKNOWN_SKILL_ID',
-      () {
+  test('a skillId not in the taxonomy fails fatally with UNKNOWN_SKILL_ID', () {
     final result = resolver.resolve(
       game: _game,
       level: _level(skillIds: ['letters.not_a_real_skill']),
@@ -136,7 +135,8 @@ void main() {
     );
   });
 
-  test('a display-name-shaped skillId fails fatally, never silently used '
+  test(
+      'a display-name-shaped skillId fails fatally, never silently used '
       'as an identity', () {
     final result = resolver.resolve(
       game: _game,
@@ -150,7 +150,8 @@ void main() {
     );
   });
 
-  test('warns (but still resolves) when the game category disagrees with '
+  test(
+      'warns (but still resolves) when the game category disagrees with '
       "the skill's taxonomy subject", () {
     const mismatchedGame = GameDescriptor(
       gameId: 'alphabet_explorer',
@@ -171,8 +172,7 @@ void main() {
     expect(result.mapping!.subjectId, 'letters');
   });
 
-  test('warns when no curriculum node exists for the resolved age/subject',
-      () {
+  test('warns when no curriculum node exists for the resolved age/subject', () {
     final result = resolver.resolve(
       game: _game,
       level: _level(ageGroup: 'master'), // no 'master.letters' node defined
@@ -201,8 +201,7 @@ void main() {
     );
   });
 
-  test('findDuplicateActivityIds flags two different games sharing an ID',
-      () {
+  test('findDuplicateActivityIds flags two different games sharing an ID', () {
     const a = CanonicalActivityMapping(
       gameId: 'game_a',
       levelId: 'shared-id',

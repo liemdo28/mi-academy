@@ -10,7 +10,8 @@ class LearningEvent {
 
   final String eventId;
   final String childProfileId;
-  final String eventType; // game_start, game_complete, lesson_view, question_answer
+  final String
+  eventType; // game_start, game_complete, lesson_view, question_answer
   final String? gameId;
   final String? lessonId;
   final DateTime timestamp;
@@ -34,9 +35,17 @@ class LearningEvent {
   Map<String, dynamic> toJson() => _$LearningEventToJson(this);
 
   static const validEventTypes = [
-    'game_start', 'game_complete', 'game_pause', 'game_resume',
-    'lesson_start', 'lesson_complete', 'question_answer', 'hint_used',
-    'skill_unlocked', 'level_completed', 'daily_summary',
+    'game_start',
+    'game_complete',
+    'game_pause',
+    'game_resume',
+    'lesson_start',
+    'lesson_complete',
+    'question_answer',
+    'hint_used',
+    'skill_unlocked',
+    'level_completed',
+    'daily_summary',
   ];
 
   List<String> validate() {

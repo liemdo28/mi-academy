@@ -1,29 +1,25 @@
-# Known Limitations — as of fix/full-integration-production
+# Known Limitations
 
-This session scoped down from the originally requested 19-phase full-repo production-readiness pass to a deep fix on the golden flow (see the plan context in the PR). Everything below was **not attempted** this session — it's listed explicitly so silence isn't mistaken for "done."
+Last updated: 2026-07-24 on `integration/m1-m2-baseline`.
 
-## Not attempted this session
+## Release Blockers
 
-- **Security**: no penetration testing, no dependency/CVE audit beyond what the existing CI `security-scans` job already does (gitleaks, pip-audit, bandit — all `continue-on-error: true`, i.e. non-blocking today), no auth/PIN/JWT design review beyond the read-only observations in `docs/audit/PRODUCTION_BLOCKERS.md`.
-- **Performance**: no profiling of startup, game/asset loading, snapshot restore, sync, or parent dashboard; no memory/CPU/jank measurement.
-- **Accessibility**: no screen-reader, high-contrast, reduced-motion, large-text, or color-blindness testing. `packages/mi_game_accessibility` exists but its actual behavior wasn't verified this session.
-- **Content/curriculum validation**: lesson/level/question schema validation, skill-id consistency, curriculum completeness — not audited.
-- **Assets**: asset-id audit, duplicate/missing asset detection, license/localization completeness — not audited.
-- **Localization**: translation completeness beyond what's visible in the Vietnamese strings already in the touched files.
-- **CI**: no changes to `.github/workflows/ci.yml`. It was read (see `docs/audit/REPOSITORY_AUDIT.md`) but not modified, extended, or verified to actually pass end-to-end in this environment.
-- **Release/production readiness**: no work on release builds, signing, rollback, monitoring, logging infrastructure, or backup/restore.
-- **Admin app** (`apps/admin`): not audited beyond removing its dangling `shared_models` dependency.
-- ~~Snapshot versioning/migration~~ **Fixed in `fix/full-phase-1-to-19`** — `MiGameSnapshot` v2 (checksum, `gameVersion`) is wired into all 6 games via `SnapshotStore`/`SnapshotLifecycleMixin`, with local save/restore/clear-on-complete. Remaining gap: no backend snapshot persistence (local-only), full corruption/migration test matrix beyond v1->v2 not attempted.
-- ~~Adaptive learning / spaced repetition~~ **Partially fixed in `fix/full-phase-1-to-19`** — `AdaptiveLearningService` runs `MasteryEngine`/`RecommendationEngine` in shadow mode per completion (still write-only, no consumer of that specific output), but separately `GET /lessons/recommended` and the daily-plan endpoint driving `ChildHomeScreen` now rank by real per-child `Progress` data (`apps/api/adaptive_ranking.py`) instead of static difficulty. See `docs/phase-reports/PHASE_10_11_AUTH_PROGRESS_2026-07-18.md`.
+- **Manual child-safety QA is pending.** Automated audits pass for 30 games, but `docs/child-safety/GAME_SAFETY_PRESIGNOFF.md` still requires a human reviewer/date for real-device review.
+- **Full UI localization is not complete.** ARB parity passes at 97 English keys and 97 Vietnamese keys, but `python tools/localization_audit.py --json` still reports 379 hardcoded user-facing string warnings across 50 mobile files.
+- **Real-device coverage is not complete in this environment.** Windows local verification covered analyzer, widget/golden tests, web build, APK, and AAB. iOS/macOS tooling and a physical-device or emulator playthrough signoff still need to be attached by release QA.
+- **Final brand/content approval is still human-owned.** All 37 required brand assets pass the strict validator, but the generated mascot/logo/icon candidates still need designer ownership/licensing approval before public store release.
+- **Admin CMS publishing workflow remains incomplete.** The child app has bundled content, but a full publish/unpublish/version/rollback CMS workflow is still a later product phase.
 
-## Structural gaps discovered but not resolved
+## Non-Blocking Warnings
 
-- ~~The app's real entry point doesn't boot the golden flow.~~ **Fixed in `fix/full-phase-1-to-19`** — `main()` now boots `app.dart`'s real flow with auth-state-aware splash routing.
-- ~~5 of 6 games have no completion telemetry, and the production route only ever showed a fake demo regardless of game.~~ **Fixed in `fix/full-phase-1-to-19`** — `/game/:gameId` now renders the real game engines (loaded from bundled level assets) and all 6 games report a `MiCompletionResult`. Remaining gap: `ChildHomeScreen`'s launcher still always opens `memory_cards` (no lesson→game mapping exists in the backend content model), and the non-Memory-Cards games report a single fixed skill tag rather than per-question skill evidence.
-- ~~Two dead, non-compiling files remain~~ **Fixed in `fix/full-phase-1-to-19`** — deleted after the user explicitly named them; `flutter analyze` is now clean.
-- **Contract fragmentation beyond MiGameResult** (`Lesson`, `Child`, `Parent`, `Skill`, `Progress` each have 2-4 hand-maintained definitions) was catalogued but not unified.
+- Child-safety static audit warns about `dio` and `connectivity_plus`; these are expected for parent/sync/backend flows and must stay out of child-facing game mechanics.
+- Platform privacy audit warns about INTERNET permission in debug/profile Android manifests; release manifests are still scoped separately.
+- Flutter reports 28 dependency updates available but incompatible with current constraints. This is not a build failure.
 
-## Environment constraints
+## Verified Closures
 
-- No iOS/Android device or emulator was available in this environment; mobile verification is `flutter analyze` + `flutter test` only, not a running app.
-- Backend verification is `pytest` against SQLite in-memory, not a full Postgres + Redis production-like stack.
+- 30 of 30 target games are registered and content-backed.
+- 1030 production levels validate through the mobile/backend content schema path.
+- Android release APK and AAB build successfully.
+- Android signing configuration is present.
+- Home Screen has phone/tablet Vietnamese/English golden previews with no overflow test failures.

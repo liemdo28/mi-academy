@@ -83,8 +83,8 @@ class AdaptiveLearningService {
     final skillId = resolvedSkillId(result, mapping: mapping);
     final maxScore = result.maxScore <= 0 ? 1 : result.maxScore;
     final correct = result.score / maxScore >= 0.7;
-    final current =
-        previousMastery ?? MasteryState(childId: childProfileId, skillId: skillId);
+    final current = previousMastery ??
+        MasteryState(childId: childProfileId, skillId: skillId);
     final mastery = masteryEngine.evaluate(
       currentState: current,
       attempt: AttemptEvidence(

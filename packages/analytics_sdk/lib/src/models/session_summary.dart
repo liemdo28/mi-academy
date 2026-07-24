@@ -50,15 +50,14 @@ class SessionSummary {
     if (totalDuration.inSeconds == 0) return 0.0;
     final activityDensity = totalEvents / totalDuration.inMinutes.clamp(1, 60);
     final varietyBonus = (skillsTouched.length * 5.0).clamp(0, 25);
-    final completionBonus =
-        ((gamesPlayed + lessonsViewed) * 3.0).clamp(0, 25);
-    final raw = (activityDensity * 50).clamp(0, 50) + varietyBonus + completionBonus;
+    final completionBonus = ((gamesPlayed + lessonsViewed) * 3.0).clamp(0, 25);
+    final raw =
+        (activityDensity * 50).clamp(0, 50) + varietyBonus + completionBonus;
     return raw.clamp(0, 100);
   }
 
   /// Whether this session meets minimum meaningful activity thresholds.
-  bool get isMeaningful =>
-      totalDuration.inMinutes >= 5 && totalEvents >= 3;
+  bool get isMeaningful => totalDuration.inMinutes >= 5 && totalEvents >= 3;
 
   List<String> validate() {
     final errors = <String>[];

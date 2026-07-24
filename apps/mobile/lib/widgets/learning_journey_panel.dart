@@ -35,8 +35,7 @@ class LearningJourneyPanel extends StatelessWidget {
   final String locale;
 
   /// Null when [node.state] is [LevelProgressState.locked] -- not
-  /// playable yet, so no action is offered rather than a button that
-  /// would silently fail.
+  /// playable yet, so no action is offered rather than an inactive button.
   final VoidCallback? onPlay;
 
   String _name(Map<String, String> name) => name[locale] ?? name.values.first;
@@ -91,7 +90,8 @@ class LearningJourneyPanel extends StatelessWidget {
         padding: const EdgeInsets.all(MiTokens.space4),
         decoration: const BoxDecoration(
           color: MiColors.surface,
-          borderRadius: BorderRadius.vertical(top: Radius.circular(MiTokens.radiusLg)),
+          borderRadius:
+              BorderRadius.vertical(top: Radius.circular(MiTokens.radiusLg)),
         ),
         child: Column(
           mainAxisSize: MainAxisSize.min,
@@ -122,7 +122,9 @@ class LearningJourneyPanel extends StatelessWidget {
             _InfoRow(
               icon: Icons.timer_outlined,
               label: locale == 'en' ? 'Estimated time' : 'Thời gian dự kiến',
-              value: locale == 'en' ? '$estimatedMinutes min' : '$estimatedMinutes phút',
+              value: locale == 'en'
+                  ? '$estimatedMinutes min'
+                  : '$estimatedMinutes phút',
             ),
             if (prerequisiteNames.isNotEmpty)
               _InfoRow(
@@ -142,7 +144,8 @@ class LearningJourneyPanel extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     for (final line in reasonLines)
-                      Text(line, style: const TextStyle(fontWeight: FontWeight.w600)),
+                      Text(line,
+                          style: const TextStyle(fontWeight: FontWeight.w600)),
                   ],
                 ),
               ),
@@ -150,7 +153,8 @@ class LearningJourneyPanel extends StatelessWidget {
             const SizedBox(height: MiTokens.space3),
             Row(
               children: [
-                const Icon(Icons.star_rounded, color: MiColors.warning, size: MiTokens.iconSm),
+                const Icon(Icons.star_rounded,
+                    color: MiColors.warning, size: MiTokens.iconSm),
                 const SizedBox(width: MiTokens.space2),
                 Expanded(
                   child: Text(
@@ -178,7 +182,8 @@ class LearningJourneyPanel extends StatelessWidget {
 }
 
 class _InfoRow extends StatelessWidget {
-  const _InfoRow({required this.icon, required this.label, required this.value});
+  const _InfoRow(
+      {required this.icon, required this.label, required this.value});
 
   final IconData icon;
   final String label;
@@ -205,7 +210,8 @@ class _InfoRow extends StatelessWidget {
 /// node grid and this panel so the two never drift out of sync. State is
 /// never color-only: every state pairs a distinct icon with its color.
 class JourneyStateBadge extends StatelessWidget {
-  const JourneyStateBadge({super.key, required this.state, required this.locale});
+  const JourneyStateBadge(
+      {super.key, required this.state, required this.locale});
 
   final LevelProgressState state;
   final String locale;
@@ -233,7 +239,10 @@ class JourneyStateBadge extends StatelessWidget {
   static const _labelByState = {
     LevelProgressState.locked: {'vi': 'Đã khoá', 'en': 'Locked'},
     LevelProgressState.available: {'vi': 'Có thể học', 'en': 'Available'},
-    LevelProgressState.recommended: {'vi': 'Gợi ý cho con', 'en': 'Recommended'},
+    LevelProgressState.recommended: {
+      'vi': 'Gợi ý cho con',
+      'en': 'Recommended'
+    },
     LevelProgressState.mastered: {'vi': 'Đã thành thạo', 'en': 'Mastered'},
     LevelProgressState.review: {'vi': 'Cần ôn tập', 'en': 'Review'},
     LevelProgressState.challenge: {'vi': 'Thử thách', 'en': 'Challenge'},
@@ -252,7 +261,8 @@ class JourneyStateBadge extends StatelessWidget {
     return Semantics(
       label: label,
       child: Container(
-        padding: const EdgeInsets.symmetric(horizontal: MiTokens.space3, vertical: MiTokens.space1),
+        padding: const EdgeInsets.symmetric(
+            horizontal: MiTokens.space3, vertical: MiTokens.space1),
         decoration: BoxDecoration(
           color: color.withValues(alpha: 0.15),
           borderRadius: BorderRadius.circular(MiTokens.radiusFull),
@@ -263,7 +273,8 @@ class JourneyStateBadge extends StatelessWidget {
           children: [
             Icon(_iconByState[state], size: MiTokens.iconSm, color: color),
             const SizedBox(width: MiTokens.space1),
-            Text(label, style: TextStyle(color: color, fontWeight: FontWeight.w700)),
+            Text(label,
+                style: TextStyle(color: color, fontWeight: FontWeight.w700)),
           ],
         ),
       ),

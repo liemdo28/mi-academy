@@ -3,7 +3,7 @@ from pathlib import Path
 from tools import child_safety_signoff
 
 
-def test_signoff_report_covers_all_mvp_games():
+def test_signoff_report_covers_all_bundled_games():
     report = child_safety_signoff.build_report()
 
     assert report.status == "pass"
@@ -43,7 +43,7 @@ def test_write_markdown_report(tmp_path):
 
     assert output.exists()
     assert output.read_text(encoding="utf-8").startswith(
-        "# MI Academy - MVP Game Safety Pre-Signoff"
+        "# MI Academy - Game Safety Pre-Signoff"
     )
 
 

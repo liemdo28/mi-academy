@@ -25,10 +25,8 @@ class MiApiClient {
   late final analytics_sdk.AnalyticsClient analytics;
   late final adaptive_sdk.AdaptiveClient adaptive;
 
-  MiApiClient({
-    required this.config,
-    http.Client? httpClient,
-  }) : _httpClient = httpClient ?? http.Client() {
+  MiApiClient({required this.config, http.Client? httpClient})
+    : _httpClient = httpClient ?? http.Client() {
     games = game_sdk.GameClient(
       baseUrl: config.baseUrl,
       httpClient: _httpClient,

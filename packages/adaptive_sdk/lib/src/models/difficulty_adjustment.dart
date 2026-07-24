@@ -82,9 +82,10 @@ class DifficultyAdjustment {
       direction = 'maintain';
     }
 
-    final confidence = (min(sampleSize / 5.0, 1.0) *
-            (1.0 - (recentAccuracy - 0.5).abs() * 0.5))
-        .clamp(0.0, 1.0);
+    final confidence =
+        (min(sampleSize / 5.0, 1.0) *
+                (1.0 - (recentAccuracy - 0.5).abs() * 0.5))
+            .clamp(0.0, 1.0);
 
     final reasons = <String>[];
     if (direction == 'up') reasons.add('High accuracy performance detected');
@@ -115,7 +116,10 @@ class DifficultyAdjustment {
   }) {
     if (sampleSize < 3) return validDifficulties[currentIndex];
     if (accuracy >= 0.9) {
-      return validDifficulties[min(currentIndex + 1, validDifficulties.length - 1)];
+      return validDifficulties[min(
+        currentIndex + 1,
+        validDifficulties.length - 1,
+      )];
     }
     if (accuracy < 0.6) {
       return validDifficulties[max(currentIndex - 1, 0)];

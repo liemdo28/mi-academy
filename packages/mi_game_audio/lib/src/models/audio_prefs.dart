@@ -76,5 +76,6 @@ class AudioPrefs extends Equatable {
   static const AudioPrefs defaults = AudioPrefs();
 
   @override
-  List<Object?> get props => [voice, music, effects, masterMuted, speechEnabled];
+  List<Object?> get props =>
+      [voice, music, effects, masterMuted, speechEnabled];
 }

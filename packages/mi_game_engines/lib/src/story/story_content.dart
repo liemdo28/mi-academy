@@ -50,7 +50,8 @@ class StoryNode extends Equatable {
   final String? endingTone;
 
   @override
-  List<Object?> get props => [id, text, type, choices, reflectionPrompt, endingTone];
+  List<Object?> get props =>
+      [id, text, type, choices, reflectionPrompt, endingTone];
 }
 
 enum StoryNodeType { narrative, choice, ending }
@@ -111,8 +112,14 @@ class StoryContent extends Equatable {
 
   factory StoryContent.fromJson(Map<String, dynamic> json) {
     final required = [
-      'contentId', 'gameId', 'locale', 'ageBand', 'difficulty',
-      'title', 'nodes', 'startNodeId',
+      'contentId',
+      'gameId',
+      'locale',
+      'ageBand',
+      'difficulty',
+      'title',
+      'nodes',
+      'startNodeId',
     ];
     final missing = <String>[];
     for (final field in required) {
@@ -177,8 +184,16 @@ class StoryContent extends Equatable {
 
   @override
   List<Object?> get props => [
-        contentId, gameId, locale, ageBand, difficulty, title, hint,
-        nodes, startNodeId, estimatedSeconds,
+        contentId,
+        gameId,
+        locale,
+        ageBand,
+        difficulty,
+        title,
+        hint,
+        nodes,
+        startNodeId,
+        estimatedSeconds,
       ];
 }
 

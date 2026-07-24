@@ -41,16 +41,22 @@ class StruggleSignal extends Equatable {
 enum StruggleSignalType {
   /// Same mistake repeated multiple times
   repeatedError,
+
   /// Many hints requested in short span
   hintFlood,
+
   /// Long pause at a step
   longPause,
+
   /// Child exited and re-entered the same level
   levelRetry,
+
   /// Rapid random tapping detected
   randomTapping,
+
   /// Too many attempts at one question
   attemptFlood,
+
   /// Level abandoned after multiple tries
   levelAbandon,
 }
@@ -58,8 +64,10 @@ enum StruggleSignalType {
 enum StruggleSignalSeverity {
   /// Mild — may need gentle hint
   mild,
+
   /// Moderate — suggest easier activity or more guidance
   moderate,
+
   /// High — suggest pausing or switching activity
   high,
 }

@@ -7,7 +7,8 @@ class FakeAudioBackend implements AudioBackend {
   var stopAllCount = 0;
 
   @override
-  Future<void> play(String assetPath, {required double volume, double rate = 1.0}) async {
+  Future<void> play(String assetPath,
+      {required double volume, double rate = 1.0}) async {
     played.add((assetPath: assetPath, volume: volume, rate: rate));
   }
 
