@@ -104,6 +104,7 @@ void main() {
     });
 
     test('registers deep games with bespoke engine types', () {
+      expect(GameRegistry.find('sentence_order')!.engineType, 'sequence');
       expect(
           GameRegistry.find('story_comprehension')!.engineType, 'reading_lab');
       expect(

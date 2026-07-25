@@ -18,6 +18,7 @@ class SequenceScreen extends StatefulWidget {
     this.onSaveProgress,
     this.reducedMotion = false,
     this.soundEnabled = true,
+    this.locale = 'vi',
   });
 
   final Map<String, dynamic> rawContent;
@@ -26,6 +27,7 @@ class SequenceScreen extends StatefulWidget {
   final void Function(int attempts)? onSaveProgress;
   final bool reducedMotion;
   final bool soundEnabled;
+  final String locale;
 
   @override
   State<SequenceScreen> createState() => _SequenceScreenState();
@@ -97,6 +99,7 @@ class _SequenceScreenState extends State<SequenceScreen> {
 
   @override
   Widget build(BuildContext context) {
+    final text = _SequenceScreenText(widget.locale);
     final error = _loadError;
     if (error != null) {
       return Scaffold(
@@ -112,7 +115,7 @@ class _SequenceScreenState extends State<SequenceScreen> {
               children: [
                 const Icon(Icons.error_outline, size: 48, color: Colors.grey),
                 const SizedBox(height: 12),
-                Text('Nội dung không khả dụng.\n$error',
+                Text('${text.contentUnavailable}\n$error',
                     textAlign: TextAlign.center),
               ],
             ),
@@ -123,35 +126,35 @@ class _SequenceScreenState extends State<SequenceScreen> {
 
     final controller = _controller!;
     final content = controller.content;
-
     return Scaffold(
       appBar: AppBar(
         leading: IconButton(
           icon: const Icon(Icons.close),
           onPressed: widget.onExit,
-          tooltip: 'Thoát',
+          tooltip: text.exit,
         ),
         title: Text(content.instruction),
         actions: [
           IconButton(
             icon: Icon(controller.isPaused ? Icons.play_arrow : Icons.pause),
-            tooltip: controller.isPaused ? 'Tiếp tục' : 'Tạm dừng',
+            tooltip: controller.isPaused ? text.resume : text.pause,
             onPressed: () =>
                 controller.isPaused ? controller.resume() : controller.pause(),
           ),
           if (content.hint != null)
             IconButton(
               icon: const Icon(Icons.lightbulb_outline),
-              tooltip: 'Gợi ý',
+              tooltip: text.hint,
               onPressed: controller.requestHint,
             ),
         ],
       ),
       body: SafeArea(
         child: controller.isPaused
-            ? _PausedOverlay(onResume: controller.resume)
+            ? _PausedOverlay(onResume: controller.resume, label: text.resume)
             : controller.isComplete
                 ? _CompletionView(
+                    text: text,
                     stars: controller.starsEarned,
                     attempts: controller.attempts,
                     onExit: widget.onExit,
@@ -168,11 +171,17 @@ class _SequenceScreenState extends State<SequenceScreen> {
                           onDismiss: controller.dismissHint,
                         ),
                       if (controller.lastSubmissionCorrect == false)
-                        const _FeedbackBanner(isCorrect: false),
+                        _FeedbackBanner(message: text.tryAgain),
                       Expanded(
                         child: content.mode == SequenceMode.reorder
-                            ? _ReorderBody(controller: controller)
-                            : _MissingItemBody(controller: controller),
+                            ? _ReorderBody(
+                                controller: controller,
+                                text: text,
+                              )
+                            : _MissingItemBody(
+                                controller: controller,
+                                text: text,
+                              ),
                       ),
                       Padding(
                         padding: const EdgeInsets.all(16),
@@ -180,7 +189,7 @@ class _SequenceScreenState extends State<SequenceScreen> {
                           onPressed: content.mode == SequenceMode.reorder
                               ? controller.submitReorder
                               : controller.submitMissingItems,
-                          child: const Text('Kiểm tra'),
+                          child: Text(text.check),
                         ),
                       ),
                     ],
@@ -191,8 +200,9 @@ class _SequenceScreenState extends State<SequenceScreen> {
 }
 
 class _ReorderBody extends StatelessWidget {
-  const _ReorderBody({required this.controller});
+  const _ReorderBody({required this.controller, required this.text});
   final SequenceController controller;
+  final _SequenceScreenText text;
 
   @override
   Widget build(BuildContext context) {
@@ -211,20 +221,20 @@ class _ReorderBody extends StatelessWidget {
           child: ListTile(
             title: Text(item.content, style: const TextStyle(fontSize: 20)),
             trailing: Semantics(
-              label: 'Di chuyển ${item.content}',
+              label: text.moveItem(item.content),
               child: Row(
                 mainAxisSize: MainAxisSize.min,
                 children: [
                   IconButton(
                     icon: const Icon(Icons.arrow_back),
-                    tooltip: 'Di chuyển sang trái',
+                    tooltip: text.moveLeft,
                     onPressed: index > 0
                         ? () => controller.moveItem(index, index - 1)
                         : null,
                   ),
                   IconButton(
                     icon: const Icon(Icons.arrow_forward),
-                    tooltip: 'Di chuyển sang phải',
+                    tooltip: text.moveRight,
                     onPressed: index < items.length - 1
                         ? () => controller.moveItem(index, index + 1)
                         : null,
@@ -247,8 +257,9 @@ class _ReorderBody extends StatelessWidget {
 }
 
 class _MissingItemBody extends StatelessWidget {
-  const _MissingItemBody({required this.controller});
+  const _MissingItemBody({required this.controller, required this.text});
   final SequenceController controller;
+  final _SequenceScreenText text;
 
   @override
   Widget build(BuildContext context) {
@@ -290,7 +301,7 @@ class _MissingItemBody extends StatelessWidget {
               for (final choice in allChoices)
                 Semantics(
                   button: true,
-                  label: 'Chọn ${choice.content}',
+                  label: text.choose(choice.content),
                   child: SizedBox(
                     height: 48,
                     child: ElevatedButton(
@@ -357,28 +368,28 @@ class _HintBanner extends StatelessWidget {
 }
 
 class _FeedbackBanner extends StatelessWidget {
-  const _FeedbackBanner({required this.isCorrect});
-  final bool isCorrect;
+  const _FeedbackBanner({required this.message});
+  final String message;
 
   @override
   Widget build(BuildContext context) {
     return Semantics(
       liveRegion: true,
-      label: 'Chưa đúng thứ tự, thử lại nhé!',
+      label: message,
       child: Container(
         width: double.infinity,
         color: Colors.orange.withValues(alpha: 0.15),
         padding: const EdgeInsets.symmetric(vertical: 8),
-        child: const Text('Chưa đúng thứ tự, thử lại nhé!',
-            textAlign: TextAlign.center),
+        child: Text(message, textAlign: TextAlign.center),
       ),
     );
   }
 }
 
 class _PausedOverlay extends StatelessWidget {
-  const _PausedOverlay({required this.onResume});
+  const _PausedOverlay({required this.onResume, required this.label});
   final VoidCallback onResume;
+  final String label;
 
   @override
   Widget build(BuildContext context) {
@@ -386,7 +397,7 @@ class _PausedOverlay extends StatelessWidget {
       child: ElevatedButton.icon(
         onPressed: onResume,
         icon: const Icon(Icons.play_arrow),
-        label: const Text('Tiếp tục'),
+        label: Text(label),
       ),
     );
   }
@@ -394,12 +405,14 @@ class _PausedOverlay extends StatelessWidget {
 
 class _CompletionView extends StatelessWidget {
   const _CompletionView({
+    required this.text,
     required this.stars,
     required this.attempts,
     required this.onExit,
     required this.onRetry,
   });
 
+  final _SequenceScreenText text;
   final int stars;
   final int attempts;
   final VoidCallback onExit;
@@ -412,7 +425,7 @@ class _CompletionView extends StatelessWidget {
         mainAxisSize: MainAxisSize.min,
         children: [
           Semantics(
-            label: '$stars trên 3 sao',
+            label: text.stars(stars),
             child: Row(
               mainAxisSize: MainAxisSize.min,
               children: List.generate(
@@ -428,18 +441,50 @@ class _CompletionView extends StatelessWidget {
             ),
           ),
           const SizedBox(height: 12),
-          Text('Hoàn thành sau $attempts lượt thử!'),
+          Text(text.completed(attempts)),
           const SizedBox(height: 20),
           Row(
             mainAxisSize: MainAxisSize.min,
             children: [
-              OutlinedButton(onPressed: onRetry, child: const Text('Chơi lại')),
+              OutlinedButton(onPressed: onRetry, child: Text(text.replay)),
               const SizedBox(width: 12),
-              ElevatedButton(onPressed: onExit, child: const Text('Thoát')),
+              ElevatedButton(onPressed: onExit, child: Text(text.exit)),
             ],
           ),
         ],
       ),
     );
   }
+}
+
+class _SequenceScreenText {
+  const _SequenceScreenText(this.locale);
+
+  final String locale;
+
+  bool get _en => locale == 'en';
+
+  String get check => _en ? 'Check' : 'Kiểm tra';
+  String get exit => _en ? 'Exit' : 'Thoát';
+  String get pause => _en ? 'Pause' : 'Tạm dừng';
+  String get resume => _en ? 'Resume' : 'Tiếp tục';
+  String get hint => _en ? 'Hint' : 'Gợi ý';
+  String get replay => _en ? 'Play again' : 'Chơi lại';
+  String get contentUnavailable =>
+      _en ? 'Content is unavailable.' : 'Nội dung không khả dụng.';
+  String get moveLeft => _en ? 'Move left' : 'Di chuyển sang trái';
+  String get moveRight => _en ? 'Move right' : 'Di chuyển sang phải';
+  String get tryAgain =>
+      _en ? 'Not quite in order. Try again!' : 'Chưa đúng thứ tự, thử lại nhé!';
+
+  String choose(String content) => _en ? 'Choose $content' : 'Chọn $content';
+
+  String moveItem(String content) =>
+      _en ? 'Move $content' : 'Di chuyển $content';
+
+  String stars(int count) => _en ? '$count of 3 stars' : '$count trên 3 sao';
+
+  String completed(int attempts) => _en
+      ? 'Completed in $attempts attempt${attempts == 1 ? '' : 's'}!'
+      : 'Hoàn thành sau $attempts lượt thử!';
 }

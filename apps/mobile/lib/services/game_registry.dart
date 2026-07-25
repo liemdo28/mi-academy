@@ -13,6 +13,7 @@ import '../src/games/logic_maze/logic_maze_screen.dart';
 import '../src/games/memory_cards/memory_cards_game.dart';
 import '../src/games/memory_cards/memory_cards_screen.dart';
 import '../src/games/robot_commands/robot_commands_screen.dart';
+import '../src/games/sentence_order/sentence_order_screen.dart';
 import '../src/games/sound_match/sound_match_screen.dart';
 import '../src/games/word_builder/word_builder_screen.dart';
 
@@ -335,7 +336,7 @@ abstract final class GameRegistry {
           primaryColor: MiColors.discovery,
           worldLabel: (locale) => miGameWorldLabel('speed_spelling', locale),
         ),
-        _choiceEntry(
+        GameRegistryEntry(
           gameId: 'sentence_order',
           localizedName: miGameNameMap('sentence_order'),
           category: 'letters',
@@ -344,9 +345,30 @@ abstract final class GameRegistry {
             'letters.simple_sentences',
             'letters.sentence_completion',
           ],
-          brandIcon: MiBrandIcon.writing,
-          primaryColor: MiColors.discovery,
-          worldLabel: (locale) => miGameWorldLabel('sentence_order', locale),
+          engineType: 'sequence',
+          builder: ({
+            required level,
+            required allLevels,
+            required onExit,
+            required onComplete,
+            required childProfileId,
+            initialSnapshot,
+            onSaveSnapshot,
+            creativeArtifactStore,
+            reduceMotion = false,
+            required locale,
+          }) =>
+              SentenceOrderScreen(
+            level: level,
+            allLevels: allLevels,
+            onExit: onExit,
+            onComplete: onComplete,
+            childProfileId: childProfileId,
+            initialSnapshot: initialSnapshot,
+            onSaveSnapshot: onSaveSnapshot,
+            reduceMotion: reduceMotion,
+            locale: locale,
+          ),
         ),
         _deepLogicEntry(
           gameId: 'story_comprehension',

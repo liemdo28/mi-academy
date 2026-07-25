@@ -80,7 +80,7 @@ class StoryChoice extends Equatable {
 }
 
 class StoryContent extends Equatable {
-  const StoryContent({
+  StoryContent({
     required this.contentId,
     required this.gameId,
     required this.locale,

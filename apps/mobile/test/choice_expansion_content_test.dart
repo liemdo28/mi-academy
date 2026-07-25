@@ -5,12 +5,12 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:mi_academy/services/game_levels.dart';
 import 'package:mi_academy/services/game_registry.dart';
 import 'package:mi_game_content/mi_game_content.dart';
+import 'package:mi_game_engines/mi_game_engines.dart';
 
 const _expansionGameIds = {
   'picture_word_match',
   'rhyme_picker',
   'speed_spelling',
-  'sentence_order',
   'story_comprehension',
   'object_counting',
   'number_quantity_match',
@@ -29,6 +29,10 @@ const _expansionGameIds = {
   'kids_sudoku',
   'reasoning_detective',
   'free_creativity',
+};
+
+const _sequenceGameIds = {
+  'sentence_order',
 };
 
 const _deepGameIds = {
@@ -166,6 +170,46 @@ void main() {
             final enDeep = en['deepData'] as Map<String, dynamic>;
             expect(enDeep['passage'], isNotEmpty);
             break;
+        }
+      }
+    }
+  });
+
+  test('sequence game packs carry bilingual engine content', () {
+    for (final gameId in _sequenceGameIds) {
+      final raw = File(gameLevelAssets[gameId]!).readAsStringSync();
+      final data = jsonDecode(raw) as Map<String, dynamic>;
+      final levels = (data['levels'] as List)
+          .map((level) => Map<String, dynamic>.from(level as Map))
+          .toList();
+
+      expect(levels, hasLength(30), reason: gameId);
+      expect(
+        levels.map((level) => level['difficulty']).toSet(),
+        {1, 2, 3, 4, 5},
+        reason: gameId,
+      );
+
+      for (final level in levels) {
+        final metadata = level['metadata'] as Map<String, dynamic>;
+        expect(metadata['contentKind'], 'sequence_progression');
+        final localized = level['localizedContent'] as Map<String, dynamic>;
+        for (final locale in const ['vi', 'en']) {
+          final content = localized[locale] as Map<String, dynamic>;
+          final sequence = content['sequence'] as Map<String, dynamic>;
+          expect(
+            SequenceContent.fromJson(Map<String, dynamic>.from(sequence)),
+            isA<SequenceContent>(),
+            reason: '$gameId:${level['id']}:$locale',
+          );
+          expect(sequence['locale'], locale,
+              reason: '$gameId:${level['id']}:$locale');
+          expect(sequence['gameId'], gameId,
+              reason: '$gameId:${level['id']}:$locale');
+          expect(sequence['correctOrder'], hasLength(greaterThanOrEqualTo(3)),
+              reason: '$gameId:${level['id']}:$locale');
+          expect(sequence['rule'], isA<Map<String, dynamic>>(),
+              reason: '$gameId:${level['id']}:$locale');
         }
       }
     }

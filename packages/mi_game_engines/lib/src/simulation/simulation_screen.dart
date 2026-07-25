@@ -202,13 +202,6 @@ class _PhaseIndicator extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final labels = {
-      SimPhase.observe: '1. Quan sát',
-      SimPhase.predict: '2. Dự đoán',
-      SimPhase.test: '3. Thử nghiệm',
-      SimPhase.explain: '4. Giải thích',
-      SimPhase.complete: 'Hoàn thành',
-    };
     final stepNum = switch (phase) {
       SimPhase.observe => 1,
       SimPhase.predict => 2,

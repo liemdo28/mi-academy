@@ -580,6 +580,13 @@ packages:
       relative: true
     source: path
     version: "0.1.0"
+  mi_game_engines:
+    dependency: "direct main"
+    description:
+      path: "../../packages/mi_game_engines"
+      relative: true
+    source: path
+    version: "0.1.0"
   mi_game_progress:
     dependency: "direct main"
     description:
