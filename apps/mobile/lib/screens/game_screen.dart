@@ -232,7 +232,16 @@ class _GameScreenState extends ConsumerState<GameScreen> {
 
     if (widget.childId == 'offline-child') return;
 
-    final games = await ref.read(gamesCatalogProvider.future);
+    List<Map<String, dynamic>> games;
+    try {
+      games = await ref.read(gamesCatalogProvider.future);
+    } catch (_) {
+      // Family/live web builds can run fully offline or without a reachable
+      // backend catalog. Local progress/rewards are already recorded above,
+      // so a backend lookup failure must not surface as an unhandled game
+      // error after the child completes a level.
+      return;
+    }
     final game = games.firstWhere(
       (g) => g['game_type'] == widget.gameType,
       orElse: () => const {},
