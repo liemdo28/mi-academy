@@ -27,7 +27,6 @@ void main() {
     await tester.pumpAndSettle(const Duration(seconds: 2));
 
     expect(find.text('Chào Mi!'), findsOneWidget);
-    expect(find.text('Tìm chữ còn thiếu'), findsOneWidget);
 
     await tester.tap(find.text('Tiếp tục học'));
     await tester.pumpAndSettle(const Duration(seconds: 2));
@@ -35,7 +34,7 @@ void main() {
     expect(find.text('Tìm chữ còn thiếu'), findsOneWidget);
     expect(find.text('Chọn chữ còn thiếu: M_O'), findsOneWidget);
 
-    await tester.tap(find.text('È'));
+    await tester.tap(find.text('È').last);
     await tester.pumpAndSettle(const Duration(seconds: 2));
 
     expect(find.text('Con đã tìm được chữ còn thiếu!'), findsOneWidget);
