@@ -107,7 +107,7 @@ void main() {
           GameRegistry.find('story_comprehension')!.engineType, 'reading_lab');
       expect(
           GameRegistry.find('logic_maze')!.engineType, 'logic_maze_movement');
-      expect(GameRegistry.find('kids_sudoku')!.engineType, 'sudoku_grid');
+      expect(GameRegistry.find('kids_sudoku')!.engineType, 'kids_sudoku_grid');
       expect(
           GameRegistry.find('reasoning_detective')!.engineType, 'clue_board');
       expect(GameRegistry.find('free_creativity')!.engineType, 'story_lab');

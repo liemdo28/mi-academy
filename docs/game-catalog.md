@@ -95,7 +95,7 @@ out-of-range positions. Evidence on 2026-07-19: `flutter analyze`,
 | 25 | Robot làm theo lệnh | 6–12 | **Built** | `apps/mobile/lib/src/games/robot_commands/`; 30 bilingual levels, 5 difficulty tiers, including turn/sequence practice and existing loop-command content |
 | 26 | Mê cung logic | 6–12 | **Built — Interactive movement** | `logic_maze`; dedicated command-queue movement engine with grid/path/obstacle data, collision/out-of-bounds feedback, undo/reset, save/restore, 30 bilingual levels, 5 difficulty tiers |
 | 27 | Tìm quy luật | 7–12 | **Built — Choice expansion** | `pattern_finder`; 30 bilingual levels, 5 difficulty tiers |
-| 28 | Sudoku trẻ em | 8–12 | **Built — Deep UI** | `kids_sudoku`; sudoku-grid surface with symbols/givens/blank data, 30 bilingual levels, 5 difficulty tiers |
+| 28 | Sudoku trẻ em | 8–12 | **Built — Interactive grid** | `kids_sudoku`; dedicated editable-grid engine with fixed givens, row/column/region validation, erase/hint controls, save/restore, 30 bilingual levels, 5 difficulty tiers |
 | 29 | Thám tử suy luận | 9–12 | **Built — Deep UI** | `reasoning_detective`; clue-board surface with localized clue sets, 30 bilingual levels, 5 difficulty tiers |
 | 30 | Sáng tạo tự do | 5–12 | **Built — Deep UI** | `free_creativity`; story-lab surface with localized story cards, 30 bilingual levels, 5 difficulty tiers |
 

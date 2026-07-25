@@ -35,7 +35,7 @@ that's the closest existing precedent for the spec's engine-reuse model.
 | 9. Story and Quiz Engine | none | Not built (needed for Game 09 đọc hiểu) |
 | 10. Simulation Engine | none | Not built (needed for Game 30's garden/room design mode) |
 | 11. Puzzle Placement Engine | none | Not built (needed for Game 20 hình học lắp ghép) |
-| 12. Logic Grid Engine | none | Not built (needed for Game 28 Sudoku, Game 29 thám tử suy luận) |
+| 12. Logic Grid Engine | Kids Sudoku | Partially built for Game 28 via `kids_sudoku_grid`; Game 29 still needs richer clue-board logic |
 
 **4 of 12 engine types have any real precedent; 8 have none.** Building
 the missing 8 engines generically (rather than as 24 one-off

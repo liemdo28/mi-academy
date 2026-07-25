@@ -308,6 +308,39 @@ class GameLocaleText {
     }
   }
 
+  String get sudokuTitle => miGameName('kids_sudoku', locale);
+  String get sudokuBoard => isEnglish ? 'Mini grid' : 'Ô lưới nhỏ';
+  String get sudokuSymbols => isEnglish ? 'Symbols' : 'Ký hiệu';
+  String get sudokuErase => isEnglish ? 'Erase' : 'Xóa';
+  String get sudokuHint => isEnglish
+      ? 'Check the row, column, and small region.'
+      : 'Nhìn hàng, cột và vùng nhỏ nhé.';
+  String get sudokuComplete =>
+      isEnglish ? 'You solved the Sudoku grid!' : 'Con đã giải ô Sudoku!';
+  String get sudokuDone =>
+      isEnglish ? 'The grid is complete!' : 'Ô lưới đã hoàn thành!';
+  String get sudokuEmpty => isEnglish
+      ? 'Fill the empty square first.'
+      : 'Con điền ô trống trước nhé.';
+  String get sudokuRowConflict => isEnglish
+      ? 'That symbol repeats in the row.'
+      : 'Ký hiệu này bị lặp trong hàng.';
+  String get sudokuColumnConflict => isEnglish
+      ? 'That symbol repeats in the column.'
+      : 'Ký hiệu này bị lặp trong cột.';
+  String get sudokuRegionConflict => isEnglish
+      ? 'That symbol repeats in the small region.'
+      : 'Ký hiệu này bị lặp trong vùng nhỏ.';
+  String get sudokuRetry => isEnglish
+      ? 'Not solved yet. Try another symbol.'
+      : 'Chưa đúng rồi. Con thử ký hiệu khác nhé.';
+  String sudokuCellLabel(int index, String value, bool fixed) => isEnglish
+      ? '${fixed ? 'Fixed' : 'Editable'} cell ${index + 1}: $value'
+      : 'Ô ${index + 1} ${fixed ? 'cố định' : 'có thể điền'}: $value';
+  String sudokuEmptyCellLabel(int index) => isEnglish
+      ? 'Editable empty cell ${index + 1}'
+      : 'Ô trống có thể điền ${index + 1}';
+
   String get memoryTitle => miGameName('memory_cards', locale);
   String get memoryPrompt =>
       isEnglish ? 'Find the matching pairs!' : 'Tìm cặp giống nhau!';

@@ -6,6 +6,7 @@ import 'package:mi_game_ui/mi_game_ui.dart';
 import '../src/games/choice/choice_game_screen.dart';
 import '../src/games/deep_logic/deep_logic_game_screen.dart';
 import '../src/games/game_locale_text.dart';
+import '../src/games/kids_sudoku/kids_sudoku_screen.dart';
 import '../src/games/logic_maze/logic_maze_screen.dart';
 import '../src/games/memory_cards/memory_cards_game.dart';
 import '../src/games/memory_cards/memory_cards_screen.dart';
@@ -646,7 +647,7 @@ abstract final class GameRegistry {
           primaryColor: MiColors.creative,
           worldLabel: (locale) => miGameWorldLabel('pattern_finder', locale),
         ),
-        _deepLogicEntry(
+        GameRegistryEntry(
           gameId: 'kids_sudoku',
           localizedName: miGameNameMap('kids_sudoku'),
           category: 'logic',
@@ -655,10 +656,27 @@ abstract final class GameRegistry {
             'logic.conditions',
             'logic.spatial_reasoning',
           ],
-          engineType: 'sudoku_grid',
-          scene: DeepLogicScene.sudoku,
-          primaryColor: MiColors.creative,
-          worldLabel: (locale) => miGameWorldLabel('kids_sudoku', locale),
+          engineType: 'kids_sudoku_grid',
+          builder: ({
+            required level,
+            required allLevels,
+            required onExit,
+            required onComplete,
+            required childProfileId,
+            initialSnapshot,
+            onSaveSnapshot,
+            reduceMotion = false,
+            required locale,
+          }) =>
+              KidsSudokuScreen(
+            level: level,
+            allLevels: allLevels,
+            onExit: onExit,
+            onComplete: onComplete,
+            initialSnapshot: initialSnapshot,
+            onSaveSnapshot: onSaveSnapshot,
+            locale: locale,
+          ),
         ),
         _deepLogicEntry(
           gameId: 'reasoning_detective',
