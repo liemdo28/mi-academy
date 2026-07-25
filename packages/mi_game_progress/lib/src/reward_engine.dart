@@ -22,7 +22,7 @@ class RewardEngine {
     required Map<String, String> gameCategories,
     required Set<String> alreadyUnlocked,
   }) {
-    final correct = attempts.where((a) => a.correct).toList();
+    final correct = attempts.where((a) => a.isCorrect).toList();
     final newlyUnlocked = <String>[];
 
     for (final reward in catalog.rewards) {

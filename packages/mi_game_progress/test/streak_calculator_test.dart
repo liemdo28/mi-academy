@@ -12,6 +12,19 @@ AttemptRecord _attempt(DateTime day, {bool correct = true}) {
   );
 }
 
+AttemptRecord _participation(DateTime day) {
+  return AttemptRecord(
+    childId: 'child-1',
+    gameId: 'free_creativity',
+    levelId: 'fc-${day.toIso8601String()}',
+    correct: null,
+    attemptedAt: day,
+    duration: const Duration(seconds: 30),
+    assessmentType: AttemptAssessmentType.participation,
+    completionModel: AttemptCompletionModel.participation,
+  );
+}
+
 void main() {
   final today = DateTime.utc(2026, 7, 21);
 
@@ -75,6 +88,18 @@ void main() {
   test('an incorrect-only attempt does not fabricate a streak on its own', () {
     final attempts = [_attempt(today, correct: false)];
     expect(StreakCalculator.currentStreakDays(attempts, now: today), 0);
+  });
+
+  test('participation attempts are ignored by correctness streaks', () {
+    final attempts = [
+      _participation(today),
+      _attempt(today.subtract(const Duration(days: 1))),
+    ];
+    expect(StreakCalculator.currentStreakDays(attempts, now: today), 1);
+    expect(
+      StreakCalculator.currentStreakDays([_participation(today)], now: today),
+      0,
+    );
   });
 
   test(

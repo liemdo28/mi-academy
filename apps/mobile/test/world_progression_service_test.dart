@@ -418,12 +418,22 @@ void main() {
             attemptedAt: now,
             duration: const Duration(seconds: 20),
           ),
+          AttemptRecord(
+            childId: 'child-1',
+            gameId: 'free_creativity',
+            levelId: 'fc-1',
+            correct: null,
+            attemptedAt: now,
+            duration: const Duration(seconds: 15),
+            assessmentType: AttemptAssessmentType.participation,
+            completionModel: AttemptCompletionModel.participation,
+          ),
         ],
         unlockedRewards: const [],
         ageBand: 'junior',
       );
       expect(withHistory.overallAccuracy, 0.5);
-      expect(withHistory.totalTimeSpent, const Duration(seconds: 60));
+      expect(withHistory.totalTimeSpent, const Duration(seconds: 75));
       expect(withHistory.streakDays, 1);
     });
 

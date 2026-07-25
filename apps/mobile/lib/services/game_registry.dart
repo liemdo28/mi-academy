@@ -791,7 +791,7 @@ abstract final class GameRegistry {
             onComplete: onComplete,
             initialSnapshot: initialSnapshot,
             onSaveSnapshot: onSaveSnapshot,
-            artifactStore: creativeArtifactStore,
+            artifactStore: creativeArtifactStore!,
             reduceMotion: reduceMotion,
             locale: locale,
           ),

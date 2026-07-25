@@ -1,3 +1,4 @@
+import 'package:characters/characters.dart';
 import 'package:mi_game_core/mi_game_core.dart';
 
 import '../game_locale_text.dart';
@@ -118,9 +119,9 @@ class FreeCreativitySession {
 
   void updateStoryText(String value) {
     final trimmedRight = value.replaceFirst(RegExp(r'\s+$'), '');
-    _storyText = trimmedRight.length <= _maximumStoryLength
+    _storyText = trimmedRight.characters.length <= _maximumStoryLength
         ? trimmedRight
-        : String.fromCharCodes(trimmedRight.runes.take(_maximumStoryLength));
+        : trimmedRight.characters.take(_maximumStoryLength).toString();
     _clearPrompt();
   }
 
@@ -230,9 +231,10 @@ class FreeCreativitySession {
         _restoreChoiceId(_feelings, state['feelingId'], state['feeling']);
     _storyStarterId =
         _restoreChoiceId(_storyStarters, state['storyStarterId'], null);
-    _storyText = String.fromCharCodes(
-      (state['storyText']?.toString() ?? '').runes.take(_maximumStoryLength),
-    );
+    _storyText = (state['storyText']?.toString() ?? '')
+        .characters
+        .take(_maximumStoryLength)
+        .toString();
     _feedback =
         state['feedback'] is String ? state['feedback'] as String : null;
     _feedbackState = CreativeFeedbackState.values.firstWhere(

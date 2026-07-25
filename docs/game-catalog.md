@@ -97,7 +97,7 @@ out-of-range positions. Evidence on 2026-07-19: `flutter analyze`,
 | 27 | Tìm quy luật | 7–12 | **Built — Choice expansion** | `pattern_finder`; 30 bilingual levels, 5 difficulty tiers |
 | 28 | Sudoku trẻ em | 8–12 | **Built — Interactive grid** | `kids_sudoku`; dedicated editable-grid engine with fixed givens, row/column/region validation, erase/hint controls, save/restore, 30 bilingual levels, 5 difficulty tiers |
 | 29 | Thám tử suy luận | 9–12 | **Built — Deep UI** | `reasoning_detective`; clue-board surface with localized clue sets, 30 bilingual levels, 5 difficulty tiers |
-| 30 | Sáng tạo tự do | 5–12 | **Built — Creative composition** | `free_creativity`; participation-based story lab with scene, character, feeling, and story-idea composition, no right/wrong creativity scoring, save/restore, local-first artifact persistence, 30 bilingual levels, 5 difficulty tiers |
+| 30 | Sáng tạo tự do | 5–12 | **Built — Creative composition** | `free_creativity`; participation-based story lab with scene, character, feeling, and story-idea composition, no right/wrong creativity scoring, ungraded progress (`correct=null`), save/restore, recoverable artifact-save retry, local-first artifact persistence, 30 bilingual levels, 5 difficulty tiers |
 
 ## Summary
 

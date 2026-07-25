@@ -18,7 +18,7 @@ abstract final class StreakCalculator {
   static int currentStreakDays(List<AttemptRecord> attempts, {DateTime? now}) {
     final today = _dateOnly(now ?? DateTime.now());
     final practicedDays = attempts
-        .where((a) => a.correct)
+        .where((a) => a.isCorrect)
         .map((a) => _dateOnly(a.attemptedAt))
         .toSet();
     if (practicedDays.isEmpty) return 0;

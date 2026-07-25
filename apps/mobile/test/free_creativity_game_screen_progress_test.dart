@@ -9,6 +9,7 @@ import 'package:mi_academy/services/progress_store.dart';
 import 'package:mi_academy/services/reward_store.dart';
 import 'package:mi_academy/services/snapshot_store.dart';
 import 'package:mi_academy/src/games/free_creativity/creative_artifact_store.dart';
+import 'package:mi_game_progress/mi_game_progress.dart';
 
 void main() {
   TestWidgetsFlutterBinding.ensureInitialized();
@@ -74,7 +75,12 @@ void main() {
     await tester.pumpAndSettle();
 
     final tracker = progressStore.load('offline-child')!;
-    expect(tracker.attempts.single.correct, isFalse);
+    expect(tracker.attempts.single.assessmentType,
+        AttemptAssessmentType.participation);
+    expect(tracker.attempts.single.completionModel,
+        AttemptCompletionModel.participation);
+    expect(tracker.attempts.single.completed, isTrue);
+    expect(tracker.attempts.single.correct, isNull);
     expect(tracker.skills, isEmpty);
     expect(rewardStore.unlockedIds('offline-child'), isEmpty);
     expect(artifactStore.listForChild('offline-child'), hasLength(1));

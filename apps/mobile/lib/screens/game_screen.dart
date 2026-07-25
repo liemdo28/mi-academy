@@ -393,20 +393,27 @@ class _GameScreenState extends ConsumerState<GameScreen> {
     final tracker = progressStore.load(widget.childId) ??
         ProgressTracker(childId: widget.childId);
 
-    tracker.recordCompletion(
-      gameId: widget.gameType,
-      levelId: result.levelId,
-      correct: !ungraded,
-      duration: result.duration,
-      hintsUsed: result.hintsUsed,
-      skillIds: ungraded
-          ? const []
-          : mapping != null
-              ? [mapping.primarySkillId, ...mapping.secondarySkillIds]
-              : (result.newSkillsAcquired.isNotEmpty
-                  ? result.newSkillsAcquired
-                  : ['${widget.gameType}.general']),
-    );
+    if (ungraded) {
+      tracker.recordParticipationCompletion(
+        gameId: widget.gameType,
+        levelId: result.levelId,
+        duration: result.duration,
+        hintsUsed: result.hintsUsed,
+      );
+    } else {
+      tracker.recordCompletion(
+        gameId: widget.gameType,
+        levelId: result.levelId,
+        correct: true,
+        duration: result.duration,
+        hintsUsed: result.hintsUsed,
+        skillIds: mapping != null
+            ? [mapping.primarySkillId, ...mapping.secondarySkillIds]
+            : (result.newSkillsAcquired.isNotEmpty
+                ? result.newSkillsAcquired
+                : ['${widget.gameType}.general']),
+      );
+    }
     await progressStore.save(tracker);
 
     final rewardStore = ref.read(rewardStoreProvider);

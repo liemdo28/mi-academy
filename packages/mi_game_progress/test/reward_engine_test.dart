@@ -17,6 +17,19 @@ AttemptRecord _attempt(
   );
 }
 
+AttemptRecord _participationAttempt(String gameId, DateTime day) {
+  return AttemptRecord(
+    childId: 'child-1',
+    gameId: gameId,
+    levelId: '$gameId-participation-${day.toIso8601String()}',
+    correct: null,
+    attemptedAt: day,
+    duration: const Duration(seconds: 30),
+    assessmentType: AttemptAssessmentType.participation,
+    completionModel: AttemptCompletionModel.participation,
+  );
+}
+
 const _categories = {
   'alphabet_explorer': 'letters',
   'word_builder': 'letters',
@@ -63,6 +76,36 @@ void main() {
     final unlocked = engine.evaluate(
       catalog: catalog,
       attempts: [_attempt('alphabet_explorer', day1, correct: false)],
+      gameCategories: _categories,
+      alreadyUnlocked: {},
+    );
+
+    expect(unlocked, isEmpty);
+  });
+
+  test('first_completion does not unlock from participation attempts', () {
+    final catalog = RewardCatalog([
+      const RewardDefinition(
+        id: 'first_completion',
+        name: {'vi': 'x', 'en': 'x'},
+        description: {'vi': 'x', 'en': 'x'},
+        rule: RewardRule.firstCompletion(),
+      ),
+      const RewardDefinition(
+        id: 'two_lessons',
+        name: {'vi': 'x', 'en': 'x'},
+        description: {'vi': 'x', 'en': 'x'},
+        rule: RewardRule.completionCount(2),
+      ),
+    ]);
+
+    final unlocked = engine.evaluate(
+      catalog: catalog,
+      attempts: [
+        _participationAttempt('free_creativity', day1),
+        _participationAttempt(
+            'free_creativity', day1.add(const Duration(days: 1))),
+      ],
       gameCategories: _categories,
       alreadyUnlocked: {},
     );

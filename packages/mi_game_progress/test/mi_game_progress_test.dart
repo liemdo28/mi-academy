@@ -32,6 +32,31 @@ void main() {
       });
 
       expect(restored.hintsUsed, 0);
+      expect(restored.assessmentType, AttemptAssessmentType.graded);
+      expect(restored.completionModel, AttemptCompletionModel.correctness);
+      expect(restored.correct, isFalse);
+      expect(restored.isIncorrect, isTrue);
+    });
+
+    test('round-trips ungraded participation without correctness evidence', () {
+      final record = AttemptRecord(
+        childId: 'child-1',
+        gameId: 'free_creativity',
+        levelId: 'fc-1',
+        correct: null,
+        attemptedAt: DateTime.utc(2026, 7, 25),
+        duration: const Duration(seconds: 30),
+        assessmentType: AttemptAssessmentType.participation,
+        completionModel: AttemptCompletionModel.participation,
+        completed: true,
+      );
+
+      final restored = AttemptRecord.fromJson(record.toJson());
+
+      expect(restored.correct, isNull);
+      expect(restored.isCorrect, isFalse);
+      expect(restored.isIncorrect, isFalse);
+      expect(restored.isParticipation, isTrue);
     });
   });
 
@@ -151,6 +176,23 @@ void main() {
       expect(tracker.attempts.single.childId, 'child-1');
       expect(tracker.skills.keys, containsAll(['math.money', 'math.addition']));
       expect(tracker.getMastery('math.money'), greaterThan(0.0));
+    });
+
+    test('records participation completion without skill mastery evidence', () {
+      final tracker = ProgressTracker(childId: 'child-1');
+
+      tracker.recordParticipationCompletion(
+        gameId: 'free_creativity',
+        levelId: 'level-1',
+        duration: const Duration(seconds: 45),
+        hintsUsed: 1,
+      );
+
+      expect(tracker.attempts, hasLength(1));
+      expect(tracker.attempts.single.correct, isNull);
+      expect(tracker.attempts.single.completed, isTrue);
+      expect(tracker.attempts.single.isParticipation, isTrue);
+      expect(tracker.skills, isEmpty);
     });
 
     test('returns conservative defaults for unpracticed skills', () {

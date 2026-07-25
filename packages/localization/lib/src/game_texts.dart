@@ -375,6 +375,25 @@ class GameLocaleText {
       : 'Thử viết một câu về chuyện xảy ra tiếp theo nhé.';
   String get creativityStoryFieldHint =>
       isEnglish ? 'What happens next?' : 'Chuyện gì xảy ra tiếp theo?';
+  String get creativityStoryFieldSemantic =>
+      isEnglish ? 'Story idea field' : 'Ô nhập ý tưởng câu chuyện';
+  String get creativitySaving =>
+      isEnglish ? 'Saving story' : 'Đang lưu câu chuyện';
+  String get creativitySavingDetail => isEnglish
+      ? 'MI is saving your story idea.'
+      : 'MI đang lưu ý tưởng câu chuyện của con.';
+  String get creativitySaveFailed => isEnglish
+      ? 'Could not save yet. Try again when you are ready.'
+      : 'Chưa thể lưu. Con thử lại khi sẵn sàng nhé.';
+  String get creativityRetrySave =>
+      isEnglish ? 'Try saving again' : 'Thử lưu lại';
+  String get creativityMascotCelebration => isEnglish
+      ? 'MI celebrates your story.'
+      : 'MI đang chúc mừng câu chuyện của con.';
+  String creativitySelectedOption(String label) =>
+      isEnglish ? 'Selected: $label' : 'Đã chọn: $label';
+  String creativityStoryCounter(int count, int max) =>
+      isEnglish ? '$count / $max characters' : '$count / $max ký tự';
   List<String> get creativityCharacters => isEnglish
       ? const ['MI', 'a friend', 'a helper']
       : const ['MI', 'một người bạn', 'người giúp đỡ'];

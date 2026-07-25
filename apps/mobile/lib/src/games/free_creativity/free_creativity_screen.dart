@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:design_system/design_system.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:mi_game_audio/mi_game_audio.dart';
 import 'package:mi_game_core/mi_game_core.dart';
 import 'package:mi_game_ui/mi_game_ui.dart';
@@ -11,6 +12,13 @@ import '../level_skill_ids.dart';
 import '../snapshot_lifecycle_mixin.dart';
 import 'creative_artifact_store.dart';
 import 'free_creativity_session.dart';
+
+enum CreativeCompletionState {
+  editing,
+  saving,
+  saveFailed,
+  completed,
+}
 
 class FreeCreativityScreen extends StatefulWidget {
   const FreeCreativityScreen({
@@ -22,7 +30,7 @@ class FreeCreativityScreen extends StatefulWidget {
     this.onComplete,
     this.initialSnapshot,
     this.onSaveSnapshot,
-    this.artifactStore,
+    required this.artifactStore,
     this.playAudioIntent,
     this.reduceMotion = false,
     this.locale = 'vi',
@@ -35,7 +43,7 @@ class FreeCreativityScreen extends StatefulWidget {
   final void Function(MiCompletionResult)? onComplete;
   final MiGameSnapshot? initialSnapshot;
   final void Function(MiGameSnapshot)? onSaveSnapshot;
-  final CreativeArtifactStore? artifactStore;
+  final CreativeArtifactStore artifactStore;
   final Future<void> Function(MiAudioIntent intent)? playAudioIntent;
   final bool reduceMotion;
   final String locale;
@@ -50,14 +58,14 @@ class _FreeCreativityScreenState extends State<FreeCreativityScreen>
   late Stopwatch _stopwatch;
   late TextEditingController _storyController;
   late final MiAudioService _audio = MiAudioService();
-  bool _completed = false;
+  CreativeCompletionState _completionState = CreativeCompletionState.editing;
 
   @override
   void Function(MiGameSnapshot)? get onSaveSnapshot => widget.onSaveSnapshot;
 
   @override
   MiGameSnapshot? captureSnapshot() {
-    if (_completed) return null;
+    if (_completionState == CreativeCompletionState.completed) return null;
     return _session.saveSnapshot();
   }
 
@@ -90,7 +98,7 @@ class _FreeCreativityScreenState extends State<FreeCreativityScreen>
     }
     _storyController = TextEditingController(text: _session.storyText);
     setState(() {
-      _completed = false;
+      _completionState = CreativeCompletionState.editing;
       _stopwatch
         ..reset()
         ..start();
@@ -125,16 +133,28 @@ class _FreeCreativityScreenState extends State<FreeCreativityScreen>
   }
 
   Future<void> _completeStory() async {
-    if (_completed) return;
+    if (_completionState == CreativeCompletionState.saving ||
+        _completionState == CreativeCompletionState.completed) {
+      return;
+    }
     final completion = _session.complete();
-    unawaited(_playIntent(completion == null
-        ? MiAudioIntent.gentleAttention
-        : MiAudioIntent.creativeComplete));
     setState(() {});
-    if (completion == null) return;
-    _completed = true;
-    await widget.artifactStore?.save(completion.artifact);
-    _showCompletion(completion.artifact);
+    if (completion == null) {
+      unawaited(_playIntent(MiAudioIntent.gentleAttention));
+      return;
+    }
+    setState(() => _completionState = CreativeCompletionState.saving);
+    try {
+      await widget.artifactStore.save(completion.artifact);
+      if (!mounted) return;
+      setState(() => _completionState = CreativeCompletionState.completed);
+      unawaited(_playIntent(MiAudioIntent.creativeComplete));
+      _showCompletion(completion.artifact);
+    } catch (_) {
+      if (!mounted) return;
+      setState(() => _completionState = CreativeCompletionState.saveFailed);
+      unawaited(_playIntent(MiAudioIntent.gentleAttention));
+    }
   }
 
   void _showHint() {
@@ -195,6 +215,7 @@ class _FreeCreativityScreenState extends State<FreeCreativityScreen>
         nextLabel: text.completion.nextLabel,
         replayLabel: text.completion.replayLabel,
         exitLabel: text.completion.exitLabel,
+        mascotSemanticLabel: text.creativityMascotCelebration,
         reduceMotion: widget.reduceMotion,
         onNext: _goNext,
         onReplay: () {
@@ -254,6 +275,7 @@ class _FreeCreativityScreenState extends State<FreeCreativityScreen>
                     options: _session.scenes,
                     selected: _session.sceneId,
                     onSelected: _selectScene,
+                    text: text,
                   ),
                   const SizedBox(height: 16),
                   _ChoiceSection(
@@ -262,6 +284,7 @@ class _FreeCreativityScreenState extends State<FreeCreativityScreen>
                     options: _session.characters,
                     selected: _session.characterId,
                     onSelected: _selectCharacter,
+                    text: text,
                   ),
                   const SizedBox(height: 16),
                   _ChoiceSection(
@@ -270,6 +293,7 @@ class _FreeCreativityScreenState extends State<FreeCreativityScreen>
                     options: _session.feelings,
                     selected: _session.feelingId,
                     onSelected: _selectFeeling,
+                    text: text,
                   ),
                   const SizedBox(height: 16),
                   _StoryComposer(
@@ -277,7 +301,18 @@ class _FreeCreativityScreenState extends State<FreeCreativityScreen>
                     onChanged: _updateStoryText,
                     onClear: _clearStoryText,
                     text: text,
+                    maximumStoryLength: _session.maximumStoryLength,
                   ),
+                  if (_completionState == CreativeCompletionState.saving ||
+                      _completionState ==
+                          CreativeCompletionState.saveFailed) ...[
+                    const SizedBox(height: 16),
+                    _CreativeSaveStatePanel(
+                      state: _completionState,
+                      text: text,
+                      reduceMotion: widget.reduceMotion,
+                    ),
+                  ],
                   if (_session.feedback != null) ...[
                     const SizedBox(height: 16),
                     _CreativeFeedbackPanel(
@@ -303,9 +338,23 @@ class _FreeCreativityScreenState extends State<FreeCreativityScreen>
                   const SizedBox(width: 8),
                   Expanded(
                     child: ElevatedButton.icon(
-                      onPressed: _completeStory,
-                      icon: const Icon(Icons.auto_stories_rounded),
-                      label: Text(text.creativityCompleteAction),
+                      onPressed:
+                          _completionState == CreativeCompletionState.saving
+                              ? null
+                              : _completeStory,
+                      icon: Icon(
+                        _completionState == CreativeCompletionState.saveFailed
+                            ? Icons.refresh_rounded
+                            : Icons.auto_stories_rounded,
+                      ),
+                      label: Text(
+                        _completionState == CreativeCompletionState.saving
+                            ? text.creativitySaving
+                            : _completionState ==
+                                    CreativeCompletionState.saveFailed
+                                ? text.creativityRetrySave
+                                : text.creativityCompleteAction,
+                      ),
                       style: ElevatedButton.styleFrom(
                         backgroundColor: MiColors.primary,
                         foregroundColor: Colors.white,
@@ -369,6 +418,7 @@ class _ChoiceSection extends StatelessWidget {
     required this.options,
     required this.selected,
     required this.onSelected,
+    required this.text,
   });
 
   final String title;
@@ -376,6 +426,7 @@ class _ChoiceSection extends StatelessWidget {
   final List<CreativeChoice> options;
   final String? selected;
   final ValueChanged<String> onSelected;
+  final GameLocaleText text;
 
   @override
   Widget build(BuildContext context) {
@@ -398,6 +449,9 @@ class _ChoiceSection extends StatelessWidget {
               _CreativeChip(
                 text: option.label,
                 selected: selected == option.id,
+                semanticLabel: selected == option.id
+                    ? text.creativitySelectedOption(option.label)
+                    : option.label,
                 onPressed: () => onSelected(option.id),
               ),
           ],
@@ -411,11 +465,13 @@ class _CreativeChip extends StatelessWidget {
   const _CreativeChip({
     required this.text,
     required this.selected,
+    required this.semanticLabel,
     required this.onPressed,
   });
 
   final String text;
   final bool selected;
+  final String semanticLabel;
   final VoidCallback onPressed;
 
   @override
@@ -423,6 +479,7 @@ class _CreativeChip extends StatelessWidget {
     return Semantics(
       selected: selected,
       button: true,
+      label: semanticLabel,
       child: OutlinedButton(
         onPressed: onPressed,
         style: OutlinedButton.styleFrom(
@@ -441,6 +498,54 @@ class _CreativeChip extends StatelessWidget {
         ),
         child: Text(text),
       ),
+    );
+  }
+}
+
+class _CreativeSaveStatePanel extends StatelessWidget {
+  const _CreativeSaveStatePanel({
+    required this.state,
+    required this.text,
+    required this.reduceMotion,
+  });
+
+  final CreativeCompletionState state;
+  final GameLocaleText text;
+  final bool reduceMotion;
+
+  @override
+  Widget build(BuildContext context) {
+    final isFailure = state == CreativeCompletionState.saveFailed;
+    final message =
+        isFailure ? text.creativitySaveFailed : text.creativitySavingDetail;
+    final content = Semantics(
+      liveRegion: true,
+      label: message,
+      child: Container(
+        key: ValueKey(state),
+        padding: const EdgeInsets.all(16),
+        decoration: BoxDecoration(
+          color: MiColors.accent.withValues(alpha: 0.14),
+          borderRadius: BorderRadius.circular(GameTheme.cardRadius),
+          border: Border.all(color: MiColors.accent.withValues(alpha: 0.45)),
+        ),
+        child: Row(
+          children: [
+            Icon(
+              isFailure ? Icons.refresh_rounded : Icons.cloud_done_rounded,
+              color: MiColors.navy,
+            ),
+            const SizedBox(width: 12),
+            Expanded(child: Text(message, style: GameTheme.bodyMedium)),
+          ],
+        ),
+      ),
+    );
+
+    return AnimatedSwitcher(
+      duration:
+          reduceMotion ? Duration.zero : const Duration(milliseconds: 180),
+      child: content,
     );
   }
 }
@@ -493,6 +598,7 @@ class _CreativeCompletionDialog extends StatelessWidget {
     required this.nextLabel,
     required this.replayLabel,
     required this.exitLabel,
+    required this.mascotSemanticLabel,
     required this.reduceMotion,
     required this.onNext,
     required this.onReplay,
@@ -503,6 +609,7 @@ class _CreativeCompletionDialog extends StatelessWidget {
   final String nextLabel;
   final String replayLabel;
   final String exitLabel;
+  final String mascotSemanticLabel;
   final bool reduceMotion;
   final VoidCallback onNext;
   final VoidCallback onReplay;
@@ -522,10 +629,10 @@ class _CreativeCompletionDialog extends StatelessWidget {
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
-              const MiMascotReaction(
+              MiMascotReaction(
                 emotion: MiMascotEmotion.celebration,
                 size: 96,
-                semanticLabel: 'MI celebrates the story',
+                semanticLabel: mascotSemanticLabel,
               ),
               const SizedBox(height: 12),
               Text(
@@ -570,12 +677,14 @@ class _StoryComposer extends StatelessWidget {
     required this.onChanged,
     required this.onClear,
     required this.text,
+    required this.maximumStoryLength,
   });
 
   final TextEditingController controller;
   final ValueChanged<String> onChanged;
   final VoidCallback onClear;
   final GameLocaleText text;
+  final int maximumStoryLength;
 
   @override
   Widget build(BuildContext context) {
@@ -584,19 +693,33 @@ class _StoryComposer extends StatelessWidget {
       children: [
         Text(text.creativityStory, style: GameTheme.headingMedium),
         const SizedBox(height: 8),
-        TextField(
-          key: const ValueKey('free-creativity-story-field'),
-          controller: controller,
-          minLines: 2,
-          maxLines: 4,
-          textInputAction: TextInputAction.done,
-          onChanged: onChanged,
-          decoration: InputDecoration(
-            hintText: text.creativityStoryFieldHint,
-            filled: true,
-            fillColor: Colors.white,
-            border: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(16),
+        Semantics(
+          textField: true,
+          label: text.creativityStoryFieldSemantic,
+          hint: text.creativityStoryFieldHint,
+          child: TextField(
+            key: const ValueKey('free-creativity-story-field'),
+            controller: controller,
+            minLines: 2,
+            maxLines: 4,
+            maxLength: maximumStoryLength,
+            maxLengthEnforcement: MaxLengthEnforcement.enforced,
+            inputFormatters: [
+              LengthLimitingTextInputFormatter(maximumStoryLength),
+            ],
+            textInputAction: TextInputAction.done,
+            onChanged: onChanged,
+            decoration: InputDecoration(
+              hintText: text.creativityStoryFieldHint,
+              counterText: text.creativityStoryCounter(
+                controller.text.characters.length,
+                maximumStoryLength,
+              ),
+              filled: true,
+              fillColor: Colors.white,
+              border: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(16),
+              ),
             ),
           ),
         ),

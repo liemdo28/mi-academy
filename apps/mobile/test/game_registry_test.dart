@@ -1,5 +1,6 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mi_academy/services/game_registry.dart';
+import 'package:mi_academy/src/games/free_creativity/creative_artifact_store.dart';
 import 'package:mi_game_core/mi_game_core.dart';
 
 const _level = MiLevel(
@@ -127,6 +128,9 @@ void main() {
           onExit: () {},
           onComplete: (_) {},
           childProfileId: 'test-child',
+          creativeArtifactStore: entry.gameId == 'free_creativity'
+              ? InMemoryCreativeArtifactStore()
+              : null,
           locale: 'vi',
         );
         expect(widget, isNotNull, reason: '${entry.gameId} builder failed');

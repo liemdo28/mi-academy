@@ -14,6 +14,7 @@
 | Age group | On-device | Content filtering | Local + PostgreSQL | Never |
 | Language preference | On-device | Localization | Local | Never |
 | Game progress | During gameplay | Adaptive difficulty, mastery | Local + PostgreSQL (sync) | Never |
+| Free Creativity story artifacts | Child writes a story idea in Free Creativity | Let the child/parent retrieve the created story later | Local Hive `creative_artifacts` JSON box | Never by default |
 | Daily session time | During gameplay | Parent dashboard | Local + PostgreSQL | Never |
 | Stars & badges | During gameplay | Reward system | Local + PostgreSQL | Never |
 
@@ -47,9 +48,20 @@ The mobile app does not embed a backend URL by default. Parent/sync API access
 must be enabled at build time with `MI_ACADEMY_API_BASE_URL`, keeping the
 child-facing MVP offline-first unless a parent explicitly opts into sync.
 
+Free Creativity child-authored story text is stored locally in Hive as JSON in
+the `creative_artifacts` box. That box is not currently encrypted by an
+application-managed Hive cipher; it relies on normal device storage protection.
+Completion/progress metadata stores only lightweight identifiers such as the
+artifact ID, level ID, scene ID, character ID, and feeling ID. The story text is
+not placed in generic analytics metadata, is not logged on save failure, is not
+sent to AI services, and is not synced to cloud storage unless a future explicit
+cloud-artifact feature is designed and reviewed.
+
 ## Data retention
 
 - Local data: persists until parent deletes child profile
+- Free Creativity artifacts: persist locally until the owning child profile or
+  app data is deleted
 - Server data: can be deleted on parent request
 - No automatic data expiration
 

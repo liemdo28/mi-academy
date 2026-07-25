@@ -57,6 +57,31 @@ class ProgressTracker {
     }
   }
 
+  /// Record an ungraded participation completion.
+  ///
+  /// This counts as activity completion and time spent, but deliberately
+  /// does not enter correctness, mistakes, streak, reward, or mastery
+  /// evidence.
+  void recordParticipationCompletion({
+    required String gameId,
+    required String levelId,
+    required Duration duration,
+    int hintsUsed = 0,
+  }) {
+    _attempts.add(AttemptRecord(
+      childId: childId,
+      gameId: gameId,
+      levelId: levelId,
+      correct: null,
+      attemptedAt: DateTime.now(),
+      duration: duration,
+      assessmentType: AttemptAssessmentType.participation,
+      completionModel: AttemptCompletionModel.participation,
+      completed: true,
+      hintsUsed: hintsUsed,
+    ));
+  }
+
   /// Get mastery for a specific skill, or 0 if not practiced.
   double getMastery(String skillId) {
     return _skills[skillId]?.mastery ?? 0.0;

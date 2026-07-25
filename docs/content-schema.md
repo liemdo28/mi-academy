@@ -60,7 +60,12 @@ Design decisions, and why they differ from a naive per-locale-file layout:
   and `metadata.assessmentModel=ungraded`. The legacy `options` list may
   remain only for old schema/tool compatibility and must be marked by
   `metadata.deepData.legacyChoiceOptionsIgnored=true`; the game engine must
-  ignore any `options[].correct` flags.
+  ignore any `options[].correct` flags. Progress records for this engine use
+  the explicit participation attempt model (`assessmentType=participation`,
+  `completionModel=participation`, `correct=null`, `completed=true`), so
+  creative completion is neither a correct nor incorrect answer and is excluded
+  from accuracy, mistakes, mastery evidence, correctness streaks, and adaptive
+  skill evidence.
 - **`contentVersion`, `estimatedSeconds`, `publicationState` are new** (this
   pass) — see Migration policy below.
 

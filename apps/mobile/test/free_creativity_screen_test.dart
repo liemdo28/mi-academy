@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:design_system/design_system.dart';
 import 'package:mi_academy/src/games/free_creativity/creative_artifact_store.dart';
 import 'package:mi_academy/src/games/free_creativity/free_creativity_screen.dart';
 import 'package:mi_academy/src/games/free_creativity/free_creativity_session.dart';
@@ -188,6 +189,15 @@ void main() {
 
     await tester.tap(find.text('Một cánh cửa nhỏ'));
     await tester.pump();
+    final selectedScene = tester.widget<Semantics>(
+      find
+          .ancestor(
+            of: find.widgetWithText(OutlinedButton, 'Một cánh cửa nhỏ'),
+            matching: find.byType(Semantics),
+          )
+          .first,
+    );
+    expect(selectedScene.properties.label, 'Đã chọn: Một cánh cửa nhỏ');
     await tester.tap(find.text('MI').last);
     await tester.pump();
     await tester.tap(find.text('tò mò'));
@@ -205,6 +215,12 @@ void main() {
         'MI mở cửa và gặp một ý tưởng mới.');
     expect(find.text('Ý tưởng câu chuyện của con đang thành hình!'),
         findsOneWidget);
+    expect(
+      tester
+          .widget<MiMascotReaction>(find.byType(MiMascotReaction))
+          .semanticLabel,
+      'MI đang chúc mừng câu chuyện của con.',
+    );
   });
 
   testWidgets('Free Creativity restore uses child identity and stable IDs',
@@ -264,6 +280,94 @@ void main() {
       find.byType(AnimatedSwitcher).last,
     );
     expect(switcher.duration, Duration.zero);
+
+    await _completeEnglishStory(tester);
+    await tester.pumpAndSettle();
+    final scale = tester.widget<AnimatedScale>(
+      find.byWidgetPredicate(
+        (widget) => widget is AnimatedScale && widget.duration == Duration.zero,
+      ),
+    );
+    expect(scale.duration, Duration.zero);
+  });
+
+  testWidgets('Free Creativity recovers from artifact save failure',
+      (tester) async {
+    _usePhoneViewport(tester);
+    final store = _ThrowOnceCreativeArtifactStore();
+    MiCompletionResult? completed;
+
+    await tester.pumpWidget(
+      MaterialApp(
+        home: FreeCreativityScreen(
+          level: _creativeLevel,
+          allLevels: const [_creativeLevel],
+          childProfileId: 'child-retry',
+          locale: 'en',
+          artifactStore: store,
+          onComplete: (result) => completed = result,
+        ),
+      ),
+    );
+    await tester.pump();
+
+    await _completeEnglishStory(tester);
+    await tester.pump();
+
+    expect(find.text('Could not save yet. Try again when you are ready.'),
+        findsOneWidget);
+    expect(find.text('MI opens the tiny door.'), findsOneWidget);
+    expect(completed, isNull);
+    expect(store.listForChild('child-retry'), isEmpty);
+
+    await tester.tap(find.text('Try saving again'));
+    await tester.pumpAndSettle();
+
+    expect(completed, isNotNull);
+    expect(store.saveAttempts, 2);
+    expect(store.listForChild('child-retry'), hasLength(1));
+  });
+
+  testWidgets('Free Creativity enforces story limit in visible input and save',
+      (tester) async {
+    _usePhoneViewport(tester);
+    final store = InMemoryCreativeArtifactStore();
+
+    await tester.pumpWidget(
+      MaterialApp(
+        home: FreeCreativityScreen(
+          level: _creativeLevelWithScreenLimits(maximumStoryLength: 5),
+          allLevels: [_creativeLevelWithScreenLimits(maximumStoryLength: 5)],
+          childProfileId: 'child-limit',
+          locale: 'en',
+          artifactStore: store,
+        ),
+      ),
+    );
+    await tester.pump();
+
+    await tester.enterText(
+      find.byKey(const ValueKey('free-creativity-story-field')),
+      'Hello world',
+    );
+    await tester.pump();
+
+    final field = tester.widget<TextField>(
+      find.byKey(const ValueKey('free-creativity-story-field')),
+    );
+    expect(field.controller!.text, 'Hello');
+    expect(find.text('5 / 5 characters'), findsOneWidget);
+
+    await tester.tap(find.text('A tiny door'));
+    await tester.pump();
+    await tester.tap(find.text('MI').last);
+    await tester.pump();
+    await tester.tap(find.text('curious'));
+    await tester.pump();
+    await tester.tap(find.text('Share story'));
+    await tester.pumpAndSettle();
+
+    expect(store.listForChild('child-limit').single.storyText, 'Hello');
   });
 
   testWidgets('Free Creativity layout has no overflow on tablet English',
@@ -391,6 +495,21 @@ void main() {
   });
 }
 
+Future<void> _completeEnglishStory(WidgetTester tester) async {
+  await tester.tap(find.text('A tiny door'));
+  await tester.pump();
+  await tester.tap(find.text('MI').last);
+  await tester.pump();
+  await tester.tap(find.text('curious'));
+  await tester.pump();
+  await tester.enterText(
+    find.byKey(const ValueKey('free-creativity-story-field')),
+    'MI opens the tiny door.',
+  );
+  await tester.pump();
+  await tester.tap(find.text('Share story'));
+}
+
 FreeCreativitySession _restoredSession() {
   final session = FreeCreativitySession(
     level: _creativeLevel,
@@ -484,3 +603,39 @@ const _creativeLevel = MiLevel(
     },
   },
 );
+
+MiLevel _creativeLevelWithScreenLimits({required int maximumStoryLength}) {
+  final content = Map<String, Map<String, dynamic>>.from(
+    _creativeLevel.localizedContent,
+  );
+  for (final locale in ['vi', 'en']) {
+    final localeContent = Map<String, dynamic>.from(content[locale]!);
+    final deepData =
+        Map<String, dynamic>.from(localeContent['deepData'] as Map);
+    deepData['maximumStoryLength'] = maximumStoryLength;
+    localeContent['deepData'] = deepData;
+    content[locale] = localeContent;
+  }
+  return MiLevel(
+    id: _creativeLevel.id,
+    gameId: _creativeLevel.gameId,
+    levelNumber: _creativeLevel.levelNumber,
+    difficulty: _creativeLevel.difficulty,
+    localizedContent: content,
+    hints: _creativeLevel.hints,
+    metadata: _creativeLevel.metadata,
+  );
+}
+
+class _ThrowOnceCreativeArtifactStore extends InMemoryCreativeArtifactStore {
+  int saveAttempts = 0;
+
+  @override
+  Future<void> save(CreativeArtifact artifact) async {
+    saveAttempts++;
+    if (saveAttempts == 1) {
+      throw StateError('simulated storage failure');
+    }
+    await super.save(artifact);
+  }
+}

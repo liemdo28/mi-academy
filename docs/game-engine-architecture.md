@@ -33,7 +33,7 @@ that's the closest existing precedent for the spec's engine-reuse model.
 | 7. Grid and Maze Engine | Robot Commands (`RobotGrid`, `RobotState`, `BlockInterpreter` in `packages/mi_blocks`) | Real grid/pathing logic exists but is coupled to the command-program interaction model; a plain maze game (Game 26) would need the grid/collision logic decoupled from the block-programming UI |
 | 8. Text Input Engine | none | Not built (needed for Game 07 chính tả, Game 08 sắp xếp câu) |
 | 9. Story and Quiz Engine | none | Not built (needed for Game 09 đọc hiểu) |
-| 10. Creative Story Lab | Free Creativity | Built for Game 30 via `creative_story_lab`; participation-based composition, ungraded completion metadata, neutral audio intents, snapshot restore, and local-first creative artifact persistence |
+| 10. Creative Story Lab | Free Creativity | Built for Game 30 via `creative_story_lab`; participation-based composition, required local-first creative artifact persistence, recoverable save-failure retry, ungraded participation progress (`correct=null`), neutral audio intents, reduced-motion completion UI, localized accessibility semantics, and snapshot restore |
 | 11. Puzzle Placement Engine | none | Not built (needed for Game 20 hình học lắp ghép) |
 | 12. Logic Grid Engine | Kids Sudoku | Partially built for Game 28 via `kids_sudoku_grid`; Game 29 still needs richer clue-board logic |
 

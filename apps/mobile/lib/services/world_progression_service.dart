@@ -251,7 +251,8 @@ class WorldProgressionService {
     final sortedByMastery = [...evidenced]
       ..sort((a, b) => a.masteryScore.compareTo(b.masteryScore));
 
-    final correctCount = attempts.where((a) => a.correct).length;
+    final gradedAttempts = attempts.where((a) => a.isGraded).toList();
+    final correctCount = gradedAttempts.where((a) => a.isCorrect).length;
     final totalTime = attempts.fold<Duration>(
       Duration.zero,
       (sum, a) => sum + a.duration,
@@ -278,7 +279,8 @@ class WorldProgressionService {
       },
       streakDays: StreakCalculator.currentStreakDays(attempts),
       totalTimeSpent: totalTime,
-      overallAccuracy: attempts.isEmpty ? 0.0 : correctCount / attempts.length,
+      overallAccuracy:
+          gradedAttempts.isEmpty ? 0.0 : correctCount / gradedAttempts.length,
       unlockedRewards: unlockedRewards,
     );
   }

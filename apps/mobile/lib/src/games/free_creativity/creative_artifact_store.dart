@@ -22,6 +22,7 @@ class CreativeArtifact {
     this.storyStarterId,
     this.assetReferences = const [],
     this.revision = 1,
+    this.schemaVersion = 1,
   });
 
   final String artifactId;
@@ -42,6 +43,7 @@ class CreativeArtifact {
   final String? storyStarterId;
   final List<String> assetReferences;
   final int revision;
+  final int schemaVersion;
 
   CreativeArtifact copyWith({
     String? storyText,
@@ -67,6 +69,7 @@ class CreativeArtifact {
       storyStarterId: storyStarterId,
       assetReferences: assetReferences,
       revision: revision ?? this.revision,
+      schemaVersion: schemaVersion,
     );
   }
 
@@ -90,6 +93,7 @@ class CreativeArtifact {
       if (storyStarterId != null) 'storyStarterId': storyStarterId,
       'assetReferences': assetReferences,
       'revision': revision,
+      'schemaVersion': schemaVersion,
     };
   }
 
@@ -117,6 +121,7 @@ class CreativeArtifact {
           .map((value) => value.toString())
           .toList(growable: false),
       revision: json['revision'] as int? ?? 1,
+      schemaVersion: json['schemaVersion'] as int? ?? 1,
     );
   }
 }
