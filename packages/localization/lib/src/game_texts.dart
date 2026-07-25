@@ -341,6 +341,47 @@ class GameLocaleText {
       ? 'Editable empty cell ${index + 1}'
       : 'Ô trống có thể điền ${index + 1}';
 
+  String get creativityTitle => miGameName('free_creativity', locale);
+  String get creativityLab => isEnglish ? 'Story lab' : 'Xưởng câu chuyện';
+  String get creativityScene => isEnglish ? 'Scene' : 'Bối cảnh';
+  String get creativityCharacter => isEnglish ? 'Character' : 'Nhân vật';
+  String get creativityFeeling => isEnglish ? 'Feeling' : 'Cảm xúc';
+  String get creativityStory => isEnglish ? 'Story idea' : 'Ý tưởng câu chuyện';
+  String get creativityCompleteAction =>
+      isEnglish ? 'Share story' : 'Chia sẻ câu chuyện';
+  String get creativityErase => isEnglish ? 'Clear idea' : 'Xóa ý tưởng';
+  String get creativityComplete => isEnglish
+      ? 'Your story idea is taking shape!'
+      : 'Ý tưởng câu chuyện của con đang thành hình!';
+  String get creativityDone => isEnglish
+      ? 'MI loved hearing your idea.'
+      : 'MI rất thích nghe ý tưởng của con.';
+  String get creativityNeedsScene => isEnglish
+      ? 'Choose a scene for your story.'
+      : 'Con chọn bối cảnh cho câu chuyện nhé.';
+  String get creativityNeedsCharacter => isEnglish
+      ? 'Choose who appears in the story.'
+      : 'Con chọn nhân vật xuất hiện trong chuyện nhé.';
+  String get creativityNeedsFeeling => isEnglish
+      ? 'Choose the feeling you want to show.'
+      : 'Con chọn cảm xúc muốn thể hiện nhé.';
+  String get creativityNeedsStory =>
+      isEnglish ? 'Add a short story idea.' : 'Con thêm một ý tưởng ngắn nhé.';
+  String get creativitySupportiveFeedback => isEnglish
+      ? 'There is no wrong answer here. Build your own idea!'
+      : 'Ở đây không có đáp án sai. Con tự tạo ý tưởng của mình nhé!';
+  String get creativityStoryHint => isEnglish
+      ? 'Try one sentence about what happens next.'
+      : 'Thử viết một câu về chuyện xảy ra tiếp theo nhé.';
+  String get creativityStoryFieldHint =>
+      isEnglish ? 'What happens next?' : 'Chuyện gì xảy ra tiếp theo?';
+  List<String> get creativityCharacters => isEnglish
+      ? const ['MI', 'a friend', 'a helper']
+      : const ['MI', 'một người bạn', 'người giúp đỡ'];
+  List<String> get creativityFeelings => isEnglish
+      ? const ['curious', 'happy', 'brave', 'kind', 'surprised']
+      : const ['tò mò', 'vui', 'can đảm', 'tốt bụng', 'ngạc nhiên'];
+
   String get memoryTitle => miGameName('memory_cards', locale);
   String get memoryPrompt =>
       isEnglish ? 'Find the matching pairs!' : 'Tìm cặp giống nhau!';

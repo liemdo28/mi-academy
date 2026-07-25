@@ -110,7 +110,8 @@ void main() {
       expect(GameRegistry.find('kids_sudoku')!.engineType, 'kids_sudoku_grid');
       expect(
           GameRegistry.find('reasoning_detective')!.engineType, 'clue_board');
-      expect(GameRegistry.find('free_creativity')!.engineType, 'story_lab');
+      expect(GameRegistry.find('free_creativity')!.engineType,
+          'creative_story_lab');
     });
 
     test('find() returns null for an unknown game ID', () {

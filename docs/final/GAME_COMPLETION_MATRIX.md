@@ -30,7 +30,8 @@ Date: 2026-07-25
 
 ## Interaction Depth
 
-- Bespoke/deeper surfaces: Story Comprehension, Reasoning Detective, Free Creativity, Memory Cards, Robot Commands, Word Builder, Sound Match, Math Race, Math Supermarket.
+- Bespoke/deeper surfaces: Story Comprehension, Reasoning Detective, Memory Cards, Robot Commands, Word Builder, Sound Match, Math Race, Math Supermarket.
 - Logic Maze now uses a dedicated movement engine (`logic_maze_movement`) with command queue, simulation, collision/out-of-bounds feedback, undo, reset, save/restore, widget tests, session tests, and 30/30 authored command paths validated against goal reachability.
 - Kids Sudoku now uses a dedicated interactive grid engine (`kids_sudoku_grid`) with editable blank cells, fixed givens, row/column/region validation, erase, hints, save/restore, widget tests, session tests, and 30/30 authored answers validated against the grid rules.
+- Free Creativity now uses a dedicated participation-based story lab (`creative_story_lab`) with scene, character, feeling, and story-idea composition; it does not grade creativity as right/wrong and saves composition state through the standard snapshot path.
 - Shared Choice Engine surfaces remain acceptable for family testing on the remaining expansion games, with richer bespoke interactions recommended as the next quality phase.

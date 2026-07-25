@@ -5,6 +5,7 @@ import 'package:mi_game_ui/mi_game_ui.dart';
 
 import '../src/games/choice/choice_game_screen.dart';
 import '../src/games/deep_logic/deep_logic_game_screen.dart';
+import '../src/games/free_creativity/free_creativity_screen.dart';
 import '../src/games/game_locale_text.dart';
 import '../src/games/kids_sudoku/kids_sudoku_screen.dart';
 import '../src/games/logic_maze/logic_maze_screen.dart';
@@ -746,7 +747,7 @@ abstract final class GameRegistry {
           primaryColor: MiColors.creative,
           worldLabel: (locale) => miGameWorldLabel('shadow_match', locale),
         ),
-        _deepLogicEntry(
+        GameRegistryEntry(
           gameId: 'free_creativity',
           localizedName: miGameNameMap('free_creativity'),
           category: 'creative',
@@ -755,10 +756,27 @@ abstract final class GameRegistry {
             'creative.storytelling',
             'letters.storytelling',
           ],
-          engineType: 'story_lab',
-          scene: DeepLogicScene.creative,
-          primaryColor: MiColors.primary,
-          worldLabel: (locale) => miGameWorldLabel('free_creativity', locale),
+          engineType: 'creative_story_lab',
+          builder: ({
+            required level,
+            required allLevels,
+            required onExit,
+            required onComplete,
+            required childProfileId,
+            initialSnapshot,
+            onSaveSnapshot,
+            reduceMotion = false,
+            required locale,
+          }) =>
+              FreeCreativityScreen(
+            level: level,
+            allLevels: allLevels,
+            onExit: onExit,
+            onComplete: onComplete,
+            initialSnapshot: initialSnapshot,
+            onSaveSnapshot: onSaveSnapshot,
+            locale: locale,
+          ),
         ),
       ];
 }
