@@ -18,6 +18,7 @@ import '../services/reward_store.dart';
 import '../services/skill_taxonomy_loader.dart';
 import '../services/snapshot_store.dart';
 import '../services/world_progression_service.dart';
+import '../src/games/free_creativity/creative_artifact_store.dart';
 import 'auth_provider.dart';
 import 'child_provider.dart';
 
@@ -233,6 +234,10 @@ final syncServiceProvider = Provider<SyncService>((ref) {
 /// Hive box opened by `initHive()`, same constraint as [syncServiceProvider].
 final snapshotStoreProvider = Provider<SnapshotStore>((ref) {
   return HiveSnapshotStore(box(MiBoxes.snapshots));
+});
+
+final creativeArtifactStoreProvider = Provider<CreativeArtifactStore>((ref) {
+  return HiveCreativeArtifactStore(box(MiBoxes.creativeArtifacts));
 });
 
 /// Every registered game's level content, loaded once per app session

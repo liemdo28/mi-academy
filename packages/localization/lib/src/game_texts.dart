@@ -368,8 +368,8 @@ class GameLocaleText {
   String get creativityNeedsStory =>
       isEnglish ? 'Add a short story idea.' : 'Con thêm một ý tưởng ngắn nhé.';
   String get creativitySupportiveFeedback => isEnglish
-      ? 'There is no wrong answer here. Build your own idea!'
-      : 'Ở đây không có đáp án sai. Con tự tạo ý tưởng của mình nhé!';
+      ? 'Build your own story idea. MI is ready to listen!'
+      : 'Con tự tạo ý tưởng câu chuyện nhé. MI sẵn sàng lắng nghe!';
   String get creativityStoryHint => isEnglish
       ? 'Try one sentence about what happens next.'
       : 'Thử viết một câu về chuyện xảy ra tiếp theo nhé.';

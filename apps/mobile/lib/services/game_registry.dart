@@ -6,6 +6,7 @@ import 'package:mi_game_ui/mi_game_ui.dart';
 import '../src/games/choice/choice_game_screen.dart';
 import '../src/games/deep_logic/deep_logic_game_screen.dart';
 import '../src/games/free_creativity/free_creativity_screen.dart';
+import '../src/games/free_creativity/creative_artifact_store.dart';
 import '../src/games/game_locale_text.dart';
 import '../src/games/kids_sudoku/kids_sudoku_screen.dart';
 import '../src/games/logic_maze/logic_maze_screen.dart';
@@ -76,6 +77,7 @@ typedef GameScreenBuilder = Widget Function({
   required String childProfileId,
   MiGameSnapshot? initialSnapshot,
   void Function(MiGameSnapshot)? onSaveSnapshot,
+  CreativeArtifactStore? creativeArtifactStore,
   bool reduceMotion,
   required String locale,
 });
@@ -158,6 +160,7 @@ abstract final class GameRegistry {
         required childProfileId,
         initialSnapshot,
         onSaveSnapshot,
+        creativeArtifactStore,
         reduceMotion = false,
         required locale,
       }) =>
@@ -203,6 +206,7 @@ abstract final class GameRegistry {
         required childProfileId,
         initialSnapshot,
         onSaveSnapshot,
+        creativeArtifactStore,
         reduceMotion = false,
         required locale,
       }) =>
@@ -244,6 +248,7 @@ abstract final class GameRegistry {
             required childProfileId,
             initialSnapshot,
             onSaveSnapshot,
+            creativeArtifactStore,
             reduceMotion = false,
             required locale,
           }) =>
@@ -281,6 +286,7 @@ abstract final class GameRegistry {
             required childProfileId,
             initialSnapshot,
             onSaveSnapshot,
+            creativeArtifactStore,
             reduceMotion = false,
             required locale,
           }) =>
@@ -369,6 +375,7 @@ abstract final class GameRegistry {
             required childProfileId,
             initialSnapshot,
             onSaveSnapshot,
+            creativeArtifactStore,
             reduceMotion = false,
             required locale,
           }) =>
@@ -397,6 +404,7 @@ abstract final class GameRegistry {
             required childProfileId,
             initialSnapshot,
             onSaveSnapshot,
+            creativeArtifactStore,
             reduceMotion = false,
             required locale,
           }) =>
@@ -456,6 +464,7 @@ abstract final class GameRegistry {
             required childProfileId,
             initialSnapshot,
             onSaveSnapshot,
+            creativeArtifactStore,
             reduceMotion = false,
             required locale,
           }) =>
@@ -501,6 +510,7 @@ abstract final class GameRegistry {
             required childProfileId,
             initialSnapshot,
             onSaveSnapshot,
+            creativeArtifactStore,
             reduceMotion = false,
             required locale,
           }) =>
@@ -597,6 +607,7 @@ abstract final class GameRegistry {
             required childProfileId,
             initialSnapshot,
             onSaveSnapshot,
+            creativeArtifactStore,
             reduceMotion = false,
             required locale,
           }) =>
@@ -625,6 +636,7 @@ abstract final class GameRegistry {
             required childProfileId,
             initialSnapshot,
             onSaveSnapshot,
+            creativeArtifactStore,
             reduceMotion = false,
             required locale,
           }) =>
@@ -666,6 +678,7 @@ abstract final class GameRegistry {
             required childProfileId,
             initialSnapshot,
             onSaveSnapshot,
+            creativeArtifactStore,
             reduceMotion = false,
             required locale,
           }) =>
@@ -706,6 +719,7 @@ abstract final class GameRegistry {
             required childProfileId,
             initialSnapshot,
             onSaveSnapshot,
+            creativeArtifactStore,
             reduceMotion = false,
             required locale,
           }) =>
@@ -765,16 +779,20 @@ abstract final class GameRegistry {
             required childProfileId,
             initialSnapshot,
             onSaveSnapshot,
+            creativeArtifactStore,
             reduceMotion = false,
             required locale,
           }) =>
               FreeCreativityScreen(
             level: level,
             allLevels: allLevels,
+            childProfileId: childProfileId,
             onExit: onExit,
             onComplete: onComplete,
             initialSnapshot: initialSnapshot,
             onSaveSnapshot: onSaveSnapshot,
+            artifactStore: creativeArtifactStore,
+            reduceMotion: reduceMotion,
             locale: locale,
           ),
         ),

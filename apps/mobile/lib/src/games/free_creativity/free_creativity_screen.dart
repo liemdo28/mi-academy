@@ -9,6 +9,7 @@ import 'package:mi_game_ui/mi_game_ui.dart';
 import '../game_locale_text.dart';
 import '../level_skill_ids.dart';
 import '../snapshot_lifecycle_mixin.dart';
+import 'creative_artifact_store.dart';
 import 'free_creativity_session.dart';
 
 class FreeCreativityScreen extends StatefulWidget {
@@ -16,19 +17,27 @@ class FreeCreativityScreen extends StatefulWidget {
     super.key,
     required this.level,
     required this.allLevels,
+    required this.childProfileId,
     this.onExit,
     this.onComplete,
     this.initialSnapshot,
     this.onSaveSnapshot,
+    this.artifactStore,
+    this.playAudioIntent,
+    this.reduceMotion = false,
     this.locale = 'vi',
   });
 
   final MiLevel level;
   final List<MiLevel> allLevels;
+  final String childProfileId;
   final VoidCallback? onExit;
   final void Function(MiCompletionResult)? onComplete;
   final MiGameSnapshot? initialSnapshot;
   final void Function(MiGameSnapshot)? onSaveSnapshot;
+  final CreativeArtifactStore? artifactStore;
+  final Future<void> Function(MiAudioIntent intent)? playAudioIntent;
+  final bool reduceMotion;
   final String locale;
 
   @override
@@ -69,8 +78,16 @@ class _FreeCreativityScreenState extends State<FreeCreativityScreen>
   }
 
   void _loadLevel(MiLevel level, {MiGameSnapshot? snapshot}) {
-    _session = FreeCreativitySession(level: level, locale: widget.locale);
-    if (snapshot != null) _session.restoreSnapshot(snapshot);
+    _session = FreeCreativitySession(
+      level: level,
+      childProfileId: widget.childProfileId,
+      locale: widget.locale,
+    );
+    if (snapshot != null) {
+      try {
+        _session.restoreSnapshot(snapshot);
+      } catch (_) {}
+    }
     _storyController = TextEditingController(text: _session.storyText);
     setState(() {
       _completed = false;
@@ -85,14 +102,17 @@ class _FreeCreativityScreenState extends State<FreeCreativityScreen>
 
   void _selectScene(String value) {
     setState(() => _session.selectScene(value));
+    unawaited(_playIntent(MiAudioIntent.selectionSoft));
   }
 
   void _selectCharacter(String value) {
     setState(() => _session.selectCharacter(value));
+    unawaited(_playIntent(MiAudioIntent.selectionSoft));
   }
 
   void _selectFeeling(String value) {
     setState(() => _session.selectFeeling(value));
+    unawaited(_playIntent(MiAudioIntent.selectionSoft));
   }
 
   void _updateStoryText(String value) {
@@ -104,71 +124,78 @@ class _FreeCreativityScreenState extends State<FreeCreativityScreen>
     setState(() => _session.clearStoryText());
   }
 
-  void _completeStory() {
-    final complete = _session.complete();
-    unawaited(_playEffect(complete ? 'correct' : 'try_again'));
+  Future<void> _completeStory() async {
+    if (_completed) return;
+    final completion = _session.complete();
+    unawaited(_playIntent(completion == null
+        ? MiAudioIntent.gentleAttention
+        : MiAudioIntent.creativeComplete));
     setState(() {});
-    if (complete) _showCompletion();
+    if (completion == null) return;
+    _completed = true;
+    await widget.artifactStore?.save(completion.artifact);
+    _showCompletion(completion.artifact);
   }
 
   void _showHint() {
     setState(() => _session.showHint());
-    unawaited(_playEffect('try_again'));
+    unawaited(_playIntent(MiAudioIntent.creativePrompt));
   }
 
-  Future<void> _playEffect(String assetKey) async {
+  Future<void> _playIntent(MiAudioIntent intent) async {
     try {
-      await _audio.playEffect('audio/$assetKey.wav');
+      final play = widget.playAudioIntent;
+      if (play != null) {
+        await play(intent);
+      } else {
+        await _audio.playIntent(intent);
+      }
     } catch (_) {
       // Audio feedback should never interrupt gameplay.
     }
   }
 
-  void _showCompletion() {
+  void _showCompletion(CreativeArtifact artifact) {
     final text = GameLocaleText(widget.locale);
-    final completion = text.completion;
-    _completed = true;
     _stopwatch.stop();
     widget.onComplete?.call(MiCompletionResult(
       gameId: _level.gameId,
       levelId: _level.id,
       childProfileId: _session.childProfileId,
       completedAt: DateTime.now(),
-      score: 100,
-      maxScore: 100,
+      score: 1,
+      maxScore: 1,
       attemptsUsed: 1,
       hintsUsed: _session.hintsUsed,
       duration: _stopwatch.elapsed,
-      perfectRun: _session.hintsUsed == 0,
+      perfectRun: false,
       newSkillsAcquired: skillIdsFor(
         _level,
         fallback: const ['creative.storytelling'],
       ),
       metadata: {
-        'stars': 3,
         'engine': 'creative_story_lab',
         'completionModel': 'participation',
-        'scene': _session.scene,
-        'character': _session.character,
-        'feeling': _session.feeling,
+        'assessmentModel': 'ungraded',
+        'isMasteryScore': false,
+        'isQualityScore': false,
+        'artifactId': artifact.artifactId,
+        'contentVersion': _level.contentVersion,
+        'sceneId': artifact.sceneId,
+        'characterId': artifact.characterId,
+        'feelingId': artifact.feelingId,
       },
     ));
 
     showDialog(
       context: context,
       barrierDismissible: false,
-      builder: (_) => CompletionOverlay(
-        starsEarned: 3,
-        maxStars: 3,
+      builder: (_) => _CreativeCompletionDialog(
         message: text.creativityComplete,
-        score: 100,
-        scoreLabel: completion.scoreLabel,
-        nextLabel: completion.nextLabel,
-        replayLabel: completion.replayLabel,
-        exitLabel: completion.exitLabel,
-        mascotSemanticLabel: completion.mascotSemanticLabel,
-        earnedStarSemanticLabel: completion.earnedStarSemanticLabel,
-        unearnedStarSemanticLabel: completion.unearnedStarSemanticLabel,
+        nextLabel: text.completion.nextLabel,
+        replayLabel: text.completion.replayLabel,
+        exitLabel: text.completion.exitLabel,
+        reduceMotion: widget.reduceMotion,
         onNext: _goNext,
         onReplay: () {
           Navigator.of(context).pop();
@@ -224,24 +251,24 @@ class _FreeCreativityScreenState extends State<FreeCreativityScreen>
                   _ChoiceSection(
                     title: text.creativityScene,
                     icon: Icons.landscape_rounded,
-                    options: _session.storyCards,
-                    selected: _session.scene,
+                    options: _session.scenes,
+                    selected: _session.sceneId,
                     onSelected: _selectScene,
                   ),
                   const SizedBox(height: 16),
                   _ChoiceSection(
                     title: text.creativityCharacter,
                     icon: Icons.person_rounded,
-                    options: text.creativityCharacters,
-                    selected: _session.character,
+                    options: _session.characters,
+                    selected: _session.characterId,
                     onSelected: _selectCharacter,
                   ),
                   const SizedBox(height: 16),
                   _ChoiceSection(
                     title: text.creativityFeeling,
                     icon: Icons.favorite_rounded,
-                    options: text.creativityFeelings,
-                    selected: _session.feeling,
+                    options: _session.feelings,
+                    selected: _session.feelingId,
                     onSelected: _selectFeeling,
                   ),
                   const SizedBox(height: 16),
@@ -253,10 +280,9 @@ class _FreeCreativityScreenState extends State<FreeCreativityScreen>
                   ),
                   if (_session.feedback != null) ...[
                     const SizedBox(height: 16),
-                    FeedbackBubble(
-                      isCorrect:
-                          _session.status == FreeCreativityStatus.complete,
+                    _CreativeFeedbackPanel(
                       message: _session.feedback!,
+                      reduceMotion: widget.reduceMotion,
                     ),
                   ],
                 ],
@@ -347,7 +373,7 @@ class _ChoiceSection extends StatelessWidget {
 
   final String title;
   final IconData icon;
-  final List<String> options;
+  final List<CreativeChoice> options;
   final String? selected;
   final ValueChanged<String> onSelected;
 
@@ -370,9 +396,9 @@ class _ChoiceSection extends StatelessWidget {
           children: [
             for (final option in options)
               _CreativeChip(
-                text: option,
-                selected: selected == option,
-                onPressed: () => onSelected(option),
+                text: option.label,
+                selected: selected == option.id,
+                onPressed: () => onSelected(option.id),
               ),
           ],
         ),
@@ -394,22 +420,146 @@ class _CreativeChip extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return OutlinedButton(
-      onPressed: onPressed,
-      style: OutlinedButton.styleFrom(
-        backgroundColor:
-            selected ? MiColors.primary.withValues(alpha: 0.14) : Colors.white,
-        foregroundColor: selected ? MiColors.primary : MiColors.navy,
-        side: BorderSide(
-          color: selected
-              ? MiColors.primary
-              : MiColors.navy.withValues(alpha: 0.2),
-          width: selected ? 2 : 1,
+    return Semantics(
+      selected: selected,
+      button: true,
+      child: OutlinedButton(
+        onPressed: onPressed,
+        style: OutlinedButton.styleFrom(
+          backgroundColor: selected
+              ? MiColors.primary.withValues(alpha: 0.14)
+              : Colors.white,
+          foregroundColor: selected ? MiColors.primary : MiColors.navy,
+          side: BorderSide(
+            color: selected
+                ? MiColors.primary
+                : MiColors.navy.withValues(alpha: 0.2),
+            width: selected ? 2 : 1,
+          ),
+          minimumSize: const Size(56, 48),
+          padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 12),
         ),
-        minimumSize: const Size(56, 48),
-        padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 12),
+        child: Text(text),
       ),
-      child: Text(text),
+    );
+  }
+}
+
+class _CreativeFeedbackPanel extends StatelessWidget {
+  const _CreativeFeedbackPanel({
+    required this.message,
+    required this.reduceMotion,
+  });
+
+  final String message;
+  final bool reduceMotion;
+
+  @override
+  Widget build(BuildContext context) {
+    final content = Container(
+      key: ValueKey(message),
+      padding: const EdgeInsets.all(16),
+      decoration: BoxDecoration(
+        color: MiColors.discovery.withValues(alpha: 0.1),
+        borderRadius: BorderRadius.circular(GameTheme.cardRadius),
+        border: Border.all(color: MiColors.discovery.withValues(alpha: 0.28)),
+      ),
+      child: Row(
+        children: [
+          const MiBrandIconView(
+            icon: MiBrandIcon.writing,
+            color: MiColors.discovery,
+            size: 34,
+          ),
+          const SizedBox(width: 12),
+          Expanded(
+            child: Text(message, style: GameTheme.bodyMedium),
+          ),
+        ],
+      ),
+    );
+
+    return AnimatedSwitcher(
+      duration:
+          reduceMotion ? Duration.zero : const Duration(milliseconds: 220),
+      child: content,
+    );
+  }
+}
+
+class _CreativeCompletionDialog extends StatelessWidget {
+  const _CreativeCompletionDialog({
+    required this.message,
+    required this.nextLabel,
+    required this.replayLabel,
+    required this.exitLabel,
+    required this.reduceMotion,
+    required this.onNext,
+    required this.onReplay,
+    required this.onExit,
+  });
+
+  final String message;
+  final String nextLabel;
+  final String replayLabel;
+  final String exitLabel;
+  final bool reduceMotion;
+  final VoidCallback onNext;
+  final VoidCallback onReplay;
+  final VoidCallback onExit;
+
+  @override
+  Widget build(BuildContext context) {
+    return Dialog(
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(28)),
+      child: Padding(
+        padding: const EdgeInsets.all(24),
+        child: AnimatedScale(
+          duration:
+              reduceMotion ? Duration.zero : const Duration(milliseconds: 260),
+          curve: Curves.easeOutBack,
+          scale: 1,
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              const MiMascotReaction(
+                emotion: MiMascotEmotion.celebration,
+                size: 96,
+                semanticLabel: 'MI celebrates the story',
+              ),
+              const SizedBox(height: 12),
+              Text(
+                message,
+                textAlign: TextAlign.center,
+                style: GameTheme.headingMedium,
+              ),
+              const SizedBox(height: 20),
+              ElevatedButton(
+                onPressed: onNext,
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: MiColors.primary,
+                  foregroundColor: Colors.white,
+                  minimumSize: const Size.fromHeight(52),
+                ),
+                child: Text(nextLabel),
+              ),
+              const SizedBox(height: 8),
+              OutlinedButton(
+                onPressed: onReplay,
+                style: OutlinedButton.styleFrom(
+                  foregroundColor: MiColors.primary,
+                  minimumSize: const Size.fromHeight(48),
+                ),
+                child: Text(replayLabel),
+              ),
+              TextButton(
+                onPressed: onExit,
+                child: Text(exitLabel),
+              ),
+            ],
+          ),
+        ),
+      ),
     );
   }
 }

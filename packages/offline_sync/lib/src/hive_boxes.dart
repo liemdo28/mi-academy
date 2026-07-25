@@ -11,6 +11,7 @@ abstract class MiBoxes {
   static const String progress = 'progress';
   static const String attempts = 'attempts';
   static const String snapshots = 'snapshots';
+  static const String creativeArtifacts = 'creative_artifacts';
   static const String rewards = 'rewards';
   static const String syncQueue = 'sync_queue';
   static const String settings = 'settings';
@@ -44,6 +45,7 @@ Future<void> initHive() async {
   await openBoxWithCorruptionRecovery(MiBoxes.levels);
   await openBoxWithCorruptionRecovery(MiBoxes.rewards);
   await openBoxWithCorruptionRecovery(MiBoxes.snapshots);
+  await openBoxWithCorruptionRecovery(MiBoxes.creativeArtifacts);
   await openBoxWithCorruptionRecovery(MiBoxes.profiles);
   await openBoxWithCorruptionRecovery(MiBoxes.settings);
   await openBoxWithCorruptionRecovery(MiBoxes.auth);

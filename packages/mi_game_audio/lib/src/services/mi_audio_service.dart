@@ -5,6 +5,19 @@ import 'package:audioplayers/audioplayers.dart';
 import '../audio_manager.dart';
 import '../volume_group.dart';
 
+enum MiAudioIntent {
+  correct,
+  incorrect,
+  hint,
+  levelComplete,
+  cardFlip,
+  starEarned,
+  creativePrompt,
+  selectionSoft,
+  creativeComplete,
+  gentleAttention,
+}
+
 /// Production audio backend using audioplayers.
 ///
 /// Implements [AudioBackend] and wraps the audioplayers package.
@@ -127,6 +140,12 @@ class MiAudioService {
     await _manager.playEffect(assetPath);
   }
 
+  /// Play a semantic sound intent so game code can describe feedback without
+  /// binding itself to a file path or assessment model.
+  Future<void> playIntent(MiAudioIntent intent) async {
+    await playEffect(_assetForIntent(intent));
+  }
+
   /// Stop all currently playing audio.
   Future<void> stopAll() async {
     await _manager.stopAll();
@@ -172,5 +191,20 @@ class MiAudioService {
   /// Release all audio resources. Call when game session ends.
   Future<void> dispose() async {
     await _backend.dispose();
+  }
+
+  static String _assetForIntent(MiAudioIntent intent) {
+    return switch (intent) {
+      MiAudioIntent.correct => 'audio/correct.wav',
+      MiAudioIntent.incorrect => 'audio/try_again.wav',
+      MiAudioIntent.hint => 'audio/try_again.wav',
+      MiAudioIntent.levelComplete => 'audio/correct.wav',
+      MiAudioIntent.cardFlip => 'audio/card_flip.wav',
+      MiAudioIntent.starEarned => 'audio/match_correct.wav',
+      MiAudioIntent.creativePrompt => 'audio/card_flip.wav',
+      MiAudioIntent.selectionSoft => 'audio/card_flip.wav',
+      MiAudioIntent.creativeComplete => 'audio/match_correct.wav',
+      MiAudioIntent.gentleAttention => 'audio/card_flip.wav',
+    };
   }
 }

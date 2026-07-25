@@ -53,6 +53,14 @@ Design decisions, and why they differ from a naive per-locale-file layout:
   patterns — the schema was written to describe what exists, not to force
   a premature single shape onto games with genuinely different answer
   models.
+- **Creative Story Lab (`free_creativity`) is explicitly ungraded.** Its
+  production data is authored in localized `deepData.scenes`,
+  `deepData.characters`, `deepData.feelings`, and optional
+  `deepData.storyStarters`, with `metadata.completionModel=participation`
+  and `metadata.assessmentModel=ungraded`. The legacy `options` list may
+  remain only for old schema/tool compatibility and must be marked by
+  `metadata.deepData.legacyChoiceOptionsIgnored=true`; the game engine must
+  ignore any `options[].correct` flags.
 - **`contentVersion`, `estimatedSeconds`, `publicationState` are new** (this
   pass) — see Migration policy below.
 

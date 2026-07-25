@@ -10,7 +10,7 @@
       "learningObjective": "Free Creativity tier 1",
       "localizedContent": {
         "vi": {
-          "prompt": "Chọn chi tiết giúp câu chuyện có cảm xúc tò mò.",
+          "prompt": "Chọn bối cảnh, nhân vật, cảm xúc rồi viết ý tưởng câu chuyện cấp 1.",
           "options": [
             {
               "id": "a",
@@ -31,9 +31,67 @@
           "deepData": {
             "storyLabels": [
               "Bối cảnh",
-              "Cảm xúc",
-              "Chi tiết"
+              "Nhân vật",
+              "Cảm xúc"
             ],
+            "scenes": [
+              {
+                "id": "scene-1",
+                "label": "Một cánh cửa nhỏ"
+              },
+              {
+                "id": "scene-2",
+                "label": "tiếng gõ nhẹ"
+              },
+              {
+                "id": "scene-3",
+                "label": "một câu hỏi mới"
+              }
+            ],
+            "characters": [
+              {
+                "id": "character-mi",
+                "label": "MI"
+              },
+              {
+                "id": "character-friend",
+                "label": "một người bạn"
+              },
+              {
+                "id": "character-family",
+                "label": "gia đình"
+              }
+            ],
+            "feelings": [
+              {
+                "id": "feeling-curious",
+                "label": "tò mò"
+              },
+              {
+                "id": "feeling-happy",
+                "label": "vui"
+              },
+              {
+                "id": "feeling-brave",
+                "label": "dũng cảm"
+              },
+              {
+                "id": "feeling-kind",
+                "label": "ấm áp"
+              }
+            ],
+            "storyStarters": [
+              {
+                "id": "starter-next",
+                "label": "MI tự hỏi chuyện gì sẽ xảy ra tiếp theo."
+              },
+              {
+                "id": "starter-feel",
+                "label": "Nhân vật cảm thấy một điều rất đặc biệt."
+              }
+            ],
+            "minimumStoryLength": 1,
+            "maximumStoryLength": 500,
             "storyCards": [
               "Một cánh cửa nhỏ",
               "tiếng gõ nhẹ",
@@ -42,7 +100,7 @@
           }
         },
         "en": {
-          "prompt": "Choose the detail that makes the story feel curious.",
+          "prompt": "Choose a scene, character, and feeling, then write a level 1 story idea.",
           "options": [
             {
               "id": "a",
@@ -62,10 +120,68 @@
           ],
           "deepData": {
             "storyLabels": [
-              "Setting",
-              "Feeling",
-              "Detail"
+              "Scene",
+              "Character",
+              "Feeling"
             ],
+            "scenes": [
+              {
+                "id": "scene-1",
+                "label": "A tiny door"
+              },
+              {
+                "id": "scene-2",
+                "label": "a gentle knock"
+              },
+              {
+                "id": "scene-3",
+                "label": "a new question"
+              }
+            ],
+            "characters": [
+              {
+                "id": "character-mi",
+                "label": "MI"
+              },
+              {
+                "id": "character-friend",
+                "label": "a friend"
+              },
+              {
+                "id": "character-family",
+                "label": "family"
+              }
+            ],
+            "feelings": [
+              {
+                "id": "feeling-curious",
+                "label": "curious"
+              },
+              {
+                "id": "feeling-happy",
+                "label": "happy"
+              },
+              {
+                "id": "feeling-brave",
+                "label": "brave"
+              },
+              {
+                "id": "feeling-kind",
+                "label": "kind"
+              }
+            ],
+            "storyStarters": [
+              {
+                "id": "starter-next",
+                "label": "MI wondered what would happen next."
+              },
+              {
+                "id": "starter-feel",
+                "label": "The character felt something special."
+              }
+            ],
+            "minimumStoryLength": 1,
+            "maximumStoryLength": 500,
             "storyCards": [
               "A tiny door",
               "a gentle knock",
@@ -76,10 +192,11 @@
       },
       "hints": [
         {
-          "text": "Cấp 1: đọc kỹ câu hỏi và loại đáp án sai."
-        },
-        {
-          "text": "Tier 1: read carefully and remove the wrong choices."
+          "text": "Viết một câu ngắn về điều nhân vật nhìn thấy, cảm thấy hoặc muốn làm.",
+          "localizedText": {
+            "vi": "Viết một câu ngắn về điều nhân vật nhìn thấy, cảm thấy hoặc muốn làm.",
+            "en": "Write one short sentence about what the character sees, feels, or wants to do."
+          }
         }
       ],
       "metadata": {
@@ -88,14 +205,22 @@
           "creative.storytelling",
           "letters.storytelling"
         ],
-        "contentKind": "choice_progression",
+        "contentKind": "creative_story_lab",
         "progressionTier": 1,
-        "reviewState": "technically_validated",
+        "reviewState": "family_test_ready",
         "deepData": {
           "scene": "creative",
           "cardCount": 3,
-          "targetFeeling": "curious"
-        }
+          "targetFeeling": "curious",
+          "engine": "creative_story_lab",
+          "completionModel": "participation",
+          "assessmentModel": "ungraded",
+          "legacyChoiceOptionsIgnored": true,
+          "minimumStoryLength": 1,
+          "maximumStoryLength": 500
+        },
+        "completionModel": "participation",
+        "assessmentModel": "ungraded"
       },
       "assetRefs": [],
       "contentVersion": 1,
@@ -110,7 +235,7 @@
       "learningObjective": "Free Creativity tier 1",
       "localizedContent": {
         "vi": {
-          "prompt": "Chọn chi tiết giúp câu chuyện có cảm xúc vui.",
+          "prompt": "Chọn bối cảnh, nhân vật, cảm xúc rồi viết ý tưởng câu chuyện cấp 1.",
           "options": [
             {
               "id": "a",
@@ -131,9 +256,67 @@
           "deepData": {
             "storyLabels": [
               "Bối cảnh",
-              "Cảm xúc",
-              "Chi tiết"
+              "Nhân vật",
+              "Cảm xúc"
             ],
+            "scenes": [
+              {
+                "id": "scene-1",
+                "label": "sân chơi sáng nắng"
+              },
+              {
+                "id": "scene-2",
+                "label": "bạn mới mỉm cười"
+              },
+              {
+                "id": "scene-3",
+                "label": "một lời cảm ơn"
+              }
+            ],
+            "characters": [
+              {
+                "id": "character-mi",
+                "label": "MI"
+              },
+              {
+                "id": "character-friend",
+                "label": "một người bạn"
+              },
+              {
+                "id": "character-family",
+                "label": "gia đình"
+              }
+            ],
+            "feelings": [
+              {
+                "id": "feeling-curious",
+                "label": "tò mò"
+              },
+              {
+                "id": "feeling-happy",
+                "label": "vui"
+              },
+              {
+                "id": "feeling-brave",
+                "label": "dũng cảm"
+              },
+              {
+                "id": "feeling-kind",
+                "label": "ấm áp"
+              }
+            ],
+            "storyStarters": [
+              {
+                "id": "starter-next",
+                "label": "MI tự hỏi chuyện gì sẽ xảy ra tiếp theo."
+              },
+              {
+                "id": "starter-feel",
+                "label": "Nhân vật cảm thấy một điều rất đặc biệt."
+              }
+            ],
+            "minimumStoryLength": 1,
+            "maximumStoryLength": 500,
             "storyCards": [
               "sân chơi sáng nắng",
               "bạn mới mỉm cười",
@@ -142,7 +325,7 @@
           }
         },
         "en": {
-          "prompt": "Choose the detail that makes the story feel happy.",
+          "prompt": "Choose a scene, character, and feeling, then write a level 1 story idea.",
           "options": [
             {
               "id": "a",
@@ -162,10 +345,68 @@
           ],
           "deepData": {
             "storyLabels": [
-              "Setting",
-              "Feeling",
-              "Detail"
+              "Scene",
+              "Character",
+              "Feeling"
             ],
+            "scenes": [
+              {
+                "id": "scene-1",
+                "label": "a sunny playground"
+              },
+              {
+                "id": "scene-2",
+                "label": "a new friend smiles"
+              },
+              {
+                "id": "scene-3",
+                "label": "a thank-you note"
+              }
+            ],
+            "characters": [
+              {
+                "id": "character-mi",
+                "label": "MI"
+              },
+              {
+                "id": "character-friend",
+                "label": "a friend"
+              },
+              {
+                "id": "character-family",
+                "label": "family"
+              }
+            ],
+            "feelings": [
+              {
+                "id": "feeling-curious",
+                "label": "curious"
+              },
+              {
+                "id": "feeling-happy",
+                "label": "happy"
+              },
+              {
+                "id": "feeling-brave",
+                "label": "brave"
+              },
+              {
+                "id": "feeling-kind",
+                "label": "kind"
+              }
+            ],
+            "storyStarters": [
+              {
+                "id": "starter-next",
+                "label": "MI wondered what would happen next."
+              },
+              {
+                "id": "starter-feel",
+                "label": "The character felt something special."
+              }
+            ],
+            "minimumStoryLength": 1,
+            "maximumStoryLength": 500,
             "storyCards": [
               "a sunny playground",
               "a new friend smiles",
@@ -176,10 +417,11 @@
       },
       "hints": [
         {
-          "text": "Cấp 1: đọc kỹ câu hỏi và loại đáp án sai."
-        },
-        {
-          "text": "Tier 1: read carefully and remove the wrong choices."
+          "text": "Viết một câu ngắn về điều nhân vật nhìn thấy, cảm thấy hoặc muốn làm.",
+          "localizedText": {
+            "vi": "Viết một câu ngắn về điều nhân vật nhìn thấy, cảm thấy hoặc muốn làm.",
+            "en": "Write one short sentence about what the character sees, feels, or wants to do."
+          }
         }
       ],
       "metadata": {
@@ -188,14 +430,22 @@
           "creative.storytelling",
           "letters.storytelling"
         ],
-        "contentKind": "choice_progression",
+        "contentKind": "creative_story_lab",
         "progressionTier": 1,
-        "reviewState": "technically_validated",
+        "reviewState": "family_test_ready",
         "deepData": {
           "scene": "creative",
           "cardCount": 3,
-          "targetFeeling": "happy"
-        }
+          "targetFeeling": "happy",
+          "engine": "creative_story_lab",
+          "completionModel": "participation",
+          "assessmentModel": "ungraded",
+          "legacyChoiceOptionsIgnored": true,
+          "minimumStoryLength": 1,
+          "maximumStoryLength": 500
+        },
+        "completionModel": "participation",
+        "assessmentModel": "ungraded"
       },
       "assetRefs": [],
       "contentVersion": 1,
@@ -210,7 +460,7 @@
       "learningObjective": "Free Creativity tier 1",
       "localizedContent": {
         "vi": {
-          "prompt": "Chọn chi tiết giúp câu chuyện có cảm xúc can đảm.",
+          "prompt": "Chọn bối cảnh, nhân vật, cảm xúc rồi viết ý tưởng câu chuyện cấp 1.",
           "options": [
             {
               "id": "a",
@@ -231,9 +481,67 @@
           "deepData": {
             "storyLabels": [
               "Bối cảnh",
-              "Cảm xúc",
-              "Chi tiết"
+              "Nhân vật",
+              "Cảm xúc"
             ],
+            "scenes": [
+              {
+                "id": "scene-1",
+                "label": "cây cầu nhỏ"
+              },
+              {
+                "id": "scene-2",
+                "label": "MI hít thở sâu"
+              },
+              {
+                "id": "scene-3",
+                "label": "bước đầu tiên"
+              }
+            ],
+            "characters": [
+              {
+                "id": "character-mi",
+                "label": "MI"
+              },
+              {
+                "id": "character-friend",
+                "label": "một người bạn"
+              },
+              {
+                "id": "character-family",
+                "label": "gia đình"
+              }
+            ],
+            "feelings": [
+              {
+                "id": "feeling-curious",
+                "label": "tò mò"
+              },
+              {
+                "id": "feeling-happy",
+                "label": "vui"
+              },
+              {
+                "id": "feeling-brave",
+                "label": "dũng cảm"
+              },
+              {
+                "id": "feeling-kind",
+                "label": "ấm áp"
+              }
+            ],
+            "storyStarters": [
+              {
+                "id": "starter-next",
+                "label": "MI tự hỏi chuyện gì sẽ xảy ra tiếp theo."
+              },
+              {
+                "id": "starter-feel",
+                "label": "Nhân vật cảm thấy một điều rất đặc biệt."
+              }
+            ],
+            "minimumStoryLength": 1,
+            "maximumStoryLength": 500,
             "storyCards": [
               "cây cầu nhỏ",
               "MI hít thở sâu",
@@ -242,7 +550,7 @@
           }
         },
         "en": {
-          "prompt": "Choose the detail that makes the story feel brave.",
+          "prompt": "Choose a scene, character, and feeling, then write a level 1 story idea.",
           "options": [
             {
               "id": "a",
@@ -262,10 +570,68 @@
           ],
           "deepData": {
             "storyLabels": [
-              "Setting",
-              "Feeling",
-              "Detail"
+              "Scene",
+              "Character",
+              "Feeling"
             ],
+            "scenes": [
+              {
+                "id": "scene-1",
+                "label": "a small bridge"
+              },
+              {
+                "id": "scene-2",
+                "label": "MI takes a deep breath"
+              },
+              {
+                "id": "scene-3",
+                "label": "the first step"
+              }
+            ],
+            "characters": [
+              {
+                "id": "character-mi",
+                "label": "MI"
+              },
+              {
+                "id": "character-friend",
+                "label": "a friend"
+              },
+              {
+                "id": "character-family",
+                "label": "family"
+              }
+            ],
+            "feelings": [
+              {
+                "id": "feeling-curious",
+                "label": "curious"
+              },
+              {
+                "id": "feeling-happy",
+                "label": "happy"
+              },
+              {
+                "id": "feeling-brave",
+                "label": "brave"
+              },
+              {
+                "id": "feeling-kind",
+                "label": "kind"
+              }
+            ],
+            "storyStarters": [
+              {
+                "id": "starter-next",
+                "label": "MI wondered what would happen next."
+              },
+              {
+                "id": "starter-feel",
+                "label": "The character felt something special."
+              }
+            ],
+            "minimumStoryLength": 1,
+            "maximumStoryLength": 500,
             "storyCards": [
               "a small bridge",
               "MI takes a deep breath",
@@ -276,10 +642,11 @@
       },
       "hints": [
         {
-          "text": "Cấp 1: đọc kỹ câu hỏi và loại đáp án sai."
-        },
-        {
-          "text": "Tier 1: read carefully and remove the wrong choices."
+          "text": "Viết một câu ngắn về điều nhân vật nhìn thấy, cảm thấy hoặc muốn làm.",
+          "localizedText": {
+            "vi": "Viết một câu ngắn về điều nhân vật nhìn thấy, cảm thấy hoặc muốn làm.",
+            "en": "Write one short sentence about what the character sees, feels, or wants to do."
+          }
         }
       ],
       "metadata": {
@@ -288,14 +655,22 @@
           "creative.storytelling",
           "letters.storytelling"
         ],
-        "contentKind": "choice_progression",
+        "contentKind": "creative_story_lab",
         "progressionTier": 1,
-        "reviewState": "technically_validated",
+        "reviewState": "family_test_ready",
         "deepData": {
           "scene": "creative",
           "cardCount": 3,
-          "targetFeeling": "brave"
-        }
+          "targetFeeling": "brave",
+          "engine": "creative_story_lab",
+          "completionModel": "participation",
+          "assessmentModel": "ungraded",
+          "legacyChoiceOptionsIgnored": true,
+          "minimumStoryLength": 1,
+          "maximumStoryLength": 500
+        },
+        "completionModel": "participation",
+        "assessmentModel": "ungraded"
       },
       "assetRefs": [],
       "contentVersion": 1,
@@ -310,7 +685,7 @@
       "learningObjective": "Free Creativity tier 1",
       "localizedContent": {
         "vi": {
-          "prompt": "Chọn chi tiết giúp câu chuyện có cảm xúc tốt bụng.",
+          "prompt": "Chọn bối cảnh, nhân vật, cảm xúc rồi viết ý tưởng câu chuyện cấp 1.",
           "options": [
             {
               "id": "a",
@@ -331,9 +706,67 @@
           "deepData": {
             "storyLabels": [
               "Bối cảnh",
-              "Cảm xúc",
-              "Chi tiết"
+              "Nhân vật",
+              "Cảm xúc"
             ],
+            "scenes": [
+              {
+                "id": "scene-1",
+                "label": "hộp bút rơi"
+              },
+              {
+                "id": "scene-2",
+                "label": "một bàn tay giúp đỡ"
+              },
+              {
+                "id": "scene-3",
+                "label": "lời chia sẻ"
+              }
+            ],
+            "characters": [
+              {
+                "id": "character-mi",
+                "label": "MI"
+              },
+              {
+                "id": "character-friend",
+                "label": "một người bạn"
+              },
+              {
+                "id": "character-family",
+                "label": "gia đình"
+              }
+            ],
+            "feelings": [
+              {
+                "id": "feeling-curious",
+                "label": "tò mò"
+              },
+              {
+                "id": "feeling-happy",
+                "label": "vui"
+              },
+              {
+                "id": "feeling-brave",
+                "label": "dũng cảm"
+              },
+              {
+                "id": "feeling-kind",
+                "label": "ấm áp"
+              }
+            ],
+            "storyStarters": [
+              {
+                "id": "starter-next",
+                "label": "MI tự hỏi chuyện gì sẽ xảy ra tiếp theo."
+              },
+              {
+                "id": "starter-feel",
+                "label": "Nhân vật cảm thấy một điều rất đặc biệt."
+              }
+            ],
+            "minimumStoryLength": 1,
+            "maximumStoryLength": 500,
             "storyCards": [
               "hộp bút rơi",
               "một bàn tay giúp đỡ",
@@ -342,7 +775,7 @@
           }
         },
         "en": {
-          "prompt": "Choose the detail that makes the story feel kind.",
+          "prompt": "Choose a scene, character, and feeling, then write a level 1 story idea.",
           "options": [
             {
               "id": "a",
@@ -362,10 +795,68 @@
           ],
           "deepData": {
             "storyLabels": [
-              "Setting",
-              "Feeling",
-              "Detail"
+              "Scene",
+              "Character",
+              "Feeling"
             ],
+            "scenes": [
+              {
+                "id": "scene-1",
+                "label": "a fallen pencil box"
+              },
+              {
+                "id": "scene-2",
+                "label": "a helping hand"
+              },
+              {
+                "id": "scene-3",
+                "label": "a shared word"
+              }
+            ],
+            "characters": [
+              {
+                "id": "character-mi",
+                "label": "MI"
+              },
+              {
+                "id": "character-friend",
+                "label": "a friend"
+              },
+              {
+                "id": "character-family",
+                "label": "family"
+              }
+            ],
+            "feelings": [
+              {
+                "id": "feeling-curious",
+                "label": "curious"
+              },
+              {
+                "id": "feeling-happy",
+                "label": "happy"
+              },
+              {
+                "id": "feeling-brave",
+                "label": "brave"
+              },
+              {
+                "id": "feeling-kind",
+                "label": "kind"
+              }
+            ],
+            "storyStarters": [
+              {
+                "id": "starter-next",
+                "label": "MI wondered what would happen next."
+              },
+              {
+                "id": "starter-feel",
+                "label": "The character felt something special."
+              }
+            ],
+            "minimumStoryLength": 1,
+            "maximumStoryLength": 500,
             "storyCards": [
               "a fallen pencil box",
               "a helping hand",
@@ -376,10 +867,11 @@
       },
       "hints": [
         {
-          "text": "Cấp 1: đọc kỹ câu hỏi và loại đáp án sai."
-        },
-        {
-          "text": "Tier 1: read carefully and remove the wrong choices."
+          "text": "Viết một câu ngắn về điều nhân vật nhìn thấy, cảm thấy hoặc muốn làm.",
+          "localizedText": {
+            "vi": "Viết một câu ngắn về điều nhân vật nhìn thấy, cảm thấy hoặc muốn làm.",
+            "en": "Write one short sentence about what the character sees, feels, or wants to do."
+          }
         }
       ],
       "metadata": {
@@ -388,14 +880,22 @@
           "creative.storytelling",
           "letters.storytelling"
         ],
-        "contentKind": "choice_progression",
+        "contentKind": "creative_story_lab",
         "progressionTier": 1,
-        "reviewState": "technically_validated",
+        "reviewState": "family_test_ready",
         "deepData": {
           "scene": "creative",
           "cardCount": 3,
-          "targetFeeling": "kind"
-        }
+          "targetFeeling": "kind",
+          "engine": "creative_story_lab",
+          "completionModel": "participation",
+          "assessmentModel": "ungraded",
+          "legacyChoiceOptionsIgnored": true,
+          "minimumStoryLength": 1,
+          "maximumStoryLength": 500
+        },
+        "completionModel": "participation",
+        "assessmentModel": "ungraded"
       },
       "assetRefs": [],
       "contentVersion": 1,
@@ -410,7 +910,7 @@
       "learningObjective": "Free Creativity tier 1",
       "localizedContent": {
         "vi": {
-          "prompt": "Chọn chi tiết giúp câu chuyện có cảm xúc bất ngờ.",
+          "prompt": "Chọn bối cảnh, nhân vật, cảm xúc rồi viết ý tưởng câu chuyện cấp 1.",
           "options": [
             {
               "id": "a",
@@ -431,9 +931,67 @@
           "deepData": {
             "storyLabels": [
               "Bối cảnh",
-              "Cảm xúc",
-              "Chi tiết"
+              "Nhân vật",
+              "Cảm xúc"
             ],
+            "scenes": [
+              {
+                "id": "scene-1",
+                "label": "chiếc hộp kín"
+              },
+              {
+                "id": "scene-2",
+                "label": "ánh sáng vàng"
+              },
+              {
+                "id": "scene-3",
+                "label": "một món quà nhỏ"
+              }
+            ],
+            "characters": [
+              {
+                "id": "character-mi",
+                "label": "MI"
+              },
+              {
+                "id": "character-friend",
+                "label": "một người bạn"
+              },
+              {
+                "id": "character-family",
+                "label": "gia đình"
+              }
+            ],
+            "feelings": [
+              {
+                "id": "feeling-curious",
+                "label": "tò mò"
+              },
+              {
+                "id": "feeling-happy",
+                "label": "vui"
+              },
+              {
+                "id": "feeling-brave",
+                "label": "dũng cảm"
+              },
+              {
+                "id": "feeling-kind",
+                "label": "ấm áp"
+              }
+            ],
+            "storyStarters": [
+              {
+                "id": "starter-next",
+                "label": "MI tự hỏi chuyện gì sẽ xảy ra tiếp theo."
+              },
+              {
+                "id": "starter-feel",
+                "label": "Nhân vật cảm thấy một điều rất đặc biệt."
+              }
+            ],
+            "minimumStoryLength": 1,
+            "maximumStoryLength": 500,
             "storyCards": [
               "chiếc hộp kín",
               "ánh sáng vàng",
@@ -442,7 +1000,7 @@
           }
         },
         "en": {
-          "prompt": "Choose the detail that makes the story feel surprised.",
+          "prompt": "Choose a scene, character, and feeling, then write a level 1 story idea.",
           "options": [
             {
               "id": "a",
@@ -462,10 +1020,68 @@
           ],
           "deepData": {
             "storyLabels": [
-              "Setting",
-              "Feeling",
-              "Detail"
+              "Scene",
+              "Character",
+              "Feeling"
             ],
+            "scenes": [
+              {
+                "id": "scene-1",
+                "label": "a closed box"
+              },
+              {
+                "id": "scene-2",
+                "label": "golden light"
+              },
+              {
+                "id": "scene-3",
+                "label": "a small gift"
+              }
+            ],
+            "characters": [
+              {
+                "id": "character-mi",
+                "label": "MI"
+              },
+              {
+                "id": "character-friend",
+                "label": "a friend"
+              },
+              {
+                "id": "character-family",
+                "label": "family"
+              }
+            ],
+            "feelings": [
+              {
+                "id": "feeling-curious",
+                "label": "curious"
+              },
+              {
+                "id": "feeling-happy",
+                "label": "happy"
+              },
+              {
+                "id": "feeling-brave",
+                "label": "brave"
+              },
+              {
+                "id": "feeling-kind",
+                "label": "kind"
+              }
+            ],
+            "storyStarters": [
+              {
+                "id": "starter-next",
+                "label": "MI wondered what would happen next."
+              },
+              {
+                "id": "starter-feel",
+                "label": "The character felt something special."
+              }
+            ],
+            "minimumStoryLength": 1,
+            "maximumStoryLength": 500,
             "storyCards": [
               "a closed box",
               "golden light",
@@ -476,10 +1092,11 @@
       },
       "hints": [
         {
-          "text": "Cấp 1: đọc kỹ câu hỏi và loại đáp án sai."
-        },
-        {
-          "text": "Tier 1: read carefully and remove the wrong choices."
+          "text": "Viết một câu ngắn về điều nhân vật nhìn thấy, cảm thấy hoặc muốn làm.",
+          "localizedText": {
+            "vi": "Viết một câu ngắn về điều nhân vật nhìn thấy, cảm thấy hoặc muốn làm.",
+            "en": "Write one short sentence about what the character sees, feels, or wants to do."
+          }
         }
       ],
       "metadata": {
@@ -488,14 +1105,22 @@
           "creative.storytelling",
           "letters.storytelling"
         ],
-        "contentKind": "choice_progression",
+        "contentKind": "creative_story_lab",
         "progressionTier": 1,
-        "reviewState": "technically_validated",
+        "reviewState": "family_test_ready",
         "deepData": {
           "scene": "creative",
           "cardCount": 3,
-          "targetFeeling": "surprised"
-        }
+          "targetFeeling": "surprised",
+          "engine": "creative_story_lab",
+          "completionModel": "participation",
+          "assessmentModel": "ungraded",
+          "legacyChoiceOptionsIgnored": true,
+          "minimumStoryLength": 1,
+          "maximumStoryLength": 500
+        },
+        "completionModel": "participation",
+        "assessmentModel": "ungraded"
       },
       "assetRefs": [],
       "contentVersion": 1,
@@ -510,7 +1135,7 @@
       "learningObjective": "Free Creativity tier 1",
       "localizedContent": {
         "vi": {
-          "prompt": "Chọn chi tiết giúp câu chuyện có cảm xúc bình tĩnh.",
+          "prompt": "Chọn bối cảnh, nhân vật, cảm xúc rồi viết ý tưởng câu chuyện cấp 1.",
           "options": [
             {
               "id": "a",
@@ -531,9 +1156,67 @@
           "deepData": {
             "storyLabels": [
               "Bối cảnh",
-              "Cảm xúc",
-              "Chi tiết"
+              "Nhân vật",
+              "Cảm xúc"
             ],
+            "scenes": [
+              {
+                "id": "scene-1",
+                "label": "góc đọc yên tĩnh"
+              },
+              {
+                "id": "scene-2",
+                "label": "ba hơi thở chậm"
+              },
+              {
+                "id": "scene-3",
+                "label": "một trang sách mới"
+              }
+            ],
+            "characters": [
+              {
+                "id": "character-mi",
+                "label": "MI"
+              },
+              {
+                "id": "character-friend",
+                "label": "một người bạn"
+              },
+              {
+                "id": "character-family",
+                "label": "gia đình"
+              }
+            ],
+            "feelings": [
+              {
+                "id": "feeling-curious",
+                "label": "tò mò"
+              },
+              {
+                "id": "feeling-happy",
+                "label": "vui"
+              },
+              {
+                "id": "feeling-brave",
+                "label": "dũng cảm"
+              },
+              {
+                "id": "feeling-kind",
+                "label": "ấm áp"
+              }
+            ],
+            "storyStarters": [
+              {
+                "id": "starter-next",
+                "label": "MI tự hỏi chuyện gì sẽ xảy ra tiếp theo."
+              },
+              {
+                "id": "starter-feel",
+                "label": "Nhân vật cảm thấy một điều rất đặc biệt."
+              }
+            ],
+            "minimumStoryLength": 1,
+            "maximumStoryLength": 500,
             "storyCards": [
               "góc đọc yên tĩnh",
               "ba hơi thở chậm",
@@ -542,7 +1225,7 @@
           }
         },
         "en": {
-          "prompt": "Choose the detail that makes the story feel calm.",
+          "prompt": "Choose a scene, character, and feeling, then write a level 1 story idea.",
           "options": [
             {
               "id": "a",
@@ -562,10 +1245,68 @@
           ],
           "deepData": {
             "storyLabels": [
-              "Setting",
-              "Feeling",
-              "Detail"
+              "Scene",
+              "Character",
+              "Feeling"
             ],
+            "scenes": [
+              {
+                "id": "scene-1",
+                "label": "a quiet reading nook"
+              },
+              {
+                "id": "scene-2",
+                "label": "three slow breaths"
+              },
+              {
+                "id": "scene-3",
+                "label": "a new page"
+              }
+            ],
+            "characters": [
+              {
+                "id": "character-mi",
+                "label": "MI"
+              },
+              {
+                "id": "character-friend",
+                "label": "a friend"
+              },
+              {
+                "id": "character-family",
+                "label": "family"
+              }
+            ],
+            "feelings": [
+              {
+                "id": "feeling-curious",
+                "label": "curious"
+              },
+              {
+                "id": "feeling-happy",
+                "label": "happy"
+              },
+              {
+                "id": "feeling-brave",
+                "label": "brave"
+              },
+              {
+                "id": "feeling-kind",
+                "label": "kind"
+              }
+            ],
+            "storyStarters": [
+              {
+                "id": "starter-next",
+                "label": "MI wondered what would happen next."
+              },
+              {
+                "id": "starter-feel",
+                "label": "The character felt something special."
+              }
+            ],
+            "minimumStoryLength": 1,
+            "maximumStoryLength": 500,
             "storyCards": [
               "a quiet reading nook",
               "three slow breaths",
@@ -576,10 +1317,11 @@
       },
       "hints": [
         {
-          "text": "Cấp 1: đọc kỹ câu hỏi và loại đáp án sai."
-        },
-        {
-          "text": "Tier 1: read carefully and remove the wrong choices."
+          "text": "Viết một câu ngắn về điều nhân vật nhìn thấy, cảm thấy hoặc muốn làm.",
+          "localizedText": {
+            "vi": "Viết một câu ngắn về điều nhân vật nhìn thấy, cảm thấy hoặc muốn làm.",
+            "en": "Write one short sentence about what the character sees, feels, or wants to do."
+          }
         }
       ],
       "metadata": {
@@ -588,14 +1330,22 @@
           "creative.storytelling",
           "letters.storytelling"
         ],
-        "contentKind": "choice_progression",
+        "contentKind": "creative_story_lab",
         "progressionTier": 1,
-        "reviewState": "technically_validated",
+        "reviewState": "family_test_ready",
         "deepData": {
           "scene": "creative",
           "cardCount": 3,
-          "targetFeeling": "calm"
-        }
+          "targetFeeling": "calm",
+          "engine": "creative_story_lab",
+          "completionModel": "participation",
+          "assessmentModel": "ungraded",
+          "legacyChoiceOptionsIgnored": true,
+          "minimumStoryLength": 1,
+          "maximumStoryLength": 500
+        },
+        "completionModel": "participation",
+        "assessmentModel": "ungraded"
       },
       "assetRefs": [],
       "contentVersion": 1,
@@ -610,7 +1360,7 @@
       "learningObjective": "Free Creativity tier 2",
       "localizedContent": {
         "vi": {
-          "prompt": "Chọn chi tiết giúp câu chuyện có cảm xúc kiên trì.",
+          "prompt": "Chọn bối cảnh, nhân vật, cảm xúc rồi viết ý tưởng câu chuyện cấp 2.",
           "options": [
             {
               "id": "a",
@@ -631,9 +1381,67 @@
           "deepData": {
             "storyLabels": [
               "Bối cảnh",
-              "Cảm xúc",
-              "Chi tiết"
+              "Nhân vật",
+              "Cảm xúc"
             ],
+            "scenes": [
+              {
+                "id": "scene-1",
+                "label": "bài toán khó"
+              },
+              {
+                "id": "scene-2",
+                "label": "thử lại từng bước"
+              },
+              {
+                "id": "scene-3",
+                "label": "dấu kiểm xanh"
+              }
+            ],
+            "characters": [
+              {
+                "id": "character-mi",
+                "label": "MI"
+              },
+              {
+                "id": "character-friend",
+                "label": "một người bạn"
+              },
+              {
+                "id": "character-family",
+                "label": "gia đình"
+              }
+            ],
+            "feelings": [
+              {
+                "id": "feeling-curious",
+                "label": "tò mò"
+              },
+              {
+                "id": "feeling-happy",
+                "label": "vui"
+              },
+              {
+                "id": "feeling-brave",
+                "label": "dũng cảm"
+              },
+              {
+                "id": "feeling-kind",
+                "label": "ấm áp"
+              }
+            ],
+            "storyStarters": [
+              {
+                "id": "starter-next",
+                "label": "MI tự hỏi chuyện gì sẽ xảy ra tiếp theo."
+              },
+              {
+                "id": "starter-feel",
+                "label": "Nhân vật cảm thấy một điều rất đặc biệt."
+              }
+            ],
+            "minimumStoryLength": 1,
+            "maximumStoryLength": 500,
             "storyCards": [
               "bài toán khó",
               "thử lại từng bước",
@@ -642,7 +1450,7 @@
           }
         },
         "en": {
-          "prompt": "Choose the detail that makes the story feel persistent.",
+          "prompt": "Choose a scene, character, and feeling, then write a level 2 story idea.",
           "options": [
             {
               "id": "a",
@@ -662,10 +1470,68 @@
           ],
           "deepData": {
             "storyLabels": [
-              "Setting",
-              "Feeling",
-              "Detail"
+              "Scene",
+              "Character",
+              "Feeling"
             ],
+            "scenes": [
+              {
+                "id": "scene-1",
+                "label": "a hard problem"
+              },
+              {
+                "id": "scene-2",
+                "label": "trying step by step"
+              },
+              {
+                "id": "scene-3",
+                "label": "a green check"
+              }
+            ],
+            "characters": [
+              {
+                "id": "character-mi",
+                "label": "MI"
+              },
+              {
+                "id": "character-friend",
+                "label": "a friend"
+              },
+              {
+                "id": "character-family",
+                "label": "family"
+              }
+            ],
+            "feelings": [
+              {
+                "id": "feeling-curious",
+                "label": "curious"
+              },
+              {
+                "id": "feeling-happy",
+                "label": "happy"
+              },
+              {
+                "id": "feeling-brave",
+                "label": "brave"
+              },
+              {
+                "id": "feeling-kind",
+                "label": "kind"
+              }
+            ],
+            "storyStarters": [
+              {
+                "id": "starter-next",
+                "label": "MI wondered what would happen next."
+              },
+              {
+                "id": "starter-feel",
+                "label": "The character felt something special."
+              }
+            ],
+            "minimumStoryLength": 1,
+            "maximumStoryLength": 500,
             "storyCards": [
               "a hard problem",
               "trying step by step",
@@ -676,10 +1542,11 @@
       },
       "hints": [
         {
-          "text": "Cấp 2: đọc kỹ câu hỏi và loại đáp án sai."
-        },
-        {
-          "text": "Tier 2: read carefully and remove the wrong choices."
+          "text": "Viết một câu ngắn về điều nhân vật nhìn thấy, cảm thấy hoặc muốn làm.",
+          "localizedText": {
+            "vi": "Viết một câu ngắn về điều nhân vật nhìn thấy, cảm thấy hoặc muốn làm.",
+            "en": "Write one short sentence about what the character sees, feels, or wants to do."
+          }
         }
       ],
       "metadata": {
@@ -688,14 +1555,22 @@
           "creative.storytelling",
           "letters.storytelling"
         ],
-        "contentKind": "choice_progression",
+        "contentKind": "creative_story_lab",
         "progressionTier": 2,
-        "reviewState": "technically_validated",
+        "reviewState": "family_test_ready",
         "deepData": {
           "scene": "creative",
           "cardCount": 3,
-          "targetFeeling": "persistent"
-        }
+          "targetFeeling": "persistent",
+          "engine": "creative_story_lab",
+          "completionModel": "participation",
+          "assessmentModel": "ungraded",
+          "legacyChoiceOptionsIgnored": true,
+          "minimumStoryLength": 1,
+          "maximumStoryLength": 500
+        },
+        "completionModel": "participation",
+        "assessmentModel": "ungraded"
       },
       "assetRefs": [],
       "contentVersion": 1,
@@ -710,7 +1585,7 @@
       "learningObjective": "Free Creativity tier 2",
       "localizedContent": {
         "vi": {
-          "prompt": "Chọn chi tiết giúp câu chuyện có cảm xúc hào hứng.",
+          "prompt": "Chọn bối cảnh, nhân vật, cảm xúc rồi viết ý tưởng câu chuyện cấp 2.",
           "options": [
             {
               "id": "a",
@@ -731,9 +1606,67 @@
           "deepData": {
             "storyLabels": [
               "Bối cảnh",
-              "Cảm xúc",
-              "Chi tiết"
+              "Nhân vật",
+              "Cảm xúc"
             ],
+            "scenes": [
+              {
+                "id": "scene-1",
+                "label": "bản đồ kho báu"
+              },
+              {
+                "id": "scene-2",
+                "label": "vạch xuất phát"
+              },
+              {
+                "id": "scene-3",
+                "label": "tiếng reo cổ vũ"
+              }
+            ],
+            "characters": [
+              {
+                "id": "character-mi",
+                "label": "MI"
+              },
+              {
+                "id": "character-friend",
+                "label": "một người bạn"
+              },
+              {
+                "id": "character-family",
+                "label": "gia đình"
+              }
+            ],
+            "feelings": [
+              {
+                "id": "feeling-curious",
+                "label": "tò mò"
+              },
+              {
+                "id": "feeling-happy",
+                "label": "vui"
+              },
+              {
+                "id": "feeling-brave",
+                "label": "dũng cảm"
+              },
+              {
+                "id": "feeling-kind",
+                "label": "ấm áp"
+              }
+            ],
+            "storyStarters": [
+              {
+                "id": "starter-next",
+                "label": "MI tự hỏi chuyện gì sẽ xảy ra tiếp theo."
+              },
+              {
+                "id": "starter-feel",
+                "label": "Nhân vật cảm thấy một điều rất đặc biệt."
+              }
+            ],
+            "minimumStoryLength": 1,
+            "maximumStoryLength": 500,
             "storyCards": [
               "bản đồ kho báu",
               "vạch xuất phát",
@@ -742,7 +1675,7 @@
           }
         },
         "en": {
-          "prompt": "Choose the detail that makes the story feel excited.",
+          "prompt": "Choose a scene, character, and feeling, then write a level 2 story idea.",
           "options": [
             {
               "id": "a",
@@ -762,10 +1695,68 @@
           ],
           "deepData": {
             "storyLabels": [
-              "Setting",
-              "Feeling",
-              "Detail"
+              "Scene",
+              "Character",
+              "Feeling"
             ],
+            "scenes": [
+              {
+                "id": "scene-1",
+                "label": "a treasure map"
+              },
+              {
+                "id": "scene-2",
+                "label": "the starting line"
+              },
+              {
+                "id": "scene-3",
+                "label": "cheering voices"
+              }
+            ],
+            "characters": [
+              {
+                "id": "character-mi",
+                "label": "MI"
+              },
+              {
+                "id": "character-friend",
+                "label": "a friend"
+              },
+              {
+                "id": "character-family",
+                "label": "family"
+              }
+            ],
+            "feelings": [
+              {
+                "id": "feeling-curious",
+                "label": "curious"
+              },
+              {
+                "id": "feeling-happy",
+                "label": "happy"
+              },
+              {
+                "id": "feeling-brave",
+                "label": "brave"
+              },
+              {
+                "id": "feeling-kind",
+                "label": "kind"
+              }
+            ],
+            "storyStarters": [
+              {
+                "id": "starter-next",
+                "label": "MI wondered what would happen next."
+              },
+              {
+                "id": "starter-feel",
+                "label": "The character felt something special."
+              }
+            ],
+            "minimumStoryLength": 1,
+            "maximumStoryLength": 500,
             "storyCards": [
               "a treasure map",
               "the starting line",
@@ -776,10 +1767,11 @@
       },
       "hints": [
         {
-          "text": "Cấp 2: đọc kỹ câu hỏi và loại đáp án sai."
-        },
-        {
-          "text": "Tier 2: read carefully and remove the wrong choices."
+          "text": "Viết một câu ngắn về điều nhân vật nhìn thấy, cảm thấy hoặc muốn làm.",
+          "localizedText": {
+            "vi": "Viết một câu ngắn về điều nhân vật nhìn thấy, cảm thấy hoặc muốn làm.",
+            "en": "Write one short sentence about what the character sees, feels, or wants to do."
+          }
         }
       ],
       "metadata": {
@@ -788,14 +1780,22 @@
           "creative.storytelling",
           "letters.storytelling"
         ],
-        "contentKind": "choice_progression",
+        "contentKind": "creative_story_lab",
         "progressionTier": 2,
-        "reviewState": "technically_validated",
+        "reviewState": "family_test_ready",
         "deepData": {
           "scene": "creative",
           "cardCount": 3,
-          "targetFeeling": "excited"
-        }
+          "targetFeeling": "excited",
+          "engine": "creative_story_lab",
+          "completionModel": "participation",
+          "assessmentModel": "ungraded",
+          "legacyChoiceOptionsIgnored": true,
+          "minimumStoryLength": 1,
+          "maximumStoryLength": 500
+        },
+        "completionModel": "participation",
+        "assessmentModel": "ungraded"
       },
       "assetRefs": [],
       "contentVersion": 1,
@@ -810,7 +1810,7 @@
       "learningObjective": "Free Creativity tier 2",
       "localizedContent": {
         "vi": {
-          "prompt": "Chọn chi tiết giúp câu chuyện có cảm xúc quan tâm.",
+          "prompt": "Chọn bối cảnh, nhân vật, cảm xúc rồi viết ý tưởng câu chuyện cấp 2.",
           "options": [
             {
               "id": "a",
@@ -831,9 +1831,67 @@
           "deepData": {
             "storyLabels": [
               "Bối cảnh",
-              "Cảm xúc",
-              "Chi tiết"
+              "Nhân vật",
+              "Cảm xúc"
             ],
+            "scenes": [
+              {
+                "id": "scene-1",
+                "label": "bạn buồn"
+              },
+              {
+                "id": "scene-2",
+                "label": "một lời hỏi han"
+              },
+              {
+                "id": "scene-3",
+                "label": "chiếc ghế trống"
+              }
+            ],
+            "characters": [
+              {
+                "id": "character-mi",
+                "label": "MI"
+              },
+              {
+                "id": "character-friend",
+                "label": "một người bạn"
+              },
+              {
+                "id": "character-family",
+                "label": "gia đình"
+              }
+            ],
+            "feelings": [
+              {
+                "id": "feeling-curious",
+                "label": "tò mò"
+              },
+              {
+                "id": "feeling-happy",
+                "label": "vui"
+              },
+              {
+                "id": "feeling-brave",
+                "label": "dũng cảm"
+              },
+              {
+                "id": "feeling-kind",
+                "label": "ấm áp"
+              }
+            ],
+            "storyStarters": [
+              {
+                "id": "starter-next",
+                "label": "MI tự hỏi chuyện gì sẽ xảy ra tiếp theo."
+              },
+              {
+                "id": "starter-feel",
+                "label": "Nhân vật cảm thấy một điều rất đặc biệt."
+              }
+            ],
+            "minimumStoryLength": 1,
+            "maximumStoryLength": 500,
             "storyCards": [
               "bạn buồn",
               "một lời hỏi han",
@@ -842,7 +1900,7 @@
           }
         },
         "en": {
-          "prompt": "Choose the detail that makes the story feel caring.",
+          "prompt": "Choose a scene, character, and feeling, then write a level 2 story idea.",
           "options": [
             {
               "id": "a",
@@ -862,10 +1920,68 @@
           ],
           "deepData": {
             "storyLabels": [
-              "Setting",
-              "Feeling",
-              "Detail"
+              "Scene",
+              "Character",
+              "Feeling"
             ],
+            "scenes": [
+              {
+                "id": "scene-1",
+                "label": "a sad friend"
+              },
+              {
+                "id": "scene-2",
+                "label": "a caring question"
+              },
+              {
+                "id": "scene-3",
+                "label": "an empty chair"
+              }
+            ],
+            "characters": [
+              {
+                "id": "character-mi",
+                "label": "MI"
+              },
+              {
+                "id": "character-friend",
+                "label": "a friend"
+              },
+              {
+                "id": "character-family",
+                "label": "family"
+              }
+            ],
+            "feelings": [
+              {
+                "id": "feeling-curious",
+                "label": "curious"
+              },
+              {
+                "id": "feeling-happy",
+                "label": "happy"
+              },
+              {
+                "id": "feeling-brave",
+                "label": "brave"
+              },
+              {
+                "id": "feeling-kind",
+                "label": "kind"
+              }
+            ],
+            "storyStarters": [
+              {
+                "id": "starter-next",
+                "label": "MI wondered what would happen next."
+              },
+              {
+                "id": "starter-feel",
+                "label": "The character felt something special."
+              }
+            ],
+            "minimumStoryLength": 1,
+            "maximumStoryLength": 500,
             "storyCards": [
               "a sad friend",
               "a caring question",
@@ -876,10 +1992,11 @@
       },
       "hints": [
         {
-          "text": "Cấp 2: đọc kỹ câu hỏi và loại đáp án sai."
-        },
-        {
-          "text": "Tier 2: read carefully and remove the wrong choices."
+          "text": "Viết một câu ngắn về điều nhân vật nhìn thấy, cảm thấy hoặc muốn làm.",
+          "localizedText": {
+            "vi": "Viết một câu ngắn về điều nhân vật nhìn thấy, cảm thấy hoặc muốn làm.",
+            "en": "Write one short sentence about what the character sees, feels, or wants to do."
+          }
         }
       ],
       "metadata": {
@@ -888,14 +2005,22 @@
           "creative.storytelling",
           "letters.storytelling"
         ],
-        "contentKind": "choice_progression",
+        "contentKind": "creative_story_lab",
         "progressionTier": 2,
-        "reviewState": "technically_validated",
+        "reviewState": "family_test_ready",
         "deepData": {
           "scene": "creative",
           "cardCount": 3,
-          "targetFeeling": "caring"
-        }
+          "targetFeeling": "caring",
+          "engine": "creative_story_lab",
+          "completionModel": "participation",
+          "assessmentModel": "ungraded",
+          "legacyChoiceOptionsIgnored": true,
+          "minimumStoryLength": 1,
+          "maximumStoryLength": 500
+        },
+        "completionModel": "participation",
+        "assessmentModel": "ungraded"
       },
       "assetRefs": [],
       "contentVersion": 1,
@@ -910,7 +2035,7 @@
       "learningObjective": "Free Creativity tier 2",
       "localizedContent": {
         "vi": {
-          "prompt": "Chọn chi tiết giúp câu chuyện có cảm xúc sáng tạo.",
+          "prompt": "Chọn bối cảnh, nhân vật, cảm xúc rồi viết ý tưởng câu chuyện cấp 2.",
           "options": [
             {
               "id": "a",
@@ -931,9 +2056,67 @@
           "deepData": {
             "storyLabels": [
               "Bối cảnh",
-              "Cảm xúc",
-              "Chi tiết"
+              "Nhân vật",
+              "Cảm xúc"
             ],
+            "scenes": [
+              {
+                "id": "scene-1",
+                "label": "mảnh giấy trắng"
+              },
+              {
+                "id": "scene-2",
+                "label": "ba màu sáp"
+              },
+              {
+                "id": "scene-3",
+                "label": "một ý tưởng lạ"
+              }
+            ],
+            "characters": [
+              {
+                "id": "character-mi",
+                "label": "MI"
+              },
+              {
+                "id": "character-friend",
+                "label": "một người bạn"
+              },
+              {
+                "id": "character-family",
+                "label": "gia đình"
+              }
+            ],
+            "feelings": [
+              {
+                "id": "feeling-curious",
+                "label": "tò mò"
+              },
+              {
+                "id": "feeling-happy",
+                "label": "vui"
+              },
+              {
+                "id": "feeling-brave",
+                "label": "dũng cảm"
+              },
+              {
+                "id": "feeling-kind",
+                "label": "ấm áp"
+              }
+            ],
+            "storyStarters": [
+              {
+                "id": "starter-next",
+                "label": "MI tự hỏi chuyện gì sẽ xảy ra tiếp theo."
+              },
+              {
+                "id": "starter-feel",
+                "label": "Nhân vật cảm thấy một điều rất đặc biệt."
+              }
+            ],
+            "minimumStoryLength": 1,
+            "maximumStoryLength": 500,
             "storyCards": [
               "mảnh giấy trắng",
               "ba màu sáp",
@@ -942,7 +2125,7 @@
           }
         },
         "en": {
-          "prompt": "Choose the detail that makes the story feel creative.",
+          "prompt": "Choose a scene, character, and feeling, then write a level 2 story idea.",
           "options": [
             {
               "id": "a",
@@ -962,10 +2145,68 @@
           ],
           "deepData": {
             "storyLabels": [
-              "Setting",
-              "Feeling",
-              "Detail"
+              "Scene",
+              "Character",
+              "Feeling"
             ],
+            "scenes": [
+              {
+                "id": "scene-1",
+                "label": "a blank page"
+              },
+              {
+                "id": "scene-2",
+                "label": "three crayons"
+              },
+              {
+                "id": "scene-3",
+                "label": "a surprising idea"
+              }
+            ],
+            "characters": [
+              {
+                "id": "character-mi",
+                "label": "MI"
+              },
+              {
+                "id": "character-friend",
+                "label": "a friend"
+              },
+              {
+                "id": "character-family",
+                "label": "family"
+              }
+            ],
+            "feelings": [
+              {
+                "id": "feeling-curious",
+                "label": "curious"
+              },
+              {
+                "id": "feeling-happy",
+                "label": "happy"
+              },
+              {
+                "id": "feeling-brave",
+                "label": "brave"
+              },
+              {
+                "id": "feeling-kind",
+                "label": "kind"
+              }
+            ],
+            "storyStarters": [
+              {
+                "id": "starter-next",
+                "label": "MI wondered what would happen next."
+              },
+              {
+                "id": "starter-feel",
+                "label": "The character felt something special."
+              }
+            ],
+            "minimumStoryLength": 1,
+            "maximumStoryLength": 500,
             "storyCards": [
               "a blank page",
               "three crayons",
@@ -976,10 +2217,11 @@
       },
       "hints": [
         {
-          "text": "Cấp 2: đọc kỹ câu hỏi và loại đáp án sai."
-        },
-        {
-          "text": "Tier 2: read carefully and remove the wrong choices."
+          "text": "Viết một câu ngắn về điều nhân vật nhìn thấy, cảm thấy hoặc muốn làm.",
+          "localizedText": {
+            "vi": "Viết một câu ngắn về điều nhân vật nhìn thấy, cảm thấy hoặc muốn làm.",
+            "en": "Write one short sentence about what the character sees, feels, or wants to do."
+          }
         }
       ],
       "metadata": {
@@ -988,14 +2230,22 @@
           "creative.storytelling",
           "letters.storytelling"
         ],
-        "contentKind": "choice_progression",
+        "contentKind": "creative_story_lab",
         "progressionTier": 2,
-        "reviewState": "technically_validated",
+        "reviewState": "family_test_ready",
         "deepData": {
           "scene": "creative",
           "cardCount": 3,
-          "targetFeeling": "creative"
-        }
+          "targetFeeling": "creative",
+          "engine": "creative_story_lab",
+          "completionModel": "participation",
+          "assessmentModel": "ungraded",
+          "legacyChoiceOptionsIgnored": true,
+          "minimumStoryLength": 1,
+          "maximumStoryLength": 500
+        },
+        "completionModel": "participation",
+        "assessmentModel": "ungraded"
       },
       "assetRefs": [],
       "contentVersion": 1,
@@ -1010,7 +2260,7 @@
       "learningObjective": "Free Creativity tier 2",
       "localizedContent": {
         "vi": {
-          "prompt": "Chọn chi tiết giúp câu chuyện có cảm xúc tò mò.",
+          "prompt": "Chọn bối cảnh, nhân vật, cảm xúc rồi viết ý tưởng câu chuyện cấp 2.",
           "options": [
             {
               "id": "a",
@@ -1031,9 +2281,67 @@
           "deepData": {
             "storyLabels": [
               "Bối cảnh",
-              "Cảm xúc",
-              "Chi tiết"
+              "Nhân vật",
+              "Cảm xúc"
             ],
+            "scenes": [
+              {
+                "id": "scene-1",
+                "label": "Một cánh cửa nhỏ"
+              },
+              {
+                "id": "scene-2",
+                "label": "tiếng gõ nhẹ"
+              },
+              {
+                "id": "scene-3",
+                "label": "một câu hỏi mới"
+              }
+            ],
+            "characters": [
+              {
+                "id": "character-mi",
+                "label": "MI"
+              },
+              {
+                "id": "character-friend",
+                "label": "một người bạn"
+              },
+              {
+                "id": "character-family",
+                "label": "gia đình"
+              }
+            ],
+            "feelings": [
+              {
+                "id": "feeling-curious",
+                "label": "tò mò"
+              },
+              {
+                "id": "feeling-happy",
+                "label": "vui"
+              },
+              {
+                "id": "feeling-brave",
+                "label": "dũng cảm"
+              },
+              {
+                "id": "feeling-kind",
+                "label": "ấm áp"
+              }
+            ],
+            "storyStarters": [
+              {
+                "id": "starter-next",
+                "label": "MI tự hỏi chuyện gì sẽ xảy ra tiếp theo."
+              },
+              {
+                "id": "starter-feel",
+                "label": "Nhân vật cảm thấy một điều rất đặc biệt."
+              }
+            ],
+            "minimumStoryLength": 1,
+            "maximumStoryLength": 500,
             "storyCards": [
               "Một cánh cửa nhỏ",
               "tiếng gõ nhẹ",
@@ -1042,7 +2350,7 @@
           }
         },
         "en": {
-          "prompt": "Choose the detail that makes the story feel curious.",
+          "prompt": "Choose a scene, character, and feeling, then write a level 2 story idea.",
           "options": [
             {
               "id": "a",
@@ -1062,10 +2370,68 @@
           ],
           "deepData": {
             "storyLabels": [
-              "Setting",
-              "Feeling",
-              "Detail"
+              "Scene",
+              "Character",
+              "Feeling"
             ],
+            "scenes": [
+              {
+                "id": "scene-1",
+                "label": "A tiny door"
+              },
+              {
+                "id": "scene-2",
+                "label": "a gentle knock"
+              },
+              {
+                "id": "scene-3",
+                "label": "a new question"
+              }
+            ],
+            "characters": [
+              {
+                "id": "character-mi",
+                "label": "MI"
+              },
+              {
+                "id": "character-friend",
+                "label": "a friend"
+              },
+              {
+                "id": "character-family",
+                "label": "family"
+              }
+            ],
+            "feelings": [
+              {
+                "id": "feeling-curious",
+                "label": "curious"
+              },
+              {
+                "id": "feeling-happy",
+                "label": "happy"
+              },
+              {
+                "id": "feeling-brave",
+                "label": "brave"
+              },
+              {
+                "id": "feeling-kind",
+                "label": "kind"
+              }
+            ],
+            "storyStarters": [
+              {
+                "id": "starter-next",
+                "label": "MI wondered what would happen next."
+              },
+              {
+                "id": "starter-feel",
+                "label": "The character felt something special."
+              }
+            ],
+            "minimumStoryLength": 1,
+            "maximumStoryLength": 500,
             "storyCards": [
               "A tiny door",
               "a gentle knock",
@@ -1076,10 +2442,11 @@
       },
       "hints": [
         {
-          "text": "Cấp 2: đọc kỹ câu hỏi và loại đáp án sai."
-        },
-        {
-          "text": "Tier 2: read carefully and remove the wrong choices."
+          "text": "Viết một câu ngắn về điều nhân vật nhìn thấy, cảm thấy hoặc muốn làm.",
+          "localizedText": {
+            "vi": "Viết một câu ngắn về điều nhân vật nhìn thấy, cảm thấy hoặc muốn làm.",
+            "en": "Write one short sentence about what the character sees, feels, or wants to do."
+          }
         }
       ],
       "metadata": {
@@ -1088,14 +2455,22 @@
           "creative.storytelling",
           "letters.storytelling"
         ],
-        "contentKind": "choice_progression",
+        "contentKind": "creative_story_lab",
         "progressionTier": 2,
-        "reviewState": "technically_validated",
+        "reviewState": "family_test_ready",
         "deepData": {
           "scene": "creative",
           "cardCount": 3,
-          "targetFeeling": "curious"
-        }
+          "targetFeeling": "curious",
+          "engine": "creative_story_lab",
+          "completionModel": "participation",
+          "assessmentModel": "ungraded",
+          "legacyChoiceOptionsIgnored": true,
+          "minimumStoryLength": 1,
+          "maximumStoryLength": 500
+        },
+        "completionModel": "participation",
+        "assessmentModel": "ungraded"
       },
       "assetRefs": [],
       "contentVersion": 1,
@@ -1110,7 +2485,7 @@
       "learningObjective": "Free Creativity tier 2",
       "localizedContent": {
         "vi": {
-          "prompt": "Chọn chi tiết giúp câu chuyện có cảm xúc vui.",
+          "prompt": "Chọn bối cảnh, nhân vật, cảm xúc rồi viết ý tưởng câu chuyện cấp 2.",
           "options": [
             {
               "id": "a",
@@ -1131,9 +2506,67 @@
           "deepData": {
             "storyLabels": [
               "Bối cảnh",
-              "Cảm xúc",
-              "Chi tiết"
+              "Nhân vật",
+              "Cảm xúc"
             ],
+            "scenes": [
+              {
+                "id": "scene-1",
+                "label": "sân chơi sáng nắng"
+              },
+              {
+                "id": "scene-2",
+                "label": "bạn mới mỉm cười"
+              },
+              {
+                "id": "scene-3",
+                "label": "một lời cảm ơn"
+              }
+            ],
+            "characters": [
+              {
+                "id": "character-mi",
+                "label": "MI"
+              },
+              {
+                "id": "character-friend",
+                "label": "một người bạn"
+              },
+              {
+                "id": "character-family",
+                "label": "gia đình"
+              }
+            ],
+            "feelings": [
+              {
+                "id": "feeling-curious",
+                "label": "tò mò"
+              },
+              {
+                "id": "feeling-happy",
+                "label": "vui"
+              },
+              {
+                "id": "feeling-brave",
+                "label": "dũng cảm"
+              },
+              {
+                "id": "feeling-kind",
+                "label": "ấm áp"
+              }
+            ],
+            "storyStarters": [
+              {
+                "id": "starter-next",
+                "label": "MI tự hỏi chuyện gì sẽ xảy ra tiếp theo."
+              },
+              {
+                "id": "starter-feel",
+                "label": "Nhân vật cảm thấy một điều rất đặc biệt."
+              }
+            ],
+            "minimumStoryLength": 1,
+            "maximumStoryLength": 500,
             "storyCards": [
               "sân chơi sáng nắng",
               "bạn mới mỉm cười",
@@ -1142,7 +2575,7 @@
           }
         },
         "en": {
-          "prompt": "Choose the detail that makes the story feel happy.",
+          "prompt": "Choose a scene, character, and feeling, then write a level 2 story idea.",
           "options": [
             {
               "id": "a",
@@ -1162,10 +2595,68 @@
           ],
           "deepData": {
             "storyLabels": [
-              "Setting",
-              "Feeling",
-              "Detail"
+              "Scene",
+              "Character",
+              "Feeling"
             ],
+            "scenes": [
+              {
+                "id": "scene-1",
+                "label": "a sunny playground"
+              },
+              {
+                "id": "scene-2",
+                "label": "a new friend smiles"
+              },
+              {
+                "id": "scene-3",
+                "label": "a thank-you note"
+              }
+            ],
+            "characters": [
+              {
+                "id": "character-mi",
+                "label": "MI"
+              },
+              {
+                "id": "character-friend",
+                "label": "a friend"
+              },
+              {
+                "id": "character-family",
+                "label": "family"
+              }
+            ],
+            "feelings": [
+              {
+                "id": "feeling-curious",
+                "label": "curious"
+              },
+              {
+                "id": "feeling-happy",
+                "label": "happy"
+              },
+              {
+                "id": "feeling-brave",
+                "label": "brave"
+              },
+              {
+                "id": "feeling-kind",
+                "label": "kind"
+              }
+            ],
+            "storyStarters": [
+              {
+                "id": "starter-next",
+                "label": "MI wondered what would happen next."
+              },
+              {
+                "id": "starter-feel",
+                "label": "The character felt something special."
+              }
+            ],
+            "minimumStoryLength": 1,
+            "maximumStoryLength": 500,
             "storyCards": [
               "a sunny playground",
               "a new friend smiles",
@@ -1176,10 +2667,11 @@
       },
       "hints": [
         {
-          "text": "Cấp 2: đọc kỹ câu hỏi và loại đáp án sai."
-        },
-        {
-          "text": "Tier 2: read carefully and remove the wrong choices."
+          "text": "Viết một câu ngắn về điều nhân vật nhìn thấy, cảm thấy hoặc muốn làm.",
+          "localizedText": {
+            "vi": "Viết một câu ngắn về điều nhân vật nhìn thấy, cảm thấy hoặc muốn làm.",
+            "en": "Write one short sentence about what the character sees, feels, or wants to do."
+          }
         }
       ],
       "metadata": {
@@ -1188,14 +2680,22 @@
           "creative.storytelling",
           "letters.storytelling"
         ],
-        "contentKind": "choice_progression",
+        "contentKind": "creative_story_lab",
         "progressionTier": 2,
-        "reviewState": "technically_validated",
+        "reviewState": "family_test_ready",
         "deepData": {
           "scene": "creative",
           "cardCount": 3,
-          "targetFeeling": "happy"
-        }
+          "targetFeeling": "happy",
+          "engine": "creative_story_lab",
+          "completionModel": "participation",
+          "assessmentModel": "ungraded",
+          "legacyChoiceOptionsIgnored": true,
+          "minimumStoryLength": 1,
+          "maximumStoryLength": 500
+        },
+        "completionModel": "participation",
+        "assessmentModel": "ungraded"
       },
       "assetRefs": [],
       "contentVersion": 1,
@@ -1210,7 +2710,7 @@
       "learningObjective": "Free Creativity tier 3",
       "localizedContent": {
         "vi": {
-          "prompt": "Chọn chi tiết giúp câu chuyện có cảm xúc can đảm.",
+          "prompt": "Chọn bối cảnh, nhân vật, cảm xúc rồi viết ý tưởng câu chuyện cấp 3.",
           "options": [
             {
               "id": "a",
@@ -1231,9 +2731,67 @@
           "deepData": {
             "storyLabels": [
               "Bối cảnh",
-              "Cảm xúc",
-              "Chi tiết"
+              "Nhân vật",
+              "Cảm xúc"
             ],
+            "scenes": [
+              {
+                "id": "scene-1",
+                "label": "cây cầu nhỏ"
+              },
+              {
+                "id": "scene-2",
+                "label": "MI hít thở sâu"
+              },
+              {
+                "id": "scene-3",
+                "label": "bước đầu tiên"
+              }
+            ],
+            "characters": [
+              {
+                "id": "character-mi",
+                "label": "MI"
+              },
+              {
+                "id": "character-friend",
+                "label": "một người bạn"
+              },
+              {
+                "id": "character-family",
+                "label": "gia đình"
+              }
+            ],
+            "feelings": [
+              {
+                "id": "feeling-curious",
+                "label": "tò mò"
+              },
+              {
+                "id": "feeling-happy",
+                "label": "vui"
+              },
+              {
+                "id": "feeling-brave",
+                "label": "dũng cảm"
+              },
+              {
+                "id": "feeling-kind",
+                "label": "ấm áp"
+              }
+            ],
+            "storyStarters": [
+              {
+                "id": "starter-next",
+                "label": "MI tự hỏi chuyện gì sẽ xảy ra tiếp theo."
+              },
+              {
+                "id": "starter-feel",
+                "label": "Nhân vật cảm thấy một điều rất đặc biệt."
+              }
+            ],
+            "minimumStoryLength": 8,
+            "maximumStoryLength": 500,
             "storyCards": [
               "cây cầu nhỏ",
               "MI hít thở sâu",
@@ -1242,7 +2800,7 @@
           }
         },
         "en": {
-          "prompt": "Choose the detail that makes the story feel brave.",
+          "prompt": "Choose a scene, character, and feeling, then write a level 3 story idea.",
           "options": [
             {
               "id": "a",
@@ -1262,10 +2820,68 @@
           ],
           "deepData": {
             "storyLabels": [
-              "Setting",
-              "Feeling",
-              "Detail"
+              "Scene",
+              "Character",
+              "Feeling"
             ],
+            "scenes": [
+              {
+                "id": "scene-1",
+                "label": "a small bridge"
+              },
+              {
+                "id": "scene-2",
+                "label": "MI takes a deep breath"
+              },
+              {
+                "id": "scene-3",
+                "label": "the first step"
+              }
+            ],
+            "characters": [
+              {
+                "id": "character-mi",
+                "label": "MI"
+              },
+              {
+                "id": "character-friend",
+                "label": "a friend"
+              },
+              {
+                "id": "character-family",
+                "label": "family"
+              }
+            ],
+            "feelings": [
+              {
+                "id": "feeling-curious",
+                "label": "curious"
+              },
+              {
+                "id": "feeling-happy",
+                "label": "happy"
+              },
+              {
+                "id": "feeling-brave",
+                "label": "brave"
+              },
+              {
+                "id": "feeling-kind",
+                "label": "kind"
+              }
+            ],
+            "storyStarters": [
+              {
+                "id": "starter-next",
+                "label": "MI wondered what would happen next."
+              },
+              {
+                "id": "starter-feel",
+                "label": "The character felt something special."
+              }
+            ],
+            "minimumStoryLength": 8,
+            "maximumStoryLength": 500,
             "storyCards": [
               "a small bridge",
               "MI takes a deep breath",
@@ -1276,10 +2892,11 @@
       },
       "hints": [
         {
-          "text": "Cấp 3: đọc kỹ câu hỏi và loại đáp án sai."
-        },
-        {
-          "text": "Tier 3: read carefully and remove the wrong choices."
+          "text": "Viết một câu ngắn về điều nhân vật nhìn thấy, cảm thấy hoặc muốn làm.",
+          "localizedText": {
+            "vi": "Viết một câu ngắn về điều nhân vật nhìn thấy, cảm thấy hoặc muốn làm.",
+            "en": "Write one short sentence about what the character sees, feels, or wants to do."
+          }
         }
       ],
       "metadata": {
@@ -1288,14 +2905,22 @@
           "creative.storytelling",
           "letters.storytelling"
         ],
-        "contentKind": "choice_progression",
+        "contentKind": "creative_story_lab",
         "progressionTier": 3,
-        "reviewState": "technically_validated",
+        "reviewState": "family_test_ready",
         "deepData": {
           "scene": "creative",
           "cardCount": 3,
-          "targetFeeling": "brave"
-        }
+          "targetFeeling": "brave",
+          "engine": "creative_story_lab",
+          "completionModel": "participation",
+          "assessmentModel": "ungraded",
+          "legacyChoiceOptionsIgnored": true,
+          "minimumStoryLength": 8,
+          "maximumStoryLength": 500
+        },
+        "completionModel": "participation",
+        "assessmentModel": "ungraded"
       },
       "assetRefs": [],
       "contentVersion": 1,
@@ -1310,7 +2935,7 @@
       "learningObjective": "Free Creativity tier 3",
       "localizedContent": {
         "vi": {
-          "prompt": "Chọn chi tiết giúp câu chuyện có cảm xúc tốt bụng.",
+          "prompt": "Chọn bối cảnh, nhân vật, cảm xúc rồi viết ý tưởng câu chuyện cấp 3.",
           "options": [
             {
               "id": "a",
@@ -1331,9 +2956,67 @@
           "deepData": {
             "storyLabels": [
               "Bối cảnh",
-              "Cảm xúc",
-              "Chi tiết"
+              "Nhân vật",
+              "Cảm xúc"
             ],
+            "scenes": [
+              {
+                "id": "scene-1",
+                "label": "hộp bút rơi"
+              },
+              {
+                "id": "scene-2",
+                "label": "một bàn tay giúp đỡ"
+              },
+              {
+                "id": "scene-3",
+                "label": "lời chia sẻ"
+              }
+            ],
+            "characters": [
+              {
+                "id": "character-mi",
+                "label": "MI"
+              },
+              {
+                "id": "character-friend",
+                "label": "một người bạn"
+              },
+              {
+                "id": "character-family",
+                "label": "gia đình"
+              }
+            ],
+            "feelings": [
+              {
+                "id": "feeling-curious",
+                "label": "tò mò"
+              },
+              {
+                "id": "feeling-happy",
+                "label": "vui"
+              },
+              {
+                "id": "feeling-brave",
+                "label": "dũng cảm"
+              },
+              {
+                "id": "feeling-kind",
+                "label": "ấm áp"
+              }
+            ],
+            "storyStarters": [
+              {
+                "id": "starter-next",
+                "label": "MI tự hỏi chuyện gì sẽ xảy ra tiếp theo."
+              },
+              {
+                "id": "starter-feel",
+                "label": "Nhân vật cảm thấy một điều rất đặc biệt."
+              }
+            ],
+            "minimumStoryLength": 8,
+            "maximumStoryLength": 500,
             "storyCards": [
               "hộp bút rơi",
               "một bàn tay giúp đỡ",
@@ -1342,7 +3025,7 @@
           }
         },
         "en": {
-          "prompt": "Choose the detail that makes the story feel kind.",
+          "prompt": "Choose a scene, character, and feeling, then write a level 3 story idea.",
           "options": [
             {
               "id": "a",
@@ -1362,10 +3045,68 @@
           ],
           "deepData": {
             "storyLabels": [
-              "Setting",
-              "Feeling",
-              "Detail"
+              "Scene",
+              "Character",
+              "Feeling"
             ],
+            "scenes": [
+              {
+                "id": "scene-1",
+                "label": "a fallen pencil box"
+              },
+              {
+                "id": "scene-2",
+                "label": "a helping hand"
+              },
+              {
+                "id": "scene-3",
+                "label": "a shared word"
+              }
+            ],
+            "characters": [
+              {
+                "id": "character-mi",
+                "label": "MI"
+              },
+              {
+                "id": "character-friend",
+                "label": "a friend"
+              },
+              {
+                "id": "character-family",
+                "label": "family"
+              }
+            ],
+            "feelings": [
+              {
+                "id": "feeling-curious",
+                "label": "curious"
+              },
+              {
+                "id": "feeling-happy",
+                "label": "happy"
+              },
+              {
+                "id": "feeling-brave",
+                "label": "brave"
+              },
+              {
+                "id": "feeling-kind",
+                "label": "kind"
+              }
+            ],
+            "storyStarters": [
+              {
+                "id": "starter-next",
+                "label": "MI wondered what would happen next."
+              },
+              {
+                "id": "starter-feel",
+                "label": "The character felt something special."
+              }
+            ],
+            "minimumStoryLength": 8,
+            "maximumStoryLength": 500,
             "storyCards": [
               "a fallen pencil box",
               "a helping hand",
@@ -1376,10 +3117,11 @@
       },
       "hints": [
         {
-          "text": "Cấp 3: đọc kỹ câu hỏi và loại đáp án sai."
-        },
-        {
-          "text": "Tier 3: read carefully and remove the wrong choices."
+          "text": "Viết một câu ngắn về điều nhân vật nhìn thấy, cảm thấy hoặc muốn làm.",
+          "localizedText": {
+            "vi": "Viết một câu ngắn về điều nhân vật nhìn thấy, cảm thấy hoặc muốn làm.",
+            "en": "Write one short sentence about what the character sees, feels, or wants to do."
+          }
         }
       ],
       "metadata": {
@@ -1388,14 +3130,22 @@
           "creative.storytelling",
           "letters.storytelling"
         ],
-        "contentKind": "choice_progression",
+        "contentKind": "creative_story_lab",
         "progressionTier": 3,
-        "reviewState": "technically_validated",
+        "reviewState": "family_test_ready",
         "deepData": {
           "scene": "creative",
           "cardCount": 3,
-          "targetFeeling": "kind"
-        }
+          "targetFeeling": "kind",
+          "engine": "creative_story_lab",
+          "completionModel": "participation",
+          "assessmentModel": "ungraded",
+          "legacyChoiceOptionsIgnored": true,
+          "minimumStoryLength": 8,
+          "maximumStoryLength": 500
+        },
+        "completionModel": "participation",
+        "assessmentModel": "ungraded"
       },
       "assetRefs": [],
       "contentVersion": 1,
@@ -1410,7 +3160,7 @@
       "learningObjective": "Free Creativity tier 3",
       "localizedContent": {
         "vi": {
-          "prompt": "Chọn chi tiết giúp câu chuyện có cảm xúc bất ngờ.",
+          "prompt": "Chọn bối cảnh, nhân vật, cảm xúc rồi viết ý tưởng câu chuyện cấp 3.",
           "options": [
             {
               "id": "a",
@@ -1431,9 +3181,67 @@
           "deepData": {
             "storyLabels": [
               "Bối cảnh",
-              "Cảm xúc",
-              "Chi tiết"
+              "Nhân vật",
+              "Cảm xúc"
             ],
+            "scenes": [
+              {
+                "id": "scene-1",
+                "label": "chiếc hộp kín"
+              },
+              {
+                "id": "scene-2",
+                "label": "ánh sáng vàng"
+              },
+              {
+                "id": "scene-3",
+                "label": "một món quà nhỏ"
+              }
+            ],
+            "characters": [
+              {
+                "id": "character-mi",
+                "label": "MI"
+              },
+              {
+                "id": "character-friend",
+                "label": "một người bạn"
+              },
+              {
+                "id": "character-family",
+                "label": "gia đình"
+              }
+            ],
+            "feelings": [
+              {
+                "id": "feeling-curious",
+                "label": "tò mò"
+              },
+              {
+                "id": "feeling-happy",
+                "label": "vui"
+              },
+              {
+                "id": "feeling-brave",
+                "label": "dũng cảm"
+              },
+              {
+                "id": "feeling-kind",
+                "label": "ấm áp"
+              }
+            ],
+            "storyStarters": [
+              {
+                "id": "starter-next",
+                "label": "MI tự hỏi chuyện gì sẽ xảy ra tiếp theo."
+              },
+              {
+                "id": "starter-feel",
+                "label": "Nhân vật cảm thấy một điều rất đặc biệt."
+              }
+            ],
+            "minimumStoryLength": 8,
+            "maximumStoryLength": 500,
             "storyCards": [
               "chiếc hộp kín",
               "ánh sáng vàng",
@@ -1442,7 +3250,7 @@
           }
         },
         "en": {
-          "prompt": "Choose the detail that makes the story feel surprised.",
+          "prompt": "Choose a scene, character, and feeling, then write a level 3 story idea.",
           "options": [
             {
               "id": "a",
@@ -1462,10 +3270,68 @@
           ],
           "deepData": {
             "storyLabels": [
-              "Setting",
-              "Feeling",
-              "Detail"
+              "Scene",
+              "Character",
+              "Feeling"
             ],
+            "scenes": [
+              {
+                "id": "scene-1",
+                "label": "a closed box"
+              },
+              {
+                "id": "scene-2",
+                "label": "golden light"
+              },
+              {
+                "id": "scene-3",
+                "label": "a small gift"
+              }
+            ],
+            "characters": [
+              {
+                "id": "character-mi",
+                "label": "MI"
+              },
+              {
+                "id": "character-friend",
+                "label": "a friend"
+              },
+              {
+                "id": "character-family",
+                "label": "family"
+              }
+            ],
+            "feelings": [
+              {
+                "id": "feeling-curious",
+                "label": "curious"
+              },
+              {
+                "id": "feeling-happy",
+                "label": "happy"
+              },
+              {
+                "id": "feeling-brave",
+                "label": "brave"
+              },
+              {
+                "id": "feeling-kind",
+                "label": "kind"
+              }
+            ],
+            "storyStarters": [
+              {
+                "id": "starter-next",
+                "label": "MI wondered what would happen next."
+              },
+              {
+                "id": "starter-feel",
+                "label": "The character felt something special."
+              }
+            ],
+            "minimumStoryLength": 8,
+            "maximumStoryLength": 500,
             "storyCards": [
               "a closed box",
               "golden light",
@@ -1476,10 +3342,11 @@
       },
       "hints": [
         {
-          "text": "Cấp 3: đọc kỹ câu hỏi và loại đáp án sai."
-        },
-        {
-          "text": "Tier 3: read carefully and remove the wrong choices."
+          "text": "Viết một câu ngắn về điều nhân vật nhìn thấy, cảm thấy hoặc muốn làm.",
+          "localizedText": {
+            "vi": "Viết một câu ngắn về điều nhân vật nhìn thấy, cảm thấy hoặc muốn làm.",
+            "en": "Write one short sentence about what the character sees, feels, or wants to do."
+          }
         }
       ],
       "metadata": {
@@ -1488,14 +3355,22 @@
           "creative.storytelling",
           "letters.storytelling"
         ],
-        "contentKind": "choice_progression",
+        "contentKind": "creative_story_lab",
         "progressionTier": 3,
-        "reviewState": "technically_validated",
+        "reviewState": "family_test_ready",
         "deepData": {
           "scene": "creative",
           "cardCount": 3,
-          "targetFeeling": "surprised"
-        }
+          "targetFeeling": "surprised",
+          "engine": "creative_story_lab",
+          "completionModel": "participation",
+          "assessmentModel": "ungraded",
+          "legacyChoiceOptionsIgnored": true,
+          "minimumStoryLength": 8,
+          "maximumStoryLength": 500
+        },
+        "completionModel": "participation",
+        "assessmentModel": "ungraded"
       },
       "assetRefs": [],
       "contentVersion": 1,
@@ -1510,7 +3385,7 @@
       "learningObjective": "Free Creativity tier 3",
       "localizedContent": {
         "vi": {
-          "prompt": "Chọn chi tiết giúp câu chuyện có cảm xúc bình tĩnh.",
+          "prompt": "Chọn bối cảnh, nhân vật, cảm xúc rồi viết ý tưởng câu chuyện cấp 3.",
           "options": [
             {
               "id": "a",
@@ -1531,9 +3406,67 @@
           "deepData": {
             "storyLabels": [
               "Bối cảnh",
-              "Cảm xúc",
-              "Chi tiết"
+              "Nhân vật",
+              "Cảm xúc"
             ],
+            "scenes": [
+              {
+                "id": "scene-1",
+                "label": "góc đọc yên tĩnh"
+              },
+              {
+                "id": "scene-2",
+                "label": "ba hơi thở chậm"
+              },
+              {
+                "id": "scene-3",
+                "label": "một trang sách mới"
+              }
+            ],
+            "characters": [
+              {
+                "id": "character-mi",
+                "label": "MI"
+              },
+              {
+                "id": "character-friend",
+                "label": "một người bạn"
+              },
+              {
+                "id": "character-family",
+                "label": "gia đình"
+              }
+            ],
+            "feelings": [
+              {
+                "id": "feeling-curious",
+                "label": "tò mò"
+              },
+              {
+                "id": "feeling-happy",
+                "label": "vui"
+              },
+              {
+                "id": "feeling-brave",
+                "label": "dũng cảm"
+              },
+              {
+                "id": "feeling-kind",
+                "label": "ấm áp"
+              }
+            ],
+            "storyStarters": [
+              {
+                "id": "starter-next",
+                "label": "MI tự hỏi chuyện gì sẽ xảy ra tiếp theo."
+              },
+              {
+                "id": "starter-feel",
+                "label": "Nhân vật cảm thấy một điều rất đặc biệt."
+              }
+            ],
+            "minimumStoryLength": 8,
+            "maximumStoryLength": 500,
             "storyCards": [
               "góc đọc yên tĩnh",
               "ba hơi thở chậm",
@@ -1542,7 +3475,7 @@
           }
         },
         "en": {
-          "prompt": "Choose the detail that makes the story feel calm.",
+          "prompt": "Choose a scene, character, and feeling, then write a level 3 story idea.",
           "options": [
             {
               "id": "a",
@@ -1562,10 +3495,68 @@
           ],
           "deepData": {
             "storyLabels": [
-              "Setting",
-              "Feeling",
-              "Detail"
+              "Scene",
+              "Character",
+              "Feeling"
             ],
+            "scenes": [
+              {
+                "id": "scene-1",
+                "label": "a quiet reading nook"
+              },
+              {
+                "id": "scene-2",
+                "label": "three slow breaths"
+              },
+              {
+                "id": "scene-3",
+                "label": "a new page"
+              }
+            ],
+            "characters": [
+              {
+                "id": "character-mi",
+                "label": "MI"
+              },
+              {
+                "id": "character-friend",
+                "label": "a friend"
+              },
+              {
+                "id": "character-family",
+                "label": "family"
+              }
+            ],
+            "feelings": [
+              {
+                "id": "feeling-curious",
+                "label": "curious"
+              },
+              {
+                "id": "feeling-happy",
+                "label": "happy"
+              },
+              {
+                "id": "feeling-brave",
+                "label": "brave"
+              },
+              {
+                "id": "feeling-kind",
+                "label": "kind"
+              }
+            ],
+            "storyStarters": [
+              {
+                "id": "starter-next",
+                "label": "MI wondered what would happen next."
+              },
+              {
+                "id": "starter-feel",
+                "label": "The character felt something special."
+              }
+            ],
+            "minimumStoryLength": 8,
+            "maximumStoryLength": 500,
             "storyCards": [
               "a quiet reading nook",
               "three slow breaths",
@@ -1576,10 +3567,11 @@
       },
       "hints": [
         {
-          "text": "Cấp 3: đọc kỹ câu hỏi và loại đáp án sai."
-        },
-        {
-          "text": "Tier 3: read carefully and remove the wrong choices."
+          "text": "Viết một câu ngắn về điều nhân vật nhìn thấy, cảm thấy hoặc muốn làm.",
+          "localizedText": {
+            "vi": "Viết một câu ngắn về điều nhân vật nhìn thấy, cảm thấy hoặc muốn làm.",
+            "en": "Write one short sentence about what the character sees, feels, or wants to do."
+          }
         }
       ],
       "metadata": {
@@ -1588,14 +3580,22 @@
           "creative.storytelling",
           "letters.storytelling"
         ],
-        "contentKind": "choice_progression",
+        "contentKind": "creative_story_lab",
         "progressionTier": 3,
-        "reviewState": "technically_validated",
+        "reviewState": "family_test_ready",
         "deepData": {
           "scene": "creative",
           "cardCount": 3,
-          "targetFeeling": "calm"
-        }
+          "targetFeeling": "calm",
+          "engine": "creative_story_lab",
+          "completionModel": "participation",
+          "assessmentModel": "ungraded",
+          "legacyChoiceOptionsIgnored": true,
+          "minimumStoryLength": 8,
+          "maximumStoryLength": 500
+        },
+        "completionModel": "participation",
+        "assessmentModel": "ungraded"
       },
       "assetRefs": [],
       "contentVersion": 1,
@@ -1610,7 +3610,7 @@
       "learningObjective": "Free Creativity tier 3",
       "localizedContent": {
         "vi": {
-          "prompt": "Chọn chi tiết giúp câu chuyện có cảm xúc kiên trì.",
+          "prompt": "Chọn bối cảnh, nhân vật, cảm xúc rồi viết ý tưởng câu chuyện cấp 3.",
           "options": [
             {
               "id": "a",
@@ -1631,9 +3631,67 @@
           "deepData": {
             "storyLabels": [
               "Bối cảnh",
-              "Cảm xúc",
-              "Chi tiết"
+              "Nhân vật",
+              "Cảm xúc"
             ],
+            "scenes": [
+              {
+                "id": "scene-1",
+                "label": "bài toán khó"
+              },
+              {
+                "id": "scene-2",
+                "label": "thử lại từng bước"
+              },
+              {
+                "id": "scene-3",
+                "label": "dấu kiểm xanh"
+              }
+            ],
+            "characters": [
+              {
+                "id": "character-mi",
+                "label": "MI"
+              },
+              {
+                "id": "character-friend",
+                "label": "một người bạn"
+              },
+              {
+                "id": "character-family",
+                "label": "gia đình"
+              }
+            ],
+            "feelings": [
+              {
+                "id": "feeling-curious",
+                "label": "tò mò"
+              },
+              {
+                "id": "feeling-happy",
+                "label": "vui"
+              },
+              {
+                "id": "feeling-brave",
+                "label": "dũng cảm"
+              },
+              {
+                "id": "feeling-kind",
+                "label": "ấm áp"
+              }
+            ],
+            "storyStarters": [
+              {
+                "id": "starter-next",
+                "label": "MI tự hỏi chuyện gì sẽ xảy ra tiếp theo."
+              },
+              {
+                "id": "starter-feel",
+                "label": "Nhân vật cảm thấy một điều rất đặc biệt."
+              }
+            ],
+            "minimumStoryLength": 8,
+            "maximumStoryLength": 500,
             "storyCards": [
               "bài toán khó",
               "thử lại từng bước",
@@ -1642,7 +3700,7 @@
           }
         },
         "en": {
-          "prompt": "Choose the detail that makes the story feel persistent.",
+          "prompt": "Choose a scene, character, and feeling, then write a level 3 story idea.",
           "options": [
             {
               "id": "a",
@@ -1662,10 +3720,68 @@
           ],
           "deepData": {
             "storyLabels": [
-              "Setting",
-              "Feeling",
-              "Detail"
+              "Scene",
+              "Character",
+              "Feeling"
             ],
+            "scenes": [
+              {
+                "id": "scene-1",
+                "label": "a hard problem"
+              },
+              {
+                "id": "scene-2",
+                "label": "trying step by step"
+              },
+              {
+                "id": "scene-3",
+                "label": "a green check"
+              }
+            ],
+            "characters": [
+              {
+                "id": "character-mi",
+                "label": "MI"
+              },
+              {
+                "id": "character-friend",
+                "label": "a friend"
+              },
+              {
+                "id": "character-family",
+                "label": "family"
+              }
+            ],
+            "feelings": [
+              {
+                "id": "feeling-curious",
+                "label": "curious"
+              },
+              {
+                "id": "feeling-happy",
+                "label": "happy"
+              },
+              {
+                "id": "feeling-brave",
+                "label": "brave"
+              },
+              {
+                "id": "feeling-kind",
+                "label": "kind"
+              }
+            ],
+            "storyStarters": [
+              {
+                "id": "starter-next",
+                "label": "MI wondered what would happen next."
+              },
+              {
+                "id": "starter-feel",
+                "label": "The character felt something special."
+              }
+            ],
+            "minimumStoryLength": 8,
+            "maximumStoryLength": 500,
             "storyCards": [
               "a hard problem",
               "trying step by step",
@@ -1676,10 +3792,11 @@
       },
       "hints": [
         {
-          "text": "Cấp 3: đọc kỹ câu hỏi và loại đáp án sai."
-        },
-        {
-          "text": "Tier 3: read carefully and remove the wrong choices."
+          "text": "Viết một câu ngắn về điều nhân vật nhìn thấy, cảm thấy hoặc muốn làm.",
+          "localizedText": {
+            "vi": "Viết một câu ngắn về điều nhân vật nhìn thấy, cảm thấy hoặc muốn làm.",
+            "en": "Write one short sentence about what the character sees, feels, or wants to do."
+          }
         }
       ],
       "metadata": {
@@ -1688,14 +3805,22 @@
           "creative.storytelling",
           "letters.storytelling"
         ],
-        "contentKind": "choice_progression",
+        "contentKind": "creative_story_lab",
         "progressionTier": 3,
-        "reviewState": "technically_validated",
+        "reviewState": "family_test_ready",
         "deepData": {
           "scene": "creative",
           "cardCount": 3,
-          "targetFeeling": "persistent"
-        }
+          "targetFeeling": "persistent",
+          "engine": "creative_story_lab",
+          "completionModel": "participation",
+          "assessmentModel": "ungraded",
+          "legacyChoiceOptionsIgnored": true,
+          "minimumStoryLength": 8,
+          "maximumStoryLength": 500
+        },
+        "completionModel": "participation",
+        "assessmentModel": "ungraded"
       },
       "assetRefs": [],
       "contentVersion": 1,
@@ -1710,7 +3835,7 @@
       "learningObjective": "Free Creativity tier 3",
       "localizedContent": {
         "vi": {
-          "prompt": "Chọn chi tiết giúp câu chuyện có cảm xúc hào hứng.",
+          "prompt": "Chọn bối cảnh, nhân vật, cảm xúc rồi viết ý tưởng câu chuyện cấp 3.",
           "options": [
             {
               "id": "a",
@@ -1731,9 +3856,67 @@
           "deepData": {
             "storyLabels": [
               "Bối cảnh",
-              "Cảm xúc",
-              "Chi tiết"
+              "Nhân vật",
+              "Cảm xúc"
             ],
+            "scenes": [
+              {
+                "id": "scene-1",
+                "label": "bản đồ kho báu"
+              },
+              {
+                "id": "scene-2",
+                "label": "vạch xuất phát"
+              },
+              {
+                "id": "scene-3",
+                "label": "tiếng reo cổ vũ"
+              }
+            ],
+            "characters": [
+              {
+                "id": "character-mi",
+                "label": "MI"
+              },
+              {
+                "id": "character-friend",
+                "label": "một người bạn"
+              },
+              {
+                "id": "character-family",
+                "label": "gia đình"
+              }
+            ],
+            "feelings": [
+              {
+                "id": "feeling-curious",
+                "label": "tò mò"
+              },
+              {
+                "id": "feeling-happy",
+                "label": "vui"
+              },
+              {
+                "id": "feeling-brave",
+                "label": "dũng cảm"
+              },
+              {
+                "id": "feeling-kind",
+                "label": "ấm áp"
+              }
+            ],
+            "storyStarters": [
+              {
+                "id": "starter-next",
+                "label": "MI tự hỏi chuyện gì sẽ xảy ra tiếp theo."
+              },
+              {
+                "id": "starter-feel",
+                "label": "Nhân vật cảm thấy một điều rất đặc biệt."
+              }
+            ],
+            "minimumStoryLength": 8,
+            "maximumStoryLength": 500,
             "storyCards": [
               "bản đồ kho báu",
               "vạch xuất phát",
@@ -1742,7 +3925,7 @@
           }
         },
         "en": {
-          "prompt": "Choose the detail that makes the story feel excited.",
+          "prompt": "Choose a scene, character, and feeling, then write a level 3 story idea.",
           "options": [
             {
               "id": "a",
@@ -1762,10 +3945,68 @@
           ],
           "deepData": {
             "storyLabels": [
-              "Setting",
-              "Feeling",
-              "Detail"
+              "Scene",
+              "Character",
+              "Feeling"
             ],
+            "scenes": [
+              {
+                "id": "scene-1",
+                "label": "a treasure map"
+              },
+              {
+                "id": "scene-2",
+                "label": "the starting line"
+              },
+              {
+                "id": "scene-3",
+                "label": "cheering voices"
+              }
+            ],
+            "characters": [
+              {
+                "id": "character-mi",
+                "label": "MI"
+              },
+              {
+                "id": "character-friend",
+                "label": "a friend"
+              },
+              {
+                "id": "character-family",
+                "label": "family"
+              }
+            ],
+            "feelings": [
+              {
+                "id": "feeling-curious",
+                "label": "curious"
+              },
+              {
+                "id": "feeling-happy",
+                "label": "happy"
+              },
+              {
+                "id": "feeling-brave",
+                "label": "brave"
+              },
+              {
+                "id": "feeling-kind",
+                "label": "kind"
+              }
+            ],
+            "storyStarters": [
+              {
+                "id": "starter-next",
+                "label": "MI wondered what would happen next."
+              },
+              {
+                "id": "starter-feel",
+                "label": "The character felt something special."
+              }
+            ],
+            "minimumStoryLength": 8,
+            "maximumStoryLength": 500,
             "storyCards": [
               "a treasure map",
               "the starting line",
@@ -1776,10 +4017,11 @@
       },
       "hints": [
         {
-          "text": "Cấp 3: đọc kỹ câu hỏi và loại đáp án sai."
-        },
-        {
-          "text": "Tier 3: read carefully and remove the wrong choices."
+          "text": "Viết một câu ngắn về điều nhân vật nhìn thấy, cảm thấy hoặc muốn làm.",
+          "localizedText": {
+            "vi": "Viết một câu ngắn về điều nhân vật nhìn thấy, cảm thấy hoặc muốn làm.",
+            "en": "Write one short sentence about what the character sees, feels, or wants to do."
+          }
         }
       ],
       "metadata": {
@@ -1788,14 +4030,22 @@
           "creative.storytelling",
           "letters.storytelling"
         ],
-        "contentKind": "choice_progression",
+        "contentKind": "creative_story_lab",
         "progressionTier": 3,
-        "reviewState": "technically_validated",
+        "reviewState": "family_test_ready",
         "deepData": {
           "scene": "creative",
           "cardCount": 3,
-          "targetFeeling": "excited"
-        }
+          "targetFeeling": "excited",
+          "engine": "creative_story_lab",
+          "completionModel": "participation",
+          "assessmentModel": "ungraded",
+          "legacyChoiceOptionsIgnored": true,
+          "minimumStoryLength": 8,
+          "maximumStoryLength": 500
+        },
+        "completionModel": "participation",
+        "assessmentModel": "ungraded"
       },
       "assetRefs": [],
       "contentVersion": 1,
@@ -1810,7 +4060,7 @@
       "learningObjective": "Free Creativity tier 4",
       "localizedContent": {
         "vi": {
-          "prompt": "Chọn chi tiết giúp câu chuyện có cảm xúc quan tâm.",
+          "prompt": "Chọn bối cảnh, nhân vật, cảm xúc rồi viết ý tưởng câu chuyện cấp 4.",
           "options": [
             {
               "id": "a",
@@ -1831,9 +4081,67 @@
           "deepData": {
             "storyLabels": [
               "Bối cảnh",
-              "Cảm xúc",
-              "Chi tiết"
+              "Nhân vật",
+              "Cảm xúc"
             ],
+            "scenes": [
+              {
+                "id": "scene-1",
+                "label": "bạn buồn"
+              },
+              {
+                "id": "scene-2",
+                "label": "một lời hỏi han"
+              },
+              {
+                "id": "scene-3",
+                "label": "chiếc ghế trống"
+              }
+            ],
+            "characters": [
+              {
+                "id": "character-mi",
+                "label": "MI"
+              },
+              {
+                "id": "character-friend",
+                "label": "một người bạn"
+              },
+              {
+                "id": "character-family",
+                "label": "gia đình"
+              }
+            ],
+            "feelings": [
+              {
+                "id": "feeling-curious",
+                "label": "tò mò"
+              },
+              {
+                "id": "feeling-happy",
+                "label": "vui"
+              },
+              {
+                "id": "feeling-brave",
+                "label": "dũng cảm"
+              },
+              {
+                "id": "feeling-kind",
+                "label": "ấm áp"
+              }
+            ],
+            "storyStarters": [
+              {
+                "id": "starter-next",
+                "label": "MI tự hỏi chuyện gì sẽ xảy ra tiếp theo."
+              },
+              {
+                "id": "starter-feel",
+                "label": "Nhân vật cảm thấy một điều rất đặc biệt."
+              }
+            ],
+            "minimumStoryLength": 8,
+            "maximumStoryLength": 500,
             "storyCards": [
               "bạn buồn",
               "một lời hỏi han",
@@ -1842,7 +4150,7 @@
           }
         },
         "en": {
-          "prompt": "Choose the detail that makes the story feel caring.",
+          "prompt": "Choose a scene, character, and feeling, then write a level 4 story idea.",
           "options": [
             {
               "id": "a",
@@ -1862,10 +4170,68 @@
           ],
           "deepData": {
             "storyLabels": [
-              "Setting",
-              "Feeling",
-              "Detail"
+              "Scene",
+              "Character",
+              "Feeling"
             ],
+            "scenes": [
+              {
+                "id": "scene-1",
+                "label": "a sad friend"
+              },
+              {
+                "id": "scene-2",
+                "label": "a caring question"
+              },
+              {
+                "id": "scene-3",
+                "label": "an empty chair"
+              }
+            ],
+            "characters": [
+              {
+                "id": "character-mi",
+                "label": "MI"
+              },
+              {
+                "id": "character-friend",
+                "label": "a friend"
+              },
+              {
+                "id": "character-family",
+                "label": "family"
+              }
+            ],
+            "feelings": [
+              {
+                "id": "feeling-curious",
+                "label": "curious"
+              },
+              {
+                "id": "feeling-happy",
+                "label": "happy"
+              },
+              {
+                "id": "feeling-brave",
+                "label": "brave"
+              },
+              {
+                "id": "feeling-kind",
+                "label": "kind"
+              }
+            ],
+            "storyStarters": [
+              {
+                "id": "starter-next",
+                "label": "MI wondered what would happen next."
+              },
+              {
+                "id": "starter-feel",
+                "label": "The character felt something special."
+              }
+            ],
+            "minimumStoryLength": 8,
+            "maximumStoryLength": 500,
             "storyCards": [
               "a sad friend",
               "a caring question",
@@ -1876,10 +4242,11 @@
       },
       "hints": [
         {
-          "text": "Cấp 4: đọc kỹ câu hỏi và loại đáp án sai."
-        },
-        {
-          "text": "Tier 4: read carefully and remove the wrong choices."
+          "text": "Viết một câu ngắn về điều nhân vật nhìn thấy, cảm thấy hoặc muốn làm.",
+          "localizedText": {
+            "vi": "Viết một câu ngắn về điều nhân vật nhìn thấy, cảm thấy hoặc muốn làm.",
+            "en": "Write one short sentence about what the character sees, feels, or wants to do."
+          }
         }
       ],
       "metadata": {
@@ -1888,14 +4255,22 @@
           "creative.storytelling",
           "letters.storytelling"
         ],
-        "contentKind": "choice_progression",
+        "contentKind": "creative_story_lab",
         "progressionTier": 4,
-        "reviewState": "technically_validated",
+        "reviewState": "family_test_ready",
         "deepData": {
           "scene": "creative",
           "cardCount": 3,
-          "targetFeeling": "caring"
-        }
+          "targetFeeling": "caring",
+          "engine": "creative_story_lab",
+          "completionModel": "participation",
+          "assessmentModel": "ungraded",
+          "legacyChoiceOptionsIgnored": true,
+          "minimumStoryLength": 8,
+          "maximumStoryLength": 500
+        },
+        "completionModel": "participation",
+        "assessmentModel": "ungraded"
       },
       "assetRefs": [],
       "contentVersion": 1,
@@ -1910,7 +4285,7 @@
       "learningObjective": "Free Creativity tier 4",
       "localizedContent": {
         "vi": {
-          "prompt": "Chọn chi tiết giúp câu chuyện có cảm xúc sáng tạo.",
+          "prompt": "Chọn bối cảnh, nhân vật, cảm xúc rồi viết ý tưởng câu chuyện cấp 4.",
           "options": [
             {
               "id": "a",
@@ -1931,9 +4306,67 @@
           "deepData": {
             "storyLabels": [
               "Bối cảnh",
-              "Cảm xúc",
-              "Chi tiết"
+              "Nhân vật",
+              "Cảm xúc"
             ],
+            "scenes": [
+              {
+                "id": "scene-1",
+                "label": "mảnh giấy trắng"
+              },
+              {
+                "id": "scene-2",
+                "label": "ba màu sáp"
+              },
+              {
+                "id": "scene-3",
+                "label": "một ý tưởng lạ"
+              }
+            ],
+            "characters": [
+              {
+                "id": "character-mi",
+                "label": "MI"
+              },
+              {
+                "id": "character-friend",
+                "label": "một người bạn"
+              },
+              {
+                "id": "character-family",
+                "label": "gia đình"
+              }
+            ],
+            "feelings": [
+              {
+                "id": "feeling-curious",
+                "label": "tò mò"
+              },
+              {
+                "id": "feeling-happy",
+                "label": "vui"
+              },
+              {
+                "id": "feeling-brave",
+                "label": "dũng cảm"
+              },
+              {
+                "id": "feeling-kind",
+                "label": "ấm áp"
+              }
+            ],
+            "storyStarters": [
+              {
+                "id": "starter-next",
+                "label": "MI tự hỏi chuyện gì sẽ xảy ra tiếp theo."
+              },
+              {
+                "id": "starter-feel",
+                "label": "Nhân vật cảm thấy một điều rất đặc biệt."
+              }
+            ],
+            "minimumStoryLength": 8,
+            "maximumStoryLength": 500,
             "storyCards": [
               "mảnh giấy trắng",
               "ba màu sáp",
@@ -1942,7 +4375,7 @@
           }
         },
         "en": {
-          "prompt": "Choose the detail that makes the story feel creative.",
+          "prompt": "Choose a scene, character, and feeling, then write a level 4 story idea.",
           "options": [
             {
               "id": "a",
@@ -1962,10 +4395,68 @@
           ],
           "deepData": {
             "storyLabels": [
-              "Setting",
-              "Feeling",
-              "Detail"
+              "Scene",
+              "Character",
+              "Feeling"
             ],
+            "scenes": [
+              {
+                "id": "scene-1",
+                "label": "a blank page"
+              },
+              {
+                "id": "scene-2",
+                "label": "three crayons"
+              },
+              {
+                "id": "scene-3",
+                "label": "a surprising idea"
+              }
+            ],
+            "characters": [
+              {
+                "id": "character-mi",
+                "label": "MI"
+              },
+              {
+                "id": "character-friend",
+                "label": "a friend"
+              },
+              {
+                "id": "character-family",
+                "label": "family"
+              }
+            ],
+            "feelings": [
+              {
+                "id": "feeling-curious",
+                "label": "curious"
+              },
+              {
+                "id": "feeling-happy",
+                "label": "happy"
+              },
+              {
+                "id": "feeling-brave",
+                "label": "brave"
+              },
+              {
+                "id": "feeling-kind",
+                "label": "kind"
+              }
+            ],
+            "storyStarters": [
+              {
+                "id": "starter-next",
+                "label": "MI wondered what would happen next."
+              },
+              {
+                "id": "starter-feel",
+                "label": "The character felt something special."
+              }
+            ],
+            "minimumStoryLength": 8,
+            "maximumStoryLength": 500,
             "storyCards": [
               "a blank page",
               "three crayons",
@@ -1976,10 +4467,11 @@
       },
       "hints": [
         {
-          "text": "Cấp 4: đọc kỹ câu hỏi và loại đáp án sai."
-        },
-        {
-          "text": "Tier 4: read carefully and remove the wrong choices."
+          "text": "Viết một câu ngắn về điều nhân vật nhìn thấy, cảm thấy hoặc muốn làm.",
+          "localizedText": {
+            "vi": "Viết một câu ngắn về điều nhân vật nhìn thấy, cảm thấy hoặc muốn làm.",
+            "en": "Write one short sentence about what the character sees, feels, or wants to do."
+          }
         }
       ],
       "metadata": {
@@ -1988,14 +4480,22 @@
           "creative.storytelling",
           "letters.storytelling"
         ],
-        "contentKind": "choice_progression",
+        "contentKind": "creative_story_lab",
         "progressionTier": 4,
-        "reviewState": "technically_validated",
+        "reviewState": "family_test_ready",
         "deepData": {
           "scene": "creative",
           "cardCount": 3,
-          "targetFeeling": "creative"
-        }
+          "targetFeeling": "creative",
+          "engine": "creative_story_lab",
+          "completionModel": "participation",
+          "assessmentModel": "ungraded",
+          "legacyChoiceOptionsIgnored": true,
+          "minimumStoryLength": 8,
+          "maximumStoryLength": 500
+        },
+        "completionModel": "participation",
+        "assessmentModel": "ungraded"
       },
       "assetRefs": [],
       "contentVersion": 1,
@@ -2010,7 +4510,7 @@
       "learningObjective": "Free Creativity tier 4",
       "localizedContent": {
         "vi": {
-          "prompt": "Chọn chi tiết giúp câu chuyện có cảm xúc tò mò.",
+          "prompt": "Chọn bối cảnh, nhân vật, cảm xúc rồi viết ý tưởng câu chuyện cấp 4.",
           "options": [
             {
               "id": "a",
@@ -2031,9 +4531,67 @@
           "deepData": {
             "storyLabels": [
               "Bối cảnh",
-              "Cảm xúc",
-              "Chi tiết"
+              "Nhân vật",
+              "Cảm xúc"
             ],
+            "scenes": [
+              {
+                "id": "scene-1",
+                "label": "Một cánh cửa nhỏ"
+              },
+              {
+                "id": "scene-2",
+                "label": "tiếng gõ nhẹ"
+              },
+              {
+                "id": "scene-3",
+                "label": "một câu hỏi mới"
+              }
+            ],
+            "characters": [
+              {
+                "id": "character-mi",
+                "label": "MI"
+              },
+              {
+                "id": "character-friend",
+                "label": "một người bạn"
+              },
+              {
+                "id": "character-family",
+                "label": "gia đình"
+              }
+            ],
+            "feelings": [
+              {
+                "id": "feeling-curious",
+                "label": "tò mò"
+              },
+              {
+                "id": "feeling-happy",
+                "label": "vui"
+              },
+              {
+                "id": "feeling-brave",
+                "label": "dũng cảm"
+              },
+              {
+                "id": "feeling-kind",
+                "label": "ấm áp"
+              }
+            ],
+            "storyStarters": [
+              {
+                "id": "starter-next",
+                "label": "MI tự hỏi chuyện gì sẽ xảy ra tiếp theo."
+              },
+              {
+                "id": "starter-feel",
+                "label": "Nhân vật cảm thấy một điều rất đặc biệt."
+              }
+            ],
+            "minimumStoryLength": 8,
+            "maximumStoryLength": 500,
             "storyCards": [
               "Một cánh cửa nhỏ",
               "tiếng gõ nhẹ",
@@ -2042,7 +4600,7 @@
           }
         },
         "en": {
-          "prompt": "Choose the detail that makes the story feel curious.",
+          "prompt": "Choose a scene, character, and feeling, then write a level 4 story idea.",
           "options": [
             {
               "id": "a",
@@ -2062,10 +4620,68 @@
           ],
           "deepData": {
             "storyLabels": [
-              "Setting",
-              "Feeling",
-              "Detail"
+              "Scene",
+              "Character",
+              "Feeling"
             ],
+            "scenes": [
+              {
+                "id": "scene-1",
+                "label": "A tiny door"
+              },
+              {
+                "id": "scene-2",
+                "label": "a gentle knock"
+              },
+              {
+                "id": "scene-3",
+                "label": "a new question"
+              }
+            ],
+            "characters": [
+              {
+                "id": "character-mi",
+                "label": "MI"
+              },
+              {
+                "id": "character-friend",
+                "label": "a friend"
+              },
+              {
+                "id": "character-family",
+                "label": "family"
+              }
+            ],
+            "feelings": [
+              {
+                "id": "feeling-curious",
+                "label": "curious"
+              },
+              {
+                "id": "feeling-happy",
+                "label": "happy"
+              },
+              {
+                "id": "feeling-brave",
+                "label": "brave"
+              },
+              {
+                "id": "feeling-kind",
+                "label": "kind"
+              }
+            ],
+            "storyStarters": [
+              {
+                "id": "starter-next",
+                "label": "MI wondered what would happen next."
+              },
+              {
+                "id": "starter-feel",
+                "label": "The character felt something special."
+              }
+            ],
+            "minimumStoryLength": 8,
+            "maximumStoryLength": 500,
             "storyCards": [
               "A tiny door",
               "a gentle knock",
@@ -2076,10 +4692,11 @@
       },
       "hints": [
         {
-          "text": "Cấp 4: đọc kỹ câu hỏi và loại đáp án sai."
-        },
-        {
-          "text": "Tier 4: read carefully and remove the wrong choices."
+          "text": "Viết một câu ngắn về điều nhân vật nhìn thấy, cảm thấy hoặc muốn làm.",
+          "localizedText": {
+            "vi": "Viết một câu ngắn về điều nhân vật nhìn thấy, cảm thấy hoặc muốn làm.",
+            "en": "Write one short sentence about what the character sees, feels, or wants to do."
+          }
         }
       ],
       "metadata": {
@@ -2088,14 +4705,22 @@
           "creative.storytelling",
           "letters.storytelling"
         ],
-        "contentKind": "choice_progression",
+        "contentKind": "creative_story_lab",
         "progressionTier": 4,
-        "reviewState": "technically_validated",
+        "reviewState": "family_test_ready",
         "deepData": {
           "scene": "creative",
           "cardCount": 3,
-          "targetFeeling": "curious"
-        }
+          "targetFeeling": "curious",
+          "engine": "creative_story_lab",
+          "completionModel": "participation",
+          "assessmentModel": "ungraded",
+          "legacyChoiceOptionsIgnored": true,
+          "minimumStoryLength": 8,
+          "maximumStoryLength": 500
+        },
+        "completionModel": "participation",
+        "assessmentModel": "ungraded"
       },
       "assetRefs": [],
       "contentVersion": 1,
@@ -2110,7 +4735,7 @@
       "learningObjective": "Free Creativity tier 4",
       "localizedContent": {
         "vi": {
-          "prompt": "Chọn chi tiết giúp câu chuyện có cảm xúc vui.",
+          "prompt": "Chọn bối cảnh, nhân vật, cảm xúc rồi viết ý tưởng câu chuyện cấp 4.",
           "options": [
             {
               "id": "a",
@@ -2131,9 +4756,67 @@
           "deepData": {
             "storyLabels": [
               "Bối cảnh",
-              "Cảm xúc",
-              "Chi tiết"
+              "Nhân vật",
+              "Cảm xúc"
             ],
+            "scenes": [
+              {
+                "id": "scene-1",
+                "label": "sân chơi sáng nắng"
+              },
+              {
+                "id": "scene-2",
+                "label": "bạn mới mỉm cười"
+              },
+              {
+                "id": "scene-3",
+                "label": "một lời cảm ơn"
+              }
+            ],
+            "characters": [
+              {
+                "id": "character-mi",
+                "label": "MI"
+              },
+              {
+                "id": "character-friend",
+                "label": "một người bạn"
+              },
+              {
+                "id": "character-family",
+                "label": "gia đình"
+              }
+            ],
+            "feelings": [
+              {
+                "id": "feeling-curious",
+                "label": "tò mò"
+              },
+              {
+                "id": "feeling-happy",
+                "label": "vui"
+              },
+              {
+                "id": "feeling-brave",
+                "label": "dũng cảm"
+              },
+              {
+                "id": "feeling-kind",
+                "label": "ấm áp"
+              }
+            ],
+            "storyStarters": [
+              {
+                "id": "starter-next",
+                "label": "MI tự hỏi chuyện gì sẽ xảy ra tiếp theo."
+              },
+              {
+                "id": "starter-feel",
+                "label": "Nhân vật cảm thấy một điều rất đặc biệt."
+              }
+            ],
+            "minimumStoryLength": 8,
+            "maximumStoryLength": 500,
             "storyCards": [
               "sân chơi sáng nắng",
               "bạn mới mỉm cười",
@@ -2142,7 +4825,7 @@
           }
         },
         "en": {
-          "prompt": "Choose the detail that makes the story feel happy.",
+          "prompt": "Choose a scene, character, and feeling, then write a level 4 story idea.",
           "options": [
             {
               "id": "a",
@@ -2162,10 +4845,68 @@
           ],
           "deepData": {
             "storyLabels": [
-              "Setting",
-              "Feeling",
-              "Detail"
+              "Scene",
+              "Character",
+              "Feeling"
             ],
+            "scenes": [
+              {
+                "id": "scene-1",
+                "label": "a sunny playground"
+              },
+              {
+                "id": "scene-2",
+                "label": "a new friend smiles"
+              },
+              {
+                "id": "scene-3",
+                "label": "a thank-you note"
+              }
+            ],
+            "characters": [
+              {
+                "id": "character-mi",
+                "label": "MI"
+              },
+              {
+                "id": "character-friend",
+                "label": "a friend"
+              },
+              {
+                "id": "character-family",
+                "label": "family"
+              }
+            ],
+            "feelings": [
+              {
+                "id": "feeling-curious",
+                "label": "curious"
+              },
+              {
+                "id": "feeling-happy",
+                "label": "happy"
+              },
+              {
+                "id": "feeling-brave",
+                "label": "brave"
+              },
+              {
+                "id": "feeling-kind",
+                "label": "kind"
+              }
+            ],
+            "storyStarters": [
+              {
+                "id": "starter-next",
+                "label": "MI wondered what would happen next."
+              },
+              {
+                "id": "starter-feel",
+                "label": "The character felt something special."
+              }
+            ],
+            "minimumStoryLength": 8,
+            "maximumStoryLength": 500,
             "storyCards": [
               "a sunny playground",
               "a new friend smiles",
@@ -2176,10 +4917,11 @@
       },
       "hints": [
         {
-          "text": "Cấp 4: đọc kỹ câu hỏi và loại đáp án sai."
-        },
-        {
-          "text": "Tier 4: read carefully and remove the wrong choices."
+          "text": "Viết một câu ngắn về điều nhân vật nhìn thấy, cảm thấy hoặc muốn làm.",
+          "localizedText": {
+            "vi": "Viết một câu ngắn về điều nhân vật nhìn thấy, cảm thấy hoặc muốn làm.",
+            "en": "Write one short sentence about what the character sees, feels, or wants to do."
+          }
         }
       ],
       "metadata": {
@@ -2188,14 +4930,22 @@
           "creative.storytelling",
           "letters.storytelling"
         ],
-        "contentKind": "choice_progression",
+        "contentKind": "creative_story_lab",
         "progressionTier": 4,
-        "reviewState": "technically_validated",
+        "reviewState": "family_test_ready",
         "deepData": {
           "scene": "creative",
           "cardCount": 3,
-          "targetFeeling": "happy"
-        }
+          "targetFeeling": "happy",
+          "engine": "creative_story_lab",
+          "completionModel": "participation",
+          "assessmentModel": "ungraded",
+          "legacyChoiceOptionsIgnored": true,
+          "minimumStoryLength": 8,
+          "maximumStoryLength": 500
+        },
+        "completionModel": "participation",
+        "assessmentModel": "ungraded"
       },
       "assetRefs": [],
       "contentVersion": 1,
@@ -2210,7 +4960,7 @@
       "learningObjective": "Free Creativity tier 4",
       "localizedContent": {
         "vi": {
-          "prompt": "Chọn chi tiết giúp câu chuyện có cảm xúc can đảm.",
+          "prompt": "Chọn bối cảnh, nhân vật, cảm xúc rồi viết ý tưởng câu chuyện cấp 4.",
           "options": [
             {
               "id": "a",
@@ -2231,9 +4981,67 @@
           "deepData": {
             "storyLabels": [
               "Bối cảnh",
-              "Cảm xúc",
-              "Chi tiết"
+              "Nhân vật",
+              "Cảm xúc"
             ],
+            "scenes": [
+              {
+                "id": "scene-1",
+                "label": "cây cầu nhỏ"
+              },
+              {
+                "id": "scene-2",
+                "label": "MI hít thở sâu"
+              },
+              {
+                "id": "scene-3",
+                "label": "bước đầu tiên"
+              }
+            ],
+            "characters": [
+              {
+                "id": "character-mi",
+                "label": "MI"
+              },
+              {
+                "id": "character-friend",
+                "label": "một người bạn"
+              },
+              {
+                "id": "character-family",
+                "label": "gia đình"
+              }
+            ],
+            "feelings": [
+              {
+                "id": "feeling-curious",
+                "label": "tò mò"
+              },
+              {
+                "id": "feeling-happy",
+                "label": "vui"
+              },
+              {
+                "id": "feeling-brave",
+                "label": "dũng cảm"
+              },
+              {
+                "id": "feeling-kind",
+                "label": "ấm áp"
+              }
+            ],
+            "storyStarters": [
+              {
+                "id": "starter-next",
+                "label": "MI tự hỏi chuyện gì sẽ xảy ra tiếp theo."
+              },
+              {
+                "id": "starter-feel",
+                "label": "Nhân vật cảm thấy một điều rất đặc biệt."
+              }
+            ],
+            "minimumStoryLength": 8,
+            "maximumStoryLength": 500,
             "storyCards": [
               "cây cầu nhỏ",
               "MI hít thở sâu",
@@ -2242,7 +5050,7 @@
           }
         },
         "en": {
-          "prompt": "Choose the detail that makes the story feel brave.",
+          "prompt": "Choose a scene, character, and feeling, then write a level 4 story idea.",
           "options": [
             {
               "id": "a",
@@ -2262,10 +5070,68 @@
           ],
           "deepData": {
             "storyLabels": [
-              "Setting",
-              "Feeling",
-              "Detail"
+              "Scene",
+              "Character",
+              "Feeling"
             ],
+            "scenes": [
+              {
+                "id": "scene-1",
+                "label": "a small bridge"
+              },
+              {
+                "id": "scene-2",
+                "label": "MI takes a deep breath"
+              },
+              {
+                "id": "scene-3",
+                "label": "the first step"
+              }
+            ],
+            "characters": [
+              {
+                "id": "character-mi",
+                "label": "MI"
+              },
+              {
+                "id": "character-friend",
+                "label": "a friend"
+              },
+              {
+                "id": "character-family",
+                "label": "family"
+              }
+            ],
+            "feelings": [
+              {
+                "id": "feeling-curious",
+                "label": "curious"
+              },
+              {
+                "id": "feeling-happy",
+                "label": "happy"
+              },
+              {
+                "id": "feeling-brave",
+                "label": "brave"
+              },
+              {
+                "id": "feeling-kind",
+                "label": "kind"
+              }
+            ],
+            "storyStarters": [
+              {
+                "id": "starter-next",
+                "label": "MI wondered what would happen next."
+              },
+              {
+                "id": "starter-feel",
+                "label": "The character felt something special."
+              }
+            ],
+            "minimumStoryLength": 8,
+            "maximumStoryLength": 500,
             "storyCards": [
               "a small bridge",
               "MI takes a deep breath",
@@ -2276,10 +5142,11 @@
       },
       "hints": [
         {
-          "text": "Cấp 4: đọc kỹ câu hỏi và loại đáp án sai."
-        },
-        {
-          "text": "Tier 4: read carefully and remove the wrong choices."
+          "text": "Viết một câu ngắn về điều nhân vật nhìn thấy, cảm thấy hoặc muốn làm.",
+          "localizedText": {
+            "vi": "Viết một câu ngắn về điều nhân vật nhìn thấy, cảm thấy hoặc muốn làm.",
+            "en": "Write one short sentence about what the character sees, feels, or wants to do."
+          }
         }
       ],
       "metadata": {
@@ -2288,14 +5155,22 @@
           "creative.storytelling",
           "letters.storytelling"
         ],
-        "contentKind": "choice_progression",
+        "contentKind": "creative_story_lab",
         "progressionTier": 4,
-        "reviewState": "technically_validated",
+        "reviewState": "family_test_ready",
         "deepData": {
           "scene": "creative",
           "cardCount": 3,
-          "targetFeeling": "brave"
-        }
+          "targetFeeling": "brave",
+          "engine": "creative_story_lab",
+          "completionModel": "participation",
+          "assessmentModel": "ungraded",
+          "legacyChoiceOptionsIgnored": true,
+          "minimumStoryLength": 8,
+          "maximumStoryLength": 500
+        },
+        "completionModel": "participation",
+        "assessmentModel": "ungraded"
       },
       "assetRefs": [],
       "contentVersion": 1,
@@ -2310,7 +5185,7 @@
       "learningObjective": "Free Creativity tier 4",
       "localizedContent": {
         "vi": {
-          "prompt": "Chọn chi tiết giúp câu chuyện có cảm xúc tốt bụng.",
+          "prompt": "Chọn bối cảnh, nhân vật, cảm xúc rồi viết ý tưởng câu chuyện cấp 4.",
           "options": [
             {
               "id": "a",
@@ -2331,9 +5206,67 @@
           "deepData": {
             "storyLabels": [
               "Bối cảnh",
-              "Cảm xúc",
-              "Chi tiết"
+              "Nhân vật",
+              "Cảm xúc"
             ],
+            "scenes": [
+              {
+                "id": "scene-1",
+                "label": "hộp bút rơi"
+              },
+              {
+                "id": "scene-2",
+                "label": "một bàn tay giúp đỡ"
+              },
+              {
+                "id": "scene-3",
+                "label": "lời chia sẻ"
+              }
+            ],
+            "characters": [
+              {
+                "id": "character-mi",
+                "label": "MI"
+              },
+              {
+                "id": "character-friend",
+                "label": "một người bạn"
+              },
+              {
+                "id": "character-family",
+                "label": "gia đình"
+              }
+            ],
+            "feelings": [
+              {
+                "id": "feeling-curious",
+                "label": "tò mò"
+              },
+              {
+                "id": "feeling-happy",
+                "label": "vui"
+              },
+              {
+                "id": "feeling-brave",
+                "label": "dũng cảm"
+              },
+              {
+                "id": "feeling-kind",
+                "label": "ấm áp"
+              }
+            ],
+            "storyStarters": [
+              {
+                "id": "starter-next",
+                "label": "MI tự hỏi chuyện gì sẽ xảy ra tiếp theo."
+              },
+              {
+                "id": "starter-feel",
+                "label": "Nhân vật cảm thấy một điều rất đặc biệt."
+              }
+            ],
+            "minimumStoryLength": 8,
+            "maximumStoryLength": 500,
             "storyCards": [
               "hộp bút rơi",
               "một bàn tay giúp đỡ",
@@ -2342,7 +5275,7 @@
           }
         },
         "en": {
-          "prompt": "Choose the detail that makes the story feel kind.",
+          "prompt": "Choose a scene, character, and feeling, then write a level 4 story idea.",
           "options": [
             {
               "id": "a",
@@ -2362,10 +5295,68 @@
           ],
           "deepData": {
             "storyLabels": [
-              "Setting",
-              "Feeling",
-              "Detail"
+              "Scene",
+              "Character",
+              "Feeling"
             ],
+            "scenes": [
+              {
+                "id": "scene-1",
+                "label": "a fallen pencil box"
+              },
+              {
+                "id": "scene-2",
+                "label": "a helping hand"
+              },
+              {
+                "id": "scene-3",
+                "label": "a shared word"
+              }
+            ],
+            "characters": [
+              {
+                "id": "character-mi",
+                "label": "MI"
+              },
+              {
+                "id": "character-friend",
+                "label": "a friend"
+              },
+              {
+                "id": "character-family",
+                "label": "family"
+              }
+            ],
+            "feelings": [
+              {
+                "id": "feeling-curious",
+                "label": "curious"
+              },
+              {
+                "id": "feeling-happy",
+                "label": "happy"
+              },
+              {
+                "id": "feeling-brave",
+                "label": "brave"
+              },
+              {
+                "id": "feeling-kind",
+                "label": "kind"
+              }
+            ],
+            "storyStarters": [
+              {
+                "id": "starter-next",
+                "label": "MI wondered what would happen next."
+              },
+              {
+                "id": "starter-feel",
+                "label": "The character felt something special."
+              }
+            ],
+            "minimumStoryLength": 8,
+            "maximumStoryLength": 500,
             "storyCards": [
               "a fallen pencil box",
               "a helping hand",
@@ -2376,10 +5367,11 @@
       },
       "hints": [
         {
-          "text": "Cấp 4: đọc kỹ câu hỏi và loại đáp án sai."
-        },
-        {
-          "text": "Tier 4: read carefully and remove the wrong choices."
+          "text": "Viết một câu ngắn về điều nhân vật nhìn thấy, cảm thấy hoặc muốn làm.",
+          "localizedText": {
+            "vi": "Viết một câu ngắn về điều nhân vật nhìn thấy, cảm thấy hoặc muốn làm.",
+            "en": "Write one short sentence about what the character sees, feels, or wants to do."
+          }
         }
       ],
       "metadata": {
@@ -2388,14 +5380,22 @@
           "creative.storytelling",
           "letters.storytelling"
         ],
-        "contentKind": "choice_progression",
+        "contentKind": "creative_story_lab",
         "progressionTier": 4,
-        "reviewState": "technically_validated",
+        "reviewState": "family_test_ready",
         "deepData": {
           "scene": "creative",
           "cardCount": 3,
-          "targetFeeling": "kind"
-        }
+          "targetFeeling": "kind",
+          "engine": "creative_story_lab",
+          "completionModel": "participation",
+          "assessmentModel": "ungraded",
+          "legacyChoiceOptionsIgnored": true,
+          "minimumStoryLength": 8,
+          "maximumStoryLength": 500
+        },
+        "completionModel": "participation",
+        "assessmentModel": "ungraded"
       },
       "assetRefs": [],
       "contentVersion": 1,
@@ -2410,7 +5410,7 @@
       "learningObjective": "Free Creativity tier 5",
       "localizedContent": {
         "vi": {
-          "prompt": "Chọn chi tiết giúp câu chuyện có cảm xúc bất ngờ.",
+          "prompt": "Chọn bối cảnh, nhân vật, cảm xúc rồi viết ý tưởng câu chuyện cấp 5.",
           "options": [
             {
               "id": "a",
@@ -2431,9 +5431,67 @@
           "deepData": {
             "storyLabels": [
               "Bối cảnh",
-              "Cảm xúc",
-              "Chi tiết"
+              "Nhân vật",
+              "Cảm xúc"
             ],
+            "scenes": [
+              {
+                "id": "scene-1",
+                "label": "chiếc hộp kín"
+              },
+              {
+                "id": "scene-2",
+                "label": "ánh sáng vàng"
+              },
+              {
+                "id": "scene-3",
+                "label": "một món quà nhỏ"
+              }
+            ],
+            "characters": [
+              {
+                "id": "character-mi",
+                "label": "MI"
+              },
+              {
+                "id": "character-friend",
+                "label": "một người bạn"
+              },
+              {
+                "id": "character-family",
+                "label": "gia đình"
+              }
+            ],
+            "feelings": [
+              {
+                "id": "feeling-curious",
+                "label": "tò mò"
+              },
+              {
+                "id": "feeling-happy",
+                "label": "vui"
+              },
+              {
+                "id": "feeling-brave",
+                "label": "dũng cảm"
+              },
+              {
+                "id": "feeling-kind",
+                "label": "ấm áp"
+              }
+            ],
+            "storyStarters": [
+              {
+                "id": "starter-next",
+                "label": "MI tự hỏi chuyện gì sẽ xảy ra tiếp theo."
+              },
+              {
+                "id": "starter-feel",
+                "label": "Nhân vật cảm thấy một điều rất đặc biệt."
+              }
+            ],
+            "minimumStoryLength": 8,
+            "maximumStoryLength": 500,
             "storyCards": [
               "chiếc hộp kín",
               "ánh sáng vàng",
@@ -2442,7 +5500,7 @@
           }
         },
         "en": {
-          "prompt": "Choose the detail that makes the story feel surprised.",
+          "prompt": "Choose a scene, character, and feeling, then write a level 5 story idea.",
           "options": [
             {
               "id": "a",
@@ -2462,10 +5520,68 @@
           ],
           "deepData": {
             "storyLabels": [
-              "Setting",
-              "Feeling",
-              "Detail"
+              "Scene",
+              "Character",
+              "Feeling"
             ],
+            "scenes": [
+              {
+                "id": "scene-1",
+                "label": "a closed box"
+              },
+              {
+                "id": "scene-2",
+                "label": "golden light"
+              },
+              {
+                "id": "scene-3",
+                "label": "a small gift"
+              }
+            ],
+            "characters": [
+              {
+                "id": "character-mi",
+                "label": "MI"
+              },
+              {
+                "id": "character-friend",
+                "label": "a friend"
+              },
+              {
+                "id": "character-family",
+                "label": "family"
+              }
+            ],
+            "feelings": [
+              {
+                "id": "feeling-curious",
+                "label": "curious"
+              },
+              {
+                "id": "feeling-happy",
+                "label": "happy"
+              },
+              {
+                "id": "feeling-brave",
+                "label": "brave"
+              },
+              {
+                "id": "feeling-kind",
+                "label": "kind"
+              }
+            ],
+            "storyStarters": [
+              {
+                "id": "starter-next",
+                "label": "MI wondered what would happen next."
+              },
+              {
+                "id": "starter-feel",
+                "label": "The character felt something special."
+              }
+            ],
+            "minimumStoryLength": 8,
+            "maximumStoryLength": 500,
             "storyCards": [
               "a closed box",
               "golden light",
@@ -2476,10 +5592,11 @@
       },
       "hints": [
         {
-          "text": "Cấp 5: đọc kỹ câu hỏi và loại đáp án sai."
-        },
-        {
-          "text": "Tier 5: read carefully and remove the wrong choices."
+          "text": "Viết một câu ngắn về điều nhân vật nhìn thấy, cảm thấy hoặc muốn làm.",
+          "localizedText": {
+            "vi": "Viết một câu ngắn về điều nhân vật nhìn thấy, cảm thấy hoặc muốn làm.",
+            "en": "Write one short sentence about what the character sees, feels, or wants to do."
+          }
         }
       ],
       "metadata": {
@@ -2488,14 +5605,22 @@
           "creative.storytelling",
           "letters.storytelling"
         ],
-        "contentKind": "choice_progression",
+        "contentKind": "creative_story_lab",
         "progressionTier": 5,
-        "reviewState": "technically_validated",
+        "reviewState": "family_test_ready",
         "deepData": {
           "scene": "creative",
           "cardCount": 3,
-          "targetFeeling": "surprised"
-        }
+          "targetFeeling": "surprised",
+          "engine": "creative_story_lab",
+          "completionModel": "participation",
+          "assessmentModel": "ungraded",
+          "legacyChoiceOptionsIgnored": true,
+          "minimumStoryLength": 8,
+          "maximumStoryLength": 500
+        },
+        "completionModel": "participation",
+        "assessmentModel": "ungraded"
       },
       "assetRefs": [],
       "contentVersion": 1,
@@ -2510,7 +5635,7 @@
       "learningObjective": "Free Creativity tier 5",
       "localizedContent": {
         "vi": {
-          "prompt": "Chọn chi tiết giúp câu chuyện có cảm xúc bình tĩnh.",
+          "prompt": "Chọn bối cảnh, nhân vật, cảm xúc rồi viết ý tưởng câu chuyện cấp 5.",
           "options": [
             {
               "id": "a",
@@ -2531,9 +5656,67 @@
           "deepData": {
             "storyLabels": [
               "Bối cảnh",
-              "Cảm xúc",
-              "Chi tiết"
+              "Nhân vật",
+              "Cảm xúc"
             ],
+            "scenes": [
+              {
+                "id": "scene-1",
+                "label": "góc đọc yên tĩnh"
+              },
+              {
+                "id": "scene-2",
+                "label": "ba hơi thở chậm"
+              },
+              {
+                "id": "scene-3",
+                "label": "một trang sách mới"
+              }
+            ],
+            "characters": [
+              {
+                "id": "character-mi",
+                "label": "MI"
+              },
+              {
+                "id": "character-friend",
+                "label": "một người bạn"
+              },
+              {
+                "id": "character-family",
+                "label": "gia đình"
+              }
+            ],
+            "feelings": [
+              {
+                "id": "feeling-curious",
+                "label": "tò mò"
+              },
+              {
+                "id": "feeling-happy",
+                "label": "vui"
+              },
+              {
+                "id": "feeling-brave",
+                "label": "dũng cảm"
+              },
+              {
+                "id": "feeling-kind",
+                "label": "ấm áp"
+              }
+            ],
+            "storyStarters": [
+              {
+                "id": "starter-next",
+                "label": "MI tự hỏi chuyện gì sẽ xảy ra tiếp theo."
+              },
+              {
+                "id": "starter-feel",
+                "label": "Nhân vật cảm thấy một điều rất đặc biệt."
+              }
+            ],
+            "minimumStoryLength": 8,
+            "maximumStoryLength": 500,
             "storyCards": [
               "góc đọc yên tĩnh",
               "ba hơi thở chậm",
@@ -2542,7 +5725,7 @@
           }
         },
         "en": {
-          "prompt": "Choose the detail that makes the story feel calm.",
+          "prompt": "Choose a scene, character, and feeling, then write a level 5 story idea.",
           "options": [
             {
               "id": "a",
@@ -2562,10 +5745,68 @@
           ],
           "deepData": {
             "storyLabels": [
-              "Setting",
-              "Feeling",
-              "Detail"
+              "Scene",
+              "Character",
+              "Feeling"
             ],
+            "scenes": [
+              {
+                "id": "scene-1",
+                "label": "a quiet reading nook"
+              },
+              {
+                "id": "scene-2",
+                "label": "three slow breaths"
+              },
+              {
+                "id": "scene-3",
+                "label": "a new page"
+              }
+            ],
+            "characters": [
+              {
+                "id": "character-mi",
+                "label": "MI"
+              },
+              {
+                "id": "character-friend",
+                "label": "a friend"
+              },
+              {
+                "id": "character-family",
+                "label": "family"
+              }
+            ],
+            "feelings": [
+              {
+                "id": "feeling-curious",
+                "label": "curious"
+              },
+              {
+                "id": "feeling-happy",
+                "label": "happy"
+              },
+              {
+                "id": "feeling-brave",
+                "label": "brave"
+              },
+              {
+                "id": "feeling-kind",
+                "label": "kind"
+              }
+            ],
+            "storyStarters": [
+              {
+                "id": "starter-next",
+                "label": "MI wondered what would happen next."
+              },
+              {
+                "id": "starter-feel",
+                "label": "The character felt something special."
+              }
+            ],
+            "minimumStoryLength": 8,
+            "maximumStoryLength": 500,
             "storyCards": [
               "a quiet reading nook",
               "three slow breaths",
@@ -2576,10 +5817,11 @@
       },
       "hints": [
         {
-          "text": "Cấp 5: đọc kỹ câu hỏi và loại đáp án sai."
-        },
-        {
-          "text": "Tier 5: read carefully and remove the wrong choices."
+          "text": "Viết một câu ngắn về điều nhân vật nhìn thấy, cảm thấy hoặc muốn làm.",
+          "localizedText": {
+            "vi": "Viết một câu ngắn về điều nhân vật nhìn thấy, cảm thấy hoặc muốn làm.",
+            "en": "Write one short sentence about what the character sees, feels, or wants to do."
+          }
         }
       ],
       "metadata": {
@@ -2588,14 +5830,22 @@
           "creative.storytelling",
           "letters.storytelling"
         ],
-        "contentKind": "choice_progression",
+        "contentKind": "creative_story_lab",
         "progressionTier": 5,
-        "reviewState": "technically_validated",
+        "reviewState": "family_test_ready",
         "deepData": {
           "scene": "creative",
           "cardCount": 3,
-          "targetFeeling": "calm"
-        }
+          "targetFeeling": "calm",
+          "engine": "creative_story_lab",
+          "completionModel": "participation",
+          "assessmentModel": "ungraded",
+          "legacyChoiceOptionsIgnored": true,
+          "minimumStoryLength": 8,
+          "maximumStoryLength": 500
+        },
+        "completionModel": "participation",
+        "assessmentModel": "ungraded"
       },
       "assetRefs": [],
       "contentVersion": 1,
@@ -2610,7 +5860,7 @@
       "learningObjective": "Free Creativity tier 5",
       "localizedContent": {
         "vi": {
-          "prompt": "Chọn chi tiết giúp câu chuyện có cảm xúc kiên trì.",
+          "prompt": "Chọn bối cảnh, nhân vật, cảm xúc rồi viết ý tưởng câu chuyện cấp 5.",
           "options": [
             {
               "id": "a",
@@ -2631,9 +5881,67 @@
           "deepData": {
             "storyLabels": [
               "Bối cảnh",
-              "Cảm xúc",
-              "Chi tiết"
+              "Nhân vật",
+              "Cảm xúc"
             ],
+            "scenes": [
+              {
+                "id": "scene-1",
+                "label": "bài toán khó"
+              },
+              {
+                "id": "scene-2",
+                "label": "thử lại từng bước"
+              },
+              {
+                "id": "scene-3",
+                "label": "dấu kiểm xanh"
+              }
+            ],
+            "characters": [
+              {
+                "id": "character-mi",
+                "label": "MI"
+              },
+              {
+                "id": "character-friend",
+                "label": "một người bạn"
+              },
+              {
+                "id": "character-family",
+                "label": "gia đình"
+              }
+            ],
+            "feelings": [
+              {
+                "id": "feeling-curious",
+                "label": "tò mò"
+              },
+              {
+                "id": "feeling-happy",
+                "label": "vui"
+              },
+              {
+                "id": "feeling-brave",
+                "label": "dũng cảm"
+              },
+              {
+                "id": "feeling-kind",
+                "label": "ấm áp"
+              }
+            ],
+            "storyStarters": [
+              {
+                "id": "starter-next",
+                "label": "MI tự hỏi chuyện gì sẽ xảy ra tiếp theo."
+              },
+              {
+                "id": "starter-feel",
+                "label": "Nhân vật cảm thấy một điều rất đặc biệt."
+              }
+            ],
+            "minimumStoryLength": 8,
+            "maximumStoryLength": 500,
             "storyCards": [
               "bài toán khó",
               "thử lại từng bước",
@@ -2642,7 +5950,7 @@
           }
         },
         "en": {
-          "prompt": "Choose the detail that makes the story feel persistent.",
+          "prompt": "Choose a scene, character, and feeling, then write a level 5 story idea.",
           "options": [
             {
               "id": "a",
@@ -2662,10 +5970,68 @@
           ],
           "deepData": {
             "storyLabels": [
-              "Setting",
-              "Feeling",
-              "Detail"
+              "Scene",
+              "Character",
+              "Feeling"
             ],
+            "scenes": [
+              {
+                "id": "scene-1",
+                "label": "a hard problem"
+              },
+              {
+                "id": "scene-2",
+                "label": "trying step by step"
+              },
+              {
+                "id": "scene-3",
+                "label": "a green check"
+              }
+            ],
+            "characters": [
+              {
+                "id": "character-mi",
+                "label": "MI"
+              },
+              {
+                "id": "character-friend",
+                "label": "a friend"
+              },
+              {
+                "id": "character-family",
+                "label": "family"
+              }
+            ],
+            "feelings": [
+              {
+                "id": "feeling-curious",
+                "label": "curious"
+              },
+              {
+                "id": "feeling-happy",
+                "label": "happy"
+              },
+              {
+                "id": "feeling-brave",
+                "label": "brave"
+              },
+              {
+                "id": "feeling-kind",
+                "label": "kind"
+              }
+            ],
+            "storyStarters": [
+              {
+                "id": "starter-next",
+                "label": "MI wondered what would happen next."
+              },
+              {
+                "id": "starter-feel",
+                "label": "The character felt something special."
+              }
+            ],
+            "minimumStoryLength": 8,
+            "maximumStoryLength": 500,
             "storyCards": [
               "a hard problem",
               "trying step by step",
@@ -2676,10 +6042,11 @@
       },
       "hints": [
         {
-          "text": "Cấp 5: đọc kỹ câu hỏi và loại đáp án sai."
-        },
-        {
-          "text": "Tier 5: read carefully and remove the wrong choices."
+          "text": "Viết một câu ngắn về điều nhân vật nhìn thấy, cảm thấy hoặc muốn làm.",
+          "localizedText": {
+            "vi": "Viết một câu ngắn về điều nhân vật nhìn thấy, cảm thấy hoặc muốn làm.",
+            "en": "Write one short sentence about what the character sees, feels, or wants to do."
+          }
         }
       ],
       "metadata": {
@@ -2688,14 +6055,22 @@
           "creative.storytelling",
           "letters.storytelling"
         ],
-        "contentKind": "choice_progression",
+        "contentKind": "creative_story_lab",
         "progressionTier": 5,
-        "reviewState": "technically_validated",
+        "reviewState": "family_test_ready",
         "deepData": {
           "scene": "creative",
           "cardCount": 3,
-          "targetFeeling": "persistent"
-        }
+          "targetFeeling": "persistent",
+          "engine": "creative_story_lab",
+          "completionModel": "participation",
+          "assessmentModel": "ungraded",
+          "legacyChoiceOptionsIgnored": true,
+          "minimumStoryLength": 8,
+          "maximumStoryLength": 500
+        },
+        "completionModel": "participation",
+        "assessmentModel": "ungraded"
       },
       "assetRefs": [],
       "contentVersion": 1,
@@ -2710,7 +6085,7 @@
       "learningObjective": "Free Creativity tier 5",
       "localizedContent": {
         "vi": {
-          "prompt": "Chọn chi tiết giúp câu chuyện có cảm xúc hào hứng.",
+          "prompt": "Chọn bối cảnh, nhân vật, cảm xúc rồi viết ý tưởng câu chuyện cấp 5.",
           "options": [
             {
               "id": "a",
@@ -2731,9 +6106,67 @@
           "deepData": {
             "storyLabels": [
               "Bối cảnh",
-              "Cảm xúc",
-              "Chi tiết"
+              "Nhân vật",
+              "Cảm xúc"
             ],
+            "scenes": [
+              {
+                "id": "scene-1",
+                "label": "bản đồ kho báu"
+              },
+              {
+                "id": "scene-2",
+                "label": "vạch xuất phát"
+              },
+              {
+                "id": "scene-3",
+                "label": "tiếng reo cổ vũ"
+              }
+            ],
+            "characters": [
+              {
+                "id": "character-mi",
+                "label": "MI"
+              },
+              {
+                "id": "character-friend",
+                "label": "một người bạn"
+              },
+              {
+                "id": "character-family",
+                "label": "gia đình"
+              }
+            ],
+            "feelings": [
+              {
+                "id": "feeling-curious",
+                "label": "tò mò"
+              },
+              {
+                "id": "feeling-happy",
+                "label": "vui"
+              },
+              {
+                "id": "feeling-brave",
+                "label": "dũng cảm"
+              },
+              {
+                "id": "feeling-kind",
+                "label": "ấm áp"
+              }
+            ],
+            "storyStarters": [
+              {
+                "id": "starter-next",
+                "label": "MI tự hỏi chuyện gì sẽ xảy ra tiếp theo."
+              },
+              {
+                "id": "starter-feel",
+                "label": "Nhân vật cảm thấy một điều rất đặc biệt."
+              }
+            ],
+            "minimumStoryLength": 8,
+            "maximumStoryLength": 500,
             "storyCards": [
               "bản đồ kho báu",
               "vạch xuất phát",
@@ -2742,7 +6175,7 @@
           }
         },
         "en": {
-          "prompt": "Choose the detail that makes the story feel excited.",
+          "prompt": "Choose a scene, character, and feeling, then write a level 5 story idea.",
           "options": [
             {
               "id": "a",
@@ -2762,10 +6195,68 @@
           ],
           "deepData": {
             "storyLabels": [
-              "Setting",
-              "Feeling",
-              "Detail"
+              "Scene",
+              "Character",
+              "Feeling"
             ],
+            "scenes": [
+              {
+                "id": "scene-1",
+                "label": "a treasure map"
+              },
+              {
+                "id": "scene-2",
+                "label": "the starting line"
+              },
+              {
+                "id": "scene-3",
+                "label": "cheering voices"
+              }
+            ],
+            "characters": [
+              {
+                "id": "character-mi",
+                "label": "MI"
+              },
+              {
+                "id": "character-friend",
+                "label": "a friend"
+              },
+              {
+                "id": "character-family",
+                "label": "family"
+              }
+            ],
+            "feelings": [
+              {
+                "id": "feeling-curious",
+                "label": "curious"
+              },
+              {
+                "id": "feeling-happy",
+                "label": "happy"
+              },
+              {
+                "id": "feeling-brave",
+                "label": "brave"
+              },
+              {
+                "id": "feeling-kind",
+                "label": "kind"
+              }
+            ],
+            "storyStarters": [
+              {
+                "id": "starter-next",
+                "label": "MI wondered what would happen next."
+              },
+              {
+                "id": "starter-feel",
+                "label": "The character felt something special."
+              }
+            ],
+            "minimumStoryLength": 8,
+            "maximumStoryLength": 500,
             "storyCards": [
               "a treasure map",
               "the starting line",
@@ -2776,10 +6267,11 @@
       },
       "hints": [
         {
-          "text": "Cấp 5: đọc kỹ câu hỏi và loại đáp án sai."
-        },
-        {
-          "text": "Tier 5: read carefully and remove the wrong choices."
+          "text": "Viết một câu ngắn về điều nhân vật nhìn thấy, cảm thấy hoặc muốn làm.",
+          "localizedText": {
+            "vi": "Viết một câu ngắn về điều nhân vật nhìn thấy, cảm thấy hoặc muốn làm.",
+            "en": "Write one short sentence about what the character sees, feels, or wants to do."
+          }
         }
       ],
       "metadata": {
@@ -2788,14 +6280,22 @@
           "creative.storytelling",
           "letters.storytelling"
         ],
-        "contentKind": "choice_progression",
+        "contentKind": "creative_story_lab",
         "progressionTier": 5,
-        "reviewState": "technically_validated",
+        "reviewState": "family_test_ready",
         "deepData": {
           "scene": "creative",
           "cardCount": 3,
-          "targetFeeling": "excited"
-        }
+          "targetFeeling": "excited",
+          "engine": "creative_story_lab",
+          "completionModel": "participation",
+          "assessmentModel": "ungraded",
+          "legacyChoiceOptionsIgnored": true,
+          "minimumStoryLength": 8,
+          "maximumStoryLength": 500
+        },
+        "completionModel": "participation",
+        "assessmentModel": "ungraded"
       },
       "assetRefs": [],
       "contentVersion": 1,
@@ -2810,7 +6310,7 @@
       "learningObjective": "Free Creativity tier 5",
       "localizedContent": {
         "vi": {
-          "prompt": "Chọn chi tiết giúp câu chuyện có cảm xúc quan tâm.",
+          "prompt": "Chọn bối cảnh, nhân vật, cảm xúc rồi viết ý tưởng câu chuyện cấp 5.",
           "options": [
             {
               "id": "a",
@@ -2831,9 +6331,67 @@
           "deepData": {
             "storyLabels": [
               "Bối cảnh",
-              "Cảm xúc",
-              "Chi tiết"
+              "Nhân vật",
+              "Cảm xúc"
             ],
+            "scenes": [
+              {
+                "id": "scene-1",
+                "label": "bạn buồn"
+              },
+              {
+                "id": "scene-2",
+                "label": "một lời hỏi han"
+              },
+              {
+                "id": "scene-3",
+                "label": "chiếc ghế trống"
+              }
+            ],
+            "characters": [
+              {
+                "id": "character-mi",
+                "label": "MI"
+              },
+              {
+                "id": "character-friend",
+                "label": "một người bạn"
+              },
+              {
+                "id": "character-family",
+                "label": "gia đình"
+              }
+            ],
+            "feelings": [
+              {
+                "id": "feeling-curious",
+                "label": "tò mò"
+              },
+              {
+                "id": "feeling-happy",
+                "label": "vui"
+              },
+              {
+                "id": "feeling-brave",
+                "label": "dũng cảm"
+              },
+              {
+                "id": "feeling-kind",
+                "label": "ấm áp"
+              }
+            ],
+            "storyStarters": [
+              {
+                "id": "starter-next",
+                "label": "MI tự hỏi chuyện gì sẽ xảy ra tiếp theo."
+              },
+              {
+                "id": "starter-feel",
+                "label": "Nhân vật cảm thấy một điều rất đặc biệt."
+              }
+            ],
+            "minimumStoryLength": 8,
+            "maximumStoryLength": 500,
             "storyCards": [
               "bạn buồn",
               "một lời hỏi han",
@@ -2842,7 +6400,7 @@
           }
         },
         "en": {
-          "prompt": "Choose the detail that makes the story feel caring.",
+          "prompt": "Choose a scene, character, and feeling, then write a level 5 story idea.",
           "options": [
             {
               "id": "a",
@@ -2862,10 +6420,68 @@
           ],
           "deepData": {
             "storyLabels": [
-              "Setting",
-              "Feeling",
-              "Detail"
+              "Scene",
+              "Character",
+              "Feeling"
             ],
+            "scenes": [
+              {
+                "id": "scene-1",
+                "label": "a sad friend"
+              },
+              {
+                "id": "scene-2",
+                "label": "a caring question"
+              },
+              {
+                "id": "scene-3",
+                "label": "an empty chair"
+              }
+            ],
+            "characters": [
+              {
+                "id": "character-mi",
+                "label": "MI"
+              },
+              {
+                "id": "character-friend",
+                "label": "a friend"
+              },
+              {
+                "id": "character-family",
+                "label": "family"
+              }
+            ],
+            "feelings": [
+              {
+                "id": "feeling-curious",
+                "label": "curious"
+              },
+              {
+                "id": "feeling-happy",
+                "label": "happy"
+              },
+              {
+                "id": "feeling-brave",
+                "label": "brave"
+              },
+              {
+                "id": "feeling-kind",
+                "label": "kind"
+              }
+            ],
+            "storyStarters": [
+              {
+                "id": "starter-next",
+                "label": "MI wondered what would happen next."
+              },
+              {
+                "id": "starter-feel",
+                "label": "The character felt something special."
+              }
+            ],
+            "minimumStoryLength": 8,
+            "maximumStoryLength": 500,
             "storyCards": [
               "a sad friend",
               "a caring question",
@@ -2876,10 +6492,11 @@
       },
       "hints": [
         {
-          "text": "Cấp 5: đọc kỹ câu hỏi và loại đáp án sai."
-        },
-        {
-          "text": "Tier 5: read carefully and remove the wrong choices."
+          "text": "Viết một câu ngắn về điều nhân vật nhìn thấy, cảm thấy hoặc muốn làm.",
+          "localizedText": {
+            "vi": "Viết một câu ngắn về điều nhân vật nhìn thấy, cảm thấy hoặc muốn làm.",
+            "en": "Write one short sentence about what the character sees, feels, or wants to do."
+          }
         }
       ],
       "metadata": {
@@ -2888,14 +6505,22 @@
           "creative.storytelling",
           "letters.storytelling"
         ],
-        "contentKind": "choice_progression",
+        "contentKind": "creative_story_lab",
         "progressionTier": 5,
-        "reviewState": "technically_validated",
+        "reviewState": "family_test_ready",
         "deepData": {
           "scene": "creative",
           "cardCount": 3,
-          "targetFeeling": "caring"
-        }
+          "targetFeeling": "caring",
+          "engine": "creative_story_lab",
+          "completionModel": "participation",
+          "assessmentModel": "ungraded",
+          "legacyChoiceOptionsIgnored": true,
+          "minimumStoryLength": 8,
+          "maximumStoryLength": 500
+        },
+        "completionModel": "participation",
+        "assessmentModel": "ungraded"
       },
       "assetRefs": [],
       "contentVersion": 1,
@@ -2910,7 +6535,7 @@
       "learningObjective": "Free Creativity tier 5",
       "localizedContent": {
         "vi": {
-          "prompt": "Chọn chi tiết giúp câu chuyện có cảm xúc sáng tạo.",
+          "prompt": "Chọn bối cảnh, nhân vật, cảm xúc rồi viết ý tưởng câu chuyện cấp 5.",
           "options": [
             {
               "id": "a",
@@ -2931,9 +6556,67 @@
           "deepData": {
             "storyLabels": [
               "Bối cảnh",
-              "Cảm xúc",
-              "Chi tiết"
+              "Nhân vật",
+              "Cảm xúc"
             ],
+            "scenes": [
+              {
+                "id": "scene-1",
+                "label": "mảnh giấy trắng"
+              },
+              {
+                "id": "scene-2",
+                "label": "ba màu sáp"
+              },
+              {
+                "id": "scene-3",
+                "label": "một ý tưởng lạ"
+              }
+            ],
+            "characters": [
+              {
+                "id": "character-mi",
+                "label": "MI"
+              },
+              {
+                "id": "character-friend",
+                "label": "một người bạn"
+              },
+              {
+                "id": "character-family",
+                "label": "gia đình"
+              }
+            ],
+            "feelings": [
+              {
+                "id": "feeling-curious",
+                "label": "tò mò"
+              },
+              {
+                "id": "feeling-happy",
+                "label": "vui"
+              },
+              {
+                "id": "feeling-brave",
+                "label": "dũng cảm"
+              },
+              {
+                "id": "feeling-kind",
+                "label": "ấm áp"
+              }
+            ],
+            "storyStarters": [
+              {
+                "id": "starter-next",
+                "label": "MI tự hỏi chuyện gì sẽ xảy ra tiếp theo."
+              },
+              {
+                "id": "starter-feel",
+                "label": "Nhân vật cảm thấy một điều rất đặc biệt."
+              }
+            ],
+            "minimumStoryLength": 8,
+            "maximumStoryLength": 500,
             "storyCards": [
               "mảnh giấy trắng",
               "ba màu sáp",
@@ -2942,7 +6625,7 @@
           }
         },
         "en": {
-          "prompt": "Choose the detail that makes the story feel creative.",
+          "prompt": "Choose a scene, character, and feeling, then write a level 5 story idea.",
           "options": [
             {
               "id": "a",
@@ -2962,10 +6645,68 @@
           ],
           "deepData": {
             "storyLabels": [
-              "Setting",
-              "Feeling",
-              "Detail"
+              "Scene",
+              "Character",
+              "Feeling"
             ],
+            "scenes": [
+              {
+                "id": "scene-1",
+                "label": "a blank page"
+              },
+              {
+                "id": "scene-2",
+                "label": "three crayons"
+              },
+              {
+                "id": "scene-3",
+                "label": "a surprising idea"
+              }
+            ],
+            "characters": [
+              {
+                "id": "character-mi",
+                "label": "MI"
+              },
+              {
+                "id": "character-friend",
+                "label": "a friend"
+              },
+              {
+                "id": "character-family",
+                "label": "family"
+              }
+            ],
+            "feelings": [
+              {
+                "id": "feeling-curious",
+                "label": "curious"
+              },
+              {
+                "id": "feeling-happy",
+                "label": "happy"
+              },
+              {
+                "id": "feeling-brave",
+                "label": "brave"
+              },
+              {
+                "id": "feeling-kind",
+                "label": "kind"
+              }
+            ],
+            "storyStarters": [
+              {
+                "id": "starter-next",
+                "label": "MI wondered what would happen next."
+              },
+              {
+                "id": "starter-feel",
+                "label": "The character felt something special."
+              }
+            ],
+            "minimumStoryLength": 8,
+            "maximumStoryLength": 500,
             "storyCards": [
               "a blank page",
               "three crayons",
@@ -2976,10 +6717,11 @@
       },
       "hints": [
         {
-          "text": "Cấp 5: đọc kỹ câu hỏi và loại đáp án sai."
-        },
-        {
-          "text": "Tier 5: read carefully and remove the wrong choices."
+          "text": "Viết một câu ngắn về điều nhân vật nhìn thấy, cảm thấy hoặc muốn làm.",
+          "localizedText": {
+            "vi": "Viết một câu ngắn về điều nhân vật nhìn thấy, cảm thấy hoặc muốn làm.",
+            "en": "Write one short sentence about what the character sees, feels, or wants to do."
+          }
         }
       ],
       "metadata": {
@@ -2988,14 +6730,22 @@
           "creative.storytelling",
           "letters.storytelling"
         ],
-        "contentKind": "choice_progression",
+        "contentKind": "creative_story_lab",
         "progressionTier": 5,
-        "reviewState": "technically_validated",
+        "reviewState": "family_test_ready",
         "deepData": {
           "scene": "creative",
           "cardCount": 3,
-          "targetFeeling": "creative"
-        }
+          "targetFeeling": "creative",
+          "engine": "creative_story_lab",
+          "completionModel": "participation",
+          "assessmentModel": "ungraded",
+          "legacyChoiceOptionsIgnored": true,
+          "minimumStoryLength": 8,
+          "maximumStoryLength": 500
+        },
+        "completionModel": "participation",
+        "assessmentModel": "ungraded"
       },
       "assetRefs": [],
       "contentVersion": 1,

@@ -216,11 +216,13 @@ class _GameScreenState extends ConsumerState<GameScreen> {
           levelId: result.levelId,
         );
 
+    final ungraded = _isUngradedCompletion(result);
+
     // Resolved once and threaded through both the local reward/progress
     // path and the adaptive-shadow path below, so a single completion
     // never reasons about two different skill identities depending on
     // which block happens to run.
-    final mapping = await _resolveCanonicalMapping(result);
+    final mapping = ungraded ? null : await _resolveCanonicalMapping(result);
 
     // Local-only: progress tracking and reward unlocking need no network,
     // so this runs unconditionally (including for the 'offline-child' test
@@ -241,37 +243,47 @@ class _GameScreenState extends ConsumerState<GameScreen> {
     final attemptId = const Uuid().v4();
     final startedAt = result.completedAt.subtract(result.duration).toUtc();
     final completedAt = result.completedAt.toUtc();
-    final correctCount = result.perfectRun
-        ? result.attemptsUsed
-        : (result.attemptsUsed - 1).clamp(0, result.attemptsUsed);
-    final incorrectCount = result.attemptsUsed - correctCount;
+    final correctCount = ungraded
+        ? 0
+        : (result.perfectRun
+            ? result.attemptsUsed
+            : (result.attemptsUsed - 1).clamp(0, result.attemptsUsed));
+    final incorrectCount = ungraded ? 0 : result.attemptsUsed - correctCount;
     Map<String, dynamic> adaptiveShadow;
-    try {
-      // mastery_core's MasteryState carries evidenceCount/confidence/
-      // attemptHistory that only mean anything if it accumulates across
-      // completions -- load whatever this child already has for this
-      // skill (mastery_state_store.dart) instead of always starting from
-      // a fresh, zero-evidence state.
-      final skillId =
-          AdaptiveLearningService.resolvedSkillId(result, mapping: mapping);
-      final masteryStore = ref.read(masteryStateStoreProvider);
-      final previousMastery = masteryStore.load(widget.childId, skillId);
-
-      final shadow = const AdaptiveLearningService().evaluateCompletion(
-        childProfileId: widget.childId,
-        result: result,
-        offlineMode: !await ref.read(connectivityProvider.future),
-        previousMastery: previousMastery,
-        mapping: mapping,
-      );
-      await masteryStore.save(shadow.mastery);
-      adaptiveShadow = shadow.toJson();
-    } catch (_) {
+    if (ungraded) {
       adaptiveShadow = {
         'shadow_mode': true,
-        'used_fallback': true,
-        'reason_codes': ['ADAPTIVE_EXCEPTION_FALLBACK'],
+        'skipped': true,
+        'reason_codes': ['UNGRADED_PARTICIPATION'],
       };
+    } else {
+      try {
+        // mastery_core's MasteryState carries evidenceCount/confidence/
+        // attemptHistory that only mean anything if it accumulates across
+        // completions -- load whatever this child already has for this
+        // skill (mastery_state_store.dart) instead of always starting from
+        // a fresh, zero-evidence state.
+        final skillId =
+            AdaptiveLearningService.resolvedSkillId(result, mapping: mapping);
+        final masteryStore = ref.read(masteryStateStoreProvider);
+        final previousMastery = masteryStore.load(widget.childId, skillId);
+
+        final shadow = const AdaptiveLearningService().evaluateCompletion(
+          childProfileId: widget.childId,
+          result: result,
+          offlineMode: !await ref.read(connectivityProvider.future),
+          previousMastery: previousMastery,
+          mapping: mapping,
+        );
+        await masteryStore.save(shadow.mastery);
+        adaptiveShadow = shadow.toJson();
+      } catch (_) {
+        adaptiveShadow = {
+          'shadow_mode': true,
+          'used_fallback': true,
+          'reason_codes': ['ADAPTIVE_EXCEPTION_FALLBACK'],
+        };
+      }
     }
     final body = {
       'attempt_id': attemptId,
@@ -287,11 +299,12 @@ class _GameScreenState extends ConsumerState<GameScreen> {
       'hint_count': result.hintsUsed,
       'duration_seconds': result.duration.inSeconds,
       'completed': true,
-      'mastery_evidence': result.maxScore > 0
+      'mastery_evidence': !ungraded && result.maxScore > 0
           ? (result.score / result.maxScore).clamp(0.0, 1.0)
           : 0.0,
       'skill_evidence': {
-        for (final skill in result.newSkillsAcquired) skill: true,
+        if (!ungraded)
+          for (final skill in result.newSkillsAcquired) skill: true,
       },
       'metadata': {
         ...result.metadata,
@@ -375,24 +388,24 @@ class _GameScreenState extends ConsumerState<GameScreen> {
     MiCompletionResult result,
     CanonicalActivityMapping? mapping,
   ) async {
+    final ungraded = _isUngradedCompletion(result);
     final progressStore = ref.read(progressStoreProvider);
     final tracker = progressStore.load(widget.childId) ??
         ProgressTracker(childId: widget.childId);
 
-    // onComplete only ever fires when a level is actually solved (missed
-    // attempts retry in place rather than calling back here), so every
-    // call here is a correct completion.
     tracker.recordCompletion(
       gameId: widget.gameType,
       levelId: result.levelId,
-      correct: true,
+      correct: !ungraded,
       duration: result.duration,
       hintsUsed: result.hintsUsed,
-      skillIds: mapping != null
-          ? [mapping.primarySkillId, ...mapping.secondarySkillIds]
-          : (result.newSkillsAcquired.isNotEmpty
-              ? result.newSkillsAcquired
-              : ['${widget.gameType}.general']),
+      skillIds: ungraded
+          ? const []
+          : mapping != null
+              ? [mapping.primarySkillId, ...mapping.secondarySkillIds]
+              : (result.newSkillsAcquired.isNotEmpty
+                  ? result.newSkillsAcquired
+                  : ['${widget.gameType}.general']),
     );
     await progressStore.save(tracker);
 
@@ -430,6 +443,11 @@ class _GameScreenState extends ConsumerState<GameScreen> {
         // Best-effort — the reward is already unlocked locally regardless.
       }
     }
+  }
+
+  bool _isUngradedCompletion(MiCompletionResult result) {
+    return result.metadata['assessmentModel'] == 'ungraded' ||
+        result.metadata['isMasteryScore'] == false;
   }
 
   @override
@@ -503,6 +521,9 @@ class _GameScreenState extends ConsumerState<GameScreen> {
       childProfileId: widget.childId,
       initialSnapshot: _initialSnapshot,
       onSaveSnapshot: _onSaveSnapshot,
+      creativeArtifactStore: widget.gameType == 'free_creativity'
+          ? ref.read(creativeArtifactStoreProvider)
+          : null,
       reduceMotion: _reduceMotion,
       locale: _locale,
     );

@@ -217,6 +217,95 @@ def validate_missing_letter_content(level: dict) -> list[str]:
     return errors
 
 
+def validate_free_creativity_content(level: dict) -> list[str]:
+    if level.get("gameId") != "free_creativity":
+        return []
+
+    errors: list[str] = []
+    metadata = level.get("metadata")
+    if not isinstance(metadata, dict):
+        return ["metadata: free_creativity requires metadata"]
+
+    metadata_deep = metadata.get("deepData")
+    if not isinstance(metadata_deep, dict):
+        errors.append("metadata.deepData: free_creativity requires deepData")
+        metadata_deep = {}
+
+    required_metadata = {
+        "engine": "creative_story_lab",
+        "completionModel": "participation",
+        "assessmentModel": "ungraded",
+    }
+    for key, expected in required_metadata.items():
+        if metadata.get(key, metadata_deep.get(key)) != expected:
+            errors.append(f"metadata.{key}: expected {expected!r}")
+
+    localized = level.get("localizedContent")
+    if not isinstance(localized, dict):
+        return errors + ["localizedContent: must be an object"]
+
+    for locale in ("vi", "en"):
+        content = localized.get(locale)
+        field_prefix = f"localizedContent.{locale}"
+        if not isinstance(content, dict):
+            errors.append(f"{field_prefix}: locale content is required")
+            continue
+        deep_data = content.get("deepData")
+        if not isinstance(deep_data, dict):
+            errors.append(f"{field_prefix}.deepData: required for creative_story_lab")
+            continue
+
+        for key in ("scenes", "characters", "feelings"):
+            choices = deep_data.get(key)
+            if not isinstance(choices, list) or not choices:
+                errors.append(f"{field_prefix}.deepData.{key}: required non-empty list")
+                continue
+            seen_ids: set[str] = set()
+            for index, choice in enumerate(choices):
+                if not isinstance(choice, dict):
+                    errors.append(
+                        f"{field_prefix}.deepData.{key}[{index}]: must be an object"
+                    )
+                    continue
+                choice_id = choice.get("id")
+                label = choice.get("label")
+                if not isinstance(choice_id, str) or not choice_id:
+                    errors.append(
+                        f"{field_prefix}.deepData.{key}[{index}].id: required"
+                    )
+                elif choice_id in seen_ids:
+                    errors.append(
+                        f"{field_prefix}.deepData.{key}: duplicate id {choice_id!r}"
+                    )
+                else:
+                    seen_ids.add(choice_id)
+                if not isinstance(label, str) or not label.strip():
+                    errors.append(
+                        f"{field_prefix}.deepData.{key}[{index}].label: required"
+                    )
+
+        minimum = deep_data.get("minimumStoryLength", 1)
+        maximum = deep_data.get("maximumStoryLength", 500)
+        if not isinstance(minimum, int) or minimum < 1:
+            errors.append(f"{field_prefix}.deepData.minimumStoryLength: positive int")
+        if not isinstance(maximum, int) or maximum < 1:
+            errors.append(f"{field_prefix}.deepData.maximumStoryLength: positive int")
+        if isinstance(minimum, int) and isinstance(maximum, int) and minimum > maximum:
+            errors.append(
+                f"{field_prefix}.deepData: minimumStoryLength exceeds maximumStoryLength"
+            )
+
+        options = content.get("options")
+        if isinstance(options, list) and options:
+            if metadata_deep.get("legacyChoiceOptionsIgnored") is not True:
+                errors.append(
+                    f"{field_prefix}.options: legacy options require "
+                    "metadata.deepData.legacyChoiceOptionsIgnored=true"
+                )
+
+    return errors
+
+
 def validate_production_content() -> tuple[bool, list[str]]:
     schema_dict = load_schema()
     validator_cls = jsonschema.validators.validator_for(schema_dict)
@@ -248,6 +337,9 @@ def validate_production_content() -> tuple[bool, list[str]]:
                 all_errors.append(f"{location}: {err}")
 
             for err in validate_missing_letter_content(level):
+                all_errors.append(f"{location}: {err}")
+
+            for err in validate_free_creativity_content(level):
                 all_errors.append(f"{location}: {err}")
 
             if level_id in seen_ids and level_id != "<missing id>":
@@ -289,6 +381,7 @@ def check_malformed_fixtures() -> tuple[bool, list[str]]:
         errors = validate_against_schema(data, validator)
         errors += cross_check_skill_tags(data, known_skills)
         errors += validate_missing_letter_content(data)
+        errors += validate_free_creativity_content(data)
 
         level_id = data.get("id")
         if level_id in seen_ids:

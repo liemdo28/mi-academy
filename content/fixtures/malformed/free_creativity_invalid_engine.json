@@ -1,0 +1,46 @@
+{
+  "id": "free-creativity-bad-invalid-engine",
+  "gameId": "free_creativity",
+  "levelNumber": 1,
+  "difficulty": 1,
+  "localizedContent": {
+    "vi": {
+      "prompt": "Viết một ý tưởng câu chuyện.",
+      "options": [{"id": "a", "text": "Một cánh cửa nhỏ", "correct": true}],
+      "deepData": {
+        "scenes": [{"id": "scene-door", "label": "Một cánh cửa nhỏ"}],
+        "characters": [{"id": "character-mi", "label": "MI"}],
+        "feelings": [{"id": "feeling-curious", "label": "tò mò"}],
+        "minimumStoryLength": 1,
+        "maximumStoryLength": 500
+      }
+    },
+    "en": {
+      "prompt": "Write a story idea.",
+      "options": [{"id": "a", "text": "A tiny door", "correct": true}],
+      "deepData": {
+        "scenes": [{"id": "scene-door", "label": "A tiny door"}],
+        "characters": [{"id": "character-mi", "label": "MI"}],
+        "feelings": [{"id": "feeling-curious", "label": "curious"}],
+        "minimumStoryLength": 1,
+        "maximumStoryLength": 500
+      }
+    }
+  },
+  "hints": [{"text": "Write one short sentence."}],
+  "metadata": {
+    "ageGroup": "junior",
+    "skillIds": ["creative.storytelling"],
+    "contentKind": "choice_progression",
+    "deepData": {
+      "engine": "choice",
+      "completionModel": "scored",
+      "assessmentModel": "graded",
+      "legacyChoiceOptionsIgnored": true
+    }
+  },
+  "assetRefs": [],
+  "contentVersion": 1,
+  "estimatedSeconds": 60,
+  "publicationState": "published"
+}
