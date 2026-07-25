@@ -78,6 +78,28 @@ Map<String, dynamic> _alternatingExample() => {
       ],
     };
 
+Map<String, dynamic> _multiBlankExample() => {
+      'contentId': 'sequence-en-two-blanks',
+      'gameId': 'sentence_order',
+      'locale': 'en',
+      'ageBand': 'explorer',
+      'difficulty': 2,
+      'instruction': 'Choose both missing words.',
+      'mode': 'missingItem',
+      'rule': {'type': 'fixed'},
+      'missingIndices': [1, 3],
+      'choices': [
+        {'id': 'd1', 'content': 'blue', 'type': 'text'},
+        {'id': 'd2', 'content': 'quickly', 'type': 'text'},
+      ],
+      'correctOrder': [
+        {'id': 'w1', 'content': 'Mia', 'type': 'text'},
+        {'id': 'w2', 'content': 'reads', 'type': 'text'},
+        {'id': 'w3', 'content': 'many', 'type': 'text'},
+        {'id': 'w4', 'content': 'books', 'type': 'text'},
+      ],
+    };
+
 void main() {
   group('SequenceContent.fromJson', () {
     test('parses a fixed-order Vietnamese example', () {
@@ -248,6 +270,28 @@ void main() {
       controller.moveItem(0, 1);
       expect(controller.arrangement, isNot(equals(beforeResume)));
     });
+
+    test('snapshot restores arrangement, attempts, hints, and feedback', () {
+      final content = SequenceContent.fromJson(_ascendingViExample());
+      final controller = SequenceController(content: content);
+      controller.moveItem(0, 1);
+      controller.requestHint();
+      controller.submitReorder();
+
+      final snapshot =
+          SequenceSnapshot.fromJson(controller.snapshot().toJson());
+      final restored = SequenceController(
+        content: content,
+        initialSnapshot: snapshot,
+      );
+
+      expect(restored.arrangement.map((item) => item.id),
+          controller.arrangement.map((item) => item.id));
+      expect(restored.attempts, controller.attempts);
+      expect(restored.hintsUsed, 1);
+      expect(restored.lastSubmissionCorrect, controller.lastSubmissionCorrect);
+      expect(restored.showHint, isTrue);
+    });
   });
 
   group('SequenceController (missingItem mode)', () {
@@ -277,6 +321,20 @@ void main() {
       controller.dismissHint();
       expect(controller.showHint, isFalse);
     });
+
+    test('supports multiple blanks independently', () {
+      final content = SequenceContent.fromJson(_multiBlankExample());
+      final controller = SequenceController(content: content);
+
+      controller.selectForMissingIndex(1, 'w2');
+      expect(controller.selectedMissingIndex, 3);
+      controller.selectForMissingIndex(3, 'w4');
+      controller.submitMissingItems();
+
+      expect(controller.isComplete, isTrue);
+      expect(controller.completedItemCount, content.correctOrder.length);
+      expect(controller.snapshot().missingSelections, {1: 'w2', 3: 'w4'});
+    });
   });
 
   group('SequenceScreen widget', () {
@@ -303,6 +361,21 @@ void main() {
       await tester.pump();
 
       expect(find.textContaining('không khả dụng'), findsOneWidget);
+    });
+
+    testWidgets('English malformed content hides raw parser details',
+        (tester) async {
+      await tester.pumpWidget(MaterialApp(
+        home: SequenceScreen(
+          rawContent: {'contentId': 'broken'},
+          onExit: () {},
+          locale: 'en',
+        ),
+      ));
+      await tester.pump();
+
+      expect(find.text('Content is unavailable.'), findsOneWidget);
+      expect(find.textContaining('Missing required field'), findsNothing);
     });
 
     testWidgets(
@@ -349,6 +422,63 @@ void main() {
       expect(find.text('5'), findsWidgets); // chip + the correct choice button
       // The decoy choice is offered.
       expect(find.text('99'), findsOneWidget);
+    });
+
+    testWidgets('restores multiple blank selections from a snapshot',
+        (tester) async {
+      final snapshot = SequenceSnapshot(
+        contentId: 'sequence-en-two-blanks',
+        mode: SequenceMode.missingItem,
+        arrangementIds: const [],
+        missingSelections: const {1: 'w2'},
+        selectedMissingIndex: 3,
+        attempts: 1,
+        hintsUsed: 1,
+        showHint: false,
+        isComplete: false,
+        lastSubmissionCorrect: false,
+        completedItemCount: 1,
+        totalItemCount: 4,
+      );
+
+      await tester.pumpWidget(MaterialApp(
+        home: SequenceScreen(
+          rawContent: _multiBlankExample(),
+          initialSnapshot: snapshot,
+          onExit: () {},
+          locale: 'en',
+        ),
+      ));
+      await tester.pump();
+
+      expect(find.text('reads'), findsWidgets);
+      expect(find.text('Choose both missing words.'), findsOneWidget);
+      expect(find.text('Check'), findsOneWidget);
+    });
+
+    testWidgets('reorder controls fit a narrow phone with larger text',
+        (tester) async {
+      tester.view.physicalSize = const Size(320, 568);
+      tester.view.devicePixelRatio = 1;
+      addTearDown(tester.view.resetPhysicalSize);
+      addTearDown(tester.view.resetDevicePixelRatio);
+
+      await tester.pumpWidget(MaterialApp(
+        home: MediaQuery(
+          data: const MediaQueryData(
+            size: Size(320, 568),
+            textScaler: TextScaler.linear(1.35),
+          ),
+          child: SequenceScreen(
+            rawContent: _ascendingViExample(),
+            onExit: () {},
+          ),
+        ),
+      ));
+      await tester.pump();
+
+      expect(tester.takeException(), isNull);
+      expect(find.byTooltip('Di chuyển sang phải'), findsWidgets);
     });
   });
 }

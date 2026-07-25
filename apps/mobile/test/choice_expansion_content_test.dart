@@ -212,6 +212,13 @@ void main() {
               reason: '$gameId:${level['id']}:$locale');
         }
       }
+      final multiBlankLevels = levels.where((level) {
+        final localized = level['localizedContent'] as Map<String, dynamic>;
+        final en = localized['en'] as Map<String, dynamic>;
+        final sequence = en['sequence'] as Map<String, dynamic>;
+        return (sequence['missingIndices'] as List? ?? const []).length > 1;
+      });
+      expect(multiBlankLevels, isNotEmpty, reason: gameId);
     }
   });
 }

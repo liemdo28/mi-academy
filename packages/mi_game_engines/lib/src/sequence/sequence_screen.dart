@@ -14,7 +14,12 @@ class SequenceScreen extends StatefulWidget {
     super.key,
     required this.rawContent,
     required this.onExit,
+    this.text,
+    this.initialSnapshot,
     this.onComplete,
+    this.onNext,
+    this.onRestart,
+    this.onSnapshotChanged,
     this.onSaveProgress,
     this.reducedMotion = false,
     this.soundEnabled = true,
@@ -23,7 +28,12 @@ class SequenceScreen extends StatefulWidget {
 
   final Map<String, dynamic> rawContent;
   final VoidCallback onExit;
+  final SequenceScreenText? text;
+  final SequenceSnapshot? initialSnapshot;
   final void Function(SequenceCompletionResult)? onComplete;
+  final VoidCallback? onNext;
+  final VoidCallback? onRestart;
+  final void Function(SequenceSnapshot)? onSnapshotChanged;
   final void Function(int attempts)? onSaveProgress;
   final bool reducedMotion;
   final bool soundEnabled;
@@ -37,18 +47,27 @@ class SequenceCompletionResult {
   const SequenceCompletionResult({
     required this.contentId,
     required this.attempts,
+    required this.hintsUsed,
     required this.starsEarned,
+    required this.completedItemCount,
+    required this.totalItemCount,
+    required this.snapshot,
   });
 
   final String contentId;
   final int attempts;
+  final int hintsUsed;
   final int starsEarned;
+  final int completedItemCount;
+  final int totalItemCount;
+  final SequenceSnapshot snapshot;
 }
 
 class _SequenceScreenState extends State<SequenceScreen> {
   SequenceController? _controller;
   String? _loadError;
   bool _completionReported = false;
+  Map<String, dynamic>? _lastSavedSnapshot;
 
   @override
   void initState() {
@@ -61,6 +80,7 @@ class _SequenceScreenState extends State<SequenceScreen> {
       final content = SequenceContent.fromJson(widget.rawContent);
       final controller = SequenceController(
         content: content,
+        initialSnapshot: widget.initialSnapshot,
         reducedMotion: widget.reducedMotion,
         soundEnabled: widget.soundEnabled,
       );
@@ -68,9 +88,7 @@ class _SequenceScreenState extends State<SequenceScreen> {
       _controller = controller;
       _loadError = null;
     } catch (e) {
-      _loadError = e is SequenceContentException
-          ? e.message
-          : 'Không thể tải nội dung trò chơi.';
+      _loadError = 'invalid_sequence_content';
     }
   }
 
@@ -79,16 +97,31 @@ class _SequenceScreenState extends State<SequenceScreen> {
     if (controller == null) return;
     if (controller.isComplete && !_completionReported) {
       _completionReported = true;
+      final snapshot = controller.snapshot();
       widget.onComplete?.call(
         SequenceCompletionResult(
           contentId: controller.content.contentId,
           attempts: controller.attempts,
+          hintsUsed: controller.hintsUsed,
           starsEarned: controller.starsEarned,
+          completedItemCount: controller.completedItemCount,
+          totalItemCount: controller.totalItemCount,
+          snapshot: snapshot,
         ),
       );
     }
+    _saveSnapshotIfChanged(controller);
     widget.onSaveProgress?.call(controller.attempts);
     setState(() {});
+  }
+
+  void _saveSnapshotIfChanged(SequenceController controller) {
+    if (controller.isComplete) return;
+    final snapshot = controller.snapshot();
+    final payload = snapshot.toJson();
+    if (_lastSavedSnapshot.toString() == payload.toString()) return;
+    _lastSavedSnapshot = payload;
+    widget.onSnapshotChanged?.call(snapshot);
   }
 
   @override
@@ -99,7 +132,7 @@ class _SequenceScreenState extends State<SequenceScreen> {
 
   @override
   Widget build(BuildContext context) {
-    final text = _SequenceScreenText(widget.locale);
+    final text = widget.text ?? SequenceScreenText.forLocale(widget.locale);
     final error = _loadError;
     if (error != null) {
       return Scaffold(
@@ -115,8 +148,7 @@ class _SequenceScreenState extends State<SequenceScreen> {
               children: [
                 const Icon(Icons.error_outline, size: 48, color: Colors.grey),
                 const SizedBox(height: 12),
-                Text('${text.contentUnavailable}\n$error',
-                    textAlign: TextAlign.center),
+                Text(text.contentUnavailable, textAlign: TextAlign.center),
               ],
             ),
           ),
@@ -161,7 +193,9 @@ class _SequenceScreenState extends State<SequenceScreen> {
                     onRetry: () {
                       _completionReported = false;
                       controller.retry();
+                      widget.onRestart?.call();
                     },
+                    onNext: widget.onNext,
                   )
                 : Column(
                     children: [
@@ -202,7 +236,7 @@ class _SequenceScreenState extends State<SequenceScreen> {
 class _ReorderBody extends StatelessWidget {
   const _ReorderBody({required this.controller, required this.text});
   final SequenceController controller;
-  final _SequenceScreenText text;
+  final SequenceScreenText text;
 
   @override
   Widget build(BuildContext context) {
@@ -259,7 +293,7 @@ class _ReorderBody extends StatelessWidget {
 class _MissingItemBody extends StatelessWidget {
   const _MissingItemBody({required this.controller, required this.text});
   final SequenceController controller;
-  final _SequenceScreenText text;
+  final SequenceScreenText text;
 
   @override
   Widget build(BuildContext context) {
@@ -269,11 +303,11 @@ class _MissingItemBody extends StatelessWidget {
       ...content.choices,
     ];
 
-    return Column(
-      children: [
-        Padding(
-          padding: const EdgeInsets.all(16),
-          child: Wrap(
+    return SingleChildScrollView(
+      padding: const EdgeInsets.all(16),
+      child: Column(
+        children: [
+          Wrap(
             spacing: 8,
             runSpacing: 8,
             alignment: WrapAlignment.center,
@@ -281,19 +315,23 @@ class _MissingItemBody extends StatelessWidget {
               for (var i = 0; i < content.correctOrder.length; i++)
                 if (content.missingIndices.contains(i))
                   _BlankSlot(
+                    index: i,
+                    selected: controller.selectedMissingIndex == i,
                     selectedContent: _contentFor(
                       controller.missingSelections[i],
                       allChoices,
                     ),
+                    label: text.blankSlot(i),
+                    onTap: () => controller.selectMissingIndex(i),
                   )
                 else
                   Chip(label: Text(content.correctOrder[i].content)),
             ],
           ),
-        ),
-        const Divider(),
-        Expanded(
-          child: Wrap(
+          const SizedBox(height: 16),
+          const Divider(),
+          const SizedBox(height: 16),
+          Wrap(
             spacing: 8,
             runSpacing: 8,
             alignment: WrapAlignment.center,
@@ -305,18 +343,19 @@ class _MissingItemBody extends StatelessWidget {
                   child: SizedBox(
                     height: 48,
                     child: ElevatedButton(
-                      onPressed: () => controller.selectForMissingIndex(
-                        content.missingIndices.first,
-                        choice.id,
-                      ),
+                      onPressed: () {
+                        final target = controller.selectedMissingIndex ??
+                            content.missingIndices.first;
+                        controller.selectForMissingIndex(target, choice.id);
+                      },
                       child: Text(choice.content),
                     ),
                   ),
                 ),
             ],
           ),
-        ),
-      ],
+        ],
+      ),
     );
   }
 
@@ -330,20 +369,44 @@ class _MissingItemBody extends StatelessWidget {
 }
 
 class _BlankSlot extends StatelessWidget {
-  const _BlankSlot({required this.selectedContent});
+  const _BlankSlot({
+    required this.index,
+    required this.selected,
+    required this.selectedContent,
+    required this.label,
+    required this.onTap,
+  });
+  final int index;
+  final bool selected;
   final String? selectedContent;
+  final String label;
+  final VoidCallback onTap;
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: 56,
-      height: 48,
-      alignment: Alignment.center,
-      decoration: BoxDecoration(
-        border: Border.all(color: Colors.grey),
+    return Semantics(
+      button: true,
+      selected: selected,
+      label: label,
+      child: InkWell(
+        onTap: onTap,
         borderRadius: BorderRadius.circular(8),
+        child: Container(
+          constraints: const BoxConstraints(minWidth: 56, minHeight: 48),
+          padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 10),
+          alignment: Alignment.center,
+          decoration: BoxDecoration(
+            border: Border.all(
+              color: selected
+                  ? Theme.of(context).colorScheme.primary
+                  : Colors.grey,
+              width: selected ? 2 : 1,
+            ),
+            borderRadius: BorderRadius.circular(8),
+          ),
+          child: Text(selectedContent ?? '?'),
+        ),
       ),
-      child: Text(selectedContent ?? '?'),
     );
   }
 }
@@ -410,13 +473,15 @@ class _CompletionView extends StatelessWidget {
     required this.attempts,
     required this.onExit,
     required this.onRetry,
+    required this.onNext,
   });
 
-  final _SequenceScreenText text;
+  final SequenceScreenText text;
   final int stars;
   final int attempts;
   final VoidCallback onExit;
   final VoidCallback onRetry;
+  final VoidCallback? onNext;
 
   @override
   Widget build(BuildContext context) {
@@ -448,7 +513,10 @@ class _CompletionView extends StatelessWidget {
             children: [
               OutlinedButton(onPressed: onRetry, child: Text(text.replay)),
               const SizedBox(width: 12),
-              ElevatedButton(onPressed: onExit, child: Text(text.exit)),
+              ElevatedButton(
+                onPressed: onNext ?? onExit,
+                child: Text(onNext == null ? text.exit : text.next),
+              ),
             ],
           ),
         ],
@@ -457,34 +525,69 @@ class _CompletionView extends StatelessWidget {
   }
 }
 
-class _SequenceScreenText {
-  const _SequenceScreenText(this.locale);
+class SequenceScreenText {
+  const SequenceScreenText({
+    required this.check,
+    required this.exit,
+    required this.next,
+    required this.pause,
+    required this.resume,
+    required this.hint,
+    required this.replay,
+    required this.contentUnavailable,
+    required this.moveLeft,
+    required this.moveRight,
+    required this.tryAgain,
+    required this.choose,
+    required this.moveItem,
+    required this.blankSlot,
+    required this.stars,
+    required this.completed,
+  });
 
-  final String locale;
+  factory SequenceScreenText.forLocale(String locale) {
+    final isEnglish = locale == 'en';
+    return SequenceScreenText(
+      check: isEnglish ? 'Check' : 'Kiểm tra',
+      exit: isEnglish ? 'Exit' : 'Thoát',
+      next: isEnglish ? 'Next' : 'Tiếp theo',
+      pause: isEnglish ? 'Pause' : 'Tạm dừng',
+      resume: isEnglish ? 'Resume' : 'Tiếp tục',
+      hint: isEnglish ? 'Hint' : 'Gợi ý',
+      replay: isEnglish ? 'Play again' : 'Chơi lại',
+      contentUnavailable:
+          isEnglish ? 'Content is unavailable.' : 'Nội dung không khả dụng.',
+      moveLeft: isEnglish ? 'Move left' : 'Di chuyển sang trái',
+      moveRight: isEnglish ? 'Move right' : 'Di chuyển sang phải',
+      tryAgain: isEnglish
+          ? 'Not quite in order. Try again!'
+          : 'Chưa đúng thứ tự, thử lại nhé!',
+      choose: (content) => isEnglish ? 'Choose $content' : 'Chọn $content',
+      moveItem: (content) => isEnglish ? 'Move $content' : 'Di chuyển $content',
+      blankSlot: (index) => isEnglish
+          ? 'Blank ${index + 1}, tap to fill'
+          : 'Ô trống ${index + 1}, chạm để điền',
+      stars: (count) => isEnglish ? '$count of 3 stars' : '$count trên 3 sao',
+      completed: (attempts) => isEnglish
+          ? 'Completed in $attempts attempt${attempts == 1 ? '' : 's'}!'
+          : 'Hoàn thành sau $attempts lượt thử!',
+    );
+  }
 
-  bool get _en => locale == 'en';
-
-  String get check => _en ? 'Check' : 'Kiểm tra';
-  String get exit => _en ? 'Exit' : 'Thoát';
-  String get pause => _en ? 'Pause' : 'Tạm dừng';
-  String get resume => _en ? 'Resume' : 'Tiếp tục';
-  String get hint => _en ? 'Hint' : 'Gợi ý';
-  String get replay => _en ? 'Play again' : 'Chơi lại';
-  String get contentUnavailable =>
-      _en ? 'Content is unavailable.' : 'Nội dung không khả dụng.';
-  String get moveLeft => _en ? 'Move left' : 'Di chuyển sang trái';
-  String get moveRight => _en ? 'Move right' : 'Di chuyển sang phải';
-  String get tryAgain =>
-      _en ? 'Not quite in order. Try again!' : 'Chưa đúng thứ tự, thử lại nhé!';
-
-  String choose(String content) => _en ? 'Choose $content' : 'Chọn $content';
-
-  String moveItem(String content) =>
-      _en ? 'Move $content' : 'Di chuyển $content';
-
-  String stars(int count) => _en ? '$count of 3 stars' : '$count trên 3 sao';
-
-  String completed(int attempts) => _en
-      ? 'Completed in $attempts attempt${attempts == 1 ? '' : 's'}!'
-      : 'Hoàn thành sau $attempts lượt thử!';
+  final String check;
+  final String exit;
+  final String next;
+  final String pause;
+  final String resume;
+  final String hint;
+  final String replay;
+  final String contentUnavailable;
+  final String moveLeft;
+  final String moveRight;
+  final String tryAgain;
+  final String Function(String content) choose;
+  final String Function(String content) moveItem;
+  final String Function(int index) blankSlot;
+  final String Function(int count) stars;
+  final String Function(int attempts) completed;
 }

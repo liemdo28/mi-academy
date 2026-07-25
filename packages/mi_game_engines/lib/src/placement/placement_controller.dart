@@ -132,6 +132,7 @@ class PlacementController extends ChangeNotifier {
   String? _lastInvalidItemId;
   bool? _lastAttemptWasCorrect;
   late DateTime _startedAt;
+  late DateTime _lastActivityAt;
   DateTime? _completedAt;
 
   /// Items not currently on any target, in their (possibly shuffled)
@@ -181,7 +182,8 @@ class PlacementController extends ChangeNotifier {
   bool? get lastAttemptWasCorrect => _lastAttemptWasCorrect;
   Map<String, String> get placements => Map.unmodifiable(_placements);
 
-  Duration get duration => (_completedAt ?? _clock()).difference(_startedAt);
+  Duration get duration =>
+      (_completedAt ?? _lastActivityAt).difference(_startedAt);
 
   /// 3/2/1 stars by placement accuracy, same shape as Matching/Sequence's
   /// attempt-efficiency scoring: a perfect run (zero incorrect attempts)
@@ -289,6 +291,7 @@ class PlacementController extends ChangeNotifier {
     }
 
     _selectedItemId = null;
+    _lastActivityAt = _clock();
     _checkCompletion();
     notifyListeners();
   }
@@ -306,6 +309,7 @@ class PlacementController extends ChangeNotifier {
     if (_paused || _isComplete) return;
     if (!_content.configuration.allowRemoveFromTarget) return;
     if (_placements.remove(itemId) != null) {
+      _lastActivityAt = _clock();
       notifyListeners();
     }
   }
@@ -313,6 +317,7 @@ class PlacementController extends ChangeNotifier {
   void requestHint() {
     _hintCount++;
     _showHint = true;
+    _lastActivityAt = _clock();
     notifyListeners();
   }
 
@@ -407,6 +412,7 @@ class PlacementController extends ChangeNotifier {
     _lastInvalidItemId = null;
     _lastAttemptWasCorrect = null;
     _startedAt = _clock();
+    _lastActivityAt = _startedAt;
     _completedAt = null;
   }
 

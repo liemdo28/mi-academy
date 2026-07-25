@@ -426,6 +426,36 @@ class GameLocaleText {
       isEnglish ? 'Not a match, try again!' : 'Không khớp, thử lại nhé!';
   String get memoryCongrats => isEnglish ? 'Great memory!' : 'Chúc mừng!';
 
+  String get sequenceCheck => isEnglish ? 'Check' : 'Kiểm tra';
+  String get sequenceExit => isEnglish ? 'Exit' : 'Thoát';
+  String get sequenceNext => isEnglish ? 'Next level' : 'Cấp tiếp theo';
+  String get sequencePause => isEnglish ? 'Pause' : 'Tạm dừng';
+  String get sequenceResume => isEnglish ? 'Resume' : 'Tiếp tục';
+  String get sequenceHint => isEnglish ? 'Hint' : 'Gợi ý';
+  String get sequenceReplay => isEnglish ? 'Play again' : 'Chơi lại';
+  String get sequenceContentUnavailable => isEnglish
+      ? 'This activity needs a quick refresh. Please try another level.'
+      : 'Hoạt động này cần làm mới một chút. Mình thử cấp khác nhé.';
+  String get sequenceMoveLeft =>
+      isEnglish ? 'Move left' : 'Di chuyển sang trái';
+  String get sequenceMoveRight =>
+      isEnglish ? 'Move right' : 'Di chuyển sang phải';
+  String get sequenceTryAgain => isEnglish
+      ? 'Not quite in order. Try one careful change!'
+      : 'Chưa đúng thứ tự rồi. Mình đổi một chỗ thật kỹ nhé!';
+  String sequenceChoose(String content) =>
+      isEnglish ? 'Choose $content' : 'Chọn $content';
+  String sequenceMoveItem(String content) =>
+      isEnglish ? 'Move $content' : 'Di chuyển $content';
+  String sequenceBlankSlot(int index) => isEnglish
+      ? 'Blank ${index + 1}, tap to fill'
+      : 'Ô trống ${index + 1}, chạm để điền';
+  String sequenceStars(int count) =>
+      isEnglish ? '$count of 3 stars' : '$count trên 3 sao';
+  String sequenceCompleted(int attempts) => isEnglish
+      ? 'Completed in $attempts attempt${attempts == 1 ? '' : 's'}!'
+      : 'Hoàn thành sau $attempts lượt thử!';
+
   CompletionText get completion => CompletionText(
         scoreLabel: score,
         nextLabel: next,
