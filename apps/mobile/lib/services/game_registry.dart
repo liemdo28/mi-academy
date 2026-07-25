@@ -6,6 +6,7 @@ import 'package:mi_game_ui/mi_game_ui.dart';
 import '../src/games/choice/choice_game_screen.dart';
 import '../src/games/deep_logic/deep_logic_game_screen.dart';
 import '../src/games/game_locale_text.dart';
+import '../src/games/logic_maze/logic_maze_screen.dart';
 import '../src/games/memory_cards/memory_cards_game.dart';
 import '../src/games/memory_cards/memory_cards_screen.dart';
 import '../src/games/robot_commands/robot_commands_screen.dart';
@@ -607,16 +608,33 @@ abstract final class GameRegistry {
             locale: locale,
           ),
         ),
-        _deepLogicEntry(
+        GameRegistryEntry(
           gameId: 'logic_maze',
           localizedName: miGameNameMap('logic_maze'),
           category: 'logic',
           ageBands: const ['explorer', 'master'],
           supportedSkills: const ['logic.maze', 'logic.navigation'],
-          engineType: 'maze_planner',
-          scene: DeepLogicScene.maze,
-          primaryColor: MiColors.creative,
-          worldLabel: (locale) => miGameWorldLabel('logic_maze', locale),
+          engineType: 'logic_maze_movement',
+          builder: ({
+            required level,
+            required allLevels,
+            required onExit,
+            required onComplete,
+            required childProfileId,
+            initialSnapshot,
+            onSaveSnapshot,
+            reduceMotion = false,
+            required locale,
+          }) =>
+              LogicMazeScreen(
+            level: level,
+            allLevels: allLevels,
+            onExit: onExit,
+            onComplete: onComplete,
+            initialSnapshot: initialSnapshot,
+            onSaveSnapshot: onSaveSnapshot,
+            locale: locale,
+          ),
         ),
         _choiceEntry(
           gameId: 'pattern_finder',

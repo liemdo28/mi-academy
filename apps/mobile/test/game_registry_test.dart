@@ -105,7 +105,8 @@ void main() {
     test('registers deep games with bespoke engine types', () {
       expect(
           GameRegistry.find('story_comprehension')!.engineType, 'reading_lab');
-      expect(GameRegistry.find('logic_maze')!.engineType, 'maze_planner');
+      expect(
+          GameRegistry.find('logic_maze')!.engineType, 'logic_maze_movement');
       expect(GameRegistry.find('kids_sudoku')!.engineType, 'sudoku_grid');
       expect(
           GameRegistry.find('reasoning_detective')!.engineType, 'clue_board');

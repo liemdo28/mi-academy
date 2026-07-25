@@ -266,6 +266,48 @@ class GameLocaleText {
       : 'Robot MI chưa tới đủ mục tiêu, mình thử đổi lệnh nhé!';
   String robotCommandLabel(String commandName) => commandName;
 
+  String get mazeTitle => miGameName('logic_maze', locale);
+  String get mazePlanner => isEnglish ? 'Path planner' : 'Bàn tìm đường';
+  String get mazeProgram => isEnglish ? 'Path commands' : 'Lệnh di chuyển';
+  String get mazeRun => isEnglish ? 'Run path' : 'Chạy đường đi';
+  String get mazeUndoTooltip =>
+      isEnglish ? 'Remove last move' : 'Xóa bước cuối';
+  String get mazeResetTooltip => isEnglish ? 'Reset path' : 'Làm lại đường đi';
+  String get mazeComplete =>
+      isEnglish ? 'You guided MI to the star!' : 'Con đã dẫn MI tới ngôi sao!';
+  String get mazeDone =>
+      isEnglish ? 'MI reached the star safely!' : 'MI đã tới ngôi sao an toàn!';
+  String get mazeHitWall => isEnglish
+      ? 'That path bumps into a blocked square. Try another route!'
+      : 'Đường này đụng ô bị chặn rồi. Mình thử hướng khác nhé!';
+  String get mazeOutOfBounds => isEnglish
+      ? 'That path leaves the maze. Keep MI inside the board!'
+      : 'Đường này đi ra ngoài mê cung. Giữ MI trong bảng nhé!';
+  String get mazeRetry => isEnglish
+      ? 'MI has not reached the star yet. Add or change some moves!'
+      : 'MI chưa tới ngôi sao. Con thêm hoặc đổi vài bước nhé!';
+  String get mazeEmpty => isEnglish
+      ? 'Add moves before running the path.'
+      : 'Con thêm bước rồi hãy chạy đường đi nhé.';
+  String get mazeStepUp => isEnglish ? 'Up' : 'Lên';
+  String get mazeStepDown => isEnglish ? 'Down' : 'Xuống';
+  String get mazeStepLeft => isEnglish ? 'Left' : 'Trái';
+  String get mazeStepRight => isEnglish ? 'Right' : 'Phải';
+  String mazeCommandLabel(String commandName) {
+    switch (commandName) {
+      case 'up':
+        return mazeStepUp;
+      case 'down':
+        return mazeStepDown;
+      case 'left':
+        return mazeStepLeft;
+      case 'right':
+        return mazeStepRight;
+      default:
+        return commandName;
+    }
+  }
+
   String get memoryTitle => miGameName('memory_cards', locale);
   String get memoryPrompt =>
       isEnglish ? 'Find the matching pairs!' : 'Tìm cặp giống nhau!';

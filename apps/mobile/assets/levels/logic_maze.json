@@ -2171,7 +2171,9 @@
             "up",
             "up",
             "right",
-            "up"
+            "up",
+            "up",
+            "right"
           ]
         }
       },
@@ -2290,6 +2292,8 @@
             "up",
             "right",
             "right",
+            "right",
+            "up",
             "right"
           ]
         }
@@ -2409,7 +2413,9 @@
             "right",
             "right",
             "right",
-            "up"
+            "up",
+            "up",
+            "right"
           ]
         }
       },
@@ -2528,7 +2534,9 @@
             "right",
             "up",
             "right",
-            "up"
+            "up",
+            "up",
+            "right"
           ]
         }
       },
@@ -2642,6 +2650,8 @@
             22
           ],
           "commands": [
+            "up",
+            "right",
             "up",
             "right",
             "up",
@@ -2766,7 +2776,9 @@
             "up",
             "up",
             "right",
-            "up"
+            "up",
+            "up",
+            "right"
           ]
         }
       },
@@ -2885,6 +2897,8 @@
             "up",
             "right",
             "right",
+            "right",
+            "up",
             "right"
           ]
         }
@@ -3004,7 +3018,9 @@
             "right",
             "right",
             "right",
-            "up"
+            "up",
+            "up",
+            "right"
           ]
         }
       },
@@ -3124,7 +3140,9 @@
             "right",
             "up",
             "right",
-            "up"
+            "up",
+            "up",
+            "right"
           ]
         }
       },
@@ -3238,6 +3256,8 @@
             23
           ],
           "commands": [
+            "up",
+            "right",
             "up",
             "right",
             "up",
@@ -3362,7 +3382,9 @@
             "up",
             "up",
             "right",
-            "up"
+            "up",
+            "up",
+            "right"
           ]
         }
       },
@@ -3482,6 +3504,8 @@
             "up",
             "right",
             "right",
+            "right",
+            "up",
             "right"
           ]
         }

@@ -1,6 +1,6 @@
 # Game Completion Matrix
 
-Date: 2026-07-24
+Date: 2026-07-25
 
 ## Summary
 
@@ -30,5 +30,6 @@ Date: 2026-07-24
 
 ## Interaction Depth
 
-- Bespoke/deeper surfaces: Story Comprehension, Logic Maze, Kids Sudoku, Reasoning Detective, Free Creativity, Memory Cards, Robot Commands, Word Builder, Sound Match, Math Race, Math Supermarket.
+- Bespoke/deeper surfaces: Story Comprehension, Kids Sudoku, Reasoning Detective, Free Creativity, Memory Cards, Robot Commands, Word Builder, Sound Match, Math Race, Math Supermarket.
+- Logic Maze now uses a dedicated movement engine (`logic_maze_movement`) with command queue, simulation, collision/out-of-bounds feedback, undo, reset, save/restore, widget tests, session tests, and 30/30 authored command paths validated against goal reachability.
 - Shared Choice Engine surfaces remain acceptable for family testing on the remaining expansion games, with richer bespoke interactions recommended as the next quality phase.
